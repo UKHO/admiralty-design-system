@@ -1,0 +1,10 @@
+/*
+  Using layout from Google Material v0.41.0
+  https://github.com/material-components/material-components-web/tree/master/packages/mdc-layout-grid
+*/
+@import './layout/mdc-layout-grid';
+
+/* override default padding */
+.mdc-layout-grid {
+  padding: 0 !important;
+}

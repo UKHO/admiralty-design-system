@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title><%= typeof title !== 'undefined' && title ? title + ' - ' : '' %><%= siteName %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <link rel="stylesheet" href="/css/all.css">
+  </head>
+  <body>
+
+    <%- partial("/_partials/header") %>
+    <%- partial("/_partials/breadcrumbs") %>
+
+    <main>
+      <%- yield %>
+    </main>
+
+    <footer><%- footerText %></footer>
+
+  </body>
+</html>

@@ -1,0 +1,43 @@
+{
+  "index": {
+    "title": "Delivery",
+    "url": "principles/delivery/"
+  },
+
+  "agile": {
+    "title": "Agile Principles",
+    "url": "principles/delivery/agile"
+  },
+  "lifecycle": {
+    "title": "Application Lifecycle Principles",
+    "url": "principles/delivery/lifecycle"
+  },
+  "architecture": {
+    "title": "Architecture Principles",
+    "url": "principles/delivery/architecture"
+  },
+  "development": {
+    "title": "Development Principles",
+    "url": "principles/delivery/development"
+  },
+  "testing": {
+    "title": "Testing Principles",
+    "url": "principles/delivery/testing"
+  },
+  "cyber": {
+    "title": "Cyber Principles",
+    "url": "principles/delivery/cyber"
+  },
+  "cloud": {
+    "title": "Cloud Principles",
+    "url": "principles/delivery/cloud"
+  },
+  "software": {
+    "title": "Software Engineering Principles",
+    "url": "principles/delivery/software"
+  },
+  "business": {
+    "title": "Business Analysis Principles",
+    "url": "principles/delivery/business"
+  }
+}

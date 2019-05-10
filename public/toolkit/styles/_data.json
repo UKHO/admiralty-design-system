@@ -1,0 +1,37 @@
+{
+  "index": {
+    "title": "Styles",
+    "url": "toolkit/styles/"
+  },
+
+  "logos": {
+    "title": "Logos",
+    "url": "toolkit/styles/logos",
+    "description": "This is a description of the page contents to be shown as a preview."
+  },
+  "colours": {
+    "title": "Colours",
+    "url": "toolkit/styles/colours",
+    "description": "This is a description of the page contents to be shown as a preview."
+  },
+  "layout": {
+    "title": "Layout Grids",
+    "url": "toolkit/styles/layout",
+    "description": "This is a description of the page contents to be shown as a preview."
+  },
+  "typography": {
+    "title": "Typography",
+    "url": "toolkit/styles/typography",
+    "description": "This is a description of the page contents to be shown as a preview."
+  },
+  "icons": {
+    "title": "Icons",
+    "url": "toolkit/styles/icons",
+    "description": "This is a description of the page contents to be shown as a preview."
+  },
+  "forms": {
+    "title": "Forms",
+    "url": "toolkit/styles/forms",
+    "description": "This is a description of the page contents to be shown as a preview."
+  }
+}

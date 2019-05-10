@@ -1,0 +1,31 @@
+@import 'colours';
+@import 'responsive';
+
+.card {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.2);
+
+  & > h6 {
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid $colour-admiralty-blue;
+    color: $colour-white;
+    background-color: $colour-admiralty-blue;
+    margin: 0;
+    padding: 0 20px;
+    @include not-desktop {
+      padding: 0 10px;
+    }
+  }
+
+  & > div {
+    border: 1px solid $colour-line;
+    border-top: none;
+    flex-grow: 1;
+    padding: 20px;
+    @include not-desktop {
+      padding: 0 10px;
+    }
+  }
+}

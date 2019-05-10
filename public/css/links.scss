@@ -1,0 +1,21 @@
+@import 'responsive';
+@import 'colours';
+
+a {
+  font-weight: normal;
+  color: $colour-link;
+  text-decoration: underline;
+
+  .small {
+    font-size: 16px;
+    @include not-desktop {
+      font-size: 14px;
+      line-height: 22px;
+    }
+  }
+
+  nav & {
+    font-weight: normal;
+  }
+}
+

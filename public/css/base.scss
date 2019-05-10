@@ -1,0 +1,30 @@
+@import 'responsive';
+
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  width: 100%;
+  max-width: $max-content-width;
+  flex-grow: 1;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 10px;
+  @include desktop-only {
+    padding: 20px;
+  }
+}

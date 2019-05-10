@@ -1,0 +1,50 @@
+@import 'colours';
+@import 'fontawesome';
+@import 'typography';
+
+ul.breadcrumbs {
+  width: 100%;
+  display: inline-flex;
+  border-bottom: 1px solid $colour-divider;
+  background-color: $colour-bg;
+  padding: 0 20px;
+  @include not-desktop {
+    display: none;
+  }
+
+  li {
+    // chevron
+    &::before {
+      @extend .fa;
+      @extend .fa-chevron-right:before;
+      font-size: 10px;
+      margin: 0 10px;
+    }
+    // no chevron for first link
+    &:first-child::before {
+      content: none;
+      display: none;
+    }
+
+    a {
+      display: inline-block;
+      line-height: 40px;
+      font-size: 14px;
+      font-weight: $font-weight-light;
+      text-decoration: none;
+      color: $colour-nav-item;
+      padding: 0 2px;
+
+      &:hover {
+        color: $colour-admiralty-blue;
+      }
+    }
+
+    &:last-child a {
+      color: $colour-admiralty-blue;
+      font-weight: $font-weight-medium;
+    }
+
+  }
+
+}

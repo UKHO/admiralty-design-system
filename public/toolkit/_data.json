@@ -1,0 +1,11 @@
+{
+  "meta": {
+    "folders": [ "styles", "components", "patterns" ]
+  },
+
+  "index": {
+    "title": "Toolkit",
+    "url": "toolkit/"
+  }
+
+}

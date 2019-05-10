@@ -1,0 +1,23 @@
+{
+  "index": {
+    "title": "Patterns",
+    "url": "toolkit/patterns/"
+  },
+
+  "search": {
+    "title": "Search and filter datasets",
+    "url": "toolkit/patterns/search"
+  },
+  "dataset": {
+    "title": "View and edit dataset",
+    "url": "toolkit/patterns/dataset"
+  },
+  "marketing": {
+    "title": "Product marketing landing page",
+    "url": "toolkit/patterns/marketing"
+  },
+  "bathymetrey": {
+    "title": "Bathymetery data search",
+    "url": "toolkit/patterns/bathymetery"
+  }
+}
