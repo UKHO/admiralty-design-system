@@ -1,0 +1,23 @@
+{
+  "name": "ukho-design-system",
+  "version": "1.0.0",
+  "description": "UKHO Design System ==================",
+  "main": "public/index.ejs",
+  "dependencies": {},
+  "devDependencies": {
+    "harp": "^0.30.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jgwconsulting/ukho-design-system.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jgwconsulting/ukho-design-system/issues"
+  },
+  "homepage": "https://github.com/jgwconsulting/ukho-design-system#readme"
+}
