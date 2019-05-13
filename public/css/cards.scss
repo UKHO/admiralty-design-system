@@ -1,6 +1,13 @@
 @import 'colours';
 @import 'responsive';
 
+.card-wrapper {
+  margin-bottom: 30px;
+  @include not-desktop {
+    margin-bottom: 20px;
+  }
+}
+
 .card {
   display: flex;
   flex-direction: column;

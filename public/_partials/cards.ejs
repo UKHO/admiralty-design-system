@@ -1,0 +1,18 @@
+<div class="card-wrapper mdc-layout-grid">
+    <div class="mdc-layout-grid__inner">
+        <%
+        for (var idx = 0; idx < cards.length; idx++) {
+            var card = cards[idx];
+        %>
+        <section class="card mdc-layout-grid__cell">
+            <h6><%= card.title %></h6>
+            <div>
+                <p><%= card.description %></p>
+                <a href="<%= card.url %>">View <%= card.title.toLowerCase() %></a>
+            </div>
+        </section>
+        <%
+        }
+        %>
+    </div>
+</div>

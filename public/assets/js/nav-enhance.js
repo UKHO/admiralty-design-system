@@ -1,11 +1,6 @@
 // the navigation will function entirely with CSS only (JavaScript disabled)
 // this code progressively enhances the mobile experience, removing the need for #url-anchors
 
-// handle menu open / close on mobile
-var openMenu = document.getElementById('main-menu-toggle');
-var closeMenu = document.getElementById('main-menu-close');
-var mainMenu = document.getElementById('main-menu');
-
 const toggleMenu = function(evt) {
     evt.preventDefault();
     if (mainMenu.getAttribute("aria-expanded") === 'true') {
@@ -14,6 +9,18 @@ const toggleMenu = function(evt) {
         mainMenu.setAttribute('aria-expanded', 'true');
     }
 };
+
+// expand menu backdrop to full document height
+var backdrop = document.getElementById('backdrop');
+backdrop.setAttribute("style","height:" + document.body.scrollHeight + "px");
+backdrop.addEventListener('click', function(evt) {
+    toggleMenu(evt);
+});
+
+// handle menu open / close on mobile
+var openMenu = document.getElementById('main-menu-toggle');
+var closeMenu = document.getElementById('main-menu-close');
+var mainMenu = document.getElementById('main-menu');
 
 openMenu.addEventListener('click', toggleMenu);
 closeMenu.addEventListener('click', toggleMenu);
