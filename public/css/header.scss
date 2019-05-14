@@ -142,7 +142,7 @@ header {
           }
         }
 
-        &.active, &:hover {
+        &.active, &:hover, &:focus {
           @include desktop-only {
             border-bottom: 5px solid $colour-admiralty-blue;
           }
@@ -316,7 +316,7 @@ header {
             opacity: 1;
           }
         }
-        &:hover > section, & > section:hover {
+        &:hover > section, & > section:hover, &:focus > section, & > section:focus  {
           @include desktop-only {
             display: inline-flex;
             opacity: 1;

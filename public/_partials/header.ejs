@@ -32,8 +32,8 @@
                     var sectionMeta = section._data.meta;
                     var sectionHref = '/' + section._data.index.url;
             %>
-            <li<%- folder === currentFolder ? ' class="active"' : '' %>>
-                <a href="<%= sectionHref + (folder !== currentFolder ? '#main-menu' : '') %>"><%= sectionTitle %></a>
+            <li tabindex="0" <%- folder === currentFolder ? ' class="active"' : '' %>>
+                <a tabindex="-1" href="<%= sectionHref + (folder !== currentFolder ? '#main-menu' : '') %>"><%= sectionTitle %></a>
                 <section>
                     <%
                         for (var idx2 = 0; idx2 < sectionMeta.folders.length; idx2++) {

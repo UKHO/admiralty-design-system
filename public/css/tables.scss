@@ -1,0 +1,51 @@
+@import 'typography';
+@import 'colours';
+
+table {
+  border-top: 1px solid $colour-divider;
+  border-spacing: 0;
+
+  thead {
+    border-bottom: 5px solid $colour-admiralty-blue;
+
+    tr {
+      background-color: $colour-table-row-bg;
+    }
+  }
+
+  td, th {
+    color: $colour-admiralty-blue;
+    font-weight: $font-weight-medium;
+    font-size: 18px;
+    height: 42px;
+    line-height: 42px;
+    padding: 0 20px;
+  }
+
+  tr  {
+    &:nth-child(even) {
+      background-color: $colour-table-row-alt-bg;
+    }
+
+    td {
+      border-bottom: 1px solid $colour-divider;
+    }
+
+    &:last-child td {
+      border-bottom: 1px solid transparent;
+    }
+  }
+
+  th {
+    border-bottom: 5px solid $colour-admiralty-blue;
+  }
+
+  td {
+    border-right: 1px solid $colour-divider;
+
+    &:last-child {
+      border-right: 1px solid transparent;
+    }
+  }
+
+}

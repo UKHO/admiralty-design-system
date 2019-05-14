@@ -9,7 +9,6 @@ $colour-bg: #ffffff;
 $colour-text: #333333;
 $colour-line: #d0d0d0;
 $colour-bg-grey: #eeeeee;
-$colour-table-row: #eef3f4;
 $colour-bg-text: #ffffff;
 $colour-bg-header: #d8d8d8;
 $colour-divider: #d8d8d8;
@@ -64,3 +63,7 @@ $colour-nav-bg-hover: #f4f4f4;
 $colour-nav-bg: #f6f6f6;
 $colour-nav-subitem: #3a3a3a;
 $colour-nav-subitem-icon: #333333;
+
+/* Table colours */
+$colour-table-row-bg: $colour-bg;
+$colour-table-row-alt-bg: #eef3f4;
