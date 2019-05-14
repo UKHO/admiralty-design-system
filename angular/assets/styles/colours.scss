@@ -1,0 +1,55 @@
+/* Core Palette */
+$colour-admiralty-blue: #09315B;
+$colour-black: #000000;
+$colour-white: #ffffff;
+$colour-dark-blue: #03284F;
+
+/* Supporting Palette */
+$colour-text: #333333;
+$colour-line: #d0d0d0;
+$colour-bg-grey: #eeeeee;
+$colour-table-row: #eef3f4;
+$colour-bg-text: #ffffff;
+
+/* Digital Product Colours */
+$colour-product-raster-chart: #ef3e33;
+$colour-product-list-of-lights: #00a996;
+$colour-product-passage-planner: #85a4d1;
+$colour-product-tide: #fcd446;
+$colour-product-vector-chart: #de0076;
+$colour-product-nautical-publications: #7577c0;
+$colour-product-digital-publications: #83afb4;
+$colour-product-digital-radio-signals: #75cff5;
+
+/* Utility Colours */
+$colour-utility-warning: #bd8832;
+$colour-utility-error: #e20d0d;
+$colour-utility-success: #4aab37;
+$colour-utility-info: #0177c1;
+
+/* Button Colours */
+/* Primary */
+$colour-button-standard: $colour-admiralty-blue;
+$colour-button-border-standard: $colour-admiralty-blue;
+$colour-button-hover: #03284f;
+$colour-button-border-hover: #03284f;
+$colour-button-deselected: #adadad;
+$colour-button-border-deselected: #adadad;
+$colour-button-selected: #ffffff;
+$colour-button-border-selected: $colour-admiralty-blue;
+$colour-button-text: #ffffff;
+$colour-button-icon: #ffffff;
+/* Secondary */
+$colour-button-secondary-standard: #ffffff;
+$colour-button-secondary-border-standard: #d1d3d3;
+$colour-button-secondary-hover: #eeeeee;
+$colour-button-secondary-border-hover: #d1d3d3;
+$colour-button-secondary-deselected: #adadad;
+$colour-button-secondary-border-deselected: #adadad;
+$colour-button-secondary-selected: #ffffff;
+$colour-button-secondary-border-selected: $colour-admiralty-blue;
+$colour-button-secondary-text: #05284e;
+$colour-button-secondary-icon: #ffffff;
+
+/* Link Colours */
+$colour-link: $colour-admiralty-blue;
