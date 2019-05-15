@@ -1,0 +1,13 @@
+<h3>
+  {{tableTitle}}
+</h3>
+<table>
+  <tr>
+    <th *ngFor="let heading of table.headings">{{heading}}</th>
+  </tr>
+  <tr *ngFor="let person of table.people">
+    <td *ngFor="let detail of getPersonDetails(person.id)">
+      {{detail}}
+    </td>
+  </tr>
+</table>

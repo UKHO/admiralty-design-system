@@ -25,12 +25,9 @@
             "assets": [
               "angular/assets"
             ],
-<<<<<<< HEAD
             "styles": [
               "public/css/all.scss"
             ],
-=======
->>>>>>> Remove reference to angular/styles
             "scripts": [],
             "es5BrowserSupport": true
           },
