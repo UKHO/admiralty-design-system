@@ -2,10 +2,12 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TableComponent } from './table.component';
 import { Table } from '../mock-table-data';
+import { DebugElement } from '@angular/core';
 
 describe('TableComponent', () => {
   let component: TableComponent;
   let fixture: ComponentFixture<TableComponent>;
+  let compiled: DebugElement['nativeElement']
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -17,21 +19,33 @@ describe('TableComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(TableComponent);
     component = fixture.componentInstance;
+    component.table = testTable;
     fixture.detectChanges();
+    compiled = fixture.nativeElement
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should render table headings from input property object', () => {
-    component.table = testTable
-    fixture.detectChanges()
-    const compiled = fixture.nativeElement
-    const headings = compiled.querySelectorAll('thead tr th')
+  it('should render table headings from input property table object', () => {
+    const headings = compiled.querySelectorAll('thead tr th');
     headings.forEach((heading, i) => {
-      expect(heading.textContent).toEqual(testTable.headings[i])
+      expect(heading.textContent).toEqual(testTable.headings[i]);
     })
+  })
+
+  it('should render table data from input property table object', () => {
+    const records = compiled.querySelectorAll('tbody tr')
+    records.forEach((record, i) => {
+        const testRecord = testTable.records[i]
+        const testValues = Object.values(testRecord)
+        const values = record.querySelectorAll('td')
+        values.forEach((value, j) => {
+          console.log('value...', value.textContent, testValues[j])
+          expect(value.textContent.trim()).toEqual(testValues[j])
+        })
+      })
   })
 });
 
@@ -47,7 +61,7 @@ const testTable: Table = {
           folio: '5600',
           title: 'The Solent and Approaches',
           from: '26/05/16',
-          to: '26/05/16'
+          to: '26/05/16',
       },
       {
           folio: '5600',

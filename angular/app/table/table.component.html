@@ -4,9 +4,11 @@
       <th *ngFor="let heading of table.headings">{{heading}}</th>
     </tr>
   </thead>
-  <tr *ngFor="let record of table.records">
-    <td *ngFor="let detail of getRecordDetails(record)">
-      {{detail}}
-    </td>
-  </tr>
+  <tbody>
+    <tr *ngFor="let record of table.records">
+      <td *ngFor="let detail of getRecordDetails(record)">
+        {{detail}}
+      </td>
+    </tr>
+  </tbody>
 </table>
