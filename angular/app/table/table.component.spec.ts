@@ -30,6 +30,7 @@ describe('TableComponent', () => {
 
   it('should render table headings from input property table object', () => {
     const headings = compiled.querySelectorAll('thead tr th');
+    expect(headings.length).toBe(testTable.headings.length)
     headings.forEach((heading, i) => {
       expect(heading.textContent).toEqual(testTable.headings[i]);
     })
@@ -37,10 +38,12 @@ describe('TableComponent', () => {
 
   it('should render table data from input property table object', () => {
     const records = compiled.querySelectorAll('tbody tr')
+    expect(records.length).toBe(testTable.records.length)
     records.forEach((record, i) => {
         const testRecord = testTable.records[i]
         const testValues = Object.values(testRecord)
         const values = record.querySelectorAll('td')
+        expect(values.length).toBe(testValues.length)
         values.forEach((value, j) => {
           console.log('value...', value.textContent, testValues[j])
           expect(value.textContent.trim()).toEqual(testValues[j])
