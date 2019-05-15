@@ -2,9 +2,9 @@
 @import 'responsive';
 
 .card-wrapper {
-  margin-bottom: 30px;
+  margin-bottom: 48px;
   @include not-desktop {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
   }
 }
 
@@ -14,15 +14,17 @@
   box-shadow: 0 1px 3px 0 rgba(0,0,0,0.2);
 
   & > h6 {
-    height: 40px;
-    line-height: 40px;
+    height: 60px;
+    line-height: 60px;
     border: 1px solid $colour-admiralty-blue;
     color: $colour-white;
     background-color: $colour-admiralty-blue;
     margin: 0;
-    padding: 0 20px;
+    padding: 0 30px;
     @include not-desktop {
-      padding: 0 10px;
+      padding: 0px 18px;
+      height: 48px;
+      line-height: 48px;
     }
   }
 
@@ -30,9 +32,9 @@
     border: 1px solid $colour-line;
     border-top: none;
     flex-grow: 1;
-    padding: 20px;
+    padding: 30px;
     @include not-desktop {
-      padding: 0 10px;
+      padding: 24px 18px;
     }
   }
 }
