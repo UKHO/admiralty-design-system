@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TABLE } from './mock-table-data';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ukho-components';
+  table = TABLE;
 }

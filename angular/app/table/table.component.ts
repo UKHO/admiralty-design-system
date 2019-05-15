@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { TABLE } from './mock-table-data';
+import { Component, Input } from '@angular/core';
+import { Table } from '../mock-table-data';
 
 @Component({
   selector: 'app-table',
@@ -10,9 +10,9 @@ export class TableComponent {
 
   constructor() { }
 
-  table = TABLE
+  @Input() table: Table;
   
   getRecordDetails(record) {
-    return Object.values(record)
+    return Object.values(record);
   }
 }
