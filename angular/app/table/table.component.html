@@ -1,12 +1,11 @@
-<h3>
-  {{tableTitle}}
-</h3>
-<table>
-  <tr>
-    <th *ngFor="let heading of table.headings">{{heading}}</th>
-  </tr>
-  <tr *ngFor="let person of table.people">
-    <td *ngFor="let detail of getPersonDetails(person.id)">
+<table *ngIf="table">
+  <thead>
+    <tr>
+      <th *ngFor="let heading of table.headings">{{heading}}</th>
+    </tr>
+  </thead>
+  <tr *ngFor="let record of table.records">
+    <td *ngFor="let detail of getRecordDetails(record)">
       {{detail}}
     </td>
   </tr>

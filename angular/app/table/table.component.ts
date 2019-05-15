@@ -6,19 +6,13 @@ import { TABLE } from './mock-table-data';
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.scss']
 })
-export class TableComponent implements OnInit {
+export class TableComponent {
 
   constructor() { }
 
   table = TABLE
   
-  tableTitle = 'People'
-
-  getPersonDetails(id) {
-    const person = this.table.people.find((person) => person.id === id)
-    return Object.values(person)
-  }
-
-  ngOnInit() {
+  getRecordDetails(record) {
+    return Object.values(record)
   }
 }
