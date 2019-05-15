@@ -25,7 +25,7 @@ header {
     @include not-desktop {
       height: 30px;
       line-height: 30px;
-      padding: 0 10px;
+      padding: 0 18px;
     }
 
     span {
@@ -64,16 +64,18 @@ header {
     > div {
       display: inline-flex;
       flex-direction: row;
+      align-items: center;
       flex-grow: 1;
       @include not-desktop {
         border-bottom: 1px solid $colour-divider;
+        height: 60px;
       }
 
       h1 {
         font-weight: normal;
         vertical-align: middle;
         font-size: 34px;
-        line-height: 70px;
+        line-height: 60px;
         margin: 0;
         padding: 0;
         flex-grow: 1;
@@ -81,7 +83,7 @@ header {
         @include not-desktop {
           display: block;
           width: 100%;
-          padding-left: 10px;
+          padding-left: 18px;
           font-size: 24px;
           line-height: 40px;
         }
@@ -118,9 +120,9 @@ header {
       /* Main menu items */
       & > li {
         margin: auto 0;
-        height: 70px;
+        height: 90px;
         border-bottom: 5px solid $colour-bg;
-        border-top: 5px solid $colour-bg;
+        /* border-top: 5px solid $colour-bg; */ 
         background-color: $colour-bg;
         @include not-desktop {
           border-bottom: 1px solid $colour-divider;
@@ -154,10 +156,10 @@ header {
           color: $colour-admiralty-blue;
           font-weight: normal;
           text-decoration: none;
-          line-height: 60px;
-          padding: 0 15px;
+          line-height: 90px;
+          padding: 0 24px;
           @include not-desktop {
-            padding: 0 10px;
+            padding: 0 18px;
             line-height: 38px;
             font-size: 16px;
           }
@@ -198,7 +200,7 @@ header {
           background-color: $colour-bg;
           width: 100%;
           left: 0;
-          margin-top: 5px;
+          /* margin-top: 5px; */
           flex-direction: row;
           justify-content: space-between;
           padding: 20px 30px;
@@ -222,7 +224,7 @@ header {
 
             & > h2 {
               @include not-desktop {
-                margin-bottom: 10px;
+                margin-bottom: 6px;
               }
 
               > a {
@@ -234,7 +236,7 @@ header {
                 color: $colour-admiralty-blue;
                 display: inline-block;
                 width: 100%;
-                padding: 5px 0;
+                padding: 12px 6px 6px;
                 border-bottom: 1px solid $colour-divider;
                 @include not-desktop {
                   font-size: 16px;
@@ -276,12 +278,12 @@ header {
                   font-weight: $font-weight-light;
                   text-decoration: none;
                   color: $colour-nav-item;
-                  padding: 0 2px;
+                  padding: 6px 6px;
                   font-size: 18px;
                   line-height: 40px;
                   @include not-desktop {
                     font-size: 14px;
-                    line-height: 20px;
+                    line-height: 30px;
                   }
 
                   &:hover {
@@ -292,7 +294,7 @@ header {
                     @extend .fa;
                     @extend .fa-chevron-right:before;
                     font-size: 12px;
-                    margin: 0 10px;
+                    margin: 0 12px;
                     display: inline-block;
                     float: right;
                     line-height: 40px !important;
@@ -388,6 +390,8 @@ header {
 
     @include not-desktop {
       display: inline-flex;
+      align-items: center;
+      height: 60px;
       flex-wrap: nowrap;
       border-bottom: 1px solid $colour-divider;
 
@@ -401,7 +405,7 @@ header {
         color: $colour-admiralty-blue;
         display: block;
         width: 100%;
-        padding: 0 0 0 10px;
+        padding: 0 0 0 18px;
       }
 
       a {
