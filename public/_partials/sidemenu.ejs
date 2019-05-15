@@ -1,13 +1,23 @@
 <%
 var menuItems = [];
 var slugs = url.split('/');
-if (slugs.length > 1) {
+if (slugs.length > 0) {
+
+    var folder = slugs[0];
+    var section = public[folder];
+    var sectionIndex = section._data.index;
+    var sectionTitle = sectionIndex.title;
+    var sectionMeta = section._data.meta;
+    var sectionHref = '/' + section._data.index.url;
+
+
+
     var sectionName = slugs[0];
-    var subsectionName = slugs[1];
+    var subsectionName = slugs.length > 1 ? slugs[1] : '';
     var sectionFolders = public[sectionName]._data.meta.folders;
 
     for (var idx1 = 0; idx1 < sectionFolders.length; idx1++) {
-
+        var 
     }
 
 }
@@ -36,76 +46,56 @@ if (typeof url !== 'undefined' && url) {
     }
 }
 %>
-<nav id="side-menu">
-    <ul aria-label="Menu">
+
+<nav id="side-menu" aria-label="Submenu">
+    <%
+    for (var idx2 = 0; idx2 < sectionMeta.folders.length; idx2++) {
+        var subfolder = sectionMeta.folders[idx2];
+        var subsection = section[subfolder];
+        var subsectionIndex = subsection._data.index;
+        if (!subsectionIndex) {
+            console.error('Menu partial: No index page definition for subsection ' + JSON.stringify(subsection));
+        }
+        var subsectionTitle = subsectionIndex.title;
+        var subsectionHref = '/' + subsectionIndex.url;
+    %>
+    <section>
+        <h2><a href="<%= subsectionHref %>"><%= subsectionTitle %></a></h2>
         <%
-        var currentFolder = typeof url !== 'undefined' ? url.split('/')[0] : '';
-        for (var idx1 = 0; idx1 < folders.length; idx1++) {
-            var folder = folders[idx1];
-            var section = public[folder];
-            var sectionIndex = section._data.index;
-            if (!sectionIndex) {
-                console.error('Menu partial: No index page definition for section ' + JSON.stringify({ folder, data: section._data }));
+            var pages = [];
+            for (var page in subsection._data) {
+                if (!subsection._data.hasOwnProperty(page) || page === 'index' || page === 'meta') continue;
+                var pageData = subsection._data[page];
+                pages.push({
+                    name: page,
+                    title: pageData.title,
+                    order: pageData.order || 99,
+                    url: '/' + (pageData.url || (subsectionHref + '/' + page)) + '.html'
+                });
             }
-            var sectionTitle = sectionIndex.title;
-            var sectionMeta = section._data.meta;
-            var sectionHref = '/' + section._data.index.url;
+        if (pages.length > 0) {
+            pages.sort(function(a, b) {
+                return a.order - b.order;
+            });
         %>
-        <li<%- folder === currentFolder ? ' class="active"' : '' %>>
-            <a href="<%= sectionHref + (folder !== currentFolder ? '#main-menu' : '') %>"><%= sectionTitle %></a>
-            <section>
-                <%
-                for (var idx2 = 0; idx2 < sectionMeta.folders.length; idx2++) {
-                    var subfolder = sectionMeta.folders[idx2];
-                    var subsection = section[subfolder];
-                    var subsectionIndex = subsection._data.index;
-                    if (!subsectionIndex) {
-                        console.error('Menu partial: No index page definition for subsection ' + JSON.stringify(subsection));
-                    }
-                    var subsectionTitle = subsectionIndex.title;
-                    var subsectionHref = '/' + subsectionIndex.url;
-                %>
-                <section>
-                    <h2><a href="<%= subsectionHref %>"><%= subsectionTitle %></a></h2>
-                    <%
-                        var pages = [];
-                        for (var page in subsection._data) {
-                            if (!subsection._data.hasOwnProperty(page) || page === 'index' || page === 'meta') continue;
-                            var pageData = subsection._data[page];
-                            pages.push({
-                                name: page,
-                                title: pageData.title,
-                                order: pageData.order || 99,
-                                url: '/' + (pageData.url || (subsectionHref + '/' + page)) + '.html'
-                            });
-                        }
-                    if (pages.length > 0) {
-                        pages.sort(function(a, b) {
-                            return a.order - b.order;
-                        });
-                    %>
-                    <ul>
-                        <%
-                        for (var idx3 = 0; idx3 < pages.length; idx3++) {
-                            var menuItem = pages[idx3];
-                        %>
-                        <li>
-                            <a href="<%= menuItem.url %>"><%= menuItem.title %></a>
-                        </li>
-                        <%
-                        }
-                        %>
-                    </ul>
-                    <%
-                    }
-                    %>
-                </section>
-                <%
-                }
-                %>
-            </section>
-        </li>
-        <% } %>
-    </ul>
+        <ul>
+            <%
+            for (var idx3 = 0; idx3 < pages.length; idx3++) {
+                var menuItem = pages[idx3];
+            %>
+            <li>
+                <a href="<%= menuItem.url %>"><%= menuItem.title %></a>
+            </li>
+            <%
+            }
+            %>
+        </ul>
+        <%
+        }
+        %>
+    </section>
+    <%
+    }
+    %>
 </nav>
 

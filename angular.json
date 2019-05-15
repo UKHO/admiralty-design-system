@@ -23,11 +23,10 @@
             "polyfills": "angular/polyfills.ts",
             "tsConfig": "angular/tsconfig.app.json",
             "assets": [
-              "angular/favicon.ico",
               "angular/assets"
             ],
             "styles": [
-              "angular/styles.scss"
+              "public/css/all.scss"
             ],
             "scripts": [],
             "es5BrowserSupport": true
@@ -84,11 +83,10 @@
             "tsConfig": "angular/tsconfig.spec.json",
             "karmaConfig": "angular/karma.conf.js",
             "styles": [
-              "angular/styles.scss"
+              "public/css/all.scss"
             ],
             "scripts": [],
             "assets": [
-              "angular/favicon.ico",
               "angular/assets"
             ]
           }
