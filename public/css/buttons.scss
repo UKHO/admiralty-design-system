@@ -32,7 +32,8 @@ button, input[type='button'] {
 
   &:active {
     background-color: $colour-button-selected;
-    border: 2px solid $colour-button-selected;
+    color: $colour-button-text-selected;
+    border: 2px solid $colour-button-border-selected;
   }
 
   &:disabled {
