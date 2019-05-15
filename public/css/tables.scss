@@ -17,9 +17,9 @@ table {
     color: $colour-admiralty-blue;
     font-weight: $font-weight-medium;
     font-size: 18px;
-    height: 42px;
-    line-height: 42px;
-    padding: 0 20px;
+    /* height: 42px; removed to allow padding to control height */
+    line-height: 30px;
+    padding: 6px 20px;
   }
 
   tr  {
@@ -38,6 +38,7 @@ table {
 
   th {
     border-bottom: 5px solid $colour-admiralty-blue;
+    text-align: left;
   }
 
   td {
