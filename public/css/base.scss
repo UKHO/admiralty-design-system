@@ -23,8 +23,8 @@ main {
   flex-grow: 1;
   margin-right: auto;
   margin-left: auto;
-  padding: 10px;
+  padding: 30px 18px;
   @include desktop-only {
-    padding: 20px;
+    padding: 48px 20px;
   }
 }
