@@ -1,25 +1,31 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <title><%= typeof title !== 'undefined' && title ? title + ' - ' : '' %><%= siteName %></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
     <link rel="stylesheet" href="/css/all.css">
     <link rel="stylesheet" href="/css/prism.css">
-  </head>
-  <body>
-
+</head>
+<body>
     <%- partial("/_partials/header") %>
     <%- partial("/_partials/breadcrumbs") %>
 
     <main>
-      <%- yield %>
+        <div class="sidebar-wrapper">
+            <section class="left">
+                <%- partial("/_partials/sidemenu") %>
+            </section>
+            <section class="content">
+                <%- yield %>
+            </section>
+        </div>
     </main>
 
     <footer><%- footerText %></footer>
 
     <script src="/assets/js/prism.js"></script>
     <script src="/assets/js/enhance.js"></script>
-  </body>
+</body>
 </html>

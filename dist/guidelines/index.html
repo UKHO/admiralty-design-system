@@ -14,29 +14,25 @@
         <span>
             <img src="/assets/svg/admiralty-logo-full.svg" alt="Admiralty Marine Data Solutions | UK Hydrographic Office">
         </span>
-
-        <a href="#main-menu" id="main-menu-toggle" class="menu-toggle">
-            <span class="sr-only">Open main menu</span>
-            <span class="fa fa-bars" aria-hidden="true"></span>
-        </a>
     </nav>
 
     <nav id="main-menu">
 
-        <h1>Design System</h1>
-
-        <a href="#main-menu-toggle"
-           id="main-menu-close"
-           class="menu-close"
-           aria-label="Close main menu">
-            <span class="sr-only">Close main menu</span>
-            <span class="fa fa-times"></span>
-        </a>
+        <div>
+            <h1>Design System</h1>
+            <a href="#main-menu-toggle"
+               id="main-menu-close"
+               class="menu-close"
+               aria-label="Close main menu">
+                <span class="sr-only">Close main menu</span>
+                <span class="fa fa-times"></span>
+            </a>
+        </div>
 
         <ul aria-label="Design System">
             
-            <li>
-                <a href="/principles/#main-menu">Principles</a>
+            <li tabindex="0" >
+                <a tabindex="-1" href="/principles/#main-menu">Principles</a>
                 <section>
                     
                     <section>
@@ -113,8 +109,8 @@
                 </section>
             </li>
             
-            <li>
-                <a href="/toolkit/#main-menu">Toolkit</a>
+            <li tabindex="0" >
+                <a tabindex="-1" href="/toolkit/#main-menu">Toolkit</a>
                 <section>
                     
                     <section>
@@ -211,8 +207,8 @@
                 </section>
             </li>
             
-            <li class="active">
-                <a href="/guidelines/">Guidelines</a>
+            <li tabindex="0"  class="active">
+                <a tabindex="-1" href="/guidelines/">Guidelines</a>
                 <section>
                     
                     <section>
@@ -234,11 +230,20 @@
         </ul>
     </nav>
 
-    <a href="#main-menu-toggle"
+    <a id="backdrop"
+       href="#main-menu-toggle"
        class="backdrop"
        tabindex="-1"
        aria-hidden="true" hidden>
     </a>
+
+    <div class="menu-toggle-wrapper">
+        <h1>Design System</h1>
+        <a href="#main-menu" id="main-menu-toggle" class="menu-toggle">
+            <span class="sr-only">Open main menu</span>
+            <span class="fa fa-bars" aria-hidden="true"></span>
+        </a>
+    </div>
 
 </header>
 
@@ -263,5 +268,6 @@
 
     <footer>&copy; Crown copyright 2019 UK Hydrographic Office</footer>
 
+    <script src="/assets/js/nav-enhance.js"></script>
   </body>
 </html>

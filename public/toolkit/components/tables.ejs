@@ -1,48 +1,73 @@
 <h1>Tables</h1>
 
-<table>
-    <thead>
-        <tr>
-            <th>Folio</th>
-            <th>Title</th>
-            <th>From</th>
-            <th>To</th>
-        </tr>
-    </thead>
-    <tr>
-        <td>5600</td>
-        <td>The Solent and Approaches</td>
-        <td>26/05/16</td>
-        <td>26/05/16</td>
-    </tr>
-    <tr>
-        <td>5600</td>
-        <td>East Devon and Dorset Coast, Exmouth to Christchurch</td>
-        <td>26/05/16</td>
-        <td>26/05/16</td>
-    </tr>
-    <tr>
-        <td>5600</td>
-        <td>The West Country, Falmouth to Teignmouth</td>
-        <td>26/05/16</td>
-        <td>26/05/16</td>
-    </tr>
-    <tr>
-        <td>5600</td>
-        <td>Falmouth to Hartland Point including the Isles of Scilly</td>
-        <td>26/05/16</td>
-        <td>26/05/16</td>
-    </tr>
-    <tr>
-        <td>5600</td>
-        <td>The Channel Islands</td>
-        <td>26/05/16</td>
-        <td>26/05/16</td>
-    </tr>
-    <tr>
-        <td>5600</td>
-        <td>Chichester to Ramsgate and Calais to Oostende</td>
-        <td>26/05/16</td>
-        <td>26/05/16</td>
-    </tr>
-</table>
+<p class="intro">Use tables to make information easier for users to scan and compare.</p>
+
+<ol>
+    <li><a href="#anchor1">Responsive table</a></li>
+</ol>
+
+<p></p>
+
+<h2 id="anchor1">1. Responsive table</h2>
+
+<p>Responsive tables will automatically adjust their column widths to fit different screen sizes.</p>
+
+<div class="tab-set">
+    <%- partial('../../_partials/tabs') %>
+    <section>
+        <div class="tab1 component-example">
+            <table>
+                <thead>
+                <tr>
+                    <th>Folio</th>
+                    <th>Title</th>
+                    <th>From</th>
+                    <th>To</th>
+                </tr>
+                </thead>
+                <tr>
+                    <td>5600</td>
+                    <td>The Solent and Approaches</td>
+                    <td>26/05/16</td>
+                    <td>26/05/16</td>
+                </tr>
+                <tr>
+                    <td>5600</td>
+                    <td>East Devon and Dorset Coast, Exmouth to Christchurch</td>
+                    <td>26/05/16</td>
+                    <td>26/05/16</td>
+                </tr>
+                <tr>
+                    <td>5600</td>
+                    <td>The West Country, Falmouth to Teignmouth</td>
+                    <td>26/05/16</td>
+                    <td>26/05/16</td>
+                </tr>
+                <tr>
+                    <td>5600</td>
+                    <td>Falmouth to Hartland Point including the Isles of Scilly</td>
+                    <td>26/05/16</td>
+                    <td>26/05/16</td>
+                </tr>
+                <tr>
+                    <td>5600</td>
+                    <td>The Channel Islands</td>
+                    <td>26/05/16</td>
+                    <td>26/05/16</td>
+                </tr>
+                <tr>
+                    <td>5600</td>
+                    <td>Chichester to Ramsgate and Calais to Oostende</td>
+                    <td>26/05/16</td>
+                    <td>26/05/16</td>
+                </tr>
+            </table>
+        </div>
+        <div class="tab2 component-html">
+            HTML goes here.
+        </div>
+        <div class="tab3 component-angular">
+            Markup for the Angular component goes here.
+        </div>
+    </section>
+</div>

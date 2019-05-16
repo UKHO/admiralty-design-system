@@ -18,6 +18,7 @@
     "url": "toolkit/components/search"
   },
   "tables": {
+    "layout": "../../_layout_sidemenu",
     "title": "Tables",
     "url": "toolkit/components/tables"
   },

@@ -14,29 +14,25 @@
         <span>
             <img src="/assets/svg/admiralty-logo-full.svg" alt="Admiralty Marine Data Solutions | UK Hydrographic Office">
         </span>
-
-        <a href="#main-menu" id="main-menu-toggle" class="menu-toggle">
-            <span class="sr-only">Open main menu</span>
-            <span class="fa fa-bars" aria-hidden="true"></span>
-        </a>
     </nav>
 
     <nav id="main-menu">
 
-        <h1>Design System</h1>
-
-        <a href="#main-menu-toggle"
-           id="main-menu-close"
-           class="menu-close"
-           aria-label="Close main menu">
-            <span class="sr-only">Close main menu</span>
-            <span class="fa fa-times"></span>
-        </a>
+        <div>
+            <h1>Design System</h1>
+            <a href="#main-menu-toggle"
+               id="main-menu-close"
+               class="menu-close"
+               aria-label="Close main menu">
+                <span class="sr-only">Close main menu</span>
+                <span class="fa fa-times"></span>
+            </a>
+        </div>
 
         <ul aria-label="Design System">
             
-            <li>
-                <a href="/principles/#main-menu">Principles</a>
+            <li tabindex="0" >
+                <a tabindex="-1" href="/principles/#main-menu">Principles</a>
                 <section>
                     
                     <section>
@@ -113,8 +109,8 @@
                 </section>
             </li>
             
-            <li>
-                <a href="/toolkit/#main-menu">Toolkit</a>
+            <li tabindex="0" >
+                <a tabindex="-1" href="/toolkit/#main-menu">Toolkit</a>
                 <section>
                     
                     <section>
@@ -211,8 +207,8 @@
                 </section>
             </li>
             
-            <li>
-                <a href="/guidelines/#main-menu">Guidelines</a>
+            <li tabindex="0" >
+                <a tabindex="-1" href="/guidelines/#main-menu">Guidelines</a>
                 <section>
                     
                     <section>
@@ -234,11 +230,20 @@
         </ul>
     </nav>
 
-    <a href="#main-menu-toggle"
+    <a id="backdrop"
+       href="#main-menu-toggle"
        class="backdrop"
        tabindex="-1"
        aria-hidden="true" hidden>
     </a>
+
+    <div class="menu-toggle-wrapper">
+        <h1>Design System</h1>
+        <a href="#main-menu" id="main-menu-toggle" class="menu-toggle">
+            <span class="sr-only">Open main menu</span>
+            <span class="fa fa-bars" aria-hidden="true"></span>
+        </a>
+    </div>
 
 </header>
 
@@ -250,16 +255,98 @@
 
 
     <main>
-      <h1>UKHO Design System</h1>
-<p class="intro">
-    Some intro text goes here.
-</p>
-<p>
-    Some other text goes here.
-</p>
+      <img src="assets/images/home.jpg" alt="UKHO Design System" style="width:100%">
+
+<h2>Principles</h2>
+<p class="intro">This is an introduction to the principles section of the design system, it will outline the purpose and how you should use it.</p>
+
+<div class="card-wrapper mdc-layout-grid">
+    <div class="mdc-layout-grid__inner">
+        
+        <section class="card mdc-layout-grid__cell">
+            <h6>Development Standards</h6>
+            <div>
+                <p>This is a description of what the standards are and potential areas of use in digital products and services.</p>
+                <a href="/principles/development/">View development standards</a>
+            </div>
+        </section>
+        
+        <section class="card mdc-layout-grid__cell">
+            <h6>Working with Partners</h6>
+            <div>
+                <p>This is a description of how we work with partners and potential areas of use in digital products and services.</p>
+                <a href="/principles/partners/">View working with partners</a>
+            </div>
+        </section>
+        
+        <section class="card mdc-layout-grid__cell">
+            <h6>Delivery</h6>
+            <div>
+                <p>This is a description of what the principles are and potential areas of use in digital products and services.</p>
+                <a href="/principles/delivery/">View delivery</a>
+            </div>
+        </section>
+        
+    </div>
+</div>
+
+
+
+<h2>Toolkit</h2>
+<p class="intro">This is an introduction to the toolkit section of the design system, it will outline the purpose and how you should use it.</p>
+
+<div class="card-wrapper mdc-layout-grid">
+    <div class="mdc-layout-grid__inner">
+        
+        <section class="card mdc-layout-grid__cell">
+            <h6>Styles</h6>
+            <div>
+                <p>This is a description of what styles are and potential areas of use in digital products and services.</p>
+                <a href="/toolkit/styles/">View styles</a>
+            </div>
+        </section>
+        
+        <section class="card mdc-layout-grid__cell">
+            <h6>Components</h6>
+            <div>
+                <p>This is a description of what components are and potential areas of use in digital products and services.</p>
+                <a href="/toolkit/components/">View components</a>
+            </div>
+        </section>
+        
+        <section class="card mdc-layout-grid__cell">
+            <h6>Patterns</h6>
+            <div>
+                <p>This is a description of what patterns are and potential areas of use in digital products and services.</p>
+                <a href="/toolkit/patterns/">View patterns</a>
+            </div>
+        </section>
+        
+    </div>
+</div>
+
+
+
+<h2>Guidelines</h2>
+<p class="intro">This is an introduction to the guidelines section of the design system, it will outline the purpose and how you should use it.</p>
+
+<div class="card-wrapper mdc-layout-grid">
+    <div class="mdc-layout-grid__inner">
+        
+        <section class="card mdc-layout-grid__cell">
+            <h6>General Guidelines</h6>
+            <div>
+                <p>This is a description of what the guidelines are and potential areas of use in digital products and services.</p>
+                <a href="/guidelines/general/">View general guidelines</a>
+            </div>
+        </section>
+        
+    </div>
+</div>
     </main>
 
     <footer>&copy; Crown copyright 2019 UK Hydrographic Office</footer>
 
+    <script src="/assets/js/nav-enhance.js"></script>
   </body>
 </html>
