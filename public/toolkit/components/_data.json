@@ -6,28 +6,39 @@
   },
 
   "navigation": {
+    "layout": "../../_layout_sidemenu",
     "title": "Navigation",
-    "url": "toolkit/components/navigation"
+    "url": "toolkit/components/navigation",
+    "description": "This is a description of what components are and potential areas of use in digital products and services."
   },
   "headers": {
+    "layout": "../../_layout_sidemenu",
     "title": "Headers",
-    "url": "toolkit/components/headers"
+    "url": "toolkit/components/headers",
+    "description": "This is a description of what components are and potential areas of use in digital products and services."
   },
   "search": {
+    "layout": "../../_layout_sidemenu",
     "title": "Search Fields",
-    "url": "toolkit/components/search"
+    "url": "toolkit/components/search",
+    "description": "This is a description of what components are and potential areas of use in digital products and services."
   },
   "tables": {
     "layout": "../../_layout_sidemenu",
     "title": "Tables",
-    "url": "toolkit/components/tables"
+    "url": "toolkit/components/tables",
+    "description": "This is a description of what components are and potential areas of use in digital products and services."
   },
   "cards": {
+    "layout": "../../_layout_sidemenu",
     "title": "Cards",
-    "url": "toolkit/components/tables"
+    "url": "toolkit/components/tables",
+    "description": "This is a description of what components are and potential areas of use in digital products and services."
   },
   "expansion": {
+    "layout": "../../_layout_sidemenu",
     "title": "Expansion Panels",
-    "url": "toolkit/components/tables"
+    "url": "toolkit/components/tables",
+    "description": "This is a description of what components are and potential areas of use in digital products and services."
   }
 }

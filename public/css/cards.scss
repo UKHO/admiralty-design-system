@@ -2,6 +2,7 @@
 @import 'responsive';
 
 .card-wrapper {
+  width: 100%;
   margin-bottom: 48px;
   @include not-desktop {
     margin-bottom: 30px;

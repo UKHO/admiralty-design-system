@@ -6,6 +6,7 @@
   },
 
   "logos": {
+    "layout": "../../_layout_sidemenu",
     "title": "Logos",
     "url": "toolkit/styles/logos",
     "description": "This is a description of the page contents to be shown as a preview."
@@ -21,16 +22,19 @@
     "description": "This is a description of the page contents to be shown as a preview."
   },
   "typography": {
+    "layout": "../../_layout_sidemenu",
     "title": "Typography",
     "url": "toolkit/styles/typography",
     "description": "This is a description of the page contents to be shown as a preview."
   },
   "icons": {
+    "layout": "../../_layout_sidemenu",
     "title": "Icons",
     "url": "toolkit/styles/icons",
     "description": "This is a description of the page contents to be shown as a preview."
   },
   "forms": {
+    "layout": "../../_layout_sidemenu",
     "title": "Forms",
     "url": "toolkit/styles/forms",
     "description": "This is a description of the page contents to be shown as a preview."
