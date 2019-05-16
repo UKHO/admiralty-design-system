@@ -8,8 +8,10 @@ ul.breadcrumbs {
   border-bottom: 1px solid $colour-divider;
   background-color: $colour-bg;
   padding: 0 20px;
+  margin-bottom: 48px;
   @include not-desktop {
     display: none;
+    margin-bottom: 30px;
   }
 
   li {
