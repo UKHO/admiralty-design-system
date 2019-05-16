@@ -21,7 +21,7 @@ describe('TableComponent', () => {
     component = fixture.componentInstance;
     component.table = testTable;
     fixture.detectChanges();
-    compiled = fixture.nativeElement
+    compiled = fixture.nativeElement;
   });
 
   it('should create', () => {
@@ -45,7 +45,6 @@ describe('TableComponent', () => {
         const values = record.querySelectorAll('td')
         expect(values.length).toBe(testValues.length)
         values.forEach((value, j) => {
-          console.log('value...', value.textContent, testValues[j])
           expect(value.textContent.trim()).toEqual(testValues[j])
         })
       })
