@@ -49,7 +49,7 @@ button, input[type='button'] {
     display: inline-block;
     font-size: 24px;
     color: $colour-button-icon;
-    padding: 15px 20px 15px 0;
+    padding-left: 15px;
   }
 }
 
@@ -85,6 +85,6 @@ button.secondary, input[type='button'].secondary {
     display: inline-block;
     font-size: 24px;
     color: $colour-button-secondary-icon;
-    padding: 15px 20px 15px 0;
+    padding-left: 15px;
   }
 }
