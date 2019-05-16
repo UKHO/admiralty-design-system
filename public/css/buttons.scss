@@ -55,7 +55,7 @@ button.secondary, input[type='button'].secondary {
   display: inline-block;
   background-color: $colour-button-secondary-standard;
   color: $colour-button-secondary-text;
-  border: 2px solid $colour-button-secondary-standard;
+  border: 2px solid $colour-button-secondary-border-standard;
   height: 60px;
   padding: 15px 20px;
   font-weight: $font-weight-medium;
@@ -64,12 +64,13 @@ button.secondary, input[type='button'].secondary {
 
   &:hover {
     background-color: $colour-button-secondary-hover;
-    border: 2px solid $colour-button-secondary-hover;
+    border: 2px solid $colour-button-secondary-border-hover;
   }
 
   &:active {
     background-color: $colour-button-secondary-selected;
     border: 2px solid $colour-button-secondary-selected;
+    color: $colour-button-secondary-text-selected;
   }
 
   &:disabled {
