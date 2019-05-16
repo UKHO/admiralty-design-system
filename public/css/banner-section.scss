@@ -1,0 +1,24 @@
+.page-banner {
+    background-image: url(/assets/images/homepage-header.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 60px 90px;
+    margin-bottom: 48px;
+    @include not-desktop {
+        padding: 30px;
+    }
+}
+
+.banner-text {
+    border-top: 10px solid $colour-admiralty-blue;
+    width: 40%;
+    @include not-desktop {
+        width: auto;
+    }
+
+    p {
+        background: white;
+        opacity: 0.8;
+        padding: 30px;
+    }
+}
