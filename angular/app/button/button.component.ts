@@ -9,6 +9,10 @@ export class ButtonComponent {
 
   constructor() { }
 
+  @Input() label: string;
+
   @Input() isSecondary: boolean;
+
+  @Input() icon: string;
 
 }

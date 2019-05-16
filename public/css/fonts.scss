@@ -62,3 +62,16 @@
   font-weight: 300;
   font-style: italic;
 }
+
+@font-face {
+  font-family: "FontAwesome";
+  src: url("/assets/fonts/JohnstonITC/light-italic/JohnstonITCStd-LightIta.eot"); /* IE9 Compat Modes */
+  src: url("/assets/fonts/JohnstonITC/light-italic/JohnstonITCStd-LightIta.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("/assets/fonts/JohnstonITC/light-italic/JohnstonITCStd-LightIta.otf") format("opentype"), /* Open Type Font */
+  url("/assets/fonts/JohnstonITC/light-italic/JohnstonITCStd-LightIta.svg") format("svg"), /* Legacy iOS */
+  url("/assets/fonts/JohnstonITC/light-italic/JohnstonITCStd-LightIta.ttf") format("truetype"), /* Safari, Android, iOS */
+  url("/assets/fonts/JohnstonITC/light-italic/JohnstonITCStd-LightIta.woff") format("woff"), /* Modern Browsers */
+  url("/assets/fonts/JohnstonITC/light-italic/JohnstonITCStd-LightIta.woff2") format("woff2"); /* Modern Browsers */
+  font-weight: 300;
+  font-style: italic;
+}

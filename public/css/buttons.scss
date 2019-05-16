@@ -34,6 +34,10 @@ button, input[type='button'] {
     background-color: $colour-button-selected;
     color: $colour-button-text-selected;
     border: 2px solid $colour-button-border-selected;
+
+    i {
+      color: $colour-button-icon-selected;
+    }
   }
 
   &:disabled {
@@ -47,7 +51,6 @@ button, input[type='button'] {
     color: $colour-button-icon;
     padding: 15px 20px 15px 0;
   }
-
 }
 
 /* Secondary Buttons */

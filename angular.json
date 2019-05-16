@@ -23,7 +23,7 @@
             "polyfills": "angular/polyfills.ts",
             "tsConfig": "angular/tsconfig.app.json",
             "assets": [
-              "angular/assets"
+              { "glob": "**/*", "input": "public/assets/", "output": "./assets/" }
             ],
             "styles": [
               "public/css/all.scss"
@@ -87,7 +87,7 @@
             ],
             "scripts": [],
             "assets": [
-              "angular/assets"
+              { "glob": "**/*", "input": "public/assets/", "output": "./assets/" }
             ]
           }
         },
