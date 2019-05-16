@@ -1,6 +1,9 @@
 <button
     [class.secondary]="isSecondary === true"
+    [class.icon]="icon"
 >
-    {{label}}
-    <i class="fa {{icon}}"></i>
+    <p>
+        {{label}}
+    </p>
+    <i *ngIf= "icon" class="fa {{icon}}"></i>
 </button>

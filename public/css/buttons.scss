@@ -24,6 +24,7 @@ button, input[type='button'] {
   font-weight: $font-weight-medium;
   font-size: 21px;
   white-space: nowrap;
+  min-width: 200px;
 
   &:hover {
     background-color: $colour-button-hover;
@@ -64,6 +65,7 @@ button.secondary, input[type='button'].secondary {
   font-weight: $font-weight-medium;
   font-size: 21px;
   white-space: nowrap;
+  min-width: 200px;
 
   &:hover {
     background-color: $colour-button-secondary-hover;
@@ -74,6 +76,10 @@ button.secondary, input[type='button'].secondary {
     background-color: $colour-button-secondary-selected;
     border: 2px solid $colour-button-secondary-selected;
     color: $colour-button-secondary-text-selected;
+
+    i {
+      color: $colour-button-secondary-icon-selected;
+    }
   }
 
   &:disabled {
@@ -87,4 +93,14 @@ button.secondary, input[type='button'].secondary {
     color: $colour-button-secondary-icon;
     padding-left: 15px;
   }
+}
+
+button.icon, input[type='button'].icon {
+  min-width: 240px;
+  display: flex;
+  justify-content: space-between;
+}
+
+button p {
+  padding-top: 2px;
 }
