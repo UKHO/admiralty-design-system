@@ -51,7 +51,17 @@ describe('ButtonComponent', () => {
     component.isSecondary = true
     fixture.detectChanges();
     compiled = fixture.nativeElement;
-    const button = compiled.querySelector('button')
-    expect(button.className).toBe('secondary')
+    const button = compiled.querySelector('button');
+    expect(button.className).toBe('secondary');
+  })
+
+  it('should trigger the passed function on click action', () => {
+    const testSpy = jasmine.createSpy("button");
+    component.onClick = testSpy;
+    fixture.detectChanges();
+    compiled = fixture.nativeElement;
+    const button = compiled.querySelector('button');
+    button.click();
+    expect(testSpy).toHaveBeenCalled();
   })
 });
