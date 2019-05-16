@@ -1,0 +1,31 @@
+@import '../css/colours';
+
+.colours-grid {
+  margin-bottom: 50px;
+
+  .swatch {
+    color: $colour-black;
+    padding: 20px;
+    height: 120px;
+    border: 1px solid inherit;
+
+    span {
+      display: block;
+    }
+  }
+
+  .admiralty { background-color: $colour-admiralty-blue; color: $colour-white; }
+  .black { background-color: $colour-black; color: $colour-white; }
+  .white { background-color: $colour-white; border: 1px solid $colour-line }
+
+  .text { background-color: $colour-text; color: $colour-white; }
+  .line { background-color: $colour-line; }
+  .background { background-color: $colour-bg-grey; }
+  .table-row { background-color: $colour-table-row-alt-bg; }
+
+  .warn { background-color: $colour-utility-warning; color: $colour-white; }
+  .error { background-color: $colour-utility-error; color: $colour-white; }
+  .success { background-color: $colour-utility-success; color: $colour-white; }
+  .info { background-color: $colour-utility-info; color: $colour-white; }
+
+}
