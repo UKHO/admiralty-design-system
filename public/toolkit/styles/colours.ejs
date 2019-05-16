@@ -1,1 +1,53 @@
 <h1>Colours</h1>
+<p class="intro">
+    Use the colours below for online services.
+    For consistency, stick to using the primary and supporting colour palettes.
+    Product colours should be used sparingly and where appropriate.
+</p>
+
+<ol>
+    <li><a href="#anchor1">Primary palette</a></li>
+    <li><a href="#anchor2">Supporting palette</a></li>
+    <li><a href="#anchor3">Utility colours</a></li>
+</ol>
+
+<p></p>
+
+<h2 id="anchor1">1. Primary palette</h2>
+<p>
+    ADMIRALTY Navy Blue is the colour that’s used across all our product and marketing materials.
+    It helps to deliver a recognisable and consistent look and feel for the ADMIRALTY brand.
+</p>
+<%-
+partial('../../_partials/swatches', { swatches: [
+    { name: 'ADMIRALTY Navy Blue', class: 'admiralty', colour: '#09315B' },
+    { name: 'Black', class: 'black', colour: '#000000' },
+    { name: 'White', class: 'white', colour: '#FFFFFF' }
+]});
+%>
+
+<h2 id="anchor2">2. Supporting palette</h2>
+<p>
+    Use the supporting palette when building new components and patterns.
+</p>
+<%-
+partial('../../_partials/swatches', { swatches: [
+    { name: 'Text colour', class: 'text', colour: '#333333' },
+    { name: 'Line / Stroke', class: 'line', colour: '#D0D0D0' },
+    { name: 'BG Light Grey', class: 'background', colour: '#EEEEEE' },
+    { name: 'Table row', class: 'table-row', colour: '#EEF3F4' }
+]});
+%>
+
+<h2 id="anchor3">3. Utility palette</h2>
+<p>
+    Use utility colours to convey important information.
+</p>
+<%-
+partial('../../_partials/swatches', { swatches: [
+        { name: 'Warning', class: 'warn', colour: '#BD8832' },
+        { name: 'Error', class: 'error', colour: '#E20D0D' },
+        { name: 'Success', class: 'success', colour: '#4AAB37' },
+        { name: 'Information', class: 'info', colour: '#0177C1' }
+    ]});
+%>
