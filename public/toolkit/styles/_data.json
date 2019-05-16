@@ -17,6 +17,7 @@
     "description": "This is a description of the page contents to be shown as a preview."
   },
   "layout": {
+    "layout": "../../_layout_sidemenu",
     "title": "Layout Grids",
     "url": "toolkit/styles/layout",
     "description": "This is a description of the page contents to be shown as a preview."

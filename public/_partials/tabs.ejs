@@ -9,8 +9,10 @@
         <li class="tab2">
             <label for="tabsetid-tab2">HTML</label>
         </li>
+        <% if (!typeof noAngular === 'undefined' && !noAngular) { %>
         <li class="tab3">
             <label for="tabsetid-tab3">Angular</label>
         </li>
+        <% } %>
     </ul>
 </nav>

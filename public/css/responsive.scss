@@ -1,19 +1,33 @@
 
 $max-content-width: 1284px;
 
-/* Device Sizes */
-$device-size-tablet-large: 1024px;
-$device-size-tablet-medium: 768px;
-$device-size-tablet-small: 600px;
-$device-size-mobile-large: 414px;
-$device-size-mobile: 375px;
+/* Device Sizes - matching layout breakpoints */
+$device-size-desktop: 1024px;
+$device-size-tablet: 480px;
+$device-size-phone: 0px;
 
 @mixin not-desktop() {
-  @media (max-width: $device-size-tablet-large - 1)  { @content ; }
+  @media (max-width: $device-size-desktop - 1)  { @content ; }
 }
 
 @mixin desktop-only() {
-  @media (min-width: $device-size-tablet-large)  { @content ; }
+  @media (min-width: $device-size-desktop)  { @content ; }
+}
+
+@mixin tablet-only() {
+  @media (max-width: $device-size-desktop - 1) and (min-width: $device-size-tablet)  { @content ; }
+}
+
+@mixin tablet-or-desktop() {
+  @media (min-width: $device-size-phone + 1)  { @content ; }
+}
+
+@mixin phone-or-tablet() {
+  @media (max-width: $device-size-desktop - 1) and (min-width: $device-size-phone)  { @content ; }
+}
+
+@mixin phone-only() {
+  @media (max-width: $device-size-tablet - 1) and (min-width: $device-size-phone)  { @content ; }
 }
 
 .desktop-only {
@@ -28,20 +42,32 @@ $device-size-mobile: 375px;
   }
 }
 
-@mixin breakpoint($point) {
-  @if $point == tablet-large {
-    @media (min-width: $device-size-tablet-large) { @content ; }
+.tablet-only {
+  @include desktop-only {
+    display: none;
   }
-  @else if $point == tablet-medium {
-    @media (min-width: $device-size-tablet-medium) { @content ; }
+  @include phone-only {
+    display: none;
   }
-  @else if $point == tablet-small {
-    @media (min-width: $device-size-tablet-small) { @content ; }
+}
+
+.tablet-or-desktop {
+  @include phone-only {
+    display: none;
   }
-  @else if $point == mobile-large {
-    @media (min-width: $device-size-mobile-large)  { @content ; }
+}
+
+.phone-or-tablet {
+  @include desktop-only {
+    display: none;
   }
-  @else if $point == mobile {
-    @media (max-width: $device-size-mobile)  { @content ; }
+}
+
+.phone-only {
+  @include desktop-only {
+    display: none;
+  }
+  @include tablet-only {
+    display: none;
   }
 }
