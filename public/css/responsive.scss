@@ -16,6 +16,18 @@ $device-size-mobile: 375px;
   @media (min-width: $device-size-tablet-large)  { @content ; }
 }
 
+.desktop-only {
+  @include not-desktop {
+    display: none;
+  }
+}
+
+.not-desktop {
+  @include desktop-only {
+    display: none;
+  }
+}
+
 @mixin breakpoint($point) {
   @if $point == tablet-large {
     @media (min-width: $device-size-tablet-large) { @content ; }

@@ -118,7 +118,7 @@ ol {
   counter-reset: li;
 
   li::before {
-    content: counter(li);
+    content: counter(li) ".";
     color: $colour-dark-blue;
     font-size: 18px;
     display: inline-block;

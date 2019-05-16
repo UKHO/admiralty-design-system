@@ -18,13 +18,33 @@ body {
 }
 
 main {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
   width: 100%;
   max-width: $max-content-width;
-  flex-grow: 1;
   margin-right: auto;
   margin-left: auto;
   padding: 30px 18px;
   @include desktop-only {
     padding: 48px 20px;
+  }
+
+  .sidebar-wrapper {
+    display: flex;
+    flex-direction: row;
+
+    section.left {
+      flex-grow: 1;
+      margin-right: 20px;
+      @include not-desktop {
+        display: none;
+      }
+    }
+
+    section.content {
+      width: 67%;
+      flex-grow: 1;
+    }
   }
 }
