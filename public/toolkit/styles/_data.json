@@ -11,6 +11,7 @@
     "description": "This is a description of the page contents to be shown as a preview."
   },
   "colours": {
+    "layout": "../../_layout_sidemenu",
     "title": "Colours",
     "url": "toolkit/styles/colours",
     "description": "This is a description of the page contents to be shown as a preview."

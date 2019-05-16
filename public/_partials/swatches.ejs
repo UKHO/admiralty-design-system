@@ -1,0 +1,15 @@
+<div class="mdc-layout-grid colours-grid">
+    <div class="mdc-layout-grid__inner">
+<%
+for (idx1 = 0; idx1 < swatches.length; idx1++) {
+    var swatch = swatches[idx1];
+    %>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3 swatch <%= swatch.class %>">
+            <span><%= swatch.name %></span>
+            <span><%= swatch.colour %></span>
+        </div>
+    <%
+}
+%>
+    </div>
+</div>
