@@ -8,5 +8,10 @@ import { TABLE } from './mock-table-data';
 })
 export class AppComponent {
   title = 'ukho-components';
+
   table = TABLE;
+
+  logClick() {
+    console.log('Button clicked...');
+  }
 }

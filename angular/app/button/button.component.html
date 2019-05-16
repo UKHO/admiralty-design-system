@@ -1,6 +1,7 @@
 <button
     [class.secondary]="isSecondary === true"
     [class.icon]="icon"
+    (click)="handleClick()"
 >
     <p>
         {{label}}
