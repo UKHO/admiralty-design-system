@@ -267,6 +267,8 @@ header {
             }
 
             & > ul {
+              margin-bottom: 12px;
+
               & > li {
                 &::before {
                   margin: 0;
@@ -275,6 +277,7 @@ header {
                 }
 
                 min-height: 40px;
+                margin-bottom: 0;
                 @include not-desktop {
                   min-height: auto;
                 }

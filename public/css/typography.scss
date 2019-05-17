@@ -96,6 +96,7 @@ blockquote {
   padding: 15px 34px;
   border-left: 4px solid $colour-dark-blue;
   margin-bottom: 18px;
+  background: #EEEEEE;
   @include not-desktop {
     line-height: 24px;
   }
@@ -107,6 +108,10 @@ ul {
 
   a {
     font-weight: $font-weight-light;
+  }
+
+  li {
+    margin-bottom: 12px;
   }
 
   li::before {
@@ -121,7 +126,6 @@ ul {
 ol {
   list-style: none;
   counter-reset: li;
-  line-height: 36px;
   margin-bottom: 30px;
 
   a {
