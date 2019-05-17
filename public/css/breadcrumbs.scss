@@ -15,6 +15,7 @@ ul.breadcrumbs {
   }
 
   li {
+    margin-bottom: 0;
     // chevron
     &::before {
       @extend .fa;

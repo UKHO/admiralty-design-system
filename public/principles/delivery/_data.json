@@ -7,39 +7,48 @@
   },
 
   "agile": {
-    "title": "Agile Principles",
+    "layout": "../../_layout_sidemenu",
+    "title": "Agile principles",
     "url": "principles/delivery/agile"
   },
   "lifecycle": {
-    "title": "Application Lifecycle Principles",
+    "layout": "../../_layout_sidemenu",
+    "title": "Application lifecycle principles",
     "url": "principles/delivery/lifecycle"
   },
   "architecture": {
-    "title": "Architecture Principles",
+    "layout": "../../_layout_sidemenu",
+    "title": "Architecture principles",
     "url": "principles/delivery/architecture"
   },
   "development": {
-    "title": "Development Principles",
+    "layout": "../../_layout_sidemenu",
+    "title": "Development principles",
     "url": "principles/delivery/development"
   },
   "testing": {
-    "title": "Testing Principles",
+    "layout": "../../_layout_sidemenu",
+    "title": "Testing principles",
     "url": "principles/delivery/testing"
   },
   "cyber": {
-    "title": "Cyber Principles",
+    "layout": "../../_layout_sidemenu",
+    "title": "Cyber principles",
     "url": "principles/delivery/cyber"
   },
   "cloud": {
-    "title": "Cloud Principles",
+    "layout": "../../_layout_sidemenu",
+    "title": "Cloud principles",
     "url": "principles/delivery/cloud"
   },
   "software": {
-    "title": "Software Engineering Principles",
+    "layout": "../../_layout_sidemenu",
+    "title": "Software engineering principles",
     "url": "principles/delivery/software"
   },
   "business": {
-    "title": "Business Analysis Principles",
+    "layout": "../../_layout_sidemenu",
+    "title": "Business analysis principles",
     "url": "principles/delivery/business"
   }
 }
