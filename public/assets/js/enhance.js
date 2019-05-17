@@ -25,7 +25,9 @@ function setupMenu(menuLinks, parentLevels) {
                     }
                 }
             } else {
-                window.location.href = href;
+                if (href && href !== '#' && href !== window.location.href + '#') {
+                    window.location.href = href;
+                }
             }
         });
     }

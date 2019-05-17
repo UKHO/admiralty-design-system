@@ -13,7 +13,7 @@ var id = typeof id !== 'undefined' && id ? id : 'tabsetid';
         <li class="tab2">
             <label for="<%= id %>-tab2">HTML</label>
         </li>
-        <% if (!typeof noAngular === 'undefined' && !noAngular) { %>
+        <% if (typeof noAngular === 'undefined' || !noAngular) { %>
         <li class="tab3">
             <label for="<%= id %>-tab3">Angular</label>
         </li>

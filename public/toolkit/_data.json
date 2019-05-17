@@ -6,7 +6,8 @@
   "index": {
     "title": "Toolkit",
     "url": "toolkit/",
-    "description": "This is an introduction to the toolkit section of the design system, it will outline the purpose and how you should use it."
+    "description": "This is an introduction to the toolkit section of the design system, it will outline the purpose and how you should use it.",
+    "noLink": true
   }
 
 }

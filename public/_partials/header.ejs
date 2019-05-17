@@ -30,10 +30,10 @@
                     }
                     var sectionTitle = sectionIndex.title;
                     var sectionMeta = section._data.meta;
-                    var sectionHref = '/' + section._data.index.url;
+                    var sectionHref = sectionIndex.noLink ? '#' : ('/' + sectionIndex.url + (folder !== currentFolder ? '#main-menu' : ''));
             %>
             <li tabindex="0" <%- folder === currentFolder ? ' class="active"' : '' %>>
-                <a tabindex="-1" href="<%= sectionHref + (folder !== currentFolder ? '#main-menu' : '') %>"><%= sectionTitle %></a>
+                <a tabindex="-1" href="<%= sectionHref %>"><%= sectionTitle %></a>
                 <section>
                     <%
                         for (var idx2 = 0; idx2 < sectionMeta.folders.length; idx2++) {
@@ -44,7 +44,7 @@
                                 console.error('Menu partial: No index page definition for subsection ' + JSON.stringify(subsection));
                             }
                             var subsectionTitle = subsectionIndex.title;
-                            var subsectionHref = '/' + subsectionIndex.url;
+                            var subsectionHref = sectionIndex.noLink ? '#' :'/' + subsectionIndex.url;
                     %>
                     <section>
                         <h2><a href="<%= subsectionHref %>"><%= subsectionTitle %></a></h2>
@@ -57,7 +57,7 @@
                                     name: page,
                                     title: pageData.title,
                                     order: pageData.order || 99,
-                                    url: '/' + (pageData.url || (subsectionHref + '/' + page)) + '.html'
+                                    url: pageData.noLink ? '#' : '/' + (pageData.url || (subsectionHref + '/' + page)) + '.html'
                                 });
                             }
                             if (pages.length > 0) {
