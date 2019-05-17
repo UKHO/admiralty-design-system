@@ -103,6 +103,11 @@ blockquote {
 
 ul {
   list-style-type: none;
+  margin-bottom: 30px;
+
+  a {
+    font-weight: $font-weight-light;
+  }
 
   li::before {
     content: "\25A0";
@@ -116,6 +121,12 @@ ul {
 ol {
   list-style: none;
   counter-reset: li;
+  line-height: 36px;
+  margin-bottom: 30px;
+
+  a {
+    font-weight: $font-weight-light;
+  }
 
   li::before {
     content: counter(li) ".";
@@ -127,5 +138,6 @@ ol {
 
   li {
     counter-increment: li;
+    margin-bottom: 12px;
   }
 }

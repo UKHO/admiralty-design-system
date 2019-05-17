@@ -11,11 +11,12 @@ table {
     tr {
       background-color: $colour-table-row-bg;
     }
+
   }
 
   td, th {
     color: $colour-admiralty-blue;
-    font-weight: $font-weight-medium;
+    /* font-weight: $font-weight-medium; */
     font-size: 18px;
     /* height: 42px; removed to allow padding to control height */
     line-height: 30px;
@@ -39,10 +40,12 @@ table {
   th {
     border-bottom: 5px solid $colour-admiralty-blue;
     text-align: left;
+    font-weight: $font-weight-medium;
   }
 
   td {
     border-right: 1px solid $colour-divider;
+    font-weight: $font-weight-light;
 
     &:last-child {
       border-right: 1px solid transparent;
