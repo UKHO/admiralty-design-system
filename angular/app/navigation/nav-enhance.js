@@ -50,8 +50,8 @@ export function enhanceMenu() {
     var closeMenu = document.getElementById('main-menu-close');
     var mainMenu = document.getElementById('main-menu');
 
-    openMenu.addEventListener('click', toggleMenu);
-    closeMenu.addEventListener('click', toggleMenu);
+    openMenu && openMenu.addEventListener('click', toggleMenu);
+    closeMenu && closeMenu.addEventListener('click', toggleMenu);
 
     // handle expand / contract of main menu items on mobile
     setupMenu(document.querySelectorAll('#main-menu > ul > li > a'));
