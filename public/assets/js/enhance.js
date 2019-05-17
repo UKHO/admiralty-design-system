@@ -62,9 +62,12 @@ setupMenu(document.querySelectorAll('#main-menu > ul > li > a'));
 setupMenu(document.querySelectorAll('#side-menu > section > ul > li > a'), 3);
 
 // code to handle the tabbed previews
-var example = document.querySelector('div.component-example');
-var htmlView = document.querySelector('div.component-html');
-if (example && htmlView) {
-    var escapedHtml = document.createElement('div').appendChild(document.createTextNode(example.innerHTML)).parentNode.innerHTML;
-    htmlView.innerHTML = '<code class="language-html">' + escapedHtml + '</code>';
+var examples = document.querySelectorAll('div.component-example');
+for (var idx2 = 0; idx2 < examples.length; idx2++) {
+    var example = examples[idx2];
+    var htmlView = example.parentElement.querySelector('div.component-html');
+    if (htmlView) {
+        var escapedHtml = document.createElement('div').appendChild(document.createTextNode(example.innerHTML)).parentNode.innerHTML;
+        htmlView.innerHTML = '<code class="language-html">' + escapedHtml + '</code>';
+    }
 }
