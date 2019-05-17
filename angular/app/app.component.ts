@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TABLE } from './mock-table-data';
+import { mockNavigation } from './navigation/mocknavigation';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +11,8 @@ export class AppComponent {
   title = 'ukho-components';
 
   table = TABLE;
+
+  navigation = mockNavigation;
 
   logClick() {
     console.log('Button clicked...');
