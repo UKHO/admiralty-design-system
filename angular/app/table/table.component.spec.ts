@@ -7,7 +7,7 @@ import { DebugElement } from '@angular/core';
 describe('TableComponent', () => {
   let component: TableComponent;
   let fixture: ComponentFixture<TableComponent>;
-  let compiled: DebugElement['nativeElement']
+  let compiled: DebugElement['nativeElement'];
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({

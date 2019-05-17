@@ -13,10 +13,10 @@
       </div>
     
       <ul aria-label="Main heading">
-          <li *ngFor="let section of navigation.sections" tabindex="0" class="">
+          <li *ngFor="let section of navigation.sections" tabindex="0" class="section">
               <a tabindex="-1" href="#">{{section.title}}</a>
               <section>
-                  <section *ngFor="let subSection of section.subSections">
+                  <section *ngFor="let subSection of section.subSections" class="sub-section">
                       <h2><a href="#">{{subSection.title}}</a></h2>
                       <ul>
                           <li *ngFor="let item of subSection.items">
