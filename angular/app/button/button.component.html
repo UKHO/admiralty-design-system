@@ -1,0 +1,10 @@
+<button
+    [class.secondary]="isSecondary === true"
+    [class.icon]="icon"
+    (click)="handleClick()"
+>
+    <p>
+        {{label}}
+    </p>
+    <i *ngIf= "icon" class="fa {{icon}}"></i>
+</button>

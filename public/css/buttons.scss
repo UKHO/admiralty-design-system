@@ -20,10 +20,11 @@ button, input[type='button'] {
   color: $colour-button-text;
   border: 2px solid $colour-button-standard;
   height: 60px;
-  padding: 15px 20px;
+  padding: 15px 18px;
   font-weight: $font-weight-medium;
   font-size: 21px;
   white-space: nowrap;
+  min-width: 200px;
 
   &:hover {
     background-color: $colour-button-hover;
@@ -32,7 +33,12 @@ button, input[type='button'] {
 
   &:active {
     background-color: $colour-button-selected;
-    border: 2px solid $colour-button-selected;
+    color: $colour-button-text-selected;
+    border: 2px solid $colour-button-border-selected;
+
+    i {
+      color: $colour-button-icon-selected;
+    }
   }
 
   &:disabled {
@@ -44,9 +50,8 @@ button, input[type='button'] {
     display: inline-block;
     font-size: 24px;
     color: $colour-button-icon;
-    padding: 15px 20px 15px 0;
+    padding-left: 15px;
   }
-
 }
 
 /* Secondary Buttons */
@@ -54,21 +59,27 @@ button.secondary, input[type='button'].secondary {
   display: inline-block;
   background-color: $colour-button-secondary-standard;
   color: $colour-button-secondary-text;
-  border: 2px solid $colour-button-secondary-standard;
+  border: 2px solid $colour-button-secondary-border-standard;
   height: 60px;
-  padding: 15px 20px;
+  padding: 15px 18px;
   font-weight: $font-weight-medium;
   font-size: 21px;
   white-space: nowrap;
+  min-width: 200px;
 
   &:hover {
     background-color: $colour-button-secondary-hover;
-    border: 2px solid $colour-button-secondary-hover;
+    border: 2px solid $colour-button-secondary-border-hover;
   }
 
   &:active {
     background-color: $colour-button-secondary-selected;
     border: 2px solid $colour-button-secondary-selected;
+    color: $colour-button-secondary-text-selected;
+
+    i {
+      color: $colour-button-secondary-icon-selected;
+    }
   }
 
   &:disabled {
@@ -80,6 +91,16 @@ button.secondary, input[type='button'].secondary {
     display: inline-block;
     font-size: 24px;
     color: $colour-button-secondary-icon;
-    padding: 15px 20px 15px 0;
+    padding-left: 15px;
   }
+}
+
+button.icon, input[type='button'].icon {
+  min-width: 240px;
+  display: flex;
+  justify-content: space-between;
+}
+
+button p {
+  padding-top: 2px;
 }

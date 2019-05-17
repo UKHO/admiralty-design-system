@@ -41,18 +41,23 @@ $colour-button-border-deselected: #adadad;
 $colour-button-selected: #ffffff;
 $colour-button-border-selected: $colour-admiralty-blue;
 $colour-button-text: #ffffff;
+$colour-button-text-selected: $colour-admiralty-blue;
+$colour-button-border-selected: $colour-admiralty-blue;
 $colour-button-icon: #ffffff;
+$colour-button-icon-selected: $colour-admiralty-blue;
 /* Secondary */
 $colour-button-secondary-standard: #ffffff;
-$colour-button-secondary-border-standard: #d1d3d3;
+$colour-button-secondary-border-standard: #05284e;
 $colour-button-secondary-hover: #eeeeee;
-$colour-button-secondary-border-hover: #d1d3d3;
+$colour-button-secondary-border-hover: #05284e;
 $colour-button-secondary-deselected: #adadad;
 $colour-button-secondary-border-deselected: #adadad;
-$colour-button-secondary-selected: #ffffff;
-$colour-button-secondary-border-selected: $colour-admiralty-blue;
+$colour-button-secondary-selected: #05284e;
+$colour-button-secondary-border-selected: #05284e;
 $colour-button-secondary-text: #05284e;
-$colour-button-secondary-icon: #ffffff;
+$colour-button-secondary-text-selected: #ffffff;
+$colour-button-secondary-icon: #05284e;
+$colour-button-secondary-icon-selected: #ffffff;
 
 /* Link Colours */
 $colour-link: $colour-admiralty-blue;

@@ -5,4 +5,12 @@
     <app-table [table]="table"></app-table>
     <br />
     <app-card><p style="color: red">HEllo there</p></app-card>
+    <br />
+    <app-button
+        [label]="'Pay now'"
+        [icon]="'fa-chevron-right'"
+        [isSecondary]="true"
+        [onClick]="logClick"
+    >
+    </app-button>
 </div>
