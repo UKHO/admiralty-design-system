@@ -68,7 +68,18 @@ for (var idx2 = 0; idx2 < examples.length; idx2++) {
     var htmlView = example.parentElement.querySelector('div.component-html');
     if (htmlView) {
         var escapedHtml = document.createElement('div').appendChild(document.createTextNode(example.innerHTML)).parentNode.innerHTML;
+        var lines = escapedHtml.split('\n');
+        var minTabs = 9999;
+        for (var l = 0; l < lines.length; l++) {
+            var tabs = lines[l].match(/^\s+&lt;/);
+            if (tabs && tabs.length > 0) {
+                minTabs = Math.min(minTabs, tabs[0].length - 4);
+            }
+        }
+        console.log({ minTabs });
+        if (minTabs > 0 && minTabs < 9999) {
+            escapedHtml = escapedHtml.replace( new RegExp('^\\s{' + minTabs + '}', 'gm'), '');
+        }
         htmlView.innerHTML = '<pre><code class="language-html">' + escapedHtml + '</code></pre>';
-        // htmlView.innerHTML = Prism.highlight(example.innerHTML, Prism.languages.markup, 'markup')
     }
 }
