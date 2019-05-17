@@ -1,5 +1,6 @@
 {
   "index": {
+    "layout": "../../_layout_sidemenu",
     "title": "Delivery",
     "url": "principles/delivery/",
     "description": "This is a description of what the principles are and potential areas of use in digital products and services."
