@@ -31,7 +31,7 @@
     border-bottom: 1px solid $colour-divider;
     width: 100%;
 
-    li {
+    > li {
       &:before {
         content: '';
         display: none;
@@ -51,7 +51,8 @@
       }
     }
   }
-  section {
+
+  > section {
     clear: both;
     min-height: 200px;
     border: 1px solid $colour-divider;
