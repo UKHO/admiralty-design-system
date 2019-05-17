@@ -30,14 +30,12 @@ header {
 
     span {
       flex-grow: 1;
-      display: block;
-      text-align: left;
 
       img {
         position: relative;
         top: 50%;
         transform: translateY(-50%);
-        height: 60%;
+        height: 75%;
         width: auto;
       }
     }
