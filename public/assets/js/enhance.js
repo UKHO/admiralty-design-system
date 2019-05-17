@@ -68,6 +68,7 @@ for (var idx2 = 0; idx2 < examples.length; idx2++) {
     var htmlView = example.parentElement.querySelector('div.component-html');
     if (htmlView) {
         var escapedHtml = document.createElement('div').appendChild(document.createTextNode(example.innerHTML)).parentNode.innerHTML;
-        htmlView.innerHTML = '<code class="language-html">' + escapedHtml + '</code>';
+        htmlView.innerHTML = '<pre><code class="language-html">' + escapedHtml + '</code></pre>';
+        // htmlView.innerHTML = Prism.highlight(example.innerHTML, Prism.languages.markup, 'markup')
     }
 }
