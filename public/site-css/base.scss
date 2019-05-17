@@ -31,3 +31,15 @@ main {
     }
   }
 }
+
+/* remove prism left border */
+body pre[class*="language-"] {
+  &::before, &::after {
+    content: none;
+    display: none;
+  }
+  > code {
+  border-left: none;
+  box-shadow: none;
+  }
+}

@@ -6,6 +6,7 @@ $font-weight-medium: normal;
 $font-weight-light: 300;
 
 .default-text {
+  color: $colour-text;
   font-family: 'JohnstonITC', Helvetica, sans-serif;
   font-size: 18px;
   line-height: 24px;

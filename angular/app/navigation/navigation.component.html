@@ -1,0 +1,46 @@
+<header>
+    <nav *ngIf="navigation" id="main-menu">
+    
+      <div>
+          <h1>{{navigation.heading}}</h1>
+          <a href="#main-menu-toggle"
+             id="main-menu-close"
+             class="menu-close"
+             aria-label="Close main menu">
+              <span class="sr-only">Close main menu</span>
+              <span class="fa fa-times"></span>
+          </a>
+      </div>
+    
+      <ul aria-label="Main heading">
+          <li *ngFor="let section of navigation.sections" tabindex="0" class="section">
+              <a tabindex="-1" href="#">{{section.title}}</a>
+              <section>
+                  <section *ngFor="let subSection of section.subSections" class="sub-section">
+                      <h2><a href="#">{{subSection.title}}</a></h2>
+                      <ul>
+                          <li *ngFor="let item of subSection.items">
+                              <a href="#">{{item.label}}</a>
+                          </li>
+                      </ul>
+                  </section>
+              </section>
+          </li>
+      </ul>
+    </nav>
+    
+    <a id="backdrop"
+     href="#main-menu-toggle"
+     class="backdrop"
+     tabindex="-1"
+     aria-hidden="true" hidden>
+    </a>
+    
+    <div *ngIf="navigation" class="menu-toggle-wrapper">
+      <h1 >{{navigation.heading}}</h1>
+      <a href="#main-menu" id="main-menu-toggle" class="menu-toggle">
+          <span class="sr-only">Open main menu</span>
+          <span class="fa fa-bars" aria-hidden="true"></span>
+      </a>
+    </div>
+</header>

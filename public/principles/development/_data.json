@@ -1,5 +1,6 @@
 {
   "index": {
+    "layout": "../../_layout_sidemenu",
     "title": "Development Standards",
     "url": "principles/development/",
     "description": "This is a description of what the standards are and potential areas of use in digital products and services."
