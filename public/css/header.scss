@@ -112,6 +112,7 @@ header {
       display: inline-flex;
       justify-content: flex-end;
       vertical-align: middle;
+      margin-bottom: 0;
       @include not-desktop {
         display: block;
         flex-grow: 1;
@@ -121,8 +122,6 @@ header {
       & > li {
         margin: auto 0;
         height: 90px;
-        border-bottom: 5px solid $colour-bg;
-        /* border-top: 5px solid $colour-bg; */ 
         background-color: $colour-bg;
         @include not-desktop {
           border-bottom: 1px solid $colour-divider;
@@ -144,11 +143,19 @@ header {
           }
         }
 
-        &.active, &:hover, &:focus {
+        &.active {
           @include desktop-only {
             border-bottom: 5px solid $colour-admiralty-blue;
           }
         }
+
+        &:hover, &:focus {
+          @include desktop-only {
+            background: #EEF3F4;
+          }
+        }
+
+
 
         > a {
           display: block;
@@ -160,7 +167,7 @@ header {
           padding: 0 24px;
           @include not-desktop {
             padding: 0 18px;
-            line-height: 38px;
+            line-height: 50px;
             font-size: 16px;
           }
           &::after {
@@ -171,7 +178,7 @@ header {
               margin: 0 10px;
               display: inline-block !important;
               float: right;
-              line-height: 38px !important;
+              line-height: 50px !important;
               font-size: 16px;
               color: $colour-nav-subitem-icon;
             }
