@@ -1,7 +1,7 @@
-<nav id="main-menu">
+<nav *ngIf="navigation" id="main-menu">
 
   <div>
-      <h1>Main heading</h1>
+      <h1>{{navigation.heading}}</h1>
       <a href="#main-menu-toggle"
          id="main-menu-close"
          class="menu-close"
@@ -12,67 +12,14 @@
   </div>
 
   <ul aria-label="Main heading">
-      <li tabindex="0" class="">
-          <a tabindex="-1" href="#">Section title1</a>
+      <li *ngFor="let section of navigation.sections" tabindex="0" class="">
+          <a tabindex="-1" href="#">{{section.title}}</a>
           <section>
-              <section>
-                  <h2><a href="#">sub section title1</a></h2>
+              <section *ngFor="let subSection of section.subSections">
+                  <h2><a href="#">{{subSection.title}}</a></h2>
                   <ul>
-                      <li>
-                          <a href="#menuItem1">menuItem1</a>
-                      </li>
-                      <li>
-                          <a href="#menuItem2">menuItem2</a>
-                      </li>
-                      <li>
-                          <a href="#menuItem3">menuItem3</a>
-                      </li>
-                  </ul>
-              </section>
-              <section>
-                  <h2><a href="#">sub section title1a</a></h2>
-                  <ul>
-                      <li>
-                          <a href="#">menuItem1a</a>
-                      </li>
-                      <li>
-                          <a href="#">menuItem2s</a>
-                      </li>
-                      <li>
-                          <a href="#">menuItem3s</a>
-                      </li>
-                  </ul>
-              </section>
-              <section>
-                  <h2><a href="#">sub section title1a</a></h2>
-                  <ul>
-                      <li>
-                          <a href="#">menuItemA</a>
-                      </li>
-                      <li>
-                          <a href="#">menuItemB</a>
-                      </li>
-                      <li>
-                          <a href="#">menuItemC</a>
-                      </li>
-                  </ul>
-              </section>
-          </section>
-      </li>
-      <li tabindex="0" class="active">
-          <a tabindex="-1" href="#">Section title2</a>
-          <section>
-              <section>
-                  <h2><a href="#">sub section title2</a></h2>
-                  <ul>
-                      <li>
-                          <a href="#">menuItem12</a>
-                      </li>
-                      <li>
-                          <a href="#">menuItem22</a>
-                      </li>
-                      <li>
-                          <a href="#">menuItem32</a>
+                      <li *ngFor="let item of subSection.items">
+                          <a href="#">{{item.label}}</a>
                       </li>
                   </ul>
               </section>
