@@ -6,12 +6,17 @@ import { CardComponent } from './card/card.component';
 import { ButtonComponent } from './button/button.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { HeaderComponent } from './header/header.component';
+import { TextinputComponent } from './textinput/textinput.component';
+import { MatInputModule } from '@angular/material/input';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        MatInputModule,
+        BrowserAnimationsModule
       ],
       declarations: [
         AppComponent,
@@ -20,6 +25,7 @@ describe('AppComponent', () => {
         ButtonComponent,
         HeaderComponent,
         NavigationComponent,
+        TextinputComponent
       ],
     }).compileComponents();
   }));

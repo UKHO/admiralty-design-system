@@ -1,0 +1,65 @@
+// background
+div.mat-form-field-outline {
+    background: $colour-textinput-bg;
+}
+
+.mat-focused div.mat-form-field-outline {
+    background: none;
+}
+
+// start border
+div.mat-form-field-outline div.mat-form-field-outline-start {
+    border-radius: unset;
+    border: 2px solid $colour-textinput-border;
+    border-right-style: none;
+}
+
+.mat-focused div.mat-form-field-outline div.mat-form-field-outline-start {
+    border-color: $colour-textinput-border-active;
+}
+
+// middle border
+div.mat-form-field-outline div.mat-form-field-outline-gap {
+    border-bottom: 2px solid;
+    border-top: 2px solid;
+    border-color: $colour-textinput-border;
+}
+
+.mat-focused div.mat-form-field-outline div.mat-form-field-outline-gap {
+    border-color: $colour-textinput-border-active;
+}
+
+.mat-form-field-should-float div.mat-form-field-outline div.mat-form-field-outline-gap {
+    border-top-style: none;
+}
+
+// end border
+div.mat-form-field-outline div.mat-form-field-outline-end {
+    border-radius: unset;
+    border: 2px solid;
+    border-color:  $colour-textinput-border;
+    border-left-style: none;
+}
+
+.mat-focused div.mat-form-field-outline div.mat-form-field-outline-end {
+    border-color: $colour-textinput-border-active;
+}
+
+// input
+input.mat-input-element {
+    font-size: 21px;
+    color: $colour-textinput-text;
+}
+
+.mat-focused input.mat-input-element {
+    color: $colour-textinput-text-active;
+}
+
+// label
+span.mat-form-field-label-wrapper .ng-star-inserted {
+    color: $colour-textinput-text;
+}
+
+.mat-focused span.mat-form-field-label-wrapper .ng-star-inserted {
+    color: $colour-textinput-text-active;
+}
