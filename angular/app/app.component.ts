@@ -15,7 +15,7 @@ export class AppComponent {
   navigation = mockNavigation;
   
   inputText = {
-    value: 'text object'
+    value: ''
   }
 
   logClick() {

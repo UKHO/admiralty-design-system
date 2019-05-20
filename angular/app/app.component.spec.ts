@@ -9,6 +9,7 @@ import { HeaderComponent } from './header/header.component';
 import { TextinputComponent } from './textinput/textinput.component';
 import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -16,7 +17,9 @@ describe('AppComponent', () => {
       imports: [
         RouterTestingModule,
         MatInputModule,
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
+        ReactiveFormsModule,
+        FormsModule
       ],
       declarations: [
         AppComponent,
