@@ -1,48 +1,44 @@
+
+// border colour
+.mat-form-field div.mat-form-field-outline div {
+    border-color: $colour-textinput-border;
+    border: 2px solid;
+    border-radius: unset;
+}
+
+.mat-form-field.mat-focused div.mat-form-field-outline div {
+    border-color: $colour-textinput-border-active;
+}
+
+.mat-form-field.disabled div.mat-form-field-outline div {
+    border-color: $colour-textinput-border-disabled;
+}
+
+// start border
+div.mat-form-field-outline div.mat-form-field-outline-start {
+    border-right-style: none;
+}
+
+// middle border
+div.mat-form-field-outline div.mat-form-field-outline-gap {
+    border-left-style: none;
+    border-right-style: none;
+}
+
+// end border
+div.mat-form-field-outline div.mat-form-field-outline-end {
+    border-left-style: none;
+}
+
+
 // background
 div.mat-form-field-outline {
     background: $colour-textinput-bg;
 }
 
-.mat-focused div.mat-form-field-outline {
+.mat-focused div.mat-form-field-outline,
+.disabled div.mat-form-field-outline {
     background: none;
-}
-
-// start border
-div.mat-form-field-outline div.mat-form-field-outline-start {
-    border-radius: unset;
-    border: 2px solid $colour-textinput-border;
-    border-right-style: none;
-}
-
-.mat-focused div.mat-form-field-outline div.mat-form-field-outline-start {
-    border-color: $colour-textinput-border-active;
-}
-
-// middle border
-div.mat-form-field-outline div.mat-form-field-outline-gap {
-    border-bottom: 2px solid;
-    border-top: 2px solid;
-    border-color: $colour-textinput-border;
-}
-
-.mat-focused div.mat-form-field-outline div.mat-form-field-outline-gap {
-    border-color: $colour-textinput-border-active;
-}
-
-.mat-form-field-should-float div.mat-form-field-outline div.mat-form-field-outline-gap {
-    border-top-style: none;
-}
-
-// end border
-div.mat-form-field-outline div.mat-form-field-outline-end {
-    border-radius: unset;
-    border: 2px solid;
-    border-color:  $colour-textinput-border;
-    border-left-style: none;
-}
-
-.mat-focused div.mat-form-field-outline div.mat-form-field-outline-end {
-    border-color: $colour-textinput-border-active;
 }
 
 // input
@@ -62,4 +58,8 @@ span.mat-form-field-label-wrapper .ng-star-inserted {
 
 .mat-focused span.mat-form-field-label-wrapper .ng-star-inserted {
     color: $colour-textinput-text-active;
+}
+
+.disabled span.mat-form-field-label-wrapper .ng-star-inserted {
+    color: $colour-textinput-text-disabled;
 }

@@ -1,7 +1,11 @@
 <form>
-  <mat-form-field appearance="outline">
+  <mat-form-field
+    appearance="outline"
+    [class.disabled] = "isDisabled === true"
+  >
     <mat-label>Input Label </mat-label>
     <input
+      [disabled]="isDisabled"
       matInput placeholder="Favorite food"
       value="Sushi"
     >
