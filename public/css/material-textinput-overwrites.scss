@@ -1,4 +1,3 @@
-
 // border colour
 .mat-form-field div.mat-form-field-outline div {
     border-color: $colour-textinput-border;
@@ -97,13 +96,13 @@ span.mat-form-field-label-wrapper .ng-star-inserted {
 }
 
 // icon
-
 .icon {
     margin-left: 10px;
 }
 
 .valid .icon {
     color: $colour-textinput-icon-valid;
+    transform: translateY(-0.1em);
 }
 
 .ng-invalid.ng-untouched .icon {
@@ -114,6 +113,22 @@ span.mat-form-field-label-wrapper .ng-star-inserted {
 
 div.mat-form-field-infix {
     display: flex;
+}
+
+div.mat-form-field-flex {
+    height: 50px;
+}
+
+.mat-form-field-appearance-outline div.mat-form-field-infix {
+    padding: .3em;
+}
+
+.mat-form-field-appearance-outline label.mat-form-field-label {
+    top: 1.22em;
+}
+
+.mat-form-field {
+    min-width: 420px;
 }
 
 // error message
@@ -129,4 +144,9 @@ div.mat-form-field-subscript-wrapper {
     }
 }
 
-
+// animation
+.mat-form-field-appearance-outline.mat-form-field-can-float .mat-input-server:focus+.mat-form-field-label-wrapper .mat-form-field-label, .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+    -webkit-transform: translateY(-1em) scale(.75);
+    transform: translateY(-1em) scale(.75);
+    width: 133.33333%;
+}
