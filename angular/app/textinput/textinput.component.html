@@ -2,7 +2,7 @@
   <mat-form-field
     appearance="outline"
     [class.disabled] = "isDisabled === true"
-    [class.valid] = "isValid === true && !email.invalid"
+    [class.valid] = "isValid === true"
   >
     <mat-label>Input Label </mat-label>
     <input
@@ -12,6 +12,12 @@
       [formControl]="email"
     >
     <mat-error class="error-message" *ngIf="email.invalid">Email is invalid</mat-error>
-    <span *ngIf="isValid" class="fa fa-check icon"></span>
+    <span 
+      *ngIf="isValid || email.invalid"
+      class="fa icon"
+      [class.fa-check] = "isValid && !email.invalid"
+      [class.fa-exclamation] = "email.invalid"
+    >
+    </span>
   </mat-form-field>
 </form>

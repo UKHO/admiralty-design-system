@@ -106,9 +106,13 @@ span.mat-form-field-label-wrapper .ng-star-inserted {
     color: $colour-textinput-icon-valid;
 }
 
+.ng-invalid.ng-untouched .icon {
+    display: none;
+}
+
 // layout
 
-.input-wrap {
+div.mat-form-field-infix {
     display: flex;
 }
 

@@ -16,5 +16,4 @@ export class TextinputComponent {
 
   // Example for an email input with validation
   email = new FormControl('', [Validators.required, Validators.email]);
-
 }
