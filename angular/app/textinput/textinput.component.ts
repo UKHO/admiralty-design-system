@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Validators, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-textinput',
@@ -12,5 +13,8 @@ export class TextinputComponent {
   @Input() isDisabled: boolean;
 
   @Input() isValid: boolean;
+
+  // Example for an email input with validation
+  email = new FormControl('', [Validators.required, Validators.email]);
 
 }

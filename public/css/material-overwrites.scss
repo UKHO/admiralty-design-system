@@ -18,6 +18,10 @@
     border-color: $colour-textinput-border-valid;
 }
 
+.ng-invalid.ng-touched div.mat-form-field-outline div {
+    border-color: $colour-textinput-border-invalid;
+}
+
 // start border
 div.mat-form-field-outline div.mat-form-field-outline-start {
     border-right-style: none;
@@ -27,6 +31,10 @@ div.mat-form-field-outline div.mat-form-field-outline-start {
 div.mat-form-field-outline div.mat-form-field-outline-gap {
     border-left-style: none;
     border-right-style: none;
+}
+
+.ng-invalid.ng-touched.mat-form-field-should-float div.mat-form-field-outline div.mat-form-field-outline-gap {
+    border-top-color: transparent;
 }
 
 // end border
@@ -63,6 +71,10 @@ input.mat-input-element {
     color: $colour-textinput-text-valid;
 }
 
+.ng-invalid.ng-touched input.mat-input-element {
+    color: $colour-textinput-text-invalid;
+}
+
 // label
 span.mat-form-field-label-wrapper .ng-star-inserted {
     color: $colour-textinput-text;
@@ -80,9 +92,11 @@ span.mat-form-field-label-wrapper .ng-star-inserted {
     color: $colour-textinput-text-valid;
 }
 
-div.mat-form-field-infix {
-    display: flex;
+.ng-invalid.ng-touched span.mat-form-field-label-wrapper .ng-star-inserted {
+    color: $colour-textinput-text-invalid;
 }
+
+// icon
 
 .icon {
     margin-left: 10px;
@@ -91,3 +105,24 @@ div.mat-form-field-infix {
 .valid .icon {
     color: $colour-textinput-icon-valid;
 }
+
+// layout
+
+.input-wrap {
+    display: flex;
+}
+
+// error message
+.error-message {
+    color: $colour-errormessage-text;
+}
+
+div.mat-form-field-subscript-wrapper {
+    margin-top: 0;
+    
+    .error-message {
+        font-size: 12px;
+    }
+}
+
+

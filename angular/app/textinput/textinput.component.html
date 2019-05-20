@@ -2,14 +2,16 @@
   <mat-form-field
     appearance="outline"
     [class.disabled] = "isDisabled === true"
-    [class.valid] = "isValid === true"
+    [class.valid] = "isValid === true && !email.invalid"
   >
     <mat-label>Input Label </mat-label>
     <input
       [disabled]="isDisabled"
       matInput placeholder="Favorite food"
       value="Sushi"
+      [formControl]="email"
     >
+    <mat-error class="error-message" *ngIf="email.invalid">Email is invalid</mat-error>
     <span *ngIf="isValid" class="fa fa-check icon"></span>
   </mat-form-field>
 </form>
