@@ -14,6 +14,10 @@
     border-color: $colour-textinput-border-disabled;
 }
 
+.mat-form-field.valid div.mat-form-field-outline div {
+    border-color: $colour-textinput-border-valid;
+}
+
 // start border
 div.mat-form-field-outline div.mat-form-field-outline-start {
     border-right-style: none;
@@ -51,6 +55,14 @@ input.mat-input-element {
     color: $colour-textinput-text-active;
 }
 
+.disabled input.mat-input-element {
+    color: $colour-textinput-text-disabled;
+}
+
+.valid input.mat-input-element {
+    color: $colour-textinput-text-valid;
+}
+
 // label
 span.mat-form-field-label-wrapper .ng-star-inserted {
     color: $colour-textinput-text;
@@ -62,4 +74,8 @@ span.mat-form-field-label-wrapper .ng-star-inserted {
 
 .disabled span.mat-form-field-label-wrapper .ng-star-inserted {
     color: $colour-textinput-text-disabled;
+}
+
+.valid span.mat-form-field-label-wrapper .ng-star-inserted {
+    color: $colour-textinput-text-valid;
 }

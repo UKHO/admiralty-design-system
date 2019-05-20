@@ -11,4 +11,6 @@ export class TextinputComponent {
 
   @Input() isDisabled: boolean;
 
+  @Input() isValid: boolean;
+
 }
