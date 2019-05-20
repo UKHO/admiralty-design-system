@@ -79,3 +79,15 @@ span.mat-form-field-label-wrapper .ng-star-inserted {
 .valid span.mat-form-field-label-wrapper .ng-star-inserted {
     color: $colour-textinput-text-valid;
 }
+
+div.mat-form-field-infix {
+    display: flex;
+}
+
+.icon {
+    margin-left: 10px;
+}
+
+.valid .icon {
+    color: $colour-textinput-icon-valid;
+}
