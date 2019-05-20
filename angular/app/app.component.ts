@@ -13,6 +13,10 @@ export class AppComponent {
   table = TABLE;
 
   navigation = mockNavigation;
+  
+  inputText = {
+    value: 'text object'
+  }
 
   logClick() {
     console.log('Button clicked...');

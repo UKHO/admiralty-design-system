@@ -8,7 +8,7 @@
     <input
       [disabled]="isDisabled"
       matInput placeholder="Favorite food"
-      value="Sushi"
+      [(ngModel)]="textValue.value"
       [formControl]="email"
     >
     <mat-error class="error-message" *ngIf="email.invalid">Email is invalid</mat-error>

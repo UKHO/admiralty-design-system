@@ -14,6 +14,8 @@ export class TextinputComponent {
 
   @Input() isValid: boolean;
 
+  @Input() textValue;
+
   // Example for an email input with validation
   email = new FormControl('', [Validators.required, Validators.email]);
 }
