@@ -10,6 +10,7 @@ import { TextinputComponent } from './textinput/textinput.component';
 import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { TextareaComponent } from './textarea/textarea.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -28,7 +29,8 @@ describe('AppComponent', () => {
         ButtonComponent,
         HeaderComponent,
         NavigationComponent,
-        TextinputComponent
+        TextinputComponent,
+        TextareaComponent
       ],
     }).compileComponents();
   }));

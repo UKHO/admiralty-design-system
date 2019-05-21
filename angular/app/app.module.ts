@@ -13,6 +13,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { TextinputComponent } from './textinput/textinput.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { TextareaComponent } from './textarea/textarea.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { TextareaComponent } from './textarea/textarea.component';
     MatInputModule,
     ReactiveFormsModule,
     FormsModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]
