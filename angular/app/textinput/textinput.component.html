@@ -10,14 +10,14 @@
       matInput
       placeholder="Email"
       [(ngModel)]="textValue.value"
-      [formControl]="email"
+      [formControl]="validation"
     >
-    <mat-error class="error-message" *ngIf="email.invalid">Email is invalid</mat-error>
+    <mat-error class="error-message" *ngIf="validation.invalid">{{invalidMessage}}</mat-error>
     <span 
-      *ngIf="isValid || email.invalid"
+      *ngIf="isValid || validation.invalid"
       class="fa icon"
-      [class.fa-check] = "isValid && !email.invalid"
-      [class.fa-exclamation] = "email.invalid"
+      [class.fa-check] = "isValid && !validation.invalid"
+      [class.fa-exclamation] = "validation.invalid"
     >
     </span>
   </mat-form-field>

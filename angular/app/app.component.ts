@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { TABLE } from './mock-table-data';
 import { mockNavigation } from './navigation/mocknavigation';
+import { Validators, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +18,8 @@ export class AppComponent {
   inputText = {
     value: ''
   }
+
+  inputFormControl = new FormControl('', [Validators.required, Validators.email]);
 
   logClick() {
     console.log('Button clicked...');

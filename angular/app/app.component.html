@@ -16,7 +16,12 @@
     >
     </app-button>
     <br />
-    <app-textinput [textValue]="inputText"></app-textinput>
+    <app-textinput
+        [textValue]="inputText"
+        [validation]="inputFormControl"
+        [invalidMessage]="'Email is invalid'"
+    >
+    </app-textinput>
     <p>{{inputText.value}}</p>
     <br />
     <app-textarea></app-textarea>
