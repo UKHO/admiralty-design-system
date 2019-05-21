@@ -14,7 +14,7 @@ export class TextinputComponent {
 
   @Input() isValid: boolean;
 
-  @Input() textValue;
+  @Input() inputText: { value: string };
 
   @Input() validation: FormControl;
 

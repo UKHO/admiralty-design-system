@@ -11,7 +11,7 @@
         [disabled]="isDisabled"
         matInput
         placeholder="Email"
-        [(ngModel)]="textValue.value"
+        [(ngModel)]="inputText.value"
         [formControl]="validation"
       >
       <mat-error class="error-message" *ngIf="validation.invalid">{{invalidMessage}}</mat-error>

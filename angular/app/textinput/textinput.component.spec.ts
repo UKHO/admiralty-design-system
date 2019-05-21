@@ -27,7 +27,7 @@ describe('TextinputComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(TextinputComponent);
     component = fixture.componentInstance;
-    component.textValue = { value: 'test text value'}
+    component.inputText = { value: 'test text value'}
     component.validation = new FormControl('', [Validators.required, Validators.email]);
     fixture.detectChanges();
   });
