@@ -80,6 +80,10 @@ div.mat-select-panel:not([class*=mat-elevation-z]) {
 
 div.cdk-overlay-pane {
     transform: translateX(-16px) translateY(26px) !important;
+
+    @include not-desktop {
+        transform: translateX(-14px) translateY(26px) !important
+    }
 }
 
 // select option
