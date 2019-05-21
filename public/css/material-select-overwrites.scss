@@ -70,6 +70,7 @@ div.mat-select-panel:not([class*=mat-elevation-z]) {
     border-top: none;
     border-radius: unset;
     transition: none;
+    padding-top: 20px;
 }
 
 .mat-select-panel-wrap {
@@ -79,4 +80,13 @@ div.mat-select-panel:not([class*=mat-elevation-z]) {
 
 div.cdk-overlay-pane {
     transform: translateX(-16px) translateY(26px) !important;
+}
+
+// select option
+div.mat-select-panel .mat-option {
+    height: 2em;
+}
+
+.mat-option:hover .mat-option-text {
+    font-weight: 400;
 }
