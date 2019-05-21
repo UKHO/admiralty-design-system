@@ -32,6 +32,8 @@
     width: 100%;
 
     > li {
+      margin-bottom: 0;
+      
       &:before {
         content: '';
         display: none;
