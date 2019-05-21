@@ -11,6 +11,7 @@ import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { TextareaComponent } from './textarea/textarea.component';
+import { SelectComponent } from './select/select.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -30,7 +31,8 @@ describe('AppComponent', () => {
         HeaderComponent,
         NavigationComponent,
         TextinputComponent,
-        TextareaComponent
+        TextareaComponent,
+        SelectComponent
       ],
     }).compileComponents();
   }));

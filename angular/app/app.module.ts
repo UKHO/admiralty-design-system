@@ -14,6 +14,7 @@ import { TextinputComponent } from './textinput/textinput.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { TextareaComponent } from './textarea/textarea.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { SelectComponent } from './select/select.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     HeaderComponent,
     NavigationComponent,
     TextinputComponent,
-    TextareaComponent
+    TextareaComponent,
+    SelectComponent
   ],
   imports: [
     BrowserModule,
