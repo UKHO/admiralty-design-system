@@ -1,6 +1,3 @@
-// the navigation will function entirely with CSS only (JavaScript disabled)
-// this code progressively enhances the mobile experience, removing the need for #url-anchors
-
 function setupMenu(menuLinks, parentLevels) {
     for (var idx = 0; idx < menuLinks.length; idx++) {
         var item = menuLinks[idx];
