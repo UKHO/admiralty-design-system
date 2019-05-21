@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { TextareaComponent } from './textarea/textarea.component';
 import { SelectComponent } from './select/select.component';
+import { MatSelectModule } from '@angular/material';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -21,7 +22,8 @@ describe('AppComponent', () => {
         MatInputModule,
         BrowserAnimationsModule,
         ReactiveFormsModule,
-        FormsModule
+        FormsModule,
+        MatSelectModule
       ],
       declarations: [
         AppComponent,

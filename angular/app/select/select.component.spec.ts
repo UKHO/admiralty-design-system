@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SelectComponent } from './select.component';
+import { MatSelectModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('SelectComponent', () => {
   let component: SelectComponent;
@@ -8,6 +10,10 @@ describe('SelectComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [
+        MatSelectModule,
+        BrowserAnimationsModule
+      ],
       declarations: [ SelectComponent ]
     })
     .compileComponents();

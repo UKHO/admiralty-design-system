@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Validators, FormControl } from '@angular/forms';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-textinput',

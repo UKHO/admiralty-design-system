@@ -15,6 +15,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { TextareaComponent } from './textarea/textarea.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { SelectComponent } from './select/select.component';
+import { MatSelectModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { SelectComponent } from './select/select.component';
     MatInputModule,
     ReactiveFormsModule,
     FormsModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
