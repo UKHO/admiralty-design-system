@@ -26,5 +26,8 @@
     <br />
     <app-textarea [textareaText]="textareaText"></app-textarea>
     <p>{{textareaText.value}}</p>
-    <app-select></app-select>
+    <app-select
+        [options]="selectOptions"
+        (changed)="logSelectChanged($event.value)"
+    ></app-select>
 </div>

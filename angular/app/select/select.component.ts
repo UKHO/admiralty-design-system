@@ -1,4 +1,5 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, Input, Output, EventEmitter } from '@angular/core';
+import { MatSelectChange } from '@angular/material';
 
 @Component({
   selector: 'app-select',
@@ -11,20 +12,13 @@ export class SelectComponent {
 
   @ViewChild('selectComponent') selectComponent;
 
-  foods: OptionValue[] = [
-    {value: 'steak-0', viewValue: 'Steak'},
-    {value: 'pizza-1', viewValue: 'Pizza'},
-    {value: 'tacos-2', viewValue: 'Tacos'}
-  ];
+  @Input() options: OptionValue[] 
 
-  handleChange() {
-    console.log('select has changed', this.selectComponent.panelOpen)
+  @Output() changed = new EventEmitter();
+
+  handleChange($event: MatSelectChange) {
+    this.changed.emit($event)
   }
-
-  getIconClass() {
-    return "fa-chevron-down'"
-  }
-
 }
 
 export interface OptionValue {
