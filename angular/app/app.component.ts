@@ -19,6 +19,10 @@ export class AppComponent {
     value: ''
   }
 
+  textareaText = {
+    value: ''
+  }
+
   inputFormControl = new FormControl('', [Validators.required, Validators.email]);
 
   logClick() {

@@ -1,5 +1,9 @@
 <div class="mat-textarea-wrapper">
   <mat-form-field appearance="outline">
-    <textarea matInput placeholder="Textarea"></textarea>
+    <textarea
+      matInput
+      placeholder="Textarea"
+      [(ngModel)]="textareaText.value"
+    ></textarea>
   </mat-form-field>
 </div>
