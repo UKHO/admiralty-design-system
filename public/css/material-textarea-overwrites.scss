@@ -37,11 +37,11 @@
 
     // layout
     .mat-form-field-appearance-outline .mat-form-field-infix {
-        padding: .2em 0 1em 0;
+        padding: .2em 0 .3em 0;
     }
 
     .mat-form-field-appearance-outline .mat-form-field-flex {
-        padding: 0 .75em 0 1em;
+        padding: 0 .3em 0 1em;
     }
 
     .mat-form-field-flex {
@@ -50,5 +50,30 @@
 
     .mat-input-element {
         min-height: 170px;
+        padding: 0 .75em .5em 0;
+    }
+
+    // icon
+    .resizer-arrow {
+        position: absolute;
+        width: 0; 
+        height: 0; 
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        
+        border-top: 8px solid $colour-textarea-border;
+        pointer-events: none;
+        transform: rotate(-45deg);
+    }
+
+    .mat-form-field.mat-focused .resizer-arrow {
+        border-top-color: $colour-textarea-border-focused;
+    }
+
+    .resizer-arrow-wrap {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        transform: translate(-10px, -11px);
     }
 }
