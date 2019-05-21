@@ -78,7 +78,7 @@ $colour-tab-active: #ffffff;
 $colour-tab-inactive: #eeeeee;
 $colour-tab-hover: #dddddd;
 
-/* form colours */
+/* form text input colours */
 $colour-textinput-border: $colour-dark-blue;
 $colour-textinput-border-active: $colour-utility-info;
 $colour-textinput-border-disabled: #adadad;
@@ -93,3 +93,7 @@ $colour-textinput-text-invalid: $colour-utility-error;
 $colour-textinput-icon-valid: $colour-text;
 $colour-textinput-bg: #f6f6f6;
 $colour-errormessage-text: $colour-utility-error;
+
+/* form textarea colours */
+$colour-textarea-border: $colour-dark-blue;
+$colour-textarea-border-focused: $colour-utility-info;

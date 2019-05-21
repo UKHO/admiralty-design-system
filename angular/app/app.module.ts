@@ -12,6 +12,7 @@ import { HeaderComponent } from './header/header.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { TextinputComponent } from './textinput/textinput.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { TextareaComponent } from './textarea/textarea.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     ButtonComponent,
     HeaderComponent,
     NavigationComponent,
-    TextinputComponent
+    TextinputComponent,
+    TextareaComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +31,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     MatInputModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
