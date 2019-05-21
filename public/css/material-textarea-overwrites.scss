@@ -44,8 +44,13 @@
         padding: 0 .3em 0 1em;
     }
 
-    .mat-form-field-flex {
+    .mat-form-field {
         min-width: 425px;
+        @include not-desktop {
+            min-width: unset;
+            max-width: 425px;
+            width: 100%;
+        }
     }
 
     .mat-input-element {
