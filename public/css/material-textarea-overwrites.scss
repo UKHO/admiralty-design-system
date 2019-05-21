@@ -56,12 +56,13 @@
     // icon
     .resizer-arrow {
         position: absolute;
+        bottom: 1px;
+        right: -2px;
         width: 0; 
         height: 0; 
-        border-left: 8px solid transparent;
-        border-right: 8px solid transparent;
-        
-        border-top: 8px solid $colour-textarea-border;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: 6px solid $colour-textarea-border;
         pointer-events: none;
         transform: rotate(-45deg);
     }
@@ -72,8 +73,18 @@
 
     .resizer-arrow-wrap {
         position: absolute;
-        bottom: 0;
-        right: 0;
-        transform: translate(-10px, -11px);
+        bottom: -2px;
+        right: -2px;
+        transform: translate(1px, -4px);
+        height: 15px;
+        width: 15px;
+        padding-top: 5px;
+        background-color: $colour-textinput-bg;
+        pointer-events: none;
+        
+    }
+    
+    .mat-focused .resizer-arrow-wrap {
+        background-color: $colour-bg;
     }
 }
