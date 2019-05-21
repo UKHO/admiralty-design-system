@@ -32,13 +32,19 @@
   "cards": {
     "layout": "../../_layout_sidemenu",
     "title": "Cards",
-    "url": "toolkit/components/tables",
+    "url": "toolkit/components/cards",
     "description": "This is a description of what components are and potential areas of use in digital products and services."
   },
   "expansion": {
     "layout": "../../_layout_sidemenu",
     "title": "Expansion Panels",
-    "url": "toolkit/components/tables",
+    "url": "toolkit/components/expansion",
+    "description": "This is a description of what components are and potential areas of use in digital products and services."
+  },
+  "buttons": {
+    "layout": "../../_layout_sidemenu",
+    "title": "Buttons",
+    "url": "toolkit/components/buttons",
     "description": "This is a description of what components are and potential areas of use in digital products and services."
   }
 }
