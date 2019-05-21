@@ -1,0 +1,58 @@
+.select-wrap {
+    // border colour
+    .mat-form-field div.mat-form-field-outline div {
+        border-color: $colour-textinput-border;
+        border: 2px solid;
+        border-radius: unset;
+    }
+
+    .mat-form-field.mat-focused div.mat-form-field-outline div {
+        border-color: $colour-textinput-border-active;
+    }
+
+    // start border
+    div.mat-form-field-outline div.mat-form-field-outline-start {
+        border-right-style: none;
+    }
+
+    // middle border
+    div.mat-form-field-outline div.mat-form-field-outline-gap {
+        border: none;
+    }
+
+    // end border
+    div.mat-form-field-outline div.mat-form-field-outline-end {
+        border-left-style: none;
+    }
+
+    // background
+    div.mat-form-field-outline {
+        background: $colour-textinput-bg;
+    }
+    
+    .mat-focused div.mat-form-field-outline,
+    .disabled div.mat-form-field-outline {
+        background: none;
+    }
+
+    // layout
+    div.mat-form-field-infix {
+        display: flex;
+    }
+
+    div.mat-form-field-flex {
+        height: 50px;
+    }
+
+    .mat-form-field-appearance-outline div.mat-form-field-infix {
+        padding: .2em;
+    }
+
+    .mat-form-field-appearance-outline label.mat-form-field-label {
+        top: 1.22em;
+    }
+
+    .mat-form-field {
+        min-width: 300px;
+    }
+}
