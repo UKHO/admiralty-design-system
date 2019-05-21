@@ -44,7 +44,7 @@ describe('TextinputComponent', () => {
     expect(input.getAttribute('ng-reflect-disabled')).toBe('true');
   })
 
-  it('should reflect textValue', () => {
+  it('should reflect inputText', () => {
     compiled = fixture.nativeElement;
     const input = compiled.querySelector('input');
     expect(input.getAttribute('ng-reflect-model')).toBe('test text value');
