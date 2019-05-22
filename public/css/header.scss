@@ -204,9 +204,9 @@ header {
           border-top: 1px solid $colour-divider;
           border-bottom: 1px solid $colour-divider;
           display: none;
+          visibility: hidden;
           opacity: 0;
           position: absolute;
-          transition: opacity 0.3s ease;
           background-color: $colour-bg;
           width: 100%;
           left: 0;
@@ -328,12 +328,14 @@ header {
         &.active > section {
           @include not-desktop {
             display: flex;
+            visibility: visible;
             opacity: 1;
           }
         }
         &:hover > section, & > section:hover, &:focus > section, & > section:focus  {
           @include desktop-only {
             display: inline-flex;
+            visibility: visible;
             opacity: 1;
           }
         }

@@ -157,10 +157,6 @@
                             </li>
                             
                             <li>
-                                <a href="/toolkit/components/headers.html">Headers</a>
-                            </li>
-                            
-                            <li>
                                 <a href="/toolkit/components/search.html">Search Fields</a>
                             </li>
                             
@@ -169,11 +165,11 @@
                             </li>
                             
                             <li>
-                                <a href="/toolkit/components/tables.html">Cards</a>
+                                <a href="/toolkit/components/cards.html">Cards</a>
                             </li>
                             
                             <li>
-                                <a href="/toolkit/components/tables.html">Expansion Panels</a>
+                                <a href="/toolkit/components/expansion.html">Expansion Panels</a>
                             </li>
                             
                             <li>
@@ -260,7 +256,7 @@
     
     <li><a href="/toolkit/components/">Components</a></li>
     
-    <li><a href="/toolkit/components/tables">Tables</a></li>
+    <li><a href="/toolkit/components/cards">Cards</a></li>
     
 </ul>
 
@@ -313,23 +309,19 @@
                 </li>
                 
                 <li class="">
-                    <a href="/toolkit/components/headers.html">Headers</a>
-                </li>
-                
-                <li class="">
                     <a href="/toolkit/components/search.html">Search Fields</a>
                 </li>
                 
-                <li class="active">
+                <li class="">
                     <a href="/toolkit/components/tables.html">Tables</a>
                 </li>
                 
-                <li class="">
-                    <a href="/toolkit/components/tables.html">Cards</a>
+                <li class="active">
+                    <a href="/toolkit/components/cards.html">Cards</a>
                 </li>
                 
                 <li class="">
-                    <a href="/toolkit/components/tables.html">Expansion Panels</a>
+                    <a href="/toolkit/components/expansion.html">Expansion Panels</a>
                 </li>
                 
                 <li class="">
@@ -370,6 +362,215 @@
             </section>
             <section class="content">
                 <h1>Cards</h1>
+
+<p class="intro">
+    Use cards to draw users attention to specific content.
+</p>
+
+<ol>
+    <li><a href="#anchor1">Highlight card</a></li>
+    <li><a href="#anchor2">Section button</a></li>
+</ol>
+
+<p></p>
+
+<h3 id="anchor1">1. Highlight card</h3>
+
+<p>Use highlight cards to highlight content within a page, or to break certain snippets of content away from the rest of the page.</p>
+
+<div class="tab-set">
+    
+
+<input class="tab1selector" type="radio" id="highlight-tab1" name="highlight" checked="checked">
+<input class="tab2selector" type="radio" id="highlight-tab2" name="highlight">
+<input class="tab3selector" type="radio" id="highlight-tab3" name="highlight">
+<nav>
+    <ul>
+        <li class="tab1">
+            <label for="highlight-tab1">Visual example</label>
+        </li>
+        <li class="tab2">
+            <label for="highlight-tab2">HTML</label>
+        </li>
+        
+        <li class="tab3">
+            <label for="highlight-tab3">Angular</label>
+        </li>
+        
+    </ul>
+</nav>
+
+    <section>
+        <div class="tab1 component-example">
+            <section class="card">
+                <h6>Highlight Info Card Heading</h6>
+                <div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pharetra est id elit auctor tristique.
+                         Aliquam vestibulum gravida mi eu ornare. Aenean tristique ac leo at eleifend. </p>
+                    <ul>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing.</li>
+                        <li>Dolore magna aliqua. Ut enim ad minim veniam.</li>
+                        <li>Commodo consequat duis aute irure dolor in.</li>
+                        <li>Labore et dolore magna aliqua occaecat.</li>
+                    </ul>
+                    <p><a href="#">Lorem ipsum dolor sit amet</a></p>
+                </div>
+            </section>
+        </div>
+        <div class="tab2 component-html">
+            HTML goes here.
+        </div>
+        <div class="tab3 component-angular">
+            <h5>Angular example usage:</h5>
+            <code class="language-html">
+                &lt;section class=&quot;card&quot;&gt;
+                &lt;h6 *ngIf=&quot;title&quot;&gt;Highlight Info Card Heading&lt;/h6&gt;
+                &lt;div&gt;
+                &lt;ng-content&gt;
+                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pharetra est id elit auctor tristique.
+                Aliquam vestibulum gravida mi eu ornare. Aenean tristique ac leo at eleifend. &lt;/p&gt;
+                &lt;ul&gt;
+                &lt;li&gt;Lorem ipsum dolor sit amet, consectetur adipiscing.&lt;/li&gt;
+                &lt;li&gt;Dolore magna aliqua. Ut enim ad minim veniam.&lt;/li&gt;
+                &lt;li&gt;Commodo consequat duis aute irure dolor in.&lt;/li&gt;
+                &lt;li&gt;Labore et dolore magna aliqua occaecat.&lt;/li&gt;
+                &lt;/ul&gt;
+                &lt;p&gt;&lt;a href=&quot;#&quot;&gt;Lorem ipsum dolor sit amet&lt;/a&gt;&lt;/p&gt;
+                &lt;/ng-content&gt;
+                &lt;/div&gt;
+                &lt;/section&gt;
+            </code>
+            <br>
+            <br>
+            <h5>Angular component:</h5>
+            <pre>
+                <code class="language-javascript">import {Component, Input, OnInit} from '@angular/core';
+
+@Component({
+                    selector: 'app-card',
+                    templateUrl: './card.component.html',
+                    styleUrls: ['./card.component.scss']
+})
+export class CardComponent implements OnInit {
+                    @Input() public title = '';
+
+                    constructor() { }
+
+  ngOnInit() {
+  }
+
+}
+                </code>
+            </pre>
+            <h5>Angular template:</h5>
+            <pre>
+                <code class="language-html">&lt;section class=&quot;card&quot;&gt;
+  &lt;h6 *ngIf=&quot;title&quot;&gt;{{ title }}&lt;/h6&gt;
+  &lt;div&gt;
+    &lt;ng-content&gt;&lt;/ng-content&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+                </code>
+            </pre>
+        </div>
+    </section>
+</div>
+
+<p></p>
+
+<h3 id="anchor2">2. Section card</h3>
+
+<p>Use section cards to break content into sections, for example, field sets on a webform.</p>
+
+<div class="tab-set">
+    
+
+<input class="tab1selector" type="radio" id="section-tab1" name="section" checked="checked">
+<input class="tab2selector" type="radio" id="section-tab2" name="section">
+<input class="tab3selector" type="radio" id="section-tab3" name="section">
+<nav>
+    <ul>
+        <li class="tab1">
+            <label for="section-tab1">Visual example</label>
+        </li>
+        <li class="tab2">
+            <label for="section-tab2">HTML</label>
+        </li>
+        
+        <li class="tab3">
+            <label for="section-tab3">Angular</label>
+        </li>
+        
+    </ul>
+</nav>
+
+    <section>
+        <div class="tab1 component-example">
+            <section class="card">
+                <h6>Contact details</h6>
+                <div>
+                    <form>
+                        <input type="text" placeholder="First name"><br>
+                        <input type="text" placeholder="Last name"><br>
+                        <input type="text" placeholder="Email address"><br>
+                    </form>
+                </div>
+            </section>
+        </div>
+        <div class="tab2 component-html">
+            HTML goes here.
+        </div>
+        <div class="tab3 component-angular">
+            <h5>Angular example usage:</h5>
+            <code class="language-html">
+                &lt;section class=&quot;card&quot;&gt;
+                &lt;h6 *ngIf=&quot;title&quot;&gt;Contact details&lt;/h6&gt;
+                &lt;div&gt;
+                &lt;ng-content&gt;
+                &lt;form&gt;
+                &lt;input type=&quot;text&quot; placeholder=&quot;First name&quot;/&gt;&lt;br&gt;
+                &lt;input type=&quot;text&quot; placeholder=&quot;Last name&quot;/&gt;&lt;br&gt;
+                &lt;input type=&quot;text&quot; placeholder=&quot;Email address&quot;/&gt;&lt;br&gt;
+                &lt;/form&gt;
+                &lt;/ng-content&gt;
+                &lt;/div&gt;
+                &lt;/section&gt;
+            </code>
+            <br>
+            <br>
+            <h5>Angular component:</h5>
+            <pre>
+                <code class="language-javascript">import {Component, Input, OnInit} from '@angular/core';
+
+@Component({
+                    selector: 'app-card',
+                    templateUrl: './card.component.html',
+                    styleUrls: ['./card.component.scss']
+})
+export class CardComponent implements OnInit {
+                    @Input() public title = '';
+
+                    constructor() { }
+
+  ngOnInit() {
+  }
+
+}
+                </code>
+            </pre>
+            <h5>Angular template:</h5>
+            <pre>
+                <code class="language-html">&lt;section class=&quot;card&quot;&gt;
+  &lt;h6 *ngIf=&quot;title&quot;&gt;{{ title }}&lt;/h6&gt;
+  &lt;div&gt;
+    &lt;ng-content&gt;&lt;/ng-content&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+                </code>
+            </pre>
+        </div>
+    </section>
+</div>
             </section>
         </div>
     </main>

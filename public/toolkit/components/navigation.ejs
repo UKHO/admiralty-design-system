@@ -266,3 +266,271 @@ export class CardComponent implements OnInit {
         </div>
     </section>
 </div>
+
+<p></p>
+
+<h3 id="anchor3">3. Breadcrumbs</h3>
+
+<p>Use breadcrumbs on screen sizes down to 1024 pixels wide to show the user the site architecture</p>
+
+<div class="tab-set">
+    <%- partial('../../_partials/tabs', { id: 'breadcrumbs' }) %>
+    <section>
+        <div class="tab1 component-example">
+            <ul class="breadcrumbs">
+                <li><a href="/">Homepage</a></li>
+
+                <li><a href="/section1/">Section 1</a></li>
+
+                <li><a href="/section1/item2/">Item 2</a></li>
+
+                <li><a href="/section1/item2/page">Current page</a></li>
+
+            </ul>
+        </div>
+        <div class="tab2 component-html">
+            HTML goes here.
+        </div>
+        <div class="tab3 component-angular">
+            <h5>Angular example usage:</h5>
+            <code class="language-html">
+                &lt;section class=&quot;card&quot;&gt;
+                &lt;h6 *ngIf=&quot;title&quot;&gt;Contact details&lt;/h6&gt;
+                &lt;div&gt;
+                &lt;ng-content&gt;
+                &lt;form&gt;
+                &lt;input type=&quot;text&quot; placeholder=&quot;First name&quot;/&gt;&lt;br&gt;
+                &lt;input type=&quot;text&quot; placeholder=&quot;Last name&quot;/&gt;&lt;br&gt;
+                &lt;input type=&quot;text&quot; placeholder=&quot;Email address&quot;/&gt;&lt;br&gt;
+                &lt;/form&gt;
+                &lt;/ng-content&gt;
+                &lt;/div&gt;
+                &lt;/section&gt;
+            </code>
+            <br />
+            <br />
+            <h5>Angular component:</h5>
+            <pre>
+                <code class="language-javascript">import {Component, Input, OnInit} from '@angular/core';
+
+@Component({
+                    selector: 'app-card',
+                    templateUrl: './card.component.html',
+                    styleUrls: ['./card.component.scss']
+})
+export class CardComponent implements OnInit {
+                    @Input() public title = '';
+
+                    constructor() { }
+
+  ngOnInit() {
+  }
+
+}
+                </code>
+            </pre>
+            <h5>Angular template:</h5>
+            <pre>
+                <code class="language-html">&lt;section class=&quot;card&quot;&gt;
+  &lt;h6 *ngIf=&quot;title&quot;&gt;{{ title }}&lt;/h6&gt;
+  &lt;div&gt;
+    &lt;ng-content&gt;&lt;/ng-content&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+                </code>
+            </pre>
+        </div>
+    </section>
+</div>
+
+<p></p>
+
+<h3 id="anchor4">4. Sidebar navigation</h3>
+
+<p>Use the sidebar navigation to allow users to navigate to different sections, and pages within the current section.</p>
+
+<div class="tab-set">
+    <%- partial('../../_partials/tabs', { id: 'sidebar' }) %>
+    <section>
+        <div class="tab1 component-example">
+            <nav id="side-menu" aria-label="Submenu">
+                <section>
+                    <h2><a href="/item1/">Item 1</a></h2>
+                </section>
+                <section class="active">
+                    <h2><a href="/item2/">Item 2</a></h2>
+                    <ul>
+                        <li class="active">
+                            <a href="/item2/page1">Page 1</a>
+                        </li>
+                        <li>
+                            <a href="/item2/page2">Page 2</a>
+                        </li>
+                        <li>
+                            <a href="/item2/page3">Page 3</a>
+                        </li>
+                        <li>
+                            <a href="/item2/page4">Page 4</a>
+                        </li>
+                        <li>
+                            <a href="/item2/page5">Page 5</a>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h2><a href="/item3/">Item 3</a></h2>
+                </section>
+            </nav>
+        </div>
+        <div class="tab2 component-html">
+            HTML goes here.
+        </div>
+        <div class="tab3 component-angular">
+            <h5>Angular example usage:</h5>
+            <code class="language-html">
+                &lt;section class=&quot;card&quot;&gt;
+                &lt;h6 *ngIf=&quot;title&quot;&gt;Contact details&lt;/h6&gt;
+                &lt;div&gt;
+                &lt;ng-content&gt;
+                &lt;form&gt;
+                &lt;input type=&quot;text&quot; placeholder=&quot;First name&quot;/&gt;&lt;br&gt;
+                &lt;input type=&quot;text&quot; placeholder=&quot;Last name&quot;/&gt;&lt;br&gt;
+                &lt;input type=&quot;text&quot; placeholder=&quot;Email address&quot;/&gt;&lt;br&gt;
+                &lt;/form&gt;
+                &lt;/ng-content&gt;
+                &lt;/div&gt;
+                &lt;/section&gt;
+            </code>
+            <br />
+            <br />
+            <h5>Angular component:</h5>
+            <pre>
+                <code class="language-javascript">import {Component, Input, OnInit} from '@angular/core';
+
+@Component({
+                    selector: 'app-card',
+                    templateUrl: './card.component.html',
+                    styleUrls: ['./card.component.scss']
+})
+export class CardComponent implements OnInit {
+                    @Input() public title = '';
+
+                    constructor() { }
+
+  ngOnInit() {
+  }
+
+}
+                </code>
+            </pre>
+            <h5>Angular template:</h5>
+            <pre>
+                <code class="language-html">&lt;section class=&quot;card&quot;&gt;
+  &lt;h6 *ngIf=&quot;title&quot;&gt;{{ title }}&lt;/h6&gt;
+  &lt;div&gt;
+    &lt;ng-content&gt;&lt;/ng-content&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+                </code>
+            </pre>
+        </div>
+    </section>
+</div>
+
+<p></p>
+
+<h3 id="anchor5">5. Tabs</h3>
+
+<p>Use the sidebar navigation to allow users to navigate to different sections, and pages within the current section.</p>
+
+<div class="tab-set">
+    <%- partial('../../_partials/tabs', { id: 'tabs' }) %>
+    <section>
+        <div class="tab1 component-example">
+            <div class="tab-set">
+                <input class="tab1selector" type="radio" id="tab-id-tab1" name="primary" checked="checked">
+                <input class="tab2selector" type="radio" id="tab-id-tab2" name="primary">
+                <input class="tab3selector" type="radio" id="tab-id-tab3" name="primary">
+                <!-- up to 10 tabs -->
+                <nav>
+                    <ul>
+                        <li class="tab1">
+                            <label for="tab-id-tab1">Tab 1</label>
+                        </li>
+                        <li class="tab2">
+                            <label for="tab-id-tab2">Tab 2</label>
+                        </li>
+
+                        <li class="tab3">
+                            <label for="tab-id-tab3">Tab 3</label>
+                        </li>
+
+                    </ul>
+                </nav>
+                <section>
+                    <div class="tab1">
+                        <p>Tab 1</p>
+                    </div>
+                    <div class="tab2">
+                        <p>Tab 2</p>
+                    </div>
+                    <div class="tab3">
+                        <p>Tab 3</p>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="tab2 component-html">
+            HTML goes here.
+        </div>
+        <div class="tab3 component-angular">
+            <h5>Angular example usage:</h5>
+            <code class="language-html">
+                &lt;section class=&quot;card&quot;&gt;
+                &lt;h6 *ngIf=&quot;title&quot;&gt;Contact details&lt;/h6&gt;
+                &lt;div&gt;
+                &lt;ng-content&gt;
+                &lt;form&gt;
+                &lt;input type=&quot;text&quot; placeholder=&quot;First name&quot;/&gt;&lt;br&gt;
+                &lt;input type=&quot;text&quot; placeholder=&quot;Last name&quot;/&gt;&lt;br&gt;
+                &lt;input type=&quot;text&quot; placeholder=&quot;Email address&quot;/&gt;&lt;br&gt;
+                &lt;/form&gt;
+                &lt;/ng-content&gt;
+                &lt;/div&gt;
+                &lt;/section&gt;
+            </code>
+            <br />
+            <br />
+            <h5>Angular component:</h5>
+            <pre>
+                <code class="language-javascript">import {Component, Input, OnInit} from '@angular/core';
+
+@Component({
+                    selector: 'app-card',
+                    templateUrl: './card.component.html',
+                    styleUrls: ['./card.component.scss']
+})
+export class CardComponent implements OnInit {
+                    @Input() public title = '';
+
+                    constructor() { }
+
+  ngOnInit() {
+  }
+
+}
+                </code>
+            </pre>
+            <h5>Angular template:</h5>
+            <pre>
+                <code class="language-html">&lt;section class=&quot;card&quot;&gt;
+  &lt;h6 *ngIf=&quot;title&quot;&gt;{{ title }}&lt;/h6&gt;
+  &lt;div&gt;
+    &lt;ng-content&gt;&lt;/ng-content&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+                </code>
+            </pre>
+        </div>
+    </section>
+</div>
