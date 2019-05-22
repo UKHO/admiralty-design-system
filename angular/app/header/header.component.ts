@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -8,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
   constructor() { }
+
+  @Input() src: string = '/assets/svg/admiralty-logo-full.svg';
+  @Input() alt: string = 'Admiralty Marine Data Solutions | UK Hydrographic Office';
 
   ngOnInit() {
   }

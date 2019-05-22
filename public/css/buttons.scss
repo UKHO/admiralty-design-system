@@ -46,6 +46,17 @@ button, input[type='button'] {
     border: 2px solid $colour-button-deselected;
   }
 
+  &.icon {
+    min-width: 240px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  p {
+    color: $colour-button-text;
+    padding-top: 2px;
+  }
+
   i {
     display: inline-block;
     font-size: 24px;
@@ -87,20 +98,21 @@ button.secondary, input[type='button'].secondary {
     border: 2px solid $colour-button-secondary-deselected;
   }
 
+  &.icon {
+    min-width: 240px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  p {
+    color: $colour-button-secondary-text;
+    padding-top: 2px;
+  }
+
   i {
     display: inline-block;
     font-size: 24px;
     color: $colour-button-secondary-icon;
     padding-left: 15px;
   }
-}
-
-button.icon, input[type='button'].icon {
-  min-width: 240px;
-  display: flex;
-  justify-content: space-between;
-}
-
-button p {
-  padding-top: 2px;
 }

@@ -1,20 +1,20 @@
 @import 'colours';
 
 .tab-set > input,
-.tab-set section > div {
+.tab-set > section > div {
   display: none;
 }
 
-.tab1selector:checked ~ section .tab1,
-.tab2selector:checked ~ section .tab2,
-.tab3selector:checked ~ section .tab3,
-.tab4selector:checked ~ section .tab4,
-.tab5selector:checked ~ section .tab5,
-.tab6selector:checked ~ section .tab6,
-.tab7selector:checked ~ section .tab7,
-.tab8selector:checked ~ section .tab8,
-.tab9selector:checked ~ section .tab9,
-.tab10selector:checked ~ section .tab10
+.tab1selector:checked ~ section > .tab1,
+.tab2selector:checked ~ section > .tab2,
+.tab3selector:checked ~ section > .tab3,
+.tab4selector:checked ~ section > .tab4,
+.tab5selector:checked ~ section > .tab5,
+.tab6selector:checked ~ section > .tab6,
+.tab7selector:checked ~ section > .tab7,
+.tab8selector:checked ~ section > .tab8,
+.tab9selector:checked ~ section > .tab9,
+.tab10selector:checked ~ section > .tab10
 {
   display: block;
 }
@@ -39,7 +39,7 @@
         display: none;
       }
 
-      label {
+      > label {
         float: left;
         padding: 15px 25px;
         border-bottom: 5px solid transparent;
@@ -48,7 +48,7 @@
           border-bottom: 5px solid $colour-admiralty-blue;
         }
       }
-      &:not(:last-child) label {
+      &:not(:last-child) > label {
         border-right-width: 0;
       }
     }
@@ -61,25 +61,25 @@
     box-shadow: 0 1px 3px 0 rgba(0,0,0,0.2);
     margin: 20px 0 30px 0;
 
-    div {
+    > div {
       padding: 20px;
       width: 100%;
     }
   }
 }
 
-.tab1selector:checked ~ nav .tab1,
-.tab2selector:checked ~ nav .tab2,
-.tab3selector:checked ~ nav .tab3,
-.tab4selector:checked ~ nav .tab4,
-.tab5selector:checked ~ nav .tab5,
-.tab6selector:checked ~ nav .tab6,
-.tab7selector:checked ~ nav .tab7,
-.tab8selector:checked ~ nav .tab8,
-.tab9selector:checked ~ nav .tab9,
-.tab10selector:checked ~ nav .tab10
+.tab1selector:checked ~ nav > .tab1,
+.tab2selector:checked ~ nav > .tab2,
+.tab3selector:checked ~ nav > .tab3,
+.tab4selector:checked ~ nav > .tab4,
+.tab5selector:checked ~ nav > .tab5,
+.tab6selector:checked ~ nav > .tab6,
+.tab7selector:checked ~ nav > .tab7,
+.tab8selector:checked ~ nav > .tab8,
+.tab9selector:checked ~ nav > .tab9,
+.tab10selector:checked ~ nav > .tab10
 {
-  label {
+  > label {
     border-bottom: 5px solid $colour-admiralty-blue;
   }
 }
