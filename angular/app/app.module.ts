@@ -15,7 +15,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { TextareaComponent } from './textarea/textarea.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { SelectComponent } from './select/select.component';
-import { MatSelectModule } from '@angular/material';
+import { MatSelectModule, MatRadioModule } from '@angular/material';
+import { RadioComponent } from './radio/radio.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { MatSelectModule } from '@angular/material';
     NavigationComponent,
     TextinputComponent,
     TextareaComponent,
-    SelectComponent
+    SelectComponent,
+    RadioComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +39,8 @@ import { MatSelectModule } from '@angular/material';
     ReactiveFormsModule,
     FormsModule,
     MatFormFieldModule,
-    MatSelectModule
+    MatSelectModule,
+    MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]

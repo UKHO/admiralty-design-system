@@ -12,7 +12,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { TextareaComponent } from './textarea/textarea.component';
 import { SelectComponent } from './select/select.component';
-import { MatSelectModule } from '@angular/material';
+import { MatSelectModule, MatRadioModule } from '@angular/material';
+import { RadioComponent } from './radio/radio.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -23,7 +24,8 @@ describe('AppComponent', () => {
         BrowserAnimationsModule,
         ReactiveFormsModule,
         FormsModule,
-        MatSelectModule
+        MatSelectModule,
+        MatRadioModule
       ],
       declarations: [
         AppComponent,
@@ -34,7 +36,8 @@ describe('AppComponent', () => {
         NavigationComponent,
         TextinputComponent,
         TextareaComponent,
-        SelectComponent
+        SelectComponent,
+        RadioComponent
       ],
     }).compileComponents();
   }));
