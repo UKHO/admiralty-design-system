@@ -1,6 +1,7 @@
 <div class="radio-wrap">
   <mat-radio-group
     [class.is-column]="isColumn"
+    (change)="handleChange($event)"
   >
     <mat-radio-button value="1">Option 1</mat-radio-button>
     <mat-radio-button value="2">Option 2</mat-radio-button>
