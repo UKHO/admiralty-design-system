@@ -1,0 +1,14 @@
+.checkbox-wrap {
+    //colours
+    .mat-checkbox-checked .mat-checkbox-background {
+        background-color: $colour-checkbox;
+    }
+
+    .mat-checkbox-frame {
+        border-color: $colour-checkbox;
+    }
+
+    .mat-checkbox:not(.mat-checkbox-disabled).mat-accent .mat-checkbox-ripple .mat-ripple-element {
+        background-color: $colour-checkbox;
+    }
+}

@@ -15,7 +15,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { TextareaComponent } from './textarea/textarea.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { SelectComponent } from './select/select.component';
-import { MatSelectModule, MatRadioModule } from '@angular/material';
+import { MatSelectModule, MatRadioModule, MatCheckboxModule } from '@angular/material';
 import { RadioComponent } from './radio/radio.component';
 import { CheckboxComponent } from './checkbox/checkbox.component';
 
@@ -42,7 +42,8 @@ import { CheckboxComponent } from './checkbox/checkbox.component';
     FormsModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatRadioModule
+    MatRadioModule,
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]
