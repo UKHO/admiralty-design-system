@@ -130,6 +130,11 @@
     
     .mat-form-field {
         min-width: 420px;
+        @include not-desktop {
+            min-width: unset;
+            max-width: 420px;
+            width: 100%;
+        }
     }
     
     // error message
