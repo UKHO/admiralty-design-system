@@ -12,7 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { TextareaComponent } from './textarea/textarea.component';
 import { SelectComponent } from './select/select.component';
-import { MatSelectModule, MatRadioModule } from '@angular/material';
+import { MatSelectModule, MatRadioModule, MatCheckboxModule } from '@angular/material';
 import { RadioComponent } from './radio/radio.component';
 import { CheckboxComponent } from './checkbox/checkbox.component';
 
@@ -26,7 +26,8 @@ describe('AppComponent', () => {
         ReactiveFormsModule,
         FormsModule,
         MatSelectModule,
-        MatRadioModule
+        MatRadioModule,
+        MatCheckboxModule
       ],
       declarations: [
         AppComponent,
