@@ -18,6 +18,7 @@ import { SelectComponent } from './select/select.component';
 import { MatSelectModule, MatRadioModule, MatCheckboxModule } from '@angular/material';
 import { RadioComponent } from './radio/radio.component';
 import { CheckboxComponent } from './checkbox/checkbox.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { CheckboxComponent } from './checkbox/checkbox.component';
     TextareaComponent,
     SelectComponent,
     RadioComponent,
-    CheckboxComponent
+    CheckboxComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
