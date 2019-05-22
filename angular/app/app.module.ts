@@ -17,6 +17,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { SelectComponent } from './select/select.component';
 import { MatSelectModule, MatRadioModule } from '@angular/material';
 import { RadioComponent } from './radio/radio.component';
+import { CheckboxComponent } from './checkbox/checkbox.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { RadioComponent } from './radio/radio.component';
     TextinputComponent,
     TextareaComponent,
     SelectComponent,
-    RadioComponent
+    RadioComponent,
+    CheckboxComponent
   ],
   imports: [
     BrowserModule,
