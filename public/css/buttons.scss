@@ -38,11 +38,14 @@ button, input[type='button'] {
 
   &:active {
     background-color: $colour-button-selected;
-    color: $colour-button-text-selected;
     border: 2px solid $colour-button-border-selected;
 
     i {
       color: $colour-button-icon-selected;
+    }
+
+    p {
+      color: $colour-button-text-selected;
     }
   }
 
@@ -59,7 +62,7 @@ button, input[type='button'] {
       min-width: unset;
       max-width: 240px;
       width: 100%;
-  }
+    }
   }
 
   p {
@@ -101,10 +104,13 @@ button.secondary, input[type='button'].secondary {
   &:active {
     background-color: $colour-button-secondary-selected;
     border: 2px solid $colour-button-secondary-selected;
-    color: $colour-button-secondary-text-selected;
-
+    
     i {
       color: $colour-button-secondary-icon-selected;
+    }
+    
+    p {
+      color: $colour-button-secondary-text-selected;
     }
   }
 
