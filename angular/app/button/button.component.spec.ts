@@ -57,7 +57,7 @@ describe('ButtonComponent', () => {
 
   it('should trigger the passed function on click action', () => {
     const testSpy = jasmine.createSpy("button");
-    component.onClick = testSpy;
+    component.click = testSpy;
     fixture.detectChanges();
     compiled = fixture.nativeElement;
     const button = compiled.querySelector('button');

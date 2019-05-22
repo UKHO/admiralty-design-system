@@ -15,9 +15,9 @@ export class ButtonComponent {
 
   @Input() icon: string;
 
-  @Input() onClick: () => any;
+  @Input() click: () => any;
 
   handleClick() {
-    this.onClick()
+    this.click()
   }
 }

@@ -164,4 +164,34 @@
         transform: translateY(-1em) scale(.75);
         width: 133.33333%;
     }
+
+    // placeholder text
+
+    ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        overflow: visible;
+     }
+     ::-moz-placeholder { /* Firefox 19+ */
+       overflow: visible;
+     }
+     :-ms-input-placeholder { /* IE 10+ */
+         overflow: visible;
+     }
+     :-moz-placeholder { /* Firefox 18- */
+        overflow: visible;
+     }
+ 
+     .mat-form-field.mat-focused {
+         ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+             overflow: visible;
+         }
+         ::-moz-placeholder { /* Firefox 19+ */
+             overflow: visible;
+         }
+         :-ms-input-placeholder { /* IE 10+ */
+             overflow: visible;
+         }
+         :-moz-placeholder { /* Firefox 18- */
+             overflow: visible;
+         }
+     }
 }

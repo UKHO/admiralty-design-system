@@ -15,6 +15,7 @@ import { SelectComponent } from './select/select.component';
 import { MatSelectModule, MatRadioModule, MatCheckboxModule } from '@angular/material';
 import { RadioComponent } from './radio/radio.component';
 import { CheckboxComponent } from './checkbox/checkbox.component';
+import { SearchComponent } from './search/search.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -40,7 +41,8 @@ describe('AppComponent', () => {
         TextareaComponent,
         SelectComponent,
         RadioComponent,
-        CheckboxComponent
+        CheckboxComponent,
+        SearchComponent
       ],
     }).compileComponents();
   }));
