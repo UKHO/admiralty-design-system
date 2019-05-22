@@ -1,6 +1,6 @@
 import { Component, Input, AfterViewInit } from '@angular/core';
 import { Navigation } from './mocknavigation';
-import { enhanceMenu }from './nav-enhance';
+import { enhanceMainMenu } from '../nav-enhance';
 
 @Component({
   selector: 'app-navigation',
@@ -14,6 +14,6 @@ export class NavigationComponent implements AfterViewInit {
   @Input() navigation: Navigation;
 
   ngAfterViewInit() {
-    enhanceMenu();
+    enhanceMainMenu();
   }
 }

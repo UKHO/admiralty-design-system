@@ -1,5 +1,10 @@
-// the navigation will function entirely with CSS only (JavaScript disabled)
-// this code progressively enhances the mobile experience, removing the need for #url-anchors
+/* prevent initial CSS hover on page load */
+// document.getElementById('main-menu').querySelector('ul').setAttribute("style","pointer-events: none;");
+// window.addEventListener('load', function() {
+//     setTimeout(function() {
+//         document.getElementById('main-menu').querySelector('ul').setAttribute("style","pointer-events: auto;");
+//     }, 100);
+// });
 
 function setupMenu(menuLinks, parentLevels) {
     for (var idx = 0; idx < menuLinks.length; idx++) {
@@ -78,7 +83,6 @@ for (var idx2 = 0; idx2 < examples.length; idx2++) {
                 minTabs = Math.min(minTabs, tabs[0].length - 4);
             }
         }
-        console.log({ minTabs });
         if (minTabs > 0 && minTabs < 9999) {
             escapedHtml = escapedHtml.replace( new RegExp('^\\s{' + minTabs + '}', 'gm'), '');
         }
