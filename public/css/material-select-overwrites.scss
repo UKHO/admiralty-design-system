@@ -54,6 +54,11 @@
 
     .mat-form-field {
         min-width: 300px;
+        @include not-desktop {
+            min-width: 167px;
+            max-width: 300px;
+            width: 100%;
+        }
     }
 
     .mat-select-value {
@@ -78,7 +83,7 @@ div.mat-select-panel:not([class*=mat-elevation-z]) {
 }
 
 .mat-select-panel-wrap {
-    min-width: 268px !important;
+    // min-width: 268px !important;
     transform: translateX(-3px);
 }
 
@@ -87,6 +92,15 @@ div.cdk-overlay-pane {
 
     @include not-desktop {
         transform: translateX(-14px) translateY(26px) !important
+    }
+}
+
+div.cdk-overlay-pane {
+    min-width: 268px !important;
+    @include not-desktop {
+        min-width: 135px !important;
+        max-width: 268px;
+        width: calc(100% - 92px);
     }
 }
 
