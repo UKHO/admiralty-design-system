@@ -1,0 +1,27 @@
+<form>
+  <div class="mat-input-text-wrapper">
+    <mat-form-field
+      class="material-text-input"
+      appearance="outline"
+      [class.disabled] = "isDisabled === true"
+      [class.valid] = "isValid === true"
+    >
+      <mat-label>Input Label </mat-label>
+      <input
+        [disabled]="isDisabled"
+        matInput
+        placeholder="Email"
+        [(ngModel)]="inputText.value"
+        [formControl]="validation"
+      >
+      <mat-error class="error-message" *ngIf="validation.invalid">{{invalidMessage}}</mat-error>
+      <span 
+        *ngIf="isValid || validation.invalid"
+        class="fa icon"
+        [class.fa-check] = "isValid && !validation.invalid"
+        [class.fa-exclamation] = "validation.invalid"
+      >
+      </span>
+    </mat-form-field>
+  </div>
+</form>

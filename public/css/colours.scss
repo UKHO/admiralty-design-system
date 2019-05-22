@@ -77,3 +77,30 @@ $colour-table-row-alt-bg: #eef3f4;
 $colour-tab-active: #ffffff;
 $colour-tab-inactive: #eeeeee;
 $colour-tab-hover: #dddddd;
+
+/* form text input colours */
+$colour-textinput-border: $colour-dark-blue;
+$colour-textinput-border-active: $colour-utility-info;
+$colour-textinput-border-disabled: #adadad;
+$colour-textinput-border-valid: $colour-utility-success;
+$colour-textinput-border-invalid: $colour-utility-error;
+$colour-textinput-text: $colour-dark-blue;
+$colour-textinput-text: $colour-admiralty-blue;
+$colour-textinput-text-active: $colour-utility-info;
+$colour-textinput-text-disabled: #adadad;
+$colour-textinput-text-valid: $colour-utility-success;
+$colour-textinput-text-invalid: $colour-utility-error;
+$colour-textinput-icon-valid: $colour-utility-success;
+$colour-textinput-icon-invalid: $colour-utility-error;
+$colour-textinput-bg: #f6f6f6;
+$colour-errormessage-text: $colour-utility-error;
+
+/* form textarea colours */
+$colour-textarea-border: $colour-dark-blue;
+$colour-textarea-border-focused: $colour-utility-info;
+
+/* radio button */
+$colour-radio: $colour-dark-blue;
+
+/* checkbox */
+$colour-checkbox: $colour-dark-blue;

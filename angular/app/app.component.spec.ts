@@ -6,12 +6,28 @@ import { CardComponent } from './card/card.component';
 import { ButtonComponent } from './button/button.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { HeaderComponent } from './header/header.component';
+import { TextinputComponent } from './textinput/textinput.component';
+import { MatInputModule } from '@angular/material/input';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { TextareaComponent } from './textarea/textarea.component';
+import { SelectComponent } from './select/select.component';
+import { MatSelectModule, MatRadioModule, MatCheckboxModule } from '@angular/material';
+import { RadioComponent } from './radio/radio.component';
+import { CheckboxComponent } from './checkbox/checkbox.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        MatInputModule,
+        BrowserAnimationsModule,
+        ReactiveFormsModule,
+        FormsModule,
+        MatSelectModule,
+        MatRadioModule,
+        MatCheckboxModule
       ],
       declarations: [
         AppComponent,
@@ -20,6 +36,11 @@ describe('AppComponent', () => {
         ButtonComponent,
         HeaderComponent,
         NavigationComponent,
+        TextinputComponent,
+        TextareaComponent,
+        SelectComponent,
+        RadioComponent,
+        CheckboxComponent
       ],
     }).compileComponents();
   }));

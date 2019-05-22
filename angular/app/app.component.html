@@ -1,6 +1,6 @@
 <app-header></app-header>
 <app-navigation [navigation]="navigation"></app-navigation>
-<div>
+<div class="example-wrapper">
     <h1>
         Welcome to {{ title }}!
     </h1>
@@ -15,4 +15,26 @@
         [onClick]="logClick"
     >
     </app-button>
+    <br />
+    <app-textinput
+        [isValid]="true"
+        [inputText]="inputText"
+        [validation]="inputFormControl"
+        [invalidMessage]="'Email is invalid'"
+    >
+    </app-textinput>
+    <p>{{inputText.value}}</p>
+    <br />
+    <app-textarea [textareaText]="textareaText"></app-textarea>
+    <p>{{textareaText.value}}</p>
+    <app-select
+        [options]="selectOptions"
+        (changed)="logSelectChanged($event.value)"
+    ></app-select>
+    <br />
+    <app-radio
+        [isColumn]="true"
+    ></app-radio>
+    <br />
+    <app-checkbox></app-checkbox>
 </div>

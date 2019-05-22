@@ -25,6 +25,11 @@ button, input[type='button'] {
   font-size: 21px;
   white-space: nowrap;
   min-width: 200px;
+  @include not-desktop {
+    min-width: unset;
+    max-width: 200px;
+    width: 100%;
+  }
 
   &:hover {
     background-color: $colour-button-hover;
@@ -50,6 +55,11 @@ button, input[type='button'] {
     min-width: 240px;
     display: flex;
     justify-content: space-between;
+    @include not-desktop {
+      min-width: unset;
+      max-width: 240px;
+      width: 100%;
+  }
   }
 
   p {
@@ -77,6 +87,11 @@ button.secondary, input[type='button'].secondary {
   font-size: 21px;
   white-space: nowrap;
   min-width: 200px;
+  @include not-desktop {
+    min-width: unset;
+    max-width: 200px;
+    width: 100%;
+  }
 
   &:hover {
     background-color: $colour-button-secondary-hover;
@@ -102,6 +117,11 @@ button.secondary, input[type='button'].secondary {
     min-width: 240px;
     display: flex;
     justify-content: space-between;
+    @include not-desktop {
+      min-width: unset;
+      max-width: 240px;
+      width: 100%;
+    }
   }
 
   p {

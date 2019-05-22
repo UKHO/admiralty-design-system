@@ -1,0 +1,114 @@
+@import 'colours';
+@import 'responsive';
+@import 'typography';
+
+.select-wrap {
+    // border colour
+    .mat-form-field div.mat-form-field-outline div {
+        border-color: $colour-textinput-border;
+        border: 2px solid;
+        border-radius: unset;
+    }
+
+    // start border
+    div.mat-form-field-outline div.mat-form-field-outline-start {
+        border-right-style: none;
+    }
+
+    // middle border
+    div.mat-form-field-outline div.mat-form-field-outline-gap {
+        border: none;
+    }
+
+    // end border
+    div.mat-form-field-outline div.mat-form-field-outline-end {
+        border-left-style: none;
+    }
+
+    // background
+    div.mat-form-field-outline {
+        background: $colour-textinput-bg;
+    }
+    
+    .mat-focused div.mat-form-field-outline,
+    .disabled div.mat-form-field-outline {
+        background: none;
+    }
+
+    // layout
+    div.mat-form-field-infix {
+        display: flex;
+    }
+
+    div.mat-form-field-flex {
+        height: 50px;
+    }
+
+    .mat-form-field-appearance-outline div.mat-form-field-infix {
+        padding: .3em;
+    }
+
+    .mat-form-field-appearance-outline label.mat-form-field-label {
+        top: 1.22em;
+    }
+
+    .mat-form-field {
+        min-width: 300px;
+        @include not-desktop {
+            min-width: 167px;
+            max-width: 300px;
+            width: 100%;
+        }
+    }
+
+    .mat-select-value {
+        transform: translateY(-4px);
+    }
+    
+    // icon
+    .mat-select-arrow-wrapper {
+        visibility: hidden;
+    }
+}
+
+// select box
+div.mat-select-panel:not([class*=mat-elevation-z]) {
+    box-shadow: none;
+    border-color: $colour-textinput-border;
+    border: 2px solid;
+    border-top: none;
+    border-radius: unset;
+    transition: none;
+    padding-top: 20px;
+}
+
+.mat-select-panel-wrap {
+    // min-width: 268px !important;
+    transform: translateX(-3px);
+}
+
+div.cdk-overlay-pane {
+    transform: translateX(-16px) translateY(26px) !important;
+
+    @include not-desktop {
+        transform: translateX(-14px) translateY(26px) !important
+    }
+}
+
+div.cdk-overlay-pane {
+    min-width: 268px !important;
+    @include not-desktop {
+        min-width: 135px !important;
+        max-width: 268px;
+        width: calc(100% - 92px);
+    }
+}
+
+// select option
+div.mat-select-panel .mat-option {
+    height: 2em;
+}
+
+.mat-option:hover .mat-option-text {
+    font-weight: 400;
+}
