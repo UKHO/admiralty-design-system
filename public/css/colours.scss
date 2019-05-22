@@ -90,7 +90,8 @@ $colour-textinput-text-active: $colour-utility-info;
 $colour-textinput-text-disabled: #adadad;
 $colour-textinput-text-valid: $colour-utility-success;
 $colour-textinput-text-invalid: $colour-utility-error;
-$colour-textinput-icon-valid: $colour-text;
+$colour-textinput-icon-valid: $colour-utility-success;
+$colour-textinput-icon-invalid: $colour-utility-error;
 $colour-textinput-bg: #f6f6f6;
 $colour-errormessage-text: $colour-utility-error;
 

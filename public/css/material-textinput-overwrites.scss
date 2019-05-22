@@ -18,7 +18,7 @@
         border-color: $colour-textinput-border-disabled;
     }
     
-    .mat-form-field.valid div.mat-form-field-outline div {
+    .ng-touched.valid div.mat-form-field-outline div {
         border-color: $colour-textinput-border-valid;
     }
     
@@ -71,7 +71,7 @@
         color: $colour-textinput-text-disabled;
     }
     
-    .valid input.mat-input-element {
+    .ng-touched.valid input.mat-input-element {
         color: $colour-textinput-text-valid;
     }
     
@@ -92,7 +92,7 @@
         color: $colour-textinput-text-disabled;
     }
     
-    .valid span.mat-form-field-label-wrapper .ng-star-inserted {
+    .ng-touched.valid span.mat-form-field-label-wrapper .ng-star-inserted {
         color: $colour-textinput-text-valid;
     }
     
@@ -108,6 +108,10 @@
     .valid .icon {
         color: $colour-textinput-icon-valid;
         transform: translateY(-0.1em);
+    }
+
+    .ng-invalid .icon {
+        color: $colour-textinput-icon-invalid;
     }
     
     .ng-invalid.ng-untouched .icon {
