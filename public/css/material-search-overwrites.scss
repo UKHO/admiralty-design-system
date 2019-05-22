@@ -58,6 +58,7 @@
     
     .mat-form-field-appearance-outline div.mat-form-field-infix {
         padding: .2em;
+        top: -5px;
     }
     
     .mat-form-field-appearance-outline label.mat-form-field-label {
@@ -71,5 +72,15 @@
             max-width: 420px;
             width: 100%;
         }
+    }
+
+    button, input[type='button'] {
+        height: 50px;
+    }
+
+    .mat-form-field-appearance-outline .mat-form-field-outline {
+        height: 50px;
+        top: 0;
+        margin-right: 1.33333em;
     }
 }
