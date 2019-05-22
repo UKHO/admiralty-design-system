@@ -33,7 +33,7 @@ button, input[type='button'] {
 
   &:active {
     background-color: $colour-button-selected;
-    color: $colour-button-text-selected;
+    color: $colour-button-standard;
     border: 2px solid $colour-button-border-selected;
 
     i {
