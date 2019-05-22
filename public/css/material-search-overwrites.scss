@@ -80,7 +80,11 @@
 
     .mat-form-field-appearance-outline .mat-form-field-outline {
         height: 50px;
-        top: 0;
+        top: 0px;
         margin-right: 1.33333em;
+    }
+
+    button p, input[type='button'] p {
+        padding-top: 0;
     }
 }
