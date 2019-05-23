@@ -1,0 +1,40 @@
+@import 'colours';
+@import 'responsive';
+@import 'typography';
+
+.text-area-component {
+    width: 425px;
+    min-height: 170px;
+    border: 2px solid $colour-textinput-border;
+    color: $colour-textinput-text;
+    padding: 12px 18px;
+    outline: none;
+    background-color: $colour-textinput-bg;
+    overflow: visible;
+    resize: vertical;
+    overflow: auto;
+
+    &:focus {
+        border-color: $colour-textinput-text-active;
+        background-color: unset;
+    }
+
+     // placeholder text
+
+     ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        color: $colour-textinput-text;
+        overflow: visible;
+     }
+     ::-moz-placeholder { /* Firefox 19+ */
+       color: $colour-textinput-text;
+       overflow: visible;
+     }
+     :-ms-input-placeholder { /* IE 10+ */
+         color: $colour-textinput-text;
+         overflow: visible;
+     }
+     :-moz-placeholder { /* Firefox 18- */
+        color: $colour-textinput-text;
+        overflow: visible;
+     }
+}
