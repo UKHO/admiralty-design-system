@@ -12,6 +12,11 @@
     background-color: $colour-textinput-bg;
     overflow: visible;
 
+    @include not-desktop {
+      max-width: 420px;
+      width: 100%;
+    }
+
     &:focus {
         border-color: $colour-textinput-text-active;
         color: $colour-textinput-text-active;
