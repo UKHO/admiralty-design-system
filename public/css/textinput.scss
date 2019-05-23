@@ -1,0 +1,52 @@
+@import 'colours';
+@import 'responsive';
+@import 'typography';
+
+.form-text-input {
+    width: 420px;
+    height: 50px;
+    border: 2px solid $colour-textinput-border;
+    color: $colour-textinput-text;
+    padding-left: 18px;
+    outline: none;
+    background-color: $colour-textinput-bg;
+    overflow: visible;
+
+    &:focus {
+        border-color: $colour-textinput-text-active;
+        color: $colour-textinput-text-active;
+        background-color: unset;
+
+        ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+            color: $colour-textinput-text-active;
+         }
+         ::-moz-placeholder { /* Firefox 19+ */
+           color: $colour-textinput-text-active;
+         }
+         :-ms-input-placeholder { /* IE 10+ */
+             color: $colour-textinput-text-active;
+         }
+         :-moz-placeholder { /* Firefox 18- */
+            color: $colour-textinput-text-active;
+         }
+    }
+
+     // placeholder text
+
+     ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        color: $colour-textinput-text;
+        overflow: visible;
+     }
+     ::-moz-placeholder { /* Firefox 19+ */
+       color: $colour-textinput-text;
+       overflow: visible;
+     }
+     :-ms-input-placeholder { /* IE 10+ */
+         color: $colour-textinput-text;
+         overflow: visible;
+     }
+     :-moz-placeholder { /* Firefox 18- */
+        color: $colour-textinput-text;
+        overflow: visible;
+     }
+}

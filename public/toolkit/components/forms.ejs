@@ -20,14 +20,90 @@
     <%- partial('../../_partials/tabs', { id: 'text-input' }) %>
     <section>
         <div class="tab1 component-example">
-            <p>Put the form html here</p>
+            <p class="form-label">Enter name</p>
+            <input type="text" class="form-text-input" placeholder="First name" />
         </div>
         <div class="tab2 component-html">
             HTML goes here.
         </div>
         <div class="tab3 component-angular">
-            <h5>Angular example usage:</h5>
-            <p>Angular goes here</p>
+                <h5>Angular example usage:</h5>
+                <pre>
+                    <code class="language-html">
+&ltapp-textinput
+    [isValid]="true"
+    [inputText]="inputText"
+    [validation]="inputFormControl"
+    [invalidMessage]="'Email is invalid'"
+>
+&lt/app-textinput>
+                    </code>
+                </pre>
+                <br />
+                <br />
+                <h5>Angular component:</h5>
+                <pre>
+                    <code class="language-javascript">
+import { Component, Input } from '@angular/core';
+import { FormControl } from '@angular/forms';
+
+@Component({
+    selector: 'app-textinput',
+    templateUrl: './textinput.component.html',
+    styleUrls: ['./textinput.component.scss']
+})
+export class TextinputComponent {
+
+    constructor() { }
+
+    @Input() isDisabled: boolean;
+
+    @Input() isValid: boolean;
+
+    @Input() inputText: { value: string };
+
+    @Input() validation: FormControl;
+
+    @Input() invalidMessage: string;
+}
+                            
+                    </code>
+                </pre>
+                <br />
+                <br />
+                <h5>Angular template:</h5>
+                <pre>
+                    <code class="language-html">
+&ltform>
+    &ltdiv class="mat-input-text-wrapper">
+        &ltmat-form-field
+        class="material-text-input"
+        appearance="outline"
+        [class.disabled] = "isDisabled === true"
+        [class.valid] = "isValid === true"
+        >
+        &ltmat-label>Input Label &lt/mat-label>
+        &ltinput
+            [disabled]="isDisabled"
+            matInput
+            placeholder="Email"
+            [(ngModel)]="inputText.value"
+            [formControl]="validation"
+        >
+        &ltmat-error class="error-message" *ngIf="validation.invalid">{{invalidMessage}}&lt/mat-error>
+        &ltspan 
+            *ngIf="isValid || validation.invalid"
+            class="fa icon"
+            [class.fa-check] = "isValid && !validation.invalid"
+            [class.fa-exclamation] = "validation.invalid"
+        >
+        &lt/span>
+        &lt/mat-form-field>
+    &lt/div>
+&lt/form>
+                                  
+                    </code>
+                </pre>
         </div>
     </section>
 </div>
