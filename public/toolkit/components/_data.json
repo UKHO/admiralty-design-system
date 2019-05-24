@@ -40,5 +40,11 @@
     "title": "Buttons",
     "url": "toolkit/components/buttons",
     "description": "This is a description of what components are and potential areas of use in digital products and services."
+  },
+  "forms": {
+    "layout": "../../_layout_sidemenu",
+    "title": "Forms",
+    "url": "toolkit/components/forms",
+    "description": "This is a description of what components are and potential areas of use in digital products and services."
   }
 }

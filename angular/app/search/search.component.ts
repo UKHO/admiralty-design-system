@@ -12,5 +12,4 @@ export class SearchComponent {
   handleSearch() {
     console.log('search button has been clicked')
   }
-  
 }

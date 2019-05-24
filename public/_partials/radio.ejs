@@ -1,0 +1,90 @@
+<section>
+    <div class="tab1 component-example">
+        <div class="radio-buttons">
+            <p class="form-label">Title</p>
+            <label class="container">
+                <p class="radio-label">One</p>
+                <input type="radio" name="radio-options">
+                <span class="checkmark">
+                    <span class="check-dot"></span>
+                </span>
+            </label>
+            
+            <label class="container">
+                <p class="radio-label">Two</p>
+                <input type="radio" name="radio-options">
+                <span class="checkmark">
+                    <span class="check-dot"></span>
+                </span>
+            </label>
+            
+            <label class="container">
+                <p class="radio-label">Three</p>
+                <input type="radio" name="radio-options">
+                <span class="checkmark">
+                    <span class="check-dot"></span>
+                </span>
+            </label>
+            
+            <label class="container">
+                <p class="radio-label">Four</p>
+                <input type="radio" name="radio-options">
+                <span class="checkmark">
+                    <span class="check-dot"></span>
+                </span>
+            </label>
+        </div>
+    </div>
+    <div class="tab2 component-html">
+        HTML goes here.
+    </div>
+    <div class="tab3 component-angular">
+            <h5>Angular example usage:</h5>
+            <code class="language-html">
+&ltapp-radio
+    [isColumn]="true"
+>&lt/app-radio>
+            </code>
+            <br />
+            <br />
+            <h5>Angular component:</h5>
+            <pre>
+                <code class="language-javascript">
+import { Component, Input } from '@angular/core';
+import { MatRadioChange } from '@angular/material';
+
+@Component({
+    selector: 'app-radio',
+    templateUrl: './radio.component.html',
+    styleUrls: ['./radio.component.scss']
+})
+export class RadioComponent {
+
+    constructor() { }
+
+    @Input() isColumn: boolean;
+
+    handleChange($event: MatRadioChange) {
+    console.log($event)
+    }
+}
+                </code>
+            </pre>
+            <br />
+            <br />
+            <h5>Angular template:</h5>
+            <pre>
+                <code class="language-html">
+&ltdiv class="radio-wrap">
+    &ltmat-radio-group
+        [class.is-column]="isColumn"
+        (change)="handleChange($event)"
+    >
+        &ltmat-radio-button value="1">Option 1&lt/mat-radio-button>
+        &ltmat-radio-button value="2">Option 2&lt/mat-radio-button>
+    &lt/mat-radio-group>
+&lt/div>
+                </code>
+            </pre>
+    </div>
+</section>

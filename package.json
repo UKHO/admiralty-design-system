@@ -10,7 +10,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook --config-dir ./angular/.storybook/ -p 6006",
     "build-storybook": "build-storybook"
   },
   "private": true,

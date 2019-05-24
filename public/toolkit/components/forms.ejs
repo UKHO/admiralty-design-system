@@ -1,0 +1,66 @@
+<h1>Forms</h1>
+
+<p class="intro">
+    Use form elements to obtain user input.
+    They should include text that describes the action they perform.
+</p>
+
+<ol>
+    <li><a href="#anchor1">Text Input</a></li>
+    <li><a href="#anchor2">Text Area</a></li>
+    <li><a href="#anchor3">Select Menu</a></li>
+    <li><a href="#anchor4">Radio Buttons</a></li>
+    <li><a href="#anchor5">Checkbox</a></li>
+</ol>
+
+<p></p>
+
+<h3 id="anchor1">1. Text Input</h3>
+
+<p>Text input</p>
+
+<h6>Standard input</h6>
+<div class="tab-set">
+    <%- partial('../../_partials/tabs', { id: 'text-input' }) %>
+    <%- partial('../../_partials/inputtext', { id: 'text-input-component' }) %>
+</div>
+
+<h3 id="anchor2">2. Text Area</h3>
+
+<p>Text area</p>
+
+<h6>Standard textarea</h6>
+<div class="tab-set">
+    <%- partial('../../_partials/tabs', { id: 'textarea-input' }) %>
+    <%- partial('../../_partials/textarea', { id: 'text-area-component' }) %>
+</div>
+
+<h3 id="anchor3">3. Select Menu</h3>
+
+<p>Select menu</p>
+
+<h6>Standard select</h6>
+<div class="tab-set">
+    <%- partial('../../_partials/tabs', { id: 'select-input' }) %>
+    <%- partial('../../_partials/select', { id: 'select-dropdown' }) %>
+</div>
+
+<h3 id="anchor4">4. Radio Buttons</h3>
+
+<p>Radio buttons</p>
+
+<h6>Standard radio buttons</h6>
+<div class="tab-set">
+    <%- partial('../../_partials/tabs', { id: 'radio-input' }) %>
+    <%- partial('../../_partials/radio', { id: 'radio-buttons' }) %>
+</div>
+
+<h3 id="anchor5">5. Checkbox</h3>
+
+<p>Checkbox</p>
+
+<h6>Standard checkbox</h6>
+<div class="tab-set">
+    <%- partial('../../_partials/tabs', { id: 'checkbox-input' }) %>
+    <%- partial('../../_partials/checkbox', { id: 'checkbox' }) %>
+</div>
