@@ -6,6 +6,7 @@
     height: 300px;
     display: flex;
     flex-direction: column;
+    max-width: 900px;
 
     .expansion-text {
         height: calc(100% - 55px);
