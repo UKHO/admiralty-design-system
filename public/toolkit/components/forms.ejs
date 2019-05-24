@@ -48,10 +48,16 @@
 
 <p>Use radio buttons for simple questions with only two or three options.</p>
 
-<h6>Standard radio buttons</h6>
+<h6>Linear</h6>
 <div class="tab-set">
-    <%- partial('../../_partials/tabs', { id: 'radio-input' }) %>
-    <%- partial('../../_partials/radio', { id: 'radio-buttons' }) %>
+    <%- partial('../../_partials/tabs', { id: 'radio-linear-input' }) %>
+    <%- partial('../../_partials/radio-linear', { id: 'radio-linear' }) %>
+</div>
+
+<h6>Stacked</h6>
+<div class="tab-set">
+    <%- partial('../../_partials/tabs', { id: 'radio-stacked-input' }) %>
+    <%- partial('../../_partials/radio-stacked', { id: 'radio-stacked' }) %>
 </div>
 
 <h3 id="anchor5">5. Select box</h3>

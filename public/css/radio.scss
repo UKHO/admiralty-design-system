@@ -58,4 +58,12 @@
         margin: 0;
         padding-top: 3px;
     }
+
+    .stacked {
+      display: flex;
+
+      .container {
+        margin-right: 65px;
+      }
+    }
 }
