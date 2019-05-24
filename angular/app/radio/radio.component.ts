@@ -16,5 +16,3 @@ export class RadioComponent {
     console.log($event)
   }
 }
-
-

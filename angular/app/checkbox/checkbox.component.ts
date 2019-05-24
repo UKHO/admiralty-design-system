@@ -13,5 +13,4 @@ export class CheckboxComponent {
   handleChange($event: MatCheckboxChange) {
     console.log('checkbox changed', $event)
   }
-
 }

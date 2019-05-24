@@ -10,5 +10,4 @@ export class TextareaComponent {
   constructor() { }
 
   @Input() textareaText: { value: string };
-
 }
