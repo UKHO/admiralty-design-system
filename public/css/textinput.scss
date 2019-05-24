@@ -2,6 +2,46 @@
 @import 'responsive';
 @import 'typography';
 
+.text-input-wrap {
+  position: relative;
+
+  label {
+    position: relative;
+    color: $colour-textinput-text;
+    left: 0;
+    top: 9px;
+    transition: top .3s, font-size .3s;
+  }
+
+  .input-wrap {
+    position: absolute;
+    height: 100%;
+    border-top: solid 2px transparent;
+    padding: 5px;
+    left: 13px;
+    top: 0;
+    transition: border-top-color .1s;
+  }
+
+  .form-text-input:focus + .input-wrap {
+    border-top-color: white;
+
+    label {
+      color: $colour-textinput-text-active;
+      top: -18px;
+      font-size: 14px;
+    }
+  }
+
+  .has-value {
+    border-top-color: white;
+    label {
+      top: -18px;
+      font-size: 14px;
+    }
+  }
+}
+
 .form-text-input {
     width: 420px;
     height: 50px;
@@ -10,48 +50,16 @@
     padding-left: 18px;
     outline: none;
     background-color: $colour-textinput-bg;
-    overflow: visible;
+    position: relative;
+    line-height: 3;
+
+    &:focus {
+      border-color: $colour-textinput-text-active;
+      color: $colour-textinput-text-active;
+    }
 
     @include not-desktop {
       max-width: 420px;
       width: 100%;
     }
-
-    &:focus {
-        border-color: $colour-textinput-text-active;
-        color: $colour-textinput-text-active;
-        background-color: unset;
-
-        ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-            color: $colour-textinput-text-active;
-         }
-         ::-moz-placeholder { /* Firefox 19+ */
-           color: $colour-textinput-text-active;
-         }
-         :-ms-input-placeholder { /* IE 10+ */
-             color: $colour-textinput-text-active;
-         }
-         :-moz-placeholder { /* Firefox 18- */
-            color: $colour-textinput-text-active;
-         }
-    }
-
-     // placeholder text
-
-     ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-        color: $colour-textinput-text;
-        overflow: visible;
-     }
-     ::-moz-placeholder { /* Firefox 19+ */
-       color: $colour-textinput-text;
-       overflow: visible;
-     }
-     :-ms-input-placeholder { /* IE 10+ */
-         color: $colour-textinput-text;
-         overflow: visible;
-     }
-     :-moz-placeholder { /* Firefox 18- */
-        color: $colour-textinput-text;
-        overflow: visible;
-     }
 }
