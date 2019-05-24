@@ -34,11 +34,22 @@
   }
 
   .has-value {
-    border-top-color: white;
+    border-top-color: $colour-white;
     label {
       top: -18px;
       font-size: 14px;
     }
+  }
+}
+
+.is-disabled {
+  input {
+    border-color: $colour-textinput-border-disabled;
+    background: $colour-white;
+  }
+
+  label {
+    color: $colour-textinput-text-disabled;
   }
 }
 
