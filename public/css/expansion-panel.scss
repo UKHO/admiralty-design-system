@@ -1,0 +1,28 @@
+@import 'colours';
+@import 'responsive';
+@import 'typography';
+
+.expansion-panel {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+
+    // .expansion-text, .expand-button-wrap {
+    //     border: solid 1px red;
+    // }
+    
+    .expansion-text {
+        height: calc(100% - 55px);
+        overflow: hidden;
+    }
+
+    .expand-button-wrap {
+        height: 55px;
+    }
+
+    .expand-text {
+        color: $colour-admiralty-blue;
+        cursor: pointer;
+        margin: 30px 0 0 0;
+    }
+}
