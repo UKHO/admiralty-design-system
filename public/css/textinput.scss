@@ -4,6 +4,7 @@
 
 .text-input-wrap {
   position: relative;
+  display: inline-block;
 
   label {
     position: relative;
@@ -39,6 +40,13 @@
       top: -18px;
       font-size: 14px;
     }
+  }
+
+  .validated-icon {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    color: $colour-utility-success;
   }
 }
 
