@@ -19,6 +19,8 @@ import { MatSelectModule, MatRadioModule, MatCheckboxModule } from '@angular/mat
 import { RadioComponent } from './radio/radio.component';
 import { CheckboxComponent } from './checkbox/checkbox.component';
 import { SearchComponent } from './search/search.component';
+import { ExpansionComponent } from './expansion/expansion.component';
+import {ReadMoreComponent} from "./readmore/readmore.component";
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { SearchComponent } from './search/search.component';
     SelectComponent,
     RadioComponent,
     CheckboxComponent,
-    SearchComponent
+    SearchComponent,
+    ExpansionComponent,
+    ReadMoreComponent
   ],
   imports: [
     BrowserModule,
