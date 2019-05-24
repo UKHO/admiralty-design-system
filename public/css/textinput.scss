@@ -26,7 +26,7 @@
   }
 
   .form-text-input:focus + .input-wrap {
-    border-top-color: white;
+    border-top-color: $colour-white;
 
     label {
       color: $colour-textinput-text-active;
@@ -37,6 +37,9 @@
 
   .has-value {
     border-top-color: $colour-white;
+    input {
+      background-color: $colour-white;
+    }
     label {
       top: -18px;
       font-size: 14px;
@@ -79,6 +82,7 @@ div.text-input-wrap.validated {
   input {
     color: $colour-utility-success;
     border-color: $colour-utility-success;
+    background-color: $colour-white;
   }
 
   label {
@@ -94,6 +98,7 @@ div.text-input-wrap.invalid {
   input {
     color: $colour-utility-error;
     border-color: $colour-utility-error;
+    background-color: $colour-white;
   }
 
   label {
@@ -119,7 +124,8 @@ div.text-input-wrap.invalid {
     &:focus {
       border-color: $colour-textinput-text-active;
       color: $colour-textinput-text-active;
-    }
+      background-color: $colour-white;
+  }
 
     @include not-desktop {
       max-width: 420px;
