@@ -1,0 +1,59 @@
+<section>
+    <div class="tab1 component-example">
+        <div class="checkbox-wrapper">
+            <label class="container">
+                <p class="checkbox-label">
+                    Check this box if you want to receive email communications from us
+                </p>
+                <input type="checkbox">
+                <span class="checkmark">
+                    <span class="check-dot fa fa-check"></span>
+                </span>
+            </label>
+        </div>
+    </div>
+    <div class="tab2 component-html">
+        HTML goes here.
+    </div>
+    <div class="tab3 component-angular">
+            <h5>Angular example usage:</h5>
+            <code class="language-html">
+                &ltapp-checkbox>&lt/app-checkbox>
+            </code>
+            <br />
+            <br />
+            <h5>Angular component:</h5>
+            <pre>
+                <code class="language-javascript">
+import { Component } from '@angular/core';
+import { MatCheckboxChange } from '@angular/material';
+
+@Component({
+    selector: 'app-checkbox',
+    templateUrl: './checkbox.component.html',
+    styleUrls: ['./checkbox.component.scss']
+})
+export class CheckboxComponent {
+
+    constructor() { }
+
+    handleChange($event: MatCheckboxChange) {
+    console.log('checkbox changed', $event)
+    }
+}
+                </code>
+            </pre>
+            <br />
+            <br />
+            <h5>Angular template:</h5>
+            <pre>
+                <code class="language-html">
+&ltdiv class="checkbox-wrap">
+    &ltmat-checkbox
+        (change)="handleChange($event)"
+    >Check box&lt/mat-checkbox>
+&lt/div>
+                </code>
+            </pre>
+    </div>
+</section>
