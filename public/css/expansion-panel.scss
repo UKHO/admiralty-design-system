@@ -7,10 +7,6 @@
     display: flex;
     flex-direction: column;
 
-    // .expansion-text, .expand-button-wrap {
-    //     border: solid 1px red;
-    // }
-    
     .expansion-text {
         height: calc(100% - 55px);
         overflow: hidden;
@@ -25,4 +21,8 @@
         cursor: pointer;
         margin: 30px 0 0 0;
     }
+}
+
+.expansion-panel.expanded {
+    height: unset;
 }
