@@ -25,3 +25,17 @@ function toggleValueClass3(event) {
         labelEl3.classList.remove('has-value');
     }
 }
+
+var textinputEl4 = document.getElementById('name-input4');
+var labelEl4 = document.getElementById('input-label4');
+textinputEl4.addEventListener('input', toggleValueClass4);
+
+function toggleValueClass4(event) {
+    if (event.target.value !== "") {
+        if (!labelEl4.classList.contains('has-value')) {
+            labelEl4.classList.add('has-value');
+        }
+    } else {
+        labelEl4.classList.remove('has-value');
+    }
+}
