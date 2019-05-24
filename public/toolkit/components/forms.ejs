@@ -17,12 +17,29 @@
 
 <h3 id="anchor1">1. Text Input</h3>
 
-<p>Text input</p>
+<p>Size input fields to the text that needs to go in them. Don't make them too long or too short.</p>
 
-<h6>Standard input</h6>
 <div class="tab-set">
     <%- partial('../../_partials/tabs', { id: 'text-input' }) %>
     <%- partial('../../_partials/inputtext', { id: 'text-input-component' }) %>
+</div>
+
+<h6>Disabled</h6>
+<div class="tab-set">
+    <%- partial('../../_partials/tabs', { id: 'text-disabled' }) %>
+    <%- partial('../../_partials/inputtext-disabled', { id: 'text-input-disabled' }) %>
+</div>
+
+<h6>Validated</h6>
+<div class="tab-set">
+    <%- partial('../../_partials/tabs', { id: 'text-validated' }) %>
+    <%- partial('../../_partials/inputtext-validated', { id: 'text-input-validated' }) %>
+</div>
+
+<h6>Validation error</h6>
+<div class="tab-set">
+    <%- partial('../../_partials/tabs', { id: 'text-invalid' }) %>
+    <%- partial('../../_partials/inputtext-invalid', { id: 'text-input-invalid' }) %>
 </div>
 
 <h3 id="anchor2">2. Text Area</h3>
