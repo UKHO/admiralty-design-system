@@ -41,24 +41,36 @@
             HTML goes here.
         </div>
         <div class="tab3 component-angular">
-                <h5>Table object:</h5>
-                <pre>
-                    <code class="language-javascript">
-                        <input type="textarea" placeholder="Type here" />
-                    </code>
-                </pre>
-                <br />
-                <br />
                 <h5>Angular example usage:</h5>
                 <code class="language-html">
-                    
+                    &lt;app-expansion>&lt;/app-expansion>
                 </code>
                 <br />
                 <br />
                 <h5>Angular component:</h5>
                 <pre>
                     <code class="language-javascript">
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+    selector: 'app-expansion',
+    templateUrl: './expansion.component.html',
+    styleUrls: ['./expansion.component.scss']
+})
+export class ExpansionComponent {
+
+    constructor() { }
+
+    isExpanded: boolean = false;
+
+    expandText: string = "Read more...";
     
+    toggleExpanded() {
+    this.isExpanded = !this.isExpanded;
+    this.expandText = this.isExpanded ? "Read less..." : "Read more...";
+    }
+    
+}
                     </code>
                 </pre>
                 <br />
@@ -66,7 +78,27 @@
                 <h5>Angular template:</h5>
                 <pre>
                     <code class="language-html">
-    
+&lt;div
+    id="expansion1"
+    class="expansion-panel"
+    [class.expanded]="isExpanded"
+>
+    &lt;div class="expansion-text">
+        &lt;p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc aliquam, augue ac finibus elementum, nisl lacus sagittis diam, eget molestie nisl nisl a nulla. Nulla vel maximus libero. Nullam non lectus est. Praesent ullamcorper massa felis, quis mollis quam egestas id. Sed posuere arcu a tempus eleifend. Mauris ut dolor vel neque pretium euismod sit amet sit amet nisl. Praesent iaculis molestie sem quis pretium. Nulla luctus eu ipsum eu fringilla. Aliquam vel eros ac sem scelerisque interdum ut sit amet mauris. Mauris sodales lacinia nisi sit amet molestie. Phasellus fermentum ligula at vehicula congue.
+        &lt;/p>
+        &lt;p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc aliquam, augue ac finibus elementum, nisl lacus sagittis diam, eget molestie nisl nisl a nulla. Nulla vel maximus libero. Nullam non lectus est. Praesent ullamcorper massa felis, quis mollis quam egestas id. Sed posuere arcu a tempus eleifend. Mauris ut dolor vel neque pretium euismod sit amet sit amet nisl. Praesent iaculis molestie sem quis pretium. Nulla luctus eu ipsum eu fringilla. Aliquam vel eros ac sem scelerisque interdum ut sit amet mauris. Mauris sodales lacinia nisi sit amet molestie. Phasellus fermentum ligula at vehicula congue.
+        &lt;/p>
+        &lt;p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc aliquam, augue ac finibus elementum, nisl lacus sagittis diam, eget molestie nisl nisl a nulla. Nulla vel maximus libero. Nullam non lectus est. Praesent ullamcorper massa felis, quis mollis quam egestas id. Sed posuere arcu a tempus eleifend. Mauris ut dolor vel neque pretium euismod sit amet sit amet nisl. Praesent iaculis molestie sem quis pretium. Nulla luctus eu ipsum eu fringilla. Aliquam vel eros ac sem scelerisque interdum ut sit amet mauris. Mauris sodales lacinia nisi sit amet molestie. Phasellus fermentum ligula at vehicula congue.
+        &lt;/p>
+    &lt;/div>
+    &lt;div class="expand-button-wrap">
+        &lt;p class="expand-text" (click)="toggleExpanded()">{{expandText}}&lt;/p>
+    &lt;/div>
+&lt;/div>
+                          
                     </code>
                 </pre>
         </div>
