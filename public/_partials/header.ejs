@@ -4,11 +4,14 @@
             <img src="/assets/svg/AdmiraltyUKHO linear logo.svg" alt="Admiralty Marine Data Solutions | UK Hydrographic Office">
         </span>
     </nav>
+</header>
+
+<header>
+    <h1><a href="/"><%= mainHeading %></a></h1>
 
     <nav id="main-menu">
 
         <div>
-            <h1><%= mainHeading %></h1>
             <a href="#main-menu-toggle"
                id="main-menu-close"
                class="menu-close"
@@ -18,7 +21,7 @@
             </a>
         </div>
 
-        <ul aria-label="<%= mainHeading %>">
+        <ul>
             <%
                 var currentFolder = typeof url !== 'undefined' ? url.split('/')[0] : '';
                 for (var idx1 = 0; idx1 < folders.length; idx1++) {
@@ -98,7 +101,6 @@
     </a>
 
     <div class="menu-toggle-wrapper">
-        <h1><%= mainHeading %></h1>
         <a href="#main-menu" id="main-menu-toggle" class="menu-toggle">
             <span class="sr-only">Open main menu</span>
             <span class="fa fa-bars" aria-hidden="true"></span>

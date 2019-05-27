@@ -45,7 +45,7 @@
         border-bottom: 5px solid transparent;
         color: $colour-admiralty-blue;
         &:hover {
-          border-bottom: 5px solid $colour-admiralty-blue;
+          background-color: $colour-tab-hover;
         }
       }
       &:not(:last-child) > label {
@@ -68,16 +68,16 @@
   }
 }
 
-.tab1selector:checked ~ nav > .tab1,
-.tab2selector:checked ~ nav > .tab2,
-.tab3selector:checked ~ nav > .tab3,
-.tab4selector:checked ~ nav > .tab4,
-.tab5selector:checked ~ nav > .tab5,
-.tab6selector:checked ~ nav > .tab6,
-.tab7selector:checked ~ nav > .tab7,
-.tab8selector:checked ~ nav > .tab8,
-.tab9selector:checked ~ nav > .tab9,
-.tab10selector:checked ~ nav > .tab10
+.tab1selector:checked ~ nav > ul li.tab1,
+.tab2selector:checked ~ nav > ul li.tab2,
+.tab3selector:checked ~ nav > ul li.tab3,
+.tab4selector:checked ~ nav > ul li.tab4,
+.tab5selector:checked ~ nav > ul li.tab5,
+.tab6selector:checked ~ nav > ul li.tab6,
+.tab7selector:checked ~ nav > ul li.tab7,
+.tab8selector:checked ~ nav > ul li.tab8,
+.tab9selector:checked ~ nav > ul li.tab9,
+.tab10selector:checked ~ nav > ul li.tab10
 {
   > label {
     border-bottom: 5px solid $colour-admiralty-blue;
