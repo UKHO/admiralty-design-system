@@ -90,7 +90,9 @@ for (var idx2 = 0; idx2 < examples.length; idx2++) {
     // grab the example HTML and copy it to the HTML tab
     var htmlView = example.parentElement.querySelector('div.component-html');
     if (htmlView) {
-        var escapedHtml = document.createElement('div').appendChild(document.createTextNode(example.innerHTML)).parentNode.innerHTML;
+        var exampleHtml = example.innerHTML;
+        exampleHtml = exampleHtml.replace(/<div class="new-window-link-container">[\s\S]+?<\/div>/, '');
+        var escapedHtml = document.createElement('div').appendChild(document.createTextNode(exampleHtml)).parentNode.innerHTML;
         var lines = escapedHtml.split('\n');
         var minTabs = 9999;
         for (var l = 0; l < lines.length; l++) {
