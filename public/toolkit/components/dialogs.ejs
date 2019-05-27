@@ -1,0 +1,273 @@
+<h1>Dialogue boxes</h1>
+
+<p class="intro">
+    Use dialogue boxes to convey important information to the user.
+</p>
+
+<ol>
+    <li><a href="#anchor1">Error dialogue</a></li>
+    <li><a href="#anchor2">Information dialogue</a></li>
+    <li><a href="#anchor3">Success dialogue</a></li>
+    <li><a href="#anchor4">Warning dialogue</a></li>
+</ol>
+
+<p></p>
+
+<h3 id="anchor1">1. Error dialogue</h3>
+
+<p>
+    Use the error dialogue to highlight problems to the user.
+    This might be a problem with information they have provided or a problem with our systems that is preventing them from doing something.
+</p>
+
+<div class="tab-set">
+    <%- partial('../../_partials/tabs', { id: 'error' }) %>
+    <section>
+        <div class="tab1 component-example">
+            <%- partial('../../_partials/dialog', {
+                dialogClass: 'error',
+                dialogTitle: "There's a problem",
+                dialogMessage: "It looks like there might be a problem with our system. Please try again in a few minutes. We’re sorry for the inconvenience."
+            }) %>
+        </div>
+        <div class="tab2 component-html">
+            HTML goes here.
+        </div>
+        <div class="tab3 component-angular">
+            <h5>Angular example usage:</h5>
+            <script type="text/plain" class="language-html">
+<app-dialogue title="There's a problem" type="error">
+    <p>It looks like there might be a problem with our system. Please try again in a few minutes. We’re sorry for the inconvenience.</p>
+</app-dialogue>
+            </script>
+            <br />
+            <br />
+            <h5>Angular component:</h5>
+            <script type="text/plain" class="language-javascript">
+import {Component, Input, OnInit} from '@angular/core';
+
+@Component({
+  selector: 'app-dialogue',
+  templateUrl: './dialogue.component.html',
+  styleUrls: ['./dialogue.component.scss']
+})
+export class DialogueComponent implements OnInit {
+
+  constructor() { }
+
+  @Input() title: string;
+  @Input() type: "info" | "warning" | "success" | "error";
+
+  ngOnInit() {
+  }
+
+}
+            </script>
+            <h5>Angular template:</h5>
+            <script type="text/plain" class="language-markup">
+<section class="dialog {{ type }}">
+  <h3>{{ title }}</h3>
+  <div>
+    <ng-content></ng-content>
+  </div>
+</section>
+            </script>
+        </div>
+    </section>
+</div>
+
+<p></p>
+
+<h3 id="anchor2">2. Information dialogue</h3>
+
+<p>Use the information dialogue to highlight important information to the user that might impact on what it is they’re trying to do.</p>
+
+<div class="tab-set">
+    <%- partial('../../_partials/tabs', { id: 'info' }) %>
+    <section>
+        <div class="tab1 component-example">
+            <%- partial('../../_partials/dialog', {
+                dialogClass: 'info',
+                dialogTitle: 'Important information',
+                dialogMessage: "Our site will be down for maintenance between 20:00 and 22:00 on 1 June 2019. You won’t be able to access the site during this time. We’re sorry for any inconvenience this might cause."
+            }) %>
+        </div>
+        <div class="tab2 component-html">
+            HTML goes here.
+        </div>
+        <div class="tab3 component-angular">
+            <h5>Angular example usage:</h5>
+            <script type="text/plain" class="language-html">
+<app-dialogue title="Important information" type="info">
+    <p>
+        Our site will be down for maintenance between 20:00 and 22:00 on 1 June 2019.
+        You won’t be able to access the site during this time. We’re sorry for any inconvenience this might cause.
+    </p>
+</app-dialogue>
+            </script>
+            <br />
+            <br />
+            <h5>Angular component:</h5>
+            <script type="text/plain" class="language-javascript">
+import {Component, Input, OnInit} from '@angular/core';
+
+@Component({
+  selector: 'app-dialogue',
+  templateUrl: './dialogue.component.html',
+  styleUrls: ['./dialogue.component.scss']
+})
+export class DialogueComponent implements OnInit {
+
+  constructor() { }
+
+  @Input() title: string;
+  @Input() type: "info" | "warning" | "success" | "error";
+
+  ngOnInit() {
+  }
+
+}
+            </script>
+            <h5>Angular template:</h5>
+            <script type="text/plain" class="language-markup">
+<section class="dialog {{ type }}">
+  <h3>{{ title }}</h3>
+  <div>
+    <ng-content></ng-content>
+  </div>
+</section>
+            </script>
+        </div>
+
+    </section>
+</div>
+
+<p></p>
+
+<h3 id="anchor3">3. Success dialogue</h3>
+
+<p>Use the success dialogue to confirm to the user that an action has successfully taken place.</p>
+
+<div class="tab-set">
+    <%- partial('../../_partials/tabs', { id: 'success' }) %>
+    <section>
+        <div class="tab1 component-example">
+            <%- partial('../../_partials/dialog', {
+                dialogClass: 'success',
+                dialogTitle: 'Your details have been saved',
+                dialogMessage: "Thanks for updating your contact details. Our system has now been updated."
+            }) %>
+        </div>
+        <div class="tab2 component-html">
+            HTML goes here.
+        </div>
+        <div class="tab3 component-angular">
+            <h5>Angular example usage:</h5>
+            <script type="text/plain" class="language-html">
+<app-dialogue title="Important information" type="info">
+    <p>
+        Our site will be down for maintenance between 20:00 and 22:00 on 1 June 2019.
+        You won’t be able to access the site during this time. We’re sorry for any inconvenience this might cause.
+    </p>
+</app-dialogue>
+            </script>
+            <br />
+            <br />
+            <h5>Angular component:</h5>
+            <script type="text/plain" class="language-javascript">
+import {Component, Input, OnInit} from '@angular/core';
+
+@Component({
+  selector: 'app-dialogue',
+  templateUrl: './dialogue.component.html',
+  styleUrls: ['./dialogue.component.scss']
+})
+export class DialogueComponent implements OnInit {
+
+  constructor() { }
+
+  @Input() title: string;
+  @Input() type: "info" | "warning" | "success" | "error";
+
+  ngOnInit() {
+  }
+
+}
+            </script>
+            <h5>Angular template:</h5>
+            <script type="text/plain" class="language-markup">
+<section class="dialog {{ type }}">
+  <h3>{{ title }}</h3>
+  <div>
+    <ng-content></ng-content>
+  </div>
+</section>
+            </script>
+        </div>
+    </section>
+</div>
+
+<p></p>
+
+<h3 id="anchor4">4. Warning dialogue</h3>
+
+<p>Use the warning dialogue to warn users  if they’re about to do something that is destructive or when the result of an action is unexpected.</p>
+
+<div class="tab-set">
+    <%- partial('../../_partials/tabs', { id: 'warning' }) %>
+    <section>
+        <div class="tab1 component-example">
+            <%- partial('../../_partials/dialog', {
+                dialogClass: 'warning',
+                dialogTitle: 'Check your application before submitting',
+                dialogMessage: "Once you’ve submitted the details of your application you won’t be able to go back and change anything. Take a moment to double check everything is correct before submitting."
+            }) %>
+        </div>
+        <div class="tab2 component-html">
+            HTML goes here.
+        </div>
+        <div class="tab3 component-angular">
+            <h5>Angular example usage:</h5>
+            <script type="text/plain" class="language-html">
+<app-dialogue title="Important information" type="info">
+    <p>
+        Our site will be down for maintenance between 20:00 and 22:00 on 1 June 2019.
+        You won’t be able to access the site during this time. We’re sorry for any inconvenience this might cause.
+    </p>
+</app-dialogue>
+            </script>
+            <br />
+            <br />
+            <h5>Angular component:</h5>
+            <script type="text/plain" class="language-javascript">
+import {Component, Input, OnInit} from '@angular/core';
+
+@Component({
+  selector: 'app-dialogue',
+  templateUrl: './dialogue.component.html',
+  styleUrls: ['./dialogue.component.scss']
+})
+export class DialogueComponent implements OnInit {
+
+  constructor() { }
+
+  @Input() title: string;
+  @Input() type: "info" | "warning" | "success" | "error";
+
+  ngOnInit() {
+  }
+
+}
+            </script>
+            <h5>Angular template:</h5>
+            <script type="text/plain" class="language-markup">
+<section class="dialog {{ type }}">
+  <h3>{{ title }}</h3>
+  <div>
+    <ng-content></ng-content>
+  </div>
+</section>
+            </script>
+        </div>
+    </section>
+</div>

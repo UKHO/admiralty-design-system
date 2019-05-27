@@ -1,6 +1,6 @@
 var textinputEl = document.getElementById('name-input');
 var labelEl = document.getElementById('input-label');
-textinputEl.addEventListener('input', toggleValueClass);
+if (textinputEl) textinputEl.addEventListener('input', toggleValueClass);
 
 function toggleValueClass(event) {
     if (event.target.value !== "") {
@@ -14,7 +14,7 @@ function toggleValueClass(event) {
 
 var textinputEl3 = document.getElementById('name-input3');
 var labelEl3 = document.getElementById('input-label3');
-textinputEl3.addEventListener('input', toggleValueClass3);
+if (textinputEl3) textinputEl3.addEventListener('input', toggleValueClass3);
 
 function toggleValueClass3(event) {
     if (event.target.value !== "") {
@@ -28,7 +28,7 @@ function toggleValueClass3(event) {
 
 var textinputEl4 = document.getElementById('name-input4');
 var labelEl4 = document.getElementById('input-label4');
-textinputEl4.addEventListener('input', toggleValueClass4);
+if (textinputEl4) textinputEl4.addEventListener('input', toggleValueClass4);
 
 function toggleValueClass4(event) {
     if (event.target.value !== "") {

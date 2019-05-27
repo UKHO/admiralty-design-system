@@ -20,7 +20,8 @@ import { RadioComponent } from './radio/radio.component';
 import { CheckboxComponent } from './checkbox/checkbox.component';
 import { SearchComponent } from './search/search.component';
 import { ExpansionComponent } from './expansion/expansion.component';
-import {ReadMoreComponent} from "./readmore/readmore.component";
+import { ReadMoreComponent } from "./readmore/readmore.component";
+import { DialogueComponent } from './dialogue/dialogue.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import {ReadMoreComponent} from "./readmore/readmore.component";
     CheckboxComponent,
     SearchComponent,
     ExpansionComponent,
-    ReadMoreComponent
+    ReadMoreComponent,
+    DialogueComponent
   ],
   imports: [
     BrowserModule,
