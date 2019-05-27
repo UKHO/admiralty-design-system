@@ -1,5 +1,6 @@
 <%
 var id = typeof id !== 'undefined' && id ? id : 'tabsetid';
+var noNewWindow = typeof noNewWindow !== 'undefined' && noNewWindow;
 %>
 
 <input class="tab1selector" type="radio" id="<%= id %>-tab1" name="<%= id %>" checked="checked" />
@@ -8,7 +9,7 @@ var id = typeof id !== 'undefined' && id ? id : 'tabsetid';
 <nav>
     <ul>
         <li class="tab1">
-            <label for="<%= id %>-tab1">Visual example</label>
+            <label for="<%= id %>-tab1">Example</label>
         </li>
         <li class="tab2">
             <label for="<%= id %>-tab2">HTML</label>
