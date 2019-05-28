@@ -41,6 +41,7 @@ section.expansion {
     display: block;
     cursor: pointer;
     border-bottom: 1px solid $colour-divider;
+    padding-bottom: 23px;
 
     &::after {
       @extend .fa;
