@@ -1,0 +1,23 @@
+@import 'colours';
+@import 'typography';
+
+.example1-header {
+
+    nav#top-menu {
+        z-index: 999;
+
+        span.example1-nav-text {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            color: $colour-admiralty-blue;
+            font-weight: $font-weight-medium;
+        }
+        
+        .header-links-wrap {
+            display: flex;
+            width: 33%;
+            justify-content: space-between;
+        }
+    }
+}
