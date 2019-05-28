@@ -29,7 +29,6 @@ button, input[type='button'] {
   border: 2px solid $colour-button-standard;
   height: 60px;
   padding: 15px 18px;
-  font-weight: $font-weight-medium;
   font-size: 21px;
   white-space: nowrap;
   min-width: 200px;
@@ -76,7 +75,8 @@ button, input[type='button'] {
   p {
     color: $colour-button-text;
     padding-top: 2px;
-  }
+    font-weight: $font-weight-medium;
+}
 
   i {
     display: inline-block;
@@ -94,7 +94,6 @@ button.secondary, input[type='button'].secondary {
   border: 2px solid $colour-button-secondary-border-standard;
   height: 60px;
   padding: 15px 18px;
-  font-weight: $font-weight-medium;
   font-size: 21px;
   white-space: nowrap;
   min-width: 200px;
@@ -141,7 +140,8 @@ button.secondary, input[type='button'].secondary {
   p {
     color: $colour-button-secondary-text;
     padding-top: 2px;
-  }
+    font-weight: $font-weight-medium;
+}
 
   i {
     display: inline-block;
