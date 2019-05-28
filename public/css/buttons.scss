@@ -8,8 +8,16 @@
   display: inline-flex;
   flex-direction: column;
 
-  > span, > div {
-    color: $colour-utility-error;
+  .error-wrap {
+    max-width: 240px;
+    display: flex;
+    margin-top: 11px;
+    
+    > span {
+      color: $colour-utility-error;
+      margin-left: 10px;
+      font-size: 16px;
+    }
   }
 }
 

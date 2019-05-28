@@ -52,5 +52,11 @@
     "title": "Dialogue boxes",
     "url": "toolkit/components/dialogs",
     "description": "This is a description of what components are and potential areas of use in digital products and services."
+  },
+  "errors": {
+    "layout": "../../_layout_sidemenu",
+    "title": "Errors",
+    "url": "toolkit/components/errors",
+    "description": "This is a description of what components are and potential areas of use in digital products and services."
   }
 }

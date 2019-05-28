@@ -1,0 +1,261 @@
+<h1>Errors</h1>
+
+<p class="intro">
+    Use buttons to guide users towards completing a task.
+    They should include text that describes the action they perform.
+</p>
+
+<ol>
+    <li><a href="#anchor1">Error summary</a></li>
+    <li><a href="#anchor2">Field error</a></li>
+    <li><a href="#anchor3">Button error</a></li>
+</ol>
+
+<h3 id="anchor1">1. Error summary</h3>
+
+<p>
+    Use the error summary at the top of form pages to highlight all errors on that page to the user once the user has clicked a button.
+</p>
+
+<div class="tab-set">
+    <%- partial('../../_partials/tabs', { id: 'error-summary' }) %>
+    <section>
+        <div class="tab1 component-example">
+            <section class="dialog error">
+                <h3>There's a problem</h3>
+                <div>
+                    <ol>
+                        <li>Enter your surname</li>
+                        <li>Enter a valid email address</li>
+                        <li>Enter a valid postcode</li>
+                    </ol>
+                </div>
+            </section>
+        </div>
+        <div class="tab2 component-html">
+            HTML goes here.
+        </div>
+        <div class="tab3 component-angular">
+            <h5>Angular example usage:</h5>
+            <script type="text/plain" class="language-html">
+<app-dialogue title="There's a problem" type="error">
+    <p>It looks like there might be a problem with our system. Please try again in a few minutes. We’re sorry for the inconvenience.</p>
+</app-dialogue>
+            </script>
+            <br />
+            <br />
+            <h5>Angular component:</h5>
+            <script type="text/plain" class="language-javascript">
+import {Component, Input, OnInit} from '@angular/core';
+
+@Component({
+  selector: 'app-dialogue',
+  templateUrl: './dialogue.component.html',
+  styleUrls: ['./dialogue.component.scss']
+})
+export class DialogueComponent implements OnInit {
+
+  constructor() { }
+
+  @Input() title: string;
+  @Input() type: "info" | "warning" | "success" | "error";
+
+  ngOnInit() {
+  }
+
+}
+            </script>
+            <h5>Angular template:</h5>
+            <script type="text/plain" class="language-markup">
+<section class="dialog {{ type }}">
+  <h3>{{ title }}</h3>
+  <div>
+    <ng-content></ng-content>
+  </div>
+</section>
+            </script>
+        </div>
+    </section>
+</div>
+
+<h3 id="anchor2">2. Field error</h3>
+
+<p>Use field errors to guide users to the field that has an error. Use these alongside error summaries, and also when using inline validation.</p>
+
+<div class="tab-set">
+    <%- partial('../../_partials/tabs', { id: 'errors-field' }) %>
+    <section>
+        <div class="tab1 component-example">
+            <div class="text-input-wrap invalid">
+                <input id="name-input4" type="text" class="form-text-input" />
+                <div id="input-label4" class="input-wrap">
+                    <label for="name-input">Email address</label>
+                </div>
+                <span class="icon invalid-icon fa fa-exclamation"></span>
+                <p class="error-text">Enter a valid email address</p>
+            </div>
+        </div>
+        <div class="tab2 component-html">
+            HTML goes here.
+        </div>
+        <div class="tab3 component-angular">
+                <h5>Angular example usage:</h5>
+                <pre>
+                    <code class="language-html">
+&ltapp-textinput
+    [isValid]="true"
+    [inputText]="inputText"
+    [validation]="inputFormControl"
+    [invalidMessage]="'Email is invalid'"
+>
+&lt/app-textinput>
+                    </code>
+                </pre>
+                <br />
+                <br />
+                <h5>Angular component:</h5>
+                <pre>
+                    <code class="language-javascript">
+import { Component, Input } from '@angular/core';
+import { FormControl } from '@angular/forms';
+
+@Component({
+    selector: 'app-textinput',
+    templateUrl: './textinput.component.html',
+    styleUrls: ['./textinput.component.scss']
+})
+export class TextinputComponent {
+
+    constructor() { }
+
+    @Input() isDisabled: boolean;
+
+    @Input() isValid: boolean;
+
+    @Input() inputText: { value: string };
+
+    @Input() validation: FormControl;
+
+    @Input() invalidMessage: string;
+}
+                            
+                    </code>
+                </pre>
+                <br />
+                <br />
+                <h5>Angular template:</h5>
+                <pre>
+                    <code class="language-html">
+&ltform>
+    &ltdiv class="mat-input-text-wrapper">
+        &ltmat-form-field
+        class="material-text-input"
+        appearance="outline"
+        [class.disabled] = "isDisabled === true"
+        [class.valid] = "isValid === true"
+        >
+        &ltmat-label>Input Label &lt/mat-label>
+        &ltinput
+            [disabled]="isDisabled"
+            matInput
+            placeholder="Email"
+            [(ngModel)]="inputText.value"
+            [formControl]="validation"
+        >
+        &ltmat-error class="error-message" *ngIf="validation.invalid">{{invalidMessage}}&lt/mat-error>
+        &ltspan 
+            *ngIf="isValid || validation.invalid"
+            class="fa icon"
+            [class.fa-check] = "isValid && !validation.invalid"
+            [class.fa-exclamation] = "validation.invalid"
+        >
+        &lt/span>
+        &lt/mat-form-field>
+    &lt/div>
+&lt/form>
+                                        
+                    </code>
+                </pre>
+        </div>
+    </section>
+</div>
+
+<h3 id="anchor3">3. Button error</h3>
+
+<p>Use button errors to let users know there's a problem after they've clicked a button.</p>
+
+<div class="tab-set">
+    <%- partial('../../_partials/tabs', { id: 'errors-button' }) %>
+    <section>
+        <div class="tab1 component-example">
+            <div class="button-wrapper">
+                <button class="error icon">
+                    <p>Next</p>
+                    <i class="fa fa-chevron-right"></i>
+                </button>
+                <div class="error-wrap">
+                    <span class="fa fa-exclamation"></span>
+                    <span>There's a problem with the information you provided</span>
+                </div>
+            </div>
+        </div>
+        <div class="tab2 component-html">
+            HTML goes here.
+        </div>
+        <div class="tab3 component-angular">
+            <h5>Angular example usage:</h5>
+            <code class="language-html">
+                &lt;app-button
+                [label]="'Open folder'"
+                [icon]="'fa-folder'"
+                [isSecondary]="true"
+                [onClick]="logClick"
+                &gt;
+                &lt;/app-button&gt;
+            </code>
+            <br />
+            <br />
+            <h5>Angular component:</h5>
+            <pre>
+                <code class="language-javascript">import { Component, Input } from '@angular/core';
+
+@Component({
+                    selector: 'app-button',
+                    templateUrl: './button.component.html',
+                    styleUrls: ['./button.component.scss']
+})
+export class ButtonComponent {
+
+                    constructor() { }
+
+  @Input() label: string;
+
+  @Input() isSecondary: boolean;
+
+  @Input() icon: string;
+
+  @Input() onClick: () => any;
+
+  handleClick() {
+    this.onClick()
+  }
+}
+                </code>
+            </pre>
+            <h5>Angular template:</h5>
+            <pre>
+                <code class="language-html">&lt;button
+    [class.secondary]=&quot;isSecondary === true&quot;
+    [class.icon]=&quot;icon&quot;
+    (click)=&quot;handleClick()&quot;
+&gt;
+    &lt;p&gt;
+                    {{label}}
+                    &lt;/p&gt;
+    &lt;i *ngIf= &quot;icon&quot; class=&quot;fa {{icon}}&quot;&gt;&lt;/i&gt;
+&lt;/button&gt;
+                </code>
+            </pre>
+        </div>
+    </section>
+</div>
