@@ -4,7 +4,7 @@
 .example1-header {
 
     nav#top-menu {
-        z-index: 999;
+        z-index: 2;
 
         span.example1-nav-text {
             display: flex;
@@ -20,4 +20,14 @@
             justify-content: space-between;
         }
     }
+}
+
+.text-block {
+    p {
+        margin: 40px 0;
+    }
+}
+
+.example1-table {
+    margin-top: 45px;
 }
