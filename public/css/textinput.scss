@@ -132,3 +132,18 @@ div.text-input-wrap.invalid {
       width: 100%;
     }
 }
+
+input { 
+  ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    overflow: visible;
+  }
+  ::-moz-placeholder { /* Firefox 19+ */
+    overflow: visible;
+  }
+  :-ms-input-placeholder { /* IE 10+ */
+    overflow: visible;
+  }
+  :-moz-placeholder { /* Firefox 18- */
+    overflow: visible;
+  }
+}
