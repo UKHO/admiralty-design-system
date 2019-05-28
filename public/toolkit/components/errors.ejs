@@ -18,7 +18,7 @@
 </p>
 
 <div class="tab-set">
-    <%- partial('../../_partials/tabs', { id: 'error' }) %>
+    <%- partial('../../_partials/tabs', { id: 'error-summary' }) %>
     <section>
         <div class="tab1 component-example">
             <section class="dialog error">
@@ -78,7 +78,108 @@ export class DialogueComponent implements OnInit {
     </section>
 </div>
 
-<!-- -------------------------------------------------------------------------------------- -->
+<h3 id="anchor2">2. Field error</h3>
+
+<p>Use field errors to guide users to the field that has an error. Use these alongside error summaries, and also when using inline validation.</p>
+
+<div class="tab-set">
+    <%- partial('../../_partials/tabs', { id: 'errors-field' }) %>
+    <section>
+        <div class="tab1 component-example">
+            <div class="text-input-wrap invalid">
+                <input id="name-input4" type="text" class="form-text-input" />
+                <div id="input-label4" class="input-wrap">
+                    <label for="name-input">Email address</label>
+                </div>
+                <span class="icon invalid-icon fa fa-exclamation"></span>
+                <p class="error-text">Enter a valid email address</p>
+            </div>
+        </div>
+        <div class="tab2 component-html">
+            HTML goes here.
+        </div>
+        <div class="tab3 component-angular">
+                <h5>Angular example usage:</h5>
+                <pre>
+                    <code class="language-html">
+&ltapp-textinput
+    [isValid]="true"
+    [inputText]="inputText"
+    [validation]="inputFormControl"
+    [invalidMessage]="'Email is invalid'"
+>
+&lt/app-textinput>
+                    </code>
+                </pre>
+                <br />
+                <br />
+                <h5>Angular component:</h5>
+                <pre>
+                    <code class="language-javascript">
+import { Component, Input } from '@angular/core';
+import { FormControl } from '@angular/forms';
+
+@Component({
+    selector: 'app-textinput',
+    templateUrl: './textinput.component.html',
+    styleUrls: ['./textinput.component.scss']
+})
+export class TextinputComponent {
+
+    constructor() { }
+
+    @Input() isDisabled: boolean;
+
+    @Input() isValid: boolean;
+
+    @Input() inputText: { value: string };
+
+    @Input() validation: FormControl;
+
+    @Input() invalidMessage: string;
+}
+                            
+                    </code>
+                </pre>
+                <br />
+                <br />
+                <h5>Angular template:</h5>
+                <pre>
+                    <code class="language-html">
+&ltform>
+    &ltdiv class="mat-input-text-wrapper">
+        &ltmat-form-field
+        class="material-text-input"
+        appearance="outline"
+        [class.disabled] = "isDisabled === true"
+        [class.valid] = "isValid === true"
+        >
+        &ltmat-label>Input Label &lt/mat-label>
+        &ltinput
+            [disabled]="isDisabled"
+            matInput
+            placeholder="Email"
+            [(ngModel)]="inputText.value"
+            [formControl]="validation"
+        >
+        &ltmat-error class="error-message" *ngIf="validation.invalid">{{invalidMessage}}&lt/mat-error>
+        &ltspan 
+            *ngIf="isValid || validation.invalid"
+            class="fa icon"
+            [class.fa-check] = "isValid && !validation.invalid"
+            [class.fa-exclamation] = "validation.invalid"
+        >
+        &lt/span>
+        &lt/mat-form-field>
+    &lt/div>
+&lt/form>
+                                        
+                    </code>
+                </pre>
+        </div>
+    </section>
+</div>
+
 <h3 id="anchor3">3. Button error</h3>
 
 <p>Use button errors to let users know there's a problem after they've clicked a button.</p>
