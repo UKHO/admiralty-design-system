@@ -8,7 +8,7 @@
 <ol>
     <li><a href="#anchor1">Text Input</a></li>
     <li><a href="#anchor2">Text Area</a></li>
-    <li><a href="#anchor3">Select Menu</a></li>
+    <li><a href="#anchor3">Dropdown</a></li>
     <li><a href="#anchor4">Radio Buttons</a></li>
     <li><a href="#anchor5">Checkbox</a></li>
 </ol>
@@ -44,7 +44,7 @@
 
 <h3 id="anchor2">2. Text Area</h3>
 
-<p>Text area</p>
+<p>Use a text area when the user is expected to enter in a larger amount of text.</p>
 
 <h6>Standard textarea</h6>
 <div class="tab-set">
@@ -52,11 +52,10 @@
     <%- partial('../../_partials/textarea', { id: 'text-area-component' }) %>
 </div>
 
-<h3 id="anchor3">3. Select Menu</h3>
+<h3 id="anchor3">3. Dropdown</h3>
 
-<p>Select menu</p>
+<p>Use dropdowns to contain large numbers of options or when space is at a premium.</p>
 
-<h6>Standard select</h6>
 <div class="tab-set">
     <%- partial('../../_partials/tabs', { id: 'select-input' }) %>
     <%- partial('../../_partials/select', { id: 'select-dropdown' }) %>
@@ -64,20 +63,32 @@
 
 <h3 id="anchor4">4. Radio Buttons</h3>
 
-<p>Radio buttons</p>
+<p>Use radio buttons for simple questions with only two or three options.</p>
 
-<h6>Standard radio buttons</h6>
+<h6>Linear</h6>
 <div class="tab-set">
-    <%- partial('../../_partials/tabs', { id: 'radio-input' }) %>
-    <%- partial('../../_partials/radio', { id: 'radio-buttons' }) %>
+    <%- partial('../../_partials/tabs', { id: 'radio-linear-input' }) %>
+    <%- partial('../../_partials/radio-linear', { id: 'radio-linear' }) %>
 </div>
 
-<h3 id="anchor5">5. Checkbox</h3>
-
-<p>Checkbox</p>
-
-<h6>Standard checkbox</h6>
+<h6>Stacked</h6>
 <div class="tab-set">
-    <%- partial('../../_partials/tabs', { id: 'checkbox-input' }) %>
-    <%- partial('../../_partials/checkbox', { id: 'checkbox' }) %>
+    <%- partial('../../_partials/tabs', { id: 'radio-stacked-input' }) %>
+    <%- partial('../../_partials/radio-stacked', { id: 'radio-stacked' }) %>
+</div>
+
+<h3 id="anchor5">5. Select box</h3>
+
+<p>Use select boxes to allow users to select more than one option from a small group, or for opt in/out questions.</p>
+
+<h6>Stacked</h6>
+<div class="tab-set">
+    <%- partial('../../_partials/tabs', { id: 'checkbox-input-stacked' }) %>
+    <%- partial('../../_partials/checkbox-stacked', { id: 'checkbox-stacked' }) %>
+</div>
+
+<h6>Single checkbox</h6>
+<div class="tab-set">
+    <%- partial('../../_partials/tabs', { id: 'checkbox-input-single' }) %>
+    <%- partial('../../_partials/checkbox-single', { id: 'checkbox-single' }) %>
 </div>
