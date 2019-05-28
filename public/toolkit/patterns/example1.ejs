@@ -1,0 +1,218 @@
+<style>
+    /* don't show the backdrop for the example menu */
+    main .backdrop {
+        visibility: hidden;
+    }
+</style>
+
+<h1>Example one</h1>
+
+<p class="intro">
+    This pattern shows how you use a range of components together that may be useful for creating a user interface to display patterns.
+</p>
+
+<section class="card">
+    <div class="tab1 component-example example1-tab">
+        <header class="example1-header">
+            <nav id="top-menu">
+                <span class="example1-nav-text">Site name</span>
+                <div class="header-links-wrap">
+                    <span class="example1-nav-text">Link one</span>
+                    <span class="example1-nav-text">Link two</span>
+                    <span class="example1-nav-text">Link three</span>
+                </div>
+            </nav>
+        </header>
+        <header class="example1-nav">
+            <h1><a href="/">Site Name</a></h1>
+            <nav id="main-menu">
+
+                <div>
+                    <a href="#main-menu-toggle" id="main-menu-close" class="menu-close" aria-label="Close main menu">
+                        <span class="sr-only">Close main menu</span>
+                        <span class="fa fa-times"></span>
+                    </a>
+                </div>
+
+                <ul>
+                    <li tabindex="0">
+                        <a tabindex="-1" href="/section1/">Section 1</a>
+                        <section>
+                            <section>
+                                <h2><a href="/section1/subsection-a/">Subsection 1A</a></h2>
+                                <ul>
+                                    <li>
+                                        <a href="/section1/subsection-a/page1a1.html">Page 1A1</a>
+                                    </li>
+                                </ul>
+                            </section>
+                            <section>
+                                <h2><a href="/section1/subsection-b/">Subsection 1B</a></h2>
+                                <ul>
+                                    <li>
+                                        <a href="/section1/subsection-b/page1b1">Page 1B1</a>
+                                    </li>
+                                </ul>
+                            </section>
+                            <section>
+                                <h2><a href="/section1/subsection-c/">Subsection 1C</a></h2>
+                                <ul>
+                                    <li>
+                                        <a href="/section1/subsection-c/page1c1.html">Page 1C1</a>
+                                    </li>
+                                    <li>
+                                        <a href="/section1/subsection-c/page1c2.html">Page 1C2</a>
+                                    </li>
+                                </ul>
+                            </section>
+                        </section>
+                    </li>
+
+                    <li tabindex="0" class="active">
+                        <a tabindex="-1" href="/section2/">Section 2</a>
+                        <section>
+                            <section>
+                                <h2><a href="/section2/etc/">Etc...</a></h2>
+                                <ul>
+                                    <li>
+                                        <a href="/section2/etc/etc">Etc...</a>
+                                    </li>
+                                </ul>
+                            </section>
+                            <section>
+                                <h2><a href="/section2/etc/">Etc...</a></h2>
+                                <ul>
+                                    <li>
+                                        <a href="/section2/etc/etc">Etc.</a>
+                                    </li>
+                                </ul>
+                            </section>
+                        </section>
+                    </li>
+
+                    <li tabindex="0">
+                        <a tabindex="-1" href="/section3/">Section 3</a>
+                        <section>
+                            <section>
+                                <h2><a href="/section3/etc">Etc...</a></h2>
+                                <ul>
+                                    <li>
+                                        <a href="/section3/etc/etc">Etc...</a>
+                                    </li>
+                                </ul>
+                            </section>
+                        </section>
+                    </li>
+
+                </ul>
+            </nav>
+
+            <a id="backdrop"
+                href="#main-menu-toggle"
+                class="backdrop"
+                tabindex="-1"
+                aria-hidden="true" hidden>
+            </a>
+
+            <div class="menu-toggle-wrapper">
+                <a href="#main-menu" id="main-menu-toggle" class="menu-toggle">
+                    <span class="sr-only">Open main menu</span>
+                    <span class="fa fa-bars" aria-hidden="true"></span>
+                </a>
+            </div>
+        </header>
+        <section class="text-block">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vehicula nibh ipsum, eu venenatis nulla pellentesque sit amet. Cras et semper nibh, eu fringilla nulla. In varius vulputate nisi, sit amet consequat dolor porttitor sit amet. Integer vel euismod ipsum. Fusce sit amet congue nisi. Sed non turpis in leo gravida venenatis. </p>
+        </section>
+        <section class="card">
+            <h6>Highlight Info Card Heading</h6>
+            <div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pharetra est id elit auctor tristique.
+                     Aliquam vestibulum gravida mi eu ornare. Aenean tristique ac leo at eleifend. </p>
+                <ul>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing.</li>
+                    <li>Dolore magna aliqua. Ut enim ad minim veniam.</li>
+                    <li>Commodo consequat duis aute irure dolor in.</li>
+                    <li>Labore et dolore magna aliqua occaecat.</li>
+                </ul>
+                <p><a href="#">Lorem ipsum dolor sit amet</a></p>
+            </div>
+        </section>
+
+        <section class="example1-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Folio</th>
+                        <th>Title</th>
+                        <th>From</th>
+                        <th>To</th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td>5600</td>
+                    <td>The Solent and Approaches</td>
+                    <td>26/05/16</td>
+                    <td>26/05/16</td>
+                </tr>
+                <tr>
+                    <td>5600</td>
+                    <td>East Devon and Dorset Coast, Exmouth to Christchurch</td>
+                    <td>26/05/16</td>
+                    <td>26/05/16</td>
+                </tr>
+                <tr>
+                    <td>5600</td>
+                    <td>The West Country, Falmouth to Teignmouth</td>
+                    <td>26/05/16</td>
+                    <td>26/05/16</td>
+                </tr>
+                <tr>
+                    <td>5600</td>
+                    <td>Falmouth to Hartland Point including the Isles of Scilly</td>
+                    <td>26/05/16</td>
+                    <td>26/05/16</td>
+                </tr>
+                <tr>
+                    <td>5600</td>
+                    <td>The Channel Islands</td>
+                    <td>26/05/16</td>
+                    <td>26/05/16</td>
+                </tr>
+                <tr>
+                    <td>5600</td>
+                    <td>Chichester to Ramsgate and Calais to Oostende</td>
+                    <td>26/05/16</td>
+                    <td>26/05/16</td>
+                </tr>
+            </table>
+
+            <section class="text-block">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vehicula nibh ipsum, eu venenatis nulla pellentesque sit amet. Cras et semper nibh, eu fringilla nulla. In varius vulputate nisi, sit amet consequat dolor porttitor sit amet. Integer vel euismod ipsum. Fusce sit amet congue nisi. Sed non turpis in leo gravida venenatis. </p>
+            </section>
+
+            <section class="expansion">
+                <input id="expansion1" type="checkbox">
+                <label for="expansion1">Heading 1</label>
+                <div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pharetra est id elit auctor tristique.
+                        Aliquam vestibulum gravida mi eu ornare. Aenean tristique ac leo at eleifend.
+                        Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In hac habitasse platea dictumst.
+                    </p>
+                </div>
+            </section>
+            <section class="expansion">
+                <input id="expansion2" type="checkbox">
+                <label for="expansion2">Heading 2</label>
+                <div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pharetra est id elit auctor tristique.
+                        Aliquam vestibulum gravida mi eu ornare. Aenean tristique ac leo at eleifend.
+                        Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In hac habitasse platea dictumst.
+                    </p>
+                </div>
+            </section>
+        </section>
+    </div>
+</section>
