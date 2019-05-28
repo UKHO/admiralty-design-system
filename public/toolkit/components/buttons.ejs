@@ -304,3 +304,80 @@ export class ButtonComponent {
         </div>
     </section>
 </div>
+
+<h6>Error button</h6>
+<div class="tab-set">
+    <%- partial('../../_partials/tabs', { id: 'error-button' }) %>
+    <section>
+        <div class="tab1 component-example">
+            <div class="button-wrapper">
+                <button class="error icon">
+                    <p>Next</p>
+                    <i class="fa fa-chevron-right"></i>
+                </button>
+                <div class="error-wrap">
+                    <span class="fa fa-exclamation"></span>
+                    <span>There's a problem with the information you provided</span>
+                </div>
+            </div>
+        </div>
+        <div class="tab2 component-html">
+            HTML goes here.
+        </div>
+        <div class="tab3 component-angular">
+            <h5>Angular example usage:</h5>
+            <code class="language-html">
+                &lt;app-button
+                [label]="'Open folder'"
+                [icon]="'fa-folder'"
+                [isSecondary]="true"
+                [onClick]="logClick"
+                &gt;
+                &lt;/app-button&gt;
+            </code>
+            <br />
+            <br />
+            <h5>Angular component:</h5>
+            <pre>
+                <code class="language-javascript">import { Component, Input } from '@angular/core';
+
+@Component({
+                    selector: 'app-button',
+                    templateUrl: './button.component.html',
+                    styleUrls: ['./button.component.scss']
+})
+export class ButtonComponent {
+
+                    constructor() { }
+
+  @Input() label: string;
+
+  @Input() isSecondary: boolean;
+
+  @Input() icon: string;
+
+  @Input() onClick: () => any;
+
+  handleClick() {
+    this.onClick()
+  }
+}
+                </code>
+            </pre>
+            <h5>Angular template:</h5>
+            <pre>
+                <code class="language-html">&lt;button
+    [class.secondary]=&quot;isSecondary === true&quot;
+    [class.icon]=&quot;icon&quot;
+    (click)=&quot;handleClick()&quot;
+&gt;
+    &lt;p&gt;
+                    {{label}}
+                    &lt;/p&gt;
+    &lt;i *ngIf= &quot;icon&quot; class=&quot;fa {{icon}}&quot;&gt;&lt;/i&gt;
+&lt;/button&gt;
+                </code>
+            </pre>
+        </div>
+    </section>
+</div>
