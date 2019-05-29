@@ -10,6 +10,7 @@ section.readmore {
   > label {
     @extend a;
     cursor: pointer;
+    text-decoration: none;
 
     &::before {
       content: 'Read more...';
