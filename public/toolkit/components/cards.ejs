@@ -106,10 +106,25 @@ export class ExpansionComponent implements OnInit {
             <section class="card">
                 <h6>Contact details</h6>
                 <div>
-                    <form>
-                        <input type="text" placeholder="First name"/><br>
-                        <input type="text" placeholder="Last name"/><br>
-                        <input type="text" placeholder="Email address"/><br>
+                    <form class="text-input-form">
+                        <div class="text-input-wrap">
+                            <input type="text" class="form-text-input" />
+                            <div class="input-wrap">
+                                <label for="name-input">First name</label>
+                            </div>
+                        </div>
+                        <div class="text-input-wrap">
+                            <input type="text" class="form-text-input" />
+                            <div class="input-wrap">
+                                <label for="name-input">Last name</label>
+                            </div>
+                        </div>
+                        <div class="text-input-wrap">
+                            <input type="text" class="form-text-input" />
+                            <div class="input-wrap">
+                                <label for="name-input">Email address</label>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </section>

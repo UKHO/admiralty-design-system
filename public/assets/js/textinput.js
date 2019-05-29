@@ -61,3 +61,31 @@ function setHasValue(value, element) {
         element.classList.remove('has-value');
     }
 }
+
+
+// Checks content in text inputs on Cards page
+var textInputs = document.getElementsByClassName('text-input-wrap');
+for (var i; i < textInputs.length; i++) {
+    var textInput = new textInputElement(
+        textInputs[i].getElementsByTagName('input')[0],
+        textInputs[i].getElementsByClassName('input-wrap')[0]
+    )
+}
+
+function textInputElement(input, label) {
+    this.inputElem = input;
+    this.labelElem = label;
+    this.eventFunction = function(event) {
+        if (event.target.value !== "") {
+            if (!this.labelElem.classList.contains('has-value')) {
+                this.labelElem.classList.add('has-value');
+            }
+        } else {
+            this.labelElem.classList.remove('has-value');
+        }
+    }
+
+    this.inputElem.addEventListener('input',
+        this.eventFunction.bind(this)
+    )
+}
