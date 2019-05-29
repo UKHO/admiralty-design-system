@@ -1,5 +1,5 @@
 import { Component, Input, AfterViewInit } from '@angular/core';
-import { Navigation } from './mocknavigation';
+import { Navigation } from '../navtypes';
 import { enhanceMainMenu } from '../nav-enhance';
 
 @Component({

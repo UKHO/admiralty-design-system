@@ -121,6 +121,9 @@ ul {
     font-size: 18px;
     display: inline-block;
     margin-right: 20px;
+    @include not-desktop {
+        font-size: 14px;
+    }
   }
 }
 

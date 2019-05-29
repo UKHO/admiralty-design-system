@@ -32,6 +32,10 @@
         @extend .fa-exclamation:before;
       }
     }
+
+    a {
+      text-decoration: none;
+    }
   }
   &.success {
     border-left: 5px solid $colour-utility-success;

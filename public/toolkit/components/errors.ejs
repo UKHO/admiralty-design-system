@@ -25,9 +25,9 @@
                 <h3>There's a problem</h3>
                 <div>
                     <ol>
-                        <li>Enter your surname</li>
-                        <li>Enter a valid email address</li>
-                        <li>Enter a valid postcode</li>
+                        <li><a href="#name-input4">Enter your surname</a></li>
+                        <li><a href="#name-input4">Enter a valid email address</a></li>
+                        <li><a href="#name-input4">Enter a valid postcode</a></li>
                     </ol>
                 </div>
             </section>
@@ -86,13 +86,13 @@ export class DialogueComponent implements OnInit {
     <%- partial('../../_partials/tabs', { id: 'errors-field' }) %>
     <section>
         <div class="tab1 component-example">
-            <div class="text-input-wrap invalid">
-                <input id="name-input4" type="text" class="form-text-input" />
+            <div id="invalid-input-wrap" class="text-input-wrap invalid">
+                <input id="name-input4" type="text" class="form-text-input" value="example@example,com"/>
                 <div id="input-label4" class="input-wrap">
-                    <label for="name-input">Email address</label>
+                    <label for="name-input">Email</label>
                 </div>
-                <span class="icon invalid-icon fa fa-exclamation"></span>
-                <p class="error-text">Enter a valid email address</p>
+                <span id="invalid-icon" class="icon invalid-icon fa fa-exclamation"></span>
+                <p  id="invalid-text" class="error-text">Enter a valid email address</p>
             </div>
         </div>
         <div class="tab2 component-html">

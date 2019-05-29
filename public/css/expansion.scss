@@ -10,6 +10,7 @@ section.readmore {
   > label {
     @extend a;
     cursor: pointer;
+    text-decoration: none;
 
     &::before {
       content: 'Read more...';
@@ -47,6 +48,10 @@ section.expansion {
       @extend .fa;
       @extend .fa-chevron-down:before;
       float: right;
+    }
+
+    h3 {
+      display: inline;
     }
   }
 
