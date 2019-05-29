@@ -94,9 +94,9 @@ p {
 blockquote {
   line-height: 30px;
   width: 100%;
-  padding: 15px 34px;
-  border-left: 4px solid $colour-dark-blue;
-  margin-bottom: 18px;
+  padding: 24px 18px;
+  border-left: 5px solid $colour-admiralty-blue;
+  margin-bottom: 30px;
   background: #EEEEEE;
   @include not-desktop {
     line-height: 24px;
