@@ -1,0 +1,91 @@
+<section>
+    <div class="tab1 component-example">
+        <p class="form-label">Select option</p>
+        <div class="custom-select">
+            <div class="arrow-icon-wrap">
+                <span id="arrow-icon" class="fa fa-chevron-down"></span>
+            </div>
+            <select>
+                <option value="0">Select option:</option>
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+                <option value="4">Option 4</option>
+                <option value="5">Option 5</option>
+                <option value="6">Option 6</option>
+            </select>
+        </div>
+    </div>
+    <div class="tab2 component-html">
+        HTML goes here.
+    </div>
+    <div class="tab3 component-angular">
+            <h5>Angular example usage:</h5>
+            <code class="language-html">
+&ltapp-select
+    [options]="selectOptions"
+    (changed)="logSelectChanged($event.value)"
+>&lt/app-select>
+            </code>
+            <br />
+            <br />
+            <h5>Angular component:</h5>
+            <pre>
+                <code class="language-javascript">
+import { Component, ViewChild, Input, Output, EventEmitter } from '@angular/core';
+import { MatSelectChange } from '@angular/material';
+
+@Component({
+    selector: 'app-select',
+    templateUrl: './select.component.html',
+    styleUrls: ['./select.component.scss']
+})
+export class SelectComponent {
+
+    constructor() { }
+
+    @ViewChild('selectComponent') selectComponent;
+
+    @Input() options: OptionValue[] 
+
+    @Output() changed = new EventEmitter();
+
+    handleChange($event: MatSelectChange) {
+    this.changed.emit($event)
+    }
+}
+
+export interface OptionValue {
+    value: string;
+    viewValue: string;
+}
+                </code>
+            </pre>
+            <br />
+            <br />
+            <h5>Angular template:</h5>
+            <pre>
+                <code class="language-html">
+&ltdiv class="select-wrap">
+    &ltmat-form-field appearance="outline">
+        &ltmat-select
+            #selectComponent
+            panelClass="material-select-panel"
+            (selectionChange)="handleChange($event)"
+        >
+            &ltmat-option *ngFor="let option of options" [value]="option.value">
+            {{option.viewValue}}
+            &lt/mat-option>
+        &lt/mat-select>
+        &ltspan
+            class="fa"
+            [class.fa-chevron-down]="!selectComponent.panelOpen"
+            [class.fa-chevron-up]="selectComponent.panelOpen"
+        >
+        &lt/span>
+    &lt/mat-form-field>
+&lt/div>
+                </code>
+            </pre>
+    </div>
+</section>

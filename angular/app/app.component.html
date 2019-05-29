@@ -1,6 +1,6 @@
 <app-header></app-header>
 <app-navigation [navigation]="navigation"></app-navigation>
-<div>
+<div class="example-wrapper">
     <h1>
         Welcome to {{ title }}!
     </h1>
@@ -12,7 +12,34 @@
         [label]="'Pay now'"
         [icon]="'fa-chevron-right'"
         [isSecondary]="true"
-        [onClick]="logClick"
+        [click]="logClick"
     >
     </app-button>
+    <br />
+    <app-textinput
+        [isValid]="true"
+        [inputText]="inputText"
+        [validation]="inputFormControl"
+        [invalidMessage]="'Email is invalid'"
+    >
+    </app-textinput>
+    <p>{{inputText.value}}</p>
+    <br />
+    <app-textarea [textareaText]="textareaText"></app-textarea>
+    <p>{{textareaText.value}}</p>
+    <app-select
+        [options]="selectOptions"
+        (changed)="logSelectChanged($event.value)"
+    ></app-select>
+    <br />
+    <app-radio
+        [isColumn]="true"
+    ></app-radio>
+    <br />
+    <app-checkbox></app-checkbox>
+    <br />
+    <app-search></app-search>
+    <app-expansion heading="Heading 1" initialExpanded="false">Some text</app-expansion>
+    <app-readmore heading="Heading 1" initialExpanded="false"><div class=".readmore-intro">Intro text</div><div>Main text</div></app-readmore>
+    <app-dialogue title="A warning" type="warning"><p>Whatever you do, don't...</p></app-dialogue>
 </div>

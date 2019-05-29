@@ -1,0 +1,98 @@
+@import 'colours';
+@import 'responsive';
+@import 'typography';
+
+.mat-textarea-wrapper {
+    // border colour
+    .mat-form-field div.mat-form-field-outline div {
+        border-color: $colour-textinput-border;
+        border: 2px solid;
+        border-radius: unset;
+    }
+
+    .mat-form-field.mat-focused div.mat-form-field-outline div {
+        border-color: $colour-textinput-border-active;
+    }
+
+    // start border
+    div.mat-form-field-outline div.mat-form-field-outline-start {
+        border-right-style: none;
+    }
+
+    // middle border
+    div.mat-form-field-outline div.mat-form-field-outline-gap {
+        border: none;
+    }
+
+    // end border
+    div.mat-form-field-outline div.mat-form-field-outline-end {
+        border-left-style: none;
+    }
+
+     // background
+    div.mat-form-field-outline {
+        background: $colour-textinput-bg;
+    }
+
+    .mat-focused div.mat-form-field-outline,
+    .disabled div.mat-form-field-outline {
+        background: none;
+    }
+
+    // layout
+    .mat-form-field-appearance-outline .mat-form-field-infix {
+        padding: .2em 0 .3em 0;
+    }
+
+    .mat-form-field-appearance-outline .mat-form-field-flex {
+        padding: 0 .3em 0 1em;
+    }
+
+    .mat-form-field {
+        min-width: 425px;
+        @include not-desktop {
+            min-width: unset;
+            max-width: 425px;
+            width: 100%;
+        }
+    }
+
+    .mat-input-element {
+        min-height: 170px;
+        padding: 0 .75em .5em 0;
+    }
+
+    // icon
+    .resizer-arrow {
+        position: absolute;
+        bottom: 1px;
+        right: -2px;
+        width: 0; 
+        height: 0; 
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: 6px solid $colour-textarea-border;
+        pointer-events: none;
+        transform: rotate(-45deg);
+    }
+
+    .mat-form-field.mat-focused .resizer-arrow {
+        border-top-color: $colour-textarea-border-focused;
+    }
+
+    .resizer-arrow-wrap {
+        position: absolute;
+        bottom: -2px;
+        right: -2px;
+        transform: translate(1px, -4px);
+        height: 15px;
+        width: 15px;
+        padding-top: 5px;
+        background-color: $colour-textinput-bg;
+        pointer-events: none;
+    }
+    
+    .mat-focused .resizer-arrow-wrap {
+        background-color: $colour-bg;
+    }
+}

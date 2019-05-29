@@ -1,3 +1,10 @@
+<style>
+    /* don't show the backdrop for the example menu */
+    main .backdrop {
+        visibility: hidden;
+    }
+</style>
+
 <h1>Navigation</h1>
 
 <p class="intro">
@@ -24,18 +31,17 @@
     <section>
         <div class="tab1 component-example">
             <header>
+                <h1><a href="/">Site Name</a></h1>
                 <nav id="main-menu">
 
                     <div>
-                        <h1>Site Name</h1>
                         <a href="#main-menu-toggle" id="main-menu-close" class="menu-close" aria-label="Close main menu">
                             <span class="sr-only">Close main menu</span>
                             <span class="fa fa-times"></span>
                         </a>
                     </div>
 
-                    <ul aria-label="Site Name">
-
+                    <ul>
                         <li tabindex="0">
                             <a tabindex="-1" href="/section1/">Section 1</a>
                             <section>
@@ -107,6 +113,20 @@
 
                     </ul>
                 </nav>
+
+                <a id="backdrop"
+                   href="#main-menu-toggle"
+                   class="backdrop"
+                   tabindex="-1"
+                   aria-hidden="true" hidden>
+                </a>
+
+                <div class="menu-toggle-wrapper">
+                    <a href="#main-menu" id="main-menu-toggle" class="menu-toggle">
+                        <span class="sr-only">Open main menu</span>
+                        <span class="fa fa-bars" aria-hidden="true"></span>
+                    </a>
+                </div>
             </header>
         </div>
         <div class="tab2 component-html">
@@ -204,11 +224,14 @@ const navigation = {
     <%- partial('../../_partials/tabs', { id: 'secondary' }) %>
     <section>
         <div class="tab1 component-example">
-            <header>
+            <header class="example1-header">
                 <nav id="top-menu">
-                    <span>
-                        <img src="/assets/svg/AdmiraltyUKHO linear logo.svg" alt="Admiralty Marine Data Solutions | UK Hydrographic Office">
-                    </span>
+                    <span><a href="#" class="example1-nav-text">Site name</a></span>
+                    <div class="header-links-wrap">
+                        <a href="#" class="example1-nav-text">Link one</a>
+                        <a href="#" class="example1-nav-text">Link two</a>
+                        <a href="#" class="example1-nav-text">Link three</a>
+                    </div>
                 </nav>
             </header>
         </div>
@@ -242,7 +265,7 @@ const navigation = {
                     templateUrl: './card.component.html',
                     styleUrls: ['./card.component.scss']
 })
-export class CardComponent implements OnInit {
+export class ExpansionComponent implements OnInit {
                     @Input() public title = '';
 
                     constructor() { }
@@ -318,7 +341,7 @@ export class CardComponent implements OnInit {
                     templateUrl: './card.component.html',
                     styleUrls: ['./card.component.scss']
 })
-export class CardComponent implements OnInit {
+export class ExpansionComponent implements OnInit {
                     @Input() public title = '';
 
                     constructor() { }
@@ -353,34 +376,36 @@ export class CardComponent implements OnInit {
     <%- partial('../../_partials/tabs', { id: 'sidebar' }) %>
     <section>
         <div class="tab1 component-example">
-            <nav id="side-menu" aria-label="Submenu">
-                <section>
-                    <h2><a href="/item1/">Item 1</a></h2>
-                </section>
-                <section class="active">
-                    <h2><a href="/item2/">Item 2</a></h2>
-                    <ul>
-                        <li class="active">
-                            <a href="/item2/page1">Page 1</a>
-                        </li>
-                        <li>
-                            <a href="/item2/page2">Page 2</a>
-                        </li>
-                        <li>
-                            <a href="/item2/page3">Page 3</a>
-                        </li>
-                        <li>
-                            <a href="/item2/page4">Page 4</a>
-                        </li>
-                        <li>
-                            <a href="/item2/page5">Page 5</a>
-                        </li>
-                    </ul>
-                </section>
-                <section>
-                    <h2><a href="/item3/">Item 3</a></h2>
-                </section>
-            </nav>
+            <div class="example-side-menu-wrap">
+                <nav id="side-menu" aria-label="Submenu">
+                    <section>
+                        <h2><a href="/item1/">Item 1</a></h2>
+                    </section>
+                    <section class="active">
+                        <h2><a href="/item2/">Item 2</a></h2>
+                        <ul>
+                            <li class="active">
+                                <a href="/item2/page1">Page 1</a>
+                            </li>
+                            <li>
+                                <a href="/item2/page2">Page 2</a>
+                            </li>
+                            <li>
+                                <a href="/item2/page3">Page 3</a>
+                            </li>
+                            <li>
+                                <a href="/item2/page4">Page 4</a>
+                            </li>
+                            <li>
+                                <a href="/item2/page5">Page 5</a>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2><a href="/item3/">Item 3</a></h2>
+                    </section>
+                </nav>
+            </div>
         </div>
         <div class="tab2 component-html">
             HTML goes here.
@@ -412,7 +437,7 @@ export class CardComponent implements OnInit {
                     templateUrl: './card.component.html',
                     styleUrls: ['./card.component.scss']
 })
-export class CardComponent implements OnInit {
+export class ExpansionComponent implements OnInit {
                     @Input() public title = '';
 
                     constructor() { }
@@ -448,9 +473,9 @@ export class CardComponent implements OnInit {
     <section>
         <div class="tab1 component-example">
             <div class="tab-set">
-                <input class="tab1selector" type="radio" id="tab-id-tab1" name="primary" checked="checked">
-                <input class="tab2selector" type="radio" id="tab-id-tab2" name="primary">
-                <input class="tab3selector" type="radio" id="tab-id-tab3" name="primary">
+                <input class="tab1selector" type="radio" id="tab-id-tab1" name="tab-id" checked="checked">
+                <input class="tab2selector" type="radio" id="tab-id-tab2" name="tab-id">
+                <input class="tab3selector" type="radio" id="tab-id-tab3" name="tab-id">
                 <!-- up to 10 tabs -->
                 <nav>
                     <ul>
@@ -510,7 +535,7 @@ export class CardComponent implements OnInit {
                     templateUrl: './card.component.html',
                     styleUrls: ['./card.component.scss']
 })
-export class CardComponent implements OnInit {
+export class ExpansionComponent implements OnInit {
                     @Input() public title = '';
 
                     constructor() { }

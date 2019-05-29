@@ -1,0 +1,7 @@
+<section class="expansion">
+    <input id="{{ uid }}" type="checkbox" [attr.checked]="initialExpanded">
+    <label for="{{ uid }}">{{ heading }}</label>
+    <div>
+        <ng-content></ng-content>
+    </div>
+</section>

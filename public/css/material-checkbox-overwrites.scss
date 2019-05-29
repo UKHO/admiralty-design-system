@@ -1,0 +1,42 @@
+@import 'colours';
+@import 'responsive';
+@import 'typography';
+
+.checkbox-wrap {
+    //colours
+    .mat-checkbox-checked .mat-checkbox-background {
+        background-color: $colour-checkbox;
+    }
+
+    .mat-checkbox-frame {
+        border-color: $colour-checkbox;
+    }
+
+    .mat-checkbox:not(.mat-checkbox-disabled).mat-accent .mat-checkbox-ripple .mat-ripple-element {
+        background-color: $colour-checkbox;
+    }
+
+    // layot
+    .mat-checkbox-inner-container {
+        width: 26px;
+        height: 26px;
+    }
+
+    div.mat-checkbox-ripple {
+        left: calc(50% - 25px);
+        top: calc(50% - 25px);
+        height: 50px;
+        width: 50px;
+    }
+
+    div.mat-ripple-element {
+        left: calc(50% - 25px) !important;
+        top: calc(50% - 25px) !important;
+        height: 50px !important;
+        width: 50px !important;
+    }
+
+    .mat-checkbox-label {
+        margin-top: 4px;
+    }
+}

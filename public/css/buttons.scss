@@ -8,8 +8,16 @@
   display: inline-flex;
   flex-direction: column;
 
-  > span, > div {
-    color: $colour-utility-error;
+  .error-wrap {
+    max-width: 240px;
+    display: flex;
+    margin-top: 11px;
+    
+    > span {
+      color: $colour-utility-error;
+      margin-left: 10px;
+      font-size: 16px;
+    }
   }
 }
 
@@ -21,10 +29,14 @@ button, input[type='button'] {
   border: 2px solid $colour-button-standard;
   height: 60px;
   padding: 15px 18px;
-  font-weight: $font-weight-medium;
   font-size: 21px;
   white-space: nowrap;
   min-width: 200px;
+  @include not-desktop {
+    min-width: unset;
+    max-width: 200px;
+    width: 100%;
+  }
 
   &:hover {
     background-color: $colour-button-hover;
@@ -33,11 +45,14 @@ button, input[type='button'] {
 
   &:active {
     background-color: $colour-button-selected;
-    color: $colour-button-standard;
     border: 2px solid $colour-button-border-selected;
 
     i {
       color: $colour-button-icon-selected;
+    }
+
+    p {
+      color: $colour-button-text-selected;
     }
   }
 
@@ -50,12 +65,18 @@ button, input[type='button'] {
     min-width: 240px;
     display: flex;
     justify-content: space-between;
+    @include not-desktop {
+      min-width: unset;
+      max-width: 240px;
+      width: 100%;
+    }
   }
 
   p {
     color: $colour-button-text;
     padding-top: 2px;
-  }
+    font-weight: $font-weight-medium;
+}
 
   i {
     display: inline-block;
@@ -73,10 +94,14 @@ button.secondary, input[type='button'].secondary {
   border: 2px solid $colour-button-secondary-border-standard;
   height: 60px;
   padding: 15px 18px;
-  font-weight: $font-weight-medium;
   font-size: 21px;
   white-space: nowrap;
   min-width: 200px;
+  @include not-desktop {
+    min-width: unset;
+    max-width: 200px;
+    width: 100%;
+  }
 
   &:hover {
     background-color: $colour-button-secondary-hover;
@@ -86,10 +111,13 @@ button.secondary, input[type='button'].secondary {
   &:active {
     background-color: $colour-button-secondary-selected;
     border: 2px solid $colour-button-secondary-selected;
-    color: $colour-button-secondary-text-selected;
-
+    
     i {
       color: $colour-button-secondary-icon-selected;
+    }
+    
+    p {
+      color: $colour-button-secondary-text-selected;
     }
   }
 
@@ -102,12 +130,18 @@ button.secondary, input[type='button'].secondary {
     min-width: 240px;
     display: flex;
     justify-content: space-between;
+    @include not-desktop {
+      min-width: unset;
+      max-width: 240px;
+      width: 100%;
+    }
   }
 
   p {
     color: $colour-button-secondary-text;
     padding-top: 2px;
-  }
+    font-weight: $font-weight-medium;
+}
 
   i {
     display: inline-block;

@@ -8,3 +8,9 @@
 .mdc-layout-grid {
   padding: 0 !important;
 }
+
+
+/* Stops headers in tabs from overlaying main nav */
+.content {
+  z-index: 0;
+}

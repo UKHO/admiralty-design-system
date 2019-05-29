@@ -9,7 +9,7 @@ export class HeaderComponent implements OnInit {
 
   constructor() { }
 
-  @Input() src: string = '/assets/svg/admiralty-logo-full.svg';
+  @Input() src: string = '/assets/svg/AdmiraltyUKHO linear logo.svg';
   @Input() alt: string = 'Admiralty Marine Data Solutions | UK Hydrographic Office';
 
   ngOnInit() {

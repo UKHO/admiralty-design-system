@@ -16,11 +16,14 @@
             <img src="/assets/svg/AdmiraltyUKHO linear logo.svg" alt="Admiralty Marine Data Solutions | UK Hydrographic Office">
         </span>
     </nav>
+</header>
+
+<header>
+    <h1><a href="/">Design System</a></h1>
 
     <nav id="main-menu">
 
         <div>
-            <h1>Design System</h1>
             <a href="#main-menu-toggle"
                id="main-menu-close"
                class="menu-close"
@@ -30,7 +33,7 @@
             </a>
         </div>
 
-        <ul aria-label="Design System">
+        <ul>
             
             <li tabindex="0" >
                 <a tabindex="-1" href="#">Principles</a>
@@ -139,10 +142,6 @@
                                 <a href="/toolkit/styles/icons.html">Icons</a>
                             </li>
                             
-                            <li>
-                                <a href="/toolkit/styles/forms.html">Forms</a>
-                            </li>
-                            
                         </ul>
                         
                     </section>
@@ -176,6 +175,18 @@
                                 <a href="/toolkit/components/buttons.html">Buttons</a>
                             </li>
                             
+                            <li>
+                                <a href="/toolkit/components/forms.html">Forms</a>
+                            </li>
+                            
+                            <li>
+                                <a href="/toolkit/components/dialogs.html">Dialogue boxes</a>
+                            </li>
+                            
+                            <li>
+                                <a href="/toolkit/components/errors.html">Errors</a>
+                            </li>
+                            
                         </ul>
                         
                     </section>
@@ -199,6 +210,10 @@
                             
                             <li>
                                 <a href="/toolkit/patterns/bathymetery.html">Bathymetery data search</a>
+                            </li>
+                            
+                            <li>
+                                <a href="/toolkit/patterns/example1.html">Example one</a>
                             </li>
                             
                         </ul>
@@ -239,7 +254,6 @@
     </a>
 
     <div class="menu-toggle-wrapper">
-        <h1>Design System</h1>
         <a href="#main-menu" id="main-menu-toggle" class="menu-toggle">
             <span class="sr-only">Open main menu</span>
             <span class="fa fa-bars" aria-hidden="true"></span>
@@ -292,10 +306,6 @@
                     <a href="/toolkit/styles/icons.html">Icons</a>
                 </li>
                 
-                <li class="">
-                    <a href="/toolkit/styles/forms.html">Forms</a>
-                </li>
-                
             </ul>
         </section>
         
@@ -328,6 +338,18 @@
                     <a href="/toolkit/components/buttons.html">Buttons</a>
                 </li>
                 
+                <li class="">
+                    <a href="/toolkit/components/forms.html">Forms</a>
+                </li>
+                
+                <li class="">
+                    <a href="/toolkit/components/dialogs.html">Dialogue boxes</a>
+                </li>
+                
+                <li class="">
+                    <a href="/toolkit/components/errors.html">Errors</a>
+                </li>
+                
             </ul>
         </section>
         
@@ -352,6 +374,10 @@
                     <a href="/toolkit/patterns/bathymetery.html">Bathymetery data search</a>
                 </li>
                 
+                <li class="">
+                    <a href="/toolkit/patterns/example1.html">Example one</a>
+                </li>
+                
             </ul>
         </section>
         
@@ -360,7 +386,7 @@
 
 
             </section>
-            <section class="content">
+            <section class="content push-back">
                 <h1>Buttons</h1>
 
 <p class="intro">
@@ -389,7 +415,7 @@
 <nav>
     <ul>
         <li class="tab1">
-            <label for="primary-action-tab1">Visual example</label>
+            <label for="primary-action-tab1">Example</label>
         </li>
         <li class="tab2">
             <label for="primary-action-tab2">HTML</label>
@@ -404,8 +430,8 @@
 
     <section>
         <div class="tab1 component-example">
-            <button class="primary icon">
-                <p> Pay now </p>
+            <button>
+                <p>Pay now</p>
             </button>
         </div>
         <div class="tab2 component-html">
@@ -480,7 +506,7 @@ export class ButtonComponent {
 <nav>
     <ul>
         <li class="tab1">
-            <label for="primary-icon-tab1">Visual example</label>
+            <label for="primary-icon-tab1">Example</label>
         </li>
         <li class="tab2">
             <label for="primary-icon-tab2">HTML</label>
@@ -497,7 +523,98 @@ export class ButtonComponent {
         <div class="tab1 component-example">
             <button class="primary icon">
                 <p>Open folder</p>
-                <i class="fa fa-folder"></i>
+                <i class="far fa-folder-open"></i>
+            </button>
+        </div>
+        <div class="tab2 component-html">
+            HTML goes here.
+        </div>
+        <div class="tab3 component-angular">
+            <h5>Angular example usage:</h5>
+            <code class="language-html">
+                &lt;app-button
+                [label]="'Open folder'"
+                [icon]="'fa-folder'"
+                [isSecondary]="false"
+                [onClick]="logClick"
+                &gt;
+                &lt;/app-button&gt;
+            </code>
+            <br>
+            <br>
+            <h5>Angular component:</h5>
+            <pre>
+                <code class="language-javascript">import { Component, Input } from '@angular/core';
+
+@Component({
+                    selector: 'app-button',
+                    templateUrl: './button.component.html',
+                    styleUrls: ['./button.component.scss']
+})
+export class ButtonComponent {
+
+                    constructor() { }
+
+  @Input() label: string;
+
+  @Input() isSecondary: boolean;
+
+  @Input() icon: string;
+
+  @Input() onClick: () => any;
+
+  handleClick() {
+    this.onClick()
+  }
+}
+                </code>
+            </pre>
+            <h5>Angular template:</h5>
+            <pre>
+                <code class="language-html">&lt;button
+    [class.secondary]=&quot;isSecondary === true&quot;
+    [class.icon]=&quot;icon&quot;
+    (click)=&quot;handleClick()&quot;
+&gt;
+    &lt;p&gt;
+                    {{label}}
+                    &lt;/p&gt;
+    &lt;i *ngIf= &quot;icon&quot; class=&quot;fa {{icon}}&quot;&gt;&lt;/i&gt;
+&lt;/button&gt;
+                </code>
+            </pre>
+        </div>
+    </section>
+</div>
+
+<h6>Icon button</h6>
+<div class="tab-set">
+    
+
+<input class="tab1selector" type="radio" id="primary-icon-two-tab1" name="primary-icon-two" checked="checked">
+<input class="tab2selector" type="radio" id="primary-icon-two-tab2" name="primary-icon-two">
+<input class="tab3selector" type="radio" id="primary-icon-two-tab3" name="primary-icon-two">
+<nav>
+    <ul>
+        <li class="tab1">
+            <label for="primary-icon-two-tab1">Example</label>
+        </li>
+        <li class="tab2">
+            <label for="primary-icon-two-tab2">HTML</label>
+        </li>
+        
+        <li class="tab3">
+            <label for="primary-icon-two-tab3">Angular</label>
+        </li>
+        
+    </ul>
+</nav>
+
+    <section>
+        <div class="tab1 component-example">
+            <button class="primary icon">
+                <p>Next</p>
+                <i class="fa fa-chevron-right"></i>
             </button>
         </div>
         <div class="tab2 component-html">
@@ -563,27 +680,28 @@ export class ButtonComponent {
 
 <p></p>
 
-<h3 id="anchor2">1. Secondary button</h3>
+<h3 id="anchor2">2. Secondary button</h3>
 
 <p>Use secondary buttons for more minor interactions, or if you need multiple buttons on a single page.</p>
 
+<h6>Action button</h6>
 <div class="tab-set">
-    
+        
 
-<input class="tab1selector" type="radio" id="tabsetid-tab1" name="tabsetid" checked="checked">
-<input class="tab2selector" type="radio" id="tabsetid-tab2" name="tabsetid">
-<input class="tab3selector" type="radio" id="tabsetid-tab3" name="tabsetid">
+<input class="tab1selector" type="radio" id="secondary-button-tab1" name="secondary-button" checked="checked">
+<input class="tab2selector" type="radio" id="secondary-button-tab2" name="secondary-button">
+<input class="tab3selector" type="radio" id="secondary-button-tab3" name="secondary-button">
 <nav>
     <ul>
         <li class="tab1">
-            <label for="tabsetid-tab1">Visual example</label>
+            <label for="secondary-button-tab1">Example</label>
         </li>
         <li class="tab2">
-            <label for="tabsetid-tab2">HTML</label>
+            <label for="secondary-button-tab2">HTML</label>
         </li>
         
         <li class="tab3">
-            <label for="tabsetid-tab3">Angular</label>
+            <label for="secondary-button-tab3">Angular</label>
         </li>
         
     </ul>
@@ -591,8 +709,8 @@ export class ButtonComponent {
 
     <section>
         <div class="tab1 component-example">
-            <button class="secondary icon">
-                <p>Pay now</p>
+            <button class="secondary">
+                <p>Skip this step</p>
             </button>
         </div>
         <div class="tab2 component-html">
@@ -667,7 +785,7 @@ export class ButtonComponent {
 <nav>
     <ul>
         <li class="tab1">
-            <label for="secondary-icon-tab1">Visual example</label>
+            <label for="secondary-icon-tab1">Example</label>
         </li>
         <li class="tab2">
             <label for="secondary-icon-tab2">HTML</label>
@@ -684,8 +802,196 @@ export class ButtonComponent {
         <div class="tab1 component-example">
             <button class="secondary icon">
                 <p>Open folder</p>
-                <i class="fa fa-folder"></i>
+                <i class="far fa-folder-open"></i>
             </button>
+        </div>
+        <div class="tab2 component-html">
+            HTML goes here.
+        </div>
+        <div class="tab3 component-angular">
+            <h5>Angular example usage:</h5>
+            <code class="language-html">
+                &lt;app-button
+                [label]="'Open folder'"
+                [icon]="'fa-folder'"
+                [isSecondary]="true"
+                [onClick]="logClick"
+                &gt;
+                &lt;/app-button&gt;
+            </code>
+            <br>
+            <br>
+            <h5>Angular component:</h5>
+            <pre>
+                <code class="language-javascript">import { Component, Input } from '@angular/core';
+
+@Component({
+                    selector: 'app-button',
+                    templateUrl: './button.component.html',
+                    styleUrls: ['./button.component.scss']
+})
+export class ButtonComponent {
+
+                    constructor() { }
+
+  @Input() label: string;
+
+  @Input() isSecondary: boolean;
+
+  @Input() icon: string;
+
+  @Input() onClick: () => any;
+
+  handleClick() {
+    this.onClick()
+  }
+}
+                </code>
+            </pre>
+            <h5>Angular template:</h5>
+            <pre>
+                <code class="language-html">&lt;button
+    [class.secondary]=&quot;isSecondary === true&quot;
+    [class.icon]=&quot;icon&quot;
+    (click)=&quot;handleClick()&quot;
+&gt;
+    &lt;p&gt;
+                    {{label}}
+                    &lt;/p&gt;
+    &lt;i *ngIf= &quot;icon&quot; class=&quot;fa {{icon}}&quot;&gt;&lt;/i&gt;
+&lt;/button&gt;
+                </code>
+            </pre>
+        </div>
+    </section>
+</div>
+
+<h6>Icon button</h6>
+<div class="tab-set">
+    
+
+<input class="tab1selector" type="radio" id="secondary-icon-two-tab1" name="secondary-icon-two" checked="checked">
+<input class="tab2selector" type="radio" id="secondary-icon-two-tab2" name="secondary-icon-two">
+<input class="tab3selector" type="radio" id="secondary-icon-two-tab3" name="secondary-icon-two">
+<nav>
+    <ul>
+        <li class="tab1">
+            <label for="secondary-icon-two-tab1">Example</label>
+        </li>
+        <li class="tab2">
+            <label for="secondary-icon-two-tab2">HTML</label>
+        </li>
+        
+        <li class="tab3">
+            <label for="secondary-icon-two-tab3">Angular</label>
+        </li>
+        
+    </ul>
+</nav>
+
+    <section>
+        <div class="tab1 component-example">
+            <button class="secondary icon">
+                <p>Open folder</p>
+                <i class="fa fa-chevron-right"></i>
+            </button>
+        </div>
+        <div class="tab2 component-html">
+            HTML goes here.
+        </div>
+        <div class="tab3 component-angular">
+            <h5>Angular example usage:</h5>
+            <code class="language-html">
+                &lt;app-button
+                [label]="'Open folder'"
+                [icon]="'fa-folder'"
+                [isSecondary]="true"
+                [onClick]="logClick"
+                &gt;
+                &lt;/app-button&gt;
+            </code>
+            <br>
+            <br>
+            <h5>Angular component:</h5>
+            <pre>
+                <code class="language-javascript">import { Component, Input } from '@angular/core';
+
+@Component({
+                    selector: 'app-button',
+                    templateUrl: './button.component.html',
+                    styleUrls: ['./button.component.scss']
+})
+export class ButtonComponent {
+
+                    constructor() { }
+
+  @Input() label: string;
+
+  @Input() isSecondary: boolean;
+
+  @Input() icon: string;
+
+  @Input() onClick: () => any;
+
+  handleClick() {
+    this.onClick()
+  }
+}
+                </code>
+            </pre>
+            <h5>Angular template:</h5>
+            <pre>
+                <code class="language-html">&lt;button
+    [class.secondary]=&quot;isSecondary === true&quot;
+    [class.icon]=&quot;icon&quot;
+    (click)=&quot;handleClick()&quot;
+&gt;
+    &lt;p&gt;
+                    {{label}}
+                    &lt;/p&gt;
+    &lt;i *ngIf= &quot;icon&quot; class=&quot;fa {{icon}}&quot;&gt;&lt;/i&gt;
+&lt;/button&gt;
+                </code>
+            </pre>
+        </div>
+    </section>
+</div>
+
+<h6>Error button</h6>
+<div class="tab-set">
+    
+
+<input class="tab1selector" type="radio" id="error-button-tab1" name="error-button" checked="checked">
+<input class="tab2selector" type="radio" id="error-button-tab2" name="error-button">
+<input class="tab3selector" type="radio" id="error-button-tab3" name="error-button">
+<nav>
+    <ul>
+        <li class="tab1">
+            <label for="error-button-tab1">Example</label>
+        </li>
+        <li class="tab2">
+            <label for="error-button-tab2">HTML</label>
+        </li>
+        
+        <li class="tab3">
+            <label for="error-button-tab3">Angular</label>
+        </li>
+        
+    </ul>
+</nav>
+
+    <section>
+        <div class="tab1 component-example">
+            <div class="button-wrapper">
+                <button class="error icon">
+                    <p>Next</p>
+                    <i class="fa fa-chevron-right"></i>
+                </button>
+                <div class="error-wrap">
+                    <span class="fa fa-exclamation"></span>
+                    <span>There's a problem with the information you provided</span>
+                </div>
+            </div>
         </div>
         <div class="tab2 component-html">
             HTML goes here.
@@ -755,5 +1061,7 @@ export class ButtonComponent {
 
     <script src="/assets/js/prism.js"></script>
     <script src="/assets/js/enhance.js"></script>
+    <script src="/assets/js/select.js"></script>
+    <script src="/assets/js/textinput.js"></script>
 </body>
 </html>
