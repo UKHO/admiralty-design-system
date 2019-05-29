@@ -14,7 +14,12 @@ function toggleValueClass(event) {
 
 var textinputEl3 = document.getElementById('name-input3');
 var labelEl3 = document.getElementById('input-label3');
-if (textinputEl3) textinputEl3.addEventListener('input', toggleValueClass3);
+if (textinputEl3) {
+    textinputEl3.addEventListener('input', toggleValueClass3)
+    if (textinputEl3.value !== "") {
+        labelEl3.classList.add('has-value');
+    }
+};
 
 function toggleValueClass3(event) {
     if (event.target.value !== "") {
@@ -31,7 +36,12 @@ var labelEl4 = document.getElementById('input-label4');
 var invalidInputWrap = document.getElementById('invalid-input-wrap');
 var invalidIcon = document.getElementById('invalid-icon');
 var invalidText = document.getElementById('invalid-text');
-if (textinputEl4) textinputEl4.addEventListener('input', checkInvalidInput);
+if (textinputEl4) {
+    textinputEl4.addEventListener('input', checkInvalidInput);
+    if (textinputEl4.value !== "") {
+        labelEl4.classList.add('has-value');
+    }
+}
 
 function checkInvalidInput (event) {
     // toggle value
