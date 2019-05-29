@@ -224,11 +224,14 @@ const navigation = {
     <%- partial('../../_partials/tabs', { id: 'secondary' }) %>
     <section>
         <div class="tab1 component-example">
-            <header>
+            <header class="example1-header">
                 <nav id="top-menu">
-                    <span>
-                        <img src="/assets/svg/AdmiraltyUKHO linear logo.svg" alt="Admiralty Marine Data Solutions | UK Hydrographic Office">
-                    </span>
+                    <span><a href="#" class="example1-nav-text">Site name</a></span>
+                    <div class="header-links-wrap">
+                        <a href="#" class="example1-nav-text">Link one</a>
+                        <a href="#" class="example1-nav-text">Link two</a>
+                        <a href="#" class="example1-nav-text">Link three</a>
+                    </div>
                 </nav>
             </header>
         </div>
@@ -373,34 +376,36 @@ export class ExpansionComponent implements OnInit {
     <%- partial('../../_partials/tabs', { id: 'sidebar' }) %>
     <section>
         <div class="tab1 component-example">
-            <nav id="side-menu" aria-label="Submenu">
-                <section>
-                    <h2><a href="/item1/">Item 1</a></h2>
-                </section>
-                <section class="active">
-                    <h2><a href="/item2/">Item 2</a></h2>
-                    <ul>
-                        <li class="active">
-                            <a href="/item2/page1">Page 1</a>
-                        </li>
-                        <li>
-                            <a href="/item2/page2">Page 2</a>
-                        </li>
-                        <li>
-                            <a href="/item2/page3">Page 3</a>
-                        </li>
-                        <li>
-                            <a href="/item2/page4">Page 4</a>
-                        </li>
-                        <li>
-                            <a href="/item2/page5">Page 5</a>
-                        </li>
-                    </ul>
-                </section>
-                <section>
-                    <h2><a href="/item3/">Item 3</a></h2>
-                </section>
-            </nav>
+            <div class="example-side-menu-wrap">
+                <nav id="side-menu" aria-label="Submenu">
+                    <section>
+                        <h2><a href="/item1/">Item 1</a></h2>
+                    </section>
+                    <section class="active">
+                        <h2><a href="/item2/">Item 2</a></h2>
+                        <ul>
+                            <li class="active">
+                                <a href="/item2/page1">Page 1</a>
+                            </li>
+                            <li>
+                                <a href="/item2/page2">Page 2</a>
+                            </li>
+                            <li>
+                                <a href="/item2/page3">Page 3</a>
+                            </li>
+                            <li>
+                                <a href="/item2/page4">Page 4</a>
+                            </li>
+                            <li>
+                                <a href="/item2/page5">Page 5</a>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2><a href="/item3/">Item 3</a></h2>
+                    </section>
+                </nav>
+            </div>
         </div>
         <div class="tab2 component-html">
             HTML goes here.

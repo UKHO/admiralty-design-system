@@ -63,12 +63,12 @@ $colour-button-secondary-icon-selected: #ffffff;
 $colour-link: $colour-admiralty-blue;
 
 /* Nav colours */
-$colour-nav-item: #2c2c2c;
+$colour-nav-item: #333333;
 $colour-nav-main-bg-hover: #eef3f4;
 $colour-nav-bg-hover: #f0f0f0;
 $colour-nav-bg: #f8f8f8;
-$colour-nav-subitem: #3a3a3a;
-$colour-nav-subitem-icon: #333333;
+$colour-nav-subitem: $colour-admiralty-blue;
+$colour-nav-subitem-icon: $colour-admiralty-blue;
 
 /* Table colours */
 $colour-table-row-bg: $colour-bg;
