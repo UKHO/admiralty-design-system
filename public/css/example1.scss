@@ -5,13 +5,14 @@
 
     nav#top-menu {
         z-index: 2;
+        align-items: center;
 
-        span.example1-nav-text {
+        a.example1-nav-text, span.example1-nav-text {
             display: flex;
-            align-items: center;
             font-size: 14px;
             color: $colour-admiralty-blue;
             font-weight: $font-weight-medium;
+            text-decoration: none;
         }
         
         .header-links-wrap {
