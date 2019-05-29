@@ -49,6 +49,10 @@ section.expansion {
       @extend .fa-chevron-down:before;
       float: right;
     }
+
+    h3 {
+      display: inline;
+    }
   }
 
   > div {
