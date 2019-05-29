@@ -4,7 +4,7 @@
 
 .dialog {
   box-shadow: 0 1px 3px 0 rgba(0,0,0,0.2);
-  padding: 20px;
+  padding: 30px 20px;
   @include not-desktop {
     padding: 10px;
   }
