@@ -4,9 +4,9 @@
     td {
         background-color: $colour-table-row-bg;
         border-bottom: none;
-    }
-
-    th {
         color: $colour-admiralty-blue;
+        span {
+            color: $colour-admiralty-blue;
+        }
     }
 }
