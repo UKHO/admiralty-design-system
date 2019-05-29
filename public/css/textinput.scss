@@ -5,6 +5,10 @@
 .text-input-wrap {
   position: relative;
   display: inline-block;
+  @include not-desktop {
+    width: 100%;
+    max-width: 420px;
+  }
 
   label {
     position: relative;
