@@ -22,6 +22,7 @@ import { SearchComponent } from './search/search.component';
 import { ExpansionComponent } from './expansion/expansion.component';
 import { ReadMoreComponent } from "./readmore/readmore.component";
 import { DialogueComponent } from './dialogue/dialogue.component';
+import {SidenavComponent} from "./sidenav/sidenav.component";
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { DialogueComponent } from './dialogue/dialogue.component';
     SearchComponent,
     ExpansionComponent,
     ReadMoreComponent,
-    DialogueComponent
+    DialogueComponent,
+    SidenavComponent
   ],
   imports: [
     BrowserModule,

@@ -123,6 +123,7 @@ header {
       vertical-align: middle;
       margin-bottom: 0;
       @include not-desktop {
+        margin-left: 0;
         display: block;
         flex-grow: 1;
       }

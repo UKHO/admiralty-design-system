@@ -1,24 +1,4 @@
-export interface Navigation {
-    heading: string
-    sections: Section[]
-}
-
-interface Section {
-    title: string
-    href: string
-    subSections: SubSection[]
-}
-
-interface SubSection {
-    title: string
-    href: string
-    items: Item[]
-}
-
-interface Item {
-    label: string
-    href: string
-}
+import { Navigation } from "../navtypes";
 
 export const mockNavigation: Navigation = {
     heading: 'Main heading',

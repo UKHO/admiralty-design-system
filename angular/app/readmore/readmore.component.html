@@ -1,11 +1,7 @@
 <section class="readmore">
     <h3>{{ heading }}</h3>
     <input id="{{ uid }}" type="checkbox" [attr.checked]="initialExpanded">
-    <div>
-        <ng-content select=".readmore-intro"></ng-content>
-    </div>
-    <div>
-        <ng-content></ng-content>
-    </div>
+    <ng-content select=".readmore-intro"></ng-content>
+    <ng-content></ng-content>
     <label for="{{ uid }}"></label>
 </section>
