@@ -6,11 +6,17 @@
 .text-area-wrap {
     position: relative;
     display: inline-block;
+    width: 425px;
+
+    @include not-desktop {
+        width: 100%;
+        max-width: 425px;
+    }
 
     textarea {
         position: relative;
         z-index: 1;
-        width: 425px;
+        width: 100%;
         min-height: 170px;
         border: 2px solid $colour-textinput-border;
         color: $colour-textinput-text;
@@ -27,7 +33,6 @@
         }
 
         // placeholder text
-
         ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
             color: $colour-textinput-text;
             overflow: visible;
