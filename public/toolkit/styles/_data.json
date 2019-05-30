@@ -34,5 +34,11 @@
     "title": "Icons",
     "url": "toolkit/styles/icons",
     "description": "This is a description of the page contents to be shown as a preview."
+  },
+  "images": {
+    "layout": "../../_layout_sidemenu",
+    "title": "Images",
+    "url": "toolkit/styles/images",
+    "description": "This is a description of the page contents to be shown as a preview."
   }
 }
