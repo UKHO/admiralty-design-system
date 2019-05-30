@@ -17,35 +17,77 @@
     Use imagery that is applicable to the rest of the content of the page or product.
 </p>
 
-<table>
-<thead>
+<table class="images-table">
+    <thead>
+        <tr>
+            <th>Screen size</td>
+            <th>Header dimensions (scaled to width)</td>
+        </tr>
+    </thead>
     <tr>
-        <th>Screen size</td>
-        <th>Header dimensions (scaled to width)</td>
+        <td>Over 1024px (desktop)</td>
+        <td>1240x430px</td>
     </tr>
-</thead>
-<tr>
-    <td>Over 1024px (desktop)</td>
-    <td>1240x430px</td>
-</tr>
-<tr>
-    <td>769px > 1024px (landscape tablet)</td>
-    <td>1024x355px</td>
-</tr>
-<tr>
-    <td>601px > 768px</td>
-    <td>768x422px</td>
-</tr>
-<tr>
-    <td>415px > 600px</td>
-    <td>600x329px</td>
-</tr>
-<tr>
-    <td>376px > 414px</td>
-    <td>414x261px</td>
-</tr>
-<tr>
-    <td>Up to 375px</td>
-    <td>375x236px</td>
-</tr>
+    <tr>
+        <td>769px > 1024px (landscape tablet)</td>
+        <td>1024x355px</td>
+    </tr>
+    <tr>
+        <td>601px > 768px</td>
+        <td>768x422px</td>
+    </tr>
+    <tr>
+        <td>415px > 600px</td>
+        <td>600x329px</td>
+    </tr>
+    <tr>
+        <td>376px > 414px</td>
+        <td>414x261px</td>
+    </tr>
+    <tr>
+        <td>Up to 375px</td>
+        <td>375x236px</td>
+    </tr>
 </table>
+
+<div class="tab-set">
+    <%- partial('../../_partials/tabs', { id: 'primary-action' }) %>
+    <section>
+        <div class="tab1 component-example">
+            <img class="header-image" src="/assets/images/beach-image-example.png" />
+        </div>
+        <div class="tab2 component-html">
+            HTML goes here.
+        </div>
+        <div class="tab3 component-angular">
+                <h5>Table object:</h5>
+                <pre>
+                    <code class="language-javascript">
+                        <input type="textarea" placeholder="Type here" />
+                    </code>
+                </pre>
+                <br />
+                <br />
+                <h5>Angular example usage:</h5>
+                <code class="language-html">
+                    
+                </code>
+                <br />
+                <br />
+                <h5>Angular component:</h5>
+                <pre>
+                    <code class="language-javascript">
+    
+                    </code>
+                </pre>
+                <br />
+                <br />
+                <h5>Angular template:</h5>
+                <pre>
+                    <code class="language-html">
+    
+                    </code>
+                </pre>
+        </div>
+    </section>
+</div>
