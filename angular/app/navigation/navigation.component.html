@@ -13,15 +13,15 @@
           </a>
       </div>
     
-      <ul aria-label="Main heading">
+      <ul>
           <li *ngFor="let section of navigation.sections" tabindex="0" class="section{{section.active ? ' active' : '' }}">
-              <a tabindex="-1" href="#">{{section.title}}</a>
+              <a tabindex="-1" href="{{section.href || '#'}}">{{section.title}}</a>
               <section>
                   <section *ngFor="let subSection of section.subSections" class="sub-section">
-                      <h2><a href="#">{{subSection.title}}</a></h2>
+                      <h2><a href="{{subSection.href || '#'}}">{{subSection.title}}</a></h2>
                       <ul>
                           <li *ngFor="let item of subSection.items">
-                              <a href="#">{{item.label}}</a>
+                              <a href="{{item.href || '#'}}">{{item.title}}</a>
                           </li>
                       </ul>
                   </section>

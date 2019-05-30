@@ -1,0 +1,5 @@
+<ul class="breadcrumbs">
+  <li *ngFor="let item of navigation">
+    <a href="{{item.href || '#'}}">{{item.title}}</a>
+  </li>
+</ul>
