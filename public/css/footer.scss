@@ -3,7 +3,7 @@
 @import 'typography';
 
 footer {
-  @extend .small;
+  font-size: 16px;
   color: $colour-admiralty-blue;
   background-color: $colour-bg-footer;
   font-weight: $font-weight-medium;
@@ -11,6 +11,7 @@ footer {
   line-height: 60px;
   padding: 0 20px;
   @include not-desktop {
+    font-size: 14px;
     height: 40px;
     line-height: 40px;
     padding: 0 10px;

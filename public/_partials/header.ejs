@@ -47,7 +47,7 @@
                                 console.error('Menu partial: No index page definition for subsection ' + JSON.stringify(subsection));
                             }
                             var subsectionTitle = subsectionIndex.title;
-                            var subsectionHref = sectionIndex.noLink ? '#' :'/' + subsectionIndex.url;
+                            var subsectionHref = subsectionIndex.noLink ? '#' :'/' + subsectionIndex.url;
                     %>
                     <section>
                         <h2><a href="<%= subsectionHref %>"><%= subsectionTitle %></a></h2>

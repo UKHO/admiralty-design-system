@@ -29,7 +29,7 @@ ul.breadcrumbs {
       display: none;
     }
 
-    a {
+    a, span {
       display: inline-block;
       line-height: 40px;
       font-size: 14px;
@@ -37,10 +37,12 @@ ul.breadcrumbs {
       text-decoration: none;
       color: $colour-nav-item;
       padding: 0 2px;
-
-      &:hover {
-        color: $colour-admiralty-blue;
-      }
+    }
+    a:hover {
+      color: $colour-admiralty-blue;
+    }
+    span {
+      user-select: none;
     }
 
     &:last-child a {

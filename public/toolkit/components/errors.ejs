@@ -33,7 +33,7 @@
             </section>
         </div>
         <div class="tab2 component-html">
-            HTML goes here.
+            HTML injected here
         </div>
         <div class="tab3 component-angular">
             <h5>Angular example usage:</h5>
@@ -41,38 +41,6 @@
 <app-dialogue title="There's a problem" type="error">
     <p>It looks like there might be a problem with our system. Please try again in a few minutes. We’re sorry for the inconvenience.</p>
 </app-dialogue>
-            </script>
-            <br />
-            <br />
-            <h5>Angular component:</h5>
-            <script type="text/plain" class="language-javascript">
-import {Component, Input, OnInit} from '@angular/core';
-
-@Component({
-  selector: 'app-dialogue',
-  templateUrl: './dialogue.component.html',
-  styleUrls: ['./dialogue.component.scss']
-})
-export class DialogueComponent implements OnInit {
-
-  constructor() { }
-
-  @Input() title: string;
-  @Input() type: "info" | "warning" | "success" | "error";
-
-  ngOnInit() {
-  }
-
-}
-            </script>
-            <h5>Angular template:</h5>
-            <script type="text/plain" class="language-markup">
-<section class="dialog {{ type }}">
-  <h3>{{ title }}</h3>
-  <div>
-    <ng-content></ng-content>
-  </div>
-</section>
             </script>
         </div>
     </section>
@@ -96,12 +64,12 @@ export class DialogueComponent implements OnInit {
             </div>
         </div>
         <div class="tab2 component-html">
-            HTML goes here.
+            HTML injected here
         </div>
         <div class="tab3 component-angular">
-                <h5>Angular example usage:</h5>
-                <pre>
-                    <code class="language-html">
+            <h5>Angular example usage:</h5>
+            <pre>
+                <code class="language-html">
 &ltapp-textinput
     [isValid]="true"
     [inputText]="inputText"
@@ -109,73 +77,8 @@ export class DialogueComponent implements OnInit {
     [invalidMessage]="'Email is invalid'"
 >
 &lt/app-textinput>
-                    </code>
-                </pre>
-                <br />
-                <br />
-                <h5>Angular component:</h5>
-                <pre>
-                    <code class="language-javascript">
-import { Component, Input } from '@angular/core';
-import { FormControl } from '@angular/forms';
-
-@Component({
-    selector: 'app-textinput',
-    templateUrl: './textinput.component.html',
-    styleUrls: ['./textinput.component.scss']
-})
-export class TextinputComponent {
-
-    constructor() { }
-
-    @Input() isDisabled: boolean;
-
-    @Input() isValid: boolean;
-
-    @Input() inputText: { value: string };
-
-    @Input() validation: FormControl;
-
-    @Input() invalidMessage: string;
-}
-                            
-                    </code>
-                </pre>
-                <br />
-                <br />
-                <h5>Angular template:</h5>
-                <pre>
-                    <code class="language-html">
-&ltform>
-    &ltdiv class="mat-input-text-wrapper">
-        &ltmat-form-field
-        class="material-text-input"
-        appearance="outline"
-        [class.disabled] = "isDisabled === true"
-        [class.valid] = "isValid === true"
-        >
-        &ltmat-label>Input Label &lt/mat-label>
-        &ltinput
-            [disabled]="isDisabled"
-            matInput
-            placeholder="Email"
-            [(ngModel)]="inputText.value"
-            [formControl]="validation"
-        >
-        &ltmat-error class="error-message" *ngIf="validation.invalid">{{invalidMessage}}&lt/mat-error>
-        &ltspan 
-            *ngIf="isValid || validation.invalid"
-            class="fa icon"
-            [class.fa-check] = "isValid && !validation.invalid"
-            [class.fa-exclamation] = "validation.invalid"
-        >
-        &lt/span>
-        &lt/mat-form-field>
-    &lt/div>
-&lt/form>
-                                        
-                    </code>
-                </pre>
+                </code>
+            </pre>
         </div>
     </section>
 </div>
@@ -200,7 +103,7 @@ export class TextinputComponent {
             </div>
         </div>
         <div class="tab2 component-html">
-            HTML goes here.
+            HTML injected here
         </div>
         <div class="tab3 component-angular">
             <h5>Angular example usage:</h5>
@@ -213,49 +116,6 @@ export class TextinputComponent {
                 &gt;
                 &lt;/app-button&gt;
             </code>
-            <br />
-            <br />
-            <h5>Angular component:</h5>
-            <pre>
-                <code class="language-javascript">import { Component, Input } from '@angular/core';
-
-@Component({
-                    selector: 'app-button',
-                    templateUrl: './button.component.html',
-                    styleUrls: ['./button.component.scss']
-})
-export class ButtonComponent {
-
-                    constructor() { }
-
-  @Input() label: string;
-
-  @Input() isSecondary: boolean;
-
-  @Input() icon: string;
-
-  @Input() onClick: () => any;
-
-  handleClick() {
-    this.onClick()
-  }
-}
-                </code>
-            </pre>
-            <h5>Angular template:</h5>
-            <pre>
-                <code class="language-html">&lt;button
-    [class.secondary]=&quot;isSecondary === true&quot;
-    [class.icon]=&quot;icon&quot;
-    (click)=&quot;handleClick()&quot;
-&gt;
-    &lt;p&gt;
-                    {{label}}
-                    &lt;/p&gt;
-    &lt;i *ngIf= &quot;icon&quot; class=&quot;fa {{icon}}&quot;&gt;&lt;/i&gt;
-&lt;/button&gt;
-                </code>
-            </pre>
         </div>
     </section>
 </div>

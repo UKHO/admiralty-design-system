@@ -32,6 +32,7 @@ function setupMenu(menuLinks, parentLevels) {
 
 function toggleMenu(evt) {
     evt.preventDefault();
+    var mainMenu = document.getElementById('main-menu');
     if (mainMenu.getAttribute("aria-expanded") === 'true') {
         mainMenu.setAttribute('aria-expanded', 'false');
     } else {
@@ -50,7 +51,6 @@ export function enhanceMainMenu() {
     // handle menu open / close on mobile
     var openMenu = document.getElementById('main-menu-toggle');
     var closeMenu = document.getElementById('main-menu-close');
-    var mainMenu = document.getElementById('main-menu');
 
     openMenu.addEventListener('click', toggleMenu);
     closeMenu.addEventListener('click', toggleMenu);
