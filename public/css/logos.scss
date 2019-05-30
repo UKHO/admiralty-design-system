@@ -1,38 +1,21 @@
 @import 'colours';
 
-.logos-row {
-    display: flex;
-    justify-content: space-around;
-    margin: 30px 0;
+.admiralty-stacked {
+    max-width: 295px;
 }
 
-.logos-stacked {
-    max-width: 356px;
-    margin: 0 0 45px 0;
+.admiralty-linear {
+    max-width: 775px;
 }
 
-.logos-linear {
-    max-width: 443px;
-    margin: 0 0 45px 0;
+.ukho-stacked {
+    max-width: 295px;
 }
 
-.admiralty-logo-background {
-    width: 100%;
-    max-width: 378px;
-    padding: 60px;
-    display: flex;
+.ukho-linear {
+    max-width: 470px;
 }
 
-.ukho-background {
-    width: 100%;
-    padding: 60px;
-    display: flex;
-}
-
-.dark-logo-background {
-    background-color: $colour-admiralty-blue;
-}
-
-.logo-image {
-    width: 100%;
+.logo-img {
+    margin: 35px 0 55px 0;
 }
