@@ -9,6 +9,7 @@ ul.breadcrumbs {
   background-color: $colour-bg;
   padding: 0 20px;
   margin-bottom: 48px;
+  position: static;
   @include not-desktop {
     display: none;
     margin-bottom: 30px;
@@ -16,12 +17,16 @@ ul.breadcrumbs {
 
   li {
     margin-bottom: 0;
+    transform: unset;
+    padding-right: unset;
     // chevron
     &::before {
       @extend .fa;
       @extend .fa-chevron-right:before;
       font-size: 10px;
       margin: 0 10px;
+      position: static;
+      left: unset;
     }
     // no chevron for first link
     &:first-child::before {
