@@ -24,6 +24,11 @@ table {
     /* height: 42px; removed to allow padding to control height */
     line-height: 30px;
     padding: 6px 20px;
+
+    @include not-desktop {
+      font-size: 16px;
+      line-height: 24px;
+    }
   }
 
   tr  {
