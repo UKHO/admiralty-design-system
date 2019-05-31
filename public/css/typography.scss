@@ -149,3 +149,17 @@ ol {
     margin-bottom: 12px;
   }
 }
+
+ol, ul {
+  position: relative;
+
+  li {
+    transform: translateX(31px);
+    padding-right: 30px;
+  }
+  
+  li::before {
+    position: absolute;
+    left: -30px;
+  }
+}
