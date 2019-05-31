@@ -62,7 +62,7 @@ describe('NavigationComponent', () => {
       subSections.forEach((subSection, j) => {
         const items = subSection.querySelectorAll('li > a')
         items.forEach((item, k) => {
-          expect(item.textContent).toEqual(mockNavigation.sections[i].subSections[j].items[k].label);
+          expect(item.textContent).toEqual(mockNavigation.sections[i].subSections[j].items[k].title);
         });
       });
     });
