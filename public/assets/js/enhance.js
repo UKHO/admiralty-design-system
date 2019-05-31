@@ -68,6 +68,13 @@ setupMenu(document.querySelectorAll('#main-menu > ul > li > a'));
 // handle expand / contract of side menu items
 setupMenu(document.querySelectorAll('#side-menu > section > ul > li > a'), 3);
 
+var demoMenu = document.querySelector('.main-menu-example .menu-toggle');
+if (demoMenu) {
+    demoMenu.addEventListener('click', function (evt) {
+        evt.preventDefault();
+        alert('This would open the mobile menu');
+    });
+}
 
 // handle the tabbed previews
 

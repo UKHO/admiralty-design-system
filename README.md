@@ -44,4 +44,4 @@ As a static site the resulting *dist* can then be uploaded to any web host
 
 ##Angular
 
-To be completed.
+This is a standard Angular (sub)project made with the *ng* command line tool.  
