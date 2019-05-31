@@ -17,68 +17,20 @@
         <div class="tab1 component-example">
             <p class="form-label">Search</p>
             <div class="search-wrapper">
-                <input type="text" class="form-text-input" placeholder="Input field" />
+                <input type="text" class="form-text-input" placeholder="Enter search term" />
                 <button>
                     <p>Search</p>
                 </button>
             </div>
         </div>
         <div class="tab2 component-html">
-            HTML goes here.
+            HTML injected here
         </div>
         <div class="tab3 component-angular">
-                <h5>Angular example usage:</h5>
-                <code class="language-html">
-&ltapp-search>&lt/app-search>
-                </code>
-                <br />
-                <br />
-                <h5>Angular component:</h5>
-                <pre>
-                    <code class="language-javascript">
-import { Component } from '@angular/core';
-
-@Component({
-    selector: 'app-search',
-    templateUrl: './search.component.html',
-    styleUrls: ['./search.component.scss']
-})
-export class SearchComponent {
-
-    constructor() { }
-
-    handleSearch() {
-    console.log('search button has been clicked')
-    }
-}
-                            
-                    </code>
-                </pre>
-                <br />
-                <br />
-                <h5>Angular template:</h5>
-                <pre>
-                    <code class="language-html">
-&ltform>
-    &ltdiv class="mat-search-wrapper">
-        &ltmat-form-field
-        class="material-text-input"
-        appearance="outline"
-        >
-        &ltinput
-            matInput
-            placeholder="Search"
-        >
-        &lt/mat-form-field>
-        &ltapp-button
-        [label]="'Pay now'"
-        [click]="handleSearch"
-        >
-        &lt/app-button>
-    &lt/div>
-&lt/form>
-                    </code>
-                </pre>
+            <h5>Angular example usage:</h5>
+            <code class="language-html">
+&lt;app-search>&lt;/app-search>
+            </code>
         </div>
     </section>
 </div>

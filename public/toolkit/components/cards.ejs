@@ -32,7 +32,7 @@
             </section>
         </div>
         <div class="tab2 component-html">
-            HTML goes here.
+            HTML injected here
         </div>
         <div class="tab3 component-angular">
             <h5>Angular example usage:</h5>
@@ -54,38 +54,6 @@
                 &lt;/div&gt;
                 &lt;/section&gt;
             </code>
-            <br />
-            <br />
-            <h5>Angular component:</h5>
-            <pre>
-                <code class="language-javascript">import {Component, Input, OnInit} from '@angular/core';
-
-@Component({
-                    selector: 'app-card',
-                    templateUrl: './card.component.html',
-                    styleUrls: ['./card.component.scss']
-})
-export class ExpansionComponent implements OnInit {
-                    @Input() public title = '';
-
-                    constructor() { }
-
-  ngOnInit() {
-  }
-
-}
-                </code>
-            </pre>
-            <h5>Angular template:</h5>
-            <pre>
-                <code class="language-html">&lt;section class=&quot;card&quot;&gt;
-  &lt;h6 *ngIf=&quot;title&quot;&gt;{{ title }}&lt;/h6&gt;
-  &lt;div&gt;
-    &lt;ng-content&gt;&lt;/ng-content&gt;
-  &lt;/div&gt;
-&lt;/section&gt;
-                </code>
-            </pre>
         </div>
     </section>
 </div>
@@ -101,16 +69,31 @@ export class ExpansionComponent implements OnInit {
             <section class="card">
                 <h6>Contact details</h6>
                 <div>
-                    <form>
-                        <input type="text" placeholder="First name"/><br>
-                        <input type="text" placeholder="Last name"/><br>
-                        <input type="text" placeholder="Email address"/><br>
+                    <form class="text-input-form">
+                        <div class="text-input-wrap">
+                            <input type="text" class="form-text-input" />
+                            <div class="input-wrap">
+                                <label for="name-input">First name</label>
+                            </div>
+                        </div>
+                        <div class="text-input-wrap">
+                            <input type="text" class="form-text-input" />
+                            <div class="input-wrap">
+                                <label for="name-input">Last name</label>
+                            </div>
+                        </div>
+                        <div class="text-input-wrap">
+                            <input type="text" class="form-text-input" />
+                            <div class="input-wrap">
+                                <label for="name-input">Email address</label>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </section>
         </div>
         <div class="tab2 component-html">
-            HTML goes here.
+            HTML injected here
         </div>
         <div class="tab3 component-angular">
             <h5>Angular example usage:</h5>
@@ -128,38 +111,6 @@ export class ExpansionComponent implements OnInit {
                 &lt;/div&gt;
                 &lt;/section&gt;
             </code>
-            <br />
-            <br />
-            <h5>Angular component:</h5>
-            <pre>
-                <code class="language-javascript">import {Component, Input, OnInit} from '@angular/core';
-
-@Component({
-                    selector: 'app-card',
-                    templateUrl: './card.component.html',
-                    styleUrls: ['./card.component.scss']
-})
-export class ExpansionComponent implements OnInit {
-                    @Input() public title = '';
-
-                    constructor() { }
-
-  ngOnInit() {
-  }
-
-}
-                </code>
-            </pre>
-            <h5>Angular template:</h5>
-            <pre>
-                <code class="language-html">&lt;section class=&quot;card&quot;&gt;
-  &lt;h6 *ngIf=&quot;title&quot;&gt;{{ title }}&lt;/h6&gt;
-  &lt;div&gt;
-    &lt;ng-content&gt;&lt;/ng-content&gt;
-  &lt;/div&gt;
-&lt;/section&gt;
-                </code>
-            </pre>
         </div>
     </section>
 </div>

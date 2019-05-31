@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { TABLE } from './mock-table-data';
 import { mockNavigation } from './navigation/mocknavigation';
+import { mockSideNav } from './sidenav/mocknavigation';
 import { Validators, FormControl } from '@angular/forms';
 import { OptionValue } from './select/select.component';
+import {MenuItem} from './navtypes';
 
 @Component({
   selector: 'app-root',
@@ -15,14 +17,21 @@ export class AppComponent {
   table = TABLE;
 
   navigation = mockNavigation;
+  sideNav = mockSideNav;
+  breadcrumbs: MenuItem[] = [
+    { title: 'Design System', href: '/' },
+    { title: 'Section 1', href: '/section1/' },
+    { title: 'Subsection A', href: '/section1/subsectiona/' },
+    { title: 'Page 1', href: '/section1/subsectiona/page1.html' },
+  ];
   
   inputText = {
     value: ''
-  }
+  };
 
   textareaText = {
     value: ''
-  }
+  };
   
   selectOptions: OptionValue[] = [
     {value: 'steak-0', viewValue: 'Steak'},

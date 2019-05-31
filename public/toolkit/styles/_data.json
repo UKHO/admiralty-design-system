@@ -34,5 +34,11 @@
     "title": "Icons",
     "url": "toolkit/styles/icons",
     "description": "Use icons in digital products and services to help users understand an action."
+  },
+  "images": {
+    "layout": "../../_layout_sidemenu",
+    "title": "Images",
+    "url": "toolkit/styles/images",
+    "description": "Using images can help users to visualise other forms of content."
   }
 }

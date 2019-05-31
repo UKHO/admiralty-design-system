@@ -1,12 +1,17 @@
 @import 'colours';
 
 .icon-table {
-    td {
-        background-color: $colour-table-row-bg;
-        border-bottom: none;
-    }
+    width: 100%;
 
     th {
+        width: 1000px;
+    }
+
+    th:first-child {
+        width: 12%;
+    }
+
+    span {
         color: $colour-admiralty-blue;
     }
 }
