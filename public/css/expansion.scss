@@ -28,7 +28,7 @@ section.readmore {
   }
 
   > input[type='checkbox']:checked + div + div + label::before {
-    content: 'Read less';
+    content: 'Read less...';
   }
 }
 

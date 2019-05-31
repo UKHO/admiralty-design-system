@@ -17,6 +17,10 @@ import { RadioComponent } from './radio/radio.component';
 import { CheckboxComponent } from './checkbox/checkbox.component';
 import { SearchComponent } from './search/search.component';
 import { ExpansionComponent } from './expansion/expansion.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
+import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
+import { ReadMoreComponent } from './readmore/readmore.component';
+import { DialogueComponent } from './dialogue/dialogue.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -44,7 +48,11 @@ describe('AppComponent', () => {
         RadioComponent,
         CheckboxComponent,
         SearchComponent,
-        ExpansionComponent
+        ExpansionComponent,
+        SidenavComponent,
+        BreadcrumbsComponent,
+        ReadMoreComponent,
+        DialogueComponent
       ],
     }).compileComponents();
   }));

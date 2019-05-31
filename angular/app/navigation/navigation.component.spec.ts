@@ -31,7 +31,7 @@ describe('NavigationComponent', () => {
 
   it('should render the navigation heading', () => {
     const headings = compiled.querySelectorAll('h1');
-    expect(headings.length).toBe(2)
+    expect(headings.length).toBe(1)
     headings.forEach((heading) => {
       expect(heading.textContent).toEqual(mockNavigation.heading);
     })
@@ -62,7 +62,7 @@ describe('NavigationComponent', () => {
       subSections.forEach((subSection, j) => {
         const items = subSection.querySelectorAll('li > a')
         items.forEach((item, k) => {
-          expect(item.textContent).toEqual(mockNavigation.sections[i].subSections[j].items[k].label);
+          expect(item.textContent).toEqual(mockNavigation.sections[i].subSections[j].items[k].title);
         });
       });
     });
