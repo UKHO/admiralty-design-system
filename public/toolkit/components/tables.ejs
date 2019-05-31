@@ -6,8 +6,6 @@
     <li><a href="#anchor1">Responsive table</a></li>
 </ol>
 
-<p></p>
-
 <h3 id="anchor1">1. Responsive table</h3>
 
 <p>Responsive tables will automatically adjust their column widths to fit different screen sizes.</p>
@@ -64,7 +62,7 @@
             </table>
         </div>
         <div class="tab2 component-html">
-            HTML goes here.
+            HTML injected here
         </div>
         <div class="tab3 component-angular">
             <h5>Table object:</h5>
@@ -128,54 +126,8 @@ const exampleTable: Table = {
             <br />
             <h5>Angular example usage:</h5>
             <code class="language-html">
-                &ltapp-table [table]="exampleTable">&lt/app-table>
+                &lt;app-table [table]="exampleTable">&lt;/app-table>
             </code>
-            <br />
-            <br />
-            <h5>Angular component:</h5>
-            <pre>
-                <code class="language-javascript">
-import { Component, Input } from '@angular/core';
-import { Table } from '../mock-table-data';
-
-@Component({
-    selector: 'app-table',
-    templateUrl: './table.component.html',
-    styleUrls: ['./table.component.scss']
-})
-export class TableComponent {
-
-    constructor() { }
-
-    @Input() table: Table;
-    
-    getRecordDetails(record) {
-        return Object.values(record);
-    }
-}
-                </code>
-            </pre>
-            <br />
-            <br />
-            <h5>Angular template:</h5>
-            <pre>
-                <code class="language-html">
-&lttable *ngIf="table">
-    &ltthead>
-        &lttr>
-            &ltth *ngFor="let heading of table.headings">{{heading}}&lt/th>
-        &lt/tr>
-    &lt/thead>
-    &lttbody>
-        &lttr *ngFor="let record of table.records">
-            &lttd *ngFor="let detail of getRecordDetails(record)">
-                {{detail}}
-            &lt/td>
-        &lt/tr>
-    &lt/tbody>
-&lt/table>
-                </code>
-            </pre>
         </div>
     </section>
 </div>

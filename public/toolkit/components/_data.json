@@ -13,7 +13,7 @@
   },
   "search": {
     "layout": "../../_layout_sidemenu",
-    "title": "Search Fields",
+    "title": "Search field",
     "url": "toolkit/components/search",
     "description": "This is a description of what components are and potential areas of use in digital products and services."
   },
@@ -31,7 +31,7 @@
   },
   "expansion": {
     "layout": "../../_layout_sidemenu",
-    "title": "Expansion Panels",
+    "title": "Expansion panels",
     "url": "toolkit/components/expansion",
     "description": "This is a description of what components are and potential areas of use in digital products and services."
   },
@@ -39,6 +39,24 @@
     "layout": "../../_layout_sidemenu",
     "title": "Buttons",
     "url": "toolkit/components/buttons",
+    "description": "This is a description of what components are and potential areas of use in digital products and services."
+  },
+  "forms": {
+    "layout": "../../_layout_sidemenu",
+    "title": "Forms",
+    "url": "toolkit/components/forms",
+    "description": "This is a description of what components are and potential areas of use in digital products and services."
+  },
+  "dialogs": {
+    "layout": "../../_layout_sidemenu",
+    "title": "Dialogue boxes",
+    "url": "toolkit/components/dialogs",
+    "description": "This is a description of what components are and potential areas of use in digital products and services."
+  },
+  "errors": {
+    "layout": "../../_layout_sidemenu",
+    "title": "Errors",
+    "url": "toolkit/components/errors",
     "description": "This is a description of what components are and potential areas of use in digital products and services."
   }
 }

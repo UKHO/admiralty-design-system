@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import { generateUID } from '../utils.js'
 
 @Component({
   selector: 'app-expansion',
@@ -9,13 +10,9 @@ export class ExpansionComponent {
 
   constructor() { }
 
-  isExpanded: boolean = false;
-
-  expandText: string = "Read more...";
+  @Input() initialExpanded: boolean = false;
+  @Input() heading: string;
   
-  toggleExpanded() {
-    this.isExpanded = !this.isExpanded;
-    this.expandText = this.isExpanded ? "Read less..." : "Read more...";
-  }
+  uid: string = generateUID();
   
 }

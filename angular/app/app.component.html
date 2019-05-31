@@ -1,5 +1,7 @@
 <app-header></app-header>
 <app-navigation [navigation]="navigation"></app-navigation>
+<app-sidenav [navigation]="sideNav"></app-sidenav>
+<app-breadcrumbs [navigation]="breadcrumbs"></app-breadcrumbs>
 <div class="example-wrapper">
     <h1>
         Welcome to {{ title }}!
@@ -39,5 +41,7 @@
     <app-checkbox></app-checkbox>
     <br />
     <app-search></app-search>
-    <app-expansion></app-expansion>
+    <app-expansion heading="Heading 1" initialExpanded="false">Some text</app-expansion>
+    <app-readmore heading="Heading 1" initialExpanded="false"><div class=".readmore-intro">Intro text</div><div>Main text</div></app-readmore>
+    <app-dialogue title="A warning" type="warning"><p>Whatever you do, don't...</p></app-dialogue>
 </div>

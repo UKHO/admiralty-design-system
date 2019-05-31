@@ -20,5 +20,10 @@
   "bathymetrey": {
     "title": "Bathymetery data search",
     "url": "toolkit/patterns/bathymetery"
+  },
+  "example1": {
+    "layout": "../../_layout_sidemenu",
+    "title": "Example one",
+    "url": "toolkit/patterns/example1"
   }
 }

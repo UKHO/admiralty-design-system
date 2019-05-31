@@ -1,0 +1,17 @@
+@import 'colours';
+
+.icon-table {
+    width: 100%;
+
+    th {
+        width: 1000px;
+    }
+
+    th:first-child {
+        width: 12%;
+    }
+
+    span {
+        color: $colour-admiralty-blue;
+    }
+}

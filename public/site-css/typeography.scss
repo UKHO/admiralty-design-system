@@ -5,6 +5,7 @@
   span {
     line-height: 150px;
     margin-right: 40px;
+    white-space: nowrap;
   }
 
   span:nth-child(1) {
@@ -29,9 +30,13 @@
 
   span:nth-child(5) {
     font-size: 20px;
-    font-weight: $font-weight-medium;
+    font-weight: $font-weight-light;
   }
 
+  span:nth-child(6) {
+    font-size: 20px;
+    font-weight: $font-weight-medium;
+  }
 }
 
 .typography-example2 {

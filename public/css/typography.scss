@@ -94,9 +94,9 @@ p {
 blockquote {
   line-height: 30px;
   width: 100%;
-  padding: 15px 34px;
-  border-left: 4px solid $colour-dark-blue;
-  margin-bottom: 18px;
+  padding: 24px 18px;
+  border-left: 5px solid $colour-admiralty-blue;
+  margin-bottom: 30px;
   background: #EEEEEE;
   @include not-desktop {
     line-height: 24px;
@@ -121,6 +121,9 @@ ul {
     font-size: 18px;
     display: inline-block;
     margin-right: 20px;
+    @include not-desktop {
+        font-size: 14px;
+    }
   }
 }
 
@@ -144,5 +147,19 @@ ol {
   li {
     counter-increment: li;
     margin-bottom: 12px;
+  }
+}
+
+ol, ul {
+  position: relative;
+
+  li {
+    transform: translateX(31px);
+    padding-right: 30px;
+  }
+  
+  li::before {
+    position: absolute;
+    left: -30px;
   }
 }

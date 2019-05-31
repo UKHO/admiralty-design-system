@@ -11,6 +11,7 @@
 
     span {
       display: block;
+      color: inherit;
     }
   }
 
@@ -19,6 +20,7 @@
   .white { background-color: $colour-white; border: 1px solid $colour-line }
 
   .text { background-color: $colour-text; color: $colour-white; }
+  .text { color: $colour-white; }
   .line { background-color: $colour-line; }
   .background { background-color: $colour-bg-grey; }
   .table-row { background-color: $colour-table-row-alt-bg; }
@@ -27,5 +29,4 @@
   .error { background-color: $colour-utility-error; color: $colour-white; }
   .success { background-color: $colour-utility-success; color: $colour-white; }
   .info { background-color: $colour-utility-info; color: $colour-white; }
-
 }

@@ -1,4 +1,4 @@
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "../../node_modules/@angular/material/prebuilt-themes/indigo-pink.css";
 @import 'normalize';
 @import 'base';
 @import 'layout';
@@ -13,6 +13,7 @@
 @import 'cards';
 @import 'tables';
 @import 'footer';
+@import 'expansion';
 @import 'banner-section';
 @import 'material-textinput-overwrites';
 @import 'material-textarea-overwrites';
@@ -20,4 +21,16 @@
 @import 'material-radio-overwrites';
 @import 'material-checkbox-overwrites';
 @import 'material-search-overwrites';
-@import 'expansion-panel';
+@import 'expansion';
+@import 'textinput';
+@import 'forms';
+@import 'textarea';
+@import 'select';
+@import 'radio';
+@import 'checkbox';
+@import 'search';
+@import 'dialog';
+@import 'example1';
+@import 'icons';
+@import 'images';
+@import 'logos';

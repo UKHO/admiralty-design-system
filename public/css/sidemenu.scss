@@ -57,6 +57,7 @@ nav#side-menu {
       display: none;
       visibility: hidden;
       margin-bottom: 0;
+      position: relative;
     }
 
     &.active > ul {
@@ -65,6 +66,8 @@ nav#side-menu {
 
       & > li {
         margin-bottom: 0;
+        transform: unset;
+        padding-right: unset;
         &::before {
           margin: 0;
           content: none;
@@ -101,4 +104,8 @@ nav#side-menu {
 
     }
   }
+}
+
+.example-side-menu-wrap {
+  max-width: 279px;
 }

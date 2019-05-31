@@ -1,0 +1,27 @@
+<section>
+    <div class="tab1 component-example">
+        <div class="text-input-wrap is-disabled">
+            <input id="name-input2" type="text" class="form-text-input" disabled />
+            <div id="input-label2" class="input-wrap">
+                <label for="name-input">Disabled</label>
+            </div>
+        </div>
+    </div>
+    <div class="tab2 component-html">
+        HTML injected here
+    </div>
+    <div class="tab3 component-angular">
+        <h5>Angular example usage:</h5>
+        <pre>
+            <code class="language-html">
+&ltapp-textinput
+[isValid]="true"
+[inputText]="inputText"
+[validation]="inputFormControl"
+[invalidMessage]="'Email is invalid'"
+>
+&lt/app-textinput>
+            </code>
+        </pre>
+    </div>
+</section>

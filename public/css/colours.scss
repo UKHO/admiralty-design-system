@@ -25,7 +25,7 @@ $colour-product-digital-publications: #83afb4;
 $colour-product-digital-radio-signals: #75cff5;
 
 /* Utility Colours */
-$colour-utility-warning: #bd8832;
+$colour-utility-warning: #ef8123;
 $colour-utility-error: #e20d0d;
 $colour-utility-success: #4aab37;
 $colour-utility-info: #0177c1;
@@ -63,11 +63,12 @@ $colour-button-secondary-icon-selected: #ffffff;
 $colour-link: $colour-admiralty-blue;
 
 /* Nav colours */
-$colour-nav-item: #2c2c2c;
+$colour-nav-item: #333333;
+$colour-nav-main-bg-hover: #eef3f4;
 $colour-nav-bg-hover: #f0f0f0;
 $colour-nav-bg: #f8f8f8;
-$colour-nav-subitem: #3a3a3a;
-$colour-nav-subitem-icon: #333333;
+$colour-nav-subitem: $colour-admiralty-blue;
+$colour-nav-subitem-icon: $colour-admiralty-blue;
 
 /* Table colours */
 $colour-table-row-bg: $colour-bg;
@@ -76,7 +77,7 @@ $colour-table-row-alt-bg: #eef3f4;
 /* Tab colours */
 $colour-tab-active: #ffffff;
 $colour-tab-inactive: #eeeeee;
-$colour-tab-hover: #dddddd;
+$colour-tab-hover: #eef3f4;
 
 /* form text input colours */
 $colour-textinput-border: $colour-dark-blue;

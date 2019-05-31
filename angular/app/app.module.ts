@@ -20,6 +20,10 @@ import { RadioComponent } from './radio/radio.component';
 import { CheckboxComponent } from './checkbox/checkbox.component';
 import { SearchComponent } from './search/search.component';
 import { ExpansionComponent } from './expansion/expansion.component';
+import { ReadMoreComponent } from "./readmore/readmore.component";
+import { DialogueComponent } from './dialogue/dialogue.component';
+import {SidenavComponent} from "./sidenav/sidenav.component";
+import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +39,11 @@ import { ExpansionComponent } from './expansion/expansion.component';
     RadioComponent,
     CheckboxComponent,
     SearchComponent,
-    ExpansionComponent
+    ExpansionComponent,
+    ReadMoreComponent,
+    DialogueComponent,
+    SidenavComponent,
+    BreadcrumbsComponent
   ],
   imports: [
     BrowserModule,
