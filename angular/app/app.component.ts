@@ -4,7 +4,7 @@ import { mockNavigation } from './navigation/mocknavigation';
 import { mockSideNav } from './sidenav/mocknavigation';
 import { Validators, FormControl } from '@angular/forms';
 import { OptionValue } from './select/select.component';
-import {MenuItem} from './navtypes';
+import { MenuItem } from './navtypes';
 
 @Component({
   selector: 'app-root',

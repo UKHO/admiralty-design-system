@@ -1,7 +1,11 @@
 <header>
     <nav id="top-menu">
         <span>
-            <img src="{{ src }}" alt="{{ alt }}">
+            {{text}}
+            <img *ngIf="!text" src="{{ src }}" alt="{{ alt }}">
         </span>
+        <div *ngIf="navigation" class="header-links-wrap">
+            <a *ngFor="let item of navigation" href="{{item.href}}">{{item.title}}</a>
+        </div>
     </nav>
 </header>

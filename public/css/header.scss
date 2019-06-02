@@ -12,7 +12,7 @@ header {
   -ms-user-select: none;
   user-select: none;
 
-  nav#top-menu {
+  nav#top-menu, nav.top-menu {
     display: flex;
     flex-direction: row;
     padding: 0 20px;
@@ -39,6 +39,25 @@ header {
         transform: translateY(-50%);
         height: 75%;
         width: auto;
+      }
+    }
+
+    a, span {
+      display: flex;
+      font-size: 14px;
+      color: $colour-admiralty-blue;
+      font-weight: $font-weight-medium;
+      text-decoration: none;
+      line-height: inherit;
+    }
+
+    .header-links-wrap {
+      display: flex;
+      align-items: center;
+      width: 33%;
+      justify-content: space-between;
+      @include not-desktop {
+        display: none;
       }
     }
 
@@ -69,7 +88,7 @@ header {
     }
   }
 
-  nav#main-menu {
+  nav#main-menu, nav.main-menu {
     position: relative;
     z-index: 1001;
     pointer-events: none;
@@ -370,7 +389,10 @@ header {
   }
 
   #main-menu:target + .backdrop,
-  #main-menu[aria-expanded="true"] + .backdrop {
+  #main-menu[aria-expanded="true"] + .backdrop,
+  .main-menu:target + .backdrop,
+  .main-menu[aria-expanded="true"] + .backdrop
+  {
     @include not-desktop {
       position: absolute;
       display: block;
@@ -385,7 +407,9 @@ header {
     }
   }
 
-  #main-menu:hover + .backdrop {
+  #main-menu:hover + .backdrop,
+  .main-menu:hover + .backdrop
+  {
     @include desktop-only {
       position: absolute;
       display: block;
@@ -401,20 +425,28 @@ header {
   }
 
   #main-menu:target,
-  #main-menu[aria-expanded="true"] {
+  #main-menu[aria-expanded="true"],
+  .main-menu:target,
+  .main-menu[aria-expanded="true"]
+  {
     @include not-desktop {
       display: flex;
       z-index: 1000;
     }
   }
-  #main-menu[aria-expanded="false"] {
+  #main-menu[aria-expanded="false"],
+  .main-menu[aria-expanded="false"]
+  {
     @include not-desktop {
       display: none;
     }
   }
 
   #main-menu:target .menu-close,
-  #main-menu[aria-expanded="true"] .menu-close {
+  #main-menu[aria-expanded="true"] .menu-close,
+  .main-menu:target .menu-close,
+  .main-menu[aria-expanded="true"] .menu-close
+  {
     @include not-desktop {
       z-index: 1001;
     }
@@ -451,7 +483,10 @@ header {
   }
 
   #main-menu:target ~ .menu-toggle-wrapper,
-  #main-menu[aria-expanded="true"] ~ .menu-toggle-wrapper {
+  #main-menu[aria-expanded="true"] ~ .menu-toggle-wrapper,
+  .main-menu:target ~ .menu-toggle-wrapper,
+  .main-menu[aria-expanded="true"] ~ .menu-toggle-wrapper
+  {
     @include not-desktop {
       display: none;
     }

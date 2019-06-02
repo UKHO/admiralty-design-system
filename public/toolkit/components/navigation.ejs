@@ -27,7 +27,7 @@
 <div class="tab-set">
     <%- partial('../../_partials/tabs', { id: 'primary' }) %>
     <section>
-        <div class="tab1 component-example">
+        <div class="tab1 component-example main-menu-example">
             <header>
                 <h1><a href="/">Site Name</a></h1>
                 <nav id="main-menu">
@@ -250,38 +250,6 @@ const navigation = {
                 &lt;/div&gt;
                 &lt;/section&gt;
             </code>
-            <br />
-            <br />
-            <h5>Angular component:</h5>
-            <pre>
-                <code class="language-javascript">import {Component, Input, OnInit} from '@angular/core';
-
-@Component({
-                    selector: 'app-card',
-                    templateUrl: './card.component.html',
-                    styleUrls: ['./card.component.scss']
-})
-export class ExpansionComponent implements OnInit {
-                    @Input() public title = '';
-
-                    constructor() { }
-
-  ngOnInit() {
-  }
-
-}
-                </code>
-            </pre>
-            <h5>Angular template:</h5>
-            <pre>
-                <code class="language-html">&lt;section class=&quot;card&quot;&gt;
-  &lt;h6 *ngIf=&quot;title&quot;&gt;{{ title }}&lt;/h6&gt;
-  &lt;div&gt;
-    &lt;ng-content&gt;&lt;/ng-content&gt;
-  &lt;/div&gt;
-&lt;/section&gt;
-                </code>
-            </pre>
         </div>
     </section>
 </div>

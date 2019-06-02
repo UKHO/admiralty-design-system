@@ -22,7 +22,7 @@ import { SearchComponent } from './search/search.component';
 import { ExpansionComponent } from './expansion/expansion.component';
 import { ReadMoreComponent } from "./readmore/readmore.component";
 import { DialogueComponent } from './dialogue/dialogue.component';
-import {SidenavComponent} from "./sidenav/sidenav.component";
+import { SidenavComponent } from "./sidenav/sidenav.component";
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 
 @NgModule({
