@@ -5,23 +5,24 @@ import { DebugElement } from '@angular/core';
 import {mockSideNav} from "./mocknavigation";
 
 describe('SidenavComponent', () => {
-  let component: SidenavComponent;
-  let fixture: ComponentFixture<SidenavComponent>;
-  let compiled: DebugElement['nativeElement'];
+    let component: SidenavComponent;
+    let fixture: ComponentFixture<SidenavComponent>;
+    let compiled: DebugElement['nativeElement'];
 
-  const testTitle = 'test title';
+    beforeEach(async(() => {
+        TestBed.configureTestingModule({
+            declarations: [ SidenavComponent ]
+        })
+            .compileComponents();
+    }));
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ SidenavComponent ]
-    })
-        .compileComponents();
-  }));
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(SidenavComponent);
-    component = fixture.componentInstance;
-  });
+    beforeEach(() => {
+        fixture = TestBed.createComponent(SidenavComponent);
+        component = fixture.componentInstance;
+        component.navigation = mockSideNav;
+        fixture.detectChanges();
+        compiled = fixture.nativeElement;
+    });
 
   it('should create', () => {
     expect(component).toBeTruthy();
@@ -33,30 +34,5 @@ describe('SidenavComponent', () => {
       expect(heading.textContent).toEqual(mockSideNav[i].title);
     })
   });
-
-  // it('should render the sub section headings correctly', () => {
-  //   const sections = compiled.querySelectorAll('.section');
-  //   sections.forEach((section, i) => {
-  //     const subSections = section.querySelectorAll('.sub-section');
-  //     subSections.forEach((subSection, j) => {
-  //       const subHeading = subSection.querySelector('h2');
-  //       expect(subHeading.textContent).toEqual(mockNavigation.sections[i].subSections[j].title);
-  //     })
-  //   })
-  // })
-  //
-  // it('should render the sub section items correctly', () => {
-  //   const sections = compiled.querySelectorAll('.section');
-  //   sections.forEach((section, i) => {
-  //     const subSections = section.querySelectorAll('.sub-section')
-  //     subSections.forEach((subSection, j) => {
-  //       const items = subSection.querySelectorAll('li > a')
-  //       items.forEach((item, k) => {
-  //         expect(item.textContent).toEqual(mockNavigation.sections[i].subSections[j].items[k].title);
-  //       });
-  //     });
-  //   });
-  // });
-  //
 
 });

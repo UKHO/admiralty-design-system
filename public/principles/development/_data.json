@@ -1,9 +1,9 @@
 {
   "index": {
     "layout": "../../_layout_sidemenu",
-    "title": "Development Standards",
+    "title": "Development standards",
     "url": "principles/development/",
-    "description": "This is a description of what the standards are and potential areas of use in digital products and services."
+    "description": "Find out about our development standards and how they apply to our digital products and services."
   },
 
   "info": {

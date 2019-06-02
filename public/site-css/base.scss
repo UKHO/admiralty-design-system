@@ -43,3 +43,21 @@ body pre[class*="language-"] {
   box-shadow: none;
   }
 }
+
+.text-block {
+  p {
+    margin: 40px 0;
+  }
+}
+
+.example1-table {
+  margin-top: 45px;
+}
+
+.text-input-wrap {
+  margin-bottom: 18px;
+}
+
+button {
+  display: block;
+}

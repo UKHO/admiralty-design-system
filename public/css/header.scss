@@ -42,6 +42,25 @@ header {
       }
     }
 
+    a, span {
+      display: flex;
+      font-size: 14px;
+      color: $colour-admiralty-blue;
+      font-weight: $font-weight-medium;
+      text-decoration: none;
+      line-height: inherit;
+    }
+
+    .header-links-wrap {
+      display: flex;
+      align-items: center;
+      width: 33%;
+      justify-content: space-between;
+      @include not-desktop {
+        display: none;
+      }
+    }
+
   }
 
   > h1 {
@@ -116,6 +135,7 @@ header {
     }
 
     & > ul {
+      position: static;
       margin-left: auto;
       pointer-events: auto;
       display: inline-flex;
@@ -133,6 +153,9 @@ header {
         margin: auto 0;
         height: 90px;
         background-color: $colour-bg;
+        transform: unset;
+        padding-right: unset;
+
         @include not-desktop {
           border-bottom: 1px solid $colour-divider;
           border-top: 1px solid $colour-bg;
@@ -144,6 +167,8 @@ header {
           margin: 0;
           content: none;
           display: none;
+          position: absolute;
+          left: -30px;
         }
 
 
@@ -279,12 +304,18 @@ header {
 
             & > ul {
               margin-bottom: 12px;
+              position: static;
 
               & > li {
+                transform: unset;
+                padding-right: unset;
+
                 &::before {
                   margin: 0;
                   content: none;
                   display: none;
+                  position: absolute;
+                  left: -30px;
                 }
 
                 min-height: 40px;

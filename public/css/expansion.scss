@@ -28,7 +28,7 @@ section.readmore {
   }
 
   > input[type='checkbox']:checked + div + div + label::before {
-    content: 'Read less';
+    content: 'Read less...';
   }
 }
 
@@ -42,7 +42,7 @@ section.expansion {
     display: block;
     cursor: pointer;
     border-bottom: 1px solid $colour-divider;
-    padding-bottom: 24px;
+    padding: 12px 0 24px;
 
     &::after {
       @extend .fa;

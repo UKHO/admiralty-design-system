@@ -2,28 +2,13 @@
   "index": {
     "title": "Patterns",
     "url": "toolkit/patterns/",
-    "description": "This is a description of what patterns are and potential areas of use in digital products and services."
+    "description": "Use patterns to create solutions for common tasks such as logging in, completing forms or adding contact details."
   },
 
-  "search": {
-    "title": "Search and filter datasets",
-    "url": "toolkit/patterns/search"
-  },
-  "dataset": {
-    "title": "View and edit dataset",
-    "url": "toolkit/patterns/dataset"
-  },
-  "marketing": {
-    "title": "Product marketing landing page",
-    "url": "toolkit/patterns/marketing"
-  },
-  "bathymetrey": {
-    "title": "Bathymetery data search",
-    "url": "toolkit/patterns/bathymetery"
-  },
-  "example1": {
+  "login": {
     "layout": "../../_layout_sidemenu",
-    "title": "Example one",
-    "url": "toolkit/patterns/example1"
+    "title": "User login",
+    "url": "toolkit/patterns/login",
+    "description": "Use this pattern to provide users with a consistent approach to logging in."
   }
 }

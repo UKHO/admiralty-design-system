@@ -43,17 +43,19 @@ function toggleMenu(evt) {
 export function enhanceMainMenu() {
     // expand menu backdrop to full document height
     var backdrop = document.getElementById('backdrop');
-    backdrop.setAttribute("style", "height:" + document.body.scrollHeight + "px");
-    backdrop.addEventListener('click', function (evt) {
-        toggleMenu(evt);
-    });
+    if (backdrop) {
+        backdrop.setAttribute("style", "height:" + document.body.scrollHeight + "px");
+        backdrop.addEventListener('click', function (evt) {
+            toggleMenu(evt);
+        });
+    }
 
     // handle menu open / close on mobile
     var openMenu = document.getElementById('main-menu-toggle');
     var closeMenu = document.getElementById('main-menu-close');
 
-    openMenu.addEventListener('click', toggleMenu);
-    closeMenu.addEventListener('click', toggleMenu);
+    if (openMenu) openMenu.addEventListener('click', toggleMenu);
+    if (closeMenu) closeMenu.addEventListener('click', toggleMenu);
 
     // handle expand / contract of main menu items on mobile
     setupMenu(document.querySelectorAll('#main-menu > ul > li > a'));

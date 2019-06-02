@@ -2,61 +2,61 @@
   "index": {
     "title": "Components",
     "url": "toolkit/components/",
-    "description": "This is a description of what components are and potential areas of use in digital products and services."
+    "description": "Our reusable components offer an easy-to-use and accessible solution for forms, navigation, tables and more."
   },
 
   "navigation": {
     "layout": "../../_layout_sidemenu",
     "title": "Navigation",
     "url": "toolkit/components/navigation",
-    "description": "This is a description of what components are and potential areas of use in digital products and services."
+    "description": "Use navigation to visualise the structure of your content and to direct users to the right place."
   },
   "search": {
     "layout": "../../_layout_sidemenu",
-    "title": "Search Fields",
+    "title": "Search field",
     "url": "toolkit/components/search",
-    "description": "This is a description of what components are and potential areas of use in digital products and services."
+    "description": "Use the search component if you need users to be able to search the content of a digital product or service."
   },
   "tables": {
     "layout": "../../_layout_sidemenu",
     "title": "Tables",
     "url": "toolkit/components/tables",
-    "description": "This is a description of what components are and potential areas of use in digital products and services."
+    "description": "Use tables to make certain information easier for users to scan and compare."
   },
   "cards": {
     "layout": "../../_layout_sidemenu",
     "title": "Cards",
     "url": "toolkit/components/cards",
-    "description": "This is a description of what components are and potential areas of use in digital products and services."
+    "description": "Use cards to break up content on a page, or to group related content together."
   },
   "expansion": {
     "layout": "../../_layout_sidemenu",
-    "title": "Expansion Panels",
+    "title": "Expansion panels",
     "url": "toolkit/components/expansion",
-    "description": "This is a description of what components are and potential areas of use in digital products and services."
+    "description": "Use expansion panels when space is limited and the hidden content isn't essential information."
   },
   "buttons": {
     "layout": "../../_layout_sidemenu",
     "title": "Buttons",
     "url": "toolkit/components/buttons",
-    "description": "This is a description of what components are and potential areas of use in digital products and services."
+    "description": "Use buttons to help users complete a task or to carry out an action."
   },
   "forms": {
     "layout": "../../_layout_sidemenu",
-    "title": "Forms",
+    "title": "Form elements",
     "url": "toolkit/components/forms",
-    "description": "This is a description of what components are and potential areas of use in digital products and services."
+    "description": "Use form elements to capture information from the user and to add consistency between products."
   },
   "dialogs": {
     "layout": "../../_layout_sidemenu",
     "title": "Dialogue boxes",
     "url": "toolkit/components/dialogs",
-    "description": "This is a description of what components are and potential areas of use in digital products and services."
+    "description": "Use dialogue boxes to highlight specific, often important, information to the user."
   },
   "errors": {
     "layout": "../../_layout_sidemenu",
     "title": "Errors",
     "url": "toolkit/components/errors",
-    "description": "This is a description of what components are and potential areas of use in digital products and services."
+    "description": "Use error messages to tell a user that there's a problem with the information they have entered."
   }
 }
