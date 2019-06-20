@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Patterns - UKHO Design System</title>
+    <title>UKHO Design System</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
     <link rel="stylesheet" href="/css/all.css">
@@ -113,7 +113,7 @@
                 </section>
             </li>
             
-            <li tabindex="0"  class="active">
+            <li tabindex="0" >
                 <a tabindex="-1" href="#">Toolkit</a>
                 <section>
                     
@@ -254,32 +254,83 @@
 <ul class="breadcrumbs">
     <li><a href="/">Design System</a></li>
     
-        <li><span>Toolkit</span></li>
-    
-    <li><a href="/toolkit/patterns/">Patterns</a></li>
-    
 </ul>
 
 
     <main>
-        <h1>Patterns</h1>
+        <h1>Dialogue</h1>
+
 <p class="intro">
-    Use patterns to create solutions for common tasks such as logging in, completing forms or adding contact details.
+    Use Search element for user search functionality.
 </p>
 
+<ol>
+    <li><a href="#anchor1">Text Input</a></li>
+</ol>
 
-<div class="card-wrapper mdc-layout-grid">
-    <div class="mdc-layout-grid__inner">
+<p></p>
+
+<h3 id="anchor1">1. Dialog</h3>
+
+<h6>Standard Search</h6>
+<div class="tab-set">
+    
+
+<input class="tab1selector" type="radio" id="text-input-tab1" name="text-input" checked="checked">
+<input class="tab2selector" type="radio" id="text-input-tab2" name="text-input">
+<input class="tab3selector" type="radio" id="text-input-tab3" name="text-input">
+<nav>
+    <ul>
+        <li class="tab1">
+            <label for="text-input-tab1">Example</label>
+        </li>
+        <li class="tab2">
+            <label for="text-input-tab2">HTML</label>
+        </li>
         
-        <section class="card mdc-layout-grid__cell">
-            <h6>User login</h6>
-            <div>
-                <p>Use this pattern to provide users with a consistent approach to logging in.</p>
-                <a href="/toolkit/patterns/login.html">View user login</a>
+        <li class="tab3">
+            <label for="text-input-tab3">Angular</label>
+        </li>
+        
+    </ul>
+</nav>
+
+    <section>
+        <div class="tab1 component-example">
+            <p class="form-label">Search</p>
+            <div class="search-wrapper">
+                <input type="text" class="form-text-input" placeholder="Input field">
+                <button>
+                    <p>Search</p>
+                </button>
             </div>
-        </section>
-        
-    </div>
+        </div>
+        <div class="tab2 component-html">
+            HTML goes here.
+        </div>
+        <div class="tab3 component-angular">
+                <h5>Angular example usage:</h5>
+                <code class="language-html">
+
+                </code>
+                <br>
+                <br>
+                <h5>Angular component:</h5>
+                <pre>
+                    <code class="language-javascript">
+                            
+                    </code>
+                </pre>
+                <br>
+                <br>
+                <h5>Angular template:</h5>
+                <pre>
+                    <code class="language-html">
+
+                    </code>
+                </pre>
+        </div>
+    </section>
 </div>
     </main>
 
