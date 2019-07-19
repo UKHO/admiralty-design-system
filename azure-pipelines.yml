@@ -18,7 +18,8 @@ jobs:
   condition: and(succeeded(), eq(variables['build.sourceBranch'], 'refs/heads/master'))
   container: node
   steps:
-  - download: site
+  - download: current
+    artifact: site
   - task: InstallSSHKey@0
     inputs:
       hostName: $(knownHosts)
