@@ -11,28 +11,23 @@ jobs:
     clean: true
   - script: npm install
   - script: npm run build-static
-  - task: PublishBuildArtifacts@1
-    inputs:
-      pathtoPublish: dist
-      artifactName: site
+  - publish: dist
+    artifact: site
 - job: ghpages
   dependsOn: build
   condition: and(succeeded(), eq(variables['build.sourceBranch'], 'refs/heads/master'))
   container: node
   steps:
-  - task: DownloadBuildArtifacts@0
-    inputs:
-      artifactName: site
-      downloadPath: dist
+  - download: site
   - task: InstallSSHKey@0
     inputs:
       hostName: $(knownHosts)
       sshPublicKey: $(publicKey)
       sshKeySecureFile: id_github
   - script: |
-      touch dist/.nojekyll
-      echo "design.ukho.dev" > dist/CNAME
+      touch site/.nojekyll
+      echo "design.ukho.dev" > site/CNAME
       npm install --save-dev gh-pages@2.0.1
       git config user.email "pipeline@ukho.gov.uk"
       git config user.name "Azure Pipeline"
-  - script: $(npm bin)/gh-pages --dotfiles --message "[skip ci] gh-pages update" --dist dist -r git@github.com:UKHO/design-system.git
+  - script: $(npm bin)/gh-pages --dotfiles --message "[skip ci] gh-pages update" --dist site -r git@github.com:UKHO/design-system.git
