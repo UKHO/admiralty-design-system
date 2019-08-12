@@ -7,7 +7,8 @@
 <ol>
     <li><a href="#anchor1">Primary palette</a></li>
     <li><a href="#anchor2">Supporting palette</a></li>
-    <li><a href="#anchor3">Utility colours</a></li>
+    <li><a href="#anchor3">Secondary palette</a></li>
+    <li><a href="#anchor4">Utility colours</a></li>
 </ol>
 
 <h3 id="anchor1">1. Primary palette</h3>
@@ -36,7 +37,19 @@ partial('../../_partials/swatches', { swatches: [
 ]});
 %>
 
-<h3 id="anchor3">3. Utility colours</h3>
+<h3 id="anchor3">3. Secondary palette</h3>
+<p>
+    Use the secondary palette to enhance the primary palette when it doesn't offer enough variance.
+</p>
+<%-
+partial('../../_partials/swatches', { swatches: [
+    { name: 'Teal', class: 'teal', colour: '#007e97' },
+    { name: 'Bright Blue', class: 'bright-blue', colour: '#65c4db' },
+    { name: 'Green', class: 'green', colour: '#989b00' }
+]});
+%>
+
+<h3 id="anchor4">4. Utility colours</h3>
 <p>
     Use utility colours to convey important information.
 </p>

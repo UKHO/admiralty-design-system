@@ -25,6 +25,10 @@
   .background { background-color: $colour-bg-grey; }
   .table-row { background-color: $colour-table-row-alt-bg; }
 
+  .teal { background-color: $colour-teal; color: $colour-white; }
+  .bright-blue { background-color: $colour-bright-blue; }
+  .green { background-color: $colour-green; color: $colour-white; }
+
   .warn { background-color: $colour-utility-warning; color: $colour-white; }
   .error { background-color: $colour-utility-error; color: $colour-white; }
   .success { background-color: $colour-utility-success; color: $colour-white; }
