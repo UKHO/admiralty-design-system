@@ -1,13 +1,33 @@
 {
   "index": {
     "layout": "../../_layout_sidemenu",
-    "title": "Development standards",
+    "title": "Development principles",
     "url": "principles/development/",
-    "description": "Find out about our development standards and how they apply to our digital products and services."
+    "description": "Find out about our development principles and how they apply to our digital products and services."
   },
-
-  "info": {
-    "title": "Information",
-    "url": "principles/development/info"
+  "lifecycle": {
+    "layout": "../../_layout_sidemenu",
+    "title": "Application lifecycle principles",
+    "url": "principles/development/lifecycle"
+  },
+  "architecture": {
+    "layout": "../../_layout_sidemenu",
+    "title": "Architecture principles",
+    "url": "principles/development/architecture"
+  },
+  "testing": {
+    "layout": "../../_layout_sidemenu",
+    "title": "Testing principles",
+    "url": "principles/development/testing"
+  },
+  "cyber": {
+    "layout": "../../_layout_sidemenu",
+    "title": "Cyber principles",
+    "url": "principles/development/cyber"
+  },
+  "cloud": {
+    "layout": "../../_layout_sidemenu",
+    "title": "Cloud principles",
+    "url": "principles/development/cloud"
   }
 }

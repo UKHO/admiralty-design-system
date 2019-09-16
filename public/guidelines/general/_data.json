@@ -1,12 +1,8 @@
 {
   "index": {
+    "layout": "../../_layout_sidemenu",
     "title": "General guidelines",
     "url": "guidelines/general/",
     "description": "This is a description of what the guidelines are and potential areas of use in digital products and services."
-  },
-
-  "info": {
-    "title": "Information",
-    "url": "guidelines/general/info"
   }
 }
