@@ -11,19 +11,15 @@ jobs:
     clean: true
   - script: npm install
   - script: npm run build-static
-  - task: PublishBuildArtifacts@1
-    inputs:
-      pathtoPublish: dist
-      artifactName: site
+  - publish: dist
+    artifact: site
 - job: ghpages
   dependsOn: build
   condition: and(succeeded(), eq(variables['build.sourceBranch'], 'refs/heads/master'))
   container: node
   steps:
-  - task: DownloadBuildArtifacts@0
-    inputs:
-      artifactName: site
-      downloadPath: dist
+  - download: current
+    artifact: site
   - task: InstallSSHKey@0
     inputs:
       hostName: $(knownHosts)
