@@ -1,12 +1,12 @@
 {
   "meta": {
-    "folders": [ "development", "partners", "delivery" ]
+    "folders": [ "development", "design", "delivery" ]
   },
 
   "index": {
     "title": "Principles",
     "url": "principles/",
-    "description": "Our principles outline our approach to building great digital products. They include our preferred methods for development, delivery and working with partners.",
+    "description": "Our principles outline our approach to building great digital products. They include our preferred methods for design, development and delivery.",
     "noLink": true
   }
 
