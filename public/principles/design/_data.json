@@ -4,5 +4,11 @@
     "title": "Design principles",
     "url": "principles/design/",
     "description": "Find out about our design principles and how they apply to our digital products and services."
+  },
+
+  "atomic": {
+    "layout": "../../_layout_sidemenu",
+    "title": "Atomic design principles",
+    "url": "principles/design/atomic"
   }
 }
