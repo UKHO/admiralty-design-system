@@ -4,5 +4,17 @@
     "title": "General guidelines",
     "url": "guidelines/general/",
     "description": "This is a description of what the guidelines are and potential areas of use in digital products and services."
+  },
+  
+  "access": {
+    "layout": "../../_layout_sidemenu",
+    "title": "Access information",
+    "url": "guidelines/general/access"
+  },
+
+  "usage": {
+    "layout": "../../_layout_sidemenu",
+    "title": "Usage guidelines",
+    "url": "guidelines/general/usage"
   }
 }
