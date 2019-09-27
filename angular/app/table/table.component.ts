@@ -7,11 +7,8 @@ import { Table } from '../mock-table-data';
   styleUrls: ['./table.component.scss']
 })
 export class TableComponent {
-
-  constructor() { }
-
   @Input() table: Table;
-  
+
   getRecordDetails(record) {
     return Object.values(record);
   }

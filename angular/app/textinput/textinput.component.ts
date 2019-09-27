@@ -7,16 +7,9 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./textinput.component.scss']
 })
 export class TextinputComponent {
-
-  constructor() { }
-
   @Input() isDisabled: boolean;
-
   @Input() isValid: boolean;
-
   @Input() inputText: { value: string };
-
   @Input() validation: FormControl;
-
   @Input() invalidMessage: string;
 }

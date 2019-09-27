@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MatCheckboxChange } from '@angular/material';
+import { MatCheckboxChange } from '@angular/material/checkbox';
 
 @Component({
   selector: 'app-checkbox',
@@ -7,10 +7,7 @@ import { MatCheckboxChange } from '@angular/material';
   styleUrls: ['./checkbox.component.scss']
 })
 export class CheckboxComponent {
-
-  constructor() { }
-
   handleChange($event: MatCheckboxChange) {
-    console.log('checkbox changed', $event)
+    console.log('checkbox changed', $event);
   }
 }

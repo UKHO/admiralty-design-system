@@ -17,13 +17,18 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "aot": true,
             "outputPath": "dist/ukho-components",
             "index": "angular/index.html",
             "main": "angular/main.ts",
             "polyfills": "angular/polyfills.ts",
             "tsConfig": "angular/tsconfig.app.json",
             "assets": [
-              { "glob": "**/*", "input": "public/assets/", "output": "./assets/" }
+              {
+                "glob": "**/*",
+                "input": "public/assets/",
+                "output": "./assets/"
+              }
             ],
             "styles": [
               "public/css/all.scss"
@@ -53,6 +58,10 @@
                   "type": "initial",
                   "maximumWarning": "2mb",
                   "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
                 }
               ]
             }
@@ -87,7 +96,11 @@
             ],
             "scripts": [],
             "assets": [
-              { "glob": "**/*", "input": "public/assets/", "output": "./assets/" }
+              {
+                "glob": "**/*",
+                "input": "public/assets/",
+                "output": "./assets/"
+              }
             ]
           }
         },
@@ -134,5 +147,8 @@
       }
     }
   },
-  "defaultProject": "ukho-components"
+  "defaultProject": "ukho-components",
+  "cli": {
+    "analytics": "6cdc6e81-7812-4e4f-a9e7-d30c7bf5d0f4"
+  }
 }

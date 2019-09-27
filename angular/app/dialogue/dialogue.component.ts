@@ -1,18 +1,11 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-dialogue',
   templateUrl: './dialogue.component.html',
   styleUrls: ['./dialogue.component.scss']
 })
-export class DialogueComponent implements OnInit {
-
-  constructor() { }
-
+export class DialogueComponent {
   @Input() title: string;
-  @Input() type: "info" | "warning" | "success" | "error";
-
-  ngOnInit() {
-  }
-
+  @Input() type: 'info' | 'warning' | 'success' | 'error';
 }

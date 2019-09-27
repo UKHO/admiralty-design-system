@@ -8,9 +8,6 @@ import { enhanceMainMenu } from '../nav-enhance';
   styleUrls: ['./navigation.component.scss']
 })
 export class NavigationComponent implements AfterViewInit {
-
-  constructor() { }
-
   @Input() navigation: Navigation;
 
   ngAfterViewInit() {

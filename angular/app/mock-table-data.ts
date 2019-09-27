@@ -3,7 +3,6 @@ export class Table {
     records: object[];
 }
 
-
 export const TABLE: Table = {
     headings: [
         'Folio',
@@ -49,4 +48,4 @@ export const TABLE: Table = {
             to: '26/05/16',
         },
     ]
-}
+};

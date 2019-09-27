@@ -3,6 +3,8 @@
 # Edit at https://www.gitignore.io/?templates=macos,windows,webstorm+all
 
 node_modules/
+angular/dist/
+dist/
 
 ### macOS ###
 # General

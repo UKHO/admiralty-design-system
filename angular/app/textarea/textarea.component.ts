@@ -6,8 +6,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./textarea.component.scss']
 })
 export class TextareaComponent {
-
-  constructor() { }
-
   @Input() textareaText: { value: string };
 }

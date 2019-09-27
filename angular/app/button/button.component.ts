@@ -6,18 +6,12 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./button.component.scss']
 })
 export class ButtonComponent {
-
-  constructor() { }
-
   @Input() label: string;
-
   @Input() isSecondary: boolean;
-
   @Input() icon: string;
-
   @Input() click: () => any;
 
   handleClick() {
-    this.click()
+    this.click();
   }
 }

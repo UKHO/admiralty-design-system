@@ -1,5 +1,5 @@
 import { Component, ViewChild, Input, Output, EventEmitter } from '@angular/core';
-import { MatSelectChange } from '@angular/material';
+import { MatSelectChange } from '@angular/material/select';
 
 @Component({
   selector: 'app-select',
@@ -7,17 +7,12 @@ import { MatSelectChange } from '@angular/material';
   styleUrls: ['./select.component.scss']
 })
 export class SelectComponent {
-
-  constructor() { }
-
-  @ViewChild('selectComponent') selectComponent;
-
-  @Input() options: OptionValue[] 
-
+  @ViewChild('selectComponent', {static: true}) selectComponent;
+  @Input() options: OptionValue[];
   @Output() changed = new EventEmitter();
 
   handleChange($event: MatSelectChange) {
-    this.changed.emit($event)
+    this.changed.emit($event);
   }
 }
 

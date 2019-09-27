@@ -8,9 +8,6 @@ import { enhanceMainMenu } from '../nav-enhance';
   styleUrls: ['./sidenav.component.scss']
 })
 export class SidenavComponent implements AfterViewInit {
-
-  constructor() { }
-
   @Input() navigation: SubSection[];
 
   ngAfterViewInit() {

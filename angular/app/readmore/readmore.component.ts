@@ -1,5 +1,4 @@
 import {Component, Input } from '@angular/core';
-import { generateUID } from '../utils.js'
 
 @Component({
   selector: 'app-readmore',
@@ -7,12 +6,14 @@ import { generateUID } from '../utils.js'
   styleUrls: ['./readmore.component.scss']
 })
 export class ReadMoreComponent {
+  static labelCounter = 0;
 
-  constructor() { }
-
-  @Input() initialExpanded: boolean = false;
+  @Input() initialExpanded = false;
   @Input() heading: string;
-  
-  uid: string = generateUID();
-  
+
+  id: string = 'ukho-readmore-' + ReadMoreComponent.labelCounter;
+
+  constructor() {
+    ReadMoreComponent.labelCounter++;
+  }
 }

@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { MatRadioChange } from '@angular/material';
+import { MatRadioChange } from '@angular/material/radio';
 
 @Component({
   selector: 'app-radio',
@@ -7,12 +7,9 @@ import { MatRadioChange } from '@angular/material';
   styleUrls: ['./radio.component.scss']
 })
 export class RadioComponent {
-
-  constructor() { }
-
   @Input() isColumn: boolean;
 
   handleChange($event: MatRadioChange) {
-    console.log($event)
+    console.log($event);
   }
 }

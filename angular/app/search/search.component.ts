@@ -6,10 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent {
-
-  constructor() { }
-
   handleSearch() {
-    console.log('search button has been clicked')
+    console.log('search button has been clicked');
   }
 }

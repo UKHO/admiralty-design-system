@@ -1,5 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
-import { generateUID } from '../utils.js'
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-expansion',
@@ -7,12 +6,10 @@ import { generateUID } from '../utils.js'
   styleUrls: ['./expansion.component.scss']
 })
 export class ExpansionComponent {
+  static labelCounter = 0;
 
-  constructor() { }
-
-  @Input() initialExpanded: boolean = false;
+  @Input() initialExpanded = false;
   @Input() heading: string;
-  
-  uid: string = generateUID();
-  
+
+  id: string = 'ukho-expansion-' + ExpansionComponent.labelCounter;
 }

@@ -4,17 +4,24 @@ resources:
       image: node:10
 
 jobs:
-- job: build
+- job: build_lib
   container: node
   steps:
-  - checkout: self
-    clean: true
-  - script: npm install
-  - script: npm run build-static
-  - publish: dist
-    artifact: site
+    - checkout: self
+      clean: true
+    - script: yarn install
+    - script: yarn run build
+- job: build_site
+  container: node
+  steps:
+    - checkout: self
+      clean: true
+    - script: yarn install
+    - script: yarn run build-static
+    - publish: dist
+      artifact: site
 - job: ghpages
-  dependsOn: build
+  dependsOn: build_site
   condition: and(succeeded(), eq(variables['build.sourceBranch'], 'refs/heads/master'))
   container: node
   steps:
