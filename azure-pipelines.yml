@@ -10,15 +10,17 @@ jobs:
     - checkout: self
       clean: true
     - script: yarn install
-    - script: yarn run build
+    - script: yarn run ng build @ukho/components
 - job: build_site
   container: node
   steps:
     - checkout: self
       clean: true
     - script: yarn install
-    - script: yarn run build-static
-    - publish: dist
+    - script: |
+        cd projects/site
+        yarn run build
+    - publish: projects/site/dist
       artifact: site
 - job: ghpages
   dependsOn: build_site

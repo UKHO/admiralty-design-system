@@ -1,0 +1,14 @@
+{
+  "name": "@ukho/design-system",
+  "version": "0.0.1",
+  "author": "Antony Derham",
+  "scripts": {
+    "copyassets": "cp -R ../../node_modules/\\@fortawesome/fontawesome-free/webfonts public/assets/fonts/fontawesome/",
+    "build": "yarn run copyassets && harp compile -o dist",
+    "start": "yarn run copyassets && harp server"
+  },
+  "devDependencies": {
+    "@ukho/styles": "0.0.1",
+    "harp": "^0.30.1"
+  }
+}

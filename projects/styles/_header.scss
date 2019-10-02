@@ -1,0 +1,491 @@
+@import '../../node_modules/@fortawesome/fontawesome-free/scss/core';
+@import 'responsive';
+@import 'colours';
+@import 'typography';
+
+header {
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+
+  nav#top-menu, nav.top-menu {
+    display: flex;
+    flex-direction: row;
+    padding: 0 20px;
+    background-color: $colour-bg-header;
+    height: 40px;
+    line-height: 40px;
+    vertical-align: middle;
+    position: relative;
+    z-index: 1001;
+    @include not-desktop {
+      height: 30px;
+      line-height: 30px;
+      padding: 0 18px;
+    }
+
+    span {
+      flex-grow: 1;
+      display: block;
+      text-align: left;
+
+      img {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 75%;
+        width: auto;
+      }
+    }
+
+    a, span {
+      display: flex;
+      font-size: 14px;
+      color: $colour-admiralty-blue;
+      font-weight: $font-weight-medium;
+      text-decoration: none;
+      line-height: inherit;
+    }
+
+    .header-links-wrap {
+      display: flex;
+      align-items: center;
+      width: 33%;
+      justify-content: space-between;
+      @include not-desktop {
+        display: none;
+      }
+    }
+
+  }
+
+  > h1 {
+    z-index: 1002;
+    line-height: 90px;
+    padding-left: 20px;
+    position: absolute;
+    font-weight: normal;
+    vertical-align: middle;
+    font-size: 34px;
+    margin: 0;
+    color: $colour-admiralty-blue;
+    @include not-desktop {
+      display: block;
+      padding-left: 18px;
+      font-size: 24px;
+      line-height: 60px;
+    }
+
+    a {
+      font-size: inherit;
+      font-weight: inherit;
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+
+  nav#main-menu, nav.main-menu {
+    position: relative;
+    z-index: 1001;
+    pointer-events: none;
+    display: flex;
+    border-bottom: 1px solid $colour-divider;
+    background-color: $colour-bg;
+    padding: 0 20px;
+    @include not-desktop {
+      display: none;
+      position: absolute;
+      top: 30px;
+      left: 0;
+      width: 100%;
+      padding: 0;
+      box-shadow: -2px 5px 8px 0 rgba(0, 0, 0, 0.2);
+      flex-direction: column;
+    }
+
+    > div {
+      display: block;
+      text-align: right;
+      @include not-desktop {
+        border-bottom: 1px solid $colour-divider;
+        height: 60px;
+      }
+
+      .menu-close {
+        display: none;
+        @include not-desktop {
+          pointer-events: auto;
+          display: block;
+          z-index: 1001;
+          padding: 0 18px;
+          line-height: 60px;
+        }
+
+        span.fa {
+          font-size: 20px;
+          line-height: 40px;
+          padding: 0 10px;
+          color: $colour-nav-subitem-icon;
+        }
+      }
+    }
+
+    & > ul {
+      position: static;
+      margin-left: auto;
+      pointer-events: auto;
+      display: inline-flex;
+      justify-content: flex-end;
+      vertical-align: middle;
+      margin-bottom: 0;
+      @include not-desktop {
+        margin-left: 0;
+        display: block;
+        flex-grow: 1;
+      }
+
+      /* Main menu items */
+      & > li {
+        margin: auto 0;
+        height: 90px;
+        background-color: $colour-bg;
+        transform: unset;
+        padding-right: unset;
+
+        @include not-desktop {
+          border-bottom: 1px solid $colour-divider;
+          border-top: 1px solid $colour-bg;
+          display: block;
+          height: auto;
+        }
+
+        &::before {
+          margin: 0;
+          content: none;
+          display: none;
+          position: absolute;
+          left: -30px;
+        }
+
+
+        &.active > a {
+          @include not-desktop {
+            height: auto;
+          }
+        }
+
+        &.active {
+          @include desktop-only {
+            border-bottom: 5px solid $colour-admiralty-blue;
+          }
+        }
+
+        &:hover, &:focus {
+          @include desktop-only {
+            background: #EEF3F4;
+          }
+        }
+
+
+
+        > a {
+          outline: none;
+          display: block;
+          font-size: 18px;
+          color: $colour-admiralty-blue;
+          font-weight: normal;
+          text-decoration: none;
+          line-height: 90px;
+          padding: 0 24px;
+          @include not-desktop {
+            padding: 0 18px;
+            line-height: 50px;
+            font-size: 16px;
+          }
+          &::after {
+            @extend .fa;
+            @extend .fa-chevron-down, :before;
+            display: none !important;
+            @include not-desktop {
+              margin: 0 10px;
+              display: inline-block !important;
+              float: right;
+              line-height: 50px !important;
+              font-size: 16px;
+              color: $colour-nav-subitem-icon;
+            }
+          }
+        }
+
+        &.active > a {
+          @include not-desktop {
+            border-bottom: 5px solid $colour-admiralty-blue;
+          }
+          &::after {
+            @extend .fa-chevron-up, :before;
+          }
+        }
+
+        /* Sub menus */
+        & > section {
+          /* Sub menu headings */
+          box-shadow: -2px 5px 8px 0 rgba(0, 0, 0, 0.2);
+          border-top: 1px solid $colour-divider;
+          border-bottom: 1px solid $colour-divider;
+          display: none;
+          visibility: hidden;
+          opacity: 0;
+          position: absolute;
+          background-color: $colour-bg;
+          width: 100%;
+          left: 0;
+          /* margin-top: 5px; */
+          flex-direction: row;
+          justify-content: space-between;
+          padding: 20px 30px;
+          @include not-desktop {
+            box-shadow: none;
+            background-color: $colour-nav-bg;
+            border: none;
+            flex-direction: column;
+            position: static;
+            padding: 0;
+            margin-top: 0;
+          }
+
+          & > section {
+            flex-grow: 1;
+            margin: 0 10px;
+            max-width: 33.33%;
+            @include not-desktop {
+              max-width: none;
+            }
+
+            & > h2 {
+              @include not-desktop {
+                margin-bottom: 6px;
+              }
+
+              > a {
+                font-weight: normal;
+                text-decoration: none;
+                vertical-align: middle;
+                font-size: 21px;
+                line-height: 30px;
+                color: $colour-admiralty-blue;
+                display: inline-block;
+                width: 100%;
+                padding: 12px 6px 6px;
+                border-bottom: 1px solid $colour-divider;
+                @include not-desktop {
+                  font-size: 16px;
+                  color: $colour-nav-subitem;
+                }
+
+                &::after {
+                  @extend .fa;
+                  @extend .fa-chevron-right, :before;
+                  font-size: 14px;
+                  margin: 0 12px;
+                  display: inline-block;
+                  float: right;
+                  line-height: 30px !important;
+                  @include not-desktop {
+                    font-size: 12px;
+                    color: $colour-admiralty-blue;
+                  }
+                }
+              }
+            }
+
+            & > ul {
+              margin-bottom: 12px;
+              position: static;
+
+              & > li {
+                transform: unset;
+                padding-right: unset;
+
+                &::before {
+                  margin: 0;
+                  content: none;
+                  display: none;
+                  position: absolute;
+                  left: -30px;
+                }
+
+                min-height: 40px;
+                margin-bottom: 0;
+                @include not-desktop {
+                  min-height: auto;
+                }
+
+                > a {
+                  display: inline-block;
+                  width: 100%;
+                  font-weight: $font-weight-light;
+                  text-decoration: none;
+                  color: $colour-nav-item;
+                  padding: 6px 6px;
+                  font-size: 18px;
+                  line-height: 40px;
+                  @include not-desktop {
+                    font-size: 14px;
+                    line-height: 30px;
+                  }
+
+                  &:hover {
+                    background-color: $colour-nav-bg-hover;
+                  }
+
+                  &::after {
+                    @extend .fa;
+                    @extend .fa-chevron-right, :before;
+                    font-size: 12px;
+                    margin: 0 12px;
+                    display: inline-block;
+                    float: right;
+                    line-height: 40px !important;
+                    @include not-desktop {
+                      line-height: 20px !important;
+                    }
+                  }
+
+                }
+
+              }
+
+            }
+          }
+
+        }
+
+        &.active > section {
+          @include not-desktop {
+            display: flex;
+            visibility: visible;
+            opacity: 1;
+          }
+        }
+        &:hover > section, & > section:hover, &:focus > section, & > section:focus  {
+          @include desktop-only {
+            display: inline-flex;
+            visibility: visible;
+            opacity: 1;
+          }
+        }
+      }
+
+    }
+
+    /* expand menu */
+    &:target {
+      display: flex;
+    }
+  }
+
+  #main-menu:target + .backdrop,
+  #main-menu[aria-expanded="true"] + .backdrop,
+  .main-menu:target + .backdrop,
+  .main-menu[aria-expanded="true"] + .backdrop
+  {
+    @include not-desktop {
+      position: absolute;
+      display: block;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 998;
+      background-color: $colour-admiralty-blue;
+      opacity: 0.75;
+      cursor: default;
+    }
+  }
+
+  #main-menu:hover + .backdrop,
+  .main-menu:hover + .backdrop
+  {
+    @include desktop-only {
+      position: absolute;
+      display: block;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      background-color: $colour-admiralty-blue;
+      opacity: 0.75;
+      cursor: default;
+    }
+  }
+
+  #main-menu:target,
+  #main-menu[aria-expanded="true"],
+  .main-menu:target,
+  .main-menu[aria-expanded="true"]
+  {
+    @include not-desktop {
+      display: flex;
+      z-index: 1000;
+    }
+  }
+  #main-menu[aria-expanded="false"],
+  .main-menu[aria-expanded="false"]
+  {
+    @include not-desktop {
+      display: none;
+    }
+  }
+
+  #main-menu:target .menu-close,
+  #main-menu[aria-expanded="true"] .menu-close,
+  .main-menu:target .menu-close,
+  .main-menu[aria-expanded="true"] .menu-close
+  {
+    @include not-desktop {
+      z-index: 1001;
+    }
+  }
+
+  .menu-toggle-wrapper {
+    display: none;
+
+    @include not-desktop {
+      display: block;
+      text-align: right;
+      height: 60px;
+      white-space: nowrap;
+      border-bottom: 1px solid $colour-divider;
+
+      a {
+        display: block;
+        z-index: 1001;
+        padding: 0 18px;
+        line-height: 60px;
+
+        &:hover, &:focus {
+          color: lighten($colour-admiralty-blue, 20%);
+        }
+
+        span.fa {
+          font-size: 20px;
+          line-height: 40px;
+          padding: 0 10px;
+          color: $colour-nav-subitem-icon;
+        }
+      }
+    }
+  }
+
+  #main-menu:target ~ .menu-toggle-wrapper,
+  #main-menu[aria-expanded="true"] ~ .menu-toggle-wrapper,
+  .main-menu:target ~ .menu-toggle-wrapper,
+  .main-menu[aria-expanded="true"] ~ .menu-toggle-wrapper
+  {
+    @include not-desktop {
+      display: none;
+    }
+  }
+
+}

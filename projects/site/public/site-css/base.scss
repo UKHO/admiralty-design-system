@@ -1,0 +1,63 @@
+@import '../../../styles/responsive';
+
+main {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  width: 100%;
+  max-width: $max-content-width;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 30px 18px;
+  @include desktop-only {
+    padding: 0 20px 48px;
+  }
+
+  .sidebar-wrapper {
+    display: flex;
+    flex-direction: row;
+
+    section.left {
+      flex-grow: 1;
+      margin-right: 20px;
+      @include not-desktop {
+        display: none;
+      }
+    }
+
+    section.content {
+      width: 67%;
+      flex-grow: 1;
+    }
+  }
+}
+
+/* remove prism left border */
+body pre[class*="language-"] {
+  &::before, &::after {
+    content: none;
+    display: none;
+  }
+  > code {
+  border-left: none;
+  box-shadow: none;
+  }
+}
+
+.text-block {
+  p {
+    margin: 40px 0;
+  }
+}
+
+.example1-table {
+  margin-top: 45px;
+}
+
+.text-input-wrap {
+  margin-bottom: 18px;
+}
+
+button {
+  display: block;
+}

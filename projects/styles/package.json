@@ -1,0 +1,12 @@
+{
+  "name": "@ukho/styles",
+  "version": "0.0.1",
+  "author": "Antony Derham",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.11.2",
+    "@material/layout-grid": "^3.1.0"
+  },
+  "devDependencies": {
+    "normalize.css": "^8.0.1"
+  }
+}

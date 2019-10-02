@@ -1,0 +1,111 @@
+@import '../../node_modules/@fortawesome/fontawesome-free/scss/core';
+@import 'responsive';
+@import 'colours';
+@import 'typography';
+
+nav#side-menu {
+  background-color: $colour-nav-bg;
+  width: 100%;
+  flex-direction: column;
+  padding: 6px 0;
+
+  @include not-desktop {
+    display: none;
+    visibility: hidden;
+  }
+
+  & > section {
+    flex-grow: 1;
+    border-bottom: 1px solid $colour-divider;
+
+    &.active {
+      padding-bottom: 10px;
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    & > h2 {
+        margin: 0;
+        line-height: 54px;
+
+      > a {
+        font-weight: normal;
+        text-decoration: none;
+        vertical-align: middle;
+        font-size: 21px;
+        line-height: 30px;
+        padding: 0 18px;
+        display: inline-block;
+        width: 100%;
+        color: $colour-nav-subitem;
+
+        &::after {
+          @extend .fa;
+          @extend .fa-chevron-right, :before;
+          font-size: 14px;
+          /* margin: 0 12px; */
+          display: inline-block;
+          float: right;
+          line-height: 30px !important;
+        }
+      }
+    }
+
+    & > ul {
+      display: none;
+      visibility: hidden;
+      margin-bottom: 0;
+      position: relative;
+    }
+
+    &.active > ul {
+      display: block;
+      visibility: visible;
+
+      & > li {
+        margin-bottom: 0;
+        transform: unset;
+        padding-right: unset;
+        &::before {
+          margin: 0;
+          content: none;
+          display: none;
+        }
+
+        > a {
+          display: inline-block;
+          width: 100%;
+          font-weight: $font-weight-light;
+          text-decoration: none;
+          color: $colour-nav-item;
+          padding: 0 18px;
+          font-size: 16px;
+          line-height: 42px;
+
+          &:hover {
+            background-color: $colour-nav-bg-hover;
+          }
+
+          &::after {
+            @extend .fa;
+            @extend .fa-chevron-right, :before;
+            font-size: 12px;
+            /* margin: 0 10px; */
+            display: inline-block;
+            float: right;
+            line-height: 42px !important;
+          }
+
+        }
+
+      }
+
+    }
+  }
+}
+
+.example-side-menu-wrap {
+  max-width: 279px;
+}
