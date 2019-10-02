@@ -22,7 +22,7 @@ ul.breadcrumbs {
     // chevron
     &::before {
       @extend .fa;
-      @extend .fa-chevron-right:before;
+      @extend .fa-chevron-right, :before;
       font-size: 10px;
       margin: 0 10px;
       position: static;

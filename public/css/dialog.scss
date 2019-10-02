@@ -18,7 +18,7 @@
     &::before {
       color: inherit;
       @extend .fa;
-      @extend .fa-info-circle:before;
+      @extend .fa-info-circle, :before;
       font-size: 18px;
       margin: 0 10px 0 0;
     }
@@ -29,7 +29,7 @@
     h3 {
       color: $colour-utility-error;
       &::before {
-        @extend .fa-exclamation:before;
+        @extend .fa-exclamation, :before;
       }
     }
   }
@@ -38,7 +38,7 @@
     h3 {
       color: $colour-utility-success;
       &::before {
-        @extend .fa-check:before;
+        @extend .fa-check, :before;
       }
     }
   }
@@ -47,7 +47,7 @@
     h3 {
       color: $colour-utility-warning;
       &::before {
-        @extend .fa-exclamation-triangle:before;
+        @extend .fa-exclamation-triangle, :before;
       }
     }
   }

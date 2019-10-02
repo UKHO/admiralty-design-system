@@ -43,7 +43,7 @@ nav#side-menu {
 
         &::after {
           @extend .fa;
-          @extend .fa-chevron-right:before;
+          @extend .fa-chevron-right, :before;
           font-size: 14px;
           /* margin: 0 12px; */
           display: inline-block;
@@ -90,7 +90,7 @@ nav#side-menu {
 
           &::after {
             @extend .fa;
-            @extend .fa-chevron-right:before;
+            @extend .fa-chevron-right, :before;
             font-size: 12px;
             /* margin: 0 10px; */
             display: inline-block;

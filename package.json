@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "start-static": "harp server",
-    "build": "ng-packagr -p angular/package.json",
+    "build": "ng-packagr -p angular/package.json && cp -R public/css angular/dist/",
     "build-static": "harp compile -o dist",
     "test": "ng test",
     "lint": "ng lint",

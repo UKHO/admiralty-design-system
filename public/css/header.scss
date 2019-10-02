@@ -67,7 +67,6 @@ header {
     z-index: 1002;
     line-height: 90px;
     padding-left: 20px;
-    position: absolute;
     font-weight: normal;
     vertical-align: middle;
     font-size: 34px;
@@ -208,7 +207,7 @@ header {
           }
           &::after {
             @extend .fa;
-            @extend .fa-chevron-down:before;
+            @extend .fa-chevron-down, :before;
             display: none !important;
             @include not-desktop {
               margin: 0 10px;
@@ -226,7 +225,7 @@ header {
             border-bottom: 5px solid $colour-admiralty-blue;
           }
           &::after {
-            @extend .fa-chevron-up:before;
+            @extend .fa-chevron-up, :before;
           }
         }
 
@@ -288,7 +287,7 @@ header {
 
                 &::after {
                   @extend .fa;
-                  @extend .fa-chevron-right:before;
+                  @extend .fa-chevron-right, :before;
                   font-size: 14px;
                   margin: 0 12px;
                   display: inline-block;
@@ -344,7 +343,7 @@ header {
 
                   &::after {
                     @extend .fa;
-                    @extend .fa-chevron-right:before;
+                    @extend .fa-chevron-right, :before;
                     font-size: 12px;
                     margin: 0 12px;
                     display: inline-block;

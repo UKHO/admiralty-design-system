@@ -46,7 +46,7 @@ section.expansion {
 
     &::after {
       @extend .fa;
-      @extend .fa-chevron-down:before;
+      @extend .fa-chevron-down, :before;
       float: right;
     }
 
@@ -62,7 +62,7 @@ section.expansion {
   }
 
   > input[type='checkbox']:checked + label::after {
-    @extend .fa-chevron-up:before;
+    @extend .fa-chevron-up, :before;
   }
 
   > input[type='checkbox']:checked + label + div {
