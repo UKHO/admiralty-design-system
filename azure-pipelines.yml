@@ -40,4 +40,4 @@ jobs:
       npm install --save-dev gh-pages@2.0.1
       git config user.email "pipeline@ukho.gov.uk"
       git config user.name "Azure Pipeline"
-  - script: $(npm bin)/gh-pages --dotfiles --message "[skip ci] gh-pages update" --dist dist -r git@github.com:UKHO/design-system.git
+  - script: $(npm bin)/gh-pages --dotfiles --message "[skip ci] gh-pages update" --dist projects/site/dist -r git@github.com:UKHO/design-system.git
