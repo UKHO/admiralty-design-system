@@ -35,8 +35,8 @@ jobs:
       sshPublicKey: $(publicKey)
       sshKeySecureFile: id_github
   - script: |
-      touch dist/.nojekyll
-      echo "design.ukho.dev" > dist/CNAME
+      touch projects/site/dist/.nojekyll
+      echo "design.ukho.dev" > projects/site/dist/CNAME
       npm install --save-dev gh-pages@2.0.1
       git config user.email "pipeline@ukho.gov.uk"
       git config user.name "Azure Pipeline"
