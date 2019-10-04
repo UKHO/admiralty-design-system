@@ -10,23 +10,3 @@
 .tabs {
   cursor: pointer;
 }
-
-.tab2 > label {
-  @extend %fa-icon;
-  @extend .fab;
-  &:before {
-    margin-right: 0.2rem;
-    content: fa-content($fa-var-html5);
-    color: #e34c26;
-  }
-}
-
-.tab3 > label {
-  @extend %fa-icon;
-  @extend .fab;
-  &:before {
-    margin-right: 0.2rem;
-    content: fa-content($fa-var-angular);
-    color: #dd0031;
-  }
-}
