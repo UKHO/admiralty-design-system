@@ -1,3 +1,5 @@
+<img src="projects/site/public/assets/images/UKHO%20stacked%20logo.svg" height=100>
+
 # UKHO Design System
 
 This repository contains a monorepo structure with three projects: site, styles and components.
