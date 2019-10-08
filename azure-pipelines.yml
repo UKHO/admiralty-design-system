@@ -24,6 +24,7 @@ jobs:
     - script: echo "//registry.npmjs.org/:_authToken=$(NPM_TOKEN)" > ~/.npmrc
     - script: npm publish projects/styles --access=public
 - job: build_components
+  dependsOn: build_styles
   container: node
   steps:
     - checkout: self
@@ -32,6 +33,7 @@ jobs:
     - script: yarn run lerna bootstrap
     - script: yarn build @ukho/components
 - job: build_site
+  dependsOn: build_styles
   container: node
   steps:
     - checkout: self
