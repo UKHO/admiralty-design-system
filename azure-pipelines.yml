@@ -19,10 +19,11 @@ jobs:
   container: node
   condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
   steps:
+    - checkout: none
     - download: current
       artifact: styles_artefact
     - script: echo "//registry.npmjs.org/:_authToken=$(NPM_TOKEN)" > ~/.npmrc
-    - script: npm publish styles_artefact/ --access=public
+    - script: npm publish $(Pipeline.Workspace)/styles_artefact --access=public
 - job: build_components
   dependsOn: build_styles
   container: node
@@ -48,17 +49,18 @@ jobs:
   condition: and(succeeded(), eq(variables['build.sourceBranch'], 'refs/heads/master'))
   container: node
   steps:
-  - download: current
-    artifact: site_artefact
-  - task: InstallSSHKey@0
-    inputs:
-      hostName: $(knownHosts)
-      sshPublicKey: $(publicKey)
-      sshKeySecureFile: id_github
-  - script: |
-      touch site_artefact/.nojekyll
-      echo "design.ukho.dev" > site_artefact/CNAME
-      npm install --save-dev gh-pages@2.0.1
-      git config user.email "pipeline@ukho.gov.uk"
-      git config user.name "Azure Pipeline"
-  - script: $(npm bin)/gh-pages --dotfiles --message "[skip ci] gh-pages update" --dist site_artefact -r git@github.com:UKHO/design-system.git
+    - checkout: none
+    - download: current
+      artifact: site_artefact
+    - task: InstallSSHKey@0
+      inputs:
+        hostName: $(knownHosts)
+        sshPublicKey: $(publicKey)
+        sshKeySecureFile: id_github
+    - script: |
+        touch $(Pipeline.Workspace)/site_artefact/.nojekyll
+        echo "design.ukho.dev" > $(Pipeline.Workspace)/site_artefact/CNAME
+        npm install --save-dev gh-pages@2.0.1
+        git config user.email "pipeline@ukho.gov.uk"
+        git config user.name "Azure Pipeline"
+    - script: $(npm bin)/gh-pages --dotfiles --message "[skip ci] gh-pages update" --dist $(Pipeline.Workspace)/site_artefact -r git@github.com:UKHO/design-system.git
