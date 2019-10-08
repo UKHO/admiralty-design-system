@@ -13,16 +13,16 @@ jobs:
     - script: yarn run lerna bootstrap
     - script: yarn workspace @ukho/styles run build
     - publish: projects/styles
-      artifact: styles
+      artifact: styles_artefact
 - job: publish_styles
   dependsOn: build_styles
   container: node
   condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
   steps:
     - download: current
-      artifact: styles
+      artifact: styles_artefact
     - script: echo "//registry.npmjs.org/:_authToken=$(NPM_TOKEN)" > ~/.npmrc
-    - script: npm publish projects/styles --access=public
+    - script: npm publish styles_artefact --access=public
 - job: build_components
   dependsOn: build_styles
   container: node
@@ -42,23 +42,23 @@ jobs:
     - script: yarn run lerna bootstrap
     - script: yarn workspace @ukho/design-system run build
     - publish: projects/site/dist
-      artifact: site
+      artifact: site_artefact
 - job: ghpages
   dependsOn: build_site
   condition: and(succeeded(), eq(variables['build.sourceBranch'], 'refs/heads/master'))
   container: node
   steps:
   - download: current
-    artifact: site
+    artifact: site_artefact
   - task: InstallSSHKey@0
     inputs:
       hostName: $(knownHosts)
       sshPublicKey: $(publicKey)
       sshKeySecureFile: id_github
   - script: |
-      touch projects/site/dist/.nojekyll
-      echo "design.ukho.dev" > projects/site/dist/CNAME
+      touch site_artefact/.nojekyll
+      echo "design.ukho.dev" > site_artefact/CNAME
       npm install --save-dev gh-pages@2.0.1
       git config user.email "pipeline@ukho.gov.uk"
       git config user.name "Azure Pipeline"
-  - script: $(npm bin)/gh-pages --dotfiles --message "[skip ci] gh-pages update" --dist projects/site/dist -r git@github.com:UKHO/design-system.git
+  - script: $(npm bin)/gh-pages --dotfiles --message "[skip ci] gh-pages update" --dist site_artefact -r git@github.com:UKHO/design-system.git
