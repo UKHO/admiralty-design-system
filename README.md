@@ -1,4 +1,4 @@
-<img src="projects/site/public/assets/images/UKHO%20stacked%20logo.svg" height=100>
+<img src="projects/site/public/images/UKHO%20stacked%20logo.svg" height=100>
 
 # UKHO Design System
 
