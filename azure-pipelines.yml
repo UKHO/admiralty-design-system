@@ -22,7 +22,7 @@ jobs:
     - download: current
       artifact: styles_artefact
     - script: echo "//registry.npmjs.org/:_authToken=$(NPM_TOKEN)" > ~/.npmrc
-    - script: npm publish styles_artefact --access=public
+    - script: npm publish styles_artefact/ --access=public
 - job: build_components
   dependsOn: build_styles
   container: node
