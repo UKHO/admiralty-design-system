@@ -1,22 +1,22 @@
-@import 'colours';
-@import 'responsive';
-@import 'typography';
+@use 'colours';
+@use 'responsive';
+@use 'typography';
 
 .text-input-wrap {
   position: relative;
   display: inline-block;
-  @include not-desktop {
+  @include responsive.not-desktop {
     width: 100%;
     max-width: 420px;
   }
 
   label {
     position: relative;
-    color: $colour-textinput-text;
+    color: colours.$colour-textinput-text;
     left: 0;
     top: 9px;
     transition: top .3s, font-size .3s;
-    font-weight: $font-weight-medium;
+    font-weight: typography.$font-weight-medium;
   }
 
   .input-wrap {
@@ -31,19 +31,19 @@
   }
 
   .form-text-input:focus + .input-wrap {
-    border-top-color: $colour-white;
+    border-top-color: colours.$colour-white;
 
     label {
-      color: $colour-textinput-text-active;
+      color: colours.$colour-textinput-text-active;
       top: -18px;
       font-size: 14px;
     }
   }
 
   .has-value {
-    border-top-color: $colour-white;
+    border-top-color: colours.$colour-white;
     input {
-      background-color: $colour-white;
+      background-color: colours.$colour-white;
     }
     label {
       top: -18px;
@@ -62,81 +62,81 @@
   }
 
   .validated-icon {
-    color: $colour-utility-success;
+    color: colours.$colour-utility-success;
   }
 
   .invalid-icon {
-    color: $colour-utility-error;
+    color: colours.$colour-utility-error;
   }
 
   .error-text {
     font-size: 12px;
-    color: $colour-utility-error;
+    color: colours.$colour-utility-error;
     margin-left: 18px;
   }
 }
 
 .is-disabled {
   input {
-    border-color: $colour-textinput-border-disabled;
-    background: $colour-white;
+    border-color: colours.$colour-textinput-border-disabled;
+    background: colours.$colour-white;
   }
 
   label {
-    color: $colour-textinput-text-disabled;
+    color: colours.$colour-textinput-text-disabled;
   }
 }
 
 div.text-input-wrap.validated {
   input {
-    color: $colour-utility-success;
-    border-color: $colour-utility-success;
-    background-color: $colour-white;
+    color: colours.$colour-utility-success;
+    border-color: colours.$colour-utility-success;
+    background-color: colours.$colour-white;
   }
 
   label {
-    color: $colour-utility-success;
+    color: colours.$colour-utility-success;
   }
 
   .form-text-input:focus+.input-wrap label {
-    color: $colour-utility-success;
+    color: colours.$colour-utility-success;
   }
 }
 
 div.text-input-wrap.invalid {
   input {
-    color: $colour-utility-error;
-    border-color: $colour-utility-error;
-    background-color: $colour-white;
+    color: colours.$colour-utility-error;
+    border-color: colours.$colour-utility-error;
+    background-color: colours.$colour-white;
   }
 
   label {
-    color: $colour-utility-error;
+    color: colours.$colour-utility-error;
   }
 
   .form-text-input:focus+.input-wrap label {
-    color: $colour-utility-error;
+    color: colours.$colour-utility-error;
   }
 }
 
 .form-text-input {
     width: 420px;
     height: 50px;
-    border: 2px solid $colour-textinput-border;
-    color: $colour-textinput-text;
+    border: 2px solid colours.$colour-textinput-border;
+    color: colours.$colour-textinput-text;
     padding-left: 18px;
     outline: none;
-    background-color: $colour-textinput-bg;
+    background-color: colours.$colour-textinput-bg;
     position: relative;
     line-height: 3;
 
     &:focus {
-      border-color: $colour-textinput-text-active;
-      color: $colour-textinput-text-active;
-      background-color: $colour-white;
+      border-color: colours.$colour-textinput-text-active;
+      color: colours.$colour-textinput-text-active;
+      background-color: colours.$colour-white;
   }
 
-    @include not-desktop {
+    @include responsive.not-desktop {
       max-width: 420px;
       width: 100%;
     }

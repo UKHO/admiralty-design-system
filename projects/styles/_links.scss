@@ -1,14 +1,14 @@
-@import 'responsive';
-@import 'colours';
+@use 'responsive';
+@use 'colours';
 
 a {
   font-weight: normal;
-  color: $colour-link;
+  color: colours.$colour-link;
   text-decoration: underline;
 
   &.small {
     font-size: 16px;
-    @include not-desktop {
+    @include responsive.not-desktop {
       font-size: 14px;
       line-height: 22px;
     }

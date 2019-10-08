@@ -1,12 +1,30 @@
 {
   "name": "@ukho/styles",
-  "version": "0.0.1",
-  "author": "Antony Derham",
+  "version": "1.0.0",
+  "description": "Styles library for the UKHO Design System",
+  "author": {
+    "name": "UK Hydrographic Office",
+    "url": "https://www.gov.uk/ukho"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/UKHO/design-system.git"
+  },
+  "private": false,
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ],
+  "scripts": {
+    "build": "sass all.scss dist/ukho.min.css --style compressed && postcss dist/ukho.min.css --use autoprefixer -d dist/"
+  },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.11.2",
-    "@material/layout-grid": "^3.1.0"
+    "@material/layout-grid": "^3.1.0",
+    "normalize.css": "^8.0.1"
   },
   "devDependencies": {
-    "normalize.css": "^8.0.1"
+    "postcss-cli": "^6.1.3",
+    "sass": "^1.23.0"
   }
 }

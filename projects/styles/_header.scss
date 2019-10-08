@@ -1,7 +1,10 @@
-@import '../../node_modules/@fortawesome/fontawesome-free/scss/core';
-@import 'responsive';
-@import 'colours';
-@import 'typography';
+@use "sass:color";
+@use 'responsive';
+@use 'colours';
+@use 'typography';
+
+@use '../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome';
+@use '../../node_modules/@fortawesome/fontawesome-free/scss/solid';
 
 header {
   display: flex;
@@ -12,13 +15,13 @@ header {
     display: flex;
     flex-direction: row;
     padding: 0 20px;
-    background-color: $colour-bg-header;
+    background-color: colours.$colour-bg-header;
     height: 40px;
     line-height: 40px;
     vertical-align: middle;
     position: relative;
     z-index: 1001;
-    @include not-desktop {
+    @include responsive.not-desktop {
       height: 30px;
       line-height: 30px;
       padding: 0 18px;
@@ -41,8 +44,8 @@ header {
     a, span {
       display: flex;
       font-size: 14px;
-      color: $colour-admiralty-blue;
-      font-weight: $font-weight-medium;
+      color: colours.$colour-admiralty-blue;
+      font-weight: typography.$font-weight-medium;
       text-decoration: none;
       line-height: inherit;
     }
@@ -52,7 +55,7 @@ header {
       align-items: center;
       width: 33%;
       justify-content: space-between;
-      @include not-desktop {
+      @include responsive.not-desktop {
         display: none;
       }
     }
@@ -68,8 +71,8 @@ header {
     vertical-align: middle;
     font-size: 34px;
     margin: 0;
-    color: $colour-admiralty-blue;
-    @include not-desktop {
+    color: colours.$colour-admiralty-blue;
+    @include responsive.not-desktop {
       display: block;
       padding-left: 18px;
       font-size: 24px;
@@ -89,10 +92,10 @@ header {
     z-index: 1001;
     pointer-events: none;
     display: flex;
-    border-bottom: 1px solid $colour-divider;
-    background-color: $colour-bg;
+    border-bottom: 1px solid colours.$colour-divider;
+    background-color: colours.$colour-bg;
     padding: 0 20px;
-    @include not-desktop {
+    @include responsive.not-desktop {
       display: none;
       position: absolute;
       top: 30px;
@@ -106,14 +109,14 @@ header {
     > div {
       display: block;
       text-align: right;
-      @include not-desktop {
-        border-bottom: 1px solid $colour-divider;
+      @include responsive.not-desktop {
+        border-bottom: 1px solid colours.$colour-divider;
         height: 60px;
       }
 
       .menu-close {
         display: none;
-        @include not-desktop {
+        @include responsive.not-desktop {
           pointer-events: auto;
           display: block;
           z-index: 1001;
@@ -125,7 +128,7 @@ header {
           font-size: 20px;
           line-height: 40px;
           padding: 0 10px;
-          color: $colour-nav-subitem-icon;
+          color: colours.$colour-nav-subitem-icon;
         }
       }
     }
@@ -138,7 +141,7 @@ header {
       justify-content: flex-end;
       vertical-align: middle;
       margin-bottom: 0;
-      @include not-desktop {
+      @include responsive.not-desktop {
         margin-left: 0;
         display: block;
         flex-grow: 1;
@@ -148,13 +151,13 @@ header {
       & > li {
         margin: auto 0;
         height: 90px;
-        background-color: $colour-bg;
+        background-color: colours.$colour-bg;
         transform: unset;
         padding-right: unset;
 
-        @include not-desktop {
-          border-bottom: 1px solid $colour-divider;
-          border-top: 1px solid $colour-bg;
+        @include responsive.not-desktop {
+          border-bottom: 1px solid colours.$colour-divider;
+          border-top: 1px solid colours.$colour-bg;
           display: block;
           height: auto;
         }
@@ -169,19 +172,19 @@ header {
 
 
         &.active > a {
-          @include not-desktop {
+          @include responsive.not-desktop {
             height: auto;
           }
         }
 
         &.active {
-          @include desktop-only {
-            border-bottom: 5px solid $colour-admiralty-blue;
+          @include responsive.desktop-only {
+            border-bottom: 5px solid colours.$colour-admiralty-blue;
           }
         }
 
         &:hover, &:focus {
-          @include desktop-only {
+          @include responsive.desktop-only {
             background: #EEF3F4;
           }
         }
@@ -192,12 +195,12 @@ header {
           outline: none;
           display: block;
           font-size: 18px;
-          color: $colour-admiralty-blue;
+          color: colours.$colour-admiralty-blue;
           font-weight: normal;
           text-decoration: none;
           line-height: 90px;
           padding: 0 24px;
-          @include not-desktop {
+          @include responsive.not-desktop {
             padding: 0 18px;
             line-height: 50px;
             font-size: 16px;
@@ -206,20 +209,20 @@ header {
             @extend .fa;
             @extend .fa-chevron-down, :before;
             display: none !important;
-            @include not-desktop {
+            @include responsive.not-desktop {
               margin: 0 10px;
               display: inline-block !important;
               float: right;
               line-height: 50px !important;
               font-size: 16px;
-              color: $colour-nav-subitem-icon;
+              color: colours.$colour-nav-subitem-icon;
             }
           }
         }
 
         &.active > a {
-          @include not-desktop {
-            border-bottom: 5px solid $colour-admiralty-blue;
+          @include responsive.not-desktop {
+            border-bottom: 5px solid colours.$colour-admiralty-blue;
           }
           &::after {
             @extend .fa-chevron-up, :before;
@@ -230,22 +233,22 @@ header {
         & > section {
           /* Sub menu headings */
           box-shadow: -2px 5px 8px 0 rgba(0, 0, 0, 0.2);
-          border-top: 1px solid $colour-divider;
-          border-bottom: 1px solid $colour-divider;
+          border-top: 1px solid colours.$colour-divider;
+          border-bottom: 1px solid colours.$colour-divider;
           display: none;
           visibility: hidden;
           opacity: 0;
           position: absolute;
-          background-color: $colour-bg;
+          background-color: colours.$colour-bg;
           width: 100%;
           left: 0;
           /* margin-top: 5px; */
           flex-direction: row;
           justify-content: space-between;
           padding: 20px 30px;
-          @include not-desktop {
+          @include responsive.not-desktop {
             box-shadow: none;
-            background-color: $colour-nav-bg;
+            background-color: colours.$colour-nav-bg;
             border: none;
             flex-direction: column;
             position: static;
@@ -257,12 +260,12 @@ header {
             flex-grow: 1;
             margin: 0 10px;
             max-width: 33.33%;
-            @include not-desktop {
+            @include responsive.not-desktop {
               max-width: none;
             }
 
             & > h2 {
-              @include not-desktop {
+              @include responsive.not-desktop {
                 margin-bottom: 6px;
               }
 
@@ -272,14 +275,14 @@ header {
                 vertical-align: middle;
                 font-size: 21px;
                 line-height: 30px;
-                color: $colour-admiralty-blue;
+                color: colours.$colour-admiralty-blue;
                 display: inline-block;
                 width: 100%;
                 padding: 12px 6px 6px;
-                border-bottom: 1px solid $colour-divider;
-                @include not-desktop {
+                border-bottom: 1px solid colours.$colour-divider;
+                @include responsive.not-desktop {
                   font-size: 16px;
-                  color: $colour-nav-subitem;
+                  color: colours.$colour-nav-subitem;
                 }
 
                 &::after {
@@ -290,9 +293,9 @@ header {
                   display: inline-block;
                   float: right;
                   line-height: 30px !important;
-                  @include not-desktop {
+                  @include responsive.not-desktop {
                     font-size: 12px;
-                    color: $colour-admiralty-blue;
+                    color: colours.$colour-admiralty-blue;
                   }
                 }
               }
@@ -316,26 +319,26 @@ header {
 
                 min-height: 40px;
                 margin-bottom: 0;
-                @include not-desktop {
+                @include responsive.not-desktop {
                   min-height: auto;
                 }
 
                 > a {
                   display: inline-block;
                   width: 100%;
-                  font-weight: $font-weight-light;
+                  font-weight: typography.$font-weight-light;
                   text-decoration: none;
-                  color: $colour-nav-item;
+                  color: colours.$colour-nav-item;
                   padding: 6px 6px;
                   font-size: 18px;
                   line-height: 40px;
-                  @include not-desktop {
+                  @include responsive.not-desktop {
                     font-size: 14px;
                     line-height: 30px;
                   }
 
                   &:hover {
-                    background-color: $colour-nav-bg-hover;
+                    background-color: colours.$colour-nav-bg-hover;
                   }
 
                   &::after {
@@ -346,7 +349,7 @@ header {
                     display: inline-block;
                     float: right;
                     line-height: 40px !important;
-                    @include not-desktop {
+                    @include responsive.not-desktop {
                       line-height: 20px !important;
                     }
                   }
@@ -361,14 +364,14 @@ header {
         }
 
         &.active > section {
-          @include not-desktop {
+          @include responsive.not-desktop {
             display: flex;
             visibility: visible;
             opacity: 1;
           }
         }
         &:hover > section, & > section:hover, &:focus > section, & > section:focus  {
-          @include desktop-only {
+          @include responsive.desktop-only {
             display: inline-flex;
             visibility: visible;
             opacity: 1;
@@ -389,7 +392,7 @@ header {
   .main-menu:target + .backdrop,
   .main-menu[aria-expanded="true"] + .backdrop
   {
-    @include not-desktop {
+    @include responsive.not-desktop {
       position: absolute;
       display: block;
       left: 0;
@@ -397,7 +400,7 @@ header {
       width: 100%;
       height: 100%;
       z-index: 998;
-      background-color: $colour-admiralty-blue;
+      background-color: colours.$colour-admiralty-blue;
       opacity: 0.75;
       cursor: default;
     }
@@ -406,7 +409,7 @@ header {
   #main-menu:hover + .backdrop,
   .main-menu:hover + .backdrop
   {
-    @include desktop-only {
+    @include responsive.desktop-only {
       position: absolute;
       display: block;
       left: 0;
@@ -414,7 +417,7 @@ header {
       width: 100%;
       height: 100%;
       z-index: 2;
-      background-color: $colour-admiralty-blue;
+      background-color: colours.$colour-admiralty-blue;
       opacity: 0.75;
       cursor: default;
     }
@@ -425,7 +428,7 @@ header {
   .main-menu:target,
   .main-menu[aria-expanded="true"]
   {
-    @include not-desktop {
+    @include responsive.not-desktop {
       display: flex;
       z-index: 1000;
     }
@@ -433,7 +436,7 @@ header {
   #main-menu[aria-expanded="false"],
   .main-menu[aria-expanded="false"]
   {
-    @include not-desktop {
+    @include responsive.not-desktop {
       display: none;
     }
   }
@@ -443,7 +446,7 @@ header {
   .main-menu:target .menu-close,
   .main-menu[aria-expanded="true"] .menu-close
   {
-    @include not-desktop {
+    @include responsive.not-desktop {
       z-index: 1001;
     }
   }
@@ -451,12 +454,12 @@ header {
   .menu-toggle-wrapper {
     display: none;
 
-    @include not-desktop {
+    @include responsive.not-desktop {
       display: block;
       text-align: right;
       height: 60px;
       white-space: nowrap;
-      border-bottom: 1px solid $colour-divider;
+      border-bottom: 1px solid colours.$colour-divider;
 
       a {
         display: block;
@@ -465,14 +468,14 @@ header {
         line-height: 60px;
 
         &:hover, &:focus {
-          color: lighten($colour-admiralty-blue, 20%);
+          color: color.adjust(colours.$colour-admiralty-blue, $lightness: 20%);
         }
 
         span.fa {
           font-size: 20px;
           line-height: 40px;
           padding: 0 10px;
-          color: $colour-nav-subitem-icon;
+          color: colours.$colour-nav-subitem-icon;
         }
       }
     }
@@ -483,7 +486,7 @@ header {
   .main-menu:target ~ .menu-toggle-wrapper,
   .main-menu[aria-expanded="true"] ~ .menu-toggle-wrapper
   {
-    @include not-desktop {
+    @include responsive.not-desktop {
       display: none;
     }
   }

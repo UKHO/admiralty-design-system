@@ -1,4 +1,4 @@
-@import 'colours';
+@use 'colours';
 
 .icon-table {
     width: 100%;
@@ -12,6 +12,6 @@
     }
 
     span {
-        color: $colour-admiralty-blue;
+        color: colours.$colour-admiralty-blue;
     }
 }

@@ -1,16 +1,16 @@
-@import 'colours';
-@import 'responsive';
-@import 'typography';
+@use 'colours';
+@use 'responsive';
+@use 'typography';
 
 footer {
   font-size: 16px;
-  color: $colour-admiralty-blue;
-  background-color: $colour-bg-footer;
-  font-weight: $font-weight-medium;
+  color: colours.$colour-admiralty-blue;
+  background-color: colours.$colour-bg-footer;
+  font-weight: typography.$font-weight-medium;
   height: 60px;
   line-height: 60px;
   padding: 0 20px;
-  @include not-desktop {
+  @include responsive.not-desktop {
     font-size: 14px;
     height: 40px;
     line-height: 40px;

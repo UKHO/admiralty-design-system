@@ -1,13 +1,13 @@
-@import 'colours';
-@import 'responsive';
-@import 'typography';
+@use 'colours';
+@use 'responsive';
+@use 'typography';
 
 .form-label {
     font-size: 21px;
     color: #333333;
     margin-bottom: 18px;
 
-    @include not-desktop {
+    @include responsive.not-desktop {
         font-size: 18px;
     }
 }

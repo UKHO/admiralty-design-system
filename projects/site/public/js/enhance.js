@@ -172,11 +172,11 @@ for (var idx3 = 0; idx3 < popupLinks.length; idx3++) {
                 newWindow.setBody(contentElem.innerHTML);
 
                 var newScript = document.createElement("script");
-                newScript.src = "/assets/js/prism.js";
+                newScript.src = "/js/prism.js";
                 newWindow.document.body.appendChild(newScript);
 
                 var newScript = document.createElement("script");
-                newScript.src = "/assets/js/enhance.js";
+                newScript.src = "/js/enhance.js";
                 newWindow.document.body.appendChild(newScript);
             });
 

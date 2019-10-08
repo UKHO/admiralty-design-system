@@ -1,19 +1,19 @@
-@import 'colours';
-@import 'responsive';
-@import 'typography';
+@use 'colours';
+@use 'responsive';
+@use 'typography';
 
 .checkbox-wrap {
     //colours
     .mat-checkbox-checked .mat-checkbox-background {
-        background-color: $colour-checkbox;
+        background-color: colours.$colour-checkbox;
     }
 
     .mat-checkbox-frame {
-        border-color: $colour-checkbox;
+        border-color: colours.$colour-checkbox;
     }
 
     .mat-checkbox:not(.mat-checkbox-disabled).mat-accent .mat-checkbox-ripple .mat-ripple-element {
-        background-color: $colour-checkbox;
+        background-color: colours.$colour-checkbox;
     }
 
     // layot

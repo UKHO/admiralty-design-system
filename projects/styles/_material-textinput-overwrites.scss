@@ -1,29 +1,29 @@
-@import 'colours';
-@import 'responsive';
-@import 'typography';
+@use 'colours';
+@use 'responsive';
+@use 'typography';
 
 .mat-input-text-wrapper {
     // border colour
     .mat-form-field div.mat-form-field-outline div {
-        border-color: $colour-textinput-border;
+        border-color: colours.$colour-textinput-border;
         border: 2px solid;
         border-radius: unset;
     }
     
     .mat-form-field.mat-focused div.mat-form-field-outline div {
-        border-color: $colour-textinput-border-active;
+        border-color: colours.$colour-textinput-border-active;
     }
     
     .mat-form-field.disabled div.mat-form-field-outline div {
-        border-color: $colour-textinput-border-disabled;
+        border-color: colours.$colour-textinput-border-disabled;
     }
     
     .ng-touched.valid div.mat-form-field-outline div {
-        border-color: $colour-textinput-border-valid;
+        border-color: colours.$colour-textinput-border-valid;
     }
     
     .ng-invalid.ng-touched div.mat-form-field-outline div {
-        border-color: $colour-textinput-border-invalid;
+        border-color: colours.$colour-textinput-border-invalid;
     }
     
     // start border
@@ -49,7 +49,7 @@
     
     // background
     div.mat-form-field-outline {
-        background: $colour-textinput-bg;
+        background: colours.$colour-textinput-bg;
     }
     
     .mat-focused div.mat-form-field-outline,
@@ -60,44 +60,44 @@
     // input
     input.mat-input-element {
         font-size: 21px;
-        color: $colour-textinput-text;
+        color: colours.$colour-textinput-text;
     }
     
     .mat-focused input.mat-input-element {
-        color: $colour-textinput-text-active;
+        color: colours.$colour-textinput-text-active;
     }
     
     .disabled input.mat-input-element {
-        color: $colour-textinput-text-disabled;
+        color: colours.$colour-textinput-text-disabled;
     }
     
     .ng-touched.valid input.mat-input-element {
-        color: $colour-textinput-text-valid;
+        color: colours.$colour-textinput-text-valid;
     }
     
     .ng-invalid.ng-touched input.mat-input-element {
-        color: $colour-textinput-text-invalid;
+        color: colours.$colour-textinput-text-invalid;
     }
     
     // label
     span.mat-form-field-label-wrapper .ng-star-inserted {
-        color: $colour-textinput-text;
+        color: colours.$colour-textinput-text;
     }
     
     .mat-focused span.mat-form-field-label-wrapper .ng-star-inserted {
-        color: $colour-textinput-text-active;
+        color: colours.$colour-textinput-text-active;
     }
     
     .disabled span.mat-form-field-label-wrapper .ng-star-inserted {
-        color: $colour-textinput-text-disabled;
+        color: colours.$colour-textinput-text-disabled;
     }
     
     .ng-touched.valid span.mat-form-field-label-wrapper .ng-star-inserted {
-        color: $colour-textinput-text-valid;
+        color: colours.$colour-textinput-text-valid;
     }
     
     .ng-invalid.ng-touched span.mat-form-field-label-wrapper .ng-star-inserted {
-        color: $colour-textinput-text-invalid;
+        color: colours.$colour-textinput-text-invalid;
     }
     
     // icon
@@ -106,12 +106,12 @@
     }
     
     .valid .icon {
-        color: $colour-textinput-icon-valid;
+        color: colours.$colour-textinput-icon-valid;
         transform: translateY(-0.1em);
     }
 
     .ng-invalid .icon {
-        color: $colour-textinput-icon-invalid;
+        color: colours.$colour-textinput-icon-invalid;
     }
     
     .ng-invalid.ng-untouched .icon {
@@ -138,7 +138,7 @@
     
     .mat-form-field {
         min-width: 420px;
-        @include not-desktop {
+        @include responsive.not-desktop {
             min-width: unset;
             max-width: 420px;
             width: 100%;
@@ -147,7 +147,7 @@
     
     // error message
     .error-message {
-        color: $colour-errormessage-text;
+        color: colours.$colour-errormessage-text;
     }
     
     div.mat-form-field-subscript-wrapper {

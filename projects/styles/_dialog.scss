@@ -1,19 +1,21 @@
-@import '../../node_modules/@fortawesome/fontawesome-free/scss/core';
-@import 'colours';
-@import 'responsive';
+@use 'colours';
+@use 'responsive';
+
+@use '../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome';
+@use '../../node_modules/@fortawesome/fontawesome-free/scss/solid';
 
 .dialog {
   box-shadow: 0 1px 3px 0 rgba(0,0,0,0.2);
   padding: 30px 18px;
-  @include not-desktop {
+  @include responsive.not-desktop {
     padding: 24px 18px;
   }
 
   /* info type is default */
-  border-left: 5px solid $colour-utility-info;
+  border-left: 5px solid colours.$colour-utility-info;
 
   h3 {
-    color: $colour-utility-info;
+    color: colours.$colour-utility-info;
 
     &::before {
       color: inherit;
@@ -25,27 +27,27 @@
   }
 
   &.error {
-    border-left: 5px solid $colour-utility-error;
+    border-left: 5px solid colours.$colour-utility-error;
     h3 {
-      color: $colour-utility-error;
+      color: colours.$colour-utility-error;
       &::before {
         @extend .fa-exclamation, :before;
       }
     }
   }
   &.success {
-    border-left: 5px solid $colour-utility-success;
+    border-left: 5px solid colours.$colour-utility-success;
     h3 {
-      color: $colour-utility-success;
+      color: colours.$colour-utility-success;
       &::before {
         @extend .fa-check, :before;
       }
     }
   }
   &.warning {
-    border-left: 5px solid $colour-utility-warning;
+    border-left: 5px solid colours.$colour-utility-warning;
     h3 {
-      color: $colour-utility-warning;
+      color: colours.$colour-utility-warning;
       &::before {
         @extend .fa-exclamation-triangle, :before;
       }

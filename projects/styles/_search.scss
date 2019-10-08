@@ -1,11 +1,11 @@
-@import 'colours';
-@import 'responsive';
-@import 'typography';
+@use 'colours';
+@use 'responsive';
+@use 'typography';
 
 .search-wrapper {
     display: flex;
 
-    @include not-desktop {
+    @include responsive.not-desktop {
         flex-direction: column;
     }
 
@@ -21,7 +21,7 @@
         justify-content: center;
         align-items: center;
 
-        @include not-desktop {
+        @include responsive.not-desktop {
             margin-top: 20px;
             margin-left: 0px;
         }

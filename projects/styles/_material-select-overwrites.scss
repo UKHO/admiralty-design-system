@@ -1,11 +1,11 @@
-@import 'colours';
-@import 'responsive';
-@import 'typography';
+@use 'colours';
+@use 'responsive';
+@use 'typography';
 
 .select-wrap {
     // border colour
     .mat-form-field div.mat-form-field-outline div {
-        border-color: $colour-textinput-border;
+        border-color: colours.$colour-textinput-border;
         border: 2px solid;
         border-radius: unset;
     }
@@ -27,7 +27,7 @@
 
     // background
     div.mat-form-field-outline {
-        background: $colour-textinput-bg;
+        background: colours.$colour-textinput-bg;
     }
     
     .mat-focused div.mat-form-field-outline,
@@ -54,7 +54,7 @@
 
     .mat-form-field {
         min-width: 300px;
-        @include not-desktop {
+        @include responsive.not-desktop {
             min-width: 167px;
             max-width: 300px;
             width: 100%;
@@ -74,7 +74,7 @@
 // select box
 div.mat-select-panel:not([class*=mat-elevation-z]) {
     box-shadow: none;
-    border-color: $colour-textinput-border;
+    border-color: colours.$colour-textinput-border;
     border: 2px solid;
     border-top: none;
     border-radius: unset;
@@ -90,14 +90,14 @@ div.mat-select-panel:not([class*=mat-elevation-z]) {
 div.cdk-overlay-pane {
     transform: translateX(-16px) translateY(26px) !important;
 
-    @include not-desktop {
+    @include responsive.not-desktop {
         transform: translateX(-14px) translateY(26px) !important
     }
 }
 
 div.cdk-overlay-pane {
     min-width: 268px !important;
-    @include not-desktop {
+    @include responsive.not-desktop {
         min-width: 135px !important;
         max-width: 268px;
         width: calc(100% - 92px);

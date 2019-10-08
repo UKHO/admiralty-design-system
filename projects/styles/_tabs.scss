@@ -1,4 +1,4 @@
-@import 'colours';
+@use 'colours';
 
 .tab-set > input,
 .tab-set > section > div {
@@ -28,7 +28,7 @@
     margin: 0;
     padding: 0;
     display: inline-flex;
-    border-bottom: 1px solid $colour-divider;
+    border-bottom: 1px solid colours.$colour-divider;
     width: 100%;
 
     > li {
@@ -45,9 +45,9 @@
         float: left;
         padding: 15px 25px;
         border-bottom: 5px solid transparent;
-        color: $colour-admiralty-blue;
+        color: colours.$colour-admiralty-blue;
         &:hover {
-          background-color: $colour-tab-hover;
+          background-color: colours.$colour-tab-hover;
         }
       }
       &:not(:last-child) > label {
@@ -58,7 +58,7 @@
 
   > section {
     clear: both;
-    border: 1px solid $colour-divider;
+    border: 1px solid colours.$colour-divider;
     box-shadow: 0 1px 3px 0 rgba(0,0,0,0.2);
     margin: 20px 0 30px 0;
 
@@ -81,6 +81,6 @@
 .tab10selector:checked ~ nav > ul li.tab10
 {
   > label {
-    border-bottom: 5px solid $colour-admiralty-blue;
+    border-bottom: 5px solid colours.$colour-admiralty-blue;
   }
 }

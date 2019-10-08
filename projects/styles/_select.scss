@@ -1,12 +1,12 @@
-@import 'colours';
-@import 'responsive';
-@import 'typography';
+@use 'colours';
+@use 'responsive';
+@use 'typography';
 
 .custom-select {
   position: relative;
   font-family: Arial;
-  background-color: $colour-textinput-bg;
-  border: 2px solid $colour-textinput-border;
+  background-color: colours.$colour-textinput-bg;
+  border: 2px solid colours.$colour-textinput-border;
   max-width: 300px;
 }
 
@@ -15,7 +15,7 @@
 }
 
 .custom-select .select-selected.select-arrow-active {
-  background-color: $colour-white;
+  background-color: colours.$colour-white;
 }
 
 // /* Style the arrow inside the select element: */
@@ -45,18 +45,18 @@
 
 /* style the items (options), including the selected item: */
 .select-items div,.select-selected {
-  color: $colour-textinput-text;
+  color: colours.$colour-textinput-text;
   padding: 8px 16px;
   cursor: pointer;
 }
 
 /* Style items (options): */
 .select-items {
-  border: 2px solid $colour-textinput-border;
+  border: 2px solid colours.$colour-textinput-border;
   border-top: none;
   padding-top: 30px;
   position: absolute;
-  background-color: $colour-white;
+  background-color: colours.$colour-white;
   width: calc(100% + 4px);
   top: 100%;
   left: -2px;

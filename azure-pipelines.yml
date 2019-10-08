@@ -4,22 +4,41 @@ resources:
       image: node:10
 
 jobs:
-- job: build_lib
+- job: build_styles
   container: node
   steps:
     - checkout: self
       clean: true
     - script: yarn install
-    - script: yarn run ng build @ukho/components
+    - script: yarn run lerna bootstrap
+    - script: yarn workspace @ukho/styles run build
+    - publish: projects/styles
+      artifact: styles
+- job: publish_styles
+  dependsOn: build_styles
+  container: node
+  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
+  steps:
+    - download: current
+      artifact: styles
+    - script: echo "//registry.npmjs.org/:_authToken=$(NPM_TOKEN)" > ~/.npmrc
+    - script: npm publish projects/styles --access=public
+- job: build_components
+  container: node
+  steps:
+    - checkout: self
+      clean: true
+    - script: yarn install
+    - script: yarn run lerna bootstrap
+    - script: yarn build @ukho/components
 - job: build_site
   container: node
   steps:
     - checkout: self
       clean: true
     - script: yarn install
-    - script: |
-        cd projects/site
-        yarn run build
+    - script: yarn run lerna bootstrap
+    - script: yarn workspace @ukho/design-system run build
     - publish: projects/site/dist
       artifact: site
 - job: ghpages

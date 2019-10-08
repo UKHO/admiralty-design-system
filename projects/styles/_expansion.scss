@@ -1,6 +1,8 @@
-@import '../../node_modules/@fortawesome/fontawesome-free/scss/core';
-@import 'colours';
-@import 'typography';
+@use 'colours';
+@use 'typography';
+
+@use '../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome';
+@use '../../node_modules/@fortawesome/fontawesome-free/scss/solid';
 
 section.readmore {
   > input[type='checkbox'] {
@@ -18,7 +20,7 @@ section.readmore {
   }
 
   > div + div {
-    max-height: 0px;
+    max-height: 0;
     overflow: hidden;
     transition: max-height .25s ease-in-out;
   }
@@ -41,7 +43,7 @@ section.expansion {
     @extend h3;
     display: block;
     cursor: pointer;
-    border-bottom: 1px solid $colour-divider;
+    border-bottom: 1px solid colours.$colour-divider;
     padding: 12px 0 24px;
 
     &::after {
@@ -56,7 +58,7 @@ section.expansion {
   }
 
   > div {
-    max-height: 0px;
+    max-height: 0;
     overflow: hidden;
     transition: max-height .25s ease-in-out;
   }

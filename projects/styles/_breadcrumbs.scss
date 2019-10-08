@@ -1,16 +1,19 @@
-@import '../../node_modules/@fortawesome/fontawesome-free/scss/core';
-@import 'colours';
-@import 'typography';
+@use 'responsive';
+@use 'colours';
+@use 'typography';
+
+@use '../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome';
+@use '../../node_modules/@fortawesome/fontawesome-free/scss/solid';
 
 ul.breadcrumbs {
   width: 100%;
   display: inline-flex;
-  border-bottom: 1px solid $colour-divider;
-  background-color: $colour-bg;
+  border-bottom: 1px solid colours.$colour-divider;
+  background-color: colours.$colour-bg;
   padding: 0 20px;
   margin-bottom: 48px;
   position: static;
-  @include not-desktop {
+  @include responsive.not-desktop {
     display: none;
     margin-bottom: 30px;
   }
@@ -38,21 +41,21 @@ ul.breadcrumbs {
       display: inline-block;
       line-height: 40px;
       font-size: 14px;
-      font-weight: $font-weight-light;
+      font-weight: typography.$font-weight-light;
       text-decoration: none;
-      color: $colour-nav-item;
+      color: colours.$colour-nav-item;
       padding: 0 2px;
     }
     a:hover {
-      color: $colour-admiralty-blue;
+      color: colours.$colour-admiralty-blue;
     }
     span {
       user-select: none;
     }
 
     &:last-child a {
-      color: $colour-admiralty-blue;
-      font-weight: $font-weight-medium;
+      color: colours.$colour-admiralty-blue;
+      font-weight: typography.$font-weight-medium;
     }
 
   }

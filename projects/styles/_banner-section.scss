@@ -1,21 +1,21 @@
-@import 'responsive';
-@import 'colours';
+@use 'responsive';
+@use 'colours';
 
 .page-banner {
-    background-image: url(/assets/images/homepage-header.jpg);
+    background-image: url("../images/homepage-header.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     padding: 60px 90px;
     margin-bottom: 48px;
-    @include not-desktop {
+    @include responsive.not-desktop {
         padding: 30px;
     }
 }
 
 .banner-text {
-    border-top: 10px solid $colour-admiralty-blue;
+    border-top: 10px solid colours.$colour-admiralty-blue;
     width: 40%;
-    @include not-desktop {
+    @include responsive.not-desktop {
         width: auto;
     }
 

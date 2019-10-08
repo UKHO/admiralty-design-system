@@ -1,57 +1,42 @@
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-}
+@use 'sass:meta';
 
-// Harp cannot handle tilde imports
-@import '../../node_modules/normalize.css/normalize';
-@import '../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome';
-@import '../../node_modules/@fortawesome/fontawesome-free/scss/solid';
-@import '../../node_modules/@fortawesome/fontawesome-free/scss/brands';
+@use 'reset';
+@use '../../node_modules/normalize.css/normalize';
 
-@import 'base';
-@import 'layout';
-@import 'typography';
+@use 'base';
+@use 'layout';
+@use 'typography';
 
-@import 'buttons';
-@import 'header';
-@import 'sidemenu';
-@import 'breadcrumbs';
-@import 'tabs';
-@import 'links';
-@import 'cards';
-@import 'tables';
-@import 'footer';
-@import 'expansion';
-@import 'banner-section';
-@import 'material-textinput-overwrites';
-@import 'material-textarea-overwrites';
-@import 'material-select-overwrites';
-@import 'material-radio-overwrites';
-@import 'material-checkbox-overwrites';
-@import 'material-search-overwrites';
-@import 'expansion';
-@import 'textinput';
-@import 'forms';
-@import 'textarea';
-@import 'select';
-@import 'radio';
-@import 'checkbox';
-@import 'search';
-@import 'dialog';
-@import 'icons';
-@import 'images';
-@import 'logos';
+@use 'buttons';
+@use 'header';
+@use 'sidemenu';
+@use 'breadcrumbs';
+@use 'tabs';
+@use 'links';
+@use 'cards';
+@use 'tables';
+@use 'footer';
+@use 'expansion';
+@use 'banner-section';
+@use 'material-textinput-overwrites';
+@use 'material-textarea-overwrites';
+@use 'material-select-overwrites';
+@use 'material-radio-overwrites';
+@use 'material-checkbox-overwrites';
+@use 'material-search-overwrites';
+@use 'textinput';
+@use 'forms';
+@use 'textarea';
+@use 'select';
+@use 'radio';
+@use 'checkbox';
+@use 'search';
+@use 'dialog';
+@use 'icons';
+@use 'images';
+@use 'logos';
+
+@include meta.load-css('../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome');
+@include meta.load-css('../../node_modules/@fortawesome/fontawesome-free/scss/solid');
+@include meta.load-css('../../node_modules/@fortawesome/fontawesome-free/scss/brands');
+

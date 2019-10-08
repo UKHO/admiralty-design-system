@@ -1,4 +1,3 @@
-
 $max-content-width: 1284px;
 
 /* Device Sizes - matching layout breakpoints */
@@ -7,7 +6,7 @@ $device-size-tablet: 480px;
 $device-size-phone: 0px;
 
 @mixin not-desktop() {
-  @media (max-width: $device-size-desktop - 1)  { @content ; }
+  @media (max-width: $device-size-desktop - 1px)  { @content ; }
 }
 
 @mixin desktop-only() {
@@ -15,19 +14,19 @@ $device-size-phone: 0px;
 }
 
 @mixin tablet-only() {
-  @media (max-width: $device-size-desktop - 1) and (min-width: $device-size-tablet)  { @content ; }
+  @media (max-width: $device-size-desktop - 1px) and (min-width: $device-size-tablet)  { @content ; }
 }
 
 @mixin tablet-or-desktop() {
-  @media (min-width: $device-size-phone + 1)  { @content ; }
+  @media (min-width: $device-size-phone + 1px)  { @content ; }
 }
 
 @mixin phone-or-tablet() {
-  @media (max-width: $device-size-desktop - 1) and (min-width: $device-size-phone)  { @content ; }
+  @media (max-width: $device-size-desktop - 1px) and (min-width: $device-size-phone)  { @content ; }
 }
 
 @mixin phone-only() {
-  @media (max-width: $device-size-tablet - 1) and (min-width: $device-size-phone)  { @content ; }
+  @media (max-width: $device-size-tablet - 1px) and (min-width: $device-size-phone)  { @content ; }
 }
 
 .desktop-only {

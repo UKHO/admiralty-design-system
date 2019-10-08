@@ -3,12 +3,20 @@
   "version": "0.0.1",
   "author": "Antony Derham",
   "scripts": {
-    "copyassets": "cp -R ../../node_modules/\\@fortawesome/fontawesome-free/webfonts public/assets/fonts/fontawesome/",
+    "copyfonts": "cpx '../../node_modules/\\@fortawesome/fontawesome-free/webfonts/**/*' public/webfonts && cpx '../../node_modules/\\@ukho/styles/fonts/**/*' public/webfonts",
+    "copycss": "cpx '../../node_modules/\\@ukho/styles/dist/ukho.min.css' public/css",
+    "buildsitescss": "sass site-scss/all.scss public/site-css/all.css --style compressed && postcss public/site-css/all.css --use autoprefixer -d public/site-css/",
+    "copyassets": "yarn run copyfonts && yarn run copycss && yarn run buildsitescss",
     "build": "yarn run copyassets && harp compile -o dist",
     "start": "yarn run copyassets && harp server"
   },
+  "dependencies": {
+    "@ukho/styles": "1.0.0"
+  },
   "devDependencies": {
-    "@ukho/styles": "0.0.1",
-    "harp": "^0.30.1"
+    "cpx": "^1.5.0",
+    "harp": "^0.30.1",
+    "postcss-cli": "^6.1.3",
+    "sass": "^1.23.0"
   }
 }
