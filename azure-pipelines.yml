@@ -58,9 +58,10 @@ jobs:
         sshPublicKey: $(publicKey)
         sshKeySecureFile: id_github
     - script: |
-        touch $(Pipeline.Workspace)/site_artefact/.nojekyll
-        echo "design.ukho.dev" > $(Pipeline.Workspace)/site_artefact/CNAME
+        cd $(Pipeline.Workspace)
+        touch site_artefact/.nojekyll
+        echo "design.ukho.dev" > site_artefact/CNAME
         npm install --save-dev gh-pages@2.0.1
         git config user.email "pipeline@ukho.gov.uk"
         git config user.name "Azure Pipeline"
-    - script: $(npm bin)/gh-pages --dotfiles --message "[skip ci] gh-pages update" --dist $(Pipeline.Workspace)/site_artefact -r git@github.com:UKHO/design-system.git
+        $(npm bin)/gh-pages --dotfiles --message "[skip ci] gh-pages update" --dist site_artefact -r git@github.com:UKHO/design-system.git
