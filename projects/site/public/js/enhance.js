@@ -172,7 +172,7 @@ for (var idx3 = 0; idx3 < popupLinks.length; idx3++) {
                 newWindow.setBody(contentElem.innerHTML);
 
                 var newScript = document.createElement("script");
-                newScript.src = "/js/prism.js";
+                newScript.src = "/bundle.js";
                 newWindow.document.body.appendChild(newScript);
 
                 var newScript = document.createElement("script");

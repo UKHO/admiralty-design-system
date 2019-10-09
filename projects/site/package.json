@@ -5,13 +5,15 @@
   "scripts": {
     "copyfonts": "cpx '../../node_modules/\\@fortawesome/fontawesome-free/webfonts/**/*' public/webfonts && cpx '../../node_modules/\\@ukho/styles/fonts/**/*' public/webfonts",
     "copycss": "cpx '../../node_modules/\\@ukho/styles/dist/ukho.min.css' public/css",
+    "copyprism": "cpx '../../node_modules/prismjs/themes/prism-coy.css' public/site-css",
     "buildsitescss": "sass site-scss/all.scss public/site-css/all.css --style compressed && postcss public/site-css/all.css --use autoprefixer -d public/site-css/",
-    "copyassets": "yarn run copyfonts && yarn run copycss && yarn run buildsitescss",
+    "copyassets": "yarn run copyfonts && yarn run copycss && yarn run copyprism && yarn run buildsitescss",
     "build": "yarn run copyassets && harp compile -o dist",
     "start": "yarn run copyassets && harp server"
   },
   "dependencies": {
-    "@ukho/styles": "1.0.0"
+    "@ukho/styles": "^1.1.0",
+    "prismjs": "^1.17.1"
   },
   "devDependencies": {
     "cpx": "^1.5.0",
