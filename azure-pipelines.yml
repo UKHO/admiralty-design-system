@@ -23,7 +23,14 @@ jobs:
     - download: current
       artifact: styles_artefact
     - script: echo "//registry.npmjs.org/:_authToken=$(NPM_TOKEN)" > ~/.npmrc
-    - script: npm publish $(Pipeline.Workspace)/styles_artefact --access=public
+    - script: |
+         LOCAL_VERSION=$(npm version | grep -oP "(@ukho/styles':)(.*)(\'{1})(.+)('{1})" | awk -F: '{ print $2}' | awk -F"'" '{print $2}')
+         NPM_VERSION=$(npm view @ukho/styles version)
+         if [ "$NPM_VERSION" == "$LOCAL_VERSION" ]; then
+           echo "Nothing to do, version already in NPM"
+         else
+           npm publish $(Pipeline.Workspace)/styles_artefact --access=public
+         fi
 - job: build_components
   dependsOn: build_styles
   container: node
