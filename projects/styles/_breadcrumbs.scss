@@ -2,8 +2,8 @@
 @use 'colours';
 @use 'typography';
 
-@use '../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome';
-@use '../../node_modules/@fortawesome/fontawesome-free/scss/solid';
+@use 'node_modules/@fortawesome/fontawesome-free/scss/fontawesome';
+@use 'node_modules/@fortawesome/fontawesome-free/scss/solid';
 
 ul.breadcrumbs {
   width: 100%;
@@ -25,7 +25,7 @@ ul.breadcrumbs {
     // chevron
     &::before {
       @extend .fa;
-      @extend .fa-chevron-right, :before;
+      @extend .fa-chevron-right, ::before;
       font-size: 10px;
       margin: 0 10px;
       position: static;

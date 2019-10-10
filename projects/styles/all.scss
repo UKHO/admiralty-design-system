@@ -1,7 +1,7 @@
 @use 'sass:meta';
 
 @use 'reset';
-@use '../../node_modules/normalize.css/normalize';
+@use 'node_modules/normalize.css/normalize';
 
 @use 'base';
 @use 'layout';
@@ -31,12 +31,12 @@
 @use 'radio';
 @use 'checkbox';
 @use 'search';
-@use 'dialog';
+@use 'dialogue';
 @use 'icons';
 @use 'images';
 @use 'logos';
 
-@include meta.load-css('../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome');
-@include meta.load-css('../../node_modules/@fortawesome/fontawesome-free/scss/solid');
-@include meta.load-css('../../node_modules/@fortawesome/fontawesome-free/scss/brands');
+@include meta.load-css('node_modules/@fortawesome/fontawesome-free/scss/fontawesome');
+@include meta.load-css('node_modules/@fortawesome/fontawesome-free/scss/solid');
+@include meta.load-css('node_modules/@fortawesome/fontawesome-free/scss/brands');
 

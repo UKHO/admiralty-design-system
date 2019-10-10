@@ -2,9 +2,19 @@
   "name": "@ukho/components",
   "version": "0.0.1",
   "author": "Antony Derham",
+  "scripts": {
+    "build": "ng build",
+    "storybook": "start-storybook"
+  },
   "peerDependencies": {
     "@angular/common": "^9.0.0-next.8",
     "@angular/core": "^9.0.0-next.8",
     "@angular/material": "^8.2.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.2",
+    "@storybook/angular": "^5.2.1",
+    "babel-loader": "^8.0.6",
+    "raw-loader": "1.0.0"
   }
 }

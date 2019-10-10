@@ -9,9 +9,5 @@ export class ButtonComponent {
   @Input() label: string;
   @Input() isSecondary: boolean;
   @Input() icon: string;
-  @Input() click: () => any;
-
-  handleClick() {
-    this.click();
-  }
+  @Input() click: (Event?) => any;
 }

@@ -1,10 +1,8 @@
 <button
     [class.secondary]="isSecondary === true"
     [class.icon]="icon"
-    (click)="handleClick()"
+    (click)="click($event)"
 >
-    <p>
-        {{label}}
-    </p>
-    <i *ngIf= "icon" class="fa {{icon}}"></i>
+  {{label}}
+  <i *ngIf= "icon" class="fa {{icon}}"></i>
 </button>

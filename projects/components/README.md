@@ -22,3 +22,9 @@ Run `ng test components` to execute the unit tests via [Karma](https://karma-run
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Issues
+
+### Bug with raw-loader
+
+See https://github.com/storybookjs/storybook/issues/7877#issuecomment-534421385 for readoning around inclusion of raw-loader@1.0.0 in this package.json
