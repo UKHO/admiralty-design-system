@@ -46,7 +46,7 @@ function textInputElement(input, label) {
         } else {
             this.labelElem.classList.remove('has-value');
         }
-    }
+    };
 
     // Initialise event handler
     this.inputElem.addEventListener('input', this.checkValue.bind(this));
