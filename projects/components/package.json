@@ -4,7 +4,7 @@
   "author": "Antony Derham",
   "scripts": {
     "build": "ng build",
-    "storybook": "start-storybook"
+    "storybook": "start-storybook -s ../styles"
   },
   "peerDependencies": {
     "@angular/common": "^9.0.0-next.8",

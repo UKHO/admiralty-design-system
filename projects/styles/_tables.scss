@@ -1,4 +1,4 @@
-@use "responsive";
+@use 'responsive';
 @use 'typography';
 @use 'colours';
 
@@ -7,7 +7,6 @@ table {
   border-spacing: 0;
   margin-bottom: 30px;
   display: block;
-  overflow-x: scroll;
 
   thead {
     border-bottom: 5px solid colours.$colour-admiralty-blue;
@@ -15,7 +14,6 @@ table {
     tr {
       background-color: colours.$colour-table-row-bg;
     }
-
   }
 
   td, th {
@@ -60,5 +58,4 @@ table {
       border-right: 1px solid transparent;
     }
   }
-
 }
