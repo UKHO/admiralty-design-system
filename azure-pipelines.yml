@@ -12,10 +12,6 @@ jobs:
     - script: yarn config set unsafe-perm true
     - script: yarn install
     - script: yarn run lerna bootstrap
-    - publish: projects/styles
-      artifact: styles_artefact
-    - publish: projects/components/dist
-      artifact: components_artefact
     - publish: projects/site/dist
       artifact: site_artefact
 - job: publish
@@ -24,27 +20,10 @@ jobs:
   condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
   steps:
     - checkout: none
-    - download: current
-      artifact: styles_artefact
-    - download: current
-      artifact: components_artefact
     - script: echo "//registry.npmjs.org/:_authToken=$(NPM_TOKEN)" > ~/.npmrc
-    - script: |
-         LOCAL_VERSION=$(npm version | grep -oP "(@ukho/styles':)(.*)(\'{1})(.+)('{1})" | awk -F: '{ print $2}' | awk -F"'" '{print $2}')
-         NPM_VERSION=$(npm view @ukho/styles version)
-         if [ $? -eq 0 ] && [ "$NPM_VERSION" == "$LOCAL_VERSION" ]; then
-           echo "Nothing to do, version already in NPM"
-         else
-           npm publish $(Pipeline.Workspace)/styles_artefact --access=public
-         fi
-    - script: |
-        LOCAL_VERSION=$(npm version | grep -oP "(@ukho/components':)(.*)(\'{1})(.+)('{1})" | awk -F: '{ print $2}' | awk -F"'" '{print $2}')
-        NPM_VERSION=$(npm view @ukho/components version)
-        if [ $? -eq 0] && [ "$NPM_VERSION" == "$LOCAL_VERSION" ]; then
-          echo "Nothing to do, version already in NPM"
-        else
-          npm publish $(Pipeline.Workspace)/components_artefact --access=public
-        fi
+    - script: yarn config set unsafe-perm true
+    - script: yarn install
+    - script: yarn run lerna publish from-package
 - job: ghpages
   dependsOn: build
   container: node
