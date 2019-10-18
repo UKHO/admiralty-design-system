@@ -10,8 +10,7 @@ jobs:
     - checkout: self
       clean: true
     - script: yarn install
-    - script: yarn run lerna bootstrap
-    - script: yarn workspace @ukho/styles run build
+    - script: yarn run lerna bootstrap --unsafe-perm
     - publish: projects/styles
       artifact: styles_artefact
 - job: publish_styles
@@ -38,8 +37,27 @@ jobs:
     - checkout: self
       clean: true
     - script: yarn install
-    - script: yarn run lerna bootstrap
+    - script: yarn run lerna bootstrap --unsafe-perm
     - script: yarn build @ukho/components
+    - publish: projects/components/dist
+      artifact: components_artefact
+- job: publish_components
+  dependsOn: build_components
+  container: node
+  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
+  steps:
+    - checkout: none
+    - download: current
+      artifact: components_artefact
+    - script: echo "//registry.npmjs.org/:_authToken=$(NPM_TOKEN)" > ~/.npmrc
+    - script: |
+        LOCAL_VERSION=$(npm version | grep -oP "(@ukho/components':)(.*)(\'{1})(.+)('{1})" | awk -F: '{ print $2}' | awk -F"'" '{print $2}')
+        NPM_VERSION=$(npm view @ukho/components version)
+        if [ "$NPM_VERSION" == "$LOCAL_VERSION" ]; then
+          echo "Nothing to do, version already in NPM"
+        else
+          npm publish $(Pipeline.Workspace)/components_artefact --access=public
+        fi
 - job: build_site
   dependsOn: build_styles
   container: node
@@ -47,8 +65,9 @@ jobs:
     - checkout: self
       clean: true
     - script: yarn install
-    - script: yarn run lerna bootstrap
-    - script: yarn workspace @ukho/design-system run build
+    - script: yarn run lerna bootstrap --unsafe-perm
+    - script: yarn run build
+      workingDirectory: projects/site
     - publish: projects/site/dist
       artifact: site_artefact
 - job: ghpages

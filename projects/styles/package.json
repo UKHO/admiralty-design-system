@@ -10,16 +10,12 @@
     "type": "git",
     "url": "https://github.com/UKHO/design-system.git"
   },
-  "private": true,
   "browserslist": [
     "> 1%",
     "last 2 versions"
   ],
   "scripts": {
-    "build": "sass all.scss dist/ukho.min.css --style compressed && postcss dist/ukho.min.css --use autoprefixer -d dist/"
-  },
-  "workspaces": {
-    "nohoist": ["**"]
+    "prepare": "sass all.scss dist/ukho.min.css --style compressed && postcss dist/ukho.min.css --use autoprefixer -d dist/"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.11.2",

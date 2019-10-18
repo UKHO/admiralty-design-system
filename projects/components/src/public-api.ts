@@ -1,6 +1,7 @@
 /*
  * Public API Surface of components
  */
+
 export * from './lib/breadcrumbs/breadcrumbs.module';
 export * from './lib/button/button.module';
 export * from './lib/card/card.module';
@@ -17,3 +18,5 @@ export * from './lib/sidenav/sidenav.module';
 export * from './lib/table/table.module';
 export * from './lib/textarea/textarea.module';
 export * from './lib/textinput/textinput.module';
+
+export * from './lib/navtypes';

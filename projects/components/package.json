@@ -1,20 +1,33 @@
 {
   "name": "@ukho/components",
-  "version": "0.0.1",
-  "author": "Antony Derham",
+  "version": "1.0.0",
+  "description": "Angular components library for the UKHO Design System",
+  "author": {
+    "name": "UK Hydrographic Office",
+    "url": "https://www.gov.uk/ukho"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/UKHO/design-system.git"
+  },
   "scripts": {
-    "build": "ng build",
-    "storybook": "start-storybook -s ../styles"
+    "build": "ng build --prod && cpx ./src/scss/core.scss dist/",
+    "storybook": "start-storybook -s ../../node_modules/@ukho/styles,../../node_modules/@ukho/styles/node_modules/@fortawesome/fontawesome-free"
+  },
+  "dependencies": {
+    "@ukho/styles": "^1.3.0"
   },
   "peerDependencies": {
-    "@angular/common": "^9.0.0-next.8",
-    "@angular/core": "^9.0.0-next.8",
-    "@angular/material": "^8.2.1"
+    "@angular/common": "~9.0.0-next.11",
+    "@angular/core": "~9.0.0-next.11",
+    "@angular/cdk": "~9.0.0-next.0",
+    "@fortawesome/font-awesome": "^5.11.2"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
     "@storybook/angular": "^5.2.1",
     "babel-loader": "^8.0.6",
+    "cpx": "^1.5.0",
     "raw-loader": "1.0.0"
   }
 }

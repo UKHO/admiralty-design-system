@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { MatCheckboxChange } from '@angular/material/checkbox';
+import {Component} from '@angular/core';
+
+let nextId = 0;
 
 @Component({
   selector: 'ukho-checkbox',
@@ -7,7 +8,5 @@ import { MatCheckboxChange } from '@angular/material/checkbox';
   styleUrls: ['./checkbox.component.scss']
 })
 export class CheckboxComponent {
-  handleChange($event: MatCheckboxChange) {
-    console.log('checkbox changed', $event);
-  }
+  id = `ukho-checkbox-${++nextId}`;
 }

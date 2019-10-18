@@ -3,6 +3,5 @@
   "packages": [
     "projects/*"
   ],
-  "npmClient": "yarn",
-  "useWorkspaces": true
+  "npmClient": "yarn"
 }

@@ -12,9 +12,6 @@
     "start": "yarn run copyassets && harp server"
   },
   "private": true,
-  "workspaces": {
-    "nohoist": ["**"]
-  },
   "dependencies": {
     "@ukho/styles": "^1.1.0",
     "prismjs": "^1.17.1"

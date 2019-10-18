@@ -1,11 +1,6 @@
 @use 'sass:meta';
 
-@use 'reset';
-@use 'node_modules/normalize.css/normalize';
-
-@use 'base';
-@use 'layout';
-@use 'typography';
+@forward 'core';
 
 @use 'buttons';
 @use 'header';
@@ -22,7 +17,6 @@
 @use 'material-textarea-overwrites';
 @use 'material-select-overwrites';
 @use 'material-radio-overwrites';
-@use 'material-checkbox-overwrites';
 @use 'material-search-overwrites';
 @use 'textinput';
 @use 'forms';

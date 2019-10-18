@@ -1,5 +1,4 @@
-<div class="checkbox-wrap">
-  <mat-checkbox
-    (change)="handleChange($event)"
-  >Check box</mat-checkbox>
-</div>
+<input type="checkbox" [id]="id">
+<label [for]="id">
+  <ng-content></ng-content>
+</label>

@@ -7,5 +7,5 @@ import {MenuItem} from '../navtypes';
   styleUrls: ['./breadcrumbs.component.scss']
 })
 export class BreadcrumbsComponent {
-  @Input() navigation: MenuItem[];
+  @Input() items: MenuItem[];
 }

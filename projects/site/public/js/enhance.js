@@ -183,4 +183,3 @@ for (var idx3 = 0; idx3 < popupLinks.length; idx3++) {
         });
     }
 }
-

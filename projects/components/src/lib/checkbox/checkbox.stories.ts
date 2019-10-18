@@ -1,11 +1,10 @@
 import { storiesOf } from '@storybook/angular';
 import {CheckboxComponent} from './checkbox.component';
-import {MatCheckboxModule} from '@angular/material';
 
 storiesOf('Checkbox', module)
   .add('checkbox', () => ({
     moduleMetadata: {
-      imports: [MatCheckboxModule],
+      declarations: [CheckboxComponent],
     },
-    component: CheckboxComponent,
+    template: `<ukho-checkbox>I'm a checkbox</ukho-checkbox>`
   }));
