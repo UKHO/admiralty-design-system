@@ -24,7 +24,7 @@
     "@angular/common": "~9.0.0-next.11",
     "@angular/core": "~9.0.0-next.11",
     "@angular/cdk": "~9.0.0-next.0",
-    "@fortawesome/font-awesome": "^5.11.2"
+    "@fortawesome/fontawesome-free": "^5.11.2"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
