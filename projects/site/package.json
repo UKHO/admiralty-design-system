@@ -1,6 +1,6 @@
 {
   "name": "@ukho/design-system",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "author": "Antony Derham",
   "scripts": {
     "copyfonts": "cpx '../../node_modules/\\@fortawesome/fontawesome-free/webfonts/**/*' public/webfonts && cpx '../../node_modules/\\@ukho/styles/webfonts/**/*' public/webfonts",
@@ -8,12 +8,12 @@
     "copyprism": "cpx '../../node_modules/prismjs/themes/prism-coy.css' public/site-css",
     "buildsitescss": "sass site-scss/all.scss public/site-css/all.css --style compressed && postcss public/site-css/all.css --use autoprefixer -d public/site-css/",
     "copyassets": "yarn run copyfonts && yarn run copycss && yarn run copyprism && yarn run buildsitescss",
-    "build": "yarn run copyassets && harp compile -o dist",
+    "prepare": "yarn run copyassets && harp compile -o dist",
     "start": "yarn run copyassets && harp server"
   },
   "private": true,
   "dependencies": {
-    "@ukho/styles": "^1.1.0",
+    "@ukho/styles": "^1.3.0",
     "prismjs": "^1.17.1"
   },
   "devDependencies": {

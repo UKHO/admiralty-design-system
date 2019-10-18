@@ -11,8 +11,11 @@
     "url": "https://github.com/UKHO/design-system.git"
   },
   "scripts": {
-    "build": "ng build --prod && cpx ./src/scss/core.scss dist/",
+    "prepare": "ng build --prod && cpx ./src/scss/core.scss dist/",
     "storybook": "start-storybook -s ../../node_modules/@ukho/styles,../../node_modules/@ukho/styles/node_modules/@fortawesome/fontawesome-free"
+  },
+  "publishConfig": {
+    "directory": "dist"
   },
   "dependencies": {
     "@ukho/styles": "^1.3.0"

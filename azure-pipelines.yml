@@ -4,23 +4,30 @@ resources:
       image: node:10
 
 jobs:
-- job: build_styles
+- job: build
   container: node
   steps:
     - checkout: self
       clean: true
+    - script: yarn config set unsafe-perm true
     - script: yarn install
-    - script: yarn run lerna bootstrap --unsafe-perm
+    - script: yarn run lerna bootstrap
     - publish: projects/styles
       artifact: styles_artefact
-- job: publish_styles
-  dependsOn: build_styles
+    - publish: projects/components/dist
+      artifact: components_artefact
+    - publish: projects/site/dist
+      artifact: site_artefact
+- job: publish
+  dependsOn: build
   container: node
   condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
   steps:
     - checkout: none
     - download: current
       artifact: styles_artefact
+    - download: current
+      artifact: components_artefact
     - script: echo "//registry.npmjs.org/:_authToken=$(NPM_TOKEN)" > ~/.npmrc
     - script: |
          LOCAL_VERSION=$(npm version | grep -oP "(@ukho/styles':)(.*)(\'{1})(.+)('{1})" | awk -F: '{ print $2}' | awk -F"'" '{print $2}')
@@ -30,26 +37,6 @@ jobs:
          else
            npm publish $(Pipeline.Workspace)/styles_artefact --access=public
          fi
-- job: build_components
-  dependsOn: build_styles
-  container: node
-  steps:
-    - checkout: self
-      clean: true
-    - script: yarn install
-    - script: yarn run lerna bootstrap --unsafe-perm
-    - script: yarn build @ukho/components
-    - publish: projects/components/dist
-      artifact: components_artefact
-- job: publish_components
-  dependsOn: build_components
-  container: node
-  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
-  steps:
-    - checkout: none
-    - download: current
-      artifact: components_artefact
-    - script: echo "//registry.npmjs.org/:_authToken=$(NPM_TOKEN)" > ~/.npmrc
     - script: |
         LOCAL_VERSION=$(npm version | grep -oP "(@ukho/components':)(.*)(\'{1})(.+)('{1})" | awk -F: '{ print $2}' | awk -F"'" '{print $2}')
         NPM_VERSION=$(npm view @ukho/components version)
@@ -58,22 +45,10 @@ jobs:
         else
           npm publish $(Pipeline.Workspace)/components_artefact --access=public
         fi
-- job: build_site
-  dependsOn: build_styles
-  container: node
-  steps:
-    - checkout: self
-      clean: true
-    - script: yarn install
-    - script: yarn run lerna bootstrap --unsafe-perm
-    - script: yarn run build
-      workingDirectory: projects/site
-    - publish: projects/site/dist
-      artifact: site_artefact
 - job: ghpages
-  dependsOn: build_site
-  condition: and(succeeded(), eq(variables['build.sourceBranch'], 'refs/heads/master'))
+  dependsOn: build
   container: node
+  condition: and(succeeded(), eq(variables['build.sourceBranch'], 'refs/heads/master'))
   steps:
     - checkout: none
     - download: current
