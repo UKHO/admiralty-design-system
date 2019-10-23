@@ -101,7 +101,7 @@ for (var idx2 = 0; idx2 < examples.length; idx2++) {
         exampleHtml = exampleHtml.replace(/<div class="new-window-link-container">[\s\S]+?<\/div>/, '');
         var escapedHtml = document.createElement('div').appendChild(document.createTextNode(exampleHtml)).parentNode.innerHTML;
         var lines = escapedHtml.split('\n');
-        var minTabs = 9999;
+        var minTabs = Infinity;
         for (var l = 0; l < lines.length; l++) {
             var tabs = lines[l].match(/^\s+&lt;/);
             if (tabs && tabs.length > 0) {
@@ -109,7 +109,7 @@ for (var idx2 = 0; idx2 < examples.length; idx2++) {
             }
         }
         if (minTabs > 0 && minTabs < 9999) {
-            escapedHtml = escapedHtml.replace( new RegExp('^\\s{' + minTabs + '}', 'gm'), '');
+            escapedHtml = escapedHtml.replace( new RegExp('^\\n*\\s{' + minTabs + '}', 'gm'), '');
         }
         htmlView.innerHTML = '<pre><code class="language-html">' + escapedHtml + '</code></pre>';
         insertNewWindowLink(htmlView);

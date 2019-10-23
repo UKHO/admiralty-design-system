@@ -1,47 +1,33 @@
 <section>
-    <div class="tab1 component-example">
-        <div class="checkbox-wrapper">
-            <p class="form-label">When do you tend to browse the web?</p>
-            <label class="container">
-                <p class="checkbox-label">In the morning</p>
-                <input type="checkbox" checked="checked">
-                <span class="checkmark">
-                    <span class="check-dot fa fa-check"></span>
-                </span>
-            </label>
-            
-            <label class="container">
-                <p class="checkbox-label">Lunch time</p>
-                <input type="checkbox">
-                <span class="checkmark">
-                    <span class="check-dot fa fa-check"></span>
-                </span>
-            </label>
-            
-            <label class="container">
-                <p class="checkbox-label">In the afternoon</p>
-                <input type="checkbox">
-                <span class="checkmark">
-                    <span class="check-dot fa fa-check"></span>
-                </span>
-            </label>
-            
-            <label class="container">
-                <p class="checkbox-label">In the evening</p>
-                <input type="checkbox">
-                <span class="checkmark">
-                    <span class="check-dot fa fa-check"></span>
-                </span>
-            </label>
-        </div>
+  <div class="tab1 component-example">
+    <p class="form-label">When do you tend to browse the web?</p>
+    <div class="checkbox-wrapper">
+      <input id="checkbox1" type="checkbox" checked="checked">
+      <label for="checkbox1">In the morning</label>
     </div>
-    <div class="tab2 component-html">
-        HTML injected here
+
+    <div class="checkbox-wrapper">
+      <input id="checkbox2" type="checkbox">
+      <label for="checkbox2">Lunch time</label>
     </div>
-    <div class="tab3 component-angular">
-        <h5>Angular example usage:</h5>
-        <code class="language-html">
-            &lt;app-checkbox>&lt;/app-checkbox>
-        </code>
+
+    <div class="checkbox-wrapper">
+      <input id="checkbox3" type="checkbox">
+      <label for="checkbox3">In the afternoon</label>
     </div>
+
+    <div class="checkbox-wrapper">
+      <input id="checkbox4" type="checkbox">
+      <label for="checkbox4">In the evening</label>
+    </div>
+  </div>
+  <div class="tab2 component-html">
+    HTML injected here
+  </div>
+  <div class="tab3 component-angular">
+    <h5>Angular example usage:</h5>
+    <code class="language-html">
+      &lt;app-checkbox>&lt;/app-checkbox>
+    </code>
+  </div>
 </section>

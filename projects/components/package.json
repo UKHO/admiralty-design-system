@@ -12,7 +12,7 @@
   },
   "scripts": {
     "prepare": "ng build --prod && cpx ./src/scss/core.scss dist/",
-    "storybook": "start-storybook -s ../../node_modules/@ukho/styles,../../node_modules/@ukho/styles/node_modules/@fortawesome/fontawesome-free"
+    "storybook": "start-storybook -s node_modules/@ukho/styles,node_modules/@fortawesome/fontawesome-free"
   },
   "publishConfig": {
     "directory": "dist"
@@ -21,13 +21,14 @@
     "@ukho/styles": "^1.3.0"
   },
   "peerDependencies": {
-    "@angular/common": "~9.0.0-next.11",
-    "@angular/core": "~9.0.0-next.11",
-    "@angular/cdk": "~9.0.0-next.0",
+    "@angular/cdk": "~8.2.3",
+    "@angular/common": "~9.0.0-next.8",
+    "@angular/core": "~9.0.0-next.8",
     "@fortawesome/fontawesome-free": "^5.11.2"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
+    "@storybook/addon-actions": "^5.2.1",
     "@storybook/angular": "^5.2.1",
     "babel-loader": "^8.0.6",
     "cpx": "^1.5.0",

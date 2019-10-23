@@ -1,5 +1,3 @@
-@use 'sass:meta';
-
 @forward 'core';
 
 @use 'buttons';
@@ -29,8 +27,3 @@
 @use 'icons';
 @use 'images';
 @use 'logos';
-
-@include meta.load-css('node_modules/@fortawesome/fontawesome-free/scss/fontawesome');
-@include meta.load-css('node_modules/@fortawesome/fontawesome-free/scss/solid');
-@include meta.load-css('node_modules/@fortawesome/fontawesome-free/scss/brands');
-

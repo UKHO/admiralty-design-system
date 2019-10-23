@@ -17,6 +17,7 @@ const threeCrumbsMenu: MenuItem[] = [
   },
   {
     title: 'Test3',
+    active: true
   },
 ];
 
@@ -24,12 +25,12 @@ storiesOf('Breadcrumbs', module)
   .add('basic', () => ({
     component: BreadcrumbsComponent,
     props: {
-      navigation: basicMenu,
+      items: basicMenu,
     },
   }))
   .add('threeCrumbs', () => ({
     component: BreadcrumbsComponent,
     props: {
-      navigation: threeCrumbsMenu,
+      items: threeCrumbsMenu,
     },
   }));

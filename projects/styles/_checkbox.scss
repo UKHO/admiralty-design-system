@@ -1,54 +1,60 @@
 @use 'colours';
 @use 'typography';
 
-input[type="checkbox"] {
-  opacity: 0;
-  position: absolute;
-  left: -9999px;
+@mixin checkbox {
+  input[type="checkbox"] {
+    opacity: 0;
+    position: absolute;
+    left: -9999px;
+  }
+
+  label {
+    position: relative;
+    display: inline-block;
+    padding-left: 35px;
+    margin-bottom: 18px;
+    cursor: pointer;
+    user-select: none;
+    line-height: 30px;
+  }
+
+  label::before,
+  label::after {
+    position: absolute;
+    content: "";
+    display: inline-block;
+  }
+
+  label::before {
+    height: 22px;
+    width: 22px;
+
+    border: 2px solid colours.$colour-checkbox;
+    left: 0;
+    top: 0;
+  }
+
+  label::after {
+    height: 6px;
+    width: 13px;
+    border-left: 3px solid;
+    border-bottom: 3px solid;
+
+    transform: rotate(-45deg);
+
+    left: 5px;
+    top: 7px;
+  }
+
+  input[type="checkbox"] + label::after {
+    content: none;
+  }
+
+  input[type="checkbox"]:checked + label::after {
+    content: "";
+  }
 }
 
-label {
-  position: relative;
-  display: inline-block;
-  padding-left: 35px;
-  margin-bottom: 18px;
-  cursor: pointer;
-  user-select: none;
-  line-height: 30px;
-}
-
-label::before,
-label::after {
-  position: absolute;
-  content: "";
-  display: inline-block;
-}
-
-label::before{
-  height: 22px;
-  width: 22px;
-
-  border: 2px solid colours.$colour-checkbox;
-  left: 0;
-  top: 0;
-}
-
-label::after {
-  height: 6px;
-  width: 13px;
-  border-left: 3px solid;
-  border-bottom: 3px solid;
-
-  transform: rotate(-45deg);
-
-  left: 5px;
-  top: 7px;
-}
-
-input[type="checkbox"] + label::after {
-  content: none;
-}
-
-input[type="checkbox"]:checked + label::after {
-  content: "";
+.checkbox-wrapper {
+  @include checkbox;
 }
