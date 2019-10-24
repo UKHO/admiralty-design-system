@@ -10,5 +10,11 @@
     "layout": "../../_layout_sidemenu",
     "title": "Atomic design principles",
     "url": "principles/design/atomic"
+  },
+
+  "accessibility": {
+    "layout": "../../_layout_sidemenu",
+    "title": "Accessibility principles",
+    "url": "principles/design/accessibility"
   }
 }
