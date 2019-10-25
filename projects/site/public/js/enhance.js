@@ -78,15 +78,14 @@ if (demoMenu) {
 
 // handle the tabbed previews
 
-const newWindowLinkHtml = "<div class=\"new-window-link-container\">\n" +
-    "    <a target=\"popup\" href=\"/popup/popup.html\" data-inject-content-from=\"parent\">Open in a new window</a>\n" +
-    "</div>";
+const newWindowLinkHtml = `<div class="new-window-link-container">
+    <a target="popup" href="/popup/popup.html" data-inject-content-from="parent">Open in a new window</a>
+</div>`;
 
 function insertNewWindowLink(elem) {
     var newWindowLink = document.createElement('div');
     newWindowLink.innerHTML = newWindowLinkHtml;
     elem.insertBefore(newWindowLink.firstChild, elem.firstChild);
-
 }
 
 var examples = document.querySelectorAll('div.component-example');

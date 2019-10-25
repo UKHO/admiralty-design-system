@@ -24,7 +24,7 @@
     height: 100%;
     border-top: solid 2px transparent;
     padding: 5px;
-    left: 13px;
+    left: 12px;
     top: 0;
     transition: border-top-color .1s;
     pointer-events: none;
@@ -87,7 +87,7 @@
   }
 }
 
-div.text-input-wrap.validated {
+.text-input-wrap.validated {
   input {
     color: colours.$colour-utility-success;
     border-color: colours.$colour-utility-success;
@@ -103,7 +103,7 @@ div.text-input-wrap.validated {
   }
 }
 
-div.text-input-wrap.invalid {
+.text-input-wrap.invalid {
   input {
     color: colours.$colour-utility-error;
     border-color: colours.$colour-utility-error;
@@ -120,7 +120,7 @@ div.text-input-wrap.invalid {
 }
 
 .form-text-input {
-    width: 420px;
+    min-width: 200px;
     height: 50px;
     border: 2px solid colours.$colour-textinput-border;
     color: colours.$colour-textinput-text;
@@ -142,17 +142,6 @@ div.text-input-wrap.invalid {
     }
 }
 
-input { 
-  ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-    overflow: visible;
-  }
-  ::-moz-placeholder { /* Firefox 19+ */
-    overflow: visible;
-  }
-  :-ms-input-placeholder { /* IE 10+ */
-    overflow: visible;
-  }
-  :-moz-placeholder { /* Firefox 18- */
-    overflow: visible;
-  }
+input::placeholder {
+  overflow: visible;
 }

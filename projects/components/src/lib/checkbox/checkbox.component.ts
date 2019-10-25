@@ -8,7 +8,7 @@ let nextId = 0;
   templateUrl: './checkbox.component.html',
   styleUrls: ['./checkbox.component.scss'],
   host: {
-    'class': 'ukho-checkbox'
+    class: 'checkbox-wrapper'
   },
   encapsulation: ViewEncapsulation.None,
   providers: [
