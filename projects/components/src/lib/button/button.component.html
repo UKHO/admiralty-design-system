@@ -1,8 +1,7 @@
 <button
-    [class.secondary]="isSecondary === true"
-    [class.icon]="icon"
-    (click)="click($event)"
+    [ngClass]="{'secondary': secondary, 'icon': icon}"
+    [disabled]="disabled"
 >
-  {{label}}
-  <i *ngIf= "icon" class="fa {{icon}}"></i>
+  <ng-content></ng-content>
+  <i *ngIf="icon" class="fa {{icon}}"></i>
 </button>

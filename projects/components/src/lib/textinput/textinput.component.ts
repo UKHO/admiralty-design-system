@@ -62,5 +62,9 @@ export class TextinputComponent implements ControlValueAccessor {
 
   writeValue(value: any): void {
     this.input.nativeElement.value = value;
+
+    if (this.controlDirective && this.controlDirective.control) {
+      this.controlDirective.control.updateValueAndValidity();
+    }
   }
 }

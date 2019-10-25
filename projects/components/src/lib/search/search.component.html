@@ -1,18 +1,10 @@
 <form>
-    <div class="mat-search-wrapper">
-      <mat-form-field
-        class="material-text-input"
-        appearance="outline"
-      >
-        <input
-          matInput
-          placeholder="Search"
-        >
-      </mat-form-field>
-      <ukho-button
-        [label]="'Pay now'"
-        [click]="handleSearch"
-      >
-      </ukho-button>
-    </div>
-  </form>
+  <div class="mat-search-wrapper">
+    <mat-form-field class="material-text-input" appearance="outline">
+      <input matInput placeholder="Search">
+    </mat-form-field>
+    <ukho-button (click)="handleSearch">
+      Search
+    </ukho-button>
+  </div>
+</form>

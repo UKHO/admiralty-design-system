@@ -10,6 +10,12 @@ storiesOf('Text Input', module)
     },
     template: `<ukho-textinput label="Name"></ukho-textinput>`
   }))
+  .add('wide', () => ({
+    moduleMetadata: {
+      declarations: [TextinputComponent],
+    },
+    template: `<ukho-textinput label="Name" style="width: 500px"></ukho-textinput>`
+  }))
   .add('date', () => ({
     moduleMetadata: {
       declarations: [TextinputComponent],
