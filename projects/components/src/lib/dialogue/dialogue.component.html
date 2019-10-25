@@ -1,6 +1,4 @@
 <section class="dialog {{ type }}">
-  <h3>{{ title }}</h3>
-  <div>
-    <ng-content></ng-content>
-  </div>
+  <h3><ng-content select="ukho-dialogue-title"></ng-content></h3>
+  <div><ng-content select="ukho-dialogue-content"></ng-content></div>
 </section>

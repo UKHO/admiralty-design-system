@@ -1,15 +1,19 @@
 import {NgModule} from '@angular/core';
-import {DialogueComponent} from './dialogue.component';
+import {DialogueComponent, DialogueContentDirective, DialogueTitleDirective} from './dialogue.component';
 import {CommonModule} from '@angular/common';
 
 export {DialogueComponent} from './dialogue.component';
 
 @NgModule({
     declarations: [
-        DialogueComponent
+        DialogueComponent,
+        DialogueTitleDirective,
+        DialogueContentDirective
     ],
     exports: [
-        DialogueComponent
+        DialogueComponent,
+        DialogueTitleDirective,
+        DialogueContentDirective
     ],
     imports: [
         CommonModule

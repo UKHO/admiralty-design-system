@@ -18,6 +18,8 @@ jobs:
   dependsOn: build
   container: node
   condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
+  workspace:
+    clean: all
   steps:
     - checkout: none
     - script: echo "//registry.npmjs.org/:_authToken=$(NPM_TOKEN)" > ~/.npmrc
