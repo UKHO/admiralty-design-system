@@ -1,11 +1,11 @@
-import {moduleMetadata, storiesOf} from '@storybook/angular';
-import {TableModule} from './table.module';
+import { moduleMetadata, storiesOf } from '@storybook/angular';
+import { TableModule } from './table.module';
 
 storiesOf('Table', module)
   .addDecorator(
     moduleMetadata({
       imports: [TableModule],
-    })
+    }),
   )
   .add('table', () => ({
     template: `
@@ -30,15 +30,15 @@ storiesOf('Table', module)
     </table>`,
     props: {
       dataSource: [
-        {username: 1, age: 20, title: 'Test'},
-        {username: 2, age: 20, title: 'Test'},
-        {username: 3, age: 20, title: 'Test'},
-        {username: 4, age: 20, title: 'Test'},
-        {username: 5, age: 20, title: 'Test'},
-        {username: 6, age: 20, title: 'Test'},
-        {username: 7, age: 20, title: 'Test'},
-        {username: 8, age: 20, title: 'Test'},
-        {username: 9, age: 20, title: 'Test'},
-      ]
-    }
+        { username: 1, age: 20, title: 'Test' },
+        { username: 2, age: 20, title: 'Test' },
+        { username: 3, age: 20, title: 'Test' },
+        { username: 4, age: 20, title: 'Test' },
+        { username: 5, age: 20, title: 'Test' },
+        { username: 6, age: 20, title: 'Test' },
+        { username: 7, age: 20, title: 'Test' },
+        { username: 8, age: 20, title: 'Test' },
+        { username: 9, age: 20, title: 'Test' },
+      ],
+    },
   }));

@@ -1,10 +1,10 @@
-import {Component, Input} from '@angular/core';
-import {MenuItem} from '../navtypes';
+import { Component, Input } from '@angular/core';
+import { MenuItem } from '../navtypes';
 
 @Component({
   selector: 'ukho-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
   @Input() src = '/assets/svg/AdmiraltyUKHO linear logo.svg';

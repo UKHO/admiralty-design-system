@@ -16,14 +16,10 @@ describe('SearchComponent', () => {
         MatInputModule,
         BrowserAnimationsModule,
         ReactiveFormsModule,
-        FormsModule
+        FormsModule,
       ],
-      declarations: [
-        SearchComponent,
-        ButtonComponent
-      ]
-    })
-    .compileComponents();
+      declarations: [SearchComponent, ButtonComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

@@ -12,9 +12,8 @@ describe('CardComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CardComponent ]
-    })
-        .compileComponents();
+      declarations: [CardComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -31,7 +30,7 @@ describe('CardComponent', () => {
     fixture.detectChanges();
     compiled = fixture.nativeElement;
     const text = compiled.querySelector('h6');
-    expect(text.textContent.trim()).toEqual(testTitle)
+    expect(text.textContent.trim()).toEqual(testTitle);
   });
 
   it('should not render an H6 if no title is passed', () => {
@@ -39,7 +38,6 @@ describe('CardComponent', () => {
     fixture.detectChanges();
     compiled = fixture.nativeElement;
     const title = compiled.querySelector('H6');
-    expect(title).toBeNull()
+    expect(title).toBeNull();
   });
-
 });

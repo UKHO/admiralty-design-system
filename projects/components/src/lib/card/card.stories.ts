@@ -1,5 +1,5 @@
 import { storiesOf } from '@storybook/angular';
-import {CardComponent} from './card.component';
+import { CardComponent } from './card.component';
 
 storiesOf('Card', module)
   .add('withTitle', () => ({
@@ -12,5 +12,5 @@ storiesOf('Card', module)
     moduleMetadata: {
       declarations: [CardComponent],
     },
-    template: `<ukho-card title="I have content">Some content</ukho-card>`
+    template: `<ukho-card title="I have content">Some content</ukho-card>`,
   }));

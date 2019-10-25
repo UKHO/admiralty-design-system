@@ -1,11 +1,13 @@
 <header>
-    <nav id="top-menu">
-        <span>
-            {{text}}
-            <img *ngIf="!text" src="{{ src }}" alt="{{ alt }}">
-        </span>
-        <div *ngIf="navigation" class="header-links-wrap">
-            <a *ngFor="let item of navigation" href="{{item.href}}">{{item.title}}</a>
-        </div>
-    </nav>
+  <nav id="top-menu">
+    <span>
+      {{ text }}
+      <img *ngIf="!text" src="{{ src }}" alt="{{ alt }}" />
+    </span>
+    <div *ngIf="navigation" class="header-links-wrap">
+      <a *ngFor="let item of navigation" href="{{ item.href }}">{{
+        item.title
+      }}</a>
+    </div>
+  </nav>
 </header>

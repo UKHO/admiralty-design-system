@@ -5,33 +5,35 @@ import {
   CdkHeaderRow,
   CdkHeaderRowDef,
   CdkRow,
-  CdkRowDef
+  CdkRowDef,
 } from '@angular/cdk/table';
-import {ChangeDetectionStrategy, Component, Directive, ViewEncapsulation} from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Directive,
+  ViewEncapsulation,
+} from '@angular/core';
 
 @Directive({
   selector: '[ukhoHeaderRowDef]',
-  providers: [{provide: CdkHeaderRowDef, useExisting: UkhoHeaderRowDef}],
+  providers: [{ provide: CdkHeaderRowDef, useExisting: UkhoHeaderRowDef }],
   inputs: ['columns: ukhoHeaderRowDef', 'sticky: ukhoHeaderRowDefSticky'],
 })
-export class UkhoHeaderRowDef extends CdkHeaderRowDef {
-}
+export class UkhoHeaderRowDef extends CdkHeaderRowDef {}
 
 @Directive({
   selector: '[ukhoFooterRowDef]',
-  providers: [{provide: CdkFooterRowDef, useExisting: UkhoFooterRowDef}],
+  providers: [{ provide: CdkFooterRowDef, useExisting: UkhoFooterRowDef }],
   inputs: ['columns: ukhoFooterRowDef', 'sticky: ukhoFooterRowDefSticky'],
 })
-export class UkhoFooterRowDef extends CdkFooterRowDef {
-}
+export class UkhoFooterRowDef extends CdkFooterRowDef {}
 
 @Directive({
   selector: '[ukhoRowDef]',
-  providers: [{provide: CdkRowDef, useExisting: UkhoRowDef}],
+  providers: [{ provide: CdkRowDef, useExisting: UkhoRowDef }],
   inputs: ['columns: ukhoRowDefColumns', 'when: ukhoRowDefWhen'],
 })
-export class UkhoRowDef<T> extends CdkRowDef<T> {
-}
+export class UkhoRowDef<T> extends CdkRowDef<T> {}
 
 @Component({
   moduleId: module.id,
@@ -46,10 +48,9 @@ export class UkhoRowDef<T> extends CdkRowDef<T> {
   changeDetection: ChangeDetectionStrategy.Default,
   encapsulation: ViewEncapsulation.None,
   exportAs: 'matHeaderRow',
-  providers: [{provide: CdkHeaderRow, useExisting: UkhoHeaderRow}],
+  providers: [{ provide: CdkHeaderRow, useExisting: UkhoHeaderRow }],
 })
-export class UkhoHeaderRow extends CdkHeaderRow {
-}
+export class UkhoHeaderRow extends CdkHeaderRow {}
 
 @Component({
   moduleId: module.id,
@@ -64,10 +65,9 @@ export class UkhoHeaderRow extends CdkHeaderRow {
   changeDetection: ChangeDetectionStrategy.Default,
   encapsulation: ViewEncapsulation.None,
   exportAs: 'matFooterRow',
-  providers: [{provide: CdkFooterRow, useExisting: UkhoFooterRow}],
+  providers: [{ provide: CdkFooterRow, useExisting: UkhoFooterRow }],
 })
-export class UkhoFooterRow extends CdkFooterRow {
-}
+export class UkhoFooterRow extends CdkFooterRow {}
 
 @Component({
   moduleId: module.id,
@@ -82,7 +82,6 @@ export class UkhoFooterRow extends CdkFooterRow {
   changeDetection: ChangeDetectionStrategy.Default,
   encapsulation: ViewEncapsulation.None,
   exportAs: 'matRow',
-  providers: [{provide: CdkRow, useExisting: UkhoRow}],
+  providers: [{ provide: CdkRow, useExisting: UkhoRow }],
 })
-export class UkhoRow extends CdkRow {
-}
+export class UkhoRow extends CdkRow {}

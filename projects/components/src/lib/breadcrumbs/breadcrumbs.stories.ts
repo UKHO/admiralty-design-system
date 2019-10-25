@@ -1,6 +1,6 @@
 import { storiesOf } from '@storybook/angular';
 import { BreadcrumbsComponent } from './breadcrumbs.component';
-import {MenuItem} from '../navtypes';
+import { MenuItem } from '../navtypes';
 
 const basicMenu: MenuItem[] = [
   {
@@ -17,7 +17,7 @@ const threeCrumbsMenu: MenuItem[] = [
   },
   {
     title: 'Test3',
-    active: true
+    active: true,
   },
 ];
 

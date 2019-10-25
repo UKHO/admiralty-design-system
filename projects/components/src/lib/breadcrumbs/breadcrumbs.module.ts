@@ -1,18 +1,12 @@
-import {NgModule} from '@angular/core';
-import {BreadcrumbsComponent} from './breadcrumbs.component';
-import {CommonModule} from '@angular/common';
+import { NgModule } from '@angular/core';
+import { BreadcrumbsComponent } from './breadcrumbs.component';
+import { CommonModule } from '@angular/common';
 
-export {BreadcrumbsComponent} from './breadcrumbs.component';
+export { BreadcrumbsComponent } from './breadcrumbs.component';
 
 @NgModule({
-    declarations: [
-        BreadcrumbsComponent
-    ],
-    exports: [
-        BreadcrumbsComponent
-    ],
-    imports: [
-        CommonModule
-    ],
+  declarations: [BreadcrumbsComponent],
+  exports: [BreadcrumbsComponent],
+  imports: [CommonModule],
 })
 export class BreadcrumbsModule {}

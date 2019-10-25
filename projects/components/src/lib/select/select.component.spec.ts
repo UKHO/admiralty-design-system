@@ -10,13 +10,9 @@ describe('SelectComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [
-        MatSelectModule,
-        BrowserAnimationsModule
-      ],
-      declarations: [ SelectComponent ]
-    })
-    .compileComponents();
+      imports: [MatSelectModule, BrowserAnimationsModule],
+      declarations: [SelectComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

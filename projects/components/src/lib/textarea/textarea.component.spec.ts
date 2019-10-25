@@ -9,7 +9,7 @@ import { DebugElement } from '@angular/core';
 describe('TextareaComponent', () => {
   let component: TextareaComponent;
   let fixture: ComponentFixture<TextareaComponent>;
-  let compiled: DebugElement['nativeElement']
+  let compiled: DebugElement['nativeElement'];
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -17,17 +17,16 @@ describe('TextareaComponent', () => {
         ReactiveFormsModule,
         FormsModule,
         MatInputModule,
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
       ],
-      declarations: [ TextareaComponent ]
-    })
-    .compileComponents();
+      declarations: [TextareaComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(TextareaComponent);
     component = fixture.componentInstance;
-    component.textareaText = { value: 'test text value'}
+    component.textareaText = { value: 'test text value' };
     fixture.detectChanges();
   });
 
@@ -39,5 +38,5 @@ describe('TextareaComponent', () => {
     compiled = fixture.nativeElement;
     const textarea = compiled.querySelector('textarea');
     expect(textarea.getAttribute('ng-reflect-model')).toBe('test text value');
-  })
+  });
 });

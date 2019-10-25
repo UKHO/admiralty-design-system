@@ -8,9 +8,8 @@ describe('ReadMoreComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ReadMoreComponent ]
-    })
-    .compileComponents();
+      declarations: [ReadMoreComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

@@ -11,10 +11,9 @@ describe('RadioComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ MatRadioModule ],
-      declarations: [ RadioComponent ]
-    })
-    .compileComponents();
+      imports: [MatRadioModule],
+      declarations: [RadioComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -29,9 +28,9 @@ describe('RadioComponent', () => {
 
   it('adds is-column class if isColumn is true', () => {
     component.isColumn = true;
-    fixture.detectChanges()
+    fixture.detectChanges();
     compiled = fixture.nativeElement;
-    const radioGroup = compiled.querySelector('.mat-radio-group')
+    const radioGroup = compiled.querySelector('.mat-radio-group');
     expect(radioGroup.classList.contains('is-column')).toBe(true);
   });
 });

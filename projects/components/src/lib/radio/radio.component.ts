@@ -4,7 +4,7 @@ import { MatRadioChange } from '@angular/material/radio';
 @Component({
   selector: 'ukho-radio',
   templateUrl: './radio.component.html',
-  styleUrls: ['./radio.component.scss']
+  styleUrls: ['./radio.component.scss'],
 })
 export class RadioComponent {
   @Input() isColumn: boolean;

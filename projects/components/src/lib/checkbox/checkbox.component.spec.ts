@@ -9,10 +9,9 @@ describe('CheckboxComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ MatCheckboxModule ],
-      declarations: [ CheckboxComponent ]
-    })
-    .compileComponents();
+      imports: [MatCheckboxModule],
+      declarations: [CheckboxComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

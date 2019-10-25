@@ -12,9 +12,8 @@ describe('NavigationComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NavigationComponent ]
-    })
-    .compileComponents();
+      declarations: [NavigationComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -32,37 +31,41 @@ describe('NavigationComponent', () => {
   it('should render the navigation heading', () => {
     const headings = compiled.querySelectorAll('h1');
     expect(headings.length).toBe(1);
-    headings.forEach((heading) => {
+    headings.forEach(heading => {
       expect(heading.textContent).toEqual(mockNavigation.heading);
-    })
+    });
   });
 
   it('should render the section headings correctly', () => {
     const headings = compiled.querySelectorAll('.section > a');
     headings.forEach((heading, i) => {
       expect(heading.textContent).toEqual(mockNavigation.sections[i].title);
-    })
+    });
   });
 
   it('should render the sub section headings correctly', () => {
     const sections = compiled.querySelectorAll('.section');
     sections.forEach((section, i) => {
-      const subSections = section.querySelectorAll('.sub-section')
+      const subSections = section.querySelectorAll('.sub-section');
       subSections.forEach((subSection, j) => {
         const subHeading = subSection.querySelector('h2');
-        expect(subHeading.textContent).toEqual(mockNavigation.sections[i].subSections[j].title);
-      })
-    })
-  })
+        expect(subHeading.textContent).toEqual(
+          mockNavigation.sections[i].subSections[j].title,
+        );
+      });
+    });
+  });
 
   it('should render the sub section items correctly', () => {
     const sections = compiled.querySelectorAll('.section');
     sections.forEach((section, i) => {
-      const subSections = section.querySelectorAll('.sub-section')
+      const subSections = section.querySelectorAll('.sub-section');
       subSections.forEach((subSection, j) => {
-        const items = subSection.querySelectorAll('li > a')
+        const items = subSection.querySelectorAll('li > a');
         items.forEach((item, k) => {
-          expect(item.textContent).toEqual(mockNavigation.sections[i].subSections[j].items[k].title);
+          expect(item.textContent).toEqual(
+            mockNavigation.sections[i].subSections[j].items[k].title,
+          );
         });
       });
     });

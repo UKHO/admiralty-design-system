@@ -1,4 +1,4 @@
-import {Directive, Input} from '@angular/core';
+import { Directive, Input } from '@angular/core';
 import {
   CdkCell,
   CdkCellDef,
@@ -11,27 +11,25 @@ import {
 
 @Directive({
   selector: '[ukhoCellDef]',
-  providers: [{provide: CdkCellDef, useExisting: UkhoCellDef}]
+  providers: [{ provide: CdkCellDef, useExisting: UkhoCellDef }],
 })
 export class UkhoCellDef extends CdkCellDef {}
 
 @Directive({
   selector: '[ukhoHeaderCellDef]',
-  providers: [{provide: CdkHeaderCellDef, useExisting: UkhoHeaderCellDef}]
+  providers: [{ provide: CdkHeaderCellDef, useExisting: UkhoHeaderCellDef }],
 })
 export class UkhoHeaderCellDef extends CdkHeaderCellDef {}
 
 @Directive({
   selector: '[ukhoFooterCellDef]',
-  providers: [{provide: CdkFooterCellDef, useExisting: UkhoFooterCellDef}]
+  providers: [{ provide: CdkFooterCellDef, useExisting: UkhoFooterCellDef }],
 })
 export class UkhoFooterCellDef extends CdkFooterCellDef {}
 
 @Directive({
   selector: '[ukhoColumnDef]',
-  providers: [
-    {provide: CdkColumnDef, useExisting: UkhoColumnDef},
-  ],
+  providers: [{ provide: CdkColumnDef, useExisting: UkhoColumnDef }],
 })
 export class UkhoColumnDef extends CdkColumnDef {
   @Input('ukhoColumnDef') name: string;

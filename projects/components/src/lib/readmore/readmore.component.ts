@@ -1,11 +1,11 @@
-import {Component, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 let nextId = 0;
 
 @Component({
   selector: 'ukho-readmore',
   templateUrl: './readmore.component.html',
-  styleUrls: ['./readmore.component.scss']
+  styleUrls: ['./readmore.component.scss'],
 })
 export class ReadMoreComponent {
   @Input() initialExpanded = false;

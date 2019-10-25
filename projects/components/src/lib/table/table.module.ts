@@ -1,9 +1,24 @@
-import {NgModule} from '@angular/core';
-import {UkhoTable} from './table.component';
-import {CommonModule} from '@angular/common';
-import {UkhoCell, UkhoCellDef, UkhoColumnDef, UkhoFooterCell, UkhoFooterCellDef, UkhoHeaderCell, UkhoHeaderCellDef} from './cell.directive';
-import {UkhoFooterRow, UkhoFooterRowDef, UkhoHeaderRow, UkhoHeaderRowDef, UkhoRow, UkhoRowDef} from './row.directive';
-import {CdkTableModule} from '@angular/cdk/table';
+import { NgModule } from '@angular/core';
+import { UkhoTable } from './table.component';
+import { CommonModule } from '@angular/common';
+import {
+  UkhoCell,
+  UkhoCellDef,
+  UkhoColumnDef,
+  UkhoFooterCell,
+  UkhoFooterCellDef,
+  UkhoHeaderCell,
+  UkhoHeaderCellDef,
+} from './cell.directive';
+import {
+  UkhoFooterRow,
+  UkhoFooterRowDef,
+  UkhoHeaderRow,
+  UkhoHeaderRowDef,
+  UkhoRow,
+  UkhoRowDef,
+} from './row.directive';
+import { CdkTableModule } from '@angular/cdk/table';
 
 export * from './table.component';
 export * from './cell.directive';
@@ -27,11 +42,8 @@ const DECLARATIONS = [
 ];
 
 @NgModule({
-    declarations: DECLARATIONS,
-    exports: DECLARATIONS,
-    imports: [
-      CommonModule,
-      CdkTableModule
-    ],
+  declarations: DECLARATIONS,
+  exports: DECLARATIONS,
+  imports: [CommonModule, CdkTableModule],
 })
 export class TableModule {}
