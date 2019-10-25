@@ -1,5 +1,5 @@
-import {Component, ElementRef, forwardRef, Input, ViewChild, ViewEncapsulation} from '@angular/core';
-import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
+import {Component, ElementRef, Input, Optional, Self, ViewChild, ViewEncapsulation} from '@angular/core';
+import {ControlValueAccessor, NgControl} from '@angular/forms';
 
 let nextId = 0;
 
@@ -14,13 +14,6 @@ let nextId = 0;
     '[class.invalid]': '!valid && touched',
   },
   encapsulation: ViewEncapsulation.None,
-  providers: [
-    {
-      provide: NG_VALUE_ACCESSOR,
-      multi: true,
-      useExisting: forwardRef(() => TextinputComponent),
-    }
-  ],
 })
 export class TextinputComponent implements ControlValueAccessor {
   id = `ukho-textinput-${++nextId}`;
@@ -30,6 +23,12 @@ export class TextinputComponent implements ControlValueAccessor {
   @Input() type = 'text';
   @Input() label: string;
   @Input() disabled = false;
+
+  constructor(@Optional() @Self() private readonly controlDirective: NgControl) {
+    if (controlDirective) {
+      controlDirective.valueAccessor = this;
+    }
+  }
 
   get valid() {
      return this.controlDirective &&
