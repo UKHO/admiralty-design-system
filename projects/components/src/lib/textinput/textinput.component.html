@@ -20,7 +20,7 @@
 <span *ngIf="valid && touched" class="icon validated-icon fa fa-check"></span>
 <ng-container *ngIf="!valid && touched">
   <span class="icon invalid-icon fa fa-exclamation"></span>
-  <p *ngIf="validationMessages.required" class="error-text">
+  <p *ngIf="validationMessages && validationMessages.required" class="error-text">
     This field is required
   </p>
 </ng-container>
