@@ -37,8 +37,8 @@ jobs:
     - script: yarn run lerna bootstrap --scope @ukho/design-system
     - script: |
         cd projects/site
-        touch .nojekyll
-        echo "design.ukho.dev" > CNAME
+        touch dist/.nojekyll
+        echo "design.ukho.dev" > dist/CNAME
         npm install --save-dev gh-pages@2.0.1
         git config user.email "pipeline@ukho.gov.uk"
         git config user.name "Azure Pipeline"
