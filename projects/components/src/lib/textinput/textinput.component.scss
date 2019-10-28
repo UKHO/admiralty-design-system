@@ -1,1 +1,8 @@
 @use '~@ukho/styles/textinput';
+
+input[type='time']::-webkit-inner-spin-button,
+input[type='date']::-webkit-inner-spin-button,
+input[type='time']::-webkit-clear-button,
+input[type='date']::-webkit-clear-button {
+  display: none;
+}
