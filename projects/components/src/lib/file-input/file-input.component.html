@@ -4,11 +4,3 @@
   <span *ngIf="files">{{ fileName }} ({{ fileSize }})</span>
 </label>
 <input [id]="id" (change)="fileInputChange($event)" type="file" />
-<ng-container *ngIf="!valid">
-  <p
-    *ngIf="validationMessages && validationMessages.required"
-    class="error-text"
-  >
-    This field is required
-  </p>
-</ng-container>

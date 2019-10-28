@@ -62,10 +62,6 @@ export class FileInputComponent implements ControlValueAccessor {
     );
   }
 
-  get validationMessages() {
-    return this.controlDirective && this.controlDirective.errors;
-  }
-
   @HostListener('dragstart', ['$event'])
   @HostListener('dragover', ['$event'])
   @HostListener('dragenter', ['$event'])
