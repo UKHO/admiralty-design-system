@@ -1,0 +1,13 @@
+@use '~@ukho/styles/colours';
+
+:host {
+  display: flex;
+}
+
+progress {
+  appearance: none;
+  border: none;
+  color: colours.$colour-admiralty-blue;
+  flex: 1;
+  background: colours.$colour-bg-grey;
+}

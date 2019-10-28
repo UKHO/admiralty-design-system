@@ -12,6 +12,11 @@
       "root": "projects/components",
       "sourceRoot": "projects/components/src",
       "prefix": "ukho",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
