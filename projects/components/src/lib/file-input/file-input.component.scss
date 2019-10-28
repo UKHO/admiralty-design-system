@@ -20,6 +20,8 @@
   &.invalid {
     border-color: colours.$colour-utility-error;
   }
+
+  margin-bottom: 36px;
 }
 
 label {
@@ -29,14 +31,18 @@ label {
   cursor: pointer;
   align-content: center;
   justify-content: center;
-  span {
-    margin: 0.2rem 0;
+  span, i {
+    color: colours.$colour-admiralty-blue;
+    margin: 0.4rem 0;
     text-align: center;
     flex: 0 1;
     font-size: 18px;
-    i {
-      font-size: 36px;
-    }
+  }
+  i {
+    font-size: 24px;
+  }
+  .instructions {
+    font-weight: 400;
   }
 }
 

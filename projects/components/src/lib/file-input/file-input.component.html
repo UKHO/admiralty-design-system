@@ -1,6 +1,6 @@
 <label [for]="id">
-  <span><i class="fa fa-upload">upload</i></span>
-  <span *ngIf="!files">{{ label }}</span>
+  <i class="fa fa-upload"></i>
+  <span class="instructions" *ngIf="!files">{{ label }}</span>
   <span *ngIf="files">{{ fileName }} ({{ fileSize }})</span>
 </label>
 <input [id]="id" (change)="fileInputChange($event)" type="file" />

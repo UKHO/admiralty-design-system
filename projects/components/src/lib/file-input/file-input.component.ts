@@ -88,12 +88,14 @@ export class FileInputComponent implements ControlValueAccessor {
     event.stopPropagation();
     const files = event.dataTransfer.files;
     this.files = files;
+    this.onTouch();
     this.onChange(files);
   }
 
   fileInputChange(event: Event) {
     const files = (event.target as HTMLInputElement).files;
     this.files = files;
+    this.onTouch();
     this.onChange(files);
   }
 
