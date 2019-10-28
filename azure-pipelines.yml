@@ -21,7 +21,7 @@ jobs:
     - script: echo "//registry.npmjs.org/:_authToken=$(NPM_TOKEN)" > ~/.npmrc
     - script: yarn config set unsafe-perm true
     - script: yarn install --frozen-lockfile
-    - script: yarn run lerna publish from-package
+    - script: yarn run lerna publish from-package --no-git-reset
 - job: ghpages
   dependsOn: build
   container: node
