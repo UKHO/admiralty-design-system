@@ -54,7 +54,11 @@ export class FileInputComponent implements ControlValueAccessor {
 
   @HostBinding('class.invalid')
   get invalid() {
-    return !this.valid;
+    return (
+      this.controlDirective &&
+      !this.controlDirective.control.valid &&
+      this.controlDirective.control.touched
+    );
   }
 
   get validationMessages() {
