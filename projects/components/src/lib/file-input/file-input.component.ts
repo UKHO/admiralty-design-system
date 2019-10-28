@@ -7,7 +7,8 @@ import {
   Self,
 } from '@angular/core';
 import { ControlValueAccessor, NgControl } from '@angular/forms';
-import * as fileSize from 'filesize';
+import * as fileSizeNs from 'filesize';
+const fileSize = fileSizeNs;
 
 let nextId = 0;
 
