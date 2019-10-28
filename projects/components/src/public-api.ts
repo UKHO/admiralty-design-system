@@ -18,5 +18,7 @@ export * from './lib/sidenav/sidenav.module';
 export * from './lib/table/table.module';
 export * from './lib/textarea/textarea.module';
 export * from './lib/textinput/textinput.module';
+export * from './lib/file-input/file-input.module';
+export * from './lib/progress-bar/progress-bar.module';
 
 export * from './lib/navtypes';

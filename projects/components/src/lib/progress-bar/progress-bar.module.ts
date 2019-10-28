@@ -9,4 +9,4 @@ export { ProgressBarComponent } from './progress-bar.component';
   exports: [ProgressBarComponent],
   imports: [CommonModule],
 })
-export class FileInputModule {}
+export class ProgressBarModule {}
