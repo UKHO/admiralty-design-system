@@ -1,6 +1,6 @@
 {
   "name": "@ukho/design-system",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Antony Derham",
   "scripts": {
     "copyfonts": "cpx 'node_modules/\\@fortawesome/fontawesome-free/webfonts/**/*' public/webfonts && cpx 'node_modules/\\@ukho/styles/webfonts/**/*' public/webfonts",

@@ -7,12 +7,7 @@ import {
   CdkRow,
   CdkRowDef,
 } from '@angular/cdk/table';
-import {
-  ChangeDetectionStrategy,
-  Component,
-  Directive,
-  ViewEncapsulation,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, Directive, ViewEncapsulation } from '@angular/core';
 
 @Directive({
   selector: '[ukhoHeaderRowDef]',

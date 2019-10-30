@@ -4,12 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { TextinputComponent } from './textinput.component';
 import { DebugElement } from '@angular/core';
-import {
-  ReactiveFormsModule,
-  FormsModule,
-  FormControl,
-  Validators,
-} from '@angular/forms';
+import { ReactiveFormsModule, FormsModule, FormControl, Validators } from '@angular/forms';
 
 describe('TextinputComponent', () => {
   let component: TextinputComponent;
@@ -18,12 +13,7 @@ describe('TextinputComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [
-        MatInputModule,
-        BrowserAnimationsModule,
-        ReactiveFormsModule,
-        FormsModule,
-      ],
+      imports: [MatInputModule, BrowserAnimationsModule, ReactiveFormsModule, FormsModule],
       declarations: [TextinputComponent],
     }).compileComponents();
   }));
@@ -32,10 +22,7 @@ describe('TextinputComponent', () => {
     fixture = TestBed.createComponent(TextinputComponent);
     component = fixture.componentInstance;
     component.inputText = { value: 'test text value' };
-    component.validation = new FormControl('', [
-      Validators.required,
-      Validators.email,
-    ]);
+    component.validation = new FormControl('', [Validators.required, Validators.email]);
     fixture.detectChanges();
   });
 

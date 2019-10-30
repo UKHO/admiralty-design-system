@@ -1,8 +1,5 @@
 <nav *ngIf="navigation" id="side-menu" aria-label="Side menu">
-  <section
-    *ngFor="let subSection of navigation"
-    class="{{ subSection.active ? ' active' : '' }}"
-  >
+  <section *ngFor="let subSection of navigation" class="{{ subSection.active ? ' active' : '' }}">
     <h2>
       <a href="{{ subSection.href }}">{{ subSection.title }}</a>
     </h2>

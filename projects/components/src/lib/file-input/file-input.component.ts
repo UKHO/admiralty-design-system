@@ -1,11 +1,4 @@
-import {
-  Component,
-  HostBinding,
-  HostListener,
-  Input,
-  Optional,
-  Self,
-} from '@angular/core';
+import { Component, HostBinding, HostListener, Input, Optional, Self } from '@angular/core';
 import { ControlValueAccessor, NgControl } from '@angular/forms';
 import * as fileSizeNs from 'filesize';
 const fileSize = fileSizeNs;
@@ -36,9 +29,7 @@ export class FileInputComponent implements ControlValueAccessor {
     return fileSize(this.files.item(0).size);
   }
 
-  constructor(
-    @Optional() @Self() private readonly controlDirective: NgControl,
-  ) {
+  constructor(@Optional() @Self() private readonly controlDirective: NgControl) {
     if (controlDirective) {
       controlDirective.valueAccessor = this;
     }
@@ -46,20 +37,12 @@ export class FileInputComponent implements ControlValueAccessor {
 
   @HostBinding('class.validated')
   get valid() {
-    return (
-      this.controlDirective &&
-      this.controlDirective.control.valid &&
-      this.controlDirective.control.touched
-    );
+    return this.controlDirective && this.controlDirective.control.valid && this.controlDirective.control.touched;
   }
 
   @HostBinding('class.invalid')
   get invalid() {
-    return (
-      this.controlDirective &&
-      !this.controlDirective.control.valid &&
-      this.controlDirective.control.touched
-    );
+    return this.controlDirective && !this.controlDirective.control.valid && this.controlDirective.control.touched;
   }
 
   @HostListener('dragstart', ['$event'])

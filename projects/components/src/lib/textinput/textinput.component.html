@@ -3,9 +3,7 @@
   [id]="id"
   [type]="type"
   class="form-text-input"
-  (input)="
-    onChange(type === 'file' ? $event.target.files : $event.target.value)
-  "
+  (input)="onChange(type === 'file' ? $event.target.files : $event.target.value)"
   (blur)="onTouch()"
   [disabled]="disabled"
 />
@@ -20,10 +18,7 @@
 <span *ngIf="valid && touched" class="icon validated-icon fa fa-check"></span>
 <ng-container *ngIf="!valid && touched">
   <span class="icon invalid-icon fa fa-exclamation"></span>
-  <p
-    *ngIf="validationMessages && validationMessages.required"
-    class="error-text"
-  >
+  <p *ngIf="validationMessages && validationMessages.required" class="error-text">
     This field is required
   </p>
 </ng-container>

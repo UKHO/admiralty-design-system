@@ -12,12 +12,7 @@ describe('SearchComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [
-        MatInputModule,
-        BrowserAnimationsModule,
-        ReactiveFormsModule,
-        FormsModule,
-      ],
+      imports: [MatInputModule, BrowserAnimationsModule, ReactiveFormsModule, FormsModule],
       declarations: [SearchComponent, ButtonComponent],
     }).compileComponents();
   }));

@@ -10,14 +10,7 @@ import {
   UkhoHeaderCell,
   UkhoHeaderCellDef,
 } from './cell.directive';
-import {
-  UkhoFooterRow,
-  UkhoFooterRowDef,
-  UkhoHeaderRow,
-  UkhoHeaderRowDef,
-  UkhoRow,
-  UkhoRowDef,
-} from './row.directive';
+import { UkhoFooterRow, UkhoFooterRowDef, UkhoHeaderRow, UkhoHeaderRowDef, UkhoRow, UkhoRowDef } from './row.directive';
 import { CdkTableModule } from '@angular/cdk/table';
 
 export * from './table.component';

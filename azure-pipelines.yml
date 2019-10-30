@@ -4,42 +4,42 @@ resources:
       image: node:10
 
 jobs:
-- job: build
-  container: node
-  steps:
-    - checkout: self
-      clean: true
-    - script: yarn config set unsafe-perm true
-    - script: yarn install --frozen-lockfile
-    - script: yarn run lerna bootstrap
-- job: publish
-  dependsOn: build
-  container: node
-  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
-  steps:
-    - checkout: none
-    - script: echo "//registry.npmjs.org/:_authToken=$(NPM_TOKEN)" > ~/.npmrc
-    - script: yarn config set unsafe-perm true
-    - script: yarn install --frozen-lockfile
-    - script: yarn run lerna publish from-package --no-git-reset
-- job: ghpages
-  dependsOn: build
-  container: node
-  condition: and(succeeded(), eq(variables['build.sourceBranch'], 'refs/heads/master'))
-  steps:
-    - task: InstallSSHKey@0
-      inputs:
-        hostName: $(knownHosts)
-        sshPublicKey: $(publicKey)
-        sshKeySecureFile: id_github
-    - script: yarn config set unsafe-perm true
-    - script: yarn install --frozen-lockfile
-    - script: yarn run lerna bootstrap --scope @ukho/design-system
-    - script: |
-        cd projects/site
-        touch dist/.nojekyll
-        echo "design.ukho.dev" > dist/CNAME
-        npm install --save-dev gh-pages@2.0.1
-        git config user.email "pipeline@ukho.gov.uk"
-        git config user.name "Azure Pipeline"
-        $(npm bin)/gh-pages --dotfiles --message "[skip ci] gh-pages update" --dist dist -r git@github.com:UKHO/design-system.git
+  - job: build
+    container: node
+    steps:
+      - checkout: self
+        clean: true
+      - script: yarn config set unsafe-perm true
+      - script: yarn install --frozen-lockfile
+      - script: yarn run lerna bootstrap
+  - job: publish
+    dependsOn: build
+    container: node
+    condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
+    steps:
+      - checkout: none
+      - script: echo "//registry.npmjs.org/:_authToken=$(NPM_TOKEN)" > ~/.npmrc
+      - script: yarn config set unsafe-perm true
+      - script: yarn install --frozen-lockfile
+      - script: yarn run lerna publish from-package --no-git-reset
+  - job: ghpages
+    dependsOn: build
+    container: node
+    condition: and(succeeded(), eq(variables['build.sourceBranch'], 'refs/heads/master'))
+    steps:
+      - task: InstallSSHKey@0
+        inputs:
+          hostName: $(knownHosts)
+          sshPublicKey: $(publicKey)
+          sshKeySecureFile: id_github
+      - script: yarn config set unsafe-perm true
+      - script: yarn install --frozen-lockfile
+      - script: yarn run lerna bootstrap --scope @ukho/design-system
+      - script: |
+          cd projects/site
+          touch dist/.nojekyll
+          echo "design.ukho.dev" > dist/CNAME
+          npm install --save-dev gh-pages@2.0.1
+          git config user.email "pipeline@ukho.gov.uk"
+          git config user.name "Azure Pipeline"
+          $(npm bin)/gh-pages --dotfiles --message "[skip ci] gh-pages update" --dist dist -r git@github.com:UKHO/design-system.git

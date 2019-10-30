@@ -1,12 +1,4 @@
-import {
-  Component,
-  ElementRef,
-  Input,
-  Optional,
-  Self,
-  ViewChild,
-  ViewEncapsulation,
-} from '@angular/core';
+import { Component, ElementRef, Input, Optional, Self, ViewChild, ViewEncapsulation } from '@angular/core';
 import { ControlValueAccessor, NgControl } from '@angular/forms';
 
 let nextId = 0;
@@ -32,9 +24,7 @@ export class TextinputComponent implements ControlValueAccessor {
   @Input() label: string;
   @Input() disabled = false;
 
-  constructor(
-    @Optional() @Self() private readonly controlDirective: NgControl,
-  ) {
+  constructor(@Optional() @Self() private readonly controlDirective: NgControl) {
     if (controlDirective) {
       controlDirective.valueAccessor = this;
     }

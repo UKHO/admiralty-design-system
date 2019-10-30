@@ -8,10 +8,6 @@ export { TextinputComponent } from './textinput.component';
 @NgModule({
   declarations: [TextinputComponent],
   exports: [TextinputComponent],
-  imports: [
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-  ],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule],
 })
 export class TextinputModule {}

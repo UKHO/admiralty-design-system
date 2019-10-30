@@ -13,12 +13,7 @@ describe('TextareaComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [
-        ReactiveFormsModule,
-        FormsModule,
-        MatInputModule,
-        BrowserAnimationsModule,
-      ],
+      imports: [ReactiveFormsModule, FormsModule, MatInputModule, BrowserAnimationsModule],
       declarations: [TextareaComponent],
     }).compileComponents();
   }));

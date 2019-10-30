@@ -1,10 +1,6 @@
 <div class="select-wrap">
   <mat-form-field appearance="outline">
-    <mat-select
-      #selectComponent
-      panelClass="material-select-panel"
-      (selectionChange)="handleChange($event)"
-    >
+    <mat-select #selectComponent panelClass="material-select-panel" (selectionChange)="handleChange($event)">
       <mat-option *ngFor="let option of options" [value]="option.value">
         {{ option.viewValue }}
       </mat-option>
@@ -13,7 +9,6 @@
       class="fa"
       [class.fa-chevron-down]="!selectComponent.panelOpen"
       [class.fa-chevron-up]="selectComponent.panelOpen"
-    >
-    </span>
+    ></span>
   </mat-form-field>
 </div>

@@ -1,11 +1,6 @@
 import { storiesOf } from '@storybook/angular';
 import { TextinputComponent } from './textinput.component';
-import {
-  FormControl,
-  FormsModule,
-  ReactiveFormsModule,
-  Validators,
-} from '@angular/forms';
+import { FormControl, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { action } from '@storybook/addon-actions';
 
 storiesOf('Text Input', module)
