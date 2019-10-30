@@ -4,7 +4,6 @@
 
 /* Button Wrapper */
 .button-wrapper {
-
   display: inline-flex;
   flex-direction: column;
 
@@ -12,7 +11,7 @@
     max-width: 240px;
     display: flex;
     margin-top: 11px;
-    
+
     > span {
       color: colours.$colour-utility-error;
       margin-left: 10px;
@@ -115,11 +114,11 @@ button.secondary, input[type='button'].secondary {
   &:active {
     background-color: colours.$colour-button-secondary-selected;
     border: 2px solid colours.$colour-button-secondary-selected;
-    
+
     i {
       color: colours.$colour-button-secondary-icon-selected;
     }
-    
+
     p {
       color: colours.$colour-button-secondary-text-selected;
     }

@@ -1,4 +1,4 @@
-import { Component, Directive, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'ukho-dialogue',
@@ -8,15 +8,3 @@ import { Component, Directive, Input } from '@angular/core';
 export class DialogueComponent {
   @Input() type: 'info' | 'warning' | 'success' | 'error' = 'info';
 }
-
-@Directive({
-  // tslint:disable-next-line:directive-selector
-  selector: 'ukho-dialogue-title',
-})
-export class DialogueTitleDirective {}
-
-@Directive({
-  // tslint:disable-next-line:directive-selector
-  selector: 'ukho-dialogue-content',
-})
-export class DialogueContentDirective {}
