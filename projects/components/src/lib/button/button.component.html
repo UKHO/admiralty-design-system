@@ -1,4 +1,2 @@
-<button [ngClass]="{ secondary: secondary, icon: icon }" [disabled]="disabled">
-  <ng-content></ng-content>
-  <i *ngIf="icon" class="fa {{ icon }}"></i>
-</button>
+<ng-content></ng-content>
+<i *ngIf="icon" class="fa {{ icon }}"></i>

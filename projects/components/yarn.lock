@@ -1375,10 +1375,10 @@
     "@types/prop-types" "*"
     csstype "^2.2.0"
 
-"@ukho/styles@^1.3.6":
-  version "1.3.6"
-  resolved "https://registry.yarnpkg.com/@ukho/styles/-/styles-1.3.6.tgz#cb0d76d44d5717348d4772e8f6fef5cb144105a1"
-  integrity sha512-OCsOBP+eO4KiV1Vn2DyrI0VeciQC3lavKrAiN4f48AEmFxZMQOWsaPRHOW9fsQoePoF20EyPtPAWjXldksJMrQ==
+"@ukho/styles@^1.3.8":
+  version "1.3.8"
+  resolved "https://registry.yarnpkg.com/@ukho/styles/-/styles-1.3.8.tgz#8cd210fc5d82e0f9345d09c3e6c9752e1e485d98"
+  integrity sha512-0Az48/ywXRuPPl73uRL4UZUUrQ3g4vr0DeWpoH7PCdYnPZTnuHz2wK1woVSH0FsAr1jDSA7QJdT7ZOKtIOjbfQ==
   dependencies:
     "@fortawesome/fontawesome-free" "^5.11.2"
     "@material/layout-grid" "^3.1.0"

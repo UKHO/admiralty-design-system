@@ -1,12 +1,19 @@
-import { Component, Input } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  HostBinding,
+  Input,
+  ViewEncapsulation,
+} from '@angular/core';
 
 @Component({
-  selector: 'ukho-button',
+  selector: 'button[ukho-button]',
   templateUrl: './button.component.html',
   styleUrls: ['./button.component.scss'],
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ButtonComponent {
-  @Input() disabled = false;
-  @Input() secondary = false;
-  @Input() icon: string;
+  @HostBinding('class.secondary') @Input() secondary = false;
+  @HostBinding('class.icon') @Input() icon: string;
 }
