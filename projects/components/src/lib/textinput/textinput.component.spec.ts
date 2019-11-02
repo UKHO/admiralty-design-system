@@ -4,7 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { TextinputComponent } from './textinput.component';
 import { DebugElement } from '@angular/core';
-import { ReactiveFormsModule, FormsModule, FormControl, Validators } from '@angular/forms';
+import { FormControl, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 
 describe('TextinputComponent', () => {
   let component: TextinputComponent;

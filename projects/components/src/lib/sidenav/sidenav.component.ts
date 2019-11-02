@@ -1,4 +1,4 @@
-import { Component, Input, AfterViewInit } from '@angular/core';
+import { AfterViewInit, Component, Input } from '@angular/core';
 import { SubSection } from '../navtypes';
 import { enhanceMainMenu } from '../nav-enhance';
 

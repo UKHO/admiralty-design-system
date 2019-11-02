@@ -1,10 +1,5 @@
-export class Table {
-  headings: string[];
-  records: object[];
-}
-
-export const TABLE: Table = {
-  headings: ['Folio', 'Title', 'From', 'To'],
+export const data = {
+  headings: ['folio', 'title', 'from', 'to'],
   records: [
     {
       folio: '5600',

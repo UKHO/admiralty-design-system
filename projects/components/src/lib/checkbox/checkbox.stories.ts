@@ -10,13 +10,13 @@ storiesOf('Checkbox', module)
     },
     template: `<ukho-checkbox>I'm a checkbox</ukho-checkbox>`,
   }))
-  .add('ngModel', () => ({
+  .add('action', () => ({
     moduleMetadata: {
+      declarations: [CheckboxComponent],
       imports: [FormsModule],
     },
-    component: CheckboxComponent,
+    template: `<ukho-checkbox (change)="change($event)">I emit actions</ukho-checkbox>`,
     props: {
-      ngContent: "I'm a checkbox",
-      ngModelChange: action('changed'),
+      change: action('changed'),
     },
   }));

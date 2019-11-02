@@ -1,22 +1,22 @@
 import { storiesOf } from '@storybook/angular';
-import { DialogueComponent, DialogueContentDirective, DialogueTitleDirective } from './dialogue.component';
+import { DialogueComponent } from './dialogue.component';
 
 storiesOf('Dialogue', module)
   .add('basic', () => ({
     moduleMetadata: {
-      declarations: [DialogueComponent, DialogueContentDirective, DialogueTitleDirective],
+      declarations: [DialogueComponent],
     },
     template: `<ukho-dialogue>
-      <ukho-dialogue-title>Basic Title</ukho-dialogue-title>
-      <ukho-dialogue-content>Some content in the dialogue</ukho-dialogue-content>
+      <h3>Basic Title</h3>
+      <div>Some content in the dialogue</div>
     </ukho-dialogue>`,
   }))
   .add('error', () => ({
     moduleMetadata: {
-      declarations: [DialogueComponent, DialogueContentDirective, DialogueTitleDirective],
+      declarations: [DialogueComponent],
     },
     template: `<ukho-dialogue type="error">
-        <ukho-dialogue-title>Error</ukho-dialogue-title>
-        <ukho-dialogue-content>You did something wrong</ukho-dialogue-content>
+        <h3>Error</h3>
+        <div>You did something wrong</div>
       </ukho-dialogue>`,
   }));

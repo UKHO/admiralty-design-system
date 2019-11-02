@@ -41,10 +41,7 @@ export function enhanceMainMenu() {
   // expand menu backdrop to full document height
   const backdrop = document.getElementById('backdrop');
   if (backdrop) {
-    backdrop.setAttribute(
-      'style',
-      'height:' + document.body.scrollHeight + 'px',
-    );
+    backdrop.setAttribute('style', 'height:' + document.body.scrollHeight + 'px');
     backdrop.addEventListener('click', evt => {
       toggleMenu(evt);
     });

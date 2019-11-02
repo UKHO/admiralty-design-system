@@ -7,25 +7,25 @@ storiesOf('Button', module)
     moduleMetadata: {
       declarations: [ButtonComponent],
     },
-    template: `<button ukho-button>Hello Button</ukho-button>`,
+    template: `<button ukho-button>Hello Button</button>`,
   }))
   .add('withEmoji', () => ({
     moduleMetadata: {
       declarations: [ButtonComponent],
     },
-    template: `<button ukho-button>😀 😎 👍 💯</ukho-button>`,
+    template: `<button ukho-button>😀 😎 👍 💯</button>`,
   }))
   .add('withIcon', () => ({
     moduleMetadata: {
       declarations: [ButtonComponent],
     },
-    template: `<button ukho-button icon="fa-angular">Hello Button</ukho-button>`,
+    template: `<button ukho-button icon="fa-angular">Hello Button</button>`,
   }))
   .add('onClick', () => ({
     moduleMetadata: {
       declarations: [ButtonComponent],
     },
-    template: `<button ukho-button (click)="click($event)">Click Me</ukho-button>`,
+    template: `<button ukho-button (click)="click($event)">Click Me</button>`,
     props: {
       click: action('click'),
     },
@@ -34,11 +34,11 @@ storiesOf('Button', module)
     moduleMetadata: {
       declarations: [ButtonComponent],
     },
-    template: `<button ukho-button [disabled]="true">Disabled Button</ukho-button>`,
+    template: `<button ukho-button [disabled]="true">Disabled Button</button>`,
   }))
   .add('isSecondary', () => ({
     moduleMetadata: {
       declarations: [ButtonComponent],
     },
-    template: `<button ukho-button [secondary]="true">Secondary Button</ukho-button>`,
+    template: `<button ukho-button [secondary]="true">Secondary Button</button>`,
   }));

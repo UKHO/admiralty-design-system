@@ -1,0 +1,5 @@
+titleAndCommits: true
+scopes:
+  - components
+  - site
+  - styles
