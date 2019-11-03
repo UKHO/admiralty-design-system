@@ -6,7 +6,5 @@ storiesOf('Header', module)
     moduleMetadata: {
       declarations: [HeaderComponent],
     },
-    template: `<ukho-header>
-      Header Text
-    </ukho-header>`,
+    template: `<ukho-header text="Header Text"></ukho-header>`,
   }));
