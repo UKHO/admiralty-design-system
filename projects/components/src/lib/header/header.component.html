@@ -1,7 +1,7 @@
 <header>
   <nav id="top-menu">
     <span>
-      {{ text }}
+      <ng-content></ng-content>
       <img *ngIf="!text" src="{{ src }}" alt="{{ alt }}" />
     </span>
     <div *ngIf="navigation" class="header-links-wrap">

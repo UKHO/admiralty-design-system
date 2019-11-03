@@ -13,7 +13,7 @@
   },
   "private": true,
   "dependencies": {
-    "@ukho/styles": "^1.3.0",
+    "@ukho/styles": "file:../styles",
     "prismjs": "^1.17.1",
     "@fortawesome/fontawesome-free": "^5.11.2"
   },
