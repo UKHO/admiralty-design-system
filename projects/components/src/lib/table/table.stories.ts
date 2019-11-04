@@ -1,6 +1,7 @@
 import { moduleMetadata, storiesOf } from '@storybook/angular';
-import { TableModule } from './table.module';
+import { TableModule, UkhoTable } from './table.module';
 import { data } from './mock-data';
+import { action } from '@storybook/addon-actions';
 
 storiesOf('Table', module)
   .addDecorator(
@@ -8,7 +9,8 @@ storiesOf('Table', module)
       imports: [TableModule],
     }),
   )
-  .add('table', () => ({
+  .add('Table', () => ({
+    component: UkhoTable,
     template: `
     <table ukho-table [dataSource]="dataSource">
       <ng-container ukhoColumnDef="folio">
@@ -37,5 +39,38 @@ storiesOf('Table', module)
     props: {
       headings: data.headings,
       dataSource: data.records,
+    },
+  }))
+  .add('Sorting', () => ({
+    component: UkhoTable,
+    template: `
+    <table ukho-table ukho-sort [dataSource]="dataSource" (sortChange)="change($event)">
+      <ng-container ukhoColumnDef="folio">
+        <th ukho-header-cell *ukhoHeaderCellDef ukho-sort-header> Folio </th>
+        <td ukho-cell *ukhoCellDef="let row"> {{row.folio}} </td>
+      </ng-container>
+
+      <ng-container ukhoColumnDef="title">
+        <th ukho-header-cell *ukhoHeaderCellDef ukho-sort-header> Title </th>
+        <td ukho-cell *ukhoCellDef="let row"> {{row.title}} </td>
+      </ng-container>
+
+      <ng-container ukhoColumnDef="from">
+        <th ukho-header-cell *ukhoHeaderCellDef> From </th>
+        <td ukho-cell *ukhoCellDef="let row"> {{row.from}} </td>
+      </ng-container>
+
+      <ng-container ukhoColumnDef="to">
+        <th ukho-header-cell *ukhoHeaderCellDef> To </th>
+        <td ukho-cell *ukhoCellDef="let row"> {{row.to}} </td>
+      </ng-container>
+
+      <tr ukho-header-row *ukhoHeaderRowDef="headings"></tr>
+      <tr ukho-row *ukhoRowDef="let row; columns: headings"></tr>
+    </table>`,
+    props: {
+      headings: data.headings,
+      dataSource: data.records,
+      change: action('change'),
     },
   }));

@@ -1,1 +1,26 @@
 @use '~@ukho/styles/tables';
+@use '~@fortawesome/fontawesome-free/scss/fontawesome';
+@use '~@fortawesome/fontawesome-free/scss/solid';
+
+th[ukho-sort-header] {
+  white-space: nowrap;
+
+  &::after {
+    @extend .fa;
+    @extend .fa-caret-up, :before;
+    opacity: 0;
+  }
+
+  &:hover::after {
+    opacity: 0.4;
+  }
+
+  &.asc::after {
+    opacity: 1;
+  }
+
+  &.desc::after {
+    @extend .fa-caret-down, :before;
+    opacity: 1;
+  }
+}

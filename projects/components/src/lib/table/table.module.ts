@@ -12,10 +12,14 @@ import {
 } from './cell.directive';
 import { UkhoFooterRow, UkhoFooterRowDef, UkhoHeaderRow, UkhoHeaderRowDef, UkhoRow, UkhoRowDef } from './row.directive';
 import { CdkTableModule } from '@angular/cdk/table';
+import { UkhoSort } from './sort.directive';
+import { UkhoSortHeader } from './sort-header.directive';
 
 export * from './table.component';
 export * from './cell.directive';
 export * from './row.directive';
+export * from './sort.directive';
+export * from './sort-header.directive';
 
 const DECLARATIONS = [
   UkhoTable,
@@ -32,6 +36,8 @@ const DECLARATIONS = [
   UkhoHeaderRow,
   UkhoRow,
   UkhoFooterRow,
+  UkhoSort,
+  UkhoSortHeader,
 ];
 
 @NgModule({
