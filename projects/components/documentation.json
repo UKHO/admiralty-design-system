@@ -1,0 +1,3935 @@
+{
+    "pipes": [],
+    "interfaces": [
+        {
+            "name": "MenuItem",
+            "id": "interface-MenuItem-17b4939d1ce01aa7552cc159c2c99573",
+            "file": "src/lib/navtypes.ts",
+            "type": "interface",
+            "sourceCode": "export interface MenuItem {\n  title: string;\n  href?: string;\n  active?: boolean;\n}\n\nexport interface SubSection extends MenuItem {\n  items: MenuItem[];\n}\n\nexport interface Section extends MenuItem {\n  subSections: SubSection[];\n}\n\nexport interface Navigation {\n  heading: string;\n  sections: Section[];\n}\n",
+            "properties": [
+                {
+                    "name": "active",
+                    "type": "boolean",
+                    "optional": true,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "href",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 3
+                },
+                {
+                    "name": "title",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": []
+        },
+        {
+            "name": "Navigation",
+            "id": "interface-Navigation-17b4939d1ce01aa7552cc159c2c99573",
+            "file": "src/lib/navtypes.ts",
+            "type": "interface",
+            "sourceCode": "export interface MenuItem {\n  title: string;\n  href?: string;\n  active?: boolean;\n}\n\nexport interface SubSection extends MenuItem {\n  items: MenuItem[];\n}\n\nexport interface Section extends MenuItem {\n  subSections: SubSection[];\n}\n\nexport interface Navigation {\n  heading: string;\n  sections: Section[];\n}\n",
+            "properties": [
+                {
+                    "name": "heading",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 16
+                },
+                {
+                    "name": "sections",
+                    "type": "Section[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 17
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": []
+        },
+        {
+            "name": "OptionValue",
+            "id": "interface-OptionValue-e0da7876f2d12b83cee909d9944d4bde",
+            "file": "src/lib/select/select.component.ts",
+            "type": "interface",
+            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\nimport { MatSelectChange } from '@angular/material/select';\n\n@Component({\n  selector: 'ukho-select',\n  templateUrl: './select.component.html',\n  styleUrls: ['./select.component.scss'],\n})\nexport class SelectComponent {\n  @Input() options: OptionValue[];\n  @Output() changed = new EventEmitter();\n\n  handleChange($event: MatSelectChange) {\n    this.changed.emit($event);\n  }\n}\n\nexport interface OptionValue {\n  value: string;\n  viewValue: string;\n}\n",
+            "properties": [
+                {
+                    "name": "value",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 19
+                },
+                {
+                    "name": "viewValue",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 20
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": []
+        },
+        {
+            "name": "Section",
+            "id": "interface-Section-17b4939d1ce01aa7552cc159c2c99573",
+            "file": "src/lib/navtypes.ts",
+            "type": "interface",
+            "sourceCode": "export interface MenuItem {\n  title: string;\n  href?: string;\n  active?: boolean;\n}\n\nexport interface SubSection extends MenuItem {\n  items: MenuItem[];\n}\n\nexport interface Section extends MenuItem {\n  subSections: SubSection[];\n}\n\nexport interface Navigation {\n  heading: string;\n  sections: Section[];\n}\n",
+            "properties": [
+                {
+                    "name": "subSections",
+                    "type": "SubSection[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": [],
+            "extends": "MenuItem"
+        },
+        {
+            "name": "SortState",
+            "id": "interface-SortState-8b70d445ef71e646ed66cf29dd84a06a",
+            "file": "src/lib/table/sort.directive.ts",
+            "type": "interface",
+            "sourceCode": "import { Directive, EventEmitter, Output } from '@angular/core';\nimport { UkhoSortHeader } from './sort-header.directive';\n\nexport type SortDirection = 'asc' | 'desc' | '';\n\nexport interface SortState {\n  column: string;\n  direction: SortDirection;\n}\n\n@Directive({\n  selector: '[ukho-sort]'\n})\nexport class UkhoSort {\n  @Output() readonly sortChange = new EventEmitter<SortState>();\n\n  private headers = new Map<string, UkhoSortHeader>();\n\n  public register(sortHeader: UkhoSortHeader) {\n    this.headers.set(sortHeader.columnDef.name, sortHeader);\n  }\n\n  public deregister(sortHeader: UkhoSortHeader) {\n    this.headers.delete(sortHeader.columnDef.name);\n  }\n\n  public onSort(state: { column: string; direction: 'asc' | 'desc' | '' }) {\n    this.headers.forEach(header => header.columnDef.name !== state.column ? header.reset() : '');\n    this.sortChange.emit(state);\n  }\n}\n",
+            "properties": [
+                {
+                    "name": "column",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 7
+                },
+                {
+                    "name": "direction",
+                    "type": "SortDirection",
+                    "optional": false,
+                    "description": "",
+                    "line": 8
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": []
+        },
+        {
+            "name": "SubSection",
+            "id": "interface-SubSection-17b4939d1ce01aa7552cc159c2c99573",
+            "file": "src/lib/navtypes.ts",
+            "type": "interface",
+            "sourceCode": "export interface MenuItem {\n  title: string;\n  href?: string;\n  active?: boolean;\n}\n\nexport interface SubSection extends MenuItem {\n  items: MenuItem[];\n}\n\nexport interface Section extends MenuItem {\n  subSections: SubSection[];\n}\n\nexport interface Navigation {\n  heading: string;\n  sections: Section[];\n}\n",
+            "properties": [
+                {
+                    "name": "items",
+                    "type": "MenuItem[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 8
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": [],
+            "extends": "MenuItem"
+        }
+    ],
+    "injectables": [],
+    "classes": [],
+    "directives": [
+        {
+            "name": "UkhoCell",
+            "id": "directive-UkhoCell-fa176a313677e139f18d9e1d251b9d5b",
+            "file": "src/lib/table/cell.directive.ts",
+            "type": "directive",
+            "description": "",
+            "sourceCode": "import { Directive, Input } from '@angular/core';\nimport {\n  CdkCell,\n  CdkCellDef,\n  CdkColumnDef,\n  CdkFooterCell,\n  CdkFooterCellDef,\n  CdkHeaderCell,\n  CdkHeaderCellDef,\n} from '@angular/cdk/table';\n\n@Directive({\n  selector: '[ukhoCellDef]',\n  providers: [{ provide: CdkCellDef, useExisting: UkhoCellDef }],\n})\nexport class UkhoCellDef extends CdkCellDef {}\n\n@Directive({\n  selector: '[ukhoHeaderCellDef]',\n  providers: [{ provide: CdkHeaderCellDef, useExisting: UkhoHeaderCellDef }],\n})\nexport class UkhoHeaderCellDef extends CdkHeaderCellDef {}\n\n@Directive({\n  selector: '[ukhoFooterCellDef]',\n  providers: [{ provide: CdkFooterCellDef, useExisting: UkhoFooterCellDef }],\n})\nexport class UkhoFooterCellDef extends CdkFooterCellDef {}\n\n@Directive({\n  selector: '[ukhoColumnDef]',\n  providers: [{ provide: CdkColumnDef, useExisting: UkhoColumnDef }],\n})\nexport class UkhoColumnDef extends CdkColumnDef {\n  @Input('ukhoColumnDef') name: string;\n}\n\n@Directive({\n  selector: 'ukho-header-cell, th[ukho-header-cell]',\n  host: {\n    class: 'ukho-header-cell',\n    role: 'columnheader',\n  },\n})\nexport class UkhoHeaderCell extends CdkHeaderCell {}\n\n@Directive({\n  selector: 'ukho-footer-cell, td[ukho-footer-cell]',\n  host: {\n    class: 'ukho-footer-cell',\n    role: 'gridcell',\n  },\n})\nexport class UkhoFooterCell extends CdkFooterCell {}\n\n@Directive({\n  selector: 'ukho-cell, td[ukho-cell]',\n  host: {\n    class: 'ukho-cell',\n    role: 'gridcell',\n  },\n})\nexport class UkhoCell extends CdkCell {}\n",
+            "selector": "ukho-cell, td[ukho-cell]",
+            "providers": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "propertiesClass": [],
+            "methodsClass": []
+        },
+        {
+            "name": "UkhoCellDef",
+            "id": "directive-UkhoCellDef-fa176a313677e139f18d9e1d251b9d5b",
+            "file": "src/lib/table/cell.directive.ts",
+            "type": "directive",
+            "description": "",
+            "sourceCode": "import { Directive, Input } from '@angular/core';\nimport {\n  CdkCell,\n  CdkCellDef,\n  CdkColumnDef,\n  CdkFooterCell,\n  CdkFooterCellDef,\n  CdkHeaderCell,\n  CdkHeaderCellDef,\n} from '@angular/cdk/table';\n\n@Directive({\n  selector: '[ukhoCellDef]',\n  providers: [{ provide: CdkCellDef, useExisting: UkhoCellDef }],\n})\nexport class UkhoCellDef extends CdkCellDef {}\n\n@Directive({\n  selector: '[ukhoHeaderCellDef]',\n  providers: [{ provide: CdkHeaderCellDef, useExisting: UkhoHeaderCellDef }],\n})\nexport class UkhoHeaderCellDef extends CdkHeaderCellDef {}\n\n@Directive({\n  selector: '[ukhoFooterCellDef]',\n  providers: [{ provide: CdkFooterCellDef, useExisting: UkhoFooterCellDef }],\n})\nexport class UkhoFooterCellDef extends CdkFooterCellDef {}\n\n@Directive({\n  selector: '[ukhoColumnDef]',\n  providers: [{ provide: CdkColumnDef, useExisting: UkhoColumnDef }],\n})\nexport class UkhoColumnDef extends CdkColumnDef {\n  @Input('ukhoColumnDef') name: string;\n}\n\n@Directive({\n  selector: 'ukho-header-cell, th[ukho-header-cell]',\n  host: {\n    class: 'ukho-header-cell',\n    role: 'columnheader',\n  },\n})\nexport class UkhoHeaderCell extends CdkHeaderCell {}\n\n@Directive({\n  selector: 'ukho-footer-cell, td[ukho-footer-cell]',\n  host: {\n    class: 'ukho-footer-cell',\n    role: 'gridcell',\n  },\n})\nexport class UkhoFooterCell extends CdkFooterCell {}\n\n@Directive({\n  selector: 'ukho-cell, td[ukho-cell]',\n  host: {\n    class: 'ukho-cell',\n    role: 'gridcell',\n  },\n})\nexport class UkhoCell extends CdkCell {}\n",
+            "selector": "[ukhoCellDef]",
+            "providers": [
+                {
+                    "name": "{ provide: CdkCellDef, useExisting: UkhoCellDef }"
+                }
+            ],
+            "inputsClass": [],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "propertiesClass": [],
+            "methodsClass": []
+        },
+        {
+            "name": "UkhoColumnDef",
+            "id": "directive-UkhoColumnDef-fa176a313677e139f18d9e1d251b9d5b",
+            "file": "src/lib/table/cell.directive.ts",
+            "type": "directive",
+            "description": "",
+            "sourceCode": "import { Directive, Input } from '@angular/core';\nimport {\n  CdkCell,\n  CdkCellDef,\n  CdkColumnDef,\n  CdkFooterCell,\n  CdkFooterCellDef,\n  CdkHeaderCell,\n  CdkHeaderCellDef,\n} from '@angular/cdk/table';\n\n@Directive({\n  selector: '[ukhoCellDef]',\n  providers: [{ provide: CdkCellDef, useExisting: UkhoCellDef }],\n})\nexport class UkhoCellDef extends CdkCellDef {}\n\n@Directive({\n  selector: '[ukhoHeaderCellDef]',\n  providers: [{ provide: CdkHeaderCellDef, useExisting: UkhoHeaderCellDef }],\n})\nexport class UkhoHeaderCellDef extends CdkHeaderCellDef {}\n\n@Directive({\n  selector: '[ukhoFooterCellDef]',\n  providers: [{ provide: CdkFooterCellDef, useExisting: UkhoFooterCellDef }],\n})\nexport class UkhoFooterCellDef extends CdkFooterCellDef {}\n\n@Directive({\n  selector: '[ukhoColumnDef]',\n  providers: [{ provide: CdkColumnDef, useExisting: UkhoColumnDef }],\n})\nexport class UkhoColumnDef extends CdkColumnDef {\n  @Input('ukhoColumnDef') name: string;\n}\n\n@Directive({\n  selector: 'ukho-header-cell, th[ukho-header-cell]',\n  host: {\n    class: 'ukho-header-cell',\n    role: 'columnheader',\n  },\n})\nexport class UkhoHeaderCell extends CdkHeaderCell {}\n\n@Directive({\n  selector: 'ukho-footer-cell, td[ukho-footer-cell]',\n  host: {\n    class: 'ukho-footer-cell',\n    role: 'gridcell',\n  },\n})\nexport class UkhoFooterCell extends CdkFooterCell {}\n\n@Directive({\n  selector: 'ukho-cell, td[ukho-cell]',\n  host: {\n    class: 'ukho-cell',\n    role: 'gridcell',\n  },\n})\nexport class UkhoCell extends CdkCell {}\n",
+            "selector": "[ukhoColumnDef]",
+            "providers": [
+                {
+                    "name": "{ provide: CdkColumnDef, useExisting: UkhoColumnDef }"
+                }
+            ],
+            "inputsClass": [
+                {
+                    "name": "ukhoColumnDef",
+                    "line": 35,
+                    "type": "string"
+                }
+            ],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "propertiesClass": [],
+            "methodsClass": []
+        },
+        {
+            "name": "UkhoFooterCell",
+            "id": "directive-UkhoFooterCell-fa176a313677e139f18d9e1d251b9d5b",
+            "file": "src/lib/table/cell.directive.ts",
+            "type": "directive",
+            "description": "",
+            "sourceCode": "import { Directive, Input } from '@angular/core';\nimport {\n  CdkCell,\n  CdkCellDef,\n  CdkColumnDef,\n  CdkFooterCell,\n  CdkFooterCellDef,\n  CdkHeaderCell,\n  CdkHeaderCellDef,\n} from '@angular/cdk/table';\n\n@Directive({\n  selector: '[ukhoCellDef]',\n  providers: [{ provide: CdkCellDef, useExisting: UkhoCellDef }],\n})\nexport class UkhoCellDef extends CdkCellDef {}\n\n@Directive({\n  selector: '[ukhoHeaderCellDef]',\n  providers: [{ provide: CdkHeaderCellDef, useExisting: UkhoHeaderCellDef }],\n})\nexport class UkhoHeaderCellDef extends CdkHeaderCellDef {}\n\n@Directive({\n  selector: '[ukhoFooterCellDef]',\n  providers: [{ provide: CdkFooterCellDef, useExisting: UkhoFooterCellDef }],\n})\nexport class UkhoFooterCellDef extends CdkFooterCellDef {}\n\n@Directive({\n  selector: '[ukhoColumnDef]',\n  providers: [{ provide: CdkColumnDef, useExisting: UkhoColumnDef }],\n})\nexport class UkhoColumnDef extends CdkColumnDef {\n  @Input('ukhoColumnDef') name: string;\n}\n\n@Directive({\n  selector: 'ukho-header-cell, th[ukho-header-cell]',\n  host: {\n    class: 'ukho-header-cell',\n    role: 'columnheader',\n  },\n})\nexport class UkhoHeaderCell extends CdkHeaderCell {}\n\n@Directive({\n  selector: 'ukho-footer-cell, td[ukho-footer-cell]',\n  host: {\n    class: 'ukho-footer-cell',\n    role: 'gridcell',\n  },\n})\nexport class UkhoFooterCell extends CdkFooterCell {}\n\n@Directive({\n  selector: 'ukho-cell, td[ukho-cell]',\n  host: {\n    class: 'ukho-cell',\n    role: 'gridcell',\n  },\n})\nexport class UkhoCell extends CdkCell {}\n",
+            "selector": "ukho-footer-cell, td[ukho-footer-cell]",
+            "providers": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "propertiesClass": [],
+            "methodsClass": []
+        },
+        {
+            "name": "UkhoFooterCellDef",
+            "id": "directive-UkhoFooterCellDef-fa176a313677e139f18d9e1d251b9d5b",
+            "file": "src/lib/table/cell.directive.ts",
+            "type": "directive",
+            "description": "",
+            "sourceCode": "import { Directive, Input } from '@angular/core';\nimport {\n  CdkCell,\n  CdkCellDef,\n  CdkColumnDef,\n  CdkFooterCell,\n  CdkFooterCellDef,\n  CdkHeaderCell,\n  CdkHeaderCellDef,\n} from '@angular/cdk/table';\n\n@Directive({\n  selector: '[ukhoCellDef]',\n  providers: [{ provide: CdkCellDef, useExisting: UkhoCellDef }],\n})\nexport class UkhoCellDef extends CdkCellDef {}\n\n@Directive({\n  selector: '[ukhoHeaderCellDef]',\n  providers: [{ provide: CdkHeaderCellDef, useExisting: UkhoHeaderCellDef }],\n})\nexport class UkhoHeaderCellDef extends CdkHeaderCellDef {}\n\n@Directive({\n  selector: '[ukhoFooterCellDef]',\n  providers: [{ provide: CdkFooterCellDef, useExisting: UkhoFooterCellDef }],\n})\nexport class UkhoFooterCellDef extends CdkFooterCellDef {}\n\n@Directive({\n  selector: '[ukhoColumnDef]',\n  providers: [{ provide: CdkColumnDef, useExisting: UkhoColumnDef }],\n})\nexport class UkhoColumnDef extends CdkColumnDef {\n  @Input('ukhoColumnDef') name: string;\n}\n\n@Directive({\n  selector: 'ukho-header-cell, th[ukho-header-cell]',\n  host: {\n    class: 'ukho-header-cell',\n    role: 'columnheader',\n  },\n})\nexport class UkhoHeaderCell extends CdkHeaderCell {}\n\n@Directive({\n  selector: 'ukho-footer-cell, td[ukho-footer-cell]',\n  host: {\n    class: 'ukho-footer-cell',\n    role: 'gridcell',\n  },\n})\nexport class UkhoFooterCell extends CdkFooterCell {}\n\n@Directive({\n  selector: 'ukho-cell, td[ukho-cell]',\n  host: {\n    class: 'ukho-cell',\n    role: 'gridcell',\n  },\n})\nexport class UkhoCell extends CdkCell {}\n",
+            "selector": "[ukhoFooterCellDef]",
+            "providers": [
+                {
+                    "name": "{ provide: CdkFooterCellDef, useExisting: UkhoFooterCellDef }"
+                }
+            ],
+            "inputsClass": [],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "propertiesClass": [],
+            "methodsClass": []
+        },
+        {
+            "name": "UkhoFooterRowDef",
+            "id": "directive-UkhoFooterRowDef-aebeb637f936d73b50126612b19ddc82",
+            "file": "src/lib/table/row.directive.ts",
+            "type": "directive",
+            "description": "",
+            "sourceCode": "import {\n  CDK_ROW_TEMPLATE,\n  CdkFooterRow,\n  CdkFooterRowDef,\n  CdkHeaderRow,\n  CdkHeaderRowDef,\n  CdkRow,\n  CdkRowDef,\n} from '@angular/cdk/table';\nimport { ChangeDetectionStrategy, Component, Directive, ViewEncapsulation } from '@angular/core';\n\n@Directive({\n  selector: '[ukhoHeaderRowDef]',\n  providers: [{ provide: CdkHeaderRowDef, useExisting: UkhoHeaderRowDef }],\n  inputs: ['columns: ukhoHeaderRowDef', 'sticky: ukhoHeaderRowDefSticky'],\n})\nexport class UkhoHeaderRowDef extends CdkHeaderRowDef {}\n\n@Directive({\n  selector: '[ukhoFooterRowDef]',\n  providers: [{ provide: CdkFooterRowDef, useExisting: UkhoFooterRowDef }],\n  inputs: ['columns: ukhoFooterRowDef', 'sticky: ukhoFooterRowDefSticky'],\n})\nexport class UkhoFooterRowDef extends CdkFooterRowDef {}\n\n@Directive({\n  selector: '[ukhoRowDef]',\n  providers: [{ provide: CdkRowDef, useExisting: UkhoRowDef }],\n  inputs: ['columns: ukhoRowDefColumns', 'when: ukhoRowDefWhen'],\n})\nexport class UkhoRowDef<T> extends CdkRowDef<T> {}\n\n@Component({\n  moduleId: module.id,\n  selector: 'ukho-header-row, tr[ukho-header-row]',\n  template: CDK_ROW_TEMPLATE,\n  host: {\n    class: 'ukho-header-row',\n    role: 'row',\n  },\n  // See note on CdkTable for explanation on why this uses the default change detection strategy.\n  // tslint:disable-next-line:validate-decorators\n  changeDetection: ChangeDetectionStrategy.Default,\n  encapsulation: ViewEncapsulation.None,\n  exportAs: 'matHeaderRow',\n  providers: [{ provide: CdkHeaderRow, useExisting: UkhoHeaderRow }],\n})\nexport class UkhoHeaderRow extends CdkHeaderRow {}\n\n@Component({\n  moduleId: module.id,\n  selector: 'ukho-footer-row, tr[ukho-footer-row]',\n  template: CDK_ROW_TEMPLATE,\n  host: {\n    class: 'ukho-footer-row',\n    role: 'row',\n  },\n  // See note on CdkTable for explanation on why this uses the default change detection strategy.\n  // tslint:disable-next-line:validate-decorators\n  changeDetection: ChangeDetectionStrategy.Default,\n  encapsulation: ViewEncapsulation.None,\n  exportAs: 'matFooterRow',\n  providers: [{ provide: CdkFooterRow, useExisting: UkhoFooterRow }],\n})\nexport class UkhoFooterRow extends CdkFooterRow {}\n\n@Component({\n  moduleId: module.id,\n  selector: 'ukho-row, tr[ukho-row]',\n  template: CDK_ROW_TEMPLATE,\n  host: {\n    class: 'ukho-row',\n    role: 'row',\n  },\n  // See note on CdkTable for explanation on why this uses the default change detection strategy.\n  // tslint:disable-next-line:validate-decorators\n  changeDetection: ChangeDetectionStrategy.Default,\n  encapsulation: ViewEncapsulation.None,\n  exportAs: 'matRow',\n  providers: [{ provide: CdkRow, useExisting: UkhoRow }],\n})\nexport class UkhoRow extends CdkRow {}\n",
+            "selector": "[ukhoFooterRowDef]",
+            "providers": [
+                {
+                    "name": "{ provide: CdkFooterRowDef, useExisting: UkhoFooterRowDef }"
+                }
+            ],
+            "inputsClass": [],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "propertiesClass": [],
+            "methodsClass": []
+        },
+        {
+            "name": "UkhoHeaderCell",
+            "id": "directive-UkhoHeaderCell-fa176a313677e139f18d9e1d251b9d5b",
+            "file": "src/lib/table/cell.directive.ts",
+            "type": "directive",
+            "description": "",
+            "sourceCode": "import { Directive, Input } from '@angular/core';\nimport {\n  CdkCell,\n  CdkCellDef,\n  CdkColumnDef,\n  CdkFooterCell,\n  CdkFooterCellDef,\n  CdkHeaderCell,\n  CdkHeaderCellDef,\n} from '@angular/cdk/table';\n\n@Directive({\n  selector: '[ukhoCellDef]',\n  providers: [{ provide: CdkCellDef, useExisting: UkhoCellDef }],\n})\nexport class UkhoCellDef extends CdkCellDef {}\n\n@Directive({\n  selector: '[ukhoHeaderCellDef]',\n  providers: [{ provide: CdkHeaderCellDef, useExisting: UkhoHeaderCellDef }],\n})\nexport class UkhoHeaderCellDef extends CdkHeaderCellDef {}\n\n@Directive({\n  selector: '[ukhoFooterCellDef]',\n  providers: [{ provide: CdkFooterCellDef, useExisting: UkhoFooterCellDef }],\n})\nexport class UkhoFooterCellDef extends CdkFooterCellDef {}\n\n@Directive({\n  selector: '[ukhoColumnDef]',\n  providers: [{ provide: CdkColumnDef, useExisting: UkhoColumnDef }],\n})\nexport class UkhoColumnDef extends CdkColumnDef {\n  @Input('ukhoColumnDef') name: string;\n}\n\n@Directive({\n  selector: 'ukho-header-cell, th[ukho-header-cell]',\n  host: {\n    class: 'ukho-header-cell',\n    role: 'columnheader',\n  },\n})\nexport class UkhoHeaderCell extends CdkHeaderCell {}\n\n@Directive({\n  selector: 'ukho-footer-cell, td[ukho-footer-cell]',\n  host: {\n    class: 'ukho-footer-cell',\n    role: 'gridcell',\n  },\n})\nexport class UkhoFooterCell extends CdkFooterCell {}\n\n@Directive({\n  selector: 'ukho-cell, td[ukho-cell]',\n  host: {\n    class: 'ukho-cell',\n    role: 'gridcell',\n  },\n})\nexport class UkhoCell extends CdkCell {}\n",
+            "selector": "ukho-header-cell, th[ukho-header-cell]",
+            "providers": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "propertiesClass": [],
+            "methodsClass": []
+        },
+        {
+            "name": "UkhoHeaderCellDef",
+            "id": "directive-UkhoHeaderCellDef-fa176a313677e139f18d9e1d251b9d5b",
+            "file": "src/lib/table/cell.directive.ts",
+            "type": "directive",
+            "description": "",
+            "sourceCode": "import { Directive, Input } from '@angular/core';\nimport {\n  CdkCell,\n  CdkCellDef,\n  CdkColumnDef,\n  CdkFooterCell,\n  CdkFooterCellDef,\n  CdkHeaderCell,\n  CdkHeaderCellDef,\n} from '@angular/cdk/table';\n\n@Directive({\n  selector: '[ukhoCellDef]',\n  providers: [{ provide: CdkCellDef, useExisting: UkhoCellDef }],\n})\nexport class UkhoCellDef extends CdkCellDef {}\n\n@Directive({\n  selector: '[ukhoHeaderCellDef]',\n  providers: [{ provide: CdkHeaderCellDef, useExisting: UkhoHeaderCellDef }],\n})\nexport class UkhoHeaderCellDef extends CdkHeaderCellDef {}\n\n@Directive({\n  selector: '[ukhoFooterCellDef]',\n  providers: [{ provide: CdkFooterCellDef, useExisting: UkhoFooterCellDef }],\n})\nexport class UkhoFooterCellDef extends CdkFooterCellDef {}\n\n@Directive({\n  selector: '[ukhoColumnDef]',\n  providers: [{ provide: CdkColumnDef, useExisting: UkhoColumnDef }],\n})\nexport class UkhoColumnDef extends CdkColumnDef {\n  @Input('ukhoColumnDef') name: string;\n}\n\n@Directive({\n  selector: 'ukho-header-cell, th[ukho-header-cell]',\n  host: {\n    class: 'ukho-header-cell',\n    role: 'columnheader',\n  },\n})\nexport class UkhoHeaderCell extends CdkHeaderCell {}\n\n@Directive({\n  selector: 'ukho-footer-cell, td[ukho-footer-cell]',\n  host: {\n    class: 'ukho-footer-cell',\n    role: 'gridcell',\n  },\n})\nexport class UkhoFooterCell extends CdkFooterCell {}\n\n@Directive({\n  selector: 'ukho-cell, td[ukho-cell]',\n  host: {\n    class: 'ukho-cell',\n    role: 'gridcell',\n  },\n})\nexport class UkhoCell extends CdkCell {}\n",
+            "selector": "[ukhoHeaderCellDef]",
+            "providers": [
+                {
+                    "name": "{ provide: CdkHeaderCellDef, useExisting: UkhoHeaderCellDef }"
+                }
+            ],
+            "inputsClass": [],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "propertiesClass": [],
+            "methodsClass": []
+        },
+        {
+            "name": "UkhoHeaderRowDef",
+            "id": "directive-UkhoHeaderRowDef-aebeb637f936d73b50126612b19ddc82",
+            "file": "src/lib/table/row.directive.ts",
+            "type": "directive",
+            "description": "",
+            "sourceCode": "import {\n  CDK_ROW_TEMPLATE,\n  CdkFooterRow,\n  CdkFooterRowDef,\n  CdkHeaderRow,\n  CdkHeaderRowDef,\n  CdkRow,\n  CdkRowDef,\n} from '@angular/cdk/table';\nimport { ChangeDetectionStrategy, Component, Directive, ViewEncapsulation } from '@angular/core';\n\n@Directive({\n  selector: '[ukhoHeaderRowDef]',\n  providers: [{ provide: CdkHeaderRowDef, useExisting: UkhoHeaderRowDef }],\n  inputs: ['columns: ukhoHeaderRowDef', 'sticky: ukhoHeaderRowDefSticky'],\n})\nexport class UkhoHeaderRowDef extends CdkHeaderRowDef {}\n\n@Directive({\n  selector: '[ukhoFooterRowDef]',\n  providers: [{ provide: CdkFooterRowDef, useExisting: UkhoFooterRowDef }],\n  inputs: ['columns: ukhoFooterRowDef', 'sticky: ukhoFooterRowDefSticky'],\n})\nexport class UkhoFooterRowDef extends CdkFooterRowDef {}\n\n@Directive({\n  selector: '[ukhoRowDef]',\n  providers: [{ provide: CdkRowDef, useExisting: UkhoRowDef }],\n  inputs: ['columns: ukhoRowDefColumns', 'when: ukhoRowDefWhen'],\n})\nexport class UkhoRowDef<T> extends CdkRowDef<T> {}\n\n@Component({\n  moduleId: module.id,\n  selector: 'ukho-header-row, tr[ukho-header-row]',\n  template: CDK_ROW_TEMPLATE,\n  host: {\n    class: 'ukho-header-row',\n    role: 'row',\n  },\n  // See note on CdkTable for explanation on why this uses the default change detection strategy.\n  // tslint:disable-next-line:validate-decorators\n  changeDetection: ChangeDetectionStrategy.Default,\n  encapsulation: ViewEncapsulation.None,\n  exportAs: 'matHeaderRow',\n  providers: [{ provide: CdkHeaderRow, useExisting: UkhoHeaderRow }],\n})\nexport class UkhoHeaderRow extends CdkHeaderRow {}\n\n@Component({\n  moduleId: module.id,\n  selector: 'ukho-footer-row, tr[ukho-footer-row]',\n  template: CDK_ROW_TEMPLATE,\n  host: {\n    class: 'ukho-footer-row',\n    role: 'row',\n  },\n  // See note on CdkTable for explanation on why this uses the default change detection strategy.\n  // tslint:disable-next-line:validate-decorators\n  changeDetection: ChangeDetectionStrategy.Default,\n  encapsulation: ViewEncapsulation.None,\n  exportAs: 'matFooterRow',\n  providers: [{ provide: CdkFooterRow, useExisting: UkhoFooterRow }],\n})\nexport class UkhoFooterRow extends CdkFooterRow {}\n\n@Component({\n  moduleId: module.id,\n  selector: 'ukho-row, tr[ukho-row]',\n  template: CDK_ROW_TEMPLATE,\n  host: {\n    class: 'ukho-row',\n    role: 'row',\n  },\n  // See note on CdkTable for explanation on why this uses the default change detection strategy.\n  // tslint:disable-next-line:validate-decorators\n  changeDetection: ChangeDetectionStrategy.Default,\n  encapsulation: ViewEncapsulation.None,\n  exportAs: 'matRow',\n  providers: [{ provide: CdkRow, useExisting: UkhoRow }],\n})\nexport class UkhoRow extends CdkRow {}\n",
+            "selector": "[ukhoHeaderRowDef]",
+            "providers": [
+                {
+                    "name": "{ provide: CdkHeaderRowDef, useExisting: UkhoHeaderRowDef }"
+                }
+            ],
+            "inputsClass": [],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "propertiesClass": [],
+            "methodsClass": []
+        },
+        {
+            "name": "UkhoRowDef",
+            "id": "directive-UkhoRowDef-aebeb637f936d73b50126612b19ddc82",
+            "file": "src/lib/table/row.directive.ts",
+            "type": "directive",
+            "description": "",
+            "sourceCode": "import {\n  CDK_ROW_TEMPLATE,\n  CdkFooterRow,\n  CdkFooterRowDef,\n  CdkHeaderRow,\n  CdkHeaderRowDef,\n  CdkRow,\n  CdkRowDef,\n} from '@angular/cdk/table';\nimport { ChangeDetectionStrategy, Component, Directive, ViewEncapsulation } from '@angular/core';\n\n@Directive({\n  selector: '[ukhoHeaderRowDef]',\n  providers: [{ provide: CdkHeaderRowDef, useExisting: UkhoHeaderRowDef }],\n  inputs: ['columns: ukhoHeaderRowDef', 'sticky: ukhoHeaderRowDefSticky'],\n})\nexport class UkhoHeaderRowDef extends CdkHeaderRowDef {}\n\n@Directive({\n  selector: '[ukhoFooterRowDef]',\n  providers: [{ provide: CdkFooterRowDef, useExisting: UkhoFooterRowDef }],\n  inputs: ['columns: ukhoFooterRowDef', 'sticky: ukhoFooterRowDefSticky'],\n})\nexport class UkhoFooterRowDef extends CdkFooterRowDef {}\n\n@Directive({\n  selector: '[ukhoRowDef]',\n  providers: [{ provide: CdkRowDef, useExisting: UkhoRowDef }],\n  inputs: ['columns: ukhoRowDefColumns', 'when: ukhoRowDefWhen'],\n})\nexport class UkhoRowDef<T> extends CdkRowDef<T> {}\n\n@Component({\n  moduleId: module.id,\n  selector: 'ukho-header-row, tr[ukho-header-row]',\n  template: CDK_ROW_TEMPLATE,\n  host: {\n    class: 'ukho-header-row',\n    role: 'row',\n  },\n  // See note on CdkTable for explanation on why this uses the default change detection strategy.\n  // tslint:disable-next-line:validate-decorators\n  changeDetection: ChangeDetectionStrategy.Default,\n  encapsulation: ViewEncapsulation.None,\n  exportAs: 'matHeaderRow',\n  providers: [{ provide: CdkHeaderRow, useExisting: UkhoHeaderRow }],\n})\nexport class UkhoHeaderRow extends CdkHeaderRow {}\n\n@Component({\n  moduleId: module.id,\n  selector: 'ukho-footer-row, tr[ukho-footer-row]',\n  template: CDK_ROW_TEMPLATE,\n  host: {\n    class: 'ukho-footer-row',\n    role: 'row',\n  },\n  // See note on CdkTable for explanation on why this uses the default change detection strategy.\n  // tslint:disable-next-line:validate-decorators\n  changeDetection: ChangeDetectionStrategy.Default,\n  encapsulation: ViewEncapsulation.None,\n  exportAs: 'matFooterRow',\n  providers: [{ provide: CdkFooterRow, useExisting: UkhoFooterRow }],\n})\nexport class UkhoFooterRow extends CdkFooterRow {}\n\n@Component({\n  moduleId: module.id,\n  selector: 'ukho-row, tr[ukho-row]',\n  template: CDK_ROW_TEMPLATE,\n  host: {\n    class: 'ukho-row',\n    role: 'row',\n  },\n  // See note on CdkTable for explanation on why this uses the default change detection strategy.\n  // tslint:disable-next-line:validate-decorators\n  changeDetection: ChangeDetectionStrategy.Default,\n  encapsulation: ViewEncapsulation.None,\n  exportAs: 'matRow',\n  providers: [{ provide: CdkRow, useExisting: UkhoRow }],\n})\nexport class UkhoRow extends CdkRow {}\n",
+            "selector": "[ukhoRowDef]",
+            "providers": [
+                {
+                    "name": "{ provide: CdkRowDef, useExisting: UkhoRowDef }"
+                }
+            ],
+            "inputsClass": [],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "propertiesClass": [],
+            "methodsClass": []
+        },
+        {
+            "name": "UkhoSort",
+            "id": "directive-UkhoSort-8b70d445ef71e646ed66cf29dd84a06a",
+            "file": "src/lib/table/sort.directive.ts",
+            "type": "directive",
+            "description": "",
+            "sourceCode": "import { Directive, EventEmitter, Output } from '@angular/core';\nimport { UkhoSortHeader } from './sort-header.directive';\n\nexport type SortDirection = 'asc' | 'desc' | '';\n\nexport interface SortState {\n  column: string;\n  direction: SortDirection;\n}\n\n@Directive({\n  selector: '[ukho-sort]'\n})\nexport class UkhoSort {\n  @Output() readonly sortChange = new EventEmitter<SortState>();\n\n  private headers = new Map<string, UkhoSortHeader>();\n\n  public register(sortHeader: UkhoSortHeader) {\n    this.headers.set(sortHeader.columnDef.name, sortHeader);\n  }\n\n  public deregister(sortHeader: UkhoSortHeader) {\n    this.headers.delete(sortHeader.columnDef.name);\n  }\n\n  public onSort(state: { column: string; direction: 'asc' | 'desc' | '' }) {\n    this.headers.forEach(header => header.columnDef.name !== state.column ? header.reset() : '');\n    this.sortChange.emit(state);\n  }\n}\n",
+            "selector": "[ukho-sort]",
+            "providers": [],
+            "inputsClass": [],
+            "outputsClass": [
+                {
+                    "name": "sortChange",
+                    "defaultValue": "new EventEmitter<SortState>()",
+                    "line": 15,
+                    "type": "EventEmitter"
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "propertiesClass": [
+                {
+                    "name": "headers",
+                    "defaultValue": "new Map<string, UkhoSortHeader>()",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 17,
+                    "modifierKind": [
+                        112
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "deregister",
+                    "args": [
+                        {
+                            "name": "sortHeader",
+                            "type": "UkhoSortHeader"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 23,
+                    "modifierKind": [
+                        114
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "sortHeader",
+                            "type": "UkhoSortHeader",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "onSort",
+                    "args": [
+                        {
+                            "name": "state",
+                            "type": "literal type"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 27,
+                    "modifierKind": [
+                        114
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "state",
+                            "type": "literal type",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "register",
+                    "args": [
+                        {
+                            "name": "sortHeader",
+                            "type": "UkhoSortHeader"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 19,
+                    "modifierKind": [
+                        114
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "sortHeader",
+                            "type": "UkhoSortHeader",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "UkhoSortHeader",
+            "id": "directive-UkhoSortHeader-f3a3a16eb1c7e4cd664c9cdb813414f5",
+            "file": "src/lib/table/sort-header.directive.ts",
+            "type": "directive",
+            "description": "",
+            "sourceCode": "import { Directive, HostBinding, HostListener, OnDestroy, OnInit, Optional } from '@angular/core';\nimport { SortDirection, UkhoSort } from './sort.directive';\nimport { UkhoColumnDef } from './cell.directive';\n\n@Directive({\n  selector: '[ukho-sort-header]',\n})\nexport class UkhoSortHeader implements OnInit, OnDestroy {\n  constructor(@Optional() public sortDir: UkhoSort, @Optional() public columnDef: UkhoColumnDef) {}\n\n  private readonly directions: SortDirection[] = ['asc', 'desc', ''];\n  private direction: SortDirection = '';\n\n  @HostBinding('style.cursor') styleCursor = 'pointer';\n  @HostBinding('class.asc') get classAsc() { return this.direction === 'asc'; }\n  @HostBinding('class.desc') get classDesc() { return this.direction === 'desc'; }\n\n  @HostListener('click') click() {\n    const nextDirection = this.directions[this.directions.indexOf(this.direction) + 1];\n    this.direction = nextDirection || nextDirection === '' ? nextDirection : this.directions[0];\n    this.sortDir.onSort({ column: this.columnDef.name, direction: this.direction });\n  }\n\n  ngOnDestroy(): void {\n    this.sortDir.deregister(this);\n  }\n\n  ngOnInit(): void {\n    this.sortDir.register(this);\n  }\n\n  reset() {\n    this.direction = '';\n  }\n}\n",
+            "selector": "[ukho-sort-header]",
+            "providers": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "hostBindings": [
+                {
+                    "name": "class.asc",
+                    "line": 15
+                },
+                {
+                    "name": "class.desc",
+                    "line": 16
+                },
+                {
+                    "name": "style.cursor",
+                    "defaultValue": "'pointer'",
+                    "line": 14
+                }
+            ],
+            "hostListeners": [
+                {
+                    "name": "click",
+                    "args": [],
+                    "argsDecorator": [],
+                    "line": 18
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "columnDef",
+                    "type": "UkhoColumnDef",
+                    "optional": false,
+                    "description": "",
+                    "line": 9,
+                    "decorators": [
+                        {
+                            "name": "Optional",
+                            "stringifiedArguments": ""
+                        }
+                    ],
+                    "modifierKind": [
+                        114
+                    ]
+                },
+                {
+                    "name": "direction",
+                    "defaultValue": "''",
+                    "type": "SortDirection",
+                    "optional": false,
+                    "description": "",
+                    "line": 12,
+                    "modifierKind": [
+                        112
+                    ]
+                },
+                {
+                    "name": "directions",
+                    "defaultValue": "['asc', 'desc', '']",
+                    "type": "SortDirection[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 11,
+                    "modifierKind": [
+                        112,
+                        132
+                    ]
+                },
+                {
+                    "name": "sortDir",
+                    "type": "UkhoSort",
+                    "optional": false,
+                    "description": "",
+                    "line": 9,
+                    "decorators": [
+                        {
+                            "name": "Optional",
+                            "stringifiedArguments": ""
+                        }
+                    ],
+                    "modifierKind": [
+                        114
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnDestroy",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 24
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 28
+                },
+                {
+                    "name": "reset",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 32
+                }
+            ],
+            "implements": [
+                "OnInit",
+                "OnDestroy"
+            ],
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "sortDir",
+                        "type": "UkhoSort"
+                    },
+                    {
+                        "name": "columnDef",
+                        "type": "UkhoColumnDef"
+                    }
+                ],
+                "line": 8,
+                "jsdoctags": [
+                    {
+                        "name": "sortDir",
+                        "type": "UkhoSort",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "columnDef",
+                        "type": "UkhoColumnDef",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "components": [
+        {
+            "name": "BreadcrumbsComponent",
+            "id": "component-BreadcrumbsComponent-ee09c91ad5994f4332a0df1f1b7e63f9",
+            "file": "src/lib/breadcrumbs/breadcrumbs.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ukho-breadcrumbs",
+            "styleUrls": [
+                "./breadcrumbs.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./breadcrumbs.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "items",
+                    "line": 10,
+                    "type": "MenuItem[]"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { MenuItem } from '../navtypes';\n\n@Component({\n  selector: 'ukho-breadcrumbs',\n  templateUrl: './breadcrumbs.component.html',\n  styleUrls: ['./breadcrumbs.component.scss'],\n})\nexport class BreadcrumbsComponent {\n  @Input() items: MenuItem[];\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@use '~@ukho/styles/breadcrumbs';\n",
+                    "styleUrl": "./breadcrumbs.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<ul class=\"breadcrumbs\">\n  <li *ngFor=\"let item of items\">\n    <a [href]=\"item.href || '#'\">{{ item.title }}</a>\n  </li>\n</ul>\n"
+        },
+        {
+            "name": "ButtonComponent",
+            "id": "component-ButtonComponent-0acd1a3b2d0a19057b6d530b4307f98f",
+            "file": "src/lib/button/button.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [
+                "ViewEncapsulation.None"
+            ],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "button[ukho-button]",
+            "styleUrls": [
+                "./button.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./button.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "icon",
+                    "line": 12,
+                    "type": "string"
+                },
+                {
+                    "name": "secondary",
+                    "defaultValue": "false",
+                    "line": 11
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, HostBinding, Input, ViewEncapsulation } from '@angular/core';\n\n@Component({\n  selector: 'button[ukho-button]',\n  templateUrl: './button.component.html',\n  styleUrls: ['./button.component.scss'],\n  encapsulation: ViewEncapsulation.None,\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class ButtonComponent {\n  @HostBinding('class.secondary') @Input() secondary = false;\n  @HostBinding('class.icon') @Input() icon: string;\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@use '~@ukho/styles/buttons';\n",
+                    "styleUrl": "./button.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<ng-content></ng-content>\n<i *ngIf=\"icon\" class=\"fa {{ icon }}\"></i>\n"
+        },
+        {
+            "name": "CardComponent",
+            "id": "component-CardComponent-f382dbf9c5b9147d66c67f7446b11ffd",
+            "file": "src/lib/card/card.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ukho-card",
+            "styleUrls": [
+                "./card.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./card.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "title",
+                    "defaultValue": "''",
+                    "line": 9
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'ukho-card',\n  templateUrl: './card.component.html',\n  styleUrls: ['./card.component.scss'],\n})\nexport class CardComponent {\n  @Input() public title = '';\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@use '~@ukho/styles/cards';\n",
+                    "styleUrl": "./card.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<section class=\"card\">\n  <h6 *ngIf=\"title\">{{ title }}</h6>\n  <div>\n    <ng-content></ng-content>\n  </div>\n</section>\n"
+        },
+        {
+            "name": "CheckboxComponent",
+            "id": "component-CheckboxComponent-8864e73a7156416a8ad7baa15a393446",
+            "file": "src/lib/checkbox/checkbox.component.ts",
+            "encapsulation": [
+                "ViewEncapsulation.None"
+            ],
+            "entryComponents": [],
+            "host": {},
+            "inputs": [],
+            "outputs": [],
+            "providers": [
+                {
+                    "name": "{\n    provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() => CheckboxComponent), multi: true,\n}",
+                    "type": "component"
+                }
+            ],
+            "selector": "ukho-checkbox",
+            "styleUrls": [
+                "./checkbox.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./checkbox.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "checked",
+                    "defaultValue": "false",
+                    "line": 25
+                },
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "line": 26
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "id",
+                    "defaultValue": "`ukho-checkbox-${++nextId}`",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 23
+                },
+                {
+                    "name": "onChange",
+                    "defaultValue": "() => {...}",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 28
+                },
+                {
+                    "name": "onTouch",
+                    "defaultValue": "() => {...}",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 29
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "registerOnChange",
+                    "args": [
+                        {
+                            "name": "fn",
+                            "type": "function",
+                            "function": [
+                                {
+                                    "name": "checked",
+                                    "type": "boolean"
+                                }
+                            ]
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 31,
+                    "jsdoctags": [
+                        {
+                            "name": "fn",
+                            "type": "function",
+                            "function": [
+                                {
+                                    "name": "checked",
+                                    "type": "boolean"
+                                }
+                            ],
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "registerOnTouched",
+                    "args": [
+                        {
+                            "name": "fn",
+                            "type": "function",
+                            "function": []
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 35,
+                    "jsdoctags": [
+                        {
+                            "name": "fn",
+                            "type": "function",
+                            "function": [],
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "setDisabledState",
+                    "args": [
+                        {
+                            "name": "isDisabled",
+                            "type": "boolean"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 39,
+                    "jsdoctags": [
+                        {
+                            "name": "isDisabled",
+                            "type": "boolean",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "writeValue",
+                    "args": [
+                        {
+                            "name": "value",
+                            "type": "any"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 43,
+                    "jsdoctags": [
+                        {
+                            "name": "value",
+                            "type": "any",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, forwardRef, Input, ViewEncapsulation } from '@angular/core';\nimport { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';\n\nlet nextId = 0;\n\n@Component({\n  selector: 'ukho-checkbox',\n  templateUrl: './checkbox.component.html',\n  styleUrls: ['./checkbox.component.scss'],\n  host: {\n    class: 'checkbox-wrapper',\n  },\n  encapsulation: ViewEncapsulation.None,\n  providers: [\n    {\n      provide: NG_VALUE_ACCESSOR,\n      useExisting: forwardRef(() => CheckboxComponent),\n      multi: true,\n    },\n  ],\n})\nexport class CheckboxComponent implements ControlValueAccessor {\n  id = `ukho-checkbox-${++nextId}`;\n\n  @Input() checked = false;\n  @Input() disabled = false;\n\n  onChange = (checked: boolean) => {};\n  onTouch = () => {};\n\n  registerOnChange(fn: (checked: boolean) => void): void {\n    this.onChange = fn;\n  }\n\n  registerOnTouched(fn: () => void): void {\n    this.onTouch = fn;\n  }\n\n  setDisabledState(isDisabled: boolean): void {\n    this.disabled = isDisabled;\n  }\n\n  writeValue(value: any): void {\n    this.checked = !!value;\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@use '~@ukho/styles/checkbox';\n",
+                    "styleUrl": "./checkbox.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "implements": [
+                "ControlValueAccessor"
+            ],
+            "templateData": "<input type=\"checkbox\" [id]=\"id\" [checked]=\"checked\" (change)=\"onChange($event.target.checked)\" (blur)=\"onTouch()\" />\n<label [for]=\"id\">\n  <ng-content></ng-content>\n</label>\n"
+        },
+        {
+            "name": "DialogueComponent",
+            "id": "component-DialogueComponent-0b54f9d5fdba92d5b8e9153e3fc59b0e",
+            "file": "src/lib/dialogue/dialogue.component.ts",
+            "encapsulation": [
+                "ViewEncapsulation.None"
+            ],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ukho-dialogue",
+            "styleUrls": [
+                "./dialogue.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./dialogue.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "type",
+                    "defaultValue": "'info'",
+                    "line": 10,
+                    "type": "\"info\" | \"warning\" | \"success\" | \"error\""
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, Input, ViewEncapsulation } from '@angular/core';\n\n@Component({\n  selector: 'ukho-dialogue',\n  templateUrl: './dialogue.component.html',\n  styleUrls: ['./dialogue.component.scss'],\n  encapsulation: ViewEncapsulation.None,\n})\nexport class DialogueComponent {\n  @Input() type: 'info' | 'warning' | 'success' | 'error' = 'info';\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@use '~@ukho/styles/dialogue';\n",
+                    "styleUrl": "./dialogue.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<section class=\"dialog {{ type }}\">\n  <ng-content select=\"h3\"></ng-content>\n  <ng-content select=\"div\"></ng-content>\n</section>\n"
+        },
+        {
+            "name": "ExpansionComponent",
+            "id": "component-ExpansionComponent-a3e545e84da0a870252dc8361005389a",
+            "file": "src/lib/expansion/expansion.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ukho-expansion",
+            "styleUrls": [
+                "./expansion.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./expansion.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "heading",
+                    "line": 12,
+                    "type": "string"
+                },
+                {
+                    "name": "initialExpanded",
+                    "defaultValue": "false",
+                    "line": 11
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "id",
+                    "defaultValue": "`ukho-expansion-${++nextId}`",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 14
+                }
+            ],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\nlet nextId = 0;\n\n@Component({\n  selector: 'ukho-expansion',\n  templateUrl: './expansion.component.html',\n  styleUrls: ['./expansion.component.scss'],\n})\nexport class ExpansionComponent {\n  @Input() initialExpanded = false;\n  @Input() heading: string;\n\n  id = `ukho-expansion-${++nextId}`;\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@use '~@ukho/styles/expansion';\n",
+                    "styleUrl": "./expansion.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<section class=\"expansion\">\n  <input id=\"{{ id }}\" type=\"checkbox\" [attr.checked]=\"initialExpanded\" />\n  <label for=\"{{ id }}\">{{ heading }}</label>\n  <div>\n    <ng-content></ng-content>\n  </div>\n</section>\n"
+        },
+        {
+            "name": "FileInputComponent",
+            "id": "component-FileInputComponent-74011bb76cda23b865c2f168182265d7",
+            "file": "src/lib/file-input/file-input.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ukho-file-input",
+            "styleUrls": [
+                "./file-input.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./file-input.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "label",
+                    "defaultValue": "'Click to choose a file or drag it here'",
+                    "line": 17
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "files",
+                    "type": "FileList",
+                    "optional": false,
+                    "description": "",
+                    "line": 18
+                },
+                {
+                    "name": "id",
+                    "defaultValue": "`ukho-file-input-${++nextId}`",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15
+                },
+                {
+                    "name": "onChange",
+                    "type": "function",
+                    "optional": false,
+                    "description": "",
+                    "line": 22,
+                    "modifierKind": [
+                        112
+                    ]
+                },
+                {
+                    "name": "onTouch",
+                    "type": "function",
+                    "optional": false,
+                    "description": "",
+                    "line": 23,
+                    "modifierKind": [
+                        112
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "fileInputChange",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "Event"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 79,
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "registerOnChange",
+                    "args": [
+                        {
+                            "name": "fn",
+                            "type": "any"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 86,
+                    "jsdoctags": [
+                        {
+                            "name": "fn",
+                            "type": "any",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "registerOnTouched",
+                    "args": [
+                        {
+                            "name": "fn",
+                            "type": "any"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 90,
+                    "jsdoctags": [
+                        {
+                            "name": "fn",
+                            "type": "any",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "writeValue",
+                    "args": [
+                        {
+                            "name": "obj",
+                            "type": "any"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 94,
+                    "jsdoctags": [
+                        {
+                            "name": "obj",
+                            "type": "any",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "hostBindings": [
+                {
+                    "name": "class.invalid",
+                    "line": 45
+                },
+                {
+                    "name": "class.is-dragover",
+                    "defaultValue": "false",
+                    "line": 20
+                },
+                {
+                    "name": "class.validated",
+                    "line": 40
+                }
+            ],
+            "hostListeners": [
+                {
+                    "name": "dragend",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "DragEvent"
+                        }
+                    ],
+                    "argsDecorator": [
+                        "$event"
+                    ],
+                    "line": 61
+                },
+                {
+                    "name": "dragstart",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "DragEvent"
+                        }
+                    ],
+                    "argsDecorator": [
+                        "$event"
+                    ],
+                    "line": 52
+                },
+                {
+                    "name": "drop",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "DragEvent"
+                        }
+                    ],
+                    "argsDecorator": [
+                        "$event"
+                    ],
+                    "line": 69
+                }
+            ],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, HostBinding, HostListener, Input, Optional, Self } from '@angular/core';\nimport { ControlValueAccessor, NgControl } from '@angular/forms';\nimport * as fileSizeNs from 'filesize';\n\nconst fileSize = fileSizeNs;\n\nlet nextId = 0;\n\n@Component({\n  selector: 'ukho-file-input',\n  templateUrl: './file-input.component.html',\n  styleUrls: ['./file-input.component.scss'],\n})\nexport class FileInputComponent implements ControlValueAccessor {\n  id = `ukho-file-input-${++nextId}`;\n\n  @Input() label = 'Click to choose a file or drag it here';\n  files: FileList;\n\n  @HostBinding('class.is-dragover') isDragover = false;\n\n  private onChange: (files: FileList) => void;\n  private onTouch: () => void;\n\n  get fileName() {\n    return this.files.item(0).name;\n  }\n\n  get fileSize() {\n    return fileSize(this.files.item(0).size);\n  }\n\n  constructor(@Optional() @Self() private readonly controlDirective: NgControl) {\n    if (controlDirective) {\n      controlDirective.valueAccessor = this;\n    }\n  }\n\n  @HostBinding('class.validated')\n  get valid() {\n    return this.controlDirective && this.controlDirective.control.valid && this.controlDirective.control.touched;\n  }\n\n  @HostBinding('class.invalid')\n  get invalid() {\n    return this.controlDirective && !this.controlDirective.control.valid && this.controlDirective.control.touched;\n  }\n\n  @HostListener('dragstart', ['$event'])\n  @HostListener('dragover', ['$event'])\n  @HostListener('dragenter', ['$event'])\n  start(event: DragEvent) {\n    this.isDragover = true;\n    event.preventDefault();\n    event.stopPropagation();\n    this.onTouch();\n  }\n\n  @HostListener('dragend', ['$event'])\n  @HostListener('dragleave', ['$event'])\n  end(event: DragEvent) {\n    this.isDragover = false;\n    event.preventDefault();\n    event.stopPropagation();\n    this.onTouch();\n  }\n\n  @HostListener('drop', ['$event'])\n  drop(event: DragEvent) {\n    this.isDragover = false;\n    event.preventDefault();\n    event.stopPropagation();\n    const files = event.dataTransfer.files;\n    this.files = files;\n    this.onTouch();\n    this.onChange(files);\n  }\n\n  fileInputChange(event: Event) {\n    const files = (event.target as HTMLInputElement).files;\n    this.files = files;\n    this.onTouch();\n    this.onChange(files);\n  }\n\n  registerOnChange(fn: any): void {\n    this.onChange = fn;\n  }\n\n  registerOnTouched(fn: any): void {\n    this.onTouch = fn;\n  }\n\n  writeValue(obj: any): void {\n    this.files = obj;\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@use '~@ukho/styles/typography';\n@use '~@ukho/styles/colours';\n\n@use '~@fortawesome/fontawesome-free/scss/fontawesome';\n@use '~@fortawesome/fontawesome-free/scss/solid';\n\n:host {\n  display: flex;\n  border: 2px dashed colours.$colour-admiralty-blue;\n  min-height: 120px;\n  align-content: stretch;\n  justify-content: stretch;\n  background: colours.$colour-bg-grey;\n\n  &.is-dragover {\n    background: colours.$colour-white;\n  }\n\n  &.validated {\n    border-color: colours.$colour-utility-success;\n    background: colours.$colour-white;\n  }\n\n  &.invalid {\n    border-color: colours.$colour-utility-error;\n    background: colours.$colour-white;\n  }\n\n  margin-bottom: 36px;\n}\n\nlabel {\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n  cursor: pointer;\n  align-content: center;\n  justify-content: center;\n  span,\n  i {\n    color: colours.$colour-admiralty-blue;\n    margin: 0.4rem 0;\n    text-align: center;\n    flex: 0 1;\n    font-size: 18px;\n  }\n  i {\n    font-size: 24px;\n    &::before {\n      @extend .fa;\n      @extend .fa-upload, :before;\n    }\n  }\n  .instructions {\n    font-weight: 400;\n  }\n}\n\ninput {\n  width: 0;\n  height: 0;\n  opacity: 0;\n  overflow: hidden;\n  position: absolute;\n  z-index: -1;\n}\n\n.error-text {\n  font-size: 12px;\n  color: colours.$colour-utility-error;\n  margin-left: 18px;\n  margin-bottom: 0;\n}\n",
+                    "styleUrl": "./file-input.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "controlDirective",
+                        "type": "NgControl"
+                    }
+                ],
+                "line": 31,
+                "jsdoctags": [
+                    {
+                        "name": "controlDirective",
+                        "type": "NgControl",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "ControlValueAccessor"
+            ],
+            "accessors": {
+                "fileName": {
+                    "name": "fileName",
+                    "getSignature": {
+                        "name": "fileName",
+                        "type": "",
+                        "returnType": "",
+                        "line": 25
+                    }
+                },
+                "fileSize": {
+                    "name": "fileSize",
+                    "getSignature": {
+                        "name": "fileSize",
+                        "type": "",
+                        "returnType": "",
+                        "line": 29
+                    }
+                }
+            },
+            "templateData": "<label [for]=\"id\">\n  <i class=\"fa fa-upload\"></i>\n  <span class=\"instructions\" *ngIf=\"!files\">{{ label }}</span>\n  <span *ngIf=\"files\">{{ fileName }} ({{ fileSize }})</span>\n</label>\n<input [id]=\"id\" (change)=\"fileInputChange($event)\" type=\"file\" />\n"
+        },
+        {
+            "name": "HeaderComponent",
+            "id": "component-HeaderComponent-90a4a487e88cc13b9df52d00db50c2ae",
+            "file": "src/lib/header/header.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ukho-header",
+            "styleUrls": [
+                "./header.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./header.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "alt",
+                    "defaultValue": "'Admiralty Marine Data Solutions | UK Hydrographic Office'",
+                    "line": 11
+                },
+                {
+                    "name": "navigation",
+                    "line": 13,
+                    "type": "MenuItem[]"
+                },
+                {
+                    "name": "src",
+                    "defaultValue": "'/assets/svg/AdmiraltyUKHO linear logo.svg'",
+                    "line": 10
+                },
+                {
+                    "name": "text",
+                    "line": 12,
+                    "type": "string"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { MenuItem } from '../navtypes';\n\n@Component({\n  selector: 'ukho-header',\n  templateUrl: './header.component.html',\n  styleUrls: ['./header.component.scss'],\n})\nexport class HeaderComponent {\n  @Input() src = '/assets/svg/AdmiraltyUKHO linear logo.svg';\n  @Input() alt = 'Admiralty Marine Data Solutions | UK Hydrographic Office';\n  @Input() text?: string;\n  @Input() navigation?: MenuItem[];\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./header.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<header>\n  <nav id=\"top-menu\">\n    <span>\n      {{ text }}\n      <img *ngIf=\"!text\" src=\"{{ src }}\" alt=\"{{ alt }}\" />\n    </span>\n    <div *ngIf=\"navigation\" class=\"header-links-wrap\">\n      <a *ngFor=\"let item of navigation\" href=\"{{ item.href }}\">{{ item.title }}</a>\n    </div>\n  </nav>\n</header>\n"
+        },
+        {
+            "name": "NavigationComponent",
+            "id": "component-NavigationComponent-1db95215f887a4fda9c3dc89e9d348e6",
+            "file": "src/lib/navigation/navigation.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ukho-navigation",
+            "styleUrls": [
+                "./navigation.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./navigation.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "navigation",
+                    "line": 11,
+                    "type": "Navigation"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngAfterViewInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 13
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { AfterViewInit, Component, Input } from '@angular/core';\nimport { Navigation } from '../navtypes';\nimport { enhanceMainMenu } from '../nav-enhance';\n\n@Component({\n  selector: 'ukho-navigation',\n  templateUrl: './navigation.component.html',\n  styleUrls: ['./navigation.component.scss'],\n})\nexport class NavigationComponent implements AfterViewInit {\n  @Input() navigation: Navigation;\n\n  ngAfterViewInit() {\n    enhanceMainMenu();\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./navigation.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "implements": [
+                "AfterViewInit"
+            ],
+            "templateData": "<header>\n  <h1>\n    <a href=\"/\" title=\"Home\">{{ navigation.heading }}</a>\n  </h1>\n\n  <nav *ngIf=\"navigation\" id=\"main-menu\">\n    <div>\n      <a href=\"#main-menu-toggle\" id=\"main-menu-close\" class=\"menu-close\" aria-label=\"Close main menu\">\n        <span class=\"sr-only\">Close main menu</span>\n        <span class=\"fa fa-times\"></span>\n      </a>\n    </div>\n\n    <ul>\n      <li *ngFor=\"let section of navigation.sections\" tabindex=\"0\" class=\"section{{ section.active ? ' active' : '' }}\">\n        <a tabindex=\"-1\" href=\"{{ section.href || '#' }}\">{{ section.title }}</a>\n        <section>\n          <section *ngFor=\"let subSection of section.subSections\" class=\"sub-section\">\n            <h2>\n              <a href=\"{{ subSection.href || '#' }}\">{{ subSection.title }}</a>\n            </h2>\n            <ul>\n              <li *ngFor=\"let item of subSection.items\">\n                <a href=\"{{ item.href || '#' }}\">{{ item.title }}</a>\n              </li>\n            </ul>\n          </section>\n        </section>\n      </li>\n    </ul>\n  </nav>\n\n  <a id=\"backdrop\" href=\"#main-menu-toggle\" class=\"backdrop\" tabindex=\"-1\" aria-hidden=\"true\" hidden></a>\n\n  <div *ngIf=\"navigation\" class=\"menu-toggle-wrapper\">\n    <a href=\"#main-menu\" id=\"main-menu-toggle\" class=\"menu-toggle\">\n      <span class=\"sr-only\">Open main menu</span>\n      <span class=\"fa fa-bars\" aria-hidden=\"true\"></span>\n    </a>\n  </div>\n</header>\n"
+        },
+        {
+            "name": "ProgressBarComponent",
+            "id": "component-ProgressBarComponent-8fc452898afca318ffc6ae468766f604",
+            "file": "src/lib/progress-bar/progress-bar.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ukho-progress-bar",
+            "styleUrls": [
+                "./progress-bar.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./progress-bar.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "value",
+                    "defaultValue": "0",
+                    "line": 9
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'ukho-progress-bar',\n  templateUrl: './progress-bar.component.html',\n  styleUrls: ['./progress-bar.component.scss'],\n})\nexport class ProgressBarComponent {\n  @Input() value = 0;\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@use '~@ukho/styles/colours';\n\n:host {\n  display: flex;\n}\n\nprogress {\n  appearance: none;\n  border: none;\n  color: colours.$colour-admiralty-blue;\n  flex: 1;\n  background: colours.$colour-bg-grey;\n}\n",
+                    "styleUrl": "./progress-bar.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<progress [value]=\"value\" max=\"100\"></progress>\n"
+        },
+        {
+            "name": "RadioComponent",
+            "id": "component-RadioComponent-4303ebc6d860ffba99a46a08ab59e24f",
+            "file": "src/lib/radio/radio.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ukho-radio",
+            "styleUrls": [
+                "./radio.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./radio.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "isColumn",
+                    "line": 10,
+                    "type": "boolean"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "handleChange",
+                    "args": [
+                        {
+                            "name": "$event",
+                            "type": "MatRadioChange"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12,
+                    "jsdoctags": [
+                        {
+                            "name": "$event",
+                            "type": "MatRadioChange",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { MatRadioChange } from '@angular/material/radio';\n\n@Component({\n  selector: 'ukho-radio',\n  templateUrl: './radio.component.html',\n  styleUrls: ['./radio.component.scss'],\n})\nexport class RadioComponent {\n  @Input() isColumn: boolean;\n\n  handleChange($event: MatRadioChange) {\n    console.log($event);\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./radio.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<div class=\"radio-wrap\">\n  <mat-radio-group [class.is-column]=\"isColumn\" (change)=\"handleChange($event)\">\n    <mat-radio-button value=\"1\">Option 1</mat-radio-button>\n    <mat-radio-button value=\"2\">Option 2</mat-radio-button>\n  </mat-radio-group>\n</div>\n"
+        },
+        {
+            "name": "ReadMoreComponent",
+            "id": "component-ReadMoreComponent-9330e33c2bcfed02aa0e542e1a2491f5",
+            "file": "src/lib/readmore/readmore.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ukho-readmore",
+            "styleUrls": [
+                "./readmore.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./readmore.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "heading",
+                    "line": 12,
+                    "type": "string"
+                },
+                {
+                    "name": "initialExpanded",
+                    "defaultValue": "false",
+                    "line": 11
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "id",
+                    "defaultValue": "`ukho-readmore-${++nextId}`",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 14
+                }
+            ],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\nlet nextId = 0;\n\n@Component({\n  selector: 'ukho-readmore',\n  templateUrl: './readmore.component.html',\n  styleUrls: ['./readmore.component.scss'],\n})\nexport class ReadMoreComponent {\n  @Input() initialExpanded = false;\n  @Input() heading: string;\n\n  id = `ukho-readmore-${++nextId}`;\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./readmore.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<section class=\"readmore\">\n  <h3>{{ heading }}</h3>\n  <input id=\"{{ id }}\" type=\"checkbox\" [attr.checked]=\"initialExpanded\" />\n  <ng-content select=\".readmore-intro\"></ng-content>\n  <ng-content></ng-content>\n  <label for=\"{{ id }}\"></label>\n</section>\n"
+        },
+        {
+            "name": "SearchComponent",
+            "id": "component-SearchComponent-5adf21293e0babf527bc4eb8f99aae8d",
+            "file": "src/lib/search/search.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ukho-search",
+            "styleUrls": [
+                "./search.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./search.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "handleSearch",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 9
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'ukho-search',\n  templateUrl: './search.component.html',\n  styleUrls: ['./search.component.scss'],\n})\nexport class SearchComponent {\n  handleSearch() {\n    console.log('search button has been clicked');\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./search.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<form>\n  <div class=\"mat-search-wrapper\">\n    <mat-form-field class=\"material-text-input\" appearance=\"outline\">\n      <input matInput placeholder=\"Search\" />\n    </mat-form-field>\n    <button ukho-button (click)=\"handleSearch()\">\n      Search\n    </button>\n  </div>\n</form>\n"
+        },
+        {
+            "name": "SelectComponent",
+            "id": "component-SelectComponent-e0da7876f2d12b83cee909d9944d4bde",
+            "file": "src/lib/select/select.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ukho-select",
+            "styleUrls": [
+                "./select.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./select.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "options",
+                    "line": 10,
+                    "type": "OptionValue[]"
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "changed",
+                    "defaultValue": "new EventEmitter()",
+                    "line": 11,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "handleChange",
+                    "args": [
+                        {
+                            "name": "$event",
+                            "type": "MatSelectChange"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 13,
+                    "jsdoctags": [
+                        {
+                            "name": "$event",
+                            "type": "MatSelectChange",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\nimport { MatSelectChange } from '@angular/material/select';\n\n@Component({\n  selector: 'ukho-select',\n  templateUrl: './select.component.html',\n  styleUrls: ['./select.component.scss'],\n})\nexport class SelectComponent {\n  @Input() options: OptionValue[];\n  @Output() changed = new EventEmitter();\n\n  handleChange($event: MatSelectChange) {\n    this.changed.emit($event);\n  }\n}\n\nexport interface OptionValue {\n  value: string;\n  viewValue: string;\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./select.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<div class=\"select-wrap\">\n  <mat-form-field appearance=\"outline\">\n    <mat-select #selectComponent panelClass=\"material-select-panel\" (selectionChange)=\"handleChange($event)\">\n      <mat-option *ngFor=\"let option of options\" [value]=\"option.value\">\n        {{ option.viewValue }}\n      </mat-option>\n    </mat-select>\n    <span\n      class=\"fa\"\n      [class.fa-chevron-down]=\"!selectComponent.panelOpen\"\n      [class.fa-chevron-up]=\"selectComponent.panelOpen\"\n    ></span>\n  </mat-form-field>\n</div>\n"
+        },
+        {
+            "name": "SidenavComponent",
+            "id": "component-SidenavComponent-9c28dd12051d3d45dfd1563ba144d59c",
+            "file": "src/lib/sidenav/sidenav.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ukho-sidenav",
+            "styleUrls": [
+                "./sidenav.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./sidenav.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "navigation",
+                    "line": 11,
+                    "type": "SubSection[]"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngAfterViewInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 13
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { AfterViewInit, Component, Input } from '@angular/core';\nimport { SubSection } from '../navtypes';\nimport { enhanceMainMenu } from '../nav-enhance';\n\n@Component({\n  selector: 'ukho-sidenav',\n  templateUrl: './sidenav.component.html',\n  styleUrls: ['./sidenav.component.scss'],\n})\nexport class SidenavComponent implements AfterViewInit {\n  @Input() navigation: SubSection[];\n\n  ngAfterViewInit() {\n    enhanceMainMenu();\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./sidenav.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "implements": [
+                "AfterViewInit"
+            ],
+            "templateData": "<nav *ngIf=\"navigation\" id=\"side-menu\" aria-label=\"Side menu\">\n  <section *ngFor=\"let subSection of navigation\" class=\"{{ subSection.active ? ' active' : '' }}\">\n    <h2>\n      <a href=\"{{ subSection.href }}\">{{ subSection.title }}</a>\n    </h2>\n    <ul>\n      <li *ngFor=\"let item of subSection.items\">\n        <a href=\"{{ item.href || '#' }}\">{{ item.title }}</a>\n      </li>\n    </ul>\n  </section>\n</nav>\n"
+        },
+        {
+            "name": "TextareaComponent",
+            "id": "component-TextareaComponent-05058cc14d9e181799fac38597e78438",
+            "file": "src/lib/textarea/textarea.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ukho-textarea",
+            "styleUrls": [
+                "./textarea.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./textarea.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "textareaText",
+                    "line": 9,
+                    "type": "literal type"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'ukho-textarea',\n  templateUrl: './textarea.component.html',\n  styleUrls: ['./textarea.component.scss'],\n})\nexport class TextareaComponent {\n  @Input() textareaText: { value: string };\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./textarea.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<div class=\"mat-textarea-wrapper\">\n  <mat-form-field appearance=\"outline\">\n    <textarea matInput placeholder=\"Textarea\" [(ngModel)]=\"textareaText.value\"></textarea>\n    <span class=\"resizer-arrow-wrap\">\n      <span class=\"resizer-arrow\"></span>\n    </span>\n  </mat-form-field>\n</div>\n"
+        },
+        {
+            "name": "TextinputComponent",
+            "id": "component-TextinputComponent-b40d3174968f0486851427dfa8472bd1",
+            "file": "src/lib/textinput/textinput.component.ts",
+            "encapsulation": [
+                "ViewEncapsulation.None"
+            ],
+            "entryComponents": [],
+            "host": {},
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ukho-textinput",
+            "styleUrls": [
+                "./textinput.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./textinput.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "line": 25
+                },
+                {
+                    "name": "label",
+                    "line": 24,
+                    "type": "string"
+                },
+                {
+                    "name": "type",
+                    "defaultValue": "'text'",
+                    "line": 23
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "id",
+                    "defaultValue": "`ukho-textinput-${++nextId}`",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 19
+                },
+                {
+                    "name": "input",
+                    "type": "ElementRef",
+                    "optional": false,
+                    "description": "",
+                    "line": 21,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "'input', {static: true}"
+                        }
+                    ]
+                },
+                {
+                    "name": "onChange",
+                    "defaultValue": "() => {...}",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 45
+                },
+                {
+                    "name": "onTouch",
+                    "defaultValue": "() => {...}",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 46
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "registerOnChange",
+                    "args": [
+                        {
+                            "name": "fn",
+                            "type": "function",
+                            "function": [
+                                {
+                                    "name": "value",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 48,
+                    "jsdoctags": [
+                        {
+                            "name": "fn",
+                            "type": "function",
+                            "function": [
+                                {
+                                    "name": "value",
+                                    "type": "string"
+                                }
+                            ],
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "registerOnTouched",
+                    "args": [
+                        {
+                            "name": "fn",
+                            "type": "function",
+                            "function": []
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 52,
+                    "jsdoctags": [
+                        {
+                            "name": "fn",
+                            "type": "function",
+                            "function": [],
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "setDisabledState",
+                    "args": [
+                        {
+                            "name": "isDisabled",
+                            "type": "boolean"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 56,
+                    "jsdoctags": [
+                        {
+                            "name": "isDisabled",
+                            "type": "boolean",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "writeValue",
+                    "args": [
+                        {
+                            "name": "value",
+                            "type": "any"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 60,
+                    "jsdoctags": [
+                        {
+                            "name": "value",
+                            "type": "any",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, ElementRef, Input, Optional, Self, ViewChild, ViewEncapsulation } from '@angular/core';\nimport { ControlValueAccessor, NgControl } from '@angular/forms';\n\nlet nextId = 0;\n\n@Component({\n  selector: 'ukho-textinput',\n  templateUrl: './textinput.component.html',\n  styleUrls: ['./textinput.component.scss'],\n  host: {\n    class: 'text-input-wrap',\n    '[class.is-disabled]': 'disabled',\n    '[class.validated]': 'valid && touched',\n    '[class.invalid]': '!valid && touched',\n  },\n  encapsulation: ViewEncapsulation.None,\n})\nexport class TextinputComponent implements ControlValueAccessor {\n  id = `ukho-textinput-${++nextId}`;\n\n  @ViewChild('input', { static: true }) input: ElementRef;\n\n  @Input() type = 'text';\n  @Input() label: string;\n  @Input() disabled = false;\n\n  constructor(@Optional() @Self() private readonly controlDirective: NgControl) {\n    if (controlDirective) {\n      controlDirective.valueAccessor = this;\n    }\n  }\n\n  get valid() {\n    return this.controlDirective && this.controlDirective.control.valid;\n  }\n\n  get touched() {\n    return this.controlDirective && this.controlDirective.control.touched;\n  }\n\n  get validationMessages() {\n    return this.controlDirective && this.controlDirective.errors;\n  }\n\n  onChange = (value: string) => {};\n  onTouch = () => {};\n\n  registerOnChange(fn: (value: string) => void): void {\n    this.onChange = fn;\n  }\n\n  registerOnTouched(fn: () => void): void {\n    this.onTouch = fn;\n  }\n\n  setDisabledState(isDisabled: boolean): void {\n    this.disabled = isDisabled;\n  }\n\n  writeValue(value: any): void {\n    this.input.nativeElement.value = value;\n\n    if (this.controlDirective && this.controlDirective.control) {\n      this.controlDirective.control.updateValueAndValidity();\n    }\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@use '~@ukho/styles/textinput';\n\ninput[type='time']::-webkit-inner-spin-button,\ninput[type='date']::-webkit-inner-spin-button,\ninput[type='time']::-webkit-clear-button,\ninput[type='date']::-webkit-clear-button {\n  display: none;\n}\n",
+                    "styleUrl": "./textinput.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "controlDirective",
+                        "type": "NgControl"
+                    }
+                ],
+                "line": 25,
+                "jsdoctags": [
+                    {
+                        "name": "controlDirective",
+                        "type": "NgControl",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "ControlValueAccessor"
+            ],
+            "accessors": {
+                "valid": {
+                    "name": "valid",
+                    "getSignature": {
+                        "name": "valid",
+                        "type": "",
+                        "returnType": "",
+                        "line": 33
+                    }
+                },
+                "touched": {
+                    "name": "touched",
+                    "getSignature": {
+                        "name": "touched",
+                        "type": "",
+                        "returnType": "",
+                        "line": 37
+                    }
+                },
+                "validationMessages": {
+                    "name": "validationMessages",
+                    "getSignature": {
+                        "name": "validationMessages",
+                        "type": "",
+                        "returnType": "",
+                        "line": 41
+                    }
+                }
+            },
+            "templateData": "<input\n  #input\n  [id]=\"id\"\n  [type]=\"type\"\n  class=\"form-text-input\"\n  (input)=\"onChange(type === 'file' ? $event.target.files : $event.target.value)\"\n  (blur)=\"onTouch()\"\n  [disabled]=\"disabled\"\n/>\n<div\n  class=\"input-wrap\"\n  [ngClass]=\"{\n    'has-value': !!input.value || type === 'date' || type === 'time'\n  }\"\n>\n  <label [for]=\"id\">{{ label }}</label>\n</div>\n<span *ngIf=\"valid && touched\" class=\"icon validated-icon fa fa-check\"></span>\n<ng-container *ngIf=\"!valid && touched\">\n  <span class=\"icon invalid-icon fa fa-exclamation\"></span>\n  <p *ngIf=\"validationMessages && validationMessages.required\" class=\"error-text\">\n    This field is required\n  </p>\n</ng-container>\n"
+        },
+        {
+            "name": "UkhoFooterRow",
+            "id": "component-UkhoFooterRow-aebeb637f936d73b50126612b19ddc82",
+            "file": "src/lib/table/row.directive.ts",
+            "changeDetection": "ChangeDetectionStrategy.Default",
+            "encapsulation": [
+                "ViewEncapsulation.None"
+            ],
+            "entryComponents": [],
+            "exportAs": "matFooterRow",
+            "host": {},
+            "inputs": [],
+            "moduleId": "module.id",
+            "outputs": [],
+            "providers": [
+                {
+                    "name": "{ provide: CdkFooterRow, useExisting: UkhoFooterRow }"
+                }
+            ],
+            "selector": "ukho-footer-row, tr[ukho-footer-row]",
+            "styleUrls": [],
+            "styles": [],
+            "template": "CDK_ROW_TEMPLATE",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import {\n  CDK_ROW_TEMPLATE,\n  CdkFooterRow,\n  CdkFooterRowDef,\n  CdkHeaderRow,\n  CdkHeaderRowDef,\n  CdkRow,\n  CdkRowDef,\n} from '@angular/cdk/table';\nimport { ChangeDetectionStrategy, Component, Directive, ViewEncapsulation } from '@angular/core';\n\n@Directive({\n  selector: '[ukhoHeaderRowDef]',\n  providers: [{ provide: CdkHeaderRowDef, useExisting: UkhoHeaderRowDef }],\n  inputs: ['columns: ukhoHeaderRowDef', 'sticky: ukhoHeaderRowDefSticky'],\n})\nexport class UkhoHeaderRowDef extends CdkHeaderRowDef {}\n\n@Directive({\n  selector: '[ukhoFooterRowDef]',\n  providers: [{ provide: CdkFooterRowDef, useExisting: UkhoFooterRowDef }],\n  inputs: ['columns: ukhoFooterRowDef', 'sticky: ukhoFooterRowDefSticky'],\n})\nexport class UkhoFooterRowDef extends CdkFooterRowDef {}\n\n@Directive({\n  selector: '[ukhoRowDef]',\n  providers: [{ provide: CdkRowDef, useExisting: UkhoRowDef }],\n  inputs: ['columns: ukhoRowDefColumns', 'when: ukhoRowDefWhen'],\n})\nexport class UkhoRowDef<T> extends CdkRowDef<T> {}\n\n@Component({\n  moduleId: module.id,\n  selector: 'ukho-header-row, tr[ukho-header-row]',\n  template: CDK_ROW_TEMPLATE,\n  host: {\n    class: 'ukho-header-row',\n    role: 'row',\n  },\n  // See note on CdkTable for explanation on why this uses the default change detection strategy.\n  // tslint:disable-next-line:validate-decorators\n  changeDetection: ChangeDetectionStrategy.Default,\n  encapsulation: ViewEncapsulation.None,\n  exportAs: 'matHeaderRow',\n  providers: [{ provide: CdkHeaderRow, useExisting: UkhoHeaderRow }],\n})\nexport class UkhoHeaderRow extends CdkHeaderRow {}\n\n@Component({\n  moduleId: module.id,\n  selector: 'ukho-footer-row, tr[ukho-footer-row]',\n  template: CDK_ROW_TEMPLATE,\n  host: {\n    class: 'ukho-footer-row',\n    role: 'row',\n  },\n  // See note on CdkTable for explanation on why this uses the default change detection strategy.\n  // tslint:disable-next-line:validate-decorators\n  changeDetection: ChangeDetectionStrategy.Default,\n  encapsulation: ViewEncapsulation.None,\n  exportAs: 'matFooterRow',\n  providers: [{ provide: CdkFooterRow, useExisting: UkhoFooterRow }],\n})\nexport class UkhoFooterRow extends CdkFooterRow {}\n\n@Component({\n  moduleId: module.id,\n  selector: 'ukho-row, tr[ukho-row]',\n  template: CDK_ROW_TEMPLATE,\n  host: {\n    class: 'ukho-row',\n    role: 'row',\n  },\n  // See note on CdkTable for explanation on why this uses the default change detection strategy.\n  // tslint:disable-next-line:validate-decorators\n  changeDetection: ChangeDetectionStrategy.Default,\n  encapsulation: ViewEncapsulation.None,\n  exportAs: 'matRow',\n  providers: [{ provide: CdkRow, useExisting: UkhoRow }],\n})\nexport class UkhoRow extends CdkRow {}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": "CdkFooterRow"
+        },
+        {
+            "name": "UkhoHeaderRow",
+            "id": "component-UkhoHeaderRow-aebeb637f936d73b50126612b19ddc82",
+            "file": "src/lib/table/row.directive.ts",
+            "changeDetection": "ChangeDetectionStrategy.Default",
+            "encapsulation": [
+                "ViewEncapsulation.None"
+            ],
+            "entryComponents": [],
+            "exportAs": "matHeaderRow",
+            "host": {},
+            "inputs": [],
+            "moduleId": "module.id",
+            "outputs": [],
+            "providers": [
+                {
+                    "name": "{ provide: CdkHeaderRow, useExisting: UkhoHeaderRow }"
+                }
+            ],
+            "selector": "ukho-header-row, tr[ukho-header-row]",
+            "styleUrls": [],
+            "styles": [],
+            "template": "CDK_ROW_TEMPLATE",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import {\n  CDK_ROW_TEMPLATE,\n  CdkFooterRow,\n  CdkFooterRowDef,\n  CdkHeaderRow,\n  CdkHeaderRowDef,\n  CdkRow,\n  CdkRowDef,\n} from '@angular/cdk/table';\nimport { ChangeDetectionStrategy, Component, Directive, ViewEncapsulation } from '@angular/core';\n\n@Directive({\n  selector: '[ukhoHeaderRowDef]',\n  providers: [{ provide: CdkHeaderRowDef, useExisting: UkhoHeaderRowDef }],\n  inputs: ['columns: ukhoHeaderRowDef', 'sticky: ukhoHeaderRowDefSticky'],\n})\nexport class UkhoHeaderRowDef extends CdkHeaderRowDef {}\n\n@Directive({\n  selector: '[ukhoFooterRowDef]',\n  providers: [{ provide: CdkFooterRowDef, useExisting: UkhoFooterRowDef }],\n  inputs: ['columns: ukhoFooterRowDef', 'sticky: ukhoFooterRowDefSticky'],\n})\nexport class UkhoFooterRowDef extends CdkFooterRowDef {}\n\n@Directive({\n  selector: '[ukhoRowDef]',\n  providers: [{ provide: CdkRowDef, useExisting: UkhoRowDef }],\n  inputs: ['columns: ukhoRowDefColumns', 'when: ukhoRowDefWhen'],\n})\nexport class UkhoRowDef<T> extends CdkRowDef<T> {}\n\n@Component({\n  moduleId: module.id,\n  selector: 'ukho-header-row, tr[ukho-header-row]',\n  template: CDK_ROW_TEMPLATE,\n  host: {\n    class: 'ukho-header-row',\n    role: 'row',\n  },\n  // See note on CdkTable for explanation on why this uses the default change detection strategy.\n  // tslint:disable-next-line:validate-decorators\n  changeDetection: ChangeDetectionStrategy.Default,\n  encapsulation: ViewEncapsulation.None,\n  exportAs: 'matHeaderRow',\n  providers: [{ provide: CdkHeaderRow, useExisting: UkhoHeaderRow }],\n})\nexport class UkhoHeaderRow extends CdkHeaderRow {}\n\n@Component({\n  moduleId: module.id,\n  selector: 'ukho-footer-row, tr[ukho-footer-row]',\n  template: CDK_ROW_TEMPLATE,\n  host: {\n    class: 'ukho-footer-row',\n    role: 'row',\n  },\n  // See note on CdkTable for explanation on why this uses the default change detection strategy.\n  // tslint:disable-next-line:validate-decorators\n  changeDetection: ChangeDetectionStrategy.Default,\n  encapsulation: ViewEncapsulation.None,\n  exportAs: 'matFooterRow',\n  providers: [{ provide: CdkFooterRow, useExisting: UkhoFooterRow }],\n})\nexport class UkhoFooterRow extends CdkFooterRow {}\n\n@Component({\n  moduleId: module.id,\n  selector: 'ukho-row, tr[ukho-row]',\n  template: CDK_ROW_TEMPLATE,\n  host: {\n    class: 'ukho-row',\n    role: 'row',\n  },\n  // See note on CdkTable for explanation on why this uses the default change detection strategy.\n  // tslint:disable-next-line:validate-decorators\n  changeDetection: ChangeDetectionStrategy.Default,\n  encapsulation: ViewEncapsulation.None,\n  exportAs: 'matRow',\n  providers: [{ provide: CdkRow, useExisting: UkhoRow }],\n})\nexport class UkhoRow extends CdkRow {}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": "CdkHeaderRow"
+        },
+        {
+            "name": "UkhoRow",
+            "id": "component-UkhoRow-aebeb637f936d73b50126612b19ddc82",
+            "file": "src/lib/table/row.directive.ts",
+            "changeDetection": "ChangeDetectionStrategy.Default",
+            "encapsulation": [
+                "ViewEncapsulation.None"
+            ],
+            "entryComponents": [],
+            "exportAs": "matRow",
+            "host": {},
+            "inputs": [],
+            "moduleId": "module.id",
+            "outputs": [],
+            "providers": [
+                {
+                    "name": "{ provide: CdkRow, useExisting: UkhoRow }"
+                }
+            ],
+            "selector": "ukho-row, tr[ukho-row]",
+            "styleUrls": [],
+            "styles": [],
+            "template": "CDK_ROW_TEMPLATE",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import {\n  CDK_ROW_TEMPLATE,\n  CdkFooterRow,\n  CdkFooterRowDef,\n  CdkHeaderRow,\n  CdkHeaderRowDef,\n  CdkRow,\n  CdkRowDef,\n} from '@angular/cdk/table';\nimport { ChangeDetectionStrategy, Component, Directive, ViewEncapsulation } from '@angular/core';\n\n@Directive({\n  selector: '[ukhoHeaderRowDef]',\n  providers: [{ provide: CdkHeaderRowDef, useExisting: UkhoHeaderRowDef }],\n  inputs: ['columns: ukhoHeaderRowDef', 'sticky: ukhoHeaderRowDefSticky'],\n})\nexport class UkhoHeaderRowDef extends CdkHeaderRowDef {}\n\n@Directive({\n  selector: '[ukhoFooterRowDef]',\n  providers: [{ provide: CdkFooterRowDef, useExisting: UkhoFooterRowDef }],\n  inputs: ['columns: ukhoFooterRowDef', 'sticky: ukhoFooterRowDefSticky'],\n})\nexport class UkhoFooterRowDef extends CdkFooterRowDef {}\n\n@Directive({\n  selector: '[ukhoRowDef]',\n  providers: [{ provide: CdkRowDef, useExisting: UkhoRowDef }],\n  inputs: ['columns: ukhoRowDefColumns', 'when: ukhoRowDefWhen'],\n})\nexport class UkhoRowDef<T> extends CdkRowDef<T> {}\n\n@Component({\n  moduleId: module.id,\n  selector: 'ukho-header-row, tr[ukho-header-row]',\n  template: CDK_ROW_TEMPLATE,\n  host: {\n    class: 'ukho-header-row',\n    role: 'row',\n  },\n  // See note on CdkTable for explanation on why this uses the default change detection strategy.\n  // tslint:disable-next-line:validate-decorators\n  changeDetection: ChangeDetectionStrategy.Default,\n  encapsulation: ViewEncapsulation.None,\n  exportAs: 'matHeaderRow',\n  providers: [{ provide: CdkHeaderRow, useExisting: UkhoHeaderRow }],\n})\nexport class UkhoHeaderRow extends CdkHeaderRow {}\n\n@Component({\n  moduleId: module.id,\n  selector: 'ukho-footer-row, tr[ukho-footer-row]',\n  template: CDK_ROW_TEMPLATE,\n  host: {\n    class: 'ukho-footer-row',\n    role: 'row',\n  },\n  // See note on CdkTable for explanation on why this uses the default change detection strategy.\n  // tslint:disable-next-line:validate-decorators\n  changeDetection: ChangeDetectionStrategy.Default,\n  encapsulation: ViewEncapsulation.None,\n  exportAs: 'matFooterRow',\n  providers: [{ provide: CdkFooterRow, useExisting: UkhoFooterRow }],\n})\nexport class UkhoFooterRow extends CdkFooterRow {}\n\n@Component({\n  moduleId: module.id,\n  selector: 'ukho-row, tr[ukho-row]',\n  template: CDK_ROW_TEMPLATE,\n  host: {\n    class: 'ukho-row',\n    role: 'row',\n  },\n  // See note on CdkTable for explanation on why this uses the default change detection strategy.\n  // tslint:disable-next-line:validate-decorators\n  changeDetection: ChangeDetectionStrategy.Default,\n  encapsulation: ViewEncapsulation.None,\n  exportAs: 'matRow',\n  providers: [{ provide: CdkRow, useExisting: UkhoRow }],\n})\nexport class UkhoRow extends CdkRow {}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": "CdkRow"
+        },
+        {
+            "name": "UkhoTable",
+            "id": "component-UkhoTable-56ac8918963be6efaa2c425be7005eee",
+            "file": "src/lib/table/table.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.Default",
+            "encapsulation": [
+                "ViewEncapsulation.None"
+            ],
+            "entryComponents": [],
+            "exportAs": "ukhoTable",
+            "inputs": [],
+            "outputs": [],
+            "providers": [
+                {
+                    "name": "{ provide: CdkTable, useExisting: UkhoTable }"
+                }
+            ],
+            "selector": "ukho-table, table[ukho-table]",
+            "styleUrls": [
+                "./table.component.scss"
+            ],
+            "styles": [],
+            "template": "CDK_TABLE_TEMPLATE",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/core';\nimport { CDK_TABLE_TEMPLATE, CdkTable } from '@angular/cdk/table';\n\n@Component({\n  selector: 'ukho-table, table[ukho-table]',\n  exportAs: 'ukhoTable',\n  template: CDK_TABLE_TEMPLATE,\n  styleUrls: ['./table.component.scss'],\n  providers: [{ provide: CdkTable, useExisting: UkhoTable }],\n  changeDetection: ChangeDetectionStrategy.Default,\n  encapsulation: ViewEncapsulation.None,\n})\nexport class UkhoTable<T> extends CdkTable<T> {}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@use '~@ukho/styles/tables';\n@use '~@fortawesome/fontawesome-free/scss/fontawesome';\n@use '~@fortawesome/fontawesome-free/scss/solid';\n\nth[ukho-sort-header] {\n  white-space: nowrap;\n\n  &::after {\n    @extend .fa;\n    @extend .fa-caret-up, :before;\n    opacity: 0;\n  }\n\n  &:hover::after {\n    opacity: 0.4;\n  }\n\n  &.asc::after {\n    opacity: 1;\n  }\n\n  &.desc::after {\n    @extend .fa-caret-down, :before;\n    opacity: 1;\n  }\n}\n",
+                    "styleUrl": "./table.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": "CdkTable"
+        }
+    ],
+    "modules": [
+        {
+            "name": "BreadcrumbsModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "BreadcrumbsComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "BreadcrumbsComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "ButtonModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "ButtonComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "ButtonComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "CardModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "CardComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "CardComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "CheckboxModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "CheckboxComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "CheckboxComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "DialogueModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "DialogueComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "DialogueComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "ExpansionModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "ExpansionComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "ExpansionComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "FileInputModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "FileInputComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "FileInputComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "HeaderModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "HeaderComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "HeaderComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "NavigationModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "NavigationComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "NavigationComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "ProgressBarModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "ProgressBarComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "ProgressBarComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "RadioModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "RadioComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "RadioComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "ReadmoreModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "ReadMoreComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "ReadMoreComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "SearchModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "SearchComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "ButtonModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "SearchComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "SelectModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "SelectComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "SelectComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "SidenavModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "SidenavComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "SidenavComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "TableModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "UkhoCell"
+                        },
+                        {
+                            "name": "UkhoCellDef"
+                        },
+                        {
+                            "name": "UkhoColumnDef"
+                        },
+                        {
+                            "name": "UkhoFooterCell"
+                        },
+                        {
+                            "name": "UkhoFooterCellDef"
+                        },
+                        {
+                            "name": "UkhoFooterRow"
+                        },
+                        {
+                            "name": "UkhoFooterRowDef"
+                        },
+                        {
+                            "name": "UkhoHeaderCell"
+                        },
+                        {
+                            "name": "UkhoHeaderCellDef"
+                        },
+                        {
+                            "name": "UkhoHeaderRow"
+                        },
+                        {
+                            "name": "UkhoHeaderRowDef"
+                        },
+                        {
+                            "name": "UkhoRow"
+                        },
+                        {
+                            "name": "UkhoRowDef"
+                        },
+                        {
+                            "name": "UkhoSort"
+                        },
+                        {
+                            "name": "UkhoSortHeader"
+                        },
+                        {
+                            "name": "UkhoTable"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "UkhoCell"
+                        },
+                        {
+                            "name": "UkhoCellDef"
+                        },
+                        {
+                            "name": "UkhoColumnDef"
+                        },
+                        {
+                            "name": "UkhoFooterCell"
+                        },
+                        {
+                            "name": "UkhoFooterCellDef"
+                        },
+                        {
+                            "name": "UkhoFooterRow"
+                        },
+                        {
+                            "name": "UkhoFooterRowDef"
+                        },
+                        {
+                            "name": "UkhoHeaderCell"
+                        },
+                        {
+                            "name": "UkhoHeaderCellDef"
+                        },
+                        {
+                            "name": "UkhoHeaderRow"
+                        },
+                        {
+                            "name": "UkhoHeaderRowDef"
+                        },
+                        {
+                            "name": "UkhoRow"
+                        },
+                        {
+                            "name": "UkhoRowDef"
+                        },
+                        {
+                            "name": "UkhoSort"
+                        },
+                        {
+                            "name": "UkhoSortHeader"
+                        },
+                        {
+                            "name": "UkhoTable"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "TextareaModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "TextareaComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "TextareaComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "TextinputModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "TextinputComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "TextinputComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        }
+    ],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "basicMenu",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/lib/breadcrumbs/breadcrumbs.stories.ts",
+                "type": "MenuItem[]",
+                "defaultValue": "[\n  {\n    title: 'Test1',\n  },\n]"
+            },
+            {
+                "name": "data",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/lib/table/mock-data.ts",
+                "type": "object",
+                "defaultValue": "{\n  headings: ['folio', 'title', 'from', 'to'],\n  records: [\n    {\n      folio: '5600',\n      title: 'The Solent and Approaches',\n      from: '26/05/16',\n      to: '26/05/16',\n    },\n    {\n      folio: '5600',\n      title: 'East Devon and Dorset Coast, Exmouth to Christchurch',\n      from: '26/05/16',\n      to: '26/05/16',\n    },\n    {\n      folio: '5600',\n      title: 'The West Country, Falmouth to Teignmouth',\n      from: '26/05/16',\n      to: '26/05/16',\n    },\n    {\n      folio: '5600',\n      title: 'Falmouth to Hartland Point including the Isles of Scilly',\n      from: '26/05/16',\n      to: '26/05/16',\n    },\n    {\n      folio: '5600',\n      title: 'The Channel Islands',\n      from: '26/05/16',\n      to: '26/05/16',\n    },\n    {\n      folio: '5600',\n      title: 'Chichester to Ramsgate and Calais to Oostende',\n      from: '26/05/16',\n      to: '26/05/16',\n    },\n  ],\n}"
+            },
+            {
+                "name": "DECLARATIONS",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/lib/table/table.module.ts",
+                "type": "[]",
+                "defaultValue": "[\n  UkhoTable,\n  UkhoHeaderCellDef,\n  UkhoHeaderRowDef,\n  UkhoColumnDef,\n  UkhoCellDef,\n  UkhoRowDef,\n  UkhoFooterCellDef,\n  UkhoFooterRowDef,\n  UkhoHeaderCell,\n  UkhoCell,\n  UkhoFooterCell,\n  UkhoHeaderRow,\n  UkhoRow,\n  UkhoFooterRow,\n  UkhoSort,\n  UkhoSortHeader,\n]"
+            },
+            {
+                "name": "fileSize",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/lib/file-input/file-input.component.ts",
+                "type": "",
+                "defaultValue": "fileSizeNs"
+            },
+            {
+                "name": "mockNavigation",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/lib/navigation/mocknavigation.ts",
+                "type": "Navigation",
+                "defaultValue": "{\n  heading: 'Main heading',\n  sections: [\n    {\n      title: 'Section One',\n      href: '#section-one',\n      subSections: [\n        {\n          title: 'SubSectionOne',\n          href: '#sub-section-one',\n          items: [\n            { title: 'itemOne1a', href: '#itemOne1a' },\n            { title: 'itemOne2a', href: '#itemOne2a' },\n            { title: 'itemOne3a', href: '#itemOne3a' },\n            { title: 'itemOne4a', href: '#itemOne4a' },\n          ],\n        },\n        {\n          title: 'SubSectionTwo',\n          href: '#sub-section-two',\n          items: [\n            { title: 'itemOne1b', href: '#itemOne1b' },\n            { title: 'itemOne2b', href: '#itemOne2b' },\n            { title: 'itemOne3b', href: '#itemOne3b' },\n            { title: 'itemOne4b', href: '#itemOne4b' },\n          ],\n        },\n        {\n          title: 'SubSectionThree',\n          href: '#sub-section-three',\n          items: [\n            { title: 'itemOne1c', href: '#itemOne1c' },\n            { title: 'itemOne2c', href: '#itemOne2c' },\n            { title: 'itemOne3c', href: '#itemOne3c' },\n            { title: 'itemOne4c', href: '#itemOne4c' },\n          ],\n        },\n      ],\n    },\n    {\n      title: 'Section Two',\n      href: '#section-two',\n      subSections: [\n        {\n          title: 'SubSection2One',\n          href: '#sub-section-2one',\n          items: [\n            { title: 'itemTwo1a', href: '#itemTwo1a' },\n            { title: 'itemTwo2a', href: '#itemTwo2a' },\n            { title: 'itemTwo3a', href: '#itemTwo3a' },\n            { title: 'itemTwo4a', href: '#itemTwo4a' },\n          ],\n        },\n        {\n          title: 'SubSection2Two',\n          href: '#sub-section-2two',\n          items: [\n            { title: 'itemTwo1b', href: '#itemTwo1b' },\n            { title: 'itemTwo2b', href: '#itemTwo2b' },\n            { title: 'itemTwo3b', href: '#itemTwo3b' },\n            { title: 'itemTwo4b', href: '#itemTwo4b' },\n          ],\n        },\n        {\n          title: 'SubSection2Three',\n          href: '#sub-section-2three',\n          items: [\n            { title: 'itemTwo1c', href: '#itemTwo1c' },\n            { title: 'itemTwo2c', href: '#itemTwo2c' },\n            { title: 'itemTwo3c', href: '#itemTwo3c' },\n            { title: 'itemTwo4c', href: '#itemTwo4c' },\n          ],\n        },\n      ],\n    },\n    {\n      title: 'Section Three',\n      href: '#section-three',\n      subSections: [\n        {\n          title: 'SubSection3One',\n          href: '#sub-section-3one',\n          items: [\n            { title: 'item1aThree', href: '#item1aThree' },\n            { title: 'item2aThree', href: '#item2aThree' },\n            { title: 'item3aThree', href: '#item3aThree' },\n            { title: 'item4aThree', href: '#item4aThree' },\n          ],\n        },\n        {\n          title: 'SubSection3Two',\n          href: '#sub-section-3two',\n          items: [\n            { title: 'item1bThree', href: '#item1bThree' },\n            { title: 'item2bThree', href: '#item2bThree' },\n            { title: 'item3bThree', href: '#item3bThree' },\n            { title: 'item4bThree', href: '#item4bThree' },\n          ],\n        },\n        {\n          title: 'SubSection3Three',\n          href: '#sub-section-3three',\n          items: [\n            { title: 'item1cThree', href: '#item1cThree' },\n            { title: 'item2cThree', href: '#item2cThree' },\n            { title: 'item3cThree', href: '#item3cThree' },\n            { title: 'item4cThree', href: '#item4cThree' },\n          ],\n        },\n      ],\n    },\n  ],\n}"
+            },
+            {
+                "name": "mockSideNav",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/lib/sidenav/mocknavigation.ts",
+                "type": "SubSection[]",
+                "defaultValue": "[\n  {\n    title: 'SubSectionOne',\n    href: '#sub-section-one',\n    active: true,\n    items: [\n      { title: 'itemOne1a', href: '#itemOne1a' },\n      { title: 'itemOne2a', href: '#itemOne2a' },\n      { title: 'itemOne3a', href: '#itemOne3a' },\n      { title: 'itemOne4a', href: '#itemOne4a' },\n    ],\n  },\n  {\n    title: 'SubSectionTwo',\n    href: '#sub-section-two',\n    items: [\n      { title: 'itemOne1b', href: '#itemOne1b' },\n      { title: 'itemOne2b', href: '#itemOne2b' },\n      { title: 'itemOne3b', href: '#itemOne3b' },\n      { title: 'itemOne4b', href: '#itemOne4b' },\n    ],\n  },\n  {\n    title: 'SubSectionThree',\n    href: '#sub-section-three',\n    items: [\n      { title: 'itemOne1c', href: '#itemOne1c' },\n      { title: 'itemOne2c', href: '#itemOne2c' },\n      { title: 'itemOne3c', href: '#itemOne3c' },\n      { title: 'itemOne4c', href: '#itemOne4c' },\n    ],\n  },\n]"
+            },
+            {
+                "name": "nextId",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/lib/file-input/file-input.component.ts",
+                "type": "number",
+                "defaultValue": "0"
+            },
+            {
+                "name": "nextId",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/lib/readmore/readmore.component.ts",
+                "type": "number",
+                "defaultValue": "0"
+            },
+            {
+                "name": "nextId",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/lib/expansion/expansion.component.ts",
+                "type": "number",
+                "defaultValue": "0"
+            },
+            {
+                "name": "nextId",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/lib/checkbox/checkbox.component.ts",
+                "type": "number",
+                "defaultValue": "0"
+            },
+            {
+                "name": "nextId",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/lib/textinput/textinput.component.ts",
+                "type": "number",
+                "defaultValue": "0"
+            },
+            {
+                "name": "table",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/lib/table/table.stories.ts",
+                "type": "",
+                "defaultValue": "() => ({\n  template: `\n    <table ukho-table [dataSource]=\"dataSource\">\n      <ng-container ukhoColumnDef=\"folio\">\n        <th ukho-header-cell *ukhoHeaderCellDef> Folio </th>\n        <td ukho-cell *ukhoCellDef=\"let row\"> {{row.folio}} </td>\n      </ng-container>\n\n      <ng-container ukhoColumnDef=\"title\">\n        <th ukho-header-cell *ukhoHeaderCellDef> Title </th>\n        <td ukho-cell *ukhoCellDef=\"let row\"> {{row.title}} </td>\n      </ng-container>\n\n      <ng-container ukhoColumnDef=\"from\">\n        <th ukho-header-cell *ukhoHeaderCellDef> From </th>\n        <td ukho-cell *ukhoCellDef=\"let row\"> {{row.from}} </td>\n      </ng-container>\n\n      <ng-container ukhoColumnDef=\"to\">\n        <th ukho-header-cell *ukhoHeaderCellDef> To </th>\n        <td ukho-cell *ukhoCellDef=\"let row\"> {{row.to}} </td>\n      </ng-container>\n\n      <tr ukho-header-row *ukhoHeaderRowDef=\"headings\"></tr>\n      <tr ukho-row *ukhoRowDef=\"let row; columns: headings\"></tr>\n    </table>`,\n  props: {\n    headings: data.headings,\n    dataSource: data.records,\n  },\n})"
+            },
+            {
+                "name": "threeCrumbsMenu",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/lib/breadcrumbs/breadcrumbs.stories.ts",
+                "type": "MenuItem[]",
+                "defaultValue": "[\n  {\n    title: 'Test1',\n  },\n  {\n    title: 'Test2',\n  },\n  {\n    title: 'Test3',\n    active: true,\n  },\n]"
+            }
+        ],
+        "functions": [
+            {
+                "name": "enhanceMainMenu",
+                "file": "src/lib/nav-enhance.ts",
+                "ctype": "miscellaneous",
+                "subtype": "function",
+                "description": "",
+                "args": []
+            },
+            {
+                "name": "enhanceSideMenu",
+                "file": "src/lib/nav-enhance.ts",
+                "ctype": "miscellaneous",
+                "subtype": "function",
+                "description": "",
+                "args": []
+            },
+            {
+                "name": "setupMenu",
+                "file": "src/lib/nav-enhance.ts",
+                "ctype": "miscellaneous",
+                "subtype": "function",
+                "description": "",
+                "args": [
+                    {
+                        "name": "menuLinks",
+                        "type": ""
+                    },
+                    {
+                        "name": "parentLevels",
+                        "type": "number"
+                    }
+                ],
+                "jsdoctags": [
+                    {
+                        "name": "menuLinks",
+                        "type": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "parentLevels",
+                        "type": "number",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "toggleMenu",
+                "file": "src/lib/nav-enhance.ts",
+                "ctype": "miscellaneous",
+                "subtype": "function",
+                "description": "",
+                "args": [
+                    {
+                        "name": "evt",
+                        "type": ""
+                    }
+                ],
+                "jsdoctags": [
+                    {
+                        "name": "evt",
+                        "type": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            }
+        ],
+        "typealiases": [
+            {
+                "name": "SortDirection",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"asc\" | \"desc\" | \"\"",
+                "file": "src/lib/table/sort.directive.ts",
+                "description": "",
+                "kind": 168
+            }
+        ],
+        "enumerations": [],
+        "groupedVariables": {
+            "src/lib/breadcrumbs/breadcrumbs.stories.ts": [
+                {
+                    "name": "basicMenu",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/lib/breadcrumbs/breadcrumbs.stories.ts",
+                    "type": "MenuItem[]",
+                    "defaultValue": "[\n  {\n    title: 'Test1',\n  },\n]"
+                },
+                {
+                    "name": "threeCrumbsMenu",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/lib/breadcrumbs/breadcrumbs.stories.ts",
+                    "type": "MenuItem[]",
+                    "defaultValue": "[\n  {\n    title: 'Test1',\n  },\n  {\n    title: 'Test2',\n  },\n  {\n    title: 'Test3',\n    active: true,\n  },\n]"
+                }
+            ],
+            "src/lib/table/mock-data.ts": [
+                {
+                    "name": "data",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/lib/table/mock-data.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  headings: ['folio', 'title', 'from', 'to'],\n  records: [\n    {\n      folio: '5600',\n      title: 'The Solent and Approaches',\n      from: '26/05/16',\n      to: '26/05/16',\n    },\n    {\n      folio: '5600',\n      title: 'East Devon and Dorset Coast, Exmouth to Christchurch',\n      from: '26/05/16',\n      to: '26/05/16',\n    },\n    {\n      folio: '5600',\n      title: 'The West Country, Falmouth to Teignmouth',\n      from: '26/05/16',\n      to: '26/05/16',\n    },\n    {\n      folio: '5600',\n      title: 'Falmouth to Hartland Point including the Isles of Scilly',\n      from: '26/05/16',\n      to: '26/05/16',\n    },\n    {\n      folio: '5600',\n      title: 'The Channel Islands',\n      from: '26/05/16',\n      to: '26/05/16',\n    },\n    {\n      folio: '5600',\n      title: 'Chichester to Ramsgate and Calais to Oostende',\n      from: '26/05/16',\n      to: '26/05/16',\n    },\n  ],\n}"
+                }
+            ],
+            "src/lib/table/table.module.ts": [
+                {
+                    "name": "DECLARATIONS",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/lib/table/table.module.ts",
+                    "type": "[]",
+                    "defaultValue": "[\n  UkhoTable,\n  UkhoHeaderCellDef,\n  UkhoHeaderRowDef,\n  UkhoColumnDef,\n  UkhoCellDef,\n  UkhoRowDef,\n  UkhoFooterCellDef,\n  UkhoFooterRowDef,\n  UkhoHeaderCell,\n  UkhoCell,\n  UkhoFooterCell,\n  UkhoHeaderRow,\n  UkhoRow,\n  UkhoFooterRow,\n  UkhoSort,\n  UkhoSortHeader,\n]"
+                }
+            ],
+            "src/lib/file-input/file-input.component.ts": [
+                {
+                    "name": "fileSize",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/lib/file-input/file-input.component.ts",
+                    "type": "",
+                    "defaultValue": "fileSizeNs"
+                },
+                {
+                    "name": "nextId",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/lib/file-input/file-input.component.ts",
+                    "type": "number",
+                    "defaultValue": "0"
+                }
+            ],
+            "src/lib/navigation/mocknavigation.ts": [
+                {
+                    "name": "mockNavigation",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/lib/navigation/mocknavigation.ts",
+                    "type": "Navigation",
+                    "defaultValue": "{\n  heading: 'Main heading',\n  sections: [\n    {\n      title: 'Section One',\n      href: '#section-one',\n      subSections: [\n        {\n          title: 'SubSectionOne',\n          href: '#sub-section-one',\n          items: [\n            { title: 'itemOne1a', href: '#itemOne1a' },\n            { title: 'itemOne2a', href: '#itemOne2a' },\n            { title: 'itemOne3a', href: '#itemOne3a' },\n            { title: 'itemOne4a', href: '#itemOne4a' },\n          ],\n        },\n        {\n          title: 'SubSectionTwo',\n          href: '#sub-section-two',\n          items: [\n            { title: 'itemOne1b', href: '#itemOne1b' },\n            { title: 'itemOne2b', href: '#itemOne2b' },\n            { title: 'itemOne3b', href: '#itemOne3b' },\n            { title: 'itemOne4b', href: '#itemOne4b' },\n          ],\n        },\n        {\n          title: 'SubSectionThree',\n          href: '#sub-section-three',\n          items: [\n            { title: 'itemOne1c', href: '#itemOne1c' },\n            { title: 'itemOne2c', href: '#itemOne2c' },\n            { title: 'itemOne3c', href: '#itemOne3c' },\n            { title: 'itemOne4c', href: '#itemOne4c' },\n          ],\n        },\n      ],\n    },\n    {\n      title: 'Section Two',\n      href: '#section-two',\n      subSections: [\n        {\n          title: 'SubSection2One',\n          href: '#sub-section-2one',\n          items: [\n            { title: 'itemTwo1a', href: '#itemTwo1a' },\n            { title: 'itemTwo2a', href: '#itemTwo2a' },\n            { title: 'itemTwo3a', href: '#itemTwo3a' },\n            { title: 'itemTwo4a', href: '#itemTwo4a' },\n          ],\n        },\n        {\n          title: 'SubSection2Two',\n          href: '#sub-section-2two',\n          items: [\n            { title: 'itemTwo1b', href: '#itemTwo1b' },\n            { title: 'itemTwo2b', href: '#itemTwo2b' },\n            { title: 'itemTwo3b', href: '#itemTwo3b' },\n            { title: 'itemTwo4b', href: '#itemTwo4b' },\n          ],\n        },\n        {\n          title: 'SubSection2Three',\n          href: '#sub-section-2three',\n          items: [\n            { title: 'itemTwo1c', href: '#itemTwo1c' },\n            { title: 'itemTwo2c', href: '#itemTwo2c' },\n            { title: 'itemTwo3c', href: '#itemTwo3c' },\n            { title: 'itemTwo4c', href: '#itemTwo4c' },\n          ],\n        },\n      ],\n    },\n    {\n      title: 'Section Three',\n      href: '#section-three',\n      subSections: [\n        {\n          title: 'SubSection3One',\n          href: '#sub-section-3one',\n          items: [\n            { title: 'item1aThree', href: '#item1aThree' },\n            { title: 'item2aThree', href: '#item2aThree' },\n            { title: 'item3aThree', href: '#item3aThree' },\n            { title: 'item4aThree', href: '#item4aThree' },\n          ],\n        },\n        {\n          title: 'SubSection3Two',\n          href: '#sub-section-3two',\n          items: [\n            { title: 'item1bThree', href: '#item1bThree' },\n            { title: 'item2bThree', href: '#item2bThree' },\n            { title: 'item3bThree', href: '#item3bThree' },\n            { title: 'item4bThree', href: '#item4bThree' },\n          ],\n        },\n        {\n          title: 'SubSection3Three',\n          href: '#sub-section-3three',\n          items: [\n            { title: 'item1cThree', href: '#item1cThree' },\n            { title: 'item2cThree', href: '#item2cThree' },\n            { title: 'item3cThree', href: '#item3cThree' },\n            { title: 'item4cThree', href: '#item4cThree' },\n          ],\n        },\n      ],\n    },\n  ],\n}"
+                }
+            ],
+            "src/lib/sidenav/mocknavigation.ts": [
+                {
+                    "name": "mockSideNav",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/lib/sidenav/mocknavigation.ts",
+                    "type": "SubSection[]",
+                    "defaultValue": "[\n  {\n    title: 'SubSectionOne',\n    href: '#sub-section-one',\n    active: true,\n    items: [\n      { title: 'itemOne1a', href: '#itemOne1a' },\n      { title: 'itemOne2a', href: '#itemOne2a' },\n      { title: 'itemOne3a', href: '#itemOne3a' },\n      { title: 'itemOne4a', href: '#itemOne4a' },\n    ],\n  },\n  {\n    title: 'SubSectionTwo',\n    href: '#sub-section-two',\n    items: [\n      { title: 'itemOne1b', href: '#itemOne1b' },\n      { title: 'itemOne2b', href: '#itemOne2b' },\n      { title: 'itemOne3b', href: '#itemOne3b' },\n      { title: 'itemOne4b', href: '#itemOne4b' },\n    ],\n  },\n  {\n    title: 'SubSectionThree',\n    href: '#sub-section-three',\n    items: [\n      { title: 'itemOne1c', href: '#itemOne1c' },\n      { title: 'itemOne2c', href: '#itemOne2c' },\n      { title: 'itemOne3c', href: '#itemOne3c' },\n      { title: 'itemOne4c', href: '#itemOne4c' },\n    ],\n  },\n]"
+                }
+            ],
+            "src/lib/readmore/readmore.component.ts": [
+                {
+                    "name": "nextId",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/lib/readmore/readmore.component.ts",
+                    "type": "number",
+                    "defaultValue": "0"
+                }
+            ],
+            "src/lib/expansion/expansion.component.ts": [
+                {
+                    "name": "nextId",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/lib/expansion/expansion.component.ts",
+                    "type": "number",
+                    "defaultValue": "0"
+                }
+            ],
+            "src/lib/checkbox/checkbox.component.ts": [
+                {
+                    "name": "nextId",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/lib/checkbox/checkbox.component.ts",
+                    "type": "number",
+                    "defaultValue": "0"
+                }
+            ],
+            "src/lib/textinput/textinput.component.ts": [
+                {
+                    "name": "nextId",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/lib/textinput/textinput.component.ts",
+                    "type": "number",
+                    "defaultValue": "0"
+                }
+            ],
+            "src/lib/table/table.stories.ts": [
+                {
+                    "name": "table",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/lib/table/table.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\n  template: `\n    <table ukho-table [dataSource]=\"dataSource\">\n      <ng-container ukhoColumnDef=\"folio\">\n        <th ukho-header-cell *ukhoHeaderCellDef> Folio </th>\n        <td ukho-cell *ukhoCellDef=\"let row\"> {{row.folio}} </td>\n      </ng-container>\n\n      <ng-container ukhoColumnDef=\"title\">\n        <th ukho-header-cell *ukhoHeaderCellDef> Title </th>\n        <td ukho-cell *ukhoCellDef=\"let row\"> {{row.title}} </td>\n      </ng-container>\n\n      <ng-container ukhoColumnDef=\"from\">\n        <th ukho-header-cell *ukhoHeaderCellDef> From </th>\n        <td ukho-cell *ukhoCellDef=\"let row\"> {{row.from}} </td>\n      </ng-container>\n\n      <ng-container ukhoColumnDef=\"to\">\n        <th ukho-header-cell *ukhoHeaderCellDef> To </th>\n        <td ukho-cell *ukhoCellDef=\"let row\"> {{row.to}} </td>\n      </ng-container>\n\n      <tr ukho-header-row *ukhoHeaderRowDef=\"headings\"></tr>\n      <tr ukho-row *ukhoRowDef=\"let row; columns: headings\"></tr>\n    </table>`,\n  props: {\n    headings: data.headings,\n    dataSource: data.records,\n  },\n})"
+                }
+            ]
+        },
+        "groupedFunctions": {
+            "src/lib/nav-enhance.ts": [
+                {
+                    "name": "enhanceMainMenu",
+                    "file": "src/lib/nav-enhance.ts",
+                    "ctype": "miscellaneous",
+                    "subtype": "function",
+                    "description": "",
+                    "args": []
+                },
+                {
+                    "name": "enhanceSideMenu",
+                    "file": "src/lib/nav-enhance.ts",
+                    "ctype": "miscellaneous",
+                    "subtype": "function",
+                    "description": "",
+                    "args": []
+                },
+                {
+                    "name": "setupMenu",
+                    "file": "src/lib/nav-enhance.ts",
+                    "ctype": "miscellaneous",
+                    "subtype": "function",
+                    "description": "",
+                    "args": [
+                        {
+                            "name": "menuLinks",
+                            "type": ""
+                        },
+                        {
+                            "name": "parentLevels",
+                            "type": "number"
+                        }
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "menuLinks",
+                            "type": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "parentLevels",
+                            "type": "number",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "toggleMenu",
+                    "file": "src/lib/nav-enhance.ts",
+                    "ctype": "miscellaneous",
+                    "subtype": "function",
+                    "description": "",
+                    "args": [
+                        {
+                            "name": "evt",
+                            "type": ""
+                        }
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "evt",
+                            "type": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {
+            "src/lib/table/sort.directive.ts": [
+                {
+                    "name": "SortDirection",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"asc\" | \"desc\" | \"\"",
+                    "file": "src/lib/table/sort.directive.ts",
+                    "description": "",
+                    "kind": 168
+                }
+            ]
+        }
+    },
+    "routes": [],
+    "coverage": {
+        "count": 0,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "src/lib/breadcrumbs/breadcrumbs.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "BreadcrumbsComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/lib/breadcrumbs/breadcrumbs.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "basicMenu",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/lib/breadcrumbs/breadcrumbs.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "threeCrumbsMenu",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/lib/button/button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/lib/card/card.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CardComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/lib/checkbox/checkbox.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CheckboxComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/10",
+                "status": "low"
+            },
+            {
+                "filePath": "src/lib/checkbox/checkbox.component.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "nextId",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/lib/dialogue/dialogue.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "DialogueComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/lib/expansion/expansion.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ExpansionComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/lib/expansion/expansion.component.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "nextId",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/lib/file-input/file-input.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FileInputComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/17",
+                "status": "low"
+            },
+            {
+                "filePath": "src/lib/file-input/file-input.component.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "fileSize",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/lib/file-input/file-input.component.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "nextId",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/lib/header/header.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HeaderComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/lib/nav-enhance.ts",
+                "type": "function",
+                "linksubtype": "function",
+                "name": "enhanceMainMenu",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/lib/nav-enhance.ts",
+                "type": "function",
+                "linksubtype": "function",
+                "name": "enhanceSideMenu",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/lib/nav-enhance.ts",
+                "type": "function",
+                "linksubtype": "function",
+                "name": "setupMenu",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/lib/nav-enhance.ts",
+                "type": "function",
+                "linksubtype": "function",
+                "name": "toggleMenu",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/lib/navigation/mocknavigation.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "mockNavigation",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/lib/navigation/navigation.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "NavigationComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/lib/navtypes.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "MenuItem",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/lib/navtypes.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "Navigation",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/lib/navtypes.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "Section",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/lib/navtypes.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "SubSection",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/lib/progress-bar/progress-bar.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ProgressBarComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/lib/radio/radio.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "RadioComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/lib/readmore/readmore.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ReadMoreComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/lib/readmore/readmore.component.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "nextId",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/lib/search/search.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SearchComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/lib/select/select.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SelectComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/lib/select/select.component.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "OptionValue",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/lib/sidenav/mocknavigation.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "mockSideNav",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/lib/sidenav/sidenav.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SidenavComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/lib/table/cell.directive.ts",
+                "type": "directive",
+                "linktype": "directive",
+                "name": "UkhoCell",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/lib/table/cell.directive.ts",
+                "type": "directive",
+                "linktype": "directive",
+                "name": "UkhoCellDef",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/lib/table/cell.directive.ts",
+                "type": "directive",
+                "linktype": "directive",
+                "name": "UkhoColumnDef",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/lib/table/cell.directive.ts",
+                "type": "directive",
+                "linktype": "directive",
+                "name": "UkhoFooterCell",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/lib/table/cell.directive.ts",
+                "type": "directive",
+                "linktype": "directive",
+                "name": "UkhoFooterCellDef",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/lib/table/cell.directive.ts",
+                "type": "directive",
+                "linktype": "directive",
+                "name": "UkhoHeaderCell",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/lib/table/cell.directive.ts",
+                "type": "directive",
+                "linktype": "directive",
+                "name": "UkhoHeaderCellDef",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/lib/table/mock-data.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "data",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/lib/table/row.directive.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "UkhoFooterRow",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/lib/table/row.directive.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "UkhoHeaderRow",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/lib/table/row.directive.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "UkhoRow",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/lib/table/row.directive.ts",
+                "type": "directive",
+                "linktype": "directive",
+                "name": "UkhoFooterRowDef",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/lib/table/row.directive.ts",
+                "type": "directive",
+                "linktype": "directive",
+                "name": "UkhoHeaderRowDef",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/lib/table/row.directive.ts",
+                "type": "directive",
+                "linktype": "directive",
+                "name": "UkhoRowDef",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/lib/table/sort-header.directive.ts",
+                "type": "directive",
+                "linktype": "directive",
+                "name": "UkhoSortHeader",
+                "coveragePercent": 0,
+                "coverageCount": "0/13",
+                "status": "low"
+            },
+            {
+                "filePath": "src/lib/table/sort.directive.ts",
+                "type": "directive",
+                "linktype": "directive",
+                "name": "UkhoSort",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/lib/table/sort.directive.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "SortState",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/lib/table/table.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "UkhoTable",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/lib/table/table.module.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "DECLARATIONS",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/lib/table/table.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "table",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/lib/textarea/textarea.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TextareaComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/lib/textinput/textinput.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TextinputComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/13",
+                "status": "low"
+            },
+            {
+                "filePath": "src/lib/textinput/textinput.component.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "nextId",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            }
+        ]
+    }
+}

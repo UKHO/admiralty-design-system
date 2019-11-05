@@ -1,12 +1,19 @@
-import { storiesOf } from '@storybook/angular';
 import { ExpansionComponent } from './expansion.component';
 
-storiesOf('Expansion', module)
-  .add('basic', () => ({
-    moduleMetadata: {
-      declarations: [ExpansionComponent],
-    },
-    template: `<ukho-expansion heading="Expansion Heading">
+export default {
+  title: 'Expansion',
+  component: ExpansionComponent,
+};
+
+export const basic = () => ({
+  moduleMetadata: {
+    declarations: [ExpansionComponent],
+  },
+  template: `<ukho-expansion heading="Expansion Heading">
       Some content for the expansion
     </ukho-expansion>`,
-  }));
+});
+
+basic.story = {
+  name: 'basic',
+};

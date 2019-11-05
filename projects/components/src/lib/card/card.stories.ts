@@ -1,16 +1,28 @@
-import { storiesOf } from '@storybook/angular';
 import { CardComponent } from './card.component';
 
-storiesOf('Card', module)
-  .add('withTitle', () => ({
-    component: CardComponent,
-    props: {
-      title: 'Card Title',
-    },
-  }))
-  .add('withContent', () => ({
-    moduleMetadata: {
-      declarations: [CardComponent],
-    },
-    template: `<ukho-card title="I have content">Some content</ukho-card>`,
-  }));
+export default {
+  title: 'Card',
+  component: CardComponent,
+};
+
+export const withTitle = () => ({
+  component: CardComponent,
+  props: {
+    title: 'Card Title',
+  },
+});
+
+withTitle.story = {
+  name: 'withTitle',
+};
+
+export const withContent = () => ({
+  moduleMetadata: {
+    declarations: [CardComponent],
+  },
+  template: `<ukho-card title="I have content">Some content</ukho-card>`,
+});
+
+withContent.story = {
+  name: 'withContent',
+};

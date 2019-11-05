@@ -12,8 +12,12 @@ export class UkhoSortHeader implements OnInit, OnDestroy {
   private direction: SortDirection = '';
 
   @HostBinding('style.cursor') styleCursor = 'pointer';
-  @HostBinding('class.asc') get classAsc() { return this.direction === 'asc'; }
-  @HostBinding('class.desc') get classDesc() { return this.direction === 'desc'; }
+  @HostBinding('class.asc') get classAsc() {
+    return this.direction === 'asc';
+  }
+  @HostBinding('class.desc') get classDesc() {
+    return this.direction === 'desc';
+  }
 
   @HostListener('click') click() {
     const nextDirection = this.directions[this.directions.indexOf(this.direction) + 1];

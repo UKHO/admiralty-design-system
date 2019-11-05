@@ -9,7 +9,7 @@ export interface SortState {
 }
 
 @Directive({
-  selector: '[ukho-sort]'
+  selector: '[ukho-sort]',
 })
 export class UkhoSort {
   @Output() readonly sortChange = new EventEmitter<SortState>();
@@ -25,7 +25,7 @@ export class UkhoSort {
   }
 
   public onSort(state: { column: string; direction: 'asc' | 'desc' | '' }) {
-    this.headers.forEach(header => header.columnDef.name !== state.column ? header.reset() : '');
+    this.headers.forEach(header => (header.columnDef.name !== state.column ? header.reset() : ''));
     this.sortChange.emit(state);
   }
 }
