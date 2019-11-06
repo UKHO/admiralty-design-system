@@ -1,5 +1,5 @@
-import { Component, ElementRef, Input, ViewChild } from '@angular/core';
-import { ControlValueAccessor } from '@angular/forms';
+import { Component, ElementRef, Input, Optional, Self, ViewChild } from '@angular/core';
+import { ControlValueAccessor, NgControl } from '@angular/forms';
 
 let nextId = 0;
 
@@ -10,6 +10,12 @@ let nextId = 0;
 })
 export class SelectComponent implements ControlValueAccessor {
   id = `ukho-select-${++nextId}`;
+
+  constructor(@Optional() @Self() private readonly controlDirective: NgControl) {
+    if (controlDirective) {
+      controlDirective.valueAccessor = this;
+    }
+  }
 
   @Input() label: string;
   @Input() disabled = false;
