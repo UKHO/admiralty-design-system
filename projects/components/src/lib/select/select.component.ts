@@ -13,7 +13,7 @@ export class SelectComponent implements ControlValueAccessor {
 
   @Input() label: string;
 
-  @ViewChild('select') select: ElementRef;
+  @ViewChild('select', { static: true }) select: ElementRef;
 
   onChange = (value: any) => {};
   onTouch = () => {};
