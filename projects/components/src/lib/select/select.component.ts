@@ -12,6 +12,7 @@ export class SelectComponent implements ControlValueAccessor {
   id = `ukho-select-${++nextId}`;
 
   @Input() label: string;
+  @Input() disabled = false;
 
   @ViewChild('select', { static: true }) select: ElementRef;
 
@@ -27,7 +28,7 @@ export class SelectComponent implements ControlValueAccessor {
   }
 
   setDisabledState(isDisabled: boolean): void {
-    this.select.nativeElement.disabled = isDisabled;
+    this.disabled = isDisabled;
   }
 
   writeValue(obj: any): void {
