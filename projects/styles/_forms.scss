@@ -2,12 +2,12 @@
 @use 'responsive';
 @use 'typography';
 
-.form-label {
-    font-size: 21px;
-    color: #333333;
-    margin-bottom: 18px;
+label, .form-label {
+  font-size: 21px;
+  color: #333333;
+  margin-bottom: 18px;
 
-    @include responsive.not-desktop {
-        font-size: 18px;
-    }
+  @include responsive.not-desktop {
+    font-size: 18px;
+  }
 }

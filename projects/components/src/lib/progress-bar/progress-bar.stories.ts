@@ -11,23 +11,8 @@ export const basic = () => ({
   moduleMetadata: {
     declarations: [ProgressBarComponent],
   },
-  template: `<ukho-progress-bar value="40"></ukho-progress-bar>`,
-});
-
-basic.story = {
-  name: 'basic',
-};
-
-export const configurable = () => ({
-  moduleMetadata: {
-    declarations: [ProgressBarComponent],
-  },
   props: {
-    value: number('value', 0, { range: true, min: 0, max: 100, step: 5 }),
+    value: number('value', 40, { range: true, min: 0, max: 100, step: 5 }),
   },
   template: `<ukho-progress-bar [value]="value"></ukho-progress-bar>`,
 });
-
-configurable.story = {
-  name: 'configurable',
-};

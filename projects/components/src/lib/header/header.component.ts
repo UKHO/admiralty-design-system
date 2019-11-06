@@ -8,7 +8,7 @@ import { MenuItem } from '../navtypes';
 })
 export class HeaderComponent {
   @Input() src = '/assets/svg/AdmiraltyUKHO linear logo.svg';
-  @Input() alt = 'Admiralty Marine Data Solutions | UK Hydrographic Office';
+  @Input() alt = 'Admiralty Maritime Data Solutions | UK Hydrographic Office';
   @Input() text?: string;
   @Input() navigation?: MenuItem[];
 }

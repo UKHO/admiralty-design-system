@@ -1,21 +1,36 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { MatSelectChange } from '@angular/material/select';
+import { Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { ControlValueAccessor } from '@angular/forms';
+
+let nextId = 0;
 
 @Component({
   selector: 'ukho-select',
   templateUrl: './select.component.html',
   styleUrls: ['./select.component.scss'],
 })
-export class SelectComponent {
-  @Input() options: OptionValue[];
-  @Output() changed = new EventEmitter();
+export class SelectComponent implements ControlValueAccessor {
+  id = `ukho-select-${++nextId}`;
 
-  handleChange($event: MatSelectChange) {
-    this.changed.emit($event);
+  @Input() label: string;
+
+  @ViewChild('select') select: ElementRef;
+
+  onChange = (value: any) => {};
+  onTouch = () => {};
+
+  registerOnChange(fn: any): void {
+    this.onChange = fn;
   }
-}
 
-export interface OptionValue {
-  value: string;
-  viewValue: string;
+  registerOnTouched(fn: any): void {
+    this.onTouch = fn;
+  }
+
+  setDisabledState(isDisabled: boolean): void {
+    this.select.nativeElement.disabled = isDisabled;
+  }
+
+  writeValue(obj: any): void {
+    this.select.nativeElement.value = obj;
+  }
 }
