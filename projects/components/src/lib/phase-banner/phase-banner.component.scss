@@ -1,0 +1,20 @@
+@use '~@ukho/styles/colours';
+@use '~@ukho/styles/responsive';
+
+strong {
+  border: 2px solid;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: colours.$colour-admiralty-blue;
+  padding: 6px 8px 3px;
+  margin-right: 10px;
+}
+
+:host {
+  display: block;
+  line-height: 40px;
+  max-width: responsive.$max-content-width;
+  margin-right: auto;
+  margin-left: auto;
+}
