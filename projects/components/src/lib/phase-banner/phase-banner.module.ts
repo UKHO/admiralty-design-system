@@ -6,6 +6,7 @@ export { PhaseBannerComponent } from './phase-banner.component';
 
 @NgModule({
   declarations: [PhaseBannerComponent],
+  exports: [PhaseBannerComponent],
   imports: [CommonModule],
 })
 export class PhaseBannerModule {}
