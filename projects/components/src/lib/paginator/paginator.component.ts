@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'ukho-paginator',
@@ -7,8 +7,15 @@ import { Component, Input } from '@angular/core';
 })
 export class PaginatorComponent {
   @Input() set pages(pages: number) {
-    this.currentPage = 1;
+    this.setPage(1);
     this._pages = pages;
+  }
+
+  @Output() pageChange = new EventEmitter<number>();
+
+  public setPage(page: number) {
+    this.currentPage = page;
+    this.pageChange.emit(page);
   }
 
   _pages: number;
@@ -39,13 +46,13 @@ export class PaginatorComponent {
 
   prev() {
     if (this.currentPage > 1) {
-      this.currentPage--;
+      this.setPage(this.currentPage - 1);
     }
   }
 
   next() {
     if (this.currentPage < this._pages) {
-      this.currentPage++;
+      this.setPage(this.currentPage + 1);
     }
   }
 }

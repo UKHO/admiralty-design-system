@@ -4,7 +4,7 @@
     <li *ngFor="let page of pageArray">
       <a
         *ngIf="page !== '...'; else ellipsis"
-        (click)="currentPage = page"
+        (click)="setPage(page)"
         [ngClass]="{ current: page === currentPage }"
       >
         {{ page }}
