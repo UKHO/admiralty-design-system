@@ -14,7 +14,8 @@ export const paginator = () => ({
   },
   props: {
     pages: number('Number of pages', 10),
+    currentPage: number('Current Page', 1),
     pageChange: action('Page Change'),
   },
-  template: `<ukho-paginator [pages]="pages" (pageChange)="pageChange($event)"></ukho-paginator>`,
+  template: `<ukho-paginator [pages]="pages" [currentPage]="currentPage" (pageChange)="pageChange($event)"></ukho-paginator>`,
 });
