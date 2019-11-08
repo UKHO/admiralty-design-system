@@ -11,6 +11,7 @@ export * from './lib/expansion/expansion.module';
 export * from './lib/header/header.module';
 export * from './lib/navigation/navigation.module';
 export * from './lib/radio/radio.module';
+export * from './lib/radio-group/radio-group.module';
 export * from './lib/readmore/readmore.module';
 export * from './lib/search/search.module';
 export * from './lib/select/select.module';
