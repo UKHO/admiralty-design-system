@@ -16,6 +16,11 @@ export class CheckboxComponent extends UkhoAbstractFormField {
 
   onChange = (checked: boolean) => {};
 
+  handleChange(checked: boolean) {
+    this.checked = checked;
+    this.onChange(checked);
+  }
+
   writeValue(value: any): void {
     this.checked = !!value;
 
