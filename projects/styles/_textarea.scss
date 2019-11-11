@@ -4,84 +4,53 @@
 
 // with pull tab
 .text-area-wrap {
+  position: relative;
+  display: inline-block;
+  width: 425px;
+
+  @include responsive.not-desktop {
+    width: 100%;
+    max-width: 425px;
+  }
+
+  textarea {
     position: relative;
-    display: inline-block;
-    width: 425px;
+    z-index: 1;
+    width: 100%;
+    min-height: 170px;
+    border: 2px solid colours.$colour-textinput-border;
+    color: colours.$colour-textinput-text;
+    padding: 12px 18px;
+    outline: none;
+    background-color: colours.$colour-textinput-bg;
+    resize: vertical;
+    overflow: auto;
 
-    @include responsive.not-desktop {
-        width: 100%;
-        max-width: 425px;
+    &:focus {
+      border-color: colours.$colour-textinput-text-active;
+      background-color: unset;
     }
 
-    textarea {
-        position: relative;
-        z-index: 1;
-        width: 100%;
-        min-height: 170px;
-        border: 2px solid colours.$colour-textinput-border;
-        color: colours.$colour-textinput-text;
-        padding: 12px 18px;
-        outline: none;
-        background-color: colours.$colour-textinput-bg;
-        resize: vertical;
-        overflow: auto;
-
-        &:focus {
-            border-color: colours.$colour-textinput-text-active;
-            background-color: unset;
-        }
-
-        // placeholder text
-        ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-            color: colours.$colour-textinput-text;
-            overflow: visible;
-        }
-        ::-moz-placeholder { /* Firefox 19+ */
-            color: colours.$colour-textinput-text;
-            overflow: visible;
-        }
-        :-ms-input-placeholder { /* IE 10+ */
-            color: colours.$colour-textinput-text;
-            overflow: visible;
-        }
-        :-moz-placeholder { /* Firefox 18- */
-            color: colours.$colour-textinput-text;
-            overflow: visible;
-        }
-}
-
-    // icon
-    .resizer-arrow {
-        position: absolute;
-        bottom: 0;
-        right: -2px;
-        width: 0; 
-        height: 0; 
-        border-left: 6px solid transparent;
-        border-right: 6px solid transparent;
-        border-top: 6px solid colours.$colour-textarea-border;
-        pointer-events: none;
-        transform: rotate(-45deg);
+    // placeholder text
+    ::-webkit-input-placeholder {
+      /* Chrome/Opera/Safari */
+      color: colours.$colour-textinput-text;
+      overflow: visible;
     }
-
-    textarea:focus + .resizer-arrow-wrap .resizer-arrow {
-        border-top-color: colours.$colour-textarea-border-focused;
+    ::-moz-placeholder {
+      /* Firefox 19+ */
+      color: colours.$colour-textinput-text;
+      overflow: visible;
     }
-
-    .resizer-arrow-wrap {
-        position: absolute;
-        bottom: 7px;
-        right: 3px;
-        z-index: 2;
-        transform: translate(1px, -4px);
-        height: 15px;
-        width: 15px;
-        padding-top: 5px;
-        background-color: colours.$colour-textinput-bg;
-        pointer-events: none;
+    :-ms-input-placeholder {
+      /* IE 10+ */
+      color: colours.$colour-textinput-text;
+      overflow: visible;
     }
-    
-    textarea:focus + .resizer-arrow-wrap {
-        background-color: colours.$colour-bg;
+    :-moz-placeholder {
+      /* Firefox 18- */
+      color: colours.$colour-textinput-text;
+      overflow: visible;
     }
+  }
 }

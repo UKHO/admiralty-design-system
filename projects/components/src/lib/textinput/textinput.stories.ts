@@ -15,7 +15,7 @@ export const basic = () => ({
 });
 
 basic.story = {
-  name: 'basic',
+  name: 'Basic',
 };
 
 export const wide = () => ({
@@ -26,7 +26,7 @@ export const wide = () => ({
 });
 
 wide.story = {
-  name: 'wide',
+  name: 'Wide',
 };
 
 export const date = () => ({
@@ -37,7 +37,7 @@ export const date = () => ({
 });
 
 date.story = {
-  name: 'date',
+  name: 'Date',
 };
 
 export const time = () => ({
@@ -48,18 +48,7 @@ export const time = () => ({
 });
 
 time.story = {
-  name: 'time',
-};
-
-export const file = () => ({
-  moduleMetadata: {
-    declarations: [TextinputComponent],
-  },
-  template: `<ukho-textinput label="File" type="file"></ukho-textinput>`,
-});
-
-file.story = {
-  name: 'file',
+  name: 'Time',
 };
 
 export const disabled = () => ({
@@ -70,7 +59,7 @@ export const disabled = () => ({
 });
 
 disabled.story = {
-  name: 'disabled',
+  name: 'Disabled',
 };
 
 export const ngModel = () => ({
@@ -100,5 +89,5 @@ export const validationRequired = () => ({
 });
 
 validationRequired.story = {
-  name: 'validation-required',
+  name: 'Required Validation',
 };

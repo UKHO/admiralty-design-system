@@ -1,26 +1,21 @@
-import { Component, HostBinding, HostListener, Input, Optional, Self } from '@angular/core';
-import { ControlValueAccessor, NgControl } from '@angular/forms';
+import { Component, HostBinding, HostListener, Input } from '@angular/core';
 import * as fileSizeNs from 'filesize';
+import { UkhoAbstractFormField } from '../form-field/form-field';
 
 const fileSize = fileSizeNs;
-
-let nextId = 0;
 
 @Component({
   selector: 'ukho-file-input',
   templateUrl: './file-input.component.html',
   styleUrls: ['./file-input.component.scss'],
 })
-export class FileInputComponent implements ControlValueAccessor {
-  id = `ukho-file-input-${++nextId}`;
-
+export class FileInputComponent extends UkhoAbstractFormField {
   @Input() label = 'Click to choose a file or drag it here';
   files: FileList;
 
   @HostBinding('class.is-dragover') isDragover = false;
 
-  private onChange: (files: FileList) => void;
-  private onTouch: () => void;
+  public onChange: (files: FileList) => void;
 
   get fileName() {
     return this.files.item(0).name;
@@ -28,12 +23,6 @@ export class FileInputComponent implements ControlValueAccessor {
 
   get fileSize() {
     return fileSize(this.files.item(0).size);
-  }
-
-  constructor(@Optional() @Self() private readonly controlDirective: NgControl) {
-    if (controlDirective) {
-      controlDirective.valueAccessor = this;
-    }
   }
 
   @HostBinding('class.validated')
@@ -76,22 +65,16 @@ export class FileInputComponent implements ControlValueAccessor {
     this.onChange(files);
   }
 
-  fileInputChange(event: Event) {
+  public fileInputChange(event: Event) {
     const files = (event.target as HTMLInputElement).files;
     this.files = files;
     this.onTouch();
     this.onChange(files);
   }
 
-  registerOnChange(fn: any): void {
-    this.onChange = fn;
-  }
-
-  registerOnTouched(fn: any): void {
-    this.onTouch = fn;
-  }
-
   writeValue(obj: any): void {
     this.files = obj;
+
+    super.writeValue(obj);
   }
 }

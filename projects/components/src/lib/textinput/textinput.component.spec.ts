@@ -4,7 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { TextinputComponent } from './textinput.component';
 import { DebugElement } from '@angular/core';
-import { FormControl, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 describe('TextinputComponent', () => {
   let component: TextinputComponent;
@@ -21,8 +21,7 @@ describe('TextinputComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(TextinputComponent);
     component = fixture.componentInstance;
-    component.inputText = { value: 'test text value' };
-    component.validation = new FormControl('', [Validators.required, Validators.email]);
+    component.writeValue('test text value');
     fixture.detectChanges();
   });
 
@@ -31,7 +30,7 @@ describe('TextinputComponent', () => {
   });
 
   it('should reflect isDisable state', () => {
-    component.isDisabled = true;
+    component.setDisabledState(true);
     fixture.detectChanges();
     compiled = fixture.nativeElement;
     const input = compiled.querySelector('input');
@@ -45,7 +44,6 @@ describe('TextinputComponent', () => {
   });
 
   it('should reflect isValid', () => {
-    component.isValid = true;
     fixture.detectChanges();
     compiled = fixture.nativeElement;
     const formField = compiled.querySelector('mat-form-field');

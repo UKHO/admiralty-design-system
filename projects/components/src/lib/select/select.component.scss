@@ -27,9 +27,21 @@ select {
 
   &::after {
     @extend .fa;
-    @extend .fa-caret-down, :before;
+    @extend .fa-chevron-down, :before;
     position: absolute;
     top: 16px;
     right: 16px;
+  }
+
+  .is-disabled &::after {
+    color: colours.$colour-textinput-border-disabled;
+  }
+
+  .validated &::after {
+    color: colours.$colour-utility-success;
+  }
+
+  .invalid &::after {
+    color: colours.$colour-utility-error;
   }
 }

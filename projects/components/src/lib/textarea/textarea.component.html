@@ -1,8 +1,16 @@
-<div class="mat-textarea-wrapper">
-  <mat-form-field appearance="outline">
-    <textarea matInput placeholder="Textarea" [(ngModel)]="textareaText.value"></textarea>
-    <span class="resizer-arrow-wrap">
-      <span class="resizer-arrow"></span>
-    </span>
-  </mat-form-field>
-</div>
+<label [for]="id">{{ label }}</label>
+<textarea
+  #input
+  [id]="id"
+  (input)="onChange($event.target.value)"
+  (blur)="onTouch()"
+  [disabled]="disabled"
+></textarea>
+<span class="resizer-arrow-wrap">
+  <span class="resizer-arrow"></span>
+</span>
+<ng-container *ngIf="!valid && touched">
+  <p *ngIf="error" class="error-text">
+    {{ validationMessages[error] }}
+  </p>
+</ng-container>

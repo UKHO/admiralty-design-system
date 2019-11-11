@@ -4,3 +4,8 @@
     <ng-content></ng-content>
   </select>
 </div>
+<ng-container *ngIf="!valid && touched">
+  <p *ngIf="error" class="error-text">
+    {{ validationMessages[error] }}
+  </p>
+</ng-container>

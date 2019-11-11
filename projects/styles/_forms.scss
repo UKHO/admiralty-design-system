@@ -2,12 +2,78 @@
 @use 'responsive';
 @use 'typography';
 
-label, .form-label {
+label,
+.form-label {
   font-size: 21px;
   color: #333333;
   margin-bottom: 18px;
 
   @include responsive.not-desktop {
     font-size: 18px;
+  }
+}
+
+*,
+.text-input-wrap,
+.text-area-wrap {
+  .error-text {
+    font-size: 12px;
+    color: colours.$colour-utility-error;
+    margin-left: 18px;
+    margin-bottom: 0;
+  }
+
+  &.is-disabled {
+    input,
+    textarea,
+    select {
+      color: colours.$colour-textinput-text-disabled;
+      border-color: colours.$colour-textinput-border-disabled;
+      background: colours.$colour-white;
+    }
+
+    label {
+      color: colours.$colour-textinput-text-disabled;
+    }
+  }
+
+  &.validated {
+    input,
+    textarea,
+    select,
+    textarea:focus {
+      color: colours.$colour-utility-success;
+      border-color: colours.$colour-utility-success;
+      background-color: colours.$colour-white;
+
+      &:focus + .input-wrap label,
+      &:focus + label {
+        color: colours.$colour-utility-success;
+      }
+    }
+
+    label {
+      color: colours.$colour-utility-success;
+    }
+  }
+
+  &.invalid {
+    input,
+    textarea,
+    select,
+    textarea:focus {
+      color: colours.$colour-utility-error;
+      border-color: colours.$colour-utility-error;
+      background-color: colours.$colour-white;
+
+      &:focus + .input-wrap label,
+      &:focus + label {
+        color: colours.$colour-utility-error;
+      }
+    }
+
+    label {
+      color: colours.$colour-utility-error;
+    }
   }
 }
