@@ -12,6 +12,7 @@ import { UkhoAbstractFormField } from '../form-field/form-field';
 })
 export class CheckboxComponent extends UkhoAbstractFormField {
   @Input() checked = false;
+  @Input() value: unknown;
 
   onChange = (checked: boolean) => {};
 
