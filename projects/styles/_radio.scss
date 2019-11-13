@@ -6,7 +6,7 @@
   margin-bottom: 0.5rem;
 }
 
-input[type=radio] {
+:not(.tab-set) > input[type='radio'] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -18,26 +18,27 @@ input[type=radio] {
   align-items: center;
   justify-content: center;
   vertical-align: middle;
-}
 
-input[type=radio]:disabled {
-  border: 2px solid colours.$colour-button-secondary-deselected;
-}
+  &:disabled {
+    border: 2px solid colours.$colour-button-secondary-deselected;
+  }
 
-input[type=radio]:disabled::after, input[type=radio]:checked:disabled::after {
-  background-color: colours.$colour-button-secondary-deselected;
-}
+  &:disabled::after,
+  input[type='radio']:checked:disabled::after {
+    background-color: colours.$colour-button-secondary-deselected;
+  }
 
-input[type=radio]:checked::after {
-  border-radius: 100%;
-  background-color: colours.$colour-admiralty-blue;
-  width: 0.8rem;
-  height: 0.8rem;
-  content: " ";
-}
+  &:checked::after {
+    border-radius: 100%;
+    background-color: colours.$colour-admiralty-blue;
+    width: 0.8rem;
+    height: 0.8rem;
+    content: ' ';
+  }
 
-input[type=radio] + label {
-  position: relative;
-  top: 2px;
-  margin-left: 0.5rem;
+  & + label {
+    position: relative;
+    top: 2px;
+    margin-left: 0.5rem;
+  }
 }
