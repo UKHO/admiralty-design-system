@@ -9,6 +9,7 @@ th[ukho-sort-header] {
     @extend .fa;
     @extend .fa-caret-up, :before;
     opacity: 0;
+    margin-left: 0.4rem;
   }
 
   &:hover::after {
