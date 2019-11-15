@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { TextinputComponent } from './textinput.component';
@@ -13,7 +12,7 @@ describe('TextinputComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [MatInputModule, BrowserAnimationsModule, ReactiveFormsModule, FormsModule],
+      imports: [BrowserAnimationsModule, ReactiveFormsModule, FormsModule],
       declarations: [TextinputComponent],
     }).compileComponents();
   }));

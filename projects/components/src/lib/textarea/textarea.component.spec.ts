@@ -2,7 +2,6 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TextareaComponent } from './textarea.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DebugElement } from '@angular/core';
 
@@ -13,7 +12,7 @@ describe('TextareaComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ReactiveFormsModule, FormsModule, MatInputModule, BrowserAnimationsModule],
+      imports: [ReactiveFormsModule, FormsModule, BrowserAnimationsModule],
       declarations: [TextareaComponent],
     }).compileComponents();
   }));

@@ -6,11 +6,21 @@ This repository contains a monorepo structure with three projects: site, styles 
 
 ## @ukho/styles (styles)
 
-SCSS Stylesheet package containing all the style required for implementing the UKHO Design System.
+SCSS stylesheets package containing all the style required for implementing the UKHO Design System.
 
 ## @ukho/components (components)
 
 Angular library with custom component implementations for the UKHO Design System, using styles from @ukho/styles.
+
+### Installation
+
+To install the Design System in a web application project, ensure you are running Angular 9 or higher.
+
+Install the Design System components library and it's dependencies as follows:
+
+```shell script
+yarn install @angular/cdk @ukho/{styles,components} @fortawesome/fontawesome-free
+```
 
 ## design.ukho.dev (site)
 
