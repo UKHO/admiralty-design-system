@@ -1,5 +1,10 @@
 @use 'colours';
 
+
+.tab-set > input[type='radio'] {
+  display: none
+}
+
 .tab-set > input,
 .tab-set > section > div {
   display: none;
@@ -35,7 +40,7 @@
       margin-bottom: 0;
       padding-right: 0;
       transform: unset;
-      
+
       &:before {
         content: '';
         display: none;
