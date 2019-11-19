@@ -50,6 +50,7 @@ export class RadioGroupComponent implements ControlValueAccessor, AfterContentIn
 
   captureChildChangeEvent(radioButton: RadioComponent, selected: boolean) {
     if (selected) {
+      this.writeValue(radioButton.value);
       this.onChange(radioButton.value);
     }
   }

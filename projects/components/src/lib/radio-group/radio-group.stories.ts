@@ -2,6 +2,7 @@ import {button, text, withKnobs} from '@storybook/addon-knobs';
 import {RadioGroupComponent} from './radio-group.component';
 import {RadioComponent} from '../radio/radio.component';
 import {FormControl, ReactiveFormsModule, Validators} from '@angular/forms';
+import {action} from '@storybook/addon-actions';
 
 export default {
   title: 'Radio Button Group',
@@ -17,12 +18,15 @@ const handleSelectOpt2Bool = () => { testFormControl.setValue(false); };
 const handleEnableForm = () => { testFormControl.enable(); };
 const handleDisableForm = () => { testFormControl.disable(); };
 
-const commonProps = () => ({
-  name: text('name', 'Test'),
-  formControl: testFormControl,
-  enable: button('enable radio group', handleEnableForm),
-  disable: button('disable radio group', handleDisableForm),
-});
+const commonProps = () => {
+  return ({
+    name: text('name', 'Test'),
+    formControl: testFormControl,
+    enable: button('enable radio group', handleEnableForm),
+    disable: button('disable radio group', handleDisableForm),
+    change: action('change event'),
+  });
+};
 
 export const basic = () => ({
   moduleMetadata: {
