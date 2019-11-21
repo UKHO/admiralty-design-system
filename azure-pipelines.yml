@@ -9,9 +9,13 @@ jobs:
     steps:
       - checkout: self
         clean: true
+        displayName: Checkout source
       - script: yarn config set unsafe-perm true
+        displayName: Set Unsafe Perms for Yarn
       - script: yarn install --frozen-lockfile
+        displayName: Install using yarn with the lockfile frozen
       - script: yarn run lerna bootstrap
+        displayName: Bootstrap with lerna
   - job: publish
     dependsOn: build
     container: node
@@ -19,9 +23,13 @@ jobs:
     steps:
       - checkout: none
       - script: echo "//registry.npmjs.org/:_authToken=$(NPM_TOKEN)" > ~/.npmrc
+        displayName: Fill in auth token for NPMJS
       - script: yarn config set unsafe-perm true
+        displayName: Set Unsafe Perms for Yarn
       - script: yarn install --frozen-lockfile
+        displayName: Install using yarn with the lockfile frozen
       - script: yarn run lerna publish from-package --no-git-reset
+        displayName: Publish to NPMJS
   - job: ghpages
     dependsOn: build
     container: node
@@ -33,8 +41,11 @@ jobs:
           sshPublicKey: $(publicKey)
           sshKeySecureFile: id_github
       - script: yarn config set unsafe-perm true
+        displayName: Set Unsafe Perms for Yarn
       - script: yarn install --frozen-lockfile
+        displayName: Install using yarn with the lockfile frozen
       - script: yarn run lerna bootstrap --scope @ukho/design-system
+        displayName: Bootstrap with lerna - Scoped to @ukho/design-system
       - script: |
           cd projects/site
           touch dist/.nojekyll
