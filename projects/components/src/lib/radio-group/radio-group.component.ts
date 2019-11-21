@@ -8,6 +8,7 @@ import {RadioComponent} from '../radio/radio.component';
   styleUrls: ['./radio-group.component.scss'],
 })
 export class RadioGroupComponent implements ControlValueAccessor, AfterContentInit {
+  private currentValue: any;
   @Input()
   set name(name: string) {
     this._name = name;
@@ -39,6 +40,7 @@ export class RadioGroupComponent implements ControlValueAccessor, AfterContentIn
   ngAfterContentInit() {
     this.updateChild(this.updateName);
     this.updateChild(this.registerChangeCaptor);
+    this.writeValue(this.currentValue);
   }
 
   updateName = button => button.name = this._name;
@@ -75,6 +77,7 @@ export class RadioGroupComponent implements ControlValueAccessor, AfterContentIn
   }
 
   writeValue(obj: any): void {
+    this.currentValue = obj;
     this.updateChild((child) => child.checked = child.value === obj);
   }
 }
