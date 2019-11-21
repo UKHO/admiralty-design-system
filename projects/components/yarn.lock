@@ -1768,10 +1768,10 @@
   dependencies:
     "@types/yargs-parser" "*"
 
-"@ukho/styles@~1.3.14":
-  version "1.3.14"
-  resolved "https://registry.yarnpkg.com/@ukho/styles/-/styles-1.3.14.tgz#a909fd6dda7d9e15ffa6ce26f6386ad535a294d1"
-  integrity sha512-EGpqdMsTWtghYMqxdBmZz5rRRXuBwRacdBkEfARTgOPO2fTm1KBGaNuox0EONjwmKhKw4srzBuEvuTXlxr1Dig==
+"@ukho/styles@~1.3.16":
+  version "1.3.17"
+  resolved "https://registry.yarnpkg.com/@ukho/styles/-/styles-1.3.17.tgz#d9bde3e9bf911770ff2985308aa390f25e43dd00"
+  integrity sha512-Haq/PDUDbLJ3atojs3KWegH6EmrHX2EtODvJ/cewO2JLxOdo7/YeMVvHDzz6tLFcM1FSn2H6sla20ZFuPlvXqg==
   dependencies:
     "@fortawesome/fontawesome-free" "^5.11.2"
     "@material/layout-grid" "^3.1.0"
