@@ -1,5 +1,5 @@
 import { ProgressBarComponent } from './progress-bar.component';
-import { number, withKnobs } from '@storybook/addon-knobs';
+import {boolean, number, withKnobs} from '@storybook/addon-knobs';
 
 export default {
   title: 'Progress Bar',
@@ -13,6 +13,7 @@ export const basic = () => ({
   },
   props: {
     value: number('value', 40, { range: true, min: 0, max: 100, step: 5 }),
+    error: boolean('error', false),
   },
-  template: `<ukho-progress-bar [value]="value"></ukho-progress-bar>`,
+  template: `<ukho-progress-bar [error]="error" [value]="value"></ukho-progress-bar>`,
 });
