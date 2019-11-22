@@ -48,9 +48,9 @@ jobs:
         displayName: Bootstrap with lerna - Scoped to @ukho/design-system
       - script: |
           cd projects/site
-          touch dist/.nojekyll
-          echo "design.ukho.dev" > dist/CNAME
           yarn add -D gh-pages@2.0.1
           git config user.email "pipeline@ukho.gov.uk"
           git config user.name "Azure Pipeline"
-          $(npm bin)/gh-pages --dotfiles --message "[skip ci] gh-pages update" --dist dist -r git@github.com:UKHO/design-system.git
+          touch dist/.nojekyll
+          echo "design.ukho.dev" > dist/CNAME
+          yarn run gh-pages --dotfiles --message "[skip ci] gh-pages update" --dist dist -r git@github.com:UKHO/design-system.git
