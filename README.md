@@ -12,6 +12,20 @@ SCSS stylesheets package containing all the style required for implementing the 
 
 Angular library with custom component implementations for the UKHO Design System, using styles from @ukho/styles.
 
+### Storybook
+
+This project features a component sandbox using Storybook.
+
+To start storybook:
+
+- Go to `design-system/projects/components`
+
+- Install all dependencies using `yarn install`
+
+- Run `yarn run storybook`
+
+- Storybook will launch in your browser
+
 ### Installation
 
 To install the Design System in a web application project, ensure you are running Angular 9 or higher.
