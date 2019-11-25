@@ -1,9 +1,7 @@
 @use 'responsive';
 @use 'colours';
 @use 'typography';
-
-@use 'node_modules/@fortawesome/fontawesome-free/scss/fontawesome';
-@use 'node_modules/@fortawesome/fontawesome-free/scss/solid';
+@use 'fontawesome';
 
 ul.breadcrumbs {
   width: 100%;
@@ -37,7 +35,8 @@ ul.breadcrumbs {
       display: none;
     }
 
-    a, span {
+    a,
+    span {
       display: inline-block;
       line-height: 40px;
       font-size: 14px;
@@ -57,7 +56,5 @@ ul.breadcrumbs {
       color: colours.$colour-admiralty-blue;
       font-weight: typography.$font-weight-medium;
     }
-
   }
-
 }

@@ -1,9 +1,7 @@
 @use 'responsive';
 @use 'colours';
 @use 'typography';
-
-@use 'node_modules/@fortawesome/fontawesome-free/scss/fontawesome';
-@use 'node_modules/@fortawesome/fontawesome-free/scss/solid';
+@use 'fontawesome';
 
 nav#side-menu {
   background-color: colours.$colour-nav-bg;

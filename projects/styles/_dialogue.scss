@@ -1,8 +1,6 @@
 @use 'colours';
 @use 'responsive';
-
-@use 'node_modules/@fortawesome/fontawesome-free/scss/fontawesome';
-@use 'node_modules/@fortawesome/fontawesome-free/scss/solid';
+@use 'fontawesome';
 
 .dialog {
   box-shadow: 0 1px 3px 0 rgba(0,0,0,0.2);

@@ -11,9 +11,7 @@ $fa-font-path: '../webfonts' !default;
 @use 'fonts' with (
   $font-path: $font-path
 );
-@use 'node_modules/@fortawesome/fontawesome-free/scss/fontawesome' with (
-  $fa-font-path: $fa-font-path
-);
+@use 'node_modules/@fortawesome/fontawesome-free/scss/fontawesome';
 @use 'node_modules/@fortawesome/fontawesome-free/scss/solid' with (
   $fa-font-path: $fa-font-path
 );
