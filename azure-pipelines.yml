@@ -31,7 +31,7 @@ jobs:
       - script: yarn run lerna publish from-package --no-git-reset
         displayName: Publish to NPMJS
   - job: ghpages
-    dependsOn: build
+    dependsOn: publish
     container: node
     condition: and(succeeded(), eq(variables['build.sourceBranch'], 'refs/heads/master'))
     steps:
