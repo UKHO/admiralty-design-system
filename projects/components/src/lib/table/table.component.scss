@@ -1,6 +1,5 @@
 @use '~@ukho/styles/tables';
-@use '~@fortawesome/fontawesome-free/scss/fontawesome';
-@use '~@fortawesome/fontawesome-free/scss/solid';
+@use '~@ukho/styles/fontawesome';
 
 th[ukho-sort-header] {
   white-space: nowrap;

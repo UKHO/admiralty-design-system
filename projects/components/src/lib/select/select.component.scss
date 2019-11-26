@@ -1,7 +1,6 @@
 @use '~@ukho/styles/colours';
 @use '~@ukho/styles/forms';
-@use '~@fortawesome/fontawesome-free/scss/fontawesome';
-@use '~@fortawesome/fontawesome-free/scss/solid';
+@use '~@ukho/styles/fontawesome';
 
 select {
   appearance: none;

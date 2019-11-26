@@ -1,8 +1,6 @@
 @use '~@ukho/styles/typography';
 @use '~@ukho/styles/colours';
-
-@use '~@fortawesome/fontawesome-free/scss/fontawesome';
-@use '~@fortawesome/fontawesome-free/scss/solid';
+@use '~@ukho/styles/fontawesome';
 
 :host {
   display: flex;
