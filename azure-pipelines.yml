@@ -28,7 +28,7 @@ jobs:
         displayName: Set Unsafe Perms for Yarn
       - script: yarn install --frozen-lockfile
         displayName: Install using yarn with the lockfile frozen
-      - script: yarn run lerna publish from-package
+      - script: yarn run lerna publish from-package --no-git-reset
         displayName: Publish to NPMJS
   - job: ghpages
     dependsOn: publish
