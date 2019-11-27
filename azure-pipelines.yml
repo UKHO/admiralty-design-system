@@ -47,7 +47,10 @@ jobs:
       - script: yarn run lerna bootstrap --scope @ukho/design-system
         displayName: Bootstrap with lerna - Scoped to @ukho/design-system
       - script: |
-          cd projects/site
+          cd projects/components
+          yarn run build-storybook
+          mv .out ../../projects/site/storybook
+          cd ../../projects/site
           yarn add -D gh-pages@2.0.1
           git config user.email "pipeline@ukho.gov.uk"
           git config user.name "Azure Pipeline"
