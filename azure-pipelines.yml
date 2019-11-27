@@ -21,7 +21,9 @@ jobs:
     container: node
     condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
     steps:
-      - checkout: none
+      - checkout: self
+        clean: true
+        displayName: Checkout source
       - script: echo "//registry.npmjs.org/:_authToken=$(NPM_TOKEN)" > ~/.npmrc
         displayName: Fill in auth token for NPMJS
       - script: yarn config set unsafe-perm true
