@@ -51,11 +51,11 @@ jobs:
       - script: |
           cd projects/components
           yarn run build-storybook
-          mv .out ../../projects/site/storybook
-          cd ../../projects/site
+          cd ../site
           yarn add -D gh-pages@2.0.1
           git config user.email "pipeline@ukho.gov.uk"
           git config user.name "Azure Pipeline"
           touch dist/.nojekyll
           echo "design.ukho.dev" > dist/CNAME
+          mv ../components/.out dist/storybook
           yarn run gh-pages --dotfiles --message "[skip ci] gh-pages update" --dist dist -r git@github.com:UKHO/design-system.git
