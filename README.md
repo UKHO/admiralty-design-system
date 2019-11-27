@@ -8,6 +8,12 @@ This repository contains a monorepo structure with three projects: site, styles 
 
 SCSS stylesheets package containing all the style required for implementing the UKHO Design System.
 
+After having altered the styles project, to see changes in the Harp site, you will have to re-run the asset copy commands via Lerna:
+
+```bash
+yarn run lerna bootstrap --scope @ukho/design-system
+```
+
 ## @ukho/components (components)
 
 Angular library with custom component implementations for the UKHO Design System, using styles from @ukho/styles.
@@ -63,7 +69,9 @@ partial EJS files at build time.
 You can develop locally by running the Harp server which compiles and serves on-the-fly,
 watching for changes:
 
-`yarn run start`
+```bash
+yarn run start
+```
 
 The site will be available at: http://localhost:9000/
 
@@ -73,7 +81,9 @@ which should show more useful error messages in the terminal.
 
 Once you're done with modifications you can compile the final site to the _dist_ folder:
 
-`yarn run build`
+```bash
+yarn run build
+```
 
 As a static site the resulting _dist_ can then be uploaded to any web host
 (e.g. GithubPages or Netlify) with no requirement for server side processing.
