@@ -15,10 +15,7 @@ $font-weight-light: 300;
   }
 }
 
-//*:not(.fa, .fas, .far, .fal, .fab) {
-//  @extend .default-text
-//}
-*, body {
+body {
   @extend .default-text
 }
 
