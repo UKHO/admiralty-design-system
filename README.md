@@ -1,3 +1,5 @@
+[![Build Status](https://dev.azure.com/ukhogov/Pipelines/_apis/build/status/UKHO.design-system?branchName=master)](https://dev.azure.com/ukhogov/Pipelines/_build/latest?definitionId=48&branchName=master) ![Components Version](https://img.shields.io/npm/v/@ukho/components?label=%40ukho%2Fcomponents) ![Styles Version](https://img.shields.io/npm/v/@ukho/styles?label=%40ukho%2Fstyles)
+
 <img src="projects/site/public/images/UKHO%20stacked%20logo.svg" height=100>
 
 # UKHO Design System
