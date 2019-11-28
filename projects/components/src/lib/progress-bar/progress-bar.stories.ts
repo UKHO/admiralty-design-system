@@ -1,5 +1,5 @@
 import { ProgressBarComponent } from './progress-bar.component';
-import {boolean, number, withKnobs} from '@storybook/addon-knobs';
+import { boolean, number, withKnobs } from '@storybook/addon-knobs';
 
 export default {
   title: 'Progress Bar',

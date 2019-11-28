@@ -3,8 +3,11 @@ import { FormControl, FormsModule, ReactiveFormsModule, Validators } from '@angu
 import { action } from '@storybook/addon-actions';
 
 export default {
-  title: 'Text Input',
+  title: 'Form Elements|Text Input',
   component: TextinputComponent,
+  parameters: {
+    componentSubtitle: 'Text inputs are intended for allowing a user to enter single line text data.',
+  },
 };
 
 export const basic = () => ({

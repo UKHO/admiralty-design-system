@@ -1,8 +1,12 @@
 import { BreadcrumbsComponent } from './breadcrumbs.component';
 
 export default {
-  title: 'Breadcrumbs',
+  title: 'Navigation|Breadcrumbs',
   component: BreadcrumbsComponent,
+  parameters: {
+    componentSubtitle:
+      "Breadcrumbs are a type of secondary navigation scheme which display a user's location in the site",
+  },
 };
 
 export const basic = () => ({

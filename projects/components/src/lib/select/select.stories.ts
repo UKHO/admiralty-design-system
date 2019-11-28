@@ -5,7 +5,7 @@ import { TextareaComponent } from '../textarea/textarea.component';
 import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 
 export default {
-  title: 'Select',
+  title: 'Form Elements|Select',
   component: SelectComponent,
   decorators: [withKnobs],
 };
@@ -77,8 +77,8 @@ export const customValidation = () => ({
     formControl: new FormControl('', [Validators.required, Validators.pattern('Green')]),
     validationMessages: {
       required: 'This field is required',
-      pattern: 'This field must be green'
-    }
+      pattern: 'This field must be green',
+    },
   },
 });
 

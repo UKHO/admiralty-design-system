@@ -2,8 +2,11 @@ import { TextareaComponent } from './textarea.component';
 import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 
 export default {
-  title: 'Text Area',
+  title: 'Form Elements|Text Area',
   component: TextareaComponent,
+  parameters: {
+    componentSubtitle: 'Text area is intended for users to enter multi-line text data.',
+  },
 };
 
 export const basic = () => ({

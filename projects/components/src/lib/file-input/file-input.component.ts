@@ -10,11 +10,21 @@ const fileSize = fileSizeNs;
   styleUrls: ['./file-input.component.scss'],
 })
 export class FileInputComponent extends UkhoAbstractFormField {
+  /**
+   * The label displayed within the file input box
+   */
   @Input() label = 'Click to choose a file or drag it here';
+
+  /**
+   * INTERNAL - The list of files currently in the field
+   */
   files: FileList;
 
   @HostBinding('class.is-dragover') isDragover = false;
 
+  /**
+   * @ignore
+   */
   public onChange: (files: FileList) => void;
 
   get fileName() {
@@ -65,6 +75,9 @@ export class FileInputComponent extends UkhoAbstractFormField {
     this.onChange(files);
   }
 
+  /**
+   * Function that gets called when the file input gets changed
+   */
   public fileInputChange(event: Event) {
     const files = (event.target as HTMLInputElement).files;
     this.files = files;
@@ -72,6 +85,9 @@ export class FileInputComponent extends UkhoAbstractFormField {
     this.onChange(files);
   }
 
+  /**
+   * @ignore
+   */
   writeValue(obj: any): void {
     this.files = obj;
 

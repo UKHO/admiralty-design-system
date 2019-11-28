@@ -1,8 +1,13 @@
 import { FileInputComponent } from './file-input.component';
 
 export default {
-  title: 'File Input',
+  title: 'Form Elements|File Input',
   component: FileInputComponent,
+  parameters: {
+    componentSubtitle:
+      'File inputs are intended for allowing a user to select a single file to upload.' +
+      'Selection can be via the browser native file selection or by drag and drop.',
+  },
 };
 
 export const basic = () => ({

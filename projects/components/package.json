@@ -12,8 +12,8 @@
   },
   "scripts": {
     "prepare": "ng build --prod && cpx ./src/scss/core.scss dist/",
-    "storybook": "start-storybook -s node_modules/@ukho/styles,node_modules/@fortawesome/fontawesome-free",
-    "build-storybook": "build-storybook -c .storybook -o .out",
+    "storybook": "yarn docs:json && start-storybook -s node_modules/@ukho/styles,node_modules/@fortawesome/fontawesome-free",
+    "build-storybook": "yarn docs:json && build-storybook -c .storybook -o .out",
     "docs:json": "compodoc -p ./tsconfig.lib.json -e json -d ."
   },
   "publishConfig": {

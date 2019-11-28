@@ -14,10 +14,19 @@ import { UkhoAbstractFormField } from '../form-field/form-field';
   encapsulation: ViewEncapsulation.None,
 })
 export class TextareaComponent extends UkhoAbstractFormField {
+  /**
+   * A reference to the input element within the wrapper component
+   */
   @ViewChild('input', { static: true }) input: ElementRef;
 
+  /**
+   * The label which will be used as a placeholder in the unfilled state, and as a field label in the filled state.
+   */
   @Input() label: string;
 
+  /**
+   * @ignore
+   */
   writeValue(value: unknown): void {
     this.input.nativeElement.value = value;
 

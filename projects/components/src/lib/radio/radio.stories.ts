@@ -1,12 +1,16 @@
-import {boolean, withKnobs} from '@storybook/addon-knobs';
-import {RadioComponent} from './radio.component';
-import {action} from '@storybook/addon-actions';
-import {RadioGroupComponent} from '../radio-group/radio-group.component';
+import { boolean, withKnobs } from '@storybook/addon-knobs';
+import { RadioComponent } from './radio.component';
+import { action } from '@storybook/addon-actions';
 
 export default {
-  title: 'Radio Button',
+  title: 'Form Elements|Radio Buttons/Radio Button',
   component: RadioComponent,
   decorators: [withKnobs],
+  parameters: {
+    componentSubtitle:
+      'Radio buttons are intended for allowing users to pick a single option from a selection.' +
+      'They can be grouped using radio groups',
+  },
 };
 
 export const basic = () => ({
@@ -18,5 +22,7 @@ export const basic = () => ({
     disabled: boolean('Disabled', false),
     checked: boolean('Checked', false),
   },
-  template: `<ukho-radio name="group1" [disabled]="disabled" [checked]="checked" (change)="change($event.target.checked)">Option 1</ukho-radio>`,
+  template: `<ukho-radio name="group1" [disabled]="disabled" [checked]="checked" (change)="change($event.target.checked)">
+                Option 1
+             </ukho-radio>`,
 });

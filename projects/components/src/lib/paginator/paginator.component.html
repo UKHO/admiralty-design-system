@@ -2,11 +2,7 @@
   <ul>
     <li><a (click)="prev()">Previous</a></li>
     <li *ngFor="let page of pageArray">
-      <a
-        *ngIf="page !== '...'; else ellipsis"
-        (click)="setPage(page)"
-        [ngClass]="{ current: page === _currentPage }"
-      >
+      <a *ngIf="page !== '...'; else ellipsis" (click)="setPage(page)" [ngClass]="{ current: page === _currentPage }">
         {{ page }}
       </a>
       <ng-template #ellipsis>&hellip;</ng-template>

@@ -1,4 +1,11 @@
-<input type="checkbox" [value]="value" [id]="id" [checked]="checked" (change)="handleChange($event.target.checked)" (blur)="onTouch()" />
+<input
+  type="checkbox"
+  [value]="value"
+  [id]="id"
+  [checked]="checked"
+  (change)="handleChange($event.target.checked)"
+  (blur)="onTouch()"
+/>
 <label [for]="id">
   <ng-content></ng-content>
 </label>

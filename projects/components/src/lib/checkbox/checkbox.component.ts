@@ -11,7 +11,14 @@ import { UkhoAbstractFormField } from '../form-field/form-field';
   encapsulation: ViewEncapsulation.None,
 })
 export class CheckboxComponent extends UkhoAbstractFormField {
+  /**
+   * Whether the checkbox is checked or not by default.
+   */
   @Input() checked = false;
+
+  /**
+   * This is the value which the checkbox emits when selected..
+   */
   @Input() value: unknown;
 
   onChange = (checked: boolean) => {};

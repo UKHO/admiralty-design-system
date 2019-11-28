@@ -8,6 +8,15 @@ import { ChangeDetectionStrategy, Component, HostBinding, Input, ViewEncapsulati
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ButtonComponent {
+  /**
+   * This dictates whether the button is secondary.
+   */
   @HostBinding('class.secondary') @Input() secondary = false;
+
+  /**
+   * This is the icon to be used on the button
+   * This must be one of the font-awesome icons
+   * E.G: fa-chevron-down
+   */
   @HostBinding('class.icon') @Input() icon: string;
 }

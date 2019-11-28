@@ -2,8 +2,11 @@ import { action } from '@storybook/addon-actions';
 import { ButtonComponent } from './button.component';
 
 export default {
-  title: 'Button',
+  title: 'Form Elements|Button',
   component: ButtonComponent,
+  parameters: {
+    componentSubtitle: 'Buttons are intended for form actions.',
+  },
 };
 
 export const withText = () => ({
