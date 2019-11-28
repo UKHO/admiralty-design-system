@@ -20,9 +20,13 @@ Angular library with custom component implementations for the UKHO Design System
 
 ### Storybook
 
-This project features a component sandbox using Storybook.
+This project features a component sandbox using Storybook. This tool is aimed at developers using the Design System in products and contains information on component props. 
 
-To start storybook:
+https://design.ukho.dev/storybook/
+
+#### Local Development
+
+To start storybook locally:
 
 - Go to `design-system/projects/components`
 
