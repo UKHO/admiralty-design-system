@@ -1,0 +1,79 @@
+<h1 id="creating-a-new-project">Creating a new project</h1>
+<p>This document will explain how to create a new frontend project.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Developers should have a basic knowledge of Javascript (ideally TypeScript) and Node packaging.</p>
+<ul>
+    <li><a href="https://app.pluralsight.com/paths/skills/javascript">https://app.pluralsight.com/paths/skills/javascript</a></li>
+    <li><a href="https://app.pluralsight.com/library/courses/getting-started-typescript/table-of-contents">https://app.pluralsight.com/library/courses/getting-started-typescript/table-of-contents</a></li>
+</ul>
+<h3 id="tooling">Tooling</h3>
+<h4 id="node">Node</h4>
+<p>To execute Javascript applications locally (including the tooling used in the JS ecosystem), you will require Node.</p>
+<p>For those using the official UKHO Linux Workstation, you can install Node with the following command.</p>
+<pre><code class="lang-bash"><div class="highlight"><pre>sudo yum install nodejs
+</pre></div>
+
+</code></pre>
+<p>Users of alternative environments can install Node through the instructions on it&#39;s website.</p>
+<ul>
+    <li><a href="https://nodejs.org/en/">https://nodejs.org/en/</a></li>
+</ul>
+<h4 id="yarn">Yarn</h4>
+<p>Yarn is a package manager for the Node ecosystem similar to NPM. You can consider this tool the equivalent of Maven/Gradle in Java or NuGet in .Net.</p>
+<p>For those using the official UKHO Linux Workstation, you can install Yarn with the following command.</p>
+<pre><code class="lang-bash"><div class="highlight"><pre>sudo yum install yarn
+</pre></div>
+
+</code></pre>
+<p>Developers with other environments can download Yarn from it&#39;s website and follow the installation instructions.</p>
+<ul>
+    <li><a href="https://yarnpkg.com/en/docs/install">https://yarnpkg.com/en/docs/install</a></li>
+</ul>
+<h4 id="angular-cli">Angular CLI</h4>
+<p>Once Yarn is installed, we can use it to globally install Node binaries to our user account. To install the Angular CLI, execute the following.</p>
+<pre><code class="lang-bash"><div class="highlight"><pre>yarn global add @angular/cli
+</pre></div>
+
+</code></pre>
+<p>This will then allow the use of the <code>ng</code> command. Ensure the output of <code>yarn global bin</code> is accessible on your system path variable.</p>
+<h2 id="create-an-application">Create an application</h2>
+<p>This guide will walk through setting up a new frontend project.</p>
+<h3 id="create-a-new-project">Create a new project</h3>
+<p>Run the following Angular CLI command to create a new project directory under your current working directory, replacing <code>&lt;name&gt;</code> with the name of your project.</p>
+<pre><code class="lang-bash"><div class="highlight"><pre>ng new &lt;name&gt;
+</pre></div>
+
+</code></pre>
+<h3 id="git">Git</h3>
+<h3 id="add-codestyle-rules">Add codestyle rules</h3>
+<pre><code class="lang-bash"><div class="highlight"><pre>ng add @ukho/ts-codestyle
+</pre></div>
+
+</code></pre>
+<h3 id="add-prettier">Add Prettier</h3>
+<p>Prettier is an opinionated code formatter. It removes the need to make code style choices from the development team, reducing overhead. It provides a pre-defined set of style rules for Javascript and TypeScript similar to how languages like Go have built-in. This ensures good inter-operability in the open source space for JS/TS projects.</p>
+<pre><code class="lang-bash"><div class="highlight"><pre>yarn add -D prettier
+</pre></div>
+
+</code></pre>
+<p>Add the following block to your <code>package.json</code> file.</p>
+<pre><code class="lang-json"><div class="highlight"><pre><span class="s2">&quot;prettier&quot;</span><span class="err">:</span> <span class="p">{</span>
+  <span class="nt">&quot;trailingComma&quot;</span><span class="p">:</span> <span class="s2">&quot;all&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;singleQuote&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nt">&quot;htmlWhitespaceSensitivity&quot;</span><span class="p">:</span> <span class="s2">&quot;ignore&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;printWidth&quot;</span><span class="p">:</span> <span class="mi">120</span>
+<span class="p">}</span>
+</pre></div>
+
+</code></pre>
+<h3 id="create-dockerfile">Create Dockerfile</h3>
+<h2 id="architecture">Architecture</h2>
+<p>RxJS</p>
+<p>HTTP</p>
+<p>Router</p>
+<p>GraphQL</p>
+<h2 id="unit-tests">Unit tests</h2>
+<p>Testing library?</p>
+<h2 id="e2e-tests">E2E tests</h2>
+<p>Cucumber</p>
+<p>Chai</p>
