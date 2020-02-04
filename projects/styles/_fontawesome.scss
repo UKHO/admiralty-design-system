@@ -1,4 +1,4 @@
-@use 'node_modules/@fortawesome/fontawesome-free/scss/fontawesome';
+@forward 'node_modules/@fortawesome/fontawesome-free/scss/fontawesome';
 
 .fa {
   font-family: 'Font Awesome 5 Free';
