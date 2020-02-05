@@ -5,7 +5,7 @@ export default {
   component: DialogueComponent,
 };
 
-export const default = () => ({
+export const basic = () => ({
   moduleMetadata: {
     declarations: [DialogueComponent],
   },
