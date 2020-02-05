@@ -8,7 +8,7 @@
   "lifecycle": {
     "layout": "../../_layout_sidemenu",
     "title": "Application lifecycle principles",
-    "url": "principles/development/lifecycle"
+    "url": "principles/development/application"
   },
   "architecture": {
     "layout": "../../_layout_sidemenu",
