@@ -95,6 +95,14 @@
   }
 }
 
+.invalid > .form-text-input  {
+  padding-right: 2rem;
+}
+
+.validated > .form-text-input  {
+  padding-right: 2rem;
+}
+
 input::placeholder {
   overflow: visible;
 }
