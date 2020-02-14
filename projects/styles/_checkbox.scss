@@ -15,7 +15,7 @@
     margin-bottom: 18px;
     cursor: pointer;
     user-select: none;
-    line-height: 24px;
+    line-height: 26px;
   }
 
   label::before,
@@ -26,8 +26,8 @@
   }
 
   label::before {
-    height: 22px;
-    width: 22px;
+    height: 26px;
+    width: 26px;
 
     border: 2px solid colours.$colour-checkbox;
     left: 0;
@@ -35,14 +35,16 @@
   }
 
   label::after {
-    height: 6px;
-    width: 13px;
+    height: 8px;
+    width: 15px;
     border-left: 3px solid;
     border-bottom: 3px solid;
 
     transform: rotate(-45deg);
 
-    left: 5px;
+    color: colours.$colour-admiralty-blue;
+
+    left: 6px;
     top: 7px;
   }
 
