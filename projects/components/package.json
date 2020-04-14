@@ -1,6 +1,6 @@
 {
   "name": "@ukho/components",
-  "version": "1.3.32",
+  "version": "1.3.33",
   "description": "Angular components library for the UKHO Design System",
   "author": {
     "name": "UK Hydrographic Office",
@@ -12,7 +12,7 @@
   },
   "scripts": {
     "prepare": "ng build --prod && cpx ./src/scss/core.scss dist/",
-    "storybook": "yarn docs:json && start-storybook -s node_modules/@ukho/styles,node_modules/@fortawesome/fontawesome-free",
+    "storybook": "yarn docs:json && start-storybook -s node_modules/@ukho/styles,node_modules/@fortawesome/fontawesome-free,src/assets",
     "build-storybook": "yarn docs:json && build-storybook -c .storybook -o .out",
     "docs:json": "compodoc -p ./tsconfig.lib.json -e json -d ."
   },
