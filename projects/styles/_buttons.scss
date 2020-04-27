@@ -32,6 +32,7 @@ input[type='button'] {
   font-size: 21px;
   white-space: nowrap;
   min-width: 200px;
+  cursor: pointer;
   @include responsive.not-desktop {
     min-width: unset;
     max-width: 200px;
@@ -62,6 +63,7 @@ input[type='button'] {
   &:disabled {
     background-color: colours.$colour-button-deselected;
     border: 2px solid colours.$colour-button-deselected;
+    cursor: default;
   }
 
   &.icon {
