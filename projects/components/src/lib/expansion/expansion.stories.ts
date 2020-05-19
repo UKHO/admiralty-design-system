@@ -17,3 +17,16 @@ export const basic = () => ({
 basic.story = {
   name: 'basic',
 };
+
+export const expanded = () => ({
+  moduleMetadata: {
+    declarations: [ExpansionComponent],
+  },
+  template: `<ukho-expansion heading="Expansion Heading" [initialExpanded]="true">
+      Some content for the expansion
+    </ukho-expansion>`,
+});
+
+expanded.story = {
+  name: 'expanded',
+};

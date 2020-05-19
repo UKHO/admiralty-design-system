@@ -1677,7 +1677,7 @@
         },
         {
             "name": "HeaderComponent",
-            "id": "component-HeaderComponent-ab01c60bcfd650ea3b9d3140f187ddbe",
+            "id": "component-HeaderComponent-be0a091483256b594246bb3047697619",
             "file": "src/lib/header/header.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1706,7 +1706,7 @@
                 },
                 {
                     "name": "src",
-                    "defaultValue": "'../../assets/svg/Admiralty linear logo.svg'",
+                    "defaultValue": "'/svg/Admiralty linear logo.svg'",
                     "line": 10
                 },
                 {
@@ -1723,7 +1723,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\r\nimport { MenuItem } from '../navtypes';\r\n\r\n@Component({\r\n  selector: 'ukho-header',\r\n  templateUrl: './header.component.html',\r\n  styleUrls: ['./header.component.scss'],\r\n})\r\nexport class HeaderComponent {\r\n  @Input() src = '../../assets/svg/Admiralty linear logo.svg';\r\n  @Input() alt = 'Admiralty Maritime Data Solutions | UK Hydrographic Office';\r\n  @Input() text?: string;\r\n  @Input() navigation?: MenuItem[];\r\n}\r\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\nimport { MenuItem } from '../navtypes';\r\n\r\n@Component({\r\n  selector: 'ukho-header',\r\n  templateUrl: './header.component.html',\r\n  styleUrls: ['./header.component.scss'],\r\n})\r\nexport class HeaderComponent {\r\n  @Input() src = '/svg/Admiralty linear logo.svg';\r\n  @Input() alt = 'Admiralty Maritime Data Solutions | UK Hydrographic Office';\r\n  @Input() text?: string;\r\n  @Input() navigation?: MenuItem[];\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
