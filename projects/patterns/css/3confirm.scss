@@ -1,0 +1,26 @@
+@import "colours";
+
+body{
+    padding-left: 2%;
+    padding-top: 50px;
+    padding-bottom:90px;
+}
+.intro{
+    padding-top:30px;
+    padding-bottom:30px;
+    width:780px;
+    color:$colour-text;
+    
+}
+
+.get-verification-button{
+    width:300px;
+    }
+
+    button.get-verification-button {
+        margin-left:108px;
+    }
+    
+    .text-input-wrap{
+        width:410px;
+    }

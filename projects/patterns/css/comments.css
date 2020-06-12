@@ -1,0 +1,234 @@
+/* Device Sizes - matching layout breakpoints */
+@media (max-width: 1023px) {
+  .desktop-only {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .not-desktop {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .tablet-only {
+    display: none;
+  }
+}
+
+@media (max-width: 479px) and (min-width: 0px) {
+  .tablet-only {
+    display: none;
+  }
+}
+
+@media (max-width: 479px) and (min-width: 0px) {
+  .tablet-or-desktop {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .phone-or-tablet {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .phone-only {
+    display: none;
+  }
+}
+
+@media (max-width: 1023px) and (min-width: 480px) {
+  .phone-only {
+    display: none;
+  }
+}
+
+/* Core Palette */
+/* Supporting Palette */
+/* Secondary Palette */
+/* Digital Product Colours */
+/* Utility Colours */
+/* Button Colours */
+/* Primary */
+/* Secondary */
+/* Link Colours */
+/* Nav colours */
+/* Table colours */
+/* Tab colours */
+/* form text input colours */
+/* form textarea colours */
+/* radio button */
+/* checkbox */
+body {
+  margin: 2%;
+}
+
+.pattern-container {
+  width: 77.6875rem;
+  border: 1px solid #d8d8d8;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-shadow: 0rem 0.125rem 0.25rem rgba(0, 0, 0, 0.2);
+          box-shadow: 0rem 0.125rem 0.25rem rgba(0, 0, 0, 0.2);
+  padding-bottom: 0.75rem;
+}
+
+.header-container {
+  width: 77.6875rem;
+  background: #03284F;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding: 0.375rem 0.75rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header-container h3, .header-container a, .header-container i {
+  color: #ffffff;
+}
+
+.header-container h3 {
+  padding-left: 30px;
+  padding-top: 12px;
+}
+
+.header-container a {
+  font-weight: 300;
+  font-size: 1rem;
+}
+
+.header-container i {
+  padding-right: 1.125rem;
+  font-size: 1rem;
+  position: relative;
+  top: 3px;
+}
+
+.header-container .box-1 {
+  -ms-flex-preferred-size: 85%;
+      flex-basis: 85%;
+}
+
+.comments-container, #odd {
+  width: 75.6875rem;
+  margin: 0rem 1.875rem 0rem 1.875rem;
+  padding: 1.125rem;
+  border-bottom: 0.0625rem solid #d8d8d8;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.comments-container .name-date, #odd .name-date {
+  -ms-flex-preferred-size: 25%;
+      flex-basis: 25%;
+}
+
+.comments-container .name-date label, #odd .name-date label {
+  font-weight: 500;
+}
+
+.comments-container .icon, #odd .icon {
+  -ms-flex-preferred-size: 5%;
+      flex-basis: 5%;
+}
+
+.comments-container .icon i, #odd .icon i {
+  color: #03284F;
+}
+
+.comments-container .comment-text, #odd .comment-text, .comments-container #highlighted, #odd #highlighted {
+  -ms-flex-preferred-size: 70%;
+      flex-basis: 70%;
+}
+
+.comments-container .comment-text p, #odd .comment-text p, .comments-container #highlighted p, #odd #highlighted p {
+  font-weight: 300;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+}
+
+.comments-container .comment-text .text-area-wrap, #odd .comment-text .text-area-wrap, .comments-container #highlighted .text-area-wrap, #odd #highlighted .text-area-wrap {
+  width: 95%;
+  margin-left: 15px;
+}
+
+#odd {
+  background: #eef3f4;
+}
+
+#highlighted {
+  color: #ef8123;
+  font-weight: 500;
+}
+
+#highlighted-icon i {
+  color: #ef8123;
+}
+
+.button-placement {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-right: 3%;
+  margin-top: 1.5%;
+}
+
+.pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 3%;
+}
+
+.pagination .pagination-anchor {
+  width: 50px;
+  height: 50px;
+  margin: 6px;
+  border: 2px solid #03284F;
+  background: #eeeeee;
+}
+
+.pagination i {
+  padding: 16px;
+}
+
+.pagination p {
+  padding-top: 30px;
+  padding-right: 18px;
+}
+/*# sourceMappingURL=comments.css.map */

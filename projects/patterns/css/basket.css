@@ -1,0 +1,120 @@
+body {
+  padding-top: 30px;
+  padding-left: 30px;
+}
+
+.wrapper {
+  width: 500px;
+  min-height: 500px;
+  max-height: 100%;
+  background: #EEEEEE;
+  padding-left: 30px;
+  padding-top: 30px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-right: 30px;
+  overflow: hidden;
+}
+
+.checkout-btn {
+  width: 440px;
+}
+
+.total-cost {
+  font-familY: Johnston ITC Std, arial, sans-serif, Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 45px;
+  color: #333333;
+}
+
+.cost-label {
+  font-family: Johnston ITC Std, arial, sans-serif, Arial, Helvetica, sans-serif;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.box-1 {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+
+.box-2 {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+}
+
+.box-3 {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-ordinal-group: 4;
+      -ms-flex-order: 3;
+          order: 3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 270px;
+}
+
+.box3-container-1 {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+
+.box3-container-2 {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+}
+
+.order-container {
+  background: #ffffff;
+  width: 440px;
+  padding: 30px;
+  margin-top: 30px;
+  margin-bottom: 150px;
+  max-height: 220px;
+}
+
+.order-overview {
+  font-family: Johnston ITC Std, arial, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 17px;
+  color: #333333;
+}
+/*# sourceMappingURL=basket.css.map */

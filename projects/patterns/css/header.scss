@@ -1,0 +1,79 @@
+@import "colours";
+@import 'responsive';
+//Base font size 16pt
+
+
+#new-menu{
+    background-color:$colour-white;
+    display: flex;
+    flex-direction: row;
+    // padding: 1.125rem;
+    // padding: 0px 0px 0px 18px;
+    //convert to rem
+    height:90px;
+    // border: 1px solid orange;
+    justify-content: space-between;
+
+    .logo{
+        flex:1;
+        order:1;
+        display:inline-flex;
+        margin-top: 24px;
+        margin-bottom: 24px;
+        margin-left: 24px;
+        img{
+            //12.5 rem orignally
+            width:12.5rem;
+            border-right:1px solid $colour-bg-header;
+            // padding:0.375rem 24px 0rem 0.75rem
+            padding-right:24px;
+        }
+
+        h2{
+            padding-left:24px;
+        }
+    }
+  
+    .links{
+        flex:0 1 auto;
+        order:2;
+        // margin-top:1rem;
+        padding: 30px 0px 15px 0rem;
+        a:hover{
+            background-color:$colour-nav-bg-hover;
+        }
+
+        a{
+            // padding:1.125rem;
+            padding: 30px;
+            // padding-right: 18px;
+            // padding-left: 18px;
+            margin-top: 12px;
+            text-decoration: none;
+            // padding-top:35px;
+            // padding-bottom: 36px;
+        }
+        .active{
+          border-bottom: solid 0.3125rem $colour-admiralty-blue;
+          padding-bottom: 33px;
+        }
+    }
+}
+//Mobile media query
+@media (max-width: 480px){
+
+    #new-menu{
+        display: flex;
+        flex-direction: column;
+        margin-left:10%;
+    }
+
+    .logo{
+    margin-left:20px;
+    }
+
+
+
+
+
+}

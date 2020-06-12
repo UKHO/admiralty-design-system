@@ -1,0 +1,42 @@
+$mainfont: Johnston ITC Std, arial, sans-serif;
+@import "colours";
+
+body{
+    margin-left: 1.875rem;
+    margin-bottom:5.625rem;
+
+}
+
+.pattern-container{
+    width:60%;
+    max-width:900px;
+}
+
+.step1-container,.step2-container,.step3-container{
+    padding-bottom: 1.875rem;
+}
+
+.search-wrapper{
+    width:40rem;
+}
+.seperator{
+    margin-top:1.875rem;
+    height:0.0625rem;
+    background: $colour-divider;
+    width:50rem;
+}
+
+#inactive{
+width:800px;
+opacity: 0.4;
+
+}
+
+button{
+    width:200px;
+}
+
+.button-move{
+    display: flex;
+    justify-content: flex-end;
+}

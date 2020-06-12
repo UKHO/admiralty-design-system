@@ -1,0 +1,113 @@
+/* Core Palette */
+/* Supporting Palette */
+/* Secondary Palette */
+/* Digital Product Colours */
+/* Utility Colours */
+/* Button Colours */
+/* Primary */
+/* Secondary */
+/* Link Colours */
+/* Nav colours */
+/* Table colours */
+/* Tab colours */
+/* form text input colours */
+/* form textarea colours */
+/* radio button */
+/* checkbox */
+/* Device Sizes - matching layout breakpoints */
+@media (max-width: 1023px) {
+  .desktop-only {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .not-desktop {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .tablet-only {
+    display: none;
+  }
+}
+
+@media (max-width: 479px) and (min-width: 0px) {
+  .tablet-only {
+    display: none;
+  }
+}
+
+@media (max-width: 479px) and (min-width: 0px) {
+  .tablet-or-desktop {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .phone-or-tablet {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .phone-only {
+    display: none;
+  }
+}
+
+@media (max-width: 1023px) and (min-width: 480px) {
+  .phone-only {
+    display: none;
+  }
+}
+
+body {
+  padding-left: 2%;
+  padding-top: 50px;
+  padding-bottom: 90px;
+}
+
+.wrapper {
+  width: 500px;
+  height: 414px;
+  background: #eeeeee;
+  padding: 30px;
+}
+
+.nested {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 60px;
+  grid-gap: 1em;
+  padding-bottom: 18px;
+}
+
+label {
+  font-family: Johnston ITC Std, arial, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #333333;
+  padding-bottom: 6px;
+}
+
+.cardText {
+  font-family: Johnston ITC Std, arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 21px;
+  line-height: 20px;
+  color: #333333;
+}
+/*# sourceMappingURL=3_personaldetails.css.map */

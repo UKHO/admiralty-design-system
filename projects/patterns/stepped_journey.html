@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <!-- Link to design system CDN -->
+            <link rel="stylesheet" href="https://unpkg.com/@ukho/styles@1.3.26/dist/ukho.min.css">
+            <link rel="stylesheet" href="css/steps.css">
+            <script src="https://kit.fontawesome.com/15729c27bb.js" crossorigin="anonymous"></script>
+        </head>
+        <body>
+            <div class="pattern-container">
+            <h1 class="title">Stepped process</h1>
+            <p class="intro">To make a journey easier for users, break things down into steps. Make<br> steps inactive until the step before has been completed.</p>
+            <div class="line"></div>
+
+            <div class="step1-container">
+                <h2>Step 1</h2>
+                <p>Use the pattern to illustrate a stepped process.</p>
+                <!-- <p class="form-label">Search</p> -->
+            <div class="search-wrapper">
+                <input type="text" class="form-text-input" placeholder="Search to start journey">
+            </div>
+            <div class="seperator"></div>
+            </div>
+
+            <div class="step2-container" id="inactive">
+                <h2 class="inactive">Step 2</h2>
+                <p>Use components as appropriate to make up each step.</p>
+               
+                <div class="seperator"></div>
+            </div>
+           <div class="step3-container" id="inactive">
+                <h2 class="inactive">Step 3</h2>
+                <p>Choose your preffered format.</p>
+                <div class="button-move">
+                    <button disabled class="primary">
+                    <p>Disabled button</p>
+                    </button>
+                     </div>
+           </div>
+        </div>
+          
+        </body>
+    </html>

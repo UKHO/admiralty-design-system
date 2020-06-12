@@ -1,0 +1,95 @@
+$main-font: Johnston ITC Std, arial, sans-serif;
+
+
+body{
+    padding-top: 30px;
+    padding-left: 30px;
+}
+
+.wrapper{
+
+    width: 500px;
+    // change height to %?
+    min-height:500px;
+    max-height: 100%;
+    background: #EEEEEE;
+    padding-left: 30px;
+    padding-top: 30px;
+    align-items: center;
+    padding-right:30px;
+    overflow: hidden;
+}
+
+.checkout-btn{
+    width:440px;
+}
+
+.total-cost{
+    font-familY: $main-font, Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight:500;
+    font-size: 48px;
+    line-height: 45px;
+    color:#333333;
+}
+
+.cost-label{
+    font-family: $main-font, Arial, Helvetica, sans-serif;
+}
+.container{
+    display:flex;
+    flex-direction: column;
+    // align-items: flex-start;
+}
+
+
+.box-1{
+    flex:1;
+    order:1;
+}
+
+.box-2{
+    flex:2;
+    order:2;
+}
+
+.box-3{
+    flex:1;
+    order:3;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top:270px;
+}
+
+.box3-container-1{
+    flex:1;
+    order:1;
+   
+}
+
+.box3-container-2{
+    flex: 1;
+    order:2;
+
+}
+
+.order-container {
+    background: #ffffff;
+        width: 440px;
+        padding: 30px;
+        margin-top: 30px;
+        margin-bottom: 150px;
+        max-height: 220px;
+
+
+      }
+
+.order-overview{
+    font-family: $main-font;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 17px;
+    color: #333333;
+}

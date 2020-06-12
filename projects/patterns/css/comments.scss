@@ -1,0 +1,135 @@
+@import "responsive";
+@import "colours";
+body{
+    margin:2%;
+}
+
+.pattern-container{
+    width:77.6875rem;
+    border:1px solid $colour-divider;
+    box-sizing: border-box;
+    box-shadow: 0rem 0.125rem 0.25rem rgba(0,0,0,0.2);
+    padding-bottom: 0.75rem;
+}
+.header-container{
+    width:77.6875rem;
+    background:$colour-dark-blue;
+    display:flex;
+    flex-direction: row;
+    padding:0.375rem 0.75rem;
+    align-items: center;
+    h3, a, i{
+        color:$colour-white;
+    }
+    h3{
+        padding-left: 30px;
+        padding-top: 12px;
+    }
+    a{
+        font-weight:300;
+        font-size: 1rem;
+    }
+
+    i{
+        padding-right:1.125rem;
+        font-size: 1rem;
+        position: relative;
+        top: 3px;
+    }
+    .box-1{
+        flex-basis: 85%;
+    }
+    // .box-2{
+    // }
+}
+
+.comments-container{
+    width:75.6875rem;
+    margin:0rem 1.875rem 0rem 1.875rem;
+    padding:1.125rem;
+    border-bottom: 0.0625rem solid $colour-divider;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .name-date{
+        flex-basis: 25%;
+            label{
+                font-weight:500;
+            }
+    }
+
+    .icon{
+        flex-basis: 5%;
+    }
+
+    .icon i{
+        color:$colour-dark-blue;
+    }
+
+    .comment-text{
+        flex-basis:70%;
+        p{
+            font-weight: 300;
+            font-size: 1.125rem;
+            line-height: 1.5rem;
+        }
+
+        .text-area-wrap{
+            width:95%;
+            margin-left:15px;
+        }
+
+        }
+
+    }
+
+#odd{
+    @extend .comments-container;
+    background:$colour-table-row-alt-bg;
+}
+
+#highlighted{
+    @extend .comment-text;
+    color:$colour-utility-warning;
+    font-weight: 500;
+}
+
+#highlighted-icon i{
+    color:$colour-utility-warning;
+}
+
+.button-placement{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right:3%;
+    margin-top: 1.5%;
+}
+.pagination{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right:3%;
+    
+    
+
+    .pagination-anchor{
+        width: 50px;
+        height: 50px;
+        margin:6px;
+        border: 2px solid $colour-dark-blue;
+        background: #eeeeee;
+        
+    }
+i{
+    padding:16px;
+}
+
+p{
+    padding-top:30px;
+    padding-right:18px;
+}
+
+}
