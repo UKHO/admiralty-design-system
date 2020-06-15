@@ -20,3 +20,11 @@ export const checkbox = () => ({
     change: action('changed'),
   },
 });
+
+export const checkboxRight = () => ({
+  moduleMetadata: {
+    declarations: [CheckboxComponent],
+    imports: [FormsModule],
+  },
+  template: `<ukho-checkbox [checkboxRight]="true">I emit actions</ukho-checkbox>`,
+});

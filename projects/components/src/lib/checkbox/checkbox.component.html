@@ -6,6 +6,7 @@
   (change)="handleChange($event.target.checked)"
   (blur)="onTouch()"
 />
-<label [for]="id">
+
+<label [ngClass]="{ checkboxRight: checkboxRight }" [for]="id">
   <ng-content></ng-content>
 </label>

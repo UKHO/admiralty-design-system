@@ -956,7 +956,7 @@
         },
         {
             "name": "CheckboxComponent",
-            "id": "component-CheckboxComponent-f6672a46dbd97f91add2ca3347e4198b",
+            "id": "component-CheckboxComponent-e1c87cb824d2510b43830342c64d8a80",
             "file": "src/lib/checkbox/checkbox.component.ts",
             "encapsulation": [
                 "ViewEncapsulation.None"
@@ -976,6 +976,11 @@
             ],
             "viewProviders": [],
             "inputsClass": [
+                {
+                    "name": "checkboxRight",
+                    "line": 24,
+                    "type": "boolean"
+                },
                 {
                     "name": "checked",
                     "defaultValue": "false",
@@ -1016,7 +1021,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 24
+                    "line": 26
                 },
                 {
                     "name": "id",
@@ -1070,7 +1075,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 26,
+                    "line": 28,
                     "jsdoctags": [
                         {
                             "name": "checked",
@@ -1092,7 +1097,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 31,
+                    "line": 33,
                     "jsdoctags": [
                         {
                             "name": "value",
@@ -1227,7 +1232,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input, ViewEncapsulation } from '@angular/core';\r\nimport { UkhoAbstractFormField } from '../form-field/form-field';\r\n\r\n@Component({\r\n  selector: 'ukho-checkbox',\r\n  templateUrl: './checkbox.component.html',\r\n  styleUrls: ['./checkbox.component.scss'],\r\n  host: {\r\n    class: 'checkbox-wrapper',\r\n  },\r\n  encapsulation: ViewEncapsulation.None,\r\n})\r\nexport class CheckboxComponent extends UkhoAbstractFormField {\r\n  /**\r\n   * Whether the checkbox is checked or not by default.\r\n   */\r\n  @Input() checked = false;\r\n\r\n  /**\r\n   * This is the value which the checkbox emits when selected..\r\n   */\r\n  @Input() value: unknown;\r\n\r\n  onChange = (checked: boolean) => {};\r\n\r\n  handleChange(checked: boolean) {\r\n    this.checked = checked;\r\n    this.onChange(checked);\r\n  }\r\n\r\n  writeValue(value: any): void {\r\n    this.checked = !!value;\r\n\r\n    super.writeValue(value);\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Component, Input, ViewEncapsulation } from '@angular/core';\r\nimport { UkhoAbstractFormField } from '../form-field/form-field';\r\n\r\n@Component({\r\n  selector: 'ukho-checkbox',\r\n  templateUrl: './checkbox.component.html',\r\n  styleUrls: ['./checkbox.component.scss'],\r\n  host: {\r\n    class: 'checkbox-wrapper',\r\n  },\r\n  encapsulation: ViewEncapsulation.None,\r\n})\r\nexport class CheckboxComponent extends UkhoAbstractFormField {\r\n  /**\r\n   * Whether the checkbox is checked or not by default.\r\n   */\r\n  @Input() checked = false;\r\n\r\n  /**\r\n   * This is the value which the checkbox emits when selected..\r\n   */\r\n  @Input() value: unknown;\r\n\r\n  @Input() checkboxRight: boolean;\r\n\r\n  onChange = (checked: boolean) => {};\r\n\r\n  handleChange(checked: boolean) {\r\n    this.checked = checked;\r\n    this.onChange(checked);\r\n  }\r\n\r\n  writeValue(value: any): void {\r\n    this.checked = !!value;\r\n\r\n    super.writeValue(value);\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1237,7 +1242,7 @@
             ],
             "stylesData": "",
             "extends": "UkhoAbstractFormField",
-            "templateData": "<input\r\n  type=\"checkbox\"\r\n  [value]=\"value\"\r\n  [id]=\"id\"\r\n  [checked]=\"checked\"\r\n  (change)=\"handleChange($event.target.checked)\"\r\n  (blur)=\"onTouch()\"\r\n/>\r\n<label [for]=\"id\">\r\n  <ng-content></ng-content>\r\n</label>\r\n"
+            "templateData": "<input\r\n  type=\"checkbox\"\r\n  [value]=\"value\"\r\n  [id]=\"id\"\r\n  [checked]=\"checked\"\r\n  (change)=\"handleChange($event.target.checked)\"\r\n  (blur)=\"onTouch()\"\r\n/>\r\n\r\n<label [ngClass]=\"{ checkboxRight: checkboxRight == true }\" [for]=\"id\">\r\n  <ng-content></ng-content>\r\n</label>\r\n"
         },
         {
             "name": "DialogueComponent",
@@ -1342,7 +1347,7 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<section class=\"expansion\">\r\n  <input id=\"{{ id }}\" type=\"checkbox\" [attr.checked]=\"initialExpanded\" />\r\n  <label for=\"{{ id }}\">{{ heading }}</label>\r\n  <div>\r\n    <ng-content></ng-content>\r\n  </div>\r\n</section>\r\n"
+            "templateData": "<section class=\"expansion\">\r\n  <input id=\"{{ id }}\" type=\"checkbox\" [checked]=\"initialExpanded\" />\r\n  <label for=\"{{ id }}\">{{ heading }}</label>\r\n  <div>\r\n    <ng-content></ng-content>\r\n  </div>\r\n</section>\r\n"
         },
         {
             "name": "FileInputComponent",
@@ -4827,8 +4832,8 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "CheckboxComponent",
-                "coveragePercent": 73,
-                "coverageCount": "11/15",
+                "coveragePercent": 68,
+                "coverageCount": "11/16",
                 "status": "good"
             },
             {

@@ -21,6 +21,8 @@ export class CheckboxComponent extends UkhoAbstractFormField {
    */
   @Input() value: unknown;
 
+  @Input() checkboxRight: boolean;
+
   onChange = (checked: boolean) => {};
 
   handleChange(checked: boolean) {

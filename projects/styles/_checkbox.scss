@@ -2,7 +2,7 @@
 @use 'typography';
 
 .checkbox-wrapper {
-  input[type="checkbox"] {
+  input[type='checkbox'] {
     opacity: 0;
     position: absolute;
     left: -9999px;
@@ -21,7 +21,7 @@
   label::before,
   label::after {
     position: absolute;
-    content: "";
+    content: '';
     display: inline-block;
   }
 
@@ -48,11 +48,25 @@
     top: 7px;
   }
 
-  input[type="checkbox"] + label::after {
+  .checkboxRight {
+    padding-left: unset;
+    padding-right: 35px;
+
+    &:before {
+      left: unset;
+      right: 0px;
+    }
+    &:after {
+      left: unset;
+      right: 6px;
+    }
+  }
+
+  input[type='checkbox'] + label::after {
     content: none;
   }
 
-  input[type="checkbox"]:checked + label::after {
-    content: "";
+  input[type='checkbox']:checked + label::after {
+    content: '';
   }
 }
