@@ -11,8 +11,10 @@
     // padding: 0px 0px 0px 18px;
     //convert to rem
     height:90px;
+    min-height:90px;
     // border: 1px solid orange;
     justify-content: space-between;
+    border-bottom: 1px solid $colour-divider;
 
     .logo{
         flex:1;

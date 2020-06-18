@@ -1,0 +1,133 @@
+/* Device Sizes - matching layout breakpoints */
+@media (max-width: 1023px) {
+  .desktop-only {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .not-desktop {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .tablet-only {
+    display: none;
+  }
+}
+
+@media (max-width: 479px) and (min-width: 0px) {
+  .tablet-only {
+    display: none;
+  }
+}
+
+@media (max-width: 479px) and (min-width: 0px) {
+  .tablet-or-desktop {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .phone-or-tablet {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .phone-only {
+    display: none;
+  }
+}
+
+@media (max-width: 1023px) and (min-width: 480px) {
+  .phone-only {
+    display: none;
+  }
+}
+
+/* Core Palette */
+/* Supporting Palette */
+/* Secondary Palette */
+/* Digital Product Colours */
+/* Utility Colours */
+/* Button Colours */
+/* Primary */
+/* Secondary */
+/* Link Colours */
+/* Nav colours */
+/* Table colours */
+/* Tab colours */
+/* form text input colours */
+/* form textarea colours */
+/* radio button */
+/* checkbox */
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin-left: 2%;
+}
+
+.pattern-container {
+  width: 1200px;
+  min-width: 600px;
+}
+
+.pattern-container .divider {
+  height: 1px;
+  background: #d0d0d0;
+  width: 100%;
+  margin-bottom: 1.8rem;
+}
+
+.pattern-container .item-container {
+  width: 75%;
+  border: 1px solid #d0d0d0;
+  background: #ffffff;
+  height: 110px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-bottom: 30px;
+  padding-top: 6px;
+  padding-left: 30px;
+}
+
+.pattern-container .b-2, .pattern-container .b-3 {
+  padding: 6px 15px;
+}
+
+.pattern-container .b-1 {
+  padding: 0px 15px 10px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+button {
+  width: 19.6rem;
+  max-width: 100%;
+  margin-left: 70rem;
+}
+
+.values {
+  font-size: 18px;
+  line-height: 24px;
+  color: #222222;
+  font-weight: 500;
+}
+/*# sourceMappingURL=card-items-new.css.map */

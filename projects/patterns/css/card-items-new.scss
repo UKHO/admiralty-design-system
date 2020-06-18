@@ -1,0 +1,66 @@
+@import "responsive";
+@import "colours";
+
+html{
+    // Equivalent to 10px - Main browers use a base font size of 16px
+    font-size:62.5%;
+}
+
+body{
+    margin-left:2%;
+}
+
+.pattern-container{
+    width:1200px;
+    min-width:600px;
+    
+    .divider{
+        height:1px;
+        background: $colour-line;
+        width:100%;
+        margin-bottom: 1.8rem;
+            }
+    .item-container{
+        width:75%;
+        border: 1px solid $colour-line;
+        background: $colour-white;
+        height: 110px;
+        display:flex;
+        flex-direction: row;
+        margin-bottom: 30px;
+        padding-top:6px;
+        padding-left: 30px;
+      }
+        .b-2,.b-3{
+            padding: 6px 15px;
+        }
+
+        .b-1{
+           padding:0px 15px 10px 0px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+        }
+
+        
+     }
+
+       
+                       
+
+        
+
+button{
+    width: 19.6rem;
+    max-width: 100%;
+    margin-left:70rem;
+
+}
+
+.values{
+font-size:18px;
+line-height: 24px;
+color:#222222;
+font-weight: 500;
+}
