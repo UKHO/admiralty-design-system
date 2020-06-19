@@ -1,3 +1,68 @@
+/* Device Sizes - matching layout breakpoints */
+@media (max-width: 1023px) {
+  .desktop-only {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .not-desktop {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .tablet-only {
+    display: none;
+  }
+}
+
+@media (max-width: 479px) and (min-width: 0px) {
+  .tablet-only {
+    display: none;
+  }
+}
+
+@media (max-width: 479px) and (min-width: 0px) {
+  .tablet-or-desktop {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .phone-or-tablet {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .phone-only {
+    display: none;
+  }
+}
+
+@media (max-width: 1023px) and (min-width: 480px) {
+  .phone-only {
+    display: none;
+  }
+}
+
+/* Core Palette */
+/* Supporting Palette */
+/* Secondary Palette */
+/* Digital Product Colours */
+/* Utility Colours */
+/* Button Colours */
+/* Primary */
+/* Secondary */
+/* Link Colours */
+/* Nav colours */
+/* Table colours */
+/* Tab colours */
+/* form text input colours */
+/* form textarea colours */
+/* radio button */
+/* checkbox */
 body {
   padding-top: 30px;
   padding-left: 30px;
@@ -7,7 +72,7 @@ body {
   width: 500px;
   min-height: 500px;
   max-height: 100%;
-  background: #EEEEEE;
+  background: #eeeeee;
   padding-left: 30px;
   padding-top: 30px;
   -webkit-box-align: center;
@@ -19,6 +84,7 @@ body {
 
 .checkout-btn {
   width: 440px;
+  margin-bottom: 30px;
 }
 
 .total-cost {

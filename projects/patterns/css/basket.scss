@@ -1,4 +1,6 @@
 $main-font: Johnston ITC Std, arial, sans-serif;
+@import "responsive";
+@import "colours";
 
 
 body{
@@ -7,12 +9,11 @@ body{
 }
 
 .wrapper{
-
     width: 500px;
     // change height to %?
     min-height:500px;
     max-height: 100%;
-    background: #EEEEEE;
+    background: $colour-bg-grey;
     padding-left: 30px;
     padding-top: 30px;
     align-items: center;
@@ -22,6 +23,7 @@ body{
 
 .checkout-btn{
     width:440px;
+    margin-bottom: 30px;
 }
 
 .total-cost{
@@ -30,7 +32,7 @@ body{
     font-weight:500;
     font-size: 48px;
     line-height: 45px;
-    color:#333333;
+    color:$colour-text;
 }
 
 .cost-label{
@@ -75,7 +77,7 @@ body{
 }
 
 .order-container {
-    background: #ffffff;
+    background: $colour-white;
         width: 440px;
         padding: 30px;
         margin-top: 30px;
@@ -91,5 +93,5 @@ body{
     font-style: normal;
     font-weight: 300;
     line-height: 17px;
-    color: #333333;
+    color: $colour-text;
 }
