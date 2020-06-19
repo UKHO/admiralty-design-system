@@ -9,7 +9,8 @@ body{
 }
 
 .wrapper{
-    width: 500px;
+    // width: 500px;
+    width:23.8%;
     // change height to %?
     min-height:500px;
     max-height: 100%;
@@ -22,7 +23,7 @@ body{
 }
 
 .checkout-btn{
-    width:440px;
+    width:100%;
     margin-bottom: 30px;
 }
 
@@ -30,7 +31,7 @@ body{
     font-familY: $main-font, Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight:500;
-    font-size: 48px;
+    font-size: 3rem;
     line-height: 45px;
     color:$colour-text;
 }
@@ -64,16 +65,23 @@ body{
     margin-top:270px;
 }
 
-.box3-container-1{
-    flex:1;
-    order:1;
+// .box3-container-1{
+//     flex:1;
+//     order:1;
    
-}
+// }
 
-.box3-container-2{
-    flex: 1;
-    order:2;
+// .box3-container-2{
+//     flex: 1;
+//     order:2;
+//
 
+
+.box-3-container-2{
+    margin-top:20px;
+    p{
+        padding-left:80px;
+    }
 }
 
 .order-container {
@@ -89,7 +97,7 @@ body{
 
 .order-overview{
     font-family: $main-font;
-    font-size: 18px;
+    font-size: 1.125rem;
     font-style: normal;
     font-weight: 300;
     line-height: 17px;
