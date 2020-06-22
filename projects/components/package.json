@@ -1,6 +1,6 @@
 {
   "name": "@ukho/components",
-  "version": "1.4.1",
+  "version": "1.5.0",
   "description": "Angular components library for the UKHO Design System",
   "author": {
     "name": "UK Hydrographic Office",
@@ -27,7 +27,7 @@
     "@angular/common": "~9.0.0",
     "@angular/core": "~9.0.0",
     "@fortawesome/fontawesome-free": "^5.11.2",
-    "@ukho/styles": "~1.4.0"
+    "@ukho/styles": "~1.5.0"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
@@ -39,7 +39,7 @@
     "@storybook/addon-knobs": "^5.3.14",
     "@storybook/addon-storysource": "^5.3.14",
     "@storybook/angular": "^5.3.14",
-    "@ukho/styles": "~1.4.0",
+    "@ukho/styles": "~1.5.0",
     "autoprefixer": "^9.7.1",
     "babel-loader": "^8.0.6",
     "cpx": "^1.5.0",

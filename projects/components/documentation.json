@@ -1242,7 +1242,7 @@
             ],
             "stylesData": "",
             "extends": "UkhoAbstractFormField",
-            "templateData": "<input\r\n  type=\"checkbox\"\r\n  [value]=\"value\"\r\n  [id]=\"id\"\r\n  [checked]=\"checked\"\r\n  (change)=\"handleChange($event.target.checked)\"\r\n  (blur)=\"onTouch()\"\r\n/>\r\n\r\n<label [ngClass]=\"{ checkboxRight: checkboxRight == true }\" [for]=\"id\">\r\n  <ng-content></ng-content>\r\n</label>\r\n"
+            "templateData": "<input\r\n  type=\"checkbox\"\r\n  [value]=\"value\"\r\n  [id]=\"id\"\r\n  [checked]=\"checked\"\r\n  (change)=\"handleChange($event.target.checked)\"\r\n  (blur)=\"onTouch()\"\r\n/>\r\n\r\n<label [ngClass]=\"{ checkboxRight: checkboxRight }\" [for]=\"id\">\r\n  <ng-content></ng-content>\r\n</label>\r\n"
         },
         {
             "name": "DialogueComponent",
@@ -1347,7 +1347,7 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<section class=\"expansion\">\r\n  <input id=\"{{ id }}\" type=\"checkbox\" [checked]=\"initialExpanded\" />\r\n  <label for=\"{{ id }}\">{{ heading }}</label>\r\n  <div>\r\n    <ng-content></ng-content>\r\n  </div>\r\n</section>\r\n"
+            "templateData": "<section class=\"expansion\">\r\n  <input class=\"expansion-checkbox\" id=\"{{ id }}\" type=\"checkbox\" [checked]=\"initialExpanded\" />\r\n  <label class=\"expansion-label\" for=\"{{ id }}\">{{ heading }}</label>\r\n  <div class=\"expansion-content\">\r\n    <ng-content></ng-content>\r\n  </div>\r\n</section>\r\n"
         },
         {
             "name": "FileInputComponent",
