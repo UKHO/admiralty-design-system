@@ -45,6 +45,7 @@ a{
         display:flex;
         flex-direction: column;
         justify-content: start;
+        align-items: flex-start;
         height:300px;
     }
 
@@ -52,11 +53,6 @@ a{
      width:100%;
  }
 .footer-links a{
-    margin-right: 15%;
+    margin-right:45px;
 }
-
-p.footer-text{
-    margin-right: 13%;
-    }
-
-    }
+}
