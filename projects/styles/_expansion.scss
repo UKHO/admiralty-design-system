@@ -34,7 +34,6 @@ section.readmore {
 
 section.expansion {
   border-bottom: 1px solid colours.$colour-divider;
-
   .expansion-checkbox {
     display: none;
   }
@@ -45,11 +44,18 @@ section.expansion {
     cursor: pointer;
     margin-bottom: unset;
     padding: 12px 0 12px;
-
+    display: flex;
     &::after {
       @extend .fa;
       @extend .fa-chevron-down, :before;
       float: right;
+      display: flex !important;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+    span {
+      flex-grow: 1;
     }
   }
 

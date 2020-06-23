@@ -1,6 +1,8 @@
 <section class="expansion">
   <input class="expansion-checkbox" id="{{ id }}" type="checkbox" [checked]="initialExpanded" />
-  <label class="expansion-label" for="{{ id }}">{{ heading }}</label>
+  <label class="expansion-label" for="{{ id }}">
+    <span>{{ heading }}</span>
+  </label>
   <div class="expansion-content">
     <ng-content></ng-content>
   </div>
