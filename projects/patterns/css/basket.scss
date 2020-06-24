@@ -103,3 +103,16 @@ body{
     line-height: 17px;
     color: $colour-text;
 }
+
+//media queries begin
+@media only screen and (max-width: 768px) {
+.box-3{
+    display:flex;
+    flex-direction: column;
+
+    p{
+        padding:0;
+}
+  }
+}
+
