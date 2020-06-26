@@ -1,5 +1,5 @@
 import { NavigationComponent } from './navigation.component';
-import { mockNavigation } from './mocknavigation';
+import { mockNavigationBasic, mockNavigationWithSections } from './mocknavigation';
 
 export default {
   title: 'Navigation|Navigation',
@@ -12,6 +12,16 @@ export const basic = () => ({
   },
   template: `<ukho-navigation [navigation]="mockNav"></ukho-navigation>`,
   props: {
-    mockNav: mockNavigation,
+    mockNav: mockNavigationBasic,
+  },
+});
+
+export const withSections = () => ({
+  moduleMetadata: {
+    declarations: [NavigationComponent],
+  },
+  template: `<ukho-navigation [navigation]="mockNav"></ukho-navigation>`,
+  props: {
+    mockNav: mockNavigationWithSections,
   },
 });

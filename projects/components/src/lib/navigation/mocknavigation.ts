@@ -1,7 +1,11 @@
 import { Navigation } from '../navtypes';
 
-export const mockNavigation: Navigation = {
-  heading: 'Main heading',
+export const mockNavigationBasic: Navigation = {
+  heading: 'Main heading Basic',
+};
+
+export const mockNavigationWithSections: Navigation = {
+  heading: 'Main heading with Sections',
   sections: [
     {
       title: 'Section One',
