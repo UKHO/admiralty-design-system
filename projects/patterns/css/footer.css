@@ -123,16 +123,16 @@ footer {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
     height: 300px;
   }
   .footer-img .footer-links {
     width: 100%;
   }
   .footer-links a {
-    margin-right: 15%;
-  }
-  p.footer-text {
-    margin-right: 13%;
+    margin-right: 45px;
   }
 }
 /*# sourceMappingURL=footer.css.map */
