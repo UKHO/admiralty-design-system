@@ -4,14 +4,11 @@ $main-font: Johnston ITC Std, arial, sans-serif;
 
 
 body{
-    padding-top: 30px;
-    padding-left: 30px;
+    margin: 30px;
 }
 
 .wrapper{
-    // width: 500px;
-    width:23.8%;
-    // change height to %?
+    width:100%;
     height:auto;
     background: $colour-bg-grey;
     padding-left: 30px;
@@ -59,7 +56,7 @@ body{
     flex:1;
     order:3;
     display: flex;
-    flex-direction: row;
+    flex-flow: row wrap;
     justify-content: space-between;
     margin-top:270px;
 }

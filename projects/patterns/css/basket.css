@@ -64,12 +64,11 @@
 /* radio button */
 /* checkbox */
 body {
-  padding-top: 30px;
-  padding-left: 30px;
+  margin: 30px;
 }
 
 .wrapper {
-  width: 23.8%;
+  width: 100%;
   height: auto;
   background: #eeeeee;
   padding-left: 30px;
@@ -139,8 +138,8 @@ body {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
