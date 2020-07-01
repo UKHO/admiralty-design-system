@@ -14,5 +14,5 @@ export interface Section extends MenuItem {
 
 export interface Navigation {
   heading: string;
-  sections: Section[];
+  sections?: Section[];
 }

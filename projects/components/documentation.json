@@ -3,10 +3,10 @@
     "interfaces": [
         {
             "name": "MenuItem",
-            "id": "interface-MenuItem-7120cd954fa2a3097091c93e124dc917",
+            "id": "interface-MenuItem-abcd4fb4920795ec829fc5c8ceed457c",
             "file": "src/lib/navtypes.ts",
             "type": "interface",
-            "sourceCode": "export interface MenuItem {\r\n  title: string;\r\n  href?: string;\r\n  active?: boolean;\r\n}\r\n\r\nexport interface SubSection extends MenuItem {\r\n  items: MenuItem[];\r\n}\r\n\r\nexport interface Section extends MenuItem {\r\n  subSections: SubSection[];\r\n}\r\n\r\nexport interface Navigation {\r\n  heading: string;\r\n  sections: Section[];\r\n}\r\n",
+            "sourceCode": "export interface MenuItem {\r\n  title: string;\r\n  href?: string;\r\n  active?: boolean;\r\n}\r\n\r\nexport interface SubSection extends MenuItem {\r\n  items: MenuItem[];\r\n}\r\n\r\nexport interface Section extends MenuItem {\r\n  subSections: SubSection[];\r\n}\r\n\r\nexport interface Navigation {\r\n  heading: string;\r\n  sections?: Section[];\r\n}\r\n",
             "properties": [
                 {
                     "name": "active",
@@ -36,10 +36,10 @@
         },
         {
             "name": "Navigation",
-            "id": "interface-Navigation-7120cd954fa2a3097091c93e124dc917",
+            "id": "interface-Navigation-abcd4fb4920795ec829fc5c8ceed457c",
             "file": "src/lib/navtypes.ts",
             "type": "interface",
-            "sourceCode": "export interface MenuItem {\r\n  title: string;\r\n  href?: string;\r\n  active?: boolean;\r\n}\r\n\r\nexport interface SubSection extends MenuItem {\r\n  items: MenuItem[];\r\n}\r\n\r\nexport interface Section extends MenuItem {\r\n  subSections: SubSection[];\r\n}\r\n\r\nexport interface Navigation {\r\n  heading: string;\r\n  sections: Section[];\r\n}\r\n",
+            "sourceCode": "export interface MenuItem {\r\n  title: string;\r\n  href?: string;\r\n  active?: boolean;\r\n}\r\n\r\nexport interface SubSection extends MenuItem {\r\n  items: MenuItem[];\r\n}\r\n\r\nexport interface Section extends MenuItem {\r\n  subSections: SubSection[];\r\n}\r\n\r\nexport interface Navigation {\r\n  heading: string;\r\n  sections?: Section[];\r\n}\r\n",
             "properties": [
                 {
                     "name": "heading",
@@ -51,7 +51,7 @@
                 {
                     "name": "sections",
                     "type": "Section[]",
-                    "optional": false,
+                    "optional": true,
                     "description": "",
                     "line": 17
                 }
@@ -62,10 +62,10 @@
         },
         {
             "name": "Section",
-            "id": "interface-Section-7120cd954fa2a3097091c93e124dc917",
+            "id": "interface-Section-abcd4fb4920795ec829fc5c8ceed457c",
             "file": "src/lib/navtypes.ts",
             "type": "interface",
-            "sourceCode": "export interface MenuItem {\r\n  title: string;\r\n  href?: string;\r\n  active?: boolean;\r\n}\r\n\r\nexport interface SubSection extends MenuItem {\r\n  items: MenuItem[];\r\n}\r\n\r\nexport interface Section extends MenuItem {\r\n  subSections: SubSection[];\r\n}\r\n\r\nexport interface Navigation {\r\n  heading: string;\r\n  sections: Section[];\r\n}\r\n",
+            "sourceCode": "export interface MenuItem {\r\n  title: string;\r\n  href?: string;\r\n  active?: boolean;\r\n}\r\n\r\nexport interface SubSection extends MenuItem {\r\n  items: MenuItem[];\r\n}\r\n\r\nexport interface Section extends MenuItem {\r\n  subSections: SubSection[];\r\n}\r\n\r\nexport interface Navigation {\r\n  heading: string;\r\n  sections?: Section[];\r\n}\r\n",
             "properties": [
                 {
                     "name": "subSections",
@@ -108,10 +108,10 @@
         },
         {
             "name": "SubSection",
-            "id": "interface-SubSection-7120cd954fa2a3097091c93e124dc917",
+            "id": "interface-SubSection-abcd4fb4920795ec829fc5c8ceed457c",
             "file": "src/lib/navtypes.ts",
             "type": "interface",
-            "sourceCode": "export interface MenuItem {\r\n  title: string;\r\n  href?: string;\r\n  active?: boolean;\r\n}\r\n\r\nexport interface SubSection extends MenuItem {\r\n  items: MenuItem[];\r\n}\r\n\r\nexport interface Section extends MenuItem {\r\n  subSections: SubSection[];\r\n}\r\n\r\nexport interface Navigation {\r\n  heading: string;\r\n  sections: Section[];\r\n}\r\n",
+            "sourceCode": "export interface MenuItem {\r\n  title: string;\r\n  href?: string;\r\n  active?: boolean;\r\n}\r\n\r\nexport interface SubSection extends MenuItem {\r\n  items: MenuItem[];\r\n}\r\n\r\nexport interface Section extends MenuItem {\r\n  subSections: SubSection[];\r\n}\r\n\r\nexport interface Navigation {\r\n  heading: string;\r\n  sections?: Section[];\r\n}\r\n",
             "properties": [
                 {
                     "name": "items",
@@ -1793,7 +1793,7 @@
             "implements": [
                 "AfterViewInit"
             ],
-            "templateData": "<header>\r\n  <h1>\r\n    <a href=\"/\" title=\"Home\">{{ navigation.heading }}</a>\r\n  </h1>\r\n\r\n  <nav *ngIf=\"navigation\" id=\"main-menu\">\r\n    <div>\r\n      <a href=\"#main-menu-toggle\" id=\"main-menu-close\" class=\"menu-close\" aria-label=\"Close main menu\">\r\n        <span class=\"sr-only\">Close main menu</span>\r\n        <span class=\"fa fa-times\"></span>\r\n      </a>\r\n    </div>\r\n\r\n    <ul>\r\n      <li *ngFor=\"let section of navigation.sections\" tabindex=\"0\" class=\"section{{ section.active ? ' active' : '' }}\">\r\n        <a tabindex=\"-1\" href=\"{{ section.href || '#' }}\">{{ section.title }}</a>\r\n        <section>\r\n          <section *ngFor=\"let subSection of section.subSections\" class=\"sub-section\">\r\n            <h2>\r\n              <a href=\"{{ subSection.href || '#' }}\">{{ subSection.title }}</a>\r\n            </h2>\r\n            <ul>\r\n              <li *ngFor=\"let item of subSection.items\">\r\n                <a href=\"{{ item.href || '#' }}\">{{ item.title }}</a>\r\n              </li>\r\n            </ul>\r\n          </section>\r\n        </section>\r\n      </li>\r\n    </ul>\r\n  </nav>\r\n\r\n  <a id=\"backdrop\" href=\"#main-menu-toggle\" class=\"backdrop\" tabindex=\"-1\" aria-hidden=\"true\" hidden></a>\r\n\r\n  <div *ngIf=\"navigation\" class=\"menu-toggle-wrapper\">\r\n    <a href=\"#main-menu\" id=\"main-menu-toggle\" class=\"menu-toggle\">\r\n      <span class=\"sr-only\">Open main menu</span>\r\n      <span class=\"fa fa-bars\" aria-hidden=\"true\"></span>\r\n    </a>\r\n  </div>\r\n</header>\r\n"
+            "templateData": "<header>\r\n  <h1>\r\n    <a href=\"/\" title=\"Home\">{{ navigation.heading }}</a>\r\n  </h1>\r\n\r\n  <nav *ngIf=\"navigation\" id=\"main-menu\">\r\n    <div>\r\n      <a href=\"#main-menu-toggle\" id=\"main-menu-close\" class=\"menu-close\" aria-label=\"Close main menu\">\r\n        <span class=\"sr-only\">Close main menu</span>\r\n        <span class=\"fa fa-times\"></span>\r\n      </a>\r\n    </div>\r\n\r\n    <ul *ngIf=\"navigation.sections.length\">\r\n      <li *ngFor=\"let section of navigation.sections\" tabindex=\"0\" class=\"section{{ section.active ? ' active' : '' }}\">\r\n        <a tabindex=\"-1\" href=\"{{ section.href || '#' }}\">{{ section.title }}</a>\r\n        <section>\r\n          <section *ngFor=\"let subSection of section.subSections\" class=\"sub-section\">\r\n            <h2>\r\n              <a href=\"{{ subSection.href || '#' }}\">{{ subSection.title }}</a>\r\n            </h2>\r\n            <ul>\r\n              <li *ngFor=\"let item of subSection.items\">\r\n                <a href=\"{{ item.href || '#' }}\">{{ item.title }}</a>\r\n              </li>\r\n            </ul>\r\n          </section>\r\n        </section>\r\n      </li>\r\n    </ul>\r\n  </nav>\r\n\r\n  <a id=\"backdrop\" href=\"#main-menu-toggle\" class=\"backdrop\" tabindex=\"-1\" aria-hidden=\"true\" hidden></a>\r\n\r\n  <div *ngIf=\"navigation\" class=\"menu-toggle-wrapper\">\r\n    <a href=\"#main-menu\" id=\"main-menu-toggle\" class=\"menu-toggle\">\r\n      <span class=\"sr-only\">Open main menu</span>\r\n      <span class=\"fa fa-bars\" aria-hidden=\"true\"></span>\r\n    </a>\r\n  </div>\r\n</header>\r\n"
         },
         {
             "name": "PaginatorComponent",
@@ -4480,12 +4480,20 @@
                 "defaultValue": "fileSizeNs"
             },
             {
-                "name": "mockNavigation",
+                "name": "mockNavigationBasic",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/lib/navigation/mocknavigation.ts",
                 "type": "Navigation",
-                "defaultValue": "{\r\n  heading: 'Main heading',\r\n  sections: [\r\n    {\r\n      title: 'Section One',\r\n      href: '#section-one',\r\n      subSections: [\r\n        {\r\n          title: 'SubSectionOne',\r\n          href: '#sub-section-one',\r\n          items: [\r\n            { title: 'itemOne1a', href: '#itemOne1a' },\r\n            { title: 'itemOne2a', href: '#itemOne2a' },\r\n            { title: 'itemOne3a', href: '#itemOne3a' },\r\n            { title: 'itemOne4a', href: '#itemOne4a' },\r\n          ],\r\n        },\r\n        {\r\n          title: 'SubSectionTwo',\r\n          href: '#sub-section-two',\r\n          items: [\r\n            { title: 'itemOne1b', href: '#itemOne1b' },\r\n            { title: 'itemOne2b', href: '#itemOne2b' },\r\n            { title: 'itemOne3b', href: '#itemOne3b' },\r\n            { title: 'itemOne4b', href: '#itemOne4b' },\r\n          ],\r\n        },\r\n        {\r\n          title: 'SubSectionThree',\r\n          href: '#sub-section-three',\r\n          items: [\r\n            { title: 'itemOne1c', href: '#itemOne1c' },\r\n            { title: 'itemOne2c', href: '#itemOne2c' },\r\n            { title: 'itemOne3c', href: '#itemOne3c' },\r\n            { title: 'itemOne4c', href: '#itemOne4c' },\r\n          ],\r\n        },\r\n      ],\r\n    },\r\n    {\r\n      title: 'Section Two',\r\n      href: '#section-two',\r\n      subSections: [\r\n        {\r\n          title: 'SubSection2One',\r\n          href: '#sub-section-2one',\r\n          items: [\r\n            { title: 'itemTwo1a', href: '#itemTwo1a' },\r\n            { title: 'itemTwo2a', href: '#itemTwo2a' },\r\n            { title: 'itemTwo3a', href: '#itemTwo3a' },\r\n            { title: 'itemTwo4a', href: '#itemTwo4a' },\r\n          ],\r\n        },\r\n        {\r\n          title: 'SubSection2Two',\r\n          href: '#sub-section-2two',\r\n          items: [\r\n            { title: 'itemTwo1b', href: '#itemTwo1b' },\r\n            { title: 'itemTwo2b', href: '#itemTwo2b' },\r\n            { title: 'itemTwo3b', href: '#itemTwo3b' },\r\n            { title: 'itemTwo4b', href: '#itemTwo4b' },\r\n          ],\r\n        },\r\n        {\r\n          title: 'SubSection2Three',\r\n          href: '#sub-section-2three',\r\n          items: [\r\n            { title: 'itemTwo1c', href: '#itemTwo1c' },\r\n            { title: 'itemTwo2c', href: '#itemTwo2c' },\r\n            { title: 'itemTwo3c', href: '#itemTwo3c' },\r\n            { title: 'itemTwo4c', href: '#itemTwo4c' },\r\n          ],\r\n        },\r\n      ],\r\n    },\r\n    {\r\n      title: 'Section Three',\r\n      href: '#section-three',\r\n      subSections: [\r\n        {\r\n          title: 'SubSection3One',\r\n          href: '#sub-section-3one',\r\n          items: [\r\n            { title: 'item1aThree', href: '#item1aThree' },\r\n            { title: 'item2aThree', href: '#item2aThree' },\r\n            { title: 'item3aThree', href: '#item3aThree' },\r\n            { title: 'item4aThree', href: '#item4aThree' },\r\n          ],\r\n        },\r\n        {\r\n          title: 'SubSection3Two',\r\n          href: '#sub-section-3two',\r\n          items: [\r\n            { title: 'item1bThree', href: '#item1bThree' },\r\n            { title: 'item2bThree', href: '#item2bThree' },\r\n            { title: 'item3bThree', href: '#item3bThree' },\r\n            { title: 'item4bThree', href: '#item4bThree' },\r\n          ],\r\n        },\r\n        {\r\n          title: 'SubSection3Three',\r\n          href: '#sub-section-3three',\r\n          items: [\r\n            { title: 'item1cThree', href: '#item1cThree' },\r\n            { title: 'item2cThree', href: '#item2cThree' },\r\n            { title: 'item3cThree', href: '#item3cThree' },\r\n            { title: 'item4cThree', href: '#item4cThree' },\r\n          ],\r\n        },\r\n      ],\r\n    },\r\n  ],\r\n}"
+                "defaultValue": "{\r\n  heading: 'Main heading Basic'\r\n}"
+            },
+            {
+                "name": "mockNavigationWithSections",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/lib/navigation/mocknavigation.ts",
+                "type": "Navigation",
+                "defaultValue": "{\r\n  heading: 'Main heading with Sections',\r\n  sections: [\r\n    {\r\n      title: 'Section One',\r\n      href: '#section-one',\r\n      subSections: [\r\n        {\r\n          title: 'SubSectionOne',\r\n          href: '#sub-section-one',\r\n          items: [\r\n            { title: 'itemOne1a', href: '#itemOne1a' },\r\n            { title: 'itemOne2a', href: '#itemOne2a' },\r\n            { title: 'itemOne3a', href: '#itemOne3a' },\r\n            { title: 'itemOne4a', href: '#itemOne4a' },\r\n          ],\r\n        },\r\n        {\r\n          title: 'SubSectionTwo',\r\n          href: '#sub-section-two',\r\n          items: [\r\n            { title: 'itemOne1b', href: '#itemOne1b' },\r\n            { title: 'itemOne2b', href: '#itemOne2b' },\r\n            { title: 'itemOne3b', href: '#itemOne3b' },\r\n            { title: 'itemOne4b', href: '#itemOne4b' },\r\n          ],\r\n        },\r\n        {\r\n          title: 'SubSectionThree',\r\n          href: '#sub-section-three',\r\n          items: [\r\n            { title: 'itemOne1c', href: '#itemOne1c' },\r\n            { title: 'itemOne2c', href: '#itemOne2c' },\r\n            { title: 'itemOne3c', href: '#itemOne3c' },\r\n            { title: 'itemOne4c', href: '#itemOne4c' },\r\n          ],\r\n        },\r\n      ],\r\n    },\r\n    {\r\n      title: 'Section Two',\r\n      href: '#section-two',\r\n      subSections: [\r\n        {\r\n          title: 'SubSection2One',\r\n          href: '#sub-section-2one',\r\n          items: [\r\n            { title: 'itemTwo1a', href: '#itemTwo1a' },\r\n            { title: 'itemTwo2a', href: '#itemTwo2a' },\r\n            { title: 'itemTwo3a', href: '#itemTwo3a' },\r\n            { title: 'itemTwo4a', href: '#itemTwo4a' },\r\n          ],\r\n        },\r\n        {\r\n          title: 'SubSection2Two',\r\n          href: '#sub-section-2two',\r\n          items: [\r\n            { title: 'itemTwo1b', href: '#itemTwo1b' },\r\n            { title: 'itemTwo2b', href: '#itemTwo2b' },\r\n            { title: 'itemTwo3b', href: '#itemTwo3b' },\r\n            { title: 'itemTwo4b', href: '#itemTwo4b' },\r\n          ],\r\n        },\r\n        {\r\n          title: 'SubSection2Three',\r\n          href: '#sub-section-2three',\r\n          items: [\r\n            { title: 'itemTwo1c', href: '#itemTwo1c' },\r\n            { title: 'itemTwo2c', href: '#itemTwo2c' },\r\n            { title: 'itemTwo3c', href: '#itemTwo3c' },\r\n            { title: 'itemTwo4c', href: '#itemTwo4c' },\r\n          ],\r\n        },\r\n      ],\r\n    },\r\n    {\r\n      title: 'Section Three',\r\n      href: '#section-three',\r\n      subSections: [\r\n        {\r\n          title: 'SubSection3One',\r\n          href: '#sub-section-3one',\r\n          items: [\r\n            { title: 'item1aThree', href: '#item1aThree' },\r\n            { title: 'item2aThree', href: '#item2aThree' },\r\n            { title: 'item3aThree', href: '#item3aThree' },\r\n            { title: 'item4aThree', href: '#item4aThree' },\r\n          ],\r\n        },\r\n        {\r\n          title: 'SubSection3Two',\r\n          href: '#sub-section-3two',\r\n          items: [\r\n            { title: 'item1bThree', href: '#item1bThree' },\r\n            { title: 'item2bThree', href: '#item2bThree' },\r\n            { title: 'item3bThree', href: '#item3bThree' },\r\n            { title: 'item4bThree', href: '#item4bThree' },\r\n          ],\r\n        },\r\n        {\r\n          title: 'SubSection3Three',\r\n          href: '#sub-section-3three',\r\n          items: [\r\n            { title: 'item1cThree', href: '#item1cThree' },\r\n            { title: 'item2cThree', href: '#item2cThree' },\r\n            { title: 'item3cThree', href: '#item3cThree' },\r\n            { title: 'item4cThree', href: '#item4cThree' },\r\n          ],\r\n        },\r\n      ],\r\n    },\r\n  ],\r\n}"
             },
             {
                 "name": "mockSideNav",
@@ -4646,12 +4654,20 @@
             ],
             "src/lib/navigation/mocknavigation.ts": [
                 {
-                    "name": "mockNavigation",
+                    "name": "mockNavigationBasic",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/lib/navigation/mocknavigation.ts",
                     "type": "Navigation",
-                    "defaultValue": "{\r\n  heading: 'Main heading',\r\n  sections: [\r\n    {\r\n      title: 'Section One',\r\n      href: '#section-one',\r\n      subSections: [\r\n        {\r\n          title: 'SubSectionOne',\r\n          href: '#sub-section-one',\r\n          items: [\r\n            { title: 'itemOne1a', href: '#itemOne1a' },\r\n            { title: 'itemOne2a', href: '#itemOne2a' },\r\n            { title: 'itemOne3a', href: '#itemOne3a' },\r\n            { title: 'itemOne4a', href: '#itemOne4a' },\r\n          ],\r\n        },\r\n        {\r\n          title: 'SubSectionTwo',\r\n          href: '#sub-section-two',\r\n          items: [\r\n            { title: 'itemOne1b', href: '#itemOne1b' },\r\n            { title: 'itemOne2b', href: '#itemOne2b' },\r\n            { title: 'itemOne3b', href: '#itemOne3b' },\r\n            { title: 'itemOne4b', href: '#itemOne4b' },\r\n          ],\r\n        },\r\n        {\r\n          title: 'SubSectionThree',\r\n          href: '#sub-section-three',\r\n          items: [\r\n            { title: 'itemOne1c', href: '#itemOne1c' },\r\n            { title: 'itemOne2c', href: '#itemOne2c' },\r\n            { title: 'itemOne3c', href: '#itemOne3c' },\r\n            { title: 'itemOne4c', href: '#itemOne4c' },\r\n          ],\r\n        },\r\n      ],\r\n    },\r\n    {\r\n      title: 'Section Two',\r\n      href: '#section-two',\r\n      subSections: [\r\n        {\r\n          title: 'SubSection2One',\r\n          href: '#sub-section-2one',\r\n          items: [\r\n            { title: 'itemTwo1a', href: '#itemTwo1a' },\r\n            { title: 'itemTwo2a', href: '#itemTwo2a' },\r\n            { title: 'itemTwo3a', href: '#itemTwo3a' },\r\n            { title: 'itemTwo4a', href: '#itemTwo4a' },\r\n          ],\r\n        },\r\n        {\r\n          title: 'SubSection2Two',\r\n          href: '#sub-section-2two',\r\n          items: [\r\n            { title: 'itemTwo1b', href: '#itemTwo1b' },\r\n            { title: 'itemTwo2b', href: '#itemTwo2b' },\r\n            { title: 'itemTwo3b', href: '#itemTwo3b' },\r\n            { title: 'itemTwo4b', href: '#itemTwo4b' },\r\n          ],\r\n        },\r\n        {\r\n          title: 'SubSection2Three',\r\n          href: '#sub-section-2three',\r\n          items: [\r\n            { title: 'itemTwo1c', href: '#itemTwo1c' },\r\n            { title: 'itemTwo2c', href: '#itemTwo2c' },\r\n            { title: 'itemTwo3c', href: '#itemTwo3c' },\r\n            { title: 'itemTwo4c', href: '#itemTwo4c' },\r\n          ],\r\n        },\r\n      ],\r\n    },\r\n    {\r\n      title: 'Section Three',\r\n      href: '#section-three',\r\n      subSections: [\r\n        {\r\n          title: 'SubSection3One',\r\n          href: '#sub-section-3one',\r\n          items: [\r\n            { title: 'item1aThree', href: '#item1aThree' },\r\n            { title: 'item2aThree', href: '#item2aThree' },\r\n            { title: 'item3aThree', href: '#item3aThree' },\r\n            { title: 'item4aThree', href: '#item4aThree' },\r\n          ],\r\n        },\r\n        {\r\n          title: 'SubSection3Two',\r\n          href: '#sub-section-3two',\r\n          items: [\r\n            { title: 'item1bThree', href: '#item1bThree' },\r\n            { title: 'item2bThree', href: '#item2bThree' },\r\n            { title: 'item3bThree', href: '#item3bThree' },\r\n            { title: 'item4bThree', href: '#item4bThree' },\r\n          ],\r\n        },\r\n        {\r\n          title: 'SubSection3Three',\r\n          href: '#sub-section-3three',\r\n          items: [\r\n            { title: 'item1cThree', href: '#item1cThree' },\r\n            { title: 'item2cThree', href: '#item2cThree' },\r\n            { title: 'item3cThree', href: '#item3cThree' },\r\n            { title: 'item4cThree', href: '#item4cThree' },\r\n          ],\r\n        },\r\n      ],\r\n    },\r\n  ],\r\n}"
+                    "defaultValue": "{\r\n  heading: 'Main heading Basic'\r\n}"
+                },
+                {
+                    "name": "mockNavigationWithSections",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/lib/navigation/mocknavigation.ts",
+                    "type": "Navigation",
+                    "defaultValue": "{\r\n  heading: 'Main heading with Sections',\r\n  sections: [\r\n    {\r\n      title: 'Section One',\r\n      href: '#section-one',\r\n      subSections: [\r\n        {\r\n          title: 'SubSectionOne',\r\n          href: '#sub-section-one',\r\n          items: [\r\n            { title: 'itemOne1a', href: '#itemOne1a' },\r\n            { title: 'itemOne2a', href: '#itemOne2a' },\r\n            { title: 'itemOne3a', href: '#itemOne3a' },\r\n            { title: 'itemOne4a', href: '#itemOne4a' },\r\n          ],\r\n        },\r\n        {\r\n          title: 'SubSectionTwo',\r\n          href: '#sub-section-two',\r\n          items: [\r\n            { title: 'itemOne1b', href: '#itemOne1b' },\r\n            { title: 'itemOne2b', href: '#itemOne2b' },\r\n            { title: 'itemOne3b', href: '#itemOne3b' },\r\n            { title: 'itemOne4b', href: '#itemOne4b' },\r\n          ],\r\n        },\r\n        {\r\n          title: 'SubSectionThree',\r\n          href: '#sub-section-three',\r\n          items: [\r\n            { title: 'itemOne1c', href: '#itemOne1c' },\r\n            { title: 'itemOne2c', href: '#itemOne2c' },\r\n            { title: 'itemOne3c', href: '#itemOne3c' },\r\n            { title: 'itemOne4c', href: '#itemOne4c' },\r\n          ],\r\n        },\r\n      ],\r\n    },\r\n    {\r\n      title: 'Section Two',\r\n      href: '#section-two',\r\n      subSections: [\r\n        {\r\n          title: 'SubSection2One',\r\n          href: '#sub-section-2one',\r\n          items: [\r\n            { title: 'itemTwo1a', href: '#itemTwo1a' },\r\n            { title: 'itemTwo2a', href: '#itemTwo2a' },\r\n            { title: 'itemTwo3a', href: '#itemTwo3a' },\r\n            { title: 'itemTwo4a', href: '#itemTwo4a' },\r\n          ],\r\n        },\r\n        {\r\n          title: 'SubSection2Two',\r\n          href: '#sub-section-2two',\r\n          items: [\r\n            { title: 'itemTwo1b', href: '#itemTwo1b' },\r\n            { title: 'itemTwo2b', href: '#itemTwo2b' },\r\n            { title: 'itemTwo3b', href: '#itemTwo3b' },\r\n            { title: 'itemTwo4b', href: '#itemTwo4b' },\r\n          ],\r\n        },\r\n        {\r\n          title: 'SubSection2Three',\r\n          href: '#sub-section-2three',\r\n          items: [\r\n            { title: 'itemTwo1c', href: '#itemTwo1c' },\r\n            { title: 'itemTwo2c', href: '#itemTwo2c' },\r\n            { title: 'itemTwo3c', href: '#itemTwo3c' },\r\n            { title: 'itemTwo4c', href: '#itemTwo4c' },\r\n          ],\r\n        },\r\n      ],\r\n    },\r\n    {\r\n      title: 'Section Three',\r\n      href: '#section-three',\r\n      subSections: [\r\n        {\r\n          title: 'SubSection3One',\r\n          href: '#sub-section-3one',\r\n          items: [\r\n            { title: 'item1aThree', href: '#item1aThree' },\r\n            { title: 'item2aThree', href: '#item2aThree' },\r\n            { title: 'item3aThree', href: '#item3aThree' },\r\n            { title: 'item4aThree', href: '#item4aThree' },\r\n          ],\r\n        },\r\n        {\r\n          title: 'SubSection3Two',\r\n          href: '#sub-section-3two',\r\n          items: [\r\n            { title: 'item1bThree', href: '#item1bThree' },\r\n            { title: 'item2bThree', href: '#item2bThree' },\r\n            { title: 'item3bThree', href: '#item3bThree' },\r\n            { title: 'item4bThree', href: '#item4bThree' },\r\n          ],\r\n        },\r\n        {\r\n          title: 'SubSection3Three',\r\n          href: '#sub-section-3three',\r\n          items: [\r\n            { title: 'item1cThree', href: '#item1cThree' },\r\n            { title: 'item2cThree', href: '#item2cThree' },\r\n            { title: 'item3cThree', href: '#item3cThree' },\r\n            { title: 'item4cThree', href: '#item4cThree' },\r\n          ],\r\n        },\r\n      ],\r\n    },\r\n  ],\r\n}"
                 }
             ],
             "src/lib/sidenav/mocknavigation.ts": [
@@ -4952,7 +4968,17 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "mockNavigation",
+                "name": "mockNavigationBasic",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/lib/navigation/mocknavigation.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "mockNavigationWithSections",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

@@ -1,6 +1,6 @@
 {
   "name": "@ukho/components",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "description": "Angular components library for the UKHO Design System",
   "author": {
     "name": "UK Hydrographic Office",
@@ -13,7 +13,7 @@
   "scripts": {
     "prepare": "ng build --prod && cpx ./src/scss/core.scss dist/",
     "storybook": "yarn docs:json && start-storybook -s node_modules/@ukho/styles,node_modules/@fortawesome/fontawesome-free,src/assets",
-    "build-storybook": "yarn docs:json && build-storybook -c .storybook -o .out",
+    "build-storybook": "yarn docs:json && build-storybook -c .storybook -o .out  -s node_modules/@ukho/styles,node_modules/@fortawesome/fontawesome-free,src/assets",
     "docs:json": "compodoc -p ./tsconfig.lib.json -e json -d ."
   },
   "publishConfig": {
@@ -38,6 +38,7 @@
     "@storybook/addon-docs": "^5.3.14",
     "@storybook/addon-knobs": "^5.3.14",
     "@storybook/addon-storysource": "^5.3.14",
+    "@storybook/addon-viewport": "^5.3.19",
     "@storybook/angular": "^5.3.14",
     "@ukho/styles": "~1.5.0",
     "autoprefixer": "^9.7.1",

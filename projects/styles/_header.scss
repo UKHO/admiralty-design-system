@@ -93,6 +93,7 @@ header {
     border-bottom: 1px solid colours.$colour-divider;
     background-color: colours.$colour-bg;
     padding: 0 20px;
+    min-height: 90px;
     @include responsive.not-desktop {
       display: none;
       position: absolute;
