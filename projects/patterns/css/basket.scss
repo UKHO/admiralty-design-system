@@ -1,6 +1,7 @@
-$main-font: Johnston ITC Std, arial, sans-serif;
 @import "responsive";
 @import "colours";
+@import '_typography';
+
 
 
 body{
@@ -8,7 +9,7 @@ body{
 }
 
 .wrapper{
-    width:100%;
+    width: 100%;
     height:auto;
     background: $colour-bg-grey;
     padding-left: 30px;
@@ -24,7 +25,8 @@ body{
 }
 
 .total-cost{
-    font-familY: $main-font, Arial, Helvetica, sans-serif;
+    // font-familY: $main-font, Arial, Helvetica, sans-serif;
+    font-family: $default-text;
     font-style: normal;
     font-weight:500;
     font-size: 3rem;
@@ -33,15 +35,14 @@ body{
 }
 
 .cost-label{
-    font-family: $main-font, Arial, Helvetica, sans-serif;
-}
+    font-family: $default-text;
 .container{
     display:flex;
     flex-direction: column;
     // align-items: flex-start;
 }
 
-
+}
 .header-text{
     flex:1;
     order:1;
@@ -87,16 +88,3 @@ body{
     line-height: 17px;
     color: $colour-text;
 }
-
-//media queries begin
-@media only screen and (max-width: 768px) {
-.box-3{
-    display:flex;
-    flex-direction: column;
-
-    p{
-        padding:0;
-}
-  }
-}
-
