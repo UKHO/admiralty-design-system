@@ -1,6 +1,8 @@
+$main-font: arial, helvetica, sans-serif;
+
 @import "responsive";
 @import "colours";
-@import '_typography';
+// @import '../projects/styles/_typography';
 
 
 
@@ -19,14 +21,18 @@ body{
     overflow: none;
 }
 
+// button rescaling issue
 .checkout-btn{
-    width:100%;
+    width:100% !important;
+    max-width: 100%;
     margin-bottom: 30px;
 }
 
+
+
 .total-cost{
-    // font-familY: $main-font, Arial, Helvetica, sans-serif;
-    font-family: $default-text;
+    font-familY: $main-font, Arial, Helvetica, sans-serif;
+    // font-family: $default-text;
     font-style: normal;
     font-weight:500;
     font-size: 3rem;
@@ -35,7 +41,8 @@ body{
 }
 
 .cost-label{
-    font-family: $default-text;
+    // font-family: $default-text;
+    font-familY: $main-font, Arial, Helvetica, sans-serif;
 .container{
     display:flex;
     flex-direction: column;
@@ -88,3 +95,7 @@ body{
     line-height: 17px;
     color: $colour-text;
 }
+
+
+
+

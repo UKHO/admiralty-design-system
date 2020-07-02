@@ -63,7 +63,6 @@
 /* form textarea colours */
 /* radio button */
 /* checkbox */
-@use 'responsive';
 body {
   margin: 30px;
 }
@@ -82,12 +81,13 @@ body {
 }
 
 .checkout-btn {
-  width: 100%;
+  width: 100% !important;
+  max-width: 100%;
   margin-bottom: 30px;
 }
 
 .total-cost {
-  font-familY: Johnston ITC Std, arial, sans-serif, Arial, Helvetica, sans-serif;
+  font-familY: arial, helvetica, sans-serif, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 3rem;
@@ -96,10 +96,10 @@ body {
 }
 
 .cost-label {
-  font-family: Johnston ITC Std, arial, sans-serif, Arial, Helvetica, sans-serif;
+  font-familY: arial, helvetica, sans-serif, Arial, Helvetica, sans-serif;
 }
 
-.container {
+.cost-label .container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -165,7 +165,7 @@ body {
 }
 
 .order-overview {
-  font-family: Johnston ITC Std, arial, sans-serif;
+  font-family: arial, helvetica, sans-serif;
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 300;
