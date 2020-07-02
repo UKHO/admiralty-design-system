@@ -20,10 +20,8 @@ body{
     padding-right:30px;
     overflow: none;
 }
-
-// button rescaling issue
 .checkout-btn{
-    width:100% !important;
+    width:100%;
     max-width: 100%;
     margin-bottom: 30px;
 }
