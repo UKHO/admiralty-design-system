@@ -9,7 +9,7 @@ const fileSize = fileSizeNs;
   templateUrl: './file-input.component.html',
   styleUrls: ['./file-input.component.scss'],
 })
-export class FileInputComponent extends UkhoAbstractFormField {
+export class FileInputComponent extends UkhoAbstractFormField<FileList> {
   /**
    * The label displayed within the file input box
    */

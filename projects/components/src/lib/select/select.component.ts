@@ -13,7 +13,7 @@ import { UkhoAbstractFormField } from '../form-field/form-field';
   },
   encapsulation: ViewEncapsulation.None,
 })
-export class SelectComponent extends UkhoAbstractFormField {
+export class SelectComponent extends UkhoAbstractFormField<any> {
   /**
    * The label which will be used as a placeholder in the unfilled state, and as a field label in the filled state.
    */

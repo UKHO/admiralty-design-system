@@ -10,7 +10,7 @@ import { UkhoAbstractFormField } from '../form-field/form-field';
   },
   encapsulation: ViewEncapsulation.None,
 })
-export class CheckboxComponent extends UkhoAbstractFormField {
+export class CheckboxComponent extends UkhoAbstractFormField<boolean> {
   /**
    * Whether the checkbox is checked or not by default.
    */

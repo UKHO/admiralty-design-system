@@ -13,7 +13,7 @@ import { UkhoAbstractFormField } from '../form-field/form-field';
   },
   encapsulation: ViewEncapsulation.None,
 })
-export class TextinputComponent extends UkhoAbstractFormField {
+export class TextinputComponent extends UkhoAbstractFormField<string> {
   /**
    * A reference to the input element within the wrapper component
    */
@@ -32,7 +32,7 @@ export class TextinputComponent extends UkhoAbstractFormField {
   /**
    * @ignore
    */
-  writeValue(value: unknown): void {
+  writeValue(value: string): void {
     this.input.nativeElement.value = value;
     super.writeValue(value);
   }
