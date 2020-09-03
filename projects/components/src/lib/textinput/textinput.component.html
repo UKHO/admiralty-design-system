@@ -15,7 +15,7 @@
 >
   <label [for]="id">{{ label }}</label>
 </div>
-<span *ngIf="valid && touched" class="icon validated-icon fa fa-check"></span>
+<span *ngIf="valid && touched && !errorsOnly" class="icon validated-icon fa fa-check"></span>
 <ng-container *ngIf="!valid && touched">
   <span class="icon invalid-icon fa fa-exclamation"></span>
   <p *ngIf="error" class="error-text">

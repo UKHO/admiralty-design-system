@@ -37,3 +37,14 @@ export const validationRequired = () => ({
 validationRequired.story = {
   name: 'Required Validation',
 };
+
+export const errorsOnly = () => ({
+  moduleMetadata: {
+    declarations: [TextareaComponent],
+    imports: [ReactiveFormsModule],
+  },
+  template: `<ukho-textarea label="Description" [formControl]="formControl" [errorsOnly]="true"></ukho-textarea>`,
+  props: {
+    formControl: new FormControl('', Validators.maxLength(10)),
+  },
+});

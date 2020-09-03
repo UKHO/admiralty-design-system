@@ -85,3 +85,20 @@ export const customValidation = () => ({
 customValidation.story = {
   name: 'Custom Pattern Validation',
 };
+
+export const errorsOnly = () => ({
+  moduleMetadata: {
+    declarations: [SelectComponent],
+    imports: [ReactiveFormsModule],
+  },
+  template: `<ukho-select label="Choose a colour" [formControl]="formControl" [errorsOnly]="true">
+    <option>White</option>
+    <option>Blue</option>
+    <option>Black</option>
+    <option>Red</option>
+    <option>Green</option>
+</ukho-select>`,
+  props: {
+    formControl: new FormControl('', Validators.required),
+  },
+});
