@@ -3,7 +3,7 @@ name: Azure Static Web Apps CI/CD
 on:
   push:
   pull_request:
-    types: [opened, synchronize, reopened, closed]
+    types: [opened, reopened, closed]
 
 jobs:
   build_and_deploy_job:
@@ -24,11 +24,14 @@ jobs:
           ###### Repository/Build Configurations - These values can be configured to match you app requirements. ######
           # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
           app_location: "/" # App source code path
-          api_location: "api" # Api source code path - optional
-          app_artifact_location: "project/components/.out" # Built app content directory - optional
-          app_build_command: "yarn run lerna bootstrap && cd projects/components && yarn run build-storybook"
+          app_artifact_location: ".out" # Built app content directory - optional
+          app_build_command: "yarn global add @angular/cli && cd projects/components && yarn install && cd ../../ && yarn run lerna link && cd projects/components && yarn run build-storybook"
           ###### End of Repository/Build Configurations ######
-
+      - uses: actions/upload-artifact@v2.1.4
+        if: ${{ always() }}
+        with:
+          path: ".out"
+          # The desired behavior if no files are found using the provided path. 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
     runs-on: ubuntu-latest
