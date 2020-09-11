@@ -8,7 +8,6 @@ on:
     types: [opened, synchronize, reopened, closed]
     branches:
       - master
-
 jobs:
   build_and_deploy_job:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
@@ -29,7 +28,7 @@ jobs:
           # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
           app_location: "/" # App source code path
           app_artifact_location: ".out" # Built app content directory - optional
-          app_build_command: "yarn global add @angular/cli && cd projects/components && yarn install && cd ../../ && yarn run lerna link && cd projects/components && yarn run build-storybook"
+          app_build_command: "cd projects/components && yarn install && cd ../../ && yarn run lerna link && cd projects/components && yarn run build-storybook"
           ###### End of Repository/Build Configurations ######
       - uses: actions/upload-artifact@v2.1.4
         if: ${{ always() }}
