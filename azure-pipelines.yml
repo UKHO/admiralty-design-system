@@ -32,6 +32,8 @@ jobs:
         displayName: Install using yarn with the lockfile frozen
       - script: yarn run lerna bootstrap --ignore @ukho/design-system
         displayName: Bootstrap with lerna
+      - script: yarn build --prod
+        displayName: Build Project
       - script: yarn run lerna publish from-package --no-git-reset --yes
         displayName: Publish to NPMJS
   - job: ghpages
