@@ -11,7 +11,7 @@
     "url": "https://github.com/UKHO/design-system.git"
   },
   "scripts": {
-    "prepare": "cpx ./src/scss/core.scss dist/",
+    "prepare": "ng build --prod && cpx ./src/scss/core.scss dist/",
     "storybook": "yarn docs:json && start-storybook -s node_modules/@ukho/styles,node_modules/@fortawesome/fontawesome-free,src/assets",
     "build-storybook": "yarn docs:json && build-storybook -c .storybook -o ../../.out  -s node_modules/@ukho/styles,src/assets",
     "docs:json": "compodoc -p ./tsconfig.lib.json -e json -d ."
