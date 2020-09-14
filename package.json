@@ -19,7 +19,7 @@
     "printWidth": 120
   },
   "dependencies": {
-    "@angular/animations": "~9.0.7",    
+    "@angular/animations": "~9.0.7",
     "@angular/cdk": "~9.1.0",
     "@angular/common": "~9.0.7",
     "@angular/compiler": "~9.0.7",
