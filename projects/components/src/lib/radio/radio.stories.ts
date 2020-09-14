@@ -22,7 +22,8 @@ export const basic = () => ({
     disabled: boolean('Disabled', false),
     checked: boolean('Checked', false),
   },
-  template: `<ukho-radio name="group1" [disabled]="disabled" [checked]="checked" (change)="change($event.target.checked)">
-                Option 1
-             </ukho-radio>`,
+  template: `<ukho-radio name="group1"
+   [disabled]="disabled"
+   [checked]="checked"
+   (change)="change($event.target.checked)">Option 1</ukho-radio>`,
 });

@@ -4574,7 +4574,7 @@
                 "name": "nextId",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/lib/radio/radio.component.ts",
+                "file": "src/lib/readmore/readmore.component.ts",
                 "type": "number",
                 "defaultValue": "0"
             },
@@ -4582,7 +4582,7 @@
                 "name": "nextId",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/lib/readmore/readmore.component.ts",
+                "file": "src/lib/radio/radio.component.ts",
                 "type": "number",
                 "defaultValue": "0"
             }
@@ -4751,22 +4751,22 @@
                     "defaultValue": "0"
                 }
             ],
-            "src/lib/radio/radio.component.ts": [
-                {
-                    "name": "nextId",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/lib/radio/radio.component.ts",
-                    "type": "number",
-                    "defaultValue": "0"
-                }
-            ],
             "src/lib/readmore/readmore.component.ts": [
                 {
                     "name": "nextId",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/lib/readmore/readmore.component.ts",
+                    "type": "number",
+                    "defaultValue": "0"
+                }
+            ],
+            "src/lib/radio/radio.component.ts": [
+                {
+                    "name": "nextId",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/lib/radio/radio.component.ts",
                     "type": "number",
                     "defaultValue": "0"
                 }
