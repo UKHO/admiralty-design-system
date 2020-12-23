@@ -54,6 +54,16 @@ time.story = {
   name: 'Time',
 };
 
+export const autocomplete = () => ({
+  moduleMetadata: {
+    declarations: [TextinputComponent],
+  },
+  template: `<ukho-textinput label="Name" [autocomplete]="false"></ukho-textinput>`,
+});
+
+autocomplete.story = {
+  name: 'Autocomplete',
+};
 export const disabled = () => ({
   moduleMetadata: {
     declarations: [TextinputComponent],

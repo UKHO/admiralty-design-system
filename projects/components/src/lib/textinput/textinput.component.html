@@ -6,6 +6,7 @@
   (input)="onChange($event.target.value)"
   (blur)="onTouch()"
   [disabled]="disabled"
+  [autocomplete]="autocomplete ? 'on' : 'off'"
 />
 <div
   class="input-wrap"

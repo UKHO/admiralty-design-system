@@ -11,6 +11,11 @@ export abstract class UkhoAbstractFormField<T> implements ControlValueAccessor {
   id = `ukho-form-field-${++nextId}`;
 
   /**
+   * This dictates whether browser autocompletion should be disabled.
+   */
+  @Input() autocomplete = true;
+
+  /**
    * This dictates whether the form field is disabled.
    */
   @Input() disabled = false;
