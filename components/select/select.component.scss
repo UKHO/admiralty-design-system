@@ -1,0 +1,47 @@
+@use '../../styles/base/colours';
+@use '../../styles/base/icons';
+
+select {
+  appearance: none;
+  width: 100%;
+  height: 50px;
+  border: 2px solid colours.$colour-textinput-border;
+  color: colours.$colour-textinput-text;
+  padding-left: 18px;
+  outline: none;
+  background-color: colours.$colour-textinput-bg;
+  position: relative;
+  line-height: 3;
+
+  &:focus {
+    border-color: colours.$colour-textinput-text-active;
+    color: colours.$colour-textinput-text-active;
+    background-color: colours.$colour-white;
+  }
+}
+
+.wrapper {
+  position: relative;
+
+  &::after {
+    @extend .fas;
+    content: icons.fa-content(icons.$fa-var-chevron-down);
+    position: absolute;
+    top: 16px;
+    right: 16px;
+  }
+
+  .is-disabled &::after {
+    color: colours.$colour-textinput-text-disabled;
+    border-color: colours.$colour-textinput-border-disabled;
+    background: colours.$colour-white;
+  }
+
+  .validated &::after {
+    color: colours.$colour-utility-success;
+  }
+
+  .invalid &::after {
+    color: colours.$colour-utility-error;
+  }
+}

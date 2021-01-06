@@ -1,34 +1,28 @@
 {
-  "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
-    "outDir": "./dist/out-tsc",
+    "target": "es2015",
     "sourceMap": true,
-    "declaration": false,
+    "declaration": true,
+    "inlineSources": true,
+    "types": ["node"],
     "downlevelIteration": true,
+    "lib": ["dom", "es2018"],
     "experimentalDecorators": true,
+    "strictFunctionTypes": true,
     "module": "esnext",
     "moduleResolution": "node",
     "importHelpers": true,
-    "target": "es2015",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
-    "lib": [
-      "es2018",
-      "dom"
-    ],
-    "paths": {
-      "@ukho/components": [
-        "dist/components"
-      ],
-      "@ukho/components/*": [
-        "dist/components/*"
-      ]
-    }
+    "typeRoots": ["node_modules/@types"],
+    "esModuleInterop": true
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
-    "strictInjectionParameters": true
-  }
+    "strictInjectionParameters": true,
+    "skipTemplateCodegen": true,
+    "strictMetadataEmit": true,
+    "enableResourceInlining": true,
+    "enableIvy": false
+  },
+  "exclude": ["**/*.spec.ts", "**/*.stories.ts"]
 }

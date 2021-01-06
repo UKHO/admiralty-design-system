@@ -1,8 +1,0 @@
-{
-  "globals": {
-    "siteName": "UKHO Design System",
-    "mainHeading": "Design System",
-    "footerText": "&copy; Crown copyright 2019 UK Hydrographic Office",
-    "folders": [ "principles", "toolkit", "guidelines" ]
-  }
-}

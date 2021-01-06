@@ -2,6 +2,7 @@
 
 # compiled output
 **/dist
+**/dist-styles
 **/.out
 documentation.json
 /tmp
@@ -51,3 +52,5 @@ testem.log
 Thumbs.db
 
 lerna-debug.log
+storybook-static
+build-storybook.log

@@ -1,0 +1,7 @@
+{
+  "files.exclude": {
+    "**/coverage": true
+  },
+  "prettier.enable": true,
+  "jest.autoEnable": true
+}

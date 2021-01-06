@@ -1,0 +1,25 @@
+@use '../../styles/base/colours';
+
+ul {
+  display: flex;
+  list-style: none;
+  li {
+    cursor: default;
+    user-select: none;
+    flex-basis: 48px;
+    a {
+      cursor: pointer;
+      min-width: 25px;
+      text-align: center;
+      display: inline-block;
+    }
+    .current {
+      font-weight: bold;
+      color: colours.$colour-admiralty-blue;
+      border-bottom: 3px solid;
+    }
+    &::before {
+      display: none;
+    }
+  }
+}

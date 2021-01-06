@@ -1,97 +1,69 @@
-[![Build Status](https://dev.azure.com/ukhogov/Pipelines/_apis/build/status/UKHO.design-system?branchName=master)](https://dev.azure.com/ukhogov/Pipelines/_build/latest?definitionId=48&branchName=master) ![Components Version](https://img.shields.io/npm/v/@ukho/components?label=%40ukho%2Fcomponents) ![Styles Version](https://img.shields.io/npm/v/@ukho/styles?label=%40ukho%2Fstyles) [![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)](https://design.ukho.dev/storybook)
-
-<img src="projects/site/public/images/UKHO%20stacked%20logo.svg" height=100>
-
 # UKHO Design System
 
-This repository contains a monorepo structure with three projects: site, styles and components.
+![Design System CI](https://github.com/UKHO/design-system/workflows/Design%20System%20CI/badge.svg?branch=master) ![Design System Version](https://img.shields.io/npm/v/@ukho/design-system?label=%40ukho%2Fdesign-system)
 
-## @ukho/styles (styles)
+This repository contains the source for the UKHO's design system, our library of UI components that is used in our front end designs.
 
-SCSS stylesheets package containing all the style required for implementing the UKHO Design System.
+## Getting Started
 
-After having altered the styles project, to see changes in the Harp site, you will have to re-run the asset copy commands via Lerna:
+### Prerequisites
 
-```bash
-yarn run lerna bootstrap --scope @ukho/design-system
-```
-
-## @ukho/components (components)
-
-Angular library with custom component implementations for the UKHO Design System, using styles from @ukho/styles.
-
-### Storybook
-
-This project features a component sandbox using Storybook. This tool is aimed at developers using the Design System in products and contains information on component props.
-
-https://design.ukho.dev/storybook/
-
-#### Local Development
-
-To start storybook locally:
-
-- Run `yarn install` from the root of the repository
-
-- Go to `design-system/projects/components`
-
-- Install all dependencies using `yarn install`
-
-- Run `yarn run storybook`
-
-- Storybook will launch in your browser
+- [Node](https://nodejs.org/en/)
+- [Angular CLI](https://angular.io/cli#installing-angular-cli)
 
 ### Installation
 
-To install the Design System in a web application project, ensure you are running Angular 9 or higher.
+1. For new projects create a brand new angular app following instructions [here](https://angular.io/guide/setup-local)
+2. Add design system dependencies to your app
 
-Install the Design System components library and it's dependencies as follows:
-
-```shell script
-yarn install @angular/cdk @ukho/{styles,components} @fortawesome/fontawesome-free
+```sh
+npm install @angular/cdk @fortawesome/fontawesome-free
 ```
 
-## design.ukho.dev (site)
+3. Add design system to your app
 
-Static website to showcase the UKHO Design System, including components for HTML and Angular, principles and patterns.
-
-### Static HTML Site
-
-This project uses a Node based static site generator called Harp (http://harpjs.com/)
-to compile EJS (https://ejs.co/) from the **public** folder into static HTML in **dist**.
-Harp has built-in support for SASS which is similarly compiled into plan CSS. Resources
-such as fonts and images in the **assets** folder are copied as-is.
-
-The build system relies on JSON metadata which describes the basic structure of the site
-and is contained in _harp.json_ at the top level (for globals) and in _\_data.json_ files
-in each sub-folder. This data is then available as variables in the layout, template and
-partial EJS files at build time.
-
-### Installation
-
-- Prerequisites: Ensure that a recent release of Node and Yarn are installed
-
-- Install NPM packages, including Harp: `yarn install`
-
-### Development & Build
-
-You can develop locally by running the Harp server which compiles and serves on-the-fly,
-watching for changes:
-
-```bash
-yarn run start
+```sh
+npm install @ukho/design-system
 ```
 
-The site will be available at: http://localhost:9000/
+4. Add design system stylesheet globally in your app
 
-If you find that Harp fails to serve the site correctly but doesn't provide a useful
-error message in the browser or in the terminal, you should run _compile_ (see below)
-which should show more useful error messages in the terminal.
-
-Once you're done with modifications you can compile the final site to the _dist_ folder:
-
-```bash
-yarn run build
+```json
+// angular.json
+...
+"architect": {
+        "build": {
+          "options": {
+            "styles": ["...", "node_modules/@ukho/design-system/styles/core.scss"],
+          }
 ```
 
-As a static site the resulting _dist_ can then be uploaded to any web host
-(e.g. GithubPages or Netlify) with no requirement for server side processing.
+You are now ready to use the design system!
+
+### Usage
+
+Below is an example of how to import the button module into your application.
+
+1. Import modules as you need them
+
+```typescript
+// app.module.ts
+...
+import { ButtonModule } from "@ukho/design-system";
+...
+
+@NgModule({
+  imports: [..., ButtonModule]
+})
+```
+
+2. Add component selector to html
+
+```html
+<!--app.component.html-->
+<ukho-button>Hello Button</ukho-button>
+```
+
+## Contributing
+
+If you would like to contribute to the design system please read the [CONTRIBUTING File](https://github.com/UKHO/design-system/blob/master/CONTRIBUTING.md).

@@ -7,10 +7,10 @@
     "analytics": false
   },
   "projects": {
-    "@ukho/components": {
+    "design-system": {
       "projectType": "library",
-      "root": "projects/components",
-      "sourceRoot": "projects/components/src",
+      "root": "",
+      "sourceRoot": "components",
       "prefix": "ukho",
       "schematics": {
         "@schematics/angular:component": {
@@ -19,34 +19,33 @@
       },
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "tsConfig": "projects/components/tsconfig.lib.json",
-            "project": "projects/components/ng-package.json"
+            "tsConfig": "tsconfig.json",
+            "project": "ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/components/tsconfig.lib.prod.json"
+              "tsConfig": "tsconfig.json"
             }
           }
         },
         "test": {
-          "builder": "@angular-devkit/build-angular:karma",
+          "builder": "@angular-builders/jest:run",
           "options": {
-            "main": "projects/components/src/test.ts",
-            "tsConfig": "projects/components/tsconfig.spec.json",
-            "karmaConfig": "projects/components/karma.conf.js"
+            "tsConfig": "tsconfig.spec.json",
+            "configPath": "jest.config.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["projects/components/tsconfig.lib.json", "projects/components/tsconfig.spec.json"],
+            "tsConfig": ["tsconfig.json", "tsconfig.spec.json"],
             "exclude": ["**/node_modules/**"]
           }
         }
       }
     }
   },
-  "defaultProject": "@ukho/components"
+  "defaultProject": "design-system"
 }

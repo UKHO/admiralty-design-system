@@ -1,0 +1,31 @@
+@use '../../styles/base/colours';
+
+:host {
+  display: flex;
+}
+
+.errorProgress {
+  &::-webkit-progress-value {
+    background-color: red;
+  }
+  &::-moz-progress-bar {
+    background-color: red;
+  }
+}
+
+progress {
+  appearance: none;
+
+  &::-webkit-progress-bar {
+    border-radius: 0;
+  }
+
+  &::-webkit-progress-inner-element {
+    appearance: none;
+  }
+
+  border: none;
+  color: colours.$colour-admiralty-blue;
+  flex: 1;
+  background: colours.$colour-bg-grey;
+}

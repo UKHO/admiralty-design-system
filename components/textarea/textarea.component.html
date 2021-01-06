@@ -1,0 +1,12 @@
+<label [for]="id">{{ label }}</label>
+<textarea #input [id]="id" (input)="onChange($event.target.value)" (blur)="onTouch()" [disabled]="disabled">{{
+  text
+}}</textarea>
+<span class="resizer-arrow-wrap">
+  <span class="resizer-arrow"></span>
+</span>
+<ng-container *ngIf="!valid && touched">
+  <p *ngIf="error" class="error-text">
+    {{ validationMessages[error] }}
+  </p>
+</ng-container>

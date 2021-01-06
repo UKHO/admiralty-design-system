@@ -1,0 +1,57 @@
+@use '../../styles/base/colours';
+@use '../../styles/base/icons';
+@use '../../styles/base/responsive';
+
+.dialog {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  padding: 30px 18px;
+  @include responsive.not-desktop {
+    padding: 24px 18px;
+  }
+
+  /* info type is default */
+  border-left: 5px solid colours.$colour-utility-info;
+
+  h3 {
+    color: colours.$colour-utility-info;
+
+    &::before {
+      color: inherit;
+      @extend .fas;
+      content: icons.fa-content(icons.$fa-var-info-circle);
+      font-size: 18px;
+      margin: 0 10px 0 0;
+    }
+  }
+
+  &.error {
+    border-left: 5px solid colours.$colour-utility-error;
+    h3 {
+      color: colours.$colour-utility-error;
+      &::before {
+        @extend .fas;
+        content: icons.fa-content(icons.$fa-var-exclamation);
+      }
+    }
+  }
+  &.success {
+    border-left: 5px solid colours.$colour-utility-success;
+    h3 {
+      color: colours.$colour-utility-success;
+      &::before {
+        @extend .fas;
+        content: icons.fa-content(icons.$fa-var-check);
+      }
+    }
+  }
+  &.warning {
+    border-left: 5px solid colours.$colour-utility-warning;
+    h3 {
+      color: colours.$colour-utility-warning;
+      &::before {
+        @extend .fas;
+        content: icons.fa-content(icons.$fa-var-exclamation-triangle);
+      }
+    }
+  }
+}

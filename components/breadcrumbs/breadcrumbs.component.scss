@@ -1,0 +1,61 @@
+@use '../../styles/base/colours';
+@use '../../styles/base/responsive';
+@use '../../styles/base/icons';
+@use '../../styles/base/typography';
+
+ul.breadcrumbs {
+  width: 100%;
+  display: inline-flex;
+  border-bottom: 1px solid colours.$colour-divider;
+  background-color: colours.$colour-bg;
+  padding: 0 20px;
+  margin-bottom: 48px;
+  position: static;
+  @include responsive.not-desktop {
+    display: none;
+    margin-bottom: 30px;
+  }
+
+  li {
+    margin-bottom: 0;
+    transform: unset;
+    padding-right: unset;
+
+    // chevron
+    &::before {
+      @extend .fas;
+      content: icons.fa-content(icons.$fa-var-chevron-right);
+      font-size: 10px;
+      margin: 0 10px;
+      position: static;
+      left: unset;
+    }
+    // no chevron for first link
+    &:first-child::before {
+      content: none;
+      display: none;
+    }
+
+    a,
+    span {
+      display: inline-block;
+      line-height: 40px;
+      font-size: 14px;
+      font-weight: typography.$font-weight-light;
+      text-decoration: none;
+      color: colours.$colour-nav-item;
+      padding: 0 2px;
+    }
+    a:hover {
+      color: colours.$colour-admiralty-blue;
+    }
+    span {
+      user-select: none;
+    }
+
+    &:last-child a {
+      color: colours.$colour-admiralty-blue;
+      font-weight: typography.$font-weight-medium;
+    }
+  }
+}
