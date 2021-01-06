@@ -1,6 +1,6 @@
 {
   "name": "@ukho/design-system",
-  "version": "2.0.0-next.2",
+  "version": "2.0.0-next.3",
   "description": "Angular components library for the UKHO Design System",
   "author": {
     "name": "UK Hydrographic Office",
@@ -38,7 +38,7 @@
     "tslib": "^2.0.3"
   },
   "devDependencies": {
-    "@angular-builders/jest": "~10.0.1",
+    "@angular-builders/jest": "~11.0.0",
     "@angular-devkit/build-angular": "~0.1100.2",
     "@angular/animations": "^11.0.2",
     "@angular/cdk": "~11.0.1",
