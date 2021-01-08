@@ -24,3 +24,4 @@ jobs:
         stale-pr-message: 'This pull request is stale because it has been open for 100 days with no activity. Remove stale label or comment or this will be closed in 100 days'
         close-issue-message: 'This issue has been closed because it has been open for 150 days with no activity.'
         close-pr-message: 'This pull request has been closed because it has been open for 150 days with no activity.'
+        exempt-issue-labels: 'bug'
