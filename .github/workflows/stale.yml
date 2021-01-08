@@ -21,4 +21,6 @@ jobs:
         # The number of days to wait to close an issue or pull request after it being marked stale. Set to -1 to never close stale issues.
         days-before-close: 50 # optional, default is 7
         stale-issue-message: 'This issue is stale because it has been open for 100 days with no activity. Remove stale label or comment or this will be closed in 100 days'
-        stale-pr-message: 'This pull request has been closed because it has been open for 150 days with no activity.'
+        stale-pr-message: 'This pull request is stale because it has been open for 100 days with no activity. Remove stale label or comment or this will be closed in 100 days'
+        close-issue-message: 'This issue has been closed because it has been open for 150 days with no activity.'
+        close-pr-message: 'This pull request has been closed because it has been open for 150 days with no activity.'
