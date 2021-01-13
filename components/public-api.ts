@@ -23,5 +23,6 @@ export * from './file-input/file-input.module';
 export * from './progress-bar/progress-bar.module';
 export * from './phase-banner/phase-banner.module';
 export * from './paginator/paginator.module';
+export * from './typeahead/typeahead.module';
 
 export * from './navtypes';

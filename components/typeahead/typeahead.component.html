@@ -1,0 +1,25 @@
+<ukho-textinput
+  type="text"
+  [label]="label"
+  [formControl]="FormControl"
+  (keyup)="keyPressed($event)"
+  (keyup.enter)="selectCurrentItem()"
+  [errorsOnly]="true"
+  autocomplete="off"
+  class="filterTextInput"
+  (focusin)="isFocused = true"
+  (focusout)="isFocused = false"
+  [autocomplete]="false"
+></ukho-textinput>
+<div id="typeahead-list-container" *ngIf="isFocused && filterResult.length > 0">
+  <ul id="typeahead-list">
+    <li
+      *ngFor="let item of filterResult; let i = index"
+      (mousedown)="itemSelected(item)"
+      (mouseover)="itemHovered(i)"
+      [ngClass]="{ highlighted: i == selectedItemIndex }"
+    >
+      {{ item }}
+    </li>
+  </ul>
+</div>

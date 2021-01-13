@@ -6,52 +6,41 @@ export default {
   title: 'Form Elements/Text Input',
   component: TextinputComponent,
   parameters: {
-    componentSubtitle: 'Text inputs are intended for allowing a user to enter single line text data.'
-  }
+    componentSubtitle: 'Text inputs are intended for allowing a user to enter single line text data.',
+  },
 };
 
 export const basic = () => ({
   moduleMetadata: {
-    declarations: [TextinputComponent]
+    declarations: [TextinputComponent],
   },
-  template: `<ukho-textinput label="Name"></ukho-textinput>`
+  template: `<ukho-textinput label="Name"></ukho-textinput>`,
 });
 
 basic.story = {
-  name: 'Basic'
-};
-
-export const wide = () => ({
-  moduleMetadata: {
-    declarations: [TextinputComponent]
-  },
-  template: `<ukho-textinput label="Name" style="width: 500px"></ukho-textinput>`
-});
-
-wide.story = {
-  name: 'Wide'
+  name: 'Basic',
 };
 
 export const date = () => ({
   moduleMetadata: {
-    declarations: [TextinputComponent]
+    declarations: [TextinputComponent],
   },
-  template: `<ukho-textinput label="Date" type="date"></ukho-textinput>`
+  template: `<ukho-textinput label="Date" type="date"></ukho-textinput>`,
 });
 
 date.story = {
-  name: 'Date'
+  name: 'Date',
 };
 
 export const time = () => ({
   moduleMetadata: {
-    declarations: [TextinputComponent]
+    declarations: [TextinputComponent],
   },
-  template: `<ukho-textinput label="Time" type="time"></ukho-textinput>`
+  template: `<ukho-textinput label="Time" type="time"></ukho-textinput>`,
 });
 
 time.story = {
-  name: 'Time'
+  name: 'Time',
 };
 
 export const autocomplete = () => ({
@@ -66,52 +55,52 @@ autocomplete.story = {
 };
 export const disabled = () => ({
   moduleMetadata: {
-    declarations: [TextinputComponent]
+    declarations: [TextinputComponent],
   },
-  template: `<ukho-textinput label="Name" disabled="true"></ukho-textinput>`
+  template: `<ukho-textinput label="Name" disabled="true"></ukho-textinput>`,
 });
 
 disabled.story = {
-  name: 'Disabled'
+  name: 'Disabled',
 };
 
 export const ngModel = () => ({
   moduleMetadata: {
-    imports: [FormsModule]
+    imports: [FormsModule],
   },
   component: TextinputComponent,
   props: {
     label: 'Name',
-    ngModelChange: action('changed')
-  }
+    ngModelChange: action('changed'),
+  },
 });
 
 ngModel.story = {
-  name: 'ngModel'
+  name: 'ngModel',
 };
 
 export const validationRequired = () => ({
   moduleMetadata: {
     declarations: [TextinputComponent],
-    imports: [ReactiveFormsModule]
+    imports: [ReactiveFormsModule],
   },
   template: `<ukho-textinput label="Name" [formControl]="formControl"></ukho-textinput>`,
   props: {
-    formControl: new FormControl('', Validators.required)
-  }
+    formControl: new FormControl('', Validators.required),
+  },
 });
 
 validationRequired.story = {
-  name: 'Required Validation'
+  name: 'Required Validation',
 };
 
 export const errorsOnly = () => ({
   moduleMetadata: {
     declarations: [TextinputComponent],
-    imports: [ReactiveFormsModule]
+    imports: [ReactiveFormsModule],
   },
   template: '<ukho-textinput label="Name" [formControl]="formControl" [errorsOnly]="true"></ukho-textinput>',
   props: {
-    formControl: new FormControl('', Validators.max(100))
-  }
+    formControl: new FormControl('', Validators.max(100)),
+  },
 });
