@@ -29,6 +29,7 @@ select {
     position: absolute;
     top: 16px;
     right: 16px;
+    pointer-events: none;
   }
 
   .is-disabled &::after {
