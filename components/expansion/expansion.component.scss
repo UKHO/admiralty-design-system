@@ -17,11 +17,10 @@ section.readmore {
   > div + div {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.25s ease-in-out;
   }
 
   > input[type="checkbox"]:checked + div + div {
-    max-height: 1000px;
+    max-height: none;
   }
 
   > input[type="checkbox"]:checked + div + div + label::before {
@@ -60,7 +59,6 @@ section.expansion {
   .expansion-content {
     max-height: 0;
     overflow: hidden;
-    transition: all 0.25s ease-in-out;
   }
 
   .expansion-checkbox:checked {
@@ -72,7 +70,7 @@ section.expansion {
 
   .expansion-checkbox:checked {
     ~ .expansion-content {
-      max-height: 1000px;
+      max-height: none;
       padding-bottom: 12px;
     }
   }
