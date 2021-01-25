@@ -1,0 +1,15 @@
+<div class="footer-branding">
+  <div class="footer-img">
+    <a href="{{ imageLink }}">
+      <img src="{{ imageSrc }}" alt="{{ imageAlt }}" />
+    </a>
+  </div>
+</div>
+<div class="footer-content">
+  <div class="footer-links">
+    <a *ngFor="let item of navigation" href="{{ item.href }}">{{ item.title }}</a>
+  </div>
+  <div class="footer-text">
+    <p>{{ text }}</p>
+  </div>
+</div>

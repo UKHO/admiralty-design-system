@@ -19,8 +19,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "docs:json": "compodoc -p ./tsconfig.json -e json -d .",
-    "storybook": "yarn docs:json && start-storybook",
-    "build-storybook": "yarn docs:json && build-storybook",
+    "storybook": "yarn docs:json && start-storybook -s ./assets",
+    "build-storybook": "yarn docs:json && build-storybook -s ./assets",
     "build-styles": "node styles/generateCSS.js && postcss dist-styles/ukho.min.css --use autoprefixer -d dist-styles/"
   },
   "peerDependencies": {
