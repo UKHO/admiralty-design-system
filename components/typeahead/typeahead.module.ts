@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { TypeaheadComponent } from './typeahead.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { TextinputModule } from 'components/textinput/textinput.module';
+import { TextinputModule } from '../textinput/textinput.module';
 
 @NgModule({
   declarations: [TypeaheadComponent],
