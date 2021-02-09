@@ -119,13 +119,13 @@ ul {
   }
 
   li::before {
-    content: "\25A0";
+    content: "\2B24";
     color: colours.$colour-dark-blue;
-    font-size: 18px;
+    font-size: 10px;
     display: inline-block;
     margin-right: 20px;
     @include responsive.not-desktop {
-      font-size: 14px;
+      font-size: 8px;
     }
   }
 }
