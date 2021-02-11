@@ -19,6 +19,27 @@ However for those who do not have access to WebStorm we also recommend using [VS
 
 -[Angular Language Service](https://marketplace.visualstudio.com/items?itemName=Angular.ng-template) -[Jest](https://marketplace.visualstudio.com/items?itemName=Orta.vscode-jest) -[Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) -[Sass](https://marketplace.visualstudio.com/items?itemName=Syler.sass-indented) -[TSLint](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-typescript-tslint-plugin)
 
+#### VS Code Dev Container
+
+**Optionally** you can choose to make use of the provided VS Code Dev Container as your development environment.
+
+Assuming Windows 10, you would need to have the following prerequisites:
+
+- VS Code
+- Docker Desktop (Linux Containers mode)
+- WSL 2 (& Ubuntu 20.04 LTS)
+  [https://docs.microsoft.com/en-us/windows/wsl/install-win10](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
+- Git Repository Cloned to WSL
+- VS Code Extensions installed:
+  - [https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
+  - [https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl)
+
+Then to open the Dev Container you would need to do the following:
+
+- Open WSL
+- Open repository with `code .`
+- When prompted, click the 'Reopen in Container' button (should be prompted via a toast in the bottom-right)
+
 ### Adding new component
 
 To add a new component to the design system, the easiest way is to copy and existing component folder as this will provide you with the correct structure for all of the files.

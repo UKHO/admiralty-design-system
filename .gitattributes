@@ -1,0 +1,7 @@
+# Auto detect text files and perform LF normalization
+* text eol=crlf
+*.png binary
+*.eot binary
+*.ttf binary
+*.woff binary
+*.woff2 binary
