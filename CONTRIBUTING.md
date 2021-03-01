@@ -5,7 +5,7 @@ repository before making a change.
 
 ## Pull Request Process
 
-When contributing to the design system please ensure that you create a branch off of `master` and then create a PR with a description that outlines the changes that you have made. Creating a PR ensures that you get fast feedback on your code from the Code owners and the UX team.
+When contributing to the design system please ensure that you create a branch off of `main` and then create a PR with a description that outlines the changes that you have made. Creating a PR ensures that you get fast feedback on your code from the Code owners and the UX team.
 
 ## Development
 
@@ -96,7 +96,7 @@ When a new PR is created the pipeline will automatically trigger and will perfor
 - build
 - Run unit tests
 - upload to Chromatic
-- publish package to npm (master branch only)
+- publish package to npm (main branch only)
 
 The pipeline is created as a Github Workflow and can be located in the `.github` folder of the repository.
 

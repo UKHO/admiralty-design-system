@@ -1,6 +1,6 @@
 # UKHO Design System
 
-![Design System CI](https://github.com/UKHO/design-system/workflows/Design%20System%20CI/badge.svg?branch=master) ![Design System Version](https://img.shields.io/npm/v/@ukho/design-system?label=%40ukho%2Fdesign-system)
+![Design System CI](https://github.com/UKHO/design-system/workflows/Design%20System%20CI/badge.svg?branch=main) ![Design System Version](https://img.shields.io/npm/v/@ukho/design-system?label=%40ukho%2Fdesign-system)
 
 This repository contains the source for the UKHO's design system, our library of UI components that is used in our front end designs.
 
@@ -66,4 +66,4 @@ import { ButtonModule } from "@ukho/design-system";
 
 ## Contributing
 
-If you would like to contribute to the design system please read the [CONTRIBUTING File](https://github.com/UKHO/design-system/blob/master/CONTRIBUTING.md).
+If you would like to contribute to the design system please read the [CONTRIBUTING File](https://github.com/UKHO/design-system/blob/main/CONTRIBUTING.md).
