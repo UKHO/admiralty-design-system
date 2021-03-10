@@ -4,7 +4,7 @@
 
 This repository contains the source for the UKHO's design system, our library of UI components that is used in our front end designs.
 
-## Getting Started
+## Getting Started - Angular
 
 ### Prerequisites
 
@@ -28,14 +28,13 @@ npm install @ukho/design-system
 
 4. Add design system stylesheet globally in your app
 
-```json
-// angular.json
+```scss
+// styles.scss
 ...
-"architect": {
-        "build": {
-          "options": {
-            "styles": ["...", "node_modules/@ukho/design-system/styles/core.scss"],
-          }
+@use '~@fortawesome/fontawesome-free/scss/fontawesome';
+@use '~@fortawesome/fontawesome-free/scss/solid';
+@use '~@fortawesome/fontawesome-free/scss/brands';
+@use '~@ukho/design-system/styles/core.scss';
 ```
 
 You are now ready to use the design system!
@@ -62,6 +61,47 @@ import { ButtonModule } from "@ukho/design-system";
 ```html
 <!--app.component.html-->
 <ukho-button>Hello Button</ukho-button>
+```
+
+## Getting Started - CDN
+
+We understand that not everyone can use angular when building their projects, so we offer a CSS only alternative which encompasses all of the styles in the design system.
+
+### Prerequisites
+
+1. Add the [fontawesome stylesheet](https://fontawesome.com/how-to-use/on-the-web/setup/hosting-font-awesome-yourself) to your html
+
+```html
+<head>
+  <link href="/your-path-to-fontawesome/css/all.css" rel="stylesheet" />
+  <!--load all styles -->
+</head>
+```
+
+### Installation
+
+1. Add the [design system stylesheet](https://unpkg.com/browse/@ukho/design-system@latest/styles/css/ukho.min.css) to your html
+
+```html
+<head>
+  <!-- fontawesome styles -->
+  <link href="https://unpkg.com/@ukho/design-system@latest/styles/css/ukho.min.css" rel="stylesheet" />
+  <!--load all styles -->
+</head>
+```
+
+We recommend pinning the version of the css that you are using to avoid be automatically pulling breaking changes. To do this instead of using `@latest`, use `@{npm package version}` instead. e.g `@2.0.0`.
+
+### Usage
+
+Below is an example of how to add a button into your website.
+
+1. Navigate to the design system show case site and locate the component you wish use
+
+2. Add that snippet your html
+
+```html
+<ukho-button><button>Hello button!</button></ukho-button>
 ```
 
 ## Contributing

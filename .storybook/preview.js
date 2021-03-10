@@ -5,5 +5,6 @@ setCompodocJson(docJson);
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
-  controls: { expanded: true }
+  controls: { expanded: true },
+  chromatic: { diffThreshold: 0.75 },
 };
