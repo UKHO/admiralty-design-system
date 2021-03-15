@@ -15,37 +15,27 @@ export class PaginatorComponent {
     this.setPage(page);
   }
 
-  get pageArray() {
-    const even = this.maxLength % 2 === 0 ? 1 : 0;
-    if (this._pages < this.maxLength) {
-      return this.range(1, this._pages);
-    } else if (this._currentPage <= this.maxLength / 2 + 1) {
-      return [...this.range(1, this.maxLength - 2), '...', this._pages];
-    } else if (this._pages - this._currentPage <= this.maxLength / 2 - even) {
-      return [1, '...', ...this.range(this._pages - (this.maxLength - 3), this.maxLength - 2)];
-    }
-    return [
-      1,
-      '...',
-      ...this.range(this._currentPage - Math.floor(this.maxLength / 2) + 2, this.maxLength - 4),
-      '...',
-      this._pages,
-    ];
+  @Input() set label(label: string) {
+    this.setLabel(label);
   }
 
   @Output() pageChange = new EventEmitter<number>();
 
   _pages: number;
   _currentPage = 1;
+  _label = '';
   readonly maxLength = 7;
+
+  public setLabel(label: string) {
+    if (label == null || label.length == 0) {
+      return;
+    }
+    this._label = label;
+  }
 
   public setPage(page: number) {
     this._currentPage = page;
     this.pageChange.emit(page);
-  }
-
-  range(start, length) {
-    return [...Array(length).keys()].map(x => x + start);
   }
 
   prev() {

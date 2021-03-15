@@ -1,12 +1,10 @@
-<nav>
-  <ul>
-    <li><a (click)="prev()">Previous</a></li>
-    <li *ngFor="let page of pageArray">
-      <a *ngIf="page !== '...'; else ellipsis" (click)="setPage(page)" [ngClass]="{ current: page === _currentPage }">
-        {{ page }}
-      </a>
-      <ng-template #ellipsis>&hellip;</ng-template>
-    </li>
-    <li><a (click)="next()">Next</a></li>
-  </ul>
+<!-- Standard -->
+<nav class="standard">
+  <p>{{ _label }}</p>
+  <a class="pagination-anchor" [ngClass]="{ disabled: _currentPage == 1 }" (click)="prev()">
+    <i class="fas fa-chevron-left"></i>
+  </a>
+  <a class="pagination-anchor" [ngClass]="{ disabled: _currentPage == _pages }" (click)="next()">
+    <i class="fas fa-chevron-right"></i>
+  </a>
 </nav>

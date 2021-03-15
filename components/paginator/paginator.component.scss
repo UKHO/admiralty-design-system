@@ -1,27 +1,32 @@
 @use '../../styles/base/colours';
+nav.standard {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 
-:host {
-  ul {
+  .pagination-anchor {
+    width: 50px;
+    height: 50px;
+    border: 2px solid colours.$colour-dark-blue;
+    background: #eeeeee;
     display: flex;
-    list-style: none;
-    li {
-      cursor: default;
-      user-select: none;
-      flex-basis: 48px;
-      a {
-        cursor: pointer;
-        min-width: 25px;
-        text-align: center;
-        display: inline-block;
-      }
-      .current {
-        font-weight: bold;
-        color: colours.$colour-admiralty-blue;
-        border-bottom: 3px solid;
-      }
-      &::before {
-        display: none;
-      }
-    }
+    flex-direction: column;
+    justify-content: center;
+  }
+  .pagination-anchor:nth-of-type(1) {
+    margin: 0px 6px 0px 6px;
+  }
+  .pagination-anchor:nth-of-type(2) {
+    margin: 0px 0px 0px 6px;
+  }
+  .pagination-anchor.disabled {
+    opacity: 0.3;
+  }
+  i {
+    text-align: center;
+  }
+  p {
+    padding: 0px 18px 0px 0px;
+    margin-bottom: 0px;
   }
 }
