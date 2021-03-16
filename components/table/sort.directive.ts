@@ -14,7 +14,7 @@ export interface SortState {
 export class UkhoSort {
   @Output() readonly sortChange = new EventEmitter<SortState>();
 
-  private headers = new Map<string, UkhoSortHeader>();
+  public headers = new Map<string, UkhoSortHeader>();
 
   public register(sortHeader: UkhoSortHeader) {
     this.headers.set(sortHeader.columnDef.name, sortHeader);
@@ -25,7 +25,11 @@ export class UkhoSort {
   }
 
   public onSort(state: { column: string; direction: 'asc' | 'desc' | '' }) {
-    this.headers.forEach(header => (header.columnDef.name !== state.column ? header.reset() : ''));
+    this.headers.forEach((header) => {
+      if (header.columnDef.name !== state.column) {
+        header.reset();
+      }
+    });
     this.sortChange.emit(state);
   }
 }

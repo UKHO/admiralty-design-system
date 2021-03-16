@@ -1,80 +1,51 @@
-import { moduleMetadata } from '@storybook/angular';
-import { TableModule, UkhoTable } from './table.module';
-import { mockData } from './mock-data';
+import { Story } from '@storybook/angular';
+import {
+  mockDataWithHeaders,
+  mockDataNoHeaders,
+  mockDataWithAllSorting,
+  mockDataWithSomeSorting,
+  mockDataWithHtmlContent,
+} from './mock-data';
+import { CdkTableModule } from '@angular/cdk/table';
+import { TableComponent } from './table.component';
+import { UkhoSort } from './sort.directive';
+import { UkhoSortHeader } from './sort-header.directive';
 import { action } from '@storybook/addon-actions';
 
 export default {
   title: 'Table',
-  component: UkhoTable,
-
-  decorators: [
-    moduleMetadata({
-      imports: [TableModule]
-    })
-  ]
+  component: TableComponent,
 };
 
-export const table = () => ({
-  template: `
-    <table ukho-table [dataSource]="dataSource">
-      <ng-container ukhoColumnDef="folio">
-        <th ukho-header-cell *ukhoHeaderCellDef>Folio</th>
-        <td ukho-cell *ukhoCellDef="let row">{{row.folio}}</td>
-      </ng-container>
-
-      <ng-container ukhoColumnDef="title">
-        <th ukho-header-cell *ukhoHeaderCellDef>Title</th>
-        <td ukho-cell *ukhoCellDef="let row">{{row.title}}</td>
-      </ng-container>
-
-      <ng-container ukhoColumnDef="from">
-        <th ukho-header-cell *ukhoHeaderCellDef>From</th>
-        <td ukho-cell *ukhoCellDef="let row">{{row.from}}</td>
-      </ng-container>
-
-      <ng-container ukhoColumnDef="to">
-        <th ukho-header-cell *ukhoHeaderCellDef>To</th>
-        <td ukho-cell *ukhoCellDef="let row">{{row.to}}</td>
-      </ng-container>
-
-      <tr ukho-header-row *ukhoHeaderRowDef="headings"></tr>
-      <tr ukho-row *ukhoRowDef="let row; columns: headings"></tr>
-    </table>`,
-  props: {
-    headings: mockData.headings,
-    dataSource: mockData.records
-  }
+const Template: Story = (args) => ({
+  props: args,
+  moduleMetadata: {
+    declarations: [TableComponent, UkhoSort, UkhoSortHeader],
+    imports: [CdkTableModule],
+  },
+  template: `<ukho-table [dataSource]="dataSource" [displayedColumns]="displayedColumns" (sortChange)="onChange($event)"></ukho-table>`,
 });
+export const HeadersOnly: Story = Template.bind({});
+HeadersOnly.args = {
+  displayedColumns: mockDataWithHeaders.headings,
+  dataSource: mockDataWithHeaders.records,
+};
 
-export const sorting = () => ({
-  template: `
-    <table ukho-table ukho-sort [dataSource]="dataSource" (sortChange)="change($event)">
-      <ng-container ukhoColumnDef="folio">
-        <th ukho-header-cell *ukhoHeaderCellDef ukho-sort-header>Folio</th>
-        <td ukho-cell *ukhoCellDef="let row">{{row.folio}}</td>
-      </ng-container>
+export const SortingEnabledOnAll: Story = Template.bind({});
+SortingEnabledOnAll.args = {
+  displayedColumns: mockDataWithAllSorting.headings,
+  dataSource: mockDataWithAllSorting.records,
+  onChange: action('sort changed'),
+};
+export const SortingEnabledOnSome: Story = Template.bind({});
+SortingEnabledOnSome.args = {
+  displayedColumns: mockDataWithSomeSorting.headings,
+  dataSource: mockDataWithSomeSorting.records,
+  onChange: action('sort changed'),
+};
 
-      <ng-container ukhoColumnDef="title">
-        <th ukho-header-cell *ukhoHeaderCellDef ukho-sort-header>Title</th>
-        <td ukho-cell *ukhoCellDef="let row">{{row.title}}</td>
-      </ng-container>
-
-      <ng-container ukhoColumnDef="from">
-        <th ukho-header-cell *ukhoHeaderCellDef>From</th>
-        <td ukho-cell *ukhoCellDef="let row">{{row.from}}</td>
-      </ng-container>
-
-      <ng-container ukhoColumnDef="to">
-        <th ukho-header-cell *ukhoHeaderCellDef>To</th>
-        <td ukho-cell *ukhoCellDef="let row">{{row.to}}</td>
-      </ng-container>
-
-      <tr ukho-header-row *ukhoHeaderRowDef="headings"></tr>
-      <tr ukho-row *ukhoRowDef="let row; columns: headings"></tr>
-    </table>`,
-  props: {
-    headings: mockData.headings,
-    dataSource: mockData.records,
-    change: action('change')
-  }
-});
+export const TableWithHtmlContent: Story = Template.bind({});
+TableWithHtmlContent.args = {
+  displayedColumns: mockDataWithHtmlContent.headings,
+  dataSource: mockDataWithHtmlContent.records,
+};

@@ -1,123 +1,108 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { UkhoTable } from './table.component';
-import { mockData, TestData } from './mock-data';
-import { DebugElement, Type, Component, ViewChild } from '@angular/core';
-import { TableModule } from './table.module';
-import { DataSource } from '@angular/cdk/table';
-import { CollectionViewer } from '@angular/cdk/collections';
-import { BehaviorSubject, combineLatest } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { TableComponent } from './table.component';
+import { createComponentFactory, createHostFactory, Spectator, SpectatorHost } from '@ngneat/spectator/jest';
+import { CdkTableModule, DataSource } from '@angular/cdk/table';
+import { SortState } from './sort.directive';
+import { UkhoSortHeader } from './sort-header.directive';
+import { TestBed } from '@angular/core/testing';
+import { COMPILER_OPTIONS } from '@angular/core';
+import { ColumnData } from './ColumnData';
 
-describe.skip('TableComponent', () => {
-  let fixture: ComponentFixture<any>;
-  let component: any;
-  let compiled: DebugElement['nativeElement'];
-  let dataSource: FakeDataSource;
-  let table: UkhoTable<TestData>;
+describe('TableComponent', () => {
+  let spectator: Spectator<TableComponent<any>>;
+  let createComponent = createComponentFactory({ component: TableComponent, imports: [CdkTableModule] });
 
-  function createComponent<T>(componentType: Type<T>, declarations: any[] = []): ComponentFixture<T> {
-    TestBed.configureTestingModule({
-      imports: [TableModule],
-      declarations: [componentType, ...declarations]
-    }).compileComponents();
-
-    return TestBed.createComponent<T>(componentType);
-  }
-
-  function setupTableTestApp(componentType: Type<any>, declarations: any[] = []) {
-    fixture = createComponent(componentType, declarations);
-    component = fixture.componentInstance;
-
-    fixture.detectChanges();
-    compiled = fixture.nativeElement;
-  }
+  let fakeDataSource;
+  let fakeDisplayedColumns: ColumnData[];
 
   beforeEach(() => {
-    setupTableTestApp(SimpleUkhoTableApp);
-    component = fixture.componentInstance as SimpleUkhoTableApp;
-    dataSource = component.dataSource;
-    table = component.table;
-    fixture.detectChanges();
+    fakeDataSource = [{ test: 'test' }];
+    fakeDisplayedColumns = [
+      {
+        headerTitle: 'test',
+        sortable: true,
+        propertyName: 'test',
+      },
+    ];
+    spectator = createComponent({
+      props: { dataSource: fakeDataSource, displayedColumns: fakeDisplayedColumns },
+    });
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(spectator).toBeTruthy();
   });
 
-  it('should render table headings from input property table object', () => {
-    const headings = compiled.querySelectorAll('ukho-header-cell');
-    expect(headings).toBeTruthy();
-    expect(headings.length).toBe(component.columnsToRender.length);
-    headings.forEach((heading, i) => {
-      expect(heading.textContent).toEqual(mockData.headingTitles[i]);
-    });
+  it('onSortChange should call emit on the event emitter', () => {
+    const emitSpy = spyOn(spectator.component.sortChange, 'emit');
+    var sortState: SortState = { column: 'test', direction: 'asc' };
+    spectator.component.onSortChange(sortState);
+
+    expect(emitSpy).toHaveBeenCalledTimes(1);
   });
 
-  it('should render table data from input property table object', () => {
-    const records = compiled.querySelectorAll('ukho-row');
-    expect(records.length).toBe(mockData.records.length);
-    records.forEach((record, i) => {
-      const testRecord = mockData.records[i];
-      const testValues = Object.values(testRecord);
-      const values = record.querySelectorAll('ukho-cell');
-      expect(values.length).toBe(testValues.length);
-      values.forEach((value, j) => {
-        expect(value.textContent.trim()).toEqual(testValues[j]);
-      });
+  it('isHeaderDisplayed should return true if there is 1 or more header titles', () => {
+    expect(spectator.component.isHeaderDisplayed).toBe(true);
+  });
+
+  it('isHeaderDisplayed should return false if there is 0 header titles', () => {
+    const fakeDisplayedColumns: ColumnData[] = [];
+    spectator = createComponent({
+      props: { dataSource: fakeDataSource, displayedColumns: fakeDisplayedColumns },
     });
+
+    expect(spectator.component.isHeaderDisplayed).toBe(false);
+  });
+
+  it('columnProperties should return an array of only the propertyNames', () => {
+    fakeDisplayedColumns.push({
+      headerTitle: 'test2',
+      sortable: true,
+      propertyName: 'test2',
+    });
+    spectator.detectChanges();
+
+    expect(spectator.component.columnProperties.length).toBe(2);
+    expect(spectator.component.columnProperties).toEqual(['test', 'test2']);
+  });
+
+  it('should render the same number of column headers as there are passed in headers', () => {
+    expect(spectator.queryAll('th', { root: true }).length).toBe(1);
+  });
+
+  it('ukho-sort-header is not added to headers that are set as sortable false', () => {
+    fakeDisplayedColumns.push({
+      headerTitle: 'test2',
+      sortable: false,
+      propertyName: 'test2',
+    });
+    spectator.detectChanges();
+    expect(spectator.queryAll('th[ukho-sort-header]', { root: true }).length).toBe(1);
+  });
+
+  it('ukho-sort-header is added to headers that are set as sortable true', () => {
+    fakeDisplayedColumns.push({
+      headerTitle: 'test2',
+      sortable: true,
+      propertyName: 'test2',
+    });
+    spectator.detectChanges();
+    expect(spectator.queryAll('th[ukho-sort-header]', { root: true }).length).toBe(2);
+  });
+
+  it('the header row is not rendered when there are no header titles', () => {
+    fakeDisplayedColumns = [
+      {
+        sortable: true,
+        propertyName: 'test',
+      },
+    ];
+    spectator = createComponent({
+      props: { dataSource: fakeDataSource, displayedColumns: fakeDisplayedColumns },
+    });
+    expect(spectator.queryAll('tr[cdk-header-row]', { root: true }).length).toBe(0);
+  });
+
+  it('the header row is rendered when there are header titles', () => {
+    expect(spectator.queryAll('tr[cdk-header-row]', { root: true }).length).toBe(1);
   });
 });
-
-class FakeDataSource extends DataSource<TestData> {
-  isConnected = false;
-  _dataChange = new BehaviorSubject<TestData[]>([]);
-  connect(collectionViewer: CollectionViewer) {
-    this.isConnected = true;
-    return combineLatest([this._dataChange, collectionViewer.viewChange]).pipe(map((data) => data[0]));
-  }
-  disconnect(collectionViewer: CollectionViewer) {
-    this.isConnected = false;
-  }
-
-  get data() {
-    return this._dataChange.getValue();
-  }
-  set data(data: TestData[]) {
-    this._dataChange.next(data);
-  }
-  constructor() {
-    super();
-    this.data = mockData.records;
-  }
-}
-
-@Component({
-  template: `
-    <ukho-table [dataSource]="dataSource">
-      <ng-container ukhoColumnDef="folio">
-        <ukho-header-cell *ukhoHeaderCellDef>Folio</ukho-header-cell>
-        <ukho-cell *ukhoCellDef="let row">{{ row.folio }}</ukho-cell>
-      </ng-container>
-      <ng-container ukhoColumnDef="title">
-        <ukho-header-cell *ukhoHeaderCellDef>Title</ukho-header-cell>
-        <ukho-cell *ukhoCellDef="let row">{{ row.title }}</ukho-cell>
-      </ng-container>
-      <ng-container ukhoColumnDef="from">
-        <ukho-header-cell *ukhoHeaderCellDef>From</ukho-header-cell>
-        <ukho-cell *ukhoCellDef="let row">{{ row.from }}</ukho-cell>
-      </ng-container>
-      <ng-container ukhoColumnDef="to">
-        <ukho-header-cell *ukhoHeaderCellDef>To</ukho-header-cell>
-        <ukho-cell *ukhoCellDef="let row">{{ row.to }}</ukho-cell>
-      </ng-container>
-      <ukho-header-row *ukhoHeaderRowDef="columnsToRender"></ukho-header-row>
-      <ukho-row class="text-wrap" *ukhoRowDef="let row; columns: this.headings"></ukho-row>
-    </ukho-table>
-  `
-})
-class SimpleUkhoTableApp {
-  dataSource: FakeDataSource | undefined = new FakeDataSource();
-  headings = mockData.headings;
-
-  @ViewChild(UkhoTable) table: UkhoTable<TestData>;
-}

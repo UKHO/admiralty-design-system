@@ -65,12 +65,8 @@ th[ukho-sort-header] {
   &::after {
     @extend .fas;
     content: icons.fa-content(icons.$fa-var-caret-up);
-    opacity: 0;
-    margin-left: 0.4rem;
-  }
-
-  &:hover::after {
     opacity: 0.4;
+    margin-left: 0.4rem;
   }
 
   &.asc::after {
