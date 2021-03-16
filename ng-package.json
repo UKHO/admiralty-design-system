@@ -6,5 +6,5 @@
     "entryFile": "components/public-api.ts",
     "styleIncludePaths": ["styles/core.scss"]
   },
-  "allowedNonPeerDependencies": ["filesize", "normalize.css"]
+  "whitelistedNonPeerDependencies": ["filesize", "normalize.css"]
 }
