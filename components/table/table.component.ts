@@ -1,6 +1,6 @@
 import { DataSource } from '@angular/cdk/table';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { SortState } from 'components/table/sort.directive';
+import { SortState } from './sort.directive';
 import { Observable } from 'rxjs';
 import { ColumnData } from './ColumnData';
 
