@@ -17,7 +17,7 @@ Our IDE of choice is using [WebStorm](https://www.jetbrains.com/webstorm/) as it
 
 However for those who do not have access to WebStorm we also recommend using [VSCode](https://code.visualstudio.com/) with the following extensions:
 
--[Angular Language Service](https://marketplace.visualstudio.com/items?itemName=Angular.ng-template) -[Jest](https://marketplace.visualstudio.com/items?itemName=Orta.vscode-jest) -[Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) -[Sass](https://marketplace.visualstudio.com/items?itemName=Syler.sass-indented) -[TSLint](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-typescript-tslint-plugin)
+-[Angular Language Service](https://marketplace.visualstudio.com/items?itemName=Angular.ng-template) -[Jest](https://marketplace.visualstudio.com/items?itemName=Orta.vscode-jest) -[Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) -[Sass](https://marketplace.visualstudio.com/items?itemName=Syler.sass-indented) -[ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 
 #### VS Code Dev Container
 

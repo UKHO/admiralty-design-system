@@ -17,7 +17,7 @@
     "orta.vscode-jest",
     "esbenp.prettier-vscode",
     "syler.sass-indented",
-    "ms-vscode.vscode-typescript-tslint-plugin"
+    "dbaeumer.vscode-eslint"
   ],
 
   // Use 'forwardPorts' to make a list of ports inside the container available locally.

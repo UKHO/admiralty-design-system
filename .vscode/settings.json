@@ -2,6 +2,7 @@
   "files.exclude": {
     "**/coverage": true
   },
-  "prettier.enable": true,
-  "jest.autoEnable": true
+  "jest.autoEnable": true,
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "eslint.format.enable": true
 }
