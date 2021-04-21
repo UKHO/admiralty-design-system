@@ -4,7 +4,6 @@ import { Story } from '@storybook/angular';
 
 export default {
   title: 'Paginator',
-  component: PaginatorComponent,
   argTypes: {},
 };
 
