@@ -4,6 +4,7 @@ import { HorizontalRuleComponent } from './horizontal-rule.component';
 
 @NgModule({
   declarations: [HorizontalRuleComponent],
+  exports: [HorizontalRuleComponent],
   imports: [CommonModule],
 })
 export class HorizontalRuleModule {}

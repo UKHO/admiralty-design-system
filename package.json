@@ -1,6 +1,6 @@
 {
   "name": "@ukho/design-system",
-  "version": "2.0.0-next.15",
+  "version": "2.0.0-next.16",
   "description": "Angular components library for the UKHO Design System",
   "author": {
     "name": "UK Hydrographic Office",
@@ -19,7 +19,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "docs:json": "compodoc -p ./tsconfig.json -e json -d .",
-    "storybook": "yarn docs:json && start-storybook -s ./assets",
+    "storybook": "yarn docs:json && start-storybook -s ./assets -c .storybook",
     "build-storybook": "yarn docs:json && build-storybook -s ./assets",
     "build-styles": "node styles/generateCSS.js && postcss dist/styles/css/ukho.min.css --map --use autoprefixer -d dist/styles/css"
   },
@@ -89,7 +89,7 @@
     "react-is": "^17.0.1",
     "rxjs": "^6.6.3",
     "sass": "^1.29.0",
-    "sb": "^6.1.9",
+    "sb": "^6.2.9",
     "ts-node": "~9.1.1",
     "typescript": "~4.1.0",
     "zone.js": "~0.11.3"

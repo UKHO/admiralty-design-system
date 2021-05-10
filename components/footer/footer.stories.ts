@@ -1,5 +1,5 @@
 import { FooterComponent } from './footer.component';
-import { MenuItem } from '../navtypes';
+import { FooterItem } from './footer.types';
 import { Story } from '@storybook/angular';
 
 export default {
@@ -24,16 +24,14 @@ export default {
   },
 };
 
-const mockNav: MenuItem[] = [
+const mockNav: FooterItem[] = [
   {
     title: 'Privacy Policy',
     href: '',
-    active: true,
   },
   {
     title: 'Accessibility',
     href: '',
-    active: false,
   },
 ];
 

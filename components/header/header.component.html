@@ -1,11 +1,85 @@
-<header>
-  <nav id="top-menu">
-    <span>
-      {{ text }}
-      <img *ngIf="!text" src="{{ src }}" alt="{{ alt }}" />
-    </span>
-    <div *ngIf="navigation" class="header-links-wrap">
-      <a *ngFor="let item of navigation" href="{{ item.href }}">{{ item.title }}</a>
+<nav id="main-menu">
+  <div class="branding">
+    <a href="{{ branding.logoLinkUrl }}">
+      <img src="{{ branding.logoImgUrl }}" alt="{{ branding.logoAltText }}" height="100%" />
+    </a>
+
+    <div id="vertical-separator"></div>
+    <h2>{{ branding.title }}</h2>
+  </div>
+
+  <div class="links">
+    <div *ngFor="let item of menuItems">
+      <div
+        id="{{ item.title }}"
+        class="section"
+        (click)="itemClickAction(item)"
+        (mouseenter)="item.subitems?.length > 0 ? openDropdown($event) : null"
+        (mouseleave)="item.subitems?.length > 0 ? closeDropdown($event) : null"
+      >
+        <a>{{ item.title }}</a>
+        <div class="sectionDropdown">
+          <div *ngFor="let subItem of item.subitems" (click)="subItem.clickAction()" class="sectionDropdownItem">
+            <a>{{ subItem.title }}</a>
+          </div>
+        </div>
+      </div>
     </div>
-  </nav>
-</header>
+    <div id="accountSection" *ngIf="authOptions">
+      <div id="signInButton" (click)="authOptions.signInHandler()" *ngIf="!authOptions.isSignedIn()" class="section">
+        <a>Sign In</a>
+      </div>
+      <div
+        id="profile"
+        *ngIf="authOptions.isSignedIn()"
+        class="section"
+        (mouseenter)="openDropdown($event)"
+        (mouseleave)="closeDropdown($event)"
+      >
+        <a>{{ authOptions.signInButtonText }}</a>
+        <div class="sectionDropdown">
+          <div id="accountButton" (click)="authOptions.userProfileHandler()" class="sectionDropdownItem">
+            <a>Your Account</a>
+          </div>
+          <div id="signOutButton" (click)="authOptions.signOutHandler()" class="sectionDropdownItem">
+            <a>Sign Out</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mobileMenuButtonContainer" *ngIf="menuItems || authOptions">
+    <i
+      class="fas"
+      [ngClass]="{ 'fa-bars': !mobileMenuOpen, 'fa-times': mobileMenuOpen }"
+      (click)="toggleMobileMenu()"
+    ></i>
+  </div>
+  <div [@inOutAnimation] class="mobileDropdown" *ngIf="mobileMenuOpen">
+    <ng-container *ngFor="let item of menuItems; let i = index">
+      <div (click)="item.clickAction()" id="mobileDropdownItem{{ i }}" class="sectionDropdownItem">
+        <a>{{ item.title }}</a>
+      </div>
+      <div *ngFor="let subitem of item.subitems" (click)="subitem.clickAction()" class="sectionDropdownSubItem">
+        <a>{{ subitem.title }}</a>
+      </div>
+    </ng-container>
+    <ukho-hr id="authDivider" *ngIf="authOptions && menuItems"></ukho-hr>
+    <div
+      id="mobileSignInButton"
+      (click)="authOptions.signInHandler()"
+      *ngIf="authOptions && !authOptions.isSignedIn()"
+      class="sectionDropdownItem"
+    >
+      <a>Sign In</a>
+    </div>
+    <ng-container *ngIf="authOptions && authOptions.isSignedIn()">
+      <div id="mobileProfileButton" class="sectionDropdownItem" (click)="authOptions.userProfileHandler()">
+        <a>Account</a>
+      </div>
+      <div id="mobileSignOutButton" class="sectionDropdownItem" (click)="authOptions.signOutHandler()">
+        <a>Sign Out</a>
+      </div>
+    </ng-container>
+  </div>
+</nav>

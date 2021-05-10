@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { MenuItem } from '../navtypes';
+import { BreadcrumbItem } from './breadcrumbs.types';
 
 @Component({
   selector: 'ukho-breadcrumbs',
@@ -15,5 +15,5 @@ export class BreadcrumbsComponent {
    *   active?: boolean;
    * }
    */
-  @Input() items: MenuItem[];
+  @Input() items: BreadcrumbItem[];
 }

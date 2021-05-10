@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { MenuItem } from '../navtypes';
+import { FooterItem } from './footer.types';
 
 @Component({
   selector: 'ukho-footer',
@@ -11,5 +11,5 @@ export class FooterComponent {
   @Input() imageSrc = '/svg/UKHO stacked logo.svg';
   @Input() imageAlt = 'Admiralty Maritime Data Solutions | UK Hydrographic Office';
   @Input() text = `© Crown copyright ${new Date().getFullYear()} UK Hydrographic Office`;
-  @Input() navigation: MenuItem[] = [];
+  @Input() navigation: FooterItem[] = [];
 }

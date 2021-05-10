@@ -1,14 +1,58 @@
-import { Component, Input } from '@angular/core';
-import { MenuItem } from '../navtypes';
+import { trigger, transition, style, animate } from '@angular/animations';
+import { Component, Input, Optional } from '@angular/core';
+import type { Branding, HeaderItem } from './header.types';
 
 @Component({
   selector: 'ukho-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
+  animations: [
+    trigger('inOutAnimation', [
+      transition(':enter', [style({ left: '100%' }), animate('200ms ease-out', style({ left: '0%' }))]),
+      transition(':leave', [style({ left: '0%' }), animate('200ms ease-in', style({ left: '100%' }))]),
+    ]),
+  ],
 })
 export class HeaderComponent {
-  @Input() src = '../../assets/svg/Admiralty linear logo.svg';
-  @Input() alt = 'Admiralty Maritime Data Solutions | UK Hydrographic Office';
-  @Input() text?: string;
-  @Input() navigation?: MenuItem[];
+  @Input() branding: Branding;
+
+  @Input() menuItems: HeaderItem[];
+
+  @Input() authOptions?: AuthOptions;
+
+  public active: Element;
+
+  public mobileMenuOpen = false;
+
+  openDropdown(event: Event) {
+    this.active = event.target as Element;
+    this.active.classList.add('active');
+  }
+
+  closeDropdown(event: Event) {
+    if (this.active) {
+      this.active.classList.remove('active');
+      this.active = null;
+    }
+  }
+
+  itemClickAction(item: HeaderItem) {
+    if (item.clickAction && !item.subitems) {
+      item.clickAction();
+    }
+  }
+
+  toggleMobileMenu() {
+    this.mobileMenuOpen = !this.mobileMenuOpen;
+  }
+}
+
+export interface AuthOptions {
+  signInHandler: () => any;
+  isSignedIn: () => boolean;
+  signInButtonText: string;
+
+  userProfileHandler: () => any;
+
+  signOutHandler: () => any;
 }

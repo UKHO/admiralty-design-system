@@ -1,8 +1,14 @@
 {
   "files.exclude": {
     "**/coverage": true
-  },
+  }
+  "prettier.enable": true,
   "jest.autoEnable": true,
   "editor.defaultFormatter": "dbaeumer.vscode-eslint",
   "eslint.format.enable": true
+  "[scss]": {
+    "editor.suggest.insertMode": "replace",
+    "gitlens.codeLens.scopes": ["document"],
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
