@@ -16,3 +16,4 @@ types:
   - chore
   - revert
   - chore(deps)
+  - chore(deps-dev)
