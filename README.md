@@ -37,6 +37,21 @@ npm install @ukho/design-system
 @use '~@ukho/design-system/styles/core.scss';
 ```
 
+5. Add design system assets to your app
+
+```json
+// angular.json
+...
+"assets": [
+     ... // Import your other assets as normal
+     {
+       "glob": "**/*",
+       "input": "./node_modules/@ukho/design-system/assets",
+       "output": "./assets"
+     }
+   ],
+```
+
 You are now ready to use the design system!
 
 ### Usage
@@ -62,6 +77,10 @@ import { ButtonModule } from "@ukho/design-system";
 <!--app.component.html-->
 <ukho-button>Hello Button</ukho-button>
 ```
+
+### Assets
+
+By importing the assets from the design system following the instructions listed in the installation section you should have access to all the assets e.g. logos. Components that require logos all have the default paths set however there are occasions that these need to be overridden. If you have not changed the default assets path they should be available on the path: `/assets/sub-folder/asset.file`. e.g. `/assets/svg/UKHO stacked logo.svg`
 
 ## Getting Started - CDN
 

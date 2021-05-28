@@ -8,7 +8,7 @@ import { FooterItem } from './footer.types';
 })
 export class FooterComponent {
   @Input() imageLink = 'https://www.admiralty.co.uk/';
-  @Input() imageSrc = '/svg/UKHO stacked logo.svg';
+  @Input() imageSrc = '/assets/svg/UKHO stacked logo.svg';
   @Input() imageAlt = 'Admiralty Maritime Data Solutions | UK Hydrographic Office';
   @Input() text = `© Crown copyright ${new Date().getFullYear()} UK Hydrographic Office`;
   @Input() navigation: FooterItem[] = [];

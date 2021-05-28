@@ -36,7 +36,7 @@ const mockNav: FooterItem[] = [
   },
 ];
 
-const Template: Story = (args) => ({
+const Template: Story<FooterComponent> = (args: FooterComponent) => ({
   props: args,
   moduleMetadata: {
     declarations: [FooterComponent],
@@ -45,10 +45,14 @@ const Template: Story = (args) => ({
 });
 
 export const Default: Story = Template.bind({});
+Default.args = {
+  imageSrc: '/svg/UKHO stacked logo.svg',
+};
 
 export const WithLinks: Story = Template.bind({});
 WithLinks.args = {
-  mockNav,
+  mockNav: mockNav,
+  imageSrc: '/svg/UKHO stacked logo.svg',
 };
 export const UKHOStackedLogo: Story = Template.bind({});
 UKHOStackedLogo.args = {
