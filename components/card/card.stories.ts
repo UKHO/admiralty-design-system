@@ -1,3 +1,4 @@
+import { Story } from '@storybook/angular';
 import { CardComponent } from './card.component';
 
 export default {
@@ -5,24 +6,29 @@ export default {
   component: CardComponent,
 };
 
-export const withTitle = () => ({
-  component: CardComponent,
-  props: {
-    title: 'Card Title',
-  },
-});
-
-withTitle.story = {
-  name: 'withTitle',
-};
-
-export const withContent = () => ({
+const template: Story<CardComponent> = (args: CardComponent) => ({
   moduleMetadata: {
     declarations: [CardComponent],
   },
-  template: `<ukho-card title="I have content">Some content</ukho-card>`,
+  props: args,
+  template: `<ukho-card [title]="title">Some content</ukho-card>`,
 });
 
-withContent.story = {
-  name: 'withContent',
+export const withTitle: Story = template.bind({});
+withTitle.args = {
+  title: 'I am a card',
+};
+
+export const withoutTitle: Story = template.bind({});
+
+export const withHtmlContent: Story<CardComponent> = (args: CardComponent) => ({
+  moduleMetadata: {
+    declarations: [CardComponent],
+  },
+  props: args,
+  template: `<ukho-card [title]="title">You can put any html content in the body of a card. Such as <a href='#'>links</a> or <b>bold text</b></ukho-card>`,
+});
+
+withHtmlContent.args = {
+  title: 'I am a card',
 };

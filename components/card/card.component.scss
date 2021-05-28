@@ -12,7 +12,7 @@
 .card {
   display: flex;
   flex-direction: column;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  border: 1px solid colours.$colour-divider;
 
   & > h6 {
     height: 60px;
@@ -30,7 +30,6 @@
   }
 
   & > div {
-    border: 1px solid colours.$colour-line;
     border-top: none;
     flex-grow: 1;
     padding: 30px;
