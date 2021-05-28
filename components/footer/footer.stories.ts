@@ -28,6 +28,7 @@ const mockNav: FooterItem[] = [
   {
     title: 'Privacy Policy',
     href: '',
+    newTab: true,
   },
   {
     title: 'Accessibility',
@@ -47,10 +48,10 @@ export const Default: Story = Template.bind({});
 
 export const WithLinks: Story = Template.bind({});
 WithLinks.args = {
-  mockNav: mockNav,
+  mockNav,
 };
 export const UKHOStackedLogo: Story = Template.bind({});
 UKHOStackedLogo.args = {
-  mockNav: mockNav,
+  mockNav,
   imageSrc: '/svg/UKHO stacked logo.svg',
 };
