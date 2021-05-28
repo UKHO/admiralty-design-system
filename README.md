@@ -14,16 +14,24 @@ This repository contains the source for the UKHO's design system, our library of
 ### Installation
 
 1. For new projects create a brand new angular app following instructions [here](https://angular.io/guide/setup-local)
-2. Add design system dependencies to your app
+2. Add design system dependencies to your app using `npm` or `yarn`
 
 ```sh
 npm install @angular/cdk @fortawesome/fontawesome-free
 ```
 
-3. Add design system to your app
+```sh
+yarn add @angular/cdk @fortawesome/fontawesome-free
+```
+
+3. Add design system to your app using `npm` or `yarn`
 
 ```sh
 npm install @ukho/design-system
+```
+
+```sh
+yarn add @ukho/design-system
 ```
 
 4. Add design system stylesheet globally in your app
