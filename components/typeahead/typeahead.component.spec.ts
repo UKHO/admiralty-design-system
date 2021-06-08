@@ -1,6 +1,7 @@
 import { FormControl } from '@angular/forms';
 import { createKeyboardEvent } from '@ngneat/spectator';
 import { createComponentFactory, createHostFactory } from '@ngneat/spectator/jest';
+import { of } from 'rxjs';
 import { TypeaheadComponent } from './typeahead.component';
 
 describe('TypeaheadComponent', () => {
@@ -14,7 +15,7 @@ describe('TypeaheadComponent', () => {
   it('textChanged should call the filter function passed in and store the result', () => {
     const filterFn = jest.fn();
     const spectator = createHost('<ukho-typeahead label="test" [filterFn]="filterFn"></ukho-typeahead>', {
-      hostProps: { filterFn: filterFn },
+      hostProps: { filterFn },
     });
     const component = spectator.component;
     component.textChanged('test');
@@ -26,7 +27,7 @@ describe('TypeaheadComponent', () => {
     const formControl = new FormControl();
     const setValueSpy = spyOn(formControl, 'setValue');
     const spectator = createHost('<ukho-typeahead label="test" [FormControl]="formControl"></ukho-typeahead>', {
-      hostProps: { formControl: formControl },
+      hostProps: { formControl },
     });
     const component = spectator.component;
     component.selectedItemIndex = 5;
@@ -42,7 +43,7 @@ describe('TypeaheadComponent', () => {
     const formControl = new FormControl();
     const setValueSpy = spyOn(formControl, 'setValue');
     const spectator = createHost('<ukho-typeahead label="test" [FormControl]="formControl"></ukho-typeahead>', {
-      hostProps: { formControl: formControl },
+      hostProps: { formControl },
     });
     const component = spectator.component;
     component.selectedItemIndex = 5;
@@ -59,7 +60,7 @@ describe('TypeaheadComponent', () => {
     const formControl = new FormControl();
     const setValueSpy = spyOn(formControl, 'setValue');
     const spectator = createHost('<ukho-typeahead label="test" [FormControl]="formControl"></ukho-typeahead>', {
-      hostProps: { formControl: formControl },
+      hostProps: { formControl },
     });
     const component = spectator.component;
     component.selectedItemIndex = -1;
@@ -76,7 +77,7 @@ describe('TypeaheadComponent', () => {
     const formControl = new FormControl();
     const setValueSpy = spyOn(formControl, 'setValue');
     const spectator = createHost('<ukho-typeahead label="test" [FormControl]="formControl"></ukho-typeahead>', {
-      hostProps: { formControl: formControl },
+      hostProps: { formControl },
     });
     const component = spectator.component;
     component.selectedItemIndex = 5;
@@ -93,7 +94,7 @@ describe('TypeaheadComponent', () => {
     const formControl = new FormControl();
     const setValueSpy = spyOn(formControl, 'setValue');
     const spectator = createHost('<ukho-typeahead label="test" [FormControl]="formControl"></ukho-typeahead>', {
-      hostProps: { formControl: formControl },
+      hostProps: { formControl },
     });
     const component = spectator.component;
     component.selectedItemIndex = 5;
@@ -108,7 +109,7 @@ describe('TypeaheadComponent', () => {
   it('keyPressed should call textChanged when any other key is pressed', () => {
     const formControl = new FormControl();
     const spectator = createHost('<ukho-typeahead label="test" [FormControl]="formControl"></ukho-typeahead>', {
-      hostProps: { formControl: formControl },
+      hostProps: { formControl },
     });
     const component = spectator.component;
     const textChangedSpy = spyOn(component, 'textChanged');
@@ -126,7 +127,7 @@ describe('TypeaheadComponent', () => {
     const spectator = createHost(
       '<ukho-typeahead label="test" [FormControl]="formControl" [selectionAction]="selectionAction"></ukho-typeahead>',
       {
-        hostProps: { formControl: formControl, selectionAction: selectionActionSpy },
+        hostProps: { formControl, selectionAction: selectionActionSpy },
       },
     );
     const component = spectator.component;
@@ -169,5 +170,29 @@ describe('TypeaheadComponent', () => {
     component.itemHovered(5);
 
     expect(component.selectedItemIndex).toBe(5);
+  });
+
+  it('filterResult should be set directly when filterFn returns string[]', () => {
+    const expectedArray = ['Hello', 'World'];
+    const filterFn = jest.fn().mockReturnValue(expectedArray);
+    const spectator = createHost('<ukho-typeahead label="test" [filterFn]="filterFn"></ukho-typeahead>', {
+      hostProps: { filterFn },
+    });
+    const component = spectator.component;
+    component.textChanged('test');
+    expect(component.filterResult).toEqual(expectedArray);
+    expect(component.selectedItemIndex).toBe(-1);
+  });
+
+  it('filterResult should be set to the subscribable result when filterFn returns Observable<string[]>', () => {
+    const expectedArray = ['Hello', 'World'];
+    const filterFn = jest.fn().mockReturnValue(of(expectedArray));
+    const spectator = createHost('<ukho-typeahead label="test" [filterFn]="filterFn"></ukho-typeahead>', {
+      hostProps: { filterFn },
+    });
+    const component = spectator.component;
+    component.textChanged('test');
+    expect(component.filterResult).toEqual(expectedArray);
+    expect(component.selectedItemIndex).toBe(-1);
   });
 });

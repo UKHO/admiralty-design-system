@@ -1,5 +1,6 @@
 import { Component, Input, Optional } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { Observable } from 'rxjs';
 
 enum Keys {
   UP_ARROW = 'ArrowUp',
@@ -22,7 +23,7 @@ export class TypeaheadComponent {
   /**
    * Function that will be executed to filter the results shown in the typeahead
    */
-  @Input() filterFn: (filterTerm: string) => string[];
+  @Input() filterFn: (filterTerm: string) => string[] | Observable<string[]>;
   /**
    * Model that will track the contents of the input field
    */
@@ -38,7 +39,14 @@ export class TypeaheadComponent {
 
   textChanged = (value: string): void => {
     this.originalSearch = value;
-    this.filterResult = this.filterFn(value);
+    const filterResult = this.filterFn(value);
+    if (filterResult instanceof Array) {
+      this.filterResult = filterResult;
+    } else if (filterResult instanceof Observable) {
+      filterResult.subscribe((filterValue) => {
+        this.filterResult = filterValue;
+      });
+    }
     this.selectedItemIndex = -1;
   };
 
