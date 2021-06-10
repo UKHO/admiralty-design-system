@@ -1,8 +1,4 @@
 titleOnly: true
-scopes:
-  - components
-  - site
-  - styles
 types:
   - feat
   - fix
