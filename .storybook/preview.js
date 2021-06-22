@@ -21,19 +21,7 @@ export const parameters = {
   chromatic: { diffThreshold: 0.75 },
   options: {
     storySort: {
-      order: [
-        "Card",
-        "Dialogue",
-        "Expansion",
-        "Footer",
-        "Header",
-        "Horizontal Rule",
-        "Paginator",
-        "Phase Banner",
-        "Progress Bar",
-        "Table",
-        "Typeahead",
-      ],
+      method: "alphabetical",
     },
   },
   viewport: {

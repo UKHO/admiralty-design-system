@@ -5,7 +5,6 @@ $font-weight-light: 300;
 $font-family: "JohnstonITC", Helvetica, sans-serif;
 
 * {
-  color: colours.$colour-text;
   font-family: $font-family;
   font-size: 18px;
   line-height: 24px;
@@ -13,6 +12,10 @@ $font-family: "JohnstonITC", Helvetica, sans-serif;
   @include responsive.not-desktop {
     font-size: 16px;
   }
+}
+
+a {
+  color: unset;
 }
 
 h1 {
@@ -167,5 +170,11 @@ ul {
   li::before {
     position: absolute;
     left: -30px;
+  }
+}
+
+.white-text {
+  * {
+    color: colours.$colour-white;
   }
 }

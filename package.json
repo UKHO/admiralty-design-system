@@ -13,7 +13,7 @@
   "license": "British Crown Copyright",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "yarn storybook",
     "build": "ng build && yarn build-styles",
     "test": "ng test",
     "lint": "ng lint",

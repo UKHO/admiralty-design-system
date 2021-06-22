@@ -1,0 +1,8 @@
+<div class="colourBlock" [style.width.px]="width" [style.height.px]="height" [ngClass]="colour">
+  <h2>{{ title }}</h2>
+  <div class="content" [ngClass]="getTextColour()">
+    <ng-content></ng-content>
+  </div>
+
+  <h3 class="clickAction" *ngIf="clickAction && actionText" (click)="clickAction()">{{ actionText }}</h3>
+</div>
