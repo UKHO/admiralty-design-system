@@ -41,6 +41,7 @@ section.expansion {
     margin-bottom: unset;
     padding: 12px 0 12px;
     display: flex;
+    align-items: baseline;
     &::after {
       @extend .fas;
       content: icons.fa-content(icons.$fa-var-chevron-down);
@@ -49,10 +50,14 @@ section.expansion {
       flex-direction: row;
       align-items: center;
       justify-content: center;
-      margin-left: 12px;
+      margin-left: 30px;
     }
     h3 {
       flex-grow: 1;
+
+      &.expansion-heading-right-align {
+        text-align: right;
+      }
     }
   }
 

@@ -14,9 +14,14 @@ export const basic = () => ({
     </ukho-expansion>`,
 });
 
-basic.story = {
-  name: 'basic',
-};
+export const rightAlignedHeading = () => ({
+  moduleMetadata: {
+    declarations: [ExpansionComponent],
+  },
+  template: `<ukho-expansion heading="Expansion Heading" alignHeadingRight="true">
+      Some content for the expansion
+    </ukho-expansion>`,
+});
 
 export const expanded = () => ({
   moduleMetadata: {
@@ -26,10 +31,6 @@ export const expanded = () => ({
       Some content for the expansion
     </ukho-expansion>`,
 });
-
-expanded.story = {
-  name: 'expanded',
-};
 
 export const multiple = () => ({
   moduleMetadata: {
@@ -52,7 +53,7 @@ export const multiple = () => ({
       </ukho-expansion>`,
 });
 
-export const MultilineTitle = () => ({
+export const multilineTitle = () => ({
   moduleMetadata: {
     declarations: [ExpansionComponent],
   },

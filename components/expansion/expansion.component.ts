@@ -5,11 +5,12 @@ let nextId = 0;
 @Component({
   selector: 'ukho-expansion',
   templateUrl: './expansion.component.html',
-  styleUrls: ['./expansion.component.scss']
+  styleUrls: ['./expansion.component.scss'],
 })
 export class ExpansionComponent {
   @Input() initialExpanded = false;
   @Input() heading: string;
+  @Input() alignHeadingRight = false;
 
   id = `ukho-expansion-${++nextId}`;
 }
