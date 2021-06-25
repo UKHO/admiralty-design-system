@@ -19,6 +19,23 @@ describe('HeaderComponent', () => {
     expect(spectator.component).toBeTruthy();
   });
 
+  test('should create when individual inputs are passed', () => {
+    const spectator = createHost(
+      '<ukho-header [title]="title" [logoImgUrl]="logoImgUrl" [logoLinkUrl]="logoLinkUrl" [logoAltText]="logoAltText"></ukho-header>',
+      {
+        hostProps: { title: 'title', logoImgUrl: 'blah.com', logoLinkUrl: 'blah.com', logoAltText: 'blah' },
+      },
+    );
+    expect(spectator.component).toBeTruthy();
+  });
+
+  test('should create when only title passed', () => {
+    const spectator = createHost('<ukho-header [title]="title"></ukho-header>', {
+      hostProps: { title: 'title' },
+    });
+    expect(spectator.component).toBeTruthy();
+  });
+
   test('should create with AuthOptions passed', () => {
     const spectator = createHost('<ukho-header [branding]="branding" [authOptions]="authOptions"></ukho-header>', {
       hostProps: { branding: mockBranding, authOptions },

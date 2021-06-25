@@ -14,11 +14,28 @@ import type { Branding, HeaderItem } from './header.types';
   ],
 })
 export class HeaderComponent {
-  @Input() branding: Branding;
+  /**
+   * @deprecated use individual inputs for each branding option:
+   * - title
+   * - logoImgUrl - optional
+   * - logoAltText - optional
+   * - logoLinkUrl - optional
+   */
+  @Input() public set branding(value: Branding) {
+    this.title = value.title;
+    this.logoImgUrl = value.logoImgUrl;
+    this.logoAltText = value.logoAltText;
+    this.logoImgUrl = value.logoLinkUrl;
+  }
 
   @Input() menuItems: HeaderItem[];
 
   @Input() authOptions?: AuthOptions;
+
+  @Input() title: string;
+  @Input() logoImgUrl = '/svg/Admiralty stacked logo.svg';
+  @Input() logoAltText = 'Admiralty Stacked Logo';
+  @Input() logoLinkUrl = '/svg/Admiralty stacked logo.svg';
 
   public active: Element;
 

@@ -19,65 +19,57 @@ export default {
   },
 };
 
-const Template: Story<HeaderComponent> = (args: HeaderComponent) => ({
+const template: Story<HeaderComponent> = (args: HeaderComponent) => ({
   moduleMetadata: {
     declarations: [HeaderComponent],
     imports: [HorizontalRuleModule, BrowserAnimationsModule],
   },
   props: {
-    // there is currently a bug in storybook/chromatic that causes methods to get overridden https://github.com/storybookjs/storybook/issues/14696
-    branding: args.branding,
-    menuItems: args.menuItems,
-    authOptions: args.authOptions,
+    title: mockBranding.title,
+    logoImgUrl: mockBranding.logoImgUrl,
+    logoLinkUrl: mockBranding.logoLinkUrl,
+    logoAltText: mockBranding.logoAltText,
+    ...args,
   },
-  template: `<ukho-header [branding]="branding" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>`,
+  template: `<ukho-header [title]="title" [logoImgUrl]="logoImgUrl" [logoLinkUrl]="logoLinkUrl" [logoAltText]="logoAltText" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>`,
 });
 
-export const NoLinks: Story = Template.bind({});
-NoLinks.args = {
-  branding: mockBranding,
-};
+export const noLinks: Story = template.bind({});
+noLinks.args = {};
 
-export const LinksWithSubItems: Story = Template.bind({});
-LinksWithSubItems.args = {
-  branding: mockBranding,
+export const linksWithSubItems: Story = template.bind({});
+linksWithSubItems.args = {
   menuItems: mockMenuItemsWithSubItems,
 };
 
-export const LinksWithSomeSubItems: Story = Template.bind({});
-LinksWithSomeSubItems.args = {
-  branding: mockBranding,
+export const linksWithSomeSubItems: Story = template.bind({});
+linksWithSomeSubItems.args = {
   menuItems: mockMenuItemsWithSomeSubItems,
 };
 
-export const LinksWithNoSubItems: Story = Template.bind({});
-LinksWithNoSubItems.args = {
-  branding: mockBranding,
+export const linksWithNoSubItems: Story = template.bind({});
+linksWithNoSubItems.args = {
   menuItems: mockMenuItemsWithNoSubItems,
 };
 
-export const OnlyAuthNotSignedIn: Story = Template.bind({});
-OnlyAuthNotSignedIn.args = {
-  branding: mockBranding,
-  authOptions: authOptions,
+export const onlyAuthNotSignedIn: Story = template.bind({});
+onlyAuthNotSignedIn.args = {
+  authOptions,
 };
 
-export const OnlyAuthSignedIn: Story = Template.bind({});
-OnlyAuthSignedIn.args = {
-  branding: mockBranding,
+export const onlyAuthSignedIn: Story = template.bind({});
+onlyAuthSignedIn.args = {
   authOptions: authOptionsSignedIn,
 };
 
-export const LinksAndAuthNotSignedIn: Story = Template.bind({});
-LinksAndAuthNotSignedIn.args = {
-  branding: mockBranding,
+export const linksAndAuthNotSignedIn: Story = template.bind({});
+linksAndAuthNotSignedIn.args = {
   menuItems: mockMenuItemsWithSubItems,
-  authOptions: authOptions,
+  authOptions,
 };
 
-export const LinksAndAuthSignedIn: Story = Template.bind({});
-LinksAndAuthSignedIn.args = {
-  branding: mockBranding,
+export const linksAndAuthSignedIn: Story = template.bind({});
+linksAndAuthSignedIn.args = {
   menuItems: mockMenuItemsWithSubItems,
   authOptions: authOptionsSignedIn,
 };
