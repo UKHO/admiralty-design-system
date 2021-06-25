@@ -18,7 +18,7 @@
         (mouseleave)="item.subitems?.length > 0 ? closeDropdown($event) : null"
       >
         <a>{{ item.title }}</a>
-        <div class="sectionDropdown">
+        <div class="sectionDropdown" *ngIf="item.subitems">
           <div *ngFor="let subItem of item.subitems" (click)="subItem.clickAction()" class="sectionDropdownItem">
             <a>{{ subItem.title }}</a>
           </div>
