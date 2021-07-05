@@ -47,8 +47,11 @@
     }
     display: flex;
     flex-direction: row;
+    flex-grow: 1;
 
-    img {
+    .logoImage {
+      height: 100%;
+      width: auto;
       @include responsive.not-desktop {
         max-width: 170px;
       }
@@ -56,7 +59,6 @@
 
     a {
       display: contents;
-      width: 100%;
     }
 
     #vertical-separator {
@@ -73,14 +75,14 @@
       margin-bottom: unset !important;
       line-height: 36px !important;
       font-size: 36px;
-      white-space: nowrap;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      white-space: pre-wrap;
+      flex-grow: 1;
       @include responsive.not-desktop {
         font-size: 24px;
         line-height: 24px !important;
+        white-space: pre-wrap;
       }
     }
   }
