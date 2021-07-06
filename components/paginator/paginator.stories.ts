@@ -29,7 +29,7 @@ class PaginatorWrapperComponent extends PaginatorComponent {
 
 const LabelTemplate: Story = (args) => ({
   moduleMetadata: {
-    declarations: [PaginatorWrapperComponent],
+    declarations: [PaginatorWrapperComponent, PaginatorComponent],
   },
   props: args,
   template: `<div style="width:350px;">
