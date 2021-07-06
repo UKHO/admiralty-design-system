@@ -1,5 +1,27 @@
 # Changelog
 
+## [2.2.0] - 2021-07-06
+
+### Added
+
+- feat: Colour block [#308](https://github.com/UKHO/design-system/pull/308)
+- feat: Add alignHeadingRight to Expansion component [#326](https://github.com/UKHO/design-system/pull/326)
+- feat: Add header branding defaults [#336](https://github.com/UKHO/design-system/pull/336)
+- feat: Add option for typeahead to behave like select component [#343](https://github.com/UKHO/design-system/pull/343)
+
+### Changed
+
+- chore: updating storybook to 6.3.2 [#344](https://github.com/UKHO/design-system/pull/344)
+
+### Fixed
+
+- fix: only rendering the header dropdowns into the DOM if needed [#335](https://github.com/UKHO/design-system/pull/335)
+- fix: Header title wrapping issues [#340](https://github.com/UKHO/design-system/pull/340)
+
+### Removed
+
+- N/A
+
 ## [2.1.0] - 2021-06-10
 
 ### Added
@@ -25,5 +47,6 @@
 
 - Initial release of the new Design System package
 
+[2.2.0]: https://github.com/UKHO/design-system/compare/v2.1.0...v2.2.0
 [2.1.0]: https://github.com/UKHO/design-system/compare/v2.0.0...v2.1.0
 [2.0.0]: https://github.com/UKHO/design-system/tree/v2.0.0
