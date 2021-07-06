@@ -19,6 +19,7 @@ export class TypeaheadComponent {
   isFocused = false;
 
   private originalSearch: string;
+  private hasBeenFocusedAtLeastOnce = false;
 
   /**
    * Function that will be executed to filter the results shown in the typeahead
@@ -33,21 +34,30 @@ export class TypeaheadComponent {
    */
   @Input() label: string;
   /**
+   * Optional property to show results when input box is initally focused
+   */
+  @Input() showResultsOnInitialFocus = false;
+  /**
    * Optional function that will be executed when the user selects an item from the typeahead
    */
   @Input() selectionAction: (selectedItemText) => unknown = () => {};
 
+  focusIn() {
+    if (this.showResultsOnInitialFocus && !this.hasBeenFocusedAtLeastOnce) {
+      this.performFilter('');
+      this.hasBeenFocusedAtLeastOnce = true;
+    }
+
+    this.isFocused = true;
+  }
+
+  focusOut() {
+    this.isFocused = false;
+  }
+
   textChanged = (value: string): void => {
     this.originalSearch = value;
-    const filterResult = this.filterFn(value);
-    if (filterResult instanceof Array) {
-      this.filterResult = filterResult;
-    } else if (filterResult instanceof Observable) {
-      filterResult.subscribe((filterValue) => {
-        this.filterResult = filterValue;
-      });
-    }
-    this.selectedItemIndex = -1;
+    this.performFilter(value);
   };
 
   keyPressed = (event: KeyboardEvent): void => {
@@ -63,6 +73,18 @@ export class TypeaheadComponent {
     this.textChanged(value);
     this.selectionAction(value);
   };
+
+  performFilter(value: string) {
+    const filterResult = this.filterFn(value);
+    if (filterResult instanceof Array) {
+      this.filterResult = filterResult;
+    } else if (filterResult instanceof Observable) {
+      filterResult.subscribe((filterValue) => {
+        this.filterResult = filterValue;
+      });
+    }
+    this.selectedItemIndex = -1;
+  }
 
   private navigateSuggestions(key: Keys) {
     if (key == Keys.UP_ARROW) {

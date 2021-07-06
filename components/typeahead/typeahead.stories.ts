@@ -28,11 +28,9 @@ export default {
 
 const filter = (filterList: string[]) => {
   return (text: string) => {
-    const filterResult = filterList
-      .filter((animal) => {
-        return animal.toLowerCase().indexOf(text.toLowerCase()) > -1;
-      })
-      .slice(0, 10);
+    const filterResult = filterList.filter((animal) => {
+      return text === null || text.length < 1 || animal.toLowerCase().indexOf(text.toLowerCase()) > -1;
+    });
     return filterResult;
   };
 };
@@ -43,13 +41,32 @@ const Template: Story = ({ filterList, ...args }) => ({
     declarations: [TypeaheadComponent],
     imports: [TextinputModule, ReactiveFormsModule, FormsModule],
   },
-  template: `<ukho-typeahead [label]="label" [filterFn]="filterFn" [FormControl]="formControl" [selectionAction]="selectionAction"></ukho-typeahead>`,
+  template: `<ukho-typeahead [label]="label" [filterFn]="filterFn" [FormControl]="formControl" [selectionAction]="selectionAction" [showResultsOnInitialFocus]="showResultsOnInitialFocus"></ukho-typeahead>`,
 });
 
 export const WithoutAction: Story = Template.bind({});
 WithoutAction.args = {
   label: 'Please Type',
   filterList: ['dog', 'cat', 'elephant', 'badger', 'donkey'],
+};
+
+export const ShowResultsOnInitialFocus: Story = Template.bind({});
+ShowResultsOnInitialFocus.args = {
+  label: 'Please Type',
+  filterList: [
+    'dog',
+    'cat',
+    'elephant',
+    'badger',
+    'donkey',
+    'horse',
+    'lion',
+    'ostrich',
+    'rabbit',
+    'tiger',
+    'guinea pig',
+  ],
+  showResultsOnInitialFocus: true,
 };
 
 export const WithAction: Story = Template.bind({});

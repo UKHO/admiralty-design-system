@@ -7,12 +7,12 @@
   [errorsOnly]="true"
   autocomplete="off"
   class="filterTextInput"
-  (focusin)="isFocused = true"
-  (focusout)="isFocused = false"
+  (focusin)="focusIn()"
+  (focusout)="focusOut()"
   [autocomplete]="false"
 ></ukho-textinput>
-<div id="typeahead-list-container" *ngIf="isFocused && filterResult.length > 0">
-  <ul id="typeahead-list">
+<div class="typeahead-list-container" *ngIf="isFocused && filterResult.length > 0">
+  <ul class="typeahead-list">
     <li
       *ngFor="let item of filterResult; let i = index"
       (mousedown)="itemSelected(item)"
