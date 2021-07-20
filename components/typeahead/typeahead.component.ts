@@ -31,6 +31,10 @@ export class TypeaheadComponent {
    */
   @Input() showResultsOnInitialFocus = false;
 
+  /**
+   * Event that is fired whenever the value of the typeahead changes
+   * e.g. selection from the dropdown or manually typed entry
+   */
   @Output() valueChanged: EventEmitter<string> = new EventEmitter<string>();
 
   filterResult: string[] = new Array<string>();

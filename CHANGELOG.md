@@ -1,5 +1,23 @@
 # Changelog
 
+## [2.3.0] - 2021-07-20
+
+### Added
+
+- feat: Typeahead: add output option 'valueChanged' for users to track changes natively [#353](https://github.com/UKHO/design-system/pull/353)
+
+### Changed
+
+- N/A
+
+### Fixed
+
+- fix: Typeahead Z index being set too high on typeahead [#354](https://github.com/UKHO/design-system/pull/354)
+
+### Removed
+
+- N/A
+
 ## [2.2.0] - 2021-07-06
 
 ### Added
@@ -47,6 +65,7 @@
 
 - Initial release of the new Design System package
 
+[2.3.0]: https://github.com/UKHO/design-system/compare/v2.2.0...v2.3.0
 [2.2.0]: https://github.com/UKHO/design-system/compare/v2.1.0...v2.2.0
 [2.1.0]: https://github.com/UKHO/design-system/compare/v2.0.0...v2.1.0
 [2.0.0]: https://github.com/UKHO/design-system/tree/v2.0.0
