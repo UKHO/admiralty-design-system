@@ -36,12 +36,17 @@ const filter = (filterList: string[]) => {
 };
 
 const Template: Story = ({ filterList, ...args }) => ({
-  props: { ...args, filterFn: filter(filterList), formControl: new FormControl() },
+  props: {
+    ...args,
+    filterFn: filter(filterList),
+    formControl: new FormControl(),
+    onFieldChange: action('changed'),
+  },
   moduleMetadata: {
     declarations: [TypeaheadComponent],
     imports: [TextinputModule, ReactiveFormsModule, FormsModule],
   },
-  template: `<ukho-typeahead [label]="label" [filterFn]="filterFn" [FormControl]="formControl" [selectionAction]="selectionAction" [showResultsOnInitialFocus]="showResultsOnInitialFocus"></ukho-typeahead>`,
+  template: `<ukho-typeahead [label]="label" [filterFn]="filterFn" [FormControl]="formControl" [selectionAction]="selectionAction" [showResultsOnInitialFocus]="showResultsOnInitialFocus" (valueChanged)="onFieldChange($event)"></ukho-typeahead>`,
 });
 
 export const WithoutAction: Story = Template.bind({});

@@ -1,4 +1,4 @@
-import { Component, Input, Optional } from '@angular/core';
+import { Component, EventEmitter, Input, Optional, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 
@@ -14,13 +14,6 @@ enum Keys {
   styleUrls: ['./typeahead.component.scss'],
 })
 export class TypeaheadComponent {
-  filterResult: string[] = new Array<string>();
-  selectedItemIndex = -1;
-  isFocused = false;
-
-  private originalSearch: string;
-  private hasBeenFocusedAtLeastOnce = false;
-
   /**
    * Function that will be executed to filter the results shown in the typeahead
    */
@@ -37,6 +30,16 @@ export class TypeaheadComponent {
    * Optional property to show results when input box is initally focused
    */
   @Input() showResultsOnInitialFocus = false;
+
+  @Output() valueChanged: EventEmitter<string> = new EventEmitter<string>();
+
+  filterResult: string[] = new Array<string>();
+  selectedItemIndex = -1;
+  isFocused = false;
+
+  private originalSearch: string;
+  private hasBeenFocusedAtLeastOnce = false;
+
   /**
    * Optional function that will be executed when the user selects an item from the typeahead
    */
@@ -58,6 +61,7 @@ export class TypeaheadComponent {
   textChanged = (value: string): void => {
     this.originalSearch = value;
     this.performFilter(value);
+    this.valueChanged.emit(value);
   };
 
   keyPressed = (event: KeyboardEvent): void => {
@@ -86,6 +90,17 @@ export class TypeaheadComponent {
     this.selectedItemIndex = -1;
   }
 
+  selectCurrentItem(): void {
+    if (this.selectedItemIndex >= 0) {
+      const selectedItemText = this.filterResult[this.selectedItemIndex];
+      this.itemSelected(selectedItemText);
+    }
+  }
+
+  itemHovered(index: number): void {
+    this.selectedItemIndex = index;
+  }
+
   private navigateSuggestions(key: Keys) {
     if (key == Keys.UP_ARROW) {
       this.selectedItemIndex--;
@@ -104,16 +119,5 @@ export class TypeaheadComponent {
     } else {
       this.FormControl.setValue(this.filterResult[this.selectedItemIndex]);
     }
-  }
-
-  selectCurrentItem(): void {
-    if (this.selectedItemIndex >= 0) {
-      const selectedItemText = this.filterResult[this.selectedItemIndex];
-      this.itemSelected(selectedItemText);
-    }
-  }
-
-  itemHovered(index: number): void {
-    this.selectedItemIndex = index;
   }
 }

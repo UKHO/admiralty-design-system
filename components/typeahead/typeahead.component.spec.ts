@@ -23,14 +23,18 @@ describe('TypeaheadComponent', () => {
     expect(component.selectedItemIndex).toBe(-1);
   });
 
-  it('textChanged should call performFilter() with the expected string', () => {
+  it('textChanged should call performFilter() with the expected string and emit event', () => {
     const performFilterFn = jest.fn();
     const spectator = createHost('<ukho-typeahead label="test"></ukho-typeahead>', {
       props: { performFilter: performFilterFn },
     });
     const component = spectator.component;
+
+    const valueChangedSpy = spyOn(component.valueChanged, 'emit');
+
     component.textChanged('test');
     expect(performFilterFn).toHaveBeenCalledWith('test');
+    expect(valueChangedSpy).toHaveBeenCalledWith('test');
   });
 
   it('keyPressed should reduce the selectedItemIndex by 1 if the key pressed was the up arrow', () => {
