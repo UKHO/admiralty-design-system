@@ -1,7 +1,6 @@
 @use '../../styles/base/colours';
 :host {
   position: relative;
-  z-index: 100000000;
   display: flex;
 }
 
@@ -29,6 +28,7 @@
   box-sizing: border-box;
   max-height: 205px;
   overflow-y: auto;
+  z-index: 1;
 
   .typeahead-list {
     list-style: none;
