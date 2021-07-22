@@ -6,47 +6,49 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./paginator.component.scss'],
 })
 export class PaginatorComponent {
-  @Input() set pages(pages: number) {
-    this.setPage(1);
-    this._pages = pages;
-  }
+  /**
+   * The total number of pages. Defaults to 1.
+   */
+  @Input() pages = 1;
 
-  @Input() set currentPage(page: number) {
-    this.setPage(page);
-  }
+  /**
+   * The current page. Defaults to 1.
+   */
+  @Input() currentPage = 1;
 
+  /**
+   * The label to display.
+   */
   @Input() set label(label: string) {
     this.setLabel(label);
   }
 
   @Output() pageChange = new EventEmitter<number>();
 
-  _pages: number;
-  _currentPage = 1;
   _label = '';
   readonly maxLength = 7;
 
   public setLabel(label: string) {
-    if (label == null || label.length == 0) {
+    if (label == null || label.length === 0) {
       return;
     }
     this._label = label;
   }
 
   public setPage(page: number) {
-    this._currentPage = page;
+    this.currentPage = page;
     this.pageChange.emit(page);
   }
 
   prev() {
-    if (this._currentPage > 1) {
-      this.setPage(this._currentPage - 1);
+    if (this.currentPage > 1) {
+      this.setPage(this.currentPage - 1);
     }
   }
 
   next() {
-    if (this._currentPage < this._pages) {
-      this.setPage(this._currentPage + 1);
+    if (this.currentPage < this.pages) {
+      this.setPage(this.currentPage + 1);
     }
   }
 }

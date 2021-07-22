@@ -1,10 +1,10 @@
 <!-- Standard -->
 <nav class="standard">
   <p>{{ _label }}</p>
-  <a class="pagination-anchor" [ngClass]="{ disabled: _currentPage == 1 }" (click)="prev()">
+  <a class="pagination-anchor" [ngClass]="{ disabled: this.currentPage === 1 }" (click)="prev()">
     <i class="fas fa-chevron-left"></i>
   </a>
-  <a class="pagination-anchor" [ngClass]="{ disabled: _currentPage == _pages }" (click)="next()">
+  <a class="pagination-anchor" [ngClass]="{ disabled: this.currentPage === this.pages }" (click)="next()">
     <i class="fas fa-chevron-right"></i>
   </a>
 </nav>

@@ -31,7 +31,7 @@ const LabelTemplate: Story = (args) => ({
   moduleMetadata: {
     declarations: [PaginatorWrapperComponent, PaginatorComponent],
   },
-  props: args,
+  props: { ...args, pageChange: action('Page Change') },
   template: `<div style="width:350px;">
   <ukho-paginator [pages]="pages" [currentPage]="currentPage" [label]="label" (pageChange)="pageChange($event)" style="float:right;"></ukho-paginator>
   </div>`,
@@ -42,7 +42,6 @@ Basic.args = {
   pages: 8,
   currentPage: 1,
   label: 'Showing 1-6 of 45',
-  pageChange: action('Page Change'),
 };
 Basic.parameters = {
   chromatic: { viewports: [400] },
@@ -53,7 +52,7 @@ const Template: Story = (args) => ({
   moduleMetadata: {
     declarations: [PaginatorComponent],
   },
-  props: args,
+  props: { ...args, pageChange: action('Page Change') },
   template: `<ukho-paginator [pages]="pages" [currentPage]="currentPage" (pageChange)="pageChange($event)"></ukho-paginator>`,
 });
 
@@ -61,7 +60,6 @@ export const WithoutLabel: Story = Template.bind({});
 WithoutLabel.args = {
   pages: 10,
   currentPage: 5,
-  pageChange: action('Page Change'),
 };
 WithoutLabel.parameters = {
   chromatic: { viewports: [320] },
@@ -71,7 +69,6 @@ export const FirstPage: Story = Template.bind({});
 FirstPage.args = {
   pages: 10,
   currentPage: 1,
-  pageChange: action('Page Change'),
 };
 FirstPage.parameters = {
   chromatic: { viewports: [320] },
@@ -81,7 +78,6 @@ export const LastPage: Story = Template.bind({});
 LastPage.args = {
   pages: 10,
   currentPage: 10,
-  pageChange: action('Page Change'),
 };
 LastPage.parameters = {
   chromatic: { viewports: [320] },

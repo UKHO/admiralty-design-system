@@ -16,42 +16,6 @@ describe('PaginatorComponent', () => {
     expect(spectator.query('nav.standard')).toBeTruthy();
   });
 
-  it('when pages is set then setPage() is called with 1', () => {
-    const spectator = createHost('<ukho-paginator [pages]="pages" [currentPage]="currentPage"></ukho-paginator>', {
-      hostProps: {
-        pages: 1,
-        currentPage: 1,
-      },
-      props: {
-        setPage: jest.fn(),
-      },
-    });
-    jest.resetAllMocks();
-
-    expect(spectator.component.setPage).not.toBeCalled();
-    spectator.setInput('pages', 5);
-    expect(spectator.component.setPage).toHaveBeenCalledTimes(1);
-    expect(spectator.component.setPage).toBeCalledWith(1);
-  });
-
-  it('when currentPage is set then setPage() is called', () => {
-    const spectator = createHost('<ukho-paginator [pages]="pages" [currentPage]="currentPage"></ukho-paginator>', {
-      hostProps: {
-        pages: 2,
-        currentPage: 1,
-      },
-      props: {
-        setPage: jest.fn(),
-      },
-    });
-    jest.resetAllMocks();
-
-    expect(spectator.component.setPage).not.toBeCalled();
-    spectator.setInput('currentPage', 2);
-    expect(spectator.component.setPage).toHaveBeenCalledTimes(1);
-    expect(spectator.component.setPage).toBeCalledWith(2);
-  });
-
   it('when label is set then setLabel() is called', () => {
     const expectedLabel = 'Test Label';
 
@@ -94,6 +58,23 @@ describe('PaginatorComponent', () => {
     expect(pElement).toHaveText(expectedLabel);
   });
 
+  it('when inputs are set then the pageChange event is not emitted', () => {
+    const spectator = createHost('<ukho-paginator [pages]="pages" [currentPage]="currentPage"></ukho-paginator>', {
+      hostProps: {
+        pages: 1,
+        currentPage: 1,
+      },
+    });
+
+    const emitSpy = jest.spyOn(spectator.component.pageChange, 'emit');
+
+    spectator.component.pages = 5;
+    spectator.component.currentPage = 5;
+    spectator.component.label = 'IGNORE';
+
+    expect(emitSpy).not.toBeCalled();
+  });
+
   it('when setPage() is called then pageChange is emitted with expected page', () => {
     const spectator = createHost('<ukho-paginator [pages]="pages" [currentPage]="currentPage"></ukho-paginator>', {
       hostProps: {
@@ -121,8 +102,8 @@ describe('PaginatorComponent', () => {
     (currentPage, pages, expectedPage) => {
       const spectator = createHost('<ukho-paginator [pages]="pages" [currentPage]="currentPage"></ukho-paginator>', {
         hostProps: {
-          pages: pages,
-          currentPage: currentPage,
+          pages,
+          currentPage,
         },
       });
       spectator.component.setPage = jest.fn();
@@ -143,8 +124,8 @@ describe('PaginatorComponent', () => {
     (currentPage, pages, expectedPage) => {
       const spectator = createHost('<ukho-paginator [pages]="pages" [currentPage]="currentPage"></ukho-paginator>', {
         hostProps: {
-          pages: pages,
-          currentPage: currentPage,
+          pages,
+          currentPage,
         },
       });
       spectator.component.setPage = jest.fn();
@@ -257,8 +238,8 @@ describe('PaginatorComponent', () => {
     (currentPage, pages, expectedLeftButtonEnabledState, expectedRightButtonEnabledState) => {
       const spectator = createHost('<ukho-paginator [pages]="pages" [currentPage]="currentPage"></ukho-paginator>', {
         hostProps: {
-          pages: pages,
-          currentPage: currentPage,
+          pages,
+          currentPage,
         },
       });
 
