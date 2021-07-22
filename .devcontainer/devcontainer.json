@@ -21,7 +21,7 @@
   ],
 
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
-  "forwardPorts": [6006],
+  "forwardPorts": [6006, 9009],
 
   // "initializeCommand": "pwsh .devcontainer/initializeCommandSetup.ps1",
 

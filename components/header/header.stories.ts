@@ -9,6 +9,8 @@ import {
   authOptionsSignedIn,
   mockMenuItemsWithSomeSubItems,
   mockMenuItemsWithNoSubItems,
+  mockMenuItemsWithSubItemsAndNavActive,
+  mockMenuItemsWithNoSubItemsAndNavActive,
 } from './header.stories.data';
 
 export default {
@@ -42,6 +44,11 @@ linksWithSubItems.args = {
   menuItems: mockMenuItemsWithSubItems,
 };
 
+export const linksWithSubItemsAndNavActive: Story = template.bind({});
+linksWithSubItemsAndNavActive.args = {
+  menuItems: mockMenuItemsWithSubItemsAndNavActive,
+};
+
 export const linksWithSomeSubItems: Story = template.bind({});
 linksWithSomeSubItems.args = {
   menuItems: mockMenuItemsWithSomeSubItems,
@@ -50,6 +57,11 @@ linksWithSomeSubItems.args = {
 export const linksWithNoSubItems: Story = template.bind({});
 linksWithNoSubItems.args = {
   menuItems: mockMenuItemsWithNoSubItems,
+};
+
+export const linksWithNoSubItemsAndNavActive: Story = template.bind({});
+linksWithNoSubItemsAndNavActive.args = {
+  menuItems: mockMenuItemsWithNoSubItemsAndNavActive,
 };
 
 export const onlyAuthNotSignedIn: Story = template.bind({});

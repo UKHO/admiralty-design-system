@@ -2,7 +2,12 @@ import { createHostFactory, SpectatorHost } from '@ngneat/spectator/jest';
 import { HorizontalRuleModule } from '../horizontal-rule/horizontal-rule.module';
 
 import { HeaderComponent } from './header.component';
-import { authOptions, mockBranding, mockMenuItemsWithSubItems } from './header.stories.data';
+import {
+  authOptions,
+  mockBranding,
+  mockMenuItemsWithSubItems,
+  mockMenuItemsWithSubItemsAndNavActive,
+} from './header.stories.data';
 import { HeaderItem } from './header.types';
 
 describe('HeaderComponent', () => {
@@ -17,6 +22,19 @@ describe('HeaderComponent', () => {
       hostProps: { branding: mockBranding },
     });
     expect(spectator.component).toBeTruthy();
+  });
+
+  test('should set navActive class when navActive is true', () => {
+    const spectator = createHost(
+      '<ukho-header [branding]="branding" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>',
+      {
+        hostProps: { branding: mockBranding, authOptions, menuItems: mockMenuItemsWithSubItemsAndNavActive },
+      },
+    );
+    expect(spectator.query('.section.navActive')).toBeDefined();
+
+    spectator.setHostInput('menuItems', mockMenuItemsWithSubItems);
+    expect(spectator.query('.section.navActive')).toBeNull();
   });
 
   test('should create when individual inputs are passed', () => {

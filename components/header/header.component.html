@@ -11,7 +11,7 @@
     <div *ngFor="let item of menuItems">
       <div
         id="{{ item.title }}"
-        class="section"
+        class="section {{item.navActive === true ? 'navActive' : ''}}"
         (click)="itemClickAction(item)"
         (mouseenter)="item.subitems?.length > 0 ? openDropdown($event) : null"
         (mouseleave)="item.subitems?.length > 0 ? closeDropdown($event) : null"

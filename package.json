@@ -19,7 +19,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "docs:json": "compodoc -p ./tsconfig.json -e json -d .",
-    "storybook": "yarn docs:json && start-storybook -s ./assets -c .storybook",
+    "storybook": "yarn docs:json && start-storybook -s ./assets -c .storybook -p 9009",
     "build-storybook": "yarn docs:json && build-storybook -s ./assets",
     "build-styles": "node styles/generateCSS.js && postcss dist/styles/css/ukho.min.css --map --use autoprefixer -d dist/styles/css"
   },
