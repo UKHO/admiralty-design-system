@@ -1,5 +1,23 @@
 # Changelog
 
+## [2.4.0] - 2021-07-22
+
+### Added
+
+- feat: Provide active property for headeritem [#361](https://github.com/UKHO/design-system/pull/361)
+
+### Changed
+
+- N/A
+
+### Fixed
+
+- fix: Prevent excessive emitting of paginator pagechange event [#360](https://github.com/UKHO/design-system/pull/360)
+
+### Removed
+
+- N/A
+
 ## [2.3.0] - 2021-07-20
 
 ### Added
@@ -65,6 +83,7 @@
 
 - Initial release of the new Design System package
 
+[2.4.0]: https://github.com/UKHO/design-system/compare/v2.3.0...v2.4.0
 [2.3.0]: https://github.com/UKHO/design-system/compare/v2.2.0...v2.3.0
 [2.2.0]: https://github.com/UKHO/design-system/compare/v2.1.0...v2.2.0
 [2.1.0]: https://github.com/UKHO/design-system/compare/v2.0.0...v2.1.0
