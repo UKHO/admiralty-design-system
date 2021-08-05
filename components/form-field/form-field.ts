@@ -27,11 +27,6 @@ export abstract class UkhoAbstractFormField<T> implements ControlValueAccessor {
   @Input() validationMessages: Record<string, string> = { required: 'This field is required' };
 
   /**
-   * Specifies whether only negative validation results should be displayed on the field.
-   */
-  @Input() errorsOnly = false;
-
-  /**
    * The registered callback function called when an input event occurs on the input element.
    */
   public onChange = (value: T) => {};

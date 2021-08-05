@@ -19,7 +19,7 @@ const template: Story<TextinputComponent> = (args: TextinputComponent) => ({
   props: {
     ...args,
   },
-  template: `<ukho-textinput [label]="label" [type]="type" [formControl]="formControl" [errorsOnly]="errorsOnly" [disabled]="disabled"></ukho-textinput>`,
+  template: `<ukho-textinput [label]="label" [type]="type" [formControl]="formControl" [disabled]="disabled"></ukho-textinput>`,
 });
 
 export const basic: Story = template.bind({});
@@ -82,14 +82,3 @@ export const validationRequired = () => ({
 validationRequired.story = {
   name: 'Required Validation',
 };
-
-export const errorsOnly = () => ({
-  moduleMetadata: {
-    declarations: [TextinputComponent],
-    imports: [ReactiveFormsModule],
-  },
-  template: '<ukho-textinput label="Name" [formControl]="formControl" [errorsOnly]="true"></ukho-textinput>',
-  props: {
-    formControl: new FormControl('', Validators.max(100)),
-  },
-});

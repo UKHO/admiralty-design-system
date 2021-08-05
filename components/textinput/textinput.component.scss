@@ -2,7 +2,6 @@
 @use '../../styles/base/responsive';
 @use '../../styles/base/typography';
 
-
 input[type="time"]::-webkit-inner-spin-button,
 input[type="date"]::-webkit-inner-spin-button,
 input[type="time"]::-webkit-clear-button,
@@ -71,10 +70,6 @@ input[type="date"]::-webkit-clear-button {
     display: none;
   }
 
-  .validated-icon {
-    color: colours.$colour-utility-success;
-  }
-
   .invalid-icon {
     color: colours.$colour-utility-error;
   }
@@ -97,26 +92,6 @@ input[type="date"]::-webkit-clear-button {
 
     label {
       color: colours.$colour-textinput-text-disabled;
-    }
-  }
-
-  &.validated {
-    input,
-    textarea,
-    select,
-    textarea:focus {
-      color: colours.$colour-utility-success;
-      border-color: colours.$colour-utility-success;
-      background-color: colours.$colour-white;
-
-      &:focus + .input-wrap label,
-      &:focus + label {
-        color: colours.$colour-utility-success;
-      }
-    }
-
-    label {
-      color: colours.$colour-utility-success;
     }
   }
 
@@ -165,10 +140,6 @@ input[type="date"]::-webkit-clear-button {
 }
 
 .invalid > .form-text-input {
-  padding-right: 2rem;
-}
-
-.validated > .form-text-input {
   padding-right: 2rem;
 }
 

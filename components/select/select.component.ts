@@ -8,7 +8,7 @@ import { UkhoAbstractFormField } from '../form-field/form-field';
   host: {
     class: 'text-area-wrap',
     '[class.is-disabled]': 'disabled',
-    '[class.validated]': 'valid && touched && !errorsOnly',
+    '[class.validated]': 'valid && touched',
     '[class.invalid]': '!valid && touched',
   },
   encapsulation: ViewEncapsulation.None,

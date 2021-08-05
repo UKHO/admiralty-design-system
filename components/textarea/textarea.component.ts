@@ -8,10 +8,10 @@ import { UkhoAbstractFormField } from '../form-field/form-field';
   host: {
     class: 'text-area-wrap',
     '[class.is-disabled]': 'disabled',
-    '[class.validated]': 'valid && touched && !errorsOnly',
-    '[class.invalid]': '!valid && touched'
+    '[class.validated]': 'valid && touched',
+    '[class.invalid]': '!valid && touched',
   },
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
 export class TextareaComponent extends UkhoAbstractFormField<string> {
   /**

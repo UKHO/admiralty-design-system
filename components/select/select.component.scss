@@ -38,10 +38,6 @@ select {
     background: colours.$colour-white;
   }
 
-  .validated &::after {
-    color: colours.$colour-utility-success;
-  }
-
   .invalid &::after {
     color: colours.$colour-utility-error;
   }

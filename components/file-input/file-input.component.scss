@@ -13,11 +13,6 @@
     background: colours.$colour-white;
   }
 
-  &.validated {
-    border-color: colours.$colour-utility-success;
-    background: colours.$colour-white;
-  }
-
   &.invalid {
     border-color: colours.$colour-utility-error;
     background: colours.$colour-white;

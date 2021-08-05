@@ -72,26 +72,6 @@
     }
   }
 
-  &.validated {
-    input,
-    textarea,
-    select,
-    textarea:focus {
-      color: colours.$colour-utility-success;
-      border-color: colours.$colour-utility-success;
-      background-color: colours.$colour-white;
-
-      &:focus + .input-wrap label,
-      &:focus + label {
-        color: colours.$colour-utility-success;
-      }
-    }
-
-    label {
-      color: colours.$colour-utility-success;
-    }
-  }
-
   &.invalid {
     input,
     textarea,
