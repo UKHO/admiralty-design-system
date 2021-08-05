@@ -1,5 +1,26 @@
 # Changelog
 
+## [3.0.0] - 2021-08-05
+
+### Added
+
+- N/A
+
+### Changed
+
+- feat: Paginator should not update currentpage [#373](https://github.com/UKHO/design-system/pull/373)
+- fix: Remove label wrapper when no label is passed [#369](https://github.com/UKHO/design-system/pull/369)
+- chore: Upgrade packages [#366](https://github.com/UKHO/design-system/pull/366)
+
+### Fixed
+
+- fix: heights of select to match text input [#371](https://github.com/UKHO/design-system/pull/371)
+
+### Removed
+
+- chore: Remove deprecated Branding from Header [#374](https://github.com/UKHO/design-system/pull/374)
+- feat: Remove success styling from form fields [#370](https://github.com/UKHO/design-system/pull/370)
+
 ## [2.4.0] - 2021-07-22
 
 ### Added
@@ -83,6 +104,7 @@
 
 - Initial release of the new Design System package
 
+[3.0.0]: https://github.com/UKHO/design-system/compare/v2.4.0...v3.0.0
 [2.4.0]: https://github.com/UKHO/design-system/compare/v2.3.0...v2.4.0
 [2.3.0]: https://github.com/UKHO/design-system/compare/v2.2.0...v2.3.0
 [2.2.0]: https://github.com/UKHO/design-system/compare/v2.1.0...v2.2.0
