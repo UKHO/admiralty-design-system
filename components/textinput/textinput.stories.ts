@@ -1,6 +1,7 @@
 import { TextinputComponent } from './textinput.component';
 import { FormControl, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { action } from '@storybook/addon-actions';
+import { Story } from '@storybook/angular';
 
 export default {
   title: 'Form Elements/Text Input',
@@ -10,58 +11,46 @@ export default {
   },
 };
 
-export const basic = () => ({
+const template: Story<TextinputComponent> = (args: TextinputComponent) => ({
   moduleMetadata: {
     declarations: [TextinputComponent],
+    imports: [FormsModule, ReactiveFormsModule],
   },
-  template: `<ukho-textinput label="Name"></ukho-textinput>`,
+  props: {
+    ...args,
+  },
+  template: `<ukho-textinput [label]="label" [type]="type" [formControl]="formControl" [errorsOnly]="errorsOnly" [disabled]="disabled"></ukho-textinput>`,
 });
 
-basic.story = {
-  name: 'Basic',
+export const basic: Story = template.bind({});
+basic.args = {
+  label: 'Basic',
 };
 
-export const date = () => ({
-  moduleMetadata: {
-    declarations: [TextinputComponent],
-  },
-  template: `<ukho-textinput label="Date" type="date"></ukho-textinput>`,
-});
+export const noLabel: Story = template.bind({});
 
-date.story = {
-  name: 'Date',
+export const date: Story = template.bind({});
+date.args = {
+  label: 'Date',
+  type: 'date',
 };
 
-export const time = () => ({
-  moduleMetadata: {
-    declarations: [TextinputComponent],
-  },
-  template: `<ukho-textinput label="Time" type="time"></ukho-textinput>`,
-});
-
-time.story = {
-  name: 'Time',
+export const time: Story = template.bind({});
+time.args = {
+  label: 'Time',
+  type: 'time',
 };
 
-export const autocomplete = () => ({
-  moduleMetadata: {
-    declarations: [TextinputComponent],
-  },
-  template: `<ukho-textinput label="Name" [autocomplete]="false"></ukho-textinput>`,
-});
-
-autocomplete.story = {
-  name: 'Autocomplete',
+export const autocomplete: Story = template.bind({});
+autocomplete.args = {
+  label: 'AutoComplete',
+  autocomplete: false,
 };
-export const disabled = () => ({
-  moduleMetadata: {
-    declarations: [TextinputComponent],
-  },
-  template: `<ukho-textinput label="Name" disabled="true"></ukho-textinput>`,
-});
 
-disabled.story = {
-  name: 'Disabled',
+export const disabled: Story = template.bind({});
+disabled.args = {
+  label: 'Disabled',
+  disabled: true,
 };
 
 export const ngModel = () => ({

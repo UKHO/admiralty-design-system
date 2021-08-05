@@ -9,12 +9,13 @@
   [autocomplete]="autocomplete ? 'on' : 'off'"
 />
 <div
+  *ngIf="label"
   class="input-wrap"
   [ngClass]="{
     'has-value': !!input.value || type === 'date' || type === 'time'
   }"
 >
-  <label [for]="id">{{ label }}</label>
+  <label *ngIf="label" [for]="id">{{ label }}</label>
 </div>
 <span *ngIf="valid && touched && !errorsOnly" class="icon validated-icon fa fa-check"></span>
 <ng-container *ngIf="!valid && touched">
