@@ -2,33 +2,29 @@ import { createHostFactory, SpectatorHost } from '@ngneat/spectator/jest';
 import { HorizontalRuleModule } from '../horizontal-rule/horizontal-rule.module';
 
 import { HeaderComponent } from './header.component';
-import {
-  authOptions,
-  mockBranding,
-  mockMenuItemsWithSubItems,
-  mockMenuItemsWithSubItemsAndNavActive,
-} from './header.stories.data';
+import { authOptions, mockMenuItemsWithSubItems, mockMenuItemsWithSubItemsAndNavActive } from './header.stories.data';
 import { HeaderItem } from './header.types';
 
 describe('HeaderComponent', () => {
   const createHost = createHostFactory({ component: HeaderComponent, imports: [HorizontalRuleModule] });
   const mockedElementDOM = { classList: { contains: jest.fn(), remove: jest.fn(), add: jest.fn() } };
+  const title = 'Design System';
 
   afterEach(() => {
     jest.resetAllMocks();
   });
   test('should create', () => {
-    const spectator = createHost('<ukho-header [branding]="branding"></ukho-header>', {
-      hostProps: { branding: mockBranding },
+    const spectator = createHost('<ukho-header></ukho-header>', {
+      hostProps: { title },
     });
     expect(spectator.component).toBeTruthy();
   });
 
   test('should set navActive class when navActive is true', () => {
     const spectator = createHost(
-      '<ukho-header [branding]="branding" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>',
+      '<ukho-header [title]="title" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>',
       {
-        hostProps: { branding: mockBranding, authOptions, menuItems: mockMenuItemsWithSubItemsAndNavActive },
+        hostProps: { title, authOptions, menuItems: mockMenuItemsWithSubItemsAndNavActive },
       },
     );
     expect(spectator.query('.section.navActive')).toBeDefined();
@@ -41,7 +37,7 @@ describe('HeaderComponent', () => {
     const spectator = createHost(
       '<ukho-header [title]="title" [logoImgUrl]="logoImgUrl" [logoLinkUrl]="logoLinkUrl" [logoAltText]="logoAltText"></ukho-header>',
       {
-        hostProps: { title: 'title', logoImgUrl: 'blah.com', logoLinkUrl: 'blah.com', logoAltText: 'blah' },
+        hostProps: { title, logoImgUrl: 'blah.com', logoLinkUrl: 'blah.com', logoAltText: 'blah' },
       },
     );
     expect(spectator.component).toBeTruthy();
@@ -49,23 +45,23 @@ describe('HeaderComponent', () => {
 
   test('should create when only title passed', () => {
     const spectator = createHost('<ukho-header [title]="title"></ukho-header>', {
-      hostProps: { title: 'title' },
+      hostProps: { title },
     });
     expect(spectator.component).toBeTruthy();
   });
 
   test('should create with AuthOptions passed', () => {
-    const spectator = createHost('<ukho-header [branding]="branding" [authOptions]="authOptions"></ukho-header>', {
-      hostProps: { branding: mockBranding, authOptions },
+    const spectator = createHost('<ukho-header [title]="title" [authOptions]="authOptions"></ukho-header>', {
+      hostProps: { title, authOptions },
     });
     expect(spectator.component).toBeTruthy();
   });
 
   test('should create with menuItems passed', () => {
     const spectator = createHost(
-      '<ukho-header [branding]="branding" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>',
+      '<ukho-header [title]="title" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>',
       {
-        hostProps: { branding: mockBranding, authOptions, menuItems: mockMenuItemsWithSubItems },
+        hostProps: { title, authOptions, menuItems: mockMenuItemsWithSubItems },
       },
     );
     expect(spectator.component).toBeTruthy();
@@ -73,9 +69,9 @@ describe('HeaderComponent', () => {
 
   test('openDropdown should add active to the class list of the active item', () => {
     const spectator = createHost(
-      '<ukho-header [branding]="branding" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>',
+      '<ukho-header [title]="title" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>',
       {
-        hostProps: { branding: mockBranding, authOptions, menuItems: mockMenuItemsWithSubItems },
+        hostProps: { title, authOptions, menuItems: mockMenuItemsWithSubItems },
       },
     );
     const component = spectator.component;
@@ -91,9 +87,9 @@ describe('HeaderComponent', () => {
 
   test('closeDropdown should remove active from the class list of the active item', () => {
     const spectator = createHost(
-      '<ukho-header [branding]="branding" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>',
+      '<ukho-header [title]="title" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>',
       {
-        hostProps: { branding: mockBranding, authOptions, menuItems: mockMenuItemsWithSubItems },
+        hostProps: { title, authOptions, menuItems: mockMenuItemsWithSubItems },
       },
     );
     const component = spectator.component;
@@ -110,9 +106,9 @@ describe('HeaderComponent', () => {
 
   test('closeDropdown should do nothing if there is no active item', () => {
     const spectator = createHost(
-      '<ukho-header [branding]="branding" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>',
+      '<ukho-header [title]="title" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>',
       {
-        hostProps: { branding: mockBranding, authOptions, menuItems: mockMenuItemsWithSubItems },
+        hostProps: { title, authOptions, menuItems: mockMenuItemsWithSubItems },
       },
     );
     const component = spectator.component;
@@ -128,9 +124,9 @@ describe('HeaderComponent', () => {
 
   test('itemClickAction should call the clickAction if the item passed if clickAction is not null and there are no sub items', () => {
     const spectator = createHost(
-      '<ukho-header [branding]="branding" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>',
+      '<ukho-header [title]="title" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>',
       {
-        hostProps: { branding: mockBranding, authOptions, menuItems: mockMenuItemsWithSubItems },
+        hostProps: { title, authOptions, menuItems: mockMenuItemsWithSubItems },
       },
     );
     const component = spectator.component;
@@ -147,9 +143,9 @@ describe('HeaderComponent', () => {
 
   test('itemClickAction should not call the clickAction if the item passed if no clickAction', () => {
     const spectator = createHost(
-      '<ukho-header [branding]="branding" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>',
+      '<ukho-header [title]="title" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>',
       {
-        hostProps: { branding: mockBranding, authOptions, menuItems: mockMenuItemsWithSubItems },
+        hostProps: { title, authOptions, menuItems: mockMenuItemsWithSubItems },
       },
     );
     const component = spectator.component;
@@ -165,9 +161,9 @@ describe('HeaderComponent', () => {
 
   test('itemClickAction should not call the clickAction if the item passed if clickAction is not null but there are sub items', () => {
     const spectator = createHost(
-      '<ukho-header [branding]="branding" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>',
+      '<ukho-header [title]="title" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>',
       {
-        hostProps: { branding: mockBranding, authOptions, menuItems: mockMenuItemsWithSubItems },
+        hostProps: { title, authOptions, menuItems: mockMenuItemsWithSubItems },
       },
     );
     const component = spectator.component;
@@ -190,9 +186,9 @@ describe('HeaderComponent', () => {
 
   test('toggleMobileMenu should flip the boolean mobileMenuOpen', () => {
     const spectator = createHost(
-      '<ukho-header [branding]="branding" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>',
+      '<ukho-header [title]="title" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>',
       {
-        hostProps: { branding: mockBranding, authOptions, menuItems: mockMenuItemsWithSubItems },
+        hostProps: { title, authOptions, menuItems: mockMenuItemsWithSubItems },
       },
     );
     const component = spectator.component;
@@ -206,9 +202,9 @@ describe('HeaderComponent', () => {
 
   test('clicking on an item should call itemClickAction', () => {
     const spectator = createHost(
-      '<ukho-header [branding]="branding" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>',
+      '<ukho-header [title]="title" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>',
       {
-        hostProps: { branding: mockBranding, authOptions, menuItems: mockMenuItemsWithSubItems },
+        hostProps: { title, authOptions, menuItems: mockMenuItemsWithSubItems },
       },
     );
     const component = spectator.component;
@@ -222,9 +218,9 @@ describe('HeaderComponent', () => {
 
   test('hovering over an item should call openDropdown where there is subitems', () => {
     const spectator = createHost(
-      '<ukho-header [branding]="branding" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>',
+      '<ukho-header [title]="title" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>',
       {
-        hostProps: { branding: mockBranding, authOptions, menuItems: mockMenuItemsWithSubItems },
+        hostProps: { title, authOptions, menuItems: mockMenuItemsWithSubItems },
       },
     );
     const component = spectator.component;
@@ -238,9 +234,9 @@ describe('HeaderComponent', () => {
 
   test('un hovering over an item should call closeDropdown where there is subitems', () => {
     const spectator = createHost(
-      '<ukho-header [branding]="branding" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>',
+      '<ukho-header [title]="title" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>',
       {
-        hostProps: { branding: mockBranding, authOptions, menuItems: mockMenuItemsWithSubItems },
+        hostProps: { title, authOptions, menuItems: mockMenuItemsWithSubItems },
       },
     );
     const component = spectator.component;
@@ -254,9 +250,9 @@ describe('HeaderComponent', () => {
 
   test('clicking on a subitem should call clickAction on the sub item', () => {
     const spectator = createHost(
-      '<ukho-header [branding]="branding" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>',
+      '<ukho-header [title]="title" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>',
       {
-        hostProps: { branding: mockBranding, authOptions, menuItems: mockMenuItemsWithSubItems },
+        hostProps: { title, authOptions, menuItems: mockMenuItemsWithSubItems },
       },
     );
     const component = spectator.component;
@@ -272,9 +268,9 @@ describe('HeaderComponent', () => {
 
   test('sign in button shows when isSignedIn returns false', () => {
     const spectator = createHost(
-      '<ukho-header [branding]="branding" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>',
+      '<ukho-header [title]="title" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>',
       {
-        hostProps: { branding: mockBranding, authOptions, menuItems: mockMenuItemsWithSubItems },
+        hostProps: { title, authOptions, menuItems: mockMenuItemsWithSubItems },
       },
     );
     const component = spectator.component;
@@ -286,9 +282,9 @@ describe('HeaderComponent', () => {
 
   test('clicking sign in button calls signInHandler', () => {
     const spectator = createHost(
-      '<ukho-header [branding]="branding" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>',
+      '<ukho-header [title]="title" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>',
       {
-        hostProps: { branding: mockBranding, authOptions, menuItems: mockMenuItemsWithSubItems },
+        hostProps: { title, authOptions, menuItems: mockMenuItemsWithSubItems },
       },
     );
     const component = spectator.component;
@@ -302,9 +298,9 @@ describe('HeaderComponent', () => {
 
   test('profile section is show if isSignedIn returns true', () => {
     const spectator = createHost(
-      '<ukho-header [branding]="branding" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>',
+      '<ukho-header [title]="title" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>',
       {
-        hostProps: { branding: mockBranding, authOptions, menuItems: mockMenuItemsWithSubItems },
+        hostProps: { title, authOptions, menuItems: mockMenuItemsWithSubItems },
       },
     );
     const component = spectator.component;
@@ -320,9 +316,9 @@ describe('HeaderComponent', () => {
 
   test('hovering over the profile button calls openDropdown', () => {
     const spectator = createHost(
-      '<ukho-header [branding]="branding" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>',
+      '<ukho-header [title]="title" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>',
       {
-        hostProps: { branding: mockBranding, authOptions, menuItems: mockMenuItemsWithSubItems },
+        hostProps: { title, authOptions, menuItems: mockMenuItemsWithSubItems },
       },
     );
     const component = spectator.component;
@@ -338,9 +334,9 @@ describe('HeaderComponent', () => {
 
   test('un hovering over the profile button calls closeDropdown', () => {
     const spectator = createHost(
-      '<ukho-header [branding]="branding" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>',
+      '<ukho-header [title]="title" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>',
       {
-        hostProps: { branding: mockBranding, authOptions, menuItems: mockMenuItemsWithSubItems },
+        hostProps: { title, authOptions, menuItems: mockMenuItemsWithSubItems },
       },
     );
     const component = spectator.component;
@@ -361,9 +357,9 @@ describe('HeaderComponent', () => {
 
   test('clicking accountButton calls userProfileHandler', () => {
     const spectator = createHost(
-      '<ukho-header [branding]="branding" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>',
+      '<ukho-header [title]="title" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>',
       {
-        hostProps: { branding: mockBranding, authOptions, menuItems: mockMenuItemsWithSubItems },
+        hostProps: { title, authOptions, menuItems: mockMenuItemsWithSubItems },
       },
     );
     const component = spectator.component;
@@ -379,9 +375,9 @@ describe('HeaderComponent', () => {
 
   test('clicking signOutButton calls signOutHandler', () => {
     const spectator = createHost(
-      '<ukho-header [branding]="branding" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>',
+      '<ukho-header [title]="title" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>',
       {
-        hostProps: { branding: mockBranding, authOptions, menuItems: mockMenuItemsWithSubItems },
+        hostProps: { title, authOptions, menuItems: mockMenuItemsWithSubItems },
       },
     );
     const component = spectator.component;
@@ -397,9 +393,9 @@ describe('HeaderComponent', () => {
 
   test('mobileDropdown is available if mobileMenuOpen is true', () => {
     const spectator = createHost(
-      '<ukho-header [branding]="branding" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>',
+      '<ukho-header [title]="title" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>',
       {
-        hostProps: { branding: mockBranding, authOptions, menuItems: mockMenuItemsWithSubItems },
+        hostProps: { title, authOptions, menuItems: mockMenuItemsWithSubItems },
       },
     );
     const component = spectator.component;
@@ -411,9 +407,9 @@ describe('HeaderComponent', () => {
 
   test('clicking on a mobile dropdown item calls clickAction', () => {
     const spectator = createHost(
-      '<ukho-header [branding]="branding" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>',
+      '<ukho-header [title]="title" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>',
       {
-        hostProps: { branding: mockBranding, authOptions, menuItems: mockMenuItemsWithSubItems },
+        hostProps: { title, authOptions, menuItems: mockMenuItemsWithSubItems },
       },
     );
     const component = spectator.component;
@@ -430,9 +426,9 @@ describe('HeaderComponent', () => {
 
   test('clicking on a mobile dropdown subitem calls clickAction', () => {
     const spectator = createHost(
-      '<ukho-header [branding]="branding" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>',
+      '<ukho-header [title]="title" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>',
       {
-        hostProps: { branding: mockBranding, authOptions, menuItems: mockMenuItemsWithSubItems },
+        hostProps: { title, authOptions, menuItems: mockMenuItemsWithSubItems },
       },
     );
     const component = spectator.component;
@@ -449,9 +445,9 @@ describe('HeaderComponent', () => {
 
   test('clicking mobile sign in button should call signInHandler', () => {
     const spectator = createHost(
-      '<ukho-header [branding]="branding" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>',
+      '<ukho-header [title]="title" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>',
       {
-        hostProps: { branding: mockBranding, authOptions, menuItems: mockMenuItemsWithSubItems },
+        hostProps: { title, authOptions, menuItems: mockMenuItemsWithSubItems },
       },
     );
     const component = spectator.component;
@@ -469,9 +465,9 @@ describe('HeaderComponent', () => {
 
   test('mobile sign in button does not render if isSignedIn returns true', () => {
     const spectator = createHost(
-      '<ukho-header [branding]="branding" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>',
+      '<ukho-header [title]="title" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>',
       {
-        hostProps: { branding: mockBranding, authOptions, menuItems: mockMenuItemsWithSubItems },
+        hostProps: { title, authOptions, menuItems: mockMenuItemsWithSubItems },
       },
     );
     const component = spectator.component;
@@ -485,9 +481,9 @@ describe('HeaderComponent', () => {
 
   test('mobile profile button renders if isSignedIn returns true', () => {
     const spectator = createHost(
-      '<ukho-header [branding]="branding" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>',
+      '<ukho-header [title]="title" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>',
       {
-        hostProps: { branding: mockBranding, authOptions, menuItems: mockMenuItemsWithSubItems },
+        hostProps: { title, authOptions, menuItems: mockMenuItemsWithSubItems },
       },
     );
     const component = spectator.component;
@@ -501,9 +497,9 @@ describe('HeaderComponent', () => {
 
   test('mobile sign out button renders if isSignedIn returns true', () => {
     const spectator = createHost(
-      '<ukho-header [branding]="branding" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>',
+      '<ukho-header [title]="title" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>',
       {
-        hostProps: { branding: mockBranding, authOptions, menuItems: mockMenuItemsWithSubItems },
+        hostProps: { title, authOptions, menuItems: mockMenuItemsWithSubItems },
       },
     );
     const component = spectator.component;
@@ -517,9 +513,9 @@ describe('HeaderComponent', () => {
 
   test('clicking on the mobile profile button calls userProfileHandler', () => {
     const spectator = createHost(
-      '<ukho-header [branding]="branding" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>',
+      '<ukho-header [title]="title" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>',
       {
-        hostProps: { branding: mockBranding, authOptions, menuItems: mockMenuItemsWithSubItems },
+        hostProps: { title, authOptions, menuItems: mockMenuItemsWithSubItems },
       },
     );
     const component = spectator.component;
@@ -537,9 +533,9 @@ describe('HeaderComponent', () => {
 
   test('clicking on the mobile sign out button calls signOutHandler', () => {
     const spectator = createHost(
-      '<ukho-header [branding]="branding" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>',
+      '<ukho-header [title]="title" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>',
       {
-        hostProps: { branding: mockBranding, authOptions, menuItems: mockMenuItemsWithSubItems },
+        hostProps: { title, authOptions, menuItems: mockMenuItemsWithSubItems },
       },
     );
     const component = spectator.component;

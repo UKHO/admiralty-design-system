@@ -3,7 +3,6 @@ import { HorizontalRuleModule } from '../horizontal-rule/horizontal-rule.module'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Story } from '@storybook/angular';
 import {
-  mockBranding,
   mockMenuItemsWithSubItems,
   authOptions,
   authOptionsSignedIn,
@@ -27,10 +26,10 @@ const template: Story<HeaderComponent> = (args: HeaderComponent) => ({
     imports: [HorizontalRuleModule, BrowserAnimationsModule],
   },
   props: {
-    title: mockBranding.title,
-    logoImgUrl: mockBranding.logoImgUrl,
-    logoLinkUrl: mockBranding.logoLinkUrl,
-    logoAltText: mockBranding.logoAltText,
+    title: 'Design System',
+    logoLinkUrl: '/svg/Admiralty stacked logo.svg',
+    logoAltText: 'Admiralty Stacked Logo',
+    logoImgUrl: '/svg/Admiralty stacked logo.svg',
     ...args,
   },
   template: `<ukho-header [title]="title" [logoImgUrl]="logoImgUrl" [logoLinkUrl]="logoLinkUrl" [logoAltText]="logoAltText" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>`,

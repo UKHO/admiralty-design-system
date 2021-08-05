@@ -1,13 +1,6 @@
-import { Branding, HeaderItem } from './header.types';
+import { HeaderItem } from './header.types';
 import { action } from '@storybook/addon-actions';
 import { AuthOptions } from './header.component';
-
-export const mockBranding: Branding = {
-  title: 'Design System',
-  logoLinkUrl: '/svg/Admiralty stacked logo.svg',
-  logoAltText: 'Admiralty Stacked Logo',
-  logoImgUrl: '/svg/Admiralty stacked logo.svg',
-};
 
 export const mockMenuItemsWithSubItems: HeaderItem[] = [
   {
