@@ -35,20 +35,19 @@ export class PaginatorComponent {
     this._label = label;
   }
 
-  public setPage(page: number) {
-    this.currentPage = page;
+  public pageChanged(page: number) {
     this.pageChange.emit(page);
   }
 
   prev() {
     if (this.currentPage > 1) {
-      this.setPage(this.currentPage - 1);
+      this.pageChanged(this.currentPage - 1);
     }
   }
 
   next() {
     if (this.currentPage < this.pages) {
-      this.setPage(this.currentPage + 1);
+      this.pageChanged(this.currentPage + 1);
     }
   }
 }

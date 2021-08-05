@@ -75,7 +75,7 @@ describe('PaginatorComponent', () => {
     expect(emitSpy).not.toBeCalled();
   });
 
-  it('when setPage() is called then pageChange is emitted with expected page', () => {
+  it('when pageChanged() is called then pageChange is emitted with expected page', () => {
     const spectator = createHost('<ukho-paginator [pages]="pages" [currentPage]="currentPage"></ukho-paginator>', {
       hostProps: {
         pages: 1,
@@ -88,7 +88,7 @@ describe('PaginatorComponent', () => {
     const expectedPage = 5;
 
     expect(emitSpy).not.toBeCalled();
-    spectator.component.setPage(expectedPage);
+    spectator.component.pageChanged(expectedPage);
     expect(emitSpy).toBeCalledTimes(1);
     expect(emitSpy).toBeCalledWith(expectedPage);
   });
@@ -98,7 +98,7 @@ describe('PaginatorComponent', () => {
     [2, 3, 1],
     [3, 3, 2],
   ])(
-    'given page %d of %d when prev() is called then setPage() is called with %d',
+    'given page %d of %d when prev() is called then pageChanged() is called with %d',
     (currentPage, pages, expectedPage) => {
       const spectator = createHost('<ukho-paginator [pages]="pages" [currentPage]="currentPage"></ukho-paginator>', {
         hostProps: {
@@ -106,12 +106,12 @@ describe('PaginatorComponent', () => {
           currentPage,
         },
       });
-      spectator.component.setPage = jest.fn();
+      spectator.component.pageChanged = jest.fn();
 
-      expect(spectator.component.setPage).not.toBeCalled();
+      expect(spectator.component.pageChanged).not.toBeCalled();
       spectator.component.prev();
-      expect(spectator.component.setPage).toHaveBeenCalledTimes(1);
-      expect(spectator.component.setPage).toBeCalledWith(expectedPage);
+      expect(spectator.component.pageChanged).toHaveBeenCalledTimes(1);
+      expect(spectator.component.pageChanged).toBeCalledWith(expectedPage);
     },
   );
 
@@ -120,7 +120,7 @@ describe('PaginatorComponent', () => {
     [2, 3, 3],
     [1, 3, 2],
   ])(
-    'given page %d of %d when next() is called then setPage() is called with %d',
+    'given page %d of %d when next() is called then pageChanged() is called with %d',
     (currentPage, pages, expectedPage) => {
       const spectator = createHost('<ukho-paginator [pages]="pages" [currentPage]="currentPage"></ukho-paginator>', {
         hostProps: {
@@ -128,41 +128,41 @@ describe('PaginatorComponent', () => {
           currentPage,
         },
       });
-      spectator.component.setPage = jest.fn();
+      spectator.component.pageChanged = jest.fn();
 
-      expect(spectator.component.setPage).not.toBeCalled();
+      expect(spectator.component.pageChanged).not.toBeCalled();
       spectator.component.next();
-      expect(spectator.component.setPage).toHaveBeenCalledTimes(1);
-      expect(spectator.component.setPage).toBeCalledWith(expectedPage);
+      expect(spectator.component.pageChanged).toHaveBeenCalledTimes(1);
+      expect(spectator.component.pageChanged).toBeCalledWith(expectedPage);
     },
   );
 
-  it('given matching current page 1 and total pages 1 when prev() is called then setPage() is not called', () => {
+  it('given matching current page 1 and total pages 1 when prev() is called then pageChanged() is not called', () => {
     const spectator = createHost('<ukho-paginator [pages]="pages" [currentPage]="currentPage"></ukho-paginator>', {
       hostProps: {
         pages: 1,
         currentPage: 1,
       },
     });
-    spectator.component.setPage = jest.fn();
+    spectator.component.pageChanged = jest.fn();
 
-    expect(spectator.component.setPage).not.toBeCalled();
+    expect(spectator.component.pageChanged).not.toBeCalled();
     spectator.component.prev();
-    expect(spectator.component.setPage).not.toBeCalled();
+    expect(spectator.component.pageChanged).not.toBeCalled();
   });
 
-  it('given matching current page 1 and total pages 1 when next() is called then setPage() is not called', () => {
+  it('given matching current page 1 and total pages 1 when next() is called then pageChanged() is not called', () => {
     const spectator = createHost('<ukho-paginator [pages]="pages" [currentPage]="currentPage"></ukho-paginator>', {
       hostProps: {
         pages: 1,
         currentPage: 1,
       },
     });
-    spectator.component.setPage = jest.fn();
+    spectator.component.pageChanged = jest.fn();
 
-    expect(spectator.component.setPage).not.toBeCalled();
+    expect(spectator.component.pageChanged).not.toBeCalled();
     spectator.component.next();
-    expect(spectator.component.setPage).not.toBeCalled();
+    expect(spectator.component.pageChanged).not.toBeCalled();
   });
 
   it('should allow prev() & next() when input is changed', () => {

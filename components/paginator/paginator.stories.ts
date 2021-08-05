@@ -1,4 +1,4 @@
-import { PaginatorComponent } from './paginator.component';
+import { PaginatorWrapperWithLabelComponent, PaginatorWrapperWithoutLabelComponent } from './paginator.stories.data';
 import { action } from '@storybook/addon-actions';
 import { Story } from '@storybook/angular';
 
@@ -7,33 +7,13 @@ export default {
   argTypes: {},
 };
 
-// This extended class of PaginatorComponent will set the
-// label of the Paginator when setPage is called.
-// However, this is only used due to a limitation with Storybook whereby props
-// cannot be changed from inside the emitted event handler.
-// The pageChange event should be used instead.
-class PaginatorWrapperComponent extends PaginatorComponent {
-  setPage(page: number) {
-    const perPage = 6;
-    const first = page == 1 ? 1 : perPage * (page - 1);
-    const last = page == 8 ? 45 : perPage * page;
-    const total = 45;
-    const label = `Showing ${first}-${last} of ${total}`;
-    console.log('setLabel super');
-    super.setLabel(label);
-
-    console.log('setPage super');
-    super.setPage(page);
-  }
-}
-
-const LabelTemplate: Story = (args) => ({
+const LabelTemplate: Story<PaginatorWrapperWithLabelComponent> = (args) => ({
   moduleMetadata: {
-    declarations: [PaginatorWrapperComponent, PaginatorComponent],
+    declarations: [PaginatorWrapperWithLabelComponent],
   },
   props: { ...args, pageChange: action('Page Change') },
   template: `<div style="width:350px;">
-  <ukho-paginator [pages]="pages" [currentPage]="currentPage" [label]="label" (pageChange)="pageChange($event)" style="float:right;"></ukho-paginator>
+  <ukho-paginator-wrapper-with-label [pages]="pages" [currentPage]="currentPage" [label]="label" (pageChange)="pageChange($event)" style="float:right;"></ukho-paginator-wrapper-with-label>
   </div>`,
 });
 
@@ -48,12 +28,12 @@ Basic.parameters = {
 };
 
 // Non-label stories:
-const Template: Story = (args) => ({
+const Template: Story<PaginatorWrapperWithoutLabelComponent> = (args) => ({
   moduleMetadata: {
-    declarations: [PaginatorComponent],
+    declarations: [PaginatorWrapperWithoutLabelComponent],
   },
   props: { ...args, pageChange: action('Page Change') },
-  template: `<ukho-paginator [pages]="pages" [currentPage]="currentPage" (pageChange)="pageChange($event)"></ukho-paginator>`,
+  template: `<ukho-paginator-wrapper-without-label [pages]="pages" [currentPage]="currentPage" (pageChange)="pageChange($event)"></ukho-paginator-wrapper-without-label>`,
 });
 
 export const WithoutLabel: Story = Template.bind({});
