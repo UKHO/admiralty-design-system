@@ -1,5 +1,23 @@
 # Changelog
 
+## [3.0.3] - 2021-08-25
+
+### Added
+
+- N/A
+
+### Changed
+
+- N/A
+
+### Fixed
+
+- fix: Remove unnecessary textarea z-index [#384](https://github.com/UKHO/design-system/pull/384)
+
+### Removed
+
+- N/A
+
 ## [3.0.2] - 2021-08-06
 
 ### Added
@@ -140,6 +158,7 @@
 
 - Initial release of the new Design System package
 
+[3.0.3]: https://github.com/UKHO/design-system/compare/v3.0.2...v3.0.3
 [3.0.2]: https://github.com/UKHO/design-system/compare/v3.0.1...v3.0.2
 [3.0.1]: https://github.com/UKHO/design-system/compare/v3.0.0...v3.0.1
 [3.0.0]: https://github.com/UKHO/design-system/compare/v2.4.0...v3.0.0
