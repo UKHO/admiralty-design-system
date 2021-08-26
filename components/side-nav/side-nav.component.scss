@@ -1,0 +1,40 @@
+@use '../../styles/base/colours';
+@use '../../styles/base/responsive';
+
+nav.side-nav {
+  display: flex;
+  flex-direction: column;
+
+  a.section {
+    cursor: pointer;
+    padding: 0px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 42px;
+    max-width: fit-content;
+    box-sizing: border-box;
+    user-select: none;
+
+    text-align: center;
+    text-decoration: none;
+    color: colours.$colour-admiralty-blue;
+    font-weight: normal;
+    font-size: 16px;
+
+    &:hover {
+      background-color: colours.$colour-nav-bg-hover;
+    }
+
+    &:focus {
+      padding: 0px 8px;
+      border: 2px solid colours.$colour-utility-info;
+      outline: none;
+    }
+
+    &.navActive {
+      background-color: colours.$colour-admiralty-blue;
+      color: colours.$colour-white;
+    }
+  }
+}
