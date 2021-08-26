@@ -1,5 +1,23 @@
 # Changelog
 
+## [3.1.0] - 2021-08-26
+
+### Added
+
+- feat: Create side nav component [#365](https://github.com/UKHO/design-system/pull/365)
+
+### Changed
+
+- chore: Upgrade dependencies [#389](https://github.com/UKHO/design-system/pull/389)
+
+### Fixed
+
+- N/A
+
+### Removed
+
+- N/A
+
 ## [3.0.3] - 2021-08-25
 
 ### Added
@@ -158,6 +176,7 @@
 
 - Initial release of the new Design System package
 
+[3.1.0]: https://github.com/UKHO/design-system/compare/v3.0.3...v3.1.0
 [3.0.3]: https://github.com/UKHO/design-system/compare/v3.0.2...v3.0.3
 [3.0.2]: https://github.com/UKHO/design-system/compare/v3.0.1...v3.0.2
 [3.0.1]: https://github.com/UKHO/design-system/compare/v3.0.0...v3.0.1
