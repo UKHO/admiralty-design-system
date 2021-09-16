@@ -1,6 +1,7 @@
 import { HeaderComponent } from './header.component';
 import { HorizontalRuleModule } from '../horizontal-rule/horizontal-rule.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { action } from '@storybook/addon-actions';
 import { Story } from '@storybook/angular';
 import {
   mockMenuItemsWithSubItems,
@@ -30,10 +31,16 @@ const template: Story<HeaderComponent> = (args: HeaderComponent) => ({
     logoLinkUrl: '/svg/Admiralty stacked logo.svg',
     logoAltText: 'Admiralty Stacked Logo',
     logoImgUrl: '/svg/Admiralty stacked logo.svg',
+    titleLinkNavigated: action('Title Link Navigated'),
     ...args,
   },
-  template: `<ukho-header [title]="title" [logoImgUrl]="logoImgUrl" [logoLinkUrl]="logoLinkUrl" [logoAltText]="logoAltText" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>`,
+  template: `<ukho-header [title]="title" [titleLinkUrl]="titleLinkUrl" [logoImgUrl]="logoImgUrl" [logoLinkUrl]="logoLinkUrl" [logoAltText]="logoAltText" [authOptions]="authOptions" [menuItems]="menuItems" (titleLinkNavigated)="titleLinkNavigated($event)"></ukho-header>`,
 });
+
+export const titleLink: Story = template.bind({});
+titleLink.args = {
+  titleLinkUrl: '/a',
+};
 
 export const noLinks: Story = template.bind({});
 noLinks.args = {};

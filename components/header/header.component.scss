@@ -57,7 +57,7 @@
       }
     }
 
-    a {
+    > a {
       display: contents;
     }
 
@@ -71,7 +71,7 @@
       }
     }
 
-    h2 {
+    h2.headerTitle {
       margin-bottom: unset !important;
       line-height: 36px !important;
       font-size: 36px;
@@ -79,10 +79,23 @@
       flex-direction: column;
       justify-content: center;
       flex-grow: 1;
+      user-select: none;
+
       @include responsive.not-desktop {
         font-size: 24px;
         line-height: 24px !important;
         white-space: pre-wrap;
+      }
+
+      a {
+        font-size: 36px;
+        font-weight: normal;
+        cursor: pointer;
+        max-width: fit-content;
+
+        @include responsive.not-desktop {
+          font-size: 24px;
+        }
       }
     }
   }

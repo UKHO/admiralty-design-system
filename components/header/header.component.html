@@ -4,7 +4,15 @@
       <img class="logoImage" src="{{ logoImgUrl }}" alt="{{ logoAltText }}" />
     </a>
     <div id="vertical-separator"></div>
-    <h2>{{ title }}</h2>
+    <h2 class="headerTitle">
+      <a *ngIf="titleLinkUrl"
+          tabindex="0"
+          role="button"
+          (click)="navigateTitleLink()"
+          (keyup.enter)="navigateTitleLink()"
+      >{{ title }}</a>
+      <ng-container *ngIf="!titleLinkUrl">{{ title }}</ng-container>
+    </h2>
   </div>
 
   <div class="links">

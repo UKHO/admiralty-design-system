@@ -50,6 +50,63 @@ describe('HeaderComponent', () => {
     expect(spectator.component).toBeTruthy();
   });
 
+  test('navigateTitleLink() should emit titleLinkNavigated with the parameter of titleLinkUrl', () => {
+    const expectedTitleLinkUrl1 = 'a';
+    const expectedTitleLinkUrl2 = 'b';
+    const spectator = createHost('<ukho-header [title]="title" [titleLinkUrl]="titleLinkUrl"></ukho-header>', {
+      hostProps: { title, titleLinkUrl: expectedTitleLinkUrl1 },
+    });
+
+    const titleLinkNavigatedSpy = jest.spyOn(spectator.component.titleLinkNavigated, 'emit');
+
+    expect(titleLinkNavigatedSpy).not.toBeCalled();
+    spectator.component.navigateTitleLink();
+    expect(titleLinkNavigatedSpy).toBeCalledTimes(1);
+    expect(titleLinkNavigatedSpy).toBeCalledWith(expectedTitleLinkUrl1);
+
+    titleLinkNavigatedSpy.mockClear();
+
+    expect(titleLinkNavigatedSpy).not.toBeCalled();
+    spectator.setHostInput('titleLinkUrl', expectedTitleLinkUrl2);
+    spectator.component.navigateTitleLink();
+    expect(titleLinkNavigatedSpy).toBeCalledTimes(1);
+    expect(titleLinkNavigatedSpy).toBeCalledWith(expectedTitleLinkUrl2);
+  });
+
+  test('clicking on the header title should call navigateTitleLink()', () => {
+    const spectator = createHost('<ukho-header [title]="title" [titleLinkUrl]="titleLinkUrl"></ukho-header>', {
+      hostProps: { title, titleLinkUrl: 'a' },
+    });
+
+    spectator.component.navigateTitleLink = jest.fn();
+
+    spectator.click('.headerTitle a');
+
+    expect(spectator.component.navigateTitleLink).toHaveBeenCalledTimes(1);
+  });
+
+  test('pressing enter on the header title with focus should call navigateTitleLink()', () => {
+    const spectator = createHost('<ukho-header [title]="title" [titleLinkUrl]="titleLinkUrl"></ukho-header>', {
+      hostProps: { title, titleLinkUrl: 'a' },
+    });
+
+    spectator.component.navigateTitleLink = jest.fn();
+
+    spectator.focus('.headerTitle a');
+
+    spectator.keyboard.pressEnter('.headerTitle a');
+
+    expect(spectator.component.navigateTitleLink).toHaveBeenCalledTimes(1);
+  });
+
+  test('should not have header link when titleLinkUrl input is not provided', () => {
+    const spectator = createHost('<ukho-header [title]="title"></ukho-header>', {
+      hostProps: { title },
+    });
+
+    expect(spectator.query('.headerTitle')).not.toHaveDescendant('a');
+  });
+
   test('should create with AuthOptions passed', () => {
     const spectator = createHost('<ukho-header [title]="title" [authOptions]="authOptions"></ukho-header>', {
       hostProps: { title, authOptions },

@@ -1,5 +1,5 @@
 import { trigger, transition, style, animate } from '@angular/animations';
-import { Component, Input, Optional } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import type { HeaderItem } from './header.types';
 
 @Component({
@@ -19,13 +19,20 @@ export class HeaderComponent {
   @Input() authOptions?: AuthOptions;
 
   @Input() title: string;
+  @Input() titleLinkUrl: string;
   @Input() logoImgUrl = '/svg/Admiralty stacked logo.svg';
   @Input() logoAltText = 'Admiralty Stacked Logo';
   @Input() logoLinkUrl = '/svg/Admiralty stacked logo.svg';
 
+  @Output() titleLinkNavigated = new EventEmitter<string>();
+
   public active: Element;
 
   public mobileMenuOpen = false;
+
+  navigateTitleLink() {
+    this.titleLinkNavigated.emit(this.titleLinkUrl);
+  }
 
   openDropdown(event: Event) {
     this.active = event.target as Element;
