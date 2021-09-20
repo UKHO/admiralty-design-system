@@ -1,5 +1,24 @@
 # Changelog
 
+## [3.2.0] - 2021-09-20
+
+### Added
+
+- feat: Add code snippet component [#296](https://github.com/UKHO/design-system/pull/296)
+- feat: Add navigation via header title [#394](https://github.com/UKHO/design-system/pull/394)
+
+### Changed
+
+- chore: Upgrade dependencies [#398](https://github.com/UKHO/design-system/pull/398)
+
+### Fixed
+
+- N/A
+
+### Removed
+
+- N/A
+
 ## [3.1.0] - 2021-08-26
 
 ### Added
@@ -176,6 +195,7 @@
 
 - Initial release of the new Design System package
 
+[3.2.0]: https://github.com/UKHO/design-system/compare/v3.1.0...v3.2.0
 [3.1.0]: https://github.com/UKHO/design-system/compare/v3.0.3...v3.1.0
 [3.0.3]: https://github.com/UKHO/design-system/compare/v3.0.2...v3.0.3
 [3.0.2]: https://github.com/UKHO/design-system/compare/v3.0.1...v3.0.2
