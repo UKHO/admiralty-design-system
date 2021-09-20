@@ -4,7 +4,11 @@
   "assets": ["styles/!(generateCSS.js)", "./assets"],
   "lib": {
     "entryFile": "components/public-api.ts",
-    "styleIncludePaths": ["styles/core.scss"]
+    "styleIncludePaths": ["styles/core.scss"],
+    "umdModuleIds": {
+      "filesize": "filesize",
+      "highlight.js": "highlight.js"
+    }
   },
-  "whitelistedNonPeerDependencies": ["filesize", "normalize.css"]
+  "whitelistedNonPeerDependencies": ["filesize", "highlight.js", "normalize.css"]
 }

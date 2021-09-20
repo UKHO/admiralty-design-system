@@ -1,0 +1,11 @@
+<div class="codeSnippetComponentContainer">
+  <div class="copiedCodeModal" [@copyCodeAnimation]="showCopiedCode ? 'show' : 'hide'">
+    <span>Copied to clipboard!</span>
+  </div>
+  <div class="copyCodeContainer">
+    <ukho-button (click)="onCopyClick()">Copy code</ukho-button>
+  </div>
+  <div class="codeSnippetContainer">
+    <pre><code tabindex="0" >{{code}}</code></pre>
+  </div>
+</div>

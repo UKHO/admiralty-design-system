@@ -6,6 +6,7 @@ export * from './breadcrumbs/breadcrumbs.module';
 export * from './button/button.module';
 export * from './card/card.module';
 export * from './checkbox/checkbox.module';
+export * from './code-snippet/code-snippet.module';
 export * from './colour-block/colour-block.module';
 export * from './dialogue/dialogue.module';
 export * from './expansion/expansion.module';
