@@ -26,19 +26,28 @@ However for those who do not have access to WebStorm we also recommend using [VS
 Assuming Windows 10, you would need to have the following prerequisites:
 
 - VS Code
-- Docker Desktop (Linux Containers mode)
 - WSL 2 (& Ubuntu 20.04 LTS)
   [https://docs.microsoft.com/en-us/windows/wsl/install-win10](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
+- Podman installed in WSL 2  
+  See Ubuntu heading (install as root): [https://podman.io/getting-started/installation#linux-distributions](https://podman.io/getting-started/installation#linux-distributions)
 - Git Repository Cloned to WSL
 - VS Code Extensions installed:
   - [https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
   - [https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl)
+  - Add VS Code user setting (JSON):  
+
+    ```json
+    "remote.containers.dockerPath": "podman"
+    ```
 
 Then to open the Dev Container you would need to do the following:
 
-- Open WSL
+- Open WSL (as `root`)
 - Open repository with `code .`
 - When prompted, click the 'Reopen in Container' button (should be prompted via a toast in the bottom-right)
+
+**NOTE:** Unfortunately WSL root appears to be required to work with Podman at the moment.  
+Ideally we should return to rootless as soon as possible.
 
 ### Adding new component
 
