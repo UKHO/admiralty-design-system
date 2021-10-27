@@ -3,11 +3,13 @@ import { createHostFactory } from '@ngneat/spectator/jest';
 
 import { CodeSnippetComponent } from './code-snippet.component';
 import { ButtonModule } from '../button/button.module';
+import { CodeSnippetDirective } from './code-snippet.directive';
 
 describe('CodeSnippetComponent', () => {
   const createHost = createHostFactory({
     component: CodeSnippetComponent,
     imports: [ButtonModule],
+    declarations: [CodeSnippetDirective],
   });
 
   const timeout = 5000;
@@ -45,6 +47,7 @@ describe('CodeSnippetComponent', () => {
     spectator.tick(timeout);
     const codeElement = spectator.query('code');
     expect(codeElement).not.toBeEmpty();
+    expect(codeElement.innerHTML).not.toBeEmpty();
   }));
 
   it('should call onCopyClick() when Copy Code link is clicked', fakeAsync(() => {
@@ -62,20 +65,5 @@ describe('CodeSnippetComponent', () => {
     spectator.click('button');
     spectator.tick(timeout);
     expect(spectator.component.onCopyClick).toHaveBeenCalledTimes(1);
-  }));
-
-  it('should call highlightAll() when component is created', fakeAsync(() => {
-    const highlightjs = require('highlight.js');
-    const highlightAllSpy = jest.spyOn(highlightjs, 'highlightAll');
-    expect(highlightAllSpy).toHaveBeenCalledTimes(0);
-
-    const spectator = createHost('<ukho-code-snippet [code]="code" [language]="language"></ukho-code-snippet>', {
-      hostProps: {
-        code: htmlCodeExample,
-        language: 'html',
-      },
-    });
-
-    expect(highlightAllSpy).toHaveBeenCalledTimes(1);
   }));
 });

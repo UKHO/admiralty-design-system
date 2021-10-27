@@ -11,6 +11,9 @@ div.codeSnippetComponentContainer {
   position: relative;
 
   div.copyCodeContainer {
+    position: absolute;
+    top: 0px;
+    right: 0px;
     display: flex;
     justify-content: flex-end;
     padding: 12px 12px 0px 12px;
@@ -21,17 +24,18 @@ div.codeSnippetComponentContainer {
     overflow-x: auto;
     overflow-y: auto;
     flex-grow: 1;
+    background-color: colours.$colour-codesnippet-bg;
 
     pre {
       height: 100%;
       margin: 0;
 
-      code.hljs {
+      code {
         height: 100%;
         padding: 12px;
         box-sizing: border-box;
         font-family: monospace;
-        background-color: colours.$colour-codesnippet-bg;
+        display: block;
 
         span {
           font-family: monospace;

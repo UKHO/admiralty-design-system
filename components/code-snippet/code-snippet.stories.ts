@@ -4,6 +4,7 @@ import { Story } from '@storybook/angular';
 import { ButtonModule } from '../button/button.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ButtonComponent } from '../button/button.component';
+import { CodeSnippetDirective } from './code-snippet.directive';
 
 export default {
   title: 'Code Snippet',
@@ -13,6 +14,7 @@ export default {
 
 const Template: Story = (args) => ({
   moduleMetadata: {
+    declarations: [CodeSnippetDirective],
     imports: [ButtonModule, BrowserAnimationsModule],
   },
   props: args,
@@ -32,7 +34,7 @@ Html.args = {
 const wrapperTemplate: Story<CodeSnippetWrapperComponent> = (args: CodeSnippetWrapperComponent) => ({
   moduleMetadata: {
     imports: [BrowserAnimationsModule],
-    declarations: [ButtonComponent, CodeSnippetWrapperComponent, CodeSnippetComponent],
+    declarations: [ButtonComponent, CodeSnippetWrapperComponent, CodeSnippetComponent, CodeSnippetDirective],
   },
   props: {
     ...args,
@@ -68,10 +70,11 @@ AngularClass.args = {
 
 const RestrictedHeightTemplate: Story = (args) => ({
   moduleMetadata: {
+    declarations: [CodeSnippetDirective],
     imports: [ButtonModule, BrowserAnimationsModule],
   },
   props: args,
-  template: `<div style="height: 500px; width: 300px;">
+  template: `<div style="height: 500px;">
   <ukho-code-snippet [code]="code" [language]="language"></ukho-code-snippet>
   </div>`,
 });

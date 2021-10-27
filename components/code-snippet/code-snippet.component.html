@@ -6,6 +6,6 @@
     <ukho-button (click)="onCopyClick()">Copy code</ukho-button>
   </div>
   <div class="codeSnippetContainer">
-    <pre><code tabindex="0" >{{code}}</code></pre>
+    <pre><code codeBlock [code]="code" [language]="language" tabindex="0"></code></pre>
   </div>
 </div>

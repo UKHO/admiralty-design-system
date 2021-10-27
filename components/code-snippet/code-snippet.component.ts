@@ -1,6 +1,5 @@
 import { animate, keyframes, state, style, transition, trigger } from '@angular/animations';
-import { Component, Input, ViewEncapsulation, AfterViewInit } from '@angular/core';
-import { highlightAll, configure } from 'highlight.js';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'ukho-code-snippet',
@@ -30,14 +29,8 @@ import { highlightAll, configure } from 'highlight.js';
     ]),
   ],
 })
-export class CodeSnippetComponent implements AfterViewInit {
+export class CodeSnippetComponent {
   constructor() {}
-
-  ngAfterViewInit(): void {
-    configure({ languages: [this.language] });
-    highlightAll();
-  }
-
   @Input() code: string;
 
   @Input() language: string;
