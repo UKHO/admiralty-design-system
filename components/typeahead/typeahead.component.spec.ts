@@ -12,6 +12,21 @@ describe('TypeaheadComponent', () => {
     expect(spectator.component).toBeTruthy();
   });
 
+  it('keyPressed should reduce the selectedItemIndex by 1 if the key pressed was the up arrow', () => {
+    const formControl = new FormControl();
+    const setValueSpy = spyOn(formControl, 'setValue');
+    const value = 'testvalue';
+    const spectator = createHost(
+      '<ukho-typeahead label="test" [FormControl]="formControl" [value]="value"></ukho-typeahead>',
+      {
+        hostProps: { formControl, value },
+      },
+    );
+
+    expect(setValueSpy).toBeCalledTimes(1);
+    expect(setValueSpy).toBeCalledWith(value);
+  });
+
   it('performFilter() should call the filter function passed in and store the result', () => {
     const filterFn = jest.fn();
     const spectator = createHost('<ukho-typeahead label="test" [filterFn]="filterFn"></ukho-typeahead>', {
@@ -35,6 +50,40 @@ describe('TypeaheadComponent', () => {
     component.textChanged('test');
     expect(performFilterFn).toHaveBeenCalledWith('test');
     expect(valueChangedSpy).toHaveBeenCalledWith('test');
+  });
+
+  it('value property returns correct value', () => {
+    const performFilterFn = jest.fn();
+    const spectator = createHost('<ukho-typeahead label="test"></ukho-typeahead>', {
+      props: { performFilter: performFilterFn },
+    });
+    const component = spectator.component;
+
+    const expectedValue = 'test';
+
+    component.value = expectedValue;
+
+    expect(component.value).toBe(expectedValue);
+  });
+
+  it('value property does not set invalid values', () => {
+    const performFilterFn = jest.fn();
+    const spectator = createHost('<ukho-typeahead label="test"></ukho-typeahead>', {
+      props: { performFilter: performFilterFn },
+    });
+    const component = spectator.component;
+
+    const expectedValue = 'test';
+    component.value = expectedValue;
+
+    component.value = undefined;
+    expect(component.value).toBe(expectedValue);
+
+    component.value = null;
+    expect(component.value).toBe(expectedValue);
+
+    component.value = '';
+    expect(component.value).toBe(expectedValue);
   });
 
   it('keyPressed should reduce the selectedItemIndex by 1 if the key pressed was the up arrow', () => {

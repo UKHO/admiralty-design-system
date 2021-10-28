@@ -20,8 +20,25 @@ export class TypeaheadComponent {
   @Input() filterFn: (filterTerm: string) => string[] | Observable<string[]>;
   /**
    * Model that will track the contents of the input field
+   *
+   * @deprecated
+   * - Use the `value` input property instead to set the `value`
+   * - Use the `valueChanged` output or `value` input property to retrieve the current value
    */
-  @Input() FormControl: FormControl;
+  @Input() FormControl: FormControl = new FormControl();
+  /**
+   * The value of the textinput
+   */
+  @Input()
+  get value(): string {
+    return this.FormControl.value;
+  }
+  set value(value: string) {
+    if (typeof value === 'undefined' || value === null || value.length < 1) {
+      return;
+    }
+    this.FormControl.setValue(value);
+  }
   /**
    * The text content of the label for the input box
    */
@@ -69,7 +86,7 @@ export class TypeaheadComponent {
   };
 
   keyPressed = (event: KeyboardEvent): void => {
-    if (event.key == Keys.UP_ARROW || event.key == Keys.DOWN_ARROW) {
+    if (event.key === Keys.UP_ARROW || event.key === Keys.DOWN_ARROW) {
       this.navigateSuggestions(event.key);
     } else if (event.key !== Keys.ENTER) {
       this.textChanged(this.FormControl.value);
@@ -106,19 +123,19 @@ export class TypeaheadComponent {
   }
 
   private navigateSuggestions(key: Keys) {
-    if (key == Keys.UP_ARROW) {
+    if (key === Keys.UP_ARROW) {
       this.selectedItemIndex--;
-      if (this.selectedItemIndex == -2) {
+      if (this.selectedItemIndex === -2) {
         this.selectedItemIndex = this.filterResult.length - 1;
       }
     }
-    if (key == Keys.DOWN_ARROW) {
+    if (key === Keys.DOWN_ARROW) {
       this.selectedItemIndex++;
       if (this.selectedItemIndex > this.filterResult.length - 1) {
         this.selectedItemIndex = -1;
       }
     }
-    if (this.selectedItemIndex == -1) {
+    if (this.selectedItemIndex === -1) {
       this.FormControl.setValue(this.originalSearch);
     } else {
       this.FormControl.setValue(this.filterResult[this.selectedItemIndex]);

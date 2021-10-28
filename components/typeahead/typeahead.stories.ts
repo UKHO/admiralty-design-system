@@ -2,7 +2,7 @@ import { TypeaheadComponent } from './typeahead.component';
 import { Story } from '@storybook/angular';
 import { action } from '@storybook/addon-actions';
 import { TextinputModule } from '../textinput/textinput.module';
-import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 export default {
   title: 'Typeahead',
@@ -13,7 +13,7 @@ export default {
         disable: true,
       },
     },
-    FormControl: {
+    formControl: {
       table: {
         disable: true,
       },
@@ -39,20 +39,26 @@ const Template: Story = ({ filterList, ...args }) => ({
   props: {
     ...args,
     filterFn: filter(filterList),
-    formControl: new FormControl(),
     onFieldChange: action('changed'),
   },
   moduleMetadata: {
     declarations: [TypeaheadComponent],
     imports: [TextinputModule, ReactiveFormsModule, FormsModule],
   },
-  template: `<ukho-typeahead [label]="label" [filterFn]="filterFn" [FormControl]="formControl" [selectionAction]="selectionAction" [showResultsOnInitialFocus]="showResultsOnInitialFocus" (valueChanged)="onFieldChange($event)"></ukho-typeahead>`,
+  template: `<ukho-typeahead [label]="label" [filterFn]="filterFn" [value]="value" [selectionAction]="selectionAction" [showResultsOnInitialFocus]="showResultsOnInitialFocus" (valueChanged)="onFieldChange($event)"></ukho-typeahead>`,
 });
 
-export const WithoutAction: Story = Template.bind({});
-WithoutAction.args = {
+export const WithoutSelectionAction: Story = Template.bind({});
+WithoutSelectionAction.args = {
   label: 'Please Type',
   filterList: ['dog', 'cat', 'elephant', 'badger', 'donkey'],
+};
+
+export const Prefilled: Story = Template.bind({});
+Prefilled.args = {
+  label: 'Please Type',
+  filterList: ['dog', 'cat', 'elephant', 'badger', 'donkey'],
+  value: 'donke2y',
 };
 
 export const ShowResultsOnInitialFocus: Story = Template.bind({});
@@ -74,8 +80,8 @@ ShowResultsOnInitialFocus.args = {
   showResultsOnInitialFocus: true,
 };
 
-export const WithAction: Story = Template.bind({});
-WithAction.args = {
+export const WithSelectionAction: Story = Template.bind({});
+WithSelectionAction.args = {
   label: 'Please Type',
   filterList: ['dog', 'cat', 'elephant', 'badger', 'donkey'],
   selectionAction: action('item selected!'),
