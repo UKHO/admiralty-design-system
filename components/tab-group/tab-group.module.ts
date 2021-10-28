@@ -1,0 +1,13 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { TabGroupComponent } from './tab-group.component';
+import { TabBodyComponent } from './tab-body.component';
+import { TabComponent } from './tab.component';
+import { TabHeaderComponent } from './tab-header.component';
+
+@NgModule({
+  declarations: [TabGroupComponent, TabBodyComponent, TabComponent, TabHeaderComponent],
+  imports: [CommonModule],
+  exports: [TabGroupComponent],
+})
+export class TabGroupModule {}

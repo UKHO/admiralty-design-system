@@ -27,6 +27,7 @@ export * from './progress-bar/progress-bar.module';
 export * from './phase-banner/phase-banner.module';
 export * from './paginator/paginator.module';
 export * from './typeahead/typeahead.module';
+export * from './tab-group/tab-group.module';
 
 export * from './header/header.types';
 export * from './footer/footer.types';

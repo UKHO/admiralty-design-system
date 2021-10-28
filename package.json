@@ -19,7 +19,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "docs:json": "compodoc -p ./tsconfig.json -e json -d .",
-    "storybook": "BROWSER=none && yarn docs:json && start-storybook -s ./assets -c .storybook -p 9009",
+    "storybook": "yarn docs:json && cross-env BROWSER=none start-storybook -s ./assets -c .storybook -p 9009",
     "build-storybook": "yarn docs:json && build-storybook -s ./assets",
     "build-styles": "node styles/generateCSS.js && postcss dist/styles/css/ukho.min.css --map --use autoprefixer -d dist/styles/css"
   },
@@ -73,6 +73,7 @@
     "@typescript-eslint/parser": "4.16.1",
     "babel-loader": "^8.2.2",
     "chromatic": "^5.9.2",
+    "cross-env": "^7.0.3",
     "eslint": "^7.6.0",
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-jsdoc": "30.7.6",
