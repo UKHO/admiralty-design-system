@@ -8,6 +8,6 @@ import { TabHeaderComponent } from './tab-header.component';
 @NgModule({
   declarations: [TabGroupComponent, TabBodyComponent, TabComponent, TabHeaderComponent],
   imports: [CommonModule],
-  exports: [TabGroupComponent],
+  exports: [TabGroupComponent, TabComponent],
 })
 export class TabGroupModule {}
