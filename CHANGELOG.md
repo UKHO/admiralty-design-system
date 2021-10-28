@@ -1,5 +1,23 @@
 # Changelog
 
+## [3.3.1] - 2021-10-28
+
+### Added
+
+- N/A
+
+### Changed
+
+- N/A
+
+### Fixed
+
+- fix: Fix TabGroupModule exports to include TabComponent [#411](https://github.com/UKHO/design-system/pull/411)
+
+### Removed
+
+- N/A
+
 ## [3.3.0] - 2021-10-28
 
 ### Added
@@ -214,6 +232,7 @@
 
 - Initial release of the new Design System package
 
+[3.3.1]: https://github.com/UKHO/design-system/compare/v3.3.0...v3.3.1
 [3.3.0]: https://github.com/UKHO/design-system/compare/v3.2.0...v3.3.0
 [3.2.0]: https://github.com/UKHO/design-system/compare/v3.1.0...v3.2.0
 [3.1.0]: https://github.com/UKHO/design-system/compare/v3.0.3...v3.1.0
