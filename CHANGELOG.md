@@ -1,5 +1,24 @@
 # Changelog
 
+## [3.3.0] - 2021-10-28
+
+### Added
+
+- feat: Provide new input for setting typeahead value [#404](https://github.com/UKHO/design-system/pull/404)
+- feat: Initial work on Tab Group Component [#406](https://github.com/UKHO/design-system/pull/406)
+
+### Changed
+
+- chore: Upgrade dependencies [#409](https://github.com/UKHO/design-system/pull/409)
+
+### Fixed
+
+- feat: Rebuild Code Snippet [#402](https://github.com/UKHO/design-system/pull/402)
+
+### Removed
+
+- N/A
+
 ## [3.2.0] - 2021-09-20
 
 ### Added
@@ -195,6 +214,7 @@
 
 - Initial release of the new Design System package
 
+[3.3.0]: https://github.com/UKHO/design-system/compare/v3.2.0...v3.3.0
 [3.2.0]: https://github.com/UKHO/design-system/compare/v3.1.0...v3.2.0
 [3.1.0]: https://github.com/UKHO/design-system/compare/v3.0.3...v3.1.0
 [3.0.3]: https://github.com/UKHO/design-system/compare/v3.0.2...v3.0.3
