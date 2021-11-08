@@ -5,6 +5,10 @@ import { CdkTableModule } from '@angular/cdk/table';
 import { UkhoSort } from './sort.directive';
 import { UkhoSortHeader } from './sort-header.directive';
 
+export { TableComponent } from './table.component';
+export { UkhoSort } from './sort.directive';
+export { UkhoSortHeader } from './sort-header.directive';
+
 @NgModule({
   declarations: [TableComponent, UkhoSort, UkhoSortHeader],
   exports: [TableComponent, UkhoSort, UkhoSortHeader],

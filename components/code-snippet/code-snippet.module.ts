@@ -5,6 +5,8 @@ import { ButtonModule } from '../button/button.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CodeSnippetDirective } from './code-snippet.directive';
 
+export { CodeSnippetComponent } from './code-snippet.component';
+
 @NgModule({
   declarations: [CodeSnippetComponent, CodeSnippetDirective],
   imports: [CommonModule, ButtonModule, BrowserAnimationsModule],

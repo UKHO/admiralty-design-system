@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ColourBlockComponent } from './colour-block.component';
 
+export { ColourBlockComponent } from './colour-block.component';
+
 @NgModule({
   declarations: [ColourBlockComponent],
   exports: [ColourBlockComponent],

@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TextinputModule } from '../textinput/textinput.module';
 
+export { TypeaheadComponent } from './typeahead.component';
+
 @NgModule({
   declarations: [TypeaheadComponent],
   exports: [TypeaheadComponent],

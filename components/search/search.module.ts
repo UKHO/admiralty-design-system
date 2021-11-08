@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { ButtonModule } from '../button/button.module';
 import { TextinputModule } from '../textinput/textinput.module';
 
+export { SearchComponent } from './search.component';
+
 @NgModule({
   declarations: [SearchComponent],
   exports: [SearchComponent],

@@ -5,6 +5,9 @@ import { TabBodyComponent } from './tab-body.component';
 import { TabComponent } from './tab.component';
 import { TabHeaderComponent } from './tab-header.component';
 
+export { TabGroupComponent } from './tab-group.component';
+export { TabComponent } from './tab.component';
+
 @NgModule({
   declarations: [TabGroupComponent, TabBodyComponent, TabComponent, TabHeaderComponent],
   imports: [CommonModule],
