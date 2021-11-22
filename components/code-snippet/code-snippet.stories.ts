@@ -21,6 +21,12 @@ const Template: Story = (args) => ({
   template: `<ukho-code-snippet [code]="code" [language]="language"></ukho-code-snippet>`,
 });
 
+export const Empty: Story = Template.bind({});
+Empty.args = {
+  code: ``,
+  language: 'html',
+};
+
 export const Html: Story = Template.bind({});
 Html.args = {
   code: `<main>
