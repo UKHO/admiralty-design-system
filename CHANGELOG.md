@@ -1,5 +1,23 @@
 # Changelog
 
+## [3.3.3] - 2021-11-26
+
+### Added
+
+- N/A
+
+### Changed
+
+- N/A
+
+### Fixed
+
+- fix: Add minimum height to code snippet [#416](https://github.com/UKHO/design-system/pull/416)
+
+### Removed
+
+- N/A
+
 ## [3.3.2] - 2021-11-08
 
 ### Added
@@ -250,6 +268,7 @@
 
 - Initial release of the new Design System package
 
+[3.3.3]: https://github.com/UKHO/design-system/compare/v3.3.2...v3.3.3
 [3.3.2]: https://github.com/UKHO/design-system/compare/v3.3.1...v3.3.2
 [3.3.1]: https://github.com/UKHO/design-system/compare/v3.3.0...v3.3.1
 [3.3.0]: https://github.com/UKHO/design-system/compare/v3.2.0...v3.3.0
