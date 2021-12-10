@@ -1,68 +1,36 @@
-import { action } from '@storybook/addon-actions';
 import { ButtonComponent } from './button.component';
+import { Story } from '@storybook/angular';
 
 export default {
   title: 'Form Elements/Button',
   component: ButtonComponent,
   parameters: {
-    componentSubtitle: 'Buttons are intended for form actions.'
-  }
+    componentSubtitle: 'Buttons are intended for form actions.',
+  },
+  argTypes: { click: { action: 'button clicked' } },
 };
 
-export const withText = () => ({
+const template: Story = (args) => ({
+  props: args,
   moduleMetadata: {
-    declarations: [ButtonComponent]
+    declarations: [ButtonComponent],
   },
-  template: `<ukho-button>Hello Button</ukho-button>`
+  template: `<ukho-button [icon]="icon" [disabled]="disabled" [secondary]="secondary" (click)="click($event)">Hello Button</ukho-button>`,
 });
 
-withText.story = {
-  name: 'withText'
+export const standard = template.bind({});
+
+export const withIcon = template.bind({});
+withIcon.args = {
+  icon: 'fab fa-angular',
 };
 
-export const withIcon = () => ({
-  moduleMetadata: {
-    declarations: [ButtonComponent]
-  },
-  template: `<ukho-button icon="fab fa-angular">Hello Button</ukho-button>`
-});
-
-withIcon.story = {
-  name: 'withIcon'
+export const disabled = template.bind({});
+disabled.args = {
+  disabled: true,
 };
 
-export const onClick = () => ({
-  moduleMetadata: {
-    declarations: [ButtonComponent]
-  },
-  template: `<ukho-button (click)="click($event)">Click Me</ukho-button>`,
-  props: {
-    click: action('click')
-  }
-});
-
-onClick.story = {
-  name: 'onClick'
-};
-
-export const disabled = () => ({
-  moduleMetadata: {
-    declarations: [ButtonComponent]
-  },
-  template: `<ukho-button [disabled]="true">Disabled Button</ukho-button>`
-});
-
-disabled.story = {
-  name: 'disabled'
-};
-
-export const isSecondary = () => ({
-  moduleMetadata: {
-    declarations: [ButtonComponent]
-  },
-  template: `<ukho-button [secondary]="true">Secondary Button</ukho-button>`
-});
-
-isSecondary.story = {
-  name: 'isSecondary'
+export const secondary = template.bind({});
+secondary.args = {
+  secondary: true,
 };
