@@ -20,9 +20,9 @@ export class HeaderComponent {
 
   @Input() title: string;
   @Input() titleLinkUrl: string;
-  @Input() logoImgUrl = '/svg/Admiralty stacked logo.svg';
+  @Input() logoImgUrl = '/assets/svg/Admiralty stacked logo.svg';
   @Input() logoAltText = 'Admiralty Stacked Logo';
-  @Input() logoLinkUrl = '/svg/Admiralty stacked logo.svg';
+  @Input() logoLinkUrl = 'https://www.admiralty.co.uk/';
 
   @Output() titleLinkNavigated = new EventEmitter<string>();
 

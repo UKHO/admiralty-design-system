@@ -19,6 +19,13 @@ export default {
   parameters: {
     layout: 'fullscreen',
   },
+  args: {
+    title: 'Design System',
+    logoLinkUrl: '/svg/Admiralty stacked logo.svg',
+    logoAltText: 'Admiralty Stacked Logo',
+    logoImgUrl: '/svg/Admiralty stacked logo.svg',
+    titleLinkNavigated: action('Title Link Navigated'),
+  },
 };
 
 const template: Story<HeaderComponent> = (args: HeaderComponent) => ({
@@ -26,14 +33,7 @@ const template: Story<HeaderComponent> = (args: HeaderComponent) => ({
     declarations: [HeaderComponent],
     imports: [HorizontalRuleModule, BrowserAnimationsModule],
   },
-  props: {
-    title: 'Design System',
-    logoLinkUrl: '/svg/Admiralty stacked logo.svg',
-    logoAltText: 'Admiralty Stacked Logo',
-    logoImgUrl: '/svg/Admiralty stacked logo.svg',
-    titleLinkNavigated: action('Title Link Navigated'),
-    ...args,
-  },
+  props: args,
   template: `<ukho-header [title]="title" [titleLinkUrl]="titleLinkUrl" [logoImgUrl]="logoImgUrl" [logoLinkUrl]="logoLinkUrl" [logoAltText]="logoAltText" [authOptions]="authOptions" [menuItems]="menuItems" (titleLinkNavigated)="titleLinkNavigated($event)"></ukho-header>`,
 });
 
