@@ -1,17 +1,17 @@
 import { CdkColumnDef } from '@angular/cdk/table';
 import { dir } from 'console';
-import { UkhoSortHeader } from './sort-header.directive';
-import { UkhoSort } from './sort.directive';
+import { SortHeaderDirective } from './sort-header.directive';
+import { SortDirective } from './sort.directive';
 
 describe('SortHeaderDirective', () => {
-  let directive: UkhoSortHeader;
-  let ukhoSort: UkhoSort;
+  let directive: SortHeaderDirective;
+  let ukhoSort: SortDirective;
   let columnDef: CdkColumnDef;
 
   beforeEach(() => {
-    ukhoSort = new UkhoSort();
+    ukhoSort = new SortDirective();
     columnDef = new CdkColumnDef();
-    directive = new UkhoSortHeader(ukhoSort, columnDef);
+    directive = new SortHeaderDirective(ukhoSort, columnDef);
   });
   it('should create an instance', () => {
     expect(directive).toBeTruthy();

@@ -1,29 +1,13 @@
-import { DataSource } from '@angular/cdk/table';
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { SortState } from './sort.directive';
-import { Observable } from 'rxjs';
-import { ColumnData } from './ColumnData';
+import { CdkTable, CDK_TABLE_TEMPLATE } from '@angular/cdk/table';
+import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  selector: 'ukho-table',
-  templateUrl: './table.component.html',
+  selector: 'ukho-table, table[ukho-table]',
+  exportAs: 'ukhoTable',
+  template: CDK_TABLE_TEMPLATE,
   styleUrls: ['./table.component.scss'],
+  providers: [{ provide: CdkTable, useExisting: TableComponent }],
+  changeDetection: ChangeDetectionStrategy.Default,
+  encapsulation: ViewEncapsulation.None,
 })
-export class TableComponent<T> {
-  @Input() dataSource: DataSource<T> | Observable<ReadonlyArray<T> | T[]> | ReadonlyArray<T> | T[];
-  @Input() displayedColumns: ColumnData[];
-
-  @Output() readonly sortChange = new EventEmitter<SortState>();
-
-  onSortChange(state: SortState) {
-    this.sortChange.emit(state);
-  }
-
-  public get isHeaderDisplayed(): boolean {
-    return this.displayedColumns.some((x) => x.headerTitle);
-  }
-
-  public get columnProperties(): string[] {
-    return this.displayedColumns.map((x) => x.propertyName);
-  }
-}
+export class TableComponent<T> extends CdkTable<T> {}

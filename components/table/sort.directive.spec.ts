@@ -1,13 +1,13 @@
 import { CdkColumnDef } from '@angular/cdk/table';
 import { dir } from 'console';
-import { UkhoSortHeader } from './sort-header.directive';
-import { UkhoSort } from './sort.directive';
+import { SortHeaderDirective } from './sort-header.directive';
+import { SortDirective } from './sort.directive';
 
 describe('SortDirective', () => {
-  let directive: UkhoSort;
+  let directive: SortDirective;
 
   beforeEach(() => {
-    directive = new UkhoSort();
+    directive = new SortDirective();
   });
 
   it('should create an instance', () => {
@@ -15,7 +15,7 @@ describe('SortDirective', () => {
   });
 
   it('register should add the passed in header to the headers map', () => {
-    const sortHeader = new UkhoSortHeader(directive, new CdkColumnDef());
+    const sortHeader = new SortHeaderDirective(directive, new CdkColumnDef());
     sortHeader.columnDef.name = 'test';
     directive.register(sortHeader);
 
@@ -23,7 +23,7 @@ describe('SortDirective', () => {
   });
 
   it('deregister should remove the passed in header from the headers map', () => {
-    const sortHeader = new UkhoSortHeader(directive, new CdkColumnDef());
+    const sortHeader = new SortHeaderDirective(directive, new CdkColumnDef());
     sortHeader.columnDef.name = 'test';
     directive.register(sortHeader);
 
@@ -35,12 +35,12 @@ describe('SortDirective', () => {
   });
 
   it('onSort should reset value of all headers that dont match the name of the one passed in', () => {
-    const sortHeader = new UkhoSortHeader(directive, new CdkColumnDef());
+    const sortHeader = new SortHeaderDirective(directive, new CdkColumnDef());
     sortHeader.columnDef.name = 'test';
     const resetSpy = spyOn(sortHeader, 'reset');
     directive.register(sortHeader);
 
-    const sortHeader2 = new UkhoSortHeader(directive, new CdkColumnDef());
+    const sortHeader2 = new SortHeaderDirective(directive, new CdkColumnDef());
     sortHeader2.columnDef.name = 'test2';
     directive.register(sortHeader2);
 

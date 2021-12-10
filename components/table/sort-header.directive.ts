@@ -1,23 +1,22 @@
 import { Directive, HostBinding, HostListener, OnDestroy, OnInit, Optional } from '@angular/core';
-import { SortDirection, UkhoSort } from './sort.directive';
+import { SortDirection, SortDirective } from './sort.directive';
 import { CdkColumnDef } from '@angular/cdk/table';
 
 @Directive({
-  selector: '[ukho-sort-header]',
+  selector: '[ukhoSortHeader]',
 })
-export class UkhoSortHeader implements OnInit, OnDestroy {
-  constructor(@Optional() public sortDir: UkhoSort, @Optional() public columnDef: CdkColumnDef) {}
-
-  private readonly directions: SortDirection[] = ['asc', 'desc', ''];
-  public direction: SortDirection = '';
-
+export class SortHeaderDirective implements OnInit, OnDestroy {
   @HostBinding('style.cursor') styleCursor = 'pointer';
+
   @HostBinding('class.asc') get classAsc() {
     return this.direction === 'asc';
   }
   @HostBinding('class.desc') get classDesc() {
     return this.direction === 'desc';
   }
+  public direction: SortDirection = '';
+  private readonly directions: SortDirection[] = ['asc', 'desc', ''];
+  constructor(@Optional() public sortDir: SortDirective, @Optional() public columnDef: CdkColumnDef) {}
 
   @HostListener('click')
   click() {

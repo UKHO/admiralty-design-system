@@ -2,16 +2,61 @@ import { NgModule } from '@angular/core';
 import { TableComponent } from './table.component';
 import { CommonModule } from '@angular/common';
 import { CdkTableModule } from '@angular/cdk/table';
-import { UkhoSort } from './sort.directive';
-import { UkhoSortHeader } from './sort-header.directive';
+import { SortDirective } from './sort.directive';
+import { SortHeaderDirective } from './sort-header.directive';
+import {
+  CellRefDirective,
+  HeaderCellRefDirective,
+  FooterCellRefDirective,
+  ColumnDefDirective,
+  CellDirective,
+  FooterCellDirective,
+  HeaderCellDirective,
+} from './table.cells';
+import {
+  HeaderRowDefDirective,
+  FooterRowDefDirective,
+  RowDefDirective,
+  FooterRowComponent,
+  HeaderRowComponent,
+  RowComponent,
+} from './table.rows';
 
 export { TableComponent } from './table.component';
-export { UkhoSort } from './sort.directive';
-export { UkhoSortHeader } from './sort-header.directive';
+export { SortDirective } from './sort.directive';
+export { SortHeaderDirective } from './sort-header.directive';
+
+const EXPORTED_DECLARATIONS = [
+  // Table
+  TableComponent,
+
+  // Template defs
+  CellRefDirective,
+  HeaderCellRefDirective,
+  FooterCellRefDirective,
+  ColumnDefDirective,
+  HeaderRowDefDirective,
+  FooterRowDefDirective,
+  RowDefDirective,
+
+  // Cell directives
+  HeaderCellDirective,
+  FooterCellDirective,
+  CellDirective,
+
+  // Row directives
+  HeaderRowComponent,
+  FooterRowComponent,
+  RowComponent,
+
+  // Sort directives
+  SortDirective,
+  SortHeaderDirective,
+];
 
 @NgModule({
-  declarations: [TableComponent, UkhoSort, UkhoSortHeader],
-  exports: [TableComponent, UkhoSort, UkhoSortHeader],
+  declarations: [EXPORTED_DECLARATIONS],
+  exports: [EXPORTED_DECLARATIONS],
   imports: [CommonModule, CdkTableModule],
 })
 export class TableModule {}

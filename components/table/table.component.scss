@@ -1,7 +1,7 @@
-@use '../../styles/base/colours';
-@use '../../styles/base/responsive';
-@use '../../styles/base/icons';
-@use '../../styles/base/typography';
+@use "../../styles/base/colours";
+@use "../../styles/base/responsive";
+@use "../../styles/base/icons";
+@use "../../styles/base/typography";
 
 table {
   border-top: 1px solid colours.$colour-divider;
@@ -59,7 +59,7 @@ table {
   }
 }
 
-th[ukho-sort-header] {
+th[ukhoSortHeader] {
   white-space: nowrap;
 
   &::after {

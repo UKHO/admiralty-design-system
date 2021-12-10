@@ -1,5 +1,5 @@
 import { Directive, EventEmitter, Output } from '@angular/core';
-import { UkhoSortHeader } from './sort-header.directive';
+import { SortHeaderDirective } from './sort-header.directive';
 
 export type SortDirection = 'asc' | 'desc' | '';
 
@@ -9,18 +9,18 @@ export interface SortState {
 }
 
 @Directive({
-  selector: '[ukho-sort]',
+  selector: '[ukhoSort]',
 })
-export class UkhoSort {
+export class SortDirective {
   @Output() readonly sortChange = new EventEmitter<SortState>();
 
-  public headers = new Map<string, UkhoSortHeader>();
+  public headers = new Map<string, SortHeaderDirective>();
 
-  public register(sortHeader: UkhoSortHeader) {
+  public register(sortHeader: SortHeaderDirective) {
     this.headers.set(sortHeader.columnDef.name, sortHeader);
   }
 
-  public deregister(sortHeader: UkhoSortHeader) {
+  public deregister(sortHeader: SortHeaderDirective) {
     this.headers.delete(sortHeader.columnDef.name);
   }
 
