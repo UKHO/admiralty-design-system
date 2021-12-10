@@ -5,21 +5,21 @@
 
 ul.breadcrumbs {
   width: 100%;
+  box-sizing: border-box;
   display: inline-flex;
   border-bottom: 1px solid colours.$colour-divider;
   background-color: colours.$colour-bg;
   padding: 0 20px;
-  margin-bottom: 48px;
-  position: static;
-  @include responsive.not-desktop {
-    display: none;
-    margin-bottom: 30px;
-  }
 
   li {
     margin-bottom: 0;
     transform: unset;
     padding-right: unset;
+
+    &.active a {
+      color: colours.$colour-admiralty-blue;
+      font-weight: typography.$font-weight-medium;
+    }
 
     // chevron
     &::before {
@@ -51,11 +51,6 @@ ul.breadcrumbs {
     }
     span {
       user-select: none;
-    }
-
-    &:last-child a {
-      color: colours.$colour-admiralty-blue;
-      font-weight: typography.$font-weight-medium;
     }
   }
 }

@@ -1,5 +1,7 @@
-<ul class="breadcrumbs">
-  <li *ngFor="let item of items">
-    <a [href]="item.href || '#'">{{ item.title }}</a>
-  </li>
-</ul>
+<nav aria-label="breadcrumbs">
+  <ul class="breadcrumbs">
+    <li *ngFor="let item of items; let first = first; let last = last" [ngClass]="{ 'active': last }">
+      <a [href]="item.href || '#'" [attr.aria-current]="last ? 'page' : null">{{ item.title }}</a>
+    </li>
+  </ul>
+</nav>
