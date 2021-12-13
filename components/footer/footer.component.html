@@ -1,15 +1,19 @@
-<div class="footer-branding">
-  <div class="footer-img">
-    <a href="{{ imageLink }}">
-      <img src="{{ imageSrc }}" alt="{{ imageAlt }}" />
-    </a>
+<footer>
+  <div class="footer-branding">
+    <div class="footer-img">
+      <a href="{{ imageLink }}">
+        <img src="{{ imageSrc }}" alt="{{ imageAlt }}" />
+      </a>
+    </div>
   </div>
-</div>
-<div class="footer-content">
-  <div class="footer-links">
-    <a *ngFor="let item of navigation" target="{{item.newTab ? '_blank' : '_self'}}" href="{{ item.href }}">{{ item.title }}</a>
+  <div class="footer-content">
+    <nav aria-label="Footer Links" class="footer-links">
+      <a *ngFor="let item of navigation" target="{{ item.newTab ? '_blank' : '_self' }}" href="{{ item.href }}">
+        {{ item.title }}
+      </a>
+    </nav>
+    <div class="footer-text">
+      <p>{{ text }}</p>
+    </div>
   </div>
-  <div class="footer-text">
-    <p>{{ text }}</p>
-  </div>
-</div>
+</footer>

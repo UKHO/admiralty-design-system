@@ -2,7 +2,7 @@
 @use '../../styles/base/responsive';
 @use '../../styles/base/typography';
 
-:host {
+footer {
   border-top: colours.$colour-admiralty-blue 0.375rem solid;
   height: 148px;
   background: colours.$colour-bg-grey;
