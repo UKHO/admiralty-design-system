@@ -1,10 +1,27 @@
-<!-- Standard -->
-<nav class="standard">
+<nav aria-label="pagination" class="standard">
   <p>{{ _label }}</p>
-  <a class="pagination-anchor" [ngClass]="{ disabled: this.currentPage === 1 }" (click)="prev()">
+  <a
+    role="button"
+    class="pagination-anchor"
+    tabindex="{{ this.currentPage === 1 ? -1 : 0 }}"
+    [ngClass]="{ disabled: this.currentPage === 1 }"
+    (click)="prev()"
+    (keydown.enter)="prev()"
+    (keydown.space)="prev()"
+    aria-label="Previous Page"
+  >
     <i class="fas fa-chevron-left"></i>
   </a>
-  <a class="pagination-anchor" [ngClass]="{ disabled: this.currentPage === this.pages }" (click)="next()">
+  <a
+    role="button"
+    class="pagination-anchor"
+    tabindex="{{ this.currentPage === this.pages ? -1 : 0 }}"
+    [ngClass]="{ disabled: this.currentPage === this.pages }"
+    (click)="next()"
+    (keydown.enter)="next()"
+    (keydown.space)="next()"
+    aria-label="Next Page"
+  >
     <i class="fas fa-chevron-right"></i>
   </a>
 </nav>
