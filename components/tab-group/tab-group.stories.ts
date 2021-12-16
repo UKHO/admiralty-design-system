@@ -16,7 +16,6 @@ const Template: Story = (args) => ({
   moduleMetadata: {
     declarations: [TabBodyComponent, TabComponent, TabHeaderComponent],
   },
-  props: args,
   template: `<ukho-tab-group><ukho-tab [label]="'a'">test a</ukho-tab><ukho-tab [label]="'b'"><b>test b</b></ukho-tab></ukho-tab-group>`,
 });
 
@@ -27,7 +26,6 @@ export const withComplexContent: Story = (args) => ({
     declarations: [TabBodyComponent, TabComponent, TabHeaderComponent],
     imports: [CardModule],
   },
-  props: args,
   template: `<ukho-tab-group><ukho-tab [label]="'a'"><ukho-card title="title">You can put any html content in the body of a card. Such as <a href='#'>links</a> or <b>bold text</b></ukho-card></ukho-tab><ukho-tab [label]="'b'"><b>test b</b></ukho-tab></ukho-tab-group>`,
 });
 
@@ -60,11 +58,22 @@ export class FooterComponent {
 }`,
     language: 'html',
     language2: 'typescript',
-
-    ...args,
   },
   template: `<ukho-tab-group>
   <ukho-tab [label]="'Html'"><ukho-code-snippet [code]="code" [language]="language"></ukho-code-snippet></ukho-tab>
   <ukho-tab [label]="'Typescript'"><ukho-code-snippet [code]="code2" [language]="language2"></ukho-code-snippet></ukho-tab>
   </ukho-tab-group>`,
 });
+
+const SelectedIndexTemplate: Story = (args) => ({
+  moduleMetadata: {
+    declarations: [TabBodyComponent, TabComponent, TabHeaderComponent],
+  },
+  props: { selectedIndex: args.selectedIndex as number },
+  template: `<ukho-tab-group [selectedIndex]="selectedIndex"><ukho-tab [label]="'a'">test a</ukho-tab><ukho-tab [label]="'b'"><b>test b</b></ukho-tab></ukho-tab-group>`,
+});
+
+export const WithSelectedIndex: Story = SelectedIndexTemplate.bind({});
+WithSelectedIndex.args = {
+  selectedIndex: 1,
+};
