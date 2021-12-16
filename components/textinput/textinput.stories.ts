@@ -16,10 +16,8 @@ const template: Story<TextinputComponent> = (args: TextinputComponent) => ({
     declarations: [TextinputComponent],
     imports: [FormsModule, ReactiveFormsModule],
   },
-  props: {
-    ...args,
-  },
-  template: `<ukho-textinput [label]="label" [type]="type" [formControl]="formControl" [disabled]="disabled"></ukho-textinput>`,
+  props: args,
+  template: `<form><ukho-textinput [name]="name" [label]="label" [type]="type" [formControl]="formControl" [disabled]="disabled" [placeholder]="placeholder" [autocomplete]="autocomplete"></ukho-textinput></form>`,
 });
 
 export const basic: Story = template.bind({});
@@ -27,7 +25,17 @@ basic.args = {
   label: 'Basic',
 };
 
-export const noLabel: Story = template.bind({});
+export const withPlaceholder: Story = template.bind({});
+withPlaceholder.args = {
+  label: 'With Placeholder',
+  placeholder: 'Fill Me In',
+};
+
+export const number: Story = template.bind({});
+number.args = {
+  label: 'Number',
+  type: 'number',
+};
 
 export const date: Story = template.bind({});
 date.args = {
@@ -41,10 +49,17 @@ time.args = {
   type: 'time',
 };
 
-export const autocomplete: Story = template.bind({});
+export const autocomplete: Story<TextinputComponent> = template.bind({});
 autocomplete.args = {
+  label: 'Full Name',
+  name: 'name',
+  autocomplete: 'name',
+};
+
+export const autocompleteOff: Story = template.bind({});
+autocompleteOff.args = {
   label: 'AutoComplete',
-  autocomplete: false,
+  autocomplete: 'off',
 };
 
 export const disabled: Story = template.bind({});

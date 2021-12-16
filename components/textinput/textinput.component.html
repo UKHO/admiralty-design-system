@@ -1,25 +1,23 @@
-<input
-  #input
-  [id]="id"
-  [type]="type"
-  class="form-text-input"
-  (input)="onChange($event.target.value)"
-  (blur)="onTouch()"
-  [disabled]="disabled"
-  [autocomplete]="autocomplete ? 'on' : 'off'"
-/>
-<div
-  *ngIf="label"
-  class="input-wrap"
-  [ngClass]="{
-    'has-value': !!input.value || type === 'date' || type === 'time'
-  }"
->
-  <label *ngIf="label" [for]="id">{{ label }}</label>
+<div class="text-input-container">
+  <label [ngClass]="{ disabled: disabled }" class="form-text-input-label" [for]="id">{{ label }}</label>
+  <input
+    #input
+    (blur)="onTouch()"
+    (input)="onChange($event.target.value)"
+    [attr.autocomplete]="autocomplete ? name : null"
+    [disabled]="disabled"
+    [placeholder]="placeholder || ''"
+    [id]="id"
+    [attr.name]="name ? name : null"
+    [type]="type"
+    class="form-text-input"
+    [ngClass]="{ invalid: !valid && touched, disabled: disabled }"
+    [attr.aria-describedby]="!valid && touched ? errorLabelId : null"
+    [attr.aria-invalid]="!valid && touched"
+  />
 </div>
-<ng-container *ngIf="!valid && touched">
-  <span class="icon invalid-icon fa fa-exclamation"></span>
-  <p *ngIf="error" class="error-text">
+<div *ngIf="!valid && touched" class="text-input-error">
+  <p [id]="errorLabelId" *ngIf="error" class="error-text">
     {{ validationMessages[error] }}
   </p>
-</ng-container>
+</div>

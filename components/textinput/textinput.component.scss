@@ -1,148 +1,64 @@
 @use '../../styles/base/colours';
-@use '../../styles/base/responsive';
 @use '../../styles/base/typography';
+@use '../../styles/base/icons';
 
-input[type="time"]::-webkit-inner-spin-button,
-input[type="date"]::-webkit-inner-spin-button,
-input[type="time"]::-webkit-clear-button,
-input[type="date"]::-webkit-clear-button {
-  display: none;
-}
-
-.text-input-wrap {
-  position: relative;
+.text-input-container {
   display: flex;
-  height: 86px;
+  flex-direction: column;
 
-  @include responsive.not-desktop {
-    width: 100%;
-    max-width: 420px;
-  }
+  .form-text-input-label {
+    margin-bottom: 6px;
 
-  label {
-    position: relative;
-    color: colours.$colour-textinput-text;
-    left: 0;
-    top: 9px;
-    transition: top 0.3s, font-size 0.3s;
-    font-weight: typography.$font-weight-medium;
-  }
-
-  .input-wrap {
-    position: absolute;
-    height: 100%;
-    border-top: solid 2px transparent;
-    padding: 5px;
-    left: 12px;
-    top: 0;
-    transition: border-top-color 0.1s;
-    pointer-events: none;
-  }
-
-  .form-text-input:focus + .input-wrap {
-    border-top-color: colours.$colour-white;
-
-    label {
-      color: colours.$colour-textinput-text-active;
-      top: -18px;
-      font-size: 14px;
+    &.disabled {
+      color: colours.$colour-textinput-text-disabled;
     }
   }
 
-  .has-value {
-    border-top-color: colours.$colour-white;
-    input {
-      background-color: colours.$colour-white;
+  .form-text-input {
+    border-color: colours.$colour-text;
+    border-width: 2px;
+    border-style: solid;
+
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: typography.$font-weight-light;
+
+    padding: 12px;
+
+    &:focus-visible {
+      outline: unset;
+      box-shadow: colours.$colour-text inset 0 0 0 2px;
     }
-    label {
-      top: -18px;
-      font-size: 14px;
+
+    &.invalid {
+      border-color: colours.$colour-utility-error;
+
+      &:focus-visible {
+        box-shadow: colours.$colour-utility-error inset 0 0 0 2px;
+      }
     }
-  }
 
-  .icon {
-    position: absolute;
-    right: 16px;
-    top: 16px;
-  }
-
-  .is-hidden {
-    display: none;
-  }
-
-  .invalid-icon {
-    color: colours.$colour-utility-error;
-  }
-
-  .error-text {
-    font-size: 12px;
-    color: colours.$colour-utility-error;
-    margin-left: 18px;
-    margin-bottom: 0;
-  }
-
-  &.is-disabled {
-    input,
-    textarea,
-    select {
+    &.disabled {
       color: colours.$colour-textinput-text-disabled;
       border-color: colours.$colour-textinput-border-disabled;
       background: colours.$colour-white;
     }
-
-    label {
-      color: colours.$colour-textinput-text-disabled;
-    }
-  }
-
-  &.invalid {
-    input,
-    textarea,
-    select,
-    textarea:focus {
-      color: colours.$colour-utility-error;
-      border-color: colours.$colour-utility-error;
-      background-color: colours.$colour-white;
-
-      &:focus + .input-wrap label,
-      &:focus + label {
-        color: colours.$colour-utility-error;
-      }
-    }
-
-    label {
-      color: colours.$colour-utility-error;
-    }
   }
 }
 
-.form-text-input {
-  width: 100%;
-  height: 50px;
-  border: 2px solid colours.$colour-textinput-border;
-  color: colours.$colour-textinput-text;
-  padding-left: 18px;
-  outline: none;
-  background-color: colours.$colour-textinput-bg;
-  position: relative;
-  line-height: 3;
+.text-input-error{
 
-  &:focus {
-    border-color: colours.$colour-textinput-text-active;
-    color: colours.$colour-textinput-text-active;
-    background-color: colours.$colour-white;
+  padding: 6px;
+
+  .error-text {
+    color: colours.$colour-utility-error;
+    margin: 0;
+
+    &:before {
+      @extend .fas;
+      content: icons.fa-content(icons.$fa-var-exclamation);
+      margin-right: 6px;
+      vertical-align: bottom;
+    }
   }
-
-  @include responsive.not-desktop {
-    max-width: 420px;
-    width: 100%;
-  }
-}
-
-.invalid > .form-text-input {
-  padding-right: 2rem;
-}
-
-input::placeholder {
-  overflow: visible;
 }
