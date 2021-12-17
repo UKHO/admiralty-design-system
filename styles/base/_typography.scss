@@ -110,8 +110,7 @@ blockquote {
 
 ul {
   font-family: $font-family;
-  list-style-type: none;
-
+  list-style: none;
   a {
     font-weight: $font-weight-light;
   }
@@ -120,12 +119,12 @@ ul {
     margin-bottom: 12px;
   }
 
-  li::before {
-    content: "\2B24";
-    color: colours.$colour-dark-blue;
-    font-size: 10px;
-    display: inline-block;
-    margin-right: 20px;
+  li:before {
+    content: "\25A0";
+    font-size: 18px;
+    color: colours.$colour-admiralty-blue;
+    vertical-align: text-bottom;
+    margin-right: 12px;
     @include responsive.not-desktop {
       font-size: 8px;
     }
@@ -136,39 +135,21 @@ ol {
   font-family: $font-family;
   list-style: none;
   counter-reset: li;
-  margin-bottom: 30px;
 
   a {
     font-weight: $font-weight-light;
   }
 
-  li::before {
+  li:before {
     content: counter(li) ".";
     color: colours.$colour-dark-blue;
     font-size: 18px;
-    display: inline-block;
-    margin-right: 20px;
+    margin-right: 12px;
   }
 
   li {
     counter-increment: li;
     margin-bottom: 12px;
-  }
-}
-
-ol,
-ul {
-  font-family: $font-family;
-  position: relative;
-
-  li {
-    transform: translateX(31px);
-    padding-right: 30px;
-  }
-
-  li::before {
-    position: absolute;
-    left: -30px;
   }
 }
 

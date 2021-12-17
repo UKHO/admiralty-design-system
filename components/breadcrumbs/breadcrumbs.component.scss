@@ -27,8 +27,7 @@ ul.breadcrumbs {
       content: icons.fa-content(icons.$fa-var-chevron-right);
       font-size: 10px;
       margin: 0 10px;
-      position: static;
-      left: unset;
+      vertical-align: unset;
     }
     // no chevron for first link
     &:first-child::before {
