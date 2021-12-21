@@ -28,9 +28,10 @@ export const validationRequired = () => ({
     declarations: [TextareaComponent],
     imports: [ReactiveFormsModule],
   },
-  template: `<ukho-textarea label="Description" [formControl]="formControl"></ukho-textarea>`,
+  template: `<ukho-textarea label="Description" [validationMessages]="validationMessages" [formControl]="formControl"></ukho-textarea>`,
   props: {
     formControl: new FormControl('', Validators.required),
+    validationMessages: { required: 'This field is required' },
   },
 });
 
@@ -38,5 +39,5 @@ export const withText = () => ({
   moduleMetadata: {
     declarations: [TextareaComponent],
   },
-  template: `<ukho-textarea text="Sample Text"></ukho-textarea>`,
+  template: `<ukho-textarea label="With Text" text="Sample Text"></ukho-textarea>`,
 });

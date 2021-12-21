@@ -88,9 +88,10 @@ export const validationRequired = () => ({
     declarations: [TextinputComponent],
     imports: [ReactiveFormsModule],
   },
-  template: `<ukho-textinput label="Name" [formControl]="formControl"></ukho-textinput>`,
+  template: `<ukho-textinput label="Name" [validationMessages]="validationMessages" [formControl]="formControl"></ukho-textinput>`,
   props: {
     formControl: new FormControl('', Validators.required),
+    validationMessages: { required: 'This field is required' },
   },
 });
 

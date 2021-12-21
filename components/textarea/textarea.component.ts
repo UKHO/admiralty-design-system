@@ -5,13 +5,6 @@ import { UkhoAbstractFormField } from '../form-field/form-field';
   selector: 'ukho-textarea',
   templateUrl: './textarea.component.html',
   styleUrls: ['./textarea.component.scss'],
-  host: {
-    class: 'text-area-wrap',
-    '[class.is-disabled]': 'disabled',
-    '[class.validated]': 'valid && touched',
-    '[class.invalid]': '!valid && touched',
-  },
-  encapsulation: ViewEncapsulation.None,
 })
 export class TextareaComponent extends UkhoAbstractFormField<string> {
   /**

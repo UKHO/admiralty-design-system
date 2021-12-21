@@ -1,12 +1,17 @@
-<label [for]="id">{{ label }}</label>
-<textarea #input [id]="id" (input)="onChange($event.target.value)" (blur)="onTouch()" [disabled]="disabled">{{
-  text
-}}</textarea>
-<span class="resizer-arrow-wrap">
-  <span class="resizer-arrow"></span>
-</span>
-<ng-container *ngIf="!valid && touched">
-  <p *ngIf="error" class="error-text">
+<div class="text-area-container">
+  <label class="form-field-label" [ngClass]="{ disabled: disabled }" [for]="id">{{ label }}</label>
+  <textarea
+    [ngClass]="{ invalid: !valid && touched, disabled: disabled }"
+    #input
+    [id]="id"
+    (input)="onChange($event.target.value)"
+    (blur)="onTouch()"
+    [disabled]="disabled"
+    >{{ text }}</textarea
+  >
+</div>
+<div *ngIf="validationMessages" class="text-input-error">
+  <p [id]="errorLabelId" *ngIf="!valid && touched && error" class="error-text">
     {{ validationMessages[error] }}
   </p>
-</ng-container>
+</div>

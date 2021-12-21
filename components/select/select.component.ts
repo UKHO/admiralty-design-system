@@ -5,15 +5,8 @@ import { UkhoAbstractFormField } from '../form-field/form-field';
   selector: 'ukho-select',
   templateUrl: './select.component.html',
   styleUrls: ['./select.component.scss'],
-  host: {
-    class: 'text-area-wrap',
-    '[class.is-disabled]': 'disabled',
-    '[class.validated]': 'valid && touched',
-    '[class.invalid]': '!valid && touched',
-  },
-  encapsulation: ViewEncapsulation.None,
 })
-export class SelectComponent extends UkhoAbstractFormField<any> {
+export class SelectComponent extends UkhoAbstractFormField<string> {
   /**
    * The label which will be used as a placeholder in the unfilled state, and as a field label in the filled state.
    */

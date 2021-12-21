@@ -1,11 +1,20 @@
-<label [for]="id" class="form-label">{{ label }}</label>
-<div class="wrapper">
-  <select #select [id]="id" (change)="onChange($event.target.value)" (blur)="onTouch()" [disabled]="disabled">
-    <ng-content></ng-content>
-  </select>
+<div class="select-container">
+  <label class="form-field-label" [ngClass]="{ disabled: disabled }" [for]="id">{{ label }}</label>
+  <div class="wrapper" [ngClass]="{ invalid: !valid && touched, disabled: disabled }">
+    <select
+      [ngClass]="{ invalid: !valid && touched, disabled: disabled }"
+      #select
+      [id]="id"
+      (change)="onChange($event.target.value)"
+      (blur)="onTouch()"
+      [disabled]="disabled"
+    >
+      <ng-content></ng-content>
+    </select>
+  </div>
 </div>
-<ng-container *ngIf="!valid && touched">
-  <p *ngIf="error" class="error-text">
+<div *ngIf="validationMessages" class="text-input-error">
+  <p [id]="errorLabelId" *ngIf="!valid && touched && error" class="error-text">
     {{ validationMessages[error] }}
   </p>
-</ng-container>
+</div>

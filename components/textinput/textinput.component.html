@@ -1,10 +1,10 @@
 <div class="text-input-container">
-  <label [ngClass]="{ disabled: disabled }" class="form-text-input-label" [for]="id">{{ label }}</label>
+  <label [ngClass]="{ disabled: disabled }" class="form-field-label" [for]="id">{{ label }}</label>
   <input
     #input
     (blur)="onTouch()"
     (input)="onChange($event.target.value)"
-    [attr.autocomplete]="autocomplete ? name : null"
+    [attr.autocomplete]="autocomplete ? autocomplete : null"
     [disabled]="disabled"
     [placeholder]="placeholder || ''"
     [id]="id"
@@ -16,8 +16,8 @@
     [attr.aria-invalid]="!valid && touched"
   />
 </div>
-<div *ngIf="!valid && touched" class="text-input-error">
-  <p [id]="errorLabelId" *ngIf="error" class="error-text">
+<div class="text-input-error" *ngIf="validationMessages">
+  <p [id]="errorLabelId" *ngIf="!valid && touched && error" class="error-text">
     {{ validationMessages[error] }}
   </p>
 </div>

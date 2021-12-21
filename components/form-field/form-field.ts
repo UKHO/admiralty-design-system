@@ -13,7 +13,7 @@ export abstract class UkhoAbstractFormField<T> implements ControlValueAccessor {
    * A Record of string,string to provide custom messages to be used with Reactive Form validators
    * EG: `{ required: This field is required }` will cause the `required` validator to display the message specified.
    */
-  @Input() validationMessages: Record<string, string> = { required: 'This field is required' };
+  @Input() validationMessages: Record<string, string>;
 
   private readonly _nextFormFieldId: number;
 
@@ -63,6 +63,7 @@ export abstract class UkhoAbstractFormField<T> implements ControlValueAccessor {
     const activeErrors = errorKeys.filter((errorKey) => !!this.controlDirective.errors[errorKey]);
     return activeErrors[0];
   }
+
   /**
    * Registers a function called when the control value changes.
    * Used by ReactiveForms to check for changes

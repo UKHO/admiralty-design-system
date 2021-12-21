@@ -1,0 +1,50 @@
+@use "../../styles/base/colours";
+@use "../../styles/base/icons";
+@use "../../styles/base/typography";
+
+.form-field-label {
+  margin-bottom: 6px;
+  display: inline-block;
+
+  &.disabled {
+    color: colours.$colour-textinput-text-disabled;
+  }
+}
+
+.form-field {
+  &:focus-visible {
+    outline: unset;
+    box-shadow: colours.$colour-text inset 0 0 0 2px;
+  }
+
+  &.invalid {
+    border-color: colours.$colour-utility-error;
+
+    &:focus-visible {
+      box-shadow: colours.$colour-utility-error inset 0 0 0 2px;
+    }
+  }
+
+  &.disabled {
+    color: colours.$colour-textinput-text-disabled;
+    border-color: colours.$colour-textinput-border-disabled;
+    background: colours.$colour-white;
+  }
+}
+
+.text-input-error {
+  padding: 6px;
+  min-height: typography.$font-line-height-normal;
+
+  .error-text {
+    color: colours.$colour-utility-error;
+    margin: 0;
+
+    &:before {
+      @extend .fas;
+      content: icons.fa-content(icons.$fa-var-exclamation);
+      margin-right: 6px;
+      vertical-align: bottom;
+    }
+  }
+}
