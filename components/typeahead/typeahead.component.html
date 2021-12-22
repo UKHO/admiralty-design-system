@@ -8,7 +8,7 @@
   class="filterTextInput"
   (focusin)="focusIn()"
   (focusout)="focusOut()"
-  [autocomplete]="false"
+  autocomplete="off"
 ></ukho-textinput>
 <div class="typeahead-list-container" *ngIf="isFocused && filterResult.length > 0">
   <ul class="typeahead-list">

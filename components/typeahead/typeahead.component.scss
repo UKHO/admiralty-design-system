@@ -19,7 +19,8 @@
 
 .typeahead-list-container {
   position: absolute;
-  top: 60px;
+  top: 100%;
+  margin-top: 6px;
   left: 0px;
   background-color: colours.$colour-white;
   width: 100%;
