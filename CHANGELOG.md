@@ -1,5 +1,34 @@
 # Changelog
 
+## [4.0.0] - 2021-12-22
+
+### Added
+
+- feat: Allow user to supply the button type [#434](https://github.com/UKHO/design-system/pull/434)
+- feat: adding a11y to the breadcrumbs [#435](https://github.com/UKHO/design-system/pull/435)
+- feat: Adding a11y to the footer [#440](https://github.com/UKHO/design-system/pull/440)
+- feat: adding keyboard navigation to the paginator and updating aria tags [#452](https://github.com/UKHO/design-system/pull/452)
+
+### Changed
+
+- feat: updating the header branding defaults to be more consistent [#420](https://github.com/UKHO/design-system/pull/420)
+- feat: refactoring the table to give more flexibility in how a table is created [#425](https://github.com/UKHO/design-system/pull/425)
+- feat: restyling the text inputs [#453](https://github.com/UKHO/design-system/pull/453)
+- feat: chore: Upgrade dependencies [#454](https://github.com/UKHO/design-system/pull/454)
+- feat: updating the bullet point styling to be squares [#455](https://github.com/UKHO/design-system/pull/455)
+- feat: updated textarea and select to match the new input styles [#458](https://github.com/UKHO/design-system/pull/458)
+
+### Fixed
+
+- feat: Fixing a11y issues in the dialog [#441](https://github.com/UKHO/design-system/pull/441)
+- fix: link styling [#456](https://github.com/UKHO/design-system/pull/456)
+- fix: typeahead dropdown rendering issues [#459](https://github.com/UKHO/design-system/pull/459)
+- fix: broken table exports [#460](https://github.com/UKHO/design-system/pull/460)
+
+### Removed
+
+- N/A
+
 ## [3.3.3] - 2021-11-26
 
 ### Added
@@ -268,6 +297,7 @@
 
 - Initial release of the new Design System package
 
+[4.0.0]: https://github.com/UKHO/design-system/compare/v3.3.3...v4.0.0
 [3.3.3]: https://github.com/UKHO/design-system/compare/v3.3.2...v3.3.3
 [3.3.2]: https://github.com/UKHO/design-system/compare/v3.3.1...v3.3.2
 [3.3.1]: https://github.com/UKHO/design-system/compare/v3.3.0...v3.3.1
