@@ -1,12 +1,6 @@
 import { Directive, EventEmitter, Output } from '@angular/core';
 import { SortHeaderDirective } from './sort-header.directive';
-
-export type SortDirection = 'asc' | 'desc' | '';
-
-export interface SortState {
-  column: string;
-  direction: SortDirection;
-}
+import { SortState } from './tables.types';
 
 @Directive({
   selector: '[ukhoSort]',

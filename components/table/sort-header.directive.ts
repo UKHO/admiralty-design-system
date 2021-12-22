@@ -1,6 +1,7 @@
 import { Directive, HostBinding, HostListener, OnDestroy, OnInit, Optional } from '@angular/core';
-import { SortDirection, SortDirective } from './sort.directive';
+import { SortDirective } from './sort.directive';
 import { CdkColumnDef } from '@angular/cdk/table';
+import { SortDirection } from './tables.types';
 
 @Directive({
   selector: '[ukhoSortHeader]',

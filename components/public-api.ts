@@ -33,3 +33,4 @@ export * from './header/header.types';
 export * from './footer/footer.types';
 export * from './breadcrumbs/breadcrumbs.types';
 export * from './side-nav/side-nav.types';
+export * from './table/tables.types';
