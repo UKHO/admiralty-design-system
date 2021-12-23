@@ -1,5 +1,23 @@
 # Changelog
 
+## [4.0.1] - 2021-12-23
+
+### Added
+
+- N/A
+
+### Changed
+
+- N/A
+
+### Fixed
+
+- fix: making select styling consistent [#463](https://github.com/UKHO/design-system/pull/463)
+
+### Removed
+
+- N/A
+
 ## [4.0.0] - 2021-12-22
 
 ### Added
@@ -297,6 +315,7 @@
 
 - Initial release of the new Design System package
 
+[4.0.1]: https://github.com/UKHO/design-system/compare/v4.0.0...v4.0.1
 [4.0.0]: https://github.com/UKHO/design-system/compare/v3.3.3...v4.0.0
 [3.3.3]: https://github.com/UKHO/design-system/compare/v3.3.2...v3.3.3
 [3.3.2]: https://github.com/UKHO/design-system/compare/v3.3.1...v3.3.2
