@@ -1,20 +1,22 @@
 @use "../../styles/base/colours";
 @use "../../styles/base/icons";
+@use "../../styles/base/typography";
 @use "../form-field/form-field";
 
 .select-container {
 
   select {
-    appearance: none;
     width: 100%;
-    height: 54px;
-    border: 2px solid colours.$colour-text;
+    border-color: colours.$colour-text;
+    border-width: 2px;
+    border-style: solid;
     color: colours.$colour-text;
-    padding-left: 18px;
-    outline: none;
-    background-color: colours.$colour-white;
-    position: relative;
-    line-height: 3;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: typography.$font-weight-light;
+
+    padding: 12px;
+    appearance: none;
     box-sizing: border-box;
 
     @extend .form-field;
@@ -27,7 +29,7 @@
       @extend .fas;
       content: icons.fa-content(icons.$fa-var-chevron-down);
       position: absolute;
-      top: 16px;
+      top: 15px;
       right: 16px;
       pointer-events: none;
     }

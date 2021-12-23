@@ -12,6 +12,9 @@
 }
 
 .form-field {
+
+  background-color: colours.$colour-white;
+
   &:focus-visible {
     outline: unset;
     box-shadow: colours.$colour-text inset 0 0 0 2px;
