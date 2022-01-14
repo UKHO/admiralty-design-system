@@ -4,11 +4,16 @@
 **/dist
 **/dist-styles
 **/.out
-documentation.json
+angular/documentation.json
 /tmp
 /out-tsc
 # Only exists if Bazel was run
 /bazel-out
+
+**/.rollup.cache
+
+.env
+**/coverage
 
 # Use fontawesome from NPM package
 projects/site/public/assets/fonts/fontawesome
@@ -40,7 +45,7 @@ speed-measure-plugin*.json
 # misc
 /.sass-cache
 /connect.lock
-/coverage
+/packages/angular/coverage
 /libpeerconnection.log
 npm-debug.log
 yarn-error.log
@@ -52,5 +57,7 @@ testem.log
 Thumbs.db
 
 lerna-debug.log
-storybook-static
+packages/angular/storybook-static
 build-storybook.log
+
+**/storybook-static

@@ -1,28 +1,12 @@
 {
+  "extends": "./tsconfig.build.json",
+
   "compilerOptions": {
-    "baseUrl": "./",
-    "target": "es2015",
-    "sourceMap": true,
-    "declaration": true,
-    "inlineSources": true,
-    "types": ["node"],
-    "downlevelIteration": true,
-    "lib": ["dom", "es2018"],
-    "experimentalDecorators": true,
-    "strictFunctionTypes": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "importHelpers": true,
-    "typeRoots": ["node_modules/@types"],
-    "esModuleInterop": true
-  },
-  "angularCompilerOptions": {
-    "fullTemplateTypeCheck": true,
-    "strictInjectionParameters": true,
-    "skipTemplateCodegen": true,
-    "strictMetadataEmit": true,
-    "enableResourceInlining": true,
-    "enableIvy": false
-  },
-  "exclude": ["**/*.spec.ts", "**/*.stories.ts"]
+    "baseUrl": ".",
+    "paths": {
+      "@ukho/design-system-core": ["packages/core/*"],
+      "@ukho/design-system-angular": ["packages/angular/*"]
+    },
+    "noEmit": true
+  }
 }

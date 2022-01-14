@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,UAAU,CAAA;EACN,UAAU,EAAE,MAAM;CACrB",
-    "sources": [
-        "cookies.scss"
-    ],
-    "names": [],
-    "file": "cookies.css"
-}
