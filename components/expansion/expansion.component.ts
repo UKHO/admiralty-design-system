@@ -8,9 +8,10 @@ let nextId = 0;
   styleUrls: ['./expansion.component.scss'],
 })
 export class ExpansionComponent {
-  @Input() initialExpanded = false;
+  @Input() initialExpanded: boolean = false;
   @Input() heading: string;
-  @Input() alignHeadingRight = false;
+  @Input() alignHeadingRight: boolean = false;
+  @Input() hideBorder: boolean = false;
 
   id = `ukho-expansion-${++nextId}`;
 }

@@ -1,0 +1,48 @@
+.filters {
+  display: table;
+
+  .heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+
+    h2 {
+      margin-bottom: 0;
+    }
+
+    /* TODO: If reused, move class to button component */
+    button.text-link {
+      background-color: unset;
+      border: none;
+      color: black;
+      margin-left: 28px;
+      padding: 0;
+      min-width: unset;
+      width: unset;
+      height: unset;
+      font-size: 16px;
+      text-decoration: underline;
+      font-weight: unset;
+    }
+    button.text-link:hover {
+      background-color: unset;
+      border: unset;
+    }
+  }
+
+  ukho-expansion {
+    display: block;
+    margin-left: 7px;
+  }
+
+  .filter-items {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+  }
+
+  ukho-button {
+    display: block;
+    margin-top: 10px;
+  }
+}

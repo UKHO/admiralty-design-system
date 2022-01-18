@@ -63,3 +63,18 @@ export const multilineTitle = () => ({
   <p>Curabitur nec mattis ex. In tincidunt quis nunc eu congue. Phasellus odio dui, aliquam a aliquet vel, fermentum id dolor. Nullam neque elit, interdum et mauris et, tempus imperdiet arcu. Cras erat odio, volutpat vel bibendum quis, malesuada non quam. Etiam in bibendum lacus. In hac habitasse platea dictumst. Proin justo nunc, gravida nec magna id, faucibus placerat dui. Phasellus luctus viverra imperdiet. Maecenas sed lorem ligula. Maecenas nec velit ut lectus porta ullamcorper vel et ante. Sed pretium metus vitae sagittis tincidunt. Integer aliquam consectetur ex et tempus. Aliquam faucibus ullamcorper libero.</p>
     </ukho-expansion></div>`,
 });
+
+export const noBorder = () => ({
+  moduleMetadata: {
+    declarations: [ExpansionComponent],
+  },
+  template: `<ukho-expansion heading="Expansion Heading 1" hideBorder="true">
+      Some content for the expansion with no border
+    </ukho-expansion>
+    <ukho-expansion heading="Expansion Heading 2" hideBorder="true">
+      Some content for the expansion with no border
+    </ukho-expansion>
+    <ukho-expansion heading="Expansion Heading 3" hideBorder="true">
+      Some content for the expansion with no border
+    </ukho-expansion>`,
+});

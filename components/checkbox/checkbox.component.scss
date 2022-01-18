@@ -1,4 +1,4 @@
-@use '../../styles/base/colours';
+@use "../../styles/base/colours";
 
 .checkbox-wrapper {
   input[type="checkbox"] {
@@ -59,6 +59,10 @@
       left: unset;
       right: 6px;
     }
+  }
+
+  .justify {
+    display: block;
   }
 
   input[type="checkbox"] + label::after {

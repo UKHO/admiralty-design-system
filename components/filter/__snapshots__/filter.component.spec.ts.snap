@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FilterComponent should create compenent with expected structure 1`] = `
+<ng-component
+  groups={[Function Array]}
+>
+  <ukho-filter>
+    <section
+      class="filters"
+    >
+      <header
+        class="heading"
+      >
+        <h2>
+          Filters
+        </h2>
+        <button
+          class="text-link"
+          type="reset"
+        >
+          Clear
+        </button>
+      </header>
+      
+      <ukho-expansion>
+        <nav
+          aria-label="Product"
+          class="filter-items"
+        >
+          
+          <ukho-checkbox>
+            AVCS
+          </ukho-checkbox>
+          <ukho-checkbox>
+            ADP
+          </ukho-checkbox>
+        </nav>
+      </ukho-expansion>
+      <ukho-expansion>
+        <nav
+          aria-label="Media type"
+          class="filter-items"
+        >
+          
+          <ukho-checkbox>
+            DVD
+          </ukho-checkbox>
+          <ukho-checkbox>
+            CD
+          </ukho-checkbox>
+          <ukho-checkbox>
+            BASE
+          </ukho-checkbox>
+          <ukho-checkbox>
+            ZIP
+          </ukho-checkbox>
+        </nav>
+      </ukho-expansion>
+      <ukho-expansion>
+        <nav
+          aria-label="Week number"
+          class="filter-items"
+        >
+          
+          <ukho-checkbox>
+            Week 39
+          </ukho-checkbox>
+          <ukho-checkbox>
+            Week 40
+          </ukho-checkbox>
+        </nav>
+      </ukho-expansion>
+      <ukho-expansion>
+        <nav
+          aria-label="Year"
+          class="filter-items"
+        >
+          
+          <ukho-checkbox>
+            2022
+          </ukho-checkbox>
+          <ukho-checkbox>
+            2021
+          </ukho-checkbox>
+          <ukho-checkbox>
+            2020
+          </ukho-checkbox>
+        </nav>
+      </ukho-expansion>
+      <ukho-button>
+        Apply filters
+      </ukho-button>
+    </section>
+  </ukho-filter>
+</ng-component>
+`;

@@ -1,0 +1,12 @@
+<section class="filters">
+  <header class="heading">
+    <h2>{{heading}}</h2>
+    <button type="reset" class="text-link" (click)="onClear()">Clear</button>
+  </header>
+  <ukho-expansion *ngFor="let group of groups" (change)="onExpansionChange(group)" [hideBorder]="true" [heading]="group.title" [initialExpanded]="group.expanded">
+    <nav class="filter-items" [attr.aria-label]="group.title">
+      <ukho-checkbox *ngFor="let item of group.items" (change)="onCheckboxChange(group, item)" [checkboxRight]="true" [checked]="item.selected" [justify]="true">{{item.title}}</ukho-checkbox>
+    </nav>
+  </ukho-expansion>
+  <ukho-button (click)="onApply()">Apply filters</ukho-button>
+</section>

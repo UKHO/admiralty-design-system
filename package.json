@@ -82,6 +82,7 @@
     "glob": "^7.1.6",
     "jest": "^26.6.3",
     "jest-preset-angular": "^8.3.2",
+    "ng-mocks": "^12.5.1",
     "ng-packagr": "~11.0.0",
     "postcss": "^8.2.8",
     "postcss-cli": "^8.2.0",

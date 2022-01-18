@@ -1,5 +1,5 @@
-@use '../../styles/base/colours';
-@use '../../styles/base/icons';
+@use "../../styles/base/colours";
+@use "../../styles/base/icons";
 section.readmore {
   > input[type="checkbox"] {
     display: none;
@@ -29,7 +29,9 @@ section.readmore {
 }
 
 section.expansion {
-  border-bottom: 1px solid colours.$colour-divider;
+  &.bordered {
+    border-bottom: 1px solid colours.$colour-divider;
+  }
   .expansion-checkbox {
     display: none;
   }

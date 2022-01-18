@@ -23,6 +23,11 @@ export class CheckboxComponent extends UkhoAbstractFormField<boolean> {
 
   @Input() checkboxRight: boolean;
 
+  /**
+   * Whether the checkbox and label should be justified.
+   */
+  @Input() justify = false;
+
   onChange = (checked: boolean) => {};
 
   handleChange(checked: boolean) {
