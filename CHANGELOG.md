@@ -1,5 +1,23 @@
 # Changelog
 
+## [4.1.0] - 2022-01-19
+
+### Added
+
+- feat: Create filter component [#466](https://github.com/UKHO/design-system/pull/466)
+
+### Changed
+
+- N/A
+
+### Fixed
+
+- N/A
+
+### Removed
+
+- N/A
+
 ## [4.0.1] - 2021-12-23
 
 ### Added
@@ -315,6 +333,7 @@
 
 - Initial release of the new Design System package
 
+[4.1.0]: https://github.com/UKHO/design-system/compare/v4.0.1...v4.1.0
 [4.0.1]: https://github.com/UKHO/design-system/compare/v4.0.0...v4.0.1
 [4.0.0]: https://github.com/UKHO/design-system/compare/v3.3.3...v4.0.0
 [3.3.3]: https://github.com/UKHO/design-system/compare/v3.3.2...v3.3.3
