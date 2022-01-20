@@ -1,0 +1,32 @@
+// These imports are relative to the project root directory
+@use "../../angular/styles/reset";
+
+// Parent pages or components cannot affect styles in the ShadowDOM, but properties
+// can still be inherited, so a library like normalise.css is still useful.
+@use "node_modules/normalize.css/normalize.css";
+
+@use "../../angular/styles/base/colours"; // as colours;
+@use "../../angular/styles/base/responsive"; // as responsive;
+@use "../../angular/styles/base/typography"; // as typography;
+@use "../../angular/styles/base/icons"; // as icons;
+
+// The standard Font Awesome CSS file contains icons defined using unicode that Lit is
+// unable to parse correctly. The modified version escapes all definitions e.g. "\f105"
+// becomes "\\f105". See more - https://github.com/lit/lit/issues/348
+
+// @use "../../angular/node_modules/@fortawesome/fontawesome-free/css/fontawesome.css";
+@use "../../angular/styles/fontawesome-modified.css";
+
+// Fonts can't be defined in web components. They need to be defined and loaded on
+// the parent page. See - https://bugs.chromium.org/p/chromium/issues/detail?id=336876
+// @use "../../angular/styles/base/fonts";
+
+i {
+  font-size: 24px;
+  &.small {
+    font-size: 16px;
+  }
+  &.large {
+    font-size: 32px;
+  }
+}

@@ -1,0 +1,17 @@
+// Load the Font Awesome web font into the storybook page
+$fa-font-path: "@fortawesome/fontawesome-free/webfonts" !default;
+@use "@fortawesome/fontawesome-free/scss/fontawesome";
+@use "@fortawesome/fontawesome-free/scss/regular" with (
+  $fa-font-path: $fa-font-path
+);
+@use "@fortawesome/fontawesome-free/scss/solid" with (
+  $fa-font-path: $fa-font-path
+);
+@use "@fortawesome/fontawesome-free/scss/brands" with (
+  $fa-font-path: $fa-font-path
+);
+
+// Load the UKHO fonts into the storybook page
+@use "../../../angular/styles/base/fonts" with (
+  $font-path: "../../../angular/styles/webfonts"
+);

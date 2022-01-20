@@ -4,7 +4,7 @@
   "scripts": {
     "build": "lerna exec -- yarn build",
     "test": "lerna exec -- yarn test",
-    "build-storybook-core": "cd packages/core && yarn build-storybook"
+    "build-storybook-core": "lerna exec -- yarn build-storybook"
   },
   "devDependencies": {
     "@auto-it/conventional-commits": "^10.32.5",

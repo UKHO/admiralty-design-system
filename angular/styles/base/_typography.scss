@@ -1,12 +1,15 @@
-@use 'colours';
-@use 'responsive';
+@use "colours";
+@use "responsive";
 $font-weight-medium: normal;
 $font-weight-light: 300;
 $font-family: "JohnstonITC", Helvetica, sans-serif;
 $font-size-normal: 18px;
 $font-line-height-normal: 24px;
 
-* {
+// The :host() selector functions like the * selector when used in a shadow DOM. It has no
+// effect oustide a shadow DOM.
+*,
+:host {
   font-family: $font-family;
   font-size: $font-size-normal;
   line-height: $font-line-height-normal;

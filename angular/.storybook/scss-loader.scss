@@ -1,13 +1,8 @@
-$fa-font-path: "../node_modules/@fortawesome/fontawesome-free/webfonts" !default;
+$fa-font-path: "@fortawesome/fontawesome-free/webfonts" !default;
 
-@use '../../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome';
-@use '../../../node_modules/@fortawesome/fontawesome-free/scss/solid' with (
-  $fa-font-path: $fa-font-path
-);
-@use '../../../node_modules/@fortawesome/fontawesome-free/scss/brands' with (
-  $fa-font-path: $fa-font-path
-);
+@use "@fortawesome/fontawesome-free/scss/fontawesome";
+@use "@fortawesome/fontawesome-free/scss/regular" with ($fa-font-path: $fa-font-path);
+@use "@fortawesome/fontawesome-free/scss/solid" with ($fa-font-path: $fa-font-path);
+@use "@fortawesome/fontawesome-free/scss/brands" with ($fa-font-path: $fa-font-path);
 
-@use '../styles/core' with (
-  $font-path: '../styles/webfonts'
-);
+@use "../styles/core" with ($font-path: "../styles/webfonts");
