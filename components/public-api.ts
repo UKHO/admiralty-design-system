@@ -10,6 +10,7 @@ export * from './code-snippet/code-snippet.module';
 export * from './colour-block/colour-block.module';
 export * from './dialogue/dialogue.module';
 export * from './expansion/expansion.module';
+export * from './filter/filter.module';
 export * from './footer/footer.module';
 export * from './header/header.module';
 export * from './horizontal-rule/horizontal-rule.module';

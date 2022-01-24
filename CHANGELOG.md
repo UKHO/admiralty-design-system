@@ -1,5 +1,23 @@
 # Changelog
 
+## [4.1.1] - 2022-01-24
+
+### Added
+
+- N/A
+
+### Changed
+
+- N/A
+
+### Fixed
+
+- fix: Ensure filter component is exported [#474](https://github.com/UKHO/design-system/pull/474)
+
+### Removed
+
+- N/A
+
 ## [4.1.0] - 2022-01-19
 
 ### Added
