@@ -1,12 +1,12 @@
+import { Story } from '@storybook/web-components';
 import { html } from 'lit';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 
 import './card';
-import { UKHOCard } from './card';
 
 export default {
   title: 'Card',
-  component: 'ukho-button',
+  component: 'ukho-card',
   argTypes: {
     heading: {
       control: { type: 'text' },
@@ -19,22 +19,21 @@ export default {
   },
 };
 
-// TODO - update typings for stories
-const Template: Partial<any> = ({ heading, content }: { heading: string; content: string }) =>
+const Template: Story = ({ heading, content }: { heading?: string; content?: string }) =>
   html`<ukho-card heading=${heading}>${unsafeHTML(content)}</ukho-card>`;
 
-export const WithTitle = Template.bind();
+export const WithTitle = Template.bind({});
 WithTitle.args = {
   heading: 'I am a card',
   content: 'Some content',
 };
 
-export const WithoutTitle = Template.bind();
+export const WithoutTitle = Template.bind({});
 WithoutTitle.args = {
   content: 'Some content',
 };
 
-export const WithHtmlContent = Template.bind();
+export const WithHtmlContent = Template.bind({});
 WithHtmlContent.args = {
   heading: 'I am a card',
   content: `
@@ -45,7 +44,7 @@ WithHtmlContent.args = {
   `,
 };
 
-export const WithListContent = Template.bind();
+export const WithListContent = Template.bind({});
 WithListContent.args = {
   heading: 'I am a card',
   content: `

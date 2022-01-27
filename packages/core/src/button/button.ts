@@ -3,10 +3,21 @@ import { html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import buttonStyles from './button.scss';
 
+export enum Variant {
+  Primary = 'primary',
+  Secondary = 'secondary',
+}
+
+export enum ButtonType {
+  Button = 'button',
+  Submit = 'submit',
+  Reset = 'reset',
+}
+
 /**
- * An button component.
+ * A button component.
  *
- * @fires count-changed - Indicates when the count changes
+ * @fires onclick - When the button has been pressed
  * @slot - This element has a slot
  * @csspart button - The button
  */
@@ -20,13 +31,13 @@ export class UKHOButton extends UKHOBase {
    * The type of the button
    */
   @property({ type: String })
-  variant: 'primary' | 'seconday' = 'primary';
+  variant: Variant = Variant.Primary;
 
   /**
    * The type of the button
    */
   @property({ type: String })
-  type: 'button' | 'submit' | 'reset' = 'submit';
+  type: ButtonType = ButtonType.Submit;
 
   /**
    * Whether the button is disabled.
@@ -34,9 +45,14 @@ export class UKHOButton extends UKHOBase {
   @property({ type: Boolean })
   disabled: boolean = false;
 
+  private onClick(e: Event) {
+    const event = new Event('onclick', { bubbles: true, composed: true, cancelable: true });
+    this.dispatchEvent(event);
+  }
+
   render() {
     return html`
-      <button ?disabled=${this.disabled} class=${this.variant}>
+      <button ?disabled=${this.disabled} @click=${this.onClick} class=${this.variant}>
         <slot name="start"></slot>
         <slot></slot>
         <slot name="end"></slot>
