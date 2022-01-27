@@ -1,22 +1,33 @@
-// These imports are relative to the project root directory
-@use "../../angular/styles/reset";
+@use "../../styles/scss/mixins" as *;
+@use "../../styles/scss/variables" as *;
 
-// Parent pages or components cannot affect styles in the ShadowDOM, but properties
-// can still be inherited, so a library like normalise.css is still useful.
-@use "node_modules/normalize.css/normalize.css";
-
-// These imports are relative to the project root directory
-@use "../../angular/styles/base/colours" as colours;
-@use "../../angular/styles/base/responsive";
-@use "../../angular/styles/base/typography";
-@use "../../angular/styles/base/icons";
-
-// Fonts can't be defined in web components. They need to be defined and loaded on
-// the parent page. See - https://bugs.chromium.org/p/chromium/issues/detail?id=336876
-// @use "../../angular/styles/base/fonts";
-
-// Font Awesome styles are not loaded here because this example uses slots and the
-// parent page is responsibile for styling slotted content.
+/* Primary */
+$colour-button-standard: $colour-admiralty-blue;
+$colour-button-border-standard: $colour-admiralty-blue;
+$colour-button-hover: #03284f;
+$colour-button-border-hover: #03284f;
+$colour-button-deselected: #adadad;
+$colour-button-border-deselected: #adadad;
+$colour-button-selected: #ffffff;
+$colour-button-border-selected: $colour-admiralty-blue;
+$colour-button-text: #ffffff;
+$colour-button-text-selected: $colour-admiralty-blue;
+$colour-button-border-selected: $colour-admiralty-blue;
+$colour-button-icon: #ffffff;
+$colour-button-icon-selected: $colour-admiralty-blue;
+/* Secondary */
+$colour-button-secondary-standard: #ffffff;
+$colour-button-secondary-border-standard: #05284e;
+$colour-button-secondary-hover: #eeeeee;
+$colour-button-secondary-border-hover: #05284e;
+$colour-button-secondary-deselected: #adadad;
+$colour-button-secondary-border-deselected: #adadad;
+$colour-button-secondary-selected: #05284e;
+$colour-button-secondary-border-selected: #05284e;
+$colour-button-secondary-text: #05284e;
+$colour-button-secondary-text-selected: #ffffff;
+$colour-button-secondary-icon: #05284e;
+$colour-button-secondary-icon-selected: #ffffff;
 
 /* Button Wrapper */
 .button-wrapper {
@@ -29,7 +40,7 @@
     margin-top: 11px;
 
     > span {
-      color: colours.$colour-utility-error;
+      color: $colour-utility-error;
       margin-left: 10px;
       font-size: 16px;
     }
@@ -37,20 +48,19 @@
 }
 
 /* Primary Buttons */
-button,
-input[type="button"] {
+button {
   display: inline-block;
-  background-color: colours.$colour-button-standard;
-  color: colours.$colour-button-text;
-  border: 2px solid colours.$colour-button-standard;
+  background-color: $colour-button-standard;
+  color: $colour-button-text;
+  border: 2px solid $colour-button-standard;
   height: 60px;
   padding: 15px 18px;
   font-size: 21px;
-  font-weight: typography.$font-weight-medium;
+  font-weight: $font-weight-medium;
   white-space: nowrap;
   min-width: 200px;
   cursor: pointer;
-  @include responsive.not-desktop {
+  @include not-desktop {
     min-width: unset;
     max-width: 200px;
     width: 100%;
@@ -60,28 +70,29 @@ input[type="button"] {
 
   // this styles all content passed into the slot
   slot {
+    display: inline;
     font-size: 21px;
-    font-weight: typography.$font-weight-medium;
+    font-weight: $font-weight-medium;
+  }
+  slot:not([name="start"]):not([name="end"]) {
+    display: inline-block;
+    padding-top: 2px;
   }
 
   &:hover {
-    background-color: colours.$colour-button-hover;
-    border: 2px solid colours.$colour-button-hover;
+    background-color: $colour-button-hover;
+    border: 2px solid $colour-button-hover;
   }
 
   &:active {
-    background-color: colours.$colour-button-selected;
-    border: 2px solid colours.$colour-button-border-selected;
-    color: colours.$colour-button-icon-selected;
-
-    ::slotted(i) {
-      color: colours.$colour-button-icon-selected;
-    }
+    background-color: $colour-button-selected;
+    border: 2px solid $colour-button-border-selected;
+    color: $colour-button-icon-selected;
   }
 
   &:disabled {
-    background-color: colours.$colour-button-deselected;
-    border: 2px solid colours.$colour-button-deselected;
+    background-color: $colour-button-deselected;
+    border: 2px solid $colour-button-deselected;
     cursor: default;
   }
 
@@ -89,7 +100,7 @@ input[type="button"] {
     min-width: 240px;
     display: flex;
     justify-content: space-between;
-    @include responsive.not-desktop {
+    @include not-desktop {
       min-width: unset;
       max-width: 240px;
       width: 100%;
@@ -98,57 +109,35 @@ input[type="button"] {
 
   // Slotted element styles are set on the parent element (e.g. Storybook) but can
   // also be set using the ::slotted() selector.
-  ::slotted(i) {
-    vertical-align: middle;
-    font-size: 24px;
-    color: colours.$colour-button-icon;
-    padding-left: 15px;
-  }
-
   ::slotted([slot="start"]) {
     vertical-align: middle;
-    padding-right: 15px;
+    padding-right: 15px !important;
   }
   ::slotted([slot="end"]) {
     vertical-align: middle;
-    padding-left: 15px;
+    padding-left: 15px !important;
   }
 }
 
 /* Secondary Buttons */
-button.secondary,
-input[type="button"].secondary {
-  background-color: colours.$colour-button-secondary-standard;
-  color: colours.$colour-button-secondary-text;
-  border: 2px solid colours.$colour-button-secondary-border-standard;
+button.secondary {
+  background-color: $colour-button-secondary-standard;
+  color: $colour-button-secondary-text;
+  border: 2px solid $colour-button-secondary-border-standard;
 
   &:hover {
-    background-color: colours.$colour-button-secondary-hover;
-    border: 2px solid colours.$colour-button-secondary-border-hover;
+    background-color: $colour-button-secondary-hover;
+    border: 2px solid $colour-button-secondary-border-hover;
   }
 
   &:active {
-    background-color: colours.$colour-button-secondary-selected;
-    border: 2px solid colours.$colour-button-secondary-selected;
-    color: colours.$colour-button-secondary-icon-selected;
-
-    ::slotted(i) {
-      color: colours.$colour-button-secondary-icon-selected;
-    }
-
-    ::slotted(p) {
-      color: colours.$colour-button-secondary-text-selected;
-    }
+    background-color: $colour-button-secondary-selected;
+    border: 2px solid $colour-button-secondary-selected;
+    color: $colour-button-secondary-icon-selected;
   }
 
   &:disabled {
-    background-color: colours.$colour-button-secondary-deselected;
-    border: 2px solid colours.$colour-button-secondary-deselected;
-  }
-
-  // Slotted element styles are set on the parent element (e.g. Storybook) but can
-  // also be set using the ::slotted() selector.
-  ::slotted(i) {
-    color: colours.$colour-button-secondary-icon !important;
+    background-color: $colour-button-secondary-deselected;
+    border: 2px solid $colour-button-secondary-deselected;
   }
 }

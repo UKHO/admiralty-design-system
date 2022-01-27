@@ -38,8 +38,8 @@ export default {
       babelHelpers: "runtime",
     }),
     litcss({
-      include: "/**/*.scss",
-      transform: (data, { filePath }) => Sass.renderSync({ data, file: filePath }).css.toString(),
+      include: ["/**/*.scss"],
+      transform: (data, { filePath }) => Sass.compile(filePath).css,
     }),
     production && terser(),
   ],

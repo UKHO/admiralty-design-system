@@ -1,4 +1,5 @@
-import { LitElement, html } from 'lit';
+import { UKHOBase } from '../base/base';
+import { html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import buttonStyles from './button.scss';
 
@@ -10,9 +11,9 @@ import buttonStyles from './button.scss';
  * @csspart button - The button
  */
 @customElement('ukho-button')
-export class UkhoButton extends LitElement {
+export class UKHOButton extends UKHOBase {
   static get styles() {
-    return [buttonStyles];
+    return [UKHOBase.styles, buttonStyles];
   }
 
   /**
@@ -46,6 +47,6 @@ export class UkhoButton extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'ukho-button': UkhoButton;
+    'ukho-button': UKHOButton;
   }
 }

@@ -4,8 +4,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@ukho/design-system-core": ["packages/core/*"],
-      "@ukho/design-system-angular": ["packages/angular/*"]
+      "@ukho/design-system-core": ["packages/core/*"]
     },
     "noEmit": true
   }

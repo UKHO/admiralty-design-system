@@ -27,11 +27,15 @@ module.exports = {
           options: {
             // Prefer `dart-sass`
             implementation: require("sass"),
+            sassOptions: {
+              includePaths: [path.resolve(__dirname), "../../node_modules"],
+            },
           },
         },
       ],
     });
     config.resolve.modules.push(path.resolve(__dirname));
+    config.resolve.modules.push("../../node_modules");
 
     // Return the altered config
     return config;

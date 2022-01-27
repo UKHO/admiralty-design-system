@@ -1,4 +1,5 @@
-import { LitElement, html } from 'lit';
+import { UKHOBase } from '../base/base';
+import { html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import styles from './icon.scss';
 
@@ -6,9 +7,9 @@ import styles from './icon.scss';
  * An icon component that displays icons from the Font Awesome library.
  */
 @customElement('ukho-icon')
-export class UkhoIcon extends LitElement {
+export class UKHOIcon extends UKHOBase {
   static get styles() {
-    return [styles];
+    return [UKHOBase.styles, styles];
   }
 
   /**
@@ -53,6 +54,6 @@ export class UkhoIcon extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'ukho-icon': UkhoIcon;
+    'ukho-icon': UKHOIcon;
   }
 }

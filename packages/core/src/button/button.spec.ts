@@ -1,5 +1,5 @@
 import { html, fixture } from '@open-wc/testing-helpers';
-import { UkhoButton } from '..';
+import { UKHOButton } from '..';
 
 import './button';
 
@@ -32,7 +32,7 @@ describe('Button', () => {
   describe('properties', () => {
     it('should not be disabled', async () => {
       // ARRANGE
-      const el: UkhoButton = await fixture(html`<ukho-button>Test</ukho-button>`);
+      const el: UKHOButton = await fixture(html`<ukho-button>Test</ukho-button>`);
       const button = el.shadowRoot!.querySelector('button')!;
 
       // ASSERT
@@ -41,7 +41,7 @@ describe('Button', () => {
 
     it('should be disabled', async () => {
       // ARRANGE
-      const el: UkhoButton = await fixture(html`<ukho-button disabled></ukho-button>`);
+      const el: UKHOButton = await fixture(html`<ukho-button disabled></ukho-button>`);
       const button = el.shadowRoot!.querySelector('button')!;
 
       // ASSERT
@@ -50,7 +50,7 @@ describe('Button', () => {
 
     it('should have the default variant', async () => {
       // ARRANGE
-      const el: UkhoButton = await fixture(html`<ukho-button>Test</ukho-button>`);
+      const el: UKHOButton = await fixture(html`<ukho-button>Test</ukho-button>`);
       const button = el.shadowRoot!.querySelector('button')!;
 
       // ASSERT
@@ -60,7 +60,7 @@ describe('Button', () => {
 
     it('should have the secondary variant', async () => {
       // ARRANGE
-      const el: UkhoButton = await fixture(html`<ukho-button variant="secondary"></ukho-button>`);
+      const el: UKHOButton = await fixture(html`<ukho-button variant="secondary"></ukho-button>`);
       const button = el.shadowRoot!.querySelector('button')!;
 
       // ASSERT
@@ -73,7 +73,7 @@ describe('Button', () => {
     it('should call the passed function when the button is pressed', async () => {
       // ARRANGE
       const testFn = jest.fn();
-      const el: UkhoButton = await fixture(html`<ukho-button @click=${testFn}></ukho-button>`);
+      const el: UKHOButton = await fixture(html`<ukho-button @click=${testFn}></ukho-button>`);
       const button = el.shadowRoot!.querySelector('button')!;
 
       // ACT
@@ -86,7 +86,7 @@ describe('Button', () => {
     it('should not call the passed function when the button is disabled and pressed', async () => {
       // ARRANGE
       const testFn = jest.fn();
-      const el: UkhoButton = await fixture(html`<ukho-button disabled @click=${testFn}></ukho-button>`);
+      const el: UKHOButton = await fixture(html`<ukho-button disabled @click=${testFn}></ukho-button>`);
       const button = el.shadowRoot!.querySelector('button')!;
 
       // ACT

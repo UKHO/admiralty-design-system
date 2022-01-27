@@ -1,6 +1,10 @@
 {
   "name": "root",
+  "private": true,
   "version": "0.0.0",
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "build": "lerna exec -- yarn build",
     "test": "lerna exec -- yarn test",

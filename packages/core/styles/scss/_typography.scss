@@ -1,10 +1,6 @@
 @use "colours.vars" as colours;
 @use "responsive.mixins" as responsive;
-$font-weight-medium: normal;
-$font-weight-light: 300;
-$font-family: "JohnstonITC", Helvetica, sans-serif;
-$font-size-normal: 18px;
-$font-line-height-normal: 24px;
+@use "typography.vars" as *;
 
 // The :host() selector functions like the * selector when used in a shadow DOM. It has no
 // effect oustide a shadow DOM.
@@ -81,6 +77,7 @@ p {
   margin-bottom: 30px;
 }
 
+/* where is this used? move this out? */
 .intro {
   font-family: $font-family;
   font-size: 28px;
@@ -91,6 +88,7 @@ p {
   }
 }
 
+/* not being used? move this out? */
 .small {
   font-family: $font-family;
   font-size: 16px;

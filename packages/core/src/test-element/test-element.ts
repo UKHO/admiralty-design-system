@@ -22,6 +22,17 @@ export class MyElement extends LitElement {
       border: solid 1px gray;
       padding: 16px;
       max-width: 800px;
+      font-family: Sans-serif;
+    }
+    * {
+      color: blue;
+      font-family: Sans-serif;
+    }
+    h1 {
+      color: red;
+    }
+    h2 {
+      font-weight: 100;
     }
   `;
 
@@ -38,7 +49,7 @@ export class MyElement extends LitElement {
   count = 0;
 
   render() {
-    return html` <h1>hello</h1> `;
+    return html` <h1>Inside h1</h1><h2>Inside h2</h2> `;
   }
 }
 
