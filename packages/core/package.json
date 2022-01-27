@@ -1,6 +1,6 @@
 {
   "name": "@ukho/design-system-core",
-  "version": "0.0.4",
+  "version": "0.0.3",
   "license": "British Crown Copyright",
   "main": "dist/bundle.cjs.js",
   "module": "dist/bundle.esm.js",
