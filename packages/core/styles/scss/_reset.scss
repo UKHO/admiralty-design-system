@@ -1,8 +1,0 @@
-// The :host() selector functions like the * selector when used in a shadow DOM. It has no
-// effect oustide a shadow DOM.
-*,
-:host {
-  margin: 0;
-  padding: 0;
-  border: 0;
-}
