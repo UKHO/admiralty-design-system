@@ -5,7 +5,7 @@ export const config: Config = {
   namespace: 'design-system-core',
   outputTargets: [
     angular({
-      componentCorePackage: `design-system-core`,
+      componentCorePackage: `@ukho/design-system-core`,
       directivesProxyFile: `../angular/projects/component-library/src/lib/stencil-generated/components.ts`
     }),
     {
