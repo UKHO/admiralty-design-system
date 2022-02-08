@@ -2,11 +2,11 @@ import { Config } from '@stencil/core';
 import { angularOutputTarget as angular } from '@stencil/angular-output-target';
 
 export const config: Config = {
-  namespace: 'design-system-core',
+  namespace: 'ukho',
   outputTargets: [
     angular({
       componentCorePackage: `@ukho/design-system-core`,
-      directivesProxyFile: `../angular/projects/component-library/src/lib/stencil-generated/components.ts`
+      directivesProxyFile: `../angular/src/lib/stencil-generated/components.ts`
     }),
     {
       type: 'dist',
@@ -14,13 +14,6 @@ export const config: Config = {
     },
     {
       type: 'dist-custom-elements',
-    },
-    {
-      type: 'docs-readme',
-    },
-    {
-      type: 'www',
-      serviceWorker: null, // disable service workers
     },
   ],
 };
