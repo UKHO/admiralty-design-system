@@ -6,7 +6,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "component-library": {
+    "design-system": {
       "projectType": "library",
       "root": "./",
       "sourceRoot": "src",

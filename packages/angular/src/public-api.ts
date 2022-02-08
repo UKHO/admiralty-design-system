@@ -3,4 +3,4 @@
  */
 export * from './lib/stencil-generated/components';
 
-export * from './lib/component-library.module';
+export * from './lib/design-system.module';

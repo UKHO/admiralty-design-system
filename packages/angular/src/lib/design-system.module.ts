@@ -15,4 +15,4 @@ const DECLARATIONS = [
   ],
   exports: DECLARATIONS
 })
-export class ComponentLibraryModule { }
+export class DesignSystemModule { }
