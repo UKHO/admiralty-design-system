@@ -1,5 +1,23 @@
 # Changelog
 
+## [4.1.2] - 2022-02-09
+
+### Added
+
+- N/A
+
+### Changed
+
+- N/A
+
+### Fixed
+
+- fix: filter types export [#493](https://github.com/UKHO/design-system/pull/493)
+
+### Removed
+
+- N/A
+
 ## [4.1.1] - 2022-01-24
 
 ### Added
@@ -351,6 +369,8 @@
 
 - Initial release of the new Design System package
 
+[4.1.2]: https://github.com/UKHO/design-system/compare/v4.1.1...v4.1.2
+[4.1.1]: https://github.com/UKHO/design-system/compare/v4.1.0...v4.1.1
 [4.1.0]: https://github.com/UKHO/design-system/compare/v4.0.1...v4.1.0
 [4.0.1]: https://github.com/UKHO/design-system/compare/v4.0.0...v4.0.1
 [4.0.0]: https://github.com/UKHO/design-system/compare/v3.3.3...v4.0.0
