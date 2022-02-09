@@ -31,6 +31,7 @@ export * from './typeahead/typeahead.module';
 export * from './tab-group/tab-group.module';
 
 export * from './header/header.types';
+export * from './filter/filter.types';
 export * from './footer/footer.types';
 export * from './breadcrumbs/breadcrumbs.types';
 export * from './side-nav/side-nav.types';
