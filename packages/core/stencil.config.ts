@@ -6,11 +6,17 @@ export const config: Config = {
   outputTargets: [
     angular({
       componentCorePackage: `@ukho/design-system-core`,
-      directivesProxyFile: `../angular/src/lib/stencil-generated/components.ts`
+      directivesProxyFile: `../angular/src/lib/stencil-generated/components.ts`,
+      includeImportCustomElements: true,
+      customElementsDir: `dist/components`
     }),
     {
       type: 'dist',
       esmLoaderPath: '../loader',
+    },
+    {
+      type: 'dist-custom-elements',
+      autoDefineCustomElements: true
     },
   ],
 };
