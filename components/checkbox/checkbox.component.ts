@@ -6,6 +6,8 @@ import { UkhoAbstractFormField } from '../form-field/form-field';
   templateUrl: './checkbox.component.html',
   styleUrls: ['./checkbox.component.scss'],
   host: {
+    "[class.right-align]": "checkboxRight",
+    "[class.justify]": "justify",
     class: 'checkbox-wrapper',
   },
   encapsulation: ViewEncapsulation.None,
