@@ -1,0 +1,29 @@
+@use "../../styles/base/colours";
+@use "../../styles/base/icons";
+section.readmore {
+  > input[type="checkbox"] {
+    display: none;
+  }
+
+  > label {
+    cursor: pointer;
+    text-decoration: none;
+
+    &::before {
+      content: "Read more...";
+    }
+  }
+
+  > div + div {
+    max-height: 0;
+    overflow: hidden;
+  }
+
+  > input[type="checkbox"]:checked + div + div {
+    max-height: none;
+  }
+
+  > input[type="checkbox"]:checked + div + div + label::before {
+    content: "Read less...";
+  }
+}

@@ -1,9 +1,20 @@
-<section class="expansion {{!hideBorder ? 'bordered' : ''}}">
-  <input class="expansion-checkbox" id="{{ id }}" type="checkbox" [checked]="initialExpanded" />
-  <label class="expansion-label" for="{{ id }}">
-    <h3 class="{{alignHeadingRight ? 'expansion-heading-right-align': ''}}">{{ heading }}</h3>
-  </label>
-  <div class="expansion-content">
+<section class="expansion {{ !hideBorder ? 'bordered' : '' }} {{ initialExpanded ? 'expanded' : '' }}">
+  <button
+    [id]="headerId"
+    type="button"
+    [attr.aria-expanded]="initialExpanded"
+    [attr.aria-controls]="contentId"
+    (click)="onToggle()"
+  >
+    <h3 class="{{ alignHeadingRight ? 'expansion-heading-right-align' : '' }}">{{ heading }}</h3>
+    <span class="visually-hidden">, {{ initialExpanded ? "Hide" : "Show"}} this section</span>
+  </button>
+  <div
+    class="expansion-content"
+    [id]="contentId"
+    [attr.aria-labelledby]="headerId"
+    [hidden]="!initialExpanded"
+  >
     <ng-content></ng-content>
   </div>
 </section>

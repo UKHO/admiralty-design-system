@@ -1,49 +1,43 @@
 @use "../../styles/base/colours";
 @use "../../styles/base/icons";
-section.readmore {
-  > input[type="checkbox"] {
-    display: none;
-  }
-
-  > label {
-    cursor: pointer;
-    text-decoration: none;
-
-    &::before {
-      content: "Read more...";
-    }
-  }
-
-  > div + div {
-    max-height: 0;
-    overflow: hidden;
-  }
-
-  > input[type="checkbox"]:checked + div + div {
-    max-height: none;
-  }
-
-  > input[type="checkbox"]:checked + div + div + label::before {
-    content: "Read less...";
-  }
-}
+@use "../../styles/base/a11y";
 
 section.expansion {
+  padding: 2px 0;
+  border-bottom: 1px solid transparent;
   &.bordered {
     border-bottom: 1px solid colours.$colour-divider;
   }
-  .expansion-checkbox {
+
+  .expansion-content {
     display: none;
+    max-height: 0;
+    overflow: visible;
+  }
+  &.expanded .expansion-content {
+    display: block;
+    max-height: initial;
+    padding-bottom: 12px;
   }
 
-  .expansion-label {
+  button {
     @extend h3;
-    display: block;
+    background-color: transparent;
+    border: none;
+    height: initial;
+    min-width: unset;
+    max-width: unset;
+    white-space: unset;
+    color: initial;
+    font-size: 16px;
     cursor: pointer;
-    margin-bottom: unset;
-    padding: 12px 0 12px;
+    margin: 10px 0 22px;
+    padding: 0;
     display: flex;
     align-items: baseline;
+    width: 100%;
+    text-align: left;
+    position: relative;
     &::after {
       @extend .fas;
       content: icons.fa-content(icons.$fa-var-chevron-down);
@@ -54,31 +48,32 @@ section.expansion {
       justify-content: center;
       margin-left: 30px;
     }
+    &:focus {
+      outline: none;
+    }
     h3 {
       flex-grow: 1;
+      margin-bottom: 0;
 
       &.expansion-heading-right-align {
         text-align: right;
       }
     }
-  }
-
-  .expansion-content {
-    max-height: 0;
-    overflow: hidden;
-  }
-
-  .expansion-checkbox:checked {
-    ~ .expansion-label::after {
-      @extend .fas;
-      content: icons.fa-content(icons.$fa-var-chevron-up);
+    &:focus h3::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: -3px;
+      left: -3px;
+      box-shadow: 0 0 0 3px colours.$colour-utility-focus;
     }
   }
 
-  .expansion-checkbox:checked {
-    ~ .expansion-content {
-      max-height: none;
-      padding-bottom: 12px;
+  &.expanded button {
+    &::after {
+      @extend .fas;
+      content: icons.fa-content(icons.$fa-var-chevron-up);
     }
   }
 }
