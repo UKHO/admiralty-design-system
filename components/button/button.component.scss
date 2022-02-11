@@ -1,7 +1,7 @@
-@use '../../styles/base/colours';
-@use '../../styles/base/responsive';
-@use '../../styles/base/typography';
-@use '../../styles/base/icons';
+@use "../../styles/base/colours";
+@use "../../styles/base/responsive";
+@use "../../styles/base/typography";
+@use "../../styles/base/icons";
 
 /* Button Wrapper */
 .button-wrapper {
@@ -22,8 +22,8 @@
 }
 
 /* Primary Buttons */
-button,
-input[type="button"] {
+ukho-button button,
+ukho-button input[type="button"] {
   display: inline-block;
   background-color: colours.$colour-button-standard;
   color: colours.$colour-button-text;
@@ -68,6 +68,11 @@ input[type="button"] {
     cursor: default;
   }
 
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px colours.$colour-utility-focus;
+  }
+
   &.icon {
     min-width: 240px;
     display: flex;
@@ -88,8 +93,8 @@ input[type="button"] {
 }
 
 /* Secondary Buttons */
-button.secondary,
-input[type="button"].secondary {
+ukho-button button.secondary,
+ukho-button input[type="button"].secondary {
   display: inline-block;
   background-color: colours.$colour-button-secondary-standard;
   color: colours.$colour-button-secondary-text;

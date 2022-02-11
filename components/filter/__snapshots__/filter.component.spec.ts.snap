@@ -14,12 +14,16 @@ exports[`FilterComponent should create compenent with expected structure 1`] = `
         <h2>
           Filters
         </h2>
-        <button
-          class="text-link"
-          type="reset"
+        <div
+          class="button-wrapper"
         >
-          Clear
-        </button>
+          <button
+            class="text-link"
+            type="reset"
+          >
+            Clear
+          </button>
+        </div>
       </header>
       
       <ukho-expansion>

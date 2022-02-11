@@ -1,3 +1,5 @@
+@use "../../styles/base/colours";
+
 .filters {
   display: table;
 
@@ -10,23 +12,39 @@
       margin-bottom: 0;
     }
 
-    /* TODO: If reused, move class to button component */
-    button.text-link {
-      background-color: unset;
-      border: none;
-      color: black;
+    .button-wrapper {
+      position: relative;
       margin-left: 28px;
-      padding: 0;
-      min-width: unset;
-      width: unset;
-      height: unset;
-      font-size: 16px;
-      text-decoration: underline;
-      font-weight: unset;
-    }
-    button.text-link:hover {
-      background-color: unset;
-      border: unset;
+      /* TODO: If reused, move class to button component */
+      button.text-link {
+        background-color: unset;
+        border: none;
+        color: black;
+        padding: 0;
+        min-width: unset;
+        width: unset;
+        height: unset;
+        font-size: 16px;
+        text-decoration: underline;
+        font-weight: unset;
+        cursor: pointer;
+      }
+      button.text-link:hover {
+        background-color: unset;
+        border: unset;
+      }
+      button.text-link:focus {
+        outline: none;
+      }
+      button.text-link:focus::after {
+        content: "";
+        position: absolute;
+        top: -3px;
+        bottom: 0;
+        right: -3px;
+        left: -3px;
+        box-shadow: 0 0 0 3px colours.$colour-utility-focus;
+      }
     }
   }
 

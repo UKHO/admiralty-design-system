@@ -17,6 +17,11 @@ export class FilterComponent {
    */
   @Output() filtersChange = new EventEmitter<FilterGroup[]>();
 
+  // Return a unique ID for each expansion so Angular can track changes
+  trackExpansion = (index: number) => `expansion-${index}`;
+  // Return a unique ID for each filter item so Angular can track changes
+  trackFilterItem = (groupIndex: number, index: number) => `expansion-${groupIndex}-item-${index}`;
+
   onExpansionChange(filterGroup: FilterGroup) {
     this.groups = this.groups.map((group: FilterGroup) => {
       if (group.title !== filterGroup.title) {
@@ -27,7 +32,8 @@ export class FilterComponent {
     });
   }
 
-  onCheckboxChange(filterGroup: FilterGroup, filterItem: FilterItem) {
+  onCheckboxChange(event: Event, filterGroup: FilterGroup, filterItem: FilterItem) {
+    event.stopPropagation();
     this.groups = this.groups.map((group: FilterGroup) => {
       if (group.title !== filterGroup.title) {
         return group;

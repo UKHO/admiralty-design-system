@@ -179,7 +179,7 @@ describe('FilterComponent', () => {
         },
       });
 
-      spectator.component.onCheckboxChange(mockGroups[0], mockGroups[0].items[0]);
+      spectator.component.onCheckboxChange(new Event('change'), mockGroups[0], mockGroups[0].items[0]);
 
       expect(spectator.component.groups).toEqual([
         { ...mockGroups[0], items: [{ ...mockGroups[0].items[0], selected: true }, ...mockGroups[0].items.slice(1)] },
@@ -198,7 +198,7 @@ describe('FilterComponent', () => {
         },
       });
 
-      spectator.component.onCheckboxChange(groups[0], groups[0].items[0]);
+      spectator.component.onCheckboxChange(new Event('change'), groups[0], groups[0].items[0]);
 
       expect(spectator.component.groups).toEqual(mockGroups);
     });
