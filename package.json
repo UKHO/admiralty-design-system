@@ -1,9 +1,7 @@
 {
-  "name": "root",
   "private": true,
-  "version": "0.0.0",
   "scripts": {
-    "build": "node scripts/build.js",
+    "build": "lerna run build",
     "test": "lerna exec -- yarn test",
     "build-storybook-core": "lerna exec -- yarn build-storybook"
   },
