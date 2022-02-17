@@ -1,8 +1,5 @@
-import { TestBed } from '@angular/core/testing';
-
 import { TextinputComponent } from './textinput.component';
-import { DebugElement } from '@angular/core';
-import { ReactiveFormsModule, FormsModule, NgControl, FormControl, Validators } from '@angular/forms';
+import { NgControl } from '@angular/forms';
 import { createHostFactory } from '@ngneat/spectator/jest';
 
 describe('TextinputComponent', () => {

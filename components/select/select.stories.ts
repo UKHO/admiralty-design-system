@@ -22,11 +22,12 @@ const Template: Story = (args) => ({
   },
   props: {
     label: 'Choose a colour',
+    hint: 'This is a hint to instruct the user what to do',
     change: action('changed'),
     disabled: false,
     ...args,
   },
-  template: `<ukho-select [label]="label" [disabled]="disabled" (change)="change($event.target.value)" [formControl]="formControl" [validationMessages]="validationMessages">
+  template: `<ukho-select [label]="label" [hint]="hint"  [disabled]="disabled" (change)="change($event.target.value)" [formControl]="formControl" [validationMessages]="validationMessages">
     <option>White</option>
     <option>Blue</option>
     <option>Black</option>

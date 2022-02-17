@@ -14,7 +14,7 @@ describe('SelectComponent', () => {
         <option>Black</option>\
         <option>Red</option>\
         <option>Green</option>\
-        </ukho-select>'
+        </ukho-select>',
     );
     expect(spectator.component).toBeTruthy();
   });

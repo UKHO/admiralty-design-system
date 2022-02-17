@@ -1,5 +1,6 @@
 <div class="select-container">
   <label class="form-field-label" [ngClass]="{ disabled: disabled }" [for]="id">{{ label }}</label>
+  <label class="form-field-hint" [ngClass]="{ disabled: disabled }" [for]="id">{{ hint }}</label>
   <div class="wrapper" [ngClass]="{ invalid: !valid && touched, disabled: disabled }">
     <select
       [ngClass]="{ invalid: !valid && touched, disabled: disabled }"
@@ -7,12 +8,12 @@
       [id]="id"
       (change)="onChange($event.target.value)"
       (blur)="onTouch()"
-      [disabled]="disabled"
-    >
+      [disabled]="disabled">
       <ng-content></ng-content>
     </select>
   </div>
 </div>
+
 <div *ngIf="validationMessages" class="text-input-error">
   <p [id]="errorLabelId" *ngIf="!valid && touched && error" class="error-text">
     {{ validationMessages[error] }}

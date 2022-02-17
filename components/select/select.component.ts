@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { UkhoAbstractFormField } from '../form-field/form-field';
 
 @Component({
@@ -11,6 +11,11 @@ export class SelectComponent extends UkhoAbstractFormField<string> {
    * The label which will be used as a placeholder in the unfilled state, and as a field label in the filled state.
    */
   @Input() label: string;
+
+  /**
+   * The hint that is used to instruct the user what to do. For example, 'Select an item from the dropdown'.
+   */
+  @Input() hint: string;
 
   /**
    * @ignore
