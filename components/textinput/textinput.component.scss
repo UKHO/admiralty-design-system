@@ -7,8 +7,7 @@
   display: flex;
   flex-direction: column;
 
-
-  .form-text-input {
+  input.form-text-input {
     border-color: colours.$colour-text;
     border-width: 2px;
     border-style: solid;
@@ -19,7 +18,12 @@
 
     padding: 12px;
 
+    &:focus {
+      outline-offset: unset;
+      outline: 3px solid colours.$colour-utility-focus;
+      box-shadow: colours.$colour-text inset 0 0 0 2px;
+    }
+
     @extend .form-field;
   }
 }
-

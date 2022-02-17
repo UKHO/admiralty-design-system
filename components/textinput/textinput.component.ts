@@ -41,6 +41,29 @@ export class TextinputComponent extends UkhoAbstractFormField<string> {
   @Input() autocomplete: string;
 
   /**
+   * The ARIA role. If a list box is attached to this element (e.g. when used as a combobox) then this
+   * should be set as "combobox".
+   */
+  @Input() ariaRole: string;
+
+  /**
+   * If a list box is attached to this element (e.g. when used as a combobox) then when that
+   * element is expanded this should be true.
+   */
+  @Input() ariaExpanded: boolean;
+
+  /**
+   * The ID of any element that semantically should be owned by this component, regardless
+   * of whether it is a sibling or parent.
+   */
+  @Input() ariaOwns: string;
+
+  /**
+   * The ID of any element that describes the input, in addition to the error section.
+   */
+  @Input() ariaDescribedBy: string;
+
+  /**
    * @ignore
    */
   writeValue(value: string): void {

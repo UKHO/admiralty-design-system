@@ -4,7 +4,10 @@
     #input
     (blur)="onTouch()"
     (input)="onChange($event.target.value)"
-    [attr.autocomplete]="autocomplete ? autocomplete : null"
+    [attr.aria-expanded]="ariaExpanded"
+    [attr.aria-owns]="ariaOwns"
+    [attr.aria-autocomplete]="autocomplete ? autocomplete : null"
+    autocomplete="off"
     [disabled]="disabled"
     [placeholder]="placeholder || ''"
     [id]="id"
@@ -12,8 +15,9 @@
     [type]="type"
     class="form-text-input"
     [ngClass]="{ invalid: !valid && touched, disabled: disabled }"
-    [attr.aria-describedby]="!valid && touched ? errorLabelId : null"
+    attr.aria-describedby="{{ errorLabelId }} {{ ariaDescribedBy }}"
     [attr.aria-invalid]="!valid && touched"
+    [attr.role]="ariaRole ? ariaRole : null"
   />
 </div>
 <div class="text-input-error" *ngIf="validationMessages">
