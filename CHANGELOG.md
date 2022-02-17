@@ -1,5 +1,27 @@
 # Changelog
 
+## [4.2.0] - 2022-02-17
+
+### Added
+
+- feat: make expansion component accessible [#490](https://github.com/UKHO/design-system/pull/490)
+- feat: add checkbox focus border, keyboard navigation and aria checked description [#491](https://github.com/UKHO/design-system/pull/491)
+- feat: add focus state for filter buttons and ensure events are handled correctly [#498](https://github.com/UKHO/design-system/pull/498)
+
+### Changed
+
+- feat: resolve accessibility bugs [#500](https://github.com/UKHO/design-system/pull/500)
+- feat: change form field labels to medium font weight [#501](https://github.com/UKHO/design-system/pull/501)
+- Update Various Dependencies
+
+### Fixed
+
+- N/A
+
+### Removed
+
+- N/A
+
 ## [4.1.2] - 2022-02-09
 
 ### Added
@@ -369,6 +391,7 @@
 
 - Initial release of the new Design System package
 
+[4.2.0]: https://github.com/UKHO/design-system/compare/v4.1.2...v4.2.0
 [4.1.2]: https://github.com/UKHO/design-system/compare/v4.1.1...v4.1.2
 [4.1.1]: https://github.com/UKHO/design-system/compare/v4.1.0...v4.1.1
 [4.1.0]: https://github.com/UKHO/design-system/compare/v4.0.1...v4.1.0
