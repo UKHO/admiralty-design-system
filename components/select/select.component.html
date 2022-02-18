@@ -1,6 +1,6 @@
 <div class="select-container">
   <label class="form-field-label" [ngClass]="{ disabled: disabled }" [for]="id">{{ label }}</label>
-  <label class="form-field-hint" [ngClass]="{ disabled: disabled }" [for]="id">{{ hint }}</label>
+  <label *ngIf="hint" class="form-field-hint" [ngClass]="{ disabled: disabled }" [for]="id">{{ hint }}</label>
   <div class="wrapper" [ngClass]="{ invalid: !valid && touched, disabled: disabled }">
     <select
       [ngClass]="{ invalid: !valid && touched, disabled: disabled }"
