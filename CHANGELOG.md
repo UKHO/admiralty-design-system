@@ -1,5 +1,23 @@
 # Changelog
 
+## [4.2.1] - 2022-02-18
+
+### Added
+
+- N/A
+
+### Changed
+
+- N/A
+
+### Fixed
+
+- feat: removing the hint element from the dom when one isnt passed [#506](https://github.com/UKHO/design-system/pull/506)
+
+### Removed
+
+- N/A
+
 ## [4.2.0] - 2022-02-17
 
 ### Added
@@ -391,6 +409,7 @@
 
 - Initial release of the new Design System package
 
+[4.2.1]: https://github.com/UKHO/design-system/compare/v4.2.0...v4.2.1
 [4.2.0]: https://github.com/UKHO/design-system/compare/v4.1.2...v4.2.0
 [4.1.2]: https://github.com/UKHO/design-system/compare/v4.1.1...v4.1.2
 [4.1.1]: https://github.com/UKHO/design-system/compare/v4.1.0...v4.1.1
