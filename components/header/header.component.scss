@@ -1,5 +1,6 @@
-@use '../../styles/base/colours';
-@use '../../styles/base/responsive';
+@use "../../styles/base/colours";
+@use "../../styles/base/responsive";
+@use "../../styles/base/a11y";
 
 #main-menu {
   display: flex;
@@ -15,6 +16,13 @@
   border-bottom: 1px solid colours.$colour-bg-header;
   z-index: 1000;
 
+  li {
+    margin-bottom: 0;
+    &:before {
+      content: none;
+    }
+  }
+
   .mobileMenuButtonContainer {
     display: none;
     @include responsive.not-desktop {
@@ -22,6 +30,14 @@
     }
     flex-direction: column;
     justify-content: center;
+
+    button {
+      background-color: unset;
+      &:focus {
+        outline: none;
+        box-shadow: colours.$colour-utility-focus inset 0 0 0 3px;
+      }
+    }
 
     i {
       font-size: 24px;
@@ -49,6 +65,10 @@
     flex-direction: row;
     flex-grow: 1;
 
+    .logoImageLink {
+      display: grid;
+    }
+
     .logoImage {
       height: 100%;
       width: auto;
@@ -57,8 +77,9 @@
       }
     }
 
-    > a {
-      display: contents;
+    a:focus {
+      outline: 3px solid colours.$colour-utility-focus;
+      outline-offset: 3px;
     }
 
     #vertical-separator {
@@ -71,7 +92,7 @@
       }
     }
 
-    h2.headerTitle {
+    h1.headerTitle {
       margin-bottom: unset !important;
       line-height: 36px !important;
       font-size: 36px;
@@ -92,6 +113,8 @@
         font-weight: normal;
         cursor: pointer;
         max-width: fit-content;
+        line-height: 1;
+        text-decoration: unset;
 
         @include responsive.not-desktop {
           font-size: 24px;
@@ -122,9 +145,17 @@
       @include responsive.desktop-only {
         min-width: 80px;
         max-width: 200px;
+      }
 
-        a {
-          text-align: center;
+      > button {
+        background-color: unset;
+        color: colours.$colour-admiralty-blue;
+        font-weight: normal;
+        cursor: pointer;
+
+        &:focus {
+          outline: 3px solid colours.$colour-utility-focus;
+          outline-offset: 3px;
         }
       }
 
@@ -138,6 +169,7 @@
 
       &.active {
         box-shadow: inset 0px -5px colours.$colour-admiralty-blue;
+        background-color: colours.$colour-nav-bg-hover;
 
         .sectionDropdown {
           display: unset;
@@ -152,10 +184,34 @@
           .sectionDropdownItem {
             box-sizing: border-box;
             width: 100%;
-            padding: 12px;
+
             a {
+              display: block;
+              padding: 12px;
               font-weight: 300;
+
+              &:focus {
+                outline: none;
+                box-shadow: colours.$colour-utility-focus inset 0 0 0 3px;
+              }
             }
+
+            button {
+              display: block;
+              background-color: unset;
+              color: colours.$colour-admiralty-blue;
+              padding: 12px;
+              font-weight: 300;
+              cursor: pointer;
+              width: 100%;
+              text-align: left;
+
+              &:focus {
+                outline: none;
+                box-shadow: colours.$colour-utility-focus inset 0 0 0 3px;
+              }
+            }
+
             &:hover {
               background-color: colours.$colour-nav-bg-hover;
             }
@@ -176,9 +232,15 @@
         color: colours.$colour-admiralty-blue;
         font-weight: normal;
         pointer-events: none;
+        line-height: 1;
+        text-align: center;
 
         &:visited {
           color: colours.$colour-admiralty-blue;
+        }
+        &:focus {
+          outline: 3px solid colours.$colour-utility-focus;
+          outline-offset: 3px;
         }
       }
     }
@@ -202,39 +264,35 @@
     background-color: colours.$colour-white;
     border: 1px solid colours.$colour-bg-header;
 
-    .sectionDropdownItem {
+    .mobileDropdownItem,
+    .mobileDropdownSubItem {
+      display: block;
       box-sizing: border-box;
       width: 100%;
       padding: 12px;
       cursor: pointer;
+      color: colours.$colour-admiralty-blue;
+      font-size: 18px;
+      font-weight: 500;
+      background-color: unset;
+      text-align: unset;
+      text-decoration: unset;
+
       &:hover {
         background-color: colours.$colour-nav-bg-hover;
+      }
+      &:focus {
+        outline: none;
+        box-shadow: colours.$colour-utility-focus inset 0 0 0 3px;
       }
       i {
         margin-right: 12px;
       }
-
-      a {
-        color: colours.$colour-admiralty-blue;
-        font-size: 18px;
-        font-weight: 500;
-      }
     }
 
-    .sectionDropdownSubItem {
-      box-sizing: border-box;
-      width: 100%;
-      padding: 12px;
+    .mobileDropdownSubItem {
       padding-left: 24px;
-      cursor: pointer;
-      &:hover {
-        background-color: colours.$colour-nav-bg-hover;
-      }
-      a {
-        color: colours.$colour-admiralty-blue;
-        font-size: 18px;
-        font-weight: 300;
-      }
+      font-weight: 300;
     }
   }
 }

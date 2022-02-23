@@ -1,6 +1,6 @@
 import { trigger, transition, style, animate } from '@angular/animations';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import type { HeaderItem } from './header.types';
+import type { HeaderItem, HeaderSubItem } from './header.types';
 
 @Component({
   selector: 'ukho-header',
@@ -29,25 +29,42 @@ export class HeaderComponent {
   public active: Element;
 
   public mobileMenuOpen = false;
+  public activeDropdownMenu: string;
 
-  navigateTitleLink() {
+  navigateTitleLink(event: MouseEvent) {
+    event.preventDefault();
     this.titleLinkNavigated.emit(this.titleLinkUrl);
   }
 
-  openDropdown(event: Event) {
-    this.active = event.target as Element;
+  openDropdown(target: HTMLElement, title: string) {
+    if (this.active && this.active.id !== title) {
+      this.closeDropdown();
+    }
+    this.active = target;
+    this.activeDropdownMenu = title;
     this.active.classList.add('active');
   }
 
-  closeDropdown(event: Event) {
+  closeDropdown() {
     if (this.active) {
       this.active.classList.remove('active');
+      this.activeDropdownMenu = null;
       this.active = null;
     }
   }
 
-  itemClickAction(item: HeaderItem) {
-    if (item.clickAction && !item.subitems) {
+  toggleDropdown(event: MouseEvent, target: HTMLElement, title: string) {
+    event.stopImmediatePropagation();
+    if (!this.active || (this.active && this.active.id !== title)) {
+      this.openDropdown(target, title);
+    } else {
+      this.closeDropdown();
+    }
+  }
+
+  itemClickAction(event: MouseEvent, item: HeaderItem | HeaderSubItem) {
+    event.preventDefault();
+    if (item.clickAction && !(item as HeaderItem).subitems) {
       item.clickAction();
     }
   }
@@ -60,7 +77,8 @@ export class HeaderComponent {
 export interface AuthOptions {
   signInHandler: () => any;
   isSignedIn: () => boolean;
-  signInButtonText: string;
+  signedInButtonText: string;
+  signedInButtonTextDescription?: string;
 
   userProfileHandler: () => any;
 
