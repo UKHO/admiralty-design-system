@@ -114,3 +114,13 @@ $colour-checkbox: $colour-dark-blue;
 /* code snippet */
 $colour-codesnippet-bg: $colour-bg-grey;
 $colour-codesnippet-line: $colour-line;
+
+@function darken($color) {
+  $darker-color: scale-color($color, $lightness: -19%, $saturation: 60%);
+  @return $darker-color;
+}
+
+@function lighten($color) {
+  $lighter-color: scale-color($color, $lightness: 10%, $saturation: -25%);
+  @return $lighter-color;
+}

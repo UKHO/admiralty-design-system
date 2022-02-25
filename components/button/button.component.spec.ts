@@ -34,6 +34,18 @@ describe('ButtonComponent', () => {
     expect(button).toHaveClass('secondary');
   });
 
+  it('should have the secondary class when variant is secondary', () => {
+    spectator = createHost('<ukho-button variant="secondary">Test</ukho-button>');
+    const button = spectator.query('button');
+    expect(button).toHaveClass('secondary');
+  });
+
+  it('should have the text class when variant is text', () => {
+    spectator = createHost('<ukho-button variant="text">Test</ukho-button>');
+    const button = spectator.query('button');
+    expect(button).toHaveClass('text');
+  });
+
   it('should have the disabled attribute when is disabled input is true', () => {
     spectator = createHost('<ukho-button disabled="true">Test</ukho-button>');
     const button = spectator.query('button');
@@ -44,8 +56,8 @@ describe('ButtonComponent', () => {
     const testFn = jest.fn();
     spectator = createHost('<ukho-button (click)="test()">Test</ukho-button>', {
       hostProps: {
-        test: testFn
-      }
+        test: testFn,
+      },
     });
     spectator.click(spectator.element);
 
