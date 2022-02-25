@@ -1,0 +1,22 @@
+@use '../../../styles/base/colours';
+@use '../../../styles/base/typography';
+
+.form-field-label {
+  margin-bottom: 6px;
+  display: inline-block;
+  font-weight: typography.$font-weight-medium;
+
+  &.disabled {
+    color: colours.$colour-textinput-text-disabled;
+  }
+}
+
+.form-field-hint {
+  margin-bottom: 6px;
+  display: block;
+  font-weight: typography.$font-weight-light;
+
+  &.disabled {
+    color: colours.$colour-textinput-text-disabled;
+  }
+}

@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { UkhoAbstractFormField } from '../form-field/form-field';
 
 @Component({
@@ -16,11 +16,6 @@ export class TextinputComponent extends UkhoAbstractFormField<string> {
    * The input type, options are: `text | date | time | email | password | tel | url`
    */
   @Input() type: 'text' | 'date' | 'time' | 'email' | 'password' | 'tel' | 'url' = 'text';
-
-  /**
-   * The label which will be used above the input to describe the input.
-   */
-  @Input() label: string;
 
   /**
    * The placeholder text to show in the input

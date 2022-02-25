@@ -1,5 +1,9 @@
 <div class="text-input-container">
-  <label [ngClass]="{ disabled: disabled }" class="form-field-label" [for]="id">{{ label }}</label>
+  <ukho-input-header [id]="id"
+                     [label]="label"
+                     [hint]="hint"
+                     [disabled]="disabled">
+  </ukho-input-header>
   <input
     #input
     (blur)="onTouch()"

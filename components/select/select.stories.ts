@@ -2,6 +2,7 @@ import { SelectComponent } from './select.component';
 import { action } from '@storybook/addon-actions';
 import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Story } from '@storybook/angular';
+import { InputHeaderModule } from '../form-field/input-header/input-header.module';
 
 export default {
   title: 'Form Elements/Select',
@@ -18,7 +19,7 @@ export default {
 const Template: Story = (args) => ({
   moduleMetadata: {
     declarations: [SelectComponent],
-    imports: [ReactiveFormsModule],
+    imports: [ReactiveFormsModule, InputHeaderModule],
   },
   props: {
     label: 'Choose a colour',
@@ -27,7 +28,7 @@ const Template: Story = (args) => ({
     disabled: false,
     ...args,
   },
-  template: `<ukho-select [label]="label" [hint]="hint"  [disabled]="disabled" (change)="change($event.target.value)" [formControl]="formControl" [validationMessages]="validationMessages">
+  template: `<ukho-select [label]="label" [hint]="hint" [disabled]="disabled" (change)="change($event.target.value)" [formControl]="formControl" [validationMessages]="validationMessages">
     <option>White</option>
     <option>Blue</option>
     <option>Black</option>

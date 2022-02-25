@@ -10,6 +10,16 @@ export abstract class UkhoAbstractFormField<T> implements ControlValueAccessor {
   @Input() disabled = false;
 
   /**
+   * The label which will be used above the input to describe the input.
+   */
+  @Input() label: string;
+
+  /**
+   * The hint which will be used under the label to describe the input.
+   */
+  @Input() hint: string;
+
+  /**
    * A Record of string,string to provide custom messages to be used with Reactive Form validators
    * EG: `{ required: This field is required }` will cause the `required` validator to display the message specified.
    */
