@@ -208,6 +208,10 @@ ukho-button input[type="button"].text {
     }
   }
 
+  &:focus {
+    outline-offset: 3px;
+  }
+
   i {
     color: colours.$colour-button-secondary-icon;
   }
