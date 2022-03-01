@@ -1,3 +1,7 @@
+import { Story } from '@storybook/angular';
+import { action } from '@storybook/addon-actions';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { FileInputComponent } from './file-input.component';
 
 export default {
@@ -7,16 +11,17 @@ export default {
     componentSubtitle:
       'File inputs are intended for allowing a user to select a single file to upload.' +
       'Selection can be via the browser native file selection or by drag and drop.'
-  }
+  },
+  argTypes: { change: { action: 'files changed' } },
 };
 
-export const basic = () => ({
+const Template: Story<FileInputComponent> = (args: FileInputComponent) => ({
+  props: { ...args, change: action('changed') },
   moduleMetadata: {
-    declarations: [FileInputComponent]
+    declarations: [FileInputComponent],
+    imports: [FormsModule, ReactiveFormsModule],
   },
-  template: `<ukho-file-input></ukho-file-input>`
+  template: `<ukho-file-input (change)="change($event.target.files)"></ukho-file-input>`,
 });
 
-basic.story = {
-  name: 'basic'
-};
+export const basic = Template.bind({});
