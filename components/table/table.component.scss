@@ -78,4 +78,8 @@ th[ukhoSortHeader] {
     content: icons.fa-content(icons.$fa-var-caret-down);
     opacity: 1;
   }
+
+  &:focus {
+    outline: 3px solid colours.$colour-utility-focus;
+  }
 }
