@@ -18,6 +18,10 @@ $font-line-height-normal: 24px;
 
 a {
   color: colours.$colour-admiralty-blue;
+  &:focus {
+    outline: 3px solid colours.$colour-utility-focus;
+    outline-offset: 1px;
+  }
 }
 
 h1 {
