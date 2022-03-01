@@ -1,5 +1,29 @@
 # Changelog
 
+## [4.3.0] - 2022-03-01
+
+### Added
+
+- feat: update header to be accessible [#509](https://github.com/UKHO/design-system/pull/509)
+- feat: reusable input header [#511](https://github.com/UKHO/design-system/pull/511)
+- feat: add new button variants [#516](https://github.com/UKHO/design-system/pull/516)
+- feat: add focus state to remaining components [#519](https://github.com/UKHO/design-system/pull/519)
+- feat: update focus state on file input and breadcrumbs [#521](https://github.com/UKHO/design-system/pull/521)
+
+
+### Changed
+
+- feat: improve colour block accessibility [#512](https://github.com/UKHO/design-system/pull/512)
+- feat: improve table focus state [#520](https://github.com/UKHO/design-system/pull/520)
+
+### Fixed
+
+- N/A
+
+### Removed
+
+- N/A
+
 ## [4.2.1] - 2022-02-18
 
 ### Added
@@ -409,6 +433,7 @@
 
 - Initial release of the new Design System package
 
+[4.3.0]: https://github.com/UKHO/design-system/compare/v4.2.1...v4.3.0
 [4.2.1]: https://github.com/UKHO/design-system/compare/v4.2.0...v4.2.1
 [4.2.0]: https://github.com/UKHO/design-system/compare/v4.1.2...v4.2.0
 [4.1.2]: https://github.com/UKHO/design-system/compare/v4.1.1...v4.1.2
