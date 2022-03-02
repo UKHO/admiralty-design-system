@@ -30,6 +30,7 @@ export * from './paginator/paginator.module';
 export * from './typeahead/typeahead.module';
 export * from './tab-group/tab-group.module';
 
+export * from './button/button.types';
 export * from './header/header.types';
 export * from './filter/filter.types';
 export * from './footer/footer.types';

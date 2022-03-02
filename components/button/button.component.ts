@@ -1,12 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit, SimpleChanges, ViewEncapsulation } from '@angular/core';
-
-export enum Variant {
-  Primary = 'primary',
-  Secondary = 'secondary',
-  Warning = 'warning',
-  Text = 'text',
-  Icon = 'icon',
-}
+import { ButtonVariant } from './button.types';
 
 @Component({
   selector: 'ukho-button',
@@ -20,7 +13,7 @@ export class ButtonComponent implements OnInit {
    * The type of button to render. Valid values are `primary`, `secondary`, `warning`, `text` and `icon`.
    * Default value is `primary`.
    */
-  @Input() variant: Variant;
+  @Input() variant: ButtonVariant;
   /**
    * Deprecated. Whether the button should be rendered as a secondary type of button. Will take
    * precedent over `variant`.
@@ -45,10 +38,10 @@ export class ButtonComponent implements OnInit {
 
   ngOnInit(): void {
     if (!this.variant) {
-      this.variant = Variant.Primary;
+      this.variant = ButtonVariant.Primary;
     }
     if (this.secondary) {
-      this.variant = Variant.Secondary;
+      this.variant = ButtonVariant.Secondary;
     }
   }
 }

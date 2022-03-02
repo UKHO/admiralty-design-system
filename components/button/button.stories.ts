@@ -1,5 +1,6 @@
-import { ButtonComponent, Variant } from './button.component';
+import { ButtonComponent } from './button.component';
 import { Story } from '@storybook/angular';
+import { ButtonVariant } from './button.types';
 
 export default {
   title: 'Form Elements/Button',
@@ -32,7 +33,7 @@ disabled.args = {
 
 export const secondary = template.bind({});
 secondary.args = {
-  variant: Variant.Secondary,
+  variant: ButtonVariant.Secondary,
 };
 
 export const secondaryDeprecated = template.bind({});
@@ -42,12 +43,12 @@ secondaryDeprecated.args = {
 
 export const warning = template.bind({});
 warning.args = {
-  variant: Variant.Warning,
+  variant: ButtonVariant.Warning,
 };
 
 export const text = template.bind({});
 text.args = {
-  variant: Variant.Text,
+  variant: ButtonVariant.Text,
 };
 
 export const textCustom: Story = (args) => ({
@@ -60,7 +61,7 @@ export const textCustom: Story = (args) => ({
   </ukho-button>`,
 });
 textCustom.args = {
-  variant: Variant.Text,
+  variant: ButtonVariant.Text,
 };
 
 export const icon: Story = (args) => ({
@@ -71,6 +72,6 @@ export const icon: Story = (args) => ({
   template: `<ukho-button [variant]="variant" [icon]="icon" [disabled]="disabled" [secondary]="secondary" (click)="click($event)"></ukho-button>`,
 });
 icon.args = {
-  variant: Variant.Icon,
+  variant: ButtonVariant.Icon,
   icon: 'fas fa-chevron-right',
 };
