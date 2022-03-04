@@ -1,11 +1,11 @@
-@use '../../styles/base/colours';
-@use '../../styles/base/icons';
-@use '../../styles/base/responsive';
+@use "../../styles/base/colours";
+@use "../../styles/base/icons";
+@use "../../styles/base/responsive";
 
 .dialog {
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
   padding: 30px 18px;
-
+  overflow-wrap: break-word;
 
   @include responsive.not-desktop {
     padding: 24px 18px;
@@ -13,10 +13,9 @@
 
   /* info type is default */
   border-left: 5px solid colours.$colour-utility-info;
-  background-color: #E0ECF3;
+  background-color: #e0ecf3;
 
   h3 {
-
     &::before {
       color: colours.$colour-admiralty-blue;
       @extend .fas;
@@ -28,7 +27,7 @@
 
   &.error {
     border-left: 5px solid colours.$colour-utility-error;
-    background-color: #F7E1E1;
+    background-color: #f7e1e1;
     h3 {
       &::before {
         @extend .fas;
@@ -38,9 +37,8 @@
   }
   &.success {
     border-left: 5px solid colours.$colour-utility-success;
-    background-color: #E7F1E5;
+    background-color: #e7f1e5;
     h3 {
-
       &::before {
         @extend .fas;
         content: icons.fa-content(icons.$fa-var-check);
@@ -49,9 +47,8 @@
   }
   &.warning {
     border-left: 5px solid colours.$colour-utility-warning;
-    background-color: #F8EDE3;
+    background-color: #f8ede3;
     h3 {
-
       &::before {
         @extend .fas;
         content: icons.fa-content(icons.$fa-var-exclamation-triangle);
