@@ -23,7 +23,10 @@ export class CheckboxComponent extends UkhoAbstractFormField<boolean> {
    */
   @Input() value: unknown;
 
-  @Input() checkboxRight: boolean;
+  /**
+   * When set the checkbox appears to the right of the label
+   */
+  @Input() checkboxRight = false;
 
   /**
    * Whether the checkbox and label should be justified.
