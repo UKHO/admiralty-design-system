@@ -1,5 +1,4 @@
 import { RadioComponent } from './radio.component';
-import { action } from '@storybook/addon-actions';
 import { Story } from '@storybook/angular';
 
 export default {
@@ -9,7 +8,8 @@ export default {
     componentSubtitle:
       'Radio buttons are intended for allowing users to pick a single option from a selection.' +
       'They can be grouped using radio groups'
-  }
+  },
+  argTypes: { change: { action: 'radio changed' } },
 };
 
 const Template: Story = (args) => ({
@@ -25,7 +25,18 @@ const Template: Story = (args) => ({
 
 export const basic: Story = Template.bind({});
 basic.args = {
-  change: action('changed'),
   disabled: false,
+  checked: false
+};
+
+export const checked: Story = Template.bind({});
+checked.args = {
+  disabled: false,
+  checked: true
+};
+
+export const disabled: Story = Template.bind({});
+disabled.args = {
+  disabled: true,
   checked: false
 };
