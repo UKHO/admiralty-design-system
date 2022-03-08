@@ -64,6 +64,7 @@ export class HeaderComponent {
 
   itemClickAction(event: MouseEvent, item: HeaderItem | HeaderSubItem) {
     event.preventDefault();
+    event.stopImmediatePropagation();
     if (item.clickAction && !(item as HeaderItem).subitems) {
       item.clickAction();
     }

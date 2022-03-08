@@ -261,7 +261,10 @@ describe('HeaderComponent', () => {
       },
     );
     const component = spectator.component;
-    component.itemClickAction = jest.fn().mockImplementation((e) => e.preventDefault());
+    component.itemClickAction = jest.fn().mockImplementation((e) => {
+      e.stopImmediatePropagation();
+      e.preventDefault()
+    });
     const items = spectator.queryAll('.section > a');
 
     spectator.click(items[0]);

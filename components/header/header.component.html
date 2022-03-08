@@ -22,7 +22,7 @@
       <li
         id="{{ item.title }}"
         class="section {{ item.navActive === true ? 'navActive' : '' }}"
-        (click)="toggleDropdown($event, $event.target, item.title)"
+        (click)="item.subitems?.length > 0 ? toggleDropdown($event, $event.target, item.title) : itemClickAction($event, item)"
         (mouseenter)="item.subitems?.length > 0 ? openDropdown($event.target, item.title) : null"
         (mouseleave)="item.subitems?.length > 0 ? closeDropdown() : null"
       >
