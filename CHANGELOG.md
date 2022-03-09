@@ -1,5 +1,28 @@
 # Changelog
 
+## [4.4.0] - 2022-04-09
+
+### Added
+
+- feat: make progress bar accessible [#529](https://github.com/UKHO/design-system/pull/529)
+
+### Changed
+
+- fix: button variant enum export [#524](https://github.com/UKHO/design-system/pull/524)
+- fix: ensure checkboxRight property defaults to false [#527](https://github.com/UKHO/design-system/pull/527)
+- fix: allow dialogue text to wrap [#528](https://github.com/UKHO/design-system/pull/528)
+- fix: add aria labels to radio buttons [#530](https://github.com/UKHO/design-system/pull/530)
+- fix: ensure header links work and logo is sized correctly [#531](https://github.com/UKHO/design-system/pull/531)
+- fix: restore functionality to readmore component [#525](https://github.com/UKHO/design-system/pull/525)
+
+### Fixed
+
+- N/A
+
+### Removed
+
+- N/A
+
 ## [4.3.0] - 2022-03-01
 
 ### Added
@@ -433,6 +456,7 @@
 
 - Initial release of the new Design System package
 
+[4.4.0]: https://github.com/UKHO/design-system/compare/v4.3.0...v4.4.0
 [4.3.0]: https://github.com/UKHO/design-system/compare/v4.2.1...v4.3.0
 [4.2.1]: https://github.com/UKHO/design-system/compare/v4.2.0...v4.2.1
 [4.2.0]: https://github.com/UKHO/design-system/compare/v4.1.2...v4.2.0
