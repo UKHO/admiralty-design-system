@@ -68,6 +68,7 @@
         id="profile"
         *ngIf="authOptions.isSignedIn()"
         class="section"
+        (click)="toggleDropdown($event, $event.target.parentElement, 'profile')"
         (mouseenter)="openDropdown($event.target, 'profile')"
         (mouseleave)="closeDropdown()"
       >
