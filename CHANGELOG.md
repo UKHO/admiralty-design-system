@@ -1,5 +1,23 @@
 # Changelog
 
+## [4.4.1] - 2022-04-09
+
+### Added
+
+- N/A
+
+### Changed
+
+- N/A
+
+### Fixed
+
+- fix: ensure click event fires on auth menu container [#535](https://github.com/UKHO/design-system/pull/535)
+
+### Removed
+
+- N/A
+
 ## [4.4.0] - 2022-04-09
 
 ### Added
@@ -456,6 +474,7 @@
 
 - Initial release of the new Design System package
 
+[4.4.1]: https://github.com/UKHO/design-system/compare/v4.4.0...v4.4.1
 [4.4.0]: https://github.com/UKHO/design-system/compare/v4.3.0...v4.4.0
 [4.3.0]: https://github.com/UKHO/design-system/compare/v4.2.1...v4.3.0
 [4.2.1]: https://github.com/UKHO/design-system/compare/v4.2.0...v4.2.1
