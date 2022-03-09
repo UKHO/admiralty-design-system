@@ -1,7 +1,22 @@
-<section class="readmore">
+<section class="readmore {{ initialExpanded ? 'expanded' : '' }}">
   <h3>{{ heading }}</h3>
-  <input id="{{ id }}" type="checkbox" [attr.checked]="initialExpanded" />
-  <ng-content select=".readmore-intro"></ng-content>
-  <ng-content></ng-content>
-  <label for="{{ id }}"></label>
+  <div>
+    <ng-content select=".readmore-intro"></ng-content>
+  </div>
+  <div
+    [id]="contentId"
+    [attr.aria-labelledby]="headerId"
+    [hidden]="!initialExpanded"
+  >
+    <ng-content></ng-content>
+  </div>
+  <ukho-button
+    variant="text"
+    [id]="headerId"
+    [attr.aria-expanded]="initialExpanded"
+    [attr.aria-controls]="contentId"
+    (click)="onToggle()"
+  >
+    <div>Read {{ initialExpanded ? "less" : "more"}}...</div>
+  </ukho-button>
 </section>

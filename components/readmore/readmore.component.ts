@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 let nextId = 0;
 
@@ -11,5 +11,14 @@ export class ReadMoreComponent {
   @Input() initialExpanded = false;
   @Input() heading: string;
 
-  id = `ukho-readmore-${++nextId}`;
+  @Output() change = new EventEmitter<boolean>();
+
+  id = `ukho-expansion-${++nextId}`;
+  headerId = `${this.id}-header`;
+  contentId = `${this.id}-content`;
+
+  onToggle() {
+    this.initialExpanded = !this.initialExpanded;
+    this.change.emit(this.initialExpanded);
+  }
 }
