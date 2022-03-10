@@ -1,5 +1,5 @@
-@use '../../styles/base/colours';
-@use '../../styles/base/responsive';
+@use "../../styles/base/colours";
+@use "../../styles/base/responsive";
 
 strong {
   border: 2px solid;
@@ -18,8 +18,8 @@ strong {
   max-width: responsive.$max-content-width;
   margin-right: auto;
   margin-left: auto;
-  padding: 30px 18px;
+  padding: 0 18px;
   @include responsive.desktop-only {
-    padding: 0 20px 48px;
+    padding: 0 20px;
   }
 }
