@@ -19,11 +19,6 @@
       "npm",
       "conventional-commits",
       "released"
-    ],
-    "onlyPublishWithReleaseLabel": true
-  },
-  "publishConfig": {
-    "access": "restricted",
-    "registry": "https://npm.pkg.github.com"
+    ]
   }
 }
