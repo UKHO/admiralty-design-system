@@ -31,6 +31,7 @@
     "@ukho/design-system-angular": "^0.0.0"
   },
   "devDependencies": {
+    "@types/jest": "^27.4.1",
     "jest": "^27.4.5",
     "jest-cli": "^27.4.5",
     "puppeteer": "^10.0.0"
