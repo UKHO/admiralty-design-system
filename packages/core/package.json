@@ -1,5 +1,5 @@
 {
-  "name": "@ukho/design-system-core",
+  "name": "@ukho/design-system-dog",
   "version": "1.0.0",
   "description": "Stencil Component Starter",
   "main": "dist/index.cjs.js",
