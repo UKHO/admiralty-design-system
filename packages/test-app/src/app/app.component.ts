@@ -1,11 +1,5 @@
 import { Component } from '@angular/core';
-// import { MyButton } from '@ukho/design-system-angular/dist/design-system/lib/stencil-generated/components';
 
-class AppDrawer extends HTMLElement {}
-
-// @ts-ignore
-// customElements.define('my-button', MyButton);
-// console.log(MyButton);
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

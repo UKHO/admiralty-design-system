@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { DesignSystemModule } from '@ukho/design-system-angular/dist/design-system';
-import { defineCustomElements } from '@ukho/design-system-core/loader';
-
 import { AppComponent } from './app.component';
+import { DesignSystemModule } from '@ukho/design-system-angular/dist/design-system';
+
+// Import and define the components
+import '@ukho/design-system-core/dist/components/my-button';
+import '@ukho/design-system-core/dist/components/my-component';
 
 @NgModule({
   declarations: [
@@ -16,9 +18,4 @@ import { AppComponent } from './app.component';
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {
-  constructor() {
-    console.log('register web components in app.module.ts constructor - this is called')
-    defineCustomElements(window);
-  }
-}
+export class AppModule {}

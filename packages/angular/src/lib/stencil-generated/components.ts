@@ -3,16 +3,15 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, EventEmitter, NgZone } from '@angular/core';
 import { ProxyCmp, proxyOutputs } from './angular-component-lib/utils';
 
-import type { Components } from '@ukho/design-system-core/dist/components';
+import { Components } from '@ukho/design-system-core';
 
-import { defineCustomElement as defineMyButton } from '@ukho/design-system-core/dist/components/my-button.js';
-import { defineCustomElement as defineMyComponent } from '@ukho/design-system-core/dist/components/my-component.js';
+
 
 
 export declare interface MyButton extends Components.MyButton {}
 
 @ProxyCmp({
-  defineCustomElementFn: defineMyButton
+  defineCustomElementFn: undefined
 })
 @Component({
   selector: 'my-button',
@@ -31,7 +30,7 @@ export class MyButton {
 export declare interface MyComponent extends Components.MyComponent {}
 
 @ProxyCmp({
-  defineCustomElementFn: defineMyComponent,
+  defineCustomElementFn: undefined,
   inputs: ['first', 'last', 'middle']
 })
 @Component({
