@@ -1,6 +1,6 @@
 {
   "name": "@ukho/design-system-core",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "Stencil Component Starter",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
