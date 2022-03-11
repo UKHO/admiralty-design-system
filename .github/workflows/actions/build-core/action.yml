@@ -27,4 +27,4 @@ runs:
       with:
         name: design-system-core
         output: design-system-core.zip
-        paths: ./packages/core/dist
+        paths: ./packages/core/dist ./packages/core/loader
