@@ -1,10 +1,5 @@
 {
   "private": true,
-  "scripts": {
-    "build": "lerna run build",
-    "test": "lerna exec -- yarn test",
-    "build-storybook-core": "lerna exec -- yarn build-storybook"
-  },
   "devDependencies": {
     "@auto-it/conventional-commits": "^10.32.5",
     "@auto-it/released": "^10.32.5",

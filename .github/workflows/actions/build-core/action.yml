@@ -16,7 +16,7 @@ runs:
         path: ./packages/core/node_modules
         key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('./packages/core/package-lock.json') }}-v2
     - name: Install Dependencies
-      run: npm install
+      run: yarn install --frozen-lockfile
       working-directory: ./packages/core
       shell: bash
     - name: Build Core
