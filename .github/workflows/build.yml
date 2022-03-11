@@ -10,6 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: ./.github/workflows/actions/build-core
+        name: Build Core
 
   build-angular:
     needs: [ build-core ]
@@ -17,3 +18,4 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: ./.github/workflows/actions/build-angular
+        name: Build Angular
