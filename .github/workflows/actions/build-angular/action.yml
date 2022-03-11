@@ -1,0 +1,53 @@
+name: 'Build Design System Angular'
+description: 'Build Design System Angular'
+runs:
+  using: 'composite'
+  steps:
+    - uses: actions/setup-node@v1
+      with:
+        node-version: 15.x
+
+    - name: Cache Core Node Modules
+      uses: actions/cache@v2
+      env:
+        cache-name: core-node-modules
+      with:
+        path: ./packages/core/node_modules
+        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('./packages/core/yarn.lock')}}-v2
+    - name: Cache Angular Node Modules
+      uses: actions/cache@v2
+      env:
+        cache-name: angular-node-modules
+      with:
+        path: ./packages/angular/node_modules
+        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('./packages/angular/yarn.lock')}}-v2
+    - uses: ./.github/workflows/actions/download-archive
+      with:
+        name: design-system-core
+        path: ./packages/core
+        filename: design-system-core.zip
+    - name: Install Angular Dependencies
+      run: yarn install --frozen-lockfile
+      shell: bash
+      working-directory: ./packages/angular
+    - name: Link @ukho/deisgn-system-core
+      run: yarn link
+      shell: bash
+      working-directory: ./packages/core
+    - name: Link @ukho/design-system-core in @uhko/design-system-angular
+      run: yarn link @ukho/deisgn-system-core
+      shell: bash
+      working-directory: ./packages/angular
+    - name: Lint
+      run: yarn lint
+      shell: bash
+      working-directory: ./packages/angular
+    - name: Build
+      run: yarn build
+      shell: bash
+      working-directory: ./packages/angular
+    - uses: ./.github/workflows/actions/upload-archive
+      with:
+        name: design-system-angular
+        output: ./packages/angular/design-system-angular.zip
+        paths: ./packages/angular/dist
