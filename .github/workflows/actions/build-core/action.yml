@@ -6,7 +6,7 @@ runs:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v1
       with:
-        node-version: 15.x
+        node-version: 16.x
 
     - name: Cache Node Modules
       uses: actions/cache@v2
