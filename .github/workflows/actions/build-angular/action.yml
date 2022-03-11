@@ -38,10 +38,6 @@ runs:
       run: yarn link @ukho/design-system-core
       shell: bash
       working-directory: ./packages/angular
-    - name: Lint
-      run: yarn lint
-      shell: bash
-      working-directory: ./packages/angular
     - name: Build
       run: yarn build
       shell: bash
