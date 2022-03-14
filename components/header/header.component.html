@@ -100,7 +100,12 @@
   </div>
   <div [@inOutAnimation] class="mobileDropdown" *ngIf="mobileMenuOpen">
     <ng-container *ngFor="let item of menuItems; let i = index">
-      <a id="mobileDropdownItem{{ i }}" class="mobileDropdownItem" tabindex="0">
+      <a
+        id="mobileDropdownItem{{ i }}"
+        class="mobileDropdownItem"
+        tabindex="0"
+        (click)="item.subitems?.length > 0 ? null : itemClickAction($event, item)"
+      >
         {{ item.title }}
       </a>
       <a
