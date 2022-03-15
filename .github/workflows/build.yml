@@ -1,0 +1,29 @@
+name: 'Design System Build'
+
+on:
+  pull_request:
+    branches: [ '**' ]
+
+jobs:
+  build-core:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./.github/workflows/actions/build-core
+        name: Build Core
+
+  test-core-spec:
+    needs: [ build-core ]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./.github/workflows/actions/test-core-spec
+        name: Test Core Spec
+
+  build-angular:
+    needs: [ build-core ]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./.github/workflows/actions/build-angular
+        name: Build Angular

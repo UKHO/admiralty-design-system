@@ -1,9 +1,11 @@
-name: Design System CI
+name: 'Design System Release'
 
-on: [push]
+on:
+  pull_request:
+    branches: [ '**' ]
 
 jobs:
-  CI:
+  release:
     runs-on: ubuntu-latest
     if: "!contains(github.event.head_commit.message, 'ci skip') && !contains(github.event.head_commit.message, 'skip ci')"
     steps:
@@ -12,13 +14,10 @@ jobs:
       - name: Prepare repository
         run: git fetch --unshallow --tags
 
-      - name: Use Node.js 14.x
+      - name: Use Node.js 16.x
         uses: actions/setup-node@v1
         with:
-          node-version: 14.x
-          registry-url: "https://npm.pkg.github.com"
-          scope: "@ukho"
-
+          node-version: 16.x
 
       - name: Cache node modules
         uses: actions/cache@v1
@@ -28,19 +27,11 @@ jobs:
           restore-keys: |
             yarn-deps-${{ hashFiles('yarn.lock') }}
 
-      - name: Bootstrap Packages
-        run: |
-          yarn install --frozen-lockfile
-          lerna bootstrap
-
-      - name: Run Unit Tests
-        run: |
-          yarn test
-
       - name: Create Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
-          npx auto shipit
+          yarn install --frozen-lockfile
+          lerna bootstrap
+          npx auto shipit --dry-run

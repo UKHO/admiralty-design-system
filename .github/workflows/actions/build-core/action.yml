@@ -1,0 +1,30 @@
+name: 'Build Design System Core'
+description: 'Build Design System Core'
+runs:
+  using: 'composite'
+  steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
+      with:
+        node-version: 16.x
+
+    - name: Cache Node Modules
+      uses: actions/cache@v2
+      env:
+        cache-name: core-node-modules
+      with:
+        path: ./packages/core/node_modules
+        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('./packages/core/yarn.lock.json') }}-v2
+    - name: Install Dependencies
+      run: yarn install --frozen-lockfile
+      working-directory: ./packages/core
+      shell: bash
+    - name: Build Core
+      run: yarn build --ci
+      working-directory: ./packages/core
+      shell: bash
+    - uses: ./.github/workflows/actions/upload-archive
+      with:
+        name: design-system-core
+        output: design-system-core.zip
+        paths: ./packages/core/dist ./packages/core/loader

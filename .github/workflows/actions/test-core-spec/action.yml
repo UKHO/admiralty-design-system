@@ -1,0 +1,25 @@
+name: 'Test Core Spec'
+description: 'Test Core Spec'
+runs:
+  using: 'composite'
+  steps:
+    - uses: actions/setup-node@v1
+      with:
+        node-version: 16.x
+
+    - name: Cache Core Node Modules
+      uses: actions/cache@v2
+      env:
+        cache-name: core-node-modules
+      with:
+        path: ./packages/core/node_modules
+        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('./core/yarn.lock') }}-v2
+    - uses: ./.github/workflows/actions/download-archive
+      with:
+        name: design-system-core
+        path: ./package/core
+        filename: design-system-core.zip
+    - name: Test
+      run: npm run test.spec -- --ci
+      shell: bash
+      working-directory: ./packages/core

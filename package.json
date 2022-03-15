@@ -21,16 +21,15 @@
   "url": "https://github.com/UKHO/design-system",
   "repository": "git://github.com/UKHO/design-system.git",
   "author": "auto",
+  "publishConfig": {
+    "access": "restricted",
+    "registry": "https://npm.pkg.github.com"
+  },
   "auto": {
     "plugins": [
       "npm",
       "conventional-commits",
       "released"
-    ],
-    "onlyPublishWithReleaseLabel": true
-  },
-  "publishConfig": {
-    "access": "restricted",
-    "registry": "https://npm.pkg.github.com"
+    ]
   }
 }
