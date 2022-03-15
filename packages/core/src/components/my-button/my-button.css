@@ -1,0 +1,20 @@
+:host {
+  display: block;
+}
+
+button {
+  padding: 1em 2em;
+  background-color: navy;
+  color: white;
+  font-family: sans-serif;
+  border: 2px solid navy;
+}
+button:hover {
+  background-color: blue;
+  border-color: blue;
+}
+button:active {
+  background-color: white;
+  color: navy;
+  border: 2px solid navy;
+}
