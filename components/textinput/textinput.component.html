@@ -18,6 +18,7 @@
     [attr.name]="name ? name : null"
     [type]="type"
     class="form-text-input"
+    [style.maxWidth.px]="width"
     [ngClass]="{ invalid: !valid && touched, disabled: disabled }"
     attr.aria-describedby="{{ errorLabelId }} {{ ariaDescribedBy }}"
     [attr.aria-invalid]="!valid && touched"

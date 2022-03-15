@@ -25,6 +25,11 @@ export abstract class UkhoAbstractFormField<T> implements ControlValueAccessor {
    */
   @Input() validationMessages: Record<string, string>;
 
+  /**
+   * The maximum width for the input field.
+   */
+  @Input() width: number;
+
   private readonly _nextFormFieldId: number;
 
   /**

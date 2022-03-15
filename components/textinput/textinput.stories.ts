@@ -26,6 +26,13 @@ basic.args = {
   label: 'Basic',
 };
 
+export const FixedWidth: Story = template.bind({});
+FixedWidth.args = {
+  label: 'How old are you?',
+  type: 'number',
+  width: 60,
+};
+
 export const withPlaceholder: Story = template.bind({});
 withPlaceholder.args = {
   label: 'With Placeholder',

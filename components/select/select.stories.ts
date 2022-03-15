@@ -28,7 +28,7 @@ const Template: Story = (args) => ({
     disabled: false,
     ...args,
   },
-  template: `<ukho-select [label]="label" [hint]="hint" [disabled]="disabled" (change)="change($event.target.value)" [formControl]="formControl" [validationMessages]="validationMessages">
+  template: `<ukho-select [label]="label" [hint]="hint" [disabled]="disabled" [width]="width" (change)="change($event.target.value)" [formControl]="formControl" [validationMessages]="validationMessages">
     <option>White</option>
     <option>Blue</option>
     <option>Black</option>
@@ -38,6 +38,11 @@ const Template: Story = (args) => ({
 });
 
 export const Basic: Story = Template.bind({});
+
+export const FixedWidth: Story = Template.bind({});
+FixedWidth.args = {
+  width: 150,
+};
 
 export const Disabled: Story = Template.bind({});
 Disabled.args = {
