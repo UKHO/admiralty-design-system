@@ -1,6 +1,24 @@
 # Changelog
 
-## [4.4.2] - 2022-04-09
+## [4.5.0] - 2022-03-16
+
+### Added
+
+- feat: allow fixed width input fields [#541](https://github.com/UKHO/design-system/pull/541)
+
+### Changed
+
+- fix: ensure banner always left aligns [#543](https://github.com/UKHO/design-system/pull/543)
+
+### Fixed
+
+- fix: ensure click action fires on hamburger menu items [#542](https://github.com/UKHO/design-system/pull/542)
+
+### Removed
+
+- N/A
+
+## [4.4.2] - 2022-03-09
 
 ### Added
 
@@ -18,7 +36,7 @@
 
 - N/A
 
-## [4.4.1] - 2022-04-09
+## [4.4.1] - 2022-03-09
 
 ### Added
 
@@ -36,7 +54,7 @@
 
 - N/A
 
-## [4.4.0] - 2022-04-09
+## [4.4.0] - 2022-03-09
 
 ### Added
 
@@ -492,6 +510,7 @@
 
 - Initial release of the new Design System package
 
+[4.5.0]: https://github.com/UKHO/design-system/compare/v4.4.2...v4.5.0
 [4.4.2]: https://github.com/UKHO/design-system/compare/v4.4.1...v4.4.2
 [4.4.1]: https://github.com/UKHO/design-system/compare/v4.4.0...v4.4.1
 [4.4.0]: https://github.com/UKHO/design-system/compare/v4.3.0...v4.4.0
