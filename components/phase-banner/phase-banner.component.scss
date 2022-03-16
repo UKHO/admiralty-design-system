@@ -15,9 +15,6 @@ strong {
   display: block;
   line-height: 40px;
   width: 100%;
-  max-width: responsive.$max-content-width;
-  margin-right: auto;
-  margin-left: auto;
   padding: 0 18px;
   @include responsive.desktop-only {
     padding: 0 20px;
