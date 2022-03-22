@@ -46,5 +46,9 @@
   "jest": {
     "preset": "jest-preset-angular",
     "setupFilesAfterEnv": ["./setupJest.ts"]
+  },
+  "publishConfig": {
+    "access": "restricted",
+    "registry": "https://npm.pkg.github.com"
   }
 }
