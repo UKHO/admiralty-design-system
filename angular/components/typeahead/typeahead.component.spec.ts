@@ -1,3 +1,4 @@
+import { fakeAsync, tick } from '@angular/core/testing';
 import { FormControl } from '@angular/forms';
 import { createKeyboardEvent } from '@ngneat/spectator';
 import { createComponentFactory, createHostFactory } from '@ngneat/spectator/jest';
@@ -267,20 +268,25 @@ describe('TypeaheadComponent', () => {
   it('focusIn() sets isFocused to true', () => {
     const spectator = createHost('<ukho-typeahead label="test"></ukho-typeahead>');
     expect(spectator.component.isFocused).toBeFalsy();
+    expect(spectator.component.isSilenced).toBeFalsy();
 
     spectator.component.focusIn();
     expect(spectator.component.isFocused).toBeTruthy();
+    expect(spectator.component.isSilenced).toBeFalsy();
   });
 
   it('focusOut() sets isFocused to false', () => {
     const spectator = createHost('<ukho-typeahead label="test"></ukho-typeahead>');
     expect(spectator.component.isFocused).toBeFalsy();
+    expect(spectator.component.isSilenced).toBeFalsy();
 
     spectator.component.focusIn();
     expect(spectator.component.isFocused).toBeTruthy();
+    expect(spectator.component.isSilenced).toBeFalsy();
 
     spectator.component.focusOut();
     expect(spectator.component.isFocused).toBeFalsy();
+    expect(spectator.component.isSilenced).toBeTruthy();
   });
 
   it('given showResultsOnInitialFocus is true then focusIn() calls performFilter() with an empty string', () => {
@@ -329,5 +335,61 @@ describe('TypeaheadComponent', () => {
     expect(performFilterFn).not.toBeCalled();
     spectator.component.focusIn();
     expect(performFilterFn).not.toBeCalled();
+  });
+
+  it('isSilenced should be intially false', () => {
+    const spectator = createHost('<ukho-typeahead label="test"></ukho-typeahead>');
+    expect(spectator.component.isSilenced).toBeFalsy();
+  });
+
+  it('isDebounced should be intially false', () => {
+    const spectator = createHost('<ukho-typeahead label="test"></ukho-typeahead>');
+    expect(spectator.component.isDebounced).toBeFalsy();
+  });
+
+  describe('getStatusText', () => {
+    it('should return correct text when there are no results', fakeAsync(() => {
+      const spectator = createHost('<ukho-typeahead label="test"></ukho-typeahead>');
+      expect(spectator.component.statusText).toBeUndefined();
+      spectator.component.focusIn();
+      tick(1400);
+      expect(spectator.component.statusText).toBe('No search results');
+    }));
+
+    it('should return correct text for two items when filtering', fakeAsync(() => {
+      const expectedArray = ['four', 'five'];
+      const filterFn = jest.fn().mockReturnValue(expectedArray);
+      const spectator = createHost(
+        '<ukho-typeahead label="test" [filterList]="filterList"  [filterFn]="filterFn"></ukho-typeahead>',
+        {
+          hostProps: { filterFn },
+        },
+      );
+      expect(spectator.component.statusText).toBeUndefined();
+      spectator.component.focusIn();
+      const event = createKeyboardEvent('keyup', 'f');
+      spectator.component.keyPressed(event);
+      tick(1400);
+      expect(spectator.component.statusText).toBe('2 results are available. ');
+    }));
+
+    it('should return correct text for one item when filtering', fakeAsync(() => {
+      const expectedArray = ['four'];
+      const filterFn = jest.fn().mockReturnValue(expectedArray);
+      const spectator = createHost(
+        '<ukho-typeahead label="test" [filterList]="filterList"  [filterFn]="filterFn"></ukho-typeahead>',
+        {
+          hostProps: { filterFn },
+        },
+      );
+      expect(spectator.component.statusText).toBeUndefined();
+      spectator.component.focusIn();
+      const event1 = createKeyboardEvent('keyup', 'f');
+      spectator.component.keyPressed(event1);
+      const event2 = createKeyboardEvent('keyup', 'fo');
+      spectator.component.keyPressed(event2);
+      tick(1400);
+      expect(spectator.component.statusText).toBe('1 result is available. ');
+    }));
   });
 });

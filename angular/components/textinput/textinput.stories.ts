@@ -2,6 +2,7 @@ import { TextinputComponent } from './textinput.component';
 import { FormControl, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { action } from '@storybook/addon-actions';
 import { Story } from '@storybook/angular';
+import { InputHeaderModule } from '../form-field/input-header/input-header.module';
 
 export default {
   title: 'Form Elements/Text Input',
@@ -14,15 +15,22 @@ export default {
 const template: Story<TextinputComponent> = (args: TextinputComponent) => ({
   moduleMetadata: {
     declarations: [TextinputComponent],
-    imports: [FormsModule, ReactiveFormsModule],
+    imports: [FormsModule, ReactiveFormsModule, InputHeaderModule],
   },
   props: args,
-  template: `<form><ukho-textinput [name]="name" [label]="label" [type]="type" [formControl]="formControl" [disabled]="disabled" [placeholder]="placeholder" [autocomplete]="autocomplete"></ukho-textinput></form>`,
+  template: `<form><ukho-textinput [name]="name" [label]="label" [hint]="hint" [type]="type" [formControl]="formControl" [disabled]="disabled" [placeholder]="placeholder" [autocomplete]="autocomplete"></ukho-textinput></form>`,
 });
 
 export const basic: Story = template.bind({});
 basic.args = {
   label: 'Basic',
+};
+
+export const FixedWidth: Story = template.bind({});
+FixedWidth.args = {
+  label: 'How old are you?',
+  type: 'number',
+  width: 60,
 };
 
 export const withPlaceholder: Story = template.bind({});
@@ -70,7 +78,7 @@ disabled.args = {
 
 export const ngModel = () => ({
   moduleMetadata: {
-    imports: [FormsModule],
+    imports: [FormsModule, InputHeaderModule],
   },
   component: TextinputComponent,
   props: {
@@ -86,7 +94,7 @@ ngModel.story = {
 export const validationRequired = () => ({
   moduleMetadata: {
     declarations: [TextinputComponent],
-    imports: [ReactiveFormsModule],
+    imports: [ReactiveFormsModule, InputHeaderModule],
   },
   template: `<ukho-textinput label="Name" [validationMessages]="validationMessages" [formControl]="formControl"></ukho-textinput>`,
   props: {

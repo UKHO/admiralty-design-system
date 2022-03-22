@@ -1,1 +1,11 @@
-<progress [ngClass]="{ errorProgress: error }" [value]="value" max="100"></progress>
+<progress
+  role="progressbar"
+  [attr.aria-label]="ariaLabel"
+  [attr.aria-labelledby]="ariaLabelledBy"
+  [ngClass]="{ errorProgress: error }"
+  [value]="value"
+  [attr.aria-valuenow]="value"
+  aria-valuemin="0"
+  aria-valuemax="100"
+  max="100"
+></progress>

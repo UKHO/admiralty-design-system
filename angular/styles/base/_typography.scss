@@ -1,5 +1,5 @@
-@use "colours.vars" as colours;
-@use "responsive.mixins" as responsive;
+@use "colours";
+@use "responsive";
 $font-weight-medium: normal;
 $font-weight-light: 300;
 $font-family: "JohnstonITC", Helvetica, sans-serif;
@@ -21,6 +21,10 @@ $font-line-height-normal: 24px;
 
 a {
   color: colours.$colour-admiralty-blue;
+  &:focus {
+    outline: 3px solid colours.$colour-utility-focus;
+    outline-offset: 1px;
+  }
 }
 
 h1 {

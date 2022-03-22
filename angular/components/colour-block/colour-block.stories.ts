@@ -1,4 +1,5 @@
 import { ColourBlockComponent } from './colour-block.component';
+import { ButtonModule } from '../button/button.module';
 import { HorizontalRuleModule } from '../horizontal-rule/horizontal-rule.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Story } from '@storybook/angular';
@@ -12,7 +13,7 @@ const template: Story<ColourBlockComponent> = (args: ColourBlockComponent) => ({
   props: args,
   moduleMetadata: {
     declarations: [ColourBlockComponent],
-    imports: [HorizontalRuleModule, BrowserAnimationsModule],
+    imports: [HorizontalRuleModule, BrowserAnimationsModule, ButtonModule],
   },
   template: `<ukho-colour-block [clickAction]="action" [actionText]="actionText" [width]="width" [height]="height" [title]="title" [colour]="colour"><div [innerHTML]="content"></div></ukho-colour-block>`,
 });

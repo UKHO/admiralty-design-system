@@ -1,92 +1,143 @@
 <nav id="main-menu">
   <div class="branding">
-    <a href="{{ logoLinkUrl }}">
+    <a href="{{ logoLinkUrl }}" tabindex="0" class="logoImageLink">
       <img class="logoImage" src="{{ logoImgUrl }}" alt="{{ logoAltText }}" />
     </a>
     <div id="vertical-separator"></div>
-    <h2 class="headerTitle">
-      <a *ngIf="titleLinkUrl"
-          tabindex="0"
-          role="button"
-          (click)="navigateTitleLink()"
-          (keyup.enter)="navigateTitleLink()"
-      >{{ title }}</a>
+    <h1 class="headerTitle">
+      <a
+        href="{{ titleLinkUrl }}"
+        *ngIf="titleLinkUrl"
+        tabindex="0"
+        (click)="navigateTitleLink($event)"
+        (keydown.enter)="navigateTitleLink($event)"
+        >{{ title }}</a
+      >
       <ng-container *ngIf="!titleLinkUrl">{{ title }}</ng-container>
-    </h2>
+    </h1>
   </div>
 
   <div class="links">
-    <div *ngFor="let item of menuItems">
-      <div
+    <ul *ngFor="let item of menuItems">
+      <li
         id="{{ item.title }}"
-        class="section {{item.navActive === true ? 'navActive' : ''}}"
-        (click)="itemClickAction(item)"
-        (mouseenter)="item.subitems?.length > 0 ? openDropdown($event) : null"
-        (mouseleave)="item.subitems?.length > 0 ? closeDropdown($event) : null"
+        class="section {{ item.navActive === true ? 'navActive' : '' }}"
+        (click)="item.subitems?.length > 0 ? toggleDropdown($event, $event.target, item.title) : itemClickAction($event, item)"
+        (mouseenter)="item.subitems?.length > 0 ? openDropdown($event.target, item.title) : null"
+        (mouseleave)="item.subitems?.length > 0 ? closeDropdown() : null"
       >
-        <a>{{ item.title }}</a>
-        <div class="sectionDropdown" *ngIf="item.subitems">
-          <div *ngFor="let subItem of item.subitems" (click)="subItem.clickAction()" class="sectionDropdownItem">
-            <a>{{ subItem.title }}</a>
-          </div>
-        </div>
-      </div>
-    </div>
+        <a
+          href="#0"
+          *ngIf="!item.subitems"
+          tabindex="0"
+          (click)="itemClickAction($event, item)"
+          (keydown.enter)="itemClickAction($event, item)"
+          (keydown.space)="itemClickAction($event, item)"
+        >
+          {{ item.title }}
+        </a>
+        <button
+          *ngIf="item.subitems"
+          (click)="toggleDropdown($event, $event.target.parentElement, item.title)"
+          [attr.aria-expanded]="this.activeDropdownMenu === item.title"
+        >
+          {{ item.title }}
+        </button>
+        <ul class="sectionDropdown" *ngIf="item.subitems">
+          <li
+            *ngFor="let subItem of item.subitems"
+            (click)="itemClickAction($event, subItem)"
+            class="sectionDropdownItem"
+          >
+            <a
+              href="#0"
+              tabindex="0"
+              (keydown.enter)="itemClickAction($event, subItem)"
+              (keydown.space)="itemClickAction($event, subItem)"
+              >{{ subItem.title }}</a
+            >
+          </li>
+        </ul>
+      </li>
+    </ul>
     <div id="accountSection" *ngIf="authOptions">
-      <div id="signInButton" (click)="authOptions.signInHandler()" *ngIf="!authOptions.isSignedIn()" class="section">
-        <a>Sign In</a>
+      <div *ngIf="!authOptions.isSignedIn()" class="section">
+        <button id="signInButton" (click)="authOptions.signInHandler()">Sign in</button>
       </div>
       <div
         id="profile"
         *ngIf="authOptions.isSignedIn()"
         class="section"
-        (mouseenter)="openDropdown($event)"
-        (mouseleave)="closeDropdown($event)"
+        (click)="toggleDropdown($event, $event.target.parentElement, 'profile')"
+        (mouseenter)="openDropdown($event.target, 'profile')"
+        (mouseleave)="closeDropdown()"
       >
-        <a>{{ authOptions.signInButtonText }}</a>
-        <div class="sectionDropdown">
-          <div id="accountButton" (click)="authOptions.userProfileHandler()" class="sectionDropdownItem">
-            <a>Your Account</a>
-          </div>
-          <div id="signOutButton" (click)="authOptions.signOutHandler()" class="sectionDropdownItem">
-            <a>Sign Out</a>
-          </div>
+        <button
+          (click)="toggleDropdown($event, $event.target.parentElement, 'profile')"
+          [attr.aria-expanded]="this.activeDropdownMenu === 'profile'"
+          aria-describedby="signedInButtonTextDescription"
+        >
+          {{ authOptions.signedInButtonText }}
+        </button>
+        <div *ngIf="authOptions.signedInButtonTextDescription" id="signedInButtonTextDescription" class="visually-hidden">
+          {{ authOptions.signedInButtonTextDescription }}
         </div>
+        <ul class="sectionDropdown">
+          <li class="sectionDropdownItem">
+            <button id="accountButton" (click)="authOptions.userProfileHandler()">Your account</button>
+          </li>
+          <li class="sectionDropdownItem">
+            <button id="signOutButton" (click)="authOptions.signOutHandler()">Sign out</button>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
-  <div class="mobileMenuButtonContainer" *ngIf="menuItems || authOptions">
-    <i
-      class="fas"
-      [ngClass]="{ 'fa-bars': !mobileMenuOpen, 'fa-times': mobileMenuOpen }"
-      (click)="toggleMobileMenu()"
-    ></i>
+  <div class="mobileMenuButtonContainer" *ngIf="menuItems || authOptions" role="navigation" aria-label="Menu">
+    <button (click)="toggleMobileMenu()" [attr.aria-expanded]="this.mobileMenuOpen">
+      <i class="fas" [ngClass]="{ 'fa-bars': !mobileMenuOpen, 'fa-times': mobileMenuOpen }"></i>
+    </button>
   </div>
   <div [@inOutAnimation] class="mobileDropdown" *ngIf="mobileMenuOpen">
     <ng-container *ngFor="let item of menuItems; let i = index">
-      <div (click)="item.clickAction()" id="mobileDropdownItem{{ i }}" class="sectionDropdownItem">
-        <a>{{ item.title }}</a>
-      </div>
-      <div *ngFor="let subitem of item.subitems" (click)="subitem.clickAction()" class="sectionDropdownSubItem">
-        <a>{{ subitem.title }}</a>
-      </div>
+      <a
+        id="mobileDropdownItem{{ i }}"
+        class="mobileDropdownItem"
+        tabindex="0"
+        (click)="item.subitems?.length > 0 ? null : itemClickAction($event, item)"
+      >
+        {{ item.title }}
+      </a>
+      <a
+        href="#0"
+        *ngFor="let subItem of item.subitems"
+        class="mobileDropdownSubItem"
+        (click)="itemClickAction($event, subItem)"
+        (keydown.enter)="itemClickAction($event, subItem)"
+        (keydown.space)="itemClickAction($event, subItem)"
+        tabindex="0"
+      >
+        {{ subItem.title }}
+      </a>
     </ng-container>
-    <ukho-hr id="authDivider" *ngIf="authOptions && menuItems"></ukho-hr>
-    <div
-      id="mobileSignInButton"
-      (click)="authOptions.signInHandler()"
-      *ngIf="authOptions && !authOptions.isSignedIn()"
-      class="sectionDropdownItem"
-    >
-      <a>Sign In</a>
+    <ukho-hr *ngIf="authOptions && menuItems"></ukho-hr>
+    <div *ngIf="authOptions && !authOptions.isSignedIn()">
+      <button
+        id="mobileSignInButton"
+        *ngIf="!authOptions.isSignedIn()"
+        class="mobileDropdownItem"
+        (click)="authOptions.signInHandler()"
+      >
+        Sign in
+      </button>
     </div>
     <ng-container *ngIf="authOptions && authOptions.isSignedIn()">
-      <div id="mobileProfileButton" class="sectionDropdownItem" (click)="authOptions.userProfileHandler()">
-        <a>Account</a>
-      </div>
-      <div id="mobileSignOutButton" class="sectionDropdownItem" (click)="authOptions.signOutHandler()">
-        <a>Sign Out</a>
-      </div>
+      <button id="mobileProfileButton" class="mobileDropdownItem" (click)="authOptions.userProfileHandler()">
+        Your account
+      </button>
+      <button id="mobileSignOutButton" class="mobileDropdownItem" (click)="authOptions.signOutHandler()">
+        Sign out
+      </button>
     </ng-container>
   </div>
 </nav>

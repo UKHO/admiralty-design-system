@@ -152,7 +152,7 @@ export const mockMenuItemsWithNoSubItemsAndNavActive: HeaderItem[] = [
 ];
 
 export const authOptions: AuthOptions = {
-  signInButtonText: 'Sign In',
+  signedInButtonText: '',
   isSignedIn: () => false,
   signInHandler: action('Sign In'),
   signOutHandler: () => {},
@@ -160,7 +160,8 @@ export const authOptions: AuthOptions = {
 };
 
 export const authOptionsSignedIn: AuthOptions = {
-  signInButtonText: 'Mr. Admiral',
+  signedInButtonText: 'Mr. Admiral',
+  signedInButtonTextDescription: 'Display account menu',
   isSignedIn: () => true,
   signInHandler: () => {},
   signOutHandler: action('Sign Out'),

@@ -1,8 +1,9 @@
-@use '../../styles/base/colours';
-@use '../../styles/base/icons';
+@use "../../styles/base/colours";
+@use "../../styles/base/icons";
 
 :host {
   display: flex;
+  position: relative;
   border: 2px dashed colours.$colour-admiralty-blue;
   min-height: 120px;
   align-content: stretch;
@@ -49,12 +50,16 @@ label {
 }
 
 input {
-  width: 0;
-  height: 0;
-  opacity: 0;
-  overflow: hidden;
+  width: 100%;
+  top: 0;
+  bottom: 0;
   position: absolute;
   z-index: -1;
+
+  &:focus {
+    outline: 3px solid colours.$colour-utility-focus;
+    outline-offset: 2px;
+  }
 }
 
 .error-text {

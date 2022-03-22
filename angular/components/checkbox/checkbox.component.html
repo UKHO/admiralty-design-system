@@ -3,10 +3,11 @@
   [value]="value"
   [id]="id"
   [checked]="checked"
+  [attr.aria-checked]="checked"
   (change)="handleChange($event.target.checked)"
   (blur)="onTouch()"
 />
 
-<label [ngClass]="{ checkboxRight: checkboxRight }" [for]="id">
+<label [for]="id">
   <ng-content></ng-content>
 </label>

@@ -1,22 +1,45 @@
+<div class="visually-hidden">
+  <div class="results-status-a" role="status" aria-atomic="true" aria-live="polite">
+    {{ !isSilenced && isAlternateStatusSection ? statusText : "" }}
+  </div>
+  <div class="results-status-b" role="status" aria-atomic="true" aria-live="polite">
+    {{ !isSilenced && !isAlternateStatusSection ? statusText : "" }}
+  </div>
+</div>
 <ukho-textinput
   type="text"
   [label]="label"
   [formControl]="FormControl"
   (keyup)="keyPressed($event)"
   (keyup.enter)="selectCurrentItem()"
-  autocomplete="off"
+  (keydown.tab)="selectCurrentItem()"
+  autocomplete="list"
   class="filterTextInput"
   (focusin)="focusIn()"
   (focusout)="focusOut()"
-  autocomplete="off"
+  [ariaExpanded]="isFocused && filterResult.length > 0"
+  [ariaOwns]="listId"
+  ariaRole="combobox"
+  [ariaDescribedBy]="isFocused && filterResult.length > 0 ? null : hintId"
 ></ukho-textinput>
-<div class="typeahead-list-container" *ngIf="isFocused && filterResult.length > 0">
-  <ul class="typeahead-list">
+<span id="{{hintId}}" class="visually-hidden">
+  When autocomplete results are available use up and down arrows to review and enter to select. Touch device users,
+  explore by touch or with swipe gestures.
+</span>
+<div #typeaheadListContainer class="typeahead-list-container" *ngIf="filterResult.length > 0">
+  <ul class="typeahead-list" id="{{listId}}" role="listbox">
     <li
+      #typeaheadListItems
       *ngFor="let item of filterResult; let i = index"
       (mousedown)="itemSelected(item)"
       (mouseover)="itemHovered(i)"
+      [attr.aria-selected]="i == selectedItemIndex"
+      [attr.selected]="i == selectedItemIndex"
       [ngClass]="{ highlighted: i == selectedItemIndex }"
+      role="option"
+      tabindex="-1"
+      [attr.aria-posinset]="i + 1"
+      [attr.aria-setsize]="filterResult.length"
     >
       {{ item }}
     </li>

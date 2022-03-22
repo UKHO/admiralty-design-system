@@ -1,0 +1,13 @@
+@use "../../styles/base/colours";
+@use "../../styles/base/icons";
+
+section.readmore {
+  ukho-button {
+    cursor: pointer;
+
+    div {
+      text-decoration: underline;
+      color: colours.$colour-black;
+    }
+  }
+}

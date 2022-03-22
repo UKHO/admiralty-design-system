@@ -1,7 +1,7 @@
-@use '../../styles/base/colours';
-@use '../../styles/base/responsive';
-@use '../../styles/base/icons';
-@use '../../styles/base/typography';
+@use "../../styles/base/colours";
+@use "../../styles/base/responsive";
+@use "../../styles/base/icons";
+@use "../../styles/base/typography";
 
 ul.breadcrumbs {
   width: 100%;
@@ -38,12 +38,12 @@ ul.breadcrumbs {
     a,
     span {
       display: inline-block;
-      line-height: 40px;
+      line-height: 20px;
       font-size: 14px;
       font-weight: typography.$font-weight-light;
       text-decoration: none;
       color: colours.$colour-nav-item;
-      padding: 0 2px;
+      margin: 10px 2px;
     }
     a:hover {
       color: colours.$colour-admiralty-blue;

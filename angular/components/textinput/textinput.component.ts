@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { UkhoAbstractFormField } from '../form-field/form-field';
 
 @Component({
@@ -18,11 +18,6 @@ export class TextinputComponent extends UkhoAbstractFormField<string> {
   @Input() type: 'text' | 'date' | 'time' | 'email' | 'password' | 'tel' | 'url' = 'text';
 
   /**
-   * The label which will be used above the input to describe the input.
-   */
-  @Input() label: string;
-
-  /**
    * The placeholder text to show in the input
    */
   @Input() placeholder: string;
@@ -39,6 +34,29 @@ export class TextinputComponent extends UkhoAbstractFormField<string> {
    * @see https://developers.google.com/web/fundamentals/design-and-ux/input/forms#recommended_input_name_and_autocomplete_attribute_values
    */
   @Input() autocomplete: string;
+
+  /**
+   * The ARIA role. If a list box is attached to this element (e.g. when used as a combobox) then this
+   * should be set as "combobox".
+   */
+  @Input() ariaRole: string;
+
+  /**
+   * If a list box is attached to this element (e.g. when used as a combobox) then when that
+   * element is expanded this should be true.
+   */
+  @Input() ariaExpanded: boolean;
+
+  /**
+   * The ID of any element that semantically should be owned by this component, regardless
+   * of whether it is a sibling or parent.
+   */
+  @Input() ariaOwns: string;
+
+  /**
+   * The ID of any element that describes the input, in addition to the error section.
+   */
+  @Input() ariaDescribedBy: string;
 
   /**
    * @ignore

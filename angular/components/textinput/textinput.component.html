@@ -1,19 +1,28 @@
 <div class="text-input-container">
-  <label [ngClass]="{ disabled: disabled }" class="form-field-label" [for]="id">{{ label }}</label>
+  <ukho-input-header [id]="id"
+                     [label]="label"
+                     [hint]="hint"
+                     [disabled]="disabled">
+  </ukho-input-header>
   <input
     #input
     (blur)="onTouch()"
     (input)="onChange($event.target.value)"
-    [attr.autocomplete]="autocomplete ? autocomplete : null"
+    [attr.aria-expanded]="ariaExpanded"
+    [attr.aria-owns]="ariaOwns"
+    [attr.aria-autocomplete]="autocomplete ? autocomplete : null"
+    autocomplete="off"
     [disabled]="disabled"
     [placeholder]="placeholder || ''"
     [id]="id"
     [attr.name]="name ? name : null"
     [type]="type"
     class="form-text-input"
+    [style.maxWidth.px]="width"
     [ngClass]="{ invalid: !valid && touched, disabled: disabled }"
-    [attr.aria-describedby]="!valid && touched ? errorLabelId : null"
+    attr.aria-describedby="{{ errorLabelId }} {{ ariaDescribedBy }}"
     [attr.aria-invalid]="!valid && touched"
+    [attr.role]="ariaRole ? ariaRole : null"
   />
 </div>
 <div class="text-input-error" *ngIf="validationMessages">

@@ -2,6 +2,7 @@ import { SelectComponent } from './select.component';
 import { action } from '@storybook/addon-actions';
 import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Story } from '@storybook/angular';
+import { InputHeaderModule } from '../form-field/input-header/input-header.module';
 
 export default {
   title: 'Form Elements/Select',
@@ -18,15 +19,16 @@ export default {
 const Template: Story = (args) => ({
   moduleMetadata: {
     declarations: [SelectComponent],
-    imports: [ReactiveFormsModule],
+    imports: [ReactiveFormsModule, InputHeaderModule],
   },
   props: {
     label: 'Choose a colour',
+    hint: 'This is a hint to instruct the user what to do',
     change: action('changed'),
     disabled: false,
     ...args,
   },
-  template: `<ukho-select [label]="label" [disabled]="disabled" (change)="change($event.target.value)" [formControl]="formControl" [validationMessages]="validationMessages">
+  template: `<ukho-select [label]="label" [hint]="hint" [disabled]="disabled" [width]="width" (change)="change($event.target.value)" [formControl]="formControl" [validationMessages]="validationMessages">
     <option>White</option>
     <option>Blue</option>
     <option>Black</option>
@@ -36,6 +38,11 @@ const Template: Story = (args) => ({
 });
 
 export const Basic: Story = Template.bind({});
+
+export const FixedWidth: Story = Template.bind({});
+FixedWidth.args = {
+  width: 150,
+};
 
 export const Disabled: Story = Template.bind({});
 Disabled.args = {

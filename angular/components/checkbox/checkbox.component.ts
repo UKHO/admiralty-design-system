@@ -6,6 +6,8 @@ import { UkhoAbstractFormField } from '../form-field/form-field';
   templateUrl: './checkbox.component.html',
   styleUrls: ['./checkbox.component.scss'],
   host: {
+    "[class.right-align]": "checkboxRight",
+    "[class.justify]": "justify",
     class: 'checkbox-wrapper',
   },
   encapsulation: ViewEncapsulation.None,
@@ -21,7 +23,15 @@ export class CheckboxComponent extends UkhoAbstractFormField<boolean> {
    */
   @Input() value: unknown;
 
-  @Input() checkboxRight: boolean;
+  /**
+   * When set the checkbox appears to the right of the label
+   */
+  @Input() checkboxRight = false;
+
+  /**
+   * Whether the checkbox and label should be justified.
+   */
+  @Input() justify = false;
 
   onChange = (checked: boolean) => {};
 

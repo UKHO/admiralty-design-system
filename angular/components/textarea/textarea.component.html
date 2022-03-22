@@ -2,6 +2,7 @@
   <label class="form-field-label" [ngClass]="{ disabled: disabled }" [for]="id">{{ label }}</label>
   <textarea
     [ngClass]="{ invalid: !valid && touched, disabled: disabled }"
+    [style.maxWidth.px]="width"
     #input
     [id]="id"
     (input)="onChange($event.target.value)"

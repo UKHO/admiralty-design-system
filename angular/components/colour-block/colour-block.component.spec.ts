@@ -1,34 +1,36 @@
 import { createHostFactory } from '@ngneat/spectator/jest';
+import { MockComponent } from 'ng-mocks';
+import { ButtonComponent } from '../button/button.module';
 
 import { ColourBlockComponent } from './colour-block.component';
 
 describe('ColourBlockComponent', () => {
-  const createHost = createHostFactory(ColourBlockComponent);
+  const createHost = createHostFactory({
+    component: ColourBlockComponent,
+    declarations: [ColourBlockComponent, MockComponent(ButtonComponent)],
+  });
 
   test('should create', () => {
     const spectator = createHost('<ukho-colour-block>Test</ukho-colour-block>');
     expect(spectator).toBeTruthy();
   });
 
-  test('getTextColour returns white-test when colour is admiralty-blue', () => {
+  test('textColour should be white-text when colour is admiralty-blue', () => {
     const spectator = createHost('<ukho-colour-block colour="admiralty-blue">Test</ukho-colour-block>');
     const component = spectator.component;
-    const colour = component.getTextColour();
-    expect(colour).toBe('white-text');
+    expect(component.textColour).toBe('white-text');
   });
 
-  test('getTextColour returns white-test when colour is teal', () => {
+  test('textColour should be white-text when colour is teal', () => {
     const spectator = createHost('<ukho-colour-block colour="teal">Test</ukho-colour-block>');
     const component = spectator.component;
-    const colour = component.getTextColour();
-    expect(colour).toBe('white-text');
+    expect(component.textColour).toBe('white-text');
   });
 
-  test('getTextColour returns empty string when colour is bright-blue', () => {
+  test('textColour should be empty string when colour is bright-blue', () => {
     const spectator = createHost('<ukho-colour-block colour="bright-blue">Test</ukho-colour-block>');
     const component = spectator.component;
-    const colour = component.getTextColour();
-    expect(colour).toBe('');
+    expect(component.textColour).toBe('');
   });
 
   test('the class of the div is set as the colour from the input', () => {
@@ -78,7 +80,7 @@ describe('ColourBlockComponent', () => {
         },
       },
     );
-    const component = spectator.query('.clickAction');
+    const component = spectator.query('.clickAction h3');
 
     expect(component.textContent).toBe('test');
   });

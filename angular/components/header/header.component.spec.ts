@@ -2,7 +2,13 @@ import { createHostFactory, SpectatorHost } from '@ngneat/spectator/jest';
 import { HorizontalRuleModule } from '../horizontal-rule/horizontal-rule.module';
 
 import { HeaderComponent } from './header.component';
-import { authOptions, mockMenuItemsWithSubItems, mockMenuItemsWithSubItemsAndNavActive } from './header.stories.data';
+import {
+  authOptions,
+  mockMenuItemsWithNoSubItems,
+  mockMenuItemsWithSomeSubItems,
+  mockMenuItemsWithSubItems,
+  mockMenuItemsWithSubItemsAndNavActive,
+} from './header.stories.data';
 import { HeaderItem } from './header.types';
 
 describe('HeaderComponent', () => {
@@ -60,7 +66,7 @@ describe('HeaderComponent', () => {
     const titleLinkNavigatedSpy = jest.spyOn(spectator.component.titleLinkNavigated, 'emit');
 
     expect(titleLinkNavigatedSpy).not.toBeCalled();
-    spectator.component.navigateTitleLink();
+    spectator.component.navigateTitleLink(new MouseEvent('click'));
     expect(titleLinkNavigatedSpy).toBeCalledTimes(1);
     expect(titleLinkNavigatedSpy).toBeCalledWith(expectedTitleLinkUrl1);
 
@@ -68,7 +74,7 @@ describe('HeaderComponent', () => {
 
     expect(titleLinkNavigatedSpy).not.toBeCalled();
     spectator.setHostInput('titleLinkUrl', expectedTitleLinkUrl2);
-    spectator.component.navigateTitleLink();
+    spectator.component.navigateTitleLink(new MouseEvent('click'));
     expect(titleLinkNavigatedSpy).toBeCalledTimes(1);
     expect(titleLinkNavigatedSpy).toBeCalledWith(expectedTitleLinkUrl2);
   });
@@ -78,7 +84,7 @@ describe('HeaderComponent', () => {
       hostProps: { title, titleLinkUrl: 'a' },
     });
 
-    spectator.component.navigateTitleLink = jest.fn();
+    spectator.component.navigateTitleLink = jest.fn().mockImplementation((e) => e.preventDefault());
 
     spectator.click('.headerTitle a');
 
@@ -94,7 +100,7 @@ describe('HeaderComponent', () => {
 
     spectator.focus('.headerTitle a');
 
-    spectator.keyboard.pressEnter('.headerTitle a');
+    spectator.dispatchKeyboardEvent('.headerTitle a', 'keydown', 'Enter');
 
     expect(spectator.component.navigateTitleLink).toHaveBeenCalledTimes(1);
   });
@@ -133,10 +139,7 @@ describe('HeaderComponent', () => {
     );
     const component = spectator.component;
 
-    const mockEvent = {
-      target: mockedElementDOM,
-    };
-    component.openDropdown(mockEvent as any);
+    component.openDropdown(mockedElementDOM as any, 'test');
 
     expect(mockedElementDOM.classList.add).toBeCalledWith('active');
     expect(component.active).toBe(mockedElementDOM);
@@ -151,11 +154,8 @@ describe('HeaderComponent', () => {
     );
     const component = spectator.component;
 
-    const mockEvent = {
-      target: mockedElementDOM,
-    };
     component.active = mockedElementDOM as any;
-    component.closeDropdown(mockEvent as any);
+    component.closeDropdown();
 
     expect(mockedElementDOM.classList.remove).toBeCalledWith('active');
     expect(component.active).toBeNull();
@@ -170,10 +170,7 @@ describe('HeaderComponent', () => {
     );
     const component = spectator.component;
 
-    const mockEvent = {
-      target: mockedElementDOM,
-    };
-    component.closeDropdown(mockEvent as any);
+    component.closeDropdown();
 
     expect(mockedElementDOM.classList.remove).not.toBeCalledWith('active');
     expect(component.active).toBeFalsy();
@@ -193,7 +190,7 @@ describe('HeaderComponent', () => {
       clickAction: jest.fn(),
     };
 
-    component.itemClickAction(headerItem);
+    component.itemClickAction(new MouseEvent('click'), headerItem);
 
     expect(headerItem.clickAction).toHaveBeenCalledTimes(1);
   });
@@ -211,7 +208,7 @@ describe('HeaderComponent', () => {
       title: 'test',
     };
 
-    component.itemClickAction(headerItem);
+    component.itemClickAction(new MouseEvent('click'), headerItem);
 
     expect(headerItem.clickAction).toBeFalsy();
   });
@@ -236,7 +233,7 @@ describe('HeaderComponent', () => {
       ],
     };
 
-    component.itemClickAction(headerItem);
+    component.itemClickAction(new MouseEvent('click'), headerItem);
 
     expect(headerItem.clickAction).not.toHaveBeenCalled();
   });
@@ -257,7 +254,28 @@ describe('HeaderComponent', () => {
     expect(component.mobileMenuOpen).toBe(false);
   });
 
-  test('clicking on an item should call itemClickAction', () => {
+  test('clicking on an item with no sub items should call itemClickAction', () => {
+    const spectator = createHost(
+      '<ukho-header [title]="title" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>',
+      {
+        hostProps: { title, authOptions, menuItems: mockMenuItemsWithNoSubItems },
+      },
+    );
+    const component = spectator.component;
+    component.itemClickAction = jest.fn().mockImplementation((e) => {
+      e.stopImmediatePropagation();
+      e.preventDefault()
+    });
+    const items = spectator.queryAll('li.section');
+
+    expect(items.length).toBe(3);
+
+    spectator.click(items[0]);
+
+    expect(component.itemClickAction).toHaveBeenCalledTimes(1);
+  });
+
+  test('clicking on an item with sub items should not call itemClickAction', () => {
     const spectator = createHost(
       '<ukho-header [title]="title" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>',
       {
@@ -265,12 +283,63 @@ describe('HeaderComponent', () => {
       },
     );
     const component = spectator.component;
-    component.itemClickAction = jest.fn();
-    const items = spectator.queryAll('.section');
+    component.itemClickAction = jest.fn().mockImplementation((e) => {
+      e.stopImmediatePropagation();
+      e.preventDefault()
+    });
+    const items = spectator.queryAll('li.section');
+
+    expect(items.length).toBe(3);
 
     spectator.click(items[0]);
 
+    expect(component.itemClickAction).not.toHaveBeenCalled();
+  });
+
+  test('clicking on a link under an item with no sub items should call itemClickAction', () => {
+    const spectator = createHost(
+      '<ukho-header [title]="title" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>',
+      {
+        hostProps: { title, authOptions, menuItems: mockMenuItemsWithNoSubItems },
+      },
+    );
+    const component = spectator.component;
+    component.itemClickAction = jest.fn().mockImplementation((e) => {
+      e.stopImmediatePropagation();
+      e.preventDefault()
+    });
+    const links = spectator.queryAll('li.section > a');
+    const buttons = spectator.queryAll('li.section > button');
+
+    expect(links.length).toBe(3);
+    expect(buttons.length).toBe(0);
+
+    spectator.click(links[0]);
+
     expect(component.itemClickAction).toHaveBeenCalledTimes(1);
+  });
+
+  test('clicking on a button under an item with sub items should not call itemClickAction', () => {
+    const spectator = createHost(
+      '<ukho-header [title]="title" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>',
+      {
+        hostProps: { title, authOptions, menuItems: mockMenuItemsWithSubItems },
+      },
+    );
+    const component = spectator.component;
+    component.itemClickAction = jest.fn().mockImplementation((e) => {
+      e.stopImmediatePropagation();
+      e.preventDefault()
+    });
+    const links = spectator.queryAll('li.section > a');
+    const buttons = spectator.queryAll('li.section > button');
+
+    expect(links.length).toBe(0);
+    expect(buttons.length).toBe(3);
+
+    spectator.click(buttons[0]);
+
+    expect(component.itemClickAction).not.toHaveBeenCalled();
   });
 
   test('hovering over an item should call openDropdown where there is subitems', () => {
@@ -462,11 +531,31 @@ describe('HeaderComponent', () => {
     expect(mobileDropdown).toBeTruthy();
   });
 
-  test('clicking on a mobile dropdown item calls clickAction', () => {
+  test('clicking on a mobile dropdown header item should not call clickAction when there are sub items', () => {
     const spectator = createHost(
       '<ukho-header [title]="title" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>',
       {
         hostProps: { title, authOptions, menuItems: mockMenuItemsWithSubItems },
+      },
+    );
+    const component = spectator.component;
+    component.mobileMenuOpen = true;
+    spectator.detectChanges();
+
+    component.menuItems[0].clickAction = jest.fn();
+    component.menuItems[0].subitems[0].clickAction = jest.fn();
+    const dropdownItem = spectator.query('#mobileDropdownItem0');
+
+    spectator.click(dropdownItem);
+
+    expect(component.menuItems[0].clickAction).not.toHaveBeenCalled();
+  });
+
+  test('clicking on a mobile dropdown header item should call clickAction when there are no sub items', () => {
+    const spectator = createHost(
+      '<ukho-header [title]="title" [authOptions]="authOptions" [menuItems]="menuItems"></ukho-header>',
+      {
+        hostProps: { title, authOptions, menuItems: mockMenuItemsWithNoSubItems },
       },
     );
     const component = spectator.component;
@@ -494,7 +583,7 @@ describe('HeaderComponent', () => {
 
     component.menuItems[0].subitems[0].clickAction = jest.fn();
 
-    const dropdownSubItem = spectator.query('#mobileDropdownItem0 + .sectionDropdownSubItem');
+    const dropdownSubItem = spectator.query('#mobileDropdownItem0 + .mobileDropdownSubItem');
     spectator.click(dropdownSubItem);
 
     expect(component.menuItems[0].subitems[0].clickAction).toHaveBeenCalledTimes(1);

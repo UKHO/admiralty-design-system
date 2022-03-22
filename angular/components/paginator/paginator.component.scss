@@ -1,4 +1,4 @@
-@use '../../styles/base/colours';
+@use "../../styles/base/colours";
 nav.standard {
   display: flex;
   flex-direction: row;
@@ -23,6 +23,9 @@ nav.standard {
   .pagination-anchor.disabled {
     opacity: 0.3;
     cursor: unset;
+  }
+  .pagination-anchor:focus {
+    outline: 2px solid colours.$colour-utility-focus;
   }
   i {
     text-align: center;

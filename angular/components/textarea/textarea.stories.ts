@@ -1,5 +1,7 @@
 import { TextareaComponent } from './textarea.component';
-import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormControl, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { InputHeaderModule } from '../form-field/input-header/input-header.module';
+import { Story } from '@storybook/angular';
 
 export default {
   title: 'Form Elements/Text Area',
@@ -9,35 +11,50 @@ export default {
   },
 };
 
-export const basic = () => ({
+const template: Story<TextareaComponent> = (args: TextareaComponent) => ({
   moduleMetadata: {
     declarations: [TextareaComponent],
+    imports: [FormsModule, ReactiveFormsModule, InputHeaderModule],
   },
-  template: `<ukho-textarea label="Description"></ukho-textarea>`,
+  props: args,
+  template: `<ukho-textarea [label]="label" [disabled]="true" [width]="width" [text]="text"></ukho-textarea>`,
 });
 
-export const disabled = () => ({
-  moduleMetadata: {
-    declarations: [TextareaComponent],
-  },
-  template: `<ukho-textarea label="Description" [disabled]="true"></ukho-textarea>`,
-});
+export const Basic: Story = template.bind({});
+Basic.args = {
+  label: 'Description',
+};
 
-export const validationRequired = () => ({
+export const FixedWidth: Story = template.bind({});
+FixedWidth.args = {
+  label: 'Description',
+  width: 400,
+};
+
+export const Disabled: Story = template.bind({});
+Disabled.args = {
+  label: 'Description',
+  disabled:  true,
+};
+
+export const ValidationRequired = (args) => ({
   moduleMetadata: {
     declarations: [TextareaComponent],
-    imports: [ReactiveFormsModule],
+    imports: [ReactiveFormsModule, InputHeaderModule],
   },
-  template: `<ukho-textarea label="Description" [validationMessages]="validationMessages" [formControl]="formControl"></ukho-textarea>`,
+  template: `<ukho-textarea [label]="label" [validationMessages]="validationMessages" [formControl]="formControl"></ukho-textarea>`,
   props: {
+    ...args,
     formControl: new FormControl('', Validators.required),
     validationMessages: { required: 'This field is required' },
   },
 });
+ValidationRequired.args = {
+  label: 'Description',
+};
 
-export const withText = () => ({
-  moduleMetadata: {
-    declarations: [TextareaComponent],
-  },
-  template: `<ukho-textarea label="With Text" text="Sample Text"></ukho-textarea>`,
-});
+export const WithText: Story = template.bind({});
+WithText.args = {
+  label: 'With text',
+  text: 'Sample Text',
+};

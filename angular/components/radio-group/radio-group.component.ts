@@ -34,6 +34,12 @@ export class RadioGroupComponent implements ControlValueAccessor, AfterContentIn
     return this._name;
   }
 
+  /**
+   * The ID of any element that labels the radio group.
+   */
+  @Input()
+  ariaLabelledBy: string;
+
   get valid() {
     return this.controlDirective && this.controlDirective.control.valid;
   }

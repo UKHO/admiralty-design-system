@@ -1,4 +1,4 @@
-@use '../../styles/base/colours';
+@use "../../styles/base/colours";
 
 .colourBlock {
   height: 100%;
@@ -13,10 +13,14 @@
     flex-grow: 1;
   }
 
-  h3 {
-    margin-bottom: 0px;
-    text-align: right;
+  .clickAction {
+    background-color: unset;
+    align-self: flex-end;
     cursor: pointer;
+
+    h3 {
+      margin-bottom: 0px;
+    }
   }
 
   &.admiralty-blue {

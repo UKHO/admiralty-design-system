@@ -1,7 +1,7 @@
-@use '../../styles/base/colours';
-@use '../../styles/base/responsive';
-@use '../../styles/base/typography';
-@use '../../styles/base/icons';
+@use "../../styles/base/colours";
+@use "../../styles/base/responsive";
+@use "../../styles/base/typography";
+@use "../../styles/base/icons";
 
 /* Button Wrapper */
 .button-wrapper {
@@ -21,20 +21,42 @@
   }
 }
 
-/* Primary Buttons */
-button,
-input[type="button"] {
-  display: inline-block;
-  background-color: colours.$colour-button-standard;
-  color: colours.$colour-button-text;
-  border: 2px solid colours.$colour-button-standard;
-  height: 60px;
-  padding: 15px 18px;
+@mixin button-defaults {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
   font-size: 21px;
   font-weight: typography.$font-weight-medium;
+  background-color: unset;
+  cursor: pointer;
+
+  &:focus {
+    outline: 3px solid colours.$colour-utility-focus;
+  }
+
+  &:disabled {
+    cursor: default;
+    * {
+      pointer-events: none;
+    }
+  }
+
+  i {
+    display: inline-block;
+    font-size: 24px;
+    color: colours.$colour-button-icon;
+    padding-left: 15px;
+  }
+}
+
+@mixin button {
+  @include button-defaults;
+  height: 60px;
+  padding: 15px 18px;
   white-space: nowrap;
   min-width: 200px;
-  cursor: pointer;
+
   @include responsive.not-desktop {
     min-width: unset;
     max-width: 200px;
@@ -42,6 +64,22 @@ input[type="button"] {
     height: 50px;
     padding: 10px 18px;
   }
+
+  i {
+    display: inline-block;
+    font-size: 24px;
+    color: colours.$colour-button-icon;
+    padding-left: 15px;
+  }
+}
+
+/* Primary Buttons */
+ukho-button button.primary,
+ukho-button input[type="button"].primary {
+  @include button;
+  background-color: colours.$colour-button-standard;
+  color: colours.$colour-button-text;
+  border: 2px solid colours.$colour-button-standard;
 
   &:hover {
     background-color: colours.$colour-button-hover;
@@ -65,48 +103,16 @@ input[type="button"] {
   &:disabled {
     background-color: colours.$colour-button-deselected;
     border: 2px solid colours.$colour-button-deselected;
-    cursor: default;
-  }
-
-  &.icon {
-    min-width: 240px;
-    display: flex;
-    justify-content: space-between;
-    @include responsive.not-desktop {
-      min-width: unset;
-      max-width: 240px;
-      width: 100%;
-    }
-  }
-
-  i {
-    display: inline-block;
-    font-size: 24px;
-    color: colours.$colour-button-icon;
-    padding-left: 15px;
   }
 }
 
 /* Secondary Buttons */
-button.secondary,
-input[type="button"].secondary {
-  display: inline-block;
+ukho-button button.secondary,
+ukho-button input[type="button"].secondary {
+  @include button;
   background-color: colours.$colour-button-secondary-standard;
   color: colours.$colour-button-secondary-text;
   border: 2px solid colours.$colour-button-secondary-border-standard;
-  height: 60px;
-  padding: 15px 18px;
-  font-size: 21px;
-  font-weight: typography.$font-weight-medium;
-  white-space: nowrap;
-  min-width: 200px;
-  @include responsive.not-desktop {
-    min-width: unset;
-    max-width: 200px;
-    width: 100%;
-    height: 50px;
-    padding: 10px 18px;
-  }
 
   &:hover {
     background-color: colours.$colour-button-secondary-hover;
@@ -132,22 +138,114 @@ input[type="button"].secondary {
     border: 2px solid colours.$colour-button-secondary-deselected;
   }
 
-  &.icon {
-    min-width: 240px;
-    display: flex;
-    justify-content: space-between;
-    @extend .fab;
-    @include responsive.not-desktop {
-      min-width: unset;
-      max-width: 240px;
-      width: 100%;
+  i {
+    color: colours.$colour-button-secondary-icon;
+  }
+}
+
+/* Warning Buttons */
+ukho-button button.warning,
+ukho-button input[type="button"].warning {
+  @include button;
+  background-color: colours.$colour-utility-error;
+  color: colours.$colour-white;
+  border: 2px solid colours.$colour-utility-error;
+
+  &:hover {
+    background-color: colours.darken(colours.$colour-utility-error);
+    border: 2px solid colours.darken(colours.$colour-utility-error);
+  }
+
+  &:active {
+    background-color: colours.$colour-white;
+    border: 2px solid colours.$colour-utility-error;
+    color: colours.$colour-utility-error;
+
+    i {
+      color: colours.$colour-utility-error;
+    }
+
+    p {
+      color: colours.$colour-utility-error;
+    }
+  }
+
+  &:disabled {
+    background-color: colours.$colour-button-secondary-deselected;
+    border: 2px solid colours.$colour-button-secondary-deselected;
+    & > * {
+      opacity: 0.5;
     }
   }
 
   i {
-    display: inline-block;
-    font-size: 24px;
+    color: colours.$colour-white;
+  }
+}
+
+/* Text Buttons */
+ukho-button button.text,
+ukho-button input[type="button"].text {
+  @include button-defaults;
+  color: colours.$colour-button-secondary-text;
+
+  &:active {
+    color: colours.$colour-button-secondary-text;
+
+    i {
+      color: colours.$colour-button-secondary-text;
+    }
+
+    p {
+      color: colours.$colour-button-secondary-text;
+    }
+  }
+
+  &:disabled {
+    color: colours.$colour-button-secondary-deselected;
+    & > * {
+      opacity: 0.5;
+    }
+  }
+
+  &:focus {
+    outline-offset: 3px;
+  }
+
+  i {
     color: colours.$colour-button-secondary-icon;
-    padding-left: 15px;
+  }
+}
+
+/* Icon Buttons */
+ukho-button button.icon,
+ukho-button input[type="button"].icon {
+  @include button-defaults;
+  min-height: 50px;
+  min-width: 50px;
+  padding: 10px 10px;
+
+  background-color: colours.$colour-bg-grey;
+  color: colours.$colour-admiralty-blue;
+  border: 2px solid colours.$colour-admiralty-blue;
+
+  &:active {
+    background-color: colours.$colour-admiralty-blue;
+    color: colours.$colour-white;
+  }
+
+  &:disabled {
+    opacity: 0.3;
+  }
+
+  &:active:disabled {
+    background-color: colours.$colour-bg-grey;
+  }
+
+  i {
+    margin: auto;
+    font-size: unset;
+    color: unset;
+    padding-left: unset;
   }
 }

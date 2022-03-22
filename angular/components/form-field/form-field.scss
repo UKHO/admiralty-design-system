@@ -5,6 +5,17 @@
 .form-field-label {
   margin-bottom: 6px;
   display: inline-block;
+  font-weight: typography.$font-weight-medium;
+
+  &.disabled {
+    color: colours.$colour-textinput-text-disabled;
+  }
+}
+
+.form-field-hint {
+  margin-bottom: 6px;
+  display: block;
+  font-weight: typography.$font-weight-light;
 
   &.disabled {
     color: colours.$colour-textinput-text-disabled;
@@ -12,11 +23,10 @@
 }
 
 .form-field {
-
   background-color: colours.$colour-white;
 
   &:focus-visible {
-    outline: unset;
+    outline: 3px solid colours.$colour-utility-focus;
     box-shadow: colours.$colour-text inset 0 0 0 2px;
   }
 
@@ -24,7 +34,8 @@
     border-color: colours.$colour-utility-error;
 
     &:focus-visible {
-      box-shadow: colours.$colour-utility-error inset 0 0 0 2px;
+      border-color: unset;
+      outline: 3px solid colours.$colour-utility-focus;
     }
   }
 

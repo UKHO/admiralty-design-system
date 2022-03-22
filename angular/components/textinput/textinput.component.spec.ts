@@ -1,12 +1,14 @@
-import { TestBed } from '@angular/core/testing';
-
 import { TextinputComponent } from './textinput.component';
-import { DebugElement } from '@angular/core';
-import { ReactiveFormsModule, FormsModule, NgControl, FormControl, Validators } from '@angular/forms';
+import { NgControl } from '@angular/forms';
 import { createHostFactory } from '@ngneat/spectator/jest';
+import { InputHeaderModule } from '../form-field/input-header/input-header.module';
 
 describe('TextinputComponent', () => {
-  const createHost = createHostFactory({ component: TextinputComponent, providers: [NgControl] });
+  const createHost = createHostFactory({
+    component: TextinputComponent,
+    imports: [InputHeaderModule],
+    providers: [NgControl],
+  });
 
   it('should create', () => {
     const spectator = createHost('<ukho-textinput label="Name"></ukho-textinput>');

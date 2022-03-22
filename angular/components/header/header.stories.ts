@@ -21,7 +21,8 @@ export default {
   },
   args: {
     title: 'Design System',
-    logoLinkUrl: '/svg/Admiralty stacked logo.svg',
+    titleLinkUrl: 'https://www.example.com',
+    logoLinkUrl: 'https://www.example.com',
     logoAltText: 'Admiralty Stacked Logo',
     logoImgUrl: '/svg/Admiralty stacked logo.svg',
     titleLinkNavigated: action('Title Link Navigated'),
@@ -38,12 +39,12 @@ const template: Story<HeaderComponent> = (args: HeaderComponent) => ({
 });
 
 export const titleLink: Story = template.bind({});
-titleLink.args = {
-  titleLinkUrl: '/a',
-};
+titleLink.args = {};
 
 export const noLinks: Story = template.bind({});
-noLinks.args = {};
+noLinks.args = {
+  titleLinkUrl: null,
+};
 
 export const linksWithSubItems: Story = template.bind({});
 linksWithSubItems.args = {

@@ -1,5 +1,5 @@
-@use '../../styles/base/colours';
-@use '../../styles/base/responsive';
+@use "../../styles/base/colours";
+@use "../../styles/base/responsive";
 
 nav.side-nav {
   display: flex;
@@ -27,9 +27,7 @@ nav.side-nav {
     }
 
     &:focus {
-      padding: 0px 8px;
-      border: 2px solid colours.$colour-utility-info;
-      outline: none;
+      outline-offset: -2px;
     }
 
     &.navActive {

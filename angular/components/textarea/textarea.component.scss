@@ -4,8 +4,8 @@
 @use "../form-field/form-field";
 
 .text-area-container {
-
   textarea {
+    display: block;
     position: relative;
     width: 100%;
     min-height: 170px;
@@ -21,4 +21,3 @@
     @extend .form-field;
   }
 }
-
