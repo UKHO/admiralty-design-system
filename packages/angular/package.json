@@ -9,14 +9,13 @@
     "test": "jest --passWithNoTests",
     "test:watch": "jest --watch"
   },
-  "private": true,
   "peerDependencies": {
     "@angular/common": "^13.2.0",
-    "@angular/core": "^13.2.0",
-    "@ukho/design-system-core": "^0.0.1"
+    "@angular/core": "^13.2.0"
   },
   "dependencies": {
-    "tslib": "^2.3.0"
+    "tslib": "^2.3.0",
+    "@ukho/design-system-core": "^0.0.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~13.2.2",
