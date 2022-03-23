@@ -1,5 +1,9 @@
 name: 'Design System Release Packages'
 description: 'Downloads build artifacts and releases them'
+inputs:
+  GITHUB_TOKEN:
+    description: GITHUB_TOKEN used to create release
+    required: true
 runs:
   using: 'composite'
   steps:
@@ -21,9 +25,9 @@ runs:
         filename: design-system-core.zip
     - name: Create Release
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ inputs.GITHUB_TOKEN }}
+        NODE_AUTH_TOKEN: ${{ inputs.GITHUB_TOKEN }}
+        NPM_TOKEN: ${{ inputs.GITHUB_TOKEN }}
       run: |
         yarn install --frozen-lockfile
         npx auto shipit

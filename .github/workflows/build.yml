@@ -36,3 +36,5 @@ jobs:
       - uses: actions/checkout@v2
       - uses: ./.github/workflows/actions/release-packages
         name: Release Packages
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
