@@ -35,3 +35,4 @@ jobs:
           yarn install --frozen-lockfile
           lerna bootstrap
           npx auto shipit
+
