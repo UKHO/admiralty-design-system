@@ -26,14 +26,9 @@ runs:
         name: design-system-core
         path: ./packages/core
         filename: design-system-core.zip
-    - name: Link @ukho/design-system-core
-      run: yarn link
+    - name: Bootstrap Packages
+      run: npx lerna bootstrap
       shell: bash
-      working-directory: ./packages/core
-    - name: Link @ukho/design-system-core in @uhko/design-system-angular
-      run: yarn link @ukho/design-system-core
-      shell: bash
-      working-directory: ./packages/angular
     - name: Install Angular Dependencies
       run: yarn install --frozen-lockfile
       shell: bash
