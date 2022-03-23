@@ -17,7 +17,7 @@ runs:
     - uses: ./.github/workflows/actions/download-archive
       with:
         name: design-system-core
-        path: ./package/core
+        path: ./packages/core
         filename: design-system-core.zip
     - name: Test
       run: npm run test.spec -- --ci
