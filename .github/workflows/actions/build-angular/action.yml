@@ -29,10 +29,6 @@ runs:
     - name: Bootstrap Packages
       run: npx lerna bootstrap
       shell: bash
-    - name: Install Angular Dependencies
-      run: yarn install --frozen-lockfile
-      shell: bash
-      working-directory: ./packages/angular
     - name: Build
       run: yarn build
       shell: bash
