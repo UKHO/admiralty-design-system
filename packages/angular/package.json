@@ -50,5 +50,7 @@
   "publishConfig": {
     "access": "restricted",
     "registry": "https://npm.pkg.github.com"
-  }
+  },
+  "url": "https://github.com/UKHO/design-system",
+  "repository": "git://github.com/UKHO/design-system.git"
 }
