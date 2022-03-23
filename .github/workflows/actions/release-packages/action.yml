@@ -1,0 +1,30 @@
+name: 'Design System Release Packages'
+description: 'Downloads build artifacts and releases them'
+runs:
+  using: 'composite'
+  steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
+      with:
+        node-version: 16.x
+    - name: Cache Core Node Modules
+      uses: actions/cache@v2
+      env:
+        cache-name: root-node-modules
+      with:
+        path: ./node_modules
+        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('./yarn.lock') }}-v2
+    - uses: ./.github/workflows/actions/download-archive
+      with:
+        name: design-system-core
+        path: ./package/core
+        filename: design-system-core.zip
+    - name: Create Release
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        yarn install --frozen-lockfile
+        npx auto shipit
+      shell: bash
