@@ -30,6 +30,7 @@
       "npm",
       "conventional-commits",
       "released"
-    ]
+    ],
+    "baseBranch": "main"
   }
 }
