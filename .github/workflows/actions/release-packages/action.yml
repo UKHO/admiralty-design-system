@@ -8,6 +8,9 @@ runs:
   using: 'composite'
   steps:
     - uses: actions/checkout@v2
+    - name: Prepare repository
+      run: git fetch --unshallow --tags
+      shell: bash
     - uses: actions/setup-node@v1
       with:
         node-version: 16.x
