@@ -23,6 +23,11 @@ runs:
         name: design-system-core
         path: ./packages/core
         filename: design-system-core.zip
+    - uses: ./.github/workflows/actions/download-archive
+      with:
+        name: design-system-angular
+        path: ./packages/angular
+        filename: design-system-angular.zip
     - name: Create Release
       env:
         GITHUB_TOKEN: ${{ inputs.GITHUB_TOKEN }}
