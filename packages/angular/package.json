@@ -2,6 +2,7 @@
   "name": "@ukho/design-system-angular",
   "version": "0.0.0",
   "scripts": {
+    "prepublishOnly": "node .scripts/copyPackageVersion.js",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
@@ -49,7 +50,8 @@
   },
   "publishConfig": {
     "access": "restricted",
-    "registry": "https://npm.pkg.github.com"
+    "registry": "https://npm.pkg.github.com",
+    "directory": "dist/"
   },
   "url": "https://github.com/UKHO/design-system",
   "repository": "git://github.com/UKHO/design-system.git"
