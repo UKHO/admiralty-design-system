@@ -7,9 +7,15 @@ inputs:
   NPM_TOKEN:
     description: NPM_TOKEN used to publish to npm
     required: true
+  ADMIN_TOKEN:
+    description: ADMIN_TOKEN used to access the git repo
+    required: true
 runs:
   using: 'composite'
   steps:
+    - uses: actions/checkout@v2
+      with:
+        token: ${{ secrets.ADMIN_TOKEN }}
     - name: Prepare repository
       run: git fetch --unshallow --tags
       shell: bash
