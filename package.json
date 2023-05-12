@@ -1,0 +1,30 @@
+{
+  "name": "admiralty-design-system",
+  "packageManager": "yarn@3.5.0",
+  "devDependencies": {
+    "@auto-it/conventional-commits": "^10.32.5",
+    "@auto-it/released": "^10.32.5",
+    "auto": "^10.32.5",
+    "colorette": "^2.0.16",
+    "execa": "^5.1.1",
+    "fs-extra": "^10.0.0",
+    "lerna": "^4.0.0",
+    "listr": "^0.14.3",
+    "semver": "^7.3.5"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "url": "https://github.com/UKHO/admiralty-design-system",
+  "repository": "git://github.com/UKHO/admiralty-design-system.git",
+  "license": "MIT",
+  "author": "UKHO",
+  "auto": {
+    "plugins": [
+      "npm",
+      "conventional-commits",
+      "released"
+    ],
+    "baseBranch": "main"
+  }
+}

@@ -1,0 +1,7 @@
+@use "../../scss/base/responsive";
+@use "../../scss/vars/colours";
+
+nav.side-nav {
+  display: flex;
+  flex-direction: column;
+}

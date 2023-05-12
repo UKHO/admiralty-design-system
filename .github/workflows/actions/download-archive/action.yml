@@ -1,0 +1,25 @@
+name: 'Design System Archive Download'
+description: 'Downloads and decompresses an archive from a previous job'
+inputs:
+  path:
+    required: true
+    description: 'Input archive name'
+  filename:
+    required: true
+    description: 'Input file name'
+  name:
+    required: true
+    description: 'Archive name'
+runs:
+  using: 'composite'
+  steps:
+    - uses: actions/download-artifact@v3
+      with:
+        name: ${{ inputs.name }}
+        path: ${{ inputs.path }}
+    - name: Exract Archive
+      run: unzip -q -o ${{ inputs.path }}/${{ inputs.filename }}
+      shell: bash
+    - name: Remove Archive
+      run: rm ${{ inputs.path }}/${{ inputs.filename }}
+      shell: bash

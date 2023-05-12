@@ -1,0 +1,32 @@
+name: "Chromatic Deployment"
+
+on: push
+
+jobs:
+  chromatic-deployment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3.6.0
+        with:
+          # Version Spec of the version to use. Examples: 12.x, 10.15.1, >=10.15.0.
+          node-version: 16.x
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: '0'
+      - uses: ./.github/workflows/actions/yarn-cache
+        name: Restore Yarn Cache
+      - name: Install Packages
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
+        run: |
+          yarn install --immutable
+        working-directory: ./packages/core
+      - uses: ./.github/workflows/actions/build-core
+        name: Build Core
+      - name: Deploy to Chromatic
+        uses: chromaui/action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          workingDir: ./packages/core
+          exitOnceUploaded: true

@@ -1,0 +1,45 @@
+@use "../../scss/vars/colours" as colours;
+
+@mixin active {
+  background-color: colours.$colour-nav-bg-hover;
+  box-shadow: inset 0 -5px colours.$colour-admiralty-blue;
+}
+
+.menu-item {
+  cursor: pointer;
+  display: flex;
+  flex: 0;
+  flex-direction: column;
+  font-size: 18px !important;
+  font-weight: 400;
+  height: 100%;
+  justify-content: center;
+  line-height: 1.33em;
+  margin-bottom: 0;
+  min-width: 4em;
+  max-width: 11.1em;
+  padding: 0 1.65em;
+  position: relative;
+  text-align: center;
+
+    .sub-menu {
+      display: none;
+      position: absolute;
+      border: 1px solid colours.$colour-divider;
+      right: 0;
+      top: 100%;
+    }
+
+    &:hover{
+      @include active;
+
+      .sub-menu {
+        display: flex;
+        flex-direction: column
+      }
+    }
+
+    &.active {
+      @include active;
+    }
+}

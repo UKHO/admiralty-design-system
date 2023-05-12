@@ -1,0 +1,17 @@
+.radio-group {
+  display: flex;
+  flex-direction: row;
+
+  ::slotted(*) {
+    margin-right: 2em !important;
+  }
+}
+
+.stack {
+  flex-direction: column;
+
+  ::slotted(*) {
+    margin-bottom: 10px !important;
+  }
+}
+

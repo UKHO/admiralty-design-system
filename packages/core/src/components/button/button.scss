@@ -1,0 +1,231 @@
+@use "../../scss/base/responsive";
+
+@use "../../scss/vars/colours";
+@use "../../scss/vars/typography";
+
+@mixin button-defaults {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: typography.$font-family;
+  font-size: typography.$font-size-normal;
+  line-height: typography.$font-line-height-normal;
+  font-size: 21px;
+  font-weight: typography.$font-weight-medium;
+  background-color: unset;
+  cursor: pointer;
+
+  &:focus {
+    outline: 3px solid colours.$colour-utility-focus;
+  }
+
+  &:disabled {
+    cursor: default;
+    * {
+      pointer-events: none;
+    }
+  }
+
+  i {
+    display: inline-block;
+    font-size: 24px;
+    color: colours.$colour-button-icon;
+    padding-left: 15px;
+  }
+}
+
+@mixin button {
+  @include button-defaults;
+  height: 60px;
+  padding: 15px 18px;
+  white-space: nowrap;
+  min-width: 200px;
+
+  @include responsive.not-desktop {
+    min-width: unset;
+    max-width: 200px;
+    width: 100%;
+    height: 50px;
+    padding: 10px 18px;
+  }
+
+  i {
+    display: inline-block;
+    font-size: 24px;
+    color: colours.$colour-button-icon;
+    padding-left: 15px;
+  }
+}
+
+/* Primary Buttons */
+button.primary {
+  @include button;
+  background-color: colours.$colour-button-standard;
+  color: colours.$colour-button-text;
+  border: 2px solid colours.$colour-button-standard;
+
+  &:hover {
+    background-color: colours.$colour-button-hover;
+    border: 2px solid colours.$colour-button-hover;
+  }
+
+  &:enabled:active {
+    background-color: colours.$colour-button-selected;
+    border: 2px solid colours.$colour-button-border-selected;
+    color: colours.$colour-button-icon-selected;
+
+    i {
+      color: colours.$colour-button-icon-selected;
+    }
+
+    p {
+      color: colours.$colour-button-text-selected;
+    }
+  }
+
+  &:disabled {
+    background-color: colours.$colour-button-deselected;
+    border: 2px solid colours.$colour-button-deselected;
+  }
+}
+
+/* Secondary Buttons */
+button.secondary {
+  @include button;
+  background-color: colours.$colour-button-secondary-standard;
+  color: colours.$colour-button-secondary-text;
+  border: 2px solid colours.$colour-button-secondary-border-standard;
+
+  &:hover {
+    background-color: colours.$colour-button-secondary-hover;
+    border: 2px solid colours.$colour-button-secondary-border-hover;
+  }
+
+  &:enabled:active {
+    background-color: colours.$colour-button-secondary-selected;
+    border: 2px solid colours.$colour-button-secondary-selected;
+    color: colours.$colour-button-secondary-icon-selected;
+
+    i {
+      color: colours.$colour-button-secondary-icon-selected;
+    }
+
+    p {
+      color: colours.$colour-button-secondary-text-selected;
+    }
+  }
+
+  &:disabled {
+    background-color: colours.$colour-button-secondary-deselected;
+    border: 2px solid colours.$colour-button-secondary-deselected;
+  }
+
+  i {
+    color: colours.$colour-button-secondary-icon;
+  }
+}
+
+/* Warning Buttons */
+button.warning {
+  @include button;
+  background-color: colours.$colour-utility-error;
+  color: colours.$colour-white;
+  border: 2px solid colours.$colour-utility-error;
+
+  &:hover {
+    background-color: colours.darken(colours.$colour-utility-error);
+    border: 2px solid colours.darken(colours.$colour-utility-error);
+  }
+
+  &:enabled:active {
+    background-color: colours.$colour-white;
+    border: 2px solid colours.$colour-utility-error;
+    color: colours.$colour-utility-error;
+
+    i {
+      color: colours.$colour-utility-error;
+    }
+
+    p {
+      color: colours.$colour-utility-error;
+    }
+  }
+
+  &:disabled {
+    background-color: colours.$colour-button-secondary-deselected;
+    border: 2px solid colours.$colour-button-secondary-deselected;
+    & > * {
+      opacity: 0.5;
+    }
+  }
+
+  i {
+    color: colours.$colour-white;
+  }
+}
+
+/* Text Buttons */
+button.text {
+  @include button-defaults;
+  color: colours.$colour-button-secondary-text;
+
+  &:enabled:active {
+    color: colours.$colour-button-secondary-text;
+
+    i {
+      color: colours.$colour-button-secondary-text;
+    }
+
+    p {
+      color: colours.$colour-button-secondary-text;
+    }
+  }
+
+  &:disabled {
+    color: colours.$colour-button-secondary-deselected;
+    & > * {
+      opacity: 0.5;
+    }
+  }
+
+  &:focus {
+    outline-offset: 3px;
+  }
+
+  i {
+    color: colours.$colour-button-secondary-icon;
+  }
+}
+
+/* Icon Buttons */
+button.icon {
+  @include button-defaults;
+  min-height: 50px;
+  min-width: 50px;
+  padding: 10px 10px;
+
+  background-color: var(--button-icon-background-colour, colours.$colour-bg-grey);
+  color: colours.$colour-admiralty-blue;
+  border: 2px solid colours.$colour-admiralty-blue;
+
+  &:enabled:active {
+    background-color: colours.$colour-admiralty-blue;
+    color: colours.$colour-white;
+  }
+
+  &:disabled {
+    opacity: 0.3;
+  }
+
+  &:active:disabled {
+    background-color: colours.$colour-bg-grey;
+  }
+
+  i {
+    margin: auto;
+    font-size: unset;
+    color: unset;
+    padding-left: unset;
+  }
+}

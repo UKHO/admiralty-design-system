@@ -1,0 +1,44 @@
+@use "../../scss/vars/colours";
+@use "../../scss/base/responsive";
+@use "../../scss/base/typography";
+@use "../../scss/vars/typography" as typography-vars;
+
+
+.text-area-container {
+  textarea {
+    display: block;
+    position: relative;
+    width: 100%;
+    min-height: 170px;
+    border: 2px solid colours.$colour-text;
+    color: colours.$colour-text;
+    padding: 12px 18px;
+    outline: none;
+    resize: vertical;
+    overflow: auto;
+    box-sizing: border-box;
+    vertical-align: top;
+
+    background-color: colours.$colour-white;
+
+    &:focus-visible {
+      outline: 3px solid colours.$colour-utility-focus;
+      box-shadow: colours.$colour-text inset 0 0 0 2px;
+    }
+
+    &.invalid {
+      border-color: colours.$colour-utility-error;
+
+      &:focus-visible {
+        border-color: unset;
+        outline: 3px solid colours.$colour-utility-focus;
+      }
+    }
+
+    &.disabled {
+      color: colours.$colour-textinput-text-disabled;
+      border-color: colours.$colour-textinput-border-disabled;
+      background: colours.$colour-white;
+    }
+  }
+}

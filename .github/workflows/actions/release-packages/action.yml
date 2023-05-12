@@ -1,0 +1,31 @@
+name: 'Design System Release Packages'
+description: 'Downloads build artifacts and releases them'
+inputs:
+  GITHUB_TOKEN:
+    description: GITHUB_TOKEN used to create release
+    required: true
+runs:
+  using: 'composite'
+  steps:
+    - name: Prepare repository
+      run: git fetch --unshallow --tags
+      shell: bash
+    - uses: ./.github/workflows/actions/download-archive
+      with:
+        name: admiralty-core
+        path: ./packages/core
+        filename: admiralty-core.zip
+    - uses: ./.github/workflows/actions/download-archive
+      with:
+        name: admiralty-angular
+        path: ./packages/angular
+        filename: admiralty-angular.zip
+    - name: Create Release
+      env:
+        GITHUB_TOKEN: ${{ inputs.GITHUB_TOKEN }}
+        NODE_AUTH_TOKEN: ${{ inputs.GITHUB_TOKEN }}
+        NPM_TOKEN: ${{ inputs.NPM_TOKEN }}
+      run: |
+        yarn install --frozen-lockfile
+        npx auto shipit
+      shell: bash

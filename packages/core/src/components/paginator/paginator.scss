@@ -1,0 +1,16 @@
+@use "../../scss/vars/colours";
+
+admiralty-paginator nav.standard {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  admiralty-button {
+    margin: 6px;
+  }
+
+  p {
+    padding: 0px 18px 0px 0px;
+    margin-bottom: 0px;
+  }
+}

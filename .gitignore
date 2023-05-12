@@ -1,0 +1,68 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+**/dist
+**/dist-styles
+**/.out
+angular/documentation.json
+/tmp
+/out-tsc
+# Only exists if Bazel was run
+/bazel-out
+
+**/.rollup.cache
+
+.env
+**/coverage
+
+# Use fontawesome from NPM package
+projects/site/public/assets/fonts/fontawesome
+
+# dependencies
+**/node_modules
+
+# profiling files
+chrome-profiler-events*.json
+speed-measure-plugin*.json
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# misc
+/.sass-cache
+/connect.lock
+/packages/angular/coverage
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
+
+# System Files
+.DS_Store
+Thumbs.db
+
+lerna-debug.log
+packages/angular/storybook-static
+build-storybook.log
+
+**/storybook-static
+
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+.pnp.*

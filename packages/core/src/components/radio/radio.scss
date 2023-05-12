@@ -1,0 +1,41 @@
+@use "../../scss/vars/colours" as colours;
+@use "../../scss/vars/typography" as typography;
+
+.admiralty-radio {
+  input {
+    appearance: none;
+    border: 2px solid colours.$colour-admiralty-blue;
+    border-radius: 1rem;
+    height: 1.5rem;
+    width: 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    margin-right: 18px;
+
+    &:checked:after {
+        border-radius: 100%;
+        background-color: colours.$colour-admiralty-blue;
+        width: .8rem;
+        height: .8rem;
+        content: " ";
+      }
+
+      &:disabled {
+        border: 2px solid colours.$colour-textinput-text-disabled;
+      }
+
+      &:focus {
+        outline: 3px solid colours.$colour-utility-focus;
+        outline-offset: 0;
+      }
+  }
+
+  label {
+    font-family: typography.$font-family;
+    font-weight: typography.$font-weight-light;
+    position: relative;
+    top: 2px;
+  }
+}

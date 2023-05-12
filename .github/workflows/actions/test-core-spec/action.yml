@@ -1,0 +1,19 @@
+name: 'Test Core Spec'
+description: 'Test Core Spec'
+runs:
+  using: 'composite'
+  steps:
+    - uses: ./.github/workflows/actions/download-archive
+      with:
+        name: admiralty-core
+        path: ./packages/core
+        filename: admiralty-core.zip
+    - name: Install Packages
+      run: |
+        yarn install --immutable
+      shell: bash
+      working-directory: ./packages/angular
+    - name: Test
+      run: npm run test:spec -- --ci
+      shell: bash
+      working-directory: ./packages/core

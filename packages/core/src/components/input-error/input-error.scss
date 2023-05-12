@@ -1,0 +1,16 @@
+@use '../../scss/vars/colours';
+
+:host {
+  display: flex;
+  align-items: center;
+}
+
+admiralty-icon {
+  color: colours.$colour-utility-error;
+}
+
+p {
+  margin: 0;
+  color: colours.$colour-utility-error;
+}
+

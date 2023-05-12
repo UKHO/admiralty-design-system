@@ -1,0 +1,13 @@
+@use '../../scss/vars/colours';
+@use '../../scss/vars/typography';
+
+:host {
+  display: table-cell;
+  color: colours.$colour-admiralty-blue;
+  font-size: 18px;
+  line-height: 30px;
+  padding: 6px 20px;
+  text-align: left;
+  font-weight: typography.$font-weight-medium;
+  border-bottom: 5px solid colours.$colour-admiralty-blue;
+}

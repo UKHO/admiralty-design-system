@@ -1,0 +1,24 @@
+name: 'Build Design System Angular'
+description: 'Build Design System Angular'
+runs:
+  using: 'composite'
+  steps:
+    - uses: ./.github/workflows/actions/download-archive
+      with:
+        name: admiralty-core
+        path: ./packages/core
+        filename: admiralty-core.zip
+    - name: Install Packages
+      run: |
+        yarn install --immutable
+      shell: bash
+      working-directory: ./packages/angular
+    - name: Build
+      run: yarn build
+      shell: bash
+      working-directory: ./packages/angular
+    - uses: ./.github/workflows/actions/upload-archive
+      with:
+        name: admiralty-angular
+        output: ./packages/angular/admiralty-angular.zip
+        paths: ./packages/angular/dist

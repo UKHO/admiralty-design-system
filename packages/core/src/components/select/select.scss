@@ -1,0 +1,51 @@
+@use "../../scss/vars/colours";
+@use "../../scss/vars/typography";
+
+.disabled {
+  color: colours.$colour-textinput-text-disabled;
+}
+
+.select-wrapper {
+  position: relative;
+}
+
+admiralty-icon {
+  font-size: 24px;
+  font-weight: typography.$font-weight-medium;
+  pointer-events: none;
+  position: absolute;
+  right: 12px;
+  top: 12px;
+}
+
+
+select {
+  appearance: none;
+  background-color: colours.$colour-white;
+  border: 2px solid colours.$colour-text;
+  box-sizing: border-box;
+  color: colours.$colour-text;
+  font-family: typography.$font-family;
+  font-size: typography.$font-size-normal;
+  line-height: 24px;
+  margin-bottom: 6px;
+  position: relative;
+  font-weight: typography.$font-weight-light;
+  padding: 12px;
+  width: 100%;
+
+  &.error {
+    border-color: colours.$colour-utility-error;
+  }
+
+  &:focus-visible {
+    outline: 3px solid colours.$colour-utility-focus;
+    box-shadow: inset 0 0 0 2px colours.$colour-text;
+  }
+
+  &.disabled {
+    border-color: colours.$colour-textinput-text-disabled;
+  }
+}
+
+

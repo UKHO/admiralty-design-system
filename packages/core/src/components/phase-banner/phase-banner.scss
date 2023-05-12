@@ -1,0 +1,22 @@
+@use "../../scss/base/responsive";
+@use "../../scss/vars/colours";
+
+admiralty-phase-banner .phase-banner {
+  display: block;
+  line-height: 40px;
+  width: 100%;
+  padding: 0 18px;
+  @include responsive.desktop-only {
+    padding: 0 20px;
+  }
+
+  strong {
+    border: 2px solid;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: colours.$colour-admiralty-blue;
+    padding: 6px 8px 3px;
+    margin-right: 10px;
+  }
+}

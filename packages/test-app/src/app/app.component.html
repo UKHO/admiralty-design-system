@@ -1,0 +1,177 @@
+<admiralty-header
+  enabled="true"
+  logo-alt-text="Admiralty Stacked Logo"
+  logo-link-url="http://www.example.com"
+  logo-img-url="https://designsystem.admiralty.co.uk/assets/svg/Admiralty%20stacked%20logo.svg"
+  nav-title="Design System"
+>
+  <admiralty-header-menu-item menu-title="First Item" slot="items">
+    <admiralty-header-sub-menu-item menu-title="Sub menu 1"></admiralty-header-sub-menu-item>
+    <admiralty-header-sub-menu-item menu-title="Sub menu 2"></admiralty-header-sub-menu-item>
+  </admiralty-header-menu-item>
+  <admiralty-header-menu-item active="true" menu-title="Second Item" slot="items"></admiralty-header-menu-item>
+  <admiralty-header-menu-item menu-title="Third Item" slot="items"></admiralty-header-menu-item>
+  <admiralty-header-profile isSignedIn="false" slot="profile"></admiralty-header-profile>
+</admiralty-header>
+<admiralty-breadcrumbs>
+  <admiralty-breadcrumb>Test1</admiralty-breadcrumb>
+  <admiralty-breadcrumb>Test2</admiralty-breadcrumb>
+  <admiralty-breadcrumb>Test3</admiralty-breadcrumb>
+</admiralty-breadcrumbs>
+<admiralty-button>Button</admiralty-button>
+<admiralty-card heading="A card">Some content</admiralty-card>
+<admiralty-colour-block
+  action-text="Click here"
+  width="400"
+  height="400"
+  heading="Colour block"
+  colour="admiralty-blue"
+  click-action="onColourBlockClick"
+>
+  <div>
+    <p>This colour block is a component in the design system and we hope you enjoy it</p>
+  </div>
+</admiralty-colour-block>
+<admiralty-expansion heading="Heading 1">
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ut vulputate justo. Nulla tincidunt gravida
+    condimentum. Vivamus elementum malesuada sem. Nulla consequat semper fermentum. Etiam et tempus massa. Nunc
+    condimentum rhoncus dui. Duis viverra erat eu velit fringilla, eu pretium orci tincidunt. Maecenas nec ipsum at arcu
+    viverra eleifend. Pellentesque volutpat, turpis a sagittis facilisis, nisl nisi consequat neque, in luctus tortor
+    enim iaculis neque.
+  </p>
+  <p>
+    Curabitur nec mattis ex. In tincidunt quis nunc eu congue. Phasellus odio dui, aliquam a aliquet vel, fermentum id
+    dolor. Nullam neque elit, interdum et mauris et, tempus imperdiet arcu. Cras erat odio, volutpat vel bibendum quis,
+    malesuada non quam. Etiam in bibendum lacus. In hac habitasse platea dictumst. Proin justo nunc, gravida nec magna
+    id, faucibus placerat dui. Phasellus luctus viverra imperdiet. Maecenas sed lorem ligula. Maecenas nec velit ut
+    lectus porta ullamcorper vel et ante. Sed pretium metus vitae sagittis tincidunt. Integer aliquam consectetur ex et
+    tempus. Aliquam faucibus ullamcorper libero.
+  </p>
+</admiralty-expansion>
+<admiralty-expansion heading="Heading 2">
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ut vulputate justo. Nulla tincidunt gravida
+    condimentum. Vivamus elementum malesuada sem. Nulla consequat semper fermentum. Etiam et tempus massa. Nunc
+    condimentum rhoncus dui. Duis viverra erat eu velit fringilla, eu pretium orci tincidunt. Maecenas nec ipsum at arcu
+    viverra eleifend. Pellentesque volutpat, turpis a sagittis facilisis, nisl nisi consequat neque, in luctus tortor
+    enim iaculis neque.
+  </p>
+  <p>
+    Curabitur nec mattis ex. In tincidunt quis nunc eu congue. Phasellus odio dui, aliquam a aliquet vel, fermentum id
+    dolor. Nullam neque elit, interdum et mauris et, tempus imperdiet arcu. Cras erat odio, volutpat vel bibendum quis,
+    malesuada non quam. Etiam in bibendum lacus. In hac habitasse platea dictumst. Proin justo nunc, gravida nec magna
+    id, faucibus placerat dui. Phasellus luctus viverra imperdiet. Maecenas sed lorem ligula. Maecenas nec velit ut
+    lectus porta ullamcorper vel et ante. Sed pretium metus vitae sagittis tincidunt. Integer aliquam consectetur ex et
+    tempus. Aliquam faucibus ullamcorper libero.
+  </p>
+</admiralty-expansion>
+<form [formGroup]="group" (ngSubmit)="onSubmit()">
+  <admiralty-file-input></admiralty-file-input>
+  <admiralty-input
+    [invalid]="blah?.invalid && blah?.touched"
+    invalidMessage="This field is required"
+    type="text"
+    formControlName="blah"
+  ></admiralty-input>
+  <admiralty-checkbox checked="true" disabled="false" input-id="checkbox" label-text="checkbox 1"></admiralty-checkbox>
+  <admiralty-radio name="radio1" value="radio1">Radio text label</admiralty-radio>
+  <admiralty-select hint="Select an option from the list" label="Choose a colour">
+    <option value="test1">Test</option>
+    <option value="test2">Test 2</option>
+  </admiralty-select>
+  <admiralty-radio-group display-vertical>
+    <admiralty-radio name="radio1" value="radio2">Radio group label 2</admiralty-radio>
+    <admiralty-radio name="radio1" value="radio3">Radio group label 3</admiralty-radio>
+  </admiralty-radio-group>
+  <admiralty-button type="submit">Submit</admiralty-button>
+</form>
+<admiralty-icon iconName="hippo"></admiralty-icon>
+<admiralty-progress-bar error="false" progression="60" label="Progress Bar Label"></admiralty-progress-bar>
+<admiralty-side-nav label="Software Stage Menu">
+  <admiralty-side-nav-item
+    side-nav-item-id="sideNavItemAlpha"
+    heading-title="Alpha"
+    nav-active="false"
+    (sideNavItemSelected)="onSideNavItemSelected($event)"
+  ></admiralty-side-nav-item>
+  <admiralty-side-nav-item
+    side-nav-item-id="sideNavItemBeta"
+    heading-title="Beta"
+    nav-active="true"
+    (sideNavItemSelected)="onSideNavItemSelected($event)"
+  ></admiralty-side-nav-item>
+  <admiralty-side-nav-item
+    side-nav-item-id="sideNavItemProduction"
+    heading-title="Production"
+    nav-active="false"
+    (sideNavItemSelected)="onSideNavItemSelected($event)"
+  ></admiralty-side-nav-item>
+</admiralty-side-nav>
+<admiralty-textarea label="Textarea Label" text="Some text"></admiralty-textarea>
+<admiralty-filter filterTitle="Awesome Filters">
+  <admiralty-filter-group groupTitle="Group 1">
+    <div style="display: flex; flex-direction: column">
+      <admiralty-checkbox labelText="Filter 1"></admiralty-checkbox>
+      <admiralty-checkbox labelText="Filter 2"></admiralty-checkbox>
+      <admiralty-checkbox labelText="Filter 3"></admiralty-checkbox>
+    </div>
+  </admiralty-filter-group>
+  <admiralty-filter-group groupTitle="Group 2">
+    <div style="display: flex; flex-direction: column">
+      <admiralty-radio-group displayVertical="true">
+        <admiralty-radio name="grp" value="option1">Option 1</admiralty-radio>
+        <admiralty-radio name="grp" value="option2">Option 2</admiralty-radio>
+        <admiralty-radio name="grp" value="option2">Option 3</admiralty-radio>
+      </admiralty-radio-group>
+    </div>
+  </admiralty-filter-group>
+</admiralty-filter>
+<admiralty-type-ahead label="Please type" results-on-init-focus="false" placeholder="Select an animal">
+  <admiralty-type-ahead-item value="dog"></admiralty-type-ahead-item>
+  <admiralty-type-ahead-item value="cat"></admiralty-type-ahead-item>
+  <admiralty-type-ahead-item value="elephant"></admiralty-type-ahead-item>
+  <admiralty-type-ahead-item value="badger"></admiralty-type-ahead-item>
+  <admiralty-type-ahead-item value="donkey"></admiralty-type-ahead-item>
+  <admiralty-type-ahead-item value="horse"></admiralty-type-ahead-item>
+  <admiralty-type-ahead-item value="lion"></admiralty-type-ahead-item>
+  <admiralty-type-ahead-item value="ostrich"></admiralty-type-ahead-item>
+  <admiralty-type-ahead-item value="rabbit"></admiralty-type-ahead-item>
+  <admiralty-type-ahead-item value="tiger"></admiralty-type-ahead-item>
+  <admiralty-type-ahead-item value="guinea pig"></admiralty-type-ahead-item>
+</admiralty-type-ahead>
+
+<admiralty-table caption="Favourite Foods">
+  <admiralty-table-header>
+    <admiralty-table-header-cell>Name</admiralty-table-header-cell>
+    <admiralty-table-header-cell>Age</admiralty-table-header-cell>
+    <admiralty-table-header-cell>Other</admiralty-table-header-cell>
+    <admiralty-table-header-cell>Favourite Food</admiralty-table-header-cell>
+  </admiralty-table-header>
+  <admiralty-table-body>
+    <admiralty-table-row>
+      <admiralty-table-cell>Tom</admiralty-table-cell>
+      <admiralty-table-cell>12</admiralty-table-cell>
+      <admiralty-table-cell>Likes Bread</admiralty-table-cell>
+      <admiralty-table-cell>Potatoes</admiralty-table-cell>
+    </admiralty-table-row>
+    <admiralty-table-row>
+      <admiralty-table-cell>Thomas</admiralty-table-cell>
+      <admiralty-table-cell>25</admiralty-table-cell>
+      <admiralty-table-cell>Likes Lots Of Bread</admiralty-table-cell>
+      <admiralty-table-cell>Potatoes</admiralty-table-cell>
+    </admiralty-table-row>
+    <admiralty-table-row>
+      <admiralty-table-cell>Tommy</admiralty-table-cell>
+      <admiralty-table-cell>1000</admiralty-table-cell>
+      <admiralty-table-cell>Bread</admiralty-table-cell>
+      <admiralty-table-cell>Potatoes</admiralty-table-cell>
+    </admiralty-table-row>
+    <admiralty-table-row>
+      <admiralty-table-cell>This is super super long</admiralty-table-cell>
+      <admiralty-table-cell>way longer than the rest of them</admiralty-table-cell>
+      <admiralty-table-cell>Bread is the greatest food on earth and this text is a perfect length</admiralty-table-cell>
+      <admiralty-table-cell>Potatoes</admiralty-table-cell>
+    </admiralty-table-row>
+  </admiralty-table-body>
+</admiralty-table>

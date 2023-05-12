@@ -1,0 +1,32 @@
+@use "../../scss/base/responsive";
+
+@use "../../scss/vars/colours";
+@use "../../scss/vars/typography";
+
+:host {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumb-icon {
+  margin: 0 10px;
+  font-size: 12px;
+}
+
+a {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: typography.$font-weight-light;
+  text-decoration: none;
+  color: colours.$colour-nav-item;
+  margin: 10px 2px;
+
+  &:hover {
+    color: colours.$colour-admiralty-blue;
+  }
+
+  &.active {
+    color: colours.$colour-admiralty-blue;
+    font-weight: typography.$font-weight-medium;
+  }
+}

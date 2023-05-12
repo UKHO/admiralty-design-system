@@ -1,0 +1,54 @@
+@import "@fortawesome/fontawesome-free/css/regular";
+@import "@fortawesome/fontawesome-free/css/solid";
+@import "@fortawesome/fontawesome-free/css/brands";
+
+@font-face {
+  font-family: "JohnstonITC";
+  src: url("/assets/webfonts/JohnstonITC/medium/JohnstonITCStd-Medium.woff2") format("woff2"); 
+  src: url("/assets/webfonts/JohnstonITC/medium/JohnstonITCStd-Medium.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "JohnstonITC";
+  src: url("/assets/webfonts/JohnstonITC/bold/JohnstonITCStd-Bold.woff2") format("woff2"); 
+  src: url("/assets/webfonts/JohnstonITC/bold/JohnstonITCStd-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "JohnstonITC";
+  src: url("/assets/webfonts/JohnstonITC/italic/JohnstonITCStd-MediumIta.woff2")  format("woff2"); 
+  src: url("/assets/webfonts/JohnstonITC/italic/JohnstonITCStd-MediumIta.woff") format("woff");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "JohnstonITC";
+  src: url("/assets/webfonts/JohnstonITC/light/JohnstonITCStd-Light.woff2") format("woff2"); 
+  src: url("/assets/webfonts/JohnstonITC/light/JohnstonITCStd-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "JohnstonITC";
+  src: url("/assets/webfonts/JohnstonITC/light-italic/JohnstonITCStd-LightIta.woff2") format("woff2"); 
+  src: url("/assets/webfonts/JohnstonITC/light-italic/JohnstonITCStd-LightIta.woff")format("woff");
+  font-weight: 300;
+  font-style: italic;
+}
+
+.fa,
+.fas {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
+.fab {
+  font-family: "Font Awesome 5 Brands";
+  font-weight: 400;
+}

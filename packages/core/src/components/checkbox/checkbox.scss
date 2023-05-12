@@ -1,0 +1,84 @@
+.form-control {
+  font-size: 18px;
+  position: relative;
+  display: inline-block;
+
+  input[type="checkbox"] {
+    box-sizing: border-box;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    margin: 0;
+    z-index: 1;
+    cursor: pointer;
+
+    &:checked+label::after {
+      content: "";
+    }
+  }
+
+  label {
+    position: relative;
+    display: inline-block;
+    padding-left: 42px;
+    margin-bottom: 14px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    line-height: 30px;
+
+    &.disabled {
+      cursor: default;
+      pointer-events: none;
+    }
+
+    &::before, &::after {
+      position: absolute;
+      content: none;
+      display: inline-block;
+    }
+
+
+    &::before {
+      content: "";
+      height: 26px;
+      width: 26px;
+      border: 2px solid #03284f;
+      left: 0;
+      top: 0;
+      background-color: #fff;
+    }
+
+    &::after {
+      height: 8px;
+      width: 15px;
+      border-left: 3px solid;
+      border-bottom: 3px solid;
+      transform: rotate(-45deg);
+      color: #09315b;
+      left: 6px;
+      top: 7px;
+    }
+  }
+
+  &.right-align label {
+    padding-left: unset;
+    padding-right: 35px;
+
+    &::before {
+      left: unset;
+      right: 0;
+    }
+
+    &::after {
+      left: unset;
+      right: 6px;
+    }
+  }
+}
+

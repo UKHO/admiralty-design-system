@@ -1,0 +1,13 @@
+@use "../../scss/vars/colours";
+@use "../../scss/vars/typography";
+
+p {
+  margin-top: 0;
+  margin-bottom: 6px;
+  display: block;
+  font-weight: typography.$font-weight-light;
+
+  &.disabled {
+    color: colours.$colour-textinput-text-disabled;
+  }
+}

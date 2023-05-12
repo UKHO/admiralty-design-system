@@ -1,0 +1,53 @@
+@use "../../scss/vars/colours";
+@use "../../scss/vars/typography";
+
+.text-input-container {
+  display: flex;
+  flex-direction: column;
+
+  input {
+    border-color: colours.$colour-text;
+    border-width: 2px;
+    border-style: solid;
+    color: colours.$colour-text;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: typography.$font-weight-light;
+
+    padding: 12px;
+
+    &:focus {
+      outline-offset: unset;
+      outline: 3px solid colours.$colour-utility-focus;
+      box-shadow: colours.$colour-text inset 0 0 0 2px;
+    }
+  }
+
+  .form-field {
+    background-color: colours.$colour-white;
+
+    &:focus-visible {
+      outline: 3px solid colours.$colour-utility-focus;
+      box-shadow: colours.$colour-text inset 0 0 0 2px;
+    }
+
+    &.invalid {
+      border-color: colours.$colour-utility-error;
+
+      &:focus-visible {
+        border-color: unset;
+        outline: 3px solid colours.$colour-utility-focus;
+      }
+    }
+
+    &.disabled {
+      color: colours.$colour-textinput-text-disabled;
+      border-color: colours.$colour-textinput-border-disabled;
+      background: colours.$colour-white;
+    }
+  }
+
+  admiralty-input-error {
+    margin-top: 6px;
+  }
+}

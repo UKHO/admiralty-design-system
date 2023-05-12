@@ -1,0 +1,26 @@
+@use "../../scss/vars/colours" as colours;
+
+@mixin active {
+  background-color: colours.$colour-nav-bg-hover;
+}
+
+.header-sub-menu-item {
+  box-sizing: border-box;
+  color: colours.$colour-admiralty-blue;
+  display: block;
+  font-size: 18px;
+  margin-bottom: 0;
+  padding: 0 .66em;
+  text-align: center;
+  width: 300px;
+
+  .title {
+    display: block;
+    padding: 10px;
+    text-align: center;
+  }
+
+  &:hover{
+    @include active;
+  }
+}

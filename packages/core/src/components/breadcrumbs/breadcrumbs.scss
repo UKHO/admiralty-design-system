@@ -1,0 +1,10 @@
+@use "../../scss/vars/colours";
+
+.breadcrumbs {
+  width: 100%;
+  box-sizing: border-box;
+  display: inline-flex;
+  border-bottom: 1px solid colours.$colour-divider;
+  background-color: colours.$colour-bg;
+  padding: 0 20px;
+}

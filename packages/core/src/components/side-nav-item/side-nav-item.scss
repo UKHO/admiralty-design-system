@@ -1,0 +1,33 @@
+@use "../../scss/base/responsive";
+@use "../../scss/vars/colours";
+
+a.section {
+  cursor: pointer;
+  padding: 0px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 42px;
+  max-width: fit-content;
+  box-sizing: border-box;
+  user-select: none;
+
+  text-align: center;
+  text-decoration: none;
+  color: colours.$colour-admiralty-blue;
+  font-weight: normal;
+  font-size: 16px;
+
+  &:hover {
+    background-color: colours.$colour-nav-bg-hover;
+  }
+
+  &:focus {
+    outline-offset: -2px;
+  }
+
+  &.navActive {
+    background-color: colours.$colour-admiralty-blue;
+    color: colours.$colour-white;
+  }
+}

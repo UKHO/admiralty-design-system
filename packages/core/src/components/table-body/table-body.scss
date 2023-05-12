@@ -1,0 +1,14 @@
+@use '../../scss/vars/colours';
+
+:host {
+  display: table-row-group;
+}
+
+::slotted(:nth-child(odd)) {
+  background-color: colours.$colour-table-row-bg;
+}
+
+::slotted(:nth-child(even)) {
+  background-color: colours.$colour-table-row-alt-bg;
+}
+

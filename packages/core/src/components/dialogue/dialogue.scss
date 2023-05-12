@@ -1,0 +1,48 @@
+@use "../../scss/base/responsive";
+@use "../../scss/vars/typography";
+@use "../../scss/vars/colours";
+
+.dialogue {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  padding: 30px 18px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  @include responsive.not-desktop {
+    padding: 24px 18px;
+  }
+
+  .dialogue-title {
+    color: colours.$colour-admiralty-blue;
+    font-size: 20px;
+    font-weight: typography.$font-weight-medium;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    margin-bottom: 12px;
+
+    .dialogue-title-icon {
+      margin-right: 12px;
+    }
+  }
+
+  &.info {
+    border-left: 5px solid colours.$colour-utility-info;
+    background-color: colours.$colour-utility-info-bg;
+  }
+
+  &.error {
+    border-left: 5px solid colours.$colour-utility-error;
+    background-color: colours.$colour-utility-error-bg;
+  }
+  &.success {
+    border-left: 5px solid colours.$colour-utility-success;
+    background-color: colours.$colour-utility-success-bg;
+  }
+  &.warning {
+    border-left: 5px solid colours.$colour-utility-warning;
+    background-color: colours.$colour-utility-warning-bg;
+  }
+}
