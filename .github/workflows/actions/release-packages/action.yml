@@ -4,6 +4,9 @@ inputs:
   GITHUB_TOKEN:
     description: GITHUB_TOKEN used to create release
     required: true
+  NPM_TOKEN:
+    description: NPM_TOKEN used to publish to npm
+    required: true
 runs:
   using: 'composite'
   steps:
