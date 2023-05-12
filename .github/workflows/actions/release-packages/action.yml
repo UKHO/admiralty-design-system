@@ -4,6 +4,9 @@ inputs:
   GITHUB_TOKEN:
     description: GITHUB_TOKEN used to create release
     required: true
+  NPM_TOKEN:
+    description: NPM_TOKEN used to publish to npm
+    required: true
 runs:
   using: 'composite'
   steps:
@@ -23,7 +26,6 @@ runs:
     - name: Create Release
       env:
         GITHUB_TOKEN: ${{ inputs.GITHUB_TOKEN }}
-        NODE_AUTH_TOKEN: ${{ inputs.GITHUB_TOKEN }}
         NPM_TOKEN: ${{ inputs.NPM_TOKEN }}
       run: |
         yarn install --frozen-lockfile
