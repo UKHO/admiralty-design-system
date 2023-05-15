@@ -21,8 +21,17 @@ describe('admiralty-header', () => {
                 <a></a>
               </h1>
             </div>
-            <div class="menu-items" role="navigation"></div>
-            <div class="header-profile" role="navigation"></div>
+            <div class="header-menus">
+              <div class="mobile-menu-toggle">
+                <button>
+                  <ukho-icon icon-name="bars"></ukho-icon>
+                </button>
+              </div>
+              <div class="menu-sections">
+                <div class="menu-items" role="navigation"></div>
+                <div class="header-profile" role="navigation"></div>
+              </div>
+            </div>
           </nav>
         </div>
       </admiralty-header>
@@ -50,15 +59,24 @@ describe('admiralty-header', () => {
                 </a>
               </h1>
             </div>
-            <div class="menu-items" role="navigation"></div>
-            <div class="header-profile" role="navigation"></div>
+            <div class="header-menus">
+              <div class="mobile-menu-toggle">
+                <button>
+                  <ukho-icon icon-name="bars"></ukho-icon>
+                </button>
+              </div>
+              <div class="menu-sections">
+                <div class="menu-items" role="navigation"></div>
+                <div class="header-profile" role="navigation"></div>
+              </div>
+            </div>
           </nav>
         </div>
       </admiralty-header>
     `);
   });
 
-  it.skip('should render signed in', async () => {
+  it('should render signed in', async () => {
     const page = await newSpecPage({
       components: [HeaderComponent],
       html: `
@@ -66,10 +84,42 @@ describe('admiralty-header', () => {
         <admiralty-header-profile is-signed-in="true" signed-in-text="Mr Admiral" slot="profile"></admiralty-header-profile>
       </admiralty-header>`,
     });
-    expect(page.root).toMatchInlineSnapshot();
+    expect(page.root).toMatchInlineSnapshot(`
+      <admiralty-header header-title="Design System" header-title-url="#" logo-alt-text="Logo" logo-img-url="logo.svg" logo-link-url="http://www.example.com">
+        <!---->
+        <div class="admiralty-header">
+          <nav class="header-menu">
+            <div class="header-branding">
+              <a class="header-logo" href="http://www.example.com">
+                <img alt="Logo" class="header-image" src="logo.svg">
+              </a>
+              <div class="vertical-seperator"></div>
+              <h1 class="header-title">
+                <a href="#">
+                  Design System
+                </a>
+              </h1>
+            </div>
+            <div class="header-menus">
+              <div class="display-hamburger mobile-menu-toggle">
+                <button>
+                  <ukho-icon icon-name="bars"></ukho-icon>
+                </button>
+              </div>
+              <div class="menu-sections">
+                <div class="menu-items" role="navigation"></div>
+                <div class="header-profile" role="navigation">
+                  <admiralty-header-profile is-signed-in="true" signed-in-text="Mr Admiral" slot="profile"></admiralty-header-profile>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </admiralty-header>
+    `);
   });
 
-  it.skip('should render signed out', async () => {
+  it('should render signed out', async () => {
     const page = await newSpecPage({
       components: [HeaderComponent],
       html: `
@@ -77,7 +127,39 @@ describe('admiralty-header', () => {
         <admiralty-header-profile is-signed-in="false" signed-in-text="Mr Admiral" slot="profile"></admiralty-header-profile>
       </admiralty-header>`,
     });
-    expect(page.root).toMatchInlineSnapshot();
+    expect(page.root).toMatchInlineSnapshot(`
+      <admiralty-header header-title="Design System" header-title-url="#" logo-alt-text="Logo" logo-img-url="logo.svg" logo-link-url="http://www.example.com">
+        <!---->
+        <div class="admiralty-header">
+          <nav class="header-menu">
+            <div class="header-branding">
+              <a class="header-logo" href="http://www.example.com">
+                <img alt="Logo" class="header-image" src="logo.svg">
+              </a>
+              <div class="vertical-seperator"></div>
+              <h1 class="header-title">
+                <a href="#">
+                  Design System
+                </a>
+              </h1>
+            </div>
+            <div class="header-menus">
+              <div class="display-hamburger mobile-menu-toggle">
+                <button>
+                  <ukho-icon icon-name="bars"></ukho-icon>
+                </button>
+              </div>
+              <div class="menu-sections">
+                <div class="menu-items" role="navigation"></div>
+                <div class="header-profile" role="navigation">
+                  <admiralty-header-profile is-signed-in="false" signed-in-text="Mr Admiral" slot="profile"></admiralty-header-profile>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </admiralty-header>
+    `);
   });
 
   it('should render menu items (no sub-menus)', async () => {
@@ -105,18 +187,27 @@ describe('admiralty-header', () => {
                 </a>
               </h1>
             </div>
-            <div class="menu-items" role="navigation">
-              <admiralty-header-menu-item active="false" menu-title="Item 1" slot="items"></admiralty-header-menu-item>
-              <admiralty-header-menu-item active="false" menu-title="Item 2" slot="items"></admiralty-header-menu-item>
+            <div class="header-menus">
+              <div class="display-hamburger mobile-menu-toggle">
+                <button>
+                  <ukho-icon icon-name="bars"></ukho-icon>
+                </button>
+              </div>
+              <div class="menu-sections">
+                <div class="menu-items" role="navigation">
+                  <admiralty-header-menu-item active="false" menu-title="Item 1" slot="items"></admiralty-header-menu-item>
+                  <admiralty-header-menu-item active="false" menu-title="Item 2" slot="items"></admiralty-header-menu-item>
+                </div>
+                <div class="header-profile" role="navigation"></div>
+              </div>
             </div>
-            <div class="header-profile" role="navigation"></div>
           </nav>
         </div>
       </admiralty-header>
     `);
   });
 
-  it.skip('should render menu items (with sub-menus)', async () => {
+  it('should render menu items (with sub-menus)', async () => {
     const page = await newSpecPage({
       components: [HeaderComponent],
       html: `
@@ -131,6 +222,45 @@ describe('admiralty-header', () => {
         </admiralty-header-menu-item>
       </admiralty-header>`,
     });
-    expect(page.root).toMatchInlineSnapshot();
+    expect(page.root).toMatchInlineSnapshot(`
+      <admiralty-header header-title="Design System" header-title-url="#" logo-alt-text="Logo" logo-img-url="logo.svg" logo-link-url="http://www.example.com">
+        <!---->
+        <div class="admiralty-header">
+          <nav class="header-menu">
+            <div class="header-branding">
+              <a class="header-logo" href="http://www.example.com">
+                <img alt="Logo" class="header-image" src="logo.svg">
+              </a>
+              <div class="vertical-seperator"></div>
+              <h1 class="header-title">
+                <a href="#">
+                  Design System
+                </a>
+              </h1>
+            </div>
+            <div class="header-menus">
+              <div class="display-hamburger mobile-menu-toggle">
+                <button>
+                  <ukho-icon icon-name="bars"></ukho-icon>
+                </button>
+              </div>
+              <div class="menu-sections">
+                <div class="menu-items" role="navigation">
+                  <admiralty-header-menu-item active="false" menu-title="Item 1" slot="items">
+                    <admiralty-header-sub-menu-item menu-title="sub item 1"></admiralty-header-sub-menu-item>
+                    <admiralty-header-sub-menu-item menu-title="sub item 2"></admiralty-header-sub-menu-item>
+                  </admiralty-header-menu-item>
+                  <admiralty-header-menu-item active="false" menu-title="Item 2" slot="items"></admiralty-header-menu-item>
+                  <admiralty-header-menu-item active="false" menu-title="Item 3" slot="items">
+                    <admiralty-header-sub-menu-item menu-title="sub item 3"></admiralty-header-sub-menu-item>
+                  </admiralty-header-menu-item>
+                </div>
+                <div class="header-profile" role="navigation"></div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </admiralty-header>
+    `);
   });
 });

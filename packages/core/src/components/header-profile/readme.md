@@ -15,12 +15,11 @@
 
 ## Events
 
-| Event                | Description                                                                           | Type                |
-| -------------------- | ------------------------------------------------------------------------------------- | ------------------- |
-| `signInClicked`      | The event that is fired when the user clicks on the sign in button                    | `CustomEvent<void>` |
-| `signOutClicked`     | The event that is fired when the user clicks on the 'sign out' button                 | `CustomEvent<void>` |
-| `userProfileClicked` | TThe event that is fired when the user clicks 'user profile'  on the profile sub menu | `CustomEvent<void>` |
-| `yourAccountClicked` | The event that is fired when the user clicks on the 'Your account' button             | `CustomEvent<void>` |
+| Event                | Description                                                               | Type                |
+| -------------------- | ------------------------------------------------------------------------- | ------------------- |
+| `signInClicked`      | The event that is fired when the user clicks on the sign in button        | `CustomEvent<void>` |
+| `signOutClicked`     | The event that is fired when the user clicks on the 'sign out' button     | `CustomEvent<void>` |
+| `yourAccountClicked` | The event that is fired when the user clicks on the 'Your account' button | `CustomEvent<void>` |
 
 
 ----------------------------------------------

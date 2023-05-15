@@ -377,7 +377,7 @@ export class AdmiraltyHeaderProfile {
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['signInClicked', 'yourAccountClicked', 'signOutClicked', 'userProfileClicked']);
+    proxyOutputs(this, this.el, ['signInClicked', 'yourAccountClicked', 'signOutClicked']);
   }
 }
 
@@ -398,11 +398,6 @@ the sign in button
 'sign out' button
    */
   signOutClicked: EventEmitter<CustomEvent<void>>;
-  /**
-   * TThe event that is fired when the user clicks 'user profile'
- on the profile sub menu
-   */
-  userProfileClicked: EventEmitter<CustomEvent<void>>;
 }
 
 

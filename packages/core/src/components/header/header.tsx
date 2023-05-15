@@ -1,4 +1,5 @@
-import { Component, Prop, h, EventEmitter, Event } from '@stencil/core';
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { Component, Element, Prop, h, EventEmitter, Event, State } from '@stencil/core';
 
 /**
  * @slot items - 'admiralty-header-menu-item menu-title' components are placed here for appropiate styling and behaviour
@@ -10,6 +11,7 @@ import { Component, Prop, h, EventEmitter, Event } from '@stencil/core';
   shadow: false,
 })
 export class HeaderComponent {
+  @Element() el: HTMLElement;
   /**
    * The header title that is displayed to the right of the logo
    */
@@ -39,10 +41,24 @@ export class HeaderComponent {
    * Emits an event that can be listened to when the title in the header is clicked
    */
   @Event() titledClicked: EventEmitter<string>;
-  private handleClick = (ev: MouseEvent) => {
+
+  @State() mobileMenuOpen = false;
+
+  @State() displayHamburger = false;
+
+  componentWillRender() {
+    const childMenus = this.el.querySelectorAll('admiralty-header-menu-item, admiralty-header-profile');
+    this.displayHamburger = childMenus.length > 0;
+  }
+
+  private handleClick(ev: MouseEvent) {
     ev.preventDefault();
     this.titledClicked.emit(this.headerTitleUrl);
-  };
+  }
+
+  toggleMobileMenu() {
+    this.mobileMenuOpen = !this.mobileMenuOpen;
+  }
 
   render() {
     const { logoAltText, logoLinkUrl, logoImgUrl, headerTitle, headerTitleUrl } = this;
@@ -56,16 +72,25 @@ export class HeaderComponent {
             </a>
             <div class="vertical-seperator"></div>
             <h1 class="header-title">
-              <a onClick={this.handleClick} href={headerTitleUrl}>
+              <a onClick={ev => this.handleClick(ev)} href={headerTitleUrl}>
                 {headerTitle}
               </a>
             </h1>
           </div>
-          <div role="navigation" class="menu-items">
-            <slot name="items"></slot>
-          </div>
-          <div role="navigation" class="header-profile">
-            <slot name="profile"></slot>
+          <div class="header-menus">
+            <div class={{ 'mobile-menu-toggle': true, 'display-hamburger': this.displayHamburger }}>
+              <button onClick={_ => this.toggleMobileMenu()} aria-expanded={this.mobileMenuOpen}>
+                <ukho-icon icon-name={this.mobileMenuOpen ? faTimes.iconName : faBars.iconName}></ukho-icon>
+              </button>
+            </div>
+            <div class={{ 'menu-sections': true, 'mob-menus-visible': this.mobileMenuOpen }}>
+              <div role="navigation" class="menu-items">
+                <slot name="items"></slot>
+              </div>
+              <div role="navigation" class="header-profile">
+                <slot name="profile"></slot>
+              </div>
+            </div>
           </div>
         </nav>
       </div>

@@ -1148,10 +1148,6 @@ declare namespace LocalJSX {
          */
         "onSignOutClicked"?: (event: AdmiraltyHeaderProfileCustomEvent<void>) => void;
         /**
-          * TThe event that is fired when the user clicks 'user profile'  on the profile sub menu
-         */
-        "onUserProfileClicked"?: (event: AdmiraltyHeaderProfileCustomEvent<void>) => void;
-        /**
           * The event that is fired when the user clicks on the 'Your account' button
          */
         "onYourAccountClicked"?: (event: AdmiraltyHeaderProfileCustomEvent<void>) => void;

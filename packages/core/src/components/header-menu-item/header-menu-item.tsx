@@ -76,7 +76,7 @@ export class HeaderMenuItemComponent {
     return (
       <Host onMouseOver={this.handleMouseOver} onMouseOut={this.handleMouseOut}>
         <div class={menuClass} onClick={this.handleClick}>
-          {menuTitle}
+          <div class="menu-title">{menuTitle}</div>
           <div class="sub-menu">
             <slot />
           </div>
