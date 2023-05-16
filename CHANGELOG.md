@@ -1,3 +1,15 @@
+# v0.0.6 (Tue May 16 2023)
+
+#### 🐛 Bug Fix
+
+- Fixing the stylesheets and webfonts missing from the NPM package [#5](https://github.com/UKHO/admiralty-design-system/pull/5) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+#### Authors: 1
+
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
 # v0.0.5 (Tue May 16 2023)
 
 #### 🐛 Bug Fix
