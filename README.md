@@ -1,6 +1,6 @@
 # ADMIRALTY Design System
 
-This repository contains the source for the **ADMIRALTY Design System**, our library of UI components that is used in our front end designs. We make use of Web Component technology to product components that can be used across multiple frameworks, each framework has its own package.
+This repository contains the source for the **ADMIRALTY Design System**, our library of UI components that is used in our front end designs. We make use of Web Component technology to produce components that can be used across multiple frameworks, each framework has its own package.
 
 | Framework   | Package                                                                                                                                                                                | Notes |
 |-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------|
