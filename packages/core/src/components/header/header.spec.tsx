@@ -24,7 +24,7 @@ describe('admiralty-header', () => {
             <div class="header-menus">
               <div class="mobile-menu-toggle">
                 <button>
-                  <ukho-icon icon-name="bars"></ukho-icon>
+                  <admiralty-icon icon-name="bars"></admiralty-icon>
                 </button>
               </div>
               <div class="menu-sections">
@@ -62,7 +62,7 @@ describe('admiralty-header', () => {
             <div class="header-menus">
               <div class="mobile-menu-toggle">
                 <button>
-                  <ukho-icon icon-name="bars"></ukho-icon>
+                  <admiralty-icon icon-name="bars"></admiralty-icon>
                 </button>
               </div>
               <div class="menu-sections">
@@ -103,7 +103,7 @@ describe('admiralty-header', () => {
             <div class="header-menus">
               <div class="display-hamburger mobile-menu-toggle">
                 <button>
-                  <ukho-icon icon-name="bars"></ukho-icon>
+                  <admiralty-icon icon-name="bars"></admiralty-icon>
                 </button>
               </div>
               <div class="menu-sections">
@@ -146,7 +146,7 @@ describe('admiralty-header', () => {
             <div class="header-menus">
               <div class="display-hamburger mobile-menu-toggle">
                 <button>
-                  <ukho-icon icon-name="bars"></ukho-icon>
+                  <admiralty-icon icon-name="bars"></admiralty-icon>
                 </button>
               </div>
               <div class="menu-sections">
@@ -190,7 +190,7 @@ describe('admiralty-header', () => {
             <div class="header-menus">
               <div class="display-hamburger mobile-menu-toggle">
                 <button>
-                  <ukho-icon icon-name="bars"></ukho-icon>
+                  <admiralty-icon icon-name="bars"></admiralty-icon>
                 </button>
               </div>
               <div class="menu-sections">
@@ -241,7 +241,7 @@ describe('admiralty-header', () => {
             <div class="header-menus">
               <div class="display-hamburger mobile-menu-toggle">
                 <button>
-                  <ukho-icon icon-name="bars"></ukho-icon>
+                  <admiralty-icon icon-name="bars"></admiralty-icon>
                 </button>
               </div>
               <div class="menu-sections">
