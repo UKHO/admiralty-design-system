@@ -1,10 +1,13 @@
 @use "../../scss/vars/colours" as colours;
+@use "../../scss/base/responsive";
+@use "../../scss/vars/typography";
 
 @mixin active {
   background-color: colours.$colour-nav-bg-hover;
 }
 
 .header-sub-menu-item {
+  @include responsive.desktop-only {
   box-sizing: border-box;
   color: colours.$colour-admiralty-blue;
   display: block;
@@ -22,5 +25,31 @@
 
   &:hover{
     @include active;
+  }
+}
+
+  @include responsive.not-desktop {
+    display: block;
+    box-sizing: border-box;
+    padding: 12px 24px;
+    cursor: pointer;
+    color: colours.$colour-admiralty-blue;
+    font-size: typography.$font-size-normal;
+    font-weight: 500;
+    background-color: unset;
+    text-align: unset;
+    text-decoration: unset;
+
+    &:hover {
+      background-color: colours.$colour-nav-bg-hover;
+      box-shadow: colours.$colour-utility-focus inset 0 0 0 3px;
+    }
+
+    &:focus {
+      outline: 3px solid colours.$colour-utility-focus;
+      outline-offset: 3px;
+    }
+
+    font-weight: typography.$font-weight-light;
   }
 }

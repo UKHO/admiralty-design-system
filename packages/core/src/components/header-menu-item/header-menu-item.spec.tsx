@@ -8,15 +8,16 @@ describe('menu-item', () => {
       html: `<admiralty-header-menu-item menuTitle="Item 1"></slot></admiralty-header-menu-item>`,
     });
     expect(page.root).toEqualHtml(`
-    <admiralty-header-menu-item menutitle="Item 1">
-      <mock:shadow-root>
-        <div class="menu-item">
-          <div class="sub-menu">
-            <slot></slot>
+      <admiralty-header-menu-item menutitle="Item 1">
+        <mock:shadow-root>
+          <div class="menu-item">
+            <div class="menu-title"></div>
+            <div class="sub-menu">
+              <slot></slot>
+            </div>
           </div>
-        </div>
-      </mock:shadow-root>
-    </admiralty-header-menu-item>
+        </mock:shadow-root>
+      </admiralty-header-menu-item>
     `);
   });
 
@@ -30,6 +31,7 @@ describe('menu-item', () => {
       <admiralty-header-menu-item active="true" menutitle="Item 1">
         <mock:shadow-root>
           <div class="active menu-item">
+            <div class="menu-title"></div>
             <div class="sub-menu">
               <slot></slot>
             </div>
@@ -49,6 +51,7 @@ describe('menu-item', () => {
       <admiralty-header-menu-item active="false" menutitle="Item 1">
         <mock:shadow-root>
           <div class="menu-item">
+            <div class="menu-title"></div>
             <div class="sub-menu">
               <slot></slot>
             </div>

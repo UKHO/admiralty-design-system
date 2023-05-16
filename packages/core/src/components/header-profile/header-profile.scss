@@ -1,36 +1,44 @@
 @use "../../scss/vars/colours" as colours;
+@use "../../scss/base/responsive";
+@use "../../scss/vars/typography";
 
 @mixin active {
-  background-color: colours.$colour-nav-bg-hover;
   box-shadow: inset 0 -5px colours.$colour-admiralty-blue;
 }
 
 .header-profile {
   color: colours.$colour-admiralty-blue;
   cursor: pointer;
-  display: flex;
-  flex: 0;
-  flex-direction: column;
-  font-size: 18px !important;
-  font-weight: 400;
-  height: 100%;
-  justify-content: center;
-  line-height: 1.33em;
-  margin-bottom: 0;
-  min-width: 4em;
-  max-width: 11.1em;
-  padding: 0 1.65em;
-  position: relative;
-  text-align: center;
 
-  button {
-    all: unset;
+  @include responsive.desktop-only {
+    .not-desktop {
+      display: none;
+    }
+
+    display: flex;
+    flex: 0;
+    flex-direction: column;
+    font-size: typography.$font-size-normal !important;
+    font-weight: 400;
     height: 100%;
-    width: 100%;
-  }
+    justify-content: center;
+    line-height: 1.33em;
+    margin-bottom: 0;
+    min-width: 4em;
+    max-width: 11.1em;
+    padding: 0 1.65em;
+    position: relative;
+    text-align: center;
 
-    &:hover{
+    button {
+      all: unset;
+      height: 100%;
+      width: 100%;
+    }
+
+    &:hover {
       @include active;
+      background-color: colours.$colour-nav-bg-hover;
 
       .sub-menu {
         display: flex;
@@ -41,38 +49,65 @@
       @include active;
     }
 
-  .sub-menu {
-    display: none;
-    flex-direction: column;
-    font-size: 18px;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    border: 1px solid colours.$colour-divider;
-    width: 300px;
+    .sub-menu {
+      display: none;
+      flex-direction: column;
+      font-size: typography.$font-size-normal;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      border: 1px solid colours.$colour-divider;
+      width: 300px;
 
-    .sub-menu-item {
-      box-sizing: content-box;
-      margin: 0;
-      width: 100%;
-
-      button {
-        all: unset;
-        box-sizing: border-box;
-        color: colours.$colour-admiralty-blue;
-        cursor: pointer;
-        display: block;
-        font-weight: 300;
-        height: 100%;
-        padding: 10px;
-        text-align: left;
+      .sub-menu-item {
+        box-sizing: content-box;
+        margin: 0;
         width: 100%;
 
-        &:hover {
-          background-color: colours.$colour-nav-bg-hover;
+        button {
+          all: unset;
+          box-sizing: border-box;
+          display: block;
+          font-weight: typography.$font-weight-light;
+          height: 100%;
+          padding: 10px;
+          text-align: left;
+          width: 100%;
+
+          &:hover {
+            background-color: colours.$colour-nav-bg-hover;
+          }
         }
       }
     }
   }
-}
 
+  @include responsive.not-desktop {
+    .desktop {
+      display: none;
+    }
+
+    border-top: 1px solid colours.$colour-bg-header;
+
+    .sub-menu-item {
+      display: block;
+      box-sizing: border-box;
+      font-size: typography.$font-size-normal;
+      font-weight: 500;
+      background-color: unset;
+      text-align: unset;
+      text-decoration: unset;
+
+      padding: 12px;
+      &:hover {
+        background-color: colours.$colour-nav-bg-hover;
+        box-shadow: colours.$colour-utility-focus inset 0 0 0 3px;
+      }
+
+      &:focus {
+        outline: 3px solid colours.$colour-utility-focus;
+        outline-offset: 3px;
+      }
+    }
+  }
+}

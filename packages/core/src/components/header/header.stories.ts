@@ -13,7 +13,7 @@ export default {
   parameters: {
     markdown: readme,
     actions: {
-      handles: ['titledClicked', 'menuItemClick', 'subMenuItemClick'],
+      handles: ['titledClicked', 'menuItemClick', 'subMenuItemClick','signInClicked','yourAccountClicked','signOutClicked'],
     },
   },
 };
@@ -82,6 +82,7 @@ export const linksWithNoSubItems: Story = TemplateLinksNoAuth.bind({});
 linksWithNoSubItems.args = {
   menuItems: mockMenuItemsWithNoSubItems,
   ...defaultArgs,
+  logoImgUrl: 'svg/UKHO linear logo.svg',
 };
 
 export const linksWithNoSubItemsAndNavActive: Story = TemplateLinksNoAuth.bind({});

@@ -12,9 +12,9 @@ describe('header-profile', () => {
       <admiralty-header-profile>
         <mock:shadow-root>
           <div class="header-profile">
-            <button>
+            <div class="sub-menu-item">
               Sign In
-            </button>
+            </div>
           </div>
         </mock:shadow-root>
       </admiralty-header-profile>
@@ -30,9 +30,9 @@ describe('header-profile', () => {
       <admiralty-header-profile is-signed-in="false" signed-in-text="Mr Admiral">
         <mock:shadow-root>
           <div class="header-profile">
-            <button>
+            <div class="sub-menu-item">
               Sign In
-            </button>
+            </div>
           </div>
         </mock:shadow-root>
       </admiralty-header-profile>
@@ -48,9 +48,19 @@ describe('header-profile', () => {
         <mock:shadow-root>
           <div class="header-profile">
             <div>
-              <button>
-                Mr Admiral
-              </button>
+              <div class="desktop">
+                <button>
+                  Mr Admiral
+                </button>
+              </div>
+              <div class="not-desktop">
+                <div class="sub-menu-item">
+                  Your Account
+                </div>
+                <div class="sub-menu-item">
+                  Sign Out
+                </div>
+              </div>
             </div>
           </div>
         </mock:shadow-root>

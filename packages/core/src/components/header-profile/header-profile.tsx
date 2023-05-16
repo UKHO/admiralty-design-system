@@ -36,12 +36,6 @@ export class HeaderProfileComponent {
    */
   @Event() signOutClicked: EventEmitter<void>;
 
-  /**
-   * TThe event that is fired when the user clicks 'user profile'
-   *  on the profile sub menu
-   */
-  @Event() userProfileClicked: EventEmitter<void>;
-
   handleSignIn = () => {
     this.signInClicked.emit();
   };
@@ -70,22 +64,28 @@ export class HeaderProfileComponent {
         <div class="header-profile">
           {isSignedIn ? (
             <div>
-              <button onMouseOver={this.openDropdown} onMouseOut={this.closeDropdown}>
-                {signedInText}
-              </button>
-              {displaySubmenu ? (
-                <div class="sub-menu">
-                  <div class="sub-menu-item">
-                    <button onClick={this.handleYouAccount}>Your Account</button>
+              <div class="desktop">
+                <button onMouseOver={this.openDropdown} onMouseOut={this.closeDropdown}>
+                  {signedInText}
+                </button>
+                {displaySubmenu ? (
+                  <div class="sub-menu">
+                    <div class="sub-menu-item">
+                      <button onClick={this.handleYouAccount}>Your Account</button>
+                    </div>
+                    <div class="sub-menu-item">
+                      <button onClick={this.handleSignOut}>Sign Out</button>
+                    </div>
                   </div>
-                  <div class="sub-menu-item">
-                    <button onClick={this.handleSignOut}>Sign Out</button>
-                  </div>
-                </div>
-              ) : null}
+                ) : null}
+              </div>
+              <div class="not-desktop">
+                <div class="sub-menu-item" onClick={this.handleYouAccount}>Your Account</div>
+                <div class="sub-menu-item" onClick={this.handleSignOut}>Sign Out</div>
+              </div>
             </div>
           ) : (
-            <button onClick={this.handleSignIn}>Sign In</button>
+            <div class="sub-menu-item" onClick={this.handleSignIn}>Sign In</div>
           )}
         </div>
       </Host>
