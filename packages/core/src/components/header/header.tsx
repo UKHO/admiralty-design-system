@@ -80,7 +80,7 @@ export class HeaderComponent {
           <div class="header-menus">
             <div class={{ 'mobile-menu-toggle': true, 'display-hamburger': this.displayHamburger }}>
               <button onClick={_ => this.toggleMobileMenu()} aria-expanded={this.mobileMenuOpen}>
-                <ukho-icon icon-name={this.mobileMenuOpen ? faTimes.iconName : faBars.iconName}></ukho-icon>
+                <admiralty-icon icon-name={this.mobileMenuOpen ? faTimes.iconName : faBars.iconName}></admiralty-icon>
               </button>
             </div>
             <div class={{ 'menu-sections': true, 'mob-menus-visible': this.mobileMenuOpen }}>
