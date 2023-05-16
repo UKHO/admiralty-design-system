@@ -16,4 +16,4 @@ runs:
       with:
         name: admiralty-core
         output: admiralty-core.zip
-        paths: ./packages/core/dist ./packages/core/loader
+        paths: ./packages/core/dist ./packages/core/loader ./packages/core/styles
