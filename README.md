@@ -1,12 +1,12 @@
-# Admiralty Design System
+# ADMIRALTY Design System
 
-This repository contains the source for the Admiralty design system, our library of UI components that is used in our front end designs. We make use of Web Component technology to product components that can be used across multiple frameworks, each framework has its own package.
+This repository contains the source for the **ADMIRALTY Design System**, our library of UI components that is used in our front end designs. We make use of Web Component technology to product components that can be used across multiple frameworks, each framework has its own package.
 
-|  Framework  | Package |
-|-------------|---------|
-|  HTML/CSS/JS | [@ukho/admiralty-core](packages/core) |
-| Angular | [@ukho/admiralty-angular](packages/angular) |
-| Other | Although untested you can use [@ukho/admiralty-core](packages/core) with any framework that supports HTML custom elements |
+| Framework   | Package                                                                                                                                                                                | Notes |
+|-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------|
+| HTML/CSS/JS | `@ukho/admiralty-core` </br> [Source](packages/core) </br> [![npm](https://img.shields.io/npm/v/@ukho/admiralty-core)](https://www.npmjs.com/package/@ukho/admiralty-core)             |       |
+| Angular     | `@ukho/admiralty-angular` </br> [Source](packages/angular) </br> [![npm](https://img.shields.io/npm/v/@ukho/admiralty-angular)](https://www.npmjs.com/package/@ukho/admiralty-angular) |       |
+| Other       | `@ukho/admiralty-core` </br> [Source](packages/angular) </br> [![npm](https://img.shields.io/npm/v/@ukho/admiralty-core)](https://www.npmjs.com/package/@ukho/admiralty-core)          | Although untested, you can use `@ukho/admiralty-core` with any framework that supports HTML custom elements |
 
 ## Contributing
 
