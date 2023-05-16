@@ -31,6 +31,19 @@
 | `"profile"` | 'admiralty-header-profile' components are placed here (the login/logout) options                        |
 
 
+## Dependencies
+
+### Depends on
+
+- [admiralty-icon](../icon)
+
+### Graph
+```mermaid
+graph TD;
+  admiralty-header --> admiralty-icon
+  style admiralty-header fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*
