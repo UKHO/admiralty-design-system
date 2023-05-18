@@ -1,0 +1,11 @@
+@use "../../scss/vars/typography";
+
+  .content {
+    display: none;
+    font-weight: typography.$font-weight-light;
+
+    &.active {
+      display: block;
+    }
+  }
+

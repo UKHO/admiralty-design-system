@@ -33,6 +33,8 @@ export const DIRECTIVES = [
   d.AdmiraltySelect,
   d.AdmiraltySideNav,
   d.AdmiraltySideNavItem,
+  d.AdmiraltyTabGroup,
+  d.AdmiraltyTabGroupItem,
   d.AdmiraltyTable,
   d.AdmiraltyTableBody,
   d.AdmiraltyTableCell,

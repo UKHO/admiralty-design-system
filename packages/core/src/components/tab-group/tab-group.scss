@@ -1,0 +1,48 @@
+@use "../../scss/vars/colours";
+@use "../../scss/vars/typography";
+
+.headers {
+  display: flex;
+
+  .header {
+    cursor: pointer;
+    padding: 10px 10px;
+    display: block;
+    justify-content: center;
+    height: 42px;
+    max-width: fit-content;
+    box-sizing: border-box;
+    user-select: none;
+
+    text-align: center;
+    text-decoration: none;
+    color: colours.$colour-admiralty-blue;
+    font-weight: typography.$font-weight-medium;
+    font-size: 16px;
+
+    &:hover {
+      background-color: colours.$colour-nav-bg-hover;
+    }
+
+    &:focus {
+      outline-offset: -2px;
+      box-shadow: colours.$colour-text inset 0 0 0 2px;    }
+
+    &:focus-visible {
+      // outline-offset: -2px;
+      outline: 3px solid colours.$colour-utility-focus;
+      box-shadow: colours.$colour-text inset 0 0 0 2px;
+    }
+
+    &.active {
+      background-color: colours.$colour-admiralty-blue;
+      color: colours.$colour-white;
+    }
+  }
+}
+
+hr {
+  height: 2px;
+  margin: 6px 0;
+  background-color: colours.$colour-divider;
+}

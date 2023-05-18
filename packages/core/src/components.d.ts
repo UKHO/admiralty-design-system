@@ -436,6 +436,14 @@ export namespace Components {
     }
     interface AdmiraltySideNavWrapper {
     }
+    interface AdmiraltyTabGroup {
+        "selectedIndex": number;
+    }
+    interface AdmiraltyTabGroupItem {
+        "active": boolean;
+        "index": number;
+        "label": string;
+    }
     /**
      * Use tables to make information easier for users to scan and compare
      */
@@ -574,6 +582,10 @@ export interface AdmiraltySelectCustomEvent<T> extends CustomEvent<T> {
 export interface AdmiraltySideNavItemCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLAdmiraltySideNavItemElement;
+}
+export interface AdmiraltyTabGroupCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLAdmiraltyTabGroupElement;
 }
 export interface AdmiraltyTextareaCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -788,6 +800,18 @@ declare global {
         prototype: HTMLAdmiraltySideNavWrapperElement;
         new (): HTMLAdmiraltySideNavWrapperElement;
     };
+    interface HTMLAdmiraltyTabGroupElement extends Components.AdmiraltyTabGroup, HTMLStencilElement {
+    }
+    var HTMLAdmiraltyTabGroupElement: {
+        prototype: HTMLAdmiraltyTabGroupElement;
+        new (): HTMLAdmiraltyTabGroupElement;
+    };
+    interface HTMLAdmiraltyTabGroupItemElement extends Components.AdmiraltyTabGroupItem, HTMLStencilElement {
+    }
+    var HTMLAdmiraltyTabGroupItemElement: {
+        prototype: HTMLAdmiraltyTabGroupItemElement;
+        new (): HTMLAdmiraltyTabGroupItemElement;
+    };
     /**
      * Use tables to make information easier for users to scan and compare
      */
@@ -894,6 +918,8 @@ declare global {
         "admiralty-side-nav": HTMLAdmiraltySideNavElement;
         "admiralty-side-nav-item": HTMLAdmiraltySideNavItemElement;
         "admiralty-side-nav-wrapper": HTMLAdmiraltySideNavWrapperElement;
+        "admiralty-tab-group": HTMLAdmiraltyTabGroupElement;
+        "admiralty-tab-group-item": HTMLAdmiraltyTabGroupItemElement;
         "admiralty-table": HTMLAdmiraltyTableElement;
         "admiralty-table-body": HTMLAdmiraltyTableBodyElement;
         "admiralty-table-cell": HTMLAdmiraltyTableCellElement;
@@ -1414,6 +1440,15 @@ declare namespace LocalJSX {
     }
     interface AdmiraltySideNavWrapper {
     }
+    interface AdmiraltyTabGroup {
+        "onAdmiralTabSelected"?: (event: AdmiraltyTabGroupCustomEvent<number>) => void;
+        "selectedIndex"?: number;
+    }
+    interface AdmiraltyTabGroupItem {
+        "active"?: boolean;
+        "index"?: number;
+        "label"?: string;
+    }
     /**
      * Use tables to make information easier for users to scan and compare
      */
@@ -1548,6 +1583,8 @@ declare namespace LocalJSX {
         "admiralty-side-nav": AdmiraltySideNav;
         "admiralty-side-nav-item": AdmiraltySideNavItem;
         "admiralty-side-nav-wrapper": AdmiraltySideNavWrapper;
+        "admiralty-tab-group": AdmiraltyTabGroup;
+        "admiralty-tab-group-item": AdmiraltyTabGroupItem;
         "admiralty-table": AdmiraltyTable;
         "admiralty-table-body": AdmiraltyTableBody;
         "admiralty-table-cell": AdmiraltyTableCell;
@@ -1602,6 +1639,8 @@ declare module "@stencil/core" {
             "admiralty-side-nav": LocalJSX.AdmiraltySideNav & JSXBase.HTMLAttributes<HTMLAdmiraltySideNavElement>;
             "admiralty-side-nav-item": LocalJSX.AdmiraltySideNavItem & JSXBase.HTMLAttributes<HTMLAdmiraltySideNavItemElement>;
             "admiralty-side-nav-wrapper": LocalJSX.AdmiraltySideNavWrapper & JSXBase.HTMLAttributes<HTMLAdmiraltySideNavWrapperElement>;
+            "admiralty-tab-group": LocalJSX.AdmiraltyTabGroup & JSXBase.HTMLAttributes<HTMLAdmiraltyTabGroupElement>;
+            "admiralty-tab-group-item": LocalJSX.AdmiraltyTabGroupItem & JSXBase.HTMLAttributes<HTMLAdmiraltyTabGroupItemElement>;
             /**
              * Use tables to make information easier for users to scan and compare
              */
