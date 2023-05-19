@@ -7,11 +7,10 @@ describe('tab-group-item', () => {
       components: [TabGroupItemComponent],
       html: `<admiralty-tab-group-item></admiralty-tab-group-item>`,
     });
-    expect(page.root).toEqualHtml(`
+    expect(page.root).toMatchInlineSnapshot(`
       <admiralty-tab-group-item>
-        <mock:shadow-root>
-          <slot></slot>
-        </mock:shadow-root>
+        <!---->
+        <div class="content" data-idx="-1"></div>
       </admiralty-tab-group-item>
     `);
   });

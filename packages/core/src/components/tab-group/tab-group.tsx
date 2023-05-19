@@ -18,7 +18,6 @@ export class TabGroupComponent {
   @Event() admiralTabSelected: EventEmitter<number>;
 
   private tabs: TabInfo[] = [];
-  // private activeIdx = 0;
 
   handleSelectedTab(idx: number) {
     console.log('handleSelectedTab event', idx);
@@ -38,7 +37,6 @@ export class TabGroupComponent {
   }
 
   componentWillRender() {
-    // console.log('lifecycle method')
     const tabItems = this.el.querySelectorAll('admiralty-tab-group-item');
 
     this.tabs = [];
@@ -51,6 +49,8 @@ export class TabGroupComponent {
         this.tabs.push({ label: t.label, index: idx });
         ++idx;
       });
+
+      this.selectedIndex = Math.max(0, Math.min(this.selectedIndex, tabItems.length-1));
 
       tabItems[this.selectedIndex].active = true;
     }
@@ -65,7 +65,6 @@ export class TabGroupComponent {
   }
 
   render() {
-    // console.log('render')
     return (
       <Host>
         <div class="headers">{this.createHeaders()}</div>
