@@ -13,7 +13,7 @@ interface TabInfo {
 export class TabGroupComponent {
   @Element() el: HTMLElement;
 
-  @Prop() selectedIndex = 0;
+  @Prop({ mutable: true }) selectedIndex = 0;
 
   @Event() admiralTabSelected: EventEmitter<number>;
 
@@ -54,18 +54,17 @@ export class TabGroupComponent {
     }
   }
 
-  private createHeaders() {
-    return Array.from(this.tabs).map(tab => (
-      <div class={{ header: true, active: tab.index === this.selectedIndex }} data-idx={tab.index} onClick={_ => this.handleSelectedTab(tab.index)}>
-        {tab.label}
-      </div>
-    ));
-  }
-
   render() {
+    const createHeaders = () =>
+      Array.from(this.tabs).map(tab => (
+        <div class={{ header: true, active: tab.index === this.selectedIndex }} data-idx={tab.index} onClick={_ => this.handleSelectedTab(tab.index)}>
+          {tab.label}
+        </div>
+      ));
+
     return (
       <Host>
-        <div class="headers">{this.createHeaders()}</div>
+        <div class="headers">{createHeaders()}</div>
         <hr />
         <slot></slot>
       </Host>
