@@ -436,13 +436,13 @@ export namespace Components {
     }
     interface AdmiraltySideNavWrapper {
     }
-    interface AdmiraltyTabGroup {
-        "selectedIndex": number;
-    }
-    interface AdmiraltyTabGroupItem {
+    interface AdmiraltyTab {
         "active": boolean;
         "index": number;
         "label": string;
+    }
+    interface AdmiraltyTabGroup {
+        "selectedIndex": number;
     }
     /**
      * Use tables to make information easier for users to scan and compare
@@ -800,17 +800,17 @@ declare global {
         prototype: HTMLAdmiraltySideNavWrapperElement;
         new (): HTMLAdmiraltySideNavWrapperElement;
     };
+    interface HTMLAdmiraltyTabElement extends Components.AdmiraltyTab, HTMLStencilElement {
+    }
+    var HTMLAdmiraltyTabElement: {
+        prototype: HTMLAdmiraltyTabElement;
+        new (): HTMLAdmiraltyTabElement;
+    };
     interface HTMLAdmiraltyTabGroupElement extends Components.AdmiraltyTabGroup, HTMLStencilElement {
     }
     var HTMLAdmiraltyTabGroupElement: {
         prototype: HTMLAdmiraltyTabGroupElement;
         new (): HTMLAdmiraltyTabGroupElement;
-    };
-    interface HTMLAdmiraltyTabGroupItemElement extends Components.AdmiraltyTabGroupItem, HTMLStencilElement {
-    }
-    var HTMLAdmiraltyTabGroupItemElement: {
-        prototype: HTMLAdmiraltyTabGroupItemElement;
-        new (): HTMLAdmiraltyTabGroupItemElement;
     };
     /**
      * Use tables to make information easier for users to scan and compare
@@ -918,8 +918,8 @@ declare global {
         "admiralty-side-nav": HTMLAdmiraltySideNavElement;
         "admiralty-side-nav-item": HTMLAdmiraltySideNavItemElement;
         "admiralty-side-nav-wrapper": HTMLAdmiraltySideNavWrapperElement;
+        "admiralty-tab": HTMLAdmiraltyTabElement;
         "admiralty-tab-group": HTMLAdmiraltyTabGroupElement;
-        "admiralty-tab-group-item": HTMLAdmiraltyTabGroupItemElement;
         "admiralty-table": HTMLAdmiraltyTableElement;
         "admiralty-table-body": HTMLAdmiraltyTableBodyElement;
         "admiralty-table-cell": HTMLAdmiraltyTableCellElement;
@@ -1440,14 +1440,14 @@ declare namespace LocalJSX {
     }
     interface AdmiraltySideNavWrapper {
     }
-    interface AdmiraltyTabGroup {
-        "onAdmiralTabSelected"?: (event: AdmiraltyTabGroupCustomEvent<number>) => void;
-        "selectedIndex"?: number;
-    }
-    interface AdmiraltyTabGroupItem {
+    interface AdmiraltyTab {
         "active"?: boolean;
         "index"?: number;
         "label"?: string;
+    }
+    interface AdmiraltyTabGroup {
+        "onAdmiralTabSelected"?: (event: AdmiraltyTabGroupCustomEvent<number>) => void;
+        "selectedIndex"?: number;
     }
     /**
      * Use tables to make information easier for users to scan and compare
@@ -1583,8 +1583,8 @@ declare namespace LocalJSX {
         "admiralty-side-nav": AdmiraltySideNav;
         "admiralty-side-nav-item": AdmiraltySideNavItem;
         "admiralty-side-nav-wrapper": AdmiraltySideNavWrapper;
+        "admiralty-tab": AdmiraltyTab;
         "admiralty-tab-group": AdmiraltyTabGroup;
-        "admiralty-tab-group-item": AdmiraltyTabGroupItem;
         "admiralty-table": AdmiraltyTable;
         "admiralty-table-body": AdmiraltyTableBody;
         "admiralty-table-cell": AdmiraltyTableCell;
@@ -1639,8 +1639,8 @@ declare module "@stencil/core" {
             "admiralty-side-nav": LocalJSX.AdmiraltySideNav & JSXBase.HTMLAttributes<HTMLAdmiraltySideNavElement>;
             "admiralty-side-nav-item": LocalJSX.AdmiraltySideNavItem & JSXBase.HTMLAttributes<HTMLAdmiraltySideNavItemElement>;
             "admiralty-side-nav-wrapper": LocalJSX.AdmiraltySideNavWrapper & JSXBase.HTMLAttributes<HTMLAdmiraltySideNavWrapperElement>;
+            "admiralty-tab": LocalJSX.AdmiraltyTab & JSXBase.HTMLAttributes<HTMLAdmiraltyTabElement>;
             "admiralty-tab-group": LocalJSX.AdmiraltyTabGroup & JSXBase.HTMLAttributes<HTMLAdmiraltyTabGroupElement>;
-            "admiralty-tab-group-item": LocalJSX.AdmiraltyTabGroupItem & JSXBase.HTMLAttributes<HTMLAdmiraltyTabGroupItemElement>;
             /**
              * Use tables to make information easier for users to scan and compare
              */

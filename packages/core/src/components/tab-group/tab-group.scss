@@ -29,7 +29,6 @@
       box-shadow: colours.$colour-text inset 0 0 0 2px;    }
 
     &:focus-visible {
-      // outline-offset: -2px;
       outline: 3px solid colours.$colour-utility-focus;
       box-shadow: colours.$colour-text inset 0 0 0 2px;
     }

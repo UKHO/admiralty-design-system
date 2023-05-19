@@ -805,6 +805,28 @@ export declare interface AdmiraltySideNavItem extends Components.AdmiraltySideNa
 
 
 @ProxyCmp({
+  inputs: ['active', 'index', 'label']
+})
+@Component({
+  selector: 'admiralty-tab',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['active', 'index', 'label'],
+})
+export class AdmiraltyTab {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface AdmiraltyTab extends Components.AdmiraltyTab {}
+
+
+@ProxyCmp({
   inputs: ['selectedIndex']
 })
 @Component({
@@ -828,28 +850,6 @@ export declare interface AdmiraltyTabGroup extends Components.AdmiraltyTabGroup 
 
   admiralTabSelected: EventEmitter<CustomEvent<number>>;
 }
-
-
-@ProxyCmp({
-  inputs: ['active', 'index', 'label']
-})
-@Component({
-  selector: 'admiralty-tab-group-item',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>',
-  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['active', 'index', 'label'],
-})
-export class AdmiraltyTabGroupItem {
-  protected el: HTMLElement;
-  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
-    c.detach();
-    this.el = r.nativeElement;
-  }
-}
-
-
-export declare interface AdmiraltyTabGroupItem extends Components.AdmiraltyTabGroupItem {}
 
 
 @ProxyCmp({

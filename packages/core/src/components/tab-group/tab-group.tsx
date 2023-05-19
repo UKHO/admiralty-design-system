@@ -20,24 +20,22 @@ export class TabGroupComponent {
   private tabs: TabInfo[] = [];
 
   handleSelectedTab(idx: number) {
-    console.log('handleSelectedTab event', idx);
-
     const oldHeader = this.el.querySelector(`div[data-idx="${this.selectedIndex}"]`);
     oldHeader.classList.remove('active');
-    const oldContent = this.el.querySelector(`admiralty-tab-group-item div[data-idx="${this.selectedIndex}"]`);
+    const oldContent = this.el.querySelector(`admiralty-tab div[data-idx="${this.selectedIndex}"]`);
     oldContent.classList.remove('active');
 
     this.selectedIndex = idx;
     const activeHeader = this.el.querySelector(`div[data-idx="${idx}"]`);
     activeHeader.classList.add('active');
-    const activeContent = this.el.querySelector(`admiralty-tab-group-item  div[data-idx="${idx}"]`);
+    const activeContent = this.el.querySelector(`admiralty-tab div[data-idx="${idx}"]`);
     activeContent.classList.add('active');
 
     this.admiralTabSelected.emit(idx);
   }
 
   componentWillRender() {
-    const tabItems = this.el.querySelectorAll('admiralty-tab-group-item');
+    const tabItems = this.el.querySelectorAll('admiralty-tab');
 
     this.tabs = [];
 
