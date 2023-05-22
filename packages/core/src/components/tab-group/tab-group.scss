@@ -1,14 +1,40 @@
 @use "../../scss/vars/colours";
 @use "../../scss/vars/typography";
+@use "../../scss/base/responsive";
+
+header {
+  width: 100%;
+
+  // @include responsive.not-desktop {
+  //   width: max-content;
+  // }
+}
+
+section {
+  position: fixed;
+
+}
+hr {
+  width: 100%;
+  height: 2px;
+  margin: 6px 0;
+  background-color: colours.$colour-divider;
+
+  @include responsive.not-desktop {
+  //   width: max-content;
+  // position: fixed;
+  }
+
+}
 
 .headers {
   display: flex;
 
   .header {
     cursor: pointer;
-    padding: 10px 10px;
-    display: block;
-    justify-content: center;
+    padding: 10px;
+    //display: block;
+    //justify-content: center;
     height: 42px;
     max-width: fit-content;
     box-sizing: border-box;
@@ -20,13 +46,26 @@
     font-weight: typography.$font-weight-medium;
     font-size: 16px;
 
+    @include responsive.not-desktop {
+      font-size: 14px;
+      line-height: 18px;
+      padding: 8px;
+      //min-height: 42px;
+      height: unset;
+      width: unset;
+      //min-width: ;
+      //max-width: 25%; //fit-content;
+      overflow-wrap: break-word;
+    }
+
     &:hover {
       background-color: colours.$colour-nav-bg-hover;
     }
 
     &:focus {
       outline-offset: -2px;
-      box-shadow: colours.$colour-text inset 0 0 0 2px;    }
+      box-shadow: colours.$colour-text inset 0 0 0 2px;
+    }
 
     &:focus-visible {
       outline: 3px solid colours.$colour-utility-focus;
@@ -38,10 +77,4 @@
       color: colours.$colour-white;
     }
   }
-}
-
-hr {
-  height: 2px;
-  margin: 6px 0;
-  background-color: colours.$colour-divider;
 }

@@ -64,9 +64,15 @@ export class TabGroupComponent {
 
     return (
       <Host>
-        <div class="headers">{createHeaders()}</div>
-        <hr />
-        <slot></slot>
+        <header>
+          <div class="headers">{createHeaders()}</div>
+          <hr />
+        </header>
+        {/* <hr/> */}
+        <section>
+
+          <slot></slot>
+        </section>
       </Host>
     );
   }
