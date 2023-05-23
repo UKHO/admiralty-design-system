@@ -57,7 +57,7 @@ export class TabGroupComponent {
   render() {
     const createHeaders = () =>
       Array.from(this.tabs).map(tab => (
-        <div class={{ header: true, active: tab.index === this.selectedIndex }} data-idx={tab.index} onClick={_ => this.handleSelectedTab(tab.index)}>
+        <div class={{ heading: true, active: tab.index === this.selectedIndex }} data-idx={tab.index} onClick={_ => this.handleSelectedTab(tab.index)}>
           {tab.label}
         </div>
       ));
@@ -68,9 +68,7 @@ export class TabGroupComponent {
           <div class="headers">{createHeaders()}</div>
           <hr />
         </header>
-        {/* <hr/> */}
         <section>
-
           <slot></slot>
         </section>
       </Host>
