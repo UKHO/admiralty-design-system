@@ -10,8 +10,11 @@ describe('admiralty-tab-group', () => {
     expect(page.root).toMatchInlineSnapshot(`
       <admiralty-tab-group>
         <!---->
-        <div class="headers"></div>
-        <hr>
+        <header>
+          <div class="headers"></div>
+          <hr>
+        </header>
+        <section></section>
       </admiralty-tab-group>
     `);
   });
@@ -28,17 +31,21 @@ describe('admiralty-tab-group', () => {
     expect(page.root).toMatchInlineSnapshot(`
       <admiralty-tab-group>
         <!---->
-        <div class="headers">
-          <div class="active header" data-idx="0"></div>
-          <div class="header" data-idx="1"></div>
-        </div>
-        <hr>
-        <admiralty-tab label="'a'">
-          test a
-        </admiralty-tab>
-        <admiralty-tab label="'b'">
-          test b
-        </admiralty-tab>
+        <header>
+          <div class="headers">
+            <div class="active heading" data-idx="0"></div>
+            <div class="heading" data-idx="1"></div>
+          </div>
+          <hr>
+        </header>
+        <section>
+          <admiralty-tab label="'a'">
+            test a
+          </admiralty-tab>
+          <admiralty-tab label="'b'">
+            test b
+          </admiralty-tab>
+        </section>
       </admiralty-tab-group>
     `);
   });
@@ -55,19 +62,22 @@ describe('admiralty-tab-group', () => {
     expect(page.root).toMatchInlineSnapshot(`
       <admiralty-tab-group selected-index="1">
         <!---->
-        <div class="headers">
-          <div class="header" data-idx="0"></div>
-          <div class="active header" data-idx="1"></div>
-        </div>
-        <hr>
-        <admiralty-tab label="'a'">
-          test a
-        </admiralty-tab>
-        <admiralty-tab label="'b'">
-          test b
-        </admiralty-tab>
+        <header>
+          <div class="headers">
+            <div class="heading" data-idx="0"></div>
+            <div class="active heading" data-idx="1"></div>
+          </div>
+          <hr>
+        </header>
+        <section>
+          <admiralty-tab label="'a'">
+            test a
+          </admiralty-tab>
+          <admiralty-tab label="'b'">
+            test b
+          </admiralty-tab>
+        </section>
       </admiralty-tab-group>
     `);
   });
-
 });

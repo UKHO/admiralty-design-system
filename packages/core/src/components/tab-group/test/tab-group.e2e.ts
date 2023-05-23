@@ -18,7 +18,7 @@ describe('tab-group', () => {
     </admiralty-tab-group>`
     );
 
-    const element = await page.find('admiralty-tab-group div.header[data-idx="1"]');
+    const element = await page.find('admiralty-tab-group div.heading[data-idx="1"]');
 
     const event = await page.spyOnEvent('admiralTabSelected');
 
