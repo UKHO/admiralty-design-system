@@ -9,7 +9,8 @@ module.exports = {
   '../src/components/dialogue/dialogue.stories.ts',
   '../src/components/expansion/expansion.stories.ts',
   '../src/components/file-input/file-input.stories.ts',
-  '../src/components/filter/filter.stories.ts'],
+  '../src/components/filter/filter.stories.ts',
+  '../src/components/footer/footer.stories.ts'],
   addons: ['@storybook/addon-links', '@storybook/addon-essentials', '@storybook/addon-a11y'],
   framework: {
     name: '@storybook/web-components-vite',
