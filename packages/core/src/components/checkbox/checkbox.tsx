@@ -88,9 +88,10 @@ export class CheckboxComponent {
 
     return (
       <Host>
-        <div aria-checked={`${checked}`} aria-hidden={disabled ? 'true' : null} role="checkbox" class={{ 'form-control': true, 'right-align': checkboxRight }}>
+        <div class={{ 'form-control': true, 'right-align': checkboxRight }}>
           <input
             aria-checked={`${checked}`}
+            aria-hidden={disabled ? 'true' : null}
             type="checkbox"
             onBlur={() => this.onBlur()}
             onFocus={() => this.onFocus()}
