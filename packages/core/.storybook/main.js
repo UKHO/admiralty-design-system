@@ -4,7 +4,8 @@ module.exports = {
   '../src/components/breadcrumb/breadcrumb.stories.ts',
   '../src/components/breadcrumbs/breadcrumbs.stories.ts',
   '../src/components/card/card.stories.ts',
-  '../src/components/checkbox/checkbox.stories.ts'],
+  '../src/components/checkbox/checkbox.stories.ts',
+  '../src/components/colour-block/colour-block.stories.ts'],
   addons: ['@storybook/addon-links', '@storybook/addon-essentials', '@storybook/addon-a11y'],
   framework: {
     name: '@storybook/web-components-vite',
