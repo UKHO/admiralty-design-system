@@ -7,7 +7,8 @@ module.exports = {
   '../src/components/checkbox/checkbox.stories.ts',
   '../src/components/colour-block/colour-block.stories.ts',
   '../src/components/dialogue/dialogue.stories.ts',
-  '../src/components/expansion/expansion.stories.ts'],
+  '../src/components/expansion/expansion.stories.ts',
+  '../src/components/file-input/file-input.stories.ts'],
   addons: ['@storybook/addon-links', '@storybook/addon-essentials', '@storybook/addon-a11y'],
   framework: {
     name: '@storybook/web-components-vite',
