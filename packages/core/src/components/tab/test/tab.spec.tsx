@@ -10,7 +10,7 @@ describe('admiratly-tab', () => {
     expect(page.root).toMatchInlineSnapshot(`
       <admiralty-tab>
         <!---->
-        <div class="content" data-idx="-1"></div>
+        <div aria-labelledby="" class="content" data-idx="-1" role="tabpanel"></div>
       </admiralty-tab>
     `);
   });
@@ -23,7 +23,7 @@ describe('admiratly-tab', () => {
     expect(page.root).toMatchInlineSnapshot(`
       <admiralty-tab active="true" index="1" label="lbl">
         <!---->
-        <div class="active content" data-idx="1"></div>
+        <div aria-labelledby="" class="active content" data-idx="1" role="tabpanel"></div>
       </admiralty-tab>
     `);
   });

@@ -10,11 +10,11 @@ describe('admiralty-tab-group', () => {
     expect(page.root).toMatchInlineSnapshot(`
       <admiralty-tab-group>
         <!---->
-        <header>
+        <div class="tab-group-headers" role="tablist">
           <div class="headers"></div>
-          <hr>
-        </header>
-        <section></section>
+        </div>
+        <hr>
+        <div class="tab-group-body-container"></div>
       </admiralty-tab-group>
     `);
   });
@@ -31,21 +31,21 @@ describe('admiralty-tab-group', () => {
     expect(page.root).toMatchInlineSnapshot(`
       <admiralty-tab-group>
         <!---->
-        <header>
+        <div class="tab-group-headers" role="tablist">
           <div class="headers">
-            <div class="active heading" data-idx="0"></div>
-            <div class="heading" data-idx="1"></div>
+            <button aria-controls="tab-panel-1-0" aria-selected="" aria-setsize="2" class="active heading" data-idx="0" id="tab-label-1-0" role="tab"></button>
+            <button aria-controls="tab-panel-1-1" aria-setsize="2" class="heading" data-idx="1" id="tab-label-1-1" role="tab"></button>
           </div>
-          <hr>
-        </header>
-        <section>
+        </div>
+        <hr>
+        <div class="tab-group-body-container">
           <admiralty-tab label="'a'">
             test a
           </admiralty-tab>
           <admiralty-tab label="'b'">
             test b
           </admiralty-tab>
-        </section>
+        </div>
       </admiralty-tab-group>
     `);
   });
@@ -62,21 +62,21 @@ describe('admiralty-tab-group', () => {
     expect(page.root).toMatchInlineSnapshot(`
       <admiralty-tab-group selected-index="1">
         <!---->
-        <header>
+        <div class="tab-group-headers" role="tablist">
           <div class="headers">
-            <div class="heading" data-idx="0"></div>
-            <div class="active heading" data-idx="1"></div>
+            <button aria-controls="tab-panel-2-0" aria-setsize="2" class="heading" data-idx="0" id="tab-label-2-0" role="tab"></button>
+            <button aria-controls="tab-panel-2-1" aria-selected="" aria-setsize="2" class="active heading" data-idx="1" id="tab-label-2-1" role="tab"></button>
           </div>
-          <hr>
-        </header>
-        <section>
+        </div>
+        <hr>
+        <div class="tab-group-body-container">
           <admiralty-tab label="'a'">
             test a
           </admiralty-tab>
           <admiralty-tab label="'b'">
             test b
           </admiralty-tab>
-        </section>
+        </div>
       </admiralty-tab-group>
     `);
   });

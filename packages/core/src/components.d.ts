@@ -437,9 +437,26 @@ export namespace Components {
     interface AdmiraltySideNavWrapper {
     }
     interface AdmiraltyTab {
+        /**
+          * Set internally by parent tab group component to indicate tab content is active.
+         */
         "active": boolean;
+        /**
+          * Tab index.  To be set internally by parent tab group component.
+         */
         "index": number;
+        /**
+          * Tab label
+         */
         "label": string;
+        /**
+          * Tab content Id.  To be set internally by parent tab group component.
+         */
+        "tabContentId": string;
+        /**
+          * Tab label Id.  To be set internally by parent tab group component.
+         */
+        "tabLabelId": string;
     }
     interface AdmiraltyTabGroup {
         "selectedIndex": number;
@@ -1441,9 +1458,26 @@ declare namespace LocalJSX {
     interface AdmiraltySideNavWrapper {
     }
     interface AdmiraltyTab {
+        /**
+          * Set internally by parent tab group component to indicate tab content is active.
+         */
         "active"?: boolean;
+        /**
+          * Tab index.  To be set internally by parent tab group component.
+         */
         "index"?: number;
+        /**
+          * Tab label
+         */
         "label"?: string;
+        /**
+          * Tab content Id.  To be set internally by parent tab group component.
+         */
+        "tabContentId"?: string;
+        /**
+          * Tab label Id.  To be set internally by parent tab group component.
+         */
+        "tabLabelId"?: string;
     }
     interface AdmiraltyTabGroup {
         "onAdmiralTabSelected"?: (event: AdmiraltyTabGroupCustomEvent<number>) => void;

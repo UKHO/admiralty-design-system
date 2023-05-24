@@ -1,9 +1,11 @@
 import { Component, Element, Prop, Event, h, EventEmitter, Host } from '@stencil/core';
 
 interface TabInfo {
-  label: string
-  index: number
+  label: string;
+  index: number;
 }
+
+let nextId = 0;
 
 @Component({
   tag: 'admiralty-tab-group',
@@ -16,6 +18,8 @@ export class TabGroupComponent {
   @Prop({ mutable: true }) selectedIndex = 0;
 
   @Event() admiralTabSelected: EventEmitter<number>;
+
+  private _groupId = nextId++;
 
   private tabs: TabInfo[] = [];
 
@@ -34,6 +38,14 @@ export class TabGroupComponent {
     this.admiralTabSelected.emit(idx);
   }
 
+  getTabContentId(i: number): string {
+    return `tab-panel-${this._groupId}-${i}`;
+  }
+
+  getTabLabelId(i: number): string {
+    return `tab-label-${this._groupId}-${i}`;
+  }
+
   componentWillRender() {
     const tabItems = this.el.querySelectorAll('admiralty-tab');
 
@@ -43,12 +55,14 @@ export class TabGroupComponent {
       let idx = 0;
       tabItems.forEach(t => {
         t.index = idx;
+        t.tabLabelId = this.getTabLabelId(idx);
+        t.tabContentId = this.getTabContentId(idx);
 
         this.tabs.push({ label: t.label, index: idx });
         ++idx;
       });
 
-      this.selectedIndex = Math.max(0, Math.min(this.selectedIndex, tabItems.length-1));
+      this.selectedIndex = Math.max(0, Math.min(this.selectedIndex, tabItems.length - 1));
 
       tabItems[this.selectedIndex].active = true;
     }
@@ -57,20 +71,29 @@ export class TabGroupComponent {
   render() {
     const createHeaders = () =>
       Array.from(this.tabs).map(tab => (
-        <div class={{ heading: true, active: tab.index === this.selectedIndex }} data-idx={tab.index} onClick={_ => this.handleSelectedTab(tab.index)}>
+        <button
+          class={{ heading: true, active: tab.index === this.selectedIndex }}
+          id={this.getTabLabelId(tab.index)}
+          data-idx={tab.index}
+          role="tab"
+          aria-setsize={this.tabs.length}
+          aria-selected={tab.index === this.selectedIndex}
+          aria-controls={this.getTabContentId(tab.index)}
+          onClick={_ => this.handleSelectedTab(tab.index)}
+        >
           {tab.label}
-        </div>
+        </button>
       ));
 
     return (
       <Host>
-        <header>
+        <div class="tab-group-headers" role="tablist">
           <div class="headers">{createHeaders()}</div>
-          <hr />
-        </header>
-        <section>
+        </div>
+        <hr />
+        <div class="tab-group-body-container">
           <slot></slot>
-        </section>
+        </div>
       </Host>
     );
   }

@@ -805,14 +805,14 @@ export declare interface AdmiraltySideNavItem extends Components.AdmiraltySideNa
 
 
 @ProxyCmp({
-  inputs: ['active', 'index', 'label']
+  inputs: ['active', 'index', 'label', 'tabContentId', 'tabLabelId']
 })
 @Component({
   selector: 'admiralty-tab',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['active', 'index', 'label'],
+  inputs: ['active', 'index', 'label', 'tabContentId', 'tabLabelId'],
 })
 export class AdmiraltyTab {
   protected el: HTMLElement;

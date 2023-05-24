@@ -2,31 +2,22 @@
 @use "../../scss/vars/typography";
 @use "../../scss/base/responsive";
 
-header {
+.tab-group-headers {
   width: 100%;
-
-  @include responsive.not-desktop {
-    margin-bottom: 10px;
-  }
-
-  hr {
-    width: 100%;
-    height: 2px;
-    margin: 6px 0;
-    background-color: colours.$colour-divider;
-
-    @include responsive.not-desktop {
-      position: fixed;
-    }
-  }
 }
 
-section {
-  position: fixed;
+hr {
+  width: 100%;
+  height: 2px;
+  margin: 6px 0;
+  background-color: colours.$colour-divider;
 }
 
 .headers {
   display: flex;
+  overflow-x: scroll;
+
+  white-space: nowrap;
 
   .heading {
     cursor: pointer;
@@ -39,6 +30,7 @@ section {
     text-align: center;
     text-decoration: none;
     color: colours.$colour-admiralty-blue;
+    background-color: unset;
     font-weight: typography.$font-weight-medium;
     font-size: 16px;
 
