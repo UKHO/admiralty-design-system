@@ -11,7 +11,8 @@ module.exports = {
   '../src/components/file-input/file-input.stories.ts',
   '../src/components/filter/filter.stories.ts',
   '../src/components/footer/footer.stories.ts',
-  '../src/components/header/header.stories.ts'],
+  '../src/components/header/header.stories.ts',
+  '../src/components/hint/hint.stories.ts'],
   addons: ['@storybook/addon-links', '@storybook/addon-essentials', '@storybook/addon-a11y'],
   framework: {
     name: '@storybook/web-components-vite',
