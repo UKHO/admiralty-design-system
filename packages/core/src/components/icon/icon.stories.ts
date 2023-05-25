@@ -1,32 +1,41 @@
-// import readme from './readme.md';
-// import { Story } from '@storybook/html';
-// import { IconComponent } from './icon';
-//
-// export default {
-//   title: 'Icon',
-//   parameters: {
-//     markdown: readme,
-//   },
-// };
-//
-// const template: Story<IconComponent> = args => {
-//   return `<admiralty-icon icon-name="${args.iconName}" icon-prefix="${args.iconPrefix}"></admiralty-icon>`;
-// };
-//
-// export const solid: Story<IconComponent> = template.bind({});
-// solid.args = {
-//   iconName: 'anchor',
-//   iconPrefix: 'fas',
-// };
-//
-// export const regular: Story<IconComponent> = template.bind({});
-// regular.args = {
-//   iconName: 'paper-plane',
-//   iconPrefix: 'far',
-// };
-//
-// export const brands: Story<IconComponent> = template.bind({});
-// brands.args = {
-//   iconName: 'google',
-//   iconPrefix: 'fab',
-// };
+import { Meta, StoryObj } from '@storybook/web-components';
+import { IconComponent } from './icon';
+import { html } from 'lit';
+
+const meta: Meta = {
+  component: 'admiralty-icon',
+  title: 'Icon',
+  parameters: {
+    actions: {
+    },
+  },
+};
+
+export default meta;
+
+type Story = StoryObj<IconComponent>;
+
+const template: Story = {
+    render: args => html`<admiralty-icon icon-name="${args.iconName}" icon-prefix="${args.iconPrefix}"></admiralty-icon>`,
+  };
+  
+export const Solid: Story = { ...template,
+  args: {
+    iconName: 'anchor',
+    iconPrefix: 'fas'
+  }
+};
+
+export const Regular: Story = { ...template,
+  args: {
+    iconName: 'paper-plane',
+    iconPrefix: 'far'
+  }
+};
+
+export const Brands: Story = { ...template,
+  args: {
+    iconName: 'google',
+    iconPrefix: 'fab'
+  }
+};
