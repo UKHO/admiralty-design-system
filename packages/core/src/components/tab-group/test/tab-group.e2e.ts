@@ -20,7 +20,7 @@ describe('tab-group', () => {
 
     const element = await page.find('admiralty-tab-group .heading[data-idx="1"]');
 
-    const event = await page.spyOnEvent('admiralTabSelected');
+    const event = await page.spyOnEvent('admiraltyTabSelected');
 
     await element.click();
 

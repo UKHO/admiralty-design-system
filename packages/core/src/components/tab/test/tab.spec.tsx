@@ -10,7 +10,7 @@ describe('admiratly-tab', () => {
     expect(page.root).toMatchInlineSnapshot(`
       <admiralty-tab>
         <!---->
-        <div aria-labelledby="" class="content" data-idx="-1" role="tabpanel"></div>
+        <div aria-labelledby="" class="tab-content" role="tabpanel" tabindex="-1"></div>
       </admiralty-tab>
     `);
   });
@@ -18,12 +18,12 @@ describe('admiratly-tab', () => {
   it('renders with content', async () => {
     const page = await newSpecPage({
       components: [TabComponent],
-      html: `<admiralty-tab label="lbl" index="1" active="true"></admiralty-tab>`,
+      html: `<admiralty-tab label="lbl"></admiralty-tab>`,
     });
     expect(page.root).toMatchInlineSnapshot(`
-      <admiralty-tab active="true" index="1" label="lbl">
+      <admiralty-tab label="lbl">
         <!---->
-        <div aria-labelledby="" class="active content" data-idx="1" role="tabpanel"></div>
+        <div aria-labelledby="" class="tab-content" role="tabpanel" tabindex="-1"></div>
       </admiralty-tab>
     `);
   });

@@ -14,7 +14,6 @@ describe('admiralty-tab-group', () => {
           <div class="headers"></div>
         </div>
         <hr>
-        <div class="tab-group-body-container"></div>
       </admiralty-tab-group>
     `);
   });
@@ -33,19 +32,17 @@ describe('admiralty-tab-group', () => {
         <!---->
         <div class="tab-group-headers" role="tablist">
           <div class="headers">
-            <button aria-controls="tab-panel-1-0" aria-selected="" aria-setsize="2" class="active heading" data-idx="0" id="tab-label-1-0" role="tab"></button>
-            <button aria-controls="tab-panel-1-1" aria-setsize="2" class="heading" data-idx="1" id="tab-label-1-1" role="tab"></button>
+            <button aria-controls="tab-panel-1-0" aria-selected="true" aria-setsize="2" class="active heading" id="tab-label-1-0" role="tab" tabindex="0"></button>
+            <button aria-controls="tab-panel-1-1" aria-selected="false" aria-setsize="2" class="heading" id="tab-label-1-1" role="tab" tabindex="-1"></button>
           </div>
         </div>
         <hr>
-        <div class="tab-group-body-container">
-          <admiralty-tab label="'a'">
-            test a
-          </admiralty-tab>
-          <admiralty-tab label="'b'">
-            test b
-          </admiralty-tab>
-        </div>
+        <admiralty-tab label="'a'">
+          test a
+        </admiralty-tab>
+        <admiralty-tab label="'b'">
+          test b
+        </admiralty-tab>
       </admiralty-tab-group>
     `);
   });
@@ -64,19 +61,17 @@ describe('admiralty-tab-group', () => {
         <!---->
         <div class="tab-group-headers" role="tablist">
           <div class="headers">
-            <button aria-controls="tab-panel-2-0" aria-setsize="2" class="heading" data-idx="0" id="tab-label-2-0" role="tab"></button>
-            <button aria-controls="tab-panel-2-1" aria-selected="" aria-setsize="2" class="active heading" data-idx="1" id="tab-label-2-1" role="tab"></button>
+            <button aria-controls="tab-panel-2-0" aria-selected="false" aria-setsize="2" class="heading" id="tab-label-2-0" role="tab" tabindex="-1"></button>
+            <button aria-controls="tab-panel-2-1" aria-selected="true" aria-setsize="2" class="active heading" id="tab-label-2-1" role="tab" tabindex="0"></button>
           </div>
         </div>
         <hr>
-        <div class="tab-group-body-container">
-          <admiralty-tab label="'a'">
-            test a
-          </admiralty-tab>
-          <admiralty-tab label="'b'">
-            test b
-          </admiralty-tab>
-        </div>
+        <admiralty-tab label="'a'">
+          test a
+        </admiralty-tab>
+        <admiralty-tab label="'b'">
+          test b
+        </admiralty-tab>
       </admiralty-tab-group>
     `);
   });
