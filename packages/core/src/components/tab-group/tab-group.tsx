@@ -1,4 +1,5 @@
 import { Component, Element, Prop, Event, h, EventEmitter, Host } from '@stencil/core';
+import { Keys } from '../Keys';
 
 interface TabInfo {
   label: string;
@@ -17,11 +18,12 @@ export class TabGroupComponent {
 
   @Prop({ mutable: true }) selectedIndex = 0;
 
-  @Event() admiralTabSelected: EventEmitter<number>;
+  @Event() admiraltyTabSelected: EventEmitter<number>;
 
   private _groupId = nextId++;
 
   private _tabs: TabInfo[] = [];
+  private _tabHeaders: HTMLElement[] = [];
 
   handleSelectedTab(idx: number) {
     const oldContent = this.el.querySelector(`.tab-content#${this.getTabContentId(this.selectedIndex)}`);
@@ -31,7 +33,7 @@ export class TabGroupComponent {
     this.selectedIndex = idx;
     this.setSelectedTabContent();
 
-    this.admiralTabSelected.emit(idx);
+    this.admiraltyTabSelected.emit(idx);
   }
 
   private setSelectedTabContent() {
@@ -50,6 +52,67 @@ export class TabGroupComponent {
 
   private getTabLabelId(i: number): string {
     return `tab-label-${this._groupId}-${i}`;
+  }
+
+  handleKeyOwn(event: KeyboardEvent): void {
+    const tgt = event.target as HTMLElement;
+    let processed = false;
+
+    switch (event.key) {
+      case Keys.LEFT_ARROW:
+        this.moveFocusToPreviousTab(tgt);
+        processed = true;
+        break;
+      case 'ArrowRight':
+        this.moveFocusToNextTab(tgt);
+        processed = true;
+        break;
+
+      case 'Home':
+        this.moveFocusToTabHeader(this._tabHeaders[0]);
+        processed = true;
+        break;
+
+      case 'End':
+        this.moveFocusToTabHeader(this._tabHeaders[this._tabHeaders.length - 1]);
+        processed = true;
+        break;
+      default:
+        break;
+    }
+
+    if (processed) {
+      event.stopPropagation();
+      event.preventDefault();
+    }
+  }
+
+  private moveFocusToTabHeader(header: HTMLElement) {
+    header.focus();
+  }
+
+  private moveFocusToPreviousTab(currentHeader: HTMLElement) {
+    const firstTab = this._tabHeaders[0];
+    const lastTab = this._tabHeaders[this._tabHeaders.length - 1];
+
+    if (currentHeader === firstTab) {
+      this.moveFocusToTabHeader(lastTab);
+    } else {
+      const index = this._tabHeaders.indexOf(currentHeader);
+      this.moveFocusToTabHeader(this._tabHeaders[index - 1]);
+    }
+  }
+
+  private moveFocusToNextTab(currentHeader: HTMLElement) {
+    const firstTab = this._tabHeaders[0];
+    const lastTab = this._tabHeaders[this._tabHeaders.length - 1];
+
+    if (currentHeader === lastTab) {
+      this.moveFocusToTabHeader(firstTab);
+    } else {
+      const index = this._tabHeaders.indexOf(currentHeader);
+      this.moveFocusToTabHeader(this._tabHeaders[index + 1]);
+    }
   }
 
   componentWillLoad() {
@@ -72,6 +135,8 @@ export class TabGroupComponent {
   }
 
   componentDidLoad() {
+    this._tabHeaders = Array.from(this.el.querySelectorAll('[role="tab"]'));
+
     const tabItems = this.el.querySelectorAll('admiralty-tab .tab-content');
 
     if (tabItems.length > 0) {
@@ -93,7 +158,8 @@ export class TabGroupComponent {
           aria-setsize={this._tabs.length}
           aria-selected={`${tab.index === this.selectedIndex}`}
           aria-controls={this.getTabContentId(tab.index)}
-          onClick={_ => this.handleSelectedTab(tab.index)}
+          onClick={_ev => this.handleSelectedTab(tab.index)}
+          onKeyDown={ev => this.handleKeyOwn(ev)}
         >
           {tab.label}
         </button>

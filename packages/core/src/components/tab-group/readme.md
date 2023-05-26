@@ -14,9 +14,9 @@
 
 ## Events
 
-| Event                | Description | Type                  |
-| -------------------- | ----------- | --------------------- |
-| `admiralTabSelected` |             | `CustomEvent<number>` |
+| Event                  | Description | Type                  |
+| ---------------------- | ----------- | --------------------- |
+| `admiraltyTabSelected` |             | `CustomEvent<number>` |
 
 
 ----------------------------------------------

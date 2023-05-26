@@ -841,14 +841,14 @@ export class AdmiraltyTabGroup {
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['admiralTabSelected']);
+    proxyOutputs(this, this.el, ['admiraltyTabSelected']);
   }
 }
 
 
 export declare interface AdmiraltyTabGroup extends Components.AdmiraltyTabGroup {
 
-  admiralTabSelected: EventEmitter<CustomEvent<number>>;
+  admiraltyTabSelected: EventEmitter<CustomEvent<number>>;
 }
 
 

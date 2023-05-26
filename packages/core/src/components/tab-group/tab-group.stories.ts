@@ -6,7 +6,7 @@ export default {
   parameters: {
     markdown: readme,
     actions: {
-      handles: ['admiralTabSelected'],
+      handles: ['admiraltyTabSelected'],
     },
   },
 };

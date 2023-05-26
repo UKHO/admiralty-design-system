@@ -1464,7 +1464,7 @@ declare namespace LocalJSX {
         "tabLabelId"?: string;
     }
     interface AdmiraltyTabGroup {
-        "onAdmiralTabSelected"?: (event: AdmiraltyTabGroupCustomEvent<number>) => void;
+        "onAdmiraltyTabSelected"?: (event: AdmiraltyTabGroupCustomEvent<number>) => void;
         "selectedIndex"?: number;
     }
     /**
