@@ -18,8 +18,8 @@
   "scripts": {
     "build": "yarn build.css && stencil build",
     "build.css": "yarn css.sass && yarn css.minify",
-    "css.minify": "cleancss -O2 -o styles/core.css styles/core.css",
-    "css.sass": "sass --embed-sources src/scss/core.scss:./styles/core.css",
+    "css.minify": "cleancss -O2 -o styles/admiralty.bundle.css styles/admiralty.bundle.css",
+    "css.sass": "sass --embed-sources src/styles/css:./styles",
     "start": "stencil build --dev --watch --serve --no-open",
     "test": "stencil test --spec --e2e",
     "test:spec": "stencil test --spec",
