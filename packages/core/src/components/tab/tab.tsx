@@ -10,10 +10,6 @@ export class TabComponent {
    * Tab label
    */
   @Prop() label = '';
-  /**
-   * Tab index.  To be set internally by parent tab group component.
-   */
-  @Prop() index = -1;
 
   /**
    * Tab label Id.  To be set internally by parent tab group component.
@@ -24,18 +20,12 @@ export class TabComponent {
    */
   @Prop() tabContentId="";
 
-  /**
-   * Set internally by parent tab group component to indicate tab content is active.
-   */
-  @Prop() active = false;
-
   render() {
     return (
-      <div
-        class={{ content: true, active: this.active }}
+      <div class="tab-content"
         id={this.tabContentId}
-        data-idx={this.index}
         role="tabpanel"
+        tabindex="-1"
         aria-labelledby={this.tabLabelId}
       >
         <slot></slot>

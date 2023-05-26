@@ -1,11 +1,10 @@
 @use "../../scss/vars/typography";
 
-  .content {
-    display: none;
-    font-weight: typography.$font-weight-light;
+.tab-content {
+  display: none;
+  font-weight: typography.$font-weight-light;
 
-    &.active {
-      display: block;
-    }
+  &.active {
+    display: block;
   }
-
+}

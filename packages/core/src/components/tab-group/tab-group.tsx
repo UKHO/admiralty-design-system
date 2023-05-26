@@ -21,63 +21,77 @@ export class TabGroupComponent {
 
   private _groupId = nextId++;
 
-  private tabs: TabInfo[] = [];
+  private _tabs: TabInfo[] = [];
 
   handleSelectedTab(idx: number) {
-    const oldHeader = this.el.querySelector(`div[data-idx="${this.selectedIndex}"]`);
-    oldHeader.classList.remove('active');
-    const oldContent = this.el.querySelector(`admiralty-tab div[data-idx="${this.selectedIndex}"]`);
+    const oldContent = this.el.querySelector(`.tab-content#${this.getTabContentId(this.selectedIndex)}`);
     oldContent.classList.remove('active');
+    oldContent.setAttribute('tabindex', this.getTabIndex(idx).toString());
 
     this.selectedIndex = idx;
-    const activeHeader = this.el.querySelector(`div[data-idx="${idx}"]`);
-    activeHeader.classList.add('active');
-    const activeContent = this.el.querySelector(`admiralty-tab div[data-idx="${idx}"]`);
-    activeContent.classList.add('active');
+    this.setSelectedTabContent();
 
     this.admiralTabSelected.emit(idx);
   }
 
-  getTabContentId(i: number): string {
+  private setSelectedTabContent() {
+    const activeContent = this.el.querySelector(`.tab-content#${this.getTabContentId(this.selectedIndex)}`);
+    activeContent.classList.add('active');
+    activeContent.setAttribute('tabindex', this.getTabIndex(this.selectedIndex).toString());
+  }
+
+  private getTabIndex(index: number): number | null {
+    return this.selectedIndex === index ? 0 : -1;
+  }
+
+  private getTabContentId(i: number): string {
     return `tab-panel-${this._groupId}-${i}`;
   }
 
-  getTabLabelId(i: number): string {
+  private getTabLabelId(i: number): string {
     return `tab-label-${this._groupId}-${i}`;
   }
 
-  componentWillRender() {
+  componentWillLoad() {
     const tabItems = this.el.querySelectorAll('admiralty-tab');
 
-    this.tabs = [];
+    this._tabs = [];
 
     if (tabItems.length > 0) {
       let idx = 0;
       tabItems.forEach(t => {
-        t.index = idx;
         t.tabLabelId = this.getTabLabelId(idx);
         t.tabContentId = this.getTabContentId(idx);
 
-        this.tabs.push({ label: t.label, index: idx });
+        this._tabs.push({ label: t.label, index: idx });
         ++idx;
       });
 
       this.selectedIndex = Math.max(0, Math.min(this.selectedIndex, tabItems.length - 1));
+    }
+  }
 
-      tabItems[this.selectedIndex].active = true;
+  componentDidLoad() {
+    const tabItems = this.el.querySelectorAll('admiralty-tab .tab-content');
+
+    if (tabItems.length > 0) {
+      const tabContent = this.el.querySelector('hr');
+      tabContent.after(...Array.from(tabItems));
+
+      this.setSelectedTabContent();
     }
   }
 
   render() {
     const createHeaders = () =>
-      Array.from(this.tabs).map(tab => (
+      Array.from(this._tabs).map(tab => (
         <button
           class={{ heading: true, active: tab.index === this.selectedIndex }}
           id={this.getTabLabelId(tab.index)}
-          data-idx={tab.index}
           role="tab"
-          aria-setsize={this.tabs.length}
-          aria-selected={tab.index === this.selectedIndex}
+          tabIndex={this.getTabIndex(tab.index)}
+          aria-setsize={this._tabs.length}
+          aria-selected={`${tab.index === this.selectedIndex}`}
           aria-controls={this.getTabContentId(tab.index)}
           onClick={_ => this.handleSelectedTab(tab.index)}
         >
@@ -91,9 +105,7 @@ export class TabGroupComponent {
           <div class="headers">{createHeaders()}</div>
         </div>
         <hr />
-        <div class="tab-group-body-container">
-          <slot></slot>
-        </div>
+        <slot></slot>
       </Host>
     );
   }

@@ -438,14 +438,6 @@ export namespace Components {
     }
     interface AdmiraltyTab {
         /**
-          * Set internally by parent tab group component to indicate tab content is active.
-         */
-        "active": boolean;
-        /**
-          * Tab index.  To be set internally by parent tab group component.
-         */
-        "index": number;
-        /**
           * Tab label
          */
         "label": string;
@@ -1458,14 +1450,6 @@ declare namespace LocalJSX {
     interface AdmiraltySideNavWrapper {
     }
     interface AdmiraltyTab {
-        /**
-          * Set internally by parent tab group component to indicate tab content is active.
-         */
-        "active"?: boolean;
-        /**
-          * Tab index.  To be set internally by parent tab group component.
-         */
-        "index"?: number;
         /**
           * Tab label
          */
