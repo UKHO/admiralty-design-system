@@ -1,3 +1,15 @@
+# v0.0.7 (Wed May 24 2023)
+
+#### 📝 Documentation
+
+- Improve READMEs [#6](https://github.com/UKHO/admiralty-design-system/pull/6) ([@UKHOGreg](https://github.com/UKHOGreg))
+
+#### Authors: 1
+
+- Greg Williams ([@UKHOGreg](https://github.com/UKHOGreg))
+
+---
+
 # v0.0.5 (Tue May 16 2023)
 
 #### 🐛 Bug Fix
