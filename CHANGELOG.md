@@ -1,3 +1,26 @@
+# v0.0.7 (Wed May 24 2023)
+
+#### 🐛 Bug Fix
+
+- fix: devcontainers [#36](https://github.com/UKHO/admiralty-design-system/pull/36) ([@UKHOGreg](https://github.com/UKHOGreg))
+- Remove dependabot updates [#32](https://github.com/UKHO/admiralty-design-system/pull/32) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+- Add in a dependabot.yml to scan all the directories [#9](https://github.com/UKHO/admiralty-design-system/pull/9) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+- Update packages [#7](https://github.com/UKHO/admiralty-design-system/pull/7) ([@UKHOGreg](https://github.com/UKHOGreg))
+
+#### 📝 Documentation
+
+- Update README.md [#8](https://github.com/UKHO/admiralty-design-system/pull/8) ([@AlJHill](https://github.com/AlJHill))
+- `@ukho/admiralty-angular`, `@ukho/admiralty-core`
+  - Improve READMEs [#6](https://github.com/UKHO/admiralty-design-system/pull/6) ([@UKHOGreg](https://github.com/UKHOGreg))
+
+#### Authors: 3
+
+- [@AlJHill](https://github.com/AlJHill)
+- Greg Williams ([@UKHOGreg](https://github.com/UKHOGreg))
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
 # v0.0.6 (Tue May 16 2023)
 
 #### 🐛 Bug Fix
