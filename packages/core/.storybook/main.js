@@ -20,7 +20,8 @@ module.exports = {
   '../src/components/label/label.stories.ts',
   '../src/components/link/link.stories.ts',
   '../src/components/paginator/paginator.stories.ts',
-  '../src/components/phase-banner/phase-banner.stories.ts'],
+  '../src/components/phase-banner/phase-banner.stories.ts',
+  '../src/components/progress-bar/progress-bar.stories.ts'],
   addons: ['@storybook/addon-links', '@storybook/addon-essentials', '@storybook/addon-a11y'],
   framework: {
     name: '@storybook/web-components-vite',
