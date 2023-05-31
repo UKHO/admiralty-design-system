@@ -54,7 +54,7 @@ export class TabGroupComponent {
     return `tab-label-${this._groupId}-${i}`;
   }
 
-  handleKeyOwn(event: KeyboardEvent): void {
+  handleKeyDown(event: KeyboardEvent): void {
     const tgt = event.target as HTMLElement;
     let processed = false;
 
@@ -63,17 +63,17 @@ export class TabGroupComponent {
         this.moveFocusToPreviousTab(tgt);
         processed = true;
         break;
-      case 'ArrowRight':
+      case Keys.RIGHT_ARROW:
         this.moveFocusToNextTab(tgt);
         processed = true;
         break;
 
-      case 'Home':
+      case Keys.HOME:
         this.moveFocusToTabHeader(this._tabHeaders[0]);
         processed = true;
         break;
 
-      case 'End':
+      case Keys.END:
         this.moveFocusToTabHeader(this._tabHeaders[this._tabHeaders.length - 1]);
         processed = true;
         break;
@@ -159,7 +159,7 @@ export class TabGroupComponent {
           aria-selected={`${tab.index === this.selectedIndex}`}
           aria-controls={this.getTabContentId(tab.index)}
           onClick={_ev => this.handleSelectedTab(tab.index)}
-          onKeyDown={ev => this.handleKeyOwn(ev)}
+          onKeyDown={ev => this.handleKeyDown(ev)}
         >
           {tab.label}
         </button>
