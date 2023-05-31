@@ -13,12 +13,12 @@ describe('tab-group', () => {
     const page = await newE2EPage();
     await page.setContent(`
     <admiralty-tab-group>
-      <admiralty-tab label="'a'">test a</admiralty-tab>
-      <admiralty-tab label="'b'">test b</admiralty-tab>
+      <admiralty-tab label="a">test a</admiralty-tab>
+      <admiralty-tab label="b">test b</admiralty-tab>
     </admiralty-tab-group>`
     );
 
-    const element = await page.find('admiralty-tab-group .heading[data-idx="1"]');
+    const element = await page.find('admiralty-tab-group .heading');
 
     const event = await page.spyOnEvent('admiraltyTabSelected');
 
@@ -26,6 +26,6 @@ describe('tab-group', () => {
 
     await page.waitForChanges();
 
-    expect(event).toHaveReceivedEventDetail(1);
+    expect(event).toHaveReceivedEventDetail(0);
    });
 });
