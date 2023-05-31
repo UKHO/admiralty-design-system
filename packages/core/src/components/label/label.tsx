@@ -7,9 +7,11 @@ import { Component, h, Prop } from '@stencil/core';
 @Component({
   tag: 'admiralty-label',
   styleUrl: 'label.scss',
-  shadow: true,
+  scoped: true,
 })
 export class LabelComponent {
+  // @Element() el: HTMLElement;
+
   /**
    * The disabled option can be used to disable the component.
    */
@@ -19,6 +21,13 @@ export class LabelComponent {
    * The id of the input the label is attached to
    */
   @Prop() for: string;
+
+  // componentWillRender() {
+  //   console.log('el', this.el);
+  //   if (this.for) {
+  //     this.el.setAttribute('for', this.for);
+  //   }
+  // }
 
   render() {
     return (
