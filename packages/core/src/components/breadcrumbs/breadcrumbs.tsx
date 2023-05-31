@@ -3,7 +3,7 @@ import { Component, Element, h } from '@stencil/core';
 @Component({
   tag: 'admiralty-breadcrumbs',
   styleUrl: 'breadcrumbs.scss',
-  shadow: true,
+  scoped: true,
 })
 export class BreadcrumbsComponent {
   @Element() el!: HTMLElement;

@@ -10,11 +10,7 @@ describe('admiralty-breadcrumbs', () => {
     });
     expect(root).toEqualHtml(`
       <admiralty-breadcrumbs>
-        <mock:shadow-root>
-          <nav aria-label="breadcrumbs" class="breadcrumbs">
-            <slot></slot>
-          </nav>
-        </mock:shadow-root>
+        <nav aria-label="breadcrumbs" class="breadcrumbs"></nav>
       </admiralty-breadcrumbs>
     `);
   });
@@ -28,19 +24,13 @@ describe('admiralty-breadcrumbs', () => {
     });
     expect(root).toEqualHtml(`
       <admiralty-breadcrumbs>
-        <mock:shadow-root>
         <nav aria-label="breadcrumbs" class="breadcrumbs">
-        <slot></slot>
+          <admiralty-breadcrumb>
+            <a class="active" href="#">
+              Test1
+            </a>
+          </admiralty-breadcrumb>
         </nav>
-        </mock:shadow-root>
-        <admiralty-breadcrumb>
-          <mock:shadow-root>
-             <a class="active" href="#">
-               <slot></slot>
-             </a>
-          </mock:shadow-root>
-          Test1
-        </admiralty-breadcrumb>
       </admiralty-breadcrumbs>
     `);
   });
@@ -56,37 +46,25 @@ describe('admiralty-breadcrumbs', () => {
     });
     expect(root).toEqualHtml(`
       <admiralty-breadcrumbs>
-      <mock:shadow-root>
         <nav aria-label="breadcrumbs" class="breadcrumbs">
-        <slot></slot>
+          <admiralty-breadcrumb>
+            <a href="#">
+              Test1
+            </a>
+          </admiralty-breadcrumb>
+          <admiralty-breadcrumb>
+            <admiralty-icon class="breadcrumb-icon" icon-name="chevron-right"></admiralty-icon>
+            <a href="#">
+              Test2
+            </a>
+          </admiralty-breadcrumb>
+          <admiralty-breadcrumb>
+            <admiralty-icon class="breadcrumb-icon" icon-name="chevron-right"></admiralty-icon>
+            <a class="active" href="#">
+              Test3
+            </a>
+          </admiralty-breadcrumb>
         </nav>
-      </mock:shadow-root>
-        <admiralty-breadcrumb>
-          <mock:shadow-root>
-             <a href="#">
-               <slot></slot>
-             </a>
-          </mock:shadow-root>
-          Test1
-        </admiralty-breadcrumb>
-        <admiralty-breadcrumb>
-          <mock:shadow-root>
-             <admiralty-icon class="breadcrumb-icon" icon-name="chevron-right"></admiralty-icon>
-             <a href="#">
-               <slot></slot>
-             </a>
-          </mock:shadow-root>
-          Test2
-        </admiralty-breadcrumb>
-        <admiralty-breadcrumb>
-          <mock:shadow-root>
-             <admiralty-icon class="breadcrumb-icon" icon-name="chevron-right"></admiralty-icon>
-             <a class="active" href="#">
-               <slot></slot>
-             </a>
-          </mock:shadow-root>
-          Test3
-        </admiralty-breadcrumb>
       </admiralty-breadcrumbs>
     `);
   });
