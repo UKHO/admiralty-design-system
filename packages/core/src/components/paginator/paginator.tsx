@@ -5,7 +5,7 @@ import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons
 @Component({
   tag: 'admiralty-paginator',
   styleUrl: 'paginator.scss',
-  shadow: false,
+  scoped: true,
 })
 export class PaginatorComponent {
   /**
