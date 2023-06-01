@@ -9,12 +9,10 @@ describe('admiralty-checkbox', () => {
     });
     expect(page.root).toEqualHtml(`
       <admiralty-checkbox>
-        <mock:shadow-root>
         <div aria-checked="false" class="form-control" role="checkbox">
           <input aria-checked="false" id="admiralty-0" name="admiralty-0" type="checkbox">
           <label htmlfor="admiralty-0"></label>
         </div>
-        </mock:shadow-root>
       </admiralty-checkbox>
     `);
   });

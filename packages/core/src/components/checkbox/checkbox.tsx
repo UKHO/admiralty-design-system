@@ -3,7 +3,7 @@ import { Component, EventEmitter, Event, Host, h, Prop, Watch } from '@stencil/c
 @Component({
   tag: 'admiralty-checkbox',
   styleUrl: 'checkbox.scss',
-  shadow: true,
+  scoped: true,
 })
 export class CheckboxComponent {
   private inputId = `admiralty-${checkboxIds++}`;

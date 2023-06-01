@@ -5,7 +5,7 @@ import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 @Component({
   tag: 'admiralty-dialogue',
   styleUrl: 'dialogue.scss',
-  shadow: true,
+  scoped: true,
 })
 export class DialogueComponent {
   /**
