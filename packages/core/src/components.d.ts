@@ -436,6 +436,23 @@ export namespace Components {
     }
     interface AdmiraltySideNavWrapper {
     }
+    interface AdmiraltyTab {
+        /**
+          * Tab label
+         */
+        "label": string;
+        /**
+          * Tab content Id.  To be set internally by parent tab group component.
+         */
+        "tabContentId": string;
+        /**
+          * Tab label Id.  To be set internally by parent tab group component.
+         */
+        "tabLabelId": string;
+    }
+    interface AdmiraltyTabGroup {
+        "selectedIndex": number;
+    }
     /**
      * Use tables to make information easier for users to scan and compare
      */
@@ -574,6 +591,10 @@ export interface AdmiraltySelectCustomEvent<T> extends CustomEvent<T> {
 export interface AdmiraltySideNavItemCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLAdmiraltySideNavItemElement;
+}
+export interface AdmiraltyTabGroupCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLAdmiraltyTabGroupElement;
 }
 export interface AdmiraltyTextareaCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -788,6 +809,18 @@ declare global {
         prototype: HTMLAdmiraltySideNavWrapperElement;
         new (): HTMLAdmiraltySideNavWrapperElement;
     };
+    interface HTMLAdmiraltyTabElement extends Components.AdmiraltyTab, HTMLStencilElement {
+    }
+    var HTMLAdmiraltyTabElement: {
+        prototype: HTMLAdmiraltyTabElement;
+        new (): HTMLAdmiraltyTabElement;
+    };
+    interface HTMLAdmiraltyTabGroupElement extends Components.AdmiraltyTabGroup, HTMLStencilElement {
+    }
+    var HTMLAdmiraltyTabGroupElement: {
+        prototype: HTMLAdmiraltyTabGroupElement;
+        new (): HTMLAdmiraltyTabGroupElement;
+    };
     /**
      * Use tables to make information easier for users to scan and compare
      */
@@ -894,6 +927,8 @@ declare global {
         "admiralty-side-nav": HTMLAdmiraltySideNavElement;
         "admiralty-side-nav-item": HTMLAdmiraltySideNavItemElement;
         "admiralty-side-nav-wrapper": HTMLAdmiraltySideNavWrapperElement;
+        "admiralty-tab": HTMLAdmiraltyTabElement;
+        "admiralty-tab-group": HTMLAdmiraltyTabGroupElement;
         "admiralty-table": HTMLAdmiraltyTableElement;
         "admiralty-table-body": HTMLAdmiraltyTableBodyElement;
         "admiralty-table-cell": HTMLAdmiraltyTableCellElement;
@@ -1414,6 +1449,24 @@ declare namespace LocalJSX {
     }
     interface AdmiraltySideNavWrapper {
     }
+    interface AdmiraltyTab {
+        /**
+          * Tab label
+         */
+        "label"?: string;
+        /**
+          * Tab content Id.  To be set internally by parent tab group component.
+         */
+        "tabContentId"?: string;
+        /**
+          * Tab label Id.  To be set internally by parent tab group component.
+         */
+        "tabLabelId"?: string;
+    }
+    interface AdmiraltyTabGroup {
+        "onAdmiraltyTabSelected"?: (event: AdmiraltyTabGroupCustomEvent<number>) => void;
+        "selectedIndex"?: number;
+    }
     /**
      * Use tables to make information easier for users to scan and compare
      */
@@ -1548,6 +1601,8 @@ declare namespace LocalJSX {
         "admiralty-side-nav": AdmiraltySideNav;
         "admiralty-side-nav-item": AdmiraltySideNavItem;
         "admiralty-side-nav-wrapper": AdmiraltySideNavWrapper;
+        "admiralty-tab": AdmiraltyTab;
+        "admiralty-tab-group": AdmiraltyTabGroup;
         "admiralty-table": AdmiraltyTable;
         "admiralty-table-body": AdmiraltyTableBody;
         "admiralty-table-cell": AdmiraltyTableCell;
@@ -1602,6 +1657,8 @@ declare module "@stencil/core" {
             "admiralty-side-nav": LocalJSX.AdmiraltySideNav & JSXBase.HTMLAttributes<HTMLAdmiraltySideNavElement>;
             "admiralty-side-nav-item": LocalJSX.AdmiraltySideNavItem & JSXBase.HTMLAttributes<HTMLAdmiraltySideNavItemElement>;
             "admiralty-side-nav-wrapper": LocalJSX.AdmiraltySideNavWrapper & JSXBase.HTMLAttributes<HTMLAdmiraltySideNavWrapperElement>;
+            "admiralty-tab": LocalJSX.AdmiraltyTab & JSXBase.HTMLAttributes<HTMLAdmiraltyTabElement>;
+            "admiralty-tab-group": LocalJSX.AdmiraltyTabGroup & JSXBase.HTMLAttributes<HTMLAdmiraltyTabGroupElement>;
             /**
              * Use tables to make information easier for users to scan and compare
              */
