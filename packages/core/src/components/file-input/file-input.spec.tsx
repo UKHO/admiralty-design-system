@@ -9,17 +9,15 @@ describe('file-input', () => {
     });
     expect(page.root).toEqualHtml(`
       <admiralty-file-input>
-        <mock:shadow-root>
-          <div class="admiralty-file-input">
-            <label htmlfor="admiralty-file-input-1">
-              <admiralty-icon class="upload-icon" icon-name="upload"></admiralty-icon>
-              <span class="instructions">
-                Click to choose a file or drag it
-              </span>
-            </label>
-            <input aria-hidden="true" aria-label="File Upload" class="admiralty-form-field" id="admiralty-file-input-1" type="file">
-          </div>
-        </mock:shadow-root>
+        <div class="admiralty-file-input">
+          <label htmlfor="admiralty-file-input-1">
+            <admiralty-icon class="upload-icon" icon-name="upload"></admiralty-icon>
+            <span class="instructions">
+              Click to choose a file or drag it
+            </span>
+          </label>
+          <input aria-hidden="true" aria-label="File Upload" class="admiralty-form-field" id="admiralty-file-input-1" type="file">
+        </div>
       </admiralty-file-input>
     `);
   });
@@ -29,19 +27,17 @@ describe('file-input', () => {
       components: [FileInputComponent],
       html: `<admiralty-file-input multiple="true"></ukhho-file-input>`,
     });
-    expect(page.root).toMatchInlineSnapshot(`
+    expect(page.root).toEqualHtml(`
       <admiralty-file-input multiple="true">
-        <mock:shadow-root>
-          <div class="admiralty-file-input">
-            <label htmlfor="admiralty-file-input-2">
-              <admiralty-icon class="upload-icon" icon-name="upload"></admiralty-icon>
-              <span class="instructions">
-                Click to choose a file or drag it
-              </span>
-            </label>
-            <input aria-hidden="true" aria-label="File Upload" class="admiralty-form-field" id="admiralty-file-input-2" multiple="" type="file">
-          </div>
-        </mock:shadow-root>
+        <div class="admiralty-file-input">
+          <label htmlfor="admiralty-file-input-2">
+            <admiralty-icon class="upload-icon" icon-name="upload"></admiralty-icon>
+            <span class="instructions">
+              Click to choose a file or drag it
+            </span>
+          </label>
+          <input aria-hidden="true" aria-label="File Upload" class="admiralty-form-field" id="admiralty-file-input-2" multiple="" type="file">
+        </div>
       </admiralty-file-input>
     `);
   });
@@ -51,19 +47,17 @@ describe('file-input', () => {
       components: [FileInputComponent],
       html: `<admiralty-file-input multiple="false"></ukhho-file-input>`,
     });
-    expect(page.root).toMatchInlineSnapshot(`
+    expect(page.root).toEqualHtml(`
       <admiralty-file-input multiple="false">
-        <mock:shadow-root>
-          <div class="admiralty-file-input">
-            <label htmlfor="admiralty-file-input-3">
-              <admiralty-icon class="upload-icon" icon-name="upload"></admiralty-icon>
-              <span class="instructions">
-                Click to choose a file or drag it
-              </span>
-            </label>
-            <input aria-hidden="true" aria-label="File Upload" class="admiralty-form-field" id="admiralty-file-input-3" type="file">
-          </div>
-        </mock:shadow-root>
+        <div class="admiralty-file-input">
+          <label htmlfor="admiralty-file-input-3">
+            <admiralty-icon class="upload-icon" icon-name="upload"></admiralty-icon>
+            <span class="instructions">
+              Click to choose a file or drag it
+            </span>
+          </label>
+          <input aria-hidden="true" aria-label="File Upload" class="admiralty-form-field" id="admiralty-file-input-3" type="file">
+        </div>
       </admiralty-file-input>
     `);
   });
@@ -73,19 +67,17 @@ describe('file-input', () => {
       components: [FileInputComponent],
       html: `<admiralty-file-input label="My other label"></ukhho-file-input>`,
     });
-    expect(page.root).toMatchInlineSnapshot(`
+    expect(page.root).toEqualHtml(`
       <admiralty-file-input label="My other label">
-        <mock:shadow-root>
-          <div class="admiralty-file-input">
-            <label htmlfor="admiralty-file-input-4">
-              <admiralty-icon class="upload-icon" icon-name="upload"></admiralty-icon>
-              <span class="instructions">
-                My other label
-              </span>
-            </label>
-            <input aria-hidden="true" aria-label="File Upload" class="admiralty-form-field" id="admiralty-file-input-4" type="file">
-          </div>
-        </mock:shadow-root>
+        <div class="admiralty-file-input">
+          <label htmlfor="admiralty-file-input-4">
+            <admiralty-icon class="upload-icon" icon-name="upload"></admiralty-icon>
+            <span class="instructions">
+              My other label
+            </span>
+          </label>
+          <input aria-hidden="true" aria-label="File Upload" class="admiralty-form-field" id="admiralty-file-input-4" type="file">
+        </div>
       </admiralty-file-input>
     `);
   });

@@ -4,7 +4,7 @@ import { Keys } from '../Keys';
 @Component({
   tag: 'admiralty-type-ahead',
   styleUrl: 'type-ahead.scss',
-  shadow: true,
+  scoped: true,
 })
 export class TypeAheadComponent {
   private _id = `admiralty-typeahead-${++id}`;
@@ -148,14 +148,14 @@ export class TypeAheadComponent {
 
   private addHighlight() {
     if (this.selectedItemIndex > -1) {
-      const listItem = this.el.shadowRoot.querySelector(`#${this.getListItemId(this.selectedItemIndex)}`);
+      const listItem = this.el.querySelector(`#${this.getListItemId(this.selectedItemIndex)}`);
       listItem.classList.add('highlighted');
     }
   }
 
   private removeHighlight(i: number) {
     if (i > -1) {
-      const listItem = this.el.shadowRoot.querySelector(`#${this.getListItemId(i)}`);
+      const listItem = this.el.querySelector(`#${this.getListItemId(i)}`);
       listItem.classList.remove('highlighted');
     }
   }

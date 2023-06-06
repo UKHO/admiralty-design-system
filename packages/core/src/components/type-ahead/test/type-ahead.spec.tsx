@@ -10,17 +10,14 @@ describe('type-ahead', () => {
     });
     expect(page.root).toEqualHtml(`
       <admiralty-type-ahead>
-        <mock:shadow-root>
-          <div class="visually-hidden">
-            <div aria-atomic="true" aria-live="polite" class="results-status-a" role="status"></div>
-            <div aria-atomic="true" aria-live="polite" class="results-status-b" role="status"></div>
-          </div>
-          <admiralty-input class="filterTextInput" type="text"></admiralty-input>
-          <span class="visually-hidden" id="admiralty-typeahead-1-assistive-hint">
-            When autocomplete results are available use up and down arrows to review and enter to select. Touch device users, explore by touch or with swipe gestures.
-          </span>
-          <slot></slot>
-        </mock:shadow-root>
+        <div class="visually-hidden">
+          <div aria-atomic="true" aria-live="polite" class="results-status-a" role="status"></div>
+          <div aria-atomic="true" aria-live="polite" class="results-status-b" role="status"></div>
+        </div>
+        <admiralty-input class="filterTextInput" type="text"></admiralty-input>
+        <span class="visually-hidden" id="admiralty-typeahead-1-assistive-hint">
+          When autocomplete results are available use up and down arrows to review and enter to select. Touch device users, explore by touch or with swipe gestures.
+        </span>
       </admiralty-type-ahead>
     `);
   });
@@ -30,26 +27,24 @@ describe('type-ahead', () => {
       components: [TypeAheadComponent, AdmiraltyTypeAheadItem],
       html: `
       <admiralty-type-ahead label="Please type something" placeholder="This is a test">
-      <AdmiraltyTypeAheadItem value="item1"></AdmiraltyTypeAheadItem>
-      <AdmiraltyTypeAheadItem value="item2"></AdmiraltyTypeAheadItem>
+      <admiralty-type-ahead-item value="item1"></admiralty-type-ahead-item>
+      <admiralty-type-ahead-item value="item2"></admiralty-type-ahead-item>
       </admiralty-type-ahead>`,
     });
 
     expect(page.root).toMatchInlineSnapshot(`
       <admiralty-type-ahead label="Please type something" placeholder="This is a test">
-        <mock:shadow-root>
-          <div class="visually-hidden">
-            <div aria-atomic="true" aria-live="polite" class="results-status-a" role="status"></div>
-            <div aria-atomic="true" aria-live="polite" class="results-status-b" role="status"></div>
-          </div>
-          <admiralty-input class="filterTextInput" label="Please type something" placeholder="This is a test" type="text"></admiralty-input>
-          <span class="visually-hidden" id="admiralty-typeahead-2-assistive-hint">
-            When autocomplete results are available use up and down arrows to review and enter to select. Touch device users, explore by touch or with swipe gestures.
-          </span>
-          <slot></slot>
-        </mock:shadow-root>
-        <admiraltytypeaheaditem value="item1"></admiraltytypeaheaditem>
-        <admiraltytypeaheaditem value="item2"></admiraltytypeaheaditem>
+        <!---->
+        <div class="visually-hidden">
+          <div aria-atomic="true" aria-live="polite" class="results-status-a" role="status"></div>
+          <div aria-atomic="true" aria-live="polite" class="results-status-b" role="status"></div>
+        </div>
+        <admiralty-input class="filterTextInput" label="Please type something" placeholder="This is a test" type="text"></admiralty-input>
+        <span class="visually-hidden" id="admiralty-typeahead-2-assistive-hint">
+          When autocomplete results are available use up and down arrows to review and enter to select. Touch device users, explore by touch or with swipe gestures.
+        </span>
+        <admiralty-type-ahead-item value="item1"></admiralty-type-ahead-item>
+        <admiralty-type-ahead-item value="item2"></admiralty-type-ahead-item>
       </admiralty-type-ahead>
     `);
   });
