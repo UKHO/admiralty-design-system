@@ -1,3 +1,16 @@
+# v0.0.8 (Tue Jun 06 2023)
+
+#### 🐛 Bug Fix
+
+- `@ukho/admiralty-angular`, `@ukho/admiralty-core`
+  - New Tabgroup web component [#33](https://github.com/UKHO/admiralty-design-system/pull/33) ([@martind-bjss](https://github.com/martind-bjss))
+
+#### Authors: 1
+
+- Martin Davies ([@martind-bjss](https://github.com/martind-bjss))
+
+---
+
 # v0.0.7 (Wed May 24 2023)
 
 #### 🐛 Bug Fix
