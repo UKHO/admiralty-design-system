@@ -23,7 +23,8 @@ module.exports = {
   '../src/components/phase-banner/phase-banner.stories.ts',
   '../src/components/progress-bar/progress-bar.stories.ts',
   '../src/components/radio/radio.stories.ts',
-  '../src/components/radio-group/radio-group.stories.ts'],
+  '../src/components/radio-group/radio-group.stories.ts',
+  '../src/components/select/select.stories.ts'],
   addons: ['@storybook/addon-links', '@storybook/addon-essentials', '@storybook/addon-a11y'],
   framework: {
     name: '@storybook/web-components-vite',
