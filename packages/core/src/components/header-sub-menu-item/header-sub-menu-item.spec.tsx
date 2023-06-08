@@ -9,11 +9,9 @@ describe('header-sub-menu-item', () => {
     });
     expect(page.root).toEqualHtml(`
     <admiralty-header-sub-menu-item menutitle="Item 1">
-      <mock:shadow-root>
-        <div class="header-sub-menu-item">
-          <span class="title"></span>
-        </div>
-      </mock:shadow-root>
+      <div class="header-sub-menu-item">
+        <span class="title"></span>
+      </div>
     </admiralty-header-sub-menu-item>
     `);
   });
