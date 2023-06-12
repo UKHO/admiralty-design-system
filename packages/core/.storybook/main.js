@@ -26,7 +26,8 @@ module.exports = {
   '../src/components/radio-group/radio-group.stories.ts',
   '../src/components/select/select.stories.ts',
   '../src/components/side-nav/side-nav.stories.ts',
-  '../src/components/side-nav-item/side-nav-item.stories.ts'],
+  '../src/components/side-nav-item/side-nav-item.stories.ts',
+  '../src/components/tab-group/tab-group.stories.ts'],
   addons: ['@storybook/addon-links', '@storybook/addon-essentials', '@storybook/addon-a11y'],
   framework: {
     name: '@storybook/web-components-vite',
