@@ -22,13 +22,6 @@ export class LabelComponent {
    */
   @Prop() for: string;
 
-  // componentWillRender() {
-  //   console.log('el', this.el);
-  //   if (this.for) {
-  //     this.el.setAttribute('for', this.for);
-  //   }
-  // }
-
   render() {
     return (
       <label htmlFor={this.for} class={{ disabled: this.disabled }}>

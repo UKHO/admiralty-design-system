@@ -4,7 +4,7 @@ import { ButtonVariant } from '../button/button.types';
 @Component({
   tag: 'admiralty-colour-block',
   styleUrl: 'colour-block.scss',
-  scoped: false,
+  scoped: true,
 })
 export class ColourBlockComponent {
   /**
