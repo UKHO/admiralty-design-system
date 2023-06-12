@@ -10,8 +10,6 @@ import { Component, h, Prop } from '@stencil/core';
   scoped: true,
 })
 export class LabelComponent {
-  // @Element() el: HTMLElement;
-
   /**
    * The disabled option can be used to disable the component.
    */
