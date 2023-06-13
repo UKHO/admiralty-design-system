@@ -29,7 +29,8 @@ module.exports = {
   '../src/components/side-nav-item/side-nav-item.stories.ts',
   '../src/components/tab-group/tab-group.stories.ts',
   '../src/components/table/table.stories.ts',
-  '../src/components/textarea/textarea.stories.ts'],
+  '../src/components/textarea/textarea.stories.ts',
+  '../src/components/type-ahead/type-ahead.stories.ts'],
   addons: ['@storybook/addon-links', '@storybook/addon-essentials', '@storybook/addon-a11y'],
   framework: {
     name: '@storybook/web-components-vite',
