@@ -27,7 +27,7 @@
       "name": "WC: E2E Test Current File",
       "cwd": "${workspaceFolder}/packages/core",
       "program": "${workspaceFolder}/node_modules/.bin/stencil",
-      "args": ["test", "--e2e", "--maxWorkers=0", "${fileBasename}"],
+      "args": ["test", "--e2e", "--maxWorkers=0", "--no-build", "${fileBasename}"],
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen"
     },

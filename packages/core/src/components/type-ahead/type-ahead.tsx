@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Host, Prop, Event, h, State, Element } from '@stencil/core';
+import { Keys } from '../Keys';
 
 @Component({
   tag: 'admiralty-type-ahead',
@@ -275,13 +276,6 @@ export class TypeAheadComponent {
       </Host>
     );
   }
-}
-
-enum Keys {
-  UP_ARROW = 'ArrowUp',
-  DOWN_ARROW = 'ArrowDown',
-  ENTER = 'Enter',
-  TAB = 'Tab',
 }
 
 let id = 0;

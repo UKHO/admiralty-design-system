@@ -1,0 +1,64 @@
+@use "../../scss/vars/colours";
+@use "../../scss/vars/typography";
+@use "../../scss/base/responsive";
+
+.tab-group-headers {
+  width: 100%;
+}
+
+hr {
+  width: 100%;
+  height: 2px;
+  margin: 6px 0;
+  background-color: colours.$colour-divider;
+}
+
+.headers {
+  display: flex;
+  overflow-x: auto;
+
+  white-space: nowrap;
+
+  .heading {
+    cursor: pointer;
+    padding: 10px;
+    height: 42px;
+    max-width: fit-content;
+    box-sizing: border-box;
+    user-select: none;
+
+    text-align: center;
+    text-decoration: none;
+    color: colours.$colour-admiralty-blue;
+    background-color: unset;
+    font-weight: typography.$font-weight-medium;
+    font-size: 16px;
+
+    @include responsive.not-desktop {
+      font-size: 14px;
+      line-height: 18px;
+      padding: 8px;
+      height: unset;
+      width: unset;
+    }
+
+    &:hover {
+      background-color: colours.$colour-nav-bg-hover;
+    }
+
+    &:focus {
+      outline-offset: -2px;
+      box-shadow: colours.$colour-text inset 0 0 0 2px;
+    }
+
+    &:focus-visible {
+      outline: 3px solid colours.$colour-utility-focus;
+      box-shadow: colours.$colour-text inset 0 0 0 2px;
+    }
+
+    &.active {
+      background-color: colours.$colour-admiralty-blue;
+      color: colours.$colour-white;
+    }
+  }
+}
