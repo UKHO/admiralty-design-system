@@ -4,6 +4,7 @@ import { html } from 'lit';
 
 const meta: Meta = {
   component: 'admiralty-card',
+  title: 'Card',
   parameters: {
     actions: {
     },

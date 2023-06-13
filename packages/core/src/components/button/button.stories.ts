@@ -6,6 +6,7 @@ import { html } from 'lit';
 
 const meta: Meta = {
   component: 'admiralty-button',
+  title: 'Button',
   parameters: {
     actions: {
       handles: ['click'],
