@@ -1,46 +1,44 @@
 @use "../../scss/vars/colours";
 
-admiralty-colour-block {
-  .colourBlock {
-    height: 100%;
-    width: 100%;
-    max-width: 100%;
-    padding: 30px 18px;
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
+.colourBlock {
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  padding: 30px 18px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
 
-    .content {
-      flex-grow: 1;
+  .content {
+    flex-grow: 1;
+  }
+
+  .clickAction {
+    background-color: unset;
+    align-self: flex-end;
+    cursor: pointer;
+
+    h3 {
+      margin-bottom: 0px;
     }
+  }
 
-    .clickAction {
-      background-color: unset;
-      align-self: flex-end;
-      cursor: pointer;
-
-      h3 {
-        margin-bottom: 0px;
-      }
+  &.admiralty-blue {
+    background-color: colours.$colour-admiralty-blue;
+    * {
+      color: colours.$colour-white;
     }
+  }
 
-    &.admiralty-blue {
-      background-color: colours.$colour-admiralty-blue;
-      * {
-        color: colours.$colour-white;
-      }
+  &.teal {
+    background-color: colours.$colour-teal;
+    * {
+      color: colours.$colour-white;
     }
+  }
 
-    &.teal {
-      background-color: colours.$colour-teal;
-      * {
-        color: colours.$colour-white;
-      }
-    }
-
-    &.bright-blue {
-      background-color: colours.$colour-bright-blue;
-      color: colours.$colour-admiralty-blue;
-    }
+  &.bright-blue {
+    background-color: colours.$colour-bright-blue;
+    color: colours.$colour-admiralty-blue;
   }
 }
