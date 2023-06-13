@@ -60,14 +60,3 @@ Icon.args = {
   variant: ButtonVariant.Icon,
   icon: faUserAstronaut.iconName,
 };
-
-export const IconCustomColour: Story = args => {
-  return `<div style="--button-icon-background-colour: white">
-  <p>The background colour of the icon variant can be changed using the '--button-icon-background-colour' CSS variable.</p>
-  <admiralty-button variant="${args.variant}" icon="${args.icon}"></admiralty-button>
-  </div>`;
-};
-IconCustomColour.args = {
-  variant: ButtonVariant.Icon,
-  icon: faUserAstronaut.iconName,
-};

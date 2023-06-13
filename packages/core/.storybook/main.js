@@ -15,7 +15,7 @@ module.exports = {
     },
   ],
   framework: '@storybook/html',
-  staticDirs: ['../dist', '../src/assets', '../styles'],
+  staticDirs: ['../dist', '../src/assets', '../styles', '../src/themes'],
   docs: {
     autodocs: true,
   },

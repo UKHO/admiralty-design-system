@@ -1,6 +1,14 @@
 @import "../vars/colours";
 @import "../utils/colour-functions";
 
+// Rest browser defaults
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+
 // Admiralty Font Family
 // -----------------
 
@@ -29,6 +37,7 @@ body {
   --admiralty-colour-base-rgb: var(--admiralty-colour-#{$colour-name}-rgb, #{colour-to-rgb-list($base)}) !important;
   --admiralty-colour-contrast: var(--admiralty-colour-#{$colour-name}-contrast, #{$contrast}) !important;
   --admiralty-colour-contrast-rgb: var(--admiralty-colour-#{$colour-name}-contrast-rgb, #{colour-to-rgb-list($contrast)}) !important;
+  --admiralty-colour-shade: var(--admiralty-colour-#{$colour-name}-shade, #{$shade}) !important;
   --admiralty-colour-tint: var(--admiralty-colour-#{$colour-name}-tint, #{$tint}) !important;
 }
 

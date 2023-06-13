@@ -1,6 +1,4 @@
-@use "../../scss/base/responsive";
-@use "../../scss/vars/typography";
-@use "../../scss/vars/colours";
+@import "dialogue.vars";
 
 .dialogue {
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
@@ -8,14 +6,9 @@
   overflow-wrap: break-word;
   word-wrap: break-word;
 
-  @include responsive.not-desktop {
-    padding: 24px 18px;
-  }
-
   .dialogue-title {
-    color: colours.$colour-admiralty-blue;
-    font-size: 20px;
-    font-weight: typography.$font-weight-medium;
+    font-size: $dialogue-title-text-size;
+    font-weight: $dialogue-title-text-weight;
     line-height: 30px;
     display: flex;
     align-items: center;
@@ -29,20 +22,24 @@
   }
 
   &.info {
-    border-left: 5px solid colours.$colour-utility-info;
-    background-color: colours.$colour-utility-info-bg;
+    border-left: 5px solid $dialogue-info-accent-colour;
+    background-color: $dialogue-info-colour;
+    color: $dialogue-info-text-colour
   }
 
   &.error {
-    border-left: 5px solid colours.$colour-utility-error;
-    background-color: colours.$colour-utility-error-bg;
+    border-left: 5px solid $dialogue-error-accent-colour;
+    background-color: $dialogue-error-colour;
+    color: $dialogue-error-text-colour
   }
   &.success {
-    border-left: 5px solid colours.$colour-utility-success;
-    background-color: colours.$colour-utility-success-bg;
+    border-left: 5px solid $dialogue-success-accent-colour;
+    background-color: $dialogue-success-colour;
+    color: $dialogue-success-text-colour
   }
   &.warning {
-    border-left: 5px solid colours.$colour-utility-warning;
-    background-color: colours.$colour-utility-warning-bg;
+    border-left: 5px solid $dialogue-warning-accent-colour;
+    background-color: $dialogue-warning-colour;
+    color: $dialogue-warning-text-colour
   }
 }

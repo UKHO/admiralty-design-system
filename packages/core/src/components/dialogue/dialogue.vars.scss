@@ -1,0 +1,20 @@
+@import "../../styles/vars/globals";
+
+$dialogue-title-text-size: 20px;
+$dialogue-title-text-weight: 400;
+
+$dialogue-info-colour: #e0ecf3;
+$dialogue-info-accent-colour: var(--admiralty-colour-info);
+$dialogue-info-text-colour: var(--admiralty-colour-primary);
+
+$dialogue-error-colour: #f7e1e1;
+$dialogue-error-accent-colour: var(--admiralty-colour-danger);
+$dialogue-error-text-colour: var(--admiralty-colour-primary);
+
+$dialogue-success-colour: #e7f1e5;
+$dialogue-success-accent-colour: var(--admiralty-colour-success);
+$dialogue-success-text-colour: var(--admiralty-colour-primary);
+
+$dialogue-warning-colour: #f8ede3;
+$dialogue-warning-accent-colour: var(--admiralty-colour-warning);
+$dialogue-warning-text-colour: var(--admiralty-colour-primary);

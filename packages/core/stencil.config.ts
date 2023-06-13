@@ -37,7 +37,7 @@ export const config: Config = {
     {
       type: 'dist',
       esmLoaderPath: '../loader',
-      copy: [{ src: '../src/scss/webfonts', dest: '../../styles/webfonts' }],
+      copy: [{ src: '../src/styles/webfonts', dest: '../../styles/webfonts' }],
     },
     {
       type: 'dist-custom-elements',

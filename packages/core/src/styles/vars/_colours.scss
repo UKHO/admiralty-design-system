@@ -1,3 +1,5 @@
+@import "../utils/colour-functions";
+
 // Admiralty Default Theme
 // -------------------------------------------------------------------------------------------
 // This file contains the theme variables.
@@ -9,7 +11,8 @@
 // Color map should provide
 // - base: main colour to be used.
 // - contrast: colour that will provide readable text against the base color
-// - background: colour that will be used as a background
+// - shade: 12% darker version of the base colour (mix with black)
+// - tint: 10% lighter version of the base colour (mix with white)
 // - outline: colour of the focus outline
 
 $primary:         #09315b !default; // Admiralty Blue
@@ -19,6 +22,7 @@ $success:         #47a234 !default;
 $warning:         #e3660e !default;
 $error:           #e20d0d !default;
 $info:            #0177c1 !default;
+$light:           #d8d8d8 !default;
 $dark-text:     #333333 !default;
 $light-text:     #ffffff !default;
 $focus: #ffdd00;
@@ -27,43 +31,58 @@ $colours:  (
   primary: (
     base:             $primary,
     contrast:         $light-text,
-    tint:             $primary,
+    tint:             get-colour-tint($primary),
+    shade:            get-colour-shade($primary),
     outline:          $focus,
   ),
   secondary: (
     base:             $secondary,
     contrast:         $light-text,
-    tint:             $secondary,
+    tint:             get-colour-tint($secondary),
+    shade:            get-colour-shade($secondary),
     outline:          $focus,
   ),
   tertiary: (
     base:             $tertiary,
     contrast:         $dark-text,
-    tint:             $tertiary,
+    tint:             get-colour-tint($tertiary),
+    shade:            get-colour-shade($tertiary),
     outline:          $focus,
   ),
   success: (
     base:             $success,
     contrast:         $dark-text,
-    tint:             #e7f1e5,
+    tint:             get-colour-tint($success),
+    shade:            get-colour-shade($success),
     outline:          $focus,
   ),
   warning: (
     base:             $warning,
     contrast:         $dark-text,
-    tint:             #f8ede3,
+    tint:             get-colour-tint($warning),
+    shade:            get-colour-shade($warning),
     outline:          $focus,
   ),
   danger: (
     base:             $error,
     contrast:         $dark-text,
-    tint:             #f7e1e1,
+    tint:             get-colour-tint($error),
+    shade:            get-colour-shade($error),
     outline:          $focus,
   ),
   info: (
     base:             $info,
     contrast:         $dark-text,
-    tint:             #e0ecf3,
+    tint:             get-colour-tint($info),
+    shade:            get-colour-shade($info),
+    outline:          $focus,
+  ),
+  light: (
+    base:             $light,
+    contrast:         $dark-text,
+    tint:             get-colour-tint($light),
+    shade:            get-colour-shade($light),
     outline:          $focus,
   ),
 ) !default;
+

@@ -14,7 +14,7 @@ export class CardComponent {
   render() {
     return (
       <section class="card">
-        {this.heading ? <h6>{this.heading}</h6> : null}
+        {this.heading ? <div class="card-heading">{this.heading}</div> : null}
         <div>
           <slot></slot>
         </div>
