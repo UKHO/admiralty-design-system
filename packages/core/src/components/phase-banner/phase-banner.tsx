@@ -3,7 +3,7 @@ import { Component, Prop, h } from '@stencil/core';
 @Component({
   tag: 'admiralty-phase-banner',
   styleUrl: 'phase-banner.scss',
-  shadow: false,
+  scoped: true,
 })
 export class PhaseBannerComponent {
   /**

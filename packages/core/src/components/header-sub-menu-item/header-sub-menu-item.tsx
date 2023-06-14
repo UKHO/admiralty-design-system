@@ -3,7 +3,7 @@ import { Component, Event, EventEmitter, h, Host, Prop } from '@stencil/core';
 @Component({
   tag: 'admiralty-header-sub-menu-item',
   styleUrl: 'header-sub-menu-item.scss',
-  shadow: true,
+  scoped: true,
 })
 export class HeaderMenuItemComponent {
   /**

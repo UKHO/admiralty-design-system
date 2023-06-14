@@ -14,17 +14,15 @@ describe('admiralty-textarea', () => {
 
     expect(page.root).toEqualHtml(`
       <admiralty-textarea label="Description" hint="Please enter description">
-        <mock:shadow-root>
-          <div class="text-area-container">
-            <admiralty-label for="admiralty-textarea-${compId}">
-              Description
-            </admiralty-label>
-            <admiralty-hint>
-              Please enter description
-            </admiralty-hint>
-            <textarea id="admiralty-textarea-${compId}"></textarea>
-          </div>
-        </mock:shadow-root>
+        <div class="text-area-container">
+          <admiralty-label for="admiralty-textarea-${compId}">
+            Description
+          </admiralty-label>
+          <admiralty-hint>
+            Please enter description
+          </admiralty-hint>
+          <textarea id="admiralty-textarea-${compId}"></textarea>
+        </div>
       </admiralty-textarea>
     `);
   });
@@ -41,11 +39,9 @@ describe('admiralty-textarea', () => {
 
     expect(page.root).toEqualHtml(`
       <admiralty-textarea text="${testText}">
-        <mock:shadow-root>
-          <div class="text-area-container">
-            <textarea id="admiralty-textarea-${compId}">${testText}</textarea>
-          </div>
-        </mock:shadow-root>
+        <div class="text-area-container">
+          <textarea id="admiralty-textarea-${compId}">${testText}</textarea>
+        </div>
       </admiralty-textarea>
     `);
   });
@@ -60,12 +56,10 @@ describe('admiralty-textarea', () => {
 
     expect(page.root).toEqualHtml(`
       <admiralty-textarea label="Description" disabled="true">
-        <mock:shadow-root>
-          <div class="text-area-container">
-            <admiralty-label disabled="" for="admiralty-textarea-${compId}">Description</admiralty-label>
-            <textarea class="disabled" id="admiralty-textarea-${compId}"></textarea>
-          </div>
-        </mock:shadow-root>
+        <div class="text-area-container">
+          <admiralty-label disabled="" for="admiralty-textarea-${compId}">Description</admiralty-label>
+          <textarea class="disabled" id="admiralty-textarea-${compId}"></textarea>
+        </div>
       </admiralty-textarea>
     `);
   });
@@ -80,13 +74,11 @@ describe('admiralty-textarea', () => {
 
     expect(page.root).toEqualHtml(`
       <admiralty-textarea label="Description" invalid="true" invalidMessage="BAD">
-        <mock:shadow-root>
-          <div class="text-area-container">
-            <admiralty-label for="admiralty-textarea-${compId}">Description</admiralty-label>
-            <textarea class="invalid" id="admiralty-textarea-${compId}"></textarea>
-            <admiralty-input-error></admiralty-input-error>
-          </div>
-        </mock:shadow-root>
+        <div class="text-area-container">
+          <admiralty-label for="admiralty-textarea-${compId}">Description</admiralty-label>
+          <textarea class="invalid" id="admiralty-textarea-${compId}"></textarea>
+          <admiralty-input-error></admiralty-input-error>
+        </div>
       </admiralty-textarea>
     `);
   });

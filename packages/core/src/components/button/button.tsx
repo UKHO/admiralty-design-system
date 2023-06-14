@@ -5,7 +5,7 @@ import { IconName } from '@fortawesome/fontawesome-svg-core';
 @Component({
   tag: 'admiralty-button',
   styleUrl: 'button.scss',
-  shadow: false,
+  scoped: true,
 })
 export class ButtonComponent {
   /**

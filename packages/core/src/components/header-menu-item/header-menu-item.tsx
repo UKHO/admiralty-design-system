@@ -6,7 +6,7 @@ import { Component, Element, Event, EventEmitter, h, Host, Prop } from '@stencil
 @Component({
   tag: 'admiralty-header-menu-item',
   styleUrl: 'header-menu-item.scss',
-  shadow: true,
+  scoped: true,
 })
 export class HeaderMenuItemComponent {
   @Element() el: HTMLElement;

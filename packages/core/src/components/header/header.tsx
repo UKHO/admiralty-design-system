@@ -8,7 +8,7 @@ import { Component, Element, Prop, h, EventEmitter, Event, State } from '@stenci
 @Component({
   tag: 'admiralty-header',
   styleUrl: 'header.scss',
-  shadow: false,
+  scoped: true,
 })
 export class HeaderComponent {
   @Element() el: HTMLElement;

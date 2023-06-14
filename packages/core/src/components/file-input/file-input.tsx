@@ -3,7 +3,7 @@ import { Component, Element, Event, Host, h, Prop, State, EventEmitter } from '@
 @Component({
   tag: 'admiralty-file-input',
   styleUrl: 'file-input.scss',
-  shadow: true,
+  scoped: true,
 })
 export class FileInputComponent {
   @Element() el: HTMLElement;
@@ -54,7 +54,7 @@ export class FileInputComponent {
    */
   dragOverHandler(event: DragEvent) {
     event.preventDefault();
-    this.el.shadowRoot.querySelector('.admiralty-file-input').classList.add('drop_zone');
+    this.el.querySelector('.admiralty-file-input').classList.add('drop_zone');
   }
 
   /**
@@ -64,7 +64,7 @@ export class FileInputComponent {
    */
   dragLeaveHander(event: DragEvent) {
     event.preventDefault();
-    this.el.shadowRoot.querySelector('.admiralty-file-input').classList.remove('drop_zone');
+    this.el.querySelector('.admiralty-file-input').classList.remove('drop_zone');
   }
 
   /**
@@ -74,7 +74,7 @@ export class FileInputComponent {
    */
   dropHandler(event: DragEvent) {
     event.preventDefault();
-    this.el.shadowRoot.querySelector('.admiralty-file-input').classList.remove('drop_zone');
+    this.el.querySelector('.admiralty-file-input').classList.remove('drop_zone');
 
     if (event.dataTransfer.files) {
       this.storeFileInfo(event.dataTransfer.files);

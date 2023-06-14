@@ -1,8 +1,6 @@
 @use "../../scss/vars/colours";
 
-admiralty-hr {
+hr {
   width: 100%;
-  hr {
-    border-top: 1px solid colours.$colour-line;
-  }
+  border-top: 1px solid colours.$colour-line;
 }

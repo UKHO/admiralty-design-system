@@ -19,7 +19,6 @@
     flex: 0;
     flex-direction: column;
     font-size: typography.$font-size-normal !important;
-    font-weight: 400;
     height: 100%;
     justify-content: center;
     line-height: 1.33em;
@@ -34,6 +33,7 @@
       all: unset;
       height: 100%;
       width: 100%;
+      font-weight: typography.$font-weight-medium;
     }
 
     &:hover {
@@ -101,12 +101,10 @@
       padding: 12px;
       &:hover {
         background-color: colours.$colour-nav-bg-hover;
-        box-shadow: colours.$colour-utility-focus inset 0 0 0 3px;
       }
 
       &:focus {
-        outline: 3px solid colours.$colour-utility-focus;
-        outline-offset: 3px;
+        box-shadow: colours.$colour-utility-focus inset 0 0 0 3px;
       }
     }
   }

@@ -3,7 +3,7 @@ import { Component, Event, Host, h, Prop, EventEmitter, State } from '@stencil/c
 @Component({
   tag: 'admiralty-header-profile',
   styleUrl: 'header-profile.scss',
-  shadow: true,
+  scoped: true,
 })
 export class HeaderProfileComponent {
   @State() displaySubmenu = false;
