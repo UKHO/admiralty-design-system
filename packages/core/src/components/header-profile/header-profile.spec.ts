@@ -8,15 +8,13 @@ describe('header-profile', () => {
       html: `<admiralty-header-profile></admiralty-header-profile>`,
     });
 
-    expect(page.root).toMatchInlineSnapshot(`
+    expect(page.root).toEqualHtml(`
       <admiralty-header-profile>
-        <mock:shadow-root>
-          <div class="header-profile">
-            <div class="sub-menu-item">
-              Sign In
-            </div>
+        <div class="header-profile">
+          <div class="sub-menu-item">
+            Sign In
           </div>
-        </mock:shadow-root>
+        </div>
       </admiralty-header-profile>
     `);
   });
@@ -28,13 +26,11 @@ describe('header-profile', () => {
     });
     expect(page.root).toMatchInlineSnapshot(`
       <admiralty-header-profile is-signed-in="false" signed-in-text="Mr Admiral">
-        <mock:shadow-root>
-          <div class="header-profile">
-            <div class="sub-menu-item">
-              Sign In
-            </div>
+        <div class="header-profile">
+          <div class="sub-menu-item">
+            Sign In
           </div>
-        </mock:shadow-root>
+        </div>
       </admiralty-header-profile>
     `);
   });
@@ -45,25 +41,23 @@ describe('header-profile', () => {
     });
     expect(page.root).toMatchInlineSnapshot(`
       <admiralty-header-profile is-signed-in="true" signed-in-text="Mr Admiral">
-        <mock:shadow-root>
-          <div class="header-profile">
-            <div>
-              <div class="desktop">
-                <button>
-                  Mr Admiral
-                </button>
+        <div class="header-profile">
+          <div>
+            <div class="desktop">
+              <button>
+                Mr Admiral
+              </button>
+            </div>
+            <div class="not-desktop">
+              <div class="sub-menu-item">
+                Your Account
               </div>
-              <div class="not-desktop">
-                <div class="sub-menu-item">
-                  Your Account
-                </div>
-                <div class="sub-menu-item">
-                  Sign Out
-                </div>
+              <div class="sub-menu-item">
+                Sign Out
               </div>
             </div>
           </div>
-        </mock:shadow-root>
+        </div>
       </admiralty-header-profile>
     `);
   });

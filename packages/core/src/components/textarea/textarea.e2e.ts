@@ -18,7 +18,7 @@ describe('admiralty-textarea', () => {
 
     const element = await page.find('admiralty-textarea');
 
-    const ta = await page.find('admiralty-textarea >>> textarea');
+    const ta = await page.find('textarea');
     const input = await page.find('input');
 
     await ta.focus();
@@ -38,7 +38,7 @@ describe('admiralty-textarea', () => {
 
     const textareaBlur = await page.spyOnEvent('textareaBlur');
 
-    const ta = await page.find('admiralty-textarea >>> textarea');
+    const ta = await page.find('textarea');
     const input = await page.find('input');
 
     await ta.focus();

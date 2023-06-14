@@ -5,7 +5,7 @@ let textareaIds = 0;
 @Component({
   tag: 'admiralty-textarea',
   styleUrl: 'textarea.scss',
-  shadow: true,
+  scoped: true,
 })
 export class TextareaComponent {
   private inputId = `admiralty-textarea-${textareaIds++}`;

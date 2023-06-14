@@ -4,7 +4,7 @@ import { UKHOOptions } from './select.types';
 @Component({
   tag: 'admiralty-select',
   styleUrl: 'select.scss',
-  shadow: true,
+  scoped: true,
 })
 export class SelectComponent {
   @Element() el: HTMLElement;

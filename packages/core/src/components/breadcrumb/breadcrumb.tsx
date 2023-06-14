@@ -4,7 +4,7 @@ import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 @Component({
   tag: 'admiralty-breadcrumb',
   styleUrl: 'breadcrumb.scss',
-  shadow: true,
+  scoped: true,
 })
 export class BreadcrumbComponent {
   /**
