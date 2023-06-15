@@ -1,6 +1,6 @@
 @use "../../scss/vars/colours";
 @use "../../scss/base/a11y";
-@use "../../scss/vars/typography";
+@use "../../scss/base/typography";
 
 * {
   margin: 0px;
@@ -23,7 +23,7 @@
   border: 2px solid colours.$colour-text;
   border-top: none;
   box-sizing: border-box;
-  max-height: 205px;
+  max-height: 180px;
   overflow-y: auto;
   z-index: 1;
 
@@ -35,6 +35,7 @@
       transform: unset !important;
       padding: 6px;
       min-height: 24px;
+      margin: 0;
     }
 
     li:before {

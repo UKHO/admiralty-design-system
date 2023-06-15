@@ -1,4 +1,5 @@
 @use "../../scss/vars/colours";
+@use "../../scss/base/typography";
 
 footer {
   border-top: colours.$colour-admiralty-blue 0.375rem solid;
@@ -30,9 +31,11 @@ footer {
       flex-grow: 1;
       margin-top: 36px;
 
-      a {
+      ::slotted(admiralty-link) {
+        a {
         margin-left: 1.5rem;
         font-weight: normal;
+        }
       }
     }
 
