@@ -723,6 +723,34 @@ export declare interface AdmiraltyRadioGroup extends Components.AdmiraltyRadioGr
 
 
 @ProxyCmp({
+  inputs: ['heading']
+})
+@Component({
+  selector: 'admiralty-read-more',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['heading'],
+})
+export class AdmiraltyReadMore {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['admiraltyToggled']);
+  }
+}
+
+
+export declare interface AdmiraltyReadMore extends Components.AdmiraltyReadMore {
+  /**
+   * The event that is dispatched when the expanded status is toggled.
+   */
+  admiraltyToggled: EventEmitter<CustomEvent<boolean>>;
+}
+
+
+@ProxyCmp({
   inputs: ['disabled', 'error', 'errorHint', 'hint', 'label', 'width']
 })
 @Component({
