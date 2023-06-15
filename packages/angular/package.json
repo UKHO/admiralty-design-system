@@ -1,12 +1,12 @@
 {
   "name": "@ukho/admiralty-angular",
   "version": "0.0.8",
-  "typings": "dist/index.d.ts",
-  "module": "dist/fesm2015/ukho-admiralty-angular.mjs",
-  "es2020": "dist/fesm2020/ukho-admiralty-angular.mjs",
-  "esm2020": "dist/esm2020/ukho-admiralty-angular.mjs",
-  "fesm2020": "dist/fesm2020/ukho-admiralty-angular.mjs",
-  "fesm2015": "dist/fesm2015/ukho-admiralty-angular.mjs",
+  "main": "dist/bundles/ukho-admiralty-angular.umd.js",
+  "module": "dist/fesm2015/ukho-admiralty-angular.js",
+  "es2015": "dist/fesm2015/ukho-admiralty-angular.js",
+  "esm2015": "dist/esm2015/ukho-admiralty-angular.js",
+  "fesm2015": "dist/fesm2015/ukho-admiralty-angular.js",
+  "typings": "dist/ukho-admiralty-angular.d.ts",
   "scripts": {
     "prepublishOnly": "node .scripts/copyPackageVersion.js",
     "build": "ng-packagr -p ng-package.json -c tsconfig.json",

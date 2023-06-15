@@ -9,25 +9,24 @@
         "dist/component-library"
       ]
     },
-//    "outDir": "./dist/out-tsc",
-//    "forceConsistentCasingInFileNames": true,
-//    "strict": true,
-//    "noImplicitOverride": true,
-//    "noPropertyAccessFromIndexSignature": true,
-//    "noImplicitReturns": true,
-//    "noFallthroughCasesInSwitch": true,
-//    "sourceMap": true,
-//    "declaration": false,
-//    "downlevelIteration": true,
-//    "experimentalDecorators": true,
-//    "moduleResolution": "node",
-//    "importHelpers": true,
-//    "target": "es2015",
-//    "module": "es2015",
-//    "lib": [
-//      "es2017",
-//      "dom"
-//    ],
+    "outDir": "./dist/out-tsc",
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "es2015",
+    "lib": [
+      "es2017",
+      "dom"
+    ],
     "skipLibCheck": true
   },
   "angularCompilerOptions": {
@@ -36,6 +35,5 @@
     "skipTemplateCodegen": true,
     "fullTemplateTypeCheck": false,
     "enableResourceInlining": true,
-    "compilationMode": "partial"
   }
 }
