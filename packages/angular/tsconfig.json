@@ -9,31 +9,33 @@
         "dist/component-library"
       ]
     },
-    "outDir": "./dist/out-tsc",
-    "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "noImplicitOverride": true,
-    "noPropertyAccessFromIndexSignature": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "sourceMap": true,
-    "declaration": false,
-    "downlevelIteration": true,
-    "experimentalDecorators": true,
-    "moduleResolution": "node",
-    "importHelpers": true,
-    "target": "es2017",
-    "module": "es2020",
-    "lib": [
-      "es2020",
-      "dom"
-    ],
+//    "outDir": "./dist/out-tsc",
+//    "forceConsistentCasingInFileNames": true,
+//    "strict": true,
+//    "noImplicitOverride": true,
+//    "noPropertyAccessFromIndexSignature": true,
+//    "noImplicitReturns": true,
+//    "noFallthroughCasesInSwitch": true,
+//    "sourceMap": true,
+//    "declaration": false,
+//    "downlevelIteration": true,
+//    "experimentalDecorators": true,
+//    "moduleResolution": "node",
+//    "importHelpers": true,
+//    "target": "es2015",
+//    "module": "es2015",
+//    "lib": [
+//      "es2017",
+//      "dom"
+//    ],
     "skipLibCheck": true
   },
   "angularCompilerOptions": {
-    "enableI18nLegacyMessageIdFormat": false,
-    "strictInjectionParameters": true,
-    "strictInputAccessModifiers": true,
-    "strictTemplates": true
+    "annotateForClosureCompiler": true,
+    "strictMetadataEmit": true,
+    "skipTemplateCodegen": true,
+    "fullTemplateTypeCheck": false,
+    "enableResourceInlining": true,
+    "compilationMode": "partial"
   }
 }
