@@ -7,12 +7,16 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { ButtonVariant } from "./components/button/button.types";
 import { IconName, IconPrefix } from "@fortawesome/fontawesome-svg-core";
+import { CheckboxChangeEventDetail } from "./components/checkbox/checkbox.interface";
 import { IconName as IconName1 } from "@fortawesome/free-solid-svg-icons";
 import { InputChangeEventDetail } from "./components/input/input.interface";
+import { SelectChangeEventDetail } from "./components/select/select.interface";
 export { ButtonVariant } from "./components/button/button.types";
 export { IconName, IconPrefix } from "@fortawesome/fontawesome-svg-core";
+export { CheckboxChangeEventDetail } from "./components/checkbox/checkbox.interface";
 export { IconName as IconName1 } from "@fortawesome/free-solid-svg-icons";
 export { InputChangeEventDetail } from "./components/input/input.interface";
+export { SelectChangeEventDetail } from "./components/select/select.interface";
 export namespace Components {
     interface AdmiraltyBreadcrumb {
         /**
@@ -409,6 +413,10 @@ export namespace Components {
           * The text that will be used as a field label.
          */
         "label": string;
+        /**
+          * The value of the input.
+         */
+        "value"?: string | number | null;
         /**
           * The maximum width (px) for the input field.
          */
@@ -1000,15 +1008,15 @@ declare namespace LocalJSX {
          */
         "name"?: string;
         /**
+          * Event is fired when the form control changes state
+          * @event admiraltyChange
+         */
+        "onAdmiraltyChange"?: (event: AdmiraltyCheckboxCustomEvent<CheckboxChangeEventDetail>) => void;
+        /**
           * Event is fired when the form control loses focus
           * @event checkboxBlur
          */
         "onCheckboxBlur"?: (event: AdmiraltyCheckboxCustomEvent<any>) => void;
-        /**
-          * Event is fired when the form control changes state
-          * @event radioChanges
-         */
-        "onCheckboxChange"?: (event: AdmiraltyCheckboxCustomEvent<any>) => void;
         /**
           * Event is fired when the form control gains focus
           * @event checkboxFocus
@@ -1417,7 +1425,11 @@ declare namespace LocalJSX {
         /**
           * Emitted when the value has changed.
          */
-        "onAdmiraltyChange"?: (event: AdmiraltySelectCustomEvent<EventTarget>) => void;
+        "onAdmiraltyChange"?: (event: AdmiraltySelectCustomEvent<SelectChangeEventDetail>) => void;
+        /**
+          * The value of the input.
+         */
+        "value"?: string | number | null;
         /**
           * The maximum width (px) for the input field.
          */

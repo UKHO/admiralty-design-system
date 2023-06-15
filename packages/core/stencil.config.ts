@@ -16,18 +16,6 @@ const angularValueAccessorBindings: ValueAccessorConfig[] = [
     type: 'radio',
   },
   {
-    elementSelectors: ['admiralty-input[type=number]'],
-    event: 'admiraltyChange',
-    targetAttr: 'value',
-    type: 'number',
-  },
-  {
-    elementSelectors: ['admiralty-checkbox'],
-    event: 'admiraltyChange',
-    targetAttr: 'value',
-    type: 'boolean',
-  },
-  {
     elementSelectors: ['admiralty-select'],
     event: 'admiraltyChange',
     targetAttr: 'value',

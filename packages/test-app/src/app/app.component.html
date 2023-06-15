@@ -69,14 +69,22 @@
 <form [formGroup]="group" (ngSubmit)="onSubmit()">
   <admiralty-file-input></admiralty-file-input>
   <admiralty-input
+    label="Text"
     [invalid]="blah?.invalid && blah?.touched"
     invalidMessage="This field is required"
     type="text"
-    formControlName="blah"
+    formControlName="text"
   ></admiralty-input>
-  <admiralty-checkbox checked="true" disabled="false" input-id="checkbox" label-text="checkbox 1"></admiralty-checkbox>
-  <admiralty-radio name="radio1" value="radio1">Radio text label</admiralty-radio>
-  <admiralty-select hint="Select an option from the list" label="Choose a colour">
+  <admiralty-input
+    label="Number"
+    [invalid]="blah?.invalid && blah?.touched"
+    invalidMessage="This field is required"
+    type="number"
+    formControlName="number"
+  ></admiralty-input>
+  <admiralty-checkbox formControlName="checkbox" input-id="checkbox" label-text="checkbox 1"></admiralty-checkbox>
+  <admiralty-radio formControlName="radio" name="radio1" value="radio1">Radio text label</admiralty-radio>
+  <admiralty-select formControlName="select" hint="Select an option from the list" label="Choose a colour">
     <option value="test1">Test</option>
     <option value="test2">Test 2</option>
   </admiralty-select>

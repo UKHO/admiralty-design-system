@@ -13,10 +13,14 @@ export class AppComponent {
 
   title = 'test-app';
   group = new FormGroup({
-    blah: new FormControl('', Validators.required),
+    text: new FormControl('', Validators.required),
+    number: new FormControl(''),
+    checkbox: new FormControl(false),
+    radio: new FormControl(''),
+    select: new FormControl(''),
   });
 
-  blah = this.group.get('blah');
+  blah = this.group.get('text');
 
   onColourBlockClick() {
     console.log('onColourBlockClick');

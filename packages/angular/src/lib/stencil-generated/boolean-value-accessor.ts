@@ -7,7 +7,7 @@ import { ValueAccessor } from './value-accessor';
   /* tslint:disable-next-line:directive-selector */
   selector: 'admiralty-checkbox',
   host: {
-    '(admiraltyChange)': 'handleChangeEvent($event.target.value)'
+    '(admiraltyChange)': 'handleChangeEvent($event.target.checked)'
   },
   providers: [
     {
