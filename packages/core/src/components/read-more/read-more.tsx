@@ -1,4 +1,6 @@
 import { Component, EventEmitter, Prop, State, Event, h } from '@stencil/core';
+import { faArrowDown, faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 
 let nextId = 0;
 
@@ -25,6 +27,10 @@ export class ReadMoreComponent {
   headerId: string = `${this.id}-header`;
   contentId: string = `${this.id}-content`;
 
+  get expansionIcon(): IconDefinition {
+    return this.expanded ?  faArrowDown : faArrowRight;
+  }
+
   onToggle() {
     this.expanded = !this.expanded;
     this.admiraltyToggled.emit(this.expanded);
@@ -46,6 +52,7 @@ export class ReadMoreComponent {
           class={{ expanded: this.expanded }}
           onClick={this.onToggle.bind(this)}
         >
+          <admiralty-icon class="expansion-heading-icon" icon-name={this.expansionIcon.iconName}></admiralty-icon>
           <span>{this.heading}</span>
           <span class="visually-hidden">, {this.expanded ? 'Hide' : 'Show'} this section</span>
         </button>

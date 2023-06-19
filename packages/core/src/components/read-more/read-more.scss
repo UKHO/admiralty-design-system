@@ -28,27 +28,20 @@ section.expansion {
     text-align: left;
     text-decoration: underline;
 
-    &.expanded {
+    &.expanded span {
       font-weight: typography.$font-weight-medium;
     }
 
-    &::before{
-      content: url("svg/mat_fwd_arrow_icon.svg");
-      color: colours.$colour-admiralty-blue;
+    .expansion-heading-icon {
       margin-left: 5px;
       margin-right: 8px;
+      vertical-align: top;
     }
 
-    &.expanded::before {
-      content: url("svg/mat_down_arrow_icon.svg");
-      margin-left: 5px;
-      margin-right: 8px;
-    }
 
     &:focus {
       outline: none;
       box-shadow: 0 0 0 3px colours.$colour-utility-focus;
     }
-
   }
 }
