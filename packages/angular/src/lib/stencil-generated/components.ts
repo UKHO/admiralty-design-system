@@ -679,7 +679,7 @@ export class AdmiraltyRadio {
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['admiraltyFocus', 'admiraltyBlur']);
+    proxyOutputs(this, this.el, ['admiraltyFocus', 'admiraltyBlur', 'admiraltyChange']);
   }
 }
 
@@ -693,6 +693,8 @@ export declare interface AdmiraltyRadio extends Components.AdmiraltyRadio {
    * Emitted when the radio button loses focus.
    */
   admiraltyBlur: EventEmitter<CustomEvent<void>>;
+
+  admiraltyChange: EventEmitter<CustomEvent<void>>;
 }
 
 
@@ -711,16 +713,18 @@ export class AdmiraltyRadioGroup {
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['radioChange']);
+    proxyOutputs(this, this.el, ['admiraltyChange']);
   }
 }
 
+
+import type { RadioGroupChangeEventDetail as IAdmiraltyRadioGroupRadioGroupChangeEventDetail } from '@ukho/admiralty-core';
 
 export declare interface AdmiraltyRadioGroup extends Components.AdmiraltyRadioGroup {
   /**
    * Event fired when the checked radio button changes
    */
-  radioChange: EventEmitter<CustomEvent<any>>;
+  admiraltyChange: EventEmitter<CustomEvent<IAdmiraltyRadioGroupRadioGroupChangeEventDetail>>;
 }
 
 

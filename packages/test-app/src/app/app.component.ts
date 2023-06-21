@@ -15,7 +15,7 @@ export class AppComponent {
   group = new FormGroup({
     text: new FormControl('', Validators.required),
     number: new FormControl(''),
-    checkbox: new FormControl(false),
+    checkbox: new FormControl(true),
     radio: new FormControl(''),
     select: new FormControl(''),
   });

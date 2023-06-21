@@ -10,12 +10,14 @@ import { IconName, IconPrefix } from "@fortawesome/fontawesome-svg-core";
 import { CheckboxChangeEventDetail } from "./components/checkbox/checkbox.interface";
 import { IconName as IconName1 } from "@fortawesome/free-solid-svg-icons";
 import { InputChangeEventDetail } from "./components/input/input.interface";
+import { RadioGroupChangeEventDetail } from "./components/radio-group/radio-group-interface";
 import { SelectChangeEventDetail } from "./components/select/select.interface";
 export { ButtonVariant } from "./components/button/button.types";
 export { IconName, IconPrefix } from "@fortawesome/fontawesome-svg-core";
 export { CheckboxChangeEventDetail } from "./components/checkbox/checkbox.interface";
 export { IconName as IconName1 } from "@fortawesome/free-solid-svg-icons";
 export { InputChangeEventDetail } from "./components/input/input.interface";
+export { RadioGroupChangeEventDetail } from "./components/radio-group/radio-group-interface";
 export { SelectChangeEventDetail } from "./components/select/select.interface";
 export namespace Components {
     interface AdmiraltyBreadcrumb {
@@ -1370,6 +1372,7 @@ declare namespace LocalJSX {
           * Emitted when the radio button loses focus.
          */
         "onAdmiraltyBlur"?: (event: AdmiraltyRadioCustomEvent<void>) => void;
+        "onAdmiraltyChange"?: (event: AdmiraltyRadioCustomEvent<void>) => void;
         /**
           * Emitted when the radio button gains focus.
          */
@@ -1391,7 +1394,7 @@ declare namespace LocalJSX {
         /**
           * Event fired when the checked radio button changes
          */
-        "onRadioChange"?: (event: AdmiraltyRadioGroupCustomEvent<any>) => void;
+        "onAdmiraltyChange"?: (event: AdmiraltyRadioGroupCustomEvent<RadioGroupChangeEventDetail>) => void;
         /**
           * The value of the radio group
          */

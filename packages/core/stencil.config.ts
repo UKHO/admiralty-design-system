@@ -16,7 +16,7 @@ const angularValueAccessorBindings: ValueAccessorConfig[] = [
     type: 'radio',
   },
   {
-    elementSelectors: ['admiralty-select'],
+    elementSelectors: ['admiralty-select', 'admiralty-radio-group'],
     event: 'admiraltyChange',
     targetAttr: 'value',
     type: 'select',

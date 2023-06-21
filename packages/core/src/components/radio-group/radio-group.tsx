@@ -1,4 +1,5 @@
 import { Component, Host, h, Prop, Element, Event, EventEmitter, ComponentInterface, Watch } from '@stencil/core';
+import { RadioGroupChangeEventDetail } from './radio-group-interface';
 
 @Component({
   tag: 'admiralty-radio-group',
@@ -29,16 +30,21 @@ export class RadioGroupComponent implements ComponentInterface {
   valueChanged(value: any) {
     this.setRadioTabindex(value);
 
-    this.radioChange.emit({ value });
+    this.admiraltyChange.emit({ value });
   }
 
   /**
    * Event fired when the checked radio button changes
    */
-  @Event() radioChange: EventEmitter<any>;
+  @Event() admiraltyChange: EventEmitter<RadioGroupChangeEventDetail>;
 
   componentDidLoad(): void {
     this.setRadioTabindex(this.value);
+  }
+
+  private emitValueChange(event?: Event) {
+    const { value } = this;
+    this.admiraltyChange.emit({ value, event });
   }
 
   private setRadioTabindex = (value: any | undefined) => {
@@ -74,8 +80,7 @@ export class RadioGroupComponent implements ComponentInterface {
 
       if (newValue !== currentValue) {
         this.value = newValue;
-      } else {
-        this.value = undefined;
+        this.emitValueChange(e);
       }
     }
   };
