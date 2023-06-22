@@ -12,6 +12,7 @@ const meta: Meta = {
   },
   args: {
     label: 'Please Type',
+    hint: '',
     value: '',
     placeholder: '',
     resultsOnInitFocus: false
@@ -27,6 +28,7 @@ const template: Story = {
     <admiralty-type-ahead
       value = "${args.value}"
       label="${args.label}"
+      hint="${args.hint}"
       ?results-on-init-focus="${args.resultsOnInitFocus}"
       placeholder="${args.placeholder}">
       <admiralty-type-ahead-item value="dog"></admiralty-type-ahead-item>
@@ -59,6 +61,7 @@ export const ShowResultsOnInitFocus: Story = { ...template,
 
 export const withPlaceholderText: Story = { ...template, 
   args: { 
-    placeholder: 'Start typing the name of an animal'
+    placeholder: 'Start typing the name of an animal',
+    hint: 'Please type the name of an animal'
   }
 };
