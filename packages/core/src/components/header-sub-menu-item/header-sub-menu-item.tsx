@@ -26,7 +26,7 @@ export class HeaderMenuItemComponent {
 
     return (
       <Host>
-        <div class="header-sub-menu-item" onClick={this.handleClick}>
+        <div class="header-sub-menu-item" onClick={this.handleClick} tabindex="0">
           <span class="title">{menuTitle}</span>
         </div>
       </Host>

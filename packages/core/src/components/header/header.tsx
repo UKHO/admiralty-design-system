@@ -67,12 +67,12 @@ export class HeaderComponent {
       <div class="admiralty-header">
         <nav class="header-menu">
           <div class="header-branding">
-            <a class="header-logo" href={logoLinkUrl}>
+            <a class="header-logo" href={logoLinkUrl} tabindex="0">
               <img class="header-image" alt={logoAltText} src={logoImgUrl} />
             </a>
             <div class="vertical-seperator"></div>
             <h1 class="header-title">
-              <a onClick={ev => this.handleClick(ev)} href={headerTitleUrl}>
+              <a onClick={ev => this.handleClick(ev)} href={headerTitleUrl} tabindex="0">
                 {headerTitle}
               </a>
             </h1>

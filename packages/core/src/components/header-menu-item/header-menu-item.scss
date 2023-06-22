@@ -11,7 +11,18 @@
 
   .menu-title {
     font-size: typography.$font-size-normal;
+
+    &:focus {
+      box-shadow: colours.$colour-utility-focus inset 0 0 0 3px;
+    }
   }
+}
+
+button {
+  all: unset;
+  height: 100%;
+  width: 100%;
+  // font-weight: typography.$font-weight-medium;
 }
 
 @include responsive.desktop-only {
@@ -29,30 +40,38 @@
     position: relative;
     text-align: center;
 
+    &:hover {
+      @include active;
+      background-color: colours.$colour-nav-bg-hover;
+
+      // .sub-menu {
+      //   display: flex;
+      // }
+    }
+
+    &.active {
+      @include active;
+
+      // .sub-menu {
+      //   display: flex;
+      // }
+    }
+
     .menu-title {
       font-weight: typography.$font-weight-medium;
     }
 
     .sub-menu {
       display: none;
+      flex-direction: column;
       position: absolute;
       border: 1px solid colours.$colour-divider;
       right: 0;
       top: 100%;
-    }
 
-    &:hover {
-      @include active;
-      background-color: colours.$colour-nav-bg-hover;
-
-      .sub-menu {
+      &.make-visible {
         display: flex;
-        flex-direction: column;
       }
-    }
-
-    &.active {
-      @include active;
     }
   }
 }
@@ -74,9 +93,9 @@
         background-color: colours.$colour-nav-bg-hover;
       }
 
-      &:focus {
-        box-shadow: colours.$colour-utility-focus inset 0 0 0 3px;
-      }
+      // &:focus {
+      //   box-shadow: colours.$colour-utility-focus inset 0 0 0 3px;
+      // }
     }
   }
 }

@@ -65,7 +65,7 @@ export class HeaderProfileComponent {
           {isSignedIn ? (
             <div>
               <div class="desktop">
-                <button onMouseOver={this.openDropdown} onMouseOut={this.closeDropdown}>
+                <button onMouseOver={this.openDropdown} onMouseOut={this.closeDropdown} tabindex="0">
                   {signedInText}
                 </button>
                 {displaySubmenu ? (
@@ -85,7 +85,7 @@ export class HeaderProfileComponent {
               </div>
             </div>
           ) : (
-            <div class="sub-menu-item" onClick={this.handleSignIn}>Sign In</div>
+            <div class="sub-menu-item" onClick={this.handleSignIn} tabindex="0">Sign In</div>
           )}
         </div>
       </Host>
