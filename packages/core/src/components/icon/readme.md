@@ -24,6 +24,7 @@
  - [admiralty-file-input](../file-input)
  - [admiralty-header](../header)
  - [admiralty-input-error](../input-error)
+ - [admiralty-read-more](../read-more)
  - [admiralty-select](../select)
 
 ### Graph
@@ -36,6 +37,7 @@ graph TD;
   admiralty-file-input --> admiralty-icon
   admiralty-header --> admiralty-icon
   admiralty-input-error --> admiralty-icon
+  admiralty-read-more --> admiralty-icon
   admiralty-select --> admiralty-icon
   style admiralty-icon fill:#f9f,stroke:#333,stroke-width:4px
 ```

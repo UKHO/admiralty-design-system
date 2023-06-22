@@ -1,3 +1,20 @@
+# v0.0.9 (Wed Jun 21 2023)
+
+#### 🐛 Bug Fix
+
+- chore: Make prettier format by default in dev environment using vscode [#44](https://github.com/UKHO/admiralty-design-system/pull/44) ([@UKHOGreg](https://github.com/UKHOGreg))
+- `@ukho/admiralty-angular`, `@ukho/admiralty-core`
+  - Readmore web component [#47](https://github.com/UKHO/admiralty-design-system/pull/47) ([@martind-bjss](https://github.com/martind-bjss))
+- `@ukho/admiralty-core`
+  - Scoped components [#39](https://github.com/UKHO/admiralty-design-system/pull/39) ([@martind-bjss](https://github.com/martind-bjss))
+
+#### Authors: 2
+
+- Greg Williams ([@UKHOGreg](https://github.com/UKHOGreg))
+- Martin Davies ([@martind-bjss](https://github.com/martind-bjss))
+
+---
+
 # v0.0.8 (Tue Jun 06 2023)
 
 #### 🐛 Bug Fix

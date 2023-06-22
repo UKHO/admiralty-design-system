@@ -4,7 +4,7 @@ import { CheckboxChangeEventDetail } from './checkbox.interface';
 @Component({
   tag: 'admiralty-checkbox',
   styleUrl: 'checkbox.scss',
-  shadow: true,
+  scoped: true,
 })
 export class CheckboxComponent {
   private inputId = `admiralty-${checkboxIds++}`;

@@ -20,7 +20,7 @@ describe('admiralty-select', () => {
 
     const event = await page.spyOnEvent('admiraltyBlur');
 
-    const sel = await page.find('admiralty-select >>> select');
+    const sel = await page.find('select');
 
     const input = await page.find('input');
 

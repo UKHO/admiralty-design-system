@@ -7,7 +7,7 @@ import { Component, h, Prop } from '@stencil/core';
 @Component({
   tag: 'admiralty-label',
   styleUrl: 'label.scss',
-  shadow: true,
+  scoped: true,
 })
 export class LabelComponent {
   /**

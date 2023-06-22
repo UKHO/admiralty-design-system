@@ -8,7 +8,7 @@ import { faExclamation } from '@fortawesome/free-solid-svg-icons';
 @Component({
   tag: 'admiralty-input-error',
   styleUrl: 'input-error.scss',
-  shadow: true,
+  scoped: true,
 })
 export class InputError {
   render() {

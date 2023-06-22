@@ -9,14 +9,10 @@ describe('menu-item', () => {
     });
     expect(page.root).toEqualHtml(`
       <admiralty-header-menu-item menutitle="Item 1">
-        <mock:shadow-root>
-          <div class="menu-item">
-            <div class="menu-title"></div>
-            <div class="sub-menu">
-              <slot></slot>
-            </div>
-          </div>
-        </mock:shadow-root>
+        <div class="menu-item">
+          <div class="menu-title"></div>
+          <div class="sub-menu"></div>
+        </div>
       </admiralty-header-menu-item>
     `);
   });
@@ -29,14 +25,11 @@ describe('menu-item', () => {
 
     expect(page.root).toMatchInlineSnapshot(`
       <admiralty-header-menu-item active="true" menutitle="Item 1">
-        <mock:shadow-root>
-          <div class="active menu-item">
-            <div class="menu-title"></div>
-            <div class="sub-menu">
-              <slot></slot>
-            </div>
-          </div>
-        </mock:shadow-root>
+        <!---->
+        <div class="active menu-item">
+          <div class="menu-title"></div>
+          <div class="sub-menu"></div>
+        </div>
       </admiralty-header-menu-item>
     `);
   });
@@ -49,14 +42,11 @@ describe('menu-item', () => {
 
     expect(page.root).toMatchInlineSnapshot(`
       <admiralty-header-menu-item active="false" menutitle="Item 1">
-        <mock:shadow-root>
-          <div class="menu-item">
-            <div class="menu-title"></div>
-            <div class="sub-menu">
-              <slot></slot>
-            </div>
-          </div>
-        </mock:shadow-root>
+        <!---->
+        <div class="menu-item">
+          <div class="menu-title"></div>
+          <div class="sub-menu"></div>
+        </div>
       </admiralty-header-menu-item>
     `);
   });

@@ -9,13 +9,10 @@ describe('input-error', () => {
     });
     expect(page.root).toEqualHtml(`
        <admiralty-input-error>
-       <mock:shadow-root>
         <admiralty-icon class="error-icon" icon-name="exclamation"></admiralty-icon>
         <p>
-        <slot></slot>
+        Test
         </p>
-       </mock:shadow-root>
-       Test
 </admiralty-input-error>
     `);
   });
