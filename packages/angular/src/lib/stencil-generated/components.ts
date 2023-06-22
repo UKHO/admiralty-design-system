@@ -1040,14 +1040,14 @@ export declare interface AdmiraltyTextarea extends Components.AdmiraltyTextarea 
 
 
 @ProxyCmp({
-  inputs: ['label', 'placeholder', 'resultsOnInitFocus', 'value']
+  inputs: ['hint', 'label', 'placeholder', 'resultsOnInitFocus', 'value']
 })
 @Component({
   selector: 'admiralty-type-ahead',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['label', 'placeholder', 'resultsOnInitFocus', 'value'],
+  inputs: ['hint', 'label', 'placeholder', 'resultsOnInitFocus', 'value'],
 })
 export class AdmiraltyTypeAhead {
   protected el: HTMLElement;

@@ -13,6 +13,7 @@ export default {
 
 const defaultArgs = {
   label: 'Please Type',
+  hint:'',
   value: '',
   placeholder: '',
   resultsOnInitFocus: false,
@@ -23,6 +24,7 @@ const Template: Story = args => {
   <admiralty-type-ahead
     value = "${args.value}"
     label="${args.label}"
+    hint="${args.hint}"
     results-on-init-focus="${args.resultsOnInitFocus}"
     placeholder="${args.placeholder}">
     <admiralty-type-ahead-item value="dog"></admiralty-type-ahead-item>
@@ -43,6 +45,7 @@ const Template: Story = args => {
 export const WithoutSelectionAction: Story = Template.bind({});
 WithoutSelectionAction.args = {
   ...defaultArgs,
+  hint: 'Please type the name of an animal',
 };
 
 export const Prefilled: Story = Template.bind({});
