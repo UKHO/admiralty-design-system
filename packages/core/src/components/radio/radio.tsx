@@ -46,6 +46,9 @@ export class RadioComponent {
    */
   @Event() admiraltyBlur!: EventEmitter<void>;
 
+  /**
+   * Emitted when the radio is selected
+   */
   @Event() admiraltyChange!: EventEmitter<void>;
 
   @Watch('value')
