@@ -62,6 +62,11 @@ export const ShowResultsOnInitFocus: Story = { ...template,
 export const withPlaceholderText: Story = { ...template, 
   args: { 
     placeholder: 'Start typing the name of an animal',
+  }
+};
+
+export const withHint: Story = { ...template, 
+  args: { 
     hint: 'Please type the name of an animal'
   }
 };
