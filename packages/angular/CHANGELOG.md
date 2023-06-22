@@ -1,3 +1,15 @@
+# v0.0.9 (Wed Jun 21 2023)
+
+#### 🐛 Bug Fix
+
+- Readmore web component [#47](https://github.com/UKHO/admiralty-design-system/pull/47) ([@martind-bjss](https://github.com/martind-bjss))
+
+#### Authors: 1
+
+- Martin Davies ([@martind-bjss](https://github.com/martind-bjss))
+
+---
+
 # v0.0.8 (Tue Jun 06 2023)
 
 #### 🐛 Bug Fix

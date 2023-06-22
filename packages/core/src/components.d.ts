@@ -388,6 +388,12 @@ export namespace Components {
          */
         "value": any | null;
     }
+    interface AdmiraltyReadMore {
+        /**
+          * The text to display in the heading of the readmore component.
+         */
+        "heading": string;
+    }
     interface AdmiraltySelect {
         /**
           * If `true`, the user cannot interact with the select.
@@ -587,6 +593,10 @@ export interface AdmiraltyRadioCustomEvent<T> extends CustomEvent<T> {
 export interface AdmiraltyRadioGroupCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLAdmiraltyRadioGroupElement;
+}
+export interface AdmiraltyReadMoreCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLAdmiraltyReadMoreElement;
 }
 export interface AdmiraltySelectCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -789,6 +799,12 @@ declare global {
         prototype: HTMLAdmiraltyRadioGroupElement;
         new (): HTMLAdmiraltyRadioGroupElement;
     };
+    interface HTMLAdmiraltyReadMoreElement extends Components.AdmiraltyReadMore, HTMLStencilElement {
+    }
+    var HTMLAdmiraltyReadMoreElement: {
+        prototype: HTMLAdmiraltyReadMoreElement;
+        new (): HTMLAdmiraltyReadMoreElement;
+    };
     interface HTMLAdmiraltySelectElement extends Components.AdmiraltySelect, HTMLStencilElement {
     }
     var HTMLAdmiraltySelectElement: {
@@ -927,6 +943,7 @@ declare global {
         "admiralty-progress-bar": HTMLAdmiraltyProgressBarElement;
         "admiralty-radio": HTMLAdmiraltyRadioElement;
         "admiralty-radio-group": HTMLAdmiraltyRadioGroupElement;
+        "admiralty-read-more": HTMLAdmiraltyReadMoreElement;
         "admiralty-select": HTMLAdmiraltySelectElement;
         "admiralty-side-nav": HTMLAdmiraltySideNavElement;
         "admiralty-side-nav-item": HTMLAdmiraltySideNavItemElement;
@@ -1393,6 +1410,16 @@ declare namespace LocalJSX {
          */
         "value"?: any | null;
     }
+    interface AdmiraltyReadMore {
+        /**
+          * The text to display in the heading of the readmore component.
+         */
+        "heading"?: string;
+        /**
+          * The event that is dispatched when the expanded status is toggled.
+         */
+        "onAdmiraltyToggled"?: (event: AdmiraltyReadMoreCustomEvent<boolean>) => void;
+    }
     interface AdmiraltySelect {
         /**
           * If `true`, the user cannot interact with the select.
@@ -1605,6 +1632,7 @@ declare namespace LocalJSX {
         "admiralty-progress-bar": AdmiraltyProgressBar;
         "admiralty-radio": AdmiraltyRadio;
         "admiralty-radio-group": AdmiraltyRadioGroup;
+        "admiralty-read-more": AdmiraltyReadMore;
         "admiralty-select": AdmiraltySelect;
         "admiralty-side-nav": AdmiraltySideNav;
         "admiralty-side-nav-item": AdmiraltySideNavItem;
@@ -1661,6 +1689,7 @@ declare module "@stencil/core" {
             "admiralty-progress-bar": LocalJSX.AdmiraltyProgressBar & JSXBase.HTMLAttributes<HTMLAdmiraltyProgressBarElement>;
             "admiralty-radio": LocalJSX.AdmiraltyRadio & JSXBase.HTMLAttributes<HTMLAdmiraltyRadioElement>;
             "admiralty-radio-group": LocalJSX.AdmiraltyRadioGroup & JSXBase.HTMLAttributes<HTMLAdmiraltyRadioGroupElement>;
+            "admiralty-read-more": LocalJSX.AdmiraltyReadMore & JSXBase.HTMLAttributes<HTMLAdmiraltyReadMoreElement>;
             "admiralty-select": LocalJSX.AdmiraltySelect & JSXBase.HTMLAttributes<HTMLAdmiraltySelectElement>;
             "admiralty-side-nav": LocalJSX.AdmiraltySideNav & JSXBase.HTMLAttributes<HTMLAdmiraltySideNavElement>;
             "admiralty-side-nav-item": LocalJSX.AdmiraltySideNavItem & JSXBase.HTMLAttributes<HTMLAdmiraltySideNavItemElement>;

@@ -30,6 +30,7 @@ export const DIRECTIVES = [
   d.AdmiraltyProgressBar,
   d.AdmiraltyRadio,
   d.AdmiraltyRadioGroup,
+  d.AdmiraltyReadMore,
   d.AdmiraltySelect,
   d.AdmiraltySideNav,
   d.AdmiraltySideNavItem,
