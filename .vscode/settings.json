@@ -11,5 +11,5 @@
     "onStartup": ["all-tests"]
   },
   "jest.showCoverageOnLoad": true,
-  "prettier.prettierPath": "./node_modules/prettier"
+  "typescript.tsdk": "node_modules/typescript/lib"
 }
