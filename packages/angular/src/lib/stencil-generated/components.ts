@@ -693,7 +693,9 @@ export declare interface AdmiraltyRadio extends Components.AdmiraltyRadio {
    * Emitted when the radio button loses focus.
    */
   admiraltyBlur: EventEmitter<CustomEvent<void>>;
-
+  /**
+   * Emitted when the radio is selected
+   */
   admiraltyChange: EventEmitter<CustomEvent<void>>;
 }
 

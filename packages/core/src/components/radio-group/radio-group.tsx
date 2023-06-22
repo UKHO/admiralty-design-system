@@ -42,11 +42,6 @@ export class RadioGroupComponent implements ComponentInterface {
     this.setRadioTabindex(this.value);
   }
 
-  private emitValueChange(event?: Event) {
-    const { value } = this;
-    this.admiraltyChange.emit({ value, event });
-  }
-
   private setRadioTabindex = (value: any | undefined) => {
     const radios = this.getRadios();
 
@@ -80,7 +75,6 @@ export class RadioGroupComponent implements ComponentInterface {
 
       if (newValue !== currentValue) {
         this.value = newValue;
-        this.emitValueChange(e);
       }
     }
   };

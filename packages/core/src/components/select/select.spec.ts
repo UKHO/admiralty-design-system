@@ -10,6 +10,7 @@ describe('admiralty-select', () => {
 
     expect(page.root).toMatchInlineSnapshot(`
       <admiralty-select>
+        <!---->
         <div class="admiralty-select">
           <admiralty-label for="admiralty-select-1">
             Choose a colour
@@ -17,7 +18,9 @@ describe('admiralty-select', () => {
           <admiralty-hint></admiralty-hint>
           <div class="select-wrapper">
             <select aria-disabled="false" aria-label="Choose a colour" class="admiralty-form-control" id="admiralty-select-1">
-              <option></option>
+              <option>
+                Test
+              </option>
             </select>
             <admiralty-icon class="select-down-icon" icon-name="angle-down"></admiralty-icon>
           </div>
@@ -36,6 +39,7 @@ describe('admiralty-select', () => {
 
     expect(page.root).toMatchInlineSnapshot(`
       <admiralty-select hint="Select an option from the list" label="Choose a colour">
+        <!---->
         <div class="admiralty-select">
           <admiralty-label for="admiralty-select-2">
             Choose a colour
@@ -44,7 +48,8 @@ describe('admiralty-select', () => {
             Select an option from the list
           </admiralty-hint>
           <div class="select-wrapper">
-            <select aria-disabled="false" aria-label="Choose a colour" class="admiralty-form-control" id="admiralty-select-2"></select>
+            <select aria-disabled="false" aria-label="Choose a colour" class="admiralty-form-control" id="admiralty-select-2">
+            </select>
             <admiralty-icon class="select-down-icon" icon-name="angle-down"></admiralty-icon>
           </div>
         </div>
@@ -62,6 +67,7 @@ describe('admiralty-select', () => {
 
     expect(page.root).toMatchInlineSnapshot(`
       <admiralty-select error="false" error-hint="The colour must be green" hint="Select an option from the list" label="Choose a colour">
+        <!---->
         <div class="admiralty-select">
           <admiralty-label for="admiralty-select-3">
             Choose a colour
@@ -70,7 +76,8 @@ describe('admiralty-select', () => {
             Select an option from the list
           </admiralty-hint>
           <div class="select-wrapper">
-            <select aria-disabled="false" aria-label="Choose a colour" class="admiralty-form-control" id="admiralty-select-3"></select>
+            <select aria-disabled="false" aria-label="Choose a colour" class="admiralty-form-control" id="admiralty-select-3">
+            </select>
             <admiralty-icon class="select-down-icon" icon-name="angle-down"></admiralty-icon>
           </div>
         </div>
@@ -88,6 +95,7 @@ describe('admiralty-select', () => {
 
     expect(page.root).toMatchInlineSnapshot(`
       <admiralty-select error="true" error-hint="The colour must be green" hint="Select an option from the list" label="Choose a colour">
+        <!---->
         <div class="admiralty-select">
           <admiralty-label for="admiralty-select-4">
             Choose a colour
@@ -96,7 +104,8 @@ describe('admiralty-select', () => {
             Select an option from the list
           </admiralty-hint>
           <div class="select-wrapper">
-            <select aria-disabled="false" aria-label="Choose a colour" class="admiralty-form-control error" id="admiralty-select-4"></select>
+            <select aria-disabled="false" aria-label="Choose a colour" class="admiralty-form-control error" id="admiralty-select-4">
+            </select>
             <admiralty-icon class="select-down-icon" icon-name="angle-down"></admiralty-icon>
           </div>
           <admiralty-input-error>
@@ -117,6 +126,7 @@ describe('admiralty-select', () => {
 
     expect(page.root).toMatchInlineSnapshot(`
       <admiralty-select disabled="true" error-hint="The colour must be green" hint="Select an option from the list" label="Choose a colour">
+        <!---->
         <div class="admiralty-select disabled">
           <admiralty-label for="admiralty-select-5">
             Choose a colour
@@ -125,7 +135,8 @@ describe('admiralty-select', () => {
             Select an option from the list
           </admiralty-hint>
           <div class="select-wrapper">
-            <select aria-disabled="true" aria-label="Choose a colour" class="admiralty-form-control disabled" disabled="" id="admiralty-select-5"></select>
+            <select aria-disabled="true" aria-label="Choose a colour" class="admiralty-form-control disabled" disabled="" id="admiralty-select-5">
+            </select>
             <admiralty-icon class="disabled select-down-icon" icon-name="angle-down"></admiralty-icon>
           </div>
         </div>
@@ -143,6 +154,7 @@ describe('admiralty-select', () => {
 
     expect(page.root).toMatchInlineSnapshot(`
       <admiralty-select hint="Select an option from the list" label="Choose a colour" width="150">
+        <!---->
         <div class="admiralty-select">
           <admiralty-label for="admiralty-select-6">
             Choose a colour
@@ -151,7 +163,8 @@ describe('admiralty-select', () => {
             Select an option from the list
           </admiralty-hint>
           <div class="select-wrapper" style="max-width: 150px;">
-            <select aria-disabled="false" aria-label="Choose a colour" class="admiralty-form-control" id="admiralty-select-6"></select>
+            <select aria-disabled="false" aria-label="Choose a colour" class="admiralty-form-control" id="admiralty-select-6">
+            </select>
             <admiralty-icon class="select-down-icon" icon-name="angle-down"></admiralty-icon>
           </div>
         </div>

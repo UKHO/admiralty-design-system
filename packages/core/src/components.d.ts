@@ -1389,6 +1389,9 @@ declare namespace LocalJSX {
           * Emitted when the radio button loses focus.
          */
         "onAdmiraltyBlur"?: (event: AdmiraltyRadioCustomEvent<void>) => void;
+        /**
+          * Emitted when the radio is selected
+         */
         "onAdmiraltyChange"?: (event: AdmiraltyRadioCustomEvent<void>) => void;
         /**
           * Emitted when the radio button gains focus.
