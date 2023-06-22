@@ -1,10 +1,11 @@
-import { Story } from '@storybook/html';
-import readme from './readme.md';
+import { Meta, StoryObj } from '@storybook/web-components';
+import { ReadMoreComponent } from './read-more';
+import { html } from 'lit';
 
-export default {
+const meta: Meta = {
+  component: 'admiralty-side-nav',
   title: 'Readmore',
   parameters: {
-    markdown: readme,
     actions: {
       handles: ['admiraltyToggled'],
     },
@@ -14,16 +15,15 @@ export default {
   },
 };
 
-const Template: Story = args => {
-  return `<admiralty-read-more
-      heading="${args.heading}"
-    >
-    We need to know your nationality so we can work out which elections you’re entitled to vote in.
-    If you cannot provide your nationality, you’ll have to send copies of identity documents through the post.
-    </admiralty-read-more>`;
+export default meta;
+
+type Story = StoryObj<ReadMoreComponent>;
+
+const template: Story = {
+  render: args => html` <admiralty-read-more heading="${args.heading}">
+    We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity
+    documents through the post.
+  </admiralty-read-more>`,
 };
 
-export const Basic = Template.bind({});
-
-
-
+export const Basic: Story = { ...template };
