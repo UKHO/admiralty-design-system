@@ -17,7 +17,7 @@ export class AppComponent {
     number: new FormControl(''),
     checkbox: new FormControl(true),
     radio: new FormControl(''),
-    select: new FormControl(''),
+    select: new FormControl('test1'),
   });
 
   blah = this.group.get('text');

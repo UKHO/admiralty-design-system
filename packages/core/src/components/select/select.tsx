@@ -1,5 +1,4 @@
 import { Component, Event, Prop, Element, EventEmitter, h, Host, Watch } from '@stencil/core';
-import { UKHOOptions } from './select.types';
 import { SelectChangeEventDetail } from './select.interface';
 
 @Component({
@@ -63,12 +62,6 @@ export class SelectComponent {
     return typeof this.value === 'number' ? this.value.toString() : (this.value || '').toString();
   }
 
-  componentWillRender() {
-    this.getOptions();
-  }
-
-  options: Array<UKHOOptions>;
-
   handleSelect(event: Event) {
     const select = event.target as HTMLSelectElement | null;
     if (select) {
@@ -80,28 +73,15 @@ export class SelectComponent {
     this.admiraltyBlur.emit();
   }
 
-  /**
-   *  Summary. gets the options passed the user passes through the slots and
-   *  extracs the text and value
-   */
-  getOptions() {
-    const slotOptions = this.el.querySelectorAll('#options-holding-area > option') as NodeListOf<HTMLOptionElement>;
-    console.log(this.el);
-    console.log(slotOptions);
-    const options = [];
-
-    // grab all the data from the slot and extract the data to be inserted into the template
-    slotOptions.forEach(slot => {
-      // remove the slotted option to keep the shadowDom clean
-      //slot.remove();
-
-      options.push({
-        text: slot.text,
-        value: slot.value,
-      });
+  selectOption() {
+    const options = this.el.querySelectorAll('option');
+    options.forEach(option => {
+      option.selected = option.value === this.getValue();
     });
+  }
 
-    this.options = options;
+  componentWillRender() {
+    this.selectOption();
   }
 
   render() {
@@ -123,16 +103,11 @@ export class SelectComponent {
               onBlur={event => this.handleBlur(event)}
               disabled={disabled}
             >
-              {this.options.map(option => (
-                <option value={option.value}>{option.text}</option>
-              ))}
+              <slot></slot>
             </select>
             <admiralty-icon class={`select-down-icon ${disabledClass}`} icon-name="angle-down"></admiralty-icon>
           </div>
           {this.error ? <admiralty-input-error>{errorHint}</admiralty-input-error> : ''}
-        </div>
-        <div id="options-holding-area" class="visually-hidden">
-          <slot></slot>
         </div>
       </Host>
     );
