@@ -1,3 +1,16 @@
+# v0.1.0 (Fri Jun 23 2023)
+
+#### 🚀 Enhancement
+
+- feat: Storybook 7 upgrade [#37](https://github.com/UKHO/admiralty-design-system/pull/37) ([@ecstaticrainbow](https://github.com/ecstaticrainbow) [@UKHOGreg](https://github.com/UKHOGreg))
+
+#### Authors: 2
+
+- Greg Williams ([@UKHOGreg](https://github.com/UKHOGreg))
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
 # v0.0.12 (Fri Jun 23 2023)
 
 #### 🐛 Bug Fix
