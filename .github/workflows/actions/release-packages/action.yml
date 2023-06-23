@@ -34,6 +34,6 @@ runs:
         GITHUB_TOKEN: ${{ inputs.GITHUB_TOKEN }}
         NPM_TOKEN: ${{ inputs.NPM_TOKEN }}
       run: |
-        yarn install --frozen-lockfile
+        yarn install --immutable
         npx auto shipit
       shell: bash
