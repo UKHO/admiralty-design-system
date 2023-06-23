@@ -1,3 +1,16 @@
+# v0.0.11 (Thu Jun 22 2023)
+
+#### 🐛 Bug Fix
+
+- `@ukho/admiralty-angular`, `@ukho/admiralty-core`
+  - Typeahead web component fixes [#40](https://github.com/UKHO/admiralty-design-system/pull/40) ([@martind-bjss](https://github.com/martind-bjss))
+
+#### Authors: 1
+
+- Martin Davies ([@martind-bjss](https://github.com/martind-bjss))
+
+---
+
 # v0.0.9 (Wed Jun 21 2023)
 
 #### 🐛 Bug Fix

@@ -532,6 +532,10 @@ export namespace Components {
     }
     interface AdmiraltyTypeAhead {
         /**
+          * The hint which will be used under the label to describe the input.
+         */
+        "hint": string;
+        /**
           * The text content of the label for the input box
          */
         "label": string;
@@ -1584,6 +1588,10 @@ declare namespace LocalJSX {
         "width"?: number;
     }
     interface AdmiraltyTypeAhead {
+        /**
+          * The hint which will be used under the label to describe the input.
+         */
+        "hint"?: string;
         /**
           * The text content of the label for the input box
          */

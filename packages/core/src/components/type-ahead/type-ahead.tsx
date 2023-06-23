@@ -50,6 +50,11 @@ export class TypeAheadComponent {
   @Prop() label: string;
 
   /**
+   * The hint which will be used under the label to describe the input.
+   */
+  @Prop() hint: string;
+
+  /**
    * The placeholder text for the input field
    */
   @Prop() placeholder: string;
@@ -240,6 +245,7 @@ export class TypeAheadComponent {
           type="text"
           ref={el => (this.inputControl = el)}
           label={this.label}
+          hint={this.hint}
           placeholder={this.placeholder}
           class="filterTextInput"
           onKeyUp={ev => this.handleKeyPressed(ev)}
