@@ -1,3 +1,15 @@
+# v0.0.12 (Fri Jun 23 2023)
+
+#### 🐛 Bug Fix
+
+- Fix angular form control value accessors not being available [#41](https://github.com/UKHO/admiralty-design-system/pull/41) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+#### Authors: 1
+
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
 # v0.0.11 (Thu Jun 22 2023)
 
 #### 🐛 Bug Fix
