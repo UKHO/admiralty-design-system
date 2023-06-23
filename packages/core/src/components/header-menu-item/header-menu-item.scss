@@ -44,17 +44,17 @@ button {
       @include active;
       background-color: colours.$colour-nav-bg-hover;
 
-      // .sub-menu {
-      //   display: flex;
-      // }
+      .sub-menu {
+        display: flex;
+      }
     }
 
     &.active {
       @include active;
 
-      // .sub-menu {
-      //   display: flex;
-      // }
+      .sub-menu {
+        display: flex;
+      }
     }
 
     .menu-title {
@@ -69,8 +69,12 @@ button {
       right: 0;
       top: 100%;
 
-      &.make-visible {
+      &.desktop-visible {
         display: flex;
+      }
+
+      &.desktop-hide {
+        display: none;
       }
     }
   }
