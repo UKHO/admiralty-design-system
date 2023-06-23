@@ -1,18 +1,25 @@
-import { Story } from '@storybook/html';
-import readme from './readme.md';
+import { Meta, StoryObj } from '@storybook/web-components';
+import { ColourBlockComponent } from './colour-block';
+import { html } from 'lit';
+import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 
-export default {
+const meta: Meta = {
+  component: 'admiralty-breadcrumb',
   title: 'Colour Block',
   parameters: {
-    markdown: readme,
     actions: {
       handles: ['click'],
     },
   },
 };
 
-const Template: Story = args => {
-  return `<admiralty-colour-block
+export default meta;
+
+type Story = StoryObj<ColourBlockComponent>;
+
+const template: Story = {
+  render: args => html`
+  <admiralty-colour-block
       action-text="${args.actionText}"
       width="${args.width}"
       height="${args.height}"
@@ -20,11 +27,11 @@ const Template: Story = args => {
       colour="${args.colour}"
       click-action="${args.clickAction}"
     >
-      <div>${args.content}</div>
+      <div>${unsafeHTML(args.content)}</div>
     </admiralty-colour-block>
     <script>
       document.querySelector('admiralty-colour-block').clickAction = () => console.log('click');
-    </script>`;
+    </script>`,
 };
 
 const squareArgs = {
@@ -48,32 +55,14 @@ const rectangleArgs = {
   colour: 'admiralty-blue',
 };
 
-export const AdmiraltyBlueSquare = Template.bind({});
-AdmiraltyBlueSquare.args = { ...squareArgs };
+export const AdmiraltyBlueSquare: Story = { ...template, args: { ...squareArgs } };
 
-export const TealSquare = Template.bind({});
-TealSquare.args = {
-  ...squareArgs,
-  colour: 'teal',
-};
+export const TealSquare: Story = { ...template, args: { ...squareArgs, colour: 'teal' } };
 
-export const BrightBlueSquare = Template.bind({});
-BrightBlueSquare.args = {
-  ...squareArgs,
-  colour: 'bright-blue',
-};
+export const BrightBlueSquare: Story = { ...template, args: { ...squareArgs, colour: 'bright-blue' } };
 
-export const AdmiraltyBlueRectangle = Template.bind({});
-AdmiraltyBlueRectangle.args = { ...rectangleArgs };
+export const AdmiraltyBlueRectangle: Story = { ...template, args: { ...rectangleArgs } };
 
-export const TealRectangle = Template.bind({});
-TealRectangle.args = {
-  ...rectangleArgs,
-  colour: 'teal',
-};
+export const TealRectangle: Story = { ...template, args: { ...rectangleArgs, colour: 'teal' } };
 
-export const BrightBlueRectangle = Template.bind({});
-BrightBlueRectangle.args = {
-  ...rectangleArgs,
-  colour: 'bright-blue',
-};
+export const BrightBlueRectangle: Story = { ...template, args: { ...rectangleArgs, colour: 'bright-blue' } };

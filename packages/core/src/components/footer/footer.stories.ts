@@ -1,36 +1,40 @@
-import { Story } from '@storybook/html';
-import readme from './readme.md';
+import { Meta, StoryObj } from '@storybook/web-components';
+import { FooterComponent } from './footer';
+import { html } from 'lit';
 
-export default {
+const meta: Meta = {
+  component: 'admiralty-footer',
   title: 'Footer',
   parameters: {
-    markdown: readme,
+    actions: {
+    },
   },
   args: {
     imageLink: 'http://www.example.com',
     imageSrc: 'svg/UKHO stacked logo.svg',
     imageAlt: 'UK Hydrographic Office',
     text: '© Crown copyright 2022',
-  },
+  }
 };
 
-export const Default: Story = args => {
-  return `<admiralty-footer>
-  </admiralty-footer>`;
-};
+export default meta;
 
-export const AlternateText: Story = args => {
-  return `<admiralty-footer
+type Story = StoryObj<FooterComponent>;
+
+export const Default: Story = { render: args => html`
+  <admiralty-footer>
+  </admiralty-footer>` };
+
+export const AlternateText: Story = { render: args => html`
+  <admiralty-footer
     image-link="${args.imageLink}"
     image-src="${args.imageSrc}"
     image-alt="${args.imageAlt}"
     text="${args.text}">
-  </admiralty-footer>`;
-};
+  </admiralty-footer>` };
 
-export const WithLinks: Story = args => {
-  return `<admiralty-footer>
-    <admiralty-link href=http://www.example.com" new-tab="true">Privacy Policy</admiralty-link>
-    <admiralty-link href=http://www.example.com">Accessibility</admiralty-link>
-  </admiralty-footer>`;
-};
+export const WithLinks: Story = { render: args => html`
+  <admiralty-footer>
+    <admiralty-link href="http://www.example.com" new-tab="true">Privacy Policy</admiralty-link>
+    <admiralty-link href="http://www.example.com">Accessibility</admiralty-link>
+  </admiralty-footer>` };

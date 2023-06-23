@@ -128,10 +128,10 @@ describe('admiralty-select', () => {
       <admiralty-select disabled="true" error-hint="The colour must be green" hint="Select an option from the list" label="Choose a colour">
         <!---->
         <div class="admiralty-select disabled">
-          <admiralty-label for="admiralty-select-5">
+          <admiralty-label disabled="" for="admiralty-select-5">
             Choose a colour
           </admiralty-label>
-          <admiralty-hint>
+          <admiralty-hint disabled="">
             Select an option from the list
           </admiralty-hint>
           <div class="select-wrapper">

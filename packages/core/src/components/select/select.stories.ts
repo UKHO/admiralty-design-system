@@ -1,45 +1,64 @@
-import { Story } from '@storybook/html';
-import readme from './readme.md';
+import { Meta, StoryObj } from '@storybook/web-components';
+import { SelectComponent } from './select';
+import { html } from 'lit';
 
-export default {
+const meta: Meta = {
+  component: 'admiralty-select',
   title: 'Forms/Select',
   parameters: {
-    markdown: readme,
     actions: {
       handles: ['admiraltyChange', 'admiraltyBlur'],
     },
   },
+  args: {
+    disabled: false,
+    error: false,
+    errorHint: 'The colour must be green',
+    hint: 'Select an option from the list',
+    label: 'Choose a colour',
+    value: 'second',
+  },
 };
 
-const defaultArgs = {
-  disabled: false,
-  error: false,
-  errorHint: 'The colour must be green',
-  hint: 'Select an option from the list',
-  label: 'Choose a colour',
-  value: 'second',
-};
+export default meta;
 
-const Template: Story = args => {
-  return `<admiralty-select value="${args.value}" disabled="${args.disabled}" error=${args.error} error-hint="${args.errorHint}" hint="${args.hint}" label="${args.label}" width="${args.width}">
+type Story = StoryObj<SelectComponent>;
+
+const template: Story = {
+  render: args => html` <admiralty-select
+    value="${args.value}"
+    ?disabled="${args.disabled}"
+    ?error=${args.error}
+    error-hint="${args.errorHint}"
+    hint="${args.hint}"
+    label="${args.label}"
+    width="${args.width}"
+  >
     <option value="first">first</option>
     <option value="second">second</option>
     <option value="third">third</option>
-    </admiralty-select>
-    `;
+  </admiralty-select>`,
 };
 
-export const DefaultSelect = Template.bind({});
-DefaultSelect.args = { ...defaultArgs };
+export const DefaultSelect: Story = { ...template };
 
-export const SelectWithError = Template.bind({});
-SelectWithError.args = { ...defaultArgs, error: true };
+export const SelectWithError: Story = {
+  ...template,
+  args: {
+    error: true,
+  },
+};
 
-export const SelectDisabled = Template.bind({});
-SelectDisabled.args = { ...defaultArgs, disabled: true };
+export const SelectDisabled: Story = {
+  ...template,
+  args: {
+    disabled: true,
+  },
+};
 
-export const FixedWidth: Story = Template.bind({});
-FixedWidth.args = {
-  ...defaultArgs,
-  width: 150,
+export const FixedWidth: Story = {
+  ...template,
+  args: {
+    width: 150,
+  },
 };

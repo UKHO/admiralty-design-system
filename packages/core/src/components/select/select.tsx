@@ -90,8 +90,10 @@ export class SelectComponent {
     return (
       <Host>
         <div class={`admiralty-select ${disabledClass}`}>
-          <admiralty-label for={id}>{label}</admiralty-label>
-          <admiralty-hint>{hint}</admiralty-hint>
+          <admiralty-label disabled={this.disabled} for={id}>
+            {label}
+          </admiralty-label>
+          <admiralty-hint disabled={this.disabled}>{hint}</admiralty-hint>
           <div class="select-wrapper" style={this.width ? { maxWidth: `${this.width}px` } : {}}>
             <select
               ref={select => (this.nativeInput = select)}

@@ -38,7 +38,7 @@ describe('admiralty-input', () => {
     expect(page.root).toEqualHtml(`
       <admiralty-input disabled>
         <div class="text-input-container">
-          <input disabled autocomplete="off" id="admiralty-input-3" name="admiralty-input-3" type="text" value="">
+          <input disabled autocomplete="off" class="disabled" id="admiralty-input-3" name="admiralty-input-3" type="text" value="">
         </div>
       </admiralty-input>
     `);

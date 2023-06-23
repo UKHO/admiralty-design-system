@@ -20,7 +20,7 @@ export class ButtonComponent {
   /**
    * Determines whether the button is disabled. A button in disabled state will not fire click output events.
    */
-  @Prop() disabled = false;
+  @Prop({ reflect: true }) disabled = false;
   /**
    * The default behavior of the button. Valid values are `button`, `submit` and `reset`.
    * Default value is `submit`.
@@ -29,7 +29,7 @@ export class ButtonComponent {
 
   render() {
     return (
-      <button type={this.type} disabled={this.disabled ? true : null} class={this.variant || ButtonVariant.Primary}>
+      <button type={this.type} disabled={this.disabled} class={this.variant || ButtonVariant.Primary}>
         <slot></slot>
         {this.icon ? <admiralty-icon icon-name={this.icon}></admiralty-icon> : undefined}
       </button>
