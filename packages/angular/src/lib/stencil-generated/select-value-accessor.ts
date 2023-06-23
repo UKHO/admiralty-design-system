@@ -5,19 +5,19 @@ import { ValueAccessor } from './value-accessor';
 
 @Directive({
   /* tslint:disable-next-line:directive-selector */
-  selector: 'admiralty-input:not([type=number]), admiralty-textarea',
+  selector: 'admiralty-select, admiralty-radio-group',
   host: {
     '(admiraltyChange)': 'handleChangeEvent($event.target.value)'
   },
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: TextValueAccessor,
+      useExisting: SelectValueAccessor,
       multi: true
     }
   ]
 })
-export class TextValueAccessor extends ValueAccessor {
+export class SelectValueAccessor extends ValueAccessor {
   constructor(el: ElementRef) {
     super(el);
   }

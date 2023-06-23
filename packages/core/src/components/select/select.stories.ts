@@ -17,13 +17,14 @@ const defaultArgs = {
   errorHint: 'The colour must be green',
   hint: 'Select an option from the list',
   label: 'Choose a colour',
+  value: 'second',
 };
 
 const Template: Story = args => {
-  return `<admiralty-select disabled="${args.disabled}" error=${args.error} error-hint="${args.errorHint}" hint="${args.hint}" label="${args.label}" width="${args.width}">
-    <option>first</option>
-    <option>second</option>
-    <option>third</option>
+  return `<admiralty-select value="${args.value}" disabled="${args.disabled}" error=${args.error} error-hint="${args.errorHint}" hint="${args.hint}" label="${args.label}" width="${args.width}">
+    <option value="first">first</option>
+    <option value="second">second</option>
+    <option value="third">third</option>
     </admiralty-select>
     `;
 };
