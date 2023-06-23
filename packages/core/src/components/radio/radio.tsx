@@ -46,6 +46,21 @@ export class RadioComponent {
    */
   @Event() admiraltyBlur!: EventEmitter<void>;
 
+  /**
+   * Emitted when the radio is selected
+   */
+  @Event() admiraltyChange!: EventEmitter<void>;
+
+  @Watch('value')
+  valueChanged() {
+    /**
+     * The new value of the radio may
+     * match the radio group's value,
+     * so we see if it should be checked.
+     */
+    this.updateState();
+  }
+
   connectedCallback() {
     if (this.value === undefined) {
       this.value = this.inputId;

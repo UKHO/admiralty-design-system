@@ -104,7 +104,7 @@ describe('radio-group', () => {
 
     const eventSpy = jest.fn();
 
-    page.doc.addEventListener('radioChange', eventSpy);
+    page.doc.addEventListener('admiraltyChange', eventSpy);
 
     const rad1 = page.doc.querySelector('input[value="option1"]') as HTMLInputElement;
     rad1.click();
