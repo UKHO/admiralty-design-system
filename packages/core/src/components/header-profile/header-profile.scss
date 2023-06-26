@@ -34,6 +34,11 @@
       height: 100%;
       width: 100%;
       font-weight: typography.$font-weight-medium;
+
+      &:focus {
+        outline: none;
+        box-shadow: colours.$colour-utility-focus inset 0 0 0 3px;
+      }
     }
 
     &:hover {
@@ -41,7 +46,11 @@
       background-color: colours.$colour-nav-bg-hover;
 
       .sub-menu {
-        display: flex;
+        display: none;
+
+        &.show {
+          display: flex;
+        }
       }
     }
 
@@ -104,6 +113,7 @@
       }
 
       &:focus {
+        outline: none;
         box-shadow: colours.$colour-utility-focus inset 0 0 0 3px;
       }
     }

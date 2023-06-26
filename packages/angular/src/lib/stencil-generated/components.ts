@@ -423,9 +423,10 @@ export class AdmiraltyHeaderSubMenuItem {
 
 export declare interface AdmiraltyHeaderSubMenuItem extends Components.AdmiraltyHeaderSubMenuItem {
   /**
-   * The event that is fired when a user clicks on the menu
+   * The event that is fired when a user clicks on the menu.
+Event contains the menu item text.
    */
-  subMenuItemClick: EventEmitter<CustomEvent<void>>;
+  subMenuItemClick: EventEmitter<CustomEvent<string>>;
 }
 
 
