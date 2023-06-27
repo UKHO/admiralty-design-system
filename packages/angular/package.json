@@ -18,7 +18,7 @@
     "@angular/core": "^15.2.5"
   },
   "dependencies": {
-    "@ukho/admiralty-core": "^0.1.0",
+    "@ukho/admiralty-core": "link:../core",
     "tslib": "^2.5.0"
   },
   "devDependencies": {

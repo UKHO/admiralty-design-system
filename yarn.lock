@@ -5642,7 +5642,7 @@ __metadata:
     "@angular/platform-browser-dynamic": ~15.2.5
     "@angular/router": ~15.2.5
     "@types/node": ^18.15.11
-    "@ukho/admiralty-core": ^0.1.0
+    "@ukho/admiralty-core": "link:../core"
     ng-packagr: ^15.2.2
     tslib: ^2.5.0
     typescript: ~4.9.3
@@ -5652,7 +5652,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@ukho/admiralty-core@^0.1.0, @ukho/admiralty-core@workspace:packages/core":
+"@ukho/admiralty-core@link:../core::locator=%40ukho%2Fadmiralty-angular%40workspace%3Apackages%2Fangular":
+  version: 0.0.0-use.local
+  resolution: "@ukho/admiralty-core@link:../core::locator=%40ukho%2Fadmiralty-angular%40workspace%3Apackages%2Fangular"
+  languageName: node
+  linkType: soft
+
+"@ukho/admiralty-core@workspace:packages/core":
   version: 0.0.0-use.local
   resolution: "@ukho/admiralty-core@workspace:packages/core"
   dependencies:
