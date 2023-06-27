@@ -37,3 +37,8 @@ runs:
         yarn install --immutable
         npx auto shipit
       shell: bash
+    - uses: ./.github/workflows/actions/upload-archive
+      with:
+        name: drop
+        output: drop.zip
+        paths: ./
