@@ -35,10 +35,5 @@ runs:
         NPM_TOKEN: ${{ inputs.NPM_TOKEN }}
       run: |
         yarn install --immutable
-        npx auto shipit -vv
+        npx auto shipit
       shell: bash
-    - uses: ./.github/workflows/actions/upload-archive
-      with:
-        name: drop
-        output: drop.zip
-        paths: ./
