@@ -12,19 +12,6 @@
     "test": "jest --passWithNoTests",
     "test:watch": "jest --watch"
   },
-  "exports": {
-    "./package.json": {
-      "default": "./package.json"
-    },
-    ".": {
-      "types": "./dist/index.d.ts",
-      "esm2020": "./dist/esm2020/ukho-admiralty-angular.mjs",
-      "es2020": "./dist/fesm2020/ukho-admiralty-angular.mjs",
-      "es2015": "./dist/fesm2015/ukho-admiralty-angular.mjs",
-      "node": "./dist/fesm2015/ukho-admiralty-angular.mjs",
-      "default": "./dist/fesm2020/ukho-admiralty-angular.mjs"
-    }
-  },
   "files": [
     "dist/"
   ],
