@@ -43,14 +43,6 @@ export class HeaderMenuItemComponent {
     }
   }
 
-  handleFocusOut(ev: FocusEvent) {
-    const relatedTarget: any = ev?.relatedTarget;
-
-    if (relatedTarget?.outerHTML?.indexOf('button') !== -1) {
-      this.closeSubMenu();
-    }
-  }
-
   private toggleSubMenu() {
     const subMenu: HTMLDivElement = this.el.querySelector('div.sub-menu');
     console.log('clicked-subMenuExists, display:', subMenu.style.display);
@@ -61,7 +53,6 @@ export class HeaderMenuItemComponent {
     } else {
       subMenu.classList.add('desktop-hide');
       subMenu.classList.remove('desktop-visible');
-
     }
   }
 
@@ -105,6 +96,14 @@ export class HeaderMenuItemComponent {
     }
   }
 
+  handleFocusOut(ev: FocusEvent) {
+    const relatedTarget: any = ev?.relatedTarget;
+
+    if (relatedTarget?.outerHTML?.indexOf('button') !== -1) {
+      this.closeSubMenu();
+    }
+  }
+  
   render() {
     const { active, menuTitle } = this;
     let menuClass = 'menu-item ';

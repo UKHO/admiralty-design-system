@@ -46,11 +46,7 @@
       background-color: colours.$colour-nav-bg-hover;
 
       .sub-menu {
-        display: none;
-
-        &.show {
-          display: flex;
-        }
+        display: flex;
       }
     }
 
@@ -68,12 +64,24 @@
       border: 1px solid colours.$colour-divider;
       width: 300px;
 
+      // &.show {
+      //   display: flex;
+      // }
+      &.desktop-visible {
+        display: flex;
+      }
+
+      &.desktop-hide {
+        display: none;
+      }
+
       .sub-menu-item {
+      //button {
         box-sizing: content-box;
         margin: 0;
         width: 100%;
 
-        button {
+        //button {
           all: unset;
           box-sizing: border-box;
           display: block;
@@ -83,10 +91,14 @@
           text-align: left;
           width: 100%;
 
+          &:focus {
+            outline: none;
+            box-shadow: colours.$colour-utility-focus inset 0 0 0 3px;
+          }
           &:hover {
             background-color: colours.$colour-nav-bg-hover;
           }
-        }
+        //}
       }
     }
   }

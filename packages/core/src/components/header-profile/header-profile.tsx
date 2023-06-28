@@ -1,4 +1,5 @@
-import { Component, Event, Host, h, Prop, EventEmitter, State } from '@stencil/core';
+import { Component, Event, Host, h, Prop, EventEmitter, State, Element } from '@stencil/core';
+import { Keys } from '../Keys';
 
 @Component({
   tag: 'admiralty-header-profile',
@@ -6,6 +7,8 @@ import { Component, Event, Host, h, Prop, EventEmitter, State } from '@stencil/c
   scoped: true,
 })
 export class HeaderProfileComponent {
+  @Element() el: HTMLElement;
+
   @State() displaySubmenu = false;
 
   /**
@@ -40,52 +43,104 @@ export class HeaderProfileComponent {
     this.signInClicked.emit();
   };
 
+  handleSignInKeyDown = (ev: KeyboardEvent) => {
+    if (ev.key === Keys.ENTER || ev.key === Keys.SPACE) {
+      this.signInClicked.emit();
+    }
+  }
+
   handleSignOut = () => {
     this.signOutClicked.emit();
   };
 
-  handleYouAccount = () => {
+  handleSignOutKeyDown = (ev: KeyboardEvent) => {
+    if (ev.key === Keys.ENTER || ev.key === Keys.SPACE) {
+      this.signOutClicked.emit();
+    }
+  }
+
+  handleYourAccount = () => {
     this.yourAccountClicked.emit();
   };
 
-  openDropdown = () => {
-    this.displaySubmenu = true;
-  };
+  handleYourAccountKeyDown = (ev: KeyboardEvent) => {
+    if (ev.key === Keys.ENTER || ev.key === Keys.SPACE) {
+      this.yourAccountClicked.emit();
+    }
+  }
+
+  // openDropdown = () => {
+  //   this.displaySubmenu = true;
+  //   const subMenu: HTMLDivElement = this.el.querySelector('div.sub-menu');
+  //   subMenu.classList.add('desktop-hide');
+  // };
 
   closeDropdown = () => {
-    this.displaySubmenu = true;
+    this.displaySubmenu = false;
+    const subMenu: HTMLDivElement = this.el.querySelector('div.sub-menu');
+    subMenu.classList.add('desktop-hide');
   };
 
-  toggleDropdown = (ev: Event) => {
-    ev.stopPropagation();
+  toggleDropdown = (_ev: Event) => {
+    //ev.stopPropagation();
     this.displaySubmenu = !this.displaySubmenu;
-    console.log('new displaySubmenu:', this.displaySubmenu)
+    //console.log('toggleDropdown:', ev.target)
+    const subMenu: HTMLDivElement = this.el.querySelector('div.sub-menu');
+
+    if (subMenu.classList.contains('desktop-hide')) {
+      subMenu.classList.add('desktop-visible');
+      subMenu.classList.remove('desktop-hide');
+    } else {
+      subMenu.classList.add('desktop-hide');
+      subMenu.classList.remove('desktop-visible');
+
+    }
   };
+
+  handleClickSignedIn = (ev: MouseEvent) =>{
+    ev.stopPropagation();
+    this.toggleDropdown(ev);
+  }
+
+  handleFocusOut = (ev: FocusEvent) => {
+    const relatedTarget: any = ev?.relatedTarget;
+
+    if (relatedTarget?.outerHTML) {
+      console.log('focusout', relatedTarget.outerHTML)
+    }
+
+    if (relatedTarget?.outerHTML?.indexOf('button') !== -1) {
+      this.closeDropdown();
+    }
+  }
 
   render() {
-    let { isSignedIn, signedInText, displaySubmenu } = this;
-
+    let { isSignedIn, signedInText } = this;
     return (
       <Host>
         <div class="header-profile">
           {isSignedIn ? (
             <div>
-              <div class="desktop">
-                <button onMouseOver={this.openDropdown} onMouseOut={this.closeDropdown} onClick={this.toggleDropdown} tabindex="0">
+              <div class="desktop"
+                //onMouseOver={this.toggleDropdown}
+                //onMouseOut={this.closeDropdown}
+              >
+                <button
+                  // onMouseOver={this.toggleDropdown}
+                  // onMouseOut={this.closeDropdown}
+                  onClick={this.handleClickSignedIn}
+                  tabindex="0">
                   {signedInText}
                 </button>
-                <div class={{ "sub-menu": true, show: displaySubmenu }} tabindex="0">
-                    <div class="sub-menu-item">
-                      <button onClick={this.handleYouAccount} tabindex="0">Your Account</button>
-                    </div>
-                    <div class="sub-menu-item">
-                      <button onClick={this.handleSignOut} tabindex="0">Sign Out</button>
-                    </div>
-                  </div>
+                {/* <div class={{ "sub-menu": true, show: displaySubmenu }} onFocusout={this.closeDropdown}> */}
+                <div class="sub-menu desktop-hide" onFocusout={this.handleFocusOut}>
+                  <div class="sub-menu-item" onClick={this.handleYourAccount} onKeyDown={this.handleYourAccountKeyDown} tabindex="0">Your Account</div>
+                  <div  class="sub-menu-item" onClick={this.handleSignOut} onKeyDown={this.handleSignOutKeyDown} tabindex="0">Sign Out</div>
+                </div>
               </div>
               <div class="not-desktop">
-                <div class="sub-menu-item" onClick={this.handleYouAccount} tabindex="0">Your Account</div>
-                <div class="sub-menu-item" onClick={this.handleSignOut} tabindex="0">Sign Out</div>
+                <div class="sub-menu-item" onClick={this.handleYourAccount} onKeyDown={this.handleYourAccountKeyDown} tabindex="0">Your Account</div>
+                <div class="sub-menu-item" onClick={this.handleSignOut}  onKeyDown={this.handleSignOutKeyDown} tabindex="0">Sign Out</div>
               </div>
             </div>
           ) : (
