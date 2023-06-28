@@ -1,3 +1,15 @@
+# v0.1.1 (Wed Jun 28 2023)
+
+#### 🐛 Bug Fix
+
+- Fixing the package version desync [#60](https://github.com/UKHO/admiralty-design-system/pull/60) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+#### Authors: 1
+
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
 # v0.0.12 (Fri Jun 23 2023)
 
 #### 🐛 Bug Fix

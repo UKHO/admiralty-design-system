@@ -1,3 +1,23 @@
+# v0.1.1 (Wed Jun 28 2023)
+
+#### 🐛 Bug Fix
+
+- Making sure that the release action uses an immutable lock file [#58](https://github.com/UKHO/admiralty-design-system/pull/58) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+- `@ukho/admiralty-angular`
+  - Fixing the package version desync [#60](https://github.com/UKHO/admiralty-design-system/pull/60) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+#### 🔩 Dependency Updates
+
+- Bump semver from 7.5.1 to 7.5.2 [#55](https://github.com/UKHO/admiralty-design-system/pull/55) ([@dependabot[bot]](https://github.com/dependabot[bot]) [@ecstaticrainbow](https://github.com/ecstaticrainbow))
+- Bump vite from 4.3.7 to 4.3.9 [#56](https://github.com/UKHO/admiralty-design-system/pull/56) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 2
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
 # v0.1.0 (Fri Jun 23 2023)
 
 #### 🚀 Enhancement
