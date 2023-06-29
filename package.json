@@ -3,6 +3,7 @@
   "packageManager": "yarn@3.5.0",
   "devDependencies": {
     "@auto-it/conventional-commits": "^10.46.0",
+    "@auto-it/protected-branch": "^10.46.0",
     "@auto-it/released": "^10.46.0",
     "auto": "^10.46.0",
     "colorette": "^2.0.20",
@@ -21,6 +22,7 @@
   "author": "UKHO",
   "auto": {
     "plugins": [
+      "protected-branch",
       "npm",
       "conventional-commits",
       "released"
