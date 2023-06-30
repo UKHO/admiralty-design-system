@@ -12,6 +12,9 @@
     "test": "jest --passWithNoTests",
     "test:watch": "jest --watch"
   },
+  "files": [
+    "dist/"
+  ],
   "peerDependencies": {
     "@angular/common": "^15.2.5",
     "@angular/core": "^15.2.5"
@@ -41,6 +44,9 @@
     "setupFilesAfterEnv": [
       "./setupJest.ts"
     ]
+  },
+  "publishConfig": {
+    "directory": "dist"
   },
   "license": "MIT",
   "url": "https://github.com/UKHO/admiralty-design-system",
