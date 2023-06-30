@@ -8,11 +8,11 @@ describe('header-sub-menu-item', () => {
       html: `<admiralty-header-sub-menu-item menuTitle="Item 1"></slot></admiralty-header-sub-menu-item>`,
     });
     expect(page.root).toEqualHtml(`
-    <admiralty-header-sub-menu-item menutitle="Item 1">
-      <div class="header-sub-menu-item">
-        <span class="title"></span>
-      </div>
-    </admiralty-header-sub-menu-item>
+      <admiralty-header-sub-menu-item menutitle="Item 1">
+        <div class="header-sub-menu-item" tabindex="0">
+          <span class="title"></span>
+        </div>
+      </admiralty-header-sub-menu-item>
     `);
   });
 });
