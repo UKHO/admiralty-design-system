@@ -15,6 +15,9 @@
   },
   "lerna": {
     "command": {
+      "version": {
+        "directory": "dist"
+      },
       "publish": {
         "directory": "dist"
       }
