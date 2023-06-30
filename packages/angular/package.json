@@ -15,13 +15,6 @@
   "files": [
     "dist/"
   ],
-  "lerna": {
-    "command": {
-      "publish": {
-        "directory": "./dist"
-      }
-    }
-  },
   "peerDependencies": {
     "@angular/common": "^15.2.5",
     "@angular/core": "^15.2.5"
