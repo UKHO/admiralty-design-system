@@ -22,12 +22,12 @@ runs:
     - uses: ./.github/workflows/actions/download-archive
       with:
         name: admiralty-core
-        path: ./packages/core
+        path: ./dist
         filename: admiralty-core.zip
     - uses: ./.github/workflows/actions/download-archive
       with:
         name: admiralty-angular
-        path: ./packages/angular
+        path: ./dist
         filename: admiralty-angular.zip
     - name: Create Release
       env:
