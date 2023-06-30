@@ -15,7 +15,7 @@
   "lerna": {
     "command": {
       "publish": {
-        "directory": "dist/"
+        "directory": "./dist"
       }
     }
   },
