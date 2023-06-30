@@ -8,6 +8,5 @@
     "publish": {
       "directory": "{workspaceRoot}/dist/{projectRoot}"
     }
-  },
-  "useWorkspaces": true
+  }
 }
