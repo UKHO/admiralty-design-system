@@ -45,9 +45,6 @@
       "./setupJest.ts"
     ]
   },
-  "publishConfig": {
-    "directory": "dist"
-  },
   "license": "MIT",
   "url": "https://github.com/UKHO/admiralty-design-system",
   "repository": "git://github.com/UKHO/admiralty-design-system.git"
