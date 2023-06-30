@@ -36,5 +36,5 @@ runs:
         PROTECTED_BRANCH_REVIEWER_TOKEN: ${{ inputs.ADMIN_TOKEN }}
       run: |
         yarn install --immutable
-        npx auto shipit
+        npx auto shipit -vv
       shell: bash
