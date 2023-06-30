@@ -1,6 +1,6 @@
 {
   "name": "@ukho/admiralty-angular",
-  "version": "0.0.10",
+  "version": "0.1.1",
   "typings": "dist/index.d.ts",
   "module": "dist/fesm2015/ukho-admiralty-angular.mjs",
   "es2020": "dist/fesm2020/ukho-admiralty-angular.mjs",
@@ -8,17 +8,19 @@
   "fesm2020": "dist/fesm2020/ukho-admiralty-angular.mjs",
   "fesm2015": "dist/fesm2015/ukho-admiralty-angular.mjs",
   "scripts": {
-    "prepublishOnly": "node .scripts/copyPackageVersion.js",
     "build": "ng-packagr -p ng-package.json -c tsconfig.json",
     "test": "jest --passWithNoTests",
     "test:watch": "jest --watch"
   },
+  "files": [
+    "dist/"
+  ],
   "peerDependencies": {
     "@angular/common": "^15.2.5",
     "@angular/core": "^15.2.5"
   },
   "dependencies": {
-    "@ukho/admiralty-core": "^0.0.10",
+    "@ukho/admiralty-core": "^0.1.1",
     "tslib": "^2.5.0"
   },
   "devDependencies": {
@@ -42,9 +44,6 @@
     "setupFilesAfterEnv": [
       "./setupJest.ts"
     ]
-  },
-  "publishConfig": {
-    "directory": "dist/"
   },
   "license": "MIT",
   "url": "https://github.com/UKHO/admiralty-design-system",

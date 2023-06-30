@@ -1,3 +1,39 @@
+# v0.1.1 (Wed Jun 28 2023)
+
+#### 🐛 Bug Fix
+
+- Fixing the package version desync [#60](https://github.com/UKHO/admiralty-design-system/pull/60) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+#### Authors: 1
+
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
+# v0.0.12 (Fri Jun 23 2023)
+
+#### 🐛 Bug Fix
+
+- Fix angular form control value accessors not being available [#41](https://github.com/UKHO/admiralty-design-system/pull/41) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+#### Authors: 1
+
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
+# v0.0.11 (Thu Jun 22 2023)
+
+#### 🐛 Bug Fix
+
+- Typeahead web component fixes [#40](https://github.com/UKHO/admiralty-design-system/pull/40) ([@martind-bjss](https://github.com/martind-bjss))
+
+#### Authors: 1
+
+- Martin Davies ([@martind-bjss](https://github.com/martind-bjss))
+
+---
+
 # v0.0.9 (Wed Jun 21 2023)
 
 #### 🐛 Bug Fix

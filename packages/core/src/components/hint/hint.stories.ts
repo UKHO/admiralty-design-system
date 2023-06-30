@@ -1,20 +1,24 @@
-import readme from './readme.md';
-import { Story } from '@storybook/html';
+import { Meta, StoryObj } from '@storybook/web-components';
+import { HintComponent } from './hint';
+import { html } from 'lit';
 
-export default {
+const meta: Meta = {
+  component: 'admiralty-hint',
   title: 'Forms/Hint',
   parameters: {
-    markdown: readme,
+    actions: {
+    },
   },
 };
 
-export const Basic: Story = () => {
-  return `<admiralty-hint>Enter your full name</admiralty-hint>`;
+export default meta;
+
+type Story = StoryObj<HintComponent>;
+
+const template: Story = {
+  render: args => html`<admiralty-hint ?disabled="${args.disabled}">Enter your full name</admiralty-hint>`,
 };
 
-export const Disabled: Story = args => {
-  return `<admiralty-hint disabled="${args.disabled}">Enter your full name</admiralty-hint>`;
-};
-Disabled.args = {
-  disabled: true,
-};
+export const Basic: Story = { ...template };
+
+export const Disabled: Story = { ...template, args: { disabled: true } };

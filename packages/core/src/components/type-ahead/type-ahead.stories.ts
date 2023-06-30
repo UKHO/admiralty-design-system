@@ -1,32 +1,36 @@
-import { Story } from '@storybook/html';
-import readme from './readme.md';
+import { Meta, StoryObj } from '@storybook/web-components';
+import { TypeAheadComponent } from './type-ahead';
+import { html } from 'lit';
 
-export default {
-  title: 'Typeahead',
+const meta: Meta = {
+  component: 'admiralty-type-ahead',
+  title: 'Forms/Typeahead',
   parameters: {
-    markdown: readme,
     actions: {
       handles: ['valueChanged', 'selectionChanged'],
     },
   },
+  args: {
+    label: 'Please Type',
+    hint: '',
+    value: '',
+    placeholder: '',
+    resultsOnInitFocus: false,
+  },
 };
 
-const defaultArgs = {
-  label: 'Please Type',
-  hint:'',
-  value: '',
-  placeholder: '',
-  resultsOnInitFocus: false,
-};
+export default meta;
 
-const Template: Story = args => {
-  return `
-  <admiralty-type-ahead
-    value = "${args.value}"
+type Story = StoryObj<TypeAheadComponent>;
+
+const template: Story = {
+  render: args => html` <admiralty-type-ahead
+    value="${args.value}"
     label="${args.label}"
     hint="${args.hint}"
-    results-on-init-focus="${args.resultsOnInitFocus}"
-    placeholder="${args.placeholder}">
+    ?results-on-init-focus="${args.resultsOnInitFocus}"
+    placeholder="${args.placeholder}"
+  >
     <admiralty-type-ahead-item value="dog"></admiralty-type-ahead-item>
     <admiralty-type-ahead-item value="cat"></admiralty-type-ahead-item>
     <admiralty-type-ahead-item value="elephant"></admiralty-type-ahead-item>
@@ -38,30 +42,35 @@ const Template: Story = args => {
     <admiralty-type-ahead-item value="rabbit"></admiralty-type-ahead-item>
     <admiralty-type-ahead-item value="tiger"></admiralty-type-ahead-item>
     <admiralty-type-ahead-item value="guinea pig"></admiralty-type-ahead-item>
-  </admiralty-type-ahead>
-  `;
+  </admiralty-type-ahead>`,
 };
 
-export const WithoutSelectionAction: Story = Template.bind({});
-WithoutSelectionAction.args = {
-  ...defaultArgs,
-  hint: 'Please type the name of an animal',
+export const WithoutSelectionAction: Story = { ...template };
+
+export const Prefilled: Story = {
+  ...template,
+  args: {
+    value: 'donke2y',
+  },
 };
 
-export const Prefilled: Story = Template.bind({});
-Prefilled.args = {
-  ...defaultArgs,
-  value: 'donke2y',
+export const ShowResultsOnInitFocus: Story = {
+  ...template,
+  args: {
+    resultsOnInitFocus: true,
+  },
 };
 
-export const ShowResultsOnInitFocus: Story = Template.bind({});
-ShowResultsOnInitFocus.args = {
-  ...defaultArgs,
-  resultsOnInitFocus: true,
+export const withPlaceholderText: Story = {
+  ...template,
+  args: {
+    placeholder: 'Start typing the name of an animal',
+  },
 };
 
-export const withPlaceholderText: Story = Template.bind({});
-withPlaceholderText.args = {
-  ...defaultArgs,
-  placeholder: 'Start typing the name of an animal',
+export const withHint: Story = {
+  ...template,
+  args: {
+    hint: 'Please type the name of an animal',
+  },
 };

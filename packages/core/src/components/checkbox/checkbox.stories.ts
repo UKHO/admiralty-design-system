@@ -1,12 +1,19 @@
-import { Story } from '@storybook/html';
-import readme from './readme.md';
+import { Meta, StoryObj } from '@storybook/web-components';
+import { CheckboxComponent } from './checkbox';
+import { html } from 'lit';
 
-export default {
+const meta: Meta = {
+  component: 'admiralty-checkbox',
   title: 'Forms/Checkbox',
   parameters: {
-    markdown: readme,
+    actions: {
+    },
   },
 };
+
+export default meta;
+
+type Story = StoryObj<CheckboxComponent>;
 
 const defaultArgs = {
   inputId: 'checkbox1',
@@ -15,15 +22,12 @@ const defaultArgs = {
   disabled: false,
 };
 
-const Template: Story = args => {
-  return `<admiralty-checkbox checked=${args.checked} disabled=${args.disabled} input-id=${args.inputId} label-text=${args.labelText}></admiralty-checkbox>`;
+const template: Story = {
+  render: args => html`<admiralty-checkbox checked=${args.checked} disabled=${args.disabled} input-id=${args.inputId} label-text=${args.labelText}></admiralty-checkbox>`,
 };
 
-export const DefaultCheckbox = Template.bind({});
-DefaultCheckbox.args = { ...defaultArgs };
+export const DefaultCheckbox: Story = { ...template, args: { ...defaultArgs } };
 
-export const checkedCheckbox = Template.bind({});
-checkedCheckbox.args = { ...defaultArgs, checked: true };
+export const checkedCheckbox: Story = { ...template, args: { ...defaultArgs, checked: true } };
 
-export const disabledCheckbox = Template.bind({});
-disabledCheckbox.args = { ...defaultArgs, disabled: true };
+export const disabledCheckbox: Story = { ...template, args: { ...defaultArgs, disabled: true } };

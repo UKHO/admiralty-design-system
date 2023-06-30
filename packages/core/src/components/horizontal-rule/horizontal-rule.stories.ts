@@ -1,13 +1,22 @@
-import { Story } from '@storybook/html';
-import readme from './readme.md';
+import { Meta, StoryObj } from '@storybook/web-components';
+import { HorizontalRuleComponent } from './horizontal-rule';
+import { html } from 'lit';
 
-export default {
+const meta: Meta = {
+  component: 'admiralty-hr',
   title: 'Horizontal Rule',
   parameters: {
-    markdown: readme,
+    actions: {
+    },
   },
 };
 
-export const Default: Story = args => {
-  return `<admiralty-hr></admiralty-hr>`;
+export default meta;
+
+type Story = StoryObj<HorizontalRuleComponent>;
+
+const template: Story = {
+  render: args => html`<admiralty-hr></admiralty-hr>`,
 };
+
+export const Default: Story = { ...template };

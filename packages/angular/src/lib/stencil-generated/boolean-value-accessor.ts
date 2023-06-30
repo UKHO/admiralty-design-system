@@ -5,20 +5,23 @@ import { ValueAccessor } from './value-accessor';
 
 @Directive({
   /* tslint:disable-next-line:directive-selector */
-  selector: 'admiralty-input:not([type=number]), admiralty-textarea',
+  selector: 'admiralty-checkbox',
   host: {
-    '(admiraltyChange)': 'handleChangeEvent($event.target.value)'
+    '(admiraltyChange)': 'handleChangeEvent($event.target.checked)'
   },
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: TextValueAccessor,
+      useExisting: BooleanValueAccessor,
       multi: true
     }
   ]
 })
-export class TextValueAccessor extends ValueAccessor {
+export class BooleanValueAccessor extends ValueAccessor {
   constructor(el: ElementRef) {
     super(el);
+  }
+  override writeValue(value: any) {
+    this.el.nativeElement.checked = this.lastValue = value == null ? false : value;
   }
 }

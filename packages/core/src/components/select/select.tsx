@@ -1,5 +1,5 @@
-import { Component, Event, Prop, Element, EventEmitter, h, Host } from '@stencil/core';
-import { UKHOOptions } from './select.types';
+import { Component, Event, Prop, Element, EventEmitter, h, Host, Watch } from '@stencil/core';
+import { SelectChangeEventDetail } from './select.interface';
 
 @Component({
   tag: 'admiralty-select',
@@ -7,7 +7,8 @@ import { UKHOOptions } from './select.types';
   scoped: true,
 })
 export class SelectComponent {
-  @Element() el: HTMLElement;
+  @Element() el?: HTMLElement;
+  private nativeInput?: HTMLSelectElement;
   id: string = `admiralty-select-${++nextId}`;
   /**
    * If `true`, the user cannot interact with the select.
@@ -36,59 +37,66 @@ export class SelectComponent {
   /**
    * Emitted when the value has changed.
    */
-  @Event() admiraltyChange: EventEmitter<EventTarget>;
+  @Event() admiraltyChange: EventEmitter<SelectChangeEventDetail>;
   /**
    * Emitted when the component loses focus.
    */
   @Event() admiraltyBlur: EventEmitter<void>;
 
-  componentWillRender() {
-    this.getOptions();
+  /**
+   * The value of the input.
+   */
+  @Prop({ mutable: true }) value?: string | number | null = '';
+
+  @Watch('value')
+  protected valueChanged() {
+    const nativeSelect = this.nativeInput;
+    const value = this.getValue();
+    if (nativeSelect && nativeSelect.value !== value) {
+      nativeSelect.value = value;
+    }
+    this.admiraltyChange.emit({ value: this.value == null ? this.getValue() : this.value.toString() });
   }
 
-  options: Array<UKHOOptions>;
+  private getValue(): string {
+    return typeof this.value === 'number' ? this.value.toString() : (this.value || '').toString();
+  }
 
   handleSelect(event: Event) {
-    this.admiraltyChange.emit(event.target);
+    const select = event.target as HTMLSelectElement | null;
+    if (select) {
+      this.value = select.value || '';
+    }
   }
 
   handleBlur(_event: FocusEvent): void {
     this.admiraltyBlur.emit();
   }
 
-  /**
-   *  Summary. gets the options passed the user passes through the slots and
-   *  extracs the text and value
-   */
-  getOptions() {
-    const slotOptions = this.el.querySelectorAll('option');
-    const options = [];
-
-    // grab all the data from the slot and extract the data to be inserted into the template
-    slotOptions.forEach(slot => {
-      // remove the slotted option to keep the shadowDom clean
-      slot.remove();
-
-      options.push({
-        text: slot.text,
-        value: slot.value,
-      });
+  selectOption() {
+    const options = this.el.querySelectorAll('option');
+    options.forEach(option => {
+      option.selected = option.value === this.getValue();
     });
+  }
 
-    this.options = options;
+  componentWillRender() {
+    this.selectOption();
   }
 
   render() {
     const { disabled, error, errorHint, hint, id, label } = this;
     const disabledClass = disabled ? 'disabled' : '';
-
     return (
       <Host>
         <div class={`admiralty-select ${disabledClass}`}>
-          <admiralty-label for={id}>{label}</admiralty-label>
-          <admiralty-hint>{hint}</admiralty-hint>
+          <admiralty-label disabled={this.disabled} for={id}>
+            {label}
+          </admiralty-label>
+          <admiralty-hint disabled={this.disabled}>{hint}</admiralty-hint>
           <div class="select-wrapper" style={this.width ? { maxWidth: `${this.width}px` } : {}}>
             <select
+              ref={select => (this.nativeInput = select)}
               id={id}
               class={{ 'admiralty-form-control': true, 'error': error, 'disabled': disabled }}
               aria-disabled={disabled ? 'true' : 'false'}
@@ -97,9 +105,7 @@ export class SelectComponent {
               onBlur={event => this.handleBlur(event)}
               disabled={disabled}
             >
-              {this.options.map(option => (
-                <option value={option.value}>{option.text}</option>
-              ))}
+              <slot></slot>
             </select>
             <admiralty-icon class={`select-down-icon ${disabledClass}`} icon-name="angle-down"></admiralty-icon>
           </div>

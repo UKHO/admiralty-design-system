@@ -16,9 +16,9 @@
 
 ## Events
 
-| Event         | Description                                       | Type               |
-| ------------- | ------------------------------------------------- | ------------------ |
-| `radioChange` | Event fired when the checked radio button changes | `CustomEvent<any>` |
+| Event             | Description                                       | Type                                            |
+| ----------------- | ------------------------------------------------- | ----------------------------------------------- |
+| `admiraltyChange` | Event fired when the checked radio button changes | `CustomEvent<RadioGroupChangeEventDetail<any>>` |
 
 
 ----------------------------------------------
