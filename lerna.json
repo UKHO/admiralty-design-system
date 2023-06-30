@@ -2,5 +2,10 @@
   "$schema": "node_modules/lerna/schemas/lerna-schema.json",
   "packages": ["packages/*"],
   "npmClient": "yarn",
-  "version": "0.1.2"
+  "version": "0.1.2",
+  "command": {
+    "publish": {
+      "directory": "{workspaceRoot}/dist/{projectRoot}"
+    }
+  }
 }
