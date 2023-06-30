@@ -45,13 +45,17 @@
       @include active;
       background-color: colours.$colour-nav-bg-hover;
 
-      .sub-menu {
+      .desktop .sub-menu {
         display: flex;
       }
     }
 
     &.active {
       @include active;
+
+      .sub-menu {
+        display: flex;
+      }
     }
 
     .sub-menu {
@@ -64,9 +68,6 @@
       border: 1px solid colours.$colour-divider;
       width: 300px;
 
-      // &.show {
-      //   display: flex;
-      // }
       &.desktop-visible {
         display: flex;
       }
