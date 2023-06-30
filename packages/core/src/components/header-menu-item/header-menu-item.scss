@@ -22,7 +22,6 @@ button {
   all: unset;
   height: 100%;
   width: 100%;
-  // font-weight: typography.$font-weight-medium;
 }
 
 @include responsive.desktop-only {
