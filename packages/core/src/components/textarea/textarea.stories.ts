@@ -63,5 +63,13 @@ export const WithText: Story = { render: args =>
   args: {
     label: 'With text',
     text: 'Sample Text',
-  }
+  },
+};
+
+export const MaxLength: Story = {
+  render: args => html` <admiralty-textarea text="${args.text}" max-length="${args.maxLength}"> </admiralty-textarea>`,
+  args: {
+    maxLength: 1,
+    text: 'A',
+  },
 };

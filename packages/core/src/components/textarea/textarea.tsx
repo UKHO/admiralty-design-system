@@ -31,6 +31,11 @@ export class TextareaComponent {
   @Prop() width?: number;
 
   /**
+   * The maximum string length for the input field.
+   */
+  @Prop() maxLength?: number;
+
+  /**
    * This dictates whether the form field is disabled.
    */
   @Prop() disabled: boolean = false;
@@ -78,6 +83,7 @@ export class TextareaComponent {
             class={{ disabled: this.disabled, invalid: this.invalid }}
             style={this.width ? { maxWidth: `${this.width}px` } : {}}
             id={this.inputId}
+            maxlength={this.maxLength}
             onChange={this.onChange}
             onBlur={this.onBlur}
           >

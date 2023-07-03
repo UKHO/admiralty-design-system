@@ -1018,14 +1018,14 @@ export declare interface AdmiraltyTableRow extends Components.AdmiraltyTableRow 
 
 
 @ProxyCmp({
-  inputs: ['disabled', 'hint', 'invalid', 'invalidMessage', 'label', 'text', 'width']
+  inputs: ['disabled', 'hint', 'invalid', 'invalidMessage', 'label', 'maxLength', 'text', 'width']
 })
 @Component({
   selector: 'admiralty-textarea',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['disabled', 'hint', 'invalid', 'invalidMessage', 'label', 'text', 'width'],
+  inputs: ['disabled', 'hint', 'invalid', 'invalidMessage', 'label', 'maxLength', 'text', 'width'],
 })
 export class AdmiraltyTextarea {
   protected el: HTMLElement;
