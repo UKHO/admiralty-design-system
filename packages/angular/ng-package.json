@@ -3,6 +3,7 @@
   "lib": {
     "entryFile": "src/index.ts"
   },
+  "dest": "../../dist/packages/angular",
   "allowedNonPeerDependencies": [
     "@ukho/admiralty-core"
   ]

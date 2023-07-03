@@ -7,5 +7,6 @@
     "publish": {
       "directory": "{workspaceRoot}/dist/{projectRoot}"
     }
-  }
+  },
+  "useNx": true
 }
