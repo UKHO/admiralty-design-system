@@ -10,8 +10,8 @@ jobs:
       - uses: actions/setup-node@v3.6.0
         with:
           node-version: 18.x
-      - uses: ./.github/workflows/actions/yarn-cache
-        name: Restore Yarn Cache
+          cache: 'yarn'
+          cache-dependency-path: 'yarn.lock'
       - uses: ./.github/workflows/actions/build-core
         name: Build Core
 
@@ -23,8 +23,8 @@ jobs:
       - uses: actions/setup-node@v3.6.0
         with:
           node-version: 18.x
-      - uses: ./.github/workflows/actions/yarn-cache
-        name: Restore Yarn Cache
+          cache: 'yarn'
+          cache-dependency-path: 'yarn.lock'
       - uses: ./.github/workflows/actions/test-core-spec
         name: Test Core Spec
 
@@ -36,8 +36,8 @@ jobs:
       - uses: actions/setup-node@v3.6.0
         with:
           node-version: 18.x
-      - uses: ./.github/workflows/actions/yarn-cache
-        name: Restore Yarn Cache
+          cache: 'yarn'
+          cache-dependency-path: 'yarn.lock'
       - uses: ./.github/workflows/actions/build-angular
         name: Build Angular
 
@@ -50,8 +50,8 @@ jobs:
       - uses: actions/setup-node@v3.6.0
         with:
           node-version: 18.x
-      - uses: ./.github/workflows/actions/yarn-cache
-        name: Restore Yarn Cache
+          cache: 'yarn'
+          cache-dependency-path: 'yarn.lock'
       - uses: ./.github/workflows/actions/release-packages
         name: Release Packages
         with:
