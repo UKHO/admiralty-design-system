@@ -12,6 +12,9 @@
     "test": "jest --passWithNoTests",
     "test:watch": "jest --watch"
   },
+  "publishConfig": {
+    "directory": "./dist"
+  },
   "peerDependencies": {
     "@angular/common": "^15.2.5",
     "@angular/core": "^15.2.5"
