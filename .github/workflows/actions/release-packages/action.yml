@@ -29,11 +29,6 @@ runs:
         name: admiralty-angular
         path: ./dist
         filename: admiralty-angular.zip
-    - uses: ./.github/workflows/actions/upload-archive
-      with:
-        name: working-directory
-        output: ./directory.zip
-        paths: ./
     - name: Create Release
       env:
         GITHUB_TOKEN: ${{ inputs.GITHUB_TOKEN }}

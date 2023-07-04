@@ -3,5 +3,10 @@
   "packages": ["packages/*"],
   "npmClient": "yarn",
   "version": "0.1.2",
+  "command": {
+    "publish": {
+      "directory": "{workspaceRoot}/dist/{projectRoot}"
+    }
+  },
   "useNx": true
 }
