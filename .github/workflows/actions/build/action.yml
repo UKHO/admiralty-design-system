@@ -1,5 +1,5 @@
-name: 'Build Design System Core'
-description: 'Build Design System Core'
+name: 'Build Design System'
+description: 'Build Design System'
 runs:
   using: 'composite'
   steps:
@@ -7,13 +7,16 @@ runs:
       run: |
         yarn install --immutable
       shell: bash
-      working-directory: ./packages/core
-    - name: Build Core
-      run: yarn build --ci
-      working-directory: ./packages/core
+    - name: Build
+      run: yarn build
       shell: bash
     - uses: ./.github/workflows/actions/upload-archive
       with:
         name: admiralty-core
         output: admiralty-core.zip
         paths: ./packages/core/dist ./packages/core/loader ./packages/core/styles ./packages/core/package.json ./packages/core/README.md ./packages/core/LICENSE
+    - uses: ./.github/workflows/actions/upload-archive
+      with:
+        name: admiralty-angular
+        output: admiralty-angular.zip
+        paths: ./dist/packages/angular
