@@ -19,4 +19,4 @@ runs:
       with:
         name: admiralty-angular
         output: ./packages/angular/admiralty-angular.zip
-        paths: ./packages/angular/dist
+        paths: ./packages/angular/dist/*
