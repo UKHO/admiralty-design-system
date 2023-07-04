@@ -65,6 +65,13 @@
     "storybook": "^7.0.23",
     "vite": "^4.3.7"
   },
+  "lerna": {
+    "command": {
+      "publish": {
+        "directory": "../../dist/packages/core"
+      }
+    }
+  },
   "license": "MIT",
   "url": "https://github.com/UKHO/admiralty-design-system",
   "repository": "git://github.com/UKHO/admiralty-design-system.git"
