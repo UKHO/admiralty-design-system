@@ -46,13 +46,6 @@
       "./setupJest.ts"
     ]
   },
-  "lerna": {
-    "command": {
-      "publish": {
-        "directory": "../../dist/packages/angular/dist"
-      }
-    }
-  },
   "license": "MIT",
   "url": "https://github.com/UKHO/admiralty-design-system",
   "repository": "git://github.com/UKHO/admiralty-design-system.git"

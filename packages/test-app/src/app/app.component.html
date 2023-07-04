@@ -5,6 +5,10 @@
   logo-img-url="https://designsystem.admiralty.co.uk/assets/svg/Admiralty%20stacked%20logo.svg"
   nav-title="Design System"
 >
+  <admiralty-header-menu-item *ngFor="let item of itemTitles" menu-title="{{item}}" slot="items">
+
+
+
   <admiralty-header-menu-item menu-title="First Item" slot="items">
     <admiralty-header-sub-menu-item menu-title="Sub menu 1"></admiralty-header-sub-menu-item>
     <admiralty-header-sub-menu-item menu-title="Sub menu 2"></admiralty-header-sub-menu-item>

@@ -18,7 +18,7 @@ runs:
         name: ${{ inputs.name }}
         path: ${{ inputs.path }}
     - name: Exract Archive
-      run: unzip -o ${{ inputs.path }}/${{ inputs.filename }} -d ${{ inputs.path }}
+      run: unzip -o ${{ inputs.path }}/${{ inputs.filename }}
       shell: bash
     - name: Remove Archive
       run: rm ${{ inputs.path }}/${{ inputs.filename }}
