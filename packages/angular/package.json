@@ -1,6 +1,6 @@
 {
   "name": "@ukho/admiralty-angular",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "typings": "dist/index.d.ts",
   "module": "dist/fesm2015/ukho-admiralty-angular.mjs",
   "es2020": "dist/fesm2020/ukho-admiralty-angular.mjs",
@@ -21,7 +21,7 @@
     "@angular/core": "^15.2.5"
   },
   "dependencies": {
-    "@ukho/admiralty-core": "^0.1.1",
+    "@ukho/admiralty-core": "^0.2.0",
     "tslib": "^2.5.0"
   },
   "devDependencies": {
