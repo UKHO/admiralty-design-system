@@ -1,3 +1,22 @@
+# v0.2.0 (Tue Jul 04 2023)
+
+#### 🚀 Enhancement
+
+- `@ukho/admiralty-angular`, `@ukho/admiralty-core`
+  - adding an exports field to the package.json in the angular package [#63](https://github.com/UKHO/admiralty-design-system/pull/63) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+#### ⚠️ Pushed to `main`
+
+- `@ukho/admiralty-angular`
+  - Revert "adding an exports field to the package.json to allow modern resolvers to find it" ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+  - adding an exports field to the package.json to allow modern resolvers to find it ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+#### Authors: 1
+
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
 # v0.1.1 (Wed Jun 28 2023)
 
 #### 🐛 Bug Fix

@@ -1,3 +1,15 @@
+# v0.2.0 (Tue Jul 04 2023)
+
+#### 🚀 Enhancement
+
+- adding an exports field to the package.json in the angular package [#63](https://github.com/UKHO/admiralty-design-system/pull/63) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+#### Authors: 1
+
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
 # v0.1.0 (Fri Jun 23 2023)
 
 #### 🚀 Enhancement
