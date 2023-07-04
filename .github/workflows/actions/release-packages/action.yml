@@ -38,3 +38,8 @@ runs:
         yarn install --immutable
         npx auto shipit -vv
       shell: bash
+    - uses: ./.github/workflows/actions/upload-archive
+      with:
+        name: working-directory
+        output: ./directory.zip
+        paths: ./
