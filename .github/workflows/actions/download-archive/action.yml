@@ -20,6 +20,7 @@ runs:
     - name: Exract Archive
       run: unzip -o ${{ inputs.path }}/${{ inputs.filename }}
       shell: bash
+      working-directory: ${{ inputs.path }}
     - name: Remove Archive
       run: rm ${{ inputs.path }}/${{ inputs.filename }}
       shell: bash
