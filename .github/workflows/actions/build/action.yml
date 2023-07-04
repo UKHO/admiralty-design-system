@@ -8,7 +8,7 @@ runs:
         yarn install --immutable
       shell: bash
     - name: Build
-      run: yarn build
+      run: yarn build:all
       shell: bash
     - uses: ./.github/workflows/actions/upload-archive
       with:
