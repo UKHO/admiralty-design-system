@@ -30,7 +30,7 @@ jobs:
 
   release-packages:
     if: "!contains(github.event.head_commit.message, 'ci skip') && !contains(github.event.head_commit.message, 'skip ci')"
-    needs: [test-core-spec,build-angular]
+    needs: [test-core-spec,build]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
