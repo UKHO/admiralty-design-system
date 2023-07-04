@@ -7748,6 +7748,7 @@ __metadata:
     "@types/node": ^18.15.11
     "@ukho/admiralty-core": ^0.1.2
     ng-packagr: ^15.2.2
+    nx: 16.4.2
     postcss: ^8.4.24
     postcss-import: ^15.1.0
     postcss-preset-env: ^9.0.0
