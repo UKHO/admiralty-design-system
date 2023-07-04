@@ -5,6 +5,7 @@
     "@auto-it/conventional-commits": "^10.46.0",
     "@auto-it/protected-branch": "^10.46.0",
     "@auto-it/released": "^10.46.0",
+    "@nx/angular": "^16.4.2",
     "auto": "^10.46.0",
     "colorette": "^2.0.20",
     "execa": "^7.1.1",

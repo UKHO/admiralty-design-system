@@ -9,7 +9,7 @@
       "dependsOn": ["^build"],
       "options": {
         "project": "packages/angular/ng-package.json",
-        "tsConfig": "./tsconfig.json"
+        "tsConfig": "packages/angular/tsconfig.json"
       }
     }
   }
