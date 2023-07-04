@@ -3,55 +3,42 @@ name: 'Design System Build'
 on: [push]
 
 jobs:
-  build-core:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3.6.0
         with:
           node-version: 18.x
-      - uses: ./.github/workflows/actions/yarn-cache
-        name: Restore Yarn Cache
-      - uses: ./.github/workflows/actions/build-core
-        name: Build Core
+          cache: 'yarn'
+          cache-dependency-path: 'yarn.lock'
+      - uses: ./.github/workflows/actions/build
+        name: Build
 
   test-core-spec:
-    needs: [ build-core ]
+    needs: [ build ]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3.6.0
         with:
           node-version: 18.x
-      - uses: ./.github/workflows/actions/yarn-cache
-        name: Restore Yarn Cache
+          cache: 'yarn'
+          cache-dependency-path: 'yarn.lock'
       - uses: ./.github/workflows/actions/test-core-spec
         name: Test Core Spec
 
-  build-angular:
-    needs: [ build-core ]
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3.6.0
-        with:
-          node-version: 18.x
-      - uses: ./.github/workflows/actions/yarn-cache
-        name: Restore Yarn Cache
-      - uses: ./.github/workflows/actions/build-angular
-        name: Build Angular
-
   release-packages:
     if: "!contains(github.event.head_commit.message, 'ci skip') && !contains(github.event.head_commit.message, 'skip ci')"
-    needs: [test-core-spec,build-angular]
+    needs: [test-core-spec,build]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3.6.0
         with:
           node-version: 18.x
-      - uses: ./.github/workflows/actions/yarn-cache
-        name: Restore Yarn Cache
+          cache: 'yarn'
+          cache-dependency-path: 'yarn.lock'
       - uses: ./.github/workflows/actions/release-packages
         name: Release Packages
         with:
