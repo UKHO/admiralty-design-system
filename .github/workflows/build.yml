@@ -3,7 +3,7 @@ name: 'Design System Build'
 on: [push]
 
 jobs:
-  build-core:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
