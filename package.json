@@ -29,10 +29,12 @@
   "author": "UKHO",
   "auto": {
     "plugins": [
-      "protected-branch",
-      {
-        "requiredStatusChecks": ["build", "test-core-spec","UI Tests","UI Review","chromatic-deployment"]
-      },
+      [
+        "protected-branch",
+        {
+          "requiredStatusChecks": ["build", "test-core-spec","UI Tests","UI Review","chromatic-deployment"]
+        }
+      ],
       "npm",
       "conventional-commits",
       "released"
