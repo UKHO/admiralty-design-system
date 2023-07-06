@@ -1,3 +1,23 @@
+# v0.3.0 (Thu Jul 06 2023)
+
+#### 🚀 Enhancement
+
+- adding an exports field to the package.json in the angular package [#63](https://github.com/UKHO/admiralty-design-system/pull/63) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+#### 🐛 Bug Fix
+
+- fix: admiralty textarea does not support maxlength [#65](https://github.com/UKHO/admiralty-design-system/pull/65) ([@UKHOGreg](https://github.com/UKHOGreg) [@ecstaticrainbow](https://github.com/ecstaticrainbow))
+- Automatic release [#66](https://github.com/UKHO/admiralty-design-system/pull/66) (runner@fv-az621-455.hgz2n3xr2b2uteg1gmg5rpevog.jx.internal.cloudapp.net [@github-actions[bot]](https://github.com/github-actions[bot]))
+
+#### Authors: 4
+
+- [@github-actions[bot]](https://github.com/github-actions[bot])
+- Greg Williams ([@UKHOGreg](https://github.com/UKHOGreg))
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+- UKHO (runner@fv-az621-455.hgz2n3xr2b2uteg1gmg5rpevog.jx.internal.cloudapp.net)
+
+---
+
 # v0.2.0 (Tue Jul 04 2023)
 
 #### 🚀 Enhancement
