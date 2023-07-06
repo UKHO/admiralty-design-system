@@ -28,11 +28,7 @@
   "license": "MIT",
   "author": "UKHO",
   "auto": {
-    "plugins": [
-      "protected-branch",
-      {
-        "requiredStatusChecks": ["build", "test-core-spec","UI Tests","UI Review","chromatic-deployment"]
-      },
+    "plugins": [      
       "npm",
       "conventional-commits",
       "released"
