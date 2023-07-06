@@ -7,12 +7,18 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { ButtonVariant } from "./components/button/button.types";
 import { IconName, IconPrefix } from "@fortawesome/fontawesome-svg-core";
+import { CheckboxChangeEventDetail } from "./components/checkbox/checkbox.interface";
 import { IconName as IconName1 } from "@fortawesome/free-solid-svg-icons";
 import { InputChangeEventDetail } from "./components/input/input.interface";
+import { RadioGroupChangeEventDetail } from "./components/radio-group/radio-group-interface";
+import { SelectChangeEventDetail } from "./components/select/select.interface";
 export { ButtonVariant } from "./components/button/button.types";
 export { IconName, IconPrefix } from "@fortawesome/fontawesome-svg-core";
+export { CheckboxChangeEventDetail } from "./components/checkbox/checkbox.interface";
 export { IconName as IconName1 } from "@fortawesome/free-solid-svg-icons";
 export { InputChangeEventDetail } from "./components/input/input.interface";
+export { RadioGroupChangeEventDetail } from "./components/radio-group/radio-group-interface";
+export { SelectChangeEventDetail } from "./components/select/select.interface";
 export namespace Components {
     interface AdmiraltyBreadcrumb {
         /**
@@ -388,6 +394,12 @@ export namespace Components {
          */
         "value": any | null;
     }
+    interface AdmiraltyReadMore {
+        /**
+          * The text to display in the heading of the readmore component.
+         */
+        "heading": string;
+    }
     interface AdmiraltySelect {
         /**
           * If `true`, the user cannot interact with the select.
@@ -409,6 +421,10 @@ export namespace Components {
           * The text that will be used as a field label.
          */
         "label": string;
+        /**
+          * The value of the input.
+         */
+        "value"?: string | number | null;
         /**
           * The maximum width (px) for the input field.
          */
@@ -506,6 +522,10 @@ export namespace Components {
          */
         "label": string;
         /**
+          * The maximum string length for the input field.
+         */
+        "maxLength"?: number;
+        /**
           * The contents of the textarea
          */
         "text": string;
@@ -515,6 +535,10 @@ export namespace Components {
         "width"?: number;
     }
     interface AdmiraltyTypeAhead {
+        /**
+          * The hint which will be used under the label to describe the input.
+         */
+        "hint": string;
         /**
           * The text content of the label for the input box
          */
@@ -583,6 +607,10 @@ export interface AdmiraltyRadioCustomEvent<T> extends CustomEvent<T> {
 export interface AdmiraltyRadioGroupCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLAdmiraltyRadioGroupElement;
+}
+export interface AdmiraltyReadMoreCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLAdmiraltyReadMoreElement;
 }
 export interface AdmiraltySelectCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -785,6 +813,12 @@ declare global {
         prototype: HTMLAdmiraltyRadioGroupElement;
         new (): HTMLAdmiraltyRadioGroupElement;
     };
+    interface HTMLAdmiraltyReadMoreElement extends Components.AdmiraltyReadMore, HTMLStencilElement {
+    }
+    var HTMLAdmiraltyReadMoreElement: {
+        prototype: HTMLAdmiraltyReadMoreElement;
+        new (): HTMLAdmiraltyReadMoreElement;
+    };
     interface HTMLAdmiraltySelectElement extends Components.AdmiraltySelect, HTMLStencilElement {
     }
     var HTMLAdmiraltySelectElement: {
@@ -923,6 +957,7 @@ declare global {
         "admiralty-progress-bar": HTMLAdmiraltyProgressBarElement;
         "admiralty-radio": HTMLAdmiraltyRadioElement;
         "admiralty-radio-group": HTMLAdmiraltyRadioGroupElement;
+        "admiralty-read-more": HTMLAdmiraltyReadMoreElement;
         "admiralty-select": HTMLAdmiraltySelectElement;
         "admiralty-side-nav": HTMLAdmiraltySideNavElement;
         "admiralty-side-nav-item": HTMLAdmiraltySideNavItemElement;
@@ -1000,15 +1035,15 @@ declare namespace LocalJSX {
          */
         "name"?: string;
         /**
+          * Event is fired when the form control changes state
+          * @event admiraltyChange
+         */
+        "onAdmiraltyChange"?: (event: AdmiraltyCheckboxCustomEvent<CheckboxChangeEventDetail>) => void;
+        /**
           * Event is fired when the form control loses focus
           * @event checkboxBlur
          */
         "onCheckboxBlur"?: (event: AdmiraltyCheckboxCustomEvent<any>) => void;
-        /**
-          * Event is fired when the form control changes state
-          * @event radioChanges
-         */
-        "onCheckboxChange"?: (event: AdmiraltyCheckboxCustomEvent<any>) => void;
         /**
           * Event is fired when the form control gains focus
           * @event checkboxFocus
@@ -1363,6 +1398,10 @@ declare namespace LocalJSX {
          */
         "onAdmiraltyBlur"?: (event: AdmiraltyRadioCustomEvent<void>) => void;
         /**
+          * Emitted when the radio is selected
+         */
+        "onAdmiraltyChange"?: (event: AdmiraltyRadioCustomEvent<void>) => void;
+        /**
           * Emitted when the radio button gains focus.
          */
         "onAdmiraltyFocus"?: (event: AdmiraltyRadioCustomEvent<void>) => void;
@@ -1383,11 +1422,21 @@ declare namespace LocalJSX {
         /**
           * Event fired when the checked radio button changes
          */
-        "onRadioChange"?: (event: AdmiraltyRadioGroupCustomEvent<any>) => void;
+        "onAdmiraltyChange"?: (event: AdmiraltyRadioGroupCustomEvent<RadioGroupChangeEventDetail>) => void;
         /**
           * The value of the radio group
          */
         "value"?: any | null;
+    }
+    interface AdmiraltyReadMore {
+        /**
+          * The text to display in the heading of the readmore component.
+         */
+        "heading"?: string;
+        /**
+          * The event that is dispatched when the expanded status is toggled.
+         */
+        "onAdmiraltyToggled"?: (event: AdmiraltyReadMoreCustomEvent<boolean>) => void;
     }
     interface AdmiraltySelect {
         /**
@@ -1417,7 +1466,11 @@ declare namespace LocalJSX {
         /**
           * Emitted when the value has changed.
          */
-        "onAdmiraltyChange"?: (event: AdmiraltySelectCustomEvent<EventTarget>) => void;
+        "onAdmiraltyChange"?: (event: AdmiraltySelectCustomEvent<SelectChangeEventDetail>) => void;
+        /**
+          * The value of the input.
+         */
+        "value"?: string | number | null;
         /**
           * The maximum width (px) for the input field.
          */
@@ -1520,6 +1573,10 @@ declare namespace LocalJSX {
          */
         "label"?: string;
         /**
+          * The maximum string length for the input field.
+         */
+        "maxLength"?: number;
+        /**
           * Event is fired when the form control loses focus
           * @event textareaBlur
          */
@@ -1539,6 +1596,10 @@ declare namespace LocalJSX {
         "width"?: number;
     }
     interface AdmiraltyTypeAhead {
+        /**
+          * The hint which will be used under the label to describe the input.
+         */
+        "hint"?: string;
         /**
           * The text content of the label for the input box
          */
@@ -1597,6 +1658,7 @@ declare namespace LocalJSX {
         "admiralty-progress-bar": AdmiraltyProgressBar;
         "admiralty-radio": AdmiraltyRadio;
         "admiralty-radio-group": AdmiraltyRadioGroup;
+        "admiralty-read-more": AdmiraltyReadMore;
         "admiralty-select": AdmiraltySelect;
         "admiralty-side-nav": AdmiraltySideNav;
         "admiralty-side-nav-item": AdmiraltySideNavItem;
@@ -1653,6 +1715,7 @@ declare module "@stencil/core" {
             "admiralty-progress-bar": LocalJSX.AdmiraltyProgressBar & JSXBase.HTMLAttributes<HTMLAdmiraltyProgressBarElement>;
             "admiralty-radio": LocalJSX.AdmiraltyRadio & JSXBase.HTMLAttributes<HTMLAdmiraltyRadioElement>;
             "admiralty-radio-group": LocalJSX.AdmiraltyRadioGroup & JSXBase.HTMLAttributes<HTMLAdmiraltyRadioGroupElement>;
+            "admiralty-read-more": LocalJSX.AdmiraltyReadMore & JSXBase.HTMLAttributes<HTMLAdmiraltyReadMoreElement>;
             "admiralty-select": LocalJSX.AdmiraltySelect & JSXBase.HTMLAttributes<HTMLAdmiraltySelectElement>;
             "admiralty-side-nav": LocalJSX.AdmiraltySideNav & JSXBase.HTMLAttributes<HTMLAdmiraltySideNavElement>;
             "admiralty-side-nav-item": LocalJSX.AdmiraltySideNavItem & JSXBase.HTMLAttributes<HTMLAdmiraltySideNavItemElement>;

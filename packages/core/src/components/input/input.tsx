@@ -119,6 +119,7 @@ export class InputComponent implements ComponentInterface {
         {this.hint ? <admiralty-hint disabled={this.disabled}>{this.hint}</admiralty-hint> : null}
         <input
           ref={input => (this.nativeInput = input)}
+          class={{ disabled: this.disabled, invalid: this.invalid }}
           disabled={this.disabled}
           id={this.inputId}
           name={this.name}

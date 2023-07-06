@@ -17,10 +17,11 @@
 
 ## Events
 
-| Event            | Description                                | Type                |
-| ---------------- | ------------------------------------------ | ------------------- |
-| `admiraltyBlur`  | Emitted when the radio button loses focus. | `CustomEvent<void>` |
-| `admiraltyFocus` | Emitted when the radio button gains focus. | `CustomEvent<void>` |
+| Event             | Description                                | Type                |
+| ----------------- | ------------------------------------------ | ------------------- |
+| `admiraltyBlur`   | Emitted when the radio button loses focus. | `CustomEvent<void>` |
+| `admiraltyChange` | Emitted when the radio is selected         | `CustomEvent<void>` |
+| `admiraltyFocus`  | Emitted when the radio button gains focus. | `CustomEvent<void>` |
 
 
 ----------------------------------------------

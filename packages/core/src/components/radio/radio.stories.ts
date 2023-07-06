@@ -1,41 +1,49 @@
-import readme from './readme.md';
-import { Story } from '@storybook/html';
+import { Meta, StoryObj } from '@storybook/web-components';
+import { RadioComponent } from './radio';
+import { html } from 'lit';
 
-export default {
+const meta: Meta = {
+  component: 'admiralty-radio',
   title: 'Forms/Radio',
   parameters: {
-    markdown: readme,
     actions: {
-      handles: ['admiraltyFocus', 'admiraltyBlur'],
+        handles: ['admiraltyFocus', 'admiraltyBlur'],
     },
-  },
+  }
 };
 
-export const Basic: Story = args => {
-  return `<admiralty-radio name="${args.name}" value="${args.value}">${args.labelText}</admiralty-radio>`;
-};
-Basic.args = {
-  labelText: 'test label',
-  name: 'exampleName',
-  value: 'exampleValue',
+export default meta;
+
+type Story = StoryObj<RadioComponent>;
+
+const template: Story = {
+  render: args => 
+    html`<admiralty-radio name="${args.name}" value="${args.value}" ?checked="${args.checked}" ?disabled="${args.disabled}" >${args.labelText}</admiralty-radio>`,
 };
 
-export const Disabled: Story = args => {
-  return `<admiralty-radio disabled="${args.disabled}" name="${args.name}" value="${args.value}">${args.labelText}</admiralty-radio>`;
-};
-Disabled.args = {
-  disabled: true,
-  labelText: 'test label',
-  name: 'exampleName',
-  value: 'exampleValue',
+export const Basic: Story = { ...template, 
+  args: { 
+    labelText: 'test label',
+    name: 'exampleName',
+    value: 'exampleValue'
+  }
 };
 
-export const Checked: Story = args => {
-  return `<admiralty-radio checked="${args.checked}" name="${args.name}" value="${args.value}">${args.labelText}</admiralty-radio>`;
+
+export const Disabled: Story = { ...template, 
+  args: { 
+    disabled: true,
+    labelText: 'test label',
+    name: 'exampleName',
+    value: 'exampleValue',
+  }
 };
-Checked.args = {
-  checked: true,
-  labelText: 'test label',
-  name: 'exampleName',
-  value: 'exampleValue',
+
+export const Checked: Story = { ...template, 
+  args: { 
+    checked: true,
+    labelText: 'test label',
+    name: 'exampleName',
+    value: 'exampleValue'
+  }
 };

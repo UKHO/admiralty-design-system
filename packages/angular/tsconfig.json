@@ -27,8 +27,11 @@
       "es2017",
       "dom"
     ],
-    "skipLibCheck": true
+    "skipLibCheck": true,
   },
+  "include": [
+    "src"
+  ],
   "angularCompilerOptions": {
     "annotateForClosureCompiler": true,
     "strictMetadataEmit": true,

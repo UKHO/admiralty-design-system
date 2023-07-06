@@ -1,10 +1,13 @@
-import { Story } from '@storybook/html';
-import readme from './readme.md';
+import { Meta, StoryObj } from '@storybook/web-components';
+import { PhaseBannerComponent } from './phase-banner';
+import { html } from 'lit';
 
-export default {
+const meta: Meta = {
+  component: 'admiralty-phase-banner',
   title: 'Phase Banner',
   parameters: {
-    markdown: readme,
+    actions: {
+    },
   },
   args: {
     phase: 'alpha',
@@ -12,17 +15,14 @@ export default {
   },
 };
 
-const Template: Story = args => {
-  return `<admiralty-phase-banner phase="${args.phase}" link="${args.link}">
-  </admiralty-phase-banner>`;
+export default meta;
+
+type Story = StoryObj<PhaseBannerComponent>;
+
+const template: Story = {
+  render: args => html`<admiralty-phase-banner phase="${args.phase}" link="${args.link}"></admiralty-phase-banner>`,
 };
 
-export const Alpha: Story = Template.bind({});
-Alpha.args = {
-  phase: 'alpha',
-};
+export const Alpha: Story = { ...template, args: { phase: 'alpha' } };
 
-export const Beta: Story = Template.bind({});
-Beta.args = {
-  phase: 'beta',
-};
+export const Beta: Story = { ...template, args: { phase: 'beta' } };

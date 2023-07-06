@@ -19,11 +19,11 @@
 
 ## Events
 
-| Event            | Description                                        | Type               |
-| ---------------- | -------------------------------------------------- | ------------------ |
-| `checkboxBlur`   | Event is fired when the form control loses focus   | `CustomEvent<any>` |
-| `checkboxChange` | Event is fired when the form control changes state | `CustomEvent<any>` |
-| `checkboxFocus`  | Event is fired when the form control gains focus   | `CustomEvent<any>` |
+| Event             | Description                                        | Type                                          |
+| ----------------- | -------------------------------------------------- | --------------------------------------------- |
+| `admiraltyChange` | Event is fired when the form control changes state | `CustomEvent<CheckboxChangeEventDetail<any>>` |
+| `checkboxBlur`    | Event is fired when the form control loses focus   | `CustomEvent<any>`                            |
+| `checkboxFocus`   | Event is fired when the form control gains focus   | `CustomEvent<any>`                            |
 
 
 ----------------------------------------------

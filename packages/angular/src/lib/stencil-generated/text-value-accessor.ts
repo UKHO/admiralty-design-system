@@ -5,7 +5,7 @@ import { ValueAccessor } from './value-accessor';
 
 @Directive({
   /* tslint:disable-next-line:directive-selector */
-  selector: 'admiralty-input[type=text]',
+  selector: 'admiralty-input:not([type=number]), admiralty-textarea',
   host: {
     '(admiraltyChange)': 'handleChangeEvent($event.target.value)'
   },
