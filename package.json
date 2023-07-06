@@ -28,7 +28,7 @@
   "license": "MIT",
   "author": "UKHO",
   "auto": {
-    "plugins": [      
+    "plugins": [
       "npm",
       "conventional-commits",
       "released"
