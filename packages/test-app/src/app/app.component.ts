@@ -46,6 +46,11 @@ export class AppComponent {
     });
   }
 
+  typeahead() {
+    console.log('gregtest');
+    this.commissioningOrganisations = [{ id: 6, organisationName: '7' }];
+  }
+
   commissioningOrganisations: CommissioningOrganisation[] = [{ id: 9, organisationName: '8' }];
 }
 

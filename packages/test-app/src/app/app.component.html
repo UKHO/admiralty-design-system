@@ -148,6 +148,8 @@
   <admiralty-type-ahead-item value="guinea pig"></admiralty-type-ahead-item>
 </admiralty-type-ahead>
 
+<admiralty-button (click)="typeahead()">Button</admiralty-button>
+
 <ng-container *ngFor="let item of commissioningOrganisations">
   <span>{{ item.organisationName }}</span>
 </ng-container>
