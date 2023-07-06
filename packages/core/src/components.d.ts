@@ -522,6 +522,10 @@ export namespace Components {
          */
         "label": string;
         /**
+          * The maximum string length for the input field.
+         */
+        "maxLength"?: number;
+        /**
           * The contents of the textarea
          */
         "text": string;
@@ -1568,6 +1572,10 @@ declare namespace LocalJSX {
           * The label which will be used as a placeholder in the unfilled state, and as a field label in the filled state.
          */
         "label"?: string;
+        /**
+          * The maximum string length for the input field.
+         */
+        "maxLength"?: number;
         /**
           * Event is fired when the form control loses focus
           * @event textareaBlur
