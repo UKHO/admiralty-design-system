@@ -1,3 +1,15 @@
+# v0.3.1 (Thu Jul 06 2023)
+
+#### 🐛 Bug Fix
+
+- Attempting to support angular 12+ by building with angular 12 [#46](https://github.com/UKHO/admiralty-design-system/pull/46) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+#### Authors: 1
+
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
 # v0.3.0 (Thu Jul 06 2023)
 
 #### 🚀 Enhancement
