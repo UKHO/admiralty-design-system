@@ -17,4 +17,5 @@ export {
   SelectChangeEventDetail,
   RadioGroupChangeEventDetail,
   TextAreaChangeEventDetail,
+  FileInputChangeEventDetail
 } from '@ukho/admiralty-core';
