@@ -12,4 +12,9 @@ export { BooleanValueAccessor } from './lib/stencil-generated/boolean-value-acce
 export { NumericValueAccessor } from './lib/stencil-generated/number-value-accessor';
 export { SelectValueAccessor } from './lib/stencil-generated/select-value-accessor';
 
-export { CheckboxChangeEventDetail, SelectChangeEventDetail, RadioGroupChangeEventDetail } from '@ukho/admiralty-core';
+export {
+  CheckboxChangeEventDetail,
+  SelectChangeEventDetail,
+  RadioGroupChangeEventDetail,
+  FileInputChangeEventDetail,
+} from '@ukho/admiralty-core';

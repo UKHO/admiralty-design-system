@@ -224,11 +224,13 @@ export class AdmiraltyFileInput {
 }
 
 
+import type { FileInputChangeEventDetail as IAdmiraltyFileInputFileInputChangeEventDetail } from '@ukho/admiralty-core';
+
 export declare interface AdmiraltyFileInput extends Components.AdmiraltyFileInput {
   /**
    * Emitted when the added file(s) changes
    */
-  fileInputChange: EventEmitter<CustomEvent<File[]>>;
+  fileInputChange: EventEmitter<CustomEvent<IAdmiraltyFileInputFileInputChangeEventDetail>>;
 }
 
 

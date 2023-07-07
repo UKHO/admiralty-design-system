@@ -15,9 +15,9 @@
 
 ## Events
 
-| Event             | Description                            | Type                  |
-| ----------------- | -------------------------------------- | --------------------- |
-| `fileInputChange` | Emitted when the added file(s) changes | `CustomEvent<File[]>` |
+| Event             | Description                            | Type                                      |
+| ----------------- | -------------------------------------- | ----------------------------------------- |
+| `fileInputChange` | Emitted when the added file(s) changes | `CustomEvent<FileInputChangeEventDetail>` |
 
 
 ## Dependencies
