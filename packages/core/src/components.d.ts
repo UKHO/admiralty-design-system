@@ -1626,7 +1626,7 @@ declare namespace LocalJSX {
         "value"?: string;
     }
     interface AdmiraltyTypeAheadItem {
-        "value": string;
+        "value"?: string;
     }
     interface IntrinsicElements {
         "admiralty-breadcrumb": AdmiraltyBreadcrumb;

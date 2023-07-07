@@ -48,9 +48,12 @@ export class AppComponent {
 
   typeahead() {
     console.log('gregtest');
-    this.commissioningOrganisations = [{ id: 6, organisationName: '7' }];
+    this.commissioningOrganisations = [{ id: 6, organisationName: 'third organisation name' }];
   }
 
-  commissioningOrganisations: CommissioningOrganisation[] = [{ id: 9, organisationName: '8' }];
+  commissioningOrganisations: CommissioningOrganisation[] = [
+    { id: 9, organisationName: 'first organisation name' },
+    { id: 10, organisationName: 'second organisation name' },
+  ];
 }
 

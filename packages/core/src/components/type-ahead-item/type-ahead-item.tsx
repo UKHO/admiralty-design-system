@@ -1,4 +1,4 @@
-import { Component, Host, Prop, Watch, h } from '@stencil/core';
+import { Component, Host, Prop, h } from '@stencil/core';
 
 @Component({
   tag: 'admiralty-type-ahead-item',
@@ -6,14 +6,9 @@ import { Component, Host, Prop, Watch, h } from '@stencil/core';
   scoped: true,
 })
 export class AdmiraltyTypeAheadItem {
-  @Prop() value!: string;
-
-  @Watch('value')
-  onNameChanged(value: string) {
-    console.log('got value: ', value);
-  }
+  @Prop() value: string;
 
   render() {
-    return <Host></Host>;
+    return <Host value={this.value}></Host>;
   }
 }

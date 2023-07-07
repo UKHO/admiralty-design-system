@@ -156,11 +156,10 @@
 
 <admiralty-type-ahead resultsOnInitFocus="true" type="text" [label]="'Commissioning organisation *'">
   <admiralty-type-ahead-item value="ostrich"></admiralty-type-ahead-item>
-  <ng-template ngFor let-hero let-i="index" [ngForOf]="commissioningOrganisations">
-    <admiralty-type-ahead-item [value]="hero.organisationName"></admiralty-type-ahead-item>
-  </ng-template>
-  <admiralty-type-ahead-item [value]="commissioningOrganisations[0].organisationName"></admiralty-type-ahead-item>
-  <admiralty-type-ahead-item value="{{ commissioningOrganisations[0].organisationName }}"></admiralty-type-ahead-item>
+  <admiralty-type-ahead-item
+    *ngFor="let item of commissioningOrganisations"
+    [value]="item.organisationName"
+  ></admiralty-type-ahead-item>
   <admiralty-type-ahead-item value="guinea pig"></admiralty-type-ahead-item>
 </admiralty-type-ahead>
 
