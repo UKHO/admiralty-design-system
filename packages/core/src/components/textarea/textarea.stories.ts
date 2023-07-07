@@ -48,17 +48,17 @@ export const Invalid: Story = {
 };
 
 export const WithText: Story = {
-  render: args => html` <admiralty-textarea label="${args.label}" text="${args.text}"> </admiralty-textarea>`,
+  render: args => html` <admiralty-textarea label="${args.label}" text="${args.value}"> </admiralty-textarea>`,
   args: {
     label: 'With text',
-    text: 'Sample Text',
+    value: 'Sample Text',
   },
 };
 
 export const MaxLength: Story = {
-  render: args => html` <admiralty-textarea text="${args.text}" max-length="${args.maxLength}"> </admiralty-textarea>`,
+  render: args => html` <admiralty-textarea text="${args.value}" max-length="${args.maxLength}"> </admiralty-textarea>`,
   args: {
     maxLength: 1,
-    text: 'A',
+    value: 'A',
   },
 };
