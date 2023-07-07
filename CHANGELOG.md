@@ -1,3 +1,16 @@
+# v0.3.3 (Fri Jul 07 2023)
+
+#### 🐛 Bug Fix
+
+- `@ukho/admiralty-angular`, `@ukho/admiralty-core`
+  - Fix textarea so that it works with the Angular form controls [#79](https://github.com/UKHO/admiralty-design-system/pull/79) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+#### Authors: 1
+
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
 # v0.3.2 (Fri Jul 07 2023)
 
 #### 🐛 Bug Fix
