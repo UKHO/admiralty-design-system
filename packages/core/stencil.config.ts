@@ -21,6 +21,18 @@ const angularValueAccessorBindings: ValueAccessorConfig[] = [
     targetAttr: 'value',
     type: 'select',
   },
+  {
+    elementSelectors: ['admiralty-checkbox'],
+    event: 'admiraltyChange',
+    targetAttr: 'checked',
+    type: 'boolean',
+  },
+  {
+    elementSelectors: ['admiralty-input[type=number]'],
+    event: 'admiraltyChange',
+    targetAttr: 'value',
+    type: 'number',
+  },
 ];
 
 export const config: Config = {

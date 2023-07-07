@@ -6,62 +6,59 @@ const meta: Meta = {
   component: 'admiralty-side-nav-item',
   title: 'Forms/Text Area',
   parameters: {
-    actions: {
-    }
-  }
+    actions: {},
+  },
 };
 
 export default meta;
 
 type Story = StoryObj<TextareaComponent>;
-  
-export const Basic: Story = { render: args => 
-  html`
-    <admiralty-textarea label="${args.label}" hint="${args.hint}">
-    </admiralty-textarea>`,
+
+export const Basic: Story = {
+  render: args => html` <admiralty-textarea label="${args.label}" hint="${args.hint}"> </admiralty-textarea>`,
   args: {
     label: 'Description',
-    hint: 'Enter a description'
-  }
+    hint: 'Enter a description',
+  },
 };
-  
-export const FixedWidth: Story = { render: args => 
-  html`
-    <admiralty-textarea label="${args.label}" width="${args.width}">
-    </admiralty-textarea>`,
+
+export const FixedWidth: Story = {
+  render: args => html` <admiralty-textarea label="${args.label}" width="${args.width}"> </admiralty-textarea>`,
   args: {
     label: 'Description',
-    width: 400
-  }
+    width: 400,
+  },
 };
-  
-export const Disabled: Story = { render: args => 
-  html`
-    <admiralty-textarea label="${args.label}" ?disabled="${args.disabled}">
-    </admiralty-textarea>`,
+
+export const Disabled: Story = {
+  render: args => html` <admiralty-textarea label="${args.label}" ?disabled="${args.disabled}"> </admiralty-textarea>`,
   args: {
     label: 'Description',
-    disabled: true
-  }
+    disabled: true,
+  },
 };
-  
-export const Invalid: Story = { render: args => 
-  html`
-    <admiralty-textarea label="${args.label}" ?invalid="${args.invalid}" invalid-message="${args.invalidMessage}">
-    </admiralty-textarea>`,
+
+export const Invalid: Story = {
+  render: args => html` <admiralty-textarea label="${args.label}" ?invalid="${args.invalid}" invalid-message="${args.invalidMessage}"> </admiralty-textarea>`,
   args: {
     label: 'What is your name?',
     invalid: true,
-    invalidMessage: 'That is not a real name'
-  }
+    invalidMessage: 'That is not a real name',
+  },
 };
-  
-export const WithText: Story = { render: args => 
-  html`
-    <admiralty-textarea label="${args.label}" text="${args.text}">
-    </admiralty-textarea>`,
+
+export const WithText: Story = {
+  render: args => html` <admiralty-textarea label="${args.label}" value="${args.value}"> </admiralty-textarea>`,
   args: {
     label: 'With text',
-    text: 'Sample Text',
-  }
+    value: 'Sample Text',
+  },
+};
+
+export const MaxLength: Story = {
+  render: args => html` <admiralty-textarea value="${args.value}" max-length="${args.maxLength}"> </admiralty-textarea>`,
+  args: {
+    maxLength: 1,
+    value: 'A',
+  },
 };

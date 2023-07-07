@@ -1,3 +1,92 @@
+# v0.3.3 (Fri Jul 07 2023)
+
+#### 🐛 Bug Fix
+
+- `@ukho/admiralty-angular`, `@ukho/admiralty-core`
+  - Fix textarea so that it works with the Angular form controls [#79](https://github.com/UKHO/admiralty-design-system/pull/79) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+#### Authors: 1
+
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
+# v0.3.2 (Fri Jul 07 2023)
+
+#### 🐛 Bug Fix
+
+- `@ukho/admiralty-angular`, `@ukho/admiralty-core`
+  - Adding a custom file input event [#75](https://github.com/UKHO/admiralty-design-system/pull/75) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+#### Authors: 1
+
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
+# v0.3.1 (Thu Jul 06 2023)
+
+#### 🐛 Bug Fix
+
+- `@ukho/admiralty-angular`, `@ukho/admiralty-core`
+  - Attempting to support angular 12+ by building with angular 12 [#46](https://github.com/UKHO/admiralty-design-system/pull/46) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+#### Authors: 1
+
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
+# v0.2.0 (Thu Jul 06 2023)
+
+#### 🚀 Enhancement
+
+- `@ukho/admiralty-angular`, `@ukho/admiralty-core`
+  - adding an exports field to the package.json in the angular package [#63](https://github.com/UKHO/admiralty-design-system/pull/63) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+#### 🐛 Bug Fix
+
+- Removing whitespace from package.json [#73](https://github.com/UKHO/admiralty-design-system/pull/73) ([@UKHOGreg](https://github.com/UKHOGreg) [@ecstaticrainbow](https://github.com/ecstaticrainbow))
+- Remove protected branch plugin [#70](https://github.com/UKHO/admiralty-design-system/pull/70) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+- adding required status checks to the protected branch config [#67](https://github.com/UKHO/admiralty-design-system/pull/67) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+- `@ukho/admiralty-angular`, `@ukho/admiralty-core`
+  - fix: admiralty textarea does not support maxlength [#65](https://github.com/UKHO/admiralty-design-system/pull/65) ([@UKHOGreg](https://github.com/UKHOGreg) [@ecstaticrainbow](https://github.com/ecstaticrainbow))
+  - Automatic release [#66](https://github.com/UKHO/admiralty-design-system/pull/66) (runner@fv-az621-455.hgz2n3xr2b2uteg1gmg5rpevog.jx.internal.cloudapp.net [@github-actions[bot]](https://github.com/github-actions[bot]))
+
+#### ⚠️ Pushed to `main`
+
+- `@ukho/admiralty-angular`
+  - Revert "adding an exports field to the package.json to allow modern resolvers to find it" ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+  - adding an exports field to the package.json to allow modern resolvers to find it ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+#### Authors: 4
+
+- [@github-actions[bot]](https://github.com/github-actions[bot])
+- Greg Williams ([@UKHOGreg](https://github.com/UKHOGreg))
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+- UKHO (runner@fv-az621-455.hgz2n3xr2b2uteg1gmg5rpevog.jx.internal.cloudapp.net)
+
+---
+
+# v0.2.0 (Tue Jul 04 2023)
+
+#### 🚀 Enhancement
+
+- `@ukho/admiralty-angular`, `@ukho/admiralty-core`
+  - adding an exports field to the package.json in the angular package [#63](https://github.com/UKHO/admiralty-design-system/pull/63) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+#### ⚠️ Pushed to `main`
+
+- `@ukho/admiralty-angular`
+  - Revert "adding an exports field to the package.json to allow modern resolvers to find it" ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+  - adding an exports field to the package.json to allow modern resolvers to find it ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+#### Authors: 1
+
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
 # v0.1.1 (Wed Jun 28 2023)
 
 #### 🐛 Bug Fix

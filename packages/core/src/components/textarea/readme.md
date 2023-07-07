@@ -7,23 +7,24 @@
 
 ## Properties
 
-| Property         | Attribute         | Description                                                                                                    | Type      | Default     |
-| ---------------- | ----------------- | -------------------------------------------------------------------------------------------------------------- | --------- | ----------- |
-| `disabled`       | `disabled`        | This dictates whether the form field is disabled.                                                              | `boolean` | `false`     |
-| `hint`           | `hint`            | The hint which will be used under the label to describe the input.                                             | `string`  | `undefined` |
-| `invalid`        | `invalid`         | Whether to show the input in an invalid state                                                                  | `boolean` | `false`     |
-| `invalidMessage` | `invalid-message` | The message to show when the input is invalid                                                                  | `string`  | `undefined` |
-| `label`          | `label`           | The label which will be used as a placeholder in the unfilled state, and as a field label in the filled state. | `string`  | `''`        |
-| `text`           | `text`            | The contents of the textarea                                                                                   | `string`  | `''`        |
-| `width`          | `width`           | The maximum width for the input field.                                                                         | `number`  | `undefined` |
+| Property         | Attribute         | Description                                                                                                    | Type               | Default     |
+| ---------------- | ----------------- | -------------------------------------------------------------------------------------------------------------- | ------------------ | ----------- |
+| `disabled`       | `disabled`        | This dictates whether the form field is disabled.                                                              | `boolean`          | `false`     |
+| `hint`           | `hint`            | The hint which will be used under the label to describe the input.                                             | `string`           | `undefined` |
+| `invalid`        | `invalid`         | Whether to show the input in an invalid state                                                                  | `boolean`          | `false`     |
+| `invalidMessage` | `invalid-message` | The message to show when the input is invalid                                                                  | `string`           | `undefined` |
+| `label`          | `label`           | The label which will be used as a placeholder in the unfilled state, and as a field label in the filled state. | `string`           | `''`        |
+| `maxLength`      | `max-length`      | The maximum string length for the input field.                                                                 | `number`           | `undefined` |
+| `value`          | `value`           | The value of the textarea.                                                                                     | `number \| string` | `''`        |
+| `width`          | `width`           | The maximum width for the input field.                                                                         | `number`           | `undefined` |
 
 
 ## Events
 
-| Event             | Description                                      | Type                  |
-| ----------------- | ------------------------------------------------ | --------------------- |
-| `textareaBlur`    | Event is fired when the form control loses focus | `CustomEvent<any>`    |
-| `textareaChanged` | Event is fired when the form control changes     | `CustomEvent<string>` |
+| Event             | Description                                      | Type                                     |
+| ----------------- | ------------------------------------------------ | ---------------------------------------- |
+| `admiraltyChange` | Event is fired when the form control changes     | `CustomEvent<TextAreaChangeEventDetail>` |
+| `textareaBlur`    | Event is fired when the form control loses focus | `CustomEvent<any>`                       |
 
 
 ## Dependencies

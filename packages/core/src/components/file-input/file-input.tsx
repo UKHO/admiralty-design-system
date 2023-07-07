@@ -1,4 +1,5 @@
 import { Component, Element, Event, Host, h, Prop, State, EventEmitter } from '@stencil/core';
+import { FileInputChangeEventDetail } from './file-input.interface';
 
 @Component({
   tag: 'admiralty-file-input',
@@ -21,7 +22,7 @@ export class FileInputComponent {
   /**
    * Emitted when the added file(s) changes
    */
-  @Event() fileInputChange: EventEmitter<File[]>;
+  @Event() fileInputChange: EventEmitter<FileInputChangeEventDetail>;
 
   id: string = `admiralty-file-input-${++nextId}`;
 
@@ -39,7 +40,7 @@ export class FileInputComponent {
 
     this.storeFileInfo((event.target as HTMLInputElement).files);
 
-    this.fileInputChange.emit(this.files);
+    this.fileInputChange.emit({ files: this.files });
     console.log('changeHandler:', this.files);
   }
 
@@ -78,7 +79,7 @@ export class FileInputComponent {
 
     if (event.dataTransfer.files) {
       this.storeFileInfo(event.dataTransfer.files);
-      this.fileInputChange.emit(this.files);
+      this.fileInputChange.emit({ files: this.files });
       console.log('Drop: ', this.files);
     }
   }
