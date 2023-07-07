@@ -16,5 +16,6 @@ export {
   CheckboxChangeEventDetail,
   SelectChangeEventDetail,
   RadioGroupChangeEventDetail,
-  FileInputChangeEventDetail,
+  TextAreaChangeEventDetail,
+  FileInputChangeEventDetail
 } from '@ukho/admiralty-core';

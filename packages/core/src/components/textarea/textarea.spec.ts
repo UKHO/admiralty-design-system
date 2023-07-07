@@ -21,7 +21,7 @@ describe('admiralty-textarea', () => {
           <admiralty-hint>
             Please enter description
           </admiralty-hint>
-          <textarea id="admiralty-textarea-${compId}"></textarea>
+          <textarea id="admiralty-textarea-${compId}" value=""></textarea>
         </div>
       </admiralty-textarea>
     `);
@@ -34,13 +34,13 @@ describe('admiralty-textarea', () => {
 
     const page = await newSpecPage({
       components: [TextareaComponent],
-      html: `<admiralty-textarea text="${testText}"></admiralty-textarea>`,
+      html: `<admiralty-textarea value="${testText}"></admiralty-textarea>`,
     });
 
     expect(page.root).toEqualHtml(`
-      <admiralty-textarea text="${testText}">
+      <admiralty-textarea value="${testText}">
         <div class="text-area-container">
-          <textarea id="admiralty-textarea-${compId}">${testText}</textarea>
+          <textarea id="admiralty-textarea-${compId}" value="${testText}"></textarea>
         </div>
       </admiralty-textarea>
     `);
@@ -58,7 +58,7 @@ describe('admiralty-textarea', () => {
       <admiralty-textarea label="Description" disabled="true">
         <div class="text-area-container">
           <admiralty-label disabled="" for="admiralty-textarea-${compId}">Description</admiralty-label>
-          <textarea class="disabled" id="admiralty-textarea-${compId}"></textarea>
+          <textarea class="disabled" id="admiralty-textarea-${compId}" value=""></textarea>
         </div>
       </admiralty-textarea>
     `);
@@ -76,7 +76,7 @@ describe('admiralty-textarea', () => {
       <admiralty-textarea label="Description" invalid="true" invalidMessage="BAD">
         <div class="text-area-container">
           <admiralty-label for="admiralty-textarea-${compId}">Description</admiralty-label>
-          <textarea class="invalid" id="admiralty-textarea-${compId}"></textarea>
+          <textarea class="invalid" id="admiralty-textarea-${compId}" value=""></textarea>
           <admiralty-input-error></admiralty-input-error>
         </div>
       </admiralty-textarea>

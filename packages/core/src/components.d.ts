@@ -13,6 +13,7 @@ import { IconName as IconName1 } from "@fortawesome/free-solid-svg-icons";
 import { InputChangeEventDetail } from "./components/input/input.interface";
 import { RadioGroupChangeEventDetail } from "./components/radio-group/radio-group-interface";
 import { SelectChangeEventDetail } from "./components/select/select.interface";
+import { TextAreaChangeEventDetail } from "./components/textarea/textarea.interface";
 export { ButtonVariant } from "./components/button/button.types";
 export { IconName, IconPrefix } from "@fortawesome/fontawesome-svg-core";
 export { CheckboxChangeEventDetail } from "./components/checkbox/checkbox.interface";
@@ -21,6 +22,7 @@ export { IconName as IconName1 } from "@fortawesome/free-solid-svg-icons";
 export { InputChangeEventDetail } from "./components/input/input.interface";
 export { RadioGroupChangeEventDetail } from "./components/radio-group/radio-group-interface";
 export { SelectChangeEventDetail } from "./components/select/select.interface";
+export { TextAreaChangeEventDetail } from "./components/textarea/textarea.interface";
 export namespace Components {
     interface AdmiraltyBreadcrumb {
         /**
@@ -528,9 +530,9 @@ export namespace Components {
          */
         "maxLength"?: number;
         /**
-          * The contents of the textarea
+          * The value of the textarea.
          */
-        "text": string;
+        "value"?: string | number | null;
         /**
           * The maximum width for the input field.
          */
@@ -1579,19 +1581,19 @@ declare namespace LocalJSX {
          */
         "maxLength"?: number;
         /**
+          * Event is fired when the form control changes
+          * @event admiraltyChange
+         */
+        "onAdmiraltyChange"?: (event: AdmiraltyTextareaCustomEvent<TextAreaChangeEventDetail>) => void;
+        /**
           * Event is fired when the form control loses focus
           * @event textareaBlur
          */
         "onTextareaBlur"?: (event: AdmiraltyTextareaCustomEvent<any>) => void;
         /**
-          * Event is fired when the form control changes
-          * @event textareaChanged
+          * The value of the textarea.
          */
-        "onTextareaChanged"?: (event: AdmiraltyTextareaCustomEvent<string>) => void;
-        /**
-          * The contents of the textarea
-         */
-        "text"?: string;
+        "value"?: string | number | null;
         /**
           * The maximum width for the input field.
          */
