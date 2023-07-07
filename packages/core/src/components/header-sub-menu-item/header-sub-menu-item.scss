@@ -12,6 +12,11 @@
     font-weight: typography.$font-weight-light;
   }
 
+  &:focus {
+    outline: none;
+    box-shadow: colours.$colour-utility-focus inset 0 0 0 3px;
+  }
+
   @include responsive.desktop-only {
     box-sizing: border-box;
     color: colours.$colour-admiralty-blue;
@@ -48,6 +53,7 @@
     }
 
     &:focus {
+      outline: none;
       box-shadow: colours.$colour-utility-focus inset 0 0 0 3px;
     }
   }

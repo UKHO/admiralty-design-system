@@ -1236,9 +1236,9 @@ declare namespace LocalJSX {
          */
         "menuTitle"?: string;
         /**
-          * The event that is fired when a user clicks on the menu
+          * The event that is fired when a user clicks on the menu. Event contains the menu item text.
          */
-        "onSubMenuItemClick"?: (event: AdmiraltyHeaderSubMenuItemCustomEvent<void>) => void;
+        "onSubMenuItemClick"?: (event: AdmiraltyHeaderSubMenuItemCustomEvent<string>) => void;
     }
     interface AdmiraltyHint {
         /**
