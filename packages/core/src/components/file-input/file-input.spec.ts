@@ -107,6 +107,6 @@ describe('file-input', () => {
 
     comp.changeHandler(event as unknown as Event);
 
-    expect(eventSpy).toBeCalledWith([file]);
+    expect(eventSpy).toBeCalledWith({ files: [file] });
   });
 });

@@ -1,3 +1,27 @@
+# v0.3.3 (Fri Jul 07 2023)
+
+#### 🐛 Bug Fix
+
+- Fix textarea so that it works with the Angular form controls [#79](https://github.com/UKHO/admiralty-design-system/pull/79) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+#### Authors: 1
+
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
+# v0.3.2 (Fri Jul 07 2023)
+
+#### 🐛 Bug Fix
+
+- Adding a custom file input event [#75](https://github.com/UKHO/admiralty-design-system/pull/75) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+#### Authors: 1
+
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
 # v0.3.1 (Thu Jul 06 2023)
 
 #### 🐛 Bug Fix

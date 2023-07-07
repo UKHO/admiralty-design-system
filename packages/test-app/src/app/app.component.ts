@@ -24,6 +24,7 @@ export class AppComponent {
     checkbox: new FormControl(true),
     radio: new FormControl(''),
     select: new FormControl('test1'),
+    textarea: new FormControl('This is a text area'),
   });
 
   blah = this.group.get('text');

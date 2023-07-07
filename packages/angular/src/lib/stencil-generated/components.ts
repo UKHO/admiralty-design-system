@@ -224,11 +224,13 @@ export class AdmiraltyFileInput {
 }
 
 
+import type { FileInputChangeEventDetail as IAdmiraltyFileInputFileInputChangeEventDetail } from '@ukho/admiralty-core';
+
 export declare interface AdmiraltyFileInput extends Components.AdmiraltyFileInput {
   /**
    * Emitted when the added file(s) changes
    */
-  fileInputChange: EventEmitter<CustomEvent<File[]>>;
+  fileInputChange: EventEmitter<CustomEvent<IAdmiraltyFileInputFileInputChangeEventDetail>>;
 }
 
 
@@ -1018,24 +1020,26 @@ export declare interface AdmiraltyTableRow extends Components.AdmiraltyTableRow 
 
 
 @ProxyCmp({
-  inputs: ['disabled', 'hint', 'invalid', 'invalidMessage', 'label', 'maxLength', 'text', 'width']
+  inputs: ['disabled', 'hint', 'invalid', 'invalidMessage', 'label', 'maxLength', 'value', 'width']
 })
 @Component({
   selector: 'admiralty-textarea',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['disabled', 'hint', 'invalid', 'invalidMessage', 'label', 'maxLength', 'text', 'width'],
+  inputs: ['disabled', 'hint', 'invalid', 'invalidMessage', 'label', 'maxLength', 'value', 'width'],
 })
 export class AdmiraltyTextarea {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['textareaBlur', 'textareaChanged']);
+    proxyOutputs(this, this.el, ['textareaBlur', 'admiraltyChange']);
   }
 }
 
+
+import type { TextAreaChangeEventDetail as IAdmiraltyTextareaTextAreaChangeEventDetail } from '@ukho/admiralty-core';
 
 export declare interface AdmiraltyTextarea extends Components.AdmiraltyTextarea {
   /**
@@ -1043,9 +1047,9 @@ export declare interface AdmiraltyTextarea extends Components.AdmiraltyTextarea 
    */
   textareaBlur: EventEmitter<CustomEvent<any>>;
   /**
-   * Event is fired when the form control changes @event textareaChanged
+   * Event is fired when the form control changes @event admiraltyChange
    */
-  textareaChanged: EventEmitter<CustomEvent<string>>;
+  admiraltyChange: EventEmitter<CustomEvent<IAdmiraltyTextareaTextAreaChangeEventDetail>>;
 }
 
 
