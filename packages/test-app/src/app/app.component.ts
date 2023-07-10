@@ -2,6 +2,12 @@ import { Component } from '@angular/core';
 import { QueryList, ViewChildren } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AdmiraltySideNavItem } from '@ukho/admiralty-angular';
+import { Observable } from 'rxjs';
+
+export interface CommissioningOrganisation {
+  id?: number;
+  organisationName?: string;
+}
 
 @Component({
   selector: 'app-root',
@@ -40,4 +46,15 @@ export class AppComponent {
       sideNavItem.navActive = sideNavItem.sideNavItemId === sideNavItemId;
     });
   }
+
+  typeahead() {
+    console.log('gregtest');
+    this.commissioningOrganisations = [{ id: 6, organisationName: 'third organisation name' }];
+  }
+
+  commissioningOrganisations: CommissioningOrganisation[] = [
+    { id: 9, organisationName: 'first organisation name' },
+    { id: 10, organisationName: 'second organisation name' },
+  ];
 }
+
