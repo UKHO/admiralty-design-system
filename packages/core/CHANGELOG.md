@@ -1,3 +1,15 @@
+# v0.3.4 (Mon Jul 10 2023)
+
+#### 🐛 Bug Fix
+
+- fix: admiralty type ahead item fails to append value on dynamic data [#80](https://github.com/UKHO/admiralty-design-system/pull/80) ([@UKHOGreg](https://github.com/UKHOGreg))
+
+#### Authors: 1
+
+- Greg Williams ([@UKHOGreg](https://github.com/UKHOGreg))
+
+---
+
 # v0.3.3 (Fri Jul 07 2023)
 
 #### 🐛 Bug Fix
