@@ -1,3 +1,15 @@
+# v0.3.5 (Tue Jul 11 2023)
+
+#### 🐛 Bug Fix
+
+- fix: input component invalid error message layout space not reserved when not displayed [#82](https://github.com/UKHO/admiralty-design-system/pull/82) ([@UKHOGreg](https://github.com/UKHOGreg))
+
+#### Authors: 1
+
+- Greg Williams ([@UKHOGreg](https://github.com/UKHOGreg))
+
+---
+
 # v0.3.4 (Mon Jul 10 2023)
 
 #### 🐛 Bug Fix
