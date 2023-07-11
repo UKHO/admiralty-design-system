@@ -1,3 +1,15 @@
+# v0.3.6 (Tue Jul 11 2023)
+
+#### 🐛 Bug Fix
+
+- fix: Typeahead drawer positioning [#85](https://github.com/UKHO/admiralty-design-system/pull/85) ([@UKHOGreg](https://github.com/UKHOGreg))
+
+#### Authors: 1
+
+- Greg Williams ([@UKHOGreg](https://github.com/UKHOGreg))
+
+---
+
 # v0.3.5 (Tue Jul 11 2023)
 
 #### 🐛 Bug Fix
