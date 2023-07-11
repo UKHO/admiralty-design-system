@@ -1,4 +1,4 @@
-@use "../../scss/vars/colours" as colours;
+@use '../../scss/vars/colours' as colours;
 
 progress {
   appearance: none;
@@ -16,7 +16,15 @@ progress {
     background-color: colours.$colour-utility-error;
   }
 
+  &[value].error::-moz-progress-bar {
+    background-color: colours.$colour-utility-error;
+  }
+
   &[value]::-webkit-progress-value {
+    background-color: colours.$colour-utility-success;
+  }
+
+  &[value]::-moz-progress-bar {
     background-color: colours.$colour-utility-success;
   }
 }
