@@ -9,7 +9,7 @@ import { Component, Host, h, Prop } from '@stencil/core';
   styleUrl: 'table.scss',
   scoped: true,
 })
-export class Table {
+export class TableComponent {
   @Prop() caption: string;
 
   render() {

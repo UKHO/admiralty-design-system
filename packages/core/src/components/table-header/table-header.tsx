@@ -9,7 +9,7 @@ import { Component, Host, h } from '@stencil/core';
   styleUrl: 'table-header.scss',
   scoped: true,
 })
-export class TableHeader {
+export class TableHeaderComponent {
   render() {
     return (
       <Host role="rowgroup">

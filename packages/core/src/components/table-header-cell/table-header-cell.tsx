@@ -9,7 +9,7 @@ import { Component, Host, h } from '@stencil/core';
   styleUrl: 'table-header-cell.scss',
   scoped: true,
 })
-export class TableHeaderCell {
+export class TableHeaderCellComponent {
   render() {
     return (
       <Host role="columnheader">

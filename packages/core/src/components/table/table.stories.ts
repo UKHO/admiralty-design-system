@@ -1,23 +1,22 @@
 import { Meta, StoryObj } from '@storybook/web-components';
-import { Table } from './table';
+import { TableComponent } from './table';
 import { html } from 'lit';
 
 const meta: Meta = {
   title: 'Table',
   component: 'admiralty-table',
   parameters: {
-    actions: {
-    }
-  }
+    actions: {},
+  },
 };
 
 export default meta;
 
-type Story = StoryObj<Table>;
+type Story = StoryObj<TableComponent>;
 
-export const Basic: Story = { render: args =>
-  html`
-    <admiralty-table caption="${args.caption}">
+export const Basic: Story = {
+  render: args =>
+    html` <admiralty-table caption="${args.caption}">
       <admiralty-table-header>
         <admiralty-table-row>
           <admiralty-table-header-cell>Name</admiralty-table-header-cell>
@@ -54,6 +53,6 @@ export const Basic: Story = { render: args =>
       </admiralty-table-body>
     </admiralty-table>`,
   args: {
-    caption: 'Favourite Foods'
-  }
+    caption: 'Favourite Foods',
+  },
 };
