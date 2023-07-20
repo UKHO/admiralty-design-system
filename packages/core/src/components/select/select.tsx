@@ -93,7 +93,7 @@ export class SelectComponent {
           <admiralty-label disabled={this.disabled} for={id}>
             {label}
           </admiralty-label>
-          <admiralty-hint disabled={this.disabled}>{hint}</admiralty-hint>
+          {hint ? <admiralty-hint disabled={this.disabled}>{hint}</admiralty-hint> : null}
           <div class="select-wrapper" style={this.width ? { maxWidth: `${this.width}px` } : {}}>
             <select
               ref={select => (this.nativeInput = select)}
