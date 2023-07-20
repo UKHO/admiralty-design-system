@@ -1,3 +1,19 @@
+# v0.3.8 (Thu Jul 20 2023)
+
+#### 🐛 Bug Fix
+
+- fix: admiralty select admiralty input styling alignment [#90](https://github.com/UKHO/admiralty-design-system/pull/90) ([@UKHOGreg](https://github.com/UKHOGreg))
+
+#### 🏠 Internal
+
+- chore: Add -Component suffix to all Table related components [#89](https://github.com/UKHO/admiralty-design-system/pull/89) ([@UKHOGreg](https://github.com/UKHOGreg))
+
+#### Authors: 1
+
+- Greg Williams ([@UKHOGreg](https://github.com/UKHOGreg))
+
+---
+
 # v0.3.7 (Tue Jul 11 2023)
 
 #### 🐛 Bug Fix
