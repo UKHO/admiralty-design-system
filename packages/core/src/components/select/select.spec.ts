@@ -15,7 +15,6 @@ describe('admiralty-select', () => {
           <admiralty-label for="admiralty-select-1">
             Choose a colour
           </admiralty-label>
-          <admiralty-hint></admiralty-hint>
           <div class="select-wrapper">
             <select aria-disabled="false" aria-label="Choose a colour" class="admiralty-form-control" id="admiralty-select-1">
               <option>
