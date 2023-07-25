@@ -1,6 +1,6 @@
-@use "../../scss/vars/colours" as colours;
-@use "../../scss/base/responsive";
-@use "../../scss/vars/typography";
+@use '../../scss/vars/colours' as colours;
+@use '../../scss/base/responsive';
+@use '../../scss/vars/typography';
 
 @mixin active {
   box-shadow: inset 0 -5px colours.$colour-admiralty-blue;
@@ -95,10 +95,6 @@ button {
       &:hover {
         background-color: colours.$colour-nav-bg-hover;
       }
-
-      // &:focus {
-      //   box-shadow: colours.$colour-utility-focus inset 0 0 0 3px;
-      // }
     }
   }
 }

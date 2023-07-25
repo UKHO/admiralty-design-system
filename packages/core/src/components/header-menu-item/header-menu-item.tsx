@@ -45,7 +45,6 @@ export class HeaderMenuItemComponent {
 
   private toggleSubMenu() {
     const subMenu: HTMLDivElement = this.el.querySelector('div.sub-menu');
-    console.log('clicked-subMenuExists, display:', subMenu.style.display);
 
     if (subMenu.classList.contains('desktop-hide')) {
       subMenu.classList.add('desktop-visible');
@@ -63,7 +62,6 @@ export class HeaderMenuItemComponent {
 
   handleClick(ev: MouseEvent): CustomEvent<void> {
     ev.stopPropagation();
-    console.log('clicked!');
 
     if (this.subMenuExists) {
       this.subMenuSelector.setAttribute('aria-hidden', 'false');
@@ -86,7 +84,7 @@ export class HeaderMenuItemComponent {
   }
 
   /**
-   * Handles mouseover events, used to set the aria hidden attribute when submenu
+   * Handles mouseout events, used to set the aria hidden attribute when submenu
    * is no longer visible
    */
   handleMouseOut(_ev: Event): void {
@@ -103,7 +101,7 @@ export class HeaderMenuItemComponent {
       this.closeSubMenu();
     }
   }
-  
+
   render() {
     const { active, menuTitle } = this;
     let menuClass = 'menu-item ';
