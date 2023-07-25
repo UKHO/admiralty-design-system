@@ -149,6 +149,21 @@
   <admiralty-type-ahead-item value="guinea pig"></admiralty-type-ahead-item>
 </admiralty-type-ahead>
 
+<admiralty-button (click)="typeahead()">Button</admiralty-button>
+
+<ng-container *ngFor="let item of commissioningOrganisations">
+  <span>{{ item.organisationName }}</span>
+</ng-container>
+
+<admiralty-type-ahead resultsOnInitFocus="true" type="text" [label]="'Commissioning organisation *'">
+  <admiralty-type-ahead-item value="ostrich"></admiralty-type-ahead-item>
+  <admiralty-type-ahead-item
+    *ngFor="let item of commissioningOrganisations"
+    [value]="item.organisationName"
+  ></admiralty-type-ahead-item>
+  <admiralty-type-ahead-item value="guinea pig"></admiralty-type-ahead-item>
+</admiralty-type-ahead>
+
 <admiralty-table caption="Favourite Foods">
   <admiralty-table-header>
     <admiralty-table-header-cell>Name</admiralty-table-header-cell>
@@ -198,3 +213,12 @@
   your nationality, you’ll have to send copies of identity documents through the post.
 </admiralty-read-more>
 <br />
+<div style="display: flex">
+  <admiralty-select style="margin-right: 10px; width: 250px" label="Vertical datum *">
+    <option disabled></option>
+    <option>test</option>
+    <option>test 2</option>
+  </admiralty-select>
+  <admiralty-input style="margin-right: 10px; width: 250px" label="Please give further details:"></admiralty-input>
+</div>
+

@@ -1,3 +1,73 @@
+# v0.3.8 (Thu Jul 20 2023)
+
+#### 🐛 Bug Fix
+
+- `@ukho/admiralty-core`
+  - fix: admiralty select admiralty input styling alignment [#90](https://github.com/UKHO/admiralty-design-system/pull/90) ([@UKHOGreg](https://github.com/UKHOGreg))
+
+#### 🏠 Internal
+
+- `@ukho/admiralty-core`
+  - chore: Add -Component suffix to all Table related components [#89](https://github.com/UKHO/admiralty-design-system/pull/89) ([@UKHOGreg](https://github.com/UKHOGreg))
+
+#### Authors: 1
+
+- Greg Williams ([@UKHOGreg](https://github.com/UKHOGreg))
+
+---
+
+# v0.3.7 (Tue Jul 11 2023)
+
+#### 🐛 Bug Fix
+
+- `@ukho/admiralty-core`
+  - fix: progress bar colours in Firefox [#83](https://github.com/UKHO/admiralty-design-system/pull/83) ([@UKHOGreg](https://github.com/UKHOGreg))
+
+#### Authors: 1
+
+- Greg Williams ([@UKHOGreg](https://github.com/UKHOGreg))
+
+---
+
+# v0.3.6 (Tue Jul 11 2023)
+
+#### 🐛 Bug Fix
+
+- `@ukho/admiralty-core`
+  - fix: Typeahead drawer positioning [#85](https://github.com/UKHO/admiralty-design-system/pull/85) ([@UKHOGreg](https://github.com/UKHOGreg))
+
+#### Authors: 1
+
+- Greg Williams ([@UKHOGreg](https://github.com/UKHOGreg))
+
+---
+
+# v0.3.5 (Tue Jul 11 2023)
+
+#### 🐛 Bug Fix
+
+- `@ukho/admiralty-core`
+  - fix: input component invalid error message layout space not reserved when not displayed [#82](https://github.com/UKHO/admiralty-design-system/pull/82) ([@UKHOGreg](https://github.com/UKHOGreg))
+
+#### Authors: 1
+
+- Greg Williams ([@UKHOGreg](https://github.com/UKHOGreg))
+
+---
+
+# v0.3.4 (Mon Jul 10 2023)
+
+#### 🐛 Bug Fix
+
+- `@ukho/admiralty-core`
+  - fix: admiralty type ahead item fails to append value on dynamic data [#80](https://github.com/UKHO/admiralty-design-system/pull/80) ([@UKHOGreg](https://github.com/UKHOGreg))
+
+#### Authors: 1
+
+- Greg Williams ([@UKHOGreg](https://github.com/UKHOGreg))
+
+---
+
 # v0.3.3 (Fri Jul 07 2023)
 
 #### 🐛 Bug Fix

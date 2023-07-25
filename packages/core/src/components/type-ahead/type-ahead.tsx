@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Host, Prop, Event, h, State, Element } from '@stencil/core';
+import { Component, EventEmitter, Host, Prop, Event, h, State, Element, forceUpdate } from '@stencil/core';
 import { Keys } from '../Keys';
 
 @Component({
@@ -27,6 +27,8 @@ export class TypeAheadComponent {
   isSilenced = false;
   isAlternateStatusSection = false;
   statusText: string;
+
+  private mutation: MutationObserver;
 
   private originalSearch = '';
   private hasBeenFocusedAtLeastOnce = false;
@@ -75,17 +77,37 @@ export class TypeAheadComponent {
    */
   @Event() valueChanged: EventEmitter<string>;
 
-  connectedCallback() {
-    const slotItems = this.el.querySelectorAll('admiralty-type-ahead-item');
-    slotItems.forEach(el => {
-      this.filterList.push(el.getAttribute('value'));
-    });
-  }
-
   componentDidLoad() {
     if (this.value) {
       this.inputValue = this.value;
     }
+  }
+
+  connectedCallback() {
+    this.mutation = new MutationObserver(() => {
+      this.populateFilterList();
+      forceUpdate(this);
+    });
+    this.mutation.observe(this.el, {
+      childList: true,
+      subtree: true,
+    });
+  }
+
+  disconnectedCallback() {
+    if (this.mutation) {
+      this.mutation.disconnect();
+      this.mutation = undefined;
+    }
+  }
+
+  populateFilterList() {
+    const slotItems = this.el.querySelectorAll('admiralty-type-ahead-item');
+    this.filterList = [];
+    slotItems.forEach(el => {
+      this.filterList.push(el.getAttribute('value'));
+      console.log('fliterlist value ', el.getAttribute('value'));
+    });
   }
 
   handleFocusIn() {

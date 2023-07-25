@@ -7589,7 +7589,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ukho/admiralty-angular@^0.3.3, @ukho/admiralty-angular@workspace:packages/angular":
+"@ukho/admiralty-angular@^0.3.8, @ukho/admiralty-angular@workspace:packages/angular":
   version: 0.0.0-use.local
   resolution: "@ukho/admiralty-angular@workspace:packages/angular"
   dependencies:
@@ -7605,7 +7605,7 @@ __metadata:
     "@angular/platform-browser-dynamic": ^12.0.0
     "@angular/router": ^12.0.0
     "@types/node": ^18.15.11
-    "@ukho/admiralty-core": ^0.3.3
+    "@ukho/admiralty-core": ^0.3.8
     ng-packagr: ^12.0.0
     postcss: ^8.4.24
     postcss-import: ^15.1.0
@@ -7619,7 +7619,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@ukho/admiralty-core@^0.3.3, @ukho/admiralty-core@workspace:packages/core":
+"@ukho/admiralty-core@^0.3.8, @ukho/admiralty-core@workspace:packages/core":
   version: 0.0.0-use.local
   resolution: "@ukho/admiralty-core@workspace:packages/core"
   dependencies:
@@ -23574,7 +23574,7 @@ __metadata:
     "@angular/router": ~15.2.5
     "@fortawesome/fontawesome-free": ~6.4.0
     "@types/node": ^18.15.11
-    "@ukho/admiralty-angular": ^0.3.3
+    "@ukho/admiralty-angular": ^0.3.8
     rimraf: ^4.4.1
     rxjs: ~7.8.0
     tslib: ^2.5.0
@@ -25163,9 +25163,9 @@ __metadata:
   linkType: hard
 
 "word-wrap@npm:~1.2.3":
-  version: 1.2.3
-  resolution: "word-wrap@npm:1.2.3"
-  checksum: 30b48f91fcf12106ed3186ae4fa86a6a1842416df425be7b60485de14bec665a54a68e4b5156647dec3a70f25e84d270ca8bc8cd23182ed095f5c7206a938c1f
+  version: 1.2.4
+  resolution: "word-wrap@npm:1.2.4"
+  checksum: 8f1f2e0a397c0e074ca225ba9f67baa23f99293bc064e31355d426ae91b8b3f6b5f6c1fc9ae5e9141178bb362d563f55e62fd8d5c31f2a77e3ade56cb3e35bd1
   languageName: node
   linkType: hard
 

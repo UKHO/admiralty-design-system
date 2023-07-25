@@ -2,6 +2,15 @@ import { newSpecPage } from '@stencil/core/testing';
 import { TypeAheadComponent } from '../type-ahead';
 import { AdmiraltyTypeAheadItem } from '../../type-ahead-item/type-ahead-item';
 
+const mutationObserverMock = jest.fn<MutationObserver, [MutationCallback]>().mockImplementation(() => {
+  return {
+    observe: jest.fn(),
+    disconnect: jest.fn(),
+    takeRecords: jest.fn(),
+  };
+});
+global.MutationObserver = mutationObserverMock;
+
 describe('type-ahead', () => {
   it('renders', async () => {
     const page = await newSpecPage({

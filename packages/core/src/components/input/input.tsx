@@ -133,7 +133,7 @@ export class InputComponent implements ComponentInterface {
             maxWidth: this.width ? `${this.width}px` : null,
           }}
         />
-        {this.invalid ? <admiralty-input-error>{this.invalidMessage}</admiralty-input-error> : null}
+        <admiralty-input-error style={{ visibility: this.invalid ? 'visible' : 'hidden' }}>{this.invalidMessage}</admiralty-input-error>
       </div>
     );
   }

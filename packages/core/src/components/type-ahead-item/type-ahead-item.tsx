@@ -6,9 +6,9 @@ import { Component, Host, Prop, h } from '@stencil/core';
   scoped: true,
 })
 export class AdmiraltyTypeAheadItem {
-  @Prop() value!: string;
+  @Prop() value: string;
 
   render() {
-    return <Host></Host>;
+    return <Host value={this.value}></Host>;
   }
 }
