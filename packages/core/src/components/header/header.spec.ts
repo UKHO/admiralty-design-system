@@ -17,8 +17,43 @@ describe('admiralty-header', () => {
                 <img alt="Admiralty Stacked Logo" class="header-image" src="svg/Admiralty stacked logo.svg">
               </a>
               <div class="vertical-seperator"></div>
+            </div>
+            <div class="header-menus">
+              <div class="mobile-menu-toggle">
+                <button>
+                  <admiralty-icon icon-name="bars"></admiralty-icon>
+                </button>
+              </div>
+              <div class="menu-sections">
+                <div class="menu-items" role="navigation"></div>
+                <div class="header-profile" role="navigation"></div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </admiralty-header>
+    `);
+  });
+
+  it('should render with title', async () => {
+    const page = await newSpecPage({
+      components: [HeaderComponent],
+      html: `<admiralty-header header-title="Design System"></admiralty-header>`,
+    });
+    expect(page.root).toMatchInlineSnapshot(`
+      <admiralty-header header-title="Design System">
+        <!---->
+        <div class="admiralty-header">
+          <nav class="header-menu">
+            <div class="header-branding">
+              <a class="header-logo" href="https://www.admiralty.co.uk/" tabindex="0">
+                <img alt="Admiralty Stacked Logo" class="header-image" src="svg/Admiralty stacked logo.svg">
+              </a>
+              <div class="vertical-seperator"></div>
               <h1 class="header-title">
-                <a tabindex="0"></a>
+                <a tabindex="0">
+                  Design System
+                </a>
               </h1>
             </div>
             <div class="header-menus">

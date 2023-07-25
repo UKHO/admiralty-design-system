@@ -71,11 +71,13 @@ export class HeaderComponent {
               <img class="header-image" alt={logoAltText} src={logoImgUrl} />
             </a>
             <div class="vertical-seperator"></div>
-            <h1 class="header-title">
-              <a onClick={ev => this.handleClick(ev)} href={headerTitleUrl} tabindex="0">
-                {headerTitle}
-              </a>
-            </h1>
+            {this.headerTitle ? (
+              <h1 class="header-title">
+                <a onClick={ev => this.handleClick(ev)} href={headerTitleUrl} tabindex="0">
+                  {headerTitle}
+                </a>
+              </h1>
+            ) : null}
           </div>
           <div class="header-menus">
             <div class={{ 'mobile-menu-toggle': true, 'display-hamburger': this.displayHamburger }}>
