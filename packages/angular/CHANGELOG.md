@@ -1,3 +1,17 @@
+# v0.4.0 (Wed Jul 26 2023)
+
+#### 🚀 Enhancement
+
+- feat: Header Components - tab through navigation using keyboard [#62](https://github.com/UKHO/admiralty-design-system/pull/62) ([@martind-bjss](https://github.com/martind-bjss) [@ecstaticrainbow](https://github.com/ecstaticrainbow) [@UKHOGreg](https://github.com/UKHOGreg))
+
+#### Authors: 3
+
+- Greg Williams ([@UKHOGreg](https://github.com/UKHOGreg))
+- Martin Davies ([@martind-bjss](https://github.com/martind-bjss))
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
 # v0.3.9 (Wed Jul 26 2023)
 
 #### 🏠 Internal
