@@ -1,3 +1,26 @@
+# v0.3.9 (Wed Jul 26 2023)
+
+#### 🐛 Bug Fix
+
+- `@ukho/admiralty-core`
+  - fix: Make Progress Bar progressvalue reactive [#94](https://github.com/UKHO/admiralty-design-system/pull/94) ([@UKHOGreg](https://github.com/UKHOGreg))
+
+#### 🏠 Internal
+
+- `@ukho/admiralty-angular`, `@ukho/admiralty-core`
+  - chore: Upgrade packages [#93](https://github.com/UKHO/admiralty-design-system/pull/93) ([@UKHOGreg](https://github.com/UKHOGreg))
+
+#### 🔩 Dependency Updates
+
+- Bump word-wrap from 1.2.3 to 1.2.4 [#91](https://github.com/UKHO/admiralty-design-system/pull/91) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 2
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Greg Williams ([@UKHOGreg](https://github.com/UKHOGreg))
+
+---
+
 # v0.3.8 (Thu Jul 20 2023)
 
 #### 🐛 Bug Fix

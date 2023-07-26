@@ -1,3 +1,19 @@
+# v0.3.9 (Wed Jul 26 2023)
+
+#### 🐛 Bug Fix
+
+- fix: Make Progress Bar progressvalue reactive [#94](https://github.com/UKHO/admiralty-design-system/pull/94) ([@UKHOGreg](https://github.com/UKHOGreg))
+
+#### 🏠 Internal
+
+- chore: Upgrade packages [#93](https://github.com/UKHO/admiralty-design-system/pull/93) ([@UKHOGreg](https://github.com/UKHOGreg))
+
+#### Authors: 1
+
+- Greg Williams ([@UKHOGreg](https://github.com/UKHOGreg))
+
+---
+
 # v0.3.8 (Thu Jul 20 2023)
 
 #### 🐛 Bug Fix

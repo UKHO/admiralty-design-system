@@ -1,4 +1,4 @@
-import { Component, h, Prop, State } from '@stencil/core';
+import { Component, h, Prop, State, Watch } from '@stencil/core';
 
 @Component({
   tag: 'admiralty-progress-bar',
@@ -25,7 +25,20 @@ export class ProgressBarComponent {
   /**
    * Progress value, min:0, max: 100
    */
+
   @State() progressionValue: number = this.progression;
+
+  /**
+   * @internal
+   * Watches the progression prop for changes
+   * then updates the progressionValue state if the progression value is valid
+   */
+  @Watch('progression')
+  protected progressionChanged() {
+    if (this.progression && this.progression >= 0 && this.progression <= 100) {
+      this.progressionValue = this.progression;
+    }
+  }
 
   render() {
     const { id, label, error, progressionValue } = this;
