@@ -1,3 +1,15 @@
+# v0.3.9 (Wed Jul 26 2023)
+
+#### 🏠 Internal
+
+- chore: Upgrade packages [#93](https://github.com/UKHO/admiralty-design-system/pull/93) ([@UKHOGreg](https://github.com/UKHOGreg))
+
+#### Authors: 1
+
+- Greg Williams ([@UKHOGreg](https://github.com/UKHOGreg))
+
+---
+
 # v0.3.3 (Fri Jul 07 2023)
 
 #### 🐛 Bug Fix
