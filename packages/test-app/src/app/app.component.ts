@@ -27,7 +27,14 @@ export class AppComponent {
     textarea: new FormControl('This is a text area'),
   });
 
+  progress = 91;
+
   blah = this.group.get('text');
+
+  onIncreaseProgressClick() {
+    this.progress++;
+    console.log('onIncreaseProgressClick', this.progress);
+  }
 
   onColourBlockClick() {
     console.log('onColourBlockClick');
