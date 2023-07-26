@@ -14,9 +14,9 @@
 
 ## Events
 
-| Event              | Description                                            | Type                |
-| ------------------ | ------------------------------------------------------ | ------------------- |
-| `subMenuItemClick` | The event that is fired when a user clicks on the menu | `CustomEvent<void>` |
+| Event              | Description                                                                                | Type                  |
+| ------------------ | ------------------------------------------------------------------------------------------ | --------------------- |
+| `subMenuItemClick` | The event that is fired when a user clicks on the menu. Event contains the menu item text. | `CustomEvent<string>` |
 
 
 ----------------------------------------------

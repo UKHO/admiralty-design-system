@@ -1,4 +1,5 @@
-import { Component, Event, Host, h, Prop, EventEmitter, State } from '@stencil/core';
+import { Component, Event, Host, h, Prop, EventEmitter, Element } from '@stencil/core';
+import { Keys } from '../Keys';
 
 @Component({
   tag: 'admiralty-header-profile',
@@ -6,7 +7,7 @@ import { Component, Event, Host, h, Prop, EventEmitter, State } from '@stencil/c
   scoped: true,
 })
 export class HeaderProfileComponent {
-  @State() displaySubmenu = false;
+  @Element() el: HTMLElement;
 
   /**
    * A boolean to indicate if the user is signed in or not
@@ -40,55 +41,85 @@ export class HeaderProfileComponent {
     this.signInClicked.emit();
   };
 
+  handleSignInKeyDown = (ev: KeyboardEvent) => {
+    if (ev.key === Keys.ENTER || ev.key === Keys.SPACE) {
+      this.signInClicked.emit();
+    }
+  }
+
   handleSignOut = () => {
     this.signOutClicked.emit();
   };
 
-  handleYouAccount = () => {
+  handleSignOutKeyDown = (ev: KeyboardEvent) => {
+    if (ev.key === Keys.ENTER || ev.key === Keys.SPACE) {
+      this.signOutClicked.emit();
+    }
+  }
+
+  handleYourAccount = () => {
     this.yourAccountClicked.emit();
   };
 
-  openDropdown = () => {
-    this.displaySubmenu = true;
-  };
+  handleYourAccountKeyDown = (ev: KeyboardEvent) => {
+    if (ev.key === Keys.ENTER || ev.key === Keys.SPACE) {
+      this.yourAccountClicked.emit();
+    }
+  }
 
   closeDropdown = () => {
-    this.displaySubmenu = true;
+    const subMenu: HTMLDivElement = this.el.querySelector('div.sub-menu');
+    subMenu.classList.add('desktop-hide');
   };
 
-  render() {
-    let { isSignedIn, signedInText, displaySubmenu } = this;
+  toggleDropdown = (_ev: Event) => {
+    const subMenu: HTMLDivElement = this.el.querySelector('div.sub-menu');
 
+    if (subMenu.classList.contains('desktop-hide')) {
+      subMenu.classList.add('desktop-visible');
+      subMenu.classList.remove('desktop-hide');
+    } else {
+      subMenu.classList.add('desktop-hide');
+      subMenu.classList.remove('desktop-visible');
+    }
+  };
+
+  handleClickSignedIn = (ev: MouseEvent) =>{
+    ev.stopPropagation();
+    this.toggleDropdown(ev);
+  }
+
+  render() {
+    let { isSignedIn, signedInText } = this;
     return (
       <Host>
         <div class="header-profile">
           {isSignedIn ? (
             <div>
-              <div class="desktop">
-                <button onMouseOver={this.openDropdown} onMouseOut={this.closeDropdown}>
+              <div class="desktop"
+                onMouseOver={this.toggleDropdown}
+              >
+                <button
+                  onClick={this.handleClickSignedIn}
+                  tabindex="0">
                   {signedInText}
                 </button>
-                {displaySubmenu ? (
-                  <div class="sub-menu">
-                    <div class="sub-menu-item">
-                      <button onClick={this.handleYouAccount}>Your Account</button>
-                    </div>
-                    <div class="sub-menu-item">
-                      <button onClick={this.handleSignOut}>Sign Out</button>
-                    </div>
-                  </div>
-                ) : null}
+                <div class="sub-menu desktop-hide">
+                  <button class="sub-menu-item" onClick={this.handleYourAccount} tabindex="0">Your Account</button>
+                  <button  class="sub-menu-item" onClick={this.handleSignOut} tabindex="0">Sign Out</button>
+                </div>
               </div>
               <div class="not-desktop">
-                <div class="sub-menu-item" onClick={this.handleYouAccount}>Your Account</div>
-                <div class="sub-menu-item" onClick={this.handleSignOut}>Sign Out</div>
+                <div class="sub-menu-item" onClick={this.handleYourAccount} onKeyDown={this.handleYourAccountKeyDown} tabindex="0">Your Account</div>
+                <div class="sub-menu-item" onClick={this.handleSignOut}  onKeyDown={this.handleSignOutKeyDown} tabindex="0">Sign Out</div>
               </div>
             </div>
           ) : (
-            <div class="sub-menu-item" onClick={this.handleSignIn}>Sign In</div>
+            <button class="sub-menu-item" onClick={this.handleSignIn} tabindex="0">Sign In</button>
           )}
         </div>
       </Host>
     );
   }
+
 }
