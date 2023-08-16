@@ -54,6 +54,11 @@ export class InputComponent implements ComponentInterface {
   @Prop() width: number;
 
   /**
+   * The maximum string length for the input field.
+   */
+  @Prop() maxLength?: number;
+
+  /**
    * This dictates whether the input is required or not
    */
   @Prop() required: boolean = false;
@@ -125,6 +130,7 @@ export class InputComponent implements ComponentInterface {
           name={this.name}
           type={this.type}
           value={value}
+          maxLength={this.maxLength}
           onInput={this.onInput}
           placeholder={this.placeholder}
           autoComplete={this.autocomplete}
