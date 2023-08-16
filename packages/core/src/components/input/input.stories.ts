@@ -119,5 +119,13 @@ export const Invalid: Story = {
     hint: 'Enter your full name',
     invalid: true,
     invalidMessage: 'That is not a real name',
-  }
+  },
+};
+
+export const MaxLength: Story = {
+  render: args => html` <admiralty-input label="${args.label}" max-length="${args.maxLength}"> </admiralty-input>`,
+  args: {
+    label: 'This input field will have a maxlength',
+    maxLength: 1,
+  },
 };

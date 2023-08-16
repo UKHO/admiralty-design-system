@@ -279,6 +279,10 @@ export namespace Components {
          */
         "label": string;
         /**
+          * The maximum string length for the input field.
+         */
+        "maxLength"?: number;
+        /**
           * The name of the control, which is submitted with the form data.
          */
         "name": string;
@@ -1289,6 +1293,10 @@ declare namespace LocalJSX {
           * The label which will be used above the input to describe the input.
          */
         "label"?: string;
+        /**
+          * The maximum string length for the input field.
+         */
+        "maxLength"?: number;
         /**
           * The name of the control, which is submitted with the form data.
          */
