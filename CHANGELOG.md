@@ -1,3 +1,21 @@
+# v0.4.1 (Wed Aug 16 2023)
+
+#### 🐛 Bug Fix
+
+- `@ukho/admiralty-angular`, `@ukho/admiralty-core`
+  - feat: Add maxLength property to Textarea [#100](https://github.com/UKHO/admiralty-design-system/pull/100) ([@UKHOGreg](https://github.com/UKHOGreg))
+
+#### 🏠 Internal
+
+- `@ukho/admiralty-core`
+  - chore: Update storybook [#96](https://github.com/UKHO/admiralty-design-system/pull/96) ([@UKHOGreg](https://github.com/UKHOGreg))
+
+#### Authors: 1
+
+- Greg Williams ([@UKHOGreg](https://github.com/UKHOGreg))
+
+---
+
 # v0.4.0 (Wed Jul 26 2023)
 
 #### 🚀 Enhancement
