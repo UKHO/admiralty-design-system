@@ -57,7 +57,7 @@ describe('admiralty-input', () => {
       <admiralty-input invalid="true">
         <div class="text-input-container">
           <input autocomplete="off" class="invalid" id="admiralty-input-4" name="admiralty-input-4" type="text" value="">
-          <admiralty-input-error style="visibility: visible;"></admiralty-input-error>
+          <admiralty-input-error style="visibility: hidden;"></admiralty-input-error>
         </div>
       </admiralty-input>
     `);
@@ -66,13 +66,15 @@ describe('admiralty-input', () => {
   it('renders invalid with invalidMessage', async () => {
     const page = await newSpecPage({
       components: [InputComponent],
-      html: `<admiralty-input invalid="true" invalidMessage="This is invalid!"></admiralty-input>`,
+      html: `<admiralty-input invalid="true" invalid-message="This is invalid!"></admiralty-input>`,
     });
     expect(page.root).toEqualHtml(`
-      <admiralty-input invalid="true" invalidMessage="This is invalid!">
+      <admiralty-input invalid="true" invalid-message="This is invalid!">
         <div class="text-input-container">
           <input autocomplete="off" class="invalid" id="admiralty-input-5" name="admiralty-input-5" type="text" value="">
-          <admiralty-input-error style="visibility: visible;"></admiralty-input-error>
+          <admiralty-input-error style="visibility: visible;">
+            This is invalid!
+          </admiralty-input-error>
         </div>
       </admiralty-input>
     `);

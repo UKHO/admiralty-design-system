@@ -69,15 +69,35 @@ describe('admiralty-textarea', () => {
 
     const page = await newSpecPage({
       components: [TextareaComponent],
-      html: `<admiralty-textarea label="Description" invalid="true" invalidMessage="BAD"></admiralty-textarea>`,
+      html: `<admiralty-textarea label="Description" invalid="true" invalid-message="BAD"></admiralty-textarea>`,
     });
 
     expect(page.root).toEqualHtml(`
-      <admiralty-textarea label="Description" invalid="true" invalidMessage="BAD">
+      <admiralty-textarea label="Description" invalid="true" invalid-message="BAD">
         <div class="text-area-container">
           <admiralty-label for="admiralty-textarea-${compId}">Description</admiralty-label>
           <textarea class="invalid" id="admiralty-textarea-${compId}" value=""></textarea>
-          <admiralty-input-error></admiralty-input-error>
+          <admiralty-input-error>
+            BAD
+          </admiralty-input-error>
+        </div>
+      </admiralty-textarea>
+    `);
+  });
+
+  it('should not show admiralty-input-error when invalid but no message provided', async () => {
+    ++compId;
+
+    const page = await newSpecPage({
+      components: [TextareaComponent],
+      html: `<admiralty-textarea label="Description" invalid="true" invalidMessage=""></admiralty-textarea>`,
+    });
+
+    expect(page.root).toEqualHtml(`
+      <admiralty-textarea label="Description" invalid="true" invalidMessage="">
+        <div class="text-area-container">
+          <admiralty-label for="admiralty-textarea-${compId}">Description</admiralty-label>
+          <textarea class="invalid" id="admiralty-textarea-${compId}" value=""></textarea>
         </div>
       </admiralty-textarea>
     `);
