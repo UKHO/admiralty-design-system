@@ -1,3 +1,15 @@
+# v0.4.2 (Thu Aug 17 2023)
+
+#### 🐛 Bug Fix
+
+- fix: admiralty input validation displays exclamation mark when invalid message is not provided [#101](https://github.com/UKHO/admiralty-design-system/pull/101) ([@UKHOGreg](https://github.com/UKHOGreg))
+
+#### Authors: 1
+
+- Greg Williams ([@UKHOGreg](https://github.com/UKHOGreg))
+
+---
+
 # v0.4.1 (Wed Aug 16 2023)
 
 #### 🐛 Bug Fix
