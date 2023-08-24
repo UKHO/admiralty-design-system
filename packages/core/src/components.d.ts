@@ -1592,7 +1592,7 @@ declare namespace LocalJSX {
           * Event is fired when the form control changes
           * @event admiraltyChange
          */
-        "onAdmiraltyChange"?: (event: AdmiraltyTextareaCustomEvent<TextAreaChangeEventDetail>) => void;
+        "onAdmiraltyInput"?: (event: AdmiraltyTextareaCustomEvent<TextAreaChangeEventDetail>) => void;
         /**
           * Event is fired when the form control loses focus
           * @event textareaBlur
