@@ -21,10 +21,10 @@
 
 ## Events
 
-| Event             | Description                                      | Type                                     |
-| ----------------- | ------------------------------------------------ | ---------------------------------------- |
-| `admiraltyChange` | Event is fired when the form control changes     | `CustomEvent<TextAreaChangeEventDetail>` |
-| `textareaBlur`    | Event is fired when the form control loses focus | `CustomEvent<any>`                       |
+| Event            | Description                                      | Type                                     |
+| ---------------- | ------------------------------------------------ | ---------------------------------------- |
+| `admiraltyInput` | Event is fired when the form control changes     | `CustomEvent<TextAreaChangeEventDetail>` |
+| `textareaBlur`   | Event is fired when the form control loses focus | `CustomEvent<any>`                       |
 
 
 ## Dependencies

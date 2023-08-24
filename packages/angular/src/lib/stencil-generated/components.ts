@@ -1035,7 +1035,7 @@ export class AdmiraltyTextarea {
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['textareaBlur', 'admiraltyChange']);
+    proxyOutputs(this, this.el, ['textareaBlur', 'admiraltyInput']);
   }
 }
 
@@ -1050,7 +1050,7 @@ export declare interface AdmiraltyTextarea extends Components.AdmiraltyTextarea 
   /**
    * Event is fired when the form control changes @event admiraltyChange
    */
-  admiraltyChange: EventEmitter<CustomEvent<IAdmiraltyTextareaTextAreaChangeEventDetail>>;
+  admiraltyInput: EventEmitter<CustomEvent<IAdmiraltyTextareaTextAreaChangeEventDetail>>;
 }
 
 

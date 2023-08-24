@@ -58,7 +58,7 @@ export class TextareaComponent {
    * Event is fired when the form control changes
    * @event admiraltyChange
    */
-  @Event() admiraltyChange: EventEmitter<TextAreaChangeEventDetail>;
+  @Event() admiraltyInput: EventEmitter<TextAreaChangeEventDetail>;
 
   /**
    * The value of the textarea.
@@ -75,7 +75,7 @@ export class TextareaComponent {
     if (nativeInput && nativeInput.value !== value) {
       nativeInput.value = value;
     }
-    this.admiraltyChange.emit({ value: this.value == null ? this.getValue() : this.value.toString() });
+    this.admiraltyInput.emit({ value: this.value == null ? this.getValue() : this.value.toString() });
   }
 
   private onBlur = () => {
