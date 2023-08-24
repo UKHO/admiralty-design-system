@@ -1,3 +1,16 @@
+# v0.4.4 (Thu Aug 24 2023)
+
+#### 🐛 Bug Fix
+
+- `@ukho/admiralty-angular`, `@ukho/admiralty-core`
+  - Fixing the text area event name change that was forgotten [#104](https://github.com/UKHO/admiralty-design-system/pull/104) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+#### Authors: 1
+
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
 # v0.4.3 (Thu Aug 24 2023)
 
 #### 🐛 Bug Fix
