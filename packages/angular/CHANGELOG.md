@@ -1,3 +1,15 @@
+# v0.4.3 (Thu Aug 24 2023)
+
+#### 🐛 Bug Fix
+
+- Fix: Input and Radio Group event names clashing [#103](https://github.com/UKHO/admiralty-design-system/pull/103) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+#### Authors: 1
+
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
 # v0.4.1 (Wed Aug 16 2023)
 
 #### 🐛 Bug Fix
