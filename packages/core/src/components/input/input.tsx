@@ -86,7 +86,7 @@ export class InputComponent implements ComponentInterface {
   /**
    * Emitted when the value has changed.
    */
-  @Event() admiraltyChange: EventEmitter<InputChangeEventDetail>;
+  @Event() admiraltyInput: EventEmitter<InputChangeEventDetail>;
 
   /**
    * Update the native input element when the value changes
@@ -98,7 +98,7 @@ export class InputComponent implements ComponentInterface {
     if (nativeInput && nativeInput.value !== value) {
       nativeInput.value = value;
     }
-    this.admiraltyChange.emit({ value: this.value == null ? this.getValue() : this.value.toString() });
+    this.admiraltyInput.emit({ value: this.value == null ? this.getValue() : this.value.toString() });
   }
 
   private onInput = (ev: Event) => {

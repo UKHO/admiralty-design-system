@@ -1304,7 +1304,7 @@ declare namespace LocalJSX {
         /**
           * Emitted when the value has changed.
          */
-        "onAdmiraltyChange"?: (event: AdmiraltyInputCustomEvent<InputChangeEventDetail>) => void;
+        "onAdmiraltyInput"?: (event: AdmiraltyInputCustomEvent<InputChangeEventDetail>) => void;
         /**
           * The placeholder text to show in the input
          */

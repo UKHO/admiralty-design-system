@@ -7,7 +7,7 @@ import { ValueAccessor } from './value-accessor';
   /* tslint:disable-next-line:directive-selector */
   selector: 'admiralty-input[type=number]',
   host: {
-    '(admiraltyChange)': 'handleChangeEvent($event.target.value)'
+    '(admiraltyInput)': 'handleChangeEvent($event.target.value)'
   },
   providers: [
     {
