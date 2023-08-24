@@ -514,7 +514,7 @@ export class AdmiraltyInput {
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['admiraltyChange']);
+    proxyOutputs(this, this.el, ['admiraltyInput']);
   }
 }
 
@@ -525,7 +525,7 @@ export declare interface AdmiraltyInput extends Components.AdmiraltyInput {
   /**
    * Emitted when the value has changed.
    */
-  admiraltyChange: EventEmitter<CustomEvent<IAdmiraltyInputInputChangeEventDetail>>;
+  admiraltyInput: EventEmitter<CustomEvent<IAdmiraltyInputInputChangeEventDetail>>;
 }
 
 

@@ -5,7 +5,7 @@ import { angularOutputTarget as angular, ValueAccessorConfig } from '@stencil/an
 const angularValueAccessorBindings: ValueAccessorConfig[] = [
   {
     elementSelectors: ['admiralty-input:not([type=number])', 'admiralty-textarea'],
-    event: 'admiraltyChange',
+    event: 'admiraltyInput',
     targetAttr: 'value',
     type: 'text',
   },
@@ -29,7 +29,7 @@ const angularValueAccessorBindings: ValueAccessorConfig[] = [
   },
   {
     elementSelectors: ['admiralty-input[type=number]'],
-    event: 'admiraltyChange',
+    event: 'admiraltyInput',
     targetAttr: 'value',
     type: 'number',
   },

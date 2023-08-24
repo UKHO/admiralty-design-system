@@ -33,9 +33,9 @@ and checkbox.
 
 ## Events
 
-| Event             | Description                         | Type                                  |
-| ----------------- | ----------------------------------- | ------------------------------------- |
-| `admiraltyChange` | Emitted when the value has changed. | `CustomEvent<InputChangeEventDetail>` |
+| Event            | Description                         | Type                                  |
+| ---------------- | ----------------------------------- | ------------------------------------- |
+| `admiraltyInput` | Emitted when the value has changed. | `CustomEvent<InputChangeEventDetail>` |
 
 
 ## Dependencies
