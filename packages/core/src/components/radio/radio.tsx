@@ -69,6 +69,15 @@ export class RadioComponent {
 
     if (radioGroup) {
       this.updateState();
+      radioGroup.addEventListener('admiraltyChange', this.updateState);
+    }
+  }
+
+  disconnectedCallback() {
+    const radioGroup = this.radioGroup;
+    if (radioGroup) {
+      radioGroup.removeEventListener('admiraltyChange', this.updateState);
+      this.radioGroup = null;
     }
   }
 
@@ -81,6 +90,9 @@ export class RadioComponent {
   private updateState = () => {
     if (this.radioGroup) {
       this.checked = this.radioGroup.value === this.value;
+      if (this.nativeInput && this.checked) {
+        this.nativeInput.focus();
+      }
     }
   };
 
