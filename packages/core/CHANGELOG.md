@@ -1,3 +1,15 @@
+# v0.4.5 (Tue Aug 29 2023)
+
+#### 🐛 Bug Fix
+
+- Fixing the radio component hit detection [#105](https://github.com/UKHO/admiralty-design-system/pull/105) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+#### Authors: 1
+
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
 # v0.4.4 (Thu Aug 24 2023)
 
 #### 🐛 Bug Fix
