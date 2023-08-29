@@ -29,7 +29,6 @@ export class RadioGroupComponent implements ComponentInterface {
   @Watch('value')
   valueChanged(value: any) {
     this.setRadioTabindex(value);
-
     this.admiraltyChange.emit({ value });
   }
 
