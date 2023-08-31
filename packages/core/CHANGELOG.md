@@ -1,3 +1,15 @@
+# v0.4.6 (Thu Aug 31 2023)
+
+#### 🐛 Bug Fix
+
+- Adding in invalid props to the radio group [#107](https://github.com/UKHO/admiralty-design-system/pull/107) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+#### Authors: 1
+
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
 # v0.4.5 (Tue Aug 29 2023)
 
 #### 🐛 Bug Fix
