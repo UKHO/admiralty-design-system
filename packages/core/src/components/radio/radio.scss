@@ -22,25 +22,24 @@
         outline: 3px solid colours.$colour-utility-focus;
       }
     }
-  }
 
     &:checked:after {
-        border-radius: 100%;
-        background-color: colours.$colour-admiralty-blue;
-        width: .8rem;
-        height: .8rem;
-        content: " ";
-      }
+      border-radius: 100%;
+      background-color: colours.$colour-admiralty-blue;
+      width: .8rem;
+      height: .8rem;
+      content: " ";
+    }
 
-      &:disabled {
-        border: 2px solid colours.$colour-textinput-text-disabled;
-      }
+    &:disabled {
+      border: 2px solid colours.$colour-textinput-text-disabled;
+    }
 
-      &:focus {
-        outline: 3px solid colours.$colour-utility-focus;
-        outline-offset: 0;
-      }
-
+    &:focus {
+      outline: 3px solid colours.$colour-utility-focus;
+      outline-offset: 0;
+    }
+  }
   label {
     font-family: typography.$font-family;
     font-weight: typography.$font-weight-light;
