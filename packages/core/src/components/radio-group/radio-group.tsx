@@ -26,6 +26,16 @@ export class RadioGroupComponent implements ComponentInterface {
    */
   @Prop() displayVertical: boolean = false;
 
+  /**
+   * Whether to show the input in an invalid state
+   */
+  @Prop() invalid: boolean = false;
+
+  /**
+   * The message to show when the input is invalid
+   */
+  @Prop() invalidMessage: string;
+
   @Watch('value')
   valueChanged(value: any) {
     this.setRadioTabindex(value);
@@ -37,8 +47,20 @@ export class RadioGroupComponent implements ComponentInterface {
    */
   @Event() admiraltyChange: EventEmitter<RadioGroupChangeEventDetail>;
 
+  @Watch('invalid')
+  invalidChanged(value: boolean) {
+    this.getRadios().forEach(radio => {
+      if (value) {
+        radio.setAttribute('invalid', 'true');
+      } else {
+        radio.removeAttribute('invalid');
+      }
+    });
+  }
+
   componentDidLoad(): void {
     this.setRadioTabindex(this.value);
+    this.invalidChanged(this.invalid);
   }
 
   private setRadioTabindex = (value: any | undefined) => {
@@ -62,7 +84,7 @@ export class RadioGroupComponent implements ComponentInterface {
     }
   };
 
-  private getRadios(): any {
+  private getRadios(): HTMLAdmiraltyRadioElement[] {
     return Array.from(this.el.querySelectorAll('admiralty-radio'));
   }
   private onClick = (e: Event) => {
@@ -85,6 +107,7 @@ export class RadioGroupComponent implements ComponentInterface {
       <Host>
         <div class={{ 'radio-group': true, 'stack': displayVertical }} role="radiogroup" onClick={this.onClick}>
           <slot></slot>
+          <admiralty-input-error style={{ visibility: this.invalid && this.invalidMessage ? 'visible' : 'hidden' }}>{this.invalidMessage}</admiralty-input-error>
         </div>
       </Host>
     );
