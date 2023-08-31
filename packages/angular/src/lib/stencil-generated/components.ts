@@ -668,14 +668,14 @@ export declare interface AdmiraltyProgressBar extends Components.AdmiraltyProgre
 
 
 @ProxyCmp({
-  inputs: ['checked', 'disabled', 'name', 'value']
+  inputs: ['checked', 'disabled', 'invalid', 'name', 'value']
 })
 @Component({
   selector: 'admiralty-radio',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['checked', 'disabled', 'name', 'value'],
+  inputs: ['checked', 'disabled', 'invalid', 'name', 'value'],
 })
 export class AdmiraltyRadio {
   protected el: HTMLElement;
@@ -704,14 +704,14 @@ export declare interface AdmiraltyRadio extends Components.AdmiraltyRadio {
 
 
 @ProxyCmp({
-  inputs: ['displayVertical', 'name', 'value']
+  inputs: ['displayVertical', 'invalid', 'invalidMessage', 'name', 'value']
 })
 @Component({
   selector: 'admiralty-radio-group',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['displayVertical', 'name', 'value'],
+  inputs: ['displayVertical', 'invalid', 'invalidMessage', 'name', 'value'],
 })
 export class AdmiraltyRadioGroup {
   protected el: HTMLElement;

@@ -37,6 +37,11 @@ export class RadioComponent {
   @Prop({ mutable: true }) checked?: boolean = false;
 
   /**
+   * Determines whether to add the invalid stying to the radio button
+   */
+  @Prop() invalid: boolean = false;
+
+  /**
    * Emitted when the radio button gains focus.
    */
   @Event() admiraltyFocus!: EventEmitter<void>;
@@ -117,6 +122,7 @@ export class RadioComponent {
       <Host>
         <div class="admiralty-radio">
           <input
+            class={{ 'invalid': this.invalid, 'admiralty-radio': true }}
             aria-checked={`${checked}`}
             aria-hidden={disabled ? 'true' : null}
             aria-labelledby={inputId}
@@ -126,7 +132,6 @@ export class RadioComponent {
             onFocus={this.onFocus}
             onBlur={this.onBlur}
             onClick={this.onClick}
-            class="admiralty-radio"
             type="radio"
             value={value}
             checked={checked}

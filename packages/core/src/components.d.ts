@@ -379,6 +379,10 @@ export namespace Components {
          */
         "disabled"?: boolean;
         /**
+          * Determines whether to add the invalid stying to the radio button
+         */
+        "invalid": boolean;
+        /**
           * The name of the radio button for use on selection within a radio group
          */
         "name": string;
@@ -393,6 +397,14 @@ export namespace Components {
           * Setting this true displays the radio options vertically (defaults to false)
          */
         "displayVertical": boolean;
+        /**
+          * Whether to show the input in an invalid state
+         */
+        "invalid": boolean;
+        /**
+          * The message to show when the input is invalid
+         */
+        "invalidMessage": string;
         /**
           * The name of the control, which is submitted with the form data
          */
@@ -1402,6 +1414,10 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
         /**
+          * Determines whether to add the invalid stying to the radio button
+         */
+        "invalid"?: boolean;
+        /**
           * The name of the radio button for use on selection within a radio group
          */
         "name"?: string;
@@ -1427,6 +1443,14 @@ declare namespace LocalJSX {
           * Setting this true displays the radio options vertically (defaults to false)
          */
         "displayVertical"?: boolean;
+        /**
+          * Whether to show the input in an invalid state
+         */
+        "invalid"?: boolean;
+        /**
+          * The message to show when the input is invalid
+         */
+        "invalidMessage"?: string;
         /**
           * The name of the control, which is submitted with the form data
          */
