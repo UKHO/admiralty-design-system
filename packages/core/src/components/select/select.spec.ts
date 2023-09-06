@@ -23,6 +23,7 @@ describe('admiralty-select', () => {
             </select>
             <admiralty-icon class="select-down-icon" icon-name="angle-down"></admiralty-icon>
           </div>
+          <admiralty-input-error style="visibility: hidden;"></admiralty-input-error>
         </div>
       </admiralty-select>
     `);
@@ -51,6 +52,7 @@ describe('admiralty-select', () => {
             </select>
             <admiralty-icon class="select-down-icon" icon-name="angle-down"></admiralty-icon>
           </div>
+          <admiralty-input-error style="visibility: hidden;"></admiralty-input-error>
         </div>
       </admiralty-select>
     `);
@@ -79,6 +81,7 @@ describe('admiralty-select', () => {
             </select>
             <admiralty-icon class="select-down-icon" icon-name="angle-down"></admiralty-icon>
           </div>
+          <admiralty-input-error style="visibility: hidden;"></admiralty-input-error>
         </div>
       </admiralty-select>
     `);
@@ -107,7 +110,7 @@ describe('admiralty-select', () => {
             </select>
             <admiralty-icon class="select-down-icon" icon-name="angle-down"></admiralty-icon>
           </div>
-          <admiralty-input-error>
+          <admiralty-input-error style="visibility: visible;">
             The colour must be green
           </admiralty-input-error>
         </div>
@@ -138,6 +141,7 @@ describe('admiralty-select', () => {
             </select>
             <admiralty-icon class="disabled select-down-icon" icon-name="angle-down"></admiralty-icon>
           </div>
+          <admiralty-input-error style="visibility: hidden;"></admiralty-input-error>
         </div>
       </admiralty-select>
     `);
@@ -166,6 +170,7 @@ describe('admiralty-select', () => {
             </select>
             <admiralty-icon class="select-down-icon" icon-name="angle-down"></admiralty-icon>
           </div>
+          <admiralty-input-error style="visibility: hidden;"></admiralty-input-error>
         </div>
       </admiralty-select>
     `);

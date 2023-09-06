@@ -22,6 +22,7 @@ describe('admiralty-textarea', () => {
             Please enter description
           </admiralty-hint>
           <textarea id="admiralty-textarea-${compId}" value=""></textarea>
+          <admiralty-input-error style="visibility: hidden;"></admiralty-input-error>
         </div>
       </admiralty-textarea>
     `);
@@ -41,6 +42,7 @@ describe('admiralty-textarea', () => {
       <admiralty-textarea value="${testText}">
         <div class="text-area-container">
           <textarea id="admiralty-textarea-${compId}" value="${testText}"></textarea>
+          <admiralty-input-error style="visibility: hidden;"></admiralty-input-error>
         </div>
       </admiralty-textarea>
     `);
@@ -59,6 +61,7 @@ describe('admiralty-textarea', () => {
         <div class="text-area-container">
           <admiralty-label disabled="" for="admiralty-textarea-${compId}">Description</admiralty-label>
           <textarea class="disabled" id="admiralty-textarea-${compId}" value=""></textarea>
+          <admiralty-input-error style="visibility: hidden;"></admiralty-input-error>
         </div>
       </admiralty-textarea>
     `);
@@ -77,7 +80,7 @@ describe('admiralty-textarea', () => {
         <div class="text-area-container">
           <admiralty-label for="admiralty-textarea-${compId}">Description</admiralty-label>
           <textarea class="invalid" id="admiralty-textarea-${compId}" value=""></textarea>
-          <admiralty-input-error>
+          <admiralty-input-error style="visibility: visible;">
             BAD
           </admiralty-input-error>
         </div>
@@ -98,6 +101,7 @@ describe('admiralty-textarea', () => {
         <div class="text-area-container">
           <admiralty-label for="admiralty-textarea-${compId}">Description</admiralty-label>
           <textarea class="invalid" id="admiralty-textarea-${compId}" value=""></textarea>
+          <admiralty-input-error style="visibility: hidden;"></admiralty-input-error>
         </div>
       </admiralty-textarea>
     `);
