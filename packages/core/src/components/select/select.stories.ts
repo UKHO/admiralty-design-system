@@ -12,8 +12,8 @@ const meta: Meta = {
   },
   args: {
     disabled: false,
-    error: false,
-    errorHint: 'The colour must be green',
+    invalid: false,
+    invalidMessage: 'The colour must be green',
     hint: 'Select an option from the list',
     label: 'Choose a colour',
     value: 'second',
@@ -28,8 +28,8 @@ const template: Story = {
   render: args => html` <admiralty-select
     value="${args.value}"
     ?disabled="${args.disabled}"
-    ?error=${args.error}
-    error-hint="${args.errorHint}"
+    ?invalid=${args.invalid}
+    invalid-message="${args.invalidMessage}"
     hint="${args.hint}"
     label="${args.label}"
     width="${args.width}"
@@ -45,7 +45,7 @@ export const DefaultSelect: Story = { ...template };
 export const SelectWithError: Story = {
   ...template,
   args: {
-    error: true,
+    invalid: true,
   },
 };
 

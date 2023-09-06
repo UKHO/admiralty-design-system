@@ -426,17 +426,17 @@ export namespace Components {
          */
         "disabled": boolean;
         /**
-          * If 'true', the 'error' class is added to suggest an error
-         */
-        "error": boolean;
-        /**
-          * The hint that is used to inform the user of an error (displayed below the select box)
-         */
-        "errorHint": string;
-        /**
           * The text that will be used as a field label.
          */
         "hint": string;
+        /**
+          * Whether to show that the select is in an invalid state.
+         */
+        "invalid": boolean;
+        /**
+          * The message to show when the select is invalid.
+         */
+        "invalidMessage": string;
         /**
           * The text that will be used as a field label.
          */
@@ -1480,17 +1480,17 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
         /**
-          * If 'true', the 'error' class is added to suggest an error
-         */
-        "error"?: boolean;
-        /**
-          * The hint that is used to inform the user of an error (displayed below the select box)
-         */
-        "errorHint"?: string;
-        /**
           * The text that will be used as a field label.
          */
         "hint"?: string;
+        /**
+          * Whether to show that the select is in an invalid state.
+         */
+        "invalid"?: boolean;
+        /**
+          * The message to show when the select is invalid.
+         */
+        "invalidMessage"?: string;
         /**
           * The text that will be used as a field label.
          */

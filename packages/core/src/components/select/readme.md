@@ -7,15 +7,15 @@
 
 ## Properties
 
-| Property    | Attribute    | Description                                                                           | Type               | Default             |
-| ----------- | ------------ | ------------------------------------------------------------------------------------- | ------------------ | ------------------- |
-| `disabled`  | `disabled`   | If `true`, the user cannot interact with the select.                                  | `boolean`          | `false`             |
-| `error`     | `error`      | If 'true', the 'error' class is added to suggest an error                             | `boolean`          | `false`             |
-| `errorHint` | `error-hint` | The hint that is used to inform the user of an error (displayed below the select box) | `string`           | `null`              |
-| `hint`      | `hint`       | The text that will be used as a field label.                                          | `string`           | `null`              |
-| `label`     | `label`      | The text that will be used as a field label.                                          | `string`           | `'Choose a colour'` |
-| `value`     | `value`      | The value of the input.                                                               | `number \| string` | `''`                |
-| `width`     | `width`      | The maximum width (px) for the input field.                                           | `number`           | `undefined`         |
+| Property         | Attribute         | Description                                             | Type               | Default             |
+| ---------------- | ----------------- | ------------------------------------------------------- | ------------------ | ------------------- |
+| `disabled`       | `disabled`        | If `true`, the user cannot interact with the select.    | `boolean`          | `false`             |
+| `hint`           | `hint`            | The text that will be used as a field label.            | `string`           | `null`              |
+| `invalid`        | `invalid`         | Whether to show that the select is in an invalid state. | `boolean`          | `false`             |
+| `invalidMessage` | `invalid-message` | The message to show when the select is invalid.         | `string`           | `null`              |
+| `label`          | `label`           | The text that will be used as a field label.            | `string`           | `'Choose a colour'` |
+| `value`          | `value`           | The value of the input.                                 | `number \| string` | `''`                |
+| `width`          | `width`           | The maximum width (px) for the input field.             | `number`           | `undefined`         |
 
 
 ## Events
