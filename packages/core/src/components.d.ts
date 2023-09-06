@@ -307,7 +307,7 @@ export namespace Components {
          */
         "width": number;
     }
-    interface AdmiraltyInputError {
+    interface AdmiraltyInputInvalid {
     }
     interface AdmiraltyLabel {
         /**
@@ -779,11 +779,11 @@ declare global {
         prototype: HTMLAdmiraltyInputElement;
         new (): HTMLAdmiraltyInputElement;
     };
-    interface HTMLAdmiraltyInputErrorElement extends Components.AdmiraltyInputError, HTMLStencilElement {
+    interface HTMLAdmiraltyInputInvalidElement extends Components.AdmiraltyInputInvalid, HTMLStencilElement {
     }
-    var HTMLAdmiraltyInputErrorElement: {
-        prototype: HTMLAdmiraltyInputErrorElement;
-        new (): HTMLAdmiraltyInputErrorElement;
+    var HTMLAdmiraltyInputInvalidElement: {
+        prototype: HTMLAdmiraltyInputInvalidElement;
+        new (): HTMLAdmiraltyInputInvalidElement;
     };
     interface HTMLAdmiraltyLabelElement extends Components.AdmiraltyLabel, HTMLStencilElement {
     }
@@ -968,7 +968,7 @@ declare global {
         "admiralty-hr": HTMLAdmiraltyHrElement;
         "admiralty-icon": HTMLAdmiraltyIconElement;
         "admiralty-input": HTMLAdmiraltyInputElement;
-        "admiralty-input-error": HTMLAdmiraltyInputErrorElement;
+        "admiralty-input-invalid": HTMLAdmiraltyInputInvalidElement;
         "admiralty-label": HTMLAdmiraltyLabelElement;
         "admiralty-link": HTMLAdmiraltyLinkElement;
         "admiralty-paginator": HTMLAdmiraltyPaginatorElement;
@@ -1338,7 +1338,7 @@ declare namespace LocalJSX {
          */
         "width"?: number;
     }
-    interface AdmiraltyInputError {
+    interface AdmiraltyInputInvalid {
     }
     interface AdmiraltyLabel {
         /**
@@ -1685,7 +1685,7 @@ declare namespace LocalJSX {
         "admiralty-hr": AdmiraltyHr;
         "admiralty-icon": AdmiraltyIcon;
         "admiralty-input": AdmiraltyInput;
-        "admiralty-input-error": AdmiraltyInputError;
+        "admiralty-input-invalid": AdmiraltyInputInvalid;
         "admiralty-label": AdmiraltyLabel;
         "admiralty-link": AdmiraltyLink;
         "admiralty-paginator": AdmiraltyPaginator;
@@ -1742,7 +1742,7 @@ declare module "@stencil/core" {
              * and checkbox.
              */
             "admiralty-input": LocalJSX.AdmiraltyInput & JSXBase.HTMLAttributes<HTMLAdmiraltyInputElement>;
-            "admiralty-input-error": LocalJSX.AdmiraltyInputError & JSXBase.HTMLAttributes<HTMLAdmiraltyInputErrorElement>;
+            "admiralty-input-invalid": LocalJSX.AdmiraltyInputInvalid & JSXBase.HTMLAttributes<HTMLAdmiraltyInputInvalidElement>;
             "admiralty-label": LocalJSX.AdmiraltyLabel & JSXBase.HTMLAttributes<HTMLAdmiraltyLabelElement>;
             "admiralty-link": LocalJSX.AdmiraltyLink & JSXBase.HTMLAttributes<HTMLAdmiraltyLinkElement>;
             "admiralty-paginator": LocalJSX.AdmiraltyPaginator & JSXBase.HTMLAttributes<HTMLAdmiraltyPaginatorElement>;

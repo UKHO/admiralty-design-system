@@ -1,7 +1,5 @@
 # admiralty-select
 
-
-
 <!-- Auto Generated Below -->
 
 
@@ -33,7 +31,7 @@
 - [admiralty-label](../label)
 - [admiralty-hint](../hint)
 - [admiralty-icon](../icon)
-- [admiralty-input-error](../input-error)
+- [admiralty-input-invalid](../input-invalid)
 
 ### Graph
 ```mermaid
@@ -41,8 +39,8 @@ graph TD;
   admiralty-select --> admiralty-label
   admiralty-select --> admiralty-hint
   admiralty-select --> admiralty-icon
-  admiralty-select --> admiralty-input-error
-  admiralty-input-error --> admiralty-icon
+  admiralty-select --> admiralty-input-invalid
+  admiralty-input-invalid --> admiralty-icon
   style admiralty-select fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

@@ -12,7 +12,7 @@ describe('radio-group', () => {
       <admiralty-radio-group>
         <div class="radio-group" role="radiogroup">
 
-      <admiralty-input-error style="visibility: hidden;"></admiralty-input-error>
+      <admiralty-input-invalid style="visibility: hidden;"></admiralty-input-invalid>
       </div>
       </admiralty-radio-group>
     `);
@@ -51,7 +51,7 @@ describe('radio-group', () => {
               </label>
             </div>
           </admiralty-radio>
-          <admiralty-input-error style="visibility: hidden;"></admiralty-input-error>
+          <admiralty-input-invalid style="visibility: hidden;"></admiralty-input-invalid>
         </div>
       </admiralty-radio-group>
     `);
@@ -90,7 +90,7 @@ describe('radio-group', () => {
               </label>
             </div>
           </admiralty-radio>
-          <admiralty-input-error style="visibility: hidden;"></admiralty-input-error>
+          <admiralty-input-invalid style="visibility: hidden;"></admiralty-input-invalid>
         </div>
       </admiralty-radio-group>
     `);

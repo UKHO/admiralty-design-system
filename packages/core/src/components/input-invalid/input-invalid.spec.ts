@@ -1,19 +1,19 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { InputError } from './input-error';
+import { InputInvalidComponent } from './input-invalid';
 
-describe('input-error', () => {
+describe('input-invalid', () => {
   it('renders', async () => {
     const page = await newSpecPage({
-      components: [InputError],
-      html: `<admiralty-input-error>Test</admiralty-input-error>`,
+      components: [InputInvalidComponent],
+      html: `<admiralty-input-invalid>Test</admiralty-input-invalid>`,
     });
     expect(page.root).toEqualHtml(`
-       <admiralty-input-error>
+       <admiralty-input-invalid>
         <admiralty-icon class="error-icon" icon-name="exclamation"></admiralty-icon>
         <p>
         Test
         </p>
-</admiralty-input-error>
+</admiralty-input-invalid>
     `);
   });
 });

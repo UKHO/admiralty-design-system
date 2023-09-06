@@ -22,7 +22,7 @@ export const DIRECTIVES = [
   d.AdmiraltyHr,
   d.AdmiraltyIcon,
   d.AdmiraltyInput,
-  d.AdmiraltyInputError,
+  d.AdmiraltyInputInvalid,
   d.AdmiraltyLabel,
   d.AdmiraltyLink,
   d.AdmiraltyPaginator,

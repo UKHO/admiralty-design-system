@@ -23,7 +23,7 @@ describe('admiralty-select', () => {
             </select>
             <admiralty-icon class="select-down-icon" icon-name="angle-down"></admiralty-icon>
           </div>
-          <admiralty-input-error style="visibility: hidden;"></admiralty-input-error>
+          <admiralty-input-invalid style="visibility: hidden;"></admiralty-input-invalid>
         </div>
       </admiralty-select>
     `);
@@ -52,7 +52,7 @@ describe('admiralty-select', () => {
             </select>
             <admiralty-icon class="select-down-icon" icon-name="angle-down"></admiralty-icon>
           </div>
-          <admiralty-input-error style="visibility: hidden;"></admiralty-input-error>
+          <admiralty-input-invalid style="visibility: hidden;"></admiralty-input-invalid>
         </div>
       </admiralty-select>
     `);
@@ -81,7 +81,7 @@ describe('admiralty-select', () => {
             </select>
             <admiralty-icon class="select-down-icon" icon-name="angle-down"></admiralty-icon>
           </div>
-          <admiralty-input-error style="visibility: hidden;"></admiralty-input-error>
+          <admiralty-input-invalid style="visibility: hidden;"></admiralty-input-invalid>
         </div>
       </admiralty-select>
     `);
@@ -110,9 +110,9 @@ describe('admiralty-select', () => {
             </select>
             <admiralty-icon class="select-down-icon" icon-name="angle-down"></admiralty-icon>
           </div>
-          <admiralty-input-error style="visibility: visible;">
+          <admiralty-input-invalid style="visibility: visible;">
             The colour must be green
-          </admiralty-input-error>
+          </admiralty-input-invalid>
         </div>
       </admiralty-select>
     `);
@@ -141,7 +141,7 @@ describe('admiralty-select', () => {
             </select>
             <admiralty-icon class="disabled select-down-icon" icon-name="angle-down"></admiralty-icon>
           </div>
-          <admiralty-input-error style="visibility: hidden;"></admiralty-input-error>
+          <admiralty-input-invalid style="visibility: hidden;"></admiralty-input-invalid>
         </div>
       </admiralty-select>
     `);
@@ -170,7 +170,7 @@ describe('admiralty-select', () => {
             </select>
             <admiralty-icon class="select-down-icon" icon-name="angle-down"></admiralty-icon>
           </div>
-          <admiralty-input-error style="visibility: hidden;"></admiralty-input-error>
+          <admiralty-input-invalid style="visibility: hidden;"></admiralty-input-invalid>
         </div>
       </admiralty-select>
     `);

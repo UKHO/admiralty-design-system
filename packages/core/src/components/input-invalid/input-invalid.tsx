@@ -3,14 +3,14 @@ import { faExclamation } from '@fortawesome/free-solid-svg-icons';
 
 /**
  * @slot - The error content should be placed in the slot e.g.
- * `<admiralty-input-error>This field is required</admiralty-input-error>`
+ * `<admiralty-input-invalid>This field is required</admiralty-input-invalid>`
  */
 @Component({
-  tag: 'admiralty-input-error',
-  styleUrl: 'input-error.scss',
+  tag: 'admiralty-input-invalid',
+  styleUrl: 'input-invalid.scss',
   scoped: true,
 })
-export class InputError {
+export class InputInvalidComponent {
   render() {
     return (
       <Host>
