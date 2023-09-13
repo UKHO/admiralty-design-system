@@ -1,3 +1,15 @@
+# v0.5.0 (Wed Sep 13 2023)
+
+#### 🚀 Enhancement
+
+- fix: Input Invalid consistency [#110](https://github.com/UKHO/admiralty-design-system/pull/110) ([@UKHOGreg](https://github.com/UKHOGreg))
+
+#### Authors: 1
+
+- Greg Williams ([@UKHOGreg](https://github.com/UKHOGreg))
+
+---
+
 # v0.4.6 (Thu Aug 31 2023)
 
 #### 🐛 Bug Fix
