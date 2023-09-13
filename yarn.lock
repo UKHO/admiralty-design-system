@@ -5876,6 +5876,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@stencil/react-output-target@npm:^0.5.3":
+  version: 0.5.3
+  resolution: "@stencil/react-output-target@npm:0.5.3"
+  peerDependencies:
+    "@stencil/core": ">=2.0.0 || >=3 || >= 4.0.0-beta.0 || >= 4.0.0"
+  checksum: ce762ecd37fe8b04b4193402f8999b44291d18af59e488ab4571528473aec9cac60c508df5db68298c78a493779e4781433dc2390ce7c34039b2a7a2455bd7db
+  languageName: node
+  linkType: hard
+
 "@stencil/sass@npm:^3.0.5":
   version: 3.0.5
   resolution: "@stencil/sass@npm:3.0.5"
@@ -7291,6 +7300,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/prismjs@npm:^1.26.0":
+  version: 1.26.0
+  resolution: "@types/prismjs@npm:1.26.0"
+  checksum: cd5e7a6214c1f4213ec512a5fcf6d8fe37a56b813fc57ac95b5ff5ee074742bfdbd2f2730d9fd985205bf4586728e09baa97023f739e5aa1c9735a7c1ecbd11a
+  languageName: node
+  linkType: hard
+
 "@types/prop-types@npm:*":
   version: 15.7.5
   resolution: "@types/prop-types@npm:15.7.5"
@@ -7321,7 +7337,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:18.2.21, @types/react@npm:>=16":
+"@types/react@npm:*, @types/react@npm:18.2.21, @types/react@npm:>=16, @types/react@npm:^18.2.21":
   version: 18.2.21
   resolution: "@types/react@npm:18.2.21"
   dependencies:
@@ -7600,6 +7616,7 @@ __metadata:
     "@fortawesome/free-solid-svg-icons": ^6.4.0
     "@stencil/angular-output-target": ^0.7.1
     "@stencil/core": ^3.4.2
+    "@stencil/react-output-target": ^0.5.3
     "@stencil/sass": ^3.0.5
     "@storybook/addon-a11y": ^7.2.3
     "@storybook/addon-actions": ^7.2.3
@@ -7621,6 +7638,18 @@ __metadata:
     sass: ^1.64.1
     storybook: ^7.2.3
     vite: ^4.4.7
+  languageName: unknown
+  linkType: soft
+
+"@ukho/admiralty-react@^0.4.5, @ukho/admiralty-react@workspace:packages/react":
+  version: 0.0.0-use.local
+  resolution: "@ukho/admiralty-react@workspace:packages/react"
+  dependencies:
+    "@types/react": ^18.2.21
+    "@ukho/admiralty-core": ^0.4.5
+    react: ^18.2.0
+    react-dom: ^18.2.0
+    typescript: ^5.2.2
   languageName: unknown
   linkType: soft
 
@@ -21852,6 +21881,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"prismjs@npm:^1.29.0":
+  version: 1.29.0
+  resolution: "prismjs@npm:1.29.0"
+  checksum: 007a8869d4456ff8049dc59404e32d5666a07d99c3b0e30a18bd3b7676dfa07d1daae9d0f407f20983865fd8da56de91d09cb08e6aa61f5bc420a27c0beeaf93
+  languageName: node
+  linkType: hard
+
 "proc-log@npm:^3.0.0":
   version: 3.0.0
   resolution: "proc-log@npm:3.0.0"
@@ -25400,7 +25436,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:5.2.2, typescript@npm:>=3 < 6":
+"typescript@npm:5.2.2, typescript@npm:>=3 < 6, typescript@npm:^5.2.2":
   version: 5.2.2
   resolution: "typescript@npm:5.2.2"
   bin:
@@ -25440,7 +25476,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@5.2.2#~builtin<compat/typescript>, typescript@patch:typescript@>=3 < 6#~builtin<compat/typescript>":
+"typescript@patch:typescript@5.2.2#~builtin<compat/typescript>, typescript@patch:typescript@>=3 < 6#~builtin<compat/typescript>, typescript@patch:typescript@^5.2.2#~builtin<compat/typescript>":
   version: 5.2.2
   resolution: "typescript@patch:typescript@npm%3A5.2.2#~builtin<compat/typescript>::version=5.2.2&hash=85af82"
   bin:
@@ -26487,11 +26523,14 @@ __metadata:
     "@next/mdx": ^13.4.19
     "@types/mdx": ^2.0.7
     "@types/node": 20.5.9
+    "@types/prismjs": ^1.26.0
     "@types/react": 18.2.21
     "@types/react-dom": 18.2.7
+    "@ukho/admiralty-react": ^0.4.5
     eslint: 8.48.0
     eslint-config-next: 13.4.19
     next: 13.4.19
+    prismjs: ^1.29.0
     react: 18.2.0
     react-dom: 18.2.0
     typescript: 5.2.2
