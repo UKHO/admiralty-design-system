@@ -1,5 +1,5 @@
-@use "../../scss/vars/colours";
-@use "../../scss/vars/typography";
+@use '../../scss/vars/colours';
+@use '../../scss/vars/typography';
 
 .disabled {
   color: colours.$colour-textinput-text-disabled;
@@ -18,7 +18,6 @@ admiralty-icon {
   top: 12px;
 }
 
-
 select {
   appearance: none;
   background-color: colours.$colour-white;
@@ -34,7 +33,7 @@ select {
   padding: 12px;
   width: 100%;
 
-  &.error {
+  &.invalid {
     border-color: colours.$colour-utility-error;
   }
 
@@ -47,5 +46,3 @@ select {
     border-color: colours.$colour-textinput-text-disabled;
   }
 }
-
-

@@ -22,6 +22,7 @@ describe('admiralty-textarea', () => {
             Please enter description
           </admiralty-hint>
           <textarea id="admiralty-textarea-${compId}" value=""></textarea>
+          <admiralty-input-invalid style="visibility: hidden;"></admiralty-input-invalid>
         </div>
       </admiralty-textarea>
     `);
@@ -41,6 +42,7 @@ describe('admiralty-textarea', () => {
       <admiralty-textarea value="${testText}">
         <div class="text-area-container">
           <textarea id="admiralty-textarea-${compId}" value="${testText}"></textarea>
+          <admiralty-input-invalid style="visibility: hidden;"></admiralty-input-invalid>
         </div>
       </admiralty-textarea>
     `);
@@ -59,6 +61,7 @@ describe('admiralty-textarea', () => {
         <div class="text-area-container">
           <admiralty-label disabled="" for="admiralty-textarea-${compId}">Description</admiralty-label>
           <textarea class="disabled" id="admiralty-textarea-${compId}" value=""></textarea>
+          <admiralty-input-invalid style="visibility: hidden;"></admiralty-input-invalid>
         </div>
       </admiralty-textarea>
     `);
@@ -77,15 +80,15 @@ describe('admiralty-textarea', () => {
         <div class="text-area-container">
           <admiralty-label for="admiralty-textarea-${compId}">Description</admiralty-label>
           <textarea class="invalid" id="admiralty-textarea-${compId}" value=""></textarea>
-          <admiralty-input-error>
+          <admiralty-input-invalid style="visibility: visible;">
             BAD
-          </admiralty-input-error>
+          </admiralty-input-invalid>
         </div>
       </admiralty-textarea>
     `);
   });
 
-  it('should not show admiralty-input-error when invalid but no message provided', async () => {
+  it('should not show admiralty-input-invalid when invalid but no message provided', async () => {
     ++compId;
 
     const page = await newSpecPage({
@@ -98,6 +101,7 @@ describe('admiralty-textarea', () => {
         <div class="text-area-container">
           <admiralty-label for="admiralty-textarea-${compId}">Description</admiralty-label>
           <textarea class="invalid" id="admiralty-textarea-${compId}" value=""></textarea>
+          <admiralty-input-invalid style="visibility: hidden;"></admiralty-input-invalid>
         </div>
       </admiralty-textarea>
     `);

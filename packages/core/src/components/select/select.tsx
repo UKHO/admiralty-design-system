@@ -15,13 +15,13 @@ export class SelectComponent {
    */
   @Prop() disabled: boolean = false;
   /**
-   * If 'true', the 'error' class is added to suggest an error
+   * Whether to show that the select is in an invalid state.
    */
-  @Prop() error: boolean = false;
+  @Prop() invalid: boolean = false;
   /**
-   * The hint that is used to inform the user of an error (displayed below the select box)
+   * The message to show when the select is invalid.
    */
-  @Prop() errorHint: string = null;
+  @Prop() invalidMessage: string = null;
   /**
    * The text that will be used as a field label.
    */
@@ -85,7 +85,7 @@ export class SelectComponent {
   }
 
   render() {
-    const { disabled, error, errorHint, hint, id, label } = this;
+    const { disabled, hint, id, label } = this;
     const disabledClass = disabled ? 'disabled' : '';
     return (
       <Host>
@@ -98,7 +98,7 @@ export class SelectComponent {
             <select
               ref={select => (this.nativeInput = select)}
               id={id}
-              class={{ 'admiralty-form-control': true, 'error': error, 'disabled': disabled }}
+              class={{ 'admiralty-form-control': true, 'invalid': this.invalid, 'disabled': disabled }}
               aria-disabled={disabled ? 'true' : 'false'}
               aria-label={label}
               onChange={event => this.handleSelect(event)}
@@ -109,7 +109,7 @@ export class SelectComponent {
             </select>
             <admiralty-icon class={`select-down-icon ${disabledClass}`} icon-name="angle-down"></admiralty-icon>
           </div>
-          {this.error ? <admiralty-input-error>{errorHint}</admiralty-input-error> : ''}
+          <admiralty-input-invalid style={{ visibility: this.invalid && this.invalidMessage ? 'visible' : 'hidden' }}>{this.invalidMessage}</admiralty-input-invalid>
         </div>
       </Host>
     );

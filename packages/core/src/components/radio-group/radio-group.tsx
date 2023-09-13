@@ -107,7 +107,7 @@ export class RadioGroupComponent implements ComponentInterface {
       <Host>
         <div class={{ 'radio-group': true, 'stack': displayVertical }} role="radiogroup" onClick={this.onClick}>
           <slot></slot>
-          <admiralty-input-error style={{ visibility: this.invalid && this.invalidMessage ? 'visible' : 'hidden' }}>{this.invalidMessage}</admiralty-input-error>
+          <admiralty-input-invalid style={{ visibility: this.invalid && this.invalidMessage ? 'visible' : 'hidden' }}>{this.invalidMessage}</admiralty-input-invalid>
         </div>
       </Host>
     );
