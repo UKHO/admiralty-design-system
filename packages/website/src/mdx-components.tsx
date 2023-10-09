@@ -1,4 +1,12 @@
 import type { MDXComponents } from "mdx/types";
+import {
+  AdmiraltyTable,
+  AdmiraltyTableBody,
+  AdmiraltyTableCell,
+  AdmiraltyTableHeader,
+  AdmiraltyTableHeaderCell,
+  AdmiraltyTableRow,
+} from "@ukho/admiralty-react";
 
 // This file allows you to provide custom React components
 // to be used in MDX files. You can import and use any
@@ -8,8 +16,12 @@ import type { MDXComponents } from "mdx/types";
 // This file is required to use MDX in `app` directory.
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
-    // Allows customizing built-in components, e.g. to add styling.
-    // h1: ({ children }) => <h1 style={{ fontSize: "100px" }}>{children}</h1>,
+    table: ({ children }) => <AdmiraltyTable>{children}</AdmiraltyTable>,
+    thead: ({ children }) => <AdmiraltyTableHeader>{children}</AdmiraltyTableHeader>,
+    tbody: ({ children }) => <AdmiraltyTableBody>{children}</AdmiraltyTableBody>,
+    th: ({ children }) => <AdmiraltyTableHeaderCell>{children}</AdmiraltyTableHeaderCell>,
+    tr: ({ children }) => <AdmiraltyTableRow>{children}</AdmiraltyTableRow>,
+    td: ({ children }) => <AdmiraltyTableCell>{children}</AdmiraltyTableCell>,
     ...components,
   };
 }
