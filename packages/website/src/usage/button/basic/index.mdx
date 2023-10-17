@@ -2,9 +2,8 @@ import javascript from './javascript.mdx'
 import angular from './angular.mdx'
 import react from './react.mdx'
 
-import Playground from '@/components/playground'
-import {AdmiraltyButton} from "@ukho/admiralty-react";
+import demo from './demo';
+import Playground from "@/components/playground/playground";
 
-<AdmiraltyButton>Default</AdmiraltyButton>
 
-<Playground code={{javascript, react,angular}}/>
+<Playground code={{javascript, react,angular}} demo={demo}/>

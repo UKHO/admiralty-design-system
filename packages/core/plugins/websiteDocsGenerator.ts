@@ -1,6 +1,13 @@
 import { JsonDocs } from '@stencil/core/internal';
-import { writeFileSync, mkdirSync } from 'fs';
+import { writeFileSync, mkdirSync, existsSync } from 'fs';
+import { rimrafSync } from 'rimraf';
+import * as path from 'path';
 export const generateDocs = (docs: JsonDocs) => {
+  const outputPath = '../docs/components';
+
+  // Clean the outputPath
+  rimrafSync(outputPath);
+
   docs.components.forEach(comp => {
     const compTag = comp.tag.slice(10); // remove 'admiralty-' from the tag
 
@@ -11,25 +18,18 @@ export const generateDocs = (docs: JsonDocs) => {
     const customProps = renderCustomProps(comp);
     const slots = renderSlots(comp);
 
-    mkdirSync(`docs/${compTag}`);
+    const componentPath = path.resolve(outputPath, compTag);
 
-    writeFileSync(`docs/${compTag}/props.mdx`, props, {});
-    writeFileSync(`docs/${compTag}/events.mdx`, events);
-    writeFileSync(`docs/${compTag}/methods.mdx`, methods);
-    writeFileSync(`docs/${compTag}/parts.mdx`, parts);
-    writeFileSync(`docs/${compTag}/customProps.mdx`, customProps);
-    writeFileSync(`docs/${compTag}/slots.mdx`, slots);
-    // data.push({
-    //   outDir,
-    //   componentTag: compTag,
-    //   version,
-    //   props: renderProperties(comp),
-    //   events: renderEvents(comp),
-    //   methods: renderMethods(comp),
-    //   parts: renderParts(comp),
-    //   customProps: renderCustomProps(comp),
-    //   slots: renderSlots(comp),
-    // });
+    if (!existsSync(componentPath)) {
+      mkdirSync(componentPath, { recursive: true });
+    }
+
+    writeFileSync(path.resolve(componentPath, 'props.mdx'), props);
+    writeFileSync(path.resolve(componentPath, 'events.mdx'), events);
+    writeFileSync(path.resolve(componentPath, 'methods.mdx'), methods);
+    writeFileSync(path.resolve(componentPath, 'parts.mdx'), parts);
+    writeFileSync(path.resolve(componentPath, 'customProps.mdx'), customProps);
+    writeFileSync(path.resolve(componentPath, 'slots.mdx'), slots);
   });
 };
 

@@ -1,10 +1,14 @@
 import { MDXContent } from "mdx/types";
-import React, { ReactElement, useEffect, useMemo, useState } from "react";
+import React, { ComponentType, ReactElement, useEffect, useMemo, useState } from "react";
 import { CodeSnippets, UsageTarget } from "@/components/playground/playground.types";
-import { AdmiraltyTab, AdmiraltyTabGroup } from "@ukho/admiralty-react";
+import { AdmiraltyButton, AdmiraltyTab, AdmiraltyTabGroup } from "@ukho/admiralty-react";
+import "./playground.css";
+import { faCopy } from "@fortawesome/free-regular-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 interface PlaygroundProps {
   code: { [key in UsageTarget]?: MDXContent };
+  demo: ComponentType;
 }
 
 interface PlaygroundTabProps {
@@ -13,7 +17,16 @@ interface PlaygroundTabProps {
 }
 
 const PlaygroundTab = (props: PlaygroundTabProps) => {
-  return <AdmiraltyTab label={props.usageTarget}>{props.codeSnippet}</AdmiraltyTab>;
+  return (
+    <AdmiraltyTab label={props.usageTarget}>
+      <div className="codesnippet-content">
+        {props.codeSnippet}
+        <button className="copy-button">
+          <FontAwesomeIcon icon={faCopy} />
+        </button>
+      </div>
+    </AdmiraltyTab>
+  );
 };
 
 function isUsageTarget(key: string): key is UsageTarget {
@@ -41,25 +54,30 @@ export default function Playground(props: PlaygroundProps) {
 
   return (
     <div className="playground-container">
-      <AdmiraltyTabGroup>
-        {sortedUsageTargets.map((lang) => {
-          /**
-           * If code was not passed for this target
-           * then we should disable the button.
-           */
-          let langKey = lang as keyof typeof UsageTarget;
-          const usageTarget = UsageTarget[langKey];
-          const hasCode = props.code[usageTarget] !== undefined;
-          if (hasCode) {
-            return (
-              <PlaygroundTab
-                key={lang}
-                codeSnippet={codeSnippets[usageTarget]}
-                usageTarget={usageTarget}></PlaygroundTab>
-            );
-          }
-        })}
-      </AdmiraltyTabGroup>
+      <div className="demo-container">
+        <props.demo />
+      </div>
+      <div className="codesnippet-container">
+        <AdmiraltyTabGroup>
+          {sortedUsageTargets.map((lang) => {
+            /**
+             * If code was not passed for this target
+             * then we should disable the button.
+             */
+            let langKey = lang as keyof typeof UsageTarget;
+            const usageTarget = UsageTarget[langKey];
+            const hasCode = props.code[usageTarget] !== undefined;
+            if (hasCode) {
+              return (
+                <PlaygroundTab
+                  key={lang}
+                  codeSnippet={codeSnippets[usageTarget]}
+                  usageTarget={usageTarget}></PlaygroundTab>
+              );
+            }
+          })}
+        </AdmiraltyTabGroup>
+      </div>
     </div>
   );
 }
