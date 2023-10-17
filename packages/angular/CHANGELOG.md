@@ -1,3 +1,15 @@
+# v0.6.0 (Tue Oct 17 2023)
+
+#### 🚀 Enhancement
+
+- feat: Add invalid and invalidMessage to File Input and remove layout bottom margin [#121](https://github.com/UKHO/admiralty-design-system/pull/121) ([@UKHOGreg](https://github.com/UKHOGreg))
+
+#### Authors: 1
+
+- Greg Williams ([@UKHOGreg](https://github.com/UKHOGreg))
+
+---
+
 # v0.5.0 (Wed Sep 13 2023)
 
 #### 🚀 Enhancement

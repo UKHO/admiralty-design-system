@@ -1,3 +1,18 @@
+# v0.6.0 (Tue Oct 17 2023)
+
+#### 🚀 Enhancement
+
+- `@ukho/admiralty-angular`, `@ukho/admiralty-core`
+  - feat: Add invalid and invalidMessage to File Input and remove layout bottom margin [#121](https://github.com/UKHO/admiralty-design-system/pull/121) ([@UKHOGreg](https://github.com/UKHOGreg))
+- `@ukho/admiralty-core`
+  - feat: Remove admiralty-file-input label update behaviour when files are selected [#120](https://github.com/UKHO/admiralty-design-system/pull/120) ([@UKHOGreg](https://github.com/UKHOGreg))
+
+#### Authors: 1
+
+- Greg Williams ([@UKHOGreg](https://github.com/UKHOGreg))
+
+---
+
 # v0.5.0 (Wed Sep 13 2023)
 
 #### 🚀 Enhancement
