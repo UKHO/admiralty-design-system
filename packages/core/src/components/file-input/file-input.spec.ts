@@ -93,7 +93,7 @@ describe('file-input', () => {
     });
     expect(page.root).toEqualHtml(`
       <admiralty-file-input invalid="true">
-        <div class="admiralty-file-input">
+        <div class="admiralty-file-input invalid">
           <label htmlfor="admiralty-file-input-5">
             <admiralty-icon class="upload-icon" icon-name="upload"></admiralty-icon>
             <span>
@@ -114,7 +114,7 @@ describe('file-input', () => {
     });
     expect(page.root).toEqualHtml(`
       <admiralty-file-input invalid="true" invalid-message="This is invalid!">
-        <div class="admiralty-file-input">
+        <div class="admiralty-file-input invalid">
           <label htmlfor="admiralty-file-input-6">
             <admiralty-icon class="upload-icon" icon-name="upload"></admiralty-icon>
             <span>
