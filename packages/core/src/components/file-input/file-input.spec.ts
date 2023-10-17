@@ -12,7 +12,7 @@ describe('file-input', () => {
         <div class="admiralty-file-input">
           <label htmlfor="admiralty-file-input-1">
             <admiralty-icon class="upload-icon" icon-name="upload"></admiralty-icon>
-            <span class="instructions">
+            <span>
               Click to choose a file or drag it
             </span>
           </label>
@@ -32,7 +32,7 @@ describe('file-input', () => {
         <div class="admiralty-file-input">
           <label htmlfor="admiralty-file-input-2">
             <admiralty-icon class="upload-icon" icon-name="upload"></admiralty-icon>
-            <span class="instructions">
+            <span>
               Click to choose a file or drag it
             </span>
           </label>
@@ -52,7 +52,7 @@ describe('file-input', () => {
         <div class="admiralty-file-input">
           <label htmlfor="admiralty-file-input-3">
             <admiralty-icon class="upload-icon" icon-name="upload"></admiralty-icon>
-            <span class="instructions">
+            <span>
               Click to choose a file or drag it
             </span>
           </label>
@@ -72,7 +72,7 @@ describe('file-input', () => {
         <div class="admiralty-file-input">
           <label htmlfor="admiralty-file-input-4">
             <admiralty-icon class="upload-icon" icon-name="upload"></admiralty-icon>
-            <span class="instructions">
+            <span>
               My other label
             </span>
           </label>

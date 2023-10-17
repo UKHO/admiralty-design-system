@@ -43,13 +43,9 @@ label {
     color: colours.$colour-admiralty-blue;
     flex: 0 1;
     font-size: 18px;
-    font-weight: typography.$font-weight-light;
+    font-weight: typography.$font-weight-medium;
     text-align: center;
     margin: 0.4rem 0;
-
-    &.instructions {
-      font-weight: typography.$font-weight-medium;
-    }
   }
 }
 
