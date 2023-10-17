@@ -18,6 +18,7 @@ describe('file-input', () => {
           </label>
           <input aria-hidden="true" aria-label="File Upload" class="admiralty-form-field" id="admiralty-file-input-1" type="file">
         </div>
+        <admiralty-input-invalid style="visibility: hidden;"></admiralty-input-invalid>
       </admiralty-file-input>
     `);
   });
@@ -38,6 +39,7 @@ describe('file-input', () => {
           </label>
           <input aria-hidden="true" aria-label="File Upload" class="admiralty-form-field" id="admiralty-file-input-2" multiple="" type="file">
         </div>
+        <admiralty-input-invalid style="visibility: hidden;"></admiralty-input-invalid>
       </admiralty-file-input>
     `);
   });
@@ -58,6 +60,7 @@ describe('file-input', () => {
           </label>
           <input aria-hidden="true" aria-label="File Upload" class="admiralty-form-field" id="admiralty-file-input-3" type="file">
         </div>
+        <admiralty-input-invalid style="visibility: hidden;"></admiralty-input-invalid>
       </admiralty-file-input>
     `);
   });
@@ -78,6 +81,51 @@ describe('file-input', () => {
           </label>
           <input aria-hidden="true" aria-label="File Upload" class="admiralty-form-field" id="admiralty-file-input-4" type="file">
         </div>
+        <admiralty-input-invalid style="visibility: hidden;"></admiralty-input-invalid>
+      </admiralty-file-input>
+    `);
+  });
+
+  it('renders invalid even without invalidMessage', async () => {
+    const page = await newSpecPage({
+      components: [FileInputComponent],
+      html: `<admiralty-file-input invalid="true"></ukhho-file-input>`,
+    });
+    expect(page.root).toEqualHtml(`
+      <admiralty-file-input invalid="true">
+        <div class="admiralty-file-input">
+          <label htmlfor="admiralty-file-input-5">
+            <admiralty-icon class="upload-icon" icon-name="upload"></admiralty-icon>
+            <span>
+              Click to choose a file or drag it
+            </span>
+          </label>
+          <input aria-hidden="true" aria-label="File Upload" class="admiralty-form-field" id="admiralty-file-input-5" type="file">
+        </div>
+        <admiralty-input-invalid style="visibility: hidden;"></admiralty-input-invalid>
+      </admiralty-file-input>
+    `);
+  });
+
+  it('renders invalid with invalidMessage', async () => {
+    const page = await newSpecPage({
+      components: [FileInputComponent],
+      html: `<admiralty-file-input invalid="true" invalid-message="This is invalid!"></ukhho-file-input>`,
+    });
+    expect(page.root).toEqualHtml(`
+      <admiralty-file-input invalid="true" invalid-message="This is invalid!">
+        <div class="admiralty-file-input">
+          <label htmlfor="admiralty-file-input-6">
+            <admiralty-icon class="upload-icon" icon-name="upload"></admiralty-icon>
+            <span>
+              Click to choose a file or drag it
+            </span>
+          </label>
+          <input aria-hidden="true" aria-label="File Upload" class="admiralty-form-field" id="admiralty-file-input-6" type="file">
+        </div>
+        <admiralty-input-invalid style="visibility: visible;">
+          This is invalid!
+        </admiralty-input-invalid>
       </admiralty-file-input>
     `);
   });

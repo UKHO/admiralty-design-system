@@ -20,6 +20,16 @@ export class FileInputComponent {
   @Prop() multiple = false;
 
   /**
+   * Whether to show that the file input is in an invalid state.
+   */
+  @Prop() invalid: boolean = false;
+
+  /**
+   * The message to show when the file input is invalid.
+   */
+  @Prop() invalidMessage: string = null;
+
+  /**
    * Emitted when the added file(s) changes
    */
   @Event() fileInputChange: EventEmitter<FileInputChangeEventDetail>;
@@ -115,6 +125,7 @@ export class FileInputComponent {
             multiple={this.multiple}
           />
         </div>
+        <admiralty-input-invalid style={{ visibility: this.invalid && this.invalidMessage ? 'visible' : 'hidden' }}>{this.invalidMessage}</admiralty-input-invalid>
       </Host>
     );
   }
