@@ -14,6 +14,7 @@
 
 ### Used by
 
+ - [admiralty-file-input](../file-input)
  - [admiralty-input](../input)
  - [admiralty-radio-group](../radio-group)
  - [admiralty-select](../select)
@@ -27,6 +28,7 @@
 ```mermaid
 graph TD;
   admiralty-input-invalid --> admiralty-icon
+  admiralty-file-input --> admiralty-input-invalid
   admiralty-input --> admiralty-input-invalid
   admiralty-radio-group --> admiralty-input-invalid
   admiralty-select --> admiralty-input-invalid

@@ -143,6 +143,14 @@ export namespace Components {
     }
     interface AdmiraltyFileInput {
         /**
+          * Whether to show that the file input is in an invalid state.
+         */
+        "invalid": boolean;
+        /**
+          * The message to show when the file input is invalid.
+         */
+        "invalidMessage": string;
+        /**
           * Used to display instructions to the user and is replaced with the filename the user inputs
          */
         "label": string;
@@ -1133,6 +1141,14 @@ declare namespace LocalJSX {
         "onToggled"?: (event: AdmiraltyExpansionCustomEvent<boolean>) => void;
     }
     interface AdmiraltyFileInput {
+        /**
+          * Whether to show that the file input is in an invalid state.
+         */
+        "invalid"?: boolean;
+        /**
+          * The message to show when the file input is invalid.
+         */
+        "invalidMessage"?: string;
         /**
           * Used to display instructions to the user and is replaced with the filename the user inputs
          */

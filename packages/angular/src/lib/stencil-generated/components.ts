@@ -205,14 +205,14 @@ export declare interface AdmiraltyExpansion extends Components.AdmiraltyExpansio
 
 
 @ProxyCmp({
-  inputs: ['label', 'multiple']
+  inputs: ['invalid', 'invalidMessage', 'label', 'multiple']
 })
 @Component({
   selector: 'admiralty-file-input',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['label', 'multiple'],
+  inputs: ['invalid', 'invalidMessage', 'label', 'multiple'],
 })
 export class AdmiraltyFileInput {
   protected el: HTMLElement;
