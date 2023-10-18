@@ -10,7 +10,10 @@ describe('radio-group', () => {
     });
     expect(page.root).toEqualHtml(`
       <admiralty-radio-group>
-        <div class="radio-group" role="radiogroup"></div>
+        <div class="radio-group" role="radiogroup">
+
+      <admiralty-input-invalid style="visibility: hidden;"></admiralty-input-invalid>
+      </div>
       </admiralty-radio-group>
     `);
   });
@@ -48,6 +51,7 @@ describe('radio-group', () => {
               </label>
             </div>
           </admiralty-radio>
+          <admiralty-input-invalid style="visibility: hidden;"></admiralty-input-invalid>
         </div>
       </admiralty-radio-group>
     `);
@@ -86,6 +90,7 @@ describe('radio-group', () => {
               </label>
             </div>
           </admiralty-radio>
+          <admiralty-input-invalid style="visibility: hidden;"></admiralty-input-invalid>
         </div>
       </admiralty-radio-group>
     `);

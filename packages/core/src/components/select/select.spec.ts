@@ -23,6 +23,7 @@ describe('admiralty-select', () => {
             </select>
             <admiralty-icon class="select-down-icon" icon-name="angle-down"></admiralty-icon>
           </div>
+          <admiralty-input-invalid style="visibility: hidden;"></admiralty-input-invalid>
         </div>
       </admiralty-select>
     `);
@@ -51,6 +52,7 @@ describe('admiralty-select', () => {
             </select>
             <admiralty-icon class="select-down-icon" icon-name="angle-down"></admiralty-icon>
           </div>
+          <admiralty-input-invalid style="visibility: hidden;"></admiralty-input-invalid>
         </div>
       </admiralty-select>
     `);
@@ -79,6 +81,7 @@ describe('admiralty-select', () => {
             </select>
             <admiralty-icon class="select-down-icon" icon-name="angle-down"></admiralty-icon>
           </div>
+          <admiralty-input-invalid style="visibility: hidden;"></admiralty-input-invalid>
         </div>
       </admiralty-select>
     `);
@@ -88,12 +91,12 @@ describe('admiralty-select', () => {
     const page = await newSpecPage({
       components: [SelectComponent],
       html: `
-      <admiralty-select error="true" error-hint="The colour must be green" hint="Select an option from the list" label="Choose a colour">
+      <admiralty-select hint="Select an option from the list" invalid="true" invalid-message="The colour must be green" label="Choose a colour">
       </admiralty-select>`,
     });
 
     expect(page.root).toMatchInlineSnapshot(`
-      <admiralty-select error="true" error-hint="The colour must be green" hint="Select an option from the list" label="Choose a colour">
+      <admiralty-select hint="Select an option from the list" invalid="true" invalid-message="The colour must be green" label="Choose a colour">
         <!---->
         <div class="admiralty-select">
           <admiralty-label for="admiralty-select-4">
@@ -103,13 +106,13 @@ describe('admiralty-select', () => {
             Select an option from the list
           </admiralty-hint>
           <div class="select-wrapper">
-            <select aria-disabled="false" aria-label="Choose a colour" class="admiralty-form-control error" id="admiralty-select-4">
+            <select aria-disabled="false" aria-label="Choose a colour" class="admiralty-form-control invalid" id="admiralty-select-4">
             </select>
             <admiralty-icon class="select-down-icon" icon-name="angle-down"></admiralty-icon>
           </div>
-          <admiralty-input-error>
+          <admiralty-input-invalid style="visibility: visible;">
             The colour must be green
-          </admiralty-input-error>
+          </admiralty-input-invalid>
         </div>
       </admiralty-select>
     `);
@@ -138,6 +141,7 @@ describe('admiralty-select', () => {
             </select>
             <admiralty-icon class="disabled select-down-icon" icon-name="angle-down"></admiralty-icon>
           </div>
+          <admiralty-input-invalid style="visibility: hidden;"></admiralty-input-invalid>
         </div>
       </admiralty-select>
     `);
@@ -166,6 +170,7 @@ describe('admiralty-select', () => {
             </select>
             <admiralty-icon class="select-down-icon" icon-name="angle-down"></admiralty-icon>
           </div>
+          <admiralty-input-invalid style="visibility: hidden;"></admiralty-input-invalid>
         </div>
       </admiralty-select>
     `);

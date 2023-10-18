@@ -1,7 +1,5 @@
 # admiralty-type-ahead
 
-
-
 <!-- Auto Generated Below -->
 
 
@@ -36,8 +34,8 @@ graph TD;
   admiralty-type-ahead --> admiralty-input
   admiralty-input --> admiralty-label
   admiralty-input --> admiralty-hint
-  admiralty-input --> admiralty-input-error
-  admiralty-input-error --> admiralty-icon
+  admiralty-input --> admiralty-input-invalid
+  admiralty-input-invalid --> admiralty-icon
   style admiralty-type-ahead fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

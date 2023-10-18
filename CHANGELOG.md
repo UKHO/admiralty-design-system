@@ -1,3 +1,62 @@
+# v0.7.1 (Wed Oct 18 2023)
+
+#### 🐛 Bug Fix
+
+- `@ukho/admiralty-core`
+  - fix: Add missing border style for invalid file input [#123](https://github.com/UKHO/admiralty-design-system/pull/123) ([@UKHOGreg](https://github.com/UKHOGreg))
+
+#### Authors: 1
+
+- Greg Williams ([@UKHOGreg](https://github.com/UKHOGreg))
+
+---
+
+# v0.6.0 (Tue Oct 17 2023)
+
+#### 🚀 Enhancement
+
+- `@ukho/admiralty-angular`, `@ukho/admiralty-core`
+  - feat: Add invalid and invalidMessage to File Input and remove layout bottom margin [#121](https://github.com/UKHO/admiralty-design-system/pull/121) ([@UKHOGreg](https://github.com/UKHOGreg))
+- `@ukho/admiralty-core`
+  - feat: Remove admiralty-file-input label update behaviour when files are selected [#120](https://github.com/UKHO/admiralty-design-system/pull/120) ([@UKHOGreg](https://github.com/UKHOGreg))
+
+#### Authors: 1
+
+- Greg Williams ([@UKHOGreg](https://github.com/UKHOGreg))
+
+---
+
+# v0.5.0 (Wed Sep 13 2023)
+
+#### 🚀 Enhancement
+
+- `@ukho/admiralty-angular`, `@ukho/admiralty-core`
+  - fix: Input Invalid consistency [#110](https://github.com/UKHO/admiralty-design-system/pull/110) ([@UKHOGreg](https://github.com/UKHOGreg))
+
+#### 🐛 Bug Fix
+
+- `@ukho/admiralty-core`
+  - chore: Upgrade packages [#108](https://github.com/UKHO/admiralty-design-system/pull/108) ([@UKHOGreg](https://github.com/UKHOGreg))
+
+#### Authors: 1
+
+- Greg Williams ([@UKHOGreg](https://github.com/UKHOGreg))
+
+---
+
+# v0.4.6 (Thu Aug 31 2023)
+
+#### 🐛 Bug Fix
+
+- `@ukho/admiralty-angular`, `@ukho/admiralty-core`
+  - Adding in invalid props to the radio group [#107](https://github.com/UKHO/admiralty-design-system/pull/107) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+#### Authors: 1
+
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
 # v0.4.5 (Tue Aug 29 2023)
 
 #### 🐛 Bug Fix

@@ -1,7 +1,5 @@
 # admiralty-textarea
 
-
-
 <!-- Auto Generated Below -->
 
 
@@ -33,15 +31,15 @@
 
 - [admiralty-label](../label)
 - [admiralty-hint](../hint)
-- [admiralty-input-error](../input-error)
+- [admiralty-input-invalid](../input-invalid)
 
 ### Graph
 ```mermaid
 graph TD;
   admiralty-textarea --> admiralty-label
   admiralty-textarea --> admiralty-hint
-  admiralty-textarea --> admiralty-input-error
-  admiralty-input-error --> admiralty-icon
+  admiralty-textarea --> admiralty-input-invalid
+  admiralty-input-invalid --> admiralty-icon
   style admiralty-textarea fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

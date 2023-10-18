@@ -14,24 +14,32 @@
     vertical-align: middle;
     margin-right: 18px;
 
-    &:checked:after {
-        border-radius: 100%;
-        background-color: colours.$colour-admiralty-blue;
-        width: .8rem;
-        height: .8rem;
-        content: " ";
-      }
+    &.invalid {
+      border-color: colours.$colour-utility-error;
 
-      &:disabled {
-        border: 2px solid colours.$colour-textinput-text-disabled;
-      }
-
-      &:focus {
+      &:focus-visible {
+        border-color: unset;
         outline: 3px solid colours.$colour-utility-focus;
-        outline-offset: 0;
       }
-  }
+    }
 
+    &:checked:after {
+      border-radius: 100%;
+      background-color: colours.$colour-admiralty-blue;
+      width: .8rem;
+      height: .8rem;
+      content: " ";
+    }
+
+    &:disabled {
+      border: 2px solid colours.$colour-textinput-text-disabled;
+    }
+
+    &:focus {
+      outline: 3px solid colours.$colour-utility-focus;
+      outline-offset: 0;
+    }
+  }
   label {
     font-family: typography.$font-family;
     font-weight: typography.$font-weight-light;

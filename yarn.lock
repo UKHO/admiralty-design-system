@@ -5906,7 +5906,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-a11y@npm:^7.2.3":
+"@storybook/addon-a11y@npm:^7.4.0":
   version: 7.4.0
   resolution: "@storybook/addon-a11y@npm:7.4.0"
   dependencies:
@@ -5935,7 +5935,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-actions@npm:7.4.0, @storybook/addon-actions@npm:^7.2.3":
+"@storybook/addon-actions@npm:7.4.0, @storybook/addon-actions@npm:^7.4.0":
   version: 7.4.0
   resolution: "@storybook/addon-actions@npm:7.4.0"
   dependencies:
@@ -6051,7 +6051,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-essentials@npm:^7.2.3":
+"@storybook/addon-essentials@npm:^7.4.0":
   version: 7.4.0
   resolution: "@storybook/addon-essentials@npm:7.4.0"
   dependencies:
@@ -6087,7 +6087,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-links@npm:^7.2.3":
+"@storybook/addon-links@npm:^7.4.0":
   version: 7.4.0
   resolution: "@storybook/addon-links@npm:7.4.0"
   dependencies:
@@ -6735,7 +6735,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/web-components-vite@npm:^7.2.3":
+"@storybook/web-components-vite@npm:^7.4.0":
   version: 7.4.0
   resolution: "@storybook/web-components-vite@npm:7.4.0"
   dependencies:
@@ -6751,7 +6751,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/web-components@npm:7.4.0, @storybook/web-components@npm:^7.2.3":
+"@storybook/web-components@npm:7.4.0, @storybook/web-components@npm:^7.4.0":
   version: 7.4.0
   resolution: "@storybook/web-components@npm:7.4.0"
   dependencies:
@@ -7618,7 +7618,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@ukho/admiralty-angular@^0.4.5, @ukho/admiralty-angular@workspace:packages/angular":
+"@ukho/admiralty-angular@^0.7.1, @ukho/admiralty-angular@workspace:packages/angular":
   version: 0.0.0-use.local
   resolution: "@ukho/admiralty-angular@workspace:packages/angular"
   dependencies:
@@ -7634,7 +7634,7 @@ __metadata:
     "@angular/platform-browser-dynamic": ^12.0.0
     "@angular/router": ^12.0.0
     "@types/node": ^18.17.0
-    "@ukho/admiralty-core": ^0.4.5
+    "@ukho/admiralty-core": ^0.7.1
     ng-packagr: ^12.0.0
     postcss: ^8.4.27
     postcss-import: ^15.1.0
@@ -7648,7 +7648,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@ukho/admiralty-core@^0.4.5, @ukho/admiralty-core@workspace:packages/core":
+"@ukho/admiralty-core@^0.7.1, @ukho/admiralty-core@workspace:packages/core":
   version: 0.0.0-use.local
   resolution: "@ukho/admiralty-core@workspace:packages/core"
   dependencies:
@@ -7663,16 +7663,16 @@ __metadata:
     "@stencil/core": ^3.4.2
     "@stencil/react-output-target": ^0.5.3
     "@stencil/sass": ^3.0.5
-    "@storybook/addon-a11y": ^7.2.3
-    "@storybook/addon-actions": ^7.2.3
-    "@storybook/addon-essentials": ^7.2.3
-    "@storybook/addon-links": ^7.2.3
-    "@storybook/web-components": ^7.2.3
-    "@storybook/web-components-vite": ^7.2.3
+    "@storybook/addon-a11y": ^7.4.0
+    "@storybook/addon-actions": ^7.4.0
+    "@storybook/addon-essentials": ^7.4.0
+    "@storybook/addon-links": ^7.4.0
+    "@storybook/web-components": ^7.4.0
+    "@storybook/web-components-vite": ^7.4.0
     "@types/jest": ^27.5.2
     "@types/node": ^18.17.0
     clean-css-cli: ^5.6.2
-    concurrently: ^8.2.0
+    concurrently: ^8.2.1
     jest: ^27.5.1
     jest-cli: ^27.5.1
     jest-environment-node: ^27.5.1
@@ -7682,10 +7682,17 @@ __metadata:
     react-dom: ^18.2.0
     rimraf: ^5.0.5
     sass: ^1.64.1
-    storybook: ^7.2.3
-    vite: ^4.4.7
+    storybook: ^7.4.0
+    vite: ^4.4.9
   languageName: unknown
   linkType: soft
+
+"@ukho/admiralty-core@npm:^0.4.5":
+  version: 0.4.6
+  resolution: "@ukho/admiralty-core@npm:0.4.6"
+  checksum: 070154304a00bc872cf62e6876900db2c9fffd291361a82656b3585d76dc929556bac7ba244381d9af7969bda4655e5c6f28836a13684180107a84c7d34b5773
+  languageName: node
+  linkType: hard
 
 "@ukho/admiralty-react@^0.4.5, @ukho/admiralty-react@workspace:packages/react":
   version: 0.0.0-use.local
@@ -10255,7 +10262,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"concurrently@npm:^8.2.0":
+"concurrently@npm:^8.2.1":
   version: 8.2.1
   resolution: "concurrently@npm:8.2.1"
   dependencies:
@@ -22167,7 +22174,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.2.14, postcss@npm:^8.2.15, postcss@npm:^8.2.4, postcss@npm:^8.3.5, postcss@npm:^8.3.7, postcss@npm:^8.4.19, postcss@npm:^8.4.27":
+"postcss@npm:^8.2.14, postcss@npm:^8.2.15, postcss@npm:^8.2.4, postcss@npm:^8.3.5, postcss@npm:^8.3.7, postcss@npm:^8.4.19":
   version: 8.4.29
   resolution: "postcss@npm:8.4.29"
   dependencies:
@@ -22175,6 +22182,17 @@ __metadata:
     picocolors: ^1.0.0
     source-map-js: ^1.0.2
   checksum: dd6daa25e781db9ae5b651d9b7bfde0ec6e60e86a37da69a18eb4773d5ddd51e28fc4ff054fbdc04636a31462e6bf09a1e50986f69ac52b10d46b7457cd36d12
+  languageName: node
+  linkType: hard
+
+"postcss@npm:^8.4.27":
+  version: 8.4.27
+  resolution: "postcss@npm:8.4.27"
+  dependencies:
+    nanoid: ^3.3.6
+    picocolors: ^1.0.0
+    source-map-js: ^1.0.2
+  checksum: 1cdd0c298849df6cd65f7e646a3ba36870a37b65f55fd59d1a165539c263e9b4872a402bf4ed1ca1bc31f58b68b2835545e33ea1a23b161a1f8aa6d5ded81e78
   languageName: node
   linkType: hard
 
@@ -24577,7 +24595,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"storybook@npm:^7.2.3":
+"storybook@npm:^7.4.0":
   version: 7.4.0
   resolution: "storybook@npm:7.4.0"
   dependencies:
@@ -25133,7 +25151,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tar@npm:^6.0.2, tar@npm:^6.1.0, tar@npm:^6.1.11, tar@npm:^6.1.13, tar@npm:^6.1.2":
+"tar@npm:^6.0.2, tar@npm:^6.1.0, tar@npm:^6.1.13":
   version: 6.2.0
   resolution: "tar@npm:6.2.0"
   dependencies:
@@ -25144,6 +25162,20 @@ __metadata:
     mkdirp: ^1.0.3
     yallist: ^4.0.0
   checksum: db4d9fe74a2082c3a5016630092c54c8375ff3b280186938cfd104f2e089c4fd9bad58688ef6be9cf186a889671bf355c7cda38f09bbf60604b281715ca57f5c
+  languageName: node
+  linkType: hard
+
+"tar@npm:^6.1.11, tar@npm:^6.1.2":
+  version: 6.1.13
+  resolution: "tar@npm:6.1.13"
+  dependencies:
+    chownr: ^2.0.0
+    fs-minipass: ^2.0.0
+    minipass: ^4.0.0
+    minizlib: ^2.1.1
+    mkdirp: ^1.0.3
+    yallist: ^4.0.0
+  checksum: 8a278bed123aa9f53549b256a36b719e317c8b96fe86a63406f3c62887f78267cea9b22dc6f7007009738509800d4a4dccc444abd71d762287c90f35b002eb1c
   languageName: node
   linkType: hard
 
@@ -25299,7 +25331,7 @@ __metadata:
     "@angular/router": ~15.2.5
     "@fortawesome/fontawesome-free": ~6.4.0
     "@types/node": ^18.17.0
-    "@ukho/admiralty-angular": ^0.4.5
+    "@ukho/admiralty-angular": ^0.7.1
     rimraf: ^4.4.1
     rxjs: ~7.8.1
     tslib: ^2.5.0
@@ -26607,7 +26639,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:^4.4.7":
+"vite@npm:^4.4.9":
   version: 4.4.9
   resolution: "vite@npm:4.4.9"
   dependencies:
@@ -27051,6 +27083,7 @@ __metadata:
     remark-gfm: ^3.0.1
     remark-toc: ^8.0.1
     typescript: 5.2.2
+    yarn.lock: ^0.0.1-security
   languageName: unknown
   linkType: soft
 
@@ -27579,6 +27612,13 @@ __metadata:
     y18n: ^5.0.5
     yargs-parser: ^21.1.1
   checksum: 73b572e863aa4a8cbef323dd911d79d193b772defd5a51aab0aca2d446655216f5002c42c5306033968193bdbf892a7a4c110b0d77954a7fdf563e653967b56a
+  languageName: node
+  linkType: hard
+
+"yarn.lock@npm:^0.0.1-security":
+  version: 0.0.1-security
+  resolution: "yarn.lock@npm:0.0.1-security"
+  checksum: 247a60a82cb355617a26b49fe9097154ed3ab325116897a6bc7e6794984e96856d4a612d9e5e1854859b5338e95c0d8f53a87436f3455189e927a3679ff43bbe
   languageName: node
   linkType: hard
 

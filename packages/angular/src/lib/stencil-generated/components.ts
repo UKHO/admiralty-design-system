@@ -205,14 +205,14 @@ export declare interface AdmiraltyExpansion extends Components.AdmiraltyExpansio
 
 
 @ProxyCmp({
-  inputs: ['label', 'multiple']
+  inputs: ['invalid', 'invalidMessage', 'label', 'multiple']
 })
 @Component({
   selector: 'admiralty-file-input',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['label', 'multiple'],
+  inputs: ['invalid', 'invalidMessage', 'label', 'multiple'],
 })
 export class AdmiraltyFileInput {
   protected el: HTMLElement;
@@ -532,13 +532,13 @@ export declare interface AdmiraltyInput extends Components.AdmiraltyInput {
 @ProxyCmp({
 })
 @Component({
-  selector: 'admiralty-input-error',
+  selector: 'admiralty-input-invalid',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: [],
 })
-export class AdmiraltyInputError {
+export class AdmiraltyInputInvalid {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
@@ -547,7 +547,7 @@ export class AdmiraltyInputError {
 }
 
 
-export declare interface AdmiraltyInputError extends Components.AdmiraltyInputError {}
+export declare interface AdmiraltyInputInvalid extends Components.AdmiraltyInputInvalid {}
 
 
 @ProxyCmp({
@@ -668,14 +668,14 @@ export declare interface AdmiraltyProgressBar extends Components.AdmiraltyProgre
 
 
 @ProxyCmp({
-  inputs: ['checked', 'disabled', 'name', 'value']
+  inputs: ['checked', 'disabled', 'invalid', 'name', 'value']
 })
 @Component({
   selector: 'admiralty-radio',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['checked', 'disabled', 'name', 'value'],
+  inputs: ['checked', 'disabled', 'invalid', 'name', 'value'],
 })
 export class AdmiraltyRadio {
   protected el: HTMLElement;
@@ -704,14 +704,14 @@ export declare interface AdmiraltyRadio extends Components.AdmiraltyRadio {
 
 
 @ProxyCmp({
-  inputs: ['displayVertical', 'name', 'value']
+  inputs: ['displayVertical', 'invalid', 'invalidMessage', 'name', 'value']
 })
 @Component({
   selector: 'admiralty-radio-group',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['displayVertical', 'name', 'value'],
+  inputs: ['displayVertical', 'invalid', 'invalidMessage', 'name', 'value'],
 })
 export class AdmiraltyRadioGroup {
   protected el: HTMLElement;
@@ -762,14 +762,14 @@ export declare interface AdmiraltyReadMore extends Components.AdmiraltyReadMore 
 
 
 @ProxyCmp({
-  inputs: ['disabled', 'error', 'errorHint', 'hint', 'label', 'value', 'width']
+  inputs: ['disabled', 'hint', 'invalid', 'invalidMessage', 'label', 'value', 'width']
 })
 @Component({
   selector: 'admiralty-select',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['disabled', 'error', 'errorHint', 'hint', 'label', 'value', 'width'],
+  inputs: ['disabled', 'hint', 'invalid', 'invalidMessage', 'label', 'value', 'width'],
 })
 export class AdmiraltySelect {
   protected el: HTMLElement;

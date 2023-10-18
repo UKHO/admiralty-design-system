@@ -20,6 +20,16 @@ export class FileInputComponent {
   @Prop() multiple = false;
 
   /**
+   * Whether to show that the file input is in an invalid state.
+   */
+  @Prop() invalid: boolean = false;
+
+  /**
+   * The message to show when the file input is invalid.
+   */
+  @Prop() invalidMessage: string = null;
+
+  /**
    * Emitted when the added file(s) changes
    */
   @Event() fileInputChange: EventEmitter<FileInputChangeEventDetail>;
@@ -84,10 +94,6 @@ export class FileInputComponent {
     }
   }
 
-  get filesDisplay() {
-    return `${this.files[0].name} (${this.sizeOf(this.files[0].size)}) ${this.files.length > 1 ? ' ...' : ''}`;
-  }
-
   /**
    * Takes the bytes of a file and returns it as human readable figure
    * @param bytes pass bytes throughs as a number
@@ -104,10 +110,10 @@ export class FileInputComponent {
   render() {
     return (
       <Host onDragLeave={event => this.dragLeaveHander(event)} onDragOver={event => this.dragOverHandler(event)} onDrop={event => this.dropHandler(event)}>
-        <div class="admiralty-file-input">
+        <div class={{ 'admiralty-file-input': true, 'invalid': this.invalid }}>
           <label htmlFor={this.id}>
             <admiralty-icon class="upload-icon" icon-name="upload"></admiralty-icon>
-            {this.files?.length ? <span>{this.filesDisplay}</span> : <span class="instructions">{this.label}</span>}
+            <span>{this.label}</span>
           </label>
           <input
             onChange={event => this.changeHandler(event)}
@@ -119,6 +125,7 @@ export class FileInputComponent {
             multiple={this.multiple}
           />
         </div>
+        <admiralty-input-invalid style={{ visibility: this.invalid && this.invalidMessage ? 'visible' : 'hidden' }}>{this.invalidMessage}</admiralty-input-invalid>
       </Host>
     );
   }

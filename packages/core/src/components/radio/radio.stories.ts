@@ -7,9 +7,9 @@ const meta: Meta = {
   title: 'Forms/Radio',
   parameters: {
     actions: {
-        handles: ['admiraltyFocus', 'admiraltyBlur'],
+      handles: ['admiraltyFocus', 'admiraltyBlur'],
     },
-  }
+  },
 };
 
 export default meta;
@@ -17,33 +17,40 @@ export default meta;
 type Story = StoryObj<RadioComponent>;
 
 const template: Story = {
-  render: args => 
-    html`<admiralty-radio name="${args.name}" value="${args.value}" ?checked="${args.checked}" ?disabled="${args.disabled}" >${args.labelText}</admiralty-radio>`,
+  render: args =>
+    html`<admiralty-radio name="${args.name}" value="${args.value}" ?checked="${args.checked}" ?disabled="${args.disabled}" ?invalid="${args.invalid}"
+      >${args.labelText}</admiralty-radio
+    >`,
 };
 
-export const Basic: Story = { ...template, 
-  args: { 
+export const Basic: Story = {
+  ...template,
+  args: {
     labelText: 'test label',
     name: 'exampleName',
-    value: 'exampleValue'
-  }
+    value: 'exampleValue',
+    invalid: false,
+  },
 };
 
-
-export const Disabled: Story = { ...template, 
-  args: { 
+export const Disabled: Story = {
+  ...template,
+  args: {
     disabled: true,
     labelText: 'test label',
     name: 'exampleName',
     value: 'exampleValue',
-  }
+    invalid: false,
+  },
 };
 
-export const Checked: Story = { ...template, 
-  args: { 
+export const Checked: Story = {
+  ...template,
+  args: {
     checked: true,
     labelText: 'test label',
     name: 'exampleName',
-    value: 'exampleValue'
-  }
+    value: 'exampleValue',
+    invalid: false,
+  },
 };

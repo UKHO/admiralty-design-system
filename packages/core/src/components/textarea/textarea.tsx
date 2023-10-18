@@ -114,7 +114,7 @@ export class TextareaComponent {
             onInput={this.onInput}
             onBlur={this.onBlur}
           ></textarea>
-          {this.invalid && this.invalidMessage ? <admiralty-input-error>{this.invalidMessage}</admiralty-input-error> : null}
+          <admiralty-input-invalid style={{ visibility: this.invalid && this.invalidMessage ? 'visible' : 'hidden' }}>{this.invalidMessage}</admiralty-input-invalid>
         </div>
       </Host>
     );

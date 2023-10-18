@@ -143,6 +143,14 @@ export namespace Components {
     }
     interface AdmiraltyFileInput {
         /**
+          * Whether to show that the file input is in an invalid state.
+         */
+        "invalid": boolean;
+        /**
+          * The message to show when the file input is invalid.
+         */
+        "invalidMessage": string;
+        /**
           * Used to display instructions to the user and is replaced with the filename the user inputs
          */
         "label": string;
@@ -307,7 +315,7 @@ export namespace Components {
          */
         "width": number;
     }
-    interface AdmiraltyInputError {
+    interface AdmiraltyInputInvalid {
     }
     interface AdmiraltyLabel {
         /**
@@ -379,6 +387,10 @@ export namespace Components {
          */
         "disabled"?: boolean;
         /**
+          * Determines whether to add the invalid stying to the radio button
+         */
+        "invalid": boolean;
+        /**
           * The name of the radio button for use on selection within a radio group
          */
         "name": string;
@@ -393,6 +405,14 @@ export namespace Components {
           * Setting this true displays the radio options vertically (defaults to false)
          */
         "displayVertical": boolean;
+        /**
+          * Whether to show the input in an invalid state
+         */
+        "invalid": boolean;
+        /**
+          * The message to show when the input is invalid
+         */
+        "invalidMessage": string;
         /**
           * The name of the control, which is submitted with the form data
          */
@@ -414,17 +434,17 @@ export namespace Components {
          */
         "disabled": boolean;
         /**
-          * If 'true', the 'error' class is added to suggest an error
-         */
-        "error": boolean;
-        /**
-          * The hint that is used to inform the user of an error (displayed below the select box)
-         */
-        "errorHint": string;
-        /**
           * The text that will be used as a field label.
          */
         "hint": string;
+        /**
+          * Whether to show that the select is in an invalid state.
+         */
+        "invalid": boolean;
+        /**
+          * The message to show when the select is invalid.
+         */
+        "invalidMessage": string;
         /**
           * The text that will be used as a field label.
          */
@@ -767,11 +787,11 @@ declare global {
         prototype: HTMLAdmiraltyInputElement;
         new (): HTMLAdmiraltyInputElement;
     };
-    interface HTMLAdmiraltyInputErrorElement extends Components.AdmiraltyInputError, HTMLStencilElement {
+    interface HTMLAdmiraltyInputInvalidElement extends Components.AdmiraltyInputInvalid, HTMLStencilElement {
     }
-    var HTMLAdmiraltyInputErrorElement: {
-        prototype: HTMLAdmiraltyInputErrorElement;
-        new (): HTMLAdmiraltyInputErrorElement;
+    var HTMLAdmiraltyInputInvalidElement: {
+        prototype: HTMLAdmiraltyInputInvalidElement;
+        new (): HTMLAdmiraltyInputInvalidElement;
     };
     interface HTMLAdmiraltyLabelElement extends Components.AdmiraltyLabel, HTMLStencilElement {
     }
@@ -956,7 +976,7 @@ declare global {
         "admiralty-hr": HTMLAdmiraltyHrElement;
         "admiralty-icon": HTMLAdmiraltyIconElement;
         "admiralty-input": HTMLAdmiraltyInputElement;
-        "admiralty-input-error": HTMLAdmiraltyInputErrorElement;
+        "admiralty-input-invalid": HTMLAdmiraltyInputInvalidElement;
         "admiralty-label": HTMLAdmiraltyLabelElement;
         "admiralty-link": HTMLAdmiraltyLinkElement;
         "admiralty-paginator": HTMLAdmiraltyPaginatorElement;
@@ -1121,6 +1141,14 @@ declare namespace LocalJSX {
         "onToggled"?: (event: AdmiraltyExpansionCustomEvent<boolean>) => void;
     }
     interface AdmiraltyFileInput {
+        /**
+          * Whether to show that the file input is in an invalid state.
+         */
+        "invalid"?: boolean;
+        /**
+          * The message to show when the file input is invalid.
+         */
+        "invalidMessage"?: string;
         /**
           * Used to display instructions to the user and is replaced with the filename the user inputs
          */
@@ -1326,7 +1354,7 @@ declare namespace LocalJSX {
          */
         "width"?: number;
     }
-    interface AdmiraltyInputError {
+    interface AdmiraltyInputInvalid {
     }
     interface AdmiraltyLabel {
         /**
@@ -1402,6 +1430,10 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
         /**
+          * Determines whether to add the invalid stying to the radio button
+         */
+        "invalid"?: boolean;
+        /**
           * The name of the radio button for use on selection within a radio group
          */
         "name"?: string;
@@ -1427,6 +1459,14 @@ declare namespace LocalJSX {
           * Setting this true displays the radio options vertically (defaults to false)
          */
         "displayVertical"?: boolean;
+        /**
+          * Whether to show the input in an invalid state
+         */
+        "invalid"?: boolean;
+        /**
+          * The message to show when the input is invalid
+         */
+        "invalidMessage"?: string;
         /**
           * The name of the control, which is submitted with the form data
          */
@@ -1456,17 +1496,17 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
         /**
-          * If 'true', the 'error' class is added to suggest an error
-         */
-        "error"?: boolean;
-        /**
-          * The hint that is used to inform the user of an error (displayed below the select box)
-         */
-        "errorHint"?: string;
-        /**
           * The text that will be used as a field label.
          */
         "hint"?: string;
+        /**
+          * Whether to show that the select is in an invalid state.
+         */
+        "invalid"?: boolean;
+        /**
+          * The message to show when the select is invalid.
+         */
+        "invalidMessage"?: string;
         /**
           * The text that will be used as a field label.
          */
@@ -1661,7 +1701,7 @@ declare namespace LocalJSX {
         "admiralty-hr": AdmiraltyHr;
         "admiralty-icon": AdmiraltyIcon;
         "admiralty-input": AdmiraltyInput;
-        "admiralty-input-error": AdmiraltyInputError;
+        "admiralty-input-invalid": AdmiraltyInputInvalid;
         "admiralty-label": AdmiraltyLabel;
         "admiralty-link": AdmiraltyLink;
         "admiralty-paginator": AdmiraltyPaginator;
@@ -1718,7 +1758,7 @@ declare module "@stencil/core" {
              * and checkbox.
              */
             "admiralty-input": LocalJSX.AdmiraltyInput & JSXBase.HTMLAttributes<HTMLAdmiraltyInputElement>;
-            "admiralty-input-error": LocalJSX.AdmiraltyInputError & JSXBase.HTMLAttributes<HTMLAdmiraltyInputErrorElement>;
+            "admiralty-input-invalid": LocalJSX.AdmiraltyInputInvalid & JSXBase.HTMLAttributes<HTMLAdmiraltyInputInvalidElement>;
             "admiralty-label": LocalJSX.AdmiraltyLabel & JSXBase.HTMLAttributes<HTMLAdmiraltyLabelElement>;
             "admiralty-link": LocalJSX.AdmiraltyLink & JSXBase.HTMLAttributes<HTMLAdmiraltyLinkElement>;
             "admiralty-paginator": LocalJSX.AdmiraltyPaginator & JSXBase.HTMLAttributes<HTMLAdmiraltyPaginatorElement>;
