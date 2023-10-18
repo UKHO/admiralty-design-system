@@ -1,0 +1,32 @@
+name: 'Design System Website'
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3.6.0
+        with:
+          node-version: 18.x
+          cache: 'yarn'
+          cache-dependency-path: 'yarn.lock'
+      - uses: ./.github/workflows/actions/build-website
+        name: Build
+
+  deploy-website:
+    needs: [ build ]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3.6.0
+        with:
+          node-version: 18.x
+          cache: 'yarn'
+          cache-dependency-path: 'yarn.lock'
+      - uses: ./.github/workflows/actions/deploy-website
+        name: Deploy Website
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          AZURE_STATIC_WEB_APPS_TOKEN: ${{ secrets.AZURE_STATIC_WEB_APPS_TOKEN }}

@@ -1,6 +1,10 @@
 name: 'Design System Build'
 
-on: [push]
+on:
+  push:
+    paths-ignore:
+      - 'packages/docs/**'
+      - 'package/website/**'
 
 jobs:
   build:
@@ -12,7 +16,7 @@ jobs:
           node-version: 18.x
           cache: 'yarn'
           cache-dependency-path: 'yarn.lock'
-      - uses: ./.github/workflows/actions/build
+      - uses: ./.github/workflows/actions/build-all
         name: Build
 
   test-core-spec:
@@ -45,19 +49,3 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           ADMIN_TOKEN: ${{ secrets.ADMIN_TOKEN }}
-
-  deploy-website:
-    needs: [ test-core-spec,build,release-packages ]
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3.6.0
-        with:
-          node-version: 18.x
-          cache: 'yarn'
-          cache-dependency-path: 'yarn.lock'
-      - uses: ./.github/workflows/actions/deploy-website
-        name: Deploy Website
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          AZURE_STATIC_WEB_APPS_TOKEN: ${{ secrets.AZURE_STATIC_WEB_APPS_TOKEN }}
