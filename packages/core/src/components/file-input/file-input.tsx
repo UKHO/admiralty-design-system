@@ -110,7 +110,7 @@ export class FileInputComponent {
   render() {
     return (
       <Host onDragLeave={event => this.dragLeaveHander(event)} onDragOver={event => this.dragOverHandler(event)} onDrop={event => this.dropHandler(event)}>
-        <div class="admiralty-file-input">
+        <div class={{ 'admiralty-file-input': true, 'invalid': this.invalid }}>
           <label htmlFor={this.id}>
             <admiralty-icon class="upload-icon" icon-name="upload"></admiralty-icon>
             <span>{this.label}</span>
