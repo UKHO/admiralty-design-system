@@ -13,7 +13,8 @@
   "files": [
     "dist/",
     "loader/",
-    "styles/"
+    "styles/",
+    "docs/"
   ],
   "scripts": {
     "build": "yarn build.css && stencil build",

@@ -1,15 +1,24 @@
-import { JsonDocs } from '@stencil/core/internal';
+import { JsonDocs } from '@ukho/admiralty-core/docs/docs';
 import { writeFileSync, mkdirSync, existsSync } from 'fs';
 import { rimrafSync } from 'rimraf';
 import * as path from 'path';
+import chalk from 'chalk';
+
+const error = chalk.red;
+const warning = chalk.yellow;
+const success = chalk.green;
+
 export const generateDocs = (docs: JsonDocs) => {
-  const outputPath = '../docs/components';
+  const outputPath = path.resolve('components');
 
   // Clean the outputPath
   rimrafSync(outputPath);
+  console.log(warning('Cleaning output path...'));
 
-  docs.components.forEach(comp => {
+  docs.components.forEach((comp) => {
     const compTag = comp.tag.slice(10); // remove 'admiralty-' from the tag
+
+    console.log(`Generating docs for ${compTag}...`);
 
     const props = renderProperties(comp);
     const events = renderEvents(comp);
@@ -24,13 +33,22 @@ export const generateDocs = (docs: JsonDocs) => {
       mkdirSync(componentPath, { recursive: true });
     }
 
-    writeFileSync(path.resolve(componentPath, 'props.mdx'), props);
-    writeFileSync(path.resolve(componentPath, 'events.mdx'), events);
-    writeFileSync(path.resolve(componentPath, 'methods.mdx'), methods);
-    writeFileSync(path.resolve(componentPath, 'parts.mdx'), parts);
-    writeFileSync(path.resolve(componentPath, 'customProps.mdx'), customProps);
-    writeFileSync(path.resolve(componentPath, 'slots.mdx'), slots);
+    console.log(`Writing doc files to ${componentPath}...`);
+
+    writeDocsFile(path.resolve(componentPath, 'props.mdx'), props);
+    writeDocsFile(path.resolve(componentPath, 'events.mdx'), events);
+    writeDocsFile(path.resolve(componentPath, 'methods.mdx'), methods);
+    writeDocsFile(path.resolve(componentPath, 'parts.mdx'), parts);
+    writeDocsFile(path.resolve(componentPath, 'customProps.mdx'), customProps);
+    writeDocsFile(path.resolve(componentPath, 'slots.mdx'), slots);
+
+    console.log(success('Finished generating docs files'));
   });
+};
+
+const writeDocsFile = (path: string, content: string) => {
+  writeFileSync(path, content);
+  console.log(success(`Successfully written file to ${path}`));
 };
 
 const renderProperties = ({ props: properties }): string => {
@@ -42,7 +60,14 @@ const renderProperties = ({ props: properties }): string => {
   return `
   | Name | Type | Default | Description |
 | --- | --- | --- | --- |
-${properties.map(prop => `| \`${prop.attr}\` | \`${formatType(prop.attr, prop.type)}\` | \`${prop.default}\` | ${formatMultiline(prop.docs)} |`).join('\n')}
+${properties
+  .map(
+    (prop) =>
+      `| \`${prop.attr}\` | \`${formatType(prop.attr, prop.type)}\` | \`${prop.default}\` | ${formatMultiline(
+        prop.docs,
+      )} |`,
+  )
+  .join('\n')}
 
 `;
 };
@@ -55,7 +80,7 @@ const renderEvents = ({ events }): string => {
   return `
 | Name | Description |
 | --- | --- |
-${events.map(event => `| \`${event.event}\` | ${formatMultiline(event.docs)} |`).join('\n')}
+${events.map((event) => `| \`${event.event}\` | ${formatMultiline(event.docs)} |`).join('\n')}
 
 `;
 };
@@ -69,7 +94,7 @@ const renderMethods = ({ methods }): string => {
   return `
 ${methods
   .map(
-    method => `
+    (method) => `
 ### ${method.name}
 
 | | |
@@ -91,7 +116,7 @@ const renderParts = ({ parts }): string => {
   return `
 | Name | Description |
 | --- | --- |
-${parts.map(prop => `| \`${prop.name}\` | ${formatMultiline(prop.docs)} |`).join('\n')}
+${parts.map((prop) => `| \`${prop.name}\` | ${formatMultiline(prop.docs)} |`).join('\n')}
 
 `;
 };
@@ -104,7 +129,7 @@ const renderCustomProps = ({ styles: customProps }): string => {
   return `
 | Name | Description |
 | --- | --- |
-${customProps.map(prop => `| \`${prop.name}\` | ${formatMultiline(prop.docs)} |`).join('\n')}
+${customProps.map((prop) => `| \`${prop.name}\` | ${formatMultiline(prop.docs)} |`).join('\n')}
 
 `;
 };
@@ -117,7 +142,7 @@ const renderSlots = ({ slots }): string => {
   return `
 | Name | Description |
 | --- | --- |
-${slots.map(slot => `| \`${slot.name}\` | ${formatMultiline(slot.docs)} |`).join('\n')}
+${slots.map((slot) => `| \`${slot.name}\` | ${formatMultiline(slot.docs)} |`).join('\n')}
 
 `;
 };

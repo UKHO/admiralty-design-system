@@ -2,7 +2,6 @@ import { Config } from '@stencil/core';
 import { sass } from '@stencil/sass';
 import { angularOutputTarget as angular, ValueAccessorConfig } from '@stencil/angular-output-target';
 import { reactOutputTarget } from '@stencil/react-output-target';
-import { generateDocs } from './plugins/websiteDocsGenerator';
 
 const angularValueAccessorBindings: ValueAccessorConfig[] = [
   {
@@ -71,10 +70,6 @@ export const config: Config = {
     },
     {
       type: 'dist-custom-elements',
-    },
-    {
-      type: 'docs-custom',
-      generator: generateDocs,
     },
     {
       type: 'docs-json',
