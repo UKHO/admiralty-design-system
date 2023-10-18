@@ -7608,11 +7608,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ukho-internal/admiralty-docs@^0.4.5, @ukho-internal/admiralty-docs@workspace:packages/docs":
+"@ukho-internal/admiralty-docs@^0.7.1, @ukho-internal/admiralty-docs@workspace:packages/docs":
   version: 0.0.0-use.local
   resolution: "@ukho-internal/admiralty-docs@workspace:packages/docs"
   dependencies:
-    "@ukho/admiralty-core": ^0.4.5
+    "@ukho/admiralty-core": "workspace:^"
     chalk: ^4.1.2
     ts-node: ^10.9.1
   languageName: unknown
@@ -7648,7 +7648,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@ukho/admiralty-core@^0.7.1, @ukho/admiralty-core@workspace:packages/core":
+"@ukho/admiralty-core@^0.7.1, @ukho/admiralty-core@workspace:^, @ukho/admiralty-core@workspace:packages/core":
   version: 0.0.0-use.local
   resolution: "@ukho/admiralty-core@workspace:packages/core"
   dependencies:
@@ -7687,19 +7687,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@ukho/admiralty-core@npm:^0.4.5":
-  version: 0.4.6
-  resolution: "@ukho/admiralty-core@npm:0.4.6"
-  checksum: 070154304a00bc872cf62e6876900db2c9fffd291361a82656b3585d76dc929556bac7ba244381d9af7969bda4655e5c6f28836a13684180107a84c7d34b5773
-  languageName: node
-  linkType: hard
-
-"@ukho/admiralty-react@^0.4.5, @ukho/admiralty-react@workspace:packages/react":
+"@ukho/admiralty-react@^0.7.1, @ukho/admiralty-react@workspace:packages/react":
   version: 0.0.0-use.local
   resolution: "@ukho/admiralty-react@workspace:packages/react"
   dependencies:
     "@types/react": ^18.2.21
-    "@ukho/admiralty-core": ^0.4.5
+    "@ukho/admiralty-core": ^0.7.1
     react: ^18.2.0
     react-dom: ^18.2.0
     typescript: ^5.2.2
@@ -27069,8 +27062,8 @@ __metadata:
     "@types/prismjs": ^1.26.0
     "@types/react": 18.2.21
     "@types/react-dom": 18.2.7
-    "@ukho-internal/admiralty-docs": ^0.4.5
-    "@ukho/admiralty-react": ^0.4.5
+    "@ukho-internal/admiralty-docs": ^0.7.1
+    "@ukho/admiralty-react": ^0.7.1
     eslint: 8.48.0
     eslint-config-next: 13.4.19
     highlight.js: ^11.8.0
