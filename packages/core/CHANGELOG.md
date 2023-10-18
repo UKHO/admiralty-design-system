@@ -1,3 +1,15 @@
+# v0.7.1 (Wed Oct 18 2023)
+
+#### 🐛 Bug Fix
+
+- fix: Add missing border style for invalid file input [#123](https://github.com/UKHO/admiralty-design-system/pull/123) ([@UKHOGreg](https://github.com/UKHOGreg))
+
+#### Authors: 1
+
+- Greg Williams ([@UKHOGreg](https://github.com/UKHOGreg))
+
+---
+
 # v0.6.0 (Tue Oct 17 2023)
 
 #### 🚀 Enhancement
