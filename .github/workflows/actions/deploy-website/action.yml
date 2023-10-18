@@ -22,7 +22,7 @@ runs:
         azure_static_web_apps_api_token: ${{ inputs.AZURE_STATIC_WEB_APPS_TOKEN }}
         repo_token: ${{ inputs.GITHUB_TOKEN }} # Used for GitHub integrations (i.e. PR comments)
         action: "upload"
-        app_location: "./dist" # App source code path
+        app_location: "dist/packages/website/out" # App source code path
         skip_app_build: true
       env: # Add environment variables here
         IS_STATIC_EXPORT: 'true'
