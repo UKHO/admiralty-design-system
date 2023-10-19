@@ -1,6 +1,10 @@
 name: 'Design System Build'
 
-on: [push]
+on:
+  push:
+    paths-ignore:
+      - 'packages/docs/**'
+      - 'package/website/**'
 
 jobs:
   build:
@@ -12,7 +16,7 @@ jobs:
           node-version: 18.x
           cache: 'yarn'
           cache-dependency-path: 'yarn.lock'
-      - uses: ./.github/workflows/actions/build
+      - uses: ./.github/workflows/actions/build-all
         name: Build
 
   test-core-spec:

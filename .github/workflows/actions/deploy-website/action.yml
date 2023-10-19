@@ -1,0 +1,28 @@
+name: 'Deploy Design System Website'
+description: 'Deploy Design System Website'
+inputs:
+  GITHUB_TOKEN:
+    description: GITHUB_TOKEN used to create release
+    required: true
+  AZURE_STATIC_WEB_APPS_TOKEN:
+    description: AZURE_STATIC_WEB_APPS_TOKEN used to deploy to azure
+    required: true
+runs:
+  using: 'composite'
+  steps:
+    - uses: ./.github/workflows/actions/download-archive
+      with:
+        name: website
+        path: ./dist
+        filename: website.zip
+    - name: Deploy Website
+      id: swa
+      uses: azure/static-web-apps-deploy@latest
+      with:
+        azure_static_web_apps_api_token: ${{ inputs.AZURE_STATIC_WEB_APPS_TOKEN }}
+        repo_token: ${{ inputs.GITHUB_TOKEN }} # Used for GitHub integrations (i.e. PR comments)
+        action: "upload"
+        app_location: "packages/website/out" # App source code path
+        skip_app_build: true
+      env: # Add environment variables here
+        IS_STATIC_EXPORT: 'true'

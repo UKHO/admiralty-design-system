@@ -2,6 +2,7 @@ dist/
 www/
 loader/
 styles/
+docs/
 
 *~
 *.sw[mnpcod]
