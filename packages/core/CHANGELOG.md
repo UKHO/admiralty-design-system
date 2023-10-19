@@ -1,3 +1,15 @@
+# v0.7.2 (Thu Oct 19 2023)
+
+#### 🐛 Bug Fix
+
+- Create doc site [#124](https://github.com/UKHO/admiralty-design-system/pull/124) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+#### Authors: 1
+
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
 # v0.7.1 (Wed Oct 18 2023)
 
 #### 🐛 Bug Fix
