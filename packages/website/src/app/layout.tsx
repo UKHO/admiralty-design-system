@@ -4,17 +4,21 @@ import "./globals.css";
 import { AdmiraltyFooter, AdmiraltyHeader, AdmiraltyLink, AdmiraltyPhaseBanner } from "@ukho/admiralty-react";
 import Konami from "react-konami-code";
 import Snowfall from "react-snowfall";
-
-const snowflake1 = document.createElement("img");
-snowflake1.src = "/greg.webp";
-const snowflake2 = document.createElement("img");
-snowflake2.src = "/dave.webp";
-const snowflake3 = document.createElement("img");
-snowflake3.src = "/tom.webp";
-
-const images = [snowflake1, snowflake2, snowflake3];
+import { useEffect, useState } from "react";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const [images, setImages] = useState(Array<HTMLImageElement>);
+  useEffect(() => {
+    const snowflake1 = new Image();
+    snowflake1.src = "/greg.webp";
+    const snowflake2 = new Image();
+    snowflake2.src = "/dave.webp";
+    const snowflake3 = new Image();
+    snowflake3.src = "/tom.webp";
+
+    setImages([snowflake1, snowflake2, snowflake3]);
+  },[]);
+
   return (
     <html lang="en">
       <body>
