@@ -40,7 +40,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           phase="alpha"
           link="https://github.com/UKHO/admiralty-design-system/issues/new/choose"></AdmiraltyPhaseBanner>
         <main>{children}</main>
-        <AdmiraltyFooter>
+        <AdmiraltyFooter imageSrc="/svg/UKHO stacked logo.svg">
           <AdmiraltyLink href="http://www.example.com" new-tab="true">
             Privacy Policy
           </AdmiraltyLink>

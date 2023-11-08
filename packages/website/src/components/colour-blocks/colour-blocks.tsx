@@ -1,10 +1,9 @@
-import React from "react";
 import { AdmiraltyColourBlock } from "@ukho/admiralty-react";
-import "./colour-blocks.css";
+import styles from "./styles.module.css";
 
 export default function ColourBlocks() {
   return (
-    <div className="colour-blocks">
+    <div className={styles.colourBlocksContainer}>
       <AdmiraltyColourBlock
         width={434}
         height={434}

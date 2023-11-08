@@ -1,0 +1,10 @@
+.container {
+    width: 100%;
+    background-color: #eeeeee;
+    padding: 32px 60px;
+    box-sizing: border-box;
+}
+
+.noListStyle {
+    list-style: none;
+}
