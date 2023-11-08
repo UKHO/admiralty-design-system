@@ -1,3 +1,16 @@
+# v0.7.4 (Wed Nov 08 2023)
+
+#### 🐛 Bug Fix
+
+- `@ukho/admiralty-core`
+  - Design system homepage [#128](https://github.com/UKHO/admiralty-design-system/pull/128) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+#### Authors: 1
+
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
 # v0.7.3 (Wed Nov 08 2023)
 
 #### 🐛 Bug Fix
