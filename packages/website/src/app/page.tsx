@@ -1,6 +1,6 @@
 "use client";
 import HomePage from "./home.mdx";
-import "./home.css";
+import styles from "./styles.module.css";
 import ImageBanner from "@/components/image-banner/image-banner";
 
 export default function Home() {
@@ -9,7 +9,7 @@ export default function Home() {
       <div className="hero-image">
         <ImageBanner />
       </div>
-      <div className="content-container">
+      <div className={styles.contentContainer}>
         <HomePage />
       </div>
     </div>

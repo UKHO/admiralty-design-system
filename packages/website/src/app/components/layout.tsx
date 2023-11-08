@@ -1,7 +1,7 @@
 "use client";
 import { AdmiraltySideNav, AdmiraltySideNavItem } from "@ukho/admiralty-react";
 import React, { useEffect, useRef, useState } from "react";
-import "./docs.css";
+import styles from "./styles.module.css";
 import { AdmiraltySideNavItemCustomEvent } from "@ukho/admiralty-core";
 import { useRouter } from "next/navigation";
 
@@ -26,8 +26,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   };
 
   return (
-    <div className="content-container">
-      <div className="side-menu">
+    <div className={styles.contentContainer}>
+      <div className={styles.sideMenu}>
         <AdmiraltySideNav ref={sideNavRef}>
           <AdmiraltySideNavItem
             onSideNavItemSelected={onSideNavItemSelected}

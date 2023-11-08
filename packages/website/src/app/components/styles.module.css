@@ -1,14 +1,14 @@
 @import "~highlight.js/styles/default.css";
 
-.content-container {
+.contentContainer {
   display: flex;
   padding: 60px 142px 0px 142px;
 
-  .side-menu {
+  .sideMenu {
     min-width: 284px;
   }
 }
 
-.hash-link::before {
+.hashLink::before {
   content: '#';
 }
