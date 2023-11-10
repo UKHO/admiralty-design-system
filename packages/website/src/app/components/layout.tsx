@@ -35,6 +35,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             headingTitle="Overview"></AdmiraltySideNavItem>
           <AdmiraltySideNavItem
             onSideNavItemSelected={onSideNavItemSelected}
+            sideNavItemId="breadcrumbs"
+            headingTitle="Breadcrumbs"></AdmiraltySideNavItem>
+          <AdmiraltySideNavItem
+            onSideNavItemSelected={onSideNavItemSelected}
             sideNavItemId="button"
             headingTitle="Button"></AdmiraltySideNavItem>
           <AdmiraltySideNavItem
@@ -51,3 +55,4 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     </div>
   );
 }
+
