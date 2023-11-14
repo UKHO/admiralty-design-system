@@ -14434,18 +14434,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hast-util-to-text@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "hast-util-to-text@npm:4.0.0"
-  dependencies:
-    "@types/hast": ^3.0.0
-    "@types/unist": ^3.0.0
-    hast-util-is-element: ^3.0.0
-    unist-util-find-after: ^5.0.0
-  checksum: 3beedbdf20e2ecc9352cdd0963848b741294c1f3872d43400125bc0ca2d7938d5358081b0f9c252ec15c22368f30a4e7e6ca0ce5a57d4d2bcdd02adbf884e2af
-  languageName: node
-  linkType: hard
-
 "hast-util-whitespace@npm:^2.0.0":
   version: 2.0.1
   resolution: "hast-util-whitespace@npm:2.0.1"
@@ -14468,13 +14456,6 @@ __metadata:
   version: 3.0.0
   resolution: "hdr-histogram-percentiles-obj@npm:3.0.0"
   checksum: ab238edcb38d9b60d23ca53da0ecd9a6b1c8ee9a49e30a6146bd3f8f70f26244652f28b79974157c00504e7ddf3129e0ddb217baf71d32330e3fae0105bf30ed
-  languageName: node
-  linkType: hard
-
-"highlight.js@npm:^11.8.0, highlight.js@npm:~11.8.0":
-  version: 11.8.0
-  resolution: "highlight.js@npm:11.8.0"
-  checksum: d2578a57aee7315946ff19379053fd0a28b127baabf7617ab1d28d62cdc4eaf3d75053569cb8479a5afdc7a68f1ba9a6c1d612d8ae399b4b9aa43093b4fb6831
   languageName: node
   linkType: hard
 
@@ -17525,17 +17506,6 @@ __metadata:
   bin:
     loose-envify: cli.js
   checksum: 6517e24e0cad87ec9888f500c5b5947032cdfe6ef65e1c1936a0c48a524b81e65542c9c3edc91c97d5bddc806ee2a985dbc79be89215d613b1de5db6d1cfe6f4
-  languageName: node
-  linkType: hard
-
-"lowlight@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "lowlight@npm:3.0.0"
-  dependencies:
-    "@types/hast": ^3.0.0
-    devlop: ^1.0.0
-    highlight.js: ~11.8.0
-  checksum: 9dd7459b5f4b44c82f743de3a7a1c913a23b10540a2267ccb38b4b08a9d1f2b3fe1ec9e8d6b6e7e45a1ea96fe669579a05c3c4f96465b7227b03eaf2fa4af2dd
   languageName: node
   linkType: hard
 
@@ -22295,6 +22265,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"prismjs@npm:^1.29.0":
+  version: 1.29.0
+  resolution: "prismjs@npm:1.29.0"
+  checksum: 007a8869d4456ff8049dc59404e32d5666a07d99c3b0e30a18bd3b7676dfa07d1daae9d0f407f20983865fd8da56de91d09cb08e6aa61f5bc420a27c0beeaf93
+  languageName: node
+  linkType: hard
+
 "proc-log@npm:^3.0.0":
   version: 3.0.0
   resolution: "proc-log@npm:3.0.0"
@@ -23111,19 +23088,6 @@ __metadata:
     unified: ^11.0.0
     unist-util-visit: ^5.0.0
   checksum: b7cbbfa06612632cba99eb6ed58e0d539a24bac75d5efb697fffe941d187650ad17126d9168913e0a9809e90640430b5ba3a2ed4ba53f2414c0f3654883c7182
-  languageName: node
-  linkType: hard
-
-"rehype-highlight@npm:^7.0.0":
-  version: 7.0.0
-  resolution: "rehype-highlight@npm:7.0.0"
-  dependencies:
-    "@types/hast": ^3.0.0
-    hast-util-to-text: ^4.0.0
-    lowlight: ^3.0.0
-    unist-util-visit: ^5.0.0
-    vfile: ^6.0.0
-  checksum: 11f9734a5b71f3cf433352f0ec3fb95fdea4d578debfa7d26b1a6a4747f7b4a5ded786dba28f2edb1e757b0ac1b14c93b404adcb23198dc0f99c5ccb8eef8521
   languageName: node
   linkType: hard
 
@@ -26192,16 +26156,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"unist-util-find-after@npm:^5.0.0":
-  version: 5.0.0
-  resolution: "unist-util-find-after@npm:5.0.0"
-  dependencies:
-    "@types/unist": ^3.0.0
-    unist-util-is: ^6.0.0
-  checksum: e64bd5ebee7ac021cf990bf33e9ec29fc6452159187d4a7fa0f77334bea8e378fea7a7fb0bcf957300b2ffdba902ff25b62c165fc8b86309613da35ad793ada0
-  languageName: node
-  linkType: hard
-
 "unist-util-generated@npm:^2.0.0":
   version: 2.0.1
   resolution: "unist-util-generated@npm:2.0.1"
@@ -27142,14 +27096,13 @@ __metadata:
     "@ukho/admiralty-react": ^0.7.4
     eslint: 8.48.0
     eslint-config-next: 13.4.19
-    highlight.js: ^11.8.0
     next: 13.4.19
+    prismjs: ^1.29.0
     react: 18.2.0
     react-dom: 18.2.0
     react-konami-code: ^2.3.0
     react-snowfall: ^1.2.1
     rehype-autolink-headings: ^7.0.0
-    rehype-highlight: ^7.0.0
     rehype-slug: ^6.0.0
     remark-gfm: ^3.0.1
     remark-toc: ^8.0.1
