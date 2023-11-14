@@ -47,6 +47,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             headingTitle="Card"></AdmiraltySideNavItem>
           <AdmiraltySideNavItem
             onSideNavItemSelected={onSideNavItemSelected}
+            sideNavItemId="checkbox"
+            headingTitle="Checkbox"></AdmiraltySideNavItem>
+          <AdmiraltySideNavItem
+            onSideNavItemSelected={onSideNavItemSelected}
             sideNavItemId="header"
             headingTitle="Header"></AdmiraltySideNavItem>
           <AdmiraltySideNavItem
