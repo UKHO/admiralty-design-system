@@ -35,10 +35,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             headingTitle="Overview"></AdmiraltySideNavItem>
           <AdmiraltySideNavItem
             onSideNavItemSelected={onSideNavItemSelected}
-            sideNavItemId="breadcrumb"
-            headingTitle="Breadcrumb"></AdmiraltySideNavItem>
-          <AdmiraltySideNavItem
-            onSideNavItemSelected={onSideNavItemSelected}
             sideNavItemId="breadcrumbs"
             headingTitle="Breadcrumbs"></AdmiraltySideNavItem>
           <AdmiraltySideNavItem
