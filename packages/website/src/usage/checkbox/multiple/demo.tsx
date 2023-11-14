@@ -4,9 +4,9 @@ import { AdmiraltyCheckbox } from "@ukho/admiralty-react";
 export default function Demo() {
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
-      <AdmiraltyCheckbox input-id="2023-checkbox" label-text="2023"></AdmiraltyCheckbox>
-      <AdmiraltyCheckbox input-id="2022-checkbox" label-text="2022" checked={true}></AdmiraltyCheckbox>
-      <AdmiraltyCheckbox input-id="2021-checkbox" label-text="2021"></AdmiraltyCheckbox>
+      <AdmiraltyCheckbox name="2023-checkbox" label-text="2023"></AdmiraltyCheckbox>
+      <AdmiraltyCheckbox name="2022-checkbox" label-text="2022" checked={true}></AdmiraltyCheckbox>
+      <AdmiraltyCheckbox name="2021-checkbox" label-text="2021"></AdmiraltyCheckbox>
     </div>
   );
 }
