@@ -1,3 +1,34 @@
+# v0.7.4 (Wed Nov 08 2023)
+
+#### 🐛 Bug Fix
+
+- `@ukho/admiralty-core`
+  - Design system homepage [#128](https://github.com/UKHO/admiralty-design-system/pull/128) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+#### Authors: 1
+
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
+# v0.7.3 (Wed Nov 08 2023)
+
+#### 🐛 Bug Fix
+
+- Fixing the website close PR job [#129](https://github.com/UKHO/admiralty-design-system/pull/129) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+#### 🔩 Dependency Updates
+
+- Bump postcss from 8.4.27 to 8.4.31 [#118](https://github.com/UKHO/admiralty-design-system/pull/118) ([@dependabot[bot]](https://github.com/dependabot[bot]) [@ecstaticrainbow](https://github.com/ecstaticrainbow))
+- Bump @babel/traverse from 7.21.4 to 7.23.2 [#122](https://github.com/UKHO/admiralty-design-system/pull/122) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 2
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
 # v0.7.2 (Thu Oct 19 2023)
 
 #### 🐛 Bug Fix
