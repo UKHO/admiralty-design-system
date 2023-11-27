@@ -1,5 +1,5 @@
 import React, { useRef, ReactNode, useEffect, useState } from "react";
-import "./highlight.css";
+import "./prism-default.css";
 import { highlightAll } from "prismjs";
 
 interface CopyCodeSnippetProps {
