@@ -1,10 +1,8 @@
 import { MDXContent } from "mdx/types";
-import React, { ComponentType, ReactElement, useEffect, useMemo, useState } from "react";
+import React, { ComponentType, ReactElement, useEffect, useMemo, useRef, useState } from "react";
 import { CodeSnippets, UsageTarget } from "@/components/playground/playground.types";
-import { AdmiraltyButton, AdmiraltyTab, AdmiraltyTabGroup } from "@ukho/admiralty-react";
+import { AdmiraltyTab, AdmiraltyTabGroup } from "@ukho/admiralty-react";
 import "./playground.css";
-import { faCopy } from "@fortawesome/free-regular-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 interface PlaygroundProps {
   code: { [key in UsageTarget]?: MDXContent };
@@ -17,16 +15,7 @@ interface PlaygroundTabProps {
 }
 
 const PlaygroundTab = (props: PlaygroundTabProps) => {
-  return (
-    <AdmiraltyTab label={props.usageTarget}>
-      <div className="codesnippet-content">
-        {props.codeSnippet}
-        <button className="copy-button">
-          <FontAwesomeIcon icon={faCopy} />
-        </button>
-      </div>
-    </AdmiraltyTab>
-  );
+  return <AdmiraltyTab label={props.usageTarget}>{props.codeSnippet}</AdmiraltyTab>;
 };
 
 function isUsageTarget(key: string): key is UsageTarget {

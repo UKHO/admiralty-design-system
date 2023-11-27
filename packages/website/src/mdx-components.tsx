@@ -7,6 +7,7 @@ import {
   AdmiraltyTableHeaderCell,
   AdmiraltyTableRow,
 } from "@ukho/admiralty-react";
+import CopyCodeSnippet from "@/components/copy-code-snippet/copy-code-snippet";
 
 // This file allows you to provide custom React components
 // to be used in MDX files. You can import and use any
@@ -22,6 +23,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     th: ({ children }) => <AdmiraltyTableHeaderCell>{children}</AdmiraltyTableHeaderCell>,
     tr: ({ children }) => <AdmiraltyTableRow>{children}</AdmiraltyTableRow>,
     td: ({ children }) => <AdmiraltyTableCell>{children}</AdmiraltyTableCell>,
+    pre: ({ children }) => <CopyCodeSnippet>{children}</CopyCodeSnippet>,
     ...components,
   };
 }
