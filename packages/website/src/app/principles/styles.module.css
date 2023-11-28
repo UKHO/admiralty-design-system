@@ -3,6 +3,6 @@
   padding: 60px 142px 0 142px;
 }
 
-.hashLink::before {
+.hash-link::before {
   content: '#';
 }
