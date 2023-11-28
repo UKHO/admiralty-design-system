@@ -1,3 +1,16 @@
+body {
+  display:flex;
+  flex-direction:column;
+  min-height: 100vh;
+}
 main {
+  flex:1;
+}
 
+ul li {
+  margin-bottom: 6px;
+}
+
+ul ul {
+  padding-left: 40px;
 }

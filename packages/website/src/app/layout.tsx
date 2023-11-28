@@ -46,6 +46,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         <AdmiraltyHeader headerTitle="Design System" onTitledClicked={() => router.push("/")} logoImgUrl="/svg/Admiralty stacked logo.svg" >
           <AdmiraltyHeaderMenuItem
+            menuTitle="Principles"
+            slot="items"
+            onMenuItemClick={() => router.push("/principles")}></AdmiraltyHeaderMenuItem>
+          <AdmiraltyHeaderMenuItem
               menuTitle="Components"
               slot="items"
               onMenuItemClick={() => router.push("/components")}></AdmiraltyHeaderMenuItem>
