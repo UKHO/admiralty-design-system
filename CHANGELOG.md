@@ -1,3 +1,17 @@
+# v0.7.5 (Tue Nov 28 2023)
+
+#### 🐛 Bug Fix
+
+- adding in the principles as static pages [#125](https://github.com/UKHO/admiralty-design-system/pull/125) ([@ecstaticrainbow](https://github.com/ecstaticrainbow) [@LewisStevens1998](https://github.com/LewisStevens1998))
+- Adding a custom copy code component [#135](https://github.com/UKHO/admiralty-design-system/pull/135) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+#### Authors: 2
+
+- Lewis Stevens ([@LewisStevens1998](https://github.com/LewisStevens1998))
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
 # v0.7.4 (Wed Nov 08 2023)
 
 #### 🐛 Bug Fix
