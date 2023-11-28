@@ -1,8 +1,13 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+# Handle line endings automatically for files detected as text
+# and leave all files detected as binary untouched.
+# Force the following filetypes to have unix eols, so Windows does not break them
+* text=auto eol=lf
+
 *.sh    text    eol=lf
 *.png   binary
 *.eot   binary
 *.ttf   binary
 *.woff  binary
 *.woff2 binary
+*.webp binary
+*.ico binary

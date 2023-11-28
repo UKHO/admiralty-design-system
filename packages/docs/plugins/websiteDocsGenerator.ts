@@ -153,7 +153,7 @@ ${slots.map((slot) => `| \`${slot.name}\` | ${formatMultiline(slot.docs)} |`).jo
  * @returns The formatted string
  */
 const formatMultiline = (str: string) => {
-  return str.split('\r\n').join('<br /><br />').split('\n').join(' ');
+  return str.split('\n').join('<br /><br />').split('\n').join(' ');
 };
 
 const formatType = (attr: string, type: string) => {
