@@ -2,7 +2,3 @@
   display: flex;
   padding: 60px 142px 0 142px;
 }
-
-.hash-link::before {
-  content: '#';
-}
