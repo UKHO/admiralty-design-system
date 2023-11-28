@@ -57,6 +57,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             onSideNavItemSelected={onSideNavItemSelected}
             sideNavItemId="footer"
             headingTitle="Footer"></AdmiraltySideNavItem>
+          <AdmiraltySideNavItem
+            onSideNavItemSelected={onSideNavItemSelected}
+            sideNavItemId="paginator"
+            headingTitle="Paginator"></AdmiraltySideNavItem>
+
         </AdmiraltySideNav>
       </div>
       <div className="content">{children}</div>
