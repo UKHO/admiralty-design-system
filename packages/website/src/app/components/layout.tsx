@@ -23,6 +23,8 @@ const sideNavItems: SideNavItem[] = [
   { path: "radio", title: "Radio" },
   { path: "radio-group", title: "Radio Group" },
   { path: "read-more", title: "Readmore" },
+  { path: "select", title: "Select" },
+
 
 ];
 
