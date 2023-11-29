@@ -18,6 +18,7 @@ const sideNavItems: SideNavItem[] = [
   { path: "header", title: "Header" },
   { path: "paginator", title: "Paginator" },
   { path: "phase-banner", title: "Phase Banner" },
+  { path: "progress-bar", title: "Progress Bar" },
 ]; // TODO: Figure out why Horizontal Rule isn't working
 
 export default function Layout({ children }: { children: React.ReactNode }) {
