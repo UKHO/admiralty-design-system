@@ -14,8 +14,8 @@ const sideNavItems: SideNavItem[] = [
   { path: "dialogue", title: "Dialogue" },
   { path: "expansion", title: "Expansion" },
   { path: "file-input", title: "File Input" },
-  { path: "header", title: "Header" },
   { path: "footer", title: "Footer" },
+  { path: "header", title: "Header" },
   { path: "paginator", title: "Paginator" },
 ];
 
