@@ -22,6 +22,8 @@ const sideNavItems: SideNavItem[] = [
   { path: "progress-bar", title: "Progress Bar" },
   { path: "radio", title: "Radio" },
   { path: "radio-group", title: "Radio Group" },
+  { path: "read-more", title: "Readmore" },
+
 ];
 
 export default function Layout({ children }: { children: React.ReactNode }) {
