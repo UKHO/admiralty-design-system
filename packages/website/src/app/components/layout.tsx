@@ -24,8 +24,7 @@ const sideNavItems: SideNavItem[] = [
   { path: "radio-group", title: "Radio Group" },
   { path: "read-more", title: "Readmore" },
   { path: "select", title: "Select" },
-
-
+  { path: "side-nav", title: "Side Nav" },
 ];
 
 export default function Layout({ children }: { children: React.ReactNode }) {
