@@ -25,6 +25,8 @@ const sideNavItems: SideNavItem[] = [
   { path: "read-more", title: "Readmore" },
   { path: "select", title: "Select" },
   { path: "side-nav", title: "Side Nav" },
+  { path: "tab-group", title: "Tab Group" },
+
 ];
 
 export default function Layout({ children }: { children: React.ReactNode }) {
