@@ -10,6 +10,7 @@ const sideNavItems: SideNavItem[] = [
   { path: "card", title: "Card" },
   { path: "checkbox", title: "Checkbox" },
   { path: "colour-block", title: "Colour Block" },
+  { path: "components", title: "Components" },
   { path: "header", title: "Header" },
   { path: "footer", title: "Footer" },
   { path: "paginator", title: "Paginator" },
