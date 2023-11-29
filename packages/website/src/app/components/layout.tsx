@@ -20,6 +20,7 @@ const sideNavItems: SideNavItem[] = [
   { path: "paginator", title: "Paginator" },
   { path: "phase-banner", title: "Phase Banner" },
   { path: "progress-bar", title: "Progress Bar" },
+  { path: "radio", title: "Radio" },
   { path: "radio-group", title: "Radio Group" },
 ];
 
