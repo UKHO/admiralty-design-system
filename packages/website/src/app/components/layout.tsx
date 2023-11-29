@@ -11,6 +11,7 @@ const sideNavItems: SideNavItem[] = [
   { path: "checkbox", title: "Checkbox" },
   { path: "colour-block", title: "Colour Block" },
   { path: "components", title: "Components" },
+  { path: "dialogue", title: "Dialogue" },
   { path: "header", title: "Header" },
   { path: "footer", title: "Footer" },
   { path: "paginator", title: "Paginator" },
