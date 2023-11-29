@@ -13,6 +13,7 @@ const sideNavItems: SideNavItem[] = [
   { path: "components", title: "Components" },
   { path: "dialogue", title: "Dialogue" },
   { path: "expansion", title: "Expansion" },
+  { path: "file-input", title: "File Input" },
   { path: "header", title: "Header" },
   { path: "footer", title: "Footer" },
   { path: "paginator", title: "Paginator" },
