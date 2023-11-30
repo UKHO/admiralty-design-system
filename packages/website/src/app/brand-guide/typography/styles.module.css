@@ -1,0 +1,20 @@
+.container {
+  border: 1px solid #d0d0d0;
+  padding: 24px;
+}
+
+.section {
+  margin-bottom: 50px;
+}
+
+.light {
+  font-size: 50px;
+  line-height: 50px;
+  font-weight: 300;
+}
+
+.medium {
+  font-size: 50px;
+  line-height: 50px;
+  font-weight: normal;
+}
