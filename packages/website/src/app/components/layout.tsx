@@ -29,6 +29,7 @@ const sideNavItems: SideNavItem[] = [
   { path: "table", title: "Table" },
   { path: "textarea", title: "Textarea" },
   { path: "text-input", title: "Text Input" },
+  { path: "type-ahead", title: "Typeahead" },
 ];
 
 export default function Layout({ children }: { children: React.ReactNode }) {
