@@ -10,3 +10,9 @@
 
 'package: angular':
   - packages/angular/**/*
+
+'package: react':
+  - packages/react/**/*
+
+'package: website':
+  - packages/website/**/*
