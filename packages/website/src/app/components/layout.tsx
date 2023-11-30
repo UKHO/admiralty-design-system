@@ -26,6 +26,7 @@ const sideNavItems: SideNavItem[] = [
   { path: "select", title: "Select" },
   { path: "side-nav", title: "Side Nav" },
   { path: "tab-group", title: "Tab Group" },
+  { path: "table", title: "Table" },
 
 ];
 
