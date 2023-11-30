@@ -27,7 +27,7 @@ const sideNavItems: SideNavItem[] = [
   { path: "side-nav", title: "Side Nav" },
   { path: "tab-group", title: "Tab Group" },
   { path: "table", title: "Table" },
-
+  { path: "text-input", title: "Text Input" },
 ];
 
 export default function Layout({ children }: { children: React.ReactNode }) {
