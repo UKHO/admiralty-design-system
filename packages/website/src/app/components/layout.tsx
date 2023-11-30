@@ -16,7 +16,7 @@ const sideNavItems: SideNavItem[] = [
   { path: "file-input", title: "File Input" },
   { path: "footer", title: "Footer" },
   { path: "header", title: "Header" },
-  { path: "horizontal-bar", title: "Horizontal Bar" }, // TODO: Figure out why Horizontal Rule isn't working
+  { path: "horizontal-rule", title: "Horizontal Rule" },
   { path: "paginator", title: "Paginator" },
   { path: "phase-banner", title: "Phase Banner" },
   { path: "progress-bar", title: "Progress Bar" },
