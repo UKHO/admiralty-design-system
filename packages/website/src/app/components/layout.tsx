@@ -27,6 +27,7 @@ const sideNavItems: SideNavItem[] = [
   { path: "side-nav", title: "Side Nav" },
   { path: "tab-group", title: "Tab Group" },
   { path: "table", title: "Table" },
+  { path: "textarea", title: "Textarea" },
   { path: "text-input", title: "Text Input" },
 ];
 
