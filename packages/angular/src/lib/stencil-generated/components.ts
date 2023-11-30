@@ -133,25 +133,31 @@ export declare interface AdmiraltyCheckbox extends Components.AdmiraltyCheckbox 
 
 
 @ProxyCmp({
-  inputs: ['actionText', 'clickAction', 'colour', 'heading', 'height', 'width']
+  inputs: ['actionText', 'colour', 'heading', 'height', 'width']
 })
 @Component({
   selector: 'admiralty-colour-block',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['actionText', 'clickAction', 'colour', 'heading', 'height', 'width'],
+  inputs: ['actionText', 'colour', 'heading', 'height', 'width'],
 })
 export class AdmiraltyColourBlock {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['colourBlockLinkClicked']);
   }
 }
 
 
-export declare interface AdmiraltyColourBlock extends Components.AdmiraltyColourBlock {}
+export declare interface AdmiraltyColourBlock extends Components.AdmiraltyColourBlock {
+  /**
+   * An event emitted when this Colour Block link is clicked
+   */
+  colourBlockLinkClicked: EventEmitter<CustomEvent<string>>;
+}
 
 
 @ProxyCmp({
