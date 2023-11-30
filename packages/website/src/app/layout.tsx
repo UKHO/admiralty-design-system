@@ -53,6 +53,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               menuTitle="Components"
               slot="items"
               onMenuItemClick={() => router.push("/components")}></AdmiraltyHeaderMenuItem>
+          <AdmiraltyHeaderMenuItem
+            menuTitle="Brand Guide"
+            slot="items"
+            onMenuItemClick={() => router.push("/brand-guide")}></AdmiraltyHeaderMenuItem>
         </AdmiraltyHeader>
         <div>
         <AdmiraltyPhaseBanner
