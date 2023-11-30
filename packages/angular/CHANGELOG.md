@@ -1,3 +1,15 @@
+# v0.8.0 (Thu Nov 30 2023)
+
+#### 🚀 Enhancement
+
+- fix: Replace colour block click action with colourBlockLinkClicked event [#139](https://github.com/UKHO/admiralty-design-system/pull/139) ([@UKHOGreg](https://github.com/UKHOGreg))
+
+#### Authors: 1
+
+- Greg Williams ([@UKHOGreg](https://github.com/UKHOGreg))
+
+---
+
 # v0.6.0 (Tue Oct 17 2023)
 
 #### 🚀 Enhancement

@@ -93,10 +93,6 @@ export namespace Components {
          */
         "actionText": string;
         /**
-          * The function to call when the action button is pressed.
-         */
-        "clickAction": () => any;
-        /**
           * The background colour of the component.
          */
         "colour": 'admiralty-blue' | 'teal' | 'bright-blue';
@@ -591,6 +587,10 @@ export namespace Components {
 export interface AdmiraltyCheckboxCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLAdmiraltyCheckboxElement;
+}
+export interface AdmiraltyColourBlockCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLAdmiraltyColourBlockElement;
 }
 export interface AdmiraltyExpansionCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -1088,10 +1088,6 @@ declare namespace LocalJSX {
          */
         "actionText"?: string;
         /**
-          * The function to call when the action button is pressed.
-         */
-        "clickAction"?: () => any;
-        /**
           * The background colour of the component.
          */
         "colour"?: 'admiralty-blue' | 'teal' | 'bright-blue';
@@ -1103,6 +1099,10 @@ declare namespace LocalJSX {
           * The height in pixels of the component.
          */
         "height"?: number;
+        /**
+          * An event emitted when this Colour Block link is clicked
+         */
+        "onColourBlockLinkClicked"?: (event: AdmiraltyColourBlockCustomEvent<string>) => void;
         /**
           * The width in pixels of the component.
          */
