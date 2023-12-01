@@ -18,19 +18,11 @@ export default meta;
 type Story = StoryObj<ColourBlockComponent>;
 
 const template: Story = {
-  render: args => html`
-  <admiralty-colour-block
-      action-text="${args.actionText}"
-      width="${args.width}"
-      height="${args.height}"
-      heading="${args.heading}"
-      colour="${args.colour}"
-      click-action="${args.clickAction}"
-    >
+  render: args => html` <admiralty-colour-block action-text="${args.actionText}" width="${args.width}" height="${args.height}" heading="${args.heading}" colour="${args.colour}">
       <div>${unsafeHTML(args.content)}</div>
     </admiralty-colour-block>
     <script>
-      document.querySelector('admiralty-colour-block').clickAction = () => console.log('click');
+      document.querySelector('admiralty-colour-block').addEventListener('colourBlockLinkClicked', () => console.log('colourBlockLinkClicked'));
     </script>`,
 };
 
