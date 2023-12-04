@@ -41,7 +41,7 @@ export class InputComponent implements ComponentInterface {
   /**
    * The input type, options are: `text | date | time | email | password | tel | url`
    */
-  @Prop() type: 'text' | 'date' | 'time' | 'email' | 'password' | 'tel' | 'url' = 'text';
+  @Prop() type: 'text' | 'number' | 'date' | 'time' | 'email' | 'password' | 'tel' | 'url' = 'text';
 
   /**
    * The placeholder text to show in the input
