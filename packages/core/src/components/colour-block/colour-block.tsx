@@ -1,5 +1,4 @@
 import { Component, Event, EventEmitter, Prop, h } from '@stencil/core';
-import { ButtonVariant } from '../button/button.types';
 
 @Component({
   tag: 'admiralty-colour-block',
@@ -62,7 +61,7 @@ export class ColourBlockComponent {
           <slot></slot>
         </div>
         {this.actionText ? (
-          <admiralty-button variant={ButtonVariant.Text} class="clickAction" onClick={this.handleClickAction.bind(this)}>
+          <admiralty-button variant="text" class="clickAction" onClick={this.handleClickAction.bind(this)}>
             <h3>{this.actionText}</h3>
           </admiralty-button>
         ) : null}
