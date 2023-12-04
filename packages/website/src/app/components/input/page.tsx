@@ -1,6 +1,6 @@
 "use client";
 
-import TextInputPage from "./text-input.mdx";
+import TextInputPage from "./input.mdx";
 export default function Home() {
   return (
     <div>

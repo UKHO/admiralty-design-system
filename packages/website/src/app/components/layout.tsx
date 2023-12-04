@@ -16,6 +16,7 @@ const sideNavItems: SideNavItem[] = [
   { path: "footer", title: "Footer" },
   { path: "header", title: "Header" },
   { path: "horizontal-rule", title: "Horizontal Rule" },
+  { path: "input", title: "Input" },
   { path: "paginator", title: "Paginator" },
   { path: "phase-banner", title: "Phase Banner" },
   { path: "progress-bar", title: "Progress Bar" },
@@ -27,7 +28,6 @@ const sideNavItems: SideNavItem[] = [
   { path: "tab-group", title: "Tab Group" },
   { path: "table", title: "Table" },
   { path: "textarea", title: "Textarea" },
-  { path: "text-input", title: "Text Input" },
   { path: "type-ahead", title: "Typeahead" },
 ];
 
@@ -39,4 +39,3 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     </div>
   );
 }
-
