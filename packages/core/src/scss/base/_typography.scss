@@ -1,6 +1,6 @@
-@use "../vars/colours";
-@use "responsive";
-@use "../vars/typography";
+@use '../vars/colours';
+@use 'responsive';
+@use '../vars/typography';
 
 * {
   font-family: typography.$font-family;
@@ -40,7 +40,7 @@ h2 {
   font-weight: typography.$font-weight-medium;
   font-size: 36px;
   line-height: 48px;
-  margin-bottom: 18px;
+  margin: 18px 0 18px 0;
   @include responsive.not-desktop {
     font-size: 34px;
     line-height: 42px;
@@ -55,7 +55,7 @@ h5 {
   font-weight: typography.$font-weight-medium;
   font-size: 21px;
   line-height: 30px;
-  margin-bottom: 12px;
+  margin: 18px 0 12px 0;
   @include responsive.not-desktop {
     font-size: 20px;
     line-height: 30px;
