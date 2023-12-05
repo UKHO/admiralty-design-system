@@ -39,7 +39,7 @@ export class InputComponent implements ComponentInterface {
   @Prop() disabled = false;
 
   /**
-   * The input type, options are: `text | date | time | email | password | tel | url`
+   * The input type, options are: text; number; date; time; email; password; tel; url
    */
   @Prop() type: 'text' | 'number' | 'date' | 'time' | 'email' | 'password' | 'tel' | 'url' = 'text';
 

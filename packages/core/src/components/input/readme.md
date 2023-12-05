@@ -24,7 +24,7 @@ and checkbox.
 | `name`           | `name`            | The name of the control, which is submitted with the form data.                           | `string`                                                                            | `this.inputId` |
 | `placeholder`    | `placeholder`     | The placeholder text to show in the input                                                 | `string`                                                                            | `undefined`    |
 | `required`       | `required`        | This dictates whether the input is required or not                                        | `boolean`                                                                           | `false`        |
-| `type`           | `type`            | The input type, options are: `text \| date \| time \| email \| password \| tel \| url`    | `"date" \| "email" \| "number" \| "password" \| "tel" \| "text" \| "time" \| "url"` | `'text'`       |
+| `type`           | `type`            | The input type, options are: text; number; date; time; email; password; tel; url          | `"date" \| "email" \| "number" \| "password" \| "tel" \| "text" \| "time" \| "url"` | `'text'`       |
 | `value`          | `value`           | The value of the input.                                                                   | `number \| string`                                                                  | `''`           |
 | `width`          | `width`           | The maximum width for the input field.                                                    | `number`                                                                            | `undefined`    |
 

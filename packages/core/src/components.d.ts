@@ -299,7 +299,7 @@ export namespace Components {
          */
         "required": boolean;
         /**
-          * The input type, options are: `text | date | time | email | password | tel | url`
+          * The input type, options are: text; number; date; time; email; password; tel; url
          */
         "type": 'text' | 'number' | 'date' | 'time' | 'email' | 'password' | 'tel' | 'url';
         /**
@@ -1342,7 +1342,7 @@ declare namespace LocalJSX {
          */
         "required"?: boolean;
         /**
-          * The input type, options are: `text | date | time | email | password | tel | url`
+          * The input type, options are: text; number; date; time; email; password; tel; url
          */
         "type"?: 'text' | 'number' | 'date' | 'time' | 'email' | 'password' | 'tel' | 'url';
         /**
