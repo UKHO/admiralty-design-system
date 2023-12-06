@@ -1,10 +1,14 @@
 body {
-  display:flex;
-  flex-direction:column;
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
 }
 main {
-  flex:1;
+  flex: 1;
+}
+
+ul {
+  margin: 12px 0 12px 0;
 }
 
 ul li {
@@ -13,4 +17,18 @@ ul li {
 
 ul ul {
   padding-left: 40px;
+}
+
+admiralty-footer {
+  margin-top: 48px;
+}
+
+h2 {
+  margin: 18px 0 18px 0;
+}
+
+h3,
+h4,
+h5 {
+  margin: 18px 0 12px 0;
 }

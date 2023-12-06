@@ -1,6 +1,9 @@
 import React, { useRef, ReactNode, useEffect, useState } from "react";
 import "./prism-default.css";
-import { highlightAll } from "prismjs";
+import Prism from "prismjs";
+import "prismjs/components/prism-typescript.min";
+import "prismjs/components/prism-jsx.min";
+import "prismjs/components/prism-tsx.min";
 
 interface CopyCodeSnippetProps {
   children: ReactNode;
@@ -22,7 +25,8 @@ export default function CopyCodeSnippet({ children, ...props }: CopyCodeSnippetP
 
   useEffect(() => {
     // Highlight code when component mounts or when children change
-    highlightAll();
+    console.log(Prism.languages);
+    Prism.highlightAll();
   }, [children]);
 
   const onCopy = () => {

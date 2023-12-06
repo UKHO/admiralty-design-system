@@ -29,7 +29,7 @@ export class ButtonComponent {
 
   render() {
     return (
-      <button type={this.type} disabled={this.disabled} class={this.variant || ButtonVariant.Primary}>
+      <button type={this.type} disabled={this.disabled} class={this.variant || 'primary'}>
         <slot></slot>
         {this.icon ? <admiralty-icon icon-name={this.icon}></admiralty-icon> : undefined}
       </button>

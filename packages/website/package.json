@@ -27,7 +27,7 @@
     "@mdx-js/react": "^2.3.0",
     "@next/mdx": "^13.4.19",
     "@types/mdx": "^2.0.7",
-    "@types/prismjs": "^1.26.0",
+    "@types/prismjs": "^1.26.3",
     "prismjs": "^1.29.0",
     "react-konami-code": "^2.3.0",
     "react-snowfall": "^1.2.1",

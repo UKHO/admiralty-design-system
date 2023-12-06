@@ -1,47 +1,94 @@
 # Button
 
-Buttons are so cool
+Use buttons to guide users towards completing a task. Buttons should include text that clearly describes the action they perform.
 
-## Basic Usage
+## Contents
 
-Us this button if you just want a basic button.
+## Primary button
 
-import Button from '@/usage/button/basic/index.mdx'
+A primary button is the main call to action. It should be used as the main action for the page, or stage in the service. Primary buttons need to be placed carefully, acting as a definite next step and ideally not be used multiple times in one page.
 
-<Button/>
+import PrimaryButton from "@/usage/button/primary-button/index.mdx";
+
+<PrimaryButton />
+
+## Primary button with icon
+
+The Primary button with icon is used to provide extra affordance to the action being taken. Adding an arrow to a ‘Next’ button tells a user which way they will be going. Adding a file icon to ‘Download’ helps them know the format things might come in.
+
+import PrimaryButtonWithIcon from "@/usage/button/primary-button-with-icon/index.mdx";
+
+<PrimaryButtonWithIcon />
+
+## Secondary button
+
+Secondary buttons are used as an action state _within_ a process, with the summary action being made by a Primary button. They can be used as a hierarchically secxondary action also.
+
+import SecondaryButton from "@/usage/button/secondary-button/index.mdx";
+
+<SecondaryButton />
+
+## Icon
+
+Use this icon button in mainly visual interactions such as map tooling.
+
+import Icon from "@/usage/button/icon/index.mdx";
+
+<Icon />
+
+## Primary icon
+
+Use this icon button as the active state on a map tool, or as the main call to action in a component such as the search bar.
+
+import PrimaryIcon from "@/usage/button/primary-icon/index.mdx";
+
+<PrimaryIcon />
+
+## Disabled button
+
+An inactive or disabled button should have a clear and obvious usage related to the completion of actions in a page. The button would become active as part of the user journey. Ensure labelling supports the presence of an inactive / disabled button and use sparingly with more of a focus on content guidance than this option to tell users what they need to do.
+
+import DisabledButton from "@/usage/button/disabled-button/index.mdx";
+
+<DisabledButton />
+
+## Accessibility
+
+All buttons need to have useful aria labels added to them, so users with screen readers can hear what the button action is, as well as those seeing it visually. The contrast levels of our buttons are AAA WCAG compliant. Icon buttons should use correct labelling. Secondary buttons have a similar style to an input field, so use labels to ensure users understand the call to action.
 
 ## Props
 
-import Props from '@docs/button/props.mdx'
+import Props from "@docs/button/props.mdx";
 
-<Props/>
+<Props />
 
 ## Events
 
-import Events from '@docs/button/events.mdx'
+import Events from "@docs/button/events.mdx";
 
 <Events />
 
 ## Methods
 
-import Methods from '@docs/button/methods.mdx'
+import Methods from "@docs/button/methods.mdx";
 
 <Methods />
 
 ## CSS Shadow Parts
 
-import Parts from '@docs/button/parts.mdx'
+import Parts from "@docs/button/parts.mdx";
 
 <Parts />
 
 ## CSS Custom Properties
 
-import CustomProps from '@docs/button/customProps.mdx'
+import CustomProps from "@docs/button/customProps.mdx";
 
 <CustomProps />
 
 ## Slots
 
-import Slots from '@docs/button/slots.mdx'
+import Slots from "@docs/button/slots.mdx";
 
 <Slots />
+

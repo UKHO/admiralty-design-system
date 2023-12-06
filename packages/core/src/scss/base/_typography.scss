@@ -1,6 +1,6 @@
-@use "../vars/colours";
-@use "responsive";
-@use "../vars/typography";
+@use '../vars/colours';
+@use 'responsive';
+@use '../vars/typography';
 
 * {
   font-family: typography.$font-family;
