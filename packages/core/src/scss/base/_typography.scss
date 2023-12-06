@@ -40,7 +40,7 @@ h2 {
   font-weight: typography.$font-weight-medium;
   font-size: 36px;
   line-height: 48px;
-  margin: 18px 0 18px 0;
+  margin-bottom: 18px;
   @include responsive.not-desktop {
     font-size: 34px;
     line-height: 42px;
@@ -55,7 +55,7 @@ h5 {
   font-weight: typography.$font-weight-medium;
   font-size: 21px;
   line-height: 30px;
-  margin: 18px 0 12px 0;
+  margin-bottom: 12px;
   @include responsive.not-desktop {
     font-size: 20px;
     line-height: 30px;

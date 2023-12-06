@@ -22,3 +22,13 @@ ul ul {
 admiralty-footer {
   margin-top: 48px;
 }
+
+h2 {
+  margin: 18px 0 18px 0;
+}
+
+h3,
+h4,
+h5 {
+  margin: 18px 0 12px 0;
+}
