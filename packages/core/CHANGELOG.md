@@ -1,3 +1,17 @@
+# v0.9.0 (Wed Dec 06 2023)
+
+#### 🚀 Enhancement
+
+- Add website component examples [#132](https://github.com/UKHO/admiralty-design-system/pull/132) ([@UKHOGreg](https://github.com/UKHOGreg) [@ecstaticrainbow](https://github.com/ecstaticrainbow) [@LewisStevens1998](https://github.com/LewisStevens1998))
+
+#### Authors: 3
+
+- Greg Williams ([@UKHOGreg](https://github.com/UKHOGreg))
+- Lewis Stevens ([@LewisStevens1998](https://github.com/LewisStevens1998))
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
 # v0.8.0 (Thu Nov 30 2023)
 
 #### 🚀 Enhancement
