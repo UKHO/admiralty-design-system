@@ -31,8 +31,8 @@ runs:
         filename: admiralty-angular.zip
     - name: Set Git Config
       run: |
-        git config --global user.email "noreply@ukho.gov.uk"
-        git config --global user.name "UKHO Bot"
+        git config --global user.name "${GITHUB_ACTOR}"
+        git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
       shell: bash
     - name: Create Release
       env:
