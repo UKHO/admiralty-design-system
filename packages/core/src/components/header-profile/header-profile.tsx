@@ -20,6 +20,13 @@ export class HeaderProfileComponent {
   @Prop() signedInText: string = 'replace';
 
   /**
+   * A boolean to indicate if the component should hide
+   * the sign-out and account buttons, useful for internal
+   * sites where the user must be always signed in.
+   */
+  @Prop() signInOnly: boolean = false;
+
+  /**
    * The event that is fired when the user clicks on
    * the sign in button
    */
@@ -45,7 +52,7 @@ export class HeaderProfileComponent {
     if (ev.key === Keys.ENTER || ev.key === Keys.SPACE) {
       this.signInClicked.emit();
     }
-  }
+  };
 
   handleSignOut = () => {
     this.signOutClicked.emit();
@@ -55,7 +62,7 @@ export class HeaderProfileComponent {
     if (ev.key === Keys.ENTER || ev.key === Keys.SPACE) {
       this.signOutClicked.emit();
     }
-  }
+  };
 
   handleYourAccount = () => {
     this.yourAccountClicked.emit();
@@ -65,7 +72,7 @@ export class HeaderProfileComponent {
     if (ev.key === Keys.ENTER || ev.key === Keys.SPACE) {
       this.yourAccountClicked.emit();
     }
-  }
+  };
 
   closeDropdown = () => {
     const subMenu: HTMLDivElement = this.el.querySelector('div.sub-menu');
@@ -84,42 +91,51 @@ export class HeaderProfileComponent {
     }
   };
 
-  handleClickSignedIn = (ev: MouseEvent) =>{
+  handleClickSignedIn = (ev: MouseEvent) => {
     ev.stopPropagation();
     this.toggleDropdown(ev);
-  }
+  };
 
   render() {
-    let { isSignedIn, signedInText } = this;
+    let { isSignedIn, signedInText, signInOnly } = this;
     return (
       <Host>
         <div class="header-profile">
           {isSignedIn ? (
             <div>
-              <div class="desktop"
-                onMouseOver={this.toggleDropdown}
-              >
-                <button
-                  onClick={this.handleClickSignedIn}
-                  tabindex="0">
+              <div class="desktop" onMouseOver={this.toggleDropdown}>
+                <button onClick={this.handleClickSignedIn} tabindex="0">
                   {signedInText}
                 </button>
-                <div class="sub-menu desktop-hide">
-                  <button class="sub-menu-item" onClick={this.handleYourAccount} tabindex="0">Your Account</button>
-                  <button  class="sub-menu-item" onClick={this.handleSignOut} tabindex="0">Sign Out</button>
+                {!signInOnly ? (
+                  <div class="sub-menu desktop-hide">
+                    <button class="sub-menu-item" onClick={this.handleYourAccount} tabindex="0">
+                      Your Account
+                    </button>
+                    <button class="sub-menu-item" onClick={this.handleSignOut} tabindex="0">
+                      Sign Out
+                    </button>
+                  </div>
+                ) : null}
+              </div>
+              {!signInOnly ? (
+                <div class="not-desktop">
+                  <div class="sub-menu-item" onClick={this.handleYourAccount} onKeyDown={this.handleYourAccountKeyDown} tabindex="0">
+                    Your Account
+                  </div>
+                  <div class="sub-menu-item" onClick={this.handleSignOut} onKeyDown={this.handleSignOutKeyDown} tabindex="0">
+                    Sign Out
+                  </div>
                 </div>
-              </div>
-              <div class="not-desktop">
-                <div class="sub-menu-item" onClick={this.handleYourAccount} onKeyDown={this.handleYourAccountKeyDown} tabindex="0">Your Account</div>
-                <div class="sub-menu-item" onClick={this.handleSignOut}  onKeyDown={this.handleSignOutKeyDown} tabindex="0">Sign Out</div>
-              </div>
+              ) : null}
             </div>
           ) : (
-            <button class="sub-menu-item" onClick={this.handleSignIn} tabindex="0">Sign In</button>
+            <button class="sub-menu-item" onClick={this.handleSignIn} tabindex="0">
+              Sign In
+            </button>
           )}
         </div>
       </Host>
     );
   }
-
 }

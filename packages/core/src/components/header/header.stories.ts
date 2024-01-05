@@ -15,7 +15,7 @@ const meta: Meta = {
   title: 'Header',
   parameters: {
     actions: {
-        handles: ['titledClicked', 'menuItemClick', 'subMenuItemClick','signInClicked','yourAccountClicked','signOutClicked']
+      handles: ['titledClicked', 'menuItemClick', 'subMenuItemClick', 'signInClicked', 'yourAccountClicked', 'signOutClicked'],
     },
   },
 };
@@ -35,13 +35,19 @@ const defaultArgs = {
 const profileArgs = {
   signedIn: false,
   singedInText: 'Mr Admiral',
+  signInOnly: false,
 };
 
 const TemplateSignedOut: Story = {
-  render: args => html`
-    <admiralty-header logo-alt-text="${args.logoAltText}" logo-link-url="${args.logoLinkUrl}" logo-img-url="${args.logoImgUrl}" header-title-url="#" header-title="${args.title}">
-      <admiralty-header-profile is-signed-in="${args.signedIn}" signed-in-text="${args.singedInText}" slot="profile"></admiralty-header-profile>
-    </admiralty-header>`
+  render: args => html` <admiralty-header
+    logo-alt-text="${args.logoAltText}"
+    logo-link-url="${args.logoLinkUrl}"
+    logo-img-url="${args.logoImgUrl}"
+    header-title-url="#"
+    header-title="${args.title}"
+  >
+    <admiralty-header-profile is-signed-in="${args.signedIn}" signed-in-text="${args.singedInText}" sign-in-only="${args.signInOnly}" slot="profile"></admiralty-header-profile>
+  </admiralty-header>`,
 };
 
 const TemplateLinksAndAuth: Story = {
@@ -51,17 +57,17 @@ const TemplateLinksAndAuth: Story = {
       return `<admiralty-header-menu-item menu-title="${item.title}" active="${item.navActive ?? false}" slot="items">${subItems?.join('')}</admiralty-header-menu-item>
     `;
     });
-  
-    let template = `<admiralty-header logo-alt-text="${args.logoAltText}" logo-link-url="${args.logoLinkUrl}" logo-img-url="${args.logoImgUrl}" header-title-url="#" header-title="${
-      args.title
-    }">
+
+    let template = `<admiralty-header logo-alt-text="${args.logoAltText}" logo-link-url="${args.logoLinkUrl}" logo-img-url="${
+      args.logoImgUrl
+    }" header-title-url="#" header-title="${args.title}">
       ${menuItems?.join('')}
       <admiralty-header-profile is-signed-in="${args.signedIn}" signed-in-text="${args.singedInText}" slot="profile"></admiralty-header-profile>
     </admiralty-header>`;
-  
+
     console.log(template);
     return html`${unsafeHTML(template)}`;
-  }
+  },
 };
 
 const TemplateLinksNoAuth: Story = {
@@ -71,75 +77,81 @@ const TemplateLinksNoAuth: Story = {
       return `<admiralty-header-menu-item menu-title="${item.title}" active="${item.navActive ?? false}" slot="items">${subItems?.join('') ?? ''}</admiralty-header-menu-item>
     `;
     });
-  
-    let template = `<admiralty-header logo-alt-text="${args.logoAltText}" logo-link-url="${args.logoLinkUrl}" logo-img-url="${args.logoImgUrl}" header-title-url="#" header-title="${
-      args.title
-    }">
+
+    let template = `<admiralty-header logo-alt-text="${args.logoAltText}" logo-link-url="${args.logoLinkUrl}" logo-img-url="${
+      args.logoImgUrl
+    }" header-title-url="#" header-title="${args.title}">
       ${menuItems?.join('') ?? ''}
     </admiralty-header>`;
-  
+
     console.log(template);
     return html`${unsafeHTML(template)}`;
-  }
+  },
 };
 
-export const linksAndAuthNotSignedIn: Story = { ...TemplateLinksAndAuth,
+export const linksAndAuthNotSignedIn: Story = {
+  ...TemplateLinksAndAuth,
   args: {
     menuItems: mockMenuItemsWithSubItems,
     ...defaultArgs,
-    ...profileArgs
-  }
+    ...profileArgs,
+  },
 };
 
-export const linksWithNoSubItems: Story = { ...TemplateLinksNoAuth,
+export const linksWithNoSubItems: Story = {
+  ...TemplateLinksNoAuth,
   args: {
     menuItems: mockMenuItemsWithNoSubItems,
     ...defaultArgs,
-    logoImgUrl: 'svg/UKHO linear logo.svg'
-  }
+    logoImgUrl: 'svg/UKHO linear logo.svg',
+  },
 };
 
-export const linksWithNoSubItemsAndNavActive: Story = { ...TemplateLinksNoAuth,
+export const linksWithNoSubItemsAndNavActive: Story = {
+  ...TemplateLinksNoAuth,
   args: {
     menuItems: mockMenuItemsWithNoSubItemsAndNavActive,
-    ...defaultArgs
-  }
+    ...defaultArgs,
+  },
 };
 
-export const linksWithSubItemsAndNavActive: Story = { ...TemplateLinksNoAuth,
+export const linksWithSubItemsAndNavActive: Story = {
+  ...TemplateLinksNoAuth,
   args: {
     menuItems: mockMenuItemsWithSubItemsAndNavActive,
-    ...defaultArgs
-  }
+    ...defaultArgs,
+  },
 };
 
-export const linksWithSomeSubItems: Story = { ...TemplateLinksNoAuth,
+export const linksWithSomeSubItems: Story = {
+  ...TemplateLinksNoAuth,
   args: {
     menuItems: mockMenuItemsWithSomeSubItems,
-    ...defaultArgs
-  }
+    ...defaultArgs,
+  },
 };
 
-export const noLinks: Story = { render: args => html`
-  <admiralty-header header-title="${args.title}" logo-link-url="${args.logoLinkUrl}" headerTitleUrl="${args.titleLinkUrl}">
-  </admiralty-header>`,
+export const noLinks: Story = {
+  render: args => html` <admiralty-header header-title="${args.title}" logo-link-url="${args.logoLinkUrl}" headerTitleUrl="${args.titleLinkUrl}"> </admiralty-header>`,
   args: {
     ...defaultArgs,
     titleLinkUrl: null,
-  }
+  },
 };
 
-export const HeaderSignedIn: Story = { ...TemplateSignedOut,
+export const HeaderSignedIn: Story = {
+  ...TemplateSignedOut,
   args: {
     ...defaultArgs,
     ...profileArgs,
-    signedIn: true
-  }
+    signedIn: true,
+  },
 };
 
-export const HeaderSignedOut: Story = { ...TemplateSignedOut,
+export const HeaderSignedOut: Story = {
+  ...TemplateSignedOut,
   args: {
     ...defaultArgs,
-    ...profileArgs
-  }
+    ...profileArgs,
+  },
 };

@@ -373,14 +373,14 @@ export declare interface AdmiraltyHeaderMenuItem extends Components.AdmiraltyHea
 
 
 @ProxyCmp({
-  inputs: ['isSignedIn', 'signedInText']
+  inputs: ['isSignedIn', 'signInOnly', 'signedInText']
 })
 @Component({
   selector: 'admiralty-header-profile',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['isSignedIn', 'signedInText'],
+  inputs: ['isSignedIn', 'signInOnly', 'signedInText'],
 })
 export class AdmiraltyHeaderProfile {
   protected el: HTMLElement;
