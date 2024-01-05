@@ -1,3 +1,20 @@
+# v0.10.0 (Fri Jan 05 2024)
+
+#### 🚀 Enhancement
+
+- `@ukho/admiralty-angular`, `@ukho/admiralty-core`
+  - Adding the ability to turn off the signout and account button on the header profile [#150](https://github.com/UKHO/admiralty-design-system/pull/150) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+#### 🐛 Bug Fix
+
+- Fix deployment [#151](https://github.com/UKHO/admiralty-design-system/pull/151) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+#### Authors: 1
+
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
 # v0.9.0 (Wed Dec 06 2023)
 
 #### 🚀 Enhancement
