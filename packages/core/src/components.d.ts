@@ -223,6 +223,10 @@ export namespace Components {
          */
         "isSignedIn": boolean;
         /**
+          * A boolean to indicate if the component should hide the sign-out and account buttons, useful for internal sites where the user must be always signed in.
+         */
+        "signInOnly": boolean;
+        /**
           * The text that is displayed after the user signs in
          */
         "signedInText": string;
@@ -1257,6 +1261,10 @@ declare namespace LocalJSX {
           * The event that is fired when the user clicks on the 'Your account' button
          */
         "onYourAccountClicked"?: (event: AdmiraltyHeaderProfileCustomEvent<void>) => void;
+        /**
+          * A boolean to indicate if the component should hide the sign-out and account buttons, useful for internal sites where the user must be always signed in.
+         */
+        "signInOnly"?: boolean;
         /**
           * The text that is displayed after the user signs in
          */

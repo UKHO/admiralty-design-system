@@ -7,10 +7,11 @@
 
 ## Properties
 
-| Property       | Attribute        | Description                                           | Type      | Default     |
-| -------------- | ---------------- | ----------------------------------------------------- | --------- | ----------- |
-| `isSignedIn`   | `is-signed-in`   | A boolean to indicate if the user is signed in or not | `boolean` | `false`     |
-| `signedInText` | `signed-in-text` | The text that is displayed after the user signs in    | `string`  | `'replace'` |
+| Property       | Attribute        | Description                                                                                                                                             | Type      | Default     |
+| -------------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | ----------- |
+| `isSignedIn`   | `is-signed-in`   | A boolean to indicate if the user is signed in or not                                                                                                   | `boolean` | `false`     |
+| `signInOnly`   | `sign-in-only`   | A boolean to indicate if the component should hide the sign-out and account buttons, useful for internal sites where the user must be always signed in. | `boolean` | `false`     |
+| `signedInText` | `signed-in-text` | The text that is displayed after the user signs in                                                                                                      | `string`  | `'replace'` |
 
 
 ## Events
