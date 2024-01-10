@@ -1,3 +1,18 @@
+# v0.10.1 (Wed Jan 10 2024)
+
+#### 🐛 Bug Fix
+
+- Removing the snowfall easter egg [#152](https://github.com/UKHO/admiralty-design-system/pull/152) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+- `@ukho/admiralty-core`
+  - Update packages [#154](https://github.com/UKHO/admiralty-design-system/pull/154) ([@UKHOGreg](https://github.com/UKHOGreg))
+
+#### Authors: 2
+
+- Greg Williams ([@UKHOGreg](https://github.com/UKHOGreg))
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
 # v0.10.0 (Fri Jan 05 2024)
 
 #### 🚀 Enhancement
