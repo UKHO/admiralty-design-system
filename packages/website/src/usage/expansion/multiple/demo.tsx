@@ -3,7 +3,7 @@ import { AdmiraltyExpansion } from "@ukho/admiralty-react";
 
 export default function Demo() {
   return (
-    <AdmiraltyExpansion> //TODO: Is there a better way to do this?
+    <AdmiraltyExpansion>
       <AdmiraltyExpansion heading="Heading 1">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ut vulputate justo. Nulla tincidunt
           gravida condimentum. Vivamus elementum malesuada sem. Nulla consequat semper fermentum. Etiam et tempus massa.
