@@ -3,7 +3,7 @@ import { AdmiraltyExpansion } from "@ukho/admiralty-react";
 
 export default function Demo() {
   return (
-      <AdmiraltyExpansion heading="Expansion Heading that is really really long" expanded="false"
+      <AdmiraltyExpansion heading="Expansion Heading that is really really long" expanded={false}
                            align-heading-right="false" hide-border="false">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ut vulputate justo. Nulla tincidunt
           gravida condimentum. Vivamus elementum malesuada sem. Nulla consequat semper fermentum. Etiam et tempus massa.
