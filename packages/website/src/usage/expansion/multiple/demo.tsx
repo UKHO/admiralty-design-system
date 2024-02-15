@@ -3,8 +3,8 @@ import { AdmiraltyExpansion } from "@ukho/admiralty-react";
 
 export default function Demo() {
   return (
-    <AdmiraltyExpansion>
-      <AdmiraltyExpansion heading="Heading 1">
+    <AdmiraltyExpansion heading="Main Heading">
+      <AdmiraltyExpansion heading="Sub Heading 1">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ut vulputate justo. Nulla tincidunt
           gravida condimentum. Vivamus elementum malesuada sem. Nulla consequat semper fermentum. Etiam et tempus massa.
           Nunc condimentum rhoncus dui. Duis viverra erat eu velit fringilla, eu pretium orci tincidunt. Maecenas nec
@@ -17,7 +17,7 @@ export default function Demo() {
           ligula. Maecenas nec velit ut lectus porta ullamcorper vel et ante. Sed pretium metus vitae sagittis
           tincidunt. Integer aliquam consectetur ex et tempus. Aliquam faucibus ullamcorper libero.</p>
       </AdmiraltyExpansion>
-      <AdmiraltyExpansion heading="Heading 2">
+      <AdmiraltyExpansion heading="Sub Heading 2">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ut vulputate justo. Nulla tincidunt
           gravida condimentum. Vivamus elementum malesuada sem. Nulla consequat semper fermentum. Etiam et tempus massa.
           Nunc condimentum rhoncus dui. Duis viverra erat eu velit fringilla, eu pretium orci tincidunt. Maecenas nec
@@ -30,7 +30,7 @@ export default function Demo() {
           ligula. Maecenas nec velit ut lectus porta ullamcorper vel et ante. Sed pretium metus vitae sagittis
           tincidunt. Integer aliquam consectetur ex et tempus. Aliquam faucibus ullamcorper libero.</p>
       </AdmiraltyExpansion>
-      <AdmiraltyExpansion heading="Heading 3">
+      <AdmiraltyExpansion heading="Sub Heading 3">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ut vulputate justo. Nulla tincidunt
           gravida condimentum. Vivamus elementum malesuada sem. Nulla consequat semper fermentum. Etiam et tempus massa.
           Nunc condimentum rhoncus dui. Duis viverra erat eu velit fringilla, eu pretium orci tincidunt. Maecenas nec
@@ -43,5 +43,6 @@ export default function Demo() {
           ligula. Maecenas nec velit ut lectus porta ullamcorper vel et ante. Sed pretium metus vitae sagittis
           tincidunt. Integer aliquam consectetur ex et tempus. Aliquam faucibus ullamcorper libero.</p>
       </AdmiraltyExpansion>
-    </AdmiraltyExpansion>);
+    </AdmiraltyExpansion>
+  );
 }
