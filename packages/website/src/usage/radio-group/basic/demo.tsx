@@ -3,7 +3,7 @@ import { AdmiraltyRadioGroup, AdmiraltyRadio } from "@ukho/admiralty-react";
 
 export default function Demo() {
   return (
-    <AdmiraltyRadioGroup displayVertical={true}>
+    <AdmiraltyRadioGroup displayVertical={false}>
       <AdmiraltyRadio name="exampleName1" value="exampleValue1">
         Option 1
       </AdmiraltyRadio>
