@@ -7,6 +7,7 @@ import {
   AdmiraltyHeaderMenuItem,
   AdmiraltyLink,
   AdmiraltyPhaseBanner,
+  AdmiraltySkipLink,
 } from "@ukho/admiralty-react";
 import { useRouter } from "next/navigation";
 
@@ -16,6 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body>
+        <AdmiraltySkipLink href="#main-content"></AdmiraltySkipLink>
         <AdmiraltyHeader
           headerTitle="Design System"
           onTitledClicked={() => router.push("/")}
@@ -38,7 +40,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             phase="alpha"
             link="https://github.com/UKHO/admiralty-design-system/issues/new/choose"></AdmiraltyPhaseBanner>
         </div>
-        <main>{children}</main>
+        <main id="main-content">{children}</main>
         <AdmiraltyFooter imageSrc="/svg/UKHO stacked logo.svg">
           <AdmiraltyLink href="http://www.example.com" new-tab="true">
             Privacy Policy

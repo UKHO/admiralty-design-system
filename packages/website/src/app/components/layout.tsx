@@ -25,6 +25,7 @@ const sideNavItems: SideNavItem[] = [
   { path: "read-more", title: "Readmore" },
   { path: "select", title: "Select" },
   { path: "side-nav", title: "Side Nav" },
+  { path: "skip-link", title: "Skip Link" },
   { path: "tab-group", title: "Tab Group" },
   { path: "table", title: "Table" },
   { path: "textarea", title: "Textarea" },
