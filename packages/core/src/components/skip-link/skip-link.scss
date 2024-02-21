@@ -1,0 +1,27 @@
+@use "../../scss/vars/colours";
+@use "../../scss/base/a11y";
+
+.skip-link {
+  @extend .visually-hidden;
+  color: colours.$colour-text;
+  display: block;
+  padding: 10px 15px;
+
+  &:focus {
+    outline: 3px solid colours.$colour-utility-focus;
+    outline-offset: 0;
+    background-color: colours.$colour-utility-focus;
+    position: static !important;
+    width: auto !important;
+    height: auto !important;
+    margin: inherit !important;
+    overflow: visible !important;
+    clip: auto !important;
+    -webkit-clip-path: none !important;
+    clip-path: none !important;
+    white-space: inherit !important;
+    -webkit-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+  }
+}
