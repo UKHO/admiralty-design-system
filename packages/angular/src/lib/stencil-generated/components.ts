@@ -852,6 +852,28 @@ export declare interface AdmiraltySideNavItem extends Components.AdmiraltySideNa
 
 
 @ProxyCmp({
+  inputs: ['href']
+})
+@Component({
+  selector: 'admiralty-skip-link',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['href'],
+})
+export class AdmiraltySkipLink {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface AdmiraltySkipLink extends Components.AdmiraltySkipLink {}
+
+
+@ProxyCmp({
   inputs: ['label', 'tabContentId', 'tabLabelId']
 })
 @Component({

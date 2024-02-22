@@ -34,6 +34,7 @@ export const DIRECTIVES = [
   d.AdmiraltySelect,
   d.AdmiraltySideNav,
   d.AdmiraltySideNavItem,
+  d.AdmiraltySkipLink,
   d.AdmiraltyTab,
   d.AdmiraltyTabGroup,
   d.AdmiraltyTable,

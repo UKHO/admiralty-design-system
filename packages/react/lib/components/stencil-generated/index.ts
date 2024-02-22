@@ -40,6 +40,7 @@ export const AdmiraltyReadMore = /*@__PURE__*/createReactComponent<JSX.Admiralty
 export const AdmiraltySelect = /*@__PURE__*/createReactComponent<JSX.AdmiraltySelect, HTMLAdmiraltySelectElement>('admiralty-select');
 export const AdmiraltySideNav = /*@__PURE__*/createReactComponent<JSX.AdmiraltySideNav, HTMLAdmiraltySideNavElement>('admiralty-side-nav');
 export const AdmiraltySideNavItem = /*@__PURE__*/createReactComponent<JSX.AdmiraltySideNavItem, HTMLAdmiraltySideNavItemElement>('admiralty-side-nav-item');
+export const AdmiraltySkipLink = /*@__PURE__*/createReactComponent<JSX.AdmiraltySkipLink, HTMLAdmiraltySkipLinkElement>('admiralty-skip-link');
 export const AdmiraltyTab = /*@__PURE__*/createReactComponent<JSX.AdmiraltyTab, HTMLAdmiraltyTabElement>('admiralty-tab');
 export const AdmiraltyTabGroup = /*@__PURE__*/createReactComponent<JSX.AdmiraltyTabGroup, HTMLAdmiraltyTabGroupElement>('admiralty-tab-group');
 export const AdmiraltyTable = /*@__PURE__*/createReactComponent<JSX.AdmiraltyTable, HTMLAdmiraltyTableElement>('admiralty-table');
