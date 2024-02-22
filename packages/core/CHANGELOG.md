@@ -1,3 +1,15 @@
+# v0.11.0 (Thu Feb 22 2024)
+
+#### 🚀 Enhancement
+
+- Add skip link component [#164](https://github.com/UKHO/admiralty-design-system/pull/164) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+#### Authors: 1
+
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
 # v0.10.1 (Wed Jan 10 2024)
 
 #### 🐛 Bug Fix

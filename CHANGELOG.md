@@ -1,3 +1,22 @@
+# v0.11.0 (Thu Feb 22 2024)
+
+#### 🚀 Enhancement
+
+- `@ukho/admiralty-angular`, `@ukho/admiralty-core`
+  - Add skip link component [#164](https://github.com/UKHO/admiralty-design-system/pull/164) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+#### ⚠️ Pushed to `main`
+
+- Removed complex ([@lstevens98](https://github.com/lstevens98))
+- Removed Sortable, added Complex ([@lstevens98](https://github.com/lstevens98))
+
+#### Authors: 2
+
+- Lewis Stevens ([@lstevens98](https://github.com/lstevens98))
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
 # v0.10.1 (Wed Jan 10 2024)
 
 #### 🐛 Bug Fix
