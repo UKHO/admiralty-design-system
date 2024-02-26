@@ -1,19 +1,34 @@
-@use "../../scss/vars/colours" as colours;
-@use "../../scss/base/responsive";
-@use "../../scss/vars/typography";
+@use '../../scss/vars/colours' as colours;
+@use '../../scss/base/responsive';
+@use '../../scss/vars/typography';
 
 @mixin active {
   box-shadow: inset 0 -5px colours.$colour-admiralty-blue;
 }
 
+.menu-item {
+  cursor: pointer;
+
+  .menu-title {
+    font-size: typography.$font-size-normal;
+
+    &:focus {
+      box-shadow: colours.$colour-utility-focus inset 0 0 0 3px;
+    }
+  }
+}
+
+button {
+  all: unset;
+  height: 100%;
+  width: 100%;
+}
+
 @include responsive.desktop-only {
   .menu-item {
-    cursor: pointer;
     display: flex;
     flex: 0;
     flex-direction: column;
-    font-size: 18px !important;
-    font-weight: 400;
     height: 100%;
     justify-content: center;
     line-height: 1.33em;
@@ -24,26 +39,42 @@
     position: relative;
     text-align: center;
 
-    .sub-menu {
-      display: none;
-      position: absolute;
-      border: 1px solid colours.$colour-divider;
-      right: 0;
-      top: 100%;
-    }
-
     &:hover {
       @include active;
       background-color: colours.$colour-nav-bg-hover;
 
       .sub-menu {
         display: flex;
-        flex-direction: column;
       }
     }
 
     &.active {
       @include active;
+
+      .sub-menu {
+        display: flex;
+      }
+    }
+
+    .menu-title {
+      font-weight: typography.$font-weight-medium;
+    }
+
+    .sub-menu {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      border: 1px solid colours.$colour-divider;
+      right: 0;
+      top: 100%;
+
+      &.desktop-visible {
+        display: flex;
+      }
+
+      &.desktop-hide {
+        display: none;
+      }
     }
   }
 }
@@ -52,24 +83,17 @@
   .menu-item {
     display: block;
     box-sizing: border-box;
-    cursor: pointer;
     color: colours.$colour-admiralty-blue;
-    font-size: typography.$font-size-normal;
-    font-weight: 500;
     background-color: unset;
     text-align: unset;
     text-decoration: unset;
 
     .menu-title {
       padding: 12px;
+      font-weight: 500;
+
       &:hover {
         background-color: colours.$colour-nav-bg-hover;
-        box-shadow: colours.$colour-utility-focus inset 0 0 0 3px;
-      }
-
-      &:focus {
-        outline: 3px solid colours.$colour-utility-focus;
-        outline-offset: 3px;
       }
     }
   }

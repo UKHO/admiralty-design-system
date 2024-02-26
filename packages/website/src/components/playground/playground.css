@@ -1,0 +1,35 @@
+.demo-container {
+    border: 1px solid #d0d0d0;
+    padding: 24px;
+}
+
+.codesnippet-container {
+    border-right: 1px solid #d0d0d0;
+    border-left: 1px solid #d0d0d0;
+    border-bottom: 1px solid #d0d0d0;
+    padding: 24px;
+}
+
+.codesnippet-content {
+    position: relative;
+}
+
+.codesnippet-content:hover .copy-button {
+    opacity: 1;
+}
+
+.copy-button {
+  background: rgba(0,0,0,.3);
+  padding: 0.4rem 0.5rem;
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  opacity: 0;
+  transition: opacity .2s ease-in-out;
+  user-select: none;
+  cursor: pointer;
+}
+
+.copy-button:focus {
+    opacity: 1;
+}

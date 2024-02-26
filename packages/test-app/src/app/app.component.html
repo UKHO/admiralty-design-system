@@ -14,19 +14,19 @@
   <admiralty-header-profile isSignedIn="false" slot="profile"></admiralty-header-profile>
 </admiralty-header>
 <admiralty-breadcrumbs>
-  <admiralty-breadcrumb>Test1</admiralty-breadcrumb>
-  <admiralty-breadcrumb>Test2</admiralty-breadcrumb>
-  <admiralty-breadcrumb>Test3</admiralty-breadcrumb>
+  <admiralty-breadcrumb href="https://example.org/test1">Test1</admiralty-breadcrumb>
+  <admiralty-breadcrumb href="https://example.org/test2" active="true">Test2</admiralty-breadcrumb>
+  <admiralty-breadcrumb href="https://example.org/test3">Test3</admiralty-breadcrumb>
 </admiralty-breadcrumbs>
 <admiralty-button>Button</admiralty-button>
 <admiralty-card heading="A card">Some content</admiralty-card>
 <admiralty-colour-block
-  action-text="Click here"
+  actionText="Click here"
   width="400"
   height="400"
   heading="Colour block"
   colour="admiralty-blue"
-  click-action="onColourBlockClick"
+  (colourBlockLinkClicked)="onColourBlockClick()"
 >
   <div>
     <p>This colour block is a component in the design system and we hope you enjoy it</p>
@@ -69,21 +69,29 @@
 <form [formGroup]="group" (ngSubmit)="onSubmit()">
   <admiralty-file-input></admiralty-file-input>
   <admiralty-input
+    label="Text"
     [invalid]="blah?.invalid && blah?.touched"
     invalidMessage="This field is required"
     type="text"
-    formControlName="blah"
+    formControlName="text"
   ></admiralty-input>
-  <admiralty-checkbox checked="true" disabled="false" input-id="checkbox" label-text="checkbox 1"></admiralty-checkbox>
-  <admiralty-radio name="radio1" value="radio1">Radio text label</admiralty-radio>
-  <admiralty-select hint="Select an option from the list" label="Choose a colour">
+  <admiralty-input
+    label="Number"
+    [invalid]="blah?.invalid && blah?.touched"
+    invalidMessage="This field is required"
+    type="number"
+    formControlName="number"
+  ></admiralty-input>
+  <admiralty-checkbox formControlName="checkbox" input-id="checkbox" label-text="checkbox 1"></admiralty-checkbox>
+  <admiralty-select formControlName="select" hint="Select an option from the list" label="Choose a colour">
     <option value="test1">Test</option>
     <option value="test2">Test 2</option>
   </admiralty-select>
-  <admiralty-radio-group display-vertical>
+  <admiralty-radio-group formControlName="radio" display-vertical>
     <admiralty-radio name="radio1" value="radio2">Radio group label 2</admiralty-radio>
     <admiralty-radio name="radio1" value="radio3">Radio group label 3</admiralty-radio>
   </admiralty-radio-group>
+  <admiralty-textarea formControlName="textarea" label="Textarea Label"></admiralty-textarea>
   <admiralty-button type="submit">Submit</admiralty-button>
 </form>
 <admiralty-icon iconName="hippo"></admiralty-icon>
@@ -108,7 +116,7 @@
     (sideNavItemSelected)="onSideNavItemSelected($event)"
   ></admiralty-side-nav-item>
 </admiralty-side-nav>
-<admiralty-textarea label="Textarea Label" text="Some text"></admiralty-textarea>
+
 <admiralty-filter filterTitle="Awesome Filters">
   <admiralty-filter-group groupTitle="Group 1">
     <div style="display: flex; flex-direction: column">
@@ -138,6 +146,21 @@
   <admiralty-type-ahead-item value="ostrich"></admiralty-type-ahead-item>
   <admiralty-type-ahead-item value="rabbit"></admiralty-type-ahead-item>
   <admiralty-type-ahead-item value="tiger"></admiralty-type-ahead-item>
+  <admiralty-type-ahead-item value="guinea pig"></admiralty-type-ahead-item>
+</admiralty-type-ahead>
+
+<admiralty-button (click)="typeahead()">Button</admiralty-button>
+
+<ng-container *ngFor="let item of commissioningOrganisations">
+  <span>{{ item.organisationName }}</span>
+</ng-container>
+
+<admiralty-type-ahead resultsOnInitFocus="true" type="text" [label]="'Commissioning organisation *'">
+  <admiralty-type-ahead-item value="ostrich"></admiralty-type-ahead-item>
+  <admiralty-type-ahead-item
+    *ngFor="let item of commissioningOrganisations"
+    [value]="item.organisationName"
+  ></admiralty-type-ahead-item>
   <admiralty-type-ahead-item value="guinea pig"></admiralty-type-ahead-item>
 </admiralty-type-ahead>
 
@@ -175,3 +198,33 @@
     </admiralty-table-row>
   </admiralty-table-body>
 </admiralty-table>
+<br />
+<admiralty-tab-group>
+  <admiralty-tab label="All Warnings">Test warnings</admiralty-tab>
+  <admiralty-tab label="NAVAREA 1"><em>Scorchio!</em></admiralty-tab>
+  <admiralty-tab label="UK Coastal">Wet and windy</admiralty-tab>
+  <admiralty-tab label="UK Estuary"><em>test a</em></admiralty-tab>
+  <admiralty-tab label="UK Swell"><b>test b</b></admiralty-tab>
+  <admiralty-tab label="UK Other"><em>test c</em></admiralty-tab>
+</admiralty-tab-group>
+<br />
+<admiralty-read-more heading="Readmore Heading">
+  We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide
+  your nationality, you’ll have to send copies of identity documents through the post.
+</admiralty-read-more>
+<br />
+<div style="display: flex">
+  <admiralty-select style="margin-right: 10px; width: 250px" label="Vertical datum *">
+    <option disabled></option>
+    <option>test</option>
+    <option>test 2</option>
+  </admiralty-select>
+  <admiralty-input style="margin-right: 10px; width: 250px" label="Please give further details:"></admiralty-input>
+</div>
+
+<admiralty-progress-bar [progression]="progress"></admiralty-progress-bar>
+<admiralty-button (click)="onIncreaseProgressClick()">Increase Progress</admiralty-button>
+<admiralty-dialogue type="info" heading="Info">
+  Our site will be down for maintenance between 20:00 and 22:00 on 1 June 2019. You won't be able to access the site
+  during this time.
+</admiralty-dialogue>

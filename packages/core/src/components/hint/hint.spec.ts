@@ -9,27 +9,22 @@ describe('admiralty-hint', () => {
     });
     expect(page.root).toEqualHtml(`
       <admiralty-hint>
-        <mock:shadow-root>
-         <p>
-            <slot></slot>
-         </p>
-        </mock:shadow-root>
-        test
+        <p>
+          test
+        </p>
       </admiralty-hint>
     `);
   });
   it('renders as disabled', async () => {
     const page = await newSpecPage({
       components: [HintComponent],
-      html: `<admiralty-hint disabled></admiralty-hint>`,
+      html: `<admiralty-hint disabled>Disabled</admiralty-hint>`,
     });
     expect(page.root).toEqualHtml(`
-        <admiralty-hint disabled>
-        <mock:shadow-root>
-            <p class="disabled">
-                <slot></slot>
-            </p>
-        </mock:shadow-root>
+      <admiralty-hint disabled>
+        <p class="disabled">
+          Disabled
+        </p>
       </admiralty-hint>`);
   });
 });

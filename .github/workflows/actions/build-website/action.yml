@@ -1,0 +1,17 @@
+name: 'Build Design System Website'
+description: 'Build Design System Website'
+runs:
+  using: 'composite'
+  steps:
+    - name: Install Packages
+      run: |
+        yarn install --immutable
+      shell: bash
+    - name: Build
+      run: yarn build:website
+      shell: bash
+    - uses: ./.github/workflows/actions/upload-archive
+      with:
+        name: website
+        output: ./packages/website/website.zip
+        paths: ./packages/website/out

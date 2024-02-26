@@ -1,30 +1,26 @@
-import { Story } from '@storybook/html';
-import readme from './readme.md';
+import { Meta, StoryObj } from '@storybook/web-components';
+import { BreadcrumbComponent } from './breadcrumb';
+import { html } from 'lit';
 
-export default {
+const meta: Meta = {
+  component: 'admiralty-breadcrumb',
   title: 'Breadcrumb',
   parameters: {
-    markdown: readme,
-  },
-  args: {
-    href: 'https://www.example.com',
-    first: false,
-    active: false,
+    actions: {
+    },
   },
 };
 
-const Template: Story = args => {
-  return `<admiralty-breadcrumb href="${args.href}" active="${args.active}" first="${args.first}">Test</admiralty-breadcrumb>`;
+export default meta;
+
+type Story = StoryObj<BreadcrumbComponent>;
+
+const template: Story = {
+  render: args => html`<admiralty-breadcrumb href="${args.href}" ?active="${args.active}" ?first="${args.first}">Test</admiralty-breadcrumb>`,
 };
 
-export const Basic = Template.bind({});
+export const Basic: Story = { ...template };
 
-export const Active = Template.bind({});
-Active.args = {
-  active: true,
-};
+export const Active: Story = { ...template, args: { active: true } };
 
-export const First = Template.bind({});
-First.args = {
-  first: true,
-};
+export const First: Story = { ...template, args: { first: true } };

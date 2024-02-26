@@ -3,7 +3,7 @@ import { Component, h } from '@stencil/core';
 @Component({
   tag: 'admiralty-hr',
   styleUrl: 'horizontal-rule.scss',
-  shadow: false,
+  scoped: true,
 })
 export class HorizontalRuleComponent {
   render() {

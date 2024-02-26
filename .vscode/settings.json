@@ -3,17 +3,13 @@
     "**/coverage": true
   },
   "prettier.enable": true,
-  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
-  "eslint.format.enable": true,
-  "[scss]": {
-    "editor.suggest.insertMode": "replace",
-    "gitlens.codeLens.scopes": ["document"],
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "jest.jestCommandLine": "yarn test",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "jest.jestCommandLine": "cd packages/core && yarn test:spec",
   "jest.autoRun": {
     "watch": true,
     "onStartup": ["all-tests"]
   },
-  "jest.showCoverageOnLoad": true
+  "jest.showCoverageOnLoad": true,
+  "typescript.tsdk": "node_modules/typescript/lib"
 }

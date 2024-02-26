@@ -2,7 +2,7 @@ import { Component, Prop, h } from '@stencil/core';
 
 @Component({
   tag: 'admiralty-link',
-  shadow: false,
+  scoped: true,
 })
 export class LinkComponent {
   /**

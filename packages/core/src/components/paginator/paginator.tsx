@@ -1,11 +1,10 @@
 import { Component, Prop, h, Event, EventEmitter } from '@stencil/core';
-import { ButtonVariant } from '../button/button.types';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   tag: 'admiralty-paginator',
   styleUrl: 'paginator.scss',
-  shadow: false,
+  scoped: true,
 })
 export class PaginatorComponent {
   /**
@@ -55,7 +54,7 @@ export class PaginatorComponent {
       <nav aria-label="pagination" class="standard">
         <p aria-live="polite">{this.label}</p>
         <admiralty-button
-          variant={ButtonVariant.Icon}
+          variant="icon"
           icon={faChevronLeft.iconName}
           disabled={this.currentPage === 1}
           tabindex={0}
@@ -65,7 +64,7 @@ export class PaginatorComponent {
           aria-label="Previous Page"
         ></admiralty-button>
         <admiralty-button
-          variant={ButtonVariant.Icon}
+          variant="icon"
           icon={faChevronRight.iconName}
           disabled={this.currentPage === this.pages}
           tabindex={0}

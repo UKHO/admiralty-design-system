@@ -16,4 +16,28 @@ describe('admiralty-colour-block', () => {
       </admiralty-colour-block>
     `);
   });
+
+  it('should emit colourBlockLinkClicked event when emitColourBlockLinkClicked() is called', () => {
+    const colourBlockComponent = new ColourBlockComponent();
+
+    const colourBlockLinkClickedEmitSpy = jest.spyOn(colourBlockComponent.colourBlockLinkClicked, 'emit');
+
+    expect(colourBlockLinkClickedEmitSpy).toHaveBeenCalledTimes(0);
+
+    colourBlockComponent.emitColourBlockLinkClicked();
+
+    expect(colourBlockLinkClickedEmitSpy).toHaveBeenCalledTimes(1);
+  });
+
+  it('should call emitColourBlockLinkClicked() when handleClickAction() is called', () => {
+    const colourBlockComponent = new ColourBlockComponent();
+
+    const colourBlockLinkClickedEmitSpy = jest.spyOn(colourBlockComponent.colourBlockLinkClicked, 'emit');
+
+    expect(colourBlockLinkClickedEmitSpy).toHaveBeenCalledTimes(0);
+
+    colourBlockComponent.handleClickAction();
+
+    expect(colourBlockLinkClickedEmitSpy).toHaveBeenCalledTimes(1);
+  });
 });

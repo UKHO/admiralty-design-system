@@ -1,9 +1,10 @@
 import { Component, Element, Event, Host, h, Prop, State, EventEmitter } from '@stencil/core';
+import { FileInputChangeEventDetail } from './file-input.interface';
 
 @Component({
   tag: 'admiralty-file-input',
   styleUrl: 'file-input.scss',
-  shadow: true,
+  scoped: true,
 })
 export class FileInputComponent {
   @Element() el: HTMLElement;
@@ -19,9 +20,19 @@ export class FileInputComponent {
   @Prop() multiple = false;
 
   /**
+   * Whether to show that the file input is in an invalid state.
+   */
+  @Prop() invalid: boolean = false;
+
+  /**
+   * The message to show when the file input is invalid.
+   */
+  @Prop() invalidMessage: string = null;
+
+  /**
    * Emitted when the added file(s) changes
    */
-  @Event() fileInputChange: EventEmitter<File[]>;
+  @Event() fileInputChange: EventEmitter<FileInputChangeEventDetail>;
 
   id: string = `admiralty-file-input-${++nextId}`;
 
@@ -39,7 +50,7 @@ export class FileInputComponent {
 
     this.storeFileInfo((event.target as HTMLInputElement).files);
 
-    this.fileInputChange.emit(this.files);
+    this.fileInputChange.emit({ files: this.files });
     console.log('changeHandler:', this.files);
   }
 
@@ -54,7 +65,7 @@ export class FileInputComponent {
    */
   dragOverHandler(event: DragEvent) {
     event.preventDefault();
-    this.el.shadowRoot.querySelector('.admiralty-file-input').classList.add('drop_zone');
+    this.el.querySelector('.admiralty-file-input').classList.add('drop_zone');
   }
 
   /**
@@ -64,7 +75,7 @@ export class FileInputComponent {
    */
   dragLeaveHander(event: DragEvent) {
     event.preventDefault();
-    this.el.shadowRoot.querySelector('.admiralty-file-input').classList.remove('drop_zone');
+    this.el.querySelector('.admiralty-file-input').classList.remove('drop_zone');
   }
 
   /**
@@ -74,17 +85,13 @@ export class FileInputComponent {
    */
   dropHandler(event: DragEvent) {
     event.preventDefault();
-    this.el.shadowRoot.querySelector('.admiralty-file-input').classList.remove('drop_zone');
+    this.el.querySelector('.admiralty-file-input').classList.remove('drop_zone');
 
     if (event.dataTransfer.files) {
       this.storeFileInfo(event.dataTransfer.files);
-      this.fileInputChange.emit(this.files);
+      this.fileInputChange.emit({ files: this.files });
       console.log('Drop: ', this.files);
     }
-  }
-
-  get filesDisplay() {
-    return `${this.files[0].name} (${this.sizeOf(this.files[0].size)}) ${this.files.length > 1 ? ' ...' : ''}`;
   }
 
   /**
@@ -103,10 +110,10 @@ export class FileInputComponent {
   render() {
     return (
       <Host onDragLeave={event => this.dragLeaveHander(event)} onDragOver={event => this.dragOverHandler(event)} onDrop={event => this.dropHandler(event)}>
-        <div class="admiralty-file-input">
+        <div class={{ 'admiralty-file-input': true, 'invalid': this.invalid }}>
           <label htmlFor={this.id}>
             <admiralty-icon class="upload-icon" icon-name="upload"></admiralty-icon>
-            {this.files?.length ? <span>{this.filesDisplay}</span> : <span class="instructions">{this.label}</span>}
+            <span>{this.label}</span>
           </label>
           <input
             onChange={event => this.changeHandler(event)}
@@ -118,6 +125,7 @@ export class FileInputComponent {
             multiple={this.multiple}
           />
         </div>
+        <admiralty-input-invalid style={{ visibility: this.invalid && this.invalidMessage ? 'visible' : 'hidden' }}>{this.invalidMessage}</admiralty-input-invalid>
       </Host>
     );
   }

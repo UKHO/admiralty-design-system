@@ -37,6 +37,11 @@ export class RadioComponent {
   @Prop({ mutable: true }) checked?: boolean = false;
 
   /**
+   * Determines whether to add the invalid stying to the radio button
+   */
+  @Prop() invalid: boolean = false;
+
+  /**
    * Emitted when the radio button gains focus.
    */
   @Event() admiraltyFocus!: EventEmitter<void>;
@@ -46,6 +51,21 @@ export class RadioComponent {
    */
   @Event() admiraltyBlur!: EventEmitter<void>;
 
+  /**
+   * Emitted when the radio is selected
+   */
+  @Event() admiraltyChange!: EventEmitter<void>;
+
+  @Watch('value')
+  valueChanged() {
+    /**
+     * The new value of the radio may
+     * match the radio group's value,
+     * so we see if it should be checked.
+     */
+    this.updateState();
+  }
+
   connectedCallback() {
     if (this.value === undefined) {
       this.value = this.inputId;
@@ -54,6 +74,15 @@ export class RadioComponent {
 
     if (radioGroup) {
       this.updateState();
+      radioGroup.addEventListener('admiraltyChange', this.updateState);
+    }
+  }
+
+  disconnectedCallback() {
+    const radioGroup = this.radioGroup;
+    if (radioGroup) {
+      radioGroup.removeEventListener('admiraltyChange', this.updateState);
+      this.radioGroup = null;
     }
   }
 
@@ -66,6 +95,9 @@ export class RadioComponent {
   private updateState = () => {
     if (this.radioGroup) {
       this.checked = this.radioGroup.value === this.value;
+      if (this.nativeInput && this.checked) {
+        this.nativeInput.focus();
+      }
     }
   };
 
@@ -90,6 +122,7 @@ export class RadioComponent {
       <Host>
         <div class="admiralty-radio">
           <input
+            class={{ 'invalid': this.invalid, 'admiralty-radio': true }}
             aria-checked={`${checked}`}
             aria-hidden={disabled ? 'true' : null}
             aria-labelledby={inputId}
@@ -99,7 +132,6 @@ export class RadioComponent {
             onFocus={this.onFocus}
             onBlur={this.onBlur}
             onClick={this.onClick}
-            class="admiralty-radio"
             type="radio"
             value={value}
             checked={checked}

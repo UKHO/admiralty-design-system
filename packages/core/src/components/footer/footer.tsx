@@ -7,7 +7,7 @@ import { Component, Prop, h } from '@stencil/core';
 @Component({
   tag: 'admiralty-footer',
   styleUrl: 'footer.scss',
-  shadow: false,
+  scoped: true,
 })
 export class FooterComponent {
   /**

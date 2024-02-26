@@ -1,9 +1,10 @@
-import { Component, EventEmitter, Host, Prop, Event, h, State, Element } from '@stencil/core';
+import { Component, EventEmitter, Host, Prop, Event, h, State, Element, forceUpdate } from '@stencil/core';
+import { Keys } from '../Keys';
 
 @Component({
   tag: 'admiralty-type-ahead',
   styleUrl: 'type-ahead.scss',
-  shadow: true,
+  scoped: true,
 })
 export class TypeAheadComponent {
   private _id = `admiralty-typeahead-${++id}`;
@@ -27,6 +28,8 @@ export class TypeAheadComponent {
   isAlternateStatusSection = false;
   statusText: string;
 
+  private mutation: MutationObserver;
+
   private originalSearch = '';
   private hasBeenFocusedAtLeastOnce = false;
 
@@ -49,6 +52,11 @@ export class TypeAheadComponent {
   @Prop() label: string;
 
   /**
+   * The hint which will be used under the label to describe the input.
+   */
+  @Prop() hint: string;
+
+  /**
    * The placeholder text for the input field
    */
   @Prop() placeholder: string;
@@ -69,17 +77,37 @@ export class TypeAheadComponent {
    */
   @Event() valueChanged: EventEmitter<string>;
 
-  connectedCallback() {
-    const slotItems = this.el.querySelectorAll('admiralty-type-ahead-item');
-    slotItems.forEach(el => {
-      this.filterList.push(el.getAttribute('value'));
-    });
-  }
-
   componentDidLoad() {
     if (this.value) {
       this.inputValue = this.value;
     }
+  }
+
+  connectedCallback() {
+    this.mutation = new MutationObserver(() => {
+      this.populateFilterList();
+      forceUpdate(this);
+    });
+    this.mutation.observe(this.el, {
+      childList: true,
+      subtree: true,
+    });
+  }
+
+  disconnectedCallback() {
+    if (this.mutation) {
+      this.mutation.disconnect();
+      this.mutation = undefined;
+    }
+  }
+
+  populateFilterList() {
+    const slotItems = this.el.querySelectorAll('admiralty-type-ahead-item');
+    this.filterList = [];
+    slotItems.forEach(el => {
+      this.filterList.push(el.getAttribute('value'));
+      console.log('fliterlist value ', el.getAttribute('value'));
+    });
   }
 
   handleFocusIn() {
@@ -147,14 +175,14 @@ export class TypeAheadComponent {
 
   private addHighlight() {
     if (this.selectedItemIndex > -1) {
-      const listItem = this.el.shadowRoot.querySelector(`#${this.getListItemId(this.selectedItemIndex)}`);
+      const listItem = this.el.querySelector(`#${this.getListItemId(this.selectedItemIndex)}`);
       listItem.classList.add('highlighted');
     }
   }
 
   private removeHighlight(i: number) {
     if (i > -1) {
-      const listItem = this.el.shadowRoot.querySelector(`#${this.getListItemId(i)}`);
+      const listItem = this.el.querySelector(`#${this.getListItemId(i)}`);
       listItem.classList.remove('highlighted');
     }
   }
@@ -239,6 +267,7 @@ export class TypeAheadComponent {
           type="text"
           ref={el => (this.inputControl = el)}
           label={this.label}
+          hint={this.hint}
           placeholder={this.placeholder}
           class="filterTextInput"
           onKeyUp={ev => this.handleKeyPressed(ev)}
@@ -275,13 +304,6 @@ export class TypeAheadComponent {
       </Host>
     );
   }
-}
-
-enum Keys {
-  UP_ARROW = 'ArrowUp',
-  DOWN_ARROW = 'ArrowDown',
-  ENTER = 'Enter',
-  TAB = 'Tab',
 }
 
 let id = 0;

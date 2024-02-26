@@ -7,26 +7,35 @@
 }
 
 .header-sub-menu-item {
-  @include responsive.desktop-only {
-  box-sizing: border-box;
-  color: colours.$colour-admiralty-blue;
-  display: block;
-  font-size: 18px;
-  margin-bottom: 0;
-  padding: 0 .66em;
-  text-align: center;
-  width: 300px;
-
   .title {
-    display: block;
-    padding: 10px;
-    text-align: center;
+    font-size: typography.$font-size-normal;
+    font-weight: typography.$font-weight-light;
   }
 
-  &:hover{
-    @include active;
+  &:focus {
+    outline: none;
+    box-shadow: colours.$colour-utility-focus inset 0 0 0 3px;
   }
-}
+
+  @include responsive.desktop-only {
+    box-sizing: border-box;
+    color: colours.$colour-admiralty-blue;
+    display: block;
+    margin-bottom: 0;
+    padding: 0 0.66em;
+    text-align: center;
+    width: 300px;
+
+    .title {
+      display: block;
+      padding: 10px;
+      text-align: center;
+    }
+
+    &:hover {
+      @include active;
+    }
+  }
 
   @include responsive.not-desktop {
     display: block;
@@ -34,22 +43,18 @@
     padding: 12px 24px;
     cursor: pointer;
     color: colours.$colour-admiralty-blue;
-    font-size: typography.$font-size-normal;
     font-weight: 500;
     background-color: unset;
     text-align: unset;
     text-decoration: unset;
 
     &:hover {
-      background-color: colours.$colour-nav-bg-hover;
-      box-shadow: colours.$colour-utility-focus inset 0 0 0 3px;
+      @include active;
     }
 
     &:focus {
-      outline: 3px solid colours.$colour-utility-focus;
-      outline-offset: 3px;
+      outline: none;
+      box-shadow: colours.$colour-utility-focus inset 0 0 0 3px;
     }
-
-    font-weight: typography.$font-weight-light;
   }
 }

@@ -1,10 +1,9 @@
 @use "../../scss/base/responsive";
 @use "../../scss/vars/colours";
 
-admiralty-phase-banner .phase-banner {
+.phase-banner {
   display: block;
   line-height: 40px;
-  width: 100%;
   padding: 0 18px;
   @include responsive.desktop-only {
     padding: 0 20px;

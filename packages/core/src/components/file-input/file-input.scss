@@ -1,21 +1,26 @@
-@use "../../scss/vars/colours";
-@use "../../scss/vars/typography";
+@use '../../scss/vars/colours';
+@use '../../scss/vars/typography';
 
 .admiralty-file-input {
   background: #eee;
   display: flex;
   position: relative;
-  border: 2px dashed colours.$colour-admiralty-blue;;
+  border: 2px dashed colours.$colour-admiralty-blue;
   min-height: 120px;
   align-content: stretch;
   justify-content: stretch;
-  margin-bottom: 36px;
+  margin-bottom: 6px;
   font-family: typography.$font-family;
   font-size: 18px;
   line-height: 24px;
   font-weight: 300;
 
-  &.drop_zone { // active when file is dragged over label
+  &.invalid {
+    border-color: colours.$colour-utility-error;
+  }
+
+  &.drop_zone {
+    // active when file is dragged over label
     background: #fff !important;
   }
 
@@ -23,7 +28,7 @@
     color: colours.$colour-admiralty-blue;
     font-size: 24px;
     font-weight: 900;
-    margin: .4rem auto;
+    margin: 0.4rem auto;
     text-align: center;
     flex: 0 1;
   }
@@ -35,7 +40,7 @@ label {
   display: flex;
   align-content: center;
   flex-direction: column;
-  flex:1;
+  flex: 1;
   justify-content: center;
   cursor: pointer;
 
@@ -43,17 +48,13 @@ label {
     color: colours.$colour-admiralty-blue;
     flex: 0 1;
     font-size: 18px;
-    font-weight: typography.$font-weight-light;
+    font-weight: typography.$font-weight-medium;
     text-align: center;
     margin: 0.4rem 0;
-
-    &.instructions {
-      font-weight: typography.$font-weight-medium;
-    }
   }
 }
 
-input[type=file] {
+input[type='file'] {
   align-items: baseline;
   overflow: visible;
   position: absolute;

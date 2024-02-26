@@ -1,23 +1,32 @@
-import { Story } from '@storybook/html';
-import readme from './readme.md';
-import { multiple } from '../../../../../angular/components/expansion/expansion.stories';
+import { Meta, StoryObj } from '@storybook/web-components';
+import { FileInputComponent } from './file-input';
+import { html } from 'lit';
 
-export default {
+const meta: Meta = {
+  component: 'admiralty-file-input',
   title: 'Forms/File Input',
   parameters: {
-    markdown: readme,
     actions: {
       handlers: ['fileInputChange'],
     },
   },
 };
 
-const Template: Story = args => {
-  return `
-    <admiralty-file-input multiple=${args.multiple}></admiralty-file-input>`;
+export default meta;
+
+type Story = StoryObj<FileInputComponent>;
+
+export const Basic: Story = {
+  render: args => html` <admiralty-file-input ?multiple=${args.multiple}> </admiralty-file-input>`,
+  args: {
+    multiple: true,
+  },
 };
 
-export const Basic = Template.bind({});
-Basic.args = {
-  multiple: true,
+export const Invalid: Story = {
+  render: args => html` <admiralty-file-input invalid="${args.invalid}" invalid-message="${args.invalidMessage}"> </admiralty-file-input>`,
+  args: {
+    invalid: true,
+    invalidMessage: 'That is not a real name',
+  },
 };

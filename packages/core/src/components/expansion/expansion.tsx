@@ -7,7 +7,7 @@ let nextId = 0;
 @Component({
   tag: 'admiralty-expansion',
   styleUrl: 'expansion.scss',
-  shadow: false,
+  scoped: true,
 })
 export class ExpansionComponent {
   /**

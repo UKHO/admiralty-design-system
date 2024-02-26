@@ -21,8 +21,8 @@ jobs:
         run: |
           yarn install --immutable
         working-directory: ./packages/core
-      - uses: ./.github/workflows/actions/build-core
-        name: Build Core
+      - uses: ./.github/workflows/actions/build-all
+        name: Build
       - name: Deploy to Chromatic
         uses: chromaui/action@v1
         with:

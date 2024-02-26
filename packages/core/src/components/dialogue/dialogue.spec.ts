@@ -9,14 +9,11 @@ describe('admiralty-dialogue', () => {
     });
     expect(root).toEqualHtml(`
       <admiralty-dialogue>
-        <mock:shadow-root>
-          <section class="dialogue info">
-            <div class="dialogue-title">
-              <admiralty-icon class="dialogue-title-icon" icon-name="circle-info"></admiralty-icon>
-            </div>
-            <slot></slot>
-          </section>
-        </mock:shadow-root>
+        <section class="dialogue info">
+          <div class="dialogue-title">
+            <admiralty-icon class="dialogue-title-icon" icon-name="circle-info"></admiralty-icon>
+          </div>
+        </section>
       </admiralty-dialogue>
     `);
   });
@@ -28,16 +25,13 @@ describe('admiralty-dialogue', () => {
     });
     expect(root).toEqualHtml(`
       <admiralty-dialogue type="info" heading="Test">
-        <mock:shadow-root>
-          <section class="dialogue info">
-            <div class="dialogue-title">
-              <admiralty-icon class="dialogue-title-icon" icon-name="circle-info"></admiralty-icon>
-              Test
-            </div>
-            <slot></slot>
-          </section>
-        </mock:shadow-root>
-        Content
+        <section class="dialogue info">
+          <div class="dialogue-title">
+            <admiralty-icon class="dialogue-title-icon" icon-name="circle-info"></admiralty-icon>
+            Test
+          </div>
+          Content
+        </section>
       </admiralty-dialogue>
     `);
   });
@@ -49,16 +43,13 @@ describe('admiralty-dialogue', () => {
     });
     expect(root).toEqualHtml(`
       <admiralty-dialogue type="error" heading="Test">
-        <mock:shadow-root>
-          <section class="dialogue error">
-            <div class="dialogue-title">
-              <admiralty-icon class="dialogue-title-icon" icon-name="exclamation"></admiralty-icon>
-              Test
-            </div>
-            <slot></slot>
-          </section>
-        </mock:shadow-root>
-        Content
+        <section class="dialogue error">
+          <div class="dialogue-title">
+            <admiralty-icon class="dialogue-title-icon" icon-name="exclamation"></admiralty-icon>
+            Test
+          </div>
+          Content
+        </section>
       </admiralty-dialogue>
     `);
   });
@@ -70,16 +61,13 @@ describe('admiralty-dialogue', () => {
     });
     expect(root).toEqualHtml(`
       <admiralty-dialogue type="success" heading="Test">
-        <mock:shadow-root>
-          <section class="dialogue success">
-            <div class="dialogue-title">
-              <admiralty-icon class="dialogue-title-icon" icon-name="check"></admiralty-icon>
-              Test
-            </div>
-            <slot></slot>
-          </section>
-        </mock:shadow-root>
-        Content
+        <section class="dialogue success">
+          <div class="dialogue-title">
+            <admiralty-icon class="dialogue-title-icon" icon-name="check"></admiralty-icon>
+            Test
+          </div>
+          Content
+        </section>
       </admiralty-dialogue>
     `);
   });
@@ -91,17 +79,14 @@ describe('admiralty-dialogue', () => {
     });
     expect(root).toEqualHtml(`
       <admiralty-dialogue type="warning" heading="Test">
-        <mock:shadow-root>
-          <section class="dialogue warning">
-            <div class="dialogue-title">
-              <admiralty-icon class="dialogue-title-icon" icon-name="triangle-exclamation"></admiralty-icon>
-              Test
-            </div>
-            <slot></slot>
-          </section>
-        </mock:shadow-root>
-        Content
-      </admiralty-dialogue>
+        <section class="dialogue warning">
+          <div class="dialogue-title">
+            <admiralty-icon class="dialogue-title-icon" icon-name="triangle-exclamation"></admiralty-icon>
+            Test
+          </div>
+          Content
+       </section>
+       </admiralty-dialogue>
     `);
   });
 });

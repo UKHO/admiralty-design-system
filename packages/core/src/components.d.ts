@@ -7,12 +7,22 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { ButtonVariant } from "./components/button/button.types";
 import { IconName, IconPrefix } from "@fortawesome/fontawesome-svg-core";
+import { CheckboxChangeEventDetail } from "./components/checkbox/checkbox.interface";
+import { FileInputChangeEventDetail } from "./components/file-input/file-input.interface";
 import { IconName as IconName1 } from "@fortawesome/free-solid-svg-icons";
 import { InputChangeEventDetail } from "./components/input/input.interface";
+import { RadioGroupChangeEventDetail } from "./components/radio-group/radio-group-interface";
+import { SelectChangeEventDetail } from "./components/select/select.interface";
+import { TextAreaChangeEventDetail } from "./components/textarea/textarea.interface";
 export { ButtonVariant } from "./components/button/button.types";
 export { IconName, IconPrefix } from "@fortawesome/fontawesome-svg-core";
+export { CheckboxChangeEventDetail } from "./components/checkbox/checkbox.interface";
+export { FileInputChangeEventDetail } from "./components/file-input/file-input.interface";
 export { IconName as IconName1 } from "@fortawesome/free-solid-svg-icons";
 export { InputChangeEventDetail } from "./components/input/input.interface";
+export { RadioGroupChangeEventDetail } from "./components/radio-group/radio-group-interface";
+export { SelectChangeEventDetail } from "./components/select/select.interface";
+export { TextAreaChangeEventDetail } from "./components/textarea/textarea.interface";
 export namespace Components {
     interface AdmiraltyBreadcrumb {
         /**
@@ -83,10 +93,6 @@ export namespace Components {
          */
         "actionText": string;
         /**
-          * The function to call when the action button is pressed.
-         */
-        "clickAction": () => any;
-        /**
           * The background colour of the component.
          */
         "colour": 'admiralty-blue' | 'teal' | 'bright-blue';
@@ -132,6 +138,14 @@ export namespace Components {
         "hideBorder": boolean;
     }
     interface AdmiraltyFileInput {
+        /**
+          * Whether to show that the file input is in an invalid state.
+         */
+        "invalid": boolean;
+        /**
+          * The message to show when the file input is invalid.
+         */
+        "invalidMessage": string;
         /**
           * Used to display instructions to the user and is replaced with the filename the user inputs
          */
@@ -209,6 +223,10 @@ export namespace Components {
          */
         "isSignedIn": boolean;
         /**
+          * A boolean to indicate if the component should hide the sign-out and account buttons, useful for internal sites where the user must be always signed in.
+         */
+        "signInOnly": boolean;
+        /**
           * The text that is displayed after the user signs in
          */
         "signedInText": string;
@@ -269,6 +287,10 @@ export namespace Components {
          */
         "label": string;
         /**
+          * The maximum string length for the input field.
+         */
+        "maxLength"?: number;
+        /**
           * The name of the control, which is submitted with the form data.
          */
         "name": string;
@@ -281,9 +303,9 @@ export namespace Components {
          */
         "required": boolean;
         /**
-          * The input type, options are: `text | date | time | email | password | tel | url`
+          * The input type, options are: text; number; date; time; email; password; tel; url
          */
-        "type": 'text' | 'date' | 'time' | 'email' | 'password' | 'tel' | 'url';
+        "type": 'text' | 'number' | 'date' | 'time' | 'email' | 'password' | 'tel' | 'url';
         /**
           * The value of the input.
          */
@@ -293,7 +315,7 @@ export namespace Components {
          */
         "width": number;
     }
-    interface AdmiraltyInputError {
+    interface AdmiraltyInputInvalid {
     }
     interface AdmiraltyLabel {
         /**
@@ -365,6 +387,10 @@ export namespace Components {
          */
         "disabled"?: boolean;
         /**
+          * Determines whether to add the invalid stying to the radio button
+         */
+        "invalid": boolean;
+        /**
           * The name of the radio button for use on selection within a radio group
          */
         "name": string;
@@ -380,6 +406,14 @@ export namespace Components {
          */
         "displayVertical": boolean;
         /**
+          * Whether to show the input in an invalid state
+         */
+        "invalid": boolean;
+        /**
+          * The message to show when the input is invalid
+         */
+        "invalidMessage": string;
+        /**
           * The name of the control, which is submitted with the form data
          */
         "name": string;
@@ -388,27 +422,37 @@ export namespace Components {
          */
         "value": any | null;
     }
+    interface AdmiraltyReadMore {
+        /**
+          * The text to display in the heading of the readmore component.
+         */
+        "heading": string;
+    }
     interface AdmiraltySelect {
         /**
           * If `true`, the user cannot interact with the select.
          */
         "disabled": boolean;
         /**
-          * If 'true', the 'error' class is added to suggest an error
-         */
-        "error": boolean;
-        /**
-          * The hint that is used to inform the user of an error (displayed below the select box)
-         */
-        "errorHint": string;
-        /**
           * The text that will be used as a field label.
          */
         "hint": string;
         /**
+          * Whether to show that the select is in an invalid state.
+         */
+        "invalid": boolean;
+        /**
+          * The message to show when the select is invalid.
+         */
+        "invalidMessage": string;
+        /**
           * The text that will be used as a field label.
          */
         "label": string;
+        /**
+          * The value of the input.
+         */
+        "value"?: string | number | null;
         /**
           * The maximum width (px) for the input field.
          */
@@ -435,6 +479,29 @@ export namespace Components {
         "sideNavItemId": string;
     }
     interface AdmiraltySideNavWrapper {
+    }
+    interface AdmiraltySkipLink {
+        /**
+          * The HTML ID that the skip link will jump to when activated.
+         */
+        "href": string;
+    }
+    interface AdmiraltyTab {
+        /**
+          * Tab label
+         */
+        "label": string;
+        /**
+          * Tab content Id.  To be set internally by parent tab group component.
+         */
+        "tabContentId": string;
+        /**
+          * Tab label Id.  To be set internally by parent tab group component.
+         */
+        "tabLabelId": string;
+    }
+    interface AdmiraltyTabGroup {
+        "selectedIndex": number;
     }
     /**
      * Use tables to make information easier for users to scan and compare
@@ -489,15 +556,23 @@ export namespace Components {
          */
         "label": string;
         /**
-          * The contents of the textarea
+          * The maximum string length for the input field.
          */
-        "text": string;
+        "maxLength"?: number;
+        /**
+          * The value of the textarea.
+         */
+        "value"?: string | number | null;
         /**
           * The maximum width for the input field.
          */
         "width"?: number;
     }
     interface AdmiraltyTypeAhead {
+        /**
+          * The hint which will be used under the label to describe the input.
+         */
+        "hint": string;
         /**
           * The text content of the label for the input box
          */
@@ -522,6 +597,10 @@ export namespace Components {
 export interface AdmiraltyCheckboxCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLAdmiraltyCheckboxElement;
+}
+export interface AdmiraltyColourBlockCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLAdmiraltyColourBlockElement;
 }
 export interface AdmiraltyExpansionCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -567,6 +646,10 @@ export interface AdmiraltyRadioGroupCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLAdmiraltyRadioGroupElement;
 }
+export interface AdmiraltyReadMoreCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLAdmiraltyReadMoreElement;
+}
 export interface AdmiraltySelectCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLAdmiraltySelectElement;
@@ -574,6 +657,10 @@ export interface AdmiraltySelectCustomEvent<T> extends CustomEvent<T> {
 export interface AdmiraltySideNavItemCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLAdmiraltySideNavItemElement;
+}
+export interface AdmiraltyTabGroupCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLAdmiraltyTabGroupElement;
 }
 export interface AdmiraltyTextareaCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -710,11 +797,11 @@ declare global {
         prototype: HTMLAdmiraltyInputElement;
         new (): HTMLAdmiraltyInputElement;
     };
-    interface HTMLAdmiraltyInputErrorElement extends Components.AdmiraltyInputError, HTMLStencilElement {
+    interface HTMLAdmiraltyInputInvalidElement extends Components.AdmiraltyInputInvalid, HTMLStencilElement {
     }
-    var HTMLAdmiraltyInputErrorElement: {
-        prototype: HTMLAdmiraltyInputErrorElement;
-        new (): HTMLAdmiraltyInputErrorElement;
+    var HTMLAdmiraltyInputInvalidElement: {
+        prototype: HTMLAdmiraltyInputInvalidElement;
+        new (): HTMLAdmiraltyInputInvalidElement;
     };
     interface HTMLAdmiraltyLabelElement extends Components.AdmiraltyLabel, HTMLStencilElement {
     }
@@ -764,6 +851,12 @@ declare global {
         prototype: HTMLAdmiraltyRadioGroupElement;
         new (): HTMLAdmiraltyRadioGroupElement;
     };
+    interface HTMLAdmiraltyReadMoreElement extends Components.AdmiraltyReadMore, HTMLStencilElement {
+    }
+    var HTMLAdmiraltyReadMoreElement: {
+        prototype: HTMLAdmiraltyReadMoreElement;
+        new (): HTMLAdmiraltyReadMoreElement;
+    };
     interface HTMLAdmiraltySelectElement extends Components.AdmiraltySelect, HTMLStencilElement {
     }
     var HTMLAdmiraltySelectElement: {
@@ -787,6 +880,24 @@ declare global {
     var HTMLAdmiraltySideNavWrapperElement: {
         prototype: HTMLAdmiraltySideNavWrapperElement;
         new (): HTMLAdmiraltySideNavWrapperElement;
+    };
+    interface HTMLAdmiraltySkipLinkElement extends Components.AdmiraltySkipLink, HTMLStencilElement {
+    }
+    var HTMLAdmiraltySkipLinkElement: {
+        prototype: HTMLAdmiraltySkipLinkElement;
+        new (): HTMLAdmiraltySkipLinkElement;
+    };
+    interface HTMLAdmiraltyTabElement extends Components.AdmiraltyTab, HTMLStencilElement {
+    }
+    var HTMLAdmiraltyTabElement: {
+        prototype: HTMLAdmiraltyTabElement;
+        new (): HTMLAdmiraltyTabElement;
+    };
+    interface HTMLAdmiraltyTabGroupElement extends Components.AdmiraltyTabGroup, HTMLStencilElement {
+    }
+    var HTMLAdmiraltyTabGroupElement: {
+        prototype: HTMLAdmiraltyTabGroupElement;
+        new (): HTMLAdmiraltyTabGroupElement;
     };
     /**
      * Use tables to make information easier for users to scan and compare
@@ -881,7 +992,7 @@ declare global {
         "admiralty-hr": HTMLAdmiraltyHrElement;
         "admiralty-icon": HTMLAdmiraltyIconElement;
         "admiralty-input": HTMLAdmiraltyInputElement;
-        "admiralty-input-error": HTMLAdmiraltyInputErrorElement;
+        "admiralty-input-invalid": HTMLAdmiraltyInputInvalidElement;
         "admiralty-label": HTMLAdmiraltyLabelElement;
         "admiralty-link": HTMLAdmiraltyLinkElement;
         "admiralty-paginator": HTMLAdmiraltyPaginatorElement;
@@ -890,10 +1001,14 @@ declare global {
         "admiralty-progress-bar": HTMLAdmiraltyProgressBarElement;
         "admiralty-radio": HTMLAdmiraltyRadioElement;
         "admiralty-radio-group": HTMLAdmiraltyRadioGroupElement;
+        "admiralty-read-more": HTMLAdmiraltyReadMoreElement;
         "admiralty-select": HTMLAdmiraltySelectElement;
         "admiralty-side-nav": HTMLAdmiraltySideNavElement;
         "admiralty-side-nav-item": HTMLAdmiraltySideNavItemElement;
         "admiralty-side-nav-wrapper": HTMLAdmiraltySideNavWrapperElement;
+        "admiralty-skip-link": HTMLAdmiraltySkipLinkElement;
+        "admiralty-tab": HTMLAdmiraltyTabElement;
+        "admiralty-tab-group": HTMLAdmiraltyTabGroupElement;
         "admiralty-table": HTMLAdmiraltyTableElement;
         "admiralty-table-body": HTMLAdmiraltyTableBodyElement;
         "admiralty-table-cell": HTMLAdmiraltyTableCellElement;
@@ -965,15 +1080,15 @@ declare namespace LocalJSX {
          */
         "name"?: string;
         /**
+          * Event is fired when the form control changes state
+          * @event admiraltyChange
+         */
+        "onAdmiraltyChange"?: (event: AdmiraltyCheckboxCustomEvent<CheckboxChangeEventDetail>) => void;
+        /**
           * Event is fired when the form control loses focus
           * @event checkboxBlur
          */
         "onCheckboxBlur"?: (event: AdmiraltyCheckboxCustomEvent<any>) => void;
-        /**
-          * Event is fired when the form control changes state
-          * @event radioChanges
-         */
-        "onCheckboxChange"?: (event: AdmiraltyCheckboxCustomEvent<any>) => void;
         /**
           * Event is fired when the form control gains focus
           * @event checkboxFocus
@@ -990,10 +1105,6 @@ declare namespace LocalJSX {
          */
         "actionText"?: string;
         /**
-          * The function to call when the action button is pressed.
-         */
-        "clickAction"?: () => any;
-        /**
           * The background colour of the component.
          */
         "colour"?: 'admiralty-blue' | 'teal' | 'bright-blue';
@@ -1005,6 +1116,10 @@ declare namespace LocalJSX {
           * The height in pixels of the component.
          */
         "height"?: number;
+        /**
+          * An event emitted when this Colour Block link is clicked
+         */
+        "onColourBlockLinkClicked"?: (event: AdmiraltyColourBlockCustomEvent<string>) => void;
         /**
           * The width in pixels of the component.
          */
@@ -1044,6 +1159,14 @@ declare namespace LocalJSX {
     }
     interface AdmiraltyFileInput {
         /**
+          * Whether to show that the file input is in an invalid state.
+         */
+        "invalid"?: boolean;
+        /**
+          * The message to show when the file input is invalid.
+         */
+        "invalidMessage"?: string;
+        /**
           * Used to display instructions to the user and is replaced with the filename the user inputs
          */
         "label"?: string;
@@ -1054,7 +1177,7 @@ declare namespace LocalJSX {
         /**
           * Emitted when the added file(s) changes
          */
-        "onFileInputChange"?: (event: AdmiraltyFileInputCustomEvent<File[]>) => void;
+        "onFileInputChange"?: (event: AdmiraltyFileInputCustomEvent<FileInputChangeEventDetail>) => void;
     }
     interface AdmiraltyFilter {
         /**
@@ -1152,6 +1275,10 @@ declare namespace LocalJSX {
          */
         "onYourAccountClicked"?: (event: AdmiraltyHeaderProfileCustomEvent<void>) => void;
         /**
+          * A boolean to indicate if the component should hide the sign-out and account buttons, useful for internal sites where the user must be always signed in.
+         */
+        "signInOnly"?: boolean;
+        /**
           * The text that is displayed after the user signs in
          */
         "signedInText"?: string;
@@ -1162,9 +1289,9 @@ declare namespace LocalJSX {
          */
         "menuTitle"?: string;
         /**
-          * The event that is fired when a user clicks on the menu
+          * The event that is fired when a user clicks on the menu. Event contains the menu item text.
          */
-        "onSubMenuItemClick"?: (event: AdmiraltyHeaderSubMenuItemCustomEvent<void>) => void;
+        "onSubMenuItemClick"?: (event: AdmiraltyHeaderSubMenuItemCustomEvent<string>) => void;
     }
     interface AdmiraltyHint {
         /**
@@ -1216,13 +1343,17 @@ declare namespace LocalJSX {
          */
         "label"?: string;
         /**
+          * The maximum string length for the input field.
+         */
+        "maxLength"?: number;
+        /**
           * The name of the control, which is submitted with the form data.
          */
         "name"?: string;
         /**
           * Emitted when the value has changed.
          */
-        "onAdmiraltyChange"?: (event: AdmiraltyInputCustomEvent<InputChangeEventDetail>) => void;
+        "onAdmiraltyInput"?: (event: AdmiraltyInputCustomEvent<InputChangeEventDetail>) => void;
         /**
           * The placeholder text to show in the input
          */
@@ -1232,9 +1363,9 @@ declare namespace LocalJSX {
          */
         "required"?: boolean;
         /**
-          * The input type, options are: `text | date | time | email | password | tel | url`
+          * The input type, options are: text; number; date; time; email; password; tel; url
          */
-        "type"?: 'text' | 'date' | 'time' | 'email' | 'password' | 'tel' | 'url';
+        "type"?: 'text' | 'number' | 'date' | 'time' | 'email' | 'password' | 'tel' | 'url';
         /**
           * The value of the input.
          */
@@ -1244,7 +1375,7 @@ declare namespace LocalJSX {
          */
         "width"?: number;
     }
-    interface AdmiraltyInputError {
+    interface AdmiraltyInputInvalid {
     }
     interface AdmiraltyLabel {
         /**
@@ -1320,6 +1451,10 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
         /**
+          * Determines whether to add the invalid stying to the radio button
+         */
+        "invalid"?: boolean;
+        /**
           * The name of the radio button for use on selection within a radio group
          */
         "name"?: string;
@@ -1327,6 +1462,10 @@ declare namespace LocalJSX {
           * Emitted when the radio button loses focus.
          */
         "onAdmiraltyBlur"?: (event: AdmiraltyRadioCustomEvent<void>) => void;
+        /**
+          * Emitted when the radio is selected
+         */
+        "onAdmiraltyChange"?: (event: AdmiraltyRadioCustomEvent<void>) => void;
         /**
           * Emitted when the radio button gains focus.
          */
@@ -1342,17 +1481,35 @@ declare namespace LocalJSX {
          */
         "displayVertical"?: boolean;
         /**
+          * Whether to show the input in an invalid state
+         */
+        "invalid"?: boolean;
+        /**
+          * The message to show when the input is invalid
+         */
+        "invalidMessage"?: string;
+        /**
           * The name of the control, which is submitted with the form data
          */
         "name"?: string;
         /**
           * Event fired when the checked radio button changes
          */
-        "onRadioChange"?: (event: AdmiraltyRadioGroupCustomEvent<any>) => void;
+        "onAdmiraltyChange"?: (event: AdmiraltyRadioGroupCustomEvent<RadioGroupChangeEventDetail>) => void;
         /**
           * The value of the radio group
          */
         "value"?: any | null;
+    }
+    interface AdmiraltyReadMore {
+        /**
+          * The text to display in the heading of the readmore component.
+         */
+        "heading"?: string;
+        /**
+          * The event that is dispatched when the expanded status is toggled.
+         */
+        "onAdmiraltyToggled"?: (event: AdmiraltyReadMoreCustomEvent<boolean>) => void;
     }
     interface AdmiraltySelect {
         /**
@@ -1360,17 +1517,17 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
         /**
-          * If 'true', the 'error' class is added to suggest an error
-         */
-        "error"?: boolean;
-        /**
-          * The hint that is used to inform the user of an error (displayed below the select box)
-         */
-        "errorHint"?: string;
-        /**
           * The text that will be used as a field label.
          */
         "hint"?: string;
+        /**
+          * Whether to show that the select is in an invalid state.
+         */
+        "invalid"?: boolean;
+        /**
+          * The message to show when the select is invalid.
+         */
+        "invalidMessage"?: string;
         /**
           * The text that will be used as a field label.
          */
@@ -1382,7 +1539,11 @@ declare namespace LocalJSX {
         /**
           * Emitted when the value has changed.
          */
-        "onAdmiraltyChange"?: (event: AdmiraltySelectCustomEvent<EventTarget>) => void;
+        "onAdmiraltyChange"?: (event: AdmiraltySelectCustomEvent<SelectChangeEventDetail>) => void;
+        /**
+          * The value of the input.
+         */
+        "value"?: string | number | null;
         /**
           * The maximum width (px) for the input field.
          */
@@ -1413,6 +1574,30 @@ declare namespace LocalJSX {
         "sideNavItemId"?: string;
     }
     interface AdmiraltySideNavWrapper {
+    }
+    interface AdmiraltySkipLink {
+        /**
+          * The HTML ID that the skip link will jump to when activated.
+         */
+        "href"?: string;
+    }
+    interface AdmiraltyTab {
+        /**
+          * Tab label
+         */
+        "label"?: string;
+        /**
+          * Tab content Id.  To be set internally by parent tab group component.
+         */
+        "tabContentId"?: string;
+        /**
+          * Tab label Id.  To be set internally by parent tab group component.
+         */
+        "tabLabelId"?: string;
+    }
+    interface AdmiraltyTabGroup {
+        "onAdmiraltyTabSelected"?: (event: AdmiraltyTabGroupCustomEvent<number>) => void;
+        "selectedIndex"?: number;
     }
     /**
      * Use tables to make information easier for users to scan and compare
@@ -1467,25 +1652,33 @@ declare namespace LocalJSX {
          */
         "label"?: string;
         /**
+          * The maximum string length for the input field.
+         */
+        "maxLength"?: number;
+        /**
+          * Event is fired when the form control changes
+          * @event admiraltyChange
+         */
+        "onAdmiraltyInput"?: (event: AdmiraltyTextareaCustomEvent<TextAreaChangeEventDetail>) => void;
+        /**
           * Event is fired when the form control loses focus
           * @event textareaBlur
          */
         "onTextareaBlur"?: (event: AdmiraltyTextareaCustomEvent<any>) => void;
         /**
-          * Event is fired when the form control changes
-          * @event textareaChanged
+          * The value of the textarea.
          */
-        "onTextareaChanged"?: (event: AdmiraltyTextareaCustomEvent<string>) => void;
-        /**
-          * The contents of the textarea
-         */
-        "text"?: string;
+        "value"?: string | number | null;
         /**
           * The maximum width for the input field.
          */
         "width"?: number;
     }
     interface AdmiraltyTypeAhead {
+        /**
+          * The hint which will be used under the label to describe the input.
+         */
+        "hint"?: string;
         /**
           * The text content of the label for the input box
          */
@@ -1512,7 +1705,7 @@ declare namespace LocalJSX {
         "value"?: string;
     }
     interface AdmiraltyTypeAheadItem {
-        "value": string;
+        "value"?: string;
     }
     interface IntrinsicElements {
         "admiralty-breadcrumb": AdmiraltyBreadcrumb;
@@ -1535,7 +1728,7 @@ declare namespace LocalJSX {
         "admiralty-hr": AdmiraltyHr;
         "admiralty-icon": AdmiraltyIcon;
         "admiralty-input": AdmiraltyInput;
-        "admiralty-input-error": AdmiraltyInputError;
+        "admiralty-input-invalid": AdmiraltyInputInvalid;
         "admiralty-label": AdmiraltyLabel;
         "admiralty-link": AdmiraltyLink;
         "admiralty-paginator": AdmiraltyPaginator;
@@ -1544,10 +1737,14 @@ declare namespace LocalJSX {
         "admiralty-progress-bar": AdmiraltyProgressBar;
         "admiralty-radio": AdmiraltyRadio;
         "admiralty-radio-group": AdmiraltyRadioGroup;
+        "admiralty-read-more": AdmiraltyReadMore;
         "admiralty-select": AdmiraltySelect;
         "admiralty-side-nav": AdmiraltySideNav;
         "admiralty-side-nav-item": AdmiraltySideNavItem;
         "admiralty-side-nav-wrapper": AdmiraltySideNavWrapper;
+        "admiralty-skip-link": AdmiraltySkipLink;
+        "admiralty-tab": AdmiraltyTab;
+        "admiralty-tab-group": AdmiraltyTabGroup;
         "admiralty-table": AdmiraltyTable;
         "admiralty-table-body": AdmiraltyTableBody;
         "admiralty-table-cell": AdmiraltyTableCell;
@@ -1589,7 +1786,7 @@ declare module "@stencil/core" {
              * and checkbox.
              */
             "admiralty-input": LocalJSX.AdmiraltyInput & JSXBase.HTMLAttributes<HTMLAdmiraltyInputElement>;
-            "admiralty-input-error": LocalJSX.AdmiraltyInputError & JSXBase.HTMLAttributes<HTMLAdmiraltyInputErrorElement>;
+            "admiralty-input-invalid": LocalJSX.AdmiraltyInputInvalid & JSXBase.HTMLAttributes<HTMLAdmiraltyInputInvalidElement>;
             "admiralty-label": LocalJSX.AdmiraltyLabel & JSXBase.HTMLAttributes<HTMLAdmiraltyLabelElement>;
             "admiralty-link": LocalJSX.AdmiraltyLink & JSXBase.HTMLAttributes<HTMLAdmiraltyLinkElement>;
             "admiralty-paginator": LocalJSX.AdmiraltyPaginator & JSXBase.HTMLAttributes<HTMLAdmiraltyPaginatorElement>;
@@ -1598,10 +1795,14 @@ declare module "@stencil/core" {
             "admiralty-progress-bar": LocalJSX.AdmiraltyProgressBar & JSXBase.HTMLAttributes<HTMLAdmiraltyProgressBarElement>;
             "admiralty-radio": LocalJSX.AdmiraltyRadio & JSXBase.HTMLAttributes<HTMLAdmiraltyRadioElement>;
             "admiralty-radio-group": LocalJSX.AdmiraltyRadioGroup & JSXBase.HTMLAttributes<HTMLAdmiraltyRadioGroupElement>;
+            "admiralty-read-more": LocalJSX.AdmiraltyReadMore & JSXBase.HTMLAttributes<HTMLAdmiraltyReadMoreElement>;
             "admiralty-select": LocalJSX.AdmiraltySelect & JSXBase.HTMLAttributes<HTMLAdmiraltySelectElement>;
             "admiralty-side-nav": LocalJSX.AdmiraltySideNav & JSXBase.HTMLAttributes<HTMLAdmiraltySideNavElement>;
             "admiralty-side-nav-item": LocalJSX.AdmiraltySideNavItem & JSXBase.HTMLAttributes<HTMLAdmiraltySideNavItemElement>;
             "admiralty-side-nav-wrapper": LocalJSX.AdmiraltySideNavWrapper & JSXBase.HTMLAttributes<HTMLAdmiraltySideNavWrapperElement>;
+            "admiralty-skip-link": LocalJSX.AdmiraltySkipLink & JSXBase.HTMLAttributes<HTMLAdmiraltySkipLinkElement>;
+            "admiralty-tab": LocalJSX.AdmiraltyTab & JSXBase.HTMLAttributes<HTMLAdmiraltyTabElement>;
+            "admiralty-tab-group": LocalJSX.AdmiraltyTabGroup & JSXBase.HTMLAttributes<HTMLAdmiraltyTabGroupElement>;
             /**
              * Use tables to make information easier for users to scan and compare
              */

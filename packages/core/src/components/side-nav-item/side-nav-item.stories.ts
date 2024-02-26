@@ -1,25 +1,34 @@
-import { Story } from '@storybook/html';
-import readme from './readme.md';
+import { Meta, StoryObj } from '@storybook/web-components';
+import { SideNavItemComponent } from './side-nav-item';
+import { html } from 'lit';
 
-export default {
+const meta: Meta = {
+  component: 'admiralty-side-nav-item',
   title: 'Side Nav Item',
   parameters: {
-    markdown: readme,
+    actions: {
+    }
   },
   args: {
     headingTitle: 'alpha',
-    navActive: false,
-  },
+    navActive: false
+  }
 };
 
-const Template: Story = args => {
-  return `<admiralty-side-nav-item heading-title="${args.headingTitle}" nav-active="${args.navActive}">
-  </admiralty-side-nav-item>`;
+export default meta;
+
+type Story = StoryObj<SideNavItemComponent>;
+
+const template: Story = {
+  render: args => html`
+    <admiralty-side-nav-item heading-title="${args.headingTitle}" ?nav-active="${args.navActive}">
+    </admiralty-side-nav-item>`,
 };
 
-export const Basic: Story = Template.bind({});
+export const Basic: Story = { ...template };
 
-export const NavActive: Story = Template.bind({});
-NavActive.args = {
-  navActive: true,
+export const NavActive: Story = { ...template,
+  args: {
+    navActive: true
+  }
 };

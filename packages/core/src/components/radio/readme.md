@@ -11,16 +11,18 @@
 | ---------- | ---------- | -------------------------------------------------------------------------------------------------------------- | --------- | -------------- |
 | `checked`  | `checked`  | Determines whether the radio button is selected (or checked)                                                   | `boolean` | `false`        |
 | `disabled` | `disabled` | Determines whether the radio button is disabled. A button in disabled state will not fire click output events. | `boolean` | `false`        |
+| `invalid`  | `invalid`  | Determines whether to add the invalid stying to the radio button                                               | `boolean` | `false`        |
 | `name`     | `name`     | The name of the radio button for use on selection within a radio group                                         | `string`  | `this.inputId` |
 | `value`    | `value`    | The value of the radio button for use on selection within a radio group                                        | `string`  | `undefined`    |
 
 
 ## Events
 
-| Event            | Description                                | Type                |
-| ---------------- | ------------------------------------------ | ------------------- |
-| `admiraltyBlur`  | Emitted when the radio button loses focus. | `CustomEvent<void>` |
-| `admiraltyFocus` | Emitted when the radio button gains focus. | `CustomEvent<void>` |
+| Event             | Description                                | Type                |
+| ----------------- | ------------------------------------------ | ------------------- |
+| `admiraltyBlur`   | Emitted when the radio button loses focus. | `CustomEvent<void>` |
+| `admiraltyChange` | Emitted when the radio is selected         | `CustomEvent<void>` |
+| `admiraltyFocus`  | Emitted when the radio button gains focus. | `CustomEvent<void>` |
 
 
 ----------------------------------------------

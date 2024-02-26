@@ -39,9 +39,9 @@ export class InputComponent implements ComponentInterface {
   @Prop() disabled = false;
 
   /**
-   * The input type, options are: `text | date | time | email | password | tel | url`
+   * The input type, options are: text; number; date; time; email; password; tel; url
    */
-  @Prop() type: 'text' | 'date' | 'time' | 'email' | 'password' | 'tel' | 'url' = 'text';
+  @Prop() type: 'text' | 'number' | 'date' | 'time' | 'email' | 'password' | 'tel' | 'url' = 'text';
 
   /**
    * The placeholder text to show in the input
@@ -52,6 +52,11 @@ export class InputComponent implements ComponentInterface {
    * The maximum width for the input field.
    */
   @Prop() width: number;
+
+  /**
+   * The maximum string length for the input field.
+   */
+  @Prop() maxLength?: number;
 
   /**
    * This dictates whether the input is required or not
@@ -81,7 +86,7 @@ export class InputComponent implements ComponentInterface {
   /**
    * Emitted when the value has changed.
    */
-  @Event() admiraltyChange: EventEmitter<InputChangeEventDetail>;
+  @Event() admiraltyInput: EventEmitter<InputChangeEventDetail>;
 
   /**
    * Update the native input element when the value changes
@@ -93,7 +98,7 @@ export class InputComponent implements ComponentInterface {
     if (nativeInput && nativeInput.value !== value) {
       nativeInput.value = value;
     }
-    this.admiraltyChange.emit({ value: this.value == null ? this.getValue() : this.value.toString() });
+    this.admiraltyInput.emit({ value: this.value == null ? this.getValue() : this.value.toString() });
   }
 
   private onInput = (ev: Event) => {
@@ -119,11 +124,13 @@ export class InputComponent implements ComponentInterface {
         {this.hint ? <admiralty-hint disabled={this.disabled}>{this.hint}</admiralty-hint> : null}
         <input
           ref={input => (this.nativeInput = input)}
+          class={{ disabled: this.disabled, invalid: this.invalid }}
           disabled={this.disabled}
           id={this.inputId}
           name={this.name}
           type={this.type}
           value={value}
+          maxLength={this.maxLength}
           onInput={this.onInput}
           placeholder={this.placeholder}
           autoComplete={this.autocomplete}
@@ -132,7 +139,7 @@ export class InputComponent implements ComponentInterface {
             maxWidth: this.width ? `${this.width}px` : null,
           }}
         />
-        {this.invalid ? <admiralty-input-error>{this.invalidMessage}</admiralty-input-error> : null}
+        <admiralty-input-invalid style={{ visibility: this.invalid && this.invalidMessage ? 'visible' : 'hidden' }}>{this.invalidMessage}</admiralty-input-invalid>
       </div>
     );
   }

@@ -1,0 +1,47 @@
+@use "../../scss/vars/colours";
+@use "../../scss/vars/typography";
+
+section.expansion {
+  padding: 2px 0;
+
+  .expansion-content {
+    display: none;
+    max-height: 0;
+    overflow: visible;
+    border-left: 4px solid colours.$colour-utility-info;
+  }
+  &.expanded .expansion-content {
+    display: block;
+    max-height: initial;
+    padding: 2px 5px;
+  }
+
+  button {
+    background-color: transparent;
+    border: none;
+    white-space: unset;
+    color: initial;
+    cursor: pointer;
+    margin: 8px 0px;
+    padding: 4px;
+    align-items: baseline;
+    text-align: left;
+    text-decoration: underline;
+
+    &.expanded span {
+      font-weight: typography.$font-weight-medium;
+    }
+
+    .expansion-heading-icon {
+      margin-left: 5px;
+      margin-right: 8px;
+      vertical-align: top;
+    }
+
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px colours.$colour-utility-focus;
+    }
+  }
+}

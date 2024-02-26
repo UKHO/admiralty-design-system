@@ -1,24 +1,22 @@
-import { Component, Host, h, Prop, Event, EventEmitter } from '@stencil/core';
+import { Component, Host, h, Prop, Event, EventEmitter, Watch } from '@stencil/core';
+import { TextAreaChangeEventDetail } from './textarea.interface';
 
 let textareaIds = 0;
 
 @Component({
   tag: 'admiralty-textarea',
   styleUrl: 'textarea.scss',
-  shadow: true,
+  scoped: true,
 })
 export class TextareaComponent {
   private inputId = `admiralty-textarea-${textareaIds++}`;
+
+  private nativeTextArea?: HTMLTextAreaElement;
 
   /**
    * The label which will be used as a placeholder in the unfilled state, and as a field label in the filled state.
    */
   @Prop() label: string = '';
-
-  /**
-   * The contents of the textarea
-   */
-  @Prop() text: string = '';
 
   /**
    * The hint which will be used under the label to describe the input.
@@ -29,6 +27,11 @@ export class TextareaComponent {
    * The maximum width for the input field.
    */
   @Prop() width?: number;
+
+  /**
+   * The maximum string length for the input field.
+   */
+  @Prop() maxLength?: number;
 
   /**
    * This dictates whether the form field is disabled.
@@ -53,18 +56,45 @@ export class TextareaComponent {
 
   /**
    * Event is fired when the form control changes
-   * @event textareaChanged
+   * @event admiraltyChange
    */
-  @Event({ eventName: 'textareaChanged' }) textareaChanged: EventEmitter<string>;
+  @Event() admiraltyInput: EventEmitter<TextAreaChangeEventDetail>;
+
+  /**
+   * The value of the textarea.
+   */
+  @Prop({ mutable: true }) value?: string | number | null = '';
+
+  /**
+   * Update the native textarea element when the value changes
+   */
+  @Watch('value')
+  protected valueChanged() {
+    const nativeInput = this.nativeTextArea;
+    const value = this.getValue();
+    if (nativeInput && nativeInput.value !== value) {
+      nativeInput.value = value;
+    }
+    this.admiraltyInput.emit({ value: this.value == null ? this.getValue() : this.value.toString() });
+  }
 
   private onBlur = () => {
     this.textareaBlur.emit();
   };
 
-  private onChange = (_ev: any) => {
-    this.textareaChanged.emit(this.text);
+  private onInput = (ev: Event) => {
+    const input = ev.target as HTMLInputElement | null;
+    if (input) {
+      this.value = input.value || '';
+    }
   };
+
+  private getValue(): string {
+    return typeof this.value === 'number' ? this.value.toString() : (this.value || '').toString();
+  }
+
   render() {
+    const value = this.getValue();
     return (
       <Host>
         <div class="text-area-container">
@@ -75,15 +105,16 @@ export class TextareaComponent {
           ) : null}
           {this.hint ? <admiralty-hint disabled={this.disabled}>{this.hint}</admiralty-hint> : null}
           <textarea
+            ref={textArea => (this.nativeTextArea = textArea)}
             class={{ disabled: this.disabled, invalid: this.invalid }}
             style={this.width ? { maxWidth: `${this.width}px` } : {}}
             id={this.inputId}
-            onChange={this.onChange}
+            value={value}
+            maxLength={this.maxLength}
+            onInput={this.onInput}
             onBlur={this.onBlur}
-          >
-            {this.text}
-          </textarea>
-          {this.invalid ? <admiralty-input-error>{this.invalidMessage}</admiralty-input-error> : null}
+          ></textarea>
+          <admiralty-input-invalid style={{ visibility: this.invalid && this.invalidMessage ? 'visible' : 'hidden' }}>{this.invalidMessage}</admiralty-input-invalid>
         </div>
       </Host>
     );

@@ -1,11 +1,12 @@
-@use "../../scss/vars/colours";
-@use "../../scss/vars/typography";
+@use '../../scss/vars/colours';
+@use '../../scss/vars/typography';
 
 .text-input-container {
   display: flex;
   flex-direction: column;
 
   input {
+    background-color: colours.$colour-white;
     border-color: colours.$colour-text;
     border-width: 2px;
     border-style: solid;
@@ -18,15 +19,6 @@
 
     &:focus {
       outline-offset: unset;
-      outline: 3px solid colours.$colour-utility-focus;
-      box-shadow: colours.$colour-text inset 0 0 0 2px;
-    }
-  }
-
-  .form-field {
-    background-color: colours.$colour-white;
-
-    &:focus-visible {
       outline: 3px solid colours.$colour-utility-focus;
       box-shadow: colours.$colour-text inset 0 0 0 2px;
     }
@@ -47,7 +39,7 @@
     }
   }
 
-  admiralty-input-error {
+  admiralty-input-invalid {
     margin-top: 6px;
   }
 }

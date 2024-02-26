@@ -1,9 +1,10 @@
 import { Component, EventEmitter, Event, Host, h, Prop, Watch } from '@stencil/core';
+import { CheckboxChangeEventDetail } from './checkbox.interface';
 
 @Component({
   tag: 'admiralty-checkbox',
   styleUrl: 'checkbox.scss',
-  shadow: true,
+  scoped: true,
 })
 export class CheckboxComponent {
   private inputId = `admiralty-${checkboxIds++}`;
@@ -44,9 +45,9 @@ export class CheckboxComponent {
 
   /**
    * Event is fired when the form control changes state
-   * @event radioChanges
+   * @event admiraltyChange
    */
-  @Event() checkboxChange: EventEmitter<any>;
+  @Event() admiraltyChange: EventEmitter<CheckboxChangeEventDetail>;
 
   /**
    * Event is fired when the form control gains focus
@@ -62,7 +63,7 @@ export class CheckboxComponent {
 
   @Watch('checked')
   checkedChanged(isChecked: boolean) {
-    this.checkboxChange.emit({
+    this.admiraltyChange.emit({
       checked: isChecked,
       value: this.value,
     });

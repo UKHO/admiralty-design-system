@@ -1,57 +1,64 @@
-import { Story } from '@storybook/html';
-import readme from './readme.md';
+import { Meta, StoryObj } from '@storybook/web-components';
 import { TextareaComponent } from './textarea';
+import { html } from 'lit';
 
-export default {
+const meta: Meta = {
+  component: 'admiralty-side-nav-item',
   title: 'Forms/Text Area',
   parameters: {
-    markdown: readme,
+    actions: {},
   },
 };
 
-const template: Story = args => {
-  return `
-  <admiralty-textarea label="${args.label}" width="${args.width}" hint="${args.hint}"></admiralty-textarea>`;
+export default meta;
+
+type Story = StoryObj<TextareaComponent>;
+
+export const Basic: Story = {
+  render: args => html` <admiralty-textarea label="${args.label}" hint="${args.hint}"> </admiralty-textarea>`,
+  args: {
+    label: 'Description',
+    hint: 'Enter a description',
+  },
 };
 
-export const Basic: Story = template.bind({});
-Basic.args = {
-  label: 'Description',
-  hint: 'Enter a description',
+export const FixedWidth: Story = {
+  render: args => html` <admiralty-textarea label="${args.label}" width="${args.width}"> </admiralty-textarea>`,
+  args: {
+    label: 'Description',
+    width: 400,
+  },
 };
 
-export const FixedWidth: Story = args => {
-  return `
-  <admiralty-textarea label="${args.label}" width="${args.width}"></admiralty-textarea>`;
-};
-FixedWidth.args = {
-  label: 'Description',
-  width: 400,
-};
-
-export const Disabled: Story = args => {
-  return `
-  <admiralty-textarea label="${args.label}" disabled="${args.disabled}"></admiralty-textarea>`;
-};
-Disabled.args = {
-  label: 'Description',
-  disabled: true,
+export const Disabled: Story = {
+  render: args => html` <admiralty-textarea label="${args.label}" ?disabled="${args.disabled}"> </admiralty-textarea>`,
+  args: {
+    label: 'Description',
+    disabled: true,
+  },
 };
 
-export const Invalid: Story<TextareaComponent> = args => {
-  return `<admiralty-textarea label="${args.label}" invalid="${args.invalid}" invalid-message="${args.invalidMessage}"></admiralty-input>`;
-};
-Invalid.args = {
-  label: 'What is your name?',
-  invalid: true,
-  invalidMessage: 'That is not a real name',
+export const Invalid: Story = {
+  render: args => html` <admiralty-textarea label="${args.label}" ?invalid="${args.invalid}" invalid-message="${args.invalidMessage}"> </admiralty-textarea>`,
+  args: {
+    label: 'What is your name?',
+    invalid: true,
+    invalidMessage: 'That is not a real name',
+  },
 };
 
-export const WithText: Story = args => {
-  return `
-  <admiralty-textarea label="${args.label}" width="${args.width}" text="${args.text}"></admiralty-textarea>`;
+export const WithText: Story = {
+  render: args => html` <admiralty-textarea label="${args.label}" value="${args.value}"> </admiralty-textarea>`,
+  args: {
+    label: 'With text',
+    value: 'Sample Text',
+  },
 };
-WithText.args = {
-  label: 'With text',
-  text: 'Sample Text',
+
+export const MaxLength: Story = {
+  render: args => html` <admiralty-textarea value="${args.value}" max-length="${args.maxLength}"> </admiralty-textarea>`,
+  args: {
+    maxLength: 1,
+    value: 'A',
+  },
 };

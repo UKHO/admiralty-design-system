@@ -9,12 +9,8 @@ describe('admiralty-breadcrumb', () => {
     });
     expect(root).toEqualHtml(`
       <admiralty-breadcrumb>
-        <mock:shadow-root>
-           <admiralty-icon class="breadcrumb-icon" icon-name="chevron-right"></admiralty-icon>
-           <a href="#">
-             <slot></slot>
-           </a>
-        </mock:shadow-root>
+        <admiralty-icon class="breadcrumb-icon" icon-name="chevron-right"></admiralty-icon>
+        <a href="#"></a>
       </admiralty-breadcrumb>
     `);
   });
@@ -26,13 +22,10 @@ describe('admiralty-breadcrumb', () => {
     });
     expect(root).toEqualHtml(`
       <admiralty-breadcrumb href="https://www.example.com">
-        <mock:shadow-root>
-           <admiralty-icon class="breadcrumb-icon" icon-name="chevron-right"></admiralty-icon>
-           <a href="https://www.example.com">
-             <slot></slot>
-           </a>
-        </mock:shadow-root>
-        Test
+        <admiralty-icon class="breadcrumb-icon" icon-name="chevron-right"></admiralty-icon>
+        <a href="https://www.example.com">
+          Test
+        </a>
       </admiralty-breadcrumb>
     `);
   });

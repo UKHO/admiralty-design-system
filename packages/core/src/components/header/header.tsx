@@ -8,7 +8,7 @@ import { Component, Element, Prop, h, EventEmitter, Event, State } from '@stenci
 @Component({
   tag: 'admiralty-header',
   styleUrl: 'header.scss',
-  shadow: false,
+  scoped: true,
 })
 export class HeaderComponent {
   @Element() el: HTMLElement;
@@ -67,15 +67,17 @@ export class HeaderComponent {
       <div class="admiralty-header">
         <nav class="header-menu">
           <div class="header-branding">
-            <a class="header-logo" href={logoLinkUrl}>
+            <a class="header-logo" href={logoLinkUrl} tabindex="0">
               <img class="header-image" alt={logoAltText} src={logoImgUrl} />
             </a>
             <div class="vertical-seperator"></div>
-            <h1 class="header-title">
-              <a onClick={ev => this.handleClick(ev)} href={headerTitleUrl}>
-                {headerTitle}
-              </a>
-            </h1>
+            {this.headerTitle ? (
+              <h1 class="header-title">
+                <a onClick={ev => this.handleClick(ev)} href={headerTitleUrl} tabindex="0">
+                  {headerTitle}
+                </a>
+              </h1>
+            ) : null}
           </div>
           <div class="header-menus">
             <div class={{ 'mobile-menu-toggle': true, 'display-hamburger': this.displayHamburger }}>

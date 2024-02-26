@@ -109,16 +109,18 @@ export class AdmiraltyCheckbox {
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['checkboxChange', 'checkboxFocus', 'checkboxBlur']);
+    proxyOutputs(this, this.el, ['admiraltyChange', 'checkboxFocus', 'checkboxBlur']);
   }
 }
 
 
+import type { CheckboxChangeEventDetail as IAdmiraltyCheckboxCheckboxChangeEventDetail } from '@ukho/admiralty-core';
+
 export declare interface AdmiraltyCheckbox extends Components.AdmiraltyCheckbox {
   /**
-   * Event is fired when the form control changes state @event radioChanges
+   * Event is fired when the form control changes state @event admiraltyChange
    */
-  checkboxChange: EventEmitter<CustomEvent<any>>;
+  admiraltyChange: EventEmitter<CustomEvent<IAdmiraltyCheckboxCheckboxChangeEventDetail>>;
   /**
    * Event is fired when the form control gains focus @event checkboxFocus
    */
@@ -131,25 +133,31 @@ export declare interface AdmiraltyCheckbox extends Components.AdmiraltyCheckbox 
 
 
 @ProxyCmp({
-  inputs: ['actionText', 'clickAction', 'colour', 'heading', 'height', 'width']
+  inputs: ['actionText', 'colour', 'heading', 'height', 'width']
 })
 @Component({
   selector: 'admiralty-colour-block',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['actionText', 'clickAction', 'colour', 'heading', 'height', 'width'],
+  inputs: ['actionText', 'colour', 'heading', 'height', 'width'],
 })
 export class AdmiraltyColourBlock {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['colourBlockLinkClicked']);
   }
 }
 
 
-export declare interface AdmiraltyColourBlock extends Components.AdmiraltyColourBlock {}
+export declare interface AdmiraltyColourBlock extends Components.AdmiraltyColourBlock {
+  /**
+   * An event emitted when this Colour Block link is clicked
+   */
+  colourBlockLinkClicked: EventEmitter<CustomEvent<string>>;
+}
 
 
 @ProxyCmp({
@@ -203,14 +211,14 @@ export declare interface AdmiraltyExpansion extends Components.AdmiraltyExpansio
 
 
 @ProxyCmp({
-  inputs: ['label', 'multiple']
+  inputs: ['invalid', 'invalidMessage', 'label', 'multiple']
 })
 @Component({
   selector: 'admiralty-file-input',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['label', 'multiple'],
+  inputs: ['invalid', 'invalidMessage', 'label', 'multiple'],
 })
 export class AdmiraltyFileInput {
   protected el: HTMLElement;
@@ -222,11 +230,13 @@ export class AdmiraltyFileInput {
 }
 
 
+import type { FileInputChangeEventDetail as IAdmiraltyFileInputFileInputChangeEventDetail } from '@ukho/admiralty-core';
+
 export declare interface AdmiraltyFileInput extends Components.AdmiraltyFileInput {
   /**
    * Emitted when the added file(s) changes
    */
-  fileInputChange: EventEmitter<CustomEvent<File[]>>;
+  fileInputChange: EventEmitter<CustomEvent<IAdmiraltyFileInputFileInputChangeEventDetail>>;
 }
 
 
@@ -363,14 +373,14 @@ export declare interface AdmiraltyHeaderMenuItem extends Components.AdmiraltyHea
 
 
 @ProxyCmp({
-  inputs: ['isSignedIn', 'signedInText']
+  inputs: ['isSignedIn', 'signInOnly', 'signedInText']
 })
 @Component({
   selector: 'admiralty-header-profile',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['isSignedIn', 'signedInText'],
+  inputs: ['isSignedIn', 'signInOnly', 'signedInText'],
 })
 export class AdmiraltyHeaderProfile {
   protected el: HTMLElement;
@@ -423,9 +433,10 @@ export class AdmiraltyHeaderSubMenuItem {
 
 export declare interface AdmiraltyHeaderSubMenuItem extends Components.AdmiraltyHeaderSubMenuItem {
   /**
-   * The event that is fired when a user clicks on the menu
+   * The event that is fired when a user clicks on the menu.
+Event contains the menu item text.
    */
-  subMenuItemClick: EventEmitter<CustomEvent<void>>;
+  subMenuItemClick: EventEmitter<CustomEvent<string>>;
 }
 
 
@@ -495,21 +506,21 @@ export declare interface AdmiraltyIcon extends Components.AdmiraltyIcon {}
 
 
 @ProxyCmp({
-  inputs: ['autocomplete', 'disabled', 'hint', 'invalid', 'invalidMessage', 'label', 'name', 'placeholder', 'required', 'type', 'value', 'width']
+  inputs: ['autocomplete', 'disabled', 'hint', 'invalid', 'invalidMessage', 'label', 'maxLength', 'name', 'placeholder', 'required', 'type', 'value', 'width']
 })
 @Component({
   selector: 'admiralty-input',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['autocomplete', 'disabled', 'hint', 'invalid', 'invalidMessage', 'label', 'name', 'placeholder', 'required', 'type', 'value', 'width'],
+  inputs: ['autocomplete', 'disabled', 'hint', 'invalid', 'invalidMessage', 'label', 'maxLength', 'name', 'placeholder', 'required', 'type', 'value', 'width'],
 })
 export class AdmiraltyInput {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['admiraltyChange']);
+    proxyOutputs(this, this.el, ['admiraltyInput']);
   }
 }
 
@@ -520,20 +531,20 @@ export declare interface AdmiraltyInput extends Components.AdmiraltyInput {
   /**
    * Emitted when the value has changed.
    */
-  admiraltyChange: EventEmitter<CustomEvent<IAdmiraltyInputInputChangeEventDetail>>;
+  admiraltyInput: EventEmitter<CustomEvent<IAdmiraltyInputInputChangeEventDetail>>;
 }
 
 
 @ProxyCmp({
 })
 @Component({
-  selector: 'admiralty-input-error',
+  selector: 'admiralty-input-invalid',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: [],
 })
-export class AdmiraltyInputError {
+export class AdmiraltyInputInvalid {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
@@ -542,7 +553,7 @@ export class AdmiraltyInputError {
 }
 
 
-export declare interface AdmiraltyInputError extends Components.AdmiraltyInputError {}
+export declare interface AdmiraltyInputInvalid extends Components.AdmiraltyInputInvalid {}
 
 
 @ProxyCmp({
@@ -663,21 +674,21 @@ export declare interface AdmiraltyProgressBar extends Components.AdmiraltyProgre
 
 
 @ProxyCmp({
-  inputs: ['checked', 'disabled', 'name', 'value']
+  inputs: ['checked', 'disabled', 'invalid', 'name', 'value']
 })
 @Component({
   selector: 'admiralty-radio',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['checked', 'disabled', 'name', 'value'],
+  inputs: ['checked', 'disabled', 'invalid', 'name', 'value'],
 })
 export class AdmiraltyRadio {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['admiraltyFocus', 'admiraltyBlur']);
+    proxyOutputs(this, this.el, ['admiraltyFocus', 'admiraltyBlur', 'admiraltyChange']);
   }
 }
 
@@ -691,46 +702,80 @@ export declare interface AdmiraltyRadio extends Components.AdmiraltyRadio {
    * Emitted when the radio button loses focus.
    */
   admiraltyBlur: EventEmitter<CustomEvent<void>>;
+  /**
+   * Emitted when the radio is selected
+   */
+  admiraltyChange: EventEmitter<CustomEvent<void>>;
 }
 
 
 @ProxyCmp({
-  inputs: ['displayVertical', 'name', 'value']
+  inputs: ['displayVertical', 'invalid', 'invalidMessage', 'name', 'value']
 })
 @Component({
   selector: 'admiralty-radio-group',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['displayVertical', 'name', 'value'],
+  inputs: ['displayVertical', 'invalid', 'invalidMessage', 'name', 'value'],
 })
 export class AdmiraltyRadioGroup {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['radioChange']);
+    proxyOutputs(this, this.el, ['admiraltyChange']);
   }
 }
 
+
+import type { RadioGroupChangeEventDetail as IAdmiraltyRadioGroupRadioGroupChangeEventDetail } from '@ukho/admiralty-core';
 
 export declare interface AdmiraltyRadioGroup extends Components.AdmiraltyRadioGroup {
   /**
    * Event fired when the checked radio button changes
    */
-  radioChange: EventEmitter<CustomEvent<any>>;
+  admiraltyChange: EventEmitter<CustomEvent<IAdmiraltyRadioGroupRadioGroupChangeEventDetail>>;
 }
 
 
 @ProxyCmp({
-  inputs: ['disabled', 'error', 'errorHint', 'hint', 'label', 'width']
+  inputs: ['heading']
+})
+@Component({
+  selector: 'admiralty-read-more',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['heading'],
+})
+export class AdmiraltyReadMore {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['admiraltyToggled']);
+  }
+}
+
+
+export declare interface AdmiraltyReadMore extends Components.AdmiraltyReadMore {
+  /**
+   * The event that is dispatched when the expanded status is toggled.
+   */
+  admiraltyToggled: EventEmitter<CustomEvent<boolean>>;
+}
+
+
+@ProxyCmp({
+  inputs: ['disabled', 'hint', 'invalid', 'invalidMessage', 'label', 'value', 'width']
 })
 @Component({
   selector: 'admiralty-select',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['disabled', 'error', 'errorHint', 'hint', 'label', 'width'],
+  inputs: ['disabled', 'hint', 'invalid', 'invalidMessage', 'label', 'value', 'width'],
 })
 export class AdmiraltySelect {
   protected el: HTMLElement;
@@ -742,11 +787,13 @@ export class AdmiraltySelect {
 }
 
 
+import type { SelectChangeEventDetail as IAdmiraltySelectSelectChangeEventDetail } from '@ukho/admiralty-core';
+
 export declare interface AdmiraltySelect extends Components.AdmiraltySelect {
   /**
    * Emitted when the value has changed.
    */
-  admiraltyChange: EventEmitter<CustomEvent<EventTarget>>;
+  admiraltyChange: EventEmitter<CustomEvent<IAdmiraltySelectSelectChangeEventDetail>>;
   /**
    * Emitted when the component loses focus.
    */
@@ -801,6 +848,76 @@ export declare interface AdmiraltySideNavItem extends Components.AdmiraltySideNa
    * An event emitted when this Side Nav item is selected containing the sideNavItemId
    */
   sideNavItemSelected: EventEmitter<CustomEvent<string>>;
+}
+
+
+@ProxyCmp({
+  inputs: ['href']
+})
+@Component({
+  selector: 'admiralty-skip-link',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['href'],
+})
+export class AdmiraltySkipLink {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface AdmiraltySkipLink extends Components.AdmiraltySkipLink {}
+
+
+@ProxyCmp({
+  inputs: ['label', 'tabContentId', 'tabLabelId']
+})
+@Component({
+  selector: 'admiralty-tab',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['label', 'tabContentId', 'tabLabelId'],
+})
+export class AdmiraltyTab {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface AdmiraltyTab extends Components.AdmiraltyTab {}
+
+
+@ProxyCmp({
+  inputs: ['selectedIndex']
+})
+@Component({
+  selector: 'admiralty-tab-group',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['selectedIndex'],
+})
+export class AdmiraltyTabGroup {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['admiraltyTabSelected']);
+  }
+}
+
+
+export declare interface AdmiraltyTabGroup extends Components.AdmiraltyTabGroup {
+
+  admiraltyTabSelected: EventEmitter<CustomEvent<number>>;
 }
 
 
@@ -932,24 +1049,26 @@ export declare interface AdmiraltyTableRow extends Components.AdmiraltyTableRow 
 
 
 @ProxyCmp({
-  inputs: ['disabled', 'hint', 'invalid', 'invalidMessage', 'label', 'text', 'width']
+  inputs: ['disabled', 'hint', 'invalid', 'invalidMessage', 'label', 'maxLength', 'value', 'width']
 })
 @Component({
   selector: 'admiralty-textarea',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['disabled', 'hint', 'invalid', 'invalidMessage', 'label', 'text', 'width'],
+  inputs: ['disabled', 'hint', 'invalid', 'invalidMessage', 'label', 'maxLength', 'value', 'width'],
 })
 export class AdmiraltyTextarea {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['textareaBlur', 'textareaChanged']);
+    proxyOutputs(this, this.el, ['textareaBlur', 'admiraltyInput']);
   }
 }
 
+
+import type { TextAreaChangeEventDetail as IAdmiraltyTextareaTextAreaChangeEventDetail } from '@ukho/admiralty-core';
 
 export declare interface AdmiraltyTextarea extends Components.AdmiraltyTextarea {
   /**
@@ -957,21 +1076,21 @@ export declare interface AdmiraltyTextarea extends Components.AdmiraltyTextarea 
    */
   textareaBlur: EventEmitter<CustomEvent<any>>;
   /**
-   * Event is fired when the form control changes @event textareaChanged
+   * Event is fired when the form control changes @event admiraltyChange
    */
-  textareaChanged: EventEmitter<CustomEvent<string>>;
+  admiraltyInput: EventEmitter<CustomEvent<IAdmiraltyTextareaTextAreaChangeEventDetail>>;
 }
 
 
 @ProxyCmp({
-  inputs: ['label', 'placeholder', 'resultsOnInitFocus', 'value']
+  inputs: ['hint', 'label', 'placeholder', 'resultsOnInitFocus', 'value']
 })
 @Component({
   selector: 'admiralty-type-ahead',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['label', 'placeholder', 'resultsOnInitFocus', 'value'],
+  inputs: ['hint', 'label', 'placeholder', 'resultsOnInitFocus', 'value'],
 })
 export class AdmiraltyTypeAhead {
   protected el: HTMLElement;

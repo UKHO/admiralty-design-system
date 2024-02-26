@@ -1,36 +1,51 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
 {
-  "name": "Node.js & TypeScript",
-  "build": {
-    "dockerfile": "Dockerfile",
-    // Update 'VARIANT' to pick a Node version: 10, 12, 14
-    "args": { "VARIANT": "16-bullseye" }
+	"name": "Node.js & TypeScript",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "mcr.microsoft.com/devcontainers/typescript-node:0-20-bullseye",
+
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"forwardPorts": [4200, 6006],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "bash .devcontainer/postCreateCommandSetup.sh",
+	
+	// Configure tool-specific properties.
+	"customizations": {
+		// Configure properties specific to VS Code.
+		"vscode": {
+			// Set *default* container specific settings.json values on container create.
+			"settings": {
+				"terminal.integrated.env.windows": {
+					"NODE_OPTIONS": "--openssl-legacy-provider"
+				},
+				"terminal.integrated.env.osx": {
+					"NODE_OPTIONS": "--openssl-legacy-provider"
+				},
+				"terminal.integrated.env.linux": {
+					"NODE_OPTIONS": "--openssl-legacy-provider"
+				}
+			},
+			"extensions": [
+				"angular.ng-template",
+				"orta.vscode-jest",
+				"esbenp.prettier-vscode",
+				"syler.sass-indented",
+				"dbaeumer.vscode-eslint"
+			]
+		}
   },
 
-  // Set *default* container specific settings.json values on container create.
-  "settings": {
-    "terminal.integrated.shell.linux": "/bin/bash"
-  },
+  "hostRequirements": {
+    "cpus": 4,
+    "memory": "8gb",
+    "storage": "32gb"
+	}
 
-  // Add the IDs of extensions you want installed when the container is created.
-  "extensions": [
-    "angular.ng-template",
-    "orta.vscode-jest",
-    "esbenp.prettier-vscode",
-    "syler.sass-indented",
-    "dbaeumer.vscode-eslint"
-  ],
-
-  // Use 'forwardPorts' to make a list of ports inside the container available locally.
-  "forwardPorts": [6006, 9009],
-
-  // "initializeCommand": "pwsh .devcontainer/initializeCommandSetup.ps1",
-
-  // Use 'postCreateCommand' to run commands after the container is created.
-  "postCreateCommand": "bash .devcontainer/postCreateCommandSetup.sh",
-
-  "postStartCommand": "bash .devcontainer/postStartCommandSetup.sh",
-
-  // Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
-  // Commented out to use root in WSL with Podman
-  // "remoteUser": "node"
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "node"
 }
