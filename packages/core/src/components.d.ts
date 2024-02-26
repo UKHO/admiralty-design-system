@@ -480,6 +480,12 @@ export namespace Components {
     }
     interface AdmiraltySideNavWrapper {
     }
+    interface AdmiraltySkipLink {
+        /**
+          * The HTML ID that the skip link will jump to when activated.
+         */
+        "href": string;
+    }
     interface AdmiraltyTab {
         /**
           * Tab label
@@ -875,6 +881,12 @@ declare global {
         prototype: HTMLAdmiraltySideNavWrapperElement;
         new (): HTMLAdmiraltySideNavWrapperElement;
     };
+    interface HTMLAdmiraltySkipLinkElement extends Components.AdmiraltySkipLink, HTMLStencilElement {
+    }
+    var HTMLAdmiraltySkipLinkElement: {
+        prototype: HTMLAdmiraltySkipLinkElement;
+        new (): HTMLAdmiraltySkipLinkElement;
+    };
     interface HTMLAdmiraltyTabElement extends Components.AdmiraltyTab, HTMLStencilElement {
     }
     var HTMLAdmiraltyTabElement: {
@@ -994,6 +1006,7 @@ declare global {
         "admiralty-side-nav": HTMLAdmiraltySideNavElement;
         "admiralty-side-nav-item": HTMLAdmiraltySideNavItemElement;
         "admiralty-side-nav-wrapper": HTMLAdmiraltySideNavWrapperElement;
+        "admiralty-skip-link": HTMLAdmiraltySkipLinkElement;
         "admiralty-tab": HTMLAdmiraltyTabElement;
         "admiralty-tab-group": HTMLAdmiraltyTabGroupElement;
         "admiralty-table": HTMLAdmiraltyTableElement;
@@ -1562,6 +1575,12 @@ declare namespace LocalJSX {
     }
     interface AdmiraltySideNavWrapper {
     }
+    interface AdmiraltySkipLink {
+        /**
+          * The HTML ID that the skip link will jump to when activated.
+         */
+        "href"?: string;
+    }
     interface AdmiraltyTab {
         /**
           * Tab label
@@ -1723,6 +1742,7 @@ declare namespace LocalJSX {
         "admiralty-side-nav": AdmiraltySideNav;
         "admiralty-side-nav-item": AdmiraltySideNavItem;
         "admiralty-side-nav-wrapper": AdmiraltySideNavWrapper;
+        "admiralty-skip-link": AdmiraltySkipLink;
         "admiralty-tab": AdmiraltyTab;
         "admiralty-tab-group": AdmiraltyTabGroup;
         "admiralty-table": AdmiraltyTable;
@@ -1780,6 +1800,7 @@ declare module "@stencil/core" {
             "admiralty-side-nav": LocalJSX.AdmiraltySideNav & JSXBase.HTMLAttributes<HTMLAdmiraltySideNavElement>;
             "admiralty-side-nav-item": LocalJSX.AdmiraltySideNavItem & JSXBase.HTMLAttributes<HTMLAdmiraltySideNavItemElement>;
             "admiralty-side-nav-wrapper": LocalJSX.AdmiraltySideNavWrapper & JSXBase.HTMLAttributes<HTMLAdmiraltySideNavWrapperElement>;
+            "admiralty-skip-link": LocalJSX.AdmiraltySkipLink & JSXBase.HTMLAttributes<HTMLAdmiraltySkipLinkElement>;
             "admiralty-tab": LocalJSX.AdmiraltyTab & JSXBase.HTMLAttributes<HTMLAdmiraltyTabElement>;
             "admiralty-tab-group": LocalJSX.AdmiraltyTabGroup & JSXBase.HTMLAttributes<HTMLAdmiraltyTabGroupElement>;
             /**
