@@ -1,19 +1,17 @@
-@use '../../scss/vars/colours' as colours;
-@use '../../scss/base/responsive';
-@use '../../scss/vars/typography';
+@import 'header-menu-item.vars';
 
 @mixin active {
-  box-shadow: inset 0 -5px colours.$colour-admiralty-blue;
+  box-shadow: inset 0 -5px $header-menu-item-active-colour;
 }
 
 .menu-item {
   cursor: pointer;
 
   .menu-title {
-    font-size: typography.$font-size-normal;
+    font-size: $header-menu-item-title-text-size;
 
     &:focus {
-      box-shadow: colours.$colour-utility-focus inset 0 0 0 3px;
+      box-shadow: $header-menu-item-focus-colour inset 0 0 0 3px;
     }
   }
 }
@@ -24,7 +22,7 @@ button {
   width: 100%;
 }
 
-@include responsive.desktop-only {
+@include desktop-only {
   .menu-item {
     display: flex;
     flex: 0;
@@ -41,7 +39,7 @@ button {
 
     &:hover {
       @include active;
-      background-color: colours.$colour-nav-bg-hover;
+      background-color: $header-menu-item-hover-background-colour;
 
       .sub-menu {
         display: flex;
@@ -57,14 +55,14 @@ button {
     }
 
     .menu-title {
-      font-weight: typography.$font-weight-medium;
+      font-weight: $header-menu-item-title-text-weight;
     }
 
     .sub-menu {
       display: none;
       flex-direction: column;
       position: absolute;
-      border: 1px solid colours.$colour-divider;
+      border: 1px solid $header-menu-item-divider-colour;
       right: 0;
       top: 100%;
 
@@ -79,21 +77,21 @@ button {
   }
 }
 
-@include responsive.not-desktop {
+@include not-desktop {
   .menu-item {
     display: block;
     box-sizing: border-box;
-    color: colours.$colour-admiralty-blue;
+    color: $header-menu-item-title-text-colour;
     background-color: unset;
     text-align: unset;
     text-decoration: unset;
 
     .menu-title {
       padding: 12px;
-      font-weight: 500;
+      font-weight: $header-menu-item-title-text-weight;
 
       &:hover {
-        background-color: colours.$colour-nav-bg-hover;
+        background-color: $header-menu-item-hover-background-colour;
       }
     }
   }

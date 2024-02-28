@@ -1,0 +1,11 @@
+@import "../../styles/vars/globals";
+
+$textarea-text-colour: var(--admiralty-text-colour);
+$textarea-border-colour: var(--admiralty-text-colour);
+$textarea-background-colour: var(--admiralty-background-colour);
+$textarea-shadow-colour: var(--admiralty-text-colour);
+$textarea-focus-colour: var(--admiralty-focus-outline-colour) !default;
+$textarea-error-border-colour: var(--admiralty-colour-danger);
+$textarea-disabled-text-colour: var(--admiralty-disabled-colour);
+$textarea-disabled-border-colour: var(--admiralty-disabled-colour);
+$textarea-disabled-background-colour: var(--admiralty-disabled-colour);

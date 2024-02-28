@@ -1,0 +1,7 @@
+@import "../../styles/vars/globals";
+
+$header-sub-menu-item-focus-colour : var(--admiralty-focus-outline-colour);
+$header-sub-menu-item-text-colour: var(--admiralty-colour-primary);
+$header-sub-menu-item-text-size: 18px;
+$header-sub-menu-item-text-weight: 500;
+$header-sub-menu-item-hover-background-colour: #f0f0f0f0; // TODO: replace with colour from vars

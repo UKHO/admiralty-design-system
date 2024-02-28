@@ -49,6 +49,7 @@
     "@storybook/addon-actions": "^7.6.7",
     "@storybook/addon-essentials": "^7.6.7",
     "@storybook/addon-links": "^7.6.7",
+    "@storybook/builder-vite": "^7.6.17",
     "@storybook/web-components": "^7.6.7",
     "@storybook/web-components-vite": "^7.6.7",
     "@types/jest": "^27.5.2",
