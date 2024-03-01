@@ -1,3 +1,5 @@
+@import "checkbox.vars";
+
 .form-control {
   font-size: 18px;
   position: relative;
@@ -48,10 +50,10 @@
       content: "";
       height: 26px;
       width: 26px;
-      border: 2px solid #03284f;
+      border: 2px solid $checkbox-border-colour;
       left: 0;
       top: 0;
-      background-color: #fff;
+      background-color: $checkbox-colour;
     }
 
     &::after {
@@ -60,7 +62,7 @@
       border-left: 3px solid;
       border-bottom: 3px solid;
       transform: rotate(-45deg);
-      color: #09315b;
+      color: $checkbox-text-colour;
       left: 6px;
       top: 7px;
     }

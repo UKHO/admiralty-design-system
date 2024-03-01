@@ -1,5 +1,4 @@
-@use "../../scss/base/responsive";
-@use "../../scss/vars/colours";
+@import 'side-nav-item.vars.scss';
 
 a.section {
   cursor: pointer;
@@ -14,12 +13,12 @@ a.section {
 
   text-align: center;
   text-decoration: none;
-  color: colours.$colour-admiralty-blue;
+  color: $side-nav-item-text-colour;
   font-weight: normal;
   font-size: 16px;
 
   &:hover {
-    background-color: colours.$colour-nav-bg-hover;
+    background-color: $side-nav-item-hover-background-colour;
   }
 
   &:focus {
@@ -27,7 +26,7 @@ a.section {
   }
 
   &.navActive {
-    background-color: colours.$colour-admiralty-blue;
-    color: colours.$colour-white;
+    background-color: $side-nav-item-active-background-colour;
+    color: $side-nav-item-active-text-colour;
   }
 }

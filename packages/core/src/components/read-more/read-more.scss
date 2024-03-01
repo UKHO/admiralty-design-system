@@ -1,5 +1,4 @@
-@use "../../scss/vars/colours";
-@use "../../scss/vars/typography";
+@import 'read-more.vars.scss';
 
 section.expansion {
   padding: 2px 0;
@@ -8,7 +7,7 @@ section.expansion {
     display: none;
     max-height: 0;
     overflow: visible;
-    border-left: 4px solid colours.$colour-utility-info;
+    border-left: 4px solid $read-more-border-colour;
   }
   &.expanded .expansion-content {
     display: block;
@@ -29,7 +28,7 @@ section.expansion {
     text-decoration: underline;
 
     &.expanded span {
-      font-weight: typography.$font-weight-medium;
+      font-weight: $read-more-text-weight;
     }
 
     .expansion-heading-icon {
@@ -41,7 +40,7 @@ section.expansion {
 
     &:focus {
       outline: none;
-      box-shadow: 0 0 0 3px colours.$colour-utility-focus;
+      box-shadow: 0 0 0 3px $read-more-focus-colour;
     }
   }
 }

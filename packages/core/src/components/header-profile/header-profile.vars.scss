@@ -1,0 +1,11 @@
+@import "../../styles/vars/globals";
+
+$header-profile-active-colour : var(--admiralty-colour-primary);
+$header-profile-focus-colour : var(--admiralty-focus-outline-colour);
+$header-profile-text-colour: var(--admiralty-colour-primary);
+$header-profile-text-size: 18px;
+$header-profile-sub-item-text-weight: 300;
+$header-profile-text-weight: 500;
+$header-profile-hover-background-colour: #f0f0f0f0; // TODO: replace with colour from vars
+$header-profile-divider-colour: var(--admiralty-colour-light);
+

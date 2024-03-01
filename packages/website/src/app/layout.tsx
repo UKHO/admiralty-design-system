@@ -1,5 +1,5 @@
 "use client";
-import "@ukho/admiralty-core/styles/core.css";
+import "@ukho/admiralty-core/styles/admiralty.bundle.css";
 import "./globals.css";
 import {
   AdmiraltyFooter,

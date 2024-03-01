@@ -1,7 +1,4 @@
-@use "../../scss/base/responsive";
-
-@use "../../scss/vars/colours";
-@use "../../scss/vars/typography";
+@import "breadcrumb.vars";
 
 :host {
   display: flex;
@@ -11,22 +8,23 @@
 .breadcrumb-icon {
   margin: 0 10px;
   font-size: 12px;
+  color: $breadcrumb-separator-colour;
 }
 
 a {
   display: inline-block;
-  font-size: 14px;
-  font-weight: typography.$font-weight-light;
+  font-size: $breadcrumb-font-size;
+  font-weight: $breadcrumb-font-weight;
   text-decoration: none;
-  color: colours.$colour-nav-item;
+  color: $breadcrumb-font-colour;
   margin: 10px 2px;
 
   &:hover {
-    color: colours.$colour-admiralty-blue;
+    color: $breadcrumb-font-colour-hover;
   }
 
   &.active {
-    color: colours.$colour-admiralty-blue;
-    font-weight: typography.$font-weight-medium;
+    color: $breadcrumb-font-colour-active;
+    font-weight: $breadcrumb-font-weight-active;
   }
 }

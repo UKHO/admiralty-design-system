@@ -1,0 +1,6 @@
+@import "../../styles/vars/globals";
+
+$progress-bar-background-colour: #eeeeee; // TODO: replace with var
+$progress-bar-text-colour: var(--admiralty-colour-primary);
+$progress-bar-success-colour: var(--admiralty-colour-success);
+$progress-bar-error-colour: var(--admiralty-colour-danger);

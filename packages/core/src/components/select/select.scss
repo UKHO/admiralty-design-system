@@ -1,8 +1,6 @@
-@use '../../scss/vars/colours';
-@use '../../scss/vars/typography';
-
+@import 'select.vars';
 .disabled {
-  color: colours.$colour-textinput-text-disabled;
+  color: $select-disabled-text-colour;
 }
 
 .select-wrapper {
@@ -11,7 +9,7 @@
 
 admiralty-icon {
   font-size: 24px;
-  font-weight: typography.$font-weight-medium;
+  font-weight: $select-text-weight;
   pointer-events: none;
   position: absolute;
   right: 12px;
@@ -20,29 +18,28 @@ admiralty-icon {
 
 select {
   appearance: none;
-  background-color: colours.$colour-white;
-  border: 2px solid colours.$colour-text;
+  background-color: $select-background-colour;
+  border: 2px solid $select-border-colour;
   box-sizing: border-box;
-  color: colours.$colour-text;
-  font-family: typography.$font-family;
-  font-size: typography.$font-size-normal;
+  color: $select-text-colour;
+  font-size: $select-text-size;
   line-height: 24px;
   margin-bottom: 6px;
   position: relative;
-  font-weight: typography.$font-weight-light;
+  font-weight: $select-text-weight;
   padding: 12px;
   width: 100%;
 
   &.invalid {
-    border-color: colours.$colour-utility-error;
+    border-color: $select-error-border-colour;
   }
 
   &:focus-visible {
-    outline: 3px solid colours.$colour-utility-focus;
-    box-shadow: inset 0 0 0 2px colours.$colour-text;
+    outline: 3px solid $select-focus-colour;
+    box-shadow: inset 0 0 0 2px $select-border-colour;
   }
 
   &.disabled {
-    border-color: colours.$colour-textinput-text-disabled;
+    border-color: $select-disabled-border-colour;
   }
 }
