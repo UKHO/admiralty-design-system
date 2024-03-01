@@ -1,67 +1,66 @@
 @import "expansion.vars";
 
-admiralty-expansion {
-  section.expansion {
-    padding: 2px 0;
-    border-bottom: 1px solid transparent;
-    &.bordered {
-      border-bottom: 1px solid $expansion-border-colour;
+section.expansion {
+  padding: 2px 0;
+  border-bottom: 1px solid transparent;
+  &.bordered {
+    border-bottom: 1px solid $expansion-border-colour;
+  }
+
+  .expansion-content {
+    display: none;
+    max-height: 0;
+    overflow: visible;
+  }
+  &.expanded .expansion-content {
+    display: block;
+    max-height: initial;
+    padding-bottom: 12px;
+  }
+
+  button {
+    background-color: transparent;
+    border: none;
+    height: initial;
+    min-width: unset;
+    max-width: unset;
+    white-space: unset;
+    color: $expansion-header-text-colour;
+    font-size: $expansion-header-text-size;
+    font-weight: $expansion-header-text-weight;
+    cursor: pointer;
+    margin: 10px 0 22px;
+    padding: 0;
+    display: flex;
+    align-items: baseline;
+    width: 100%;
+    text-align: left;
+    position: relative;
+
+    .expansion-heading-icon {
+      color: $expansion-header-icon-colour;
+      margin-left: 30px;
     }
-
-    .expansion-content {
-      display: none;
-      max-height: 0;
-      overflow: visible;
+    &:focus {
+      outline: none;
     }
-    &.expanded .expansion-content {
-      display: block;
-      max-height: initial;
-      padding-bottom: 12px;
+    h3 {
+      flex-grow: 1;
+      margin-bottom: 0;
+
+      &.expansion-heading-right-align {
+        text-align: right;
+      }
     }
-
-    button {
-      background-color: transparent;
-      border: none;
-      height: initial;
-      min-width: unset;
-      max-width: unset;
-      white-space: unset;
-      color: $expansion-header-text-colour;
-      font-size: $expansion-header-text-size;
-      font-weight: $expansion-header-text-weight;
-      cursor: pointer;
-      margin: 10px 0 22px;
-      padding: 0;
-      display: flex;
-      align-items: baseline;
-      width: 100%;
-      text-align: left;
-      position: relative;
-
-      .expansion-heading-icon {
-        color: $expansion-header-icon-colour;
-        margin-left: 30px;
-      }
-      &:focus {
-        outline: none;
-      }
-      h3 {
-        flex-grow: 1;
-        margin-bottom: 0;
-
-        &.expansion-heading-right-align {
-          text-align: right;
-        }
-      }
-      &:focus h3::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        right: -3px;
-        left: -3px;
-        box-shadow: 0 0 0 3px $expansion-header-focus-colour;
-      }
+    &:focus h3::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: -3px;
+      left: -3px;
+      box-shadow: 0 0 0 3px $expansion-header-focus-colour;
     }
   }
 }
+

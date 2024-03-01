@@ -1,46 +1,45 @@
 @import "colour-block.vars";
 
-admiralty-colour-block {
-  .colourBlock {
-    height: 100%;
-    width: 100%;
-    max-width: 100%;
-    padding: 30px 18px;
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
+.colourBlock {
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  padding: 30px 18px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
 
-    .content {
-      flex-grow: 1;
-    }
+  .content {
+    flex-grow: 1;
+  }
 
-    .clickAction {
-      background-color: unset;
-      align-self: flex-end;
-      cursor: pointer;
+  .clickAction {
+    background-color: unset;
+    align-self: flex-end;
+    cursor: pointer;
 
-      h3 {
-        margin-bottom: 0px;
-      }
-    }
-
-    &.admiralty-blue {
-      background-color: $primary-colour-block-colour;
-      * {
-        color: $primary-colour-block-text-colour;
-      }
-    }
-
-    &.teal {
-      background-color: $secondary-colour-block-colour;
-      * {
-        color: $secondary-colour-block-text-colour;
-      }
-    }
-
-    &.bright-blue {
-      background-color: $tertiary-colour-block-colour;
-      color: $tertiary-colour-block-text-colour;
+    h3 {
+      margin-bottom: 0px;
     }
   }
+
+  &.admiralty-blue {
+    background-color: $primary-colour-block-colour;
+    * {
+      color: $primary-colour-block-text-colour;
+    }
+  }
+
+  &.teal {
+    background-color: $secondary-colour-block-colour;
+    * {
+      color: $secondary-colour-block-text-colour;
+    }
+  }
+
+  &.bright-blue {
+    background-color: $tertiary-colour-block-colour;
+    color: $tertiary-colour-block-text-colour;
+  }
 }
+
