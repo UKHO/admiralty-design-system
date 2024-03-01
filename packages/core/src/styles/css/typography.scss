@@ -5,6 +5,9 @@ $list-item-font-weight: 300;
 
 html {
   font-family: var(--admiralty-font-family);
+  font-size: var(--admiralty-font-size);
+  line-height: var(--admiralty-line-height);
+  font-weight: var(--admiralty-font-weight);
 }
 
 a {
