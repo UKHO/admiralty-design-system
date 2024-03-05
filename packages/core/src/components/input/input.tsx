@@ -150,7 +150,7 @@ export class InputComponent implements ComponentInterface {
           style={{
             maxWidth: this.width ? `${this.width}px` : null,
           }}
-          aria-invalid={true}
+          aria-invalid={this.invalid ? 'true' : 'false'}
           aria-describedby={(this.hint ? this.hintId : null) + ' ' + (this.invalid ? this.errorId : null)}
         />
         <admiralty-input-invalid id={this.errorId} style={{ visibility: this.invalid && this.invalidMessage ? 'visible' : 'hidden' }}>{this.invalidMessage}</admiralty-input-invalid>
