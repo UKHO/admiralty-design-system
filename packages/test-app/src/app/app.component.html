@@ -228,3 +228,18 @@
   Our site will be down for maintenance between 20:00 and 22:00 on 1 June 2019. You won't be able to access the site
   during this time.
 </admiralty-dialogue>
+
+<admiralty-modal-dialog heading="Do you want to leave this page?">
+  <div slot="content" style="display: flex; align-items: start">
+    <admiralty-icon
+      icon-name="triangle-exclamation"
+      icon-prefix="fas"
+      style="color: #09315b; display: inline-block; padding: 5px"
+    ></admiralty-icon>
+    <span style="color: #09315b; max-width: 300px; display: inline-block"
+      >If you leave this page, your survey won't be saved and can't be recovered</span
+    >
+  </div>
+  <admiralty-button variant="secondary" slot="actions">Leave page</admiralty-button>
+  <admiralty-button slot="actions">Continue survey</admiralty-button>
+</admiralty-modal-dialog>
