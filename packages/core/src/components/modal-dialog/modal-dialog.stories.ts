@@ -31,8 +31,11 @@ export const WithHtmlContent: Story = {
 };
 
 export const WithActions: Story = {
-  render: args => html` <admiralty-modal-dialog heading="${args.heading}">
-    <div slot="content"><span>If you leave this page, your survey won't be saved and can't be recovered</span></div>
+  render: args => html`<admiralty-modal-dialog heading="${args.heading}">
+    <div slot="content"" style="display: flex; align-items: start;">
+      <admiralty-icon icon-name="triangle-exclamation" icon-prefix="fas" style="color: #09315B; display: inline-block; padding: 5px;"></admiralty-icon>
+      <div style="color: #09315B; max-width: 300px; display: inline-block">If you leave this page, your survey won't be saved and can't be recovered</div>
+    </div>
     <admiralty-button variant="secondary" slot="actions">Leave page</admiralty-button>
     <admiralty-button slot="actions">Continue survey</admiralty-button>
   </admiralty-modal-dialog>`,
