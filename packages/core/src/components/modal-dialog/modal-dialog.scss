@@ -1,0 +1,52 @@
+@use '../../scss/base/responsive';
+@use '../../scss/vars/colours';
+
+.scrim {
+  background-color: aqua;
+}
+
+.modal-dialog {
+  margin: 0 auto;
+  display: block;
+  width: max-content;
+
+  // display: flex;
+  // flex-direction: column;
+  border: 1px solid colours.$colour-divider;
+
+  & > .modal-heading {
+    height: 60px;
+    line-height: 60px;
+    color: colours.$colour-admiralty-blue;
+    margin: 0;
+    padding: 0 30px;
+    @include responsive.not-desktop {
+      padding: 0px 18px;
+      height: 48px;
+      line-height: 48px;
+    }
+  }
+
+  & > .modal-content {
+    border-top: none;
+    flex-grow: 1;
+    padding: 30px;
+    @include responsive.not-desktop {
+      padding: 24px 18px;
+    }
+  }
+
+  & > .modal-actions {
+    background-color: #d9e0e7;
+  }
+}
+
+.text-input-form {
+  .text-input-wrap {
+    margin-bottom: 30px;
+  }
+
+  .text-input-wrap:last-child {
+    margin-bottom: 0;
+  }
+}
