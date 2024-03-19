@@ -601,6 +601,28 @@ export declare interface AdmiraltyLink extends Components.AdmiraltyLink {}
 
 
 @ProxyCmp({
+  inputs: ['heading']
+})
+@Component({
+  selector: 'admiralty-modal-dialog',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['heading'],
+})
+export class AdmiraltyModalDialog {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface AdmiraltyModalDialog extends Components.AdmiraltyModalDialog {}
+
+
+@ProxyCmp({
   inputs: ['currentPage', 'label', 'pages']
 })
 @Component({

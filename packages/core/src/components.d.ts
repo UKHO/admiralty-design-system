@@ -337,6 +337,12 @@ export namespace Components {
          */
         "newTab": boolean;
     }
+    interface AdmiraltyModalDialog {
+        /**
+          * The title of the card.
+         */
+        "heading": string;
+    }
     interface AdmiraltyPaginator {
         /**
           * The current page. Defaults to 1.
@@ -930,6 +936,12 @@ declare global {
         prototype: HTMLAdmiraltyLinkElement;
         new (): HTMLAdmiraltyLinkElement;
     };
+    interface HTMLAdmiraltyModalDialogElement extends Components.AdmiraltyModalDialog, HTMLStencilElement {
+    }
+    var HTMLAdmiraltyModalDialogElement: {
+        prototype: HTMLAdmiraltyModalDialogElement;
+        new (): HTMLAdmiraltyModalDialogElement;
+    };
     interface HTMLAdmiraltyPaginatorElementEventMap {
         "pageChange": number;
     }
@@ -1214,6 +1226,7 @@ declare global {
         "admiralty-input-invalid": HTMLAdmiraltyInputInvalidElement;
         "admiralty-label": HTMLAdmiraltyLabelElement;
         "admiralty-link": HTMLAdmiraltyLinkElement;
+        "admiralty-modal-dialog": HTMLAdmiraltyModalDialogElement;
         "admiralty-paginator": HTMLAdmiraltyPaginatorElement;
         "admiralty-paginator-wrapper": HTMLAdmiraltyPaginatorWrapperElement;
         "admiralty-phase-banner": HTMLAdmiraltyPhaseBannerElement;
@@ -1616,6 +1629,12 @@ declare namespace LocalJSX {
          */
         "newTab"?: boolean;
     }
+    interface AdmiraltyModalDialog {
+        /**
+          * The title of the card.
+         */
+        "heading"?: string;
+    }
     interface AdmiraltyPaginator {
         /**
           * The current page. Defaults to 1.
@@ -1950,6 +1969,7 @@ declare namespace LocalJSX {
         "admiralty-input-invalid": AdmiraltyInputInvalid;
         "admiralty-label": AdmiraltyLabel;
         "admiralty-link": AdmiraltyLink;
+        "admiralty-modal-dialog": AdmiraltyModalDialog;
         "admiralty-paginator": AdmiraltyPaginator;
         "admiralty-paginator-wrapper": AdmiraltyPaginatorWrapper;
         "admiralty-phase-banner": AdmiraltyPhaseBanner;
@@ -2008,6 +2028,7 @@ declare module "@stencil/core" {
             "admiralty-input-invalid": LocalJSX.AdmiraltyInputInvalid & JSXBase.HTMLAttributes<HTMLAdmiraltyInputInvalidElement>;
             "admiralty-label": LocalJSX.AdmiraltyLabel & JSXBase.HTMLAttributes<HTMLAdmiraltyLabelElement>;
             "admiralty-link": LocalJSX.AdmiraltyLink & JSXBase.HTMLAttributes<HTMLAdmiraltyLinkElement>;
+            "admiralty-modal-dialog": LocalJSX.AdmiraltyModalDialog & JSXBase.HTMLAttributes<HTMLAdmiraltyModalDialogElement>;
             "admiralty-paginator": LocalJSX.AdmiraltyPaginator & JSXBase.HTMLAttributes<HTMLAdmiraltyPaginatorElement>;
             "admiralty-paginator-wrapper": LocalJSX.AdmiraltyPaginatorWrapper & JSXBase.HTMLAttributes<HTMLAdmiraltyPaginatorWrapperElement>;
             "admiralty-phase-banner": LocalJSX.AdmiraltyPhaseBanner & JSXBase.HTMLAttributes<HTMLAdmiraltyPhaseBannerElement>;
