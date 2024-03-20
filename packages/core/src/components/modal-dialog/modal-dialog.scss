@@ -1,5 +1,6 @@
 @use '../../scss/base/responsive';
 @use '../../scss/vars/colours';
+@use '../../scss/base/typography';
 
 .scrim {
   background-color: aqua;
@@ -15,22 +16,15 @@
   border: 1px solid colours.$colour-divider;
 
   & > .modal-heading {
-    height: 60px;
-    line-height: 60px;
-    color: colours.$colour-admiralty-blue;
-    margin: 0;
-    padding: 0 30px;
-    @include responsive.not-desktop {
-      padding: 0px 18px;
-      height: 48px;
-      line-height: 48px;
-    }
+    padding: 42px 42px 18px 42px;
+
+    @extend h3;
   }
 
   & > .modal-content {
     border-top: none;
     flex-grow: 1;
-    padding: 30px;
+    padding: 0px 42px 42px 42px;
     @include responsive.not-desktop {
       padding: 24px 18px;
     }
