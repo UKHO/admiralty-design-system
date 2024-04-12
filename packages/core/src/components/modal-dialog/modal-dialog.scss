@@ -9,14 +9,27 @@
 .modal-dialog {
   margin: 0 auto;
   display: block;
-  width: max-content;
+
+  @include responsive.desktop-only {
+    width: max-content;
+  }
+
+  @include responsive.not-desktop {
+    width: 250px;
+  }
 
   // display: flex;
   // flex-direction: column;
   border: 1px solid colours.$colour-divider;
 
   & > .modal-heading {
-    padding: 42px 42px 18px 42px;
+    @include responsive.desktop-only {
+      padding: 42px 42px 18px 42px;
+    }
+
+    @include responsive.not-desktop {
+      padding: 42px 18px 18px 18px;
+    }
 
     @extend h3;
   }
@@ -24,15 +37,33 @@
   & > .modal-content {
     border-top: none;
     flex-grow: 1;
-    padding: 0px 42px 42px 42px;
+
+    @include responsive.desktop-only {
+      padding: 0px 42px 42px 42px;
+    }
+
     @include responsive.not-desktop {
-      padding: 24px 18px;
+      padding: 0px 18px 42px 18px;
     }
   }
 
   & > .modal-actions {
     background-color: #d9e0e7;
     padding: 12px;
+
+    ::slotted(div) {
+      display: flex;
+
+      @include responsive.desktop-only {
+        justify-content: end;
+        flex-direction: row;
+      }
+
+      @include responsive.not-desktop {
+        justify-content: center;
+        flex-direction: column;
+      }
+    }
   }
 }
 
