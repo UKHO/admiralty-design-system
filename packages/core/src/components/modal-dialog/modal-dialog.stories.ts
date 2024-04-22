@@ -18,7 +18,7 @@ export const Basic: Story = {
   render: args => html`<admiralty-modal-dialog heading="${args.heading}">
     <div slot="content">
       <admiralty-icon icon-name="triangle-exclamation" icon-prefix="fas"></admiralty-icon>
-      <div>If you leave this page, your survey won't be saved and can't be recovered</div>
+      <div>If you leave this page, your survey won&apos;t be saved and can&apos;t be recovered</div>
     </div>
     <div slot="actions">
       <admiralty-button variant="secondary">Leave page</admiralty-button>
