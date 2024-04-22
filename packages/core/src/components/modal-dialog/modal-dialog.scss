@@ -25,14 +25,36 @@
     border-top: none;
     flex-grow: 1;
     padding: 0px 42px 42px 42px;
-    @include responsive.not-desktop {
-      padding: 24px 18px;
+    display: flex;
+    align-items: start;
+
+    ::slotted(div) {
+      admiralty-icon {
+        color: #09315b;
+        display: inline-block;
+        padding: 5px;
+      }
+      div {
+        color: #09315b;
+        max-width: 500px;
+        display: inline-block;
+      }
     }
   }
 
   & > .modal-actions {
     background-color: #d9e0e7;
     padding: 12px;
+
+    ::slotted(div) {
+      display: flex;
+      justify-content: end;
+      flex-direction: row;
+
+      admiralty-button {
+        padding: 0px 8px;
+      }
+    }
   }
 }
 

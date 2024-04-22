@@ -230,16 +230,12 @@
 </admiralty-dialogue>
 
 <admiralty-modal-dialog heading="Do you want to leave this page?">
-  <div slot="content" style="display: flex; align-items: start">
-    <admiralty-icon
-      icon-name="triangle-exclamation"
-      icon-prefix="fas"
-      style="color: #09315b; display: inline-block; padding: 5px"
-    ></admiralty-icon>
-    <span style="color: #09315b; max-width: 300px; display: inline-block"
-      >If you leave this page, your survey won't be saved and can't be recovered</span
-    >
+  <div slot="content">
+    <admiralty-icon icon-name="triangle-exclamation" icon-prefix="fas"></admiralty-icon>
+    <div>If you leave this page, your survey won't be saved and can't be recovered</div>
   </div>
-  <admiralty-button variant="secondary" slot="actions">Leave page</admiralty-button>
-  <admiralty-button slot="actions">Continue survey</admiralty-button>
+  <div slot="actions">
+    <admiralty-button variant="secondary" slot="actions">Leave page</admiralty-button>
+    <admiralty-button slot="actions">Continue survey</admiralty-button>
+  </div>
 </admiralty-modal-dialog>
