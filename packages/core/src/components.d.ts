@@ -339,7 +339,7 @@ export namespace Components {
     }
     interface AdmiraltyModalDialog {
         /**
-          * The title of the card.
+          * The title of the modal dialog.
          */
         "heading": string;
     }
@@ -1631,7 +1631,7 @@ declare namespace LocalJSX {
     }
     interface AdmiraltyModalDialog {
         /**
-          * The title of the card.
+          * The title of the modal dialog.
          */
         "heading"?: string;
     }

@@ -7,7 +7,7 @@ import { Component, Prop, h } from '@stencil/core';
 })
 export class ModalDialogComponent {
   /**
-   * The title of the card.
+   * The title of the modal dialog.
    */
   @Prop() heading: string;
 

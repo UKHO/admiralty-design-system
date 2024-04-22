@@ -7,9 +7,9 @@
 
 ## Properties
 
-| Property  | Attribute | Description            | Type     | Default     |
-| --------- | --------- | ---------------------- | -------- | ----------- |
-| `heading` | `heading` | The title of the card. | `string` | `undefined` |
+| Property  | Attribute | Description                    | Type     | Default     |
+| --------- | --------- | ------------------------------ | -------- | ----------- |
+| `heading` | `heading` | The title of the modal dialog. | `string` | `undefined` |
 
 
 ----------------------------------------------
