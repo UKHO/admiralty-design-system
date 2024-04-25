@@ -601,14 +601,14 @@ export declare interface AdmiraltyLink extends Components.AdmiraltyLink {}
 
 
 @ProxyCmp({
-  inputs: ['heading']
+  inputs: ['heading', 'show']
 })
 @Component({
   selector: 'admiralty-modal-dialog',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['heading'],
+  inputs: ['heading', 'show'],
 })
 export class AdmiraltyModalDialog {
   protected el: HTMLElement;

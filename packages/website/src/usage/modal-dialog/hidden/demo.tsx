@@ -3,7 +3,7 @@ import { AdmiraltyModalDialog, AdmiraltyIcon, AdmiraltyButton } from "@ukho/admi
 
 export default function Demo() {
   return (
-    <AdmiraltyModalDialog heading="Do you want to leave this page?" show={true}>
+    <AdmiraltyModalDialog heading="Do you want to leave this page?" show={false}>
       <div slot="content">
         <AdmiraltyIcon icon-name="triangle-exclamation" icon-prefix="fas"></AdmiraltyIcon>
         <div>If you leave this page, your survey won&apos;t be saved and can&apos;t be recovered</div>

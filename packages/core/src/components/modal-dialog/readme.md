@@ -7,9 +7,10 @@
 
 ## Properties
 
-| Property  | Attribute | Description                    | Type     | Default     |
-| --------- | --------- | ------------------------------ | -------- | ----------- |
-| `heading` | `heading` | The title of the modal dialog. | `string` | `undefined` |
+| Property  | Attribute | Description                       | Type      | Default     |
+| --------- | --------- | --------------------------------- | --------- | ----------- |
+| `heading` | `heading` | The title of the modal dialog.    | `string`  | `undefined` |
+| `show`    | `show`    | Whether to show the modal dialog. | `boolean` | `false`     |
 
 
 ----------------------------------------------

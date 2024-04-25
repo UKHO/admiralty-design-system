@@ -342,6 +342,10 @@ export namespace Components {
           * The title of the modal dialog.
          */
         "heading": string;
+        /**
+          * Whether to show the modal dialog.
+         */
+        "show": boolean;
     }
     interface AdmiraltyPaginator {
         /**
@@ -1634,6 +1638,10 @@ declare namespace LocalJSX {
           * The title of the modal dialog.
          */
         "heading"?: string;
+        /**
+          * Whether to show the modal dialog.
+         */
+        "show"?: boolean;
     }
     interface AdmiraltyPaginator {
         /**
