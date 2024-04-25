@@ -15,7 +15,7 @@ export default meta;
 type Story = StoryObj<ModalDialogComponent>;
 
 export const Basic: Story = {
-  render: args => html`<admiralty-modal-dialog heading="${args.heading}">
+  render: args => html`<admiralty-modal-dialog heading="${args.heading}" ?show="${args.show}">
     <div slot="content">
       <admiralty-icon icon-name="triangle-exclamation" icon-prefix="fas"></admiralty-icon>
       <div>If you leave this page, your survey won&apos;t be saved and can&apos;t be recovered</div>
@@ -25,5 +25,19 @@ export const Basic: Story = {
       <admiralty-button>Continue survey</admiralty-button>
     </div>
   </admiralty-modal-dialog>`,
-  args: { heading: 'Do you want to leave this page?' },
+  args: { heading: 'Do you want to leave this page?', show: true },
+};
+
+export const Hidden: Story = {
+  render: args => html`<admiralty-modal-dialog heading="${args.heading}" ?show="${args.show}">
+    <div slot="content">
+      <admiralty-icon icon-name="triangle-exclamation" icon-prefix="fas"></admiralty-icon>
+      <div>If you leave this page, your survey won&apos;t be saved and can&apos;t be recovered</div>
+    </div>
+    <div slot="actions">
+      <admiralty-button variant="secondary">Leave page</admiralty-button>
+      <admiralty-button>Continue survey</admiralty-button>
+    </div>
+  </admiralty-modal-dialog>`,
+  args: { heading: 'Do you want to leave this page?', show: false },
 };
