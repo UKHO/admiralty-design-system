@@ -1,7 +1,9 @@
 import React from "react";
 import { AdmiraltyModalDialog, AdmiraltyIcon, AdmiraltyButton } from "@ukho/admiralty-react";
+import { useFrame } from "react-frame-component";
 
 export default function Demo() {
+  useFrame();
   return (
     <AdmiraltyModalDialog heading="Do you want to leave this page?" show={true}>
       <div slot="content">
@@ -15,3 +17,4 @@ export default function Demo() {
     </AdmiraltyModalDialog>
   );
 }
+

@@ -2,6 +2,7 @@ import { MDXContent } from "mdx/types";
 import React, { ComponentType, ReactElement, useEffect, useMemo, useRef, useState } from "react";
 import { CodeSnippets, UsageTarget } from "@/components/playground/playground.types";
 import { AdmiraltyTab, AdmiraltyTabGroup } from "@ukho/admiralty-react";
+import Frame, { useFrame } from "react-frame-component";
 import "./playground.css";
 
 interface PlaygroundProps {
@@ -40,11 +41,12 @@ export default function Playground(props: PlaygroundProps) {
   }, [props.code]);
 
   const sortedUsageTargets = useMemo(() => Object.keys(UsageTarget).sort(), []);
-
   return (
     <div className="playground-container">
       <div className="demo-container">
-        <props.demo />
+        <Frame>
+          <props.demo />
+        </Frame>
       </div>
       <div className="codesnippet-container">
         <AdmiraltyTabGroup>
@@ -70,3 +72,4 @@ export default function Playground(props: PlaygroundProps) {
     </div>
   );
 }
+

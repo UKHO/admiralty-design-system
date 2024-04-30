@@ -23562,6 +23562,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-frame-component@npm:^5.2.6":
+  version: 5.2.6
+  resolution: "react-frame-component@npm:5.2.6"
+  peerDependencies:
+    prop-types: ^15.5.9
+    react: ">= 16.3"
+    react-dom: ">= 16.3"
+  checksum: 6669a0acc1532b53e80b14688b06d64bfab88103a1e4377a386f4350a51d76494b48ac1b8f6818bd60ae2d37cce015314ce725d807be72e9fe9258e9303bb6ec
+  languageName: node
+  linkType: hard
+
 "react-is@npm:^16.13.1":
   version: 16.13.1
   resolution: "react-is@npm:16.13.1"
@@ -27974,6 +27985,7 @@ __metadata:
     prismjs: ^1.29.0
     react: 18.2.0
     react-dom: 18.2.0
+    react-frame-component: ^5.2.6
     rehype-autolink-headings: ^7.0.0
     rehype-slug: ^6.0.0
     remark-gfm: ^3.0.1
