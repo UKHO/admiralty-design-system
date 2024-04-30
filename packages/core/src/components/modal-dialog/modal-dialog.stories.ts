@@ -26,6 +26,13 @@ export const Basic: Story = {
     </div>
   </admiralty-modal-dialog>`,
   args: { heading: 'Do you want to leave this page?', show: true },
+  parameters: {
+    docs: {
+      story: {
+        height: '500px',
+      },
+    },
+  },
 };
 
 export const Hidden: Story = {
