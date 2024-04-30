@@ -56,8 +56,8 @@ describe('admiralty-input', () => {
     expect(page.root).toEqualHtml(`
       <admiralty-input invalid="true">
         <div class="text-input-container">
-          <input autocomplete="off" class="invalid" id="admiralty-input-4" name="admiralty-input-4" type="text" value="">
-          <admiralty-input-invalid style="visibility: hidden;"></admiralty-input-invalid>
+          <input aria-describedby="null admiralty-input-error-4" aria-invalid="true" autocomplete="off" class="invalid" id="admiralty-input-4" name="admiralty-input-4" type="text" value="">
+          <admiralty-input-invalid id="admiralty-input-error-4" style="visibility: hidden;"></admiralty-input-invalid>
         </div>
       </admiralty-input>
     `);
@@ -70,14 +70,14 @@ describe('admiralty-input', () => {
     });
     expect(page.root).toEqualHtml(`
       <admiralty-input invalid="true" invalid-message="This is invalid!">
-        <div class="text-input-container">
-          <input aria-describedby="null null" aria-invalid="false" autocomplete="off" class="invalid" id="admiralty-input-5" name="admiralty-input-5" type="text" value="">
-          <admiralty-input-invalid id="admiralty-input-error-4" style="visibility: visible;">
-            This is invalid!
-          </admiralty-input-invalid>
-        </div>
+          <div class="text-input-container">
+              <input aria-describedby="null admiralty-input-error-5" aria-invalid="true" autocomplete="off" class="invalid" id="admiralty-input-5" name="admiralty-input-5" type="text" value="">
+              <admiralty-input-invalid id="admiralty-input-error-5" style="visibility: visible;">
+              This is invalid!
+              </admiralty-input-invalid>
+          </div>
       </admiralty-input>
-    `);
+      `);
   });
 
   it('renders with type', async () => {
@@ -102,11 +102,11 @@ it('renders with maxlength', async () => {
     html: `<admiralty-input max-length="1"></admiralty-input>`,
   });
   expect(page.root).toEqualHtml(`
-    <admiralty-input max-length="1">
-      <div class="text-input-container">
-        <input autocomplete="off" class="" id="admiralty-input-7" maxlength="1" name="admiralty-input-7" type="text" value="">
-        <admiralty-input-invalid style="visibility: hidden;"></admiralty-input-invalid>
-      </div>
-    </admiralty-input>
-  `);
+  <admiralty-input max-length="1">
+    <div class="text-input-container">
+      <input autocomplete="off" aria-describedby="null null" aria-invalid="false" id="admiralty-input-7" maxlength="1" name="admiralty-input-7" type="text" value="">
+      <admiralty-input-invalid id="admiralty-input-error-7" style="visibility: hidden;"></admiralty-input-invalid>
+    </div>
+  </admiralty-input>
+`);
 });
