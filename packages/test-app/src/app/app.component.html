@@ -230,7 +230,12 @@
 </admiralty-dialogue>
 
 <admiralty-button (click)="showModalDialog()">Show Modal Dialog</admiralty-button>
-<admiralty-modal-dialog heading="Do you want to leave this page?" [show]="isModalDialogShown">
+<admiralty-modal-dialog
+  heading="Do you want to leave this page?"
+  [show]="isModalDialogShown"
+  label="Do you want to leave this page?"
+  description="If you leave this page, your survey won't be saved and can't be recovered"
+>
   <div slot="content">
     <admiralty-icon icon-name="triangle-exclamation" icon-prefix="fas"></admiralty-icon>
     <div>If you leave this page, your survey won&apos;t be saved and can&apos;t be recovered</div>
@@ -240,3 +245,4 @@
     <admiralty-button (click)="hideModalDialog()">Continue survey</admiralty-button>
   </div>
 </admiralty-modal-dialog>
+

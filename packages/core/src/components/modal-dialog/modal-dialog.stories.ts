@@ -15,7 +15,7 @@ export default meta;
 type Story = StoryObj<ModalDialogComponent>;
 
 export const Basic: Story = {
-  render: args => html`<admiralty-modal-dialog heading="${args.heading}" ?show="${args.show}">
+  render: args => html`<admiralty-modal-dialog heading="${args.heading}" ?show="${args.show}" label="${args.label}" description="${args.description}">
     <div slot="content">
       <admiralty-icon icon-name="triangle-exclamation" icon-prefix="fas"></admiralty-icon>
       <div>If you leave this page, your survey won&apos;t be saved and can&apos;t be recovered</div>
@@ -25,7 +25,12 @@ export const Basic: Story = {
       <admiralty-button>Continue survey</admiralty-button>
     </div>
   </admiralty-modal-dialog>`,
-  args: { heading: 'Do you want to leave this page?', show: true },
+  args: {
+    heading: 'Do you want to leave this page?',
+    show: true,
+    label: 'Do you want to leave this page?',
+    description: "If you leave this page, your survey won't be saved and can't be recovered",
+  },
   parameters: {
     docs: {
       story: {
@@ -36,7 +41,7 @@ export const Basic: Story = {
 };
 
 export const Hidden: Story = {
-  render: args => html`<admiralty-modal-dialog heading="${args.heading}" ?show="${args.show}">
+  render: args => html`<admiralty-modal-dialog heading="${args.heading}" ?show="${args.show}" label="${args.label}" description="${args.description}">
     <div slot="content">
       <admiralty-icon icon-name="triangle-exclamation" icon-prefix="fas"></admiralty-icon>
       <div>If you leave this page, your survey won&apos;t be saved and can&apos;t be recovered</div>
@@ -46,5 +51,10 @@ export const Hidden: Story = {
       <admiralty-button>Continue survey</admiralty-button>
     </div>
   </admiralty-modal-dialog>`,
-  args: { heading: 'Do you want to leave this page?', show: false },
+  args: {
+    heading: 'Do you want to leave this page?',
+    show: false,
+    label: 'Do you want to leave this page?',
+    description: "If you leave this page, your survey won't be saved and can't be recovered",
+  },
 };

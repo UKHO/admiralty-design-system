@@ -339,9 +339,17 @@ export namespace Components {
     }
     interface AdmiraltyModalDialog {
         /**
+          * Describe the contents of the dialog.
+         */
+        "description": string;
+        /**
           * The title of the modal dialog.
          */
         "heading": string;
+        /**
+          * Label the dialog.
+         */
+        "label": string;
         /**
           * Whether to show the modal dialog.
          */
@@ -1635,9 +1643,17 @@ declare namespace LocalJSX {
     }
     interface AdmiraltyModalDialog {
         /**
+          * Describe the contents of the dialog.
+         */
+        "description"?: string;
+        /**
           * The title of the modal dialog.
          */
         "heading"?: string;
+        /**
+          * Label the dialog.
+         */
+        "label"?: string;
         /**
           * Whether to show the modal dialog.
          */

@@ -11,6 +11,14 @@ export class ModalDialogComponent {
    */
   @Prop() heading: string;
   /**
+   * Label the dialog.
+   */
+  @Prop() label: string;
+  /**
+   * Describe the contents of the dialog.
+   */
+  @Prop() description: string;
+  /**
    * Whether to show the modal dialog.
    */
   @Prop() show: boolean = false;
@@ -18,7 +26,7 @@ export class ModalDialogComponent {
   render() {
     return (
       <div>
-        <div class={{ 'modal-dialog': true, 'show': this.show }}>
+        <div class={{ 'modal-dialog': true, 'show': this.show }} role="dialog" aria-label={this.label} aria-description={this.description}>
           {this.heading ? <p class="modal-heading">{this.heading}</p> : null}
           <div class="modal-content">
             <slot name="content"></slot>

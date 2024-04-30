@@ -10,7 +10,7 @@ describe('admiralty-modal-dialog', () => {
     expect(root).toEqualHtml(`
       <admiralty-modal-dialog>
         <div>
-          <div class="modal-dialog">
+          <div class="modal-dialog" role="dialog">
             <div class="modal-content"></div>
             <div class="modal-actions" role="navigation"></div>
           </div>
@@ -28,7 +28,7 @@ describe('admiralty-modal-dialog', () => {
     expect(root).toEqualHtml(`
       <admiralty-modal-dialog heading="TESTHEADING">
         <div>
-          <div class="modal-dialog">
+          <div class="modal-dialog" role="dialog">
             <p class="modal-heading">TESTHEADING</p>
             <div class="modal-content"></div>
             <div class="modal-actions" role="navigation"></div>
@@ -47,7 +47,7 @@ describe('admiralty-modal-dialog', () => {
     expect(root).toEqualHtml(`
       <admiralty-modal-dialog show="true">
         <div>
-          <div class="modal-dialog show">
+          <div class="modal-dialog show" role="dialog">
             <div class="modal-content"></div>
             <div class="modal-actions" role="navigation"></div>
           </div>
@@ -65,7 +65,43 @@ describe('admiralty-modal-dialog', () => {
     expect(root).toEqualHtml(`
       <admiralty-modal-dialog show="false">
         <div>
-          <div class="modal-dialog">
+          <div class="modal-dialog" role="dialog">
+            <div class="modal-content"></div>
+            <div class="modal-actions" role="navigation"></div>
+          </div>
+          <div class="modal-backdrop">
+          </div>
+        </div>
+      </admiralty-modal-dialog>
+    `);
+  });
+  it('renders with aria-label when label is passed', async () => {
+    const { root } = await newSpecPage({
+      components: [ModalDialogComponent],
+      html: '<admiralty-modal-dialog label="TESTLABEL"></admiralty-modal-dialog>',
+    });
+    expect(root).toEqualHtml(`
+      <admiralty-modal-dialog label="TESTLABEL">
+        <div>
+          <div class="modal-dialog" role="dialog" aria-label="TESTLABEL">
+            <div class="modal-content"></div>
+            <div class="modal-actions" role="navigation"></div>
+          </div>
+          <div class="modal-backdrop">
+          </div>
+        </div>
+      </admiralty-modal-dialog>
+    `);
+  });
+  it('renders with aria-description when description is passed', async () => {
+    const { root } = await newSpecPage({
+      components: [ModalDialogComponent],
+      html: '<admiralty-modal-dialog description="TESTDESCRIPTION"></admiralty-modal-dialog>',
+    });
+    expect(root).toEqualHtml(`
+      <admiralty-modal-dialog description="TESTDESCRIPTION">
+        <div>
+          <div class="modal-dialog" role="dialog" aria-description="TESTDESCRIPTION">
             <div class="modal-content"></div>
             <div class="modal-actions" role="navigation"></div>
           </div>
