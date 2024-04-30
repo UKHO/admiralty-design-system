@@ -6928,21 +6928,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@stencil/angular-output-target@npm:^0.7.1":
-  version: 0.7.1
-  resolution: "@stencil/angular-output-target@npm:0.7.1"
+"@stencil/angular-output-target@npm:^0.8.4":
+  version: 0.8.4
+  resolution: "@stencil/angular-output-target@npm:0.8.4"
   peerDependencies:
     "@stencil/core": ">=2.0.0 || >=3 || >= 4.0.0-beta.0 || >= 4.0.0"
-  checksum: 87d3994dbfe3f7018bf32132e757c9222d31417d1adee1814c08f51567e8a8e6c9a869dc3183701b08a1251d419d391580bec334244f90e7d0fa81632a436da3
+  checksum: 250107ec48b3419dd353cbe82ecb1b4e3393779724ca6944c5e63ad492e271cc518385877ba20af9b51fb89ba7420b1ec4f74d65b00c3b27a057cd742e169869
   languageName: node
   linkType: hard
 
-"@stencil/core@npm:^3.4.2":
-  version: 3.4.2
-  resolution: "@stencil/core@npm:3.4.2"
+"@stencil/core@npm:4.11.0":
+  version: 4.11.0
+  resolution: "@stencil/core@npm:4.11.0"
   bin:
     stencil: bin/stencil
-  checksum: b875ae9fd3f794323c8f55f2640ff134632d034db6c00b103d6f6604668aa0e218880a198e531842a81c7b4afaed7bf407e71b541c7425634ecdc17e8577b7b5
+  checksum: a327cc8cf2fb0f298d4f417c518eaf1a122a7a1d198773a3aaa345972558b27c48cbed76ec24ab264937dfd272e66d91c49b7c29d2827b1adf7322066e561d6e
   languageName: node
   linkType: hard
 
@@ -6955,12 +6955,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@stencil/sass@npm:^3.0.5":
-  version: 3.0.5
-  resolution: "@stencil/sass@npm:3.0.5"
+"@stencil/sass@npm:^3.0.12":
+  version: 3.0.12
+  resolution: "@stencil/sass@npm:3.0.12"
   peerDependencies:
     "@stencil/core": ">=2.0.0 || >=3.0.0-beta.0 || >= 4.0.0-beta.0 || >= 4.0.0"
-  checksum: 996ddacf3426d16e8f9b0cb5c22b3e8df001916dddc2f0ae8bf2e5e45dbc75d5db829bb6507658e0735fe269303cd89398af4ff22c00af29f47da1e68dcd8b25
+  checksum: 838e9b367b57a0845302ae0df0130f92b2244ce129fcc0d6965b4503c3e39a2a2a31b90f6b34d963b215ac42c6334a28b380523136780aad90a1ec0b230a2256
   languageName: node
   linkType: hard
 
@@ -8564,10 +8564,10 @@ __metadata:
     "@fortawesome/free-brands-svg-icons": ^6.4.0
     "@fortawesome/free-regular-svg-icons": ^6.4.0
     "@fortawesome/free-solid-svg-icons": ^6.4.0
-    "@stencil/angular-output-target": ^0.7.1
-    "@stencil/core": ^3.4.2
+    "@stencil/angular-output-target": ^0.8.4
+    "@stencil/core": 4.11.0
     "@stencil/react-output-target": ^0.5.3
-    "@stencil/sass": ^3.0.5
+    "@stencil/sass": ^3.0.12
     "@storybook/addon-a11y": ^7.6.7
     "@storybook/addon-actions": ^7.6.7
     "@storybook/addon-essentials": ^7.6.7
