@@ -32,17 +32,18 @@
   & > .modal-heading {
     padding: 42px 42px 18px 42px;
 
-    @extend h3;
+    @extend h2;
   }
 
   & > .modal-content {
     border-top: none;
     flex-grow: 1;
     padding: 0px 42px 42px 42px;
-    display: flex;
-    align-items: start;
 
     ::slotted(div) {
+      display: flex;
+      align-items: start;
+
       admiralty-icon {
         color: #09315b;
         display: inline-block;
@@ -52,13 +53,13 @@
         color: #09315b;
         max-width: 500px;
         display: inline-block;
+        @extend h6;
       }
     }
   }
 
   & > .modal-actions {
     background-color: #d9e0e7;
-    padding: 12px;
 
     ::slotted(div) {
       display: flex;
@@ -66,7 +67,7 @@
       flex-direction: row;
 
       admiralty-button {
-        padding: 0px 8px;
+        padding: 24px 24px 24px 0px;
       }
     }
   }
