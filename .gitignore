@@ -66,3 +66,4 @@ build-storybook.log
 !.yarn/releases
 !.yarn/plugins
 .pnp.*
+.nx/*
