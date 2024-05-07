@@ -113,8 +113,6 @@ export class RadioComponent {
     this.admiraltyBlur.emit();
   };
 
-  @Watch('checked')
-  @Watch('disabled')
   render() {
     const { buttonTabindex, checked, disabled, inputId, name, value } = this;
 
