@@ -1,5 +1,6 @@
-import '../dist/admiralty/admiralty.esm';
 import '../src/scss/core.scss';
+import { defineCustomElements } from '../loader';
+defineCustomElements();
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
