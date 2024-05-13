@@ -30,4 +30,4 @@ jobs:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           workingDir: ./packages/core
           exitOnceUploaded: true
-          storybookBuildDir: ./packages/core/dist-storybook
+          storybookBuildDir: ./packages/core/storybook-dist
