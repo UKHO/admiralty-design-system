@@ -13,7 +13,7 @@ const config: StorybookConfig = {
   },
   async viteFinal(config, options) {
     // Add your configuration here
-    config.build.outDir = 'storybook-dist'; //Workaround so that vite doesn't ignore the dist folder
+    config.build.emptyOutDir = false; //Workaround so that vite doesn't ignore the dist folder
     return config;
   },
 };
