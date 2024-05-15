@@ -1,0 +1,41 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "npm",
+      "script": "build:all",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": [],
+      "label": "Build all",
+      "detail": "yarn build:all"
+    },
+    {
+      "type": "npm",
+      "script": "storybook",
+      "path": "packages/core",
+      "problemMatcher": [],
+      "label": "Run Core Storybook",
+      "detail": "concurrently \"stencil build --watch\" \"storybook dev --no-open -p 6006\""
+    },
+    {
+      "type": "npm",
+      "script": "start",
+      "path": "packages/test-app",
+      "problemMatcher": [],
+      "label": "Run Angular test-app site",
+      "detail": "ng serve --host=0.0.0.0"
+    },
+    {
+      "type": "npm",
+      "script": "dev",
+      "path": "packages/website",
+      "problemMatcher": [],
+      "label": "Run Documentation Website",
+      "detail": "next dev"
+    }
+  ]
+}
+
