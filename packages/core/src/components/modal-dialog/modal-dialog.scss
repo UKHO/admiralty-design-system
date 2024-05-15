@@ -40,35 +40,39 @@
     flex-grow: 1;
     padding: 0px 42px 42px 42px;
 
-    ::slotted(div) {
+    ::slotted(div[slot='content']) {
       display: flex;
       align-items: start;
-
-      admiralty-icon {
-        color: #09315b;
-        display: inline-block;
-        padding: 5px;
-      }
-      div {
-        color: #09315b;
-        max-width: 500px;
-        display: inline-block;
-        @extend h6;
-      }
+    }
+    //Specifying the specific slot inexplicably
+    //makes the selector apply to the slotted div
+    ::slotted(div) > admiralty-icon {
+      color: #09315b;
+      display: inline-block;
+      padding: 5px;
+    }
+    //Specifying the specific slot inexplicably
+    //makes the selector apply to the slotted div
+    ::slotted(div) > div {
+      color: #09315b;
+      max-width: 500px;
+      display: inline-block;
+      @extend h6;
     }
   }
 
   & > .modal-actions {
     background-color: #d9e0e7;
 
-    ::slotted(div) {
+    ::slotted(div[slot='actions']) {
       display: flex;
       justify-content: end;
       flex-direction: row;
-
-      admiralty-button {
-        padding: 24px 24px 24px 0px;
-      }
+    }
+    //Specifying the specific slot inexplicably
+    //makes the selector apply to the slotted div
+    ::slotted(div) > admiralty-button {
+      padding: 24px 24px 24px 0px;
     }
   }
 }
