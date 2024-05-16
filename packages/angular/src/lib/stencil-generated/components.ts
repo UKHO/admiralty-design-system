@@ -8,14 +8,14 @@ import { Components } from '@ukho/admiralty-core';
 
 
 @ProxyCmp({
-  inputs: ['defaultValue', 'id', 'minLength', 'showNoOptionsFound']
+  inputs: ['autoSelect', 'defaultValue', 'minLength', 'showAllValues', 'showNoOptionsFound']
 })
 @Component({
   selector: 'admiralty-autocomplete',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['defaultValue', 'id', 'minLength', 'showNoOptionsFound'],
+  inputs: ['autoSelect', 'defaultValue', 'minLength', 'showAllValues', 'showNoOptionsFound'],
 })
 export class AdmiraltyAutocomplete {
   protected el: HTMLElement;
@@ -542,7 +542,7 @@ export class AdmiraltyInput {
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['admiraltyInput']);
+    proxyOutputs(this, this.el, ['admiraltyInput', 'admiraltyFocus', 'admiraltyBlur']);
   }
 }
 
@@ -554,6 +554,14 @@ export declare interface AdmiraltyInput extends Components.AdmiraltyInput {
    * Emitted when the value has changed.
    */
   admiraltyInput: EventEmitter<CustomEvent<IAdmiraltyInputInputChangeEventDetail>>;
+  /**
+   * Emitted when the input gains focus.
+   */
+  admiraltyFocus: EventEmitter<CustomEvent<FocusEvent>>;
+  /**
+   * Emitted when the input loses focus.
+   */
+  admiraltyBlur: EventEmitter<CustomEvent<FocusEvent>>;
 }
 
 

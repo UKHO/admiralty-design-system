@@ -25,9 +25,10 @@ export { SelectChangeEventDetail } from "./components/select/select.interface";
 export { TextAreaChangeEventDetail } from "./components/textarea/textarea.interface";
 export namespace Components {
     interface AdmiraltyAutocomplete {
+        "autoSelect": boolean;
         "defaultValue": string;
-        "id": string;
         "minLength": number;
+        "showAllValues": boolean;
         "showNoOptionsFound": boolean;
     }
     interface AdmiraltyBreadcrumb {
@@ -903,6 +904,8 @@ declare global {
     };
     interface HTMLAdmiraltyInputElementEventMap {
         "admiraltyInput": InputChangeEventDetail;
+        "admiraltyFocus": FocusEvent;
+        "admiraltyBlur": FocusEvent;
     }
     /**
      * Once this component works, review whether a form field component should be created so
@@ -1254,9 +1257,10 @@ declare global {
 }
 declare namespace LocalJSX {
     interface AdmiraltyAutocomplete {
+        "autoSelect"?: boolean;
         "defaultValue"?: string;
-        "id"?: string;
         "minLength"?: number;
+        "showAllValues"?: boolean;
         "showNoOptionsFound"?: boolean;
     }
     interface AdmiraltyBreadcrumb {
@@ -1588,6 +1592,14 @@ declare namespace LocalJSX {
           * The name of the control, which is submitted with the form data.
          */
         "name"?: string;
+        /**
+          * Emitted when the input loses focus.
+         */
+        "onAdmiraltyBlur"?: (event: AdmiraltyInputCustomEvent<FocusEvent>) => void;
+        /**
+          * Emitted when the input gains focus.
+         */
+        "onAdmiraltyFocus"?: (event: AdmiraltyInputCustomEvent<FocusEvent>) => void;
         /**
           * Emitted when the value has changed.
          */
