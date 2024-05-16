@@ -24,6 +24,12 @@ export { RadioGroupChangeEventDetail } from "./components/radio-group/radio-grou
 export { SelectChangeEventDetail } from "./components/select/select.interface";
 export { TextAreaChangeEventDetail } from "./components/textarea/textarea.interface";
 export namespace Components {
+    interface AdmiraltyAutocomplete {
+        "defaultValue": string;
+        "id": string;
+        "minLength": number;
+        "showNoOptionsFound": boolean;
+    }
     interface AdmiraltyBreadcrumb {
         /**
           * When `true` the breadcrumb will by styled to show that it is the currently active breadcrumb. Defaults to `true` for the last breadcrumb if it is not set on any.
@@ -689,6 +695,12 @@ export interface AdmiraltyTypeAheadCustomEvent<T> extends CustomEvent<T> {
     target: HTMLAdmiraltyTypeAheadElement;
 }
 declare global {
+    interface HTMLAdmiraltyAutocompleteElement extends Components.AdmiraltyAutocomplete, HTMLStencilElement {
+    }
+    var HTMLAdmiraltyAutocompleteElement: {
+        prototype: HTMLAdmiraltyAutocompleteElement;
+        new (): HTMLAdmiraltyAutocompleteElement;
+    };
     interface HTMLAdmiraltyBreadcrumbElement extends Components.AdmiraltyBreadcrumb, HTMLStencilElement {
     }
     var HTMLAdmiraltyBreadcrumbElement: {
@@ -1215,6 +1227,7 @@ declare global {
         new (): HTMLAdmiraltyTypeAheadItemElement;
     };
     interface HTMLElementTagNameMap {
+        "admiralty-autocomplete": HTMLAdmiraltyAutocompleteElement;
         "admiralty-breadcrumb": HTMLAdmiraltyBreadcrumbElement;
         "admiralty-breadcrumbs": HTMLAdmiraltyBreadcrumbsElement;
         "admiralty-button": HTMLAdmiraltyButtonElement;
@@ -1265,6 +1278,12 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface AdmiraltyAutocomplete {
+        "defaultValue"?: string;
+        "id"?: string;
+        "minLength"?: number;
+        "showNoOptionsFound"?: boolean;
+    }
     interface AdmiraltyBreadcrumb {
         /**
           * When `true` the breadcrumb will by styled to show that it is the currently active breadcrumb. Defaults to `true` for the last breadcrumb if it is not set on any.
@@ -1970,6 +1989,7 @@ declare namespace LocalJSX {
         "value"?: string;
     }
     interface IntrinsicElements {
+        "admiralty-autocomplete": AdmiraltyAutocomplete;
         "admiralty-breadcrumb": AdmiraltyBreadcrumb;
         "admiralty-breadcrumbs": AdmiraltyBreadcrumbs;
         "admiralty-button": AdmiraltyButton;
@@ -2023,6 +2043,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "admiralty-autocomplete": LocalJSX.AdmiraltyAutocomplete & JSXBase.HTMLAttributes<HTMLAdmiraltyAutocompleteElement>;
             "admiralty-breadcrumb": LocalJSX.AdmiraltyBreadcrumb & JSXBase.HTMLAttributes<HTMLAdmiraltyBreadcrumbElement>;
             "admiralty-breadcrumbs": LocalJSX.AdmiraltyBreadcrumbs & JSXBase.HTMLAttributes<HTMLAdmiraltyBreadcrumbsElement>;
             "admiralty-button": LocalJSX.AdmiraltyButton & JSXBase.HTMLAttributes<HTMLAdmiraltyButtonElement>;

@@ -40,6 +40,7 @@ and checkbox.
 
 ### Used by
 
+ - [admiralty-autocomplete](../autocomplete)
  - [admiralty-type-ahead](../type-ahead)
 
 ### Depends on
@@ -55,6 +56,7 @@ graph TD;
   admiralty-input --> admiralty-hint
   admiralty-input --> admiralty-input-invalid
   admiralty-input-invalid --> admiralty-icon
+  admiralty-autocomplete --> admiralty-input
   admiralty-type-ahead --> admiralty-input
   style admiralty-input fill:#f9f,stroke:#333,stroke-width:4px
 ```
