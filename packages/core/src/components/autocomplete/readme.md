@@ -7,12 +7,13 @@
 
 ## Properties
 
-| Property             | Attribute               | Description | Type      | Default     |
-| -------------------- | ----------------------- | ----------- | --------- | ----------- |
-| `defaultValue`       | `default-value`         |             | `string`  | `'blah'`    |
-| `id`                 | `id`                    |             | `string`  | `undefined` |
-| `minLength`          | `min-length`            |             | `number`  | `1`         |
-| `showNoOptionsFound` | `show-no-options-found` |             | `boolean` | `true`      |
+| Property             | Attribute               | Description | Type      | Default |
+| -------------------- | ----------------------- | ----------- | --------- | ------- |
+| `autoSelect`         | `auto-select`           |             | `boolean` | `false` |
+| `defaultValue`       | `default-value`         |             | `string`  | `''`    |
+| `minLength`          | `min-length`            |             | `number`  | `1`     |
+| `showAllValues`      | `show-all-values`       |             | `boolean` | `true`  |
+| `showNoOptionsFound` | `show-no-options-found` |             | `boolean` | `true`  |
 
 
 ## Dependencies
