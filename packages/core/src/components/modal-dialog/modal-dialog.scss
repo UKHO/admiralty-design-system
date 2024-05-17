@@ -30,7 +30,7 @@
   border: 1px solid colours.$colour-divider;
 
   & > .modal-heading {
-    padding: 42px 42px 18px 42px;
+    padding: 42px 42px 18px 58px;
 
     @extend h2;
   }
@@ -49,7 +49,7 @@
     ::slotted(div) > admiralty-icon {
       color: #09315b;
       display: inline-block;
-      padding: 3px 10px 0px 16px;
+      padding: 3px 10px 0px 18px;
       font-size: 24px;
     }
     //Specifying the specific slot inexplicably
