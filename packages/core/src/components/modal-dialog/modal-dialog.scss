@@ -30,9 +30,11 @@
   border: 1px solid colours.$colour-divider;
 
   & > .modal-heading {
-    padding: 42px 42px 18px 58px;
+    padding: 60px 60px 30px 60px;
 
     @extend h2;
+
+    margin-bottom: 0px;
   }
 
   & > .modal-content {
