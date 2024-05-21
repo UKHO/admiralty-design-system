@@ -1,5 +1,9 @@
 import { Component, Prop, h } from '@stencil/core';
 
+/**
+ * @slot content - Content of the dialog.
+ * @slot actions - Actions for the dialog.
+ */
 @Component({
   tag: 'admiralty-modal-dialog',
   styleUrl: 'modal-dialog.scss',
