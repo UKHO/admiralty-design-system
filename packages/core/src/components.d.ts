@@ -25,9 +25,14 @@ export { SelectChangeEventDetail } from "./components/select/select.interface";
 export { TextAreaChangeEventDetail } from "./components/textarea/textarea.interface";
 export namespace Components {
     interface AdmiraltyAutocomplete {
+        "assistiveHint": string;
         "autoSelect": boolean;
         "defaultValue": string;
+        "hint": string;
+        "label": string;
         "minLength": number;
+        "name": string;
+        "placeholder": string;
         "showAllValues": boolean;
         "showNoOptionsFound": boolean;
     }
@@ -1282,9 +1287,14 @@ declare global {
 }
 declare namespace LocalJSX {
     interface AdmiraltyAutocomplete {
+        "assistiveHint"?: string;
         "autoSelect"?: boolean;
         "defaultValue"?: string;
+        "hint"?: string;
+        "label"?: string;
         "minLength"?: number;
+        "name"?: string;
+        "placeholder"?: string;
         "showAllValues"?: boolean;
         "showNoOptionsFound"?: boolean;
     }

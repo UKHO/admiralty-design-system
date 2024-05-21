@@ -8,14 +8,14 @@ import { Components } from '@ukho/admiralty-core';
 
 
 @ProxyCmp({
-  inputs: ['autoSelect', 'defaultValue', 'minLength', 'showAllValues', 'showNoOptionsFound']
+  inputs: ['assistiveHint', 'autoSelect', 'defaultValue', 'hint', 'label', 'minLength', 'name', 'placeholder', 'showAllValues', 'showNoOptionsFound']
 })
 @Component({
   selector: 'admiralty-autocomplete',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['autoSelect', 'defaultValue', 'minLength', 'showAllValues', 'showNoOptionsFound'],
+  inputs: ['assistiveHint', 'autoSelect', 'defaultValue', 'hint', 'label', 'minLength', 'name', 'placeholder', 'showAllValues', 'showNoOptionsFound'],
 })
 export class AdmiraltyAutocomplete {
   protected el: HTMLElement;
