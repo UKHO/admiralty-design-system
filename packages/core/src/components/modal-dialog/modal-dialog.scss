@@ -40,7 +40,7 @@
   & > .modal-content {
     border-top: none;
     flex-grow: 1;
-    padding: 0px 42px 42px 42px;
+    padding: 0px 60px 60px 60px;
 
     ::slotted(div[slot='content']) {
       display: flex;
@@ -51,7 +51,7 @@
     ::slotted(div) > admiralty-icon {
       color: #09315b;
       display: inline-block;
-      padding: 3px 10px 0px 18px;
+      padding: 3px 12px 3px 0px;
       font-size: 24px;
     }
     //Specifying the specific slot inexplicably
@@ -61,6 +61,7 @@
       max-width: 500px;
       display: inline-block;
       @extend h6;
+      margin-bottom: 0px;
     }
   }
 
