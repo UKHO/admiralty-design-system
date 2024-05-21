@@ -7,13 +7,18 @@
 
 ## Properties
 
-| Property             | Attribute               | Description | Type      | Default |
-| -------------------- | ----------------------- | ----------- | --------- | ------- |
-| `autoSelect`         | `auto-select`           |             | `boolean` | `false` |
-| `defaultValue`       | `default-value`         |             | `string`  | `''`    |
-| `minLength`          | `min-length`            |             | `number`  | `1`     |
-| `showAllValues`      | `show-all-values`       |             | `boolean` | `true`  |
-| `showNoOptionsFound` | `show-no-options-found` |             | `boolean` | `true`  |
+| Property             | Attribute               | Description | Type      | Default                                                                                                                                                        |
+| -------------------- | ----------------------- | ----------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `assistiveHint`      | `assistive-hint`        |             | `string`  | `'When autocomplete results are available use up and down arrows to review and enter to select. Touch device users, explore by touch or with swipe gestures.'` |
+| `autoSelect`         | `auto-select`           |             | `boolean` | `false`                                                                                                                                                        |
+| `defaultValue`       | `default-value`         |             | `string`  | `''`                                                                                                                                                           |
+| `hint`               | `hint`                  |             | `string`  | `undefined`                                                                                                                                                    |
+| `label`              | `label`                 |             | `string`  | `undefined`                                                                                                                                                    |
+| `minLength`          | `min-length`            |             | `number`  | `1`                                                                                                                                                            |
+| `name`               | `name`                  |             | `string`  | `undefined`                                                                                                                                                    |
+| `placeholder`        | `placeholder`           |             | `string`  | `undefined`                                                                                                                                                    |
+| `showAllValues`      | `show-all-values`       |             | `boolean` | `true`                                                                                                                                                         |
+| `showNoOptionsFound` | `show-no-options-found` |             | `boolean` | `true`                                                                                                                                                         |
 
 
 ## Dependencies

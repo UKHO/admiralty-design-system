@@ -15,7 +15,7 @@ export default meta;
 type Story = StoryObj<AutocompleteComponent>;
 
 const template: Story = {
-  render: args => html`<admiralty-autocomplete></admiralty-autocomplete>`,
+  render: args => html`<admiralty-autocomplete label="Favourite Colour" hint="Please enter your favourite colour"></admiralty-autocomplete>`,
 };
 
 export const Basic: Story = { ...template };

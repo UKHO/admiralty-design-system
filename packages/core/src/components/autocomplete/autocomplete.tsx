@@ -4,17 +4,25 @@
 
 import { Component, h, Listen, Prop, State } from '@stencil/core';
 
+const id = 1;
+
 @Component({
   tag: 'admiralty-autocomplete',
   styleUrl: 'autocomplete.scss',
   scoped: true,
 })
 export class AutocompleteComponent {
+  @Prop() name: string;
+  @Prop() label: string;
+  @Prop() hint: string;
+  @Prop() placeholder: string;
   @Prop() defaultValue: string = '';
   @Prop() showNoOptionsFound: boolean = true;
   @Prop() minLength: number = 1;
   @Prop() autoSelect: boolean = false;
   @Prop() showAllValues: boolean = true;
+  @Prop() assistiveHint: string =
+    'When autocomplete results are available use up and down arrows to review and enter to select. Touch device users, explore by touch or with swipe gestures.';
 
   @State() focused = null;
   @State() hovered = null;
@@ -26,6 +34,8 @@ export class AutocompleteComponent {
   @State() ariaHint = true;
 
   elementReferences = {};
+
+  source: string[] = ['red', 'yellow', 'green', 'blue', 'pink', 'orange', 'purple'];
 
   @Listen('admiraltyFocus')
   handleInputFocus(_: FocusEvent) {
@@ -94,6 +104,10 @@ export class AutocompleteComponent {
     event.preventDefault();
   }
 
+  handleListMouseLeave(_) {
+    this.hovered = null;
+  }
+
   handleOptionBlur(event, index: number) {
     const focusingOutsideComponent = event.relatedTarget === null;
     const focusingInput = event.relatedTarget === this.elementReferences[-1];
@@ -131,11 +145,9 @@ export class AutocompleteComponent {
     this.query = query;
     this.ariaHint = queryEmpty;
 
-    let source: any = ['egg', 'balloon', 'turkey'];
-
     const searchForOptions = this.showAllValues || (!queryEmpty && queryChanged && queryLongEnough);
     if (searchForOptions) {
-      const matches = source.filter(r => r.toLowerCase().indexOf(query.toLowerCase()) !== -1);
+      const matches = this.source.filter(r => r.toLowerCase().indexOf(query.toLowerCase()) !== -1);
       const optionsAvailable = matches.length > 0;
       this.menuOpen = optionsAvailable;
       this.options = matches;
@@ -151,6 +163,108 @@ export class AutocompleteComponent {
     this.handleInputChange(this.query);
   }
 
+  handleUpArrow(event) {
+    event.preventDefault();
+    const isNotAtTop = this.selected !== -1;
+    const allowMoveUp = isNotAtTop && this.menuOpen;
+    if (allowMoveUp) {
+      this.handleOptionFocus(this.selected - 1);
+    }
+  }
+
+  handleDownArrow(event) {
+    event.preventDefault();
+    // if not open, open
+    if (this.showAllValues && this.menuOpen === false) {
+      event.preventDefault();
+      const matches = this.source.filter(r => r.toLowerCase().indexOf(''.toLowerCase()) !== -1);
+      this.menuOpen = true;
+      this.options = matches;
+      this.selected = 0;
+      this.focused = 0;
+      this.hovered = null;
+    } else if (this.menuOpen === true) {
+      const isNotAtBottom = this.selected !== this.options.length - 1;
+      const allowMoveDown = isNotAtBottom && this.menuOpen;
+      if (allowMoveDown) {
+        this.handleOptionFocus(this.selected + 1);
+      }
+    }
+  }
+
+  handleSpace(event) {
+    // if not open, open
+    if (this.showAllValues && this.menuOpen === false && this.query === '') {
+      event.preventDefault();
+      const matches = this.source.filter(r => r.toLowerCase().indexOf(''.toLowerCase()) !== -1);
+      this.menuOpen = true;
+      this.options = matches;
+    }
+    const focusIsOnOption = this.focused !== -1;
+    if (focusIsOnOption) {
+      event.preventDefault();
+      this.handleOptionClick(this.focused);
+    }
+  }
+
+  handleEnter(event) {
+    if (this.menuOpen) {
+      event.preventDefault();
+      const hasSelectedOption = this.selected >= 0;
+      if (hasSelectedOption) {
+        this.handleOptionClick(this.selected);
+      }
+    }
+  }
+
+  isPrintableKeyCode(keyCode) {
+    return (
+      (keyCode > 47 && keyCode < 58) || // number keys
+      keyCode === 32 ||
+      keyCode === 8 || // spacebar or backspace
+      (keyCode > 64 && keyCode < 91) || // letter keys
+      (keyCode > 95 && keyCode < 112) || // numpad keys
+      (keyCode > 185 && keyCode < 193) || // ;=,-./` (in order)
+      (keyCode > 218 && keyCode < 223) // [\]' (in order)
+    );
+  }
+
+  handlePrintableKey(event) {
+    const inputElement = this.elementReferences[-1];
+    const eventIsOnInput = event.target === inputElement;
+    if (!eventIsOnInput) {
+      inputElement.focus();
+    }
+  }
+
+  handleKeyDown(event: KeyboardEvent) {
+    switch (event.code) {
+      case 'ArrowUp':
+        this.handleUpArrow(event);
+        break;
+      case 'ArrowDown':
+        console.log('down');
+        this.handleDownArrow(event);
+        break;
+      case 'Space':
+        this.handleSpace(event);
+        break;
+      case 'Enter':
+        this.handleEnter(event);
+        break;
+      case 'Escape':
+        this.handleComponentBlur({
+          query: this.query,
+        });
+        break;
+      default:
+        if (this.isPrintableKeyCode(event.keyCode)) {
+          this.handlePrintableKey(event);
+        }
+        break;
+    }
+  }
+
   render() {
     const inputFocused = this.focused === -1;
     const noOptionsAvailable = this.options.length === 0;
@@ -164,21 +278,38 @@ export class AutocompleteComponent {
     const menuClassList = [menuClassName, menuModifierVisibility];
 
     const optionClassName = `autocomplete-option`;
+    const optionFocused = this.focused !== -1 && this.focused !== null;
+
+    const assistiveHintID = id + '-assistiveHint';
+    const ariaProps = {
+      'aria-describedby': this.ariaHint ? assistiveHintID : null,
+      'aria-expanded': this.menuOpen ? 'true' : 'false',
+      'aria-activedescendant': optionFocused ? `${id}-option-${this.focused}` : null,
+      'aria-owns': `${id}-listbox`,
+      'aria-autocomplete': this.autoSelect ? 'both' : 'list',
+    };
 
     return (
-      <div class="autocomplete-wrapper">
+      <div class="autocomplete-wrapper" onKeyDown={event => this.handleKeyDown(event)}>
         <admiralty-input
+          {...ariaProps}
           value={this.query}
           onClick={() => this.handleInputClick()}
           onAdmiraltyInput={event => this.handleInputChange(event.detail.value)}
           ref={inputElement => {
             this.elementReferences[-1] = inputElement;
           }}
+          name={this.name}
+          placeholder={this.placeholder}
+          type="text"
+          role="combobox"
+          label={this.label}
+          hint={this.hint}
         ></admiralty-input>
 
         <admiralty-icon class="autocomplete-dropdown-icon" iconName="chevron-up"></admiralty-icon>
 
-        <ul class={menuClassList.join(' ')}>
+        <ul class={menuClassList.join(' ')} role="listbox" id={`${id}-listbox`} onMouseLeave={this.handleListMouseLeave}>
           {this.options.map((option, index) => {
             const showFocused = this.focused === -1 ? this.selected === index : this.focused === index;
             const optionModifierFocused = showFocused && this.hovered === null ? ` ${optionClassName}--focused` : '';
@@ -217,9 +348,9 @@ export class AutocompleteComponent {
           {showNoOptionsFound && <li class={`${optionClassName} ${optionClassName}-no-results`}>No results found</li>}
         </ul>
 
-        {/*<span id={assistiveHintID} style={{ display: 'none' }}>*/}
-        {/*  {tAssistiveHint()}*/}
-        {/*</span>*/}
+        <span id={assistiveHintID} style={{ display: 'none' }}>
+          {this.assistiveHint}
+        </span>
       </div>
     );
   }
