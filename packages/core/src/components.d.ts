@@ -695,13 +695,37 @@ declare global {
         prototype: HTMLAdmiraltyCardElement;
         new (): HTMLAdmiraltyCardElement;
     };
+    interface HTMLAdmiraltyCheckboxElementEventMap {
+        "admiraltyChange": CheckboxChangeEventDetail;
+        "checkboxFocus": any;
+        "checkboxBlur": any;
+    }
     interface HTMLAdmiraltyCheckboxElement extends Components.AdmiraltyCheckbox, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLAdmiraltyCheckboxElementEventMap>(type: K, listener: (this: HTMLAdmiraltyCheckboxElement, ev: AdmiraltyCheckboxCustomEvent<HTMLAdmiraltyCheckboxElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLAdmiraltyCheckboxElementEventMap>(type: K, listener: (this: HTMLAdmiraltyCheckboxElement, ev: AdmiraltyCheckboxCustomEvent<HTMLAdmiraltyCheckboxElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLAdmiraltyCheckboxElement: {
         prototype: HTMLAdmiraltyCheckboxElement;
         new (): HTMLAdmiraltyCheckboxElement;
     };
+    interface HTMLAdmiraltyColourBlockElementEventMap {
+        "colourBlockLinkClicked": string;
+    }
     interface HTMLAdmiraltyColourBlockElement extends Components.AdmiraltyColourBlock, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLAdmiraltyColourBlockElementEventMap>(type: K, listener: (this: HTMLAdmiraltyColourBlockElement, ev: AdmiraltyColourBlockCustomEvent<HTMLAdmiraltyColourBlockElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLAdmiraltyColourBlockElementEventMap>(type: K, listener: (this: HTMLAdmiraltyColourBlockElement, ev: AdmiraltyColourBlockCustomEvent<HTMLAdmiraltyColourBlockElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLAdmiraltyColourBlockElement: {
         prototype: HTMLAdmiraltyColourBlockElement;
@@ -713,19 +737,53 @@ declare global {
         prototype: HTMLAdmiraltyDialogueElement;
         new (): HTMLAdmiraltyDialogueElement;
     };
+    interface HTMLAdmiraltyExpansionElementEventMap {
+        "toggled": boolean;
+    }
     interface HTMLAdmiraltyExpansionElement extends Components.AdmiraltyExpansion, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLAdmiraltyExpansionElementEventMap>(type: K, listener: (this: HTMLAdmiraltyExpansionElement, ev: AdmiraltyExpansionCustomEvent<HTMLAdmiraltyExpansionElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLAdmiraltyExpansionElementEventMap>(type: K, listener: (this: HTMLAdmiraltyExpansionElement, ev: AdmiraltyExpansionCustomEvent<HTMLAdmiraltyExpansionElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLAdmiraltyExpansionElement: {
         prototype: HTMLAdmiraltyExpansionElement;
         new (): HTMLAdmiraltyExpansionElement;
     };
+    interface HTMLAdmiraltyFileInputElementEventMap {
+        "fileInputChange": FileInputChangeEventDetail;
+    }
     interface HTMLAdmiraltyFileInputElement extends Components.AdmiraltyFileInput, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLAdmiraltyFileInputElementEventMap>(type: K, listener: (this: HTMLAdmiraltyFileInputElement, ev: AdmiraltyFileInputCustomEvent<HTMLAdmiraltyFileInputElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLAdmiraltyFileInputElementEventMap>(type: K, listener: (this: HTMLAdmiraltyFileInputElement, ev: AdmiraltyFileInputCustomEvent<HTMLAdmiraltyFileInputElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLAdmiraltyFileInputElement: {
         prototype: HTMLAdmiraltyFileInputElement;
         new (): HTMLAdmiraltyFileInputElement;
     };
+    interface HTMLAdmiraltyFilterElementEventMap {
+        "filterCleared": void;
+        "filterApplied": void;
+    }
     interface HTMLAdmiraltyFilterElement extends Components.AdmiraltyFilter, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLAdmiraltyFilterElementEventMap>(type: K, listener: (this: HTMLAdmiraltyFilterElement, ev: AdmiraltyFilterCustomEvent<HTMLAdmiraltyFilterElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLAdmiraltyFilterElementEventMap>(type: K, listener: (this: HTMLAdmiraltyFilterElement, ev: AdmiraltyFilterCustomEvent<HTMLAdmiraltyFilterElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLAdmiraltyFilterElement: {
         prototype: HTMLAdmiraltyFilterElement;
@@ -743,25 +801,71 @@ declare global {
         prototype: HTMLAdmiraltyFooterElement;
         new (): HTMLAdmiraltyFooterElement;
     };
+    interface HTMLAdmiraltyHeaderElementEventMap {
+        "titledClicked": string;
+    }
     interface HTMLAdmiraltyHeaderElement extends Components.AdmiraltyHeader, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLAdmiraltyHeaderElementEventMap>(type: K, listener: (this: HTMLAdmiraltyHeaderElement, ev: AdmiraltyHeaderCustomEvent<HTMLAdmiraltyHeaderElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLAdmiraltyHeaderElementEventMap>(type: K, listener: (this: HTMLAdmiraltyHeaderElement, ev: AdmiraltyHeaderCustomEvent<HTMLAdmiraltyHeaderElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLAdmiraltyHeaderElement: {
         prototype: HTMLAdmiraltyHeaderElement;
         new (): HTMLAdmiraltyHeaderElement;
     };
+    interface HTMLAdmiraltyHeaderMenuItemElementEventMap {
+        "menuItemClick": void;
+    }
     interface HTMLAdmiraltyHeaderMenuItemElement extends Components.AdmiraltyHeaderMenuItem, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLAdmiraltyHeaderMenuItemElementEventMap>(type: K, listener: (this: HTMLAdmiraltyHeaderMenuItemElement, ev: AdmiraltyHeaderMenuItemCustomEvent<HTMLAdmiraltyHeaderMenuItemElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLAdmiraltyHeaderMenuItemElementEventMap>(type: K, listener: (this: HTMLAdmiraltyHeaderMenuItemElement, ev: AdmiraltyHeaderMenuItemCustomEvent<HTMLAdmiraltyHeaderMenuItemElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLAdmiraltyHeaderMenuItemElement: {
         prototype: HTMLAdmiraltyHeaderMenuItemElement;
         new (): HTMLAdmiraltyHeaderMenuItemElement;
     };
+    interface HTMLAdmiraltyHeaderProfileElementEventMap {
+        "signInClicked": void;
+        "yourAccountClicked": void;
+        "signOutClicked": void;
+    }
     interface HTMLAdmiraltyHeaderProfileElement extends Components.AdmiraltyHeaderProfile, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLAdmiraltyHeaderProfileElementEventMap>(type: K, listener: (this: HTMLAdmiraltyHeaderProfileElement, ev: AdmiraltyHeaderProfileCustomEvent<HTMLAdmiraltyHeaderProfileElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLAdmiraltyHeaderProfileElementEventMap>(type: K, listener: (this: HTMLAdmiraltyHeaderProfileElement, ev: AdmiraltyHeaderProfileCustomEvent<HTMLAdmiraltyHeaderProfileElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLAdmiraltyHeaderProfileElement: {
         prototype: HTMLAdmiraltyHeaderProfileElement;
         new (): HTMLAdmiraltyHeaderProfileElement;
     };
+    interface HTMLAdmiraltyHeaderSubMenuItemElementEventMap {
+        "subMenuItemClick": string;
+    }
     interface HTMLAdmiraltyHeaderSubMenuItemElement extends Components.AdmiraltyHeaderSubMenuItem, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLAdmiraltyHeaderSubMenuItemElementEventMap>(type: K, listener: (this: HTMLAdmiraltyHeaderSubMenuItemElement, ev: AdmiraltyHeaderSubMenuItemCustomEvent<HTMLAdmiraltyHeaderSubMenuItemElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLAdmiraltyHeaderSubMenuItemElementEventMap>(type: K, listener: (this: HTMLAdmiraltyHeaderSubMenuItemElement, ev: AdmiraltyHeaderSubMenuItemCustomEvent<HTMLAdmiraltyHeaderSubMenuItemElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLAdmiraltyHeaderSubMenuItemElement: {
         prototype: HTMLAdmiraltyHeaderSubMenuItemElement;
@@ -785,6 +889,9 @@ declare global {
         prototype: HTMLAdmiraltyIconElement;
         new (): HTMLAdmiraltyIconElement;
     };
+    interface HTMLAdmiraltyInputElementEventMap {
+        "admiraltyInput": InputChangeEventDetail;
+    }
     /**
      * Once this component works, review whether a form field component should be created so
      * that shared properties such as `label`, `hint`, `disabled` etc. can be defined once.
@@ -792,6 +899,14 @@ declare global {
      * and checkbox.
      */
     interface HTMLAdmiraltyInputElement extends Components.AdmiraltyInput, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLAdmiraltyInputElementEventMap>(type: K, listener: (this: HTMLAdmiraltyInputElement, ev: AdmiraltyInputCustomEvent<HTMLAdmiraltyInputElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLAdmiraltyInputElementEventMap>(type: K, listener: (this: HTMLAdmiraltyInputElement, ev: AdmiraltyInputCustomEvent<HTMLAdmiraltyInputElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLAdmiraltyInputElement: {
         prototype: HTMLAdmiraltyInputElement;
@@ -815,7 +930,18 @@ declare global {
         prototype: HTMLAdmiraltyLinkElement;
         new (): HTMLAdmiraltyLinkElement;
     };
+    interface HTMLAdmiraltyPaginatorElementEventMap {
+        "pageChange": number;
+    }
     interface HTMLAdmiraltyPaginatorElement extends Components.AdmiraltyPaginator, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLAdmiraltyPaginatorElementEventMap>(type: K, listener: (this: HTMLAdmiraltyPaginatorElement, ev: AdmiraltyPaginatorCustomEvent<HTMLAdmiraltyPaginatorElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLAdmiraltyPaginatorElementEventMap>(type: K, listener: (this: HTMLAdmiraltyPaginatorElement, ev: AdmiraltyPaginatorCustomEvent<HTMLAdmiraltyPaginatorElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLAdmiraltyPaginatorElement: {
         prototype: HTMLAdmiraltyPaginatorElement;
@@ -839,25 +965,72 @@ declare global {
         prototype: HTMLAdmiraltyProgressBarElement;
         new (): HTMLAdmiraltyProgressBarElement;
     };
+    interface HTMLAdmiraltyRadioElementEventMap {
+        "admiraltyFocus": void;
+        "admiraltyBlur": void;
+        "admiraltyChange": void;
+    }
     interface HTMLAdmiraltyRadioElement extends Components.AdmiraltyRadio, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLAdmiraltyRadioElementEventMap>(type: K, listener: (this: HTMLAdmiraltyRadioElement, ev: AdmiraltyRadioCustomEvent<HTMLAdmiraltyRadioElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLAdmiraltyRadioElementEventMap>(type: K, listener: (this: HTMLAdmiraltyRadioElement, ev: AdmiraltyRadioCustomEvent<HTMLAdmiraltyRadioElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLAdmiraltyRadioElement: {
         prototype: HTMLAdmiraltyRadioElement;
         new (): HTMLAdmiraltyRadioElement;
     };
+    interface HTMLAdmiraltyRadioGroupElementEventMap {
+        "admiraltyChange": RadioGroupChangeEventDetail;
+    }
     interface HTMLAdmiraltyRadioGroupElement extends Components.AdmiraltyRadioGroup, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLAdmiraltyRadioGroupElementEventMap>(type: K, listener: (this: HTMLAdmiraltyRadioGroupElement, ev: AdmiraltyRadioGroupCustomEvent<HTMLAdmiraltyRadioGroupElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLAdmiraltyRadioGroupElementEventMap>(type: K, listener: (this: HTMLAdmiraltyRadioGroupElement, ev: AdmiraltyRadioGroupCustomEvent<HTMLAdmiraltyRadioGroupElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLAdmiraltyRadioGroupElement: {
         prototype: HTMLAdmiraltyRadioGroupElement;
         new (): HTMLAdmiraltyRadioGroupElement;
     };
+    interface HTMLAdmiraltyReadMoreElementEventMap {
+        "admiraltyToggled": boolean;
+    }
     interface HTMLAdmiraltyReadMoreElement extends Components.AdmiraltyReadMore, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLAdmiraltyReadMoreElementEventMap>(type: K, listener: (this: HTMLAdmiraltyReadMoreElement, ev: AdmiraltyReadMoreCustomEvent<HTMLAdmiraltyReadMoreElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLAdmiraltyReadMoreElementEventMap>(type: K, listener: (this: HTMLAdmiraltyReadMoreElement, ev: AdmiraltyReadMoreCustomEvent<HTMLAdmiraltyReadMoreElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLAdmiraltyReadMoreElement: {
         prototype: HTMLAdmiraltyReadMoreElement;
         new (): HTMLAdmiraltyReadMoreElement;
     };
+    interface HTMLAdmiraltySelectElementEventMap {
+        "admiraltyChange": SelectChangeEventDetail;
+        "admiraltyBlur": void;
+    }
     interface HTMLAdmiraltySelectElement extends Components.AdmiraltySelect, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLAdmiraltySelectElementEventMap>(type: K, listener: (this: HTMLAdmiraltySelectElement, ev: AdmiraltySelectCustomEvent<HTMLAdmiraltySelectElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLAdmiraltySelectElementEventMap>(type: K, listener: (this: HTMLAdmiraltySelectElement, ev: AdmiraltySelectCustomEvent<HTMLAdmiraltySelectElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLAdmiraltySelectElement: {
         prototype: HTMLAdmiraltySelectElement;
@@ -869,7 +1042,18 @@ declare global {
         prototype: HTMLAdmiraltySideNavElement;
         new (): HTMLAdmiraltySideNavElement;
     };
+    interface HTMLAdmiraltySideNavItemElementEventMap {
+        "sideNavItemSelected": string;
+    }
     interface HTMLAdmiraltySideNavItemElement extends Components.AdmiraltySideNavItem, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLAdmiraltySideNavItemElementEventMap>(type: K, listener: (this: HTMLAdmiraltySideNavItemElement, ev: AdmiraltySideNavItemCustomEvent<HTMLAdmiraltySideNavItemElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLAdmiraltySideNavItemElementEventMap>(type: K, listener: (this: HTMLAdmiraltySideNavItemElement, ev: AdmiraltySideNavItemCustomEvent<HTMLAdmiraltySideNavItemElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLAdmiraltySideNavItemElement: {
         prototype: HTMLAdmiraltySideNavItemElement;
@@ -893,7 +1077,18 @@ declare global {
         prototype: HTMLAdmiraltyTabElement;
         new (): HTMLAdmiraltyTabElement;
     };
+    interface HTMLAdmiraltyTabGroupElementEventMap {
+        "admiraltyTabSelected": number;
+    }
     interface HTMLAdmiraltyTabGroupElement extends Components.AdmiraltyTabGroup, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLAdmiraltyTabGroupElementEventMap>(type: K, listener: (this: HTMLAdmiraltyTabGroupElement, ev: AdmiraltyTabGroupCustomEvent<HTMLAdmiraltyTabGroupElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLAdmiraltyTabGroupElementEventMap>(type: K, listener: (this: HTMLAdmiraltyTabGroupElement, ev: AdmiraltyTabGroupCustomEvent<HTMLAdmiraltyTabGroupElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLAdmiraltyTabGroupElement: {
         prototype: HTMLAdmiraltyTabGroupElement;
@@ -953,13 +1148,37 @@ declare global {
         prototype: HTMLAdmiraltyTableRowElement;
         new (): HTMLAdmiraltyTableRowElement;
     };
+    interface HTMLAdmiraltyTextareaElementEventMap {
+        "textareaBlur": any;
+        "admiraltyInput": TextAreaChangeEventDetail;
+    }
     interface HTMLAdmiraltyTextareaElement extends Components.AdmiraltyTextarea, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLAdmiraltyTextareaElementEventMap>(type: K, listener: (this: HTMLAdmiraltyTextareaElement, ev: AdmiraltyTextareaCustomEvent<HTMLAdmiraltyTextareaElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLAdmiraltyTextareaElementEventMap>(type: K, listener: (this: HTMLAdmiraltyTextareaElement, ev: AdmiraltyTextareaCustomEvent<HTMLAdmiraltyTextareaElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLAdmiraltyTextareaElement: {
         prototype: HTMLAdmiraltyTextareaElement;
         new (): HTMLAdmiraltyTextareaElement;
     };
+    interface HTMLAdmiraltyTypeAheadElementEventMap {
+        "selectionChanged": string;
+        "valueChanged": string;
+    }
     interface HTMLAdmiraltyTypeAheadElement extends Components.AdmiraltyTypeAhead, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLAdmiraltyTypeAheadElementEventMap>(type: K, listener: (this: HTMLAdmiraltyTypeAheadElement, ev: AdmiraltyTypeAheadCustomEvent<HTMLAdmiraltyTypeAheadElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLAdmiraltyTypeAheadElementEventMap>(type: K, listener: (this: HTMLAdmiraltyTypeAheadElement, ev: AdmiraltyTypeAheadCustomEvent<HTMLAdmiraltyTypeAheadElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLAdmiraltyTypeAheadElement: {
         prototype: HTMLAdmiraltyTypeAheadElement;
