@@ -1,3 +1,23 @@
+# v0.13.0 (Tue May 21 2024)
+
+#### 🚀 Enhancement
+
+- Resize Admiralty Button [#175](https://github.com/UKHO/admiralty-design-system/pull/175) ([@lstevens98](https://github.com/lstevens98))
+
+#### 🐛 Bug Fix
+
+- Update Admiralty Stacked Logo [#196](https://github.com/UKHO/admiralty-design-system/pull/196) ([@lstevens98](https://github.com/lstevens98))
+- Fix storybook auto refresh bug [#193](https://github.com/UKHO/admiralty-design-system/pull/193) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+- chore: Upgrade Packages [#190](https://github.com/UKHO/admiralty-design-system/pull/190) ([@UKHOGreg](https://github.com/UKHOGreg))
+
+#### Authors: 3
+
+- Greg Williams ([@UKHOGreg](https://github.com/UKHOGreg))
+- Lewis Stevens ([@lstevens98](https://github.com/lstevens98))
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
 # v0.11.0 (Thu Feb 22 2024)
 
 #### 🚀 Enhancement
