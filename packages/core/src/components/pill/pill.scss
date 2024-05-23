@@ -1,0 +1,20 @@
+@use '../../scss/vars/colours';
+
+span,
+span.admiralty-blue,
+span.admiralty-blue > admiralty-icon {
+  background-color: colours.$colour-admiralty-blue;
+  color: colours.$colour-white;
+}
+
+span.white,
+span.white > admiralty-icon {
+  background-color: colours.$colour-white;
+  color: colours.$colour-admiralty-blue;
+}
+
+span.bright-blue,
+span.bright-blue > admiralty-icon {
+  background-color: colours.$colour-bright-blue;
+  color: colours.$colour-admiralty-blue;
+}

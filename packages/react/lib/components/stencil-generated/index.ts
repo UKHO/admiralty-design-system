@@ -36,6 +36,7 @@ export const AdmiraltyLink = /*@__PURE__*/createReactComponent<JSX.AdmiraltyLink
 export const AdmiraltyModalDialog = /*@__PURE__*/createReactComponent<JSX.AdmiraltyModalDialog, HTMLAdmiraltyModalDialogElement>('admiralty-modal-dialog');
 export const AdmiraltyPaginator = /*@__PURE__*/createReactComponent<JSX.AdmiraltyPaginator, HTMLAdmiraltyPaginatorElement>('admiralty-paginator');
 export const AdmiraltyPhaseBanner = /*@__PURE__*/createReactComponent<JSX.AdmiraltyPhaseBanner, HTMLAdmiraltyPhaseBannerElement>('admiralty-phase-banner');
+export const AdmiraltyPill = /*@__PURE__*/createReactComponent<JSX.AdmiraltyPill, HTMLAdmiraltyPillElement>('admiralty-pill');
 export const AdmiraltyProgressBar = /*@__PURE__*/createReactComponent<JSX.AdmiraltyProgressBar, HTMLAdmiraltyProgressBarElement>('admiralty-progress-bar');
 export const AdmiraltyRadio = /*@__PURE__*/createReactComponent<JSX.AdmiraltyRadio, HTMLAdmiraltyRadioElement>('admiralty-radio');
 export const AdmiraltyRadioGroup = /*@__PURE__*/createReactComponent<JSX.AdmiraltyRadioGroup, HTMLAdmiraltyRadioGroupElement>('admiralty-radio-group');
