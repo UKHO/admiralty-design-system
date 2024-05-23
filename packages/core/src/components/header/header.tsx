@@ -35,7 +35,7 @@ export class HeaderComponent {
   /**
    * The alternate image text for the logo image
    */
-  @Prop() logoAltText: string = 'Admiralty Stacked Logo';
+  @Prop() logoAltText: string = 'ADMIRALTY';
 
   /**
    * Emits an event that can be listened to when the title in the header is clicked
