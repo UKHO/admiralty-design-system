@@ -381,6 +381,24 @@ export namespace Components {
          */
         "phase": 'alpha' | 'beta';
     }
+    interface AdmiraltyPill {
+        /**
+          * The background colour of the pill.
+         */
+        "colour": 'admiralty-blue' | 'white' | 'bright-blue';
+        /**
+          * Label the pill.
+         */
+        "label": string;
+        /**
+          * Whether to show the pill is selected.
+         */
+        "selected": boolean;
+        /**
+          * The text of the pill.
+         */
+        "text": string;
+    }
     interface AdmiraltyProgressBar {
         /**
           * Set to true to indicate an error (turns the progress bar red)
@@ -983,6 +1001,12 @@ declare global {
         prototype: HTMLAdmiraltyPhaseBannerElement;
         new (): HTMLAdmiraltyPhaseBannerElement;
     };
+    interface HTMLAdmiraltyPillElement extends Components.AdmiraltyPill, HTMLStencilElement {
+    }
+    var HTMLAdmiraltyPillElement: {
+        prototype: HTMLAdmiraltyPillElement;
+        new (): HTMLAdmiraltyPillElement;
+    };
     interface HTMLAdmiraltyProgressBarElement extends Components.AdmiraltyProgressBar, HTMLStencilElement {
     }
     var HTMLAdmiraltyProgressBarElement: {
@@ -1242,6 +1266,7 @@ declare global {
         "admiralty-paginator": HTMLAdmiraltyPaginatorElement;
         "admiralty-paginator-wrapper": HTMLAdmiraltyPaginatorWrapperElement;
         "admiralty-phase-banner": HTMLAdmiraltyPhaseBannerElement;
+        "admiralty-pill": HTMLAdmiraltyPillElement;
         "admiralty-progress-bar": HTMLAdmiraltyProgressBarElement;
         "admiralty-radio": HTMLAdmiraltyRadioElement;
         "admiralty-radio-group": HTMLAdmiraltyRadioGroupElement;
@@ -1689,6 +1714,24 @@ declare namespace LocalJSX {
          */
         "phase"?: 'alpha' | 'beta';
     }
+    interface AdmiraltyPill {
+        /**
+          * The background colour of the pill.
+         */
+        "colour"?: 'admiralty-blue' | 'white' | 'bright-blue';
+        /**
+          * Label the pill.
+         */
+        "label"?: string;
+        /**
+          * Whether to show the pill is selected.
+         */
+        "selected"?: boolean;
+        /**
+          * The text of the pill.
+         */
+        "text"?: string;
+    }
     interface AdmiraltyProgressBar {
         /**
           * Set to true to indicate an error (turns the progress bar red)
@@ -1997,6 +2040,7 @@ declare namespace LocalJSX {
         "admiralty-paginator": AdmiraltyPaginator;
         "admiralty-paginator-wrapper": AdmiraltyPaginatorWrapper;
         "admiralty-phase-banner": AdmiraltyPhaseBanner;
+        "admiralty-pill": AdmiraltyPill;
         "admiralty-progress-bar": AdmiraltyProgressBar;
         "admiralty-radio": AdmiraltyRadio;
         "admiralty-radio-group": AdmiraltyRadioGroup;
@@ -2056,6 +2100,7 @@ declare module "@stencil/core" {
             "admiralty-paginator": LocalJSX.AdmiraltyPaginator & JSXBase.HTMLAttributes<HTMLAdmiraltyPaginatorElement>;
             "admiralty-paginator-wrapper": LocalJSX.AdmiraltyPaginatorWrapper & JSXBase.HTMLAttributes<HTMLAdmiraltyPaginatorWrapperElement>;
             "admiralty-phase-banner": LocalJSX.AdmiraltyPhaseBanner & JSXBase.HTMLAttributes<HTMLAdmiraltyPhaseBannerElement>;
+            "admiralty-pill": LocalJSX.AdmiraltyPill & JSXBase.HTMLAttributes<HTMLAdmiraltyPillElement>;
             "admiralty-progress-bar": LocalJSX.AdmiraltyProgressBar & JSXBase.HTMLAttributes<HTMLAdmiraltyProgressBarElement>;
             "admiralty-radio": LocalJSX.AdmiraltyRadio & JSXBase.HTMLAttributes<HTMLAdmiraltyRadioElement>;
             "admiralty-radio-group": LocalJSX.AdmiraltyRadioGroup & JSXBase.HTMLAttributes<HTMLAdmiraltyRadioGroupElement>;
