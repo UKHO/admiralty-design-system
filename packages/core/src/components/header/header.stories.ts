@@ -27,7 +27,7 @@ type Story = StoryObj<HeaderComponent>;
 const defaultArgs = {
   title: 'Design System',
   titleLinkUrl: 'http://www.example.com',
-  logoAltText: 'Admiralty Stacked Logo',
+  logoAltText: 'ADMIRALTY',
   logoImgUrl: 'svg/Admiralty stacked logo.svg',
   logoLinkUrl: 'http://www.example.com',
 };
