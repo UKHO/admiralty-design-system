@@ -47,6 +47,9 @@ export class AutocompleteComponent {
     } else {
       this.focused = -1;
     }
+    if (this.showAllValues) {
+      this.handleInputChange(this.query);
+    }
   }
 
   isQueryAnOption(query, options) {
@@ -144,8 +147,7 @@ export class AutocompleteComponent {
 
     this.query = query;
     this.ariaHint = queryEmpty;
-
-    const searchForOptions = this.showAllValues || (!queryEmpty && queryChanged && queryLongEnough);
+    const searchForOptions = (this.showAllValues && !this.validChoiceMade) || (!queryEmpty && queryChanged && queryLongEnough);
     if (searchForOptions) {
       const matches = this.source.filter(r => r.toLowerCase().indexOf(query.toLowerCase()) !== -1);
       const optionsAvailable = matches.length > 0;
@@ -243,7 +245,6 @@ export class AutocompleteComponent {
         this.handleUpArrow(event);
         break;
       case 'ArrowDown':
-        console.log('down');
         this.handleDownArrow(event);
         break;
       case 'Space':
