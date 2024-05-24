@@ -53,7 +53,7 @@ describe('admiralty-input', () => {
     expect(page.root).toEqualHtml(`
       <admiralty-input invalid="true" invalid-message="This is invalid!">
         <div class="text-input-container">
-          <input autocomplete="off" class="invalid" id="admiralty-input-5" name="admiralty-input-5" type="text" value="">
+          <input autocomplete="off" class="invalid" id="admiralty-input-4" name="admiralty-input-4" type="text" value="">
           <admiralty-input-invalid style="visibility: visible;">
             This is invalid!
           </admiralty-input-invalid>
@@ -70,7 +70,7 @@ describe('admiralty-input', () => {
     expect(page.root).toEqualHtml(`
       <admiralty-input type="date">
         <div class="text-input-container">
-          <input type="date" autocomplete="off" id="admiralty-input-6" name="admiralty-input-6" value="">
+          <input type="date" autocomplete="off" id="admiralty-input-5" name="admiralty-input-5" value="">
         </div>
       </admiralty-input>
     `);
@@ -85,7 +85,7 @@ it('renders with maxlength', async () => {
   expect(page.root).toEqualHtml(`
     <admiralty-input max-length="1">
       <div class="text-input-container">
-        <input autocomplete="off" class="" id="admiralty-input-7" maxlength="1" name="admiralty-input-7" type="text" value="">
+        <input autocomplete="off" class="" id="admiralty-input-6" maxlength="1" name="admiralty-input-6" type="text" value="">
       </div>
     </admiralty-input>
   `);
