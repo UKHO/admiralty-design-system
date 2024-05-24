@@ -1,3 +1,45 @@
+# v0.14.0 (Thu May 23 2024)
+
+#### 🚀 Enhancement
+
+- `@ukho/admiralty-angular`, `@ukho/admiralty-core`
+  - feat: Add Modal Dialog [#176](https://github.com/UKHO/admiralty-design-system/pull/176) ([@UKHOGreg](https://github.com/UKHOGreg))
+
+#### 🔩 Dependency Updates
+
+- Bump the npm_and_yarn group across 2 directories with 8 updates [#201](https://github.com/UKHO/admiralty-design-system/pull/201) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 2
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Greg Williams ([@UKHOGreg](https://github.com/UKHOGreg))
+
+---
+
+# v0.13.0 (Tue May 21 2024)
+
+#### 🚀 Enhancement
+
+- `@ukho/admiralty-core`
+  - Resize Admiralty Button [#175](https://github.com/UKHO/admiralty-design-system/pull/175) ([@lstevens98](https://github.com/lstevens98))
+
+#### 🐛 Bug Fix
+
+- Finish component examples [#156](https://github.com/UKHO/admiralty-design-system/pull/156) ([@lstevens98](https://github.com/lstevens98) [@ecstaticrainbow](https://github.com/ecstaticrainbow))
+- `@ukho/admiralty-core`
+  - Update Admiralty Stacked Logo [#196](https://github.com/UKHO/admiralty-design-system/pull/196) ([@lstevens98](https://github.com/lstevens98))
+  - Fix storybook auto refresh bug [#193](https://github.com/UKHO/admiralty-design-system/pull/193) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+- `@ukho/admiralty-angular`, `@ukho/admiralty-core`
+  - chore: Upgrade Packages [#190](https://github.com/UKHO/admiralty-design-system/pull/190) ([@UKHOGreg](https://github.com/UKHOGreg))
+
+#### Authors: 3
+
+- Greg Williams ([@UKHOGreg](https://github.com/UKHOGreg))
+- Lewis Stevens ([@lstevens98](https://github.com/lstevens98))
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
 # v0.11.0 (Thu Feb 22 2024)
 
 #### 🚀 Enhancement

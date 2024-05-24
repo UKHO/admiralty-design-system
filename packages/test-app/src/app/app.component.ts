@@ -63,5 +63,14 @@ export class AppComponent {
     { id: 9, organisationName: 'first organisation name' },
     { id: 10, organisationName: 'second organisation name' },
   ];
-}
 
+  isModalDialogShown = false;
+
+  showModalDialog() {
+    this.isModalDialogShown = true;
+  }
+
+  hideModalDialog() {
+    this.isModalDialogShown = false;
+  }
+}

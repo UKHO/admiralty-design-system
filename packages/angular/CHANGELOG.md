@@ -1,3 +1,27 @@
+# v0.14.0 (Thu May 23 2024)
+
+#### 🚀 Enhancement
+
+- feat: Add Modal Dialog [#176](https://github.com/UKHO/admiralty-design-system/pull/176) ([@UKHOGreg](https://github.com/UKHOGreg))
+
+#### Authors: 1
+
+- Greg Williams ([@UKHOGreg](https://github.com/UKHOGreg))
+
+---
+
+# v0.13.0 (Tue May 21 2024)
+
+#### 🐛 Bug Fix
+
+- chore: Upgrade Packages [#190](https://github.com/UKHO/admiralty-design-system/pull/190) ([@UKHOGreg](https://github.com/UKHOGreg))
+
+#### Authors: 1
+
+- Greg Williams ([@UKHOGreg](https://github.com/UKHOGreg))
+
+---
+
 # v0.11.0 (Thu Feb 22 2024)
 
 #### 🚀 Enhancement
