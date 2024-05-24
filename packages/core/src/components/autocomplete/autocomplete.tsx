@@ -49,7 +49,9 @@ export class AutocompleteComponent {
   }
 
   componentDidUpdate() {
-    this.elementReferences[this.focused].focus();
+    if (this.focused) {
+      this.elementReferences[this.focused].focus();
+    }
   }
 
   private get childOpts() {
@@ -71,8 +73,8 @@ export class AutocompleteComponent {
     }
   }
 
-  isQueryAnOption(query, options) {
-    return options.map(entry => entry.toLowerCase()).indexOf(query.toLowerCase()) !== -1;
+  isQueryAnOption(query: string, options: Option[]) {
+    return options.map(entry => entry.text.toLowerCase()).indexOf(query.toLowerCase()) !== -1;
   }
 
   handleComponentBlur(newState) {
@@ -309,10 +311,14 @@ export class AutocompleteComponent {
       'aria-autocomplete': this.autoSelect ? 'both' : 'list',
     };
 
+    const inputClassName = `autocomplete-input`;
+    const inputClassList = [inputClassName, this.showAllValues ? `${inputClassName}-show-all-values` : `${inputClassName}-default`];
+
     return (
       <div class="autocomplete-wrapper" onKeyDown={event => this.handleKeyDown(event)}>
         <admiralty-input
           {...ariaProps}
+          class={inputClassList.join(' ')}
           value={this.query}
           onClick={() => this.handleInputClick()}
           onAdmiraltyInput={event => this.handleInputChange(event.detail.value)}
