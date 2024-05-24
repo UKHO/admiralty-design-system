@@ -17,7 +17,7 @@
   border-top: 0;
   color: #0b0c0c;
   margin: 0;
-  max-height: 342px;
+  max-height: 240px;
   overflow-x: hidden;
   padding: 0;
   width: 100%;
@@ -33,12 +33,17 @@
 }
 
 .autocomplete-option {
-  border-bottom: solid #b1b4b6;
-  border-width: 1px 0;
   cursor: pointer;
   display: block;
   position: relative;
-  padding: 5px;
+  padding: 12px;
+  margin-bottom: 0;
+  line-height: 24px;
+  font-size: 18px;
+}
+
+.autocomplete-option:before {
+  content: unset;
 }
 
 .autocomplete-option > * {
@@ -51,10 +56,6 @@
 
 .autocomplete-option:last-of-type {
   border-bottom-width: 0;
-}
-
-.autocomplete-option--odd {
-  background-color: #f3f2f1;
 }
 
 .autocomplete-option--focused,
