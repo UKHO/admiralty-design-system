@@ -36,6 +36,12 @@ export namespace Components {
         "showAllValues": boolean;
         "showNoOptionsFound": boolean;
     }
+    interface AdmiraltyAutocompleteOption {
+        /**
+          * The text value of the option.
+         */
+        "value"?: any | null;
+    }
     interface AdmiraltyBreadcrumb {
         /**
           * When `true` the breadcrumb will by styled to show that it is the currently active breadcrumb. Defaults to `true` for the last breadcrumb if it is not set on any.
@@ -707,6 +713,12 @@ declare global {
         prototype: HTMLAdmiraltyAutocompleteElement;
         new (): HTMLAdmiraltyAutocompleteElement;
     };
+    interface HTMLAdmiraltyAutocompleteOptionElement extends Components.AdmiraltyAutocompleteOption, HTMLStencilElement {
+    }
+    var HTMLAdmiraltyAutocompleteOptionElement: {
+        prototype: HTMLAdmiraltyAutocompleteOptionElement;
+        new (): HTMLAdmiraltyAutocompleteOptionElement;
+    };
     interface HTMLAdmiraltyBreadcrumbElement extends Components.AdmiraltyBreadcrumb, HTMLStencilElement {
     }
     var HTMLAdmiraltyBreadcrumbElement: {
@@ -1236,6 +1248,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "admiralty-autocomplete": HTMLAdmiraltyAutocompleteElement;
+        "admiralty-autocomplete-option": HTMLAdmiraltyAutocompleteOptionElement;
         "admiralty-breadcrumb": HTMLAdmiraltyBreadcrumbElement;
         "admiralty-breadcrumbs": HTMLAdmiraltyBreadcrumbsElement;
         "admiralty-button": HTMLAdmiraltyButtonElement;
@@ -1297,6 +1310,12 @@ declare namespace LocalJSX {
         "placeholder"?: string;
         "showAllValues"?: boolean;
         "showNoOptionsFound"?: boolean;
+    }
+    interface AdmiraltyAutocompleteOption {
+        /**
+          * The text value of the option.
+         */
+        "value"?: any | null;
     }
     interface AdmiraltyBreadcrumb {
         /**
@@ -2012,6 +2031,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "admiralty-autocomplete": AdmiraltyAutocomplete;
+        "admiralty-autocomplete-option": AdmiraltyAutocompleteOption;
         "admiralty-breadcrumb": AdmiraltyBreadcrumb;
         "admiralty-breadcrumbs": AdmiraltyBreadcrumbs;
         "admiralty-button": AdmiraltyButton;
@@ -2066,6 +2086,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "admiralty-autocomplete": LocalJSX.AdmiraltyAutocomplete & JSXBase.HTMLAttributes<HTMLAdmiraltyAutocompleteElement>;
+            "admiralty-autocomplete-option": LocalJSX.AdmiraltyAutocompleteOption & JSXBase.HTMLAttributes<HTMLAdmiraltyAutocompleteOptionElement>;
             "admiralty-breadcrumb": LocalJSX.AdmiraltyBreadcrumb & JSXBase.HTMLAttributes<HTMLAdmiraltyBreadcrumbElement>;
             "admiralty-breadcrumbs": LocalJSX.AdmiraltyBreadcrumbs & JSXBase.HTMLAttributes<HTMLAdmiraltyBreadcrumbsElement>;
             "admiralty-button": LocalJSX.AdmiraltyButton & JSXBase.HTMLAttributes<HTMLAdmiraltyButtonElement>;

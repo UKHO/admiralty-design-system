@@ -2,9 +2,14 @@
  * This component takes heavy inspiration from the autocomplete component created by alphagov: https://github.com/alphagov/accessible-autocomplete
  */
 
-import { Component, h, Listen, Prop, State } from '@stencil/core';
+import { Component, h, Listen, Prop, State, Element } from '@stencil/core';
 
 const id = 1;
+
+interface Option {
+  text: string;
+  value: string;
+}
 
 @Component({
   tag: 'admiralty-autocomplete',
@@ -12,6 +17,8 @@ const id = 1;
   scoped: true,
 })
 export class AutocompleteComponent {
+  @Element() el!: HTMLAdmiraltyAutocompleteElement;
+
   @Prop() name: string;
   @Prop() label: string;
   @Prop() hint: string;
@@ -27,7 +34,7 @@ export class AutocompleteComponent {
   @State() focused = null;
   @State() hovered = null;
   @State() menuOpen = false;
-  @State() options = this.defaultValue ? [this.defaultValue] : [];
+  @State() options: Option[] = this.defaultValue ? [{ text: this.defaultValue, value: this.defaultValue }] : [];
   @State() query = this.defaultValue;
   @State() validChoiceMade = false;
   @State() selected = null;
@@ -35,7 +42,19 @@ export class AutocompleteComponent {
 
   elementReferences = {};
 
-  source: string[] = ['red', 'yellow', 'green', 'blue', 'pink', 'orange', 'purple'];
+  source: Option[] = [];
+
+  connectedCallback() {
+    this.source = this.childOpts.map(option => ({ text: option.textContent, value: option.getAttribute('value') }));
+  }
+
+  componentDidUpdate() {
+    this.elementReferences[this.focused].focus();
+  }
+
+  private get childOpts() {
+    return Array.from(this.el.querySelectorAll('admiralty-autocomplete-option'));
+  }
 
   @Listen('admiraltyFocus')
   handleInputFocus(_: FocusEvent) {
@@ -92,7 +111,7 @@ export class AutocompleteComponent {
     this.focused = -1;
     this.hovered = null;
     this.menuOpen = false;
-    this.query = newQuery;
+    this.query = newQuery.text;
     this.selected = -1;
     this.validChoiceMade = true;
   }
@@ -149,7 +168,7 @@ export class AutocompleteComponent {
     this.ariaHint = queryEmpty;
     const searchForOptions = (this.showAllValues && !this.validChoiceMade) || (!queryEmpty && queryChanged && queryLongEnough);
     if (searchForOptions) {
-      const matches = this.source.filter(r => r.toLowerCase().indexOf(query.toLowerCase()) !== -1);
+      const matches = this.source.filter(r => r.text.toLowerCase().indexOf(query.toLowerCase()) !== -1);
       const optionsAvailable = matches.length > 0;
       this.menuOpen = optionsAvailable;
       this.options = matches;
@@ -179,7 +198,7 @@ export class AutocompleteComponent {
     // if not open, open
     if (this.showAllValues && this.menuOpen === false) {
       event.preventDefault();
-      const matches = this.source.filter(r => r.toLowerCase().indexOf(''.toLowerCase()) !== -1);
+      const matches = this.source.filter(r => r.text.toLowerCase().indexOf(''.toLowerCase()) !== -1);
       this.menuOpen = true;
       this.options = matches;
       this.selected = 0;
@@ -198,7 +217,7 @@ export class AutocompleteComponent {
     // if not open, open
     if (this.showAllValues && this.menuOpen === false && this.query === '') {
       event.preventDefault();
-      const matches = this.source.filter(r => r.toLowerCase().indexOf(''.toLowerCase()) !== -1);
+      const matches = this.source.filter(r => r.text.toLowerCase().indexOf(''.toLowerCase()) !== -1);
       this.menuOpen = true;
       this.options = matches;
     }
@@ -324,24 +343,23 @@ export class AutocompleteComponent {
 
             return (
               <li
-                // aria-selected={focused === index ? 'true' : 'false'}
+                aria-selected={this.focused === index ? 'true' : 'false'}
                 class={`${optionClassName}${optionModifierFocused}${optionModifierOdd}`}
-                // dangerouslySetInnerHTML={{ __html: this.templateSuggestion(option) + iosPosinsetHtml }}
                 id={`option-${index}`}
                 key={index}
                 onBlur={event => this.handleOptionBlur(event, index)}
                 onClick={() => this.handleOptionClick(index)}
                 onMouseDown={this.handleOptionMouseDown}
                 onMouseEnter={() => this.handleOptionMouseEnter(index)}
-                // ref={optionEl => {
-                //   this.elementReferences[index] = optionEl;
-                // }}
+                ref={optionEl => {
+                  this.elementReferences[index] = optionEl;
+                }}
                 role="option"
-                // tabIndex="-1"
-                // aria-posinset={index + 1}
-                // aria-setsize={options.length}
+                tabIndex={-1}
+                aria-posinset={index + 1}
+                aria-setsize={this.options.length}
               >
-                {option}
+                {option.text}
               </li>
             );
           })}
