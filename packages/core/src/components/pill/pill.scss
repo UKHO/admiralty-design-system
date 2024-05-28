@@ -1,26 +1,86 @@
 @use '../../scss/vars/colours';
 
-span {
+span.pill {
+  display: inline-block;
+  box-sizing: border-box;
   height: 36px;
   padding: 8px 15px 8px 15px;
   border-radius: 20px;
 }
 
-span,
-span.admiralty-blue,
-span.admiralty-blue > admiralty-icon {
+span.pill > span.pill-item {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+span.pill > span.pill-item + span.pill-item {
+  margin: 0px 0px 0px 10px;
+}
+
+span.pill > span.pill-item.pill-item-text {
+  height: 17px;
+}
+
+span.pill > span.pill-item.pill-item-number {
+  height: 20px;
+  padding: 5px 6px 2px 5px;
+  border-radius: 30px;
+}
+
+// admiralty-blue
+
+span.pill.admiralty-blue {
   background-color: colours.$colour-admiralty-blue;
+}
+
+span.pill.admiralty-blue > span.pill-item.pill-item-text {
   color: colours.$colour-white;
 }
 
-span.white,
-span.white > admiralty-icon {
+span.pill.admiralty-blue > span.pill-item.pill-item-number {
   background-color: colours.$colour-white;
   color: colours.$colour-admiralty-blue;
 }
 
-span.bright-blue,
-span.bright-blue > admiralty-icon {
-  background-color: colours.$colour-bright-blue;
+span.pill.admiralty-blue > span.pill-item.pill-item-selected > admiralty-icon {
+  color: colours.$colour-white;
+}
+
+// white
+
+span.pill.white {
+  background-color: colours.$colour-white;
+  border: 1px solid colours.$colour-admiralty-blue;
+}
+
+span.pill.white > span.pill-item.pill-item-text {
   color: colours.$colour-admiralty-blue;
+}
+
+span.pill.white > span.pill-item.pill-item-number {
+  background-color: colours.$colour-admiralty-blue;
+  color: colours.$colour-white;
+}
+
+span.pill.white > span.pill-item.pill-item-selected > admiralty-icon {
+  color: colours.$colour-admiralty-blue;
+}
+
+// bright-blue
+
+span.pill.bright-blue {
+  background-color: colours.$colour-utility-info;
+}
+
+span.pill.bright-blue > span.pill-item.pill-item-text {
+  color: colours.$colour-white;
+}
+
+span.pill.bright-blue > span.pill-item.pill-item-number {
+  background-color: colours.$colour-white;
+  color: colours.$colour-utility-info;
+}
+
+span.pill.bright-blue > span.pill-item.pill-item-selected > admiralty-icon {
+  color: colours.$colour-white;
 }
