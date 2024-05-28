@@ -28,13 +28,19 @@ export class PillComponent {
     return (
       <span
         class={{
+          'pill': true,
           'admiralty-blue': this.colour === 'admiralty-blue' || (this.colour !== 'white' && this.colour !== 'bright-blue'),
           'white': this.colour === 'white',
           'bright-blue': this.colour === 'bright-blue',
         }}
       >
-        {this.text}
-        {this.selected ? <admiralty-icon icon-name={faCheck.iconName}></admiralty-icon> : undefined}
+        <span class="pill-item pill-item-text">{this.text}</span>
+        {this.selected ? <span class="pill-item pill-item-number">1</span> : undefined}
+        {this.selected ? (
+          <span class="pill-item pill-item-selected">
+            <admiralty-icon icon-name={faCheck.iconName}></admiralty-icon>
+          </span>
+        ) : undefined}
       </span>
     );
   }
