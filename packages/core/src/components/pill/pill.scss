@@ -1,5 +1,11 @@
 @use '../../scss/vars/colours';
 
+span {
+  height: 36px;
+  padding: 8px 15px 8px 15px;
+  border-radius: 20px;
+}
+
 span,
 span.admiralty-blue,
 span.admiralty-blue > admiralty-icon {
