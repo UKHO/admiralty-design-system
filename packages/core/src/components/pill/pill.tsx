@@ -26,7 +26,13 @@ export class PillComponent {
 
   render() {
     return (
-      <span class={{ 'admiralty-blue': this.colour === 'admiralty-blue', 'white': this.colour === 'white', 'bright-blue': this.colour === 'bright-blue' }}>
+      <span
+        class={{
+          'admiralty-blue': this.colour === 'admiralty-blue' || (this.colour !== 'white' && this.colour !== 'bright-blue'),
+          'white': this.colour === 'white',
+          'bright-blue': this.colour === 'bright-blue',
+        }}
+      >
         {this.text}
         {this.selected ? <admiralty-icon icon-name={faCheck.iconName}></admiralty-icon> : undefined}
       </span>
