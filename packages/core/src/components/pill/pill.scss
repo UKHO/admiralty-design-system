@@ -8,23 +8,25 @@ span.pill {
   border-radius: 20px;
 }
 
-span.pill > span.pill-item {
-  display: inline-block;
-  vertical-align: baseline;
-}
-
 span.pill > span.pill-item + span.pill-item {
   margin: 0px 0px 0px 10px;
 }
 
 span.pill > span.pill-item.pill-item-text {
   height: 17px;
+  display: inline-block;
+  vertical-align: top;
 }
 
 span.pill > span.pill-item.pill-item-number {
-  height: 20px;
   padding: 5px 6px 2px 5px;
   border-radius: 30px;
+  font-size: 14px;
+}
+
+span.pill > span.pill-item.pill-item-selected {
+  display: inline-block;
+  vertical-align: middle;
 }
 
 // admiralty-blue
