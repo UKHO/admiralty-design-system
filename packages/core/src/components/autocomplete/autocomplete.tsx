@@ -43,11 +43,14 @@ export class AutocompleteComponent {
 
   elementReferences = {};
 
-  source: Option[] = [];
-
-  connectedCallback() {
-    this.source = this.childOpts.map(option => ({ text: option.textContent, value: option.getAttribute('value') }));
+  //source: Option[] = [];
+  private get source(): Option[] {
+    return this.childOpts.map(option => ({ text: option.textContent, value: option.value }));
   }
+
+  // connectedCallback() {
+  //   this.source = this.childOpts.map(option => ({ text: option.textContent, value: option.getAttribute('value') }));
+  // }
 
   componentDidUpdate() {
     if (this.focused) {

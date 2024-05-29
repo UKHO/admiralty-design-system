@@ -77,7 +77,7 @@ export class AppComponent {
   }
 
   autocomplete(event: AdmiraltyAutocompleteCustomEvent<AutoCompleteChangeEventDetail>) {
-    alert(event.detail.value);
+    console.log(event.detail.value);
   }
 
   public donkeydinosaur = { custom: '!', blur: true };
