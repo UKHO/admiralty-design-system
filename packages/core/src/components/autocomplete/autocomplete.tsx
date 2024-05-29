@@ -314,27 +314,30 @@ export class AutocompleteComponent {
     const inputClassName = `autocomplete-input`;
     const inputClassList = [inputClassName, this.showAllValues ? `${inputClassName}-show-all-values` : `${inputClassName}-default`];
 
+    const dropdownIconName = this.menuOpen ? 'chevron-up' : 'chevron-down';
+
     return (
       <div class="autocomplete-wrapper" onKeyDown={event => this.handleKeyDown(event)}>
-        <admiralty-input
-          {...ariaProps}
-          class={inputClassList.join(' ')}
-          value={this.query}
-          onClick={() => this.handleInputClick()}
-          onAdmiraltyInput={event => this.handleInputChange(event.detail.value)}
-          ref={inputElement => {
-            this.elementReferences[-1] = inputElement;
-          }}
-          name={this.name}
-          placeholder={this.placeholder}
-          type="text"
-          role="combobox"
-          label={this.label}
-          hint={this.hint}
-        ></admiralty-input>
+        <div class="autocomplete-input-wrapper">
+          <admiralty-input
+            {...ariaProps}
+            class={inputClassList.join(' ')}
+            value={this.query}
+            onClick={() => this.handleInputClick()}
+            onAdmiraltyInput={event => this.handleInputChange(event.detail.value)}
+            ref={inputElement => {
+              this.elementReferences[-1] = inputElement;
+            }}
+            name={this.name}
+            placeholder={this.placeholder}
+            type="text"
+            role="combobox"
+            label={this.label}
+            hint={this.hint}
+          ></admiralty-input>
 
-        <admiralty-icon class="autocomplete-dropdown-icon" iconName="chevron-up"></admiralty-icon>
-
+          <admiralty-icon class="autocomplete-dropdown-icon" iconName={dropdownIconName}></admiralty-icon>
+        </div>
         <ul class={menuClassList.join(' ')} role="listbox" id={`${id}-listbox`} onMouseLeave={this.handleListMouseLeave}>
           {this.options.map((option, index) => {
             const showFocused = this.focused === -1 ? this.selected === index : this.focused === index;
