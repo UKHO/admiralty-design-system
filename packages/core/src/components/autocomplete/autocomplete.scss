@@ -1,4 +1,8 @@
-.autocomplete-wrapper {
+.autocomplete-input-wrapper {
+  position: relative;
+}
+
+.autocomplete-input {
   position: relative;
 }
 
@@ -12,7 +16,7 @@
   right: 12px;
   width: 24px;
   height: 24px;
-  bottom: 12px;
+  bottom: 14px;
   font-size: 24px;
 }
 
