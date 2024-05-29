@@ -5,6 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { AutoCompleteChangeEventDetail } from "./components/autocomplete/autocomplete.interface";
 import { ButtonVariant } from "./components/button/button.types";
 import { IconName, IconPrefix } from "@fortawesome/fontawesome-svg-core";
 import { CheckboxChangeEventDetail } from "./components/checkbox/checkbox.interface";
@@ -14,6 +15,7 @@ import { InputChangeEventDetail } from "./components/input/input.interface";
 import { RadioGroupChangeEventDetail } from "./components/radio-group/radio-group-interface";
 import { SelectChangeEventDetail } from "./components/select/select.interface";
 import { TextAreaChangeEventDetail } from "./components/textarea/textarea.interface";
+export { AutoCompleteChangeEventDetail } from "./components/autocomplete/autocomplete.interface";
 export { ButtonVariant } from "./components/button/button.types";
 export { IconName, IconPrefix } from "@fortawesome/fontawesome-svg-core";
 export { CheckboxChangeEventDetail } from "./components/checkbox/checkbox.interface";
@@ -630,6 +632,10 @@ export namespace Components {
         "value": string;
     }
 }
+export interface AdmiraltyAutocompleteCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLAdmiraltyAutocompleteElement;
+}
 export interface AdmiraltyCheckboxCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLAdmiraltyCheckboxElement;
@@ -707,7 +713,18 @@ export interface AdmiraltyTypeAheadCustomEvent<T> extends CustomEvent<T> {
     target: HTMLAdmiraltyTypeAheadElement;
 }
 declare global {
+    interface HTMLAdmiraltyAutocompleteElementEventMap {
+        "admiraltyChange": AutoCompleteChangeEventDetail;
+    }
     interface HTMLAdmiraltyAutocompleteElement extends Components.AdmiraltyAutocomplete, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLAdmiraltyAutocompleteElementEventMap>(type: K, listener: (this: HTMLAdmiraltyAutocompleteElement, ev: AdmiraltyAutocompleteCustomEvent<HTMLAdmiraltyAutocompleteElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLAdmiraltyAutocompleteElementEventMap>(type: K, listener: (this: HTMLAdmiraltyAutocompleteElement, ev: AdmiraltyAutocompleteCustomEvent<HTMLAdmiraltyAutocompleteElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLAdmiraltyAutocompleteElement: {
         prototype: HTMLAdmiraltyAutocompleteElement;
@@ -1307,6 +1324,10 @@ declare namespace LocalJSX {
         "label"?: string;
         "minLength"?: number;
         "name"?: string;
+        /**
+          * Emitted when the value has changed.
+         */
+        "onAdmiraltyChange"?: (event: AdmiraltyAutocompleteCustomEvent<AutoCompleteChangeEventDetail>) => void;
         "placeholder"?: string;
         "showAllValues"?: boolean;
         "showNoOptionsFound"?: boolean;
