@@ -2,13 +2,14 @@
  * This component takes heavy inspiration from the autocomplete component created by alphagov: https://github.com/alphagov/accessible-autocomplete
  */
 
-import { Component, h, Listen, Prop, State, Element } from '@stencil/core';
+import { Component, h, Listen, Prop, State, Element, EventEmitter, Event } from '@stencil/core';
+import { AutoCompleteChangeEventDetail } from './autocomplete.interface';
 
 const id = 1;
 
 interface Option {
   text: string;
-  value: string;
+  value: any;
 }
 
 @Component({
@@ -53,6 +54,11 @@ export class AutocompleteComponent {
       this.elementReferences[this.focused].focus();
     }
   }
+
+  /**
+   * Emitted when the value has changed.
+   */
+  @Event() admiraltyChange: EventEmitter<AutoCompleteChangeEventDetail>;
 
   private get childOpts() {
     return Array.from(this.el.querySelectorAll('admiralty-autocomplete-option'));
@@ -116,6 +122,7 @@ export class AutocompleteComponent {
     this.query = newQuery.text;
     this.selected = -1;
     this.validChoiceMade = true;
+    this.admiraltyChange.emit({ value: newQuery.value });
   }
 
   handleOptionMouseDown(event) {

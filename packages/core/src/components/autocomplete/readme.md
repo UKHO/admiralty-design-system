@@ -21,6 +21,13 @@
 | `showNoOptionsFound` | `show-no-options-found` |             | `boolean` | `true`                                                                                                                                                         |
 
 
+## Events
+
+| Event             | Description                         | Type                                         |
+| ----------------- | ----------------------------------- | -------------------------------------------- |
+| `admiraltyChange` | Emitted when the value has changed. | `CustomEvent<AutoCompleteChangeEventDetail>` |
+
+
 ## Dependencies
 
 ### Depends on

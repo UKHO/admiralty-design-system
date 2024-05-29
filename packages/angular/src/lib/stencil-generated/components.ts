@@ -22,11 +22,19 @@ export class AdmiraltyAutocomplete {
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['admiraltyChange']);
   }
 }
 
 
-export declare interface AdmiraltyAutocomplete extends Components.AdmiraltyAutocomplete {}
+import type { AutoCompleteChangeEventDetail as IAdmiraltyAutocompleteAutoCompleteChangeEventDetail } from '@ukho/admiralty-core';
+
+export declare interface AdmiraltyAutocomplete extends Components.AdmiraltyAutocomplete {
+  /**
+   * Emitted when the value has changed.
+   */
+  admiraltyChange: EventEmitter<CustomEvent<IAdmiraltyAutocompleteAutoCompleteChangeEventDetail>>;
+}
 
 
 @ProxyCmp({
