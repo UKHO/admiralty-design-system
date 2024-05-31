@@ -31,6 +31,18 @@ export class AutocompleteComponent {
   @Prop() showAllValues: boolean = true;
   @Prop() assistiveHint: string =
     'When autocomplete results are available use up and down arrows to review and enter to select. Touch device users, explore by touch or with swipe gestures.';
+  /**
+   * This dictates whether the autocomplete is disabled
+   */
+  @Prop() disabled = false;
+  /**
+   * Whether to show the autocomplete in an invalid state
+   */
+  @Prop() invalid: boolean = false;
+  /**
+   * The message to show when the autocomplete is invalid
+   */
+  @Prop() invalidMessage: string;
 
   @State() focused = null;
   @State() hovered = null;
@@ -344,6 +356,9 @@ export class AutocompleteComponent {
             role="combobox"
             label={this.label}
             hint={this.hint}
+            disabled={this.disabled}
+            invalid={this.invalid}
+            invalidMessage={this.invalidMessage}
           ></admiralty-input>
 
           <admiralty-icon class="autocomplete-dropdown-icon" iconName={dropdownIconName}></admiralty-icon>

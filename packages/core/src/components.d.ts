@@ -30,7 +30,19 @@ export namespace Components {
         "assistiveHint": string;
         "autoSelect": boolean;
         "defaultValue": string;
+        /**
+          * This dictates whether the autocomplete is disabled
+         */
+        "disabled": boolean;
         "hint": string;
+        /**
+          * Whether to show the autocomplete in an invalid state
+         */
+        "invalid": boolean;
+        /**
+          * The message to show when the autocomplete is invalid
+         */
+        "invalidMessage": string;
         "label": string;
         "minLength": number;
         "name": string;
@@ -1320,7 +1332,19 @@ declare namespace LocalJSX {
         "assistiveHint"?: string;
         "autoSelect"?: boolean;
         "defaultValue"?: string;
+        /**
+          * This dictates whether the autocomplete is disabled
+         */
+        "disabled"?: boolean;
         "hint"?: string;
+        /**
+          * Whether to show the autocomplete in an invalid state
+         */
+        "invalid"?: boolean;
+        /**
+          * The message to show when the autocomplete is invalid
+         */
+        "invalidMessage"?: string;
         "label"?: string;
         "minLength"?: number;
         "name"?: string;
