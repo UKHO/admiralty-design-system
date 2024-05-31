@@ -13,11 +13,15 @@
 .autocomplete-dropdown-icon {
   display: inline-block;
   position: absolute;
+  font-size: 24px;
   right: 12px;
   width: 24px;
   height: 24px;
   bottom: 14px;
-  font-size: 24px;
+}
+
+.autocomplete-dropdown-icon.invalid {
+  bottom: 44px;
 }
 
 .autocomplete-menu {
