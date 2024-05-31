@@ -364,7 +364,7 @@ export class AutocompleteComponent {
             invalidMessage={this.invalidMessage}
           ></admiralty-input>
 
-          <admiralty-icon class="autocomplete-dropdown-icon" iconName={dropdownIconName}></admiralty-icon>
+          <admiralty-icon class={{ 'autocomplete-dropdown-icon': true, 'invalid': this.invalid }} iconName={dropdownIconName}></admiralty-icon>
         </div>
         <ul class={menuClassList.join(' ')} role="listbox" id={`${id}-listbox`} onMouseLeave={this.handleListMouseLeave}>
           {this.options.map((option, index) => {
