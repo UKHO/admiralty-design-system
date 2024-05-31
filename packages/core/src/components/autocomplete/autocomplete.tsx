@@ -205,6 +205,9 @@ export class AutocompleteComponent {
   }
 
   handleInputClick() {
+    if (this.disabled) {
+      return;
+    }
     this.handleInputChange(this.query);
   }
 
