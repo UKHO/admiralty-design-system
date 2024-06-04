@@ -339,8 +339,6 @@ export class AutocompleteComponent {
     const inputClassName = `autocomplete-input`;
     const inputClassList = [inputClassName, this.showAllValues ? `${inputClassName}-show-all-values` : `${inputClassName}-default`];
 
-    const dropdownIconName = this.menuOpen ? 'chevron-up' : 'chevron-down';
-
     return (
       <div class={{ 'autocomplete-wrapper': true, 'invalid': this.invalid }} onKeyDown={event => this.handleKeyDown(event)}>
         <div class="autocomplete-input-wrapper">
@@ -364,7 +362,7 @@ export class AutocompleteComponent {
             invalidMessage={this.invalidMessage}
           ></admiralty-input>
 
-          <admiralty-icon class="autocomplete-dropdown-icon" iconName={dropdownIconName}></admiralty-icon>
+          <admiralty-icon class="autocomplete-dropdown-icon" iconName="chevron-down"></admiralty-icon>
         </div>
         <ul class={menuClassList.join(' ')} role="listbox" id={`${id}-listbox`} onMouseLeave={this.handleListMouseLeave}>
           {this.options.map((option, index) => {
