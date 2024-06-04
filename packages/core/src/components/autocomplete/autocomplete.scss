@@ -20,7 +20,7 @@
   bottom: 14px;
 }
 
-.autocomplete-dropdown-icon.invalid {
+.invalid .autocomplete-dropdown-icon {
   bottom: 44px;
 }
 
@@ -35,6 +35,11 @@
   padding: 0;
   width: 100%;
   width: calc(100% - 4px);
+}
+
+.invalid .autocomplete-menu {
+  position: relative;
+  bottom: 27px;
 }
 
 .autocomplete-menu-visible {
