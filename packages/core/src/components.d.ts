@@ -29,7 +29,6 @@ export namespace Components {
     interface AdmiraltyAutocomplete {
         "assistiveHint": string;
         "autoSelect": boolean;
-        "defaultValue": string;
         /**
           * This dictates whether the autocomplete is disabled
          */
@@ -49,6 +48,10 @@ export namespace Components {
         "placeholder": string;
         "showAllValues": boolean;
         "showNoOptionsFound": boolean;
+        /**
+          * The value of the input.
+         */
+        "value"?: any | null;
     }
     interface AdmiraltyAutocompleteOption {
         /**
@@ -1331,7 +1334,6 @@ declare namespace LocalJSX {
     interface AdmiraltyAutocomplete {
         "assistiveHint"?: string;
         "autoSelect"?: boolean;
-        "defaultValue"?: string;
         /**
           * This dictates whether the autocomplete is disabled
          */
@@ -1355,6 +1357,10 @@ declare namespace LocalJSX {
         "placeholder"?: string;
         "showAllValues"?: boolean;
         "showNoOptionsFound"?: boolean;
+        /**
+          * The value of the input.
+         */
+        "value"?: any | null;
     }
     interface AdmiraltyAutocompleteOption {
         /**

@@ -24,7 +24,10 @@ export class AutocompleteComponent {
   @Prop() label: string;
   @Prop() hint: string;
   @Prop() placeholder: string;
-  @Prop() defaultValue: string = '';
+  /**
+   * The value of the input.
+   */
+  @Prop({ mutable: true }) value?: any | null;
   @Prop() showNoOptionsFound: boolean = true;
   @Prop() minLength: number = 1;
   @Prop() autoSelect: boolean = false;
@@ -47,8 +50,8 @@ export class AutocompleteComponent {
   @State() focused = null;
   @State() hovered = null;
   @State() menuOpen = false;
-  @State() options: Option[] = this.defaultValue ? [{ text: this.defaultValue, value: this.defaultValue }] : [];
-  @State() query = this.defaultValue;
+  @State() options: Option[] = [];
+  @State() query = this.value;
   @State() validChoiceMade = false;
   @State() selected = null;
   @State() ariaHint = true;
@@ -58,6 +61,11 @@ export class AutocompleteComponent {
   //source: Option[] = [];
   private get source(): Option[] {
     return this.childOpts.map(option => ({ text: option.textContent, value: option.value }));
+  }
+
+  private setValue(selectedOption: Option) {
+    this.value = selectedOption.value;
+    this.admiraltyChange.emit({ value: selectedOption.value });
   }
 
   // connectedCallback() {
@@ -130,14 +138,14 @@ export class AutocompleteComponent {
 
   handleOptionClick(index: number) {
     const selectedOption = this.options[index];
-    const newQuery = selectedOption;
+    const newOption = selectedOption;
     this.focused = -1;
     this.hovered = null;
     this.menuOpen = false;
-    this.query = newQuery.text;
+    this.query = newOption.text;
     this.selected = -1;
     this.validChoiceMade = true;
-    this.admiraltyChange.emit({ value: newQuery.value });
+    this.setValue(newOption);
   }
 
   handleOptionMouseDown(event) {

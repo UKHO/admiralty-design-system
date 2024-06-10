@@ -92,6 +92,26 @@
     <admiralty-radio name="radio1" value="radio3">Radio group label 3</admiralty-radio>
   </admiralty-radio-group>
   <admiralty-textarea formControlName="textarea" label="Textarea Label"></admiralty-textarea>
+  <admiralty-autocomplete
+    label="Favourite Colour"
+    hint="Please enter your favourite colour"
+    (admiraltyChange)="autocomplete($event)"
+    formControlName="autocomplete"
+    value="donkeydinosaur"
+  >
+    <admiralty-autocomplete-option [value]="donkeydinosaur">Red</admiralty-autocomplete-option>
+    <admiralty-autocomplete-option value="green">Green</admiralty-autocomplete-option>
+    <admiralty-autocomplete-option value="blue">Blue</admiralty-autocomplete-option>
+    <admiralty-autocomplete-option value="yellow">Yellow</admiralty-autocomplete-option>
+    <admiralty-autocomplete-option value="purple">Purple</admiralty-autocomplete-option>
+    <admiralty-autocomplete-option value="orange">Orange</admiralty-autocomplete-option>
+    <admiralty-autocomplete-option value="black">Black</admiralty-autocomplete-option>
+    <admiralty-autocomplete-option value="white">White</admiralty-autocomplete-option>
+    <admiralty-autocomplete-option value="pink">Pink</admiralty-autocomplete-option>
+    <admiralty-autocomplete-option value="brown">Brown</admiralty-autocomplete-option>
+    <admiralty-autocomplete-option value="grey">Grey</admiralty-autocomplete-option>
+    <admiralty-autocomplete-option value="cyan">Cyan</admiralty-autocomplete-option>
+  </admiralty-autocomplete>
   <admiralty-button type="submit">Submit</admiralty-button>
 </form>
 <admiralty-icon iconName="hippo"></admiralty-icon>
@@ -245,21 +265,3 @@
     <admiralty-button (click)="hideModalDialog()">Continue survey</admiralty-button>
   </div>
 </admiralty-modal-dialog>
-<admiralty-autocomplete
-  label="Favourite Colour"
-  hint="Please enter your favourite colour"
-  (admiraltyChange)="autocomplete($event)"
->
-  <admiralty-autocomplete-option [value]="donkeydinosaur">Red</admiralty-autocomplete-option>
-  <admiralty-autocomplete-option value="green">Green</admiralty-autocomplete-option>
-  <admiralty-autocomplete-option value="blue">Blue</admiralty-autocomplete-option>
-  <admiralty-autocomplete-option value="yellow">Yellow</admiralty-autocomplete-option>
-  <admiralty-autocomplete-option value="purple">Purple</admiralty-autocomplete-option>
-  <admiralty-autocomplete-option value="orange">Orange</admiralty-autocomplete-option>
-  <admiralty-autocomplete-option value="black">Black</admiralty-autocomplete-option>
-  <admiralty-autocomplete-option value="white">White</admiralty-autocomplete-option>
-  <admiralty-autocomplete-option value="pink">Pink</admiralty-autocomplete-option>
-  <admiralty-autocomplete-option value="brown">Brown</admiralty-autocomplete-option>
-  <admiralty-autocomplete-option value="grey">Grey</admiralty-autocomplete-option>
-  <admiralty-autocomplete-option value="cyan">Cyan</admiralty-autocomplete-option>
-</admiralty-autocomplete>
