@@ -32,6 +32,46 @@ describe('admiralty-pill', () => {
     expect(root.querySelector('.pill-item-text').textContent).toEqual('texttest');
   });
 
+  it('renders no number when number property is undefined', async () => {
+    const { root } = await newSpecPage({
+      components: [PillComponent],
+      html: '<admiralty-pill></admiralty-pill>',
+    });
+    expect(root.querySelectorAll('.pill-item-number')).toHaveLength(0);
+  });
+
+  it('renders number when number property is provided', async () => {
+    const { root } = await newSpecPage({
+      components: [PillComponent],
+      html: '<admiralty-pill number="1"></admiralty-pill>',
+    });
+    expect(root.querySelector('.pill-item-number').textContent).toEqual('1');
+  });
+
+  it('renders no selected when selected property is undefined', async () => {
+    const { root } = await newSpecPage({
+      components: [PillComponent],
+      html: '<admiralty-pill></admiralty-pill>',
+    });
+    expect(root.querySelectorAll('.pill-item-selected')).toHaveLength(0);
+  });
+
+  it('renders no selected when selected property is false', async () => {
+    const { root } = await newSpecPage({
+      components: [PillComponent],
+      html: '<admiralty-pill selected="false"></admiralty-pill>',
+    });
+    expect(root.querySelectorAll('.pill-item-selected')).toHaveLength(0);
+  });
+
+  it('renders selected when selected property is true', async () => {
+    const { root } = await newSpecPage({
+      components: [PillComponent],
+      html: '<admiralty-pill selected="true"></admiralty-pill>',
+    });
+    expect(root.querySelectorAll('.pill-item-selected')).toHaveLength(1);
+  });
+
   it('renders admiralty-blue colour when colour property is undefined', async () => {
     const { root } = await newSpecPage({
       components: [PillComponent],
