@@ -12,6 +12,10 @@ export class PillComponent {
    */
   @Prop() text: string;
   /**
+   * The number of the pill.
+   */
+  @Prop() number: string;
+  /**
    * Label the pill.
    */
   @Prop() label: string;
@@ -35,7 +39,7 @@ export class PillComponent {
         }}
       >
         <span class="pill-item pill-item-text">{this.text}</span>
-        {this.selected ? <span class="pill-item pill-item-number">1</span> : undefined}
+        {this.number ? <span class="pill-item pill-item-number">{this.number}</span> : undefined}
         {this.selected ? (
           <span class="pill-item pill-item-selected">
             <admiralty-icon icon-name={faCheck.iconName}></admiralty-icon>

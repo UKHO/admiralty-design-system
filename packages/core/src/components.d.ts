@@ -391,6 +391,10 @@ export namespace Components {
          */
         "label": string;
         /**
+          * The number of the pill.
+         */
+        "number": string;
+        /**
           * Whether to show the pill is selected.
          */
         "selected": boolean;
@@ -1723,6 +1727,10 @@ declare namespace LocalJSX {
           * Label the pill.
          */
         "label"?: string;
+        /**
+          * The number of the pill.
+         */
+        "number"?: string;
         /**
           * Whether to show the pill is selected.
          */
