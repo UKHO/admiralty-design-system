@@ -58,7 +58,6 @@ export class AutocompleteComponent {
 
   elementReferences = {};
 
-  //source: Option[] = [];
   private get source(): Option[] {
     return this.childOpts.map(option => ({ text: option.textContent, value: option.value }));
   }
@@ -67,10 +66,6 @@ export class AutocompleteComponent {
     this.value = selectedOption.value;
     this.admiraltyChange.emit({ value: selectedOption.value });
   }
-
-  // connectedCallback() {
-  //   this.source = this.childOpts.map(option => ({ text: option.textContent, value: option.getAttribute('value') }));
-  // }
 
   componentDidUpdate() {
     if (this.focused) {
@@ -197,6 +192,7 @@ export class AutocompleteComponent {
     const queryLongEnough = query.length >= this.minLength;
 
     this.query = query;
+    this.setValue({ text: query, value: query });
     this.ariaHint = queryEmpty;
     const searchForOptions = (this.showAllValues && !this.validChoiceMade) || (!queryEmpty && queryChanged && queryLongEnough);
     if (searchForOptions) {
