@@ -115,6 +115,9 @@ export class AutocompleteComponent {
     this.query = newQuery;
     this.selected = null;
     this.validChoiceMade = this.isQueryAnOption(newQuery, this.options);
+    if (!this.validChoiceMade) {
+      this.admiraltyChange.emit({ value: newQuery });
+    }
   }
 
   handleOptionFocus(index: number) {
@@ -192,7 +195,6 @@ export class AutocompleteComponent {
     const queryLongEnough = query.length >= this.minLength;
 
     this.query = query;
-    this.setValue({ text: query, value: query });
     this.ariaHint = queryEmpty;
     const searchForOptions = (this.showAllValues && !this.validChoiceMade) || (!queryEmpty && queryChanged && queryLongEnough);
     if (searchForOptions) {
