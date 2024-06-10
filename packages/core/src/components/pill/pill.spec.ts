@@ -8,7 +8,11 @@ describe('admiralty-pill', () => {
       html: '<admiralty-pill></admiralty-pill>',
     });
     expect(root).toEqualHtml(`
-    <admiralty-pill><span class="admiralty-blue"></span></admiralty-pill>
+      <admiralty-pill>
+        <span class="admiralty-blue pill">
+          <span class="pill-item pill-item-text"></span>
+        </span>
+      </admiralty-pill>
     `);
   });
 });
