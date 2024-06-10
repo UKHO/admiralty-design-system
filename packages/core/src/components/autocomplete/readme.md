@@ -11,7 +11,6 @@
 | -------------------- | ----------------------- | ---------------------------------------------------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `assistiveHint`      | `assistive-hint`        |                                                      | `string`  | `'When autocomplete results are available use up and down arrows to review and enter to select. Touch device users, explore by touch or with swipe gestures.'` |
 | `autoSelect`         | `auto-select`           |                                                      | `boolean` | `false`                                                                                                                                                        |
-| `defaultValue`       | `default-value`         |                                                      | `string`  | `''`                                                                                                                                                           |
 | `disabled`           | `disabled`              | This dictates whether the autocomplete is disabled   | `boolean` | `false`                                                                                                                                                        |
 | `hint`               | `hint`                  |                                                      | `string`  | `undefined`                                                                                                                                                    |
 | `invalid`            | `invalid`               | Whether to show the autocomplete in an invalid state | `boolean` | `false`                                                                                                                                                        |
@@ -22,6 +21,7 @@
 | `placeholder`        | `placeholder`           |                                                      | `string`  | `undefined`                                                                                                                                                    |
 | `showAllValues`      | `show-all-values`       |                                                      | `boolean` | `true`                                                                                                                                                         |
 | `showNoOptionsFound` | `show-no-options-found` |                                                      | `boolean` | `true`                                                                                                                                                         |
+| `value`              | `value`                 | The value of the input.                              | `any`     | `undefined`                                                                                                                                                    |
 
 
 ## Events

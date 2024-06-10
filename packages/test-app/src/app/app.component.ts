@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { QueryList, ViewChildren } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AdmiraltySideNavItem } from '@ukho/admiralty-angular';
-import { Observable } from 'rxjs';
 import { AutoCompleteChangeEventDetail } from '@ukho/admiralty-core/src/components/autocomplete/autocomplete.interface';
 import { AdmiraltyAutocompleteCustomEvent } from '@ukho/admiralty-core';
 
@@ -27,6 +26,7 @@ export class AppComponent {
     radio: new FormControl(''),
     select: new FormControl('test1'),
     textarea: new FormControl('This is a text area'),
+    autocomplete: new FormControl(),
   });
 
   progress = 91;
