@@ -2,7 +2,7 @@
  * This component takes heavy inspiration from the autocomplete component created by alphagov: https://github.com/alphagov/accessible-autocomplete
  */
 
-import { Component, h, Listen, Prop, State, Element, EventEmitter, Event } from '@stencil/core';
+import { Component, h, Listen, Prop, State, Element, EventEmitter, Event, Watch } from '@stencil/core';
 import { AutoCompleteChangeEventDetail } from './autocomplete.interface';
 
 const id = 1;
@@ -27,7 +27,7 @@ export class AutocompleteComponent {
   /**
    * The value of the input.
    */
-  @Prop({ mutable: true }) value?: any | null;
+  @Prop({ mutable: true }) value?: any | null = '';
   @Prop() showNoOptionsFound: boolean = true;
   @Prop() minLength: number = 1;
   @Prop() autoSelect: boolean = false;
@@ -46,15 +46,50 @@ export class AutocompleteComponent {
    * The message to show when the autocomplete is invalid
    */
   @Prop() invalidMessage: string;
+  /**
+   * This dictates whether the autocomplete should confirm the choice on blur
+   */
+  @Prop() confirmOnBlur: boolean = true;
 
   @State() focused = null;
   @State() hovered = null;
   @State() menuOpen = false;
   @State() options: Option[] = [];
-  @State() query = this.value;
+  @State() query: string = this.value;
   @State() validChoiceMade = false;
   @State() selected = null;
   @State() ariaHint = true;
+
+  @Watch('value')
+  valueChanged() {
+    this.admiraltyChange.emit({ value: this.value });
+    console.log(this.value);
+  }
+
+  @Watch('query')
+  queryChanged() {
+    const autoselect = this.autoSelect;
+    const queryEmpty = this.query.length === 0;
+    const queryLongEnough = this.query.length >= this.minLength;
+
+    this.ariaHint = queryEmpty;
+    console.log(this.showAllValues);
+    console.log('validchoice', this.validChoiceMade);
+    const searchForOptions = (this.showAllValues && !this.validChoiceMade) || (!queryEmpty && queryLongEnough);
+    if (searchForOptions) {
+      const matches = this.source.filter(r => r.text.toLowerCase().indexOf(this.query.toLowerCase()) !== -1);
+      const optionsAvailable = matches.length > 0;
+      this.menuOpen = optionsAvailable;
+      this.options = matches;
+      this.selected = autoselect && optionsAvailable ? 0 : -1;
+      //this.validChoiceMade = false;
+    } else if (queryEmpty || !queryLongEnough) {
+      this.menuOpen = false;
+      this.options = [];
+    }
+
+    this.validChoiceMade = this.isQueryAnOption(this.query, this.options);
+  }
 
   elementReferences = {};
 
@@ -63,8 +98,7 @@ export class AutocompleteComponent {
   }
 
   private setValue(selectedOption: Option) {
-    this.value = selectedOption.value;
-    this.admiraltyChange.emit({ value: selectedOption.value });
+    this.value = selectedOption?.value ?? '';
   }
 
   componentDidUpdate() {
@@ -93,7 +127,7 @@ export class AutocompleteComponent {
       this.focused = -1;
     }
     if (this.showAllValues) {
-      this.handleInputChange(this.query);
+      this.queryChanged();
     }
   }
 
@@ -101,23 +135,24 @@ export class AutocompleteComponent {
     return options.map(entry => entry.text.toLowerCase()).indexOf(query.toLowerCase()) !== -1;
   }
 
-  handleComponentBlur(newState) {
-    let newQuery;
-    // if (this.confirmOnBlur) {
-    //   newQuery = newState.query || query
-    //   this.props.onConfirm(options[selected])
-    // } else {
-    //   newQuery = query
-    // }
-    newQuery = this.query;
+  handleComponentBlur(newState: { menuOpen: boolean }) {
+    if (this.confirmOnBlur) {
+      //check if the query exactly matches an item and take the first
+      const matches = this.source.filter(r => r.text.toLowerCase() == this.query.toLowerCase());
+      const firstMatch = matches[0];
+      if (firstMatch) {
+        this.setValue(firstMatch);
+      } else if (this.selected !== -1) {
+        this.setValue(this.options[this.selected]);
+      } else {
+        // if the query is not an option, clear the query and set the value to empty string
+        this.query = '';
+        this.setValue({ text: '', value: '' });
+      }
+    }
     this.focused = null;
     this.menuOpen = newState.menuOpen || false;
-    this.query = newQuery;
     this.selected = null;
-    this.validChoiceMade = this.isQueryAnOption(newQuery, this.options);
-    if (!this.validChoiceMade) {
-      this.admiraltyChange.emit({ value: newQuery });
-    }
   }
 
   handleOptionFocus(index: number) {
@@ -142,7 +177,6 @@ export class AutocompleteComponent {
     this.menuOpen = false;
     this.query = newOption.text;
     this.selected = -1;
-    this.validChoiceMade = true;
     this.setValue(newOption);
   }
 
@@ -169,52 +203,33 @@ export class AutocompleteComponent {
       const keepMenuOpen = this.menuOpen && false; // isIosDevice()
       this.handleComponentBlur({
         menuOpen: keepMenuOpen,
-        query: this.options[this.selected],
       });
     }
   }
 
-  @Listen('admiraltyBlur')
   handleInputBlur(_: FocusEvent) {
     const focusingAnOption = this.focused !== -1;
     if (!focusingAnOption) {
       const keepMenuOpen = this.menuOpen && false; // isIosDevice();
-      const newQuery = this.query; //: this.templateInputValue(options[selected]);
       this.handleComponentBlur({
         menuOpen: keepMenuOpen,
-        query: newQuery,
       });
     }
   }
 
   handleInputChange(event: string) {
-    const autoselect = this.autoSelect;
     const query = event;
     const queryEmpty = query.length === 0;
-    const queryChanged = this.query !== query;
-    const queryLongEnough = query.length >= this.minLength;
 
     this.query = query;
     this.ariaHint = queryEmpty;
-    const searchForOptions = (this.showAllValues && !this.validChoiceMade) || (!queryEmpty && queryChanged && queryLongEnough);
-    if (searchForOptions) {
-      const matches = this.source.filter(r => r.text.toLowerCase().indexOf(query.toLowerCase()) !== -1);
-      const optionsAvailable = matches.length > 0;
-      this.menuOpen = optionsAvailable;
-      this.options = matches;
-      this.selected = autoselect && optionsAvailable ? 0 : -1;
-      this.validChoiceMade = false;
-    } else if (queryEmpty || !queryLongEnough) {
-      this.menuOpen = false;
-      this.options = [];
-    }
   }
 
   handleInputClick() {
     if (this.disabled) {
       return;
     }
-    this.handleInputChange(this.query);
+    this.queryChanged();
   }
 
   handleUpArrow(event) {
@@ -307,7 +322,7 @@ export class AutocompleteComponent {
         break;
       case 'Escape':
         this.handleComponentBlur({
-          query: this.query,
+          menuOpen: false,
         });
         break;
       default:
@@ -353,6 +368,7 @@ export class AutocompleteComponent {
             class={inputClassList.join(' ')}
             value={this.query}
             onClick={() => this.handleInputClick()}
+            onAdmiraltyBlur={event => this.handleInputBlur(event.detail)}
             onAdmiraltyInput={event => this.handleInputChange(event.detail.value)}
             ref={inputElement => {
               this.elementReferences[-1] = inputElement;
