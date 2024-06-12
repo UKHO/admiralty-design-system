@@ -30,6 +30,10 @@ export namespace Components {
         "assistiveHint": string;
         "autoSelect": boolean;
         /**
+          * This dictates whether the autocomplete should confirm the choice on blur
+         */
+        "confirmOnBlur": boolean;
+        /**
           * This dictates whether the autocomplete is disabled
          */
         "disabled": boolean;
@@ -1334,6 +1338,10 @@ declare namespace LocalJSX {
     interface AdmiraltyAutocomplete {
         "assistiveHint"?: string;
         "autoSelect"?: boolean;
+        /**
+          * This dictates whether the autocomplete should confirm the choice on blur
+         */
+        "confirmOnBlur"?: boolean;
         /**
           * This dictates whether the autocomplete is disabled
          */
