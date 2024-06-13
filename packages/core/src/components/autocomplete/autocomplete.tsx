@@ -20,18 +20,45 @@ interface Option {
 export class AutocompleteComponent {
   @Element() el!: HTMLAdmiraltyAutocompleteElement;
 
+  /**
+   * The name attribute to apply to the input field
+   */
   @Prop() name: string;
+  /**
+   * The label text for the input
+   */
   @Prop() label: string;
+  /**
+   * The hint text for the input
+   */
   @Prop() hint: string;
+  /**
+   * The placeholder text for the input
+   */
   @Prop() placeholder: string;
   /**
    * The value of the input.
    */
   @Prop({ mutable: true }) value?: any | null = '';
+  /**
+   * Whether to show 'no options found'
+   */
   @Prop() showNoOptionsFound: boolean = true;
+  /**
+   * The minimum number of characters that must be entered before it starts filtering
+   */
   @Prop() minLength: number = 1;
+  /**
+   * Whether to pick the first option by default
+   */
   @Prop() autoSelect: boolean = false;
+  /**
+   * Whether to show all the values when clicked, much like a standard dropdown
+   */
   @Prop() showAllValues: boolean = true;
+  /**
+   * The assistive hint that is read to the user when the focuses the component
+   */
   @Prop() assistiveHint: string =
     'When autocomplete results are available use up and down arrows to review and enter to select. Touch device users, explore by touch or with swipe gestures.';
   /**
@@ -63,7 +90,6 @@ export class AutocompleteComponent {
   @Watch('value')
   valueChanged() {
     this.admiraltyChange.emit({ value: this.value });
-    console.log(this.value);
   }
 
   @Watch('query')
@@ -73,8 +99,6 @@ export class AutocompleteComponent {
     const queryLongEnough = this.query.length >= this.minLength;
 
     this.ariaHint = queryEmpty;
-    console.log(this.showAllValues);
-    console.log('validchoice', this.validChoiceMade);
     const searchForOptions = (this.showAllValues && !this.validChoiceMade) || (!queryEmpty && queryLongEnough);
     if (searchForOptions) {
       const matches = this.source.filter(r => r.text.toLowerCase().indexOf(this.query.toLowerCase()) !== -1);
@@ -82,7 +106,6 @@ export class AutocompleteComponent {
       this.menuOpen = optionsAvailable;
       this.options = matches;
       this.selected = autoselect && optionsAvailable ? 0 : -1;
-      //this.validChoiceMade = false;
     } else if (queryEmpty || !queryLongEnough) {
       this.menuOpen = false;
       this.options = [];
