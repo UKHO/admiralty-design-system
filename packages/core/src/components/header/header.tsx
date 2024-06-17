@@ -72,11 +72,11 @@ export class HeaderComponent {
             </a>
             <div class="vertical-seperator"></div>
             {this.headerTitle ? (
-              <h1 class="header-title">
+              <h2 class="header-title">
                 <a onClick={ev => this.handleClick(ev)} href={headerTitleUrl} tabindex="0">
                   {headerTitle}
                 </a>
-              </h1>
+              </h2>
             ) : null}
           </div>
           <div class="header-menus">
