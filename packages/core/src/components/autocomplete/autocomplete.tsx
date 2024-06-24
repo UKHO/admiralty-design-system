@@ -90,6 +90,10 @@ export class AutocompleteComponent {
   @Watch('value')
   valueChanged() {
     this.admiraltyChange.emit({ value: this.value });
+    const possibleOption = this.source.filter(r => r.value === this.value)[0];
+    if (possibleOption) {
+      this.query = possibleOption.text;
+    }
   }
 
   @Watch('query')
