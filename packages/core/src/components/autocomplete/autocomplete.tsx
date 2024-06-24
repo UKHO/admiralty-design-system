@@ -82,18 +82,22 @@ export class AutocompleteComponent {
   @State() hovered = null;
   @State() menuOpen = false;
   @State() options: Option[] = [];
-  @State() query: string = this.value;
+  @State() query: string = this.getPossibleOption()?.text ?? '';
   @State() validChoiceMade = false;
   @State() selected = null;
   @State() ariaHint = true;
 
   @Watch('value')
   valueChanged() {
-    this.admiraltyChange.emit({ value: this.value });
-    const possibleOption = this.source.filter(r => r.value === this.value)[0];
+    const possibleOption = this.getPossibleOption();
     if (possibleOption) {
       this.query = possibleOption.text;
+      this.admiraltyChange.emit({ value: this.value });
     }
+  }
+
+  private getPossibleOption() {
+    return this.source.filter(r => r.value === this.value)[0];
   }
 
   @Watch('query')
