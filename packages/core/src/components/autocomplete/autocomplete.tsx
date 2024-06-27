@@ -4,6 +4,7 @@
 
 import { Component, h, Listen, Prop, State, Element, EventEmitter, Event, Watch } from '@stencil/core';
 import { AutoCompleteChangeEventDetail } from './autocomplete.interface';
+import { watchForOptions } from './optionsWatcher';
 
 const id = 1;
 
@@ -123,6 +124,16 @@ export class AutocompleteComponent {
   }
 
   elementReferences = {};
+  mutationObserver: MutationObserver;
+
+  connectedCallback() {
+    this.mutationObserver = watchForOptions<HTMLAdmiraltyAutocompleteOptionElement>(this.el, 'admiralty-autocomplete-option', async () => {
+      const possibleOption = this.getPossibleOption();
+      if (possibleOption) {
+        this.query = possibleOption.text;
+      }
+    });
+  }
 
   private get source(): Option[] {
     return this.childOpts.map(option => ({ text: option.textContent, value: option.value }));
