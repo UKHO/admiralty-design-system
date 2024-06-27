@@ -3,7 +3,7 @@ import { AdmiraltyAutocomplete, AdmiraltyAutocompleteOption } from "@ukho/admira
 
 export default function Demo() {
   return (
-    <AdmiraltyAutocomplete name="favouritecolour" label="Favourite Colour" hint="Please enter your favourite colour">
+    <AdmiraltyAutocomplete name="favouritecolour">
       <AdmiraltyAutocompleteOption value="red">Red</AdmiraltyAutocompleteOption>
       <AdmiraltyAutocompleteOption value="green">Green</AdmiraltyAutocompleteOption>
       <AdmiraltyAutocompleteOption value="blue">Blue</AdmiraltyAutocompleteOption>
