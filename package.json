@@ -19,6 +19,7 @@
     "build:core": "yarn exec nx build @ukho/admiralty-core",
     "build:angular": "yarn exec nx build @ukho/admiralty-angular",
     "build:react": "yarn exec nx build @ukho/admiralty-react",
+    "build:test-app": "yarn exec nx build test-app",
     "build:website": "yarn exec nx build website",
     "build:docs": "yarn exec nx build @ukho-internal/admiralty-docs"
   },

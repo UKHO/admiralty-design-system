@@ -5,6 +5,7 @@ import SideNav, { SideNavItem } from "@/components/side-nav/side-nav";
 
 const sideNavItems: SideNavItem[] = [
   { path: "/", title: "Overview" },
+  { path: "autocomplete", title: "Autocomplete" },
   { path: "breadcrumbs", title: "Breadcrumbs" },
   { path: "button", title: "Button" },
   { path: "card", title: "Card" },

@@ -8,6 +8,8 @@ import type { JSX } from '@ukho/admiralty-core';
 import { applyPolyfills, defineCustomElements } from '@ukho/admiralty-core/loader';
 
 applyPolyfills().then(() => defineCustomElements());
+export const AdmiraltyAutocomplete = /*@__PURE__*/createReactComponent<JSX.AdmiraltyAutocomplete, HTMLAdmiraltyAutocompleteElement>('admiralty-autocomplete');
+export const AdmiraltyAutocompleteOption = /*@__PURE__*/createReactComponent<JSX.AdmiraltyAutocompleteOption, HTMLAdmiraltyAutocompleteOptionElement>('admiralty-autocomplete-option');
 export const AdmiraltyBreadcrumb = /*@__PURE__*/createReactComponent<JSX.AdmiraltyBreadcrumb, HTMLAdmiraltyBreadcrumbElement>('admiralty-breadcrumb');
 export const AdmiraltyBreadcrumbs = /*@__PURE__*/createReactComponent<JSX.AdmiraltyBreadcrumbs, HTMLAdmiraltyBreadcrumbsElement>('admiralty-breadcrumbs');
 export const AdmiraltyButton = /*@__PURE__*/createReactComponent<JSX.AdmiraltyButton, HTMLAdmiraltyButtonElement>('admiralty-button');

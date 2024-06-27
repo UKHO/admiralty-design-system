@@ -33,6 +33,8 @@ and checkbox.
 
 | Event            | Description                         | Type                                  |
 | ---------------- | ----------------------------------- | ------------------------------------- |
+| `admiraltyBlur`  | Emitted when the input loses focus. | `CustomEvent<FocusEvent>`             |
+| `admiraltyFocus` | Emitted when the input gains focus. | `CustomEvent<FocusEvent>`             |
 | `admiraltyInput` | Emitted when the value has changed. | `CustomEvent<InputChangeEventDetail>` |
 
 
