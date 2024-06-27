@@ -92,6 +92,7 @@ export class AutocompleteComponent {
   valueChanged() {
     const possibleOption = this.getPossibleOption();
     if (possibleOption) {
+      this.validChoiceMade = true;
       this.query = possibleOption.text;
       this.admiraltyChange.emit({ value: this.value });
     }
@@ -130,6 +131,7 @@ export class AutocompleteComponent {
     this.mutationObserver = watchForOptions<HTMLAdmiraltyAutocompleteOptionElement>(this.el, 'admiralty-autocomplete-option', async () => {
       const possibleOption = this.getPossibleOption();
       if (possibleOption) {
+        this.validChoiceMade = true;
         this.query = possibleOption.text;
       }
     });
