@@ -57,6 +57,9 @@ export class AutocompleteComponent {
   @Prop() inputClasses: any;
   @Prop() hintClasses: any;
   @Prop() menuClasses: any;
+  /**
+   * The value of the input.
+   */
   @Prop({ mutable: true }) value?: string | null = '';
 
   /**
