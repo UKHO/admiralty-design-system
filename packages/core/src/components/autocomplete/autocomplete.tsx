@@ -2,163 +2,243 @@
  * This component takes heavy inspiration from the autocomplete component created by alphagov: https://github.com/alphagov/accessible-autocomplete
  */
 
-import { Component, h, Listen, Prop, State, Element, EventEmitter, Event, Watch, forceUpdate } from '@stencil/core';
-import { AutoCompleteChangeEventDetail } from './autocomplete.interface';
+import { Component, forceUpdate, Prop, State, h, Element, EventEmitter, Event } from '@stencil/core';
+import DropdownArrowDown from './dropdown-arrow-down';
 import { watchForOptions } from './optionsWatcher';
+import { AutoCompleteChangeEventDetail } from './autocomplete.interface';
 
-const id = 1;
+const keyCodes = {
+  13: 'enter',
+  27: 'escape',
+  32: 'space',
+  38: 'up',
+  40: 'down',
+};
 
-interface Option {
-  text: string;
-  value: any;
+function isIosDevice() {
+  return typeof navigator !== 'undefined' && !!(navigator.userAgent.match(/(iPod|iPhone|iPad)/g) && navigator.userAgent.match(/AppleWebKit/g));
+}
+
+function isPrintableKeyCode(keyCode) {
+  return (
+    (keyCode > 47 && keyCode < 58) || // number keys
+    keyCode === 32 ||
+    keyCode === 8 || // spacebar or backspace
+    (keyCode > 64 && keyCode < 91) || // letter keys
+    (keyCode > 95 && keyCode < 112) || // numpad keys
+    (keyCode > 185 && keyCode < 193) || // ;=,-./` (in order)
+    (keyCode > 218 && keyCode < 223) // [\]' (in order)
+  );
 }
 
 @Component({
   tag: 'admiralty-autocomplete',
-  styleUrl: 'autocomplete.scss',
+  styleUrl: 'autocomplete.css',
   scoped: true,
 })
 export class AutocompleteComponent {
   @Element() el!: HTMLAdmiraltyAutocompleteElement;
 
-  /**
-   * The name attribute to apply to the input field
-   */
-  @Prop() name: string;
-  /**
-   * The label text for the input
-   */
-  @Prop() label: string;
-  /**
-   * The hint text for the input
-   */
-  @Prop() hint: string;
-  /**
-   * The placeholder text for the input
-   */
-  @Prop() placeholder: string;
-  /**
-   * The value of the input.
-   */
-  @Prop({ mutable: true }) value?: any | null = '';
-  /**
-   * Whether to show 'no options found'
-   */
-  @Prop() showNoOptionsFound: boolean = true;
-  /**
-   * The minimum number of characters that must be entered before it starts filtering
-   */
-  @Prop() minLength: number = 1;
-  /**
-   * Whether to pick the first option by default
-   */
-  @Prop() autoSelect: boolean = false;
-  /**
-   * Whether to show all the values when clicked, much like a standard dropdown
-   */
-  @Prop() showAllValues: boolean = true;
-  /**
-   * The assistive hint that is read to the user when the focuses the component
-   */
-  @Prop() assistiveHint: string =
-    'When autocomplete results are available use up and down arrows to review and enter to select. Touch device users, explore by touch or with swipe gestures.';
-  /**
-   * This dictates whether the autocomplete is disabled
-   */
-  @Prop() disabled = false;
-  /**
-   * Whether to show the autocomplete in an invalid state
-   */
-  @Prop() invalid: boolean = false;
-  /**
-   * The message to show when the autocomplete is invalid
-   */
-  @Prop() invalidMessage: string;
-  /**
-   * This dictates whether the autocomplete should confirm the choice on blur
-   */
+  @Prop() autoselect: boolean = false;
+  @Prop() cssNamespace: string = 'autocomplete';
+  @Prop() defaultValue: string = '';
+  @Prop() displayMenu: string = 'inline';
+  @Prop() minLength: number = 0;
+  @Prop() name: string = 'input-autocomplete';
+  @Prop() placeholder: string = '';
   @Prop() confirmOnBlur: boolean = true;
-
-  @State() focused = null;
-  @State() hovered = null;
-  @State() menuOpen = false;
-  @State() options: Option[] = [];
-  @State() query: string = this.getPossibleOption()?.text ?? '';
-  @State() validChoiceMade = false;
-  @State() selected = null;
-  @State() ariaHint = true;
-
-  @Watch('value')
-  valueChanged() {
-    const possibleOption = this.getPossibleOption();
-    if (possibleOption) {
-      this.validChoiceMade = true;
-      this.query = possibleOption.text;
-      this.admiraltyChange.emit({ value: this.value });
-    }
-  }
-
-  private getPossibleOption() {
-    return this.source.filter(r => r.value === this.value)[0];
-  }
-
-  @Watch('query')
-  queryChanged() {
-    const autoselect = this.autoSelect;
-    const queryEmpty = this.query.length === 0;
-    const queryLongEnough = this.query.length >= this.minLength;
-
-    this.ariaHint = queryEmpty;
-    const searchForOptions = (this.showAllValues && !this.validChoiceMade) || (!queryEmpty && queryLongEnough);
-    if (searchForOptions) {
-      const matches = this.source.filter(r => r.text.toLowerCase().indexOf(this.query.toLowerCase()) !== -1);
-      const optionsAvailable = matches.length > 0;
-      this.menuOpen = optionsAvailable;
-      this.options = matches;
-      this.selected = autoselect && optionsAvailable ? 0 : -1;
-    } else if (queryEmpty || !queryLongEnough) {
-      this.menuOpen = false;
-      this.options = [];
-    }
-
-    this.validChoiceMade = this.isQueryAnOption(this.query, this.options);
-  }
-
-  elementReferences = {};
-  mutationObserver: MutationObserver;
-
-  connectedCallback() {
-    this.mutationObserver = watchForOptions<HTMLAdmiraltyAutocompleteOptionElement>(this.el, 'admiralty-autocomplete-option', async () => {
-      forceUpdate(this);
-    });
-  }
-
-  private get source(): Option[] {
-    return this.childOpts.map(option => ({ text: option.textContent, value: option.value }));
-  }
-
-  private setValue(selectedOption: Option) {
-    this.value = selectedOption?.value ?? '';
-  }
-
-  componentDidUpdate() {
-    if (this.focused) {
-      this.elementReferences[this.focused].focus();
-    }
-  }
+  @Prop() showNoOptionsFound: boolean = true;
+  @Prop() showAllValues: boolean = true;
+  @Prop() required: boolean = false;
+  @Prop() assistiveHint: string =
+    'When autocomplete results are available use up and down arrows to review and enter to select.  Touch device users, explore by touch or with swipe gestures.';
+  @Prop() dropdownArrow: any;
+  @Prop() menuAttributes: any;
+  @Prop() inputClasses: any;
+  @Prop() hintClasses: any;
+  @Prop() menuClasses: any;
+  @Prop({ mutable: true }) value?: string | null = '';
 
   /**
    * Emitted when the value has changed.
    */
   @Event() admiraltyChange: EventEmitter<AutoCompleteChangeEventDetail>;
 
+  elementReferences = {};
+  $pollInput: any;
+  id = '1';
+
+  source: string[] = [];
+
+  @State() focused: any = null;
+  @State() hovered: any = null;
+  @State() menuOpen: boolean = false;
+  @State() options: any = this.value ? [this.value] : [];
+  @State() query: any = this.value;
+  @State() validChoiceMade: any = false;
+  @State() selected: any = null;
+  @State() ariaHint: boolean = true;
+
+  isQueryAnOption(query, options) {
+    return options.map(entry => this.templateInputValue(entry).toLowerCase()).indexOf(query.toLowerCase()) !== -1;
+  }
+
+  componentDidMount() {
+    this.pollInputElement();
+  }
+
+  componentWillUnmount() {
+    clearTimeout(this.$pollInput);
+  }
+
+  // Applications like Dragon NaturallySpeaking will modify the
+  // `input` field by directly changing its `.value`. These events
+  // don't trigger our JavaScript event listeners, so we need to poll
+  // to handle when and if they occur.
+  pollInputElement() {
+    this.getDirectInputChanges();
+    this.$pollInput = setTimeout(() => {
+      this.pollInputElement();
+    }, 100);
+  }
+
+  getDirectInputChanges() {
+    const inputReference = this.elementReferences[-1];
+    const queryHasChanged = inputReference && inputReference.value !== this.query;
+
+    if (queryHasChanged) {
+      this.handleInputChange({ target: { value: inputReference.value } });
+    }
+  }
+
+  onConfirm(value: string) {
+    this.value = value;
+    this.admiraltyChange.emit({ value });
+  }
+
+  mutation: MutationObserver;
+
+  connectedCallback() {
+    this.mutation = watchForOptions<HTMLAdmiraltyAutocompleteOptionElement>(this.el, 'admiralty-autocomplete-option', async () => {
+      this.source = this.childOpts.map(option => option.value);
+      forceUpdate(this);
+    });
+  }
+
   private get childOpts() {
     return Array.from(this.el.querySelectorAll('admiralty-autocomplete-option'));
   }
 
-  @Listen('admiraltyFocus')
-  handleInputFocus(_: FocusEvent) {
+  componentDidUpdate() {
+    // const componentLostFocus = this.focused === null;
+    // const focusedChanged = prevState.focused !== focused;
+    // const focusDifferentElement = focusedChanged && !componentLostFocus;
+    // if (focusDifferentElement) {
+    //   this.elementReferences[this.focused].focus();
+    // }
+    // const focusedInput = this.focused === -1;
+    // const componentGainedFocus = focusedChanged && prevState.focused === null;
+    // const selectAllText = focusedInput && componentGainedFocus;
+    // if (selectAllText) {
+    //   const inputElement = this.elementReferences[this.focused];
+    //   inputElement.setSelectionRange(0, inputElement.value.length);
+    // }
+  }
+
+  hasAutoselect() {
+    return isIosDevice() ? false : this.autoselect;
+  }
+
+  // This template is used when converting from a state.options object into a state.query.
+  templateInputValue(value) {
+    // const inputValueTemplate = this.templates && this.templates.inputValue;
+    // return inputValueTemplate ? inputValueTemplate(value) : value;
+    return value;
+  }
+
+  // This template is used when displaying results / suggestions.
+  templateSuggestion(value) {
+    // const suggestionTemplate = this.templates && this.templates.suggestion;
+    // return suggestionTemplate ? suggestionTemplate(value) : value;
+    return value;
+  }
+
+  handleComponentBlur(newState) {
+    let newQuery;
+    if (this.confirmOnBlur) {
+      newQuery = newState.query || this.query;
+      this.onConfirm(this.options[this.selected]);
+    } else {
+      newQuery = this.query;
+    }
+    this.focused = null;
+    this.menuOpen = newState.menuOpen || false;
+    this.query = newQuery;
+    this.selected = null;
+    this.validChoiceMade = this.isQueryAnOption(newQuery, this.options);
+  }
+
+  handleListMouseLeave() {
+    this.hovered = null;
+  }
+
+  handleOptionBlur(event, index) {
+    const focusingOutsideComponent = event.relatedTarget === null;
+    const focusingInput = event.relatedTarget === this.elementReferences[-1];
+    const focusingAnotherOption = this.focused !== index && this.focused !== -1;
+    const blurComponent = (!focusingAnotherOption && focusingOutsideComponent) || !(focusingAnotherOption || focusingInput);
+    if (blurComponent) {
+      const keepMenuOpen = this.menuOpen && isIosDevice();
+      this.handleComponentBlur({
+        menuOpen: keepMenuOpen,
+        query: this.templateInputValue(this.options[this.selected]),
+      });
+    }
+  }
+
+  handleInputBlur(_) {
+    const focusingAnOption = this.focused !== -1;
+    if (!focusingAnOption) {
+      const keepMenuOpen = this.menuOpen && isIosDevice();
+      const newQuery = isIosDevice() ? this.query : this.templateInputValue(this.options[this.selected]);
+      this.handleComponentBlur({
+        menuOpen: keepMenuOpen,
+        query: newQuery,
+      });
+    }
+  }
+
+  handleInputChange(event) {
+    const autoselect = this.hasAutoselect();
+    const query = event.target.value;
+    const queryEmpty = query.length === 0;
+    const queryChanged = this.query !== query;
+    const queryLongEnough = query.length >= this.minLength;
+
+    this.query = query;
+    this.ariaHint = queryEmpty;
+
+    const searchForOptions = this.showAllValues || (!queryEmpty && queryChanged && queryLongEnough);
+    if (searchForOptions) {
+      const matches = this.source.filter(r => r.toLowerCase().indexOf(this.query.toLowerCase()) !== -1);
+      const optionsAvailable = matches.length > 0;
+      this.menuOpen = optionsAvailable;
+      this.options = matches;
+      this.selected = autoselect && optionsAvailable ? 0 : -1;
+      this.validChoiceMade = false;
+    } else if (queryEmpty || !queryLongEnough) {
+      this.menuOpen = false;
+      this.options = [];
+    }
+  }
+
+  handleInputClick(event) {
+    this.handleInputChange(event);
+  }
+
+  handleInputFocus(_) {
     const shouldReopenMenu = !this.validChoiceMade && this.query.length >= this.minLength && this.options.length > 0;
+
     if (shouldReopenMenu) {
       this.focused = -1;
       this.menuOpen = shouldReopenMenu || this.menuOpen;
@@ -166,58 +246,33 @@ export class AutocompleteComponent {
     } else {
       this.focused = -1;
     }
-    if (this.showAllValues) {
-      this.queryChanged();
-    }
   }
 
-  isQueryAnOption(query: string, options: Option[]) {
-    return options.map(entry => entry.text.toLowerCase()).indexOf(query.toLowerCase()) !== -1;
-  }
-
-  handleComponentBlur(newState: { menuOpen: boolean }) {
-    if (this.confirmOnBlur) {
-      //check if the query exactly matches an item and take the first
-      const matches = this.source.filter(r => r.text.toLowerCase() == this.query.toLowerCase());
-      const firstMatch = matches[0];
-      if (firstMatch) {
-        this.setValue(firstMatch);
-      } else if (this.selected !== -1) {
-        this.setValue(this.options[this.selected]);
-      } else {
-        // if the query is not an option, clear the query and set the value to empty string
-        this.query = '';
-        this.setValue({ text: '', value: '' });
-      }
-    }
-    this.focused = null;
-    this.menuOpen = newState.menuOpen || false;
-    this.selected = null;
-  }
-
-  handleOptionFocus(index: number) {
+  handleOptionFocus(index) {
     this.focused = index;
     this.hovered = null;
     this.selected = index;
   }
 
-  handleOptionMouseEnter(index: number) {
+  handleOptionMouseEnter(index) {
     // iOS Safari prevents click event if mouseenter adds hover background colour
     // See: https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/HandlingEvents/HandlingEvents.html#//apple_ref/doc/uid/TP40006511-SW4
-    //if (!isIosDevice()) {
-    this.hovered = index;
-    //}
+    if (!isIosDevice()) {
+      this.hovered = index;
+    }
   }
 
-  handleOptionClick(index: number) {
+  handleOptionClick(_, index) {
     const selectedOption = this.options[index];
-    const newOption = selectedOption;
+    const newQuery = this.templateInputValue(selectedOption);
+    this.onConfirm(selectedOption);
     this.focused = -1;
     this.hovered = null;
     this.menuOpen = false;
-    this.query = newOption.text;
-    this.selected = -1;
-    this.setValue(newOption);
+    this.query = newQuery;
+    this.selected = index;
+    this.validChoiceMade = true;
+    forceUpdate(this);
   }
 
   handleOptionMouseDown(event) {
@@ -228,48 +283,6 @@ export class AutocompleteComponent {
     // trigger on the element underneath instead.
     // See: http://stackoverflow.com/questions/7621711/how-to-prevent-blur-running-when-clicking-a-link-in-jquery
     event.preventDefault();
-  }
-
-  handleListMouseLeave(_) {
-    this.hovered = null;
-  }
-
-  handleOptionBlur(event, index: number) {
-    const focusingOutsideComponent = event.relatedTarget === null;
-    const focusingInput = event.relatedTarget === this.elementReferences[-1];
-    const focusingAnotherOption = this.focused !== index && this.focused !== -1;
-    const blurComponent = (!focusingAnotherOption && focusingOutsideComponent) || !(focusingAnotherOption || focusingInput);
-    if (blurComponent) {
-      const keepMenuOpen = this.menuOpen && false; // isIosDevice()
-      this.handleComponentBlur({
-        menuOpen: keepMenuOpen,
-      });
-    }
-  }
-
-  handleInputBlur(_: FocusEvent) {
-    const focusingAnOption = this.focused !== -1;
-    if (!focusingAnOption) {
-      const keepMenuOpen = this.menuOpen && false; // isIosDevice();
-      this.handleComponentBlur({
-        menuOpen: keepMenuOpen,
-      });
-    }
-  }
-
-  handleInputChange(event: string) {
-    const query = event;
-    const queryEmpty = query.length === 0;
-
-    this.query = query;
-    this.ariaHint = queryEmpty;
-  }
-
-  handleInputClick() {
-    if (this.disabled) {
-      return;
-    }
-    this.queryChanged();
   }
 
   handleUpArrow(event) {
@@ -286,7 +299,7 @@ export class AutocompleteComponent {
     // if not open, open
     if (this.showAllValues && this.menuOpen === false) {
       event.preventDefault();
-      const matches = this.source.filter(r => r.text.toLowerCase().indexOf(''.toLowerCase()) !== -1);
+      const matches = this.source.filter(r => r.toLowerCase().indexOf(''.toLowerCase()) !== -1);
       this.menuOpen = true;
       this.options = matches;
       this.selected = 0;
@@ -305,14 +318,14 @@ export class AutocompleteComponent {
     // if not open, open
     if (this.showAllValues && this.menuOpen === false && this.query === '') {
       event.preventDefault();
-      const matches = this.source.filter(r => r.text.toLowerCase().indexOf(''.toLowerCase()) !== -1);
+      const matches = this.source.filter(r => r.toLowerCase().indexOf(''.toLowerCase()) !== -1);
       this.menuOpen = true;
       this.options = matches;
     }
     const focusIsOnOption = this.focused !== -1;
     if (focusIsOnOption) {
       event.preventDefault();
-      this.handleOptionClick(this.focused);
+      this.handleOptionClick(event, this.focused);
     }
   }
 
@@ -321,52 +334,43 @@ export class AutocompleteComponent {
       event.preventDefault();
       const hasSelectedOption = this.selected >= 0;
       if (hasSelectedOption) {
-        this.handleOptionClick(this.selected);
+        this.handleOptionClick(event, this.selected);
       }
     }
-  }
-
-  isPrintableKeyCode(keyCode) {
-    return (
-      (keyCode > 47 && keyCode < 58) || // number keys
-      keyCode === 32 ||
-      keyCode === 8 || // spacebar or backspace
-      (keyCode > 64 && keyCode < 91) || // letter keys
-      (keyCode > 95 && keyCode < 112) || // numpad keys
-      (keyCode > 185 && keyCode < 193) || // ;=,-./` (in order)
-      (keyCode > 218 && keyCode < 223) // [\]' (in order)
-    );
   }
 
   handlePrintableKey(event) {
     const inputElement = this.elementReferences[-1];
     const eventIsOnInput = event.target === inputElement;
     if (!eventIsOnInput) {
+      // FIXME: This would be better if it was in componentDidUpdate,
+      // but using setState to trigger that seems to not work correctly
+      // in preact@8.1.0.
       inputElement.focus();
     }
   }
 
-  handleKeyDown(event: KeyboardEvent) {
-    switch (event.code) {
-      case 'ArrowUp':
+  handleKeyDown(event) {
+    switch (keyCodes[event.keyCode]) {
+      case 'up':
         this.handleUpArrow(event);
         break;
-      case 'ArrowDown':
+      case 'down':
         this.handleDownArrow(event);
         break;
-      case 'Space':
+      case 'space':
         this.handleSpace(event);
         break;
-      case 'Enter':
+      case 'enter':
         this.handleEnter(event);
         break;
-      case 'Escape':
+      case 'escape':
         this.handleComponentBlur({
-          menuOpen: false,
+          query: this.query,
         });
         break;
       default:
-        if (this.isPrintableKeyCode(event.keyCode)) {
+        if (isPrintableKeyCode(event.keyCode)) {
           this.handlePrintableKey(event);
         }
         break;
@@ -374,79 +378,139 @@ export class AutocompleteComponent {
   }
 
   render() {
+    const autoselect = this.hasAutoselect();
+
     const inputFocused = this.focused === -1;
     const noOptionsAvailable = this.options.length === 0;
     const queryNotEmpty = this.query.length !== 0;
     const queryLongEnough = this.query.length >= this.minLength;
     const showNoOptionsFound = this.showNoOptionsFound && inputFocused && noOptionsAvailable && queryNotEmpty && queryLongEnough;
 
-    const menuClassName = `autocomplete-menu`;
-    const menuIsVisible = this.menuOpen || showNoOptionsFound;
-    const menuModifierVisibility = `${menuClassName}-${menuIsVisible ? 'visible' : 'hidden'}`;
-    const menuClassList = [menuClassName, menuModifierVisibility];
-
-    const optionClassName = `autocomplete-option`;
+    const wrapperClassName = `${this.cssNamespace}__wrapper`;
+    const dropdownArrowClassName = `${this.cssNamespace}__dropdown-arrow-down`;
     const optionFocused = this.focused !== -1 && this.focused !== null;
 
-    const assistiveHintID = id + '-assistiveHint';
+    const optionClassName = `${this.cssNamespace}__option`;
+
+    const hintClassName = `${this.cssNamespace}__hint`;
+    const selectedOptionText = this.templateInputValue(this.options[this.selected]);
+    const optionBeginsWithQuery = selectedOptionText && selectedOptionText.toLowerCase().indexOf(this.query.toLowerCase()) === 0;
+    const hintValue = optionBeginsWithQuery && autoselect ? this.query + selectedOptionText.substr(this.query.length) : '';
+
+    const assistiveHintID = this.id + '__assistiveHint';
     const ariaProps = {
       'aria-describedby': this.ariaHint ? assistiveHintID : null,
       'aria-expanded': this.menuOpen ? 'true' : 'false',
-      'aria-activedescendant': optionFocused ? `${id}-option-${this.focused}` : null,
-      'aria-owns': `${id}-listbox`,
-      'aria-autocomplete': this.autoSelect ? 'both' : 'list',
+      'aria-activedescendant': optionFocused ? `${this.id}__option--${this.focused}` : null,
+      'aria-owns': `${this.id}__listbox`,
+      'aria-autocomplete': this.hasAutoselect() ? 'both' : 'list',
     };
 
-    const inputClassName = `autocomplete-input`;
-    const inputClassList = [inputClassName, this.showAllValues ? `${inputClassName}-show-all-values` : `${inputClassName}-default`];
+    let dropdownArrow;
+
+    // we only need a dropdown arrow if showAllValues is set to a truthy value
+    if (this.showAllValues) {
+      dropdownArrow = DropdownArrowDown({ className: dropdownArrowClassName });
+
+      // if the factory returns a string we'll render this as HTML (usage w/o (P)React)
+      if (typeof dropdownArrow === 'string') {
+        dropdownArrow = <div class={`${this.cssNamespace}__dropdown-arrow-down-wrapper`} innerHTML={dropdownArrow} />;
+      }
+    }
+
+    const inputClassName = `${this.cssNamespace}__input`;
+    const inputClassList = [inputClassName, this.showAllValues ? `${inputClassName}--show-all-values` : `${inputClassName}--default`];
+
+    const componentIsFocused = this.focused !== null;
+    if (componentIsFocused) {
+      inputClassList.push(`${inputClassName}--focused`);
+    }
+
+    if (this.inputClasses) {
+      inputClassList.push(this.inputClasses);
+    }
+
+    const menuClassName = `${this.cssNamespace}__menu`;
+    const menuModifierDisplayMenu = `${menuClassName}--${this.displayMenu}`;
+    const menuIsVisible = this.menuOpen || showNoOptionsFound;
+    const menuModifierVisibility = `${menuClassName}--${menuIsVisible ? 'visible' : 'hidden'}`;
+
+    const menuClassList = [menuClassName, menuModifierDisplayMenu, menuModifierVisibility];
+
+    if (this.menuClasses) {
+      menuClassList.push(this.menuClasses);
+    }
+
+    if (this.menuAttributes?.class || this.menuAttributes?.className) {
+      menuClassList.push(this.menuAttributes?.class || this.menuAttributes?.className);
+    }
+
+    const computedMenuAttributes = {
+      // Copy the attributes passed as props
+      ...this.menuAttributes,
+      // And add the values computed for the autocomplete
+      id: `${this.id}__listbox`,
+      role: 'listbox',
+      onMouseLeave: this.handleListMouseLeave,
+    };
+
+    // Preact would override our computed `className`
+    // with the `class` from the `menuAttributes` so
+    // we need to clean it up from the computed attributes
+    delete computedMenuAttributes.class;
 
     return (
-      <div class={{ 'autocomplete-wrapper': true, 'invalid': this.invalid }} onKeyDown={event => this.handleKeyDown(event)}>
-        <div class="autocomplete-input-wrapper">
-          <admiralty-input
-            {...ariaProps}
-            class={inputClassList.join(' ')}
-            value={this.query}
-            onClick={() => this.handleInputClick()}
-            onAdmiraltyBlur={event => this.handleInputBlur(event.detail)}
-            onAdmiraltyInput={event => this.handleInputChange(event.detail.value)}
-            ref={inputElement => {
-              this.elementReferences[-1] = inputElement;
-            }}
-            name={this.name}
-            placeholder={this.placeholder}
-            type="text"
-            role="combobox"
-            label={this.label}
-            hint={this.hint}
-            disabled={this.disabled}
-            invalid={this.invalid}
-            invalidMessage={this.invalidMessage}
-          ></admiralty-input>
+      <div class={wrapperClassName} onKeyDown={event => this.handleKeyDown(event)}>
+        {hintValue && (
+          <span>
+            <input class={[hintClassName, this.hintClasses === null ? this.inputClasses : this.hintClasses].filter(Boolean).join(' ')} readonly tabIndex={-1} value={hintValue} />
+          </span>
+        )}
 
-          <admiralty-icon class="autocomplete-dropdown-icon" iconName="chevron-down"></admiralty-icon>
-        </div>
-        <ul class={menuClassList.join(' ')} role="listbox" id={`${id}-listbox`} onMouseLeave={this.handleListMouseLeave}>
+        <input
+          {...ariaProps}
+          autoComplete="off"
+          class={inputClassList.join(' ')}
+          id={this.id}
+          onClick={event => this.handleInputClick(event)}
+          onBlur={event => this.handleInputBlur(event)}
+          onInput={event => this.handleInputChange(event)}
+          onFocus={event => this.handleInputFocus(event)}
+          name={this.name}
+          placeholder={this.placeholder}
+          ref={inputElement => {
+            this.elementReferences[-1] = inputElement;
+          }}
+          type="text"
+          role="combobox"
+          required={this.required}
+          value={this.query}
+        />
+
+        {dropdownArrow}
+
+        <ul {...computedMenuAttributes} class={menuClassList.join(' ')}>
           {this.options.map((option, index) => {
             const showFocused = this.focused === -1 ? this.selected === index : this.focused === index;
             const optionModifierFocused = showFocused && this.hovered === null ? ` ${optionClassName}--focused` : '';
             const optionModifierOdd = index % 2 ? ` ${optionClassName}--odd` : '';
-            // const iosPosinsetHtml = isIosDevice()
-            //   ? `<span id=${id}__option-suffix--${index} style="border:0;clip:rect(0 0 0 0);height:1px;` +
-            //     'marginBottom:-1px;marginRight:-1px;overflow:hidden;padding:0;position:absolute;' +
-            //     'whiteSpace:nowrap;width:1px">' +
-            //     ` ${index + 1} of ${options.length}</span>`
-            //   : '';
+            const iosPosinsetHtml = isIosDevice()
+              ? `<span id=${this.id}__option-suffix--${index} style="border:0;clip:rect(0 0 0 0);height:1px;` +
+                'marginBottom:-1px;marginRight:-1px;overflow:hidden;padding:0;position:absolute;' +
+                'whiteSpace:nowrap;width:1px">' +
+                ` ${index + 1} of ${this.options.length}</span>`
+              : '';
 
             return (
               <li
                 aria-selected={this.focused === index ? 'true' : 'false'}
                 class={`${optionClassName}${optionModifierFocused}${optionModifierOdd}`}
-                id={`option-${index}`}
+                innerHTML={this.templateSuggestion(option) + iosPosinsetHtml}
+                id={`${this.id}__option--${index}`}
                 key={index}
                 onBlur={event => this.handleOptionBlur(event, index)}
-                onClick={() => this.handleOptionClick(index)}
-                onMouseDown={this.handleOptionMouseDown}
+                onClick={event => this.handleOptionClick(event, index)}
+                onMouseDown={event => this.handleOptionMouseDown(event)}
                 onMouseEnter={() => this.handleOptionMouseEnter(index)}
                 ref={optionEl => {
                   this.elementReferences[index] = optionEl;
@@ -455,13 +519,11 @@ export class AutocompleteComponent {
                 tabIndex={-1}
                 aria-posinset={index + 1}
                 aria-setsize={this.options.length}
-              >
-                {option.text}
-              </li>
+              />
             );
           })}
 
-          {showNoOptionsFound && <li class={`${optionClassName} ${optionClassName}-no-results`}>No results found</li>}
+          {showNoOptionsFound && <li class={`${optionClassName} ${optionClassName}--no-results`}>No results found</li>}
         </ul>
 
         <span id={assistiveHintID} style={{ display: 'none' }}>

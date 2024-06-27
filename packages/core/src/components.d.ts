@@ -27,62 +27,24 @@ export { SelectChangeEventDetail } from "./components/select/select.interface";
 export { TextAreaChangeEventDetail } from "./components/textarea/textarea.interface";
 export namespace Components {
     interface AdmiraltyAutocomplete {
-        /**
-          * The assistive hint that is read to the user when the focuses the component
-         */
         "assistiveHint": string;
-        /**
-          * Whether to pick the first option by default
-         */
-        "autoSelect": boolean;
-        /**
-          * This dictates whether the autocomplete should confirm the choice on blur
-         */
+        "autoselect": boolean;
         "confirmOnBlur": boolean;
-        /**
-          * This dictates whether the autocomplete is disabled
-         */
-        "disabled": boolean;
-        /**
-          * The hint text for the input
-         */
-        "hint": string;
-        /**
-          * Whether to show the autocomplete in an invalid state
-         */
-        "invalid": boolean;
-        /**
-          * The message to show when the autocomplete is invalid
-         */
-        "invalidMessage": string;
-        /**
-          * The label text for the input
-         */
-        "label": string;
-        /**
-          * The minimum number of characters that must be entered before it starts filtering
-         */
+        "cssNamespace": string;
+        "defaultValue": string;
+        "displayMenu": string;
+        "dropdownArrow": any;
+        "hintClasses": any;
+        "inputClasses": any;
+        "menuAttributes": any;
+        "menuClasses": any;
         "minLength": number;
-        /**
-          * The name attribute to apply to the input field
-         */
         "name": string;
-        /**
-          * The placeholder text for the input
-         */
         "placeholder": string;
-        /**
-          * Whether to show all the values when clicked, much like a standard dropdown
-         */
+        "required": boolean;
         "showAllValues": boolean;
-        /**
-          * Whether to show 'no options found'
-         */
         "showNoOptionsFound": boolean;
-        /**
-          * The value of the input.
-         */
-        "value"?: any | null;
+        "value"?: string | null;
     }
     interface AdmiraltyAutocompleteOption {
         /**
@@ -1363,66 +1325,28 @@ declare global {
 }
 declare namespace LocalJSX {
     interface AdmiraltyAutocomplete {
-        /**
-          * The assistive hint that is read to the user when the focuses the component
-         */
         "assistiveHint"?: string;
-        /**
-          * Whether to pick the first option by default
-         */
-        "autoSelect"?: boolean;
-        /**
-          * This dictates whether the autocomplete should confirm the choice on blur
-         */
+        "autoselect"?: boolean;
         "confirmOnBlur"?: boolean;
-        /**
-          * This dictates whether the autocomplete is disabled
-         */
-        "disabled"?: boolean;
-        /**
-          * The hint text for the input
-         */
-        "hint"?: string;
-        /**
-          * Whether to show the autocomplete in an invalid state
-         */
-        "invalid"?: boolean;
-        /**
-          * The message to show when the autocomplete is invalid
-         */
-        "invalidMessage"?: string;
-        /**
-          * The label text for the input
-         */
-        "label"?: string;
-        /**
-          * The minimum number of characters that must be entered before it starts filtering
-         */
+        "cssNamespace"?: string;
+        "defaultValue"?: string;
+        "displayMenu"?: string;
+        "dropdownArrow"?: any;
+        "hintClasses"?: any;
+        "inputClasses"?: any;
+        "menuAttributes"?: any;
+        "menuClasses"?: any;
         "minLength"?: number;
-        /**
-          * The name attribute to apply to the input field
-         */
         "name"?: string;
         /**
           * Emitted when the value has changed.
          */
         "onAdmiraltyChange"?: (event: AdmiraltyAutocompleteCustomEvent<AutoCompleteChangeEventDetail>) => void;
-        /**
-          * The placeholder text for the input
-         */
         "placeholder"?: string;
-        /**
-          * Whether to show all the values when clicked, much like a standard dropdown
-         */
+        "required"?: boolean;
         "showAllValues"?: boolean;
-        /**
-          * Whether to show 'no options found'
-         */
         "showNoOptionsFound"?: boolean;
-        /**
-          * The value of the input.
-         */
-        "value"?: any | null;
+        "value"?: string | null;
     }
     interface AdmiraltyAutocompleteOption {
         /**
