@@ -2,7 +2,7 @@
  * This component takes heavy inspiration from the autocomplete component created by alphagov: https://github.com/alphagov/accessible-autocomplete
  */
 
-import { Component, h, Listen, Prop, State, Element, EventEmitter, Event, Watch } from '@stencil/core';
+import { Component, h, Listen, Prop, State, Element, EventEmitter, Event, Watch, forceUpdate } from '@stencil/core';
 import { AutoCompleteChangeEventDetail } from './autocomplete.interface';
 import { watchForOptions } from './optionsWatcher';
 
@@ -129,11 +129,7 @@ export class AutocompleteComponent {
 
   connectedCallback() {
     this.mutationObserver = watchForOptions<HTMLAdmiraltyAutocompleteOptionElement>(this.el, 'admiralty-autocomplete-option', async () => {
-      const possibleOption = this.getPossibleOption();
-      if (possibleOption) {
-        this.validChoiceMade = true;
-        this.query = possibleOption.text;
-      }
+      forceUpdate(this);
     });
   }
 
