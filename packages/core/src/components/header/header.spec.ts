@@ -50,11 +50,11 @@ describe('admiralty-header', () => {
                 <img alt="Admiralty Stacked Logo" class="header-image" src="svg/Admiralty stacked logo.svg">
               </a>
               <div class="vertical-seperator"></div>
-              <h1 class="header-title">
+              <h2 class="header-title">
                 <a tabindex="0">
                   Design System
                 </a>
-              </h1>
+              </h2>
             </div>
             <div class="header-menus">
               <div class="mobile-menu-toggle">
@@ -88,11 +88,11 @@ describe('admiralty-header', () => {
                 <img alt="Admiralty Stacked Logo" class="header-image" src="svg/Admiralty stacked logo.svg">
               </a>
               <div class="vertical-seperator"></div>
-              <h1 class="header-title">
+              <h2 class="header-title">
                 <a href="null" tabindex="0">
                   Design System
                 </a>
-              </h1>
+              </h2>
             </div>
             <div class="header-menus">
               <div class="mobile-menu-toggle">
@@ -129,11 +129,11 @@ describe('admiralty-header', () => {
                 <img alt="Logo" class="header-image" src="logo.svg">
               </a>
               <div class="vertical-seperator"></div>
-              <h1 class="header-title">
+              <h2 class="header-title">
                 <a href="#" tabindex="0">
                   Design System
                 </a>
-              </h1>
+              </h2>
             </div>
             <div class="header-menus">
               <div class="display-hamburger mobile-menu-toggle">
@@ -172,11 +172,11 @@ describe('admiralty-header', () => {
                 <img alt="Logo" class="header-image" src="logo.svg">
               </a>
               <div class="vertical-seperator"></div>
-              <h1 class="header-title">
+              <h2 class="header-title">
                 <a href="#" tabindex="0">
                   Design System
                 </a>
-              </h1>
+              </h2>
             </div>
             <div class="header-menus">
               <div class="display-hamburger mobile-menu-toggle">
@@ -216,11 +216,11 @@ describe('admiralty-header', () => {
                 <img alt="Logo" class="header-image" src="logo.svg">
               </a>
               <div class="vertical-seperator"></div>
-              <h1 class="header-title">
+              <h2 class="header-title">
                 <a href="#" tabindex="0">
                   Design System
                 </a>
-              </h1>
+              </h2>
             </div>
             <div class="header-menus">
               <div class="display-hamburger mobile-menu-toggle">
@@ -267,11 +267,11 @@ describe('admiralty-header', () => {
                 <img alt="Logo" class="header-image" src="logo.svg">
               </a>
               <div class="vertical-seperator"></div>
-              <h1 class="header-title">
+              <h2 class="header-title">
                 <a href="#" tabindex="0">
                   Design System
                 </a>
-              </h1>
+              </h2>
             </div>
             <div class="header-menus">
               <div class="display-hamburger mobile-menu-toggle">
