@@ -25,6 +25,7 @@ export const DIRECTIVES = [
   d.AdmiraltyInputInvalid,
   d.AdmiraltyLabel,
   d.AdmiraltyLink,
+  d.AdmiraltyModalDialog,
   d.AdmiraltyPaginator,
   d.AdmiraltyPhaseBanner,
   d.AdmiraltyProgressBar,
