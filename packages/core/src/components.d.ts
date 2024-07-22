@@ -31,19 +31,21 @@ export namespace Components {
         "autoselect": boolean;
         "confirmOnBlur": boolean;
         "cssNamespace": string;
-        "defaultValue": string;
         "displayMenu": string;
         "dropdownArrow": any;
-        "hintClasses": any;
-        "inputClasses": any;
+        "hintClasses": string;
+        "inputClasses": string;
         "menuAttributes": any;
-        "menuClasses": any;
+        "menuClasses": string;
         "minLength": number;
         "name": string;
         "placeholder": string;
         "required": boolean;
         "showAllValues": boolean;
         "showNoOptionsFound": boolean;
+        /**
+          * The value of the input.
+         */
         "value"?: string | null;
     }
     interface AdmiraltyAutocompleteOption {
@@ -1329,13 +1331,12 @@ declare namespace LocalJSX {
         "autoselect"?: boolean;
         "confirmOnBlur"?: boolean;
         "cssNamespace"?: string;
-        "defaultValue"?: string;
         "displayMenu"?: string;
         "dropdownArrow"?: any;
-        "hintClasses"?: any;
-        "inputClasses"?: any;
+        "hintClasses"?: string;
+        "inputClasses"?: string;
         "menuAttributes"?: any;
-        "menuClasses"?: any;
+        "menuClasses"?: string;
         "minLength"?: number;
         "name"?: string;
         /**
@@ -1346,6 +1347,9 @@ declare namespace LocalJSX {
         "required"?: boolean;
         "showAllValues"?: boolean;
         "showNoOptionsFound"?: boolean;
+        /**
+          * The value of the input.
+         */
         "value"?: string | null;
     }
     interface AdmiraltyAutocompleteOption {
