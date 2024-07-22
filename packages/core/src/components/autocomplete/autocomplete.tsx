@@ -2,8 +2,7 @@
  * This component takes heavy inspiration from the autocomplete component created by alphagov: https://github.com/alphagov/accessible-autocomplete
  */
 
-import { Component, forceUpdate, Prop, State, h, Element, EventEmitter, Event } from '@stencil/core';
-import DropdownArrowDown from './dropdown-arrow-down';
+import { Component, forceUpdate, Prop, State, h, Element, EventEmitter, Event, Watch } from '@stencil/core';
 import { watchForOptions } from './optionsWatcher';
 import { AutoCompleteChangeEventDetail } from './autocomplete.interface';
 
@@ -33,7 +32,7 @@ function isPrintableKeyCode(keyCode) {
 
 @Component({
   tag: 'admiralty-autocomplete',
-  styleUrl: 'autocomplete.css',
+  styleUrl: 'autocomplete.scss',
   scoped: true,
 })
 export class AutocompleteComponent {
@@ -41,7 +40,6 @@ export class AutocompleteComponent {
 
   @Prop() autoselect: boolean = false;
   @Prop() cssNamespace: string = 'autocomplete';
-  @Prop() defaultValue: string = '';
   @Prop() displayMenu: string = 'inline';
   @Prop() minLength: number = 0;
   @Prop() name: string = 'input-autocomplete';
@@ -54,9 +52,9 @@ export class AutocompleteComponent {
     'When autocomplete results are available use up and down arrows to review and enter to select.  Touch device users, explore by touch or with swipe gestures.';
   @Prop() dropdownArrow: any;
   @Prop() menuAttributes: any;
-  @Prop() inputClasses: any;
-  @Prop() hintClasses: any;
-  @Prop() menuClasses: any;
+  @Prop() inputClasses: string;
+  @Prop() hintClasses: string;
+  @Prop() menuClasses: string;
   /**
    * The value of the input.
    */
@@ -68,29 +66,77 @@ export class AutocompleteComponent {
   @Event() admiraltyChange: EventEmitter<AutoCompleteChangeEventDetail>;
 
   elementReferences = {};
-  $pollInput: any;
+  $pollInput: NodeJS.Timeout;
   id = '1';
 
   source: string[] = [];
 
-  @State() focused: any = null;
-  @State() hovered: any = null;
+  @State() focused: number | null = null;
+  @State() hovered: number | null = null;
   @State() menuOpen: boolean = false;
   @State() options: any = this.value ? [this.value] : [];
-  @State() query: any = this.value;
-  @State() validChoiceMade: any = false;
-  @State() selected: any = null;
+  @State() query: string = this.value;
+  @State() validChoiceMade: boolean = false;
+  @State() selected: number | null = null;
   @State() ariaHint: boolean = true;
+
+  @Watch('value')
+  onValueChange(newVal: string, _: string) {
+    const query = newVal;
+    const queryEmpty = !query || query.length === 0;
+    const queryChanged = this.query !== query;
+    const queryLongEnough = query?.length >= this.minLength;
+
+    this.query = query;
+    this.ariaHint = queryEmpty;
+
+    const searchForOptions = !queryEmpty && queryChanged && queryLongEnough;
+    if (searchForOptions) {
+      const matches = this.source.filter(r => r.toLowerCase().indexOf(this.query.toLowerCase()) !== -1);
+      const matchFound = matches.length === 1;
+      this.options = matches;
+      this.selected = matchFound ? 0 : -1;
+      this.validChoiceMade = matchFound;
+
+      this.focused = -1;
+      this.menuOpen = false;
+    } else if (queryEmpty || !queryLongEnough) {
+      this.options = [];
+    }
+
+    this.admiraltyChange.emit({ value: newVal });
+  }
+
+  @Watch('focused')
+  onFocusedChange(newVal: number | null, oldVal: number | null) {
+    const componentLostFocus = this.focused === null;
+    const focusedChanged = oldVal !== newVal;
+    const focusDifferentElement = focusedChanged && !componentLostFocus;
+    if (focusDifferentElement) {
+      this.elementReferences[this.focused].focus();
+    }
+    const focusedInput = this.focused === -1;
+    const componentGainedFocus = focusedChanged && oldVal === null;
+    const selectAllText = focusedInput && componentGainedFocus;
+    if (selectAllText) {
+      const inputElement = this.elementReferences[this.focused];
+      inputElement.setSelectionRange(0, inputElement.value.length);
+    }
+  }
 
   isQueryAnOption(query, options) {
     return options.map(entry => this.templateInputValue(entry).toLowerCase()).indexOf(query.toLowerCase()) !== -1;
   }
 
-  componentDidMount() {
-    this.pollInputElement();
+  connectedCallback() {
+    this.mutation = watchForOptions<HTMLAdmiraltyAutocompleteOptionElement>(this.el, 'admiralty-autocomplete-option', async () => {
+      this.source = this.childOpts.map(option => option.value);
+      forceUpdate(this);
+    });
+    // this.pollInputElement();
   }
 
-  componentWillUnmount() {
+  disconnectedCallback() {
     clearTimeout(this.$pollInput);
   }
 
@@ -116,36 +162,12 @@ export class AutocompleteComponent {
 
   onConfirm(value: string) {
     this.value = value;
-    this.admiraltyChange.emit({ value });
   }
 
   mutation: MutationObserver;
 
-  connectedCallback() {
-    this.mutation = watchForOptions<HTMLAdmiraltyAutocompleteOptionElement>(this.el, 'admiralty-autocomplete-option', async () => {
-      this.source = this.childOpts.map(option => option.value);
-      forceUpdate(this);
-    });
-  }
-
   private get childOpts() {
     return Array.from(this.el.querySelectorAll('admiralty-autocomplete-option'));
-  }
-
-  componentDidUpdate() {
-    // const componentLostFocus = this.focused === null;
-    // const focusedChanged = prevState.focused !== focused;
-    // const focusDifferentElement = focusedChanged && !componentLostFocus;
-    // if (focusDifferentElement) {
-    //   this.elementReferences[this.focused].focus();
-    // }
-    // const focusedInput = this.focused === -1;
-    // const componentGainedFocus = focusedChanged && prevState.focused === null;
-    // const selectAllText = focusedInput && componentGainedFocus;
-    // if (selectAllText) {
-    //   const inputElement = this.elementReferences[this.focused];
-    //   inputElement.setSelectionRange(0, inputElement.value.length);
-    // }
   }
 
   hasAutoselect() {
@@ -170,7 +192,10 @@ export class AutocompleteComponent {
     let newQuery;
     if (this.confirmOnBlur) {
       newQuery = newState.query || this.query;
-      this.onConfirm(this.options[this.selected]);
+
+      const matches = this.source.filter(r => r.toLowerCase().indexOf(newQuery.toLowerCase()) !== -1);
+      const matchFound = newQuery?.length > 0 && matches.length === 1;
+      this.onConfirm(matchFound ? matches[0] : '');
     } else {
       newQuery = this.query;
     }
@@ -203,10 +228,9 @@ export class AutocompleteComponent {
     const focusingAnOption = this.focused !== -1;
     if (!focusingAnOption) {
       const keepMenuOpen = this.menuOpen && isIosDevice();
-      const newQuery = isIosDevice() ? this.query : this.templateInputValue(this.options[this.selected]);
       this.handleComponentBlur({
         menuOpen: keepMenuOpen,
-        query: newQuery,
+        query: this.query,
       });
     }
   }
@@ -390,7 +414,7 @@ export class AutocompleteComponent {
     const showNoOptionsFound = this.showNoOptionsFound && inputFocused && noOptionsAvailable && queryNotEmpty && queryLongEnough;
 
     const wrapperClassName = `${this.cssNamespace}__wrapper`;
-    const dropdownArrowClassName = `${this.cssNamespace}__dropdown-arrow-down`;
+    // const dropdownArrowClassName = `${this.cssNamespace}__dropdown-arrow-down`;
     const optionFocused = this.focused !== -1 && this.focused !== null;
 
     const optionClassName = `${this.cssNamespace}__option`;
@@ -413,7 +437,7 @@ export class AutocompleteComponent {
 
     // we only need a dropdown arrow if showAllValues is set to a truthy value
     if (this.showAllValues) {
-      dropdownArrow = DropdownArrowDown({ className: dropdownArrowClassName });
+      dropdownArrow = <admiralty-icon class={`select-down-icon`} icon-name={this.menuOpen || showNoOptionsFound ? 'angle-up' : 'angle-down'}></admiralty-icon>;
 
       // if the factory returns a string we'll render this as HTML (usage w/o (P)React)
       if (typeof dropdownArrow === 'string') {
@@ -496,7 +520,6 @@ export class AutocompleteComponent {
           {this.options.map((option, index) => {
             const showFocused = this.focused === -1 ? this.selected === index : this.focused === index;
             const optionModifierFocused = showFocused && this.hovered === null ? ` ${optionClassName}--focused` : '';
-            const optionModifierOdd = index % 2 ? ` ${optionClassName}--odd` : '';
             const iosPosinsetHtml = isIosDevice()
               ? `<span id=${this.id}__option-suffix--${index} style="border:0;clip:rect(0 0 0 0);height:1px;` +
                 'marginBottom:-1px;marginRight:-1px;overflow:hidden;padding:0;position:absolute;' +
@@ -507,7 +530,7 @@ export class AutocompleteComponent {
             return (
               <li
                 aria-selected={this.focused === index ? 'true' : 'false'}
-                class={`${optionClassName}${optionModifierFocused}${optionModifierOdd}`}
+                class={`${optionClassName}${optionModifierFocused}`}
                 innerHTML={this.templateSuggestion(option) + iosPosinsetHtml}
                 id={`${this.id}__option--${index}`}
                 key={index}

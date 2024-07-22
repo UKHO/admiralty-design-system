@@ -16,7 +16,14 @@ type Story = StoryObj<AutocompleteComponent>;
 
 const template: Story = {
   render: args =>
-    html`<admiralty-autocomplete label="${args.label}" hint="${args.hint}" ?invalid="${args.invalid}" invalid-message="${args.invalidMessage}" ?disabled="${args.disabled}">
+    html`<admiralty-autocomplete
+      label="${args.label}"
+      hint="${args.hint}"
+      ?invalid="${args.invalid}"
+      invalid-message="${args.invalidMessage}"
+      ?disabled="${args.disabled}"
+      value="${args.value}"
+    >
       <admiralty-autocomplete-option value="red">Red</admiralty-autocomplete-option>
       <admiralty-autocomplete-option value="green">Green</admiralty-autocomplete-option>
       <admiralty-autocomplete-option value="blue">Blue</admiralty-autocomplete-option>
@@ -37,3 +44,5 @@ export const Basic: Story = { ...template, args: { label: 'Favourite Colour', hi
 export const Invalid: Story = { ...template, args: { label: 'Favourite Colour', hint: 'Please enter your favourite colour', invalid: true, invalidMessage: 'Invalid selection' } };
 
 export const Disabled: Story = { ...template, args: { label: 'Favourite Colour', hint: 'Please enter your favourite colour', disabled: true } };
+
+export const Value: Story = { ...template, args: { label: 'Favourite Colour', hint: 'Please enter your favourite colour', value: 'orange' } };

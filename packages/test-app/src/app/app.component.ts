@@ -26,7 +26,8 @@ export class AppComponent {
     radio: new FormControl(''),
     select: new FormControl('test1'),
     textarea: new FormControl('This is a text area'),
-    autocomplete: new FormControl(),
+    autocomplete: new FormControl('orange'),
+    office: new FormControl(),
   });
 
   progress = 91;
@@ -43,7 +44,7 @@ export class AppComponent {
   }
 
   onSubmit() {
-    console.log(this.group);
+    console.log('onSubmit', this.group);
   }
 
   onSideNavItemSelected(event: Event) {
@@ -80,5 +81,12 @@ export class AppComponent {
     console.log(event.detail.value);
   }
 
-  public donkeydinosaur = { custom: '!', blur: true };
+  onOfficeChanged(event: AdmiraltyAutocompleteCustomEvent<AutoCompleteChangeEventDetail>) {
+    console.log('onOfficeChanged', event.detail.value);
+  }
+
+  selectOffice() {
+    this.group.controls.office.setValue('nottingham');
+  }
 }
+

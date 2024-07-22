@@ -1,3 +1,6 @@
+@use '../../scss/vars/colours';
+@use '../../scss/vars/typography';
+
 .autocomplete__wrapper {
   position: relative;
 }
@@ -10,7 +13,7 @@
   box-sizing: border-box;
   margin-bottom: 0; /* BUG: Safari 10 on macOS seems to add an implicit margin. */
   line-height: 1.25;
-  height: 2.5rem;
+  height: 48px;
   width: 100%;
 }
 
@@ -25,7 +28,7 @@
 }
 
 .autocomplete__input--default {
-  padding: 5px;
+  padding: 5px 5px 5px 12px;
 }
 
 .autocomplete__input--focused {
@@ -35,7 +38,7 @@
 }
 
 .autocomplete__input--show-all-values {
-  padding: 5px 35px 5px 5px; /* Space for arrow. Other padding should match .autocomplete__input--default. */
+  padding: 5px 35px 5px 12px; /* Space for arrow. Other padding should match .autocomplete__input--default. */
   cursor: pointer;
 }
 
@@ -50,7 +53,7 @@
 }
 
 .autocomplete__menu {
-  background-color: #ffffff;
+  background-color: colours.$colour-white;
   border: 2px solid #0b0c0c;
   border-top: 0;
   color: #0b0c0c;
@@ -85,9 +88,15 @@
 .autocomplete__option {
   border-bottom: solid #b1b4b6;
   border-width: 1px 0;
+  color: colours.$colour-admiralty-blue;
   cursor: pointer;
   display: block;
   position: relative;
+  margin-bottom: 0;
+}
+
+.autocomplete__option:before {
+  content: none;
 }
 
 .autocomplete__option > * {
@@ -102,21 +111,31 @@
   border-bottom-width: 0;
 }
 
-.autocomplete__option--odd {
-  background-color: #f3f2f1;
-}
-
 .autocomplete__option--focused,
 .autocomplete__option:hover {
-  background-color: #1d70b8;
-  border-color: #1d70b8;
-  color: white;
+  background-color: colours.$colour-utility-info;
+  border-color: colours.$colour-utility-info;
+  color: colours.$colour-white;
   outline: none;
 }
 
 .autocomplete__option--no-results {
-  background-color: #f3f2f1;
-  color: #505a5f;
+  background-color: colours.$colour-white;
+  color: colours.$colour-admiralty-blue;
+  text-align: center;
+
+  margin-top: 50px;
+  margin-bottom: 50px;
+  cursor: not-allowed;
+}
+.autocomplete__option--no-results:hover {
+  background-color: colours.$colour-white;
+  border-color: colours.$colour-white;
+  color: colours.$colour-admiralty-blue;
+  text-align: center;
+
+  margin-top: 50px;
+  margin-bottom: 50px;
   cursor: not-allowed;
 }
 
@@ -124,10 +143,19 @@
 .autocomplete__input,
 .autocomplete__option {
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 .autocomplete__hint,
 .autocomplete__option {
-  padding: 5px;
+  padding: 10px;
+}
+
+admiralty-icon {
+  font-size: 24px;
+  font-weight: 300;
+  pointer-events: none;
+  position: absolute;
+  right: 12px;
+  top: 12px;
 }
