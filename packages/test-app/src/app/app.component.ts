@@ -104,7 +104,7 @@ export class AppComponent {
   }
 
   selectOffice() {
-    this.group.controls.office.setValue('nottingham');
+    this.group.controls.office.setValue('Nottingham');
   }
 }
 
