@@ -117,8 +117,6 @@ export class AutocompleteComponent {
       this.options = matches;
       this.selected = matchFound ? 0 : -1;
       this.validChoiceMade = matchFound;
-
-      this.focused = -1;
       this.menuOpen = false;
     } else if (queryEmpty || !queryLongEnough) {
       this.options = [];
@@ -133,7 +131,7 @@ export class AutocompleteComponent {
     const focusedChanged = oldVal !== newVal;
     const focusDifferentElement = focusedChanged && !componentLostFocus;
     if (focusDifferentElement) {
-      this.elementReferences[this.focused].focus();
+      this.elementReferences[this.focused]?.focus();
     }
     const focusedInput = this.focused === -1;
     const componentGainedFocus = focusedChanged && oldVal === null;

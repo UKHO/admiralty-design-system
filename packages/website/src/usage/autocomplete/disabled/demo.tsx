@@ -7,8 +7,7 @@ export default function Demo() {
       label="Favourite colour"
       hint="Select a colour that you like the most"
       name="favouritecolour"
-      invalid={true}
-      invalidMessage="Select a colour">
+      disabled={true}>
       <AdmiraltyAutocompleteOption value="red">Red</AdmiraltyAutocompleteOption>
       <AdmiraltyAutocompleteOption value="green">Green</AdmiraltyAutocompleteOption>
       <AdmiraltyAutocompleteOption value="blue">Blue</AdmiraltyAutocompleteOption>
