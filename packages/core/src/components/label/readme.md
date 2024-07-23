@@ -24,6 +24,7 @@
 
 ### Used by
 
+ - [admiralty-autocomplete](../autocomplete)
  - [admiralty-input](../input)
  - [admiralty-progress-bar](../progress-bar)
  - [admiralty-select](../select)
@@ -32,6 +33,7 @@
 ### Graph
 ```mermaid
 graph TD;
+  admiralty-autocomplete --> admiralty-label
   admiralty-input --> admiralty-label
   admiralty-progress-bar --> admiralty-label
   admiralty-select --> admiralty-label

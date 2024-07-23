@@ -566,7 +566,9 @@ export class AutocompleteComponent {
         <span id={assistiveHintID} style={{ display: 'none' }}>
           {this.assistiveHint}
         </span>
-        <admiralty-input-invalid style={{ visibility: this.invalid && this.invalidMessage ? 'visible' : 'hidden' }}>{this.invalidMessage}</admiralty-input-invalid>
+        {this.invalid && this.invalidMessage && (
+          <admiralty-input-invalid style={{ visibility: this.invalid && this.invalidMessage ? 'visible' : 'hidden' }}>{this.invalidMessage}</admiralty-input-invalid>
+        )}
       </div>
     );
   }
