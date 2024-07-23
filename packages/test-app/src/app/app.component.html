@@ -117,6 +117,8 @@
     hint="Please select an office"
     (admiraltyChange)="onOfficeChanged($event)"
     formControlName="office"
+    [invalid]="office?.invalid && (office?.dirty || office?.touched)"
+    invalidMessage="Office needs to be selected"
   >
     <admiralty-autocomplete-option value="london">London</admiralty-autocomplete-option>
     <admiralty-autocomplete-option value="nottingham">Nottingham</admiralty-autocomplete-option>

@@ -31,10 +31,30 @@ export namespace Components {
         "autoselect": boolean;
         "confirmOnBlur": boolean;
         "cssNamespace": string;
+        /**
+          * When `true`, the component cannot be interacted with.
+         */
+        "disabled": boolean;
         "displayMenu": string;
         "dropdownArrow": any;
+        /**
+          * TThe text which will be used under the label to describe the input.
+         */
+        "hint": string;
         "hintClasses": string;
         "inputClasses": string;
+        /**
+          * Whether to show that the component is in an invalid state.
+         */
+        "invalid": boolean;
+        /**
+          * The message to show when the component is invalid.
+         */
+        "invalidMessage": string;
+        /**
+          * The text that will be used as a field label.
+         */
+        "label": string;
         "menuAttributes": any;
         "menuClasses": string;
         "minLength": number;
@@ -1331,10 +1351,30 @@ declare namespace LocalJSX {
         "autoselect"?: boolean;
         "confirmOnBlur"?: boolean;
         "cssNamespace"?: string;
+        /**
+          * When `true`, the component cannot be interacted with.
+         */
+        "disabled"?: boolean;
         "displayMenu"?: string;
         "dropdownArrow"?: any;
+        /**
+          * TThe text which will be used under the label to describe the input.
+         */
+        "hint"?: string;
         "hintClasses"?: string;
         "inputClasses"?: string;
+        /**
+          * Whether to show that the component is in an invalid state.
+         */
+        "invalid"?: boolean;
+        /**
+          * The message to show when the component is invalid.
+         */
+        "invalidMessage"?: string;
+        /**
+          * The text that will be used as a field label.
+         */
+        "label"?: string;
         "menuAttributes"?: any;
         "menuClasses"?: string;
         "minLength"?: number;

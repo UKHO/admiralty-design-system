@@ -46,3 +46,20 @@ export const Invalid: Story = { ...template, args: { label: 'Favourite Colour', 
 export const Disabled: Story = { ...template, args: { label: 'Favourite Colour', hint: 'Please enter your favourite colour', disabled: true } };
 
 export const Value: Story = { ...template, args: { label: 'Favourite Colour', hint: 'Please enter your favourite colour', value: 'orange' } };
+
+export const Countries: Story = {
+  render: args =>
+    html` <admiralty-autocomplete
+      label="${args.label}"
+      hint="${args.hint}"
+      ?invalid="${args.invalid}"
+      invalid-message="${args.invalidMessage}"
+      ?disabled="${args.disabled}"
+      value="${args.value}"
+    >
+      <admiralty-autocomplete-option value="fr">France</admiralty-autocomplete-option>
+      <admiralty-autocomplete-option value="de">Germany</admiralty-autocomplete-option>
+      <admiralty-autocomplete-option value="gb">United Kingdom of Great Britain & Northern Ireland</admiralty-autocomplete-option>
+    </admiralty-autocomplete>`,
+  args: { label: 'Country', hint: 'Select a country' },
+};
