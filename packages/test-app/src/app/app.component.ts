@@ -27,12 +27,13 @@ export class AppComponent {
     select: new FormControl('test1'),
     textarea: new FormControl('This is a text area'),
     autocomplete: new FormControl('orange'),
-    office: new FormControl(),
+    office: new FormControl('', Validators.required),
   });
 
   progress = 91;
 
   blah = this.group.get('text');
+  office = this.group.get('office');
 
   onIncreaseProgressClick() {
     this.progress++;
@@ -43,8 +44,25 @@ export class AppComponent {
     console.log('onColourBlockClick');
   }
 
+  validateAllFormFields(formGroup: FormGroup) {
+    Object.keys(formGroup.controls).forEach((field) => {
+      const control = formGroup.get(field);
+      if (control instanceof FormControl) {
+        control.markAsTouched({ onlySelf: true });
+      } else if (control instanceof FormGroup) {
+        this.validateAllFormFields(control);
+      }
+    });
+  }
+
   onSubmit() {
-    console.log('onSubmit', this.group);
+    console.log('onSubmit', this.group, this.group.valid);
+    if (this.group.valid) {
+      console.log('form submitted');
+    } else {
+      console.log('form has errors');
+      this.validateAllFormFields(this.group);
+    }
   }
 
   onSideNavItemSelected(event: Event) {

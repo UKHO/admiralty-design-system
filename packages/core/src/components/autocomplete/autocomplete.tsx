@@ -56,6 +56,26 @@ export class AutocompleteComponent {
   @Prop() hintClasses: string;
   @Prop() menuClasses: string;
   /**
+   * The text that will be used as a field label.
+   */
+  @Prop() label: string = null;
+  /**
+   * TThe text which will be used under the label to describe the input.
+   */
+  @Prop() hint: string = null;
+  /**
+   * Whether to show that the component is in an invalid state.
+   */
+  @Prop() invalid: boolean = false;
+  /**
+   * The message to show when the component is invalid.
+   */
+  @Prop() invalidMessage: string = null;
+  /**
+   * When `true`, the component cannot be interacted with.
+   */
+  @Prop() disabled: boolean = false;
+  /**
    * The value of the input.
    */
   @Prop({ mutable: true }) value?: string | null = '';
@@ -405,8 +425,6 @@ export class AutocompleteComponent {
   }
 
   render() {
-    const autoselect = this.hasAutoselect();
-
     const inputFocused = this.focused === -1;
     const noOptionsAvailable = this.options.length === 0;
     const queryNotEmpty = this.query.length !== 0;
@@ -414,15 +432,9 @@ export class AutocompleteComponent {
     const showNoOptionsFound = this.showNoOptionsFound && inputFocused && noOptionsAvailable && queryNotEmpty && queryLongEnough;
 
     const wrapperClassName = `${this.cssNamespace}__wrapper`;
-    // const dropdownArrowClassName = `${this.cssNamespace}__dropdown-arrow-down`;
     const optionFocused = this.focused !== -1 && this.focused !== null;
 
     const optionClassName = `${this.cssNamespace}__option`;
-
-    const hintClassName = `${this.cssNamespace}__hint`;
-    const selectedOptionText = this.templateInputValue(this.options[this.selected]);
-    const optionBeginsWithQuery = selectedOptionText && selectedOptionText.toLowerCase().indexOf(this.query.toLowerCase()) === 0;
-    const hintValue = optionBeginsWithQuery && autoselect ? this.query + selectedOptionText.substr(this.query.length) : '';
 
     const assistiveHintID = this.id + '__assistiveHint';
     const ariaProps = {
@@ -432,18 +444,6 @@ export class AutocompleteComponent {
       'aria-owns': `${this.id}__listbox`,
       'aria-autocomplete': this.hasAutoselect() ? 'both' : 'list',
     };
-
-    let dropdownArrow;
-
-    // we only need a dropdown arrow if showAllValues is set to a truthy value
-    if (this.showAllValues) {
-      dropdownArrow = <admiralty-icon class={`select-down-icon`} icon-name={this.menuOpen || showNoOptionsFound ? 'angle-up' : 'angle-down'}></admiralty-icon>;
-
-      // if the factory returns a string we'll render this as HTML (usage w/o (P)React)
-      if (typeof dropdownArrow === 'string') {
-        dropdownArrow = <div class={`${this.cssNamespace}__dropdown-arrow-down-wrapper`} innerHTML={dropdownArrow} />;
-      }
-    }
 
     const inputClassName = `${this.cssNamespace}__input`;
     const inputClassList = [inputClassName, this.showAllValues ? `${inputClassName}--show-all-values` : `${inputClassName}--default`];
@@ -455,6 +455,14 @@ export class AutocompleteComponent {
 
     if (this.inputClasses) {
       inputClassList.push(this.inputClasses);
+    }
+
+    if (this.invalid && this.invalidMessage) {
+      inputClassList.push(`${inputClassName}--invalid`);
+    }
+
+    if (this.disabled) {
+      inputClassList.push(`${inputClassName}--disabled`);
     }
 
     const menuClassName = `${this.cssNamespace}__menu`;
@@ -488,33 +496,36 @@ export class AutocompleteComponent {
 
     return (
       <div class={wrapperClassName} onKeyDown={event => this.handleKeyDown(event)}>
-        {hintValue && (
-          <span>
-            <input class={[hintClassName, this.hintClasses === null ? this.inputClasses : this.hintClasses].filter(Boolean).join(' ')} readonly tabIndex={-1} value={hintValue} />
-          </span>
-        )}
-
-        <input
-          {...ariaProps}
-          autoComplete="off"
-          class={inputClassList.join(' ')}
-          id={this.id}
-          onClick={event => this.handleInputClick(event)}
-          onBlur={event => this.handleInputBlur(event)}
-          onInput={event => this.handleInputChange(event)}
-          onFocus={event => this.handleInputFocus(event)}
-          name={this.name}
-          placeholder={this.placeholder}
-          ref={inputElement => {
-            this.elementReferences[-1] = inputElement;
-          }}
-          type="text"
-          role="combobox"
-          required={this.required}
-          value={this.query}
-        />
-
-        {dropdownArrow}
+        {this.label ? (
+          <admiralty-label disabled={this.disabled} for={this.id}>
+            {this.label}
+          </admiralty-label>
+        ) : null}
+        {this.hint ? <admiralty-hint disabled={this.disabled}>{this.hint}</admiralty-hint> : null}
+        <div class="autocomplete__input-wrapper">
+          <input
+            {...ariaProps}
+            disabled={this.disabled}
+            aria-disabled={this.disabled ? 'true' : 'false'}
+            autoComplete="off"
+            class={inputClassList.join(' ')}
+            id={this.id}
+            onClick={event => this.handleInputClick(event)}
+            onBlur={event => this.handleInputBlur(event)}
+            onInput={event => this.handleInputChange(event)}
+            onFocus={event => this.handleInputFocus(event)}
+            name={this.name}
+            placeholder={this.placeholder}
+            ref={inputElement => {
+              this.elementReferences[-1] = inputElement;
+            }}
+            type="text"
+            role="combobox"
+            required={this.required}
+            value={this.query}
+          />
+          <admiralty-icon class={`autocomplete-down-icon ${this.disabled ? 'disabled' : ''}`} icon-name={this.menuOpen || showNoOptionsFound ? 'angle-up' : 'angle-down'} />
+        </div>
 
         <ul {...computedMenuAttributes} class={menuClassList.join(' ')}>
           {this.options.map((option, index) => {
@@ -555,6 +566,7 @@ export class AutocompleteComponent {
         <span id={assistiveHintID} style={{ display: 'none' }}>
           {this.assistiveHint}
         </span>
+        <admiralty-input-invalid style={{ visibility: this.invalid && this.invalidMessage ? 'visible' : 'hidden' }}>{this.invalidMessage}</admiralty-input-invalid>
       </div>
     );
   }

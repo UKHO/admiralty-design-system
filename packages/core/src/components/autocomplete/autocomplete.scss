@@ -27,19 +27,31 @@
   position: absolute;
 }
 
+.autocomplete__input-wrapper {
+  position: relative;
+}
+
 .autocomplete__input--default {
   padding: 5px 5px 5px 12px;
 }
 
 .autocomplete__input--focused {
-  outline: 3px solid #fd0;
+  outline: 3px solid colours.$colour-utility-focus;
   outline-offset: 0;
-  box-shadow: inset 0 0 0 2px;
+  box-shadow: inset 0 0 0 2px colours.$colour-text;
 }
 
 .autocomplete__input--show-all-values {
   padding: 5px 35px 5px 12px; /* Space for arrow. Other padding should match .autocomplete__input--default. */
   cursor: pointer;
+}
+
+.autocomplete__input--invalid {
+  border-color: colours.$colour-utility-error;
+}
+
+.autocomplete__input--disabled {
+  border-color: colours.$colour-textinput-text-disabled;
 }
 
 .autocomplete__dropdown-arrow-down {
@@ -88,7 +100,7 @@
 .autocomplete__option {
   border-bottom: solid #b1b4b6;
   border-width: 1px 0;
-  color: colours.$colour-admiralty-blue;
+  color: colours.$colour-text;
   cursor: pointer;
   display: block;
   position: relative;
@@ -158,4 +170,12 @@ admiralty-icon {
   position: absolute;
   right: 12px;
   top: 12px;
+}
+
+admiralty-icon.disabled {
+  color: colours.$colour-textinput-text-disabled;
+}
+
+admiralty-input-invalid {
+  margin-top: 6px;
 }
