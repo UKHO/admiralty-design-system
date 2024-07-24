@@ -113,7 +113,7 @@ export class AutocompleteComponent {
     const searchForOptions = !queryEmpty && queryChanged && queryLongEnough;
     if (searchForOptions) {
       const matches = this.source.filter(r => r.toLowerCase().indexOf(this.query.toLowerCase()) !== -1);
-      const matchFound = matches.length === 1;
+      const matchFound = matches.length > 0;
       this.options = matches;
       this.selected = matchFound ? 0 : -1;
       this.validChoiceMade = matchFound;
@@ -212,7 +212,7 @@ export class AutocompleteComponent {
       newQuery = newState.query || this.query;
 
       const matches = this.source.filter(r => r.toLowerCase().indexOf(newQuery.toLowerCase()) !== -1);
-      const matchFound = newQuery?.length > 0 && matches.length === 1;
+      const matchFound = newQuery?.length > 0 && matches.length > 0;
       this.onConfirm(matchFound ? matches[0] : '');
     } else {
       newQuery = this.query;
