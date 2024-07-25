@@ -115,7 +115,7 @@ export class AutocompleteComponent {
   @State() ariaHint: boolean = true;
 
   @Watch('value')
-  onValueChange(newVal: string, oldVal: string) {
+  onValueChange(newVal: string, _: string) {
     if (newVal && newVal.length > 0) {
       const matches = filterOptionsByValue(this.source, newVal);
       const matchFound = matches.length > 0;
