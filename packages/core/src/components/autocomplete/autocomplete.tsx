@@ -6,6 +6,11 @@ import { Component, forceUpdate, Prop, State, h, Element, EventEmitter, Event, W
 import { watchForOptions } from './optionsWatcher';
 import { AutoCompleteChangeEventDetail } from './autocomplete.interface';
 
+interface Option {
+  text: string;
+  value: any;
+}
+
 const keyCodes = {
   13: 'enter',
   27: 'escape',
@@ -28,6 +33,14 @@ function isPrintableKeyCode(keyCode) {
     (keyCode > 185 && keyCode < 193) || // ;=,-./` (in order)
     (keyCode > 218 && keyCode < 223) // [\]' (in order)
   );
+}
+
+function filterOptions(options: Option[], searchTerm: string) {
+  return options.filter(({ text }) => text.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1);
+}
+
+function filterOptionsByValue(options: Option[], searchTerm: string) {
+  return options.filter(({ value }) => value.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1);
 }
 
 @Component({
@@ -78,7 +91,7 @@ export class AutocompleteComponent {
   /**
    * The value of the input.
    */
-  @Prop({ mutable: true }) value?: string | null = '';
+  @Prop({ mutable: true }) value?: string | null = null;
 
   /**
    * Emitted when the value has changed.
@@ -89,40 +102,38 @@ export class AutocompleteComponent {
   $pollInput: NodeJS.Timeout;
   id = '1';
 
-  source: string[] = [];
+  source: Option[] = [];
 
   @State() focused: number | null = null;
   @State() hovered: number | null = null;
   @State() menuOpen: boolean = false;
-  @State() options: any = this.value ? [this.value] : [];
-  @State() query: string = this.value;
+  @State() options: Option[] = [];
+  @State() option: Option = null;
+  @State() query: string = null;
   @State() validChoiceMade: boolean = false;
   @State() selected: number | null = null;
   @State() ariaHint: boolean = true;
 
   @Watch('value')
-  onValueChange(newVal: string, _: string) {
-    const query = newVal;
-    const queryEmpty = !query || query.length === 0;
-    const queryChanged = this.query !== query;
-    const queryLongEnough = query?.length >= this.minLength;
-
-    this.query = query;
-    this.ariaHint = queryEmpty;
-
-    const searchForOptions = !queryEmpty && queryChanged && queryLongEnough;
-    if (searchForOptions) {
-      const matches = this.source.filter(r => r.toLowerCase().indexOf(this.query.toLowerCase()) !== -1);
+  onValueChange(newVal: string, oldVal: string) {
+    if (newVal && newVal.length > 0) {
+      const matches = filterOptionsByValue(this.source, newVal);
       const matchFound = matches.length > 0;
       this.options = matches;
       this.selected = matchFound ? 0 : -1;
       this.validChoiceMade = matchFound;
+      this.option = matches[0];
+      this.query = matchFound ? matches[0].text : '';
       this.menuOpen = false;
-    } else if (queryEmpty || !queryLongEnough) {
+      this.ariaHint = false;
+    } else {
       this.options = [];
+      this.option = null;
+      this.query = '';
+      this.ariaHint = true;
     }
 
-    this.admiraltyChange.emit({ value: newVal });
+    this.admiraltyChange.emit({ value: this.option?.value ?? '' });
   }
 
   @Watch('focused')
@@ -142,13 +153,25 @@ export class AutocompleteComponent {
     }
   }
 
-  isQueryAnOption(query, options) {
-    return options.map(entry => this.templateInputValue(entry).toLowerCase()).indexOf(query.toLowerCase()) !== -1;
+  isQueryAnOption(query: string, options: Option[]) {
+    return options.map(({ text }) => this.templateInputValue(text).toLowerCase()).indexOf(query.toLowerCase()) !== -1;
   }
 
   connectedCallback() {
     this.mutation = watchForOptions<HTMLAdmiraltyAutocompleteOptionElement>(this.el, 'admiralty-autocomplete-option', async () => {
-      this.source = this.childOpts.map(option => option.value);
+      this.childOpts.map(({ textContent, value }) => {
+        console.log(textContent, value);
+      });
+      this.source = this.childOpts.map(({ textContent, value }) => ({
+        text: textContent?.length > 0 ? textContent : value,
+        value: value ?? textContent,
+      }));
+      if (this.query === null && this.value?.length > 0) {
+        const matches = filterOptionsByValue(this.source, this.value);
+        this.options = matches;
+        this.option = matches[0];
+        this.query = matches[0]?.text ?? '';
+      }
       forceUpdate(this);
     });
     // this.pollInputElement();
@@ -178,8 +201,9 @@ export class AutocompleteComponent {
     }
   }
 
-  onConfirm(value: string) {
-    this.value = value;
+  onConfirm(option: Option) {
+    this.option = option;
+    this.value = option.value;
   }
 
   mutation: MutationObserver;
@@ -206,14 +230,13 @@ export class AutocompleteComponent {
     return value;
   }
 
-  handleComponentBlur(newState) {
-    let newQuery;
+  handleComponentBlur(newState: { menuOpen: boolean; query: string }) {
+    let newQuery: string;
     if (this.confirmOnBlur) {
       newQuery = newState.query || this.query;
-
-      const matches = this.source.filter(r => r.toLowerCase().indexOf(newQuery.toLowerCase()) !== -1);
+      const matches = filterOptions(this.source, newQuery);
       const matchFound = newQuery?.length > 0 && matches.length > 0;
-      this.onConfirm(matchFound ? matches[0] : '');
+      this.onConfirm(matchFound ? matches[0] : { value: null, text: '' });
     } else {
       newQuery = this.query;
     }
@@ -265,7 +288,7 @@ export class AutocompleteComponent {
 
     const searchForOptions = this.showAllValues || (!queryEmpty && queryChanged && queryLongEnough);
     if (searchForOptions) {
-      const matches = this.source.filter(r => r.toLowerCase().indexOf(this.query.toLowerCase()) !== -1);
+      const matches = filterOptions(this.source, this.query);
       const optionsAvailable = matches.length > 0;
       this.menuOpen = optionsAvailable;
       this.options = matches;
@@ -282,7 +305,7 @@ export class AutocompleteComponent {
   }
 
   handleInputFocus(_) {
-    const shouldReopenMenu = !this.validChoiceMade && this.query.length >= this.minLength && this.options.length > 0;
+    const shouldReopenMenu = !this.validChoiceMade && this.query?.length >= this.minLength && this.options.length > 0;
 
     if (shouldReopenMenu) {
       this.focused = -1;
@@ -309,7 +332,7 @@ export class AutocompleteComponent {
 
   handleOptionClick(_, index) {
     const selectedOption = this.options[index];
-    const newQuery = this.templateInputValue(selectedOption);
+    const newQuery = this.templateInputValue(selectedOption.text);
     this.onConfirm(selectedOption);
     this.focused = -1;
     this.hovered = null;
@@ -344,7 +367,7 @@ export class AutocompleteComponent {
     // if not open, open
     if (this.showAllValues && this.menuOpen === false) {
       event.preventDefault();
-      const matches = this.source.filter(r => r.toLowerCase().indexOf(''.toLowerCase()) !== -1);
+      const matches = filterOptions(this.source, '');
       this.menuOpen = true;
       this.options = matches;
       this.selected = 0;
@@ -363,7 +386,7 @@ export class AutocompleteComponent {
     // if not open, open
     if (this.showAllValues && this.menuOpen === false && this.query === '') {
       event.preventDefault();
-      const matches = this.source.filter(r => r.toLowerCase().indexOf(''.toLowerCase()) !== -1);
+      const matches = filterOptions(this.source, '');
       this.menuOpen = true;
       this.options = matches;
     }
@@ -412,6 +435,7 @@ export class AutocompleteComponent {
       case 'escape':
         this.handleComponentBlur({
           query: this.query,
+          menuOpen: this.menuOpen,
         });
         break;
       default:
@@ -425,8 +449,8 @@ export class AutocompleteComponent {
   render() {
     const inputFocused = this.focused === -1;
     const noOptionsAvailable = this.options.length === 0;
-    const queryNotEmpty = this.query.length !== 0;
-    const queryLongEnough = this.query.length >= this.minLength;
+    const queryNotEmpty = this.query?.length !== 0;
+    const queryLongEnough = this.query?.length >= this.minLength;
     const showNoOptionsFound = this.showNoOptionsFound && inputFocused && noOptionsAvailable && queryNotEmpty && queryLongEnough;
 
     const wrapperClassName = `${this.cssNamespace}__wrapper`;
@@ -540,7 +564,7 @@ export class AutocompleteComponent {
               <li
                 aria-selected={this.focused === index ? 'true' : 'false'}
                 class={`${optionClassName}${optionModifierFocused}`}
-                innerHTML={this.templateSuggestion(option) + iosPosinsetHtml}
+                innerHTML={this.templateSuggestion(option.text) + iosPosinsetHtml}
                 id={`${this.id}__option--${index}`}
                 key={index}
                 onBlur={event => this.handleOptionBlur(event, index)}

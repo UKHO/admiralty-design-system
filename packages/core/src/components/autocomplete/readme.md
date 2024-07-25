@@ -30,7 +30,7 @@
 | `required`           | `required`              |                                                                     | `boolean` | `false`                                                                                                                                                         |
 | `showAllValues`      | `show-all-values`       |                                                                     | `boolean` | `true`                                                                                                                                                          |
 | `showNoOptionsFound` | `show-no-options-found` |                                                                     | `boolean` | `true`                                                                                                                                                          |
-| `value`              | `value`                 | The value of the input.                                             | `string`  | `''`                                                                                                                                                            |
+| `value`              | `value`                 | The value of the input.                                             | `string`  | `null`                                                                                                                                                          |
 
 
 ## Events
