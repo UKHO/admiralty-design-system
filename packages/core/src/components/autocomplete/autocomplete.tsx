@@ -159,9 +159,6 @@ export class AutocompleteComponent {
 
   connectedCallback() {
     this.mutation = watchForOptions<HTMLAdmiraltyAutocompleteOptionElement>(this.el, 'admiralty-autocomplete-option', async () => {
-      this.childOpts.map(({ textContent, value }) => {
-        console.log(textContent, value);
-      });
       this.source = this.childOpts.map(({ textContent, value }) => ({
         text: textContent?.length > 0 ? textContent : value,
         value: value ?? textContent,
@@ -204,6 +201,7 @@ export class AutocompleteComponent {
   onConfirm(option: Option) {
     this.option = option;
     this.value = option.value;
+    this.query = option.text;
   }
 
   mutation: MutationObserver;
@@ -242,7 +240,6 @@ export class AutocompleteComponent {
     }
     this.focused = null;
     this.menuOpen = newState.menuOpen || false;
-    this.query = newQuery;
     this.selected = null;
     this.validChoiceMade = this.isQueryAnOption(newQuery, this.options);
   }
@@ -260,7 +257,7 @@ export class AutocompleteComponent {
       const keepMenuOpen = this.menuOpen && isIosDevice();
       this.handleComponentBlur({
         menuOpen: keepMenuOpen,
-        query: this.templateInputValue(this.options[this.selected]),
+        query: this.templateInputValue(this.options[this.selected]?.text ?? ''),
       });
     }
   }
