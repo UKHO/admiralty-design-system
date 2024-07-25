@@ -1,15 +1,8 @@
+jest.mock('./optionsWatcher');
+
 import { newSpecPage } from '@stencil/core/testing';
 import { AutocompleteComponent } from './autocomplete';
 import { AutocompleteOptionComponent } from '../autocomplete-option/autocomplete-option';
-
-const mutationObserverMock = jest.fn<MutationObserver, [MutationCallback]>().mockImplementation(() => {
-  return {
-    observe: jest.fn(),
-    disconnect: jest.fn(),
-    takeRecords: jest.fn(),
-  };
-});
-global.MutationObserver = mutationObserverMock;
 
 describe('autocomplete', () => {
   it('renders', async () => {
@@ -33,7 +26,7 @@ describe('autocomplete', () => {
     `);
   });
 
-  it('renders', async () => {
+  it('renders with options', async () => {
     const page = await newSpecPage({
       components: [AutocompleteComponent, AutocompleteOptionComponent],
       html: `
@@ -69,5 +62,24 @@ describe('autocomplete', () => {
         </div>
       </admiralty-autocomplete>
     `);
+  });
+
+  it('selects the correct item when a value is provided', async () => {
+    const page = await newSpecPage({
+      components: [AutocompleteComponent, AutocompleteOptionComponent],
+      html: `<admiralty-autocomplete value="gb">
+        <admiralty-autocomplete-option value="de">Germany</admiralty-autocomplete-option>
+        <admiralty-autocomplete-option value="gb">United Kingdom</admiralty-autocomplete-option>
+        <admiralty-autocomplete-option value="us">United States</admiralty-autocomplete-option>
+      </admiralty-autocomplete>`,
+    });
+
+    const component = page.doc.querySelector('admiralty-autocomplete');
+
+    expect(component).toBeDefined();
+
+    const input = page.root.querySelector('input');
+
+    expect(input.value).toEqual('United Kingdom');
   });
 });
