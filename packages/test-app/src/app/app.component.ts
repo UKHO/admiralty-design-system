@@ -28,12 +28,16 @@ export class AppComponent {
     textarea: new FormControl('This is a text area'),
     autocomplete: new FormControl('orange'),
     office: new FormControl('', Validators.required),
+    country: new FormControl('', Validators.required),
+    direction: new FormControl('', Validators.required),
   });
 
   progress = 91;
 
   blah = this.group.get('text');
   office = this.group.get('office');
+  country = this.group.get('country');
+  direction = this.group.get('country');
 
   onIncreaseProgressClick() {
     this.progress++;
@@ -103,8 +107,20 @@ export class AppComponent {
     console.log('onOfficeChanged', event.detail.value);
   }
 
+  onCountryChanged(event: AdmiraltyAutocompleteCustomEvent<AutoCompleteChangeEventDetail>) {
+    console.log('onCountryChanged', event.detail.value);
+  }
+
   selectOffice() {
     this.group.controls.office.setValue('Nottingham');
+  }
+
+  selectCountry() {
+    this.group.controls.country.setValue('gb');
+  }
+
+  selectDirection() {
+    this.group.controls.direction.setValue('South');
   }
 }
 

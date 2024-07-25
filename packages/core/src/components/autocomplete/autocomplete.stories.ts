@@ -24,18 +24,18 @@ const template: Story = {
       ?disabled="${args.disabled}"
       value="${args.value}"
     >
-      <admiralty-autocomplete-option value="red" />
-      <admiralty-autocomplete-option value="green" />
-      <admiralty-autocomplete-option value="blue" />
-      <admiralty-autocomplete-option value="yellow" />
-      <admiralty-autocomplete-option value="purple" />
-      <admiralty-autocomplete-option value="orange" />
-      <admiralty-autocomplete-option value="black" />
-      <admiralty-autocomplete-option value="white" />
-      <admiralty-autocomplete-option value="pink" />
-      <admiralty-autocomplete-option value="brown" />
-      <admiralty-autocomplete-option value="grey" />
-      <admiralty-autocomplete-option value="cyan" />
+      <admiralty-autocomplete-option value="red">Red</admiralty-autocomplete-option>
+      <admiralty-autocomplete-option value="green">Green</admiralty-autocomplete-option>
+      <admiralty-autocomplete-option value="blue">Blue</admiralty-autocomplete-option>
+      <admiralty-autocomplete-option value="yellow">Yellow</admiralty-autocomplete-option>
+      <admiralty-autocomplete-option value="purple">Purple</admiralty-autocomplete-option>
+      <admiralty-autocomplete-option value="orange">Orange</admiralty-autocomplete-option>
+      <admiralty-autocomplete-option value="black">Black</admiralty-autocomplete-option>
+      <admiralty-autocomplete-option value="white">White</admiralty-autocomplete-option>
+      <admiralty-autocomplete-option value="pink">Pink</admiralty-autocomplete-option>
+      <admiralty-autocomplete-option value="brown">Brown</admiralty-autocomplete-option>
+      <admiralty-autocomplete-option value="grey">Grey</admiralty-autocomplete-option>
+      <admiralty-autocomplete-option value="cyan">Cyan</admiralty-autocomplete-option>
     </admiralty-autocomplete>`,
 };
 
@@ -57,9 +57,32 @@ export const Countries: Story = {
       ?disabled="${args.disabled}"
       value="${args.value}"
     >
-      <admiralty-autocomplete-option value="France" />
-      <admiralty-autocomplete-option value="Germany" />
-      <admiralty-autocomplete-option value="United Kingdom of Great Britain & Northern Ireland" />
+      <admiralty-autocomplete-option value="fr">France</admiralty-autocomplete-option>
+      <admiralty-autocomplete-option value="de">Germany</admiralty-autocomplete-option>
+
+      <admiralty-autocomplete-option value="ie">Ireland</admiralty-autocomplete-option>
+      <admiralty-autocomplete-option value="gb">United Kingdom of Great Britain and Northern Ireland</admiralty-autocomplete-option>
+      <admiralty-autocomplete-option value="us">United States of America</admiralty-autocomplete-option>
     </admiralty-autocomplete>`,
   args: { label: 'Country', hint: 'Select a country' },
+};
+
+export const CountriesPreSelected: Story = {
+  render: args =>
+    html` <admiralty-autocomplete
+      label="${args.label}"
+      hint="${args.hint}"
+      ?invalid="${args.invalid}"
+      invalid-message="${args.invalidMessage}"
+      ?disabled="${args.disabled}"
+      value="${args.value}"
+    >
+      <admiralty-autocomplete-option value="fr">France</admiralty-autocomplete-option>
+      <admiralty-autocomplete-option value="de">Germany</admiralty-autocomplete-option>
+
+      <admiralty-autocomplete-option value="ie">Ireland</admiralty-autocomplete-option>
+      <admiralty-autocomplete-option value="gb">United Kingdom of Great Britain and Northern Ireland</admiralty-autocomplete-option>
+      <admiralty-autocomplete-option value="us">United States of America</admiralty-autocomplete-option>
+    </admiralty-autocomplete>`,
+  args: { label: 'Country', hint: 'Select a country', value: 'gb' },
 };

@@ -94,24 +94,60 @@
   </admiralty-radio-group>
   <admiralty-textarea formControlName="textarea" label="Textarea Label"></admiralty-textarea>
   {{ group.value.textarea }}
+  <admiralty-autocomplete label="Direction" formControlName="direction">
+    <admiralty-autocomplete-option>North</admiralty-autocomplete-option>
+    <admiralty-autocomplete-option>South</admiralty-autocomplete-option>
+    <admiralty-autocomplete-option>East</admiralty-autocomplete-option>
+    <admiralty-autocomplete-option>West</admiralty-autocomplete-option>
+  </admiralty-autocomplete>
+  <hr />
+  {{ group.value.direction }}
+  <hr />
+  <admiralty-button type="button" (click)="selectDirection()">Go South</admiralty-button>
+  <hr />
   <admiralty-autocomplete
     label="Favourite Colour"
     hint="Please enter your favourite colour"
     (admiraltyChange)="autocomplete($event)"
     formControlName="autocomplete"
   >
-    <admiralty-autocomplete-option value="green" />
-    <admiralty-autocomplete-option value="blue" />
-    <admiralty-autocomplete-option value="yellow" />
-    <admiralty-autocomplete-option value="purple" />
-    <admiralty-autocomplete-option value="orange" />
-    <admiralty-autocomplete-option value="black" />
-    <admiralty-autocomplete-option value="white" />
-    <admiralty-autocomplete-option value="pink" />
-    <admiralty-autocomplete-option value="brown" />
-    <admiralty-autocomplete-option value="grey" />
-    <admiralty-autocomplete-option value="cyan" />
+    <admiralty-autocomplete-option value="green">Green</admiralty-autocomplete-option>
+    <admiralty-autocomplete-option value="blue">Blue</admiralty-autocomplete-option>
+    <admiralty-autocomplete-option value="yellow">Yellow</admiralty-autocomplete-option>
+    <admiralty-autocomplete-option value="purple">Purple</admiralty-autocomplete-option>
+    <admiralty-autocomplete-option value="orange">Orange</admiralty-autocomplete-option>
+    <admiralty-autocomplete-option value="black">Black</admiralty-autocomplete-option>
+    <admiralty-autocomplete-option value="white">White</admiralty-autocomplete-option>
+    <admiralty-autocomplete-option value="pink">Pink</admiralty-autocomplete-option>
+    <admiralty-autocomplete-option value="brown">Brown</admiralty-autocomplete-option>
+    <admiralty-autocomplete-option value="grey">Grey</admiralty-autocomplete-option>
+    <admiralty-autocomplete-option value="cyan">Cyan</admiralty-autocomplete-option>
   </admiralty-autocomplete>
+  <hr />
+  {{ group.value.autocomplete }}
+  <hr />
+  <admiralty-autocomplete
+    label="Country"
+    hint="Select a country"
+    (admiraltyChange)="onCountryChanged($event)"
+    formControlName="country"
+    [invalid]="country?.invalid && (country?.dirty || country?.touched)"
+    invalidMessage="Country must to be selected"
+  >
+    <admiralty-autocomplete-option value="fr">France</admiralty-autocomplete-option>
+    <admiralty-autocomplete-option value="de">Germany</admiralty-autocomplete-option>
+
+    <admiralty-autocomplete-option value="ie">Ireland</admiralty-autocomplete-option>
+    <admiralty-autocomplete-option value="gb"
+      >United Kingdom of Great Britain and Northern Ireland</admiralty-autocomplete-option
+    >
+    <admiralty-autocomplete-option value="us">United States of America</admiralty-autocomplete-option>
+  </admiralty-autocomplete>
+  <hr />
+  {{ group.value.country }}
+  <hr />
+  <admiralty-button type="button" (click)="selectCountry()">Choose United Kingdom</admiralty-button>
+  <hr />
   <admiralty-autocomplete
     label="Office location"
     hint="Please select an office"
@@ -120,9 +156,12 @@
     [invalid]="office?.invalid && (office?.dirty || office?.touched)"
     invalidMessage="Office needs to be selected"
   >
-    <admiralty-autocomplete-option value="London" />
-    <admiralty-autocomplete-option value="Nottingham" />
-    <admiralty-autocomplete-option value="Leeds" />
+    <admiralty-autocomplete-option value="London">London</admiralty-autocomplete-option>
+    <admiralty-autocomplete-option value="Nottingham">Nottingham</admiralty-autocomplete-option>
+    <admiralty-autocomplete-option value="Nottingham Lower">Nottingham Lower</admiralty-autocomplete-option>
+    <admiralty-autocomplete-option value="Leeds">Leeds</admiralty-autocomplete-option>
+    <admiralty-autocomplete-option value="Leeds North">Leeds North</admiralty-autocomplete-option>
+    <admiralty-autocomplete-option value="Leeds South">Leeds South</admiralty-autocomplete-option>
   </admiralty-autocomplete>
   <hr />
   {{ group.value.office }}
