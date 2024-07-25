@@ -104,7 +104,7 @@ export class TextareaComponent {
               {this.label}
             </admiralty-label>
           ) : null}
-          {this.hint ? <admiralty-hint disabled={this.disabled}>{this.hint}</admiralty-hint> : null}
+          {this.hint ? <admiralty-hint id={this.hintId} disabled={this.disabled}>{this.hint}</admiralty-hint> : null}
           <textarea
             ref={textArea => (this.nativeTextArea = textArea)}
             class={{ disabled: this.disabled, invalid: this.invalid }}
@@ -117,7 +117,7 @@ export class TextareaComponent {
             aria-invalid={this.invalid ? 'true' : 'false'}
             aria-describedby={(this.hint ? this.hintId : null) + ' ' + (this.invalid ? this.errorId : null)}
           ></textarea>
-          <admiralty-input-invalid style={{ visibility: this.invalid && this.invalidMessage ? 'visible' : 'hidden' }}>{this.invalidMessage}</admiralty-input-invalid>
+          <admiralty-input-invalid id={this.errorId} style={{ visibility: this.invalid && this.invalidMessage ? 'visible' : 'hidden' }}>{this.invalidMessage}</admiralty-input-invalid>
         </div>
       </Host>
     );
