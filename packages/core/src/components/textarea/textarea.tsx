@@ -1,7 +1,6 @@
 import { Component, Host, h, Prop, Event, EventEmitter, Watch } from '@stencil/core';
 import { TextAreaChangeEventDetail } from './textarea.interface';
 
-
 @Component({
   tag: 'admiralty-textarea',
   styleUrl: 'textarea.scss',
@@ -104,7 +103,11 @@ export class TextareaComponent {
               {this.label}
             </admiralty-label>
           ) : null}
-          {this.hint ? <admiralty-hint id={this.hintId} disabled={this.disabled}>{this.hint}</admiralty-hint> : null}
+          {this.hint ? (
+            <admiralty-hint id={this.hintId} disabled={this.disabled}>
+              {this.hint}
+            </admiralty-hint>
+          ) : null}
           <textarea
             ref={textArea => (this.nativeTextArea = textArea)}
             class={{ disabled: this.disabled, invalid: this.invalid }}
@@ -115,9 +118,11 @@ export class TextareaComponent {
             onInput={this.onInput}
             onBlur={this.onBlur}
             aria-invalid={this.invalid ? 'true' : 'false'}
-            aria-describedby={(this.hint ? this.hintId : null) + ' ' + (this.invalid ? this.errorId : null)}
+            aria-describedby={(this.hint ? this.hintId : '') + ' ' + (this.invalid ? this.errorId : '')}
           ></textarea>
-          <admiralty-input-invalid id={this.errorId} style={{ visibility: this.invalid && this.invalidMessage ? 'visible' : 'hidden' }}>{this.invalidMessage}</admiralty-input-invalid>
+          <admiralty-input-invalid id={this.errorId} style={{ visibility: this.invalid && this.invalidMessage ? 'visible' : 'hidden' }}>
+            {this.invalidMessage}
+          </admiralty-input-invalid>
         </div>
       </Host>
     );

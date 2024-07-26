@@ -127,10 +127,7 @@ export class InputComponent implements ComponentInterface {
           </admiralty-label>
         ) : null}
         {this.hint ? (
-          <admiralty-hint
-            id={this.hintId}
-            disabled={this.disabled}
-          >
+          <admiralty-hint id={this.hintId} disabled={this.disabled}>
             {this.hint}
           </admiralty-hint>
         ) : null}
@@ -151,9 +148,11 @@ export class InputComponent implements ComponentInterface {
             maxWidth: this.width ? `${this.width}px` : null,
           }}
           aria-invalid={this.invalid ? 'true' : 'false'}
-          aria-describedby={(this.hint ? this.hintId : null) + ' ' + (this.invalid ? this.errorId : null)}
+          aria-describedby={(this.hint ? this.hintId : '') + ' ' + (this.invalid ? this.errorId : '')}
         />
-        <admiralty-input-invalid id={this.errorId} style={{ visibility: this.invalid && this.invalidMessage ? 'visible' : 'hidden' }}>{this.invalidMessage}</admiralty-input-invalid>
+        <admiralty-input-invalid id={this.errorId} style={{ visibility: this.invalid && this.invalidMessage ? 'visible' : 'hidden' }}>
+          {this.invalidMessage}
+        </admiralty-input-invalid>
       </div>
     );
   }

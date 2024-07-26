@@ -13,7 +13,7 @@ describe('admiralty-input', () => {
     expect(page.root).toEqualHtml(`
       <admiralty-input>
         <div class="text-input-container">
-          <input aria-describedby="null null" aria-invalid="false" autocomplete="off" id="admiralty-input-${inputId}" name="admiralty-input-1" type="text" value="">
+          <input aria-describedby=" " aria-invalid="false" autocomplete="off" id="admiralty-input-${inputId}" name="admiralty-input-1" type="text" value="">
           <admiralty-input-invalid id="admiralty-input-error-${inputId}" style="visibility: hidden;"></admiralty-input-invalid>
         </div>
       </admiralty-input>
@@ -31,7 +31,7 @@ describe('admiralty-input', () => {
       <admiralty-input label="test-label">
         <div class="text-input-container">
           <admiralty-label for="admiralty-input-2">test-label</admiralty-label>
-          <input aria-describedby="null null" aria-invalid="false" autocomplete="off" id="admiralty-input-${inputId}" name="admiralty-input-2" type="text" value="">
+          <input aria-describedby=" " aria-invalid="false" autocomplete="off" id="admiralty-input-${inputId}" name="admiralty-input-2" type="text" value="">
           <admiralty-input-invalid id="admiralty-input-error-${inputId}" style="visibility: hidden;"></admiralty-input-invalid>
         </div>
       </admiralty-input>
@@ -48,7 +48,7 @@ describe('admiralty-input', () => {
     expect(page.root).toEqualHtml(`
       <admiralty-input disabled>
         <div class="text-input-container">
-          <input aria-describedby="null null" aria-invalid="false" disabled autocomplete="off" class="disabled" id="admiralty-input-${inputId}" name="admiralty-input-3" type="text" value="">
+          <input aria-describedby=" " aria-invalid="false" disabled autocomplete="off" class="disabled" id="admiralty-input-${inputId}" name="admiralty-input-3" type="text" value="">
           <admiralty-input-invalid id="admiralty-input-error-${inputId}" style="visibility: hidden;"></admiralty-input-invalid>
         </div>
       </admiralty-input>
@@ -65,7 +65,7 @@ describe('admiralty-input', () => {
     expect(page.root).toEqualHtml(`
       <admiralty-input invalid="true">
         <div class="text-input-container">
-          <input aria-describedby="null admiralty-input-error-4" aria-invalid="true" autocomplete="off" class="invalid" id="admiralty-input-${inputId}" name="admiralty-input-4" type="text" value="">
+          <input aria-describedby=" admiralty-input-error-4" aria-invalid="true" autocomplete="off" class="invalid" id="admiralty-input-${inputId}" name="admiralty-input-4" type="text" value="">
           <admiralty-input-invalid id="admiralty-input-error-${inputId}" style="visibility: hidden;"></admiralty-input-invalid>
         </div>
       </admiralty-input>
@@ -82,7 +82,7 @@ describe('admiralty-input', () => {
     expect(page.root).toEqualHtml(`
       <admiralty-input invalid="true" invalid-message="This is invalid!">
           <div class="text-input-container">
-              <input aria-describedby="null admiralty-input-error-5" aria-invalid="true" autocomplete="off" class="invalid" id="admiralty-input-${inputId}" name="admiralty-input-5" type="text" value="">
+              <input aria-describedby=" admiralty-input-error-5" aria-invalid="true" autocomplete="off" class="invalid" id="admiralty-input-${inputId}" name="admiralty-input-5" type="text" value="">
               <admiralty-input-invalid id="admiralty-input-error-${inputId}" style="visibility: visible;">
               This is invalid!
               </admiralty-input-invalid>
@@ -101,7 +101,7 @@ describe('admiralty-input', () => {
     expect(page.root).toEqualHtml(`
       <admiralty-input type="date">
         <div class="text-input-container">
-          <input aria-describedby="null null" aria-invalid="false" type="date" autocomplete="off" id="admiralty-input-${inputId}" name="admiralty-input-6" value="">
+          <input aria-describedby=" " aria-invalid="false" type="date" autocomplete="off" id="admiralty-input-${inputId}" name="admiralty-input-6" value="">
           <admiralty-input-invalid id="admiralty-input-error-${inputId}" style="visibility: hidden;"></admiralty-input-invalid>
         </div>
       </admiralty-input>
@@ -110,7 +110,7 @@ describe('admiralty-input', () => {
 });
 
 it('renders with maxlength', async () => {
-  inputId++
+  inputId++;
   errorId++;
   const page = await newSpecPage({
     components: [InputComponent],
@@ -119,7 +119,7 @@ it('renders with maxlength', async () => {
   expect(page.root).toEqualHtml(`
   <admiralty-input max-length="1">
     <div class="text-input-container">
-      <input autocomplete="off" aria-describedby="null null" aria-invalid="false" id="admiralty-input-${inputId}" maxlength="1" name="admiralty-input-7" type="text" value="">
+      <input autocomplete="off" aria-describedby=" " aria-invalid="false" id="admiralty-input-${inputId}" maxlength="1" name="admiralty-input-7" type="text" value="">
       <admiralty-input-invalid id="admiralty-input-error-${inputId}" style="visibility: hidden;"></admiralty-input-invalid>
     </div>
   </admiralty-input>

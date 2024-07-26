@@ -25,7 +25,7 @@ describe('admiralty-textarea', () => {
           <admiralty-hint id="admiralty-textarea-hint-${hintId}">
             Please enter description
           </admiralty-hint>
-          <textarea aria-describedby="admiralty-textarea-hint-1 null" aria-invalid="false" id="admiralty-textarea-${compId}" value=""></textarea>
+          <textarea aria-describedby="admiralty-textarea-hint-1 " aria-invalid="false" id="admiralty-textarea-${compId}" value=""></textarea>
           <admiralty-input-invalid id="admiralty-textarea-error-${errorId}" style="visibility: hidden;"></admiralty-input-invalid>
         </div>
       </admiralty-textarea>
@@ -46,7 +46,7 @@ describe('admiralty-textarea', () => {
     expect(page.root).toEqualHtml(`
       <admiralty-textarea value="${testText}">
         <div class="text-area-container">
-          <textarea aria-describedby="null null" aria-invalid="false" id="admiralty-textarea-${compId}" value="${testText}"></textarea>
+          <textarea aria-describedby=" " aria-invalid="false" id="admiralty-textarea-${compId}" value="${testText}"></textarea>
           <admiralty-input-invalid id="admiralty-textarea-error-${errorId}" style="visibility: hidden;"></admiralty-input-invalid>
         </div>
       </admiralty-textarea>
@@ -55,7 +55,7 @@ describe('admiralty-textarea', () => {
 
   it('should render disabled state', async () => {
     ++compId;
-    ++errorId
+    ++errorId;
 
     const page = await newSpecPage({
       components: [TextareaComponent],
@@ -66,7 +66,7 @@ describe('admiralty-textarea', () => {
       <admiralty-textarea label="Description" disabled="true">
         <div class="text-area-container">
           <admiralty-label disabled="" for="admiralty-textarea-${compId}">Description</admiralty-label>
-          <textarea aria-describedby="null null" aria-invalid="false" class="disabled" id="admiralty-textarea-${compId}" value=""></textarea>
+          <textarea aria-describedby=" " aria-invalid="false" class="disabled" id="admiralty-textarea-${compId}" value=""></textarea>
           <admiralty-input-invalid id="admiralty-textarea-error-${errorId}" style="visibility: hidden;"></admiralty-input-invalid>
         </div>
       </admiralty-textarea>
@@ -86,7 +86,7 @@ describe('admiralty-textarea', () => {
       <admiralty-textarea label="Description" invalid="true" invalid-message="BAD">
         <div class="text-area-container">
           <admiralty-label for="admiralty-textarea-${compId}">Description</admiralty-label>
-          <textarea aria-describedby="null admiralty-textarea-error-${errorId}" aria-invalid="true" class="invalid" id="admiralty-textarea-${compId}" value=""></textarea>
+          <textarea aria-describedby=" admiralty-textarea-error-${errorId}" aria-invalid="true" class="invalid" id="admiralty-textarea-${compId}" value=""></textarea>
           <admiralty-input-invalid id="admiralty-textarea-error-${errorId}" style="visibility: visible;">
             BAD
           </admiralty-input-invalid>
@@ -108,7 +108,7 @@ describe('admiralty-textarea', () => {
       <admiralty-textarea label="Description" invalid="true" invalidMessage="">
         <div class="text-area-container">
           <admiralty-label for="admiralty-textarea-${compId}">Description</admiralty-label>
-          <textarea aria-describedby="null admiralty-textarea-error-${errorId}" aria-invalid="true" class="invalid" id="admiralty-textarea-${compId}" value=""></textarea>
+          <textarea aria-describedby=" admiralty-textarea-error-${errorId}" aria-invalid="true" class="invalid" id="admiralty-textarea-${compId}" value=""></textarea>
           <admiralty-input-invalid id="admiralty-textarea-error-${errorId}" style="visibility: hidden;"></admiralty-input-invalid>
         </div>
       </admiralty-textarea>
