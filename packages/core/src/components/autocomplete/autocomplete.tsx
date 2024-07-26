@@ -51,22 +51,73 @@ function filterOptionsByValue(options: Option[], searchTerm: string) {
 export class AutocompleteComponent {
   @Element() el!: HTMLAdmiraltyAutocompleteElement;
 
+  /**
+   * Automatically select the first matching option.
+   */
   @Prop() autoselect: boolean = false;
+  /**
+   * The default CSS namespace.
+   */
   @Prop() cssNamespace: string = 'autocomplete';
+  /**
+   * When set to `overlay` this option will display the menu as an absolutely positioned overlay instead of inline.
+   */
   @Prop() displayMenu: string = 'inline';
+  /**
+   * Prevent displaying options until the minimum string length is reached. Ignored when show all values is enabled.
+   */
   @Prop() minLength: number = 0;
+  /**
+   * The name for the <input> element.
+   */
   @Prop() name: string = 'input-autocomplete';
+  /**
+   * Populate the placeholder attribute on the <input> element.
+   */
   @Prop() placeholder: string = '';
+  /**
+   * Toggle automatically confirming a selection when the field is blurred.
+   */
   @Prop() confirmOnBlur: boolean = true;
+  /**
+   * Toggle whether to display the "No results found" message.
+   */
   @Prop() showNoOptionsFound: boolean = true;
+  /**
+   * Toggle showing all values when the input is clicked, like a default dropdown.
+   */
   @Prop() showAllValues: boolean = true;
+  /**
+   * Populates the required field on the <input> element.
+   */
   @Prop() required: boolean = false;
+  /**
+   * The hint that is provided to assistive users.
+   */
   @Prop() assistiveHint: string =
     'When autocomplete results are available use up and down arrows to review and enter to select.  Touch device users, explore by touch or with swipe gestures.';
-  @Prop() dropdownArrow: any;
+
+  /**
+   * Sets HTML attributes and their values on the generated `ul` menu element. Useful for adding `aria-labelledby`
+   * and setting to the value of the `id` attribute on your existing label, to provide context to an assistive
+   * technology user. e.g.
+   * ```
+   * const menuAttributes = {
+   *   className: 'custom-className',
+   *   class: 'custom-class',
+   *   id: 'custom-id',
+   *   role: 'custom-role'
+   * }
+   * ```
+   * */
   @Prop() menuAttributes: any;
+  /**
+   * Classes to add to the component's <input> element.
+   */
   @Prop() inputClasses: string;
-  @Prop() hintClasses: string;
+  /**
+   * Classes to add to the menu displaying the options.
+   */
   @Prop() menuClasses: string;
   /**
    * The text that will be used as a field label.
@@ -100,7 +151,6 @@ export class AutocompleteComponent {
 
   elementReferences = {};
   $pollInput: NodeJS.Timeout;
-  id = '1';
 
   source: Option[] = [];
 
@@ -114,13 +164,18 @@ export class AutocompleteComponent {
   @State() selected: number | null = null;
   @State() ariaHint: boolean = true;
 
+  @Watch('selected')
+  onSelectedChange(newVal: string, oldVal: string) {
+    // console.log('selected', newVal, oldVal);
+  }
+
   @Watch('value')
   onValueChange(newVal: string, _: string) {
+    // console.log('onValueChange', newVal);
     if (newVal && newVal.length > 0) {
       const matches = filterOptionsByValue(this.source, newVal);
       const matchFound = matches.length > 0;
       this.options = matches;
-      this.selected = matchFound ? 0 : -1;
       this.validChoiceMade = matchFound;
       this.option = matches[0];
       this.query = matchFound ? matches[0].text : '';
@@ -198,12 +253,6 @@ export class AutocompleteComponent {
     }
   }
 
-  onConfirm(option: Option) {
-    this.option = option;
-    this.value = option.value;
-    this.query = option.text;
-  }
-
   mutation: MutationObserver;
 
   private get childOpts() {
@@ -234,7 +283,8 @@ export class AutocompleteComponent {
       newQuery = newState.query || this.query;
       const matches = filterOptions(this.source, newQuery);
       const matchFound = newQuery?.length > 0 && matches.length > 0;
-      this.onConfirm(matchFound ? matches[0] : { value: null, text: '' });
+      const option = matchFound ? matches[0] : { value: null, text: '' };
+      this.value = option.value;
     } else {
       newQuery = this.query;
     }
@@ -329,12 +379,10 @@ export class AutocompleteComponent {
 
   handleOptionClick(_, index) {
     const selectedOption = this.options[index];
-    const newQuery = this.templateInputValue(selectedOption.text);
-    this.onConfirm(selectedOption);
+    this.value = selectedOption.value;
     this.focused = -1;
     this.hovered = null;
     this.menuOpen = false;
-    this.query = newQuery;
     this.selected = index;
     this.validChoiceMade = true;
     forceUpdate(this);
@@ -444,6 +492,7 @@ export class AutocompleteComponent {
   }
 
   render() {
+    const id = this.el.getAttribute('id') ?? this.name;
     const inputFocused = this.focused === -1;
     const noOptionsAvailable = this.options.length === 0;
     const queryNotEmpty = this.query?.length !== 0;
@@ -455,12 +504,12 @@ export class AutocompleteComponent {
 
     const optionClassName = `${this.cssNamespace}__option`;
 
-    const assistiveHintID = this.id + '__assistiveHint';
+    const assistiveHintID = id + '__assistiveHint';
     const ariaProps = {
       'aria-describedby': this.ariaHint ? assistiveHintID : null,
       'aria-expanded': this.menuOpen ? 'true' : 'false',
-      'aria-activedescendant': optionFocused ? `${this.id}__option--${this.focused}` : null,
-      'aria-owns': `${this.id}__listbox`,
+      'aria-activedescendant': optionFocused ? `${id}__option--${this.focused}` : null,
+      'aria-owns': `${id}__listbox`,
       'aria-autocomplete': this.hasAutoselect() ? 'both' : 'list',
     };
 
@@ -503,7 +552,7 @@ export class AutocompleteComponent {
       // Copy the attributes passed as props
       ...this.menuAttributes,
       // And add the values computed for the autocomplete
-      id: `${this.id}__listbox`,
+      id: `${id}__listbox`,
       role: 'listbox',
       onMouseLeave: this.handleListMouseLeave,
     };
@@ -516,7 +565,7 @@ export class AutocompleteComponent {
     return (
       <div class={wrapperClassName} onKeyDown={event => this.handleKeyDown(event)}>
         {this.label ? (
-          <admiralty-label disabled={this.disabled} for={this.id}>
+          <admiralty-label disabled={this.disabled} for={id}>
             {this.label}
           </admiralty-label>
         ) : null}
@@ -525,10 +574,10 @@ export class AutocompleteComponent {
           <input
             {...ariaProps}
             disabled={this.disabled}
-            aria-disabled={this.disabled ? 'true' : 'false'}
+            aria-disabled={this.disabled}
             autoComplete="off"
             class={inputClassList.join(' ')}
-            id={this.id}
+            id={id}
             onClick={event => this.handleInputClick(event)}
             onBlur={event => this.handleInputBlur(event)}
             onInput={event => this.handleInputChange(event)}
@@ -551,18 +600,19 @@ export class AutocompleteComponent {
             const showFocused = this.focused === -1 ? this.selected === index : this.focused === index;
             const optionModifierFocused = showFocused && this.hovered === null ? ` ${optionClassName}--focused` : '';
             const iosPosinsetHtml = isIosDevice()
-              ? `<span id=${this.id}__option-suffix--${index} style="border:0;clip:rect(0 0 0 0);height:1px;` +
+              ? `<span id=${id}__option-suffix--${index} style="border:0;clip:rect(0 0 0 0);height:1px;` +
                 'marginBottom:-1px;marginRight:-1px;overflow:hidden;padding:0;position:absolute;' +
                 'whiteSpace:nowrap;width:1px">' +
                 ` ${index + 1} of ${this.options.length}</span>`
               : '';
+            // console.log(option.text, showFocused, optionModifierFocused);
 
             return (
               <li
                 aria-selected={this.focused === index ? 'true' : 'false'}
                 class={`${optionClassName}${optionModifierFocused}`}
                 innerHTML={this.templateSuggestion(option.text) + iosPosinsetHtml}
-                id={`${this.id}__option--${index}`}
+                id={`${id}__option--${index}`}
                 key={index}
                 onBlur={event => this.handleOptionBlur(event, index)}
                 onClick={event => this.handleOptionClick(event, index)}

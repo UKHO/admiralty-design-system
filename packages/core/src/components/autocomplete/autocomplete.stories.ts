@@ -23,6 +23,8 @@ const template: Story = {
       invalid-message="${args.invalidMessage}"
       ?disabled="${args.disabled}"
       value="${args.value}"
+      ?autoselect="${args.autoselect}"
+      confirm-on-blur="${args.confirmOnBlur === undefined ? true : args.confirmOnBlur}"
     >
       <admiralty-autocomplete-option value="red">Red</admiralty-autocomplete-option>
       <admiralty-autocomplete-option value="green">Green</admiralty-autocomplete-option>
@@ -46,6 +48,10 @@ export const Invalid: Story = { ...template, args: { label: 'Favourite Colour', 
 export const Disabled: Story = { ...template, args: { label: 'Favourite Colour', hint: 'Please enter your favourite colour', disabled: true } };
 
 export const Value: Story = { ...template, args: { label: 'Favourite Colour', hint: 'Please enter your favourite colour', value: 'orange' } };
+
+export const AutoSelect: Story = { ...template, args: { label: 'Favourite Colour', hint: 'Please enter your favourite colour', autoselect: true } };
+
+export const DoNotConfirmOnBlur: Story = { ...template, args: { label: 'Favourite Colour', hint: 'Please enter your favourite colour', confirmOnBlur: false } };
 
 export const Countries: Story = {
   render: args =>
