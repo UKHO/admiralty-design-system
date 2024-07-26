@@ -27,21 +27,37 @@ export { SelectChangeEventDetail } from "./components/select/select.interface";
 export { TextAreaChangeEventDetail } from "./components/textarea/textarea.interface";
 export namespace Components {
     interface AdmiraltyAutocomplete {
+        /**
+          * The hint that is provided to assistive users.
+         */
         "assistiveHint": string;
+        /**
+          * Automatically select the first matching option.
+         */
         "autoselect": boolean;
+        /**
+          * Toggle automatically confirming a selection when the field is blurred.
+         */
         "confirmOnBlur": boolean;
+        /**
+          * The default CSS namespace.
+         */
         "cssNamespace": string;
         /**
           * When `true`, the component cannot be interacted with.
          */
         "disabled": boolean;
+        /**
+          * When set to `overlay` this option will display the menu as an absolutely positioned overlay instead of inline.
+         */
         "displayMenu": string;
-        "dropdownArrow": any;
         /**
           * TThe text which will be used under the label to describe the input.
          */
         "hint": string;
-        "hintClasses": string;
+        /**
+          * Classes to add to the component's <input> element.
+         */
         "inputClasses": string;
         /**
           * Whether to show that the component is in an invalid state.
@@ -55,13 +71,37 @@ export namespace Components {
           * The text that will be used as a field label.
          */
         "label": string;
+        /**
+          * Sets HTML attributes and their values on the generated `ul` menu element. Useful for adding `aria-labelledby` and setting to the value of the `id` attribute on your existing label, to provide context to an assistive technology user. e.g. ``` const menuAttributes = {   className: 'custom-className',   class: 'custom-class',   id: 'custom-id',   role: 'custom-role' } ```
+         */
         "menuAttributes": any;
+        /**
+          * Classes to add to the menu displaying the options.
+         */
         "menuClasses": string;
+        /**
+          * Prevent displaying options until the minimum string length is reached. Ignored when show all values is enabled.
+         */
         "minLength": number;
+        /**
+          * The name for the <input> element.
+         */
         "name": string;
+        /**
+          * Populate the placeholder attribute on the <input> element.
+         */
         "placeholder": string;
+        /**
+          * Populates the required field on the <input> element.
+         */
         "required": boolean;
+        /**
+          * Toggle showing all values when the input is clicked, like a default dropdown.
+         */
         "showAllValues": boolean;
+        /**
+          * Toggle whether to display the "No results found" message.
+         */
         "showNoOptionsFound": boolean;
         /**
           * The value of the input.
@@ -1347,21 +1387,37 @@ declare global {
 }
 declare namespace LocalJSX {
     interface AdmiraltyAutocomplete {
+        /**
+          * The hint that is provided to assistive users.
+         */
         "assistiveHint"?: string;
+        /**
+          * Automatically select the first matching option.
+         */
         "autoselect"?: boolean;
+        /**
+          * Toggle automatically confirming a selection when the field is blurred.
+         */
         "confirmOnBlur"?: boolean;
+        /**
+          * The default CSS namespace.
+         */
         "cssNamespace"?: string;
         /**
           * When `true`, the component cannot be interacted with.
          */
         "disabled"?: boolean;
+        /**
+          * When set to `overlay` this option will display the menu as an absolutely positioned overlay instead of inline.
+         */
         "displayMenu"?: string;
-        "dropdownArrow"?: any;
         /**
           * TThe text which will be used under the label to describe the input.
          */
         "hint"?: string;
-        "hintClasses"?: string;
+        /**
+          * Classes to add to the component's <input> element.
+         */
         "inputClasses"?: string;
         /**
           * Whether to show that the component is in an invalid state.
@@ -1375,17 +1431,41 @@ declare namespace LocalJSX {
           * The text that will be used as a field label.
          */
         "label"?: string;
+        /**
+          * Sets HTML attributes and their values on the generated `ul` menu element. Useful for adding `aria-labelledby` and setting to the value of the `id` attribute on your existing label, to provide context to an assistive technology user. e.g. ``` const menuAttributes = {   className: 'custom-className',   class: 'custom-class',   id: 'custom-id',   role: 'custom-role' } ```
+         */
         "menuAttributes"?: any;
+        /**
+          * Classes to add to the menu displaying the options.
+         */
         "menuClasses"?: string;
+        /**
+          * Prevent displaying options until the minimum string length is reached. Ignored when show all values is enabled.
+         */
         "minLength"?: number;
+        /**
+          * The name for the <input> element.
+         */
         "name"?: string;
         /**
           * Emitted when the value has changed.
          */
         "onAdmiraltyChange"?: (event: AdmiraltyAutocompleteCustomEvent<AutoCompleteChangeEventDetail>) => void;
+        /**
+          * Populate the placeholder attribute on the <input> element.
+         */
         "placeholder"?: string;
+        /**
+          * Populates the required field on the <input> element.
+         */
         "required"?: boolean;
+        /**
+          * Toggle showing all values when the input is clicked, like a default dropdown.
+         */
         "showAllValues"?: boolean;
+        /**
+          * Toggle whether to display the "No results found" message.
+         */
         "showNoOptionsFound"?: boolean;
         /**
           * The value of the input.
