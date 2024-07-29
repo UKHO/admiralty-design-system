@@ -25,7 +25,6 @@ export default function CopyCodeSnippet({ children, ...props }: CopyCodeSnippetP
 
   useEffect(() => {
     // Highlight code when component mounts or when children change
-    console.log(Prism.languages);
     Prism.highlightAll();
   }, [children]);
 
