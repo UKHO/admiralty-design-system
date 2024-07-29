@@ -164,11 +164,6 @@ export class AutocompleteComponent {
   @State() selected: number | null = null;
   @State() ariaHint: boolean = true;
 
-  @Watch('selected')
-  onSelectedChange(newVal: string, oldVal: string) {
-    // console.log('selected', newVal, oldVal);
-  }
-
   @Watch('value')
   onValueChange(newVal: string, _: string) {
     // console.log('onValueChange', newVal);
