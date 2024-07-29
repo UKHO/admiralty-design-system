@@ -1,3 +1,17 @@
+# v0.14.1 (Mon Jul 29 2024)
+
+#### 🐛 Bug Fix
+
+- Properly describe form validation errors [#166](https://github.com/UKHO/admiralty-design-system/pull/166) ([@lstevens98](https://github.com/lstevens98) [@ecstaticrainbow](https://github.com/ecstaticrainbow) [@buzzub](https://github.com/buzzub))
+
+#### Authors: 3
+
+- Lewis Stevens ([@lstevens98](https://github.com/lstevens98))
+- Natalie ([@buzzub](https://github.com/buzzub))
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
 # v0.14.0 (Thu May 23 2024)
 
 #### 🚀 Enhancement
