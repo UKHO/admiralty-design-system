@@ -12,8 +12,7 @@
   border-radius: 0; /* Safari 10 on iOS adds implicit border rounding. */
   box-sizing: border-box;
   margin-bottom: 0; /* BUG: Safari 10 on macOS seems to add an implicit margin. */
-  line-height: 1.25;
-  height: 48px;
+  line-height: 1.5;
   width: 100%;
 }
 
@@ -32,7 +31,7 @@
 }
 
 .autocomplete__input--default {
-  padding: 5px 5px 5px 12px;
+  padding: 12px;
 }
 
 .autocomplete__input--focused {
@@ -42,7 +41,7 @@
 }
 
 .autocomplete__input--show-all-values {
-  padding: 5px 35px 5px 12px; /* Space for arrow. Other padding should match .autocomplete__input--default. */
+  padding: 12px 35px 12px 12px; /* Space for arrow. Other padding should match .autocomplete__input--default. */
   cursor: pointer;
 }
 
@@ -52,16 +51,6 @@
 
 .autocomplete__input--disabled {
   border-color: colours.$colour-textinput-text-disabled;
-}
-
-.autocomplete__dropdown-arrow-down {
-  z-index: -1;
-  display: inline-block;
-  position: absolute;
-  right: 8px;
-  width: 24px;
-  height: 24px;
-  top: 10px;
 }
 
 .autocomplete__menu {
@@ -169,7 +158,7 @@ admiralty-icon {
   pointer-events: none;
   position: absolute;
   right: 12px;
-  top: 12px;
+  top: 14px;
 }
 
 admiralty-icon.disabled {
