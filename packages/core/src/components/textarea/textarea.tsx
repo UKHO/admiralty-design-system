@@ -1,17 +1,17 @@
 import { Component, Host, h, Prop, Event, EventEmitter, Watch } from '@stencil/core';
 import { TextAreaChangeEventDetail } from './textarea.interface';
 
-let textareaIds = 0;
-
 @Component({
   tag: 'admiralty-textarea',
   styleUrl: 'textarea.scss',
   scoped: true,
 })
 export class TextareaComponent {
-  private inputId = `admiralty-textarea-${textareaIds++}`;
-
+  private id = ++nextId;
   private nativeTextArea?: HTMLTextAreaElement;
+  textareaId: string = `admiralty-textarea-${this.id}`;
+  hintId: string = `admiralty-textarea-hint-${this.id}`;
+  errorId: string = `admiralty-textarea-error-${this.id}`;
 
   /**
    * The label which will be used as a placeholder in the unfilled state, and as a field label in the filled state.
@@ -99,24 +99,33 @@ export class TextareaComponent {
       <Host>
         <div class="text-area-container">
           {this.label ? (
-            <admiralty-label for={this.inputId} disabled={this.disabled}>
+            <admiralty-label for={this.textareaId} disabled={this.disabled}>
               {this.label}
             </admiralty-label>
           ) : null}
-          {this.hint ? <admiralty-hint disabled={this.disabled}>{this.hint}</admiralty-hint> : null}
+          {this.hint ? (
+            <admiralty-hint id={this.hintId} disabled={this.disabled}>
+              {this.hint}
+            </admiralty-hint>
+          ) : null}
           <textarea
             ref={textArea => (this.nativeTextArea = textArea)}
             class={{ disabled: this.disabled, invalid: this.invalid }}
             style={this.width ? { maxWidth: `${this.width}px` } : {}}
-            id={this.inputId}
+            id={this.textareaId}
             value={value}
             maxLength={this.maxLength}
             onInput={this.onInput}
             onBlur={this.onBlur}
+            aria-invalid={this.invalid ? 'true' : 'false'}
+            aria-describedby={(this.hint ? this.hintId : '') + ' ' + (this.invalid ? this.errorId : '')}
           ></textarea>
-          <admiralty-input-invalid style={{ visibility: this.invalid && this.invalidMessage ? 'visible' : 'hidden' }}>{this.invalidMessage}</admiralty-input-invalid>
+          <admiralty-input-invalid id={this.errorId} style={{ visibility: this.invalid && this.invalidMessage ? 'visible' : 'hidden' }}>
+            {this.invalidMessage}
+          </admiralty-input-invalid>
         </div>
       </Host>
     );
   }
 }
+let nextId = 0;

@@ -14,7 +14,10 @@ import { InputChangeEventDetail } from './input.interface';
   scoped: true,
 })
 export class InputComponent implements ComponentInterface {
-  inputId: string = `admiralty-input-${++nextId}`;
+  private id = ++nextId;
+  inputId: string = `admiralty-input-${this.id}`;
+  hintId: string = `admiralty-input-hint-${this.id}`;
+  errorId: string = `admiralty-input-error-${this.id}`;
 
   private nativeInput?: HTMLInputElement;
 
@@ -91,6 +94,7 @@ export class InputComponent implements ComponentInterface {
   /**
    * Update the native input element when the value changes
    */
+
   @Watch('value')
   protected valueChanged() {
     const nativeInput = this.nativeInput;
@@ -114,6 +118,7 @@ export class InputComponent implements ComponentInterface {
 
   render() {
     const value = this.getValue();
+
     return (
       <div class="text-input-container">
         {this.label ? (
@@ -121,7 +126,11 @@ export class InputComponent implements ComponentInterface {
             {this.label}
           </admiralty-label>
         ) : null}
-        {this.hint ? <admiralty-hint disabled={this.disabled}>{this.hint}</admiralty-hint> : null}
+        {this.hint ? (
+          <admiralty-hint id={this.hintId} disabled={this.disabled}>
+            {this.hint}
+          </admiralty-hint>
+        ) : null}
         <input
           ref={input => (this.nativeInput = input)}
           class={{ disabled: this.disabled, invalid: this.invalid }}
@@ -138,8 +147,12 @@ export class InputComponent implements ComponentInterface {
           style={{
             maxWidth: this.width ? `${this.width}px` : null,
           }}
+          aria-invalid={this.invalid ? 'true' : 'false'}
+          aria-describedby={(this.hint ? this.hintId : '') + ' ' + (this.invalid ? this.errorId : '')}
         />
-        <admiralty-input-invalid style={{ visibility: this.invalid && this.invalidMessage ? 'visible' : 'hidden' }}>{this.invalidMessage}</admiralty-input-invalid>
+        <admiralty-input-invalid id={this.errorId} style={{ visibility: this.invalid && this.invalidMessage ? 'visible' : 'hidden' }}>
+          {this.invalidMessage}
+        </admiralty-input-invalid>
       </div>
     );
   }
