@@ -68,11 +68,11 @@ export class AutocompleteComponent {
    */
   @Prop() minLength: number = 0;
   /**
-   * The name for the <input> element.
+   * The name for the `<input>` element.
    */
   @Prop() name: string = 'input-autocomplete';
   /**
-   * Populate the placeholder attribute on the <input> element.
+   * Populate the placeholder attribute on the `<input>` element.
    */
   @Prop() placeholder: string = '';
   /**
@@ -88,7 +88,7 @@ export class AutocompleteComponent {
    */
   @Prop() showAllValues: boolean = true;
   /**
-   * Populates the required field on the <input> element.
+   * Populates the required field on the `<input>` element.
    */
   @Prop() required: boolean = false;
   /**
@@ -112,7 +112,7 @@ export class AutocompleteComponent {
    * */
   @Prop() menuAttributes: any;
   /**
-   * Classes to add to the component's <input> element.
+   * Classes to add to the component's `<input>` element.
    */
   @Prop() inputClasses: string;
   /**

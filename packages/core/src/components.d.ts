@@ -56,7 +56,7 @@ export namespace Components {
          */
         "hint": string;
         /**
-          * Classes to add to the component's <input> element.
+          * Classes to add to the component's `<input>` element.
          */
         "inputClasses": string;
         /**
@@ -84,15 +84,15 @@ export namespace Components {
          */
         "minLength": number;
         /**
-          * The name for the <input> element.
+          * The name for the `<input>` element.
          */
         "name": string;
         /**
-          * Populate the placeholder attribute on the <input> element.
+          * Populate the placeholder attribute on the `<input>` element.
          */
         "placeholder": string;
         /**
-          * Populates the required field on the <input> element.
+          * Populates the required field on the `<input>` element.
          */
         "required": boolean;
         /**
@@ -1416,7 +1416,7 @@ declare namespace LocalJSX {
          */
         "hint"?: string;
         /**
-          * Classes to add to the component's <input> element.
+          * Classes to add to the component's `<input>` element.
          */
         "inputClasses"?: string;
         /**
@@ -1444,7 +1444,7 @@ declare namespace LocalJSX {
          */
         "minLength"?: number;
         /**
-          * The name for the <input> element.
+          * The name for the `<input>` element.
          */
         "name"?: string;
         /**
@@ -1452,11 +1452,11 @@ declare namespace LocalJSX {
          */
         "onAdmiraltyChange"?: (event: AdmiraltyAutocompleteCustomEvent<AutoCompleteChangeEventDetail>) => void;
         /**
-          * Populate the placeholder attribute on the <input> element.
+          * Populate the placeholder attribute on the `<input>` element.
          */
         "placeholder"?: string;
         /**
-          * Populates the required field on the <input> element.
+          * Populates the required field on the `<input>` element.
          */
         "required"?: boolean;
         /**
