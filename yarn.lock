@@ -8211,17 +8211,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ukho-internal/admiralty-docs@^0.14.0, @ukho-internal/admiralty-docs@workspace:packages/docs":
+"@ukho-internal/admiralty-docs@^0.14.1, @ukho-internal/admiralty-docs@workspace:packages/docs":
   version: 0.0.0-use.local
   resolution: "@ukho-internal/admiralty-docs@workspace:packages/docs"
   dependencies:
-    "@ukho/admiralty-core": ^0.14.0
+    "@ukho/admiralty-core": ^0.14.1
     chalk: ^4.1.2
     ts-node: ^10.9.1
   languageName: unknown
   linkType: soft
 
-"@ukho/admiralty-angular@^0.14.0, @ukho/admiralty-angular@workspace:packages/angular":
+"@ukho/admiralty-angular@^0.14.1, @ukho/admiralty-angular@workspace:packages/angular":
   version: 0.0.0-use.local
   resolution: "@ukho/admiralty-angular@workspace:packages/angular"
   dependencies:
@@ -8237,7 +8237,7 @@ __metadata:
     "@angular/platform-browser-dynamic": ^12.0.0
     "@angular/router": ^12.0.0
     "@types/node": ^20.12.7
-    "@ukho/admiralty-core": ^0.14.0
+    "@ukho/admiralty-core": ^0.14.1
     ng-packagr: ^12.0.0
     postcss: ^8.4.27
     postcss-import: ^15.1.0
@@ -8251,7 +8251,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@ukho/admiralty-core@^0.14.0, @ukho/admiralty-core@workspace:packages/core":
+"@ukho/admiralty-core@^0.14.1, @ukho/admiralty-core@workspace:packages/core":
   version: 0.0.0-use.local
   resolution: "@ukho/admiralty-core@workspace:packages/core"
   dependencies:
@@ -8290,12 +8290,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@ukho/admiralty-react@^0.14.0, @ukho/admiralty-react@workspace:packages/react":
+"@ukho/admiralty-react@^0.14.1, @ukho/admiralty-react@workspace:packages/react":
   version: 0.0.0-use.local
   resolution: "@ukho/admiralty-react@workspace:packages/react"
   dependencies:
     "@types/react": ^18.2.21
-    "@ukho/admiralty-core": ^0.14.0
+    "@ukho/admiralty-core": ^0.14.1
     react: ^18.2.0
     react-dom: ^18.2.0
     typescript: ^5.2.2
@@ -25795,7 +25795,7 @@ __metadata:
     "@angular/router": ~15.2.10
     "@fortawesome/fontawesome-free": ~6.4.0
     "@types/node": ^20.12.7
-    "@ukho/admiralty-angular": ^0.14.0
+    "@ukho/admiralty-angular": ^0.14.1
     rimraf: ^4.4.1
     rxjs: ~7.8.1
     tslib: ^2.5.0
@@ -27480,8 +27480,8 @@ __metadata:
     "@types/prismjs": ^1.26.3
     "@types/react": 18.2.21
     "@types/react-dom": 18.2.7
-    "@ukho-internal/admiralty-docs": ^0.14.0
-    "@ukho/admiralty-react": ^0.14.0
+    "@ukho-internal/admiralty-docs": ^0.14.1
+    "@ukho/admiralty-react": ^0.14.1
     eslint: 8.48.0
     eslint-config-next: 13.4.19
     next: 14.1.1
