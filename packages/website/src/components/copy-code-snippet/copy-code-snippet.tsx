@@ -10,7 +10,7 @@ interface CopyCodeSnippetProps {
   // Your other props here.
 }
 
-export default function CopyCodeSnippet({ children, ...props }: CopyCodeSnippetProps) {
+export default function CopyCodeSnippet({ children }: CopyCodeSnippetProps) {
   const codeRef = useRef<HTMLPreElement>(null);
 
   const [codeToCopy, setCodeToCopy] = useState("");
