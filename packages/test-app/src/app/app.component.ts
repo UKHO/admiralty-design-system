@@ -29,7 +29,8 @@ export class AppComponent {
 
   progress = 91;
 
-  blah = this.group.get('text');
+  text = this.group.get('text');
+  number = this.group.get('number');
 
   onIncreaseProgressClick() {
     this.progress++;
