@@ -14,7 +14,7 @@ describe('admiralty-input', () => {
       <admiralty-input>
         <div class="text-input-container">
           <input aria-describedby=" " aria-invalid="false" autocomplete="off" id="admiralty-input-${inputId}" name="admiralty-input-1" type="text" value="">
-          <admiralty-input-invalid id="admiralty-input-error-${inputId}" style="visibility: hidden;"></admiralty-input-invalid>
+          <admiralty-input-invalid id="admiralty-input-error-${inputId}" style="display: none;"></admiralty-input-invalid>
         </div>
       </admiralty-input>
     `);
@@ -32,7 +32,7 @@ describe('admiralty-input', () => {
         <div class="text-input-container">
           <admiralty-label for="admiralty-input-2">test-label</admiralty-label>
           <input aria-describedby=" " aria-invalid="false" autocomplete="off" id="admiralty-input-${inputId}" name="admiralty-input-2" type="text" value="">
-          <admiralty-input-invalid id="admiralty-input-error-${inputId}" style="visibility: hidden;"></admiralty-input-invalid>
+          <admiralty-input-invalid id="admiralty-input-error-${inputId}" style="display: none;"></admiralty-input-invalid>
         </div>
       </admiralty-input>
     `);
@@ -49,7 +49,7 @@ describe('admiralty-input', () => {
       <admiralty-input disabled>
         <div class="text-input-container">
           <input aria-describedby=" " aria-invalid="false" disabled autocomplete="off" class="disabled" id="admiralty-input-${inputId}" name="admiralty-input-3" type="text" value="">
-          <admiralty-input-invalid id="admiralty-input-error-${inputId}" style="visibility: hidden;"></admiralty-input-invalid>
+          <admiralty-input-invalid id="admiralty-input-error-${inputId}" style="display: none;"></admiralty-input-invalid>
         </div>
       </admiralty-input>
     `);
@@ -66,7 +66,7 @@ describe('admiralty-input', () => {
       <admiralty-input invalid="true">
         <div class="text-input-container">
           <input aria-describedby=" admiralty-input-error-4" aria-invalid="true" autocomplete="off" class="invalid" id="admiralty-input-${inputId}" name="admiralty-input-4" type="text" value="">
-          <admiralty-input-invalid id="admiralty-input-error-${inputId}" style="visibility: hidden;"></admiralty-input-invalid>
+          <admiralty-input-invalid id="admiralty-input-error-${inputId}" style="display: none;"></admiralty-input-invalid>
         </div>
       </admiralty-input>
     `);
@@ -83,7 +83,7 @@ describe('admiralty-input', () => {
       <admiralty-input invalid="true" invalid-message="This is invalid!">
           <div class="text-input-container">
               <input aria-describedby=" admiralty-input-error-5" aria-invalid="true" autocomplete="off" class="invalid" id="admiralty-input-${inputId}" name="admiralty-input-5" type="text" value="">
-              <admiralty-input-invalid id="admiralty-input-error-${inputId}" style="visibility: visible;">
+              <admiralty-input-invalid id="admiralty-input-error-${inputId}">
               This is invalid!
               </admiralty-input-invalid>
           </div>
@@ -102,7 +102,7 @@ describe('admiralty-input', () => {
       <admiralty-input type="date">
         <div class="text-input-container">
           <input aria-describedby=" " aria-invalid="false" type="date" autocomplete="off" id="admiralty-input-${inputId}" name="admiralty-input-6" value="">
-          <admiralty-input-invalid id="admiralty-input-error-${inputId}" style="visibility: hidden;"></admiralty-input-invalid>
+          <admiralty-input-invalid id="admiralty-input-error-${inputId}" style="display: none;"></admiralty-input-invalid>
         </div>
       </admiralty-input>
     `);
@@ -120,7 +120,7 @@ it('renders with maxlength', async () => {
   <admiralty-input max-length="1">
     <div class="text-input-container">
       <input autocomplete="off" aria-describedby=" " aria-invalid="false" id="admiralty-input-${inputId}" maxlength="1" name="admiralty-input-7" type="text" value="">
-      <admiralty-input-invalid id="admiralty-input-error-${inputId}" style="visibility: hidden;"></admiralty-input-invalid>
+      <admiralty-input-invalid id="admiralty-input-error-${inputId}" style="display: none;"></admiralty-input-invalid>
     </div>
   </admiralty-input>
 `);
