@@ -31,6 +31,37 @@ export class AppComponent {
 
   blah = this.group.get('text');
 
+  active = 0;
+
+  headerItems = [
+    {
+      title: 'Item 1',
+      index: 0,
+      items: [
+        {
+          title: 'Sub item 1',
+          index: 0,
+        },
+        {
+          title: 'Sub item 2',
+          index: 1,
+        },
+      ],
+    },
+  ];
+
+  addHeaderItems() {
+    this.headerItems.push({
+      title: `Item ${this.headerItems.length + 1}`,
+      index: this.headerItems.length,
+      items: [],
+    });
+  }
+
+  onHeaderItemClick(index: number) {
+    this.active = index;
+  }
+
   onIncreaseProgressClick() {
     this.progress++;
     console.log('onIncreaseProgressClick', this.progress);
@@ -74,3 +105,4 @@ export class AppComponent {
     this.isModalDialogShown = false;
   }
 }
+

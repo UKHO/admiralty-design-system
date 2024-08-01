@@ -106,7 +106,6 @@ export class TypeAheadComponent {
     this.filterList = [];
     slotItems.forEach(el => {
       this.filterList.push(el.getAttribute('value'));
-      console.log('fliterlist value ', el.getAttribute('value'));
     });
   }
 
