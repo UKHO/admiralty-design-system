@@ -22,6 +22,7 @@ export const AdmiraltyFilterGroup = /*@__PURE__*/createReactComponent<JSX.Admira
 export const AdmiraltyFooter = /*@__PURE__*/createReactComponent<JSX.AdmiraltyFooter, HTMLAdmiraltyFooterElement>('admiralty-footer');
 export const AdmiraltyHeader = /*@__PURE__*/createReactComponent<JSX.AdmiraltyHeader, HTMLAdmiraltyHeaderElement>('admiralty-header');
 export const AdmiraltyHeaderMenuItem = /*@__PURE__*/createReactComponent<JSX.AdmiraltyHeaderMenuItem, HTMLAdmiraltyHeaderMenuItemElement>('admiralty-header-menu-item');
+export const AdmiraltyHeaderMenuLink = /*@__PURE__*/createReactComponent<JSX.AdmiraltyHeaderMenuLink, HTMLAdmiraltyHeaderMenuLinkElement>('admiralty-header-menu-link');
 export const AdmiraltyHeaderProfile = /*@__PURE__*/createReactComponent<JSX.AdmiraltyHeaderProfile, HTMLAdmiraltyHeaderProfileElement>('admiralty-header-profile');
 export const AdmiraltyHeaderSubMenuItem = /*@__PURE__*/createReactComponent<JSX.AdmiraltyHeaderSubMenuItem, HTMLAdmiraltyHeaderSubMenuItemElement>('admiralty-header-sub-menu-item');
 export const AdmiraltyHint = /*@__PURE__*/createReactComponent<JSX.AdmiraltyHint, HTMLAdmiraltyHintElement>('admiralty-hint');

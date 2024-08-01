@@ -209,13 +209,31 @@ export namespace Components {
     }
     interface AdmiraltyHeaderMenuItem {
         /**
-          * The text that will be displayed in the menu
+          * Whether the item is active
          */
         "active"?: boolean;
         /**
           * The text that will be displayed in the menu
          */
         "menuTitle": string;
+    }
+    interface AdmiraltyHeaderMenuLink {
+        /**
+          * Whether the item is active
+         */
+        "active"?: boolean;
+        /**
+          * The URL to link to.
+         */
+        "href": string;
+        /**
+          * The text that will be displayed in the menu.
+         */
+        "menuTitle"?: string;
+        /**
+          * Causes the default browser redirect to be suppressed. Can be used in conjunction with the `onMenuItemClick` event to use a navigation router and prevent a full page reload when navigating.
+         */
+        "suppressRedirect"?: boolean;
     }
     interface AdmiraltyHeaderProfile {
         /**
@@ -640,6 +658,10 @@ export interface AdmiraltyHeaderMenuItemCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLAdmiraltyHeaderMenuItemElement;
 }
+export interface AdmiraltyHeaderMenuLinkCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLAdmiraltyHeaderMenuLinkElement;
+}
 export interface AdmiraltyHeaderProfileCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLAdmiraltyHeaderProfileElement;
@@ -852,6 +874,23 @@ declare global {
     var HTMLAdmiraltyHeaderMenuItemElement: {
         prototype: HTMLAdmiraltyHeaderMenuItemElement;
         new (): HTMLAdmiraltyHeaderMenuItemElement;
+    };
+    interface HTMLAdmiraltyHeaderMenuLinkElementEventMap {
+        "menuItemClick": void;
+    }
+    interface HTMLAdmiraltyHeaderMenuLinkElement extends Components.AdmiraltyHeaderMenuLink, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLAdmiraltyHeaderMenuLinkElementEventMap>(type: K, listener: (this: HTMLAdmiraltyHeaderMenuLinkElement, ev: AdmiraltyHeaderMenuLinkCustomEvent<HTMLAdmiraltyHeaderMenuLinkElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLAdmiraltyHeaderMenuLinkElementEventMap>(type: K, listener: (this: HTMLAdmiraltyHeaderMenuLinkElement, ev: AdmiraltyHeaderMenuLinkCustomEvent<HTMLAdmiraltyHeaderMenuLinkElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLAdmiraltyHeaderMenuLinkElement: {
+        prototype: HTMLAdmiraltyHeaderMenuLinkElement;
+        new (): HTMLAdmiraltyHeaderMenuLinkElement;
     };
     interface HTMLAdmiraltyHeaderProfileElementEventMap {
         "signInClicked": void;
@@ -1229,6 +1268,7 @@ declare global {
         "admiralty-footer": HTMLAdmiraltyFooterElement;
         "admiralty-header": HTMLAdmiraltyHeaderElement;
         "admiralty-header-menu-item": HTMLAdmiraltyHeaderMenuItemElement;
+        "admiralty-header-menu-link": HTMLAdmiraltyHeaderMenuLinkElement;
         "admiralty-header-profile": HTMLAdmiraltyHeaderProfileElement;
         "admiralty-header-sub-menu-item": HTMLAdmiraltyHeaderSubMenuItemElement;
         "admiralty-hint": HTMLAdmiraltyHintElement;
@@ -1489,7 +1529,7 @@ declare namespace LocalJSX {
     }
     interface AdmiraltyHeaderMenuItem {
         /**
-          * The text that will be displayed in the menu
+          * Whether the item is active
          */
         "active"?: boolean;
         /**
@@ -1500,6 +1540,28 @@ declare namespace LocalJSX {
           * The event that is fired when a user clicks on the menu
          */
         "onMenuItemClick"?: (event: AdmiraltyHeaderMenuItemCustomEvent<void>) => void;
+    }
+    interface AdmiraltyHeaderMenuLink {
+        /**
+          * Whether the item is active
+         */
+        "active"?: boolean;
+        /**
+          * The URL to link to.
+         */
+        "href"?: string;
+        /**
+          * The text that will be displayed in the menu.
+         */
+        "menuTitle"?: string;
+        /**
+          * The event that is fired when a user clicks on the menu.
+         */
+        "onMenuItemClick"?: (event: AdmiraltyHeaderMenuLinkCustomEvent<void>) => void;
+        /**
+          * Causes the default browser redirect to be suppressed. Can be used in conjunction with the `onMenuItemClick` event to use a navigation router and prevent a full page reload when navigating.
+         */
+        "suppressRedirect"?: boolean;
     }
     interface AdmiraltyHeaderProfile {
         /**
@@ -1984,6 +2046,7 @@ declare namespace LocalJSX {
         "admiralty-footer": AdmiraltyFooter;
         "admiralty-header": AdmiraltyHeader;
         "admiralty-header-menu-item": AdmiraltyHeaderMenuItem;
+        "admiralty-header-menu-link": AdmiraltyHeaderMenuLink;
         "admiralty-header-profile": AdmiraltyHeaderProfile;
         "admiralty-header-sub-menu-item": AdmiraltyHeaderSubMenuItem;
         "admiralty-hint": AdmiraltyHint;
@@ -2037,6 +2100,7 @@ declare module "@stencil/core" {
             "admiralty-footer": LocalJSX.AdmiraltyFooter & JSXBase.HTMLAttributes<HTMLAdmiraltyFooterElement>;
             "admiralty-header": LocalJSX.AdmiraltyHeader & JSXBase.HTMLAttributes<HTMLAdmiraltyHeaderElement>;
             "admiralty-header-menu-item": LocalJSX.AdmiraltyHeaderMenuItem & JSXBase.HTMLAttributes<HTMLAdmiraltyHeaderMenuItemElement>;
+            "admiralty-header-menu-link": LocalJSX.AdmiraltyHeaderMenuLink & JSXBase.HTMLAttributes<HTMLAdmiraltyHeaderMenuLinkElement>;
             "admiralty-header-profile": LocalJSX.AdmiraltyHeaderProfile & JSXBase.HTMLAttributes<HTMLAdmiraltyHeaderProfileElement>;
             "admiralty-header-sub-menu-item": LocalJSX.AdmiraltyHeaderSubMenuItem & JSXBase.HTMLAttributes<HTMLAdmiraltyHeaderSubMenuItemElement>;
             "admiralty-hint": LocalJSX.AdmiraltyHint & JSXBase.HTMLAttributes<HTMLAdmiraltyHintElement>;

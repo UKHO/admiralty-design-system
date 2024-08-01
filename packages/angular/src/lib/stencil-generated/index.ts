@@ -16,6 +16,7 @@ export const DIRECTIVES = [
   d.AdmiraltyFooter,
   d.AdmiraltyHeader,
   d.AdmiraltyHeaderMenuItem,
+  d.AdmiraltyHeaderMenuLink,
   d.AdmiraltyHeaderProfile,
   d.AdmiraltyHeaderSubMenuItem,
   d.AdmiraltyHint,

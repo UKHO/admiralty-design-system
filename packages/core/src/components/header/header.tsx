@@ -2,7 +2,7 @@ import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { Component, Element, Prop, h, EventEmitter, Event, State } from '@stencil/core';
 
 /**
- * @slot items - 'admiralty-header-menu-item menu-title' components are placed here for appropiate styling and behaviour
+ * @slot items - 'admiralty-header-menu-item menu-title' and 'admiralty-header-menu-link menu-title' components are placed here for appropriate styling and behaviour
  * @slot profile - 'admiralty-header-profile' components are placed here (the login/logout) options
  */
 @Component({
@@ -47,7 +47,7 @@ export class HeaderComponent {
   @State() displayHamburger = false;
 
   componentWillRender() {
-    const childMenus = this.el.querySelectorAll('admiralty-header-menu-item, admiralty-header-profile');
+    const childMenus = this.el.querySelectorAll('admiralty-header-menu-item, admiralty-header-menu-link, admiralty-header-profile');
     this.displayHamburger = childMenus.length > 0;
   }
 
