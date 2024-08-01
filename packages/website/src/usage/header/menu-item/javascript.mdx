@@ -1,15 +1,29 @@
 ```html
-<admiralty-header logo-alt-text="Admiralty Stacked Logo" logo-link-url="http://www.example.com" logo-img-url="svg/Admiralty stacked logo.svg" header-title-url="#" header-title="Design System">
-  <admiralty-header-menu-item menu-title="Item 1" active="false" slot="items"><admiralty-header-sub-menu-item menu-title="sub item 1"></admiralty-header-sub-menu-item>
-    <admiralty-header-sub-menu-item menu-title="Super long sub navigation item for wrapping"></admiralty-header-sub-menu-item>
+<admiralty-header
+  logo-alt-text="Admiralty Stacked Logo"
+  logo-link-url="http://www.example.com"
+  logo-img-url="svg/Admiralty stacked logo.svg"
+  header-title-url="#"
+  header-title="Design System"
+>
+  <admiralty-header-menu-item menu-title="Item 1" active="false" slot="items"
+    ><admiralty-header-sub-menu-item menu-title="sub item 1"></admiralty-header-sub-menu-item>
+    <admiralty-header-sub-menu-item
+      menu-title="Super long sub navigation item for wrapping"
+    ></admiralty-header-sub-menu-item>
     <admiralty-header-sub-menu-item menu-title="sub item 3"></admiralty-header-sub-menu-item>
-    </admiralty-header-menu-item>
-  <admiralty-header-menu-item menu-title="Components &amp; Patterns" active="false" slot="items">
+  </admiralty-header-menu-item>
+  <admiralty-header-menu-link
+    menu-title="Components & Patterns"
+    active="{false}"
+    href="/components/header"
+    suppress-redirect="{true}"
+    slot="items"
+  />
+  <admiralty-header-menu-item menu-title="Item 3" active="false" slot="items">
     <admiralty-header-sub-menu-item menu-title="sub item 1"></admiralty-header-sub-menu-item>
-    <admiralty-header-sub-menu-item menu-title="sub item 2"></admiralty-header-sub-menu-item>
-    </admiralty-header-menu-item>
-  <admiralty-header-sub-menu-item menu-title="sub item 1"></admiralty-header-sub-menu-item>
-    </admiralty-header-menu-item>
+  </admiralty-header-menu-item>
   <admiralty-header-profile is-signed-in="false" signed-in-text="Mr Admiral" slot="profile"></admiralty-header-profile>
 </admiralty-header>
 ```
+
