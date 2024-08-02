@@ -23,6 +23,7 @@
 
 ### Used by
 
+ - [admiralty-autocomplete](../autocomplete)
  - [admiralty-input](../input)
  - [admiralty-select](../select)
  - [admiralty-textarea](../textarea)
@@ -30,6 +31,7 @@
 ### Graph
 ```mermaid
 graph TD;
+  admiralty-autocomplete --> admiralty-hint
   admiralty-input --> admiralty-hint
   admiralty-select --> admiralty-hint
   admiralty-textarea --> admiralty-hint
