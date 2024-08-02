@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { QueryList, ViewChildren } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AdmiraltySideNavItem } from '@ukho/admiralty-angular';
-import { Observable } from 'rxjs';
+import { AutoCompleteChangeEventDetail } from '@ukho/admiralty-core/src/components/autocomplete/autocomplete.interface';
+import { AdmiraltyAutocompleteCustomEvent } from '@ukho/admiralty-core';
 
 export interface CommissioningOrganisation {
   id?: number;
@@ -25,12 +26,19 @@ export class AppComponent {
     radio: new FormControl(''),
     select: new FormControl('test1'),
     textarea: new FormControl('This is a text area'),
+    autocomplete: new FormControl('orange'),
+    office: new FormControl('', Validators.required),
+    country: new FormControl('', Validators.required),
+    direction: new FormControl('', Validators.required),
   });
 
   progress = 91;
 
   text = this.group.get('text');
   number = this.group.get('number');
+  office = this.group.get('office');
+  country = this.group.get('country');
+  direction = this.group.get('country');
 
   onIncreaseProgressClick() {
     this.progress++;
@@ -41,8 +49,25 @@ export class AppComponent {
     console.log('onColourBlockClick');
   }
 
+  validateAllFormFields(formGroup: FormGroup) {
+    Object.keys(formGroup.controls).forEach((field) => {
+      const control = formGroup.get(field);
+      if (control instanceof FormControl) {
+        control.markAsTouched({ onlySelf: true });
+      } else if (control instanceof FormGroup) {
+        this.validateAllFormFields(control);
+      }
+    });
+  }
+
   onSubmit() {
-    console.log(this.group);
+    console.log('onSubmit', this.group, this.group.valid);
+    if (this.group.valid) {
+      console.log('form submitted');
+    } else {
+      console.log('form has errors');
+      this.validateAllFormFields(this.group);
+    }
   }
 
   onSideNavItemSelected(event: Event) {
@@ -74,4 +99,29 @@ export class AppComponent {
   hideModalDialog() {
     this.isModalDialogShown = false;
   }
+
+  autocomplete(event: AdmiraltyAutocompleteCustomEvent<AutoCompleteChangeEventDetail>) {
+    console.log(event.detail.value);
+  }
+
+  onOfficeChanged(event: AdmiraltyAutocompleteCustomEvent<AutoCompleteChangeEventDetail>) {
+    console.log('onOfficeChanged', event.detail.value);
+  }
+
+  onCountryChanged(event: AdmiraltyAutocompleteCustomEvent<AutoCompleteChangeEventDetail>) {
+    console.log('onCountryChanged', event.detail.value);
+  }
+
+  selectOffice() {
+    this.group.controls.office.setValue('Nottingham');
+  }
+
+  selectCountry() {
+    this.group.controls.country.setValue('gb');
+  }
+
+  selectDirection() {
+    this.group.controls.direction.setValue('South');
+  }
 }
+
