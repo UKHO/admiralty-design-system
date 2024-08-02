@@ -1,3 +1,21 @@
+# v0.17.0 (Fri Aug 02 2024)
+
+#### 🚀 Enhancement
+
+- Autocomplete dropdown [#197](https://github.com/UKHO/admiralty-design-system/pull/197) ([@ecstaticrainbow](https://github.com/ecstaticrainbow) [@UKHOGreg](https://github.com/UKHOGreg) [@buzzub](https://github.com/buzzub))
+
+#### 🐛 Bug Fix
+
+- Bump versions and manually update change logs [#235](https://github.com/UKHO/admiralty-design-system/pull/235) ([@buzzub](https://github.com/buzzub))
+
+#### Authors: 3
+
+- Greg Williams ([@UKHOGreg](https://github.com/UKHOGreg))
+- Natalie ([@buzzub](https://github.com/buzzub))
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
 # v0.16.0 (Fri Aug 02 2024)
 
 #### 🚀 Enhancement
