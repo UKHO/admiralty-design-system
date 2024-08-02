@@ -1,4 +1,4 @@
-import { Component, Element, Prop, Event, h, EventEmitter, Host } from '@stencil/core';
+import { Component, Element, Prop, Event, h, EventEmitter, Host, forceUpdate } from '@stencil/core';
 import { Keys } from '../Keys';
 
 interface TabInfo {
@@ -144,6 +144,7 @@ export class TabGroupComponent {
       tabContent.after(...Array.from(tabItems));
 
       this.setSelectedTabContent();
+      forceUpdate(this);
     }
   }
 
