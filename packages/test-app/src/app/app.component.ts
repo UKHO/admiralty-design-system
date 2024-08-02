@@ -34,7 +34,8 @@ export class AppComponent {
 
   progress = 91;
 
-  blah = this.group.get('text');
+  text = this.group.get('text');
+  number = this.group.get('number');
   office = this.group.get('office');
   country = this.group.get('country');
   direction = this.group.get('country');

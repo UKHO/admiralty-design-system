@@ -67,17 +67,18 @@
   </p>
 </admiralty-expansion>
 <form [formGroup]="group" (ngSubmit)="onSubmit()" style="margin: 32px">
+  <admiralty-input-invalid>{{ group.value.text }}</admiralty-input-invalid>
   <admiralty-file-input></admiralty-file-input>
   <admiralty-input
     label="Text"
-    [invalid]="blah?.invalid && blah?.touched"
+    [invalid]="text?.invalid && text?.touched"
     invalidMessage="This field is required"
     type="text"
     formControlName="text"
   ></admiralty-input>
   <admiralty-input
     label="Number"
-    [invalid]="blah?.invalid && blah?.touched"
+    [invalid]="number?.invalid && number?.touched"
     invalidMessage="This field is required"
     type="number"
     formControlName="number"
