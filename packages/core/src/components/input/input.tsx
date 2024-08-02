@@ -92,6 +92,16 @@ export class InputComponent implements ComponentInterface {
   @Event() admiraltyInput: EventEmitter<InputChangeEventDetail>;
 
   /**
+   * Emitted when the input gains focus.
+   */
+  @Event() admiraltyFocus: EventEmitter<FocusEvent>;
+
+  /**
+   * Emitted when the input loses focus.
+   */
+  @Event() admiraltyBlur: EventEmitter<FocusEvent>;
+
+  /**
    * Update the native input element when the value changes
    */
 
@@ -115,6 +125,14 @@ export class InputComponent implements ComponentInterface {
   private getValue(): string {
     return typeof this.value === 'number' ? this.value.toString() : (this.value || '').toString();
   }
+
+  private onBlur = (ev: FocusEvent) => {
+    this.admiraltyBlur.emit(ev);
+  };
+
+  private onFocus = (ev: FocusEvent) => {
+    this.admiraltyFocus.emit(ev);
+  };
 
   render() {
     const value = this.getValue();
@@ -141,6 +159,8 @@ export class InputComponent implements ComponentInterface {
           value={value}
           maxLength={this.maxLength}
           onInput={this.onInput}
+          onFocus={this.onFocus}
+          onBlur={this.onBlur}
           placeholder={this.placeholder}
           autoComplete={this.autocomplete}
           required={this.required}
