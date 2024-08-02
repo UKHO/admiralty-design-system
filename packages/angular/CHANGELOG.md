@@ -1,3 +1,41 @@
+# v0.16.0 (Fri Aug 02 2024)
+
+#### 🚀 Enhancement
+
+- fix: input error spacing [#229](https://github.com/UKHO/admiralty-design-system/pull/229) ([@buzzub](https://github.com/buzzub))
+
+#### Authors: 1
+
+- Natalie ([@buzzub](https://github.com/buzzub))
+
+---
+
+# v0.15.0 (Fri Aug 02 2024)
+
+#### 🚀 Enhancement
+
+- Autocomplete dropdown [#197](https://github.com/UKHO/admiralty-design-system/pull/197) ([@UKHOGreg](https://github.com/UKHOGreg) [@ecstaticrainbow](https://github.com/ecstaticrainbow) [@buzzub](https://github.com/buzzub))
+
+#### Authors: 3
+
+- Greg Williams ([@UKHOGreg](https://github.com/UKHOGreg))
+- Natalie ([@buzzub](https://github.com/buzzub))
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
+# v0.14.2 (Tue Jul 31 2024)
+
+#### 🐛 Bug Fix
+
+- fix: page width on design system website [#228](https://github.com/UKHO/admiralty-design-system/pull/228) ([@buzzub](https://github.com/buzzub))
+
+#### Authors: 1
+
+- Natalie ([@buzzub](https://github.com/buzzub))
+
+---
+
 # v0.14.0 (Thu May 23 2024)
 
 #### 🚀 Enhancement
@@ -331,3 +369,4 @@
 #### Authors: 1
 
 - Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
