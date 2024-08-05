@@ -5,14 +5,21 @@
   logo-img-url="https://designsystem.admiralty.co.uk/assets/svg/Admiralty%20stacked%20logo.svg"
   nav-title="Design System"
 >
-  <admiralty-header-menu-item menu-title="First Item" slot="items">
-    <admiralty-header-sub-menu-item menu-title="Sub menu 1"></admiralty-header-sub-menu-item>
-    <admiralty-header-sub-menu-item menu-title="Sub menu 2"></admiralty-header-sub-menu-item>
-  </admiralty-header-menu-item>
-  <admiralty-header-menu-item active="true" menu-title="Second Item" slot="items"></admiralty-header-menu-item>
-  <admiralty-header-menu-item menu-title="Third Item" slot="items"></admiralty-header-menu-item>
+  <ng-container *ngFor="let item of headerItems">
+    <admiralty-header-menu-item
+      [menuTitle]="item.title"
+      slot="items"
+      [active]="item.index === active"
+      (menuItemClick)="onHeaderItemClick(item.index)"
+    >
+      <ng-container *ngFor="let subitem of item.items">
+        <admiralty-header-sub-menu-item [menuTitle]="subitem.title"></admiralty-header-sub-menu-item>
+      </ng-container>
+    </admiralty-header-menu-item>
+  </ng-container>
   <admiralty-header-profile isSignedIn="false" slot="profile"></admiralty-header-profile>
 </admiralty-header>
+<admiralty-button (click)="addHeaderItems()">Add header item</admiralty-button>
 <admiralty-breadcrumbs>
   <admiralty-breadcrumb href="https://example.org/test1">Test1</admiralty-breadcrumb>
   <admiralty-breadcrumb href="https://example.org/test2" active="true">Test2</admiralty-breadcrumb>
