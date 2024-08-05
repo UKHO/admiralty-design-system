@@ -1,3 +1,16 @@
+# v0.18.0 (Mon Aug 05 2024)
+
+#### 🚀 Enhancement
+
+- `@ukho/admiralty-core`
+  - fix: force the header to re-render when the slot contents change [#234](https://github.com/UKHO/admiralty-design-system/pull/234) ([@buzzub](https://github.com/buzzub))
+
+#### Authors: 1
+
+- Natalie ([@buzzub](https://github.com/buzzub))
+
+---
+
 # v0.15.0 (Fri Aug 02 2024)
 
 #### 🚀 Enhancement
