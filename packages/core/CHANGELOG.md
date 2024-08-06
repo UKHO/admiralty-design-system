@@ -1,3 +1,74 @@
+# v0.18.0 (Mon Aug 05 2024)
+
+#### 🚀 Enhancement
+
+- fix: force the header to re-render when the slot contents change [#234](https://github.com/UKHO/admiralty-design-system/pull/234) ([@buzzub](https://github.com/buzzub))
+
+#### Authors: 1
+
+- Natalie ([@buzzub](https://github.com/buzzub))
+
+---
+
+# v0.17.0 (Fri Aug 02 2024)
+
+#### 🚀 Enhancement
+
+- feature: do not display error component when no error is present [#232](https://github.com/UKHO/admiralty-design-system/pull/232) ([@buzzub](https://github.com/buzzub))
+- Autocomplete dropdown [#197](https://github.com/UKHO/admiralty-design-system/pull/197) ([@ecstaticrainbow](https://github.com/ecstaticrainbow) [@UKHOGreg](https://github.com/UKHOGreg) [@buzzub](https://github.com/buzzub))
+
+#### 🐛 Bug Fix
+
+- Bump versions and manually update change logs [#235](https://github.com/UKHO/admiralty-design-system/pull/235) ([@buzzub](https://github.com/buzzub))
+- fix: input error spacing [#229](https://github.com/UKHO/admiralty-design-system/pull/229) ([@buzzub](https://github.com/buzzub))
+- fix: page width on design system website [#228](https://github.com/UKHO/admiralty-design-system/pull/228) ([@buzzub](https://github.com/buzzub))
+
+#### Authors: 3
+
+- Greg Williams ([@UKHOGreg](https://github.com/UKHOGreg))
+- Natalie ([@buzzub](https://github.com/buzzub))
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
+# v0.16.0 (Fri Aug 02 2024)
+
+#### 🚀 Enhancement
+
+- fix: input error spacing [#229](https://github.com/UKHO/admiralty-design-system/pull/229) ([@buzzub](https://github.com/buzzub))
+
+#### Authors: 1
+
+- Natalie ([@buzzub](https://github.com/buzzub))
+
+---
+
+# v0.15.0 (Fri Aug 02 2024)
+
+#### 🚀 Enhancement
+
+- Autocomplete dropdown [#197](https://github.com/UKHO/admiralty-design-system/pull/197) ([@UKHOGreg](https://github.com/UKHOGreg) [@ecstaticrainbow](https://github.com/ecstaticrainbow) [@buzzub](https://github.com/buzzub))
+
+#### Authors: 3
+
+- Greg Williams ([@UKHOGreg](https://github.com/UKHOGreg))
+- Natalie ([@buzzub](https://github.com/buzzub))
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
+# v0.14.2 (Tue Jul 31 2024)
+
+#### 🐛 Bug Fix
+
+- fix: page width on design system website [#228](https://github.com/UKHO/admiralty-design-system/pull/228) ([@buzzub](https://github.com/buzzub))
+
+#### Authors: 1
+
+- Natalie ([@buzzub](https://github.com/buzzub))
+
+---
+
 # v0.14.1 (Mon Jul 29 2024)
 
 #### 🐛 Bug Fix

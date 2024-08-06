@@ -26,7 +26,7 @@ describe('admiralty-textarea', () => {
             Please enter description
           </admiralty-hint>
           <textarea aria-describedby="admiralty-textarea-hint-1 " aria-invalid="false" id="admiralty-textarea-${compId}" value=""></textarea>
-          <admiralty-input-invalid id="admiralty-textarea-error-${errorId}" style="visibility: hidden;"></admiralty-input-invalid>
+          <admiralty-input-invalid id="admiralty-textarea-error-${errorId}" style="display: none;"></admiralty-input-invalid>
         </div>
       </admiralty-textarea>
     `);
@@ -47,7 +47,7 @@ describe('admiralty-textarea', () => {
       <admiralty-textarea value="${testText}">
         <div class="text-area-container">
           <textarea aria-describedby=" " aria-invalid="false" id="admiralty-textarea-${compId}" value="${testText}"></textarea>
-          <admiralty-input-invalid id="admiralty-textarea-error-${errorId}" style="visibility: hidden;"></admiralty-input-invalid>
+          <admiralty-input-invalid id="admiralty-textarea-error-${errorId}" style="display: none;"></admiralty-input-invalid>
         </div>
       </admiralty-textarea>
     `);
@@ -67,7 +67,7 @@ describe('admiralty-textarea', () => {
         <div class="text-area-container">
           <admiralty-label disabled="" for="admiralty-textarea-${compId}">Description</admiralty-label>
           <textarea aria-describedby=" " aria-invalid="false" class="disabled" id="admiralty-textarea-${compId}" value=""></textarea>
-          <admiralty-input-invalid id="admiralty-textarea-error-${errorId}" style="visibility: hidden;"></admiralty-input-invalid>
+          <admiralty-input-invalid id="admiralty-textarea-error-${errorId}" style="display: none;"></admiralty-input-invalid>
         </div>
       </admiralty-textarea>
     `);
@@ -87,7 +87,7 @@ describe('admiralty-textarea', () => {
         <div class="text-area-container">
           <admiralty-label for="admiralty-textarea-${compId}">Description</admiralty-label>
           <textarea aria-describedby=" admiralty-textarea-error-${errorId}" aria-invalid="true" class="invalid" id="admiralty-textarea-${compId}" value=""></textarea>
-          <admiralty-input-invalid id="admiralty-textarea-error-${errorId}" style="visibility: visible;">
+          <admiralty-input-invalid id="admiralty-textarea-error-${errorId}">
             BAD
           </admiralty-input-invalid>
         </div>
@@ -109,7 +109,7 @@ describe('admiralty-textarea', () => {
         <div class="text-area-container">
           <admiralty-label for="admiralty-textarea-${compId}">Description</admiralty-label>
           <textarea aria-describedby=" admiralty-textarea-error-${errorId}" aria-invalid="true" class="invalid" id="admiralty-textarea-${compId}" value=""></textarea>
-          <admiralty-input-invalid id="admiralty-textarea-error-${errorId}" style="visibility: hidden;"></admiralty-input-invalid>
+          <admiralty-input-invalid id="admiralty-textarea-error-${errorId}" style="display: none;"></admiralty-input-invalid>
         </div>
       </admiralty-textarea>
     `);

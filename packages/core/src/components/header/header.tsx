@@ -1,5 +1,5 @@
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
-import { Component, Element, Prop, h, EventEmitter, Event, State } from '@stencil/core';
+import { Component, Element, Prop, h, EventEmitter, Event, State, forceUpdate } from '@stencil/core';
 
 /**
  * @slot items - 'admiralty-header-menu-item menu-title' and 'admiralty-header-menu-link menu-title' components are placed here for appropriate styling and behaviour
@@ -45,6 +45,23 @@ export class HeaderComponent {
   @State() mobileMenuOpen = false;
 
   @State() displayHamburger = false;
+
+  observer: MutationObserver;
+
+  connectedCallback() {
+    this.observer = new MutationObserver(() => {
+      // when new menu items are added to the slots, we need to trigger a render cycle so that they render correctly
+      forceUpdate(this);
+    });
+    this.observer.observe(this.el, {
+      childList: true,
+      subtree: true,
+    });
+  }
+
+  disconnectedCallback() {
+    this.observer.disconnect();
+  }
 
   componentWillRender() {
     const childMenus = this.el.querySelectorAll('admiralty-header-menu-item, admiralty-header-menu-link, admiralty-header-profile');
