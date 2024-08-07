@@ -1,12 +1,12 @@
 {
   "name": "@ukho-internal/admiralty-docs",
-  "version": "0.18.0",
+  "version": "0.18.1",
   "private": true,
   "scripts": {
     "build": "ts-node build.ts"
   },
   "dependencies": {
-    "@ukho/admiralty-core": "^0.18.0"
+    "@ukho/admiralty-core": "^0.18.1"
   },
   "devDependencies": {
     "chalk": "^4.1.2",

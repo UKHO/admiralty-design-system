@@ -166,7 +166,10 @@ export class AutocompleteComponent {
 
   @Watch('value')
   onValueChange(newVal: string, _: string) {
-    // console.log('onValueChange', newVal);
+    if (this.source.length === 0) {
+      // If this is the initial render, the options won't have been set yet, so do nothing
+      return;
+    }
     if (newVal && newVal.length > 0) {
       const matches = filterOptionsByValue(this.source, newVal);
       const matchFound = matches.length > 0;
