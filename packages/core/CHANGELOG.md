@@ -1,3 +1,15 @@
+# v0.18.1 (Wed Aug 07 2024)
+
+#### 🐛 Bug Fix
+
+- Do not clear autocomplete default value before options have been rendered [#239](https://github.com/UKHO/admiralty-design-system/pull/239) ([@buzzub](https://github.com/buzzub))
+
+#### Authors: 1
+
+- Natalie ([@buzzub](https://github.com/buzzub))
+
+---
+
 # v0.18.0 (Mon Aug 05 2024)
 
 #### 🚀 Enhancement
