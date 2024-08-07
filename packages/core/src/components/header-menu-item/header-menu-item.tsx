@@ -17,7 +17,7 @@ export class HeaderMenuItemComponent {
   @Prop() menuTitle: string;
 
   /**
-   * The text that will be displayed in the menu
+   * Whether the item is active
    */
   @Prop() active?: boolean = false;
 

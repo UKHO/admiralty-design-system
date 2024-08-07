@@ -39,15 +39,16 @@ const profileArgs = {
 };
 
 const TemplateSignedOut: Story = {
-  render: args => html` <admiralty-header
-    logo-alt-text="${args.logoAltText}"
-    logo-link-url="${args.logoLinkUrl}"
-    logo-img-url="${args.logoImgUrl}"
-    header-title-url="#"
-    header-title="${args.title}"
-  >
-    <admiralty-header-profile is-signed-in="${args.signedIn}" signed-in-text="${args.singedInText}" sign-in-only="${args.signInOnly}" slot="profile"></admiralty-header-profile>
-  </admiralty-header>`,
+  render: args =>
+    html` <admiralty-header
+      logo-alt-text="${args.logoAltText}"
+      logo-link-url="${args.logoLinkUrl}"
+      logo-img-url="${args.logoImgUrl}"
+      header-title-url="#"
+      header-title="${args.title}"
+    >
+      <admiralty-header-profile is-signed-in="${args.signedIn}" signed-in-text="${args.singedInText}" sign-in-only="${args.signInOnly}" slot="profile"></admiralty-header-profile>
+    </admiralty-header>`,
 };
 
 const TemplateLinksAndAuth: Story = {
@@ -74,8 +75,10 @@ const TemplateLinksNoAuth: Story = {
   render: args => {
     const menuItems = args.menuItems?.map(item => {
       const subItems = item.subitems?.map(si => `<admiralty-header-sub-menu-item menu-title="${si.title}"></admiralty-header-sub-menu-item>`);
-      return `<admiralty-header-menu-item menu-title="${item.title}" active="${item.navActive ?? false}" slot="items">${subItems?.join('') ?? ''}</admiralty-header-menu-item>
-    `;
+      return subItems?.length > 0
+        ? `<admiralty-header-menu-item menu-title="${item.title}" active="${item.navActive ?? false}" slot="items">${subItems?.join('') ?? ''}</admiralty-header-menu-item>`
+        : `<admiralty-header-menu-link menu-title="${item.title}" href="${item.href ?? ''}" suppress-redirect="true" active="${item.navActive ?? false}" slot="items">${subItems?.join('') ?? ''}</admiralty-header-menu-link>
+      `;
     });
 
     let template = `<admiralty-header logo-alt-text="${args.logoAltText}" logo-link-url="${args.logoLinkUrl}" logo-img-url="${

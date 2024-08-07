@@ -5,14 +5,31 @@ import {
   AdmiraltyFooter,
   AdmiraltyHeader,
   AdmiraltyHeaderMenuItem,
+  AdmiraltyHeaderMenuLink,
   AdmiraltyLink,
   AdmiraltyPhaseBanner,
   AdmiraltySkipLink,
 } from "@ukho/admiralty-react";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
+
+const menuItems = [
+  {
+    name: "Principles",
+    path: "/principles",
+  },
+  {
+    name: "Components",
+    path: "/components",
+  },
+  {
+    name: "Brand Guide",
+    path: "/brand-guide",
+  },
+];
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const router = useRouter();
+  const pathname = usePathname();
 
   return (
     <html lang="en">
@@ -22,18 +39,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           headerTitle="Design System"
           onTitledClicked={() => router.push("/")}
           logoImgUrl="/svg/Admiralty stacked logo.svg">
-          <AdmiraltyHeaderMenuItem
-            menuTitle="Principles"
-            slot="items"
-            onMenuItemClick={() => router.push("/principles")}></AdmiraltyHeaderMenuItem>
-          <AdmiraltyHeaderMenuItem
-            menuTitle="Components"
-            slot="items"
-            onMenuItemClick={() => router.push("/components")}></AdmiraltyHeaderMenuItem>
-          <AdmiraltyHeaderMenuItem
-            menuTitle="Brand Guide"
-            slot="items"
-            onMenuItemClick={() => router.push("/brand-guide")}></AdmiraltyHeaderMenuItem>
+          {menuItems.map(({ name, path }) => (
+            <AdmiraltyHeaderMenuLink
+              key={path}
+              href={path}
+              active={pathname.startsWith(path)}
+              suppressRedirect={true}
+              slot="items"
+              onMenuItemClick={() => router.push(path)}>
+              {name}
+            </AdmiraltyHeaderMenuLink>
+          ))}
         </AdmiraltyHeader>
         <div>
           <AdmiraltyPhaseBanner
@@ -51,3 +67,4 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   );
 }
+

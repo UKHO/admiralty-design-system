@@ -25,10 +25,10 @@
 
 ## Slots
 
-| Slot        | Description                                                                                             |
-| ----------- | ------------------------------------------------------------------------------------------------------- |
-| `"items"`   | 'admiralty-header-menu-item menu-title' components are placed here for appropiate styling and behaviour |
-| `"profile"` | 'admiralty-header-profile' components are placed here (the login/logout) options                        |
+| Slot        | Description                                                                                                                                          |
+| ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `"items"`   | 'admiralty-header-menu-item menu-title' and 'admiralty-header-menu-link menu-title' components are placed here for appropriate styling and behaviour |
+| `"profile"` | 'admiralty-header-profile' components are placed here (the login/logout) options                                                                     |
 
 
 ## Dependencies
