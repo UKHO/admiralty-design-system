@@ -180,12 +180,17 @@ export namespace Components {
     interface AdmiraltyColourBlock {
         /**
           * The text to display on the action button
+          * @deprecated in favour of `href` and `linkText`
          */
         "actionText": string;
         /**
           * The background colour of the component.
          */
         "colour": 'admiralty-blue' | 'teal' | 'bright-blue';
+        /**
+          * Allow the card to be clicked. Will emit a `colourBlockLinkClicked` event. A value for `href` should also be provided to ensure the component conforms to accessibility standards.
+         */
+        "enableCardEvent": boolean;
         /**
           * The heading text to display.
          */
@@ -194,6 +199,18 @@ export namespace Components {
           * The height in pixels of the component.
          */
         "height": number;
+        /**
+          * The URL to link to.
+         */
+        "href": string;
+        /**
+          * The link text.
+         */
+        "linkText": string;
+        /**
+          * Causes the default browser redirect to be suppressed. Can be used in conjunction with the `colourBlockLinkClicked` event to use a navigation router and prevent a full page reload when navigating.
+         */
+        "suppressRedirect": boolean;
         /**
           * The width in pixels of the component.
          */
@@ -1559,12 +1576,17 @@ declare namespace LocalJSX {
     interface AdmiraltyColourBlock {
         /**
           * The text to display on the action button
+          * @deprecated in favour of `href` and `linkText`
          */
         "actionText"?: string;
         /**
           * The background colour of the component.
          */
         "colour"?: 'admiralty-blue' | 'teal' | 'bright-blue';
+        /**
+          * Allow the card to be clicked. Will emit a `colourBlockLinkClicked` event. A value for `href` should also be provided to ensure the component conforms to accessibility standards.
+         */
+        "enableCardEvent"?: boolean;
         /**
           * The heading text to display.
          */
@@ -1574,9 +1596,21 @@ declare namespace LocalJSX {
          */
         "height"?: number;
         /**
+          * The URL to link to.
+         */
+        "href"?: string;
+        /**
+          * The link text.
+         */
+        "linkText"?: string;
+        /**
           * An event emitted when this Colour Block link is clicked
          */
         "onColourBlockLinkClicked"?: (event: AdmiraltyColourBlockCustomEvent<string>) => void;
+        /**
+          * Causes the default browser redirect to be suppressed. Can be used in conjunction with the `colourBlockLinkClicked` event to use a navigation router and prevent a full page reload when navigating.
+         */
+        "suppressRedirect"?: boolean;
         /**
           * The width in pixels of the component.
          */

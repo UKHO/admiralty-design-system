@@ -15,27 +15,44 @@ const meta: Meta = {
 
 export default meta;
 
-type Story = StoryObj<ColourBlockComponent>;
+type ColourBlockArgs = Partial<ColourBlockComponent & { content: string; addListener: boolean }>;
+
+type Story = StoryObj<ColourBlockArgs>;
 
 const template: Story = {
-  render: args => html` <admiralty-colour-block action-text="${args.actionText}" width="${args.width}" height="${args.height}" heading="${args.heading}" colour="${args.colour}">
+  render: args => html`
+    <admiralty-colour-block
+      action-text="${args.actionText}"
+      width="${args.width}"
+      height="${args.height}"
+      heading="${args.heading}"
+      colour="${args.colour}"
+      link-text="${args.linkText}"
+      href="${args.href}"
+      suppress-redirect="${args.suppressRedirect}"
+      enable-card-event="${args.enableCardEvent}"
+    >
       <div>${unsafeHTML(args.content)}</div>
     </admiralty-colour-block>
     <script>
-      document.querySelector('admiralty-colour-block').addEventListener('colourBlockLinkClicked', () => console.log('colourBlockLinkClicked'));
-    </script>`,
+      ${args.addListener ? `document.querySelector('admiralty-colour-block').addEventListener('colourBlockLinkClicked', () => alert('colourBlockLinkClicked'));` : null};
+    </script>
+  `,
 };
 
-const squareArgs = {
+const defaultArgs: ColourBlockArgs = {
   width: 400,
   height: 400,
-  heading: 'Colour Me Surprised',
-  content: `<p>This colour block is a component in the design system and we hope you enjoy it</p>`,
-  actionText: 'Click Here',
+  heading: 'Setting it up',
+  content: `<p>Go to Get Started to see how to install the Design System and start using it in your builds.</p>`,
+  href: 'http://www.admiralty.co.uk',
+  linkText: 'Get started',
+  suppressRedirect: false,
   colour: 'admiralty-blue',
+  enableCardEvent: false,
 };
 
-const rectangleArgs = {
+const rectangleArgs: ColourBlockArgs = {
   width: 1000,
   height: 400,
   heading: 'Block by Block',
@@ -45,16 +62,80 @@ const rectangleArgs = {
     <span>What about spans?</span>`,
   actionText: 'Click Here',
   colour: 'admiralty-blue',
+  enableCardEvent: true,
 };
 
-export const AdmiraltyBlueSquare: Story = { ...template, args: { ...squareArgs } };
+export const AdmiraltyBlue: Story = {
+  ...template,
+  args: {
+    ...defaultArgs,
+  },
+};
 
-export const TealSquare: Story = { ...template, args: { ...squareArgs, colour: 'teal' } };
+export const Teal: Story = {
+  ...template,
+  args: { ...defaultArgs, colour: 'teal' },
+};
 
-export const BrightBlueSquare: Story = { ...template, args: { ...squareArgs, colour: 'bright-blue' } };
+export const BrightBlue: Story = {
+  ...template,
+  args: { ...defaultArgs, colour: 'bright-blue' },
+};
 
-export const AdmiraltyBlueRectangle: Story = { ...template, args: { ...rectangleArgs } };
+export const NoRedirect: Story = {
+  ...template,
+  args: {
+    ...defaultArgs,
+    suppressRedirect: true,
+    addListener: true,
+  },
+};
 
-export const TealRectangle: Story = { ...template, args: { ...rectangleArgs, colour: 'teal' } };
+export const ListenerOnBlock: Story = {
+  ...template,
+  args: {
+    ...defaultArgs,
+    suppressRedirect: true,
+    addListener: true,
+    enableCardEvent: true,
+  },
+};
 
-export const BrightBlueRectangle: Story = { ...template, args: { ...rectangleArgs, colour: 'bright-blue' } };
+export const DeprecatedButton: Story = {
+  ...template,
+  args: {
+    ...defaultArgs,
+    heading: 'Accessibility',
+    content: `<p>Accessible design principles state that links go somewhere and that buttons do something.</p>
+      <p>Buttons should not be used for links.</p>`,
+    href: undefined,
+    linkText: undefined,
+    addListener: true,
+    actionText: 'Show an alert',
+    colour: 'teal',
+  },
+};
+
+export const NoLink: Story = {
+  ...template,
+  args: {
+    ...defaultArgs,
+    href: undefined,
+    linkText: undefined,
+  },
+};
+
+export const RectangleWithLongerContent: Story = {
+  ...template,
+  args: {
+    ...defaultArgs,
+    width: 1000,
+    height: 400,
+    heading: 'What is a design system?',
+    content: `<p>A design system is a comprehensive set of standards, guidelines, principles, and reusable components that guide the design and development of a product or brand.</p>
+      <p>Design is <b>important</b> and you can find out <a href='#'>why design is important</a>.</p>
+      <h5>Types of design</h5>
+      <p>There are many types of design.</p>`,
+    linkText: 'Find out more about design',
+  },
+};

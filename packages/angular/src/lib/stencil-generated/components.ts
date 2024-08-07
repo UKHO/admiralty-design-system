@@ -185,14 +185,14 @@ export declare interface AdmiraltyCheckbox extends Components.AdmiraltyCheckbox 
 
 
 @ProxyCmp({
-  inputs: ['actionText', 'colour', 'heading', 'height', 'width']
+  inputs: ['actionText', 'colour', 'enableCardEvent', 'heading', 'height', 'href', 'linkText', 'suppressRedirect', 'width']
 })
 @Component({
   selector: 'admiralty-colour-block',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['actionText', 'colour', 'heading', 'height', 'width'],
+  inputs: ['actionText', 'colour', 'enableCardEvent', 'heading', 'height', 'href', 'linkText', 'suppressRedirect', 'width'],
 })
 export class AdmiraltyColourBlock {
   protected el: HTMLElement;
