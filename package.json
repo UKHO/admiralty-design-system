@@ -1,6 +1,6 @@
 {
   "name": "admiralty-design-system",
-  "packageManager": "yarn@3.5.0",
+  "packageManager": "yarn@4.4.0",
   "devDependencies": {
     "@auto-it/conventional-commits": "^11.0.5",
     "@auto-it/protected-branch": "^11.0.5",
