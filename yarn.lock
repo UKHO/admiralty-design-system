@@ -5858,9 +5858,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/mdx@npm:^13.4.19":
-  version: 13.4.19
-  resolution: "@next/mdx@npm:13.4.19"
+"@next/mdx@npm:^13.5.6":
+  version: 13.5.6
+  resolution: "@next/mdx@npm:13.5.6"
   dependencies:
     source-map: ^0.7.0
   peerDependencies:
@@ -5871,7 +5871,7 @@ __metadata:
       optional: true
     "@mdx-js/react":
       optional: true
-  checksum: 56d591e43285eb5029a40940e4ce004635043ad7fbed2ce2740ea5a1840fc5b284eb96a8787e5fb6131ccf46d7fbc6320161e20a23775a0dd1493013caf3c52e
+  checksum: 082bbc8867631fa09fefa85e2fbd902d150ecd8981a84e7453cd46aeb9fbfb21eaedcd16e372cf5fca4d4b1fae4a9d4b240d1d27b414a16353c70b62bc89be68
   languageName: node
   linkType: hard
 
@@ -27359,7 +27359,7 @@ __metadata:
     "@fortawesome/react-fontawesome": ^0.2.0
     "@mdx-js/loader": ^2.3.0
     "@mdx-js/react": ^2.3.0
-    "@next/mdx": ^13.4.19
+    "@next/mdx": ^13.5.6
     "@types/mdx": ^2.0.7
     "@types/node": 20.12.7
     "@types/prismjs": ^1.26.3
