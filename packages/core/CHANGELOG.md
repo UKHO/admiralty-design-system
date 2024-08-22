@@ -1,3 +1,15 @@
+# v0.18.2 (Tue Aug 20 2024)
+
+#### 🐛 Bug Fix
+
+- chore: Update packages [#242](https://github.com/UKHO/admiralty-design-system/pull/242) ([@UKHOGreg](https://github.com/UKHOGreg))
+
+#### Authors: 1
+
+- Greg Williams ([@UKHOGreg](https://github.com/UKHOGreg))
+
+---
+
 # v0.18.1 (Wed Aug 07 2024)
 
 #### 🐛 Bug Fix
