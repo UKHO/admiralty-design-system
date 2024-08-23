@@ -1,6 +1,15 @@
 import { newSpecPage } from '@stencil/core/testing';
 import { HeaderComponent } from './header';
 
+const mutationObserverMock = jest.fn<MutationObserver, [MutationCallback]>().mockImplementation(() => {
+  return {
+    observe: jest.fn(),
+    disconnect: jest.fn(),
+    takeRecords: jest.fn(),
+  };
+});
+global.MutationObserver = mutationObserverMock;
+
 describe('admiralty-header', () => {
   it('renders', async () => {
     const page = await newSpecPage({
