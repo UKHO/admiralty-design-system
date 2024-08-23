@@ -64,4 +64,18 @@ describe('admiralty-button', () => {
       </admiralty-button>
     `);
   });
+
+  it('renders form, name and value', async () => {
+    const { root } = await newSpecPage({
+      components: [ButtonComponent],
+      html: '<admiralty-button form="form1" name"button" value="ready">Ready</admiralty-button>',
+    });
+    expect(root).toEqualHtml(`
+      <admiralty-button form="form1" name"button" value="ready">
+        <button class="primary" form="form1" type="submit" value="ready">
+          Ready
+        </button>
+      </admiralty-button>
+    `);
+  });
 });
