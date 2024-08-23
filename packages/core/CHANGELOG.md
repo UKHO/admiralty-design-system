@@ -39,19 +39,10 @@
 #### 🚀 Enhancement
 
 - feature: do not display error component when no error is present [#232](https://github.com/UKHO/admiralty-design-system/pull/232) ([@buzzub](https://github.com/buzzub))
-- Autocomplete dropdown [#197](https://github.com/UKHO/admiralty-design-system/pull/197) ([@ecstaticrainbow](https://github.com/ecstaticrainbow) [@UKHOGreg](https://github.com/UKHOGreg) [@buzzub](https://github.com/buzzub))
 
-#### 🐛 Bug Fix
+#### Authors: 1
 
-- Bump versions and manually update change logs [#235](https://github.com/UKHO/admiralty-design-system/pull/235) ([@buzzub](https://github.com/buzzub))
-- fix: input error spacing [#229](https://github.com/UKHO/admiralty-design-system/pull/229) ([@buzzub](https://github.com/buzzub))
-- fix: page width on design system website [#228](https://github.com/UKHO/admiralty-design-system/pull/228) ([@buzzub](https://github.com/buzzub))
-
-#### Authors: 3
-
-- Greg Williams ([@UKHOGreg](https://github.com/UKHOGreg))
 - Natalie ([@buzzub](https://github.com/buzzub))
-- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
 
 ---
 
