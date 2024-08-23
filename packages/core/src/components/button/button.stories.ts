@@ -30,13 +30,14 @@ export const Warning: Story = { ...template, args: { variant: 'warning' } };
 export const Text: Story = { ...template, args: { variant: 'text' } };
 
 export const TextCustom: Story = {
-  render: args => html`<admiralty-button variant="${args.variant}">
-    <div style="font-size: 16px; color: black; text-decoration: underline;">Small type</div>
-  </admiralty-button>`,
+  render: args =>
+    html`<admiralty-button variant="${args.variant}">
+      <div style="font-size: 16px; color: black; text-decoration: underline;">Small type</div>
+    </admiralty-button>`,
   args: { variant: 'text' },
 };
 
-export const Disabled: Story = { ...template, args: { disabled: true } };
+export const Disabled: Story = { ...template, args: { variant: 'primary', disabled: true } };
 
 export const Icon: Story = {
   render: args => html`<admiralty-button variant="${args.variant}" icon="${args.icon}"></admiralty-button>`,
