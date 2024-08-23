@@ -5,6 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { AutoCompleteChangeEventDetail } from "./components/autocomplete/autocomplete.interface";
 import { ButtonVariant } from "./components/button/button.types";
 import { IconName, IconPrefix } from "@fortawesome/fontawesome-svg-core";
 import { CheckboxChangeEventDetail } from "./components/checkbox/checkbox.interface";
@@ -14,6 +15,7 @@ import { InputChangeEventDetail } from "./components/input/input.interface";
 import { RadioGroupChangeEventDetail } from "./components/radio-group/radio-group-interface";
 import { SelectChangeEventDetail } from "./components/select/select.interface";
 import { TextAreaChangeEventDetail } from "./components/textarea/textarea.interface";
+export { AutoCompleteChangeEventDetail } from "./components/autocomplete/autocomplete.interface";
 export { ButtonVariant } from "./components/button/button.types";
 export { IconName, IconPrefix } from "@fortawesome/fontawesome-svg-core";
 export { CheckboxChangeEventDetail } from "./components/checkbox/checkbox.interface";
@@ -24,6 +26,94 @@ export { RadioGroupChangeEventDetail } from "./components/radio-group/radio-grou
 export { SelectChangeEventDetail } from "./components/select/select.interface";
 export { TextAreaChangeEventDetail } from "./components/textarea/textarea.interface";
 export namespace Components {
+    interface AdmiraltyAutocomplete {
+        /**
+          * The hint that is provided to assistive users.
+         */
+        "assistiveHint": string;
+        /**
+          * Automatically select the first matching option.
+         */
+        "autoselect": boolean;
+        /**
+          * Toggle automatically confirming a selection when the field is blurred.
+         */
+        "confirmOnBlur": boolean;
+        /**
+          * The default CSS namespace.
+         */
+        "cssNamespace": string;
+        /**
+          * When `true`, the component cannot be interacted with.
+         */
+        "disabled": boolean;
+        /**
+          * When set to `overlay` this option will display the menu as an absolutely positioned overlay instead of inline.
+         */
+        "displayMenu": string;
+        /**
+          * TThe text which will be used under the label to describe the input.
+         */
+        "hint": string;
+        /**
+          * Classes to add to the component's `<input>` element.
+         */
+        "inputClasses": string;
+        /**
+          * Whether to show that the component is in an invalid state.
+         */
+        "invalid": boolean;
+        /**
+          * The message to show when the component is invalid.
+         */
+        "invalidMessage": string;
+        /**
+          * The text that will be used as a field label.
+         */
+        "label": string;
+        /**
+          * Sets HTML attributes and their values on the generated `ul` menu element. Useful for adding `aria-labelledby` and setting to the value of the `id` attribute on your existing label, to provide context to an assistive technology user. e.g. ``` const menuAttributes = {   className: 'custom-className',   class: 'custom-class',   id: 'custom-id',   role: 'custom-role' } ```
+         */
+        "menuAttributes": any;
+        /**
+          * Classes to add to the menu displaying the options.
+         */
+        "menuClasses": string;
+        /**
+          * Prevent displaying options until the minimum string length is reached. Ignored when show all values is enabled.
+         */
+        "minLength": number;
+        /**
+          * The name for the `<input>` element.
+         */
+        "name": string;
+        /**
+          * Populate the placeholder attribute on the `<input>` element.
+         */
+        "placeholder": string;
+        /**
+          * Populates the required field on the `<input>` element.
+         */
+        "required": boolean;
+        /**
+          * Toggle showing all values when the input is clicked, like a default dropdown.
+         */
+        "showAllValues": boolean;
+        /**
+          * Toggle whether to display the "No results found" message.
+         */
+        "showNoOptionsFound": boolean;
+        /**
+          * The value of the input.
+         */
+        "value"?: string | null;
+    }
+    interface AdmiraltyAutocompleteOption {
+        /**
+          * The text value of the option.
+         */
+        "value"?: any | null;
+    }
     interface AdmiraltyBreadcrumb {
         /**
           * When `true` the breadcrumb will by styled to show that it is the currently active breadcrumb. Defaults to `true` for the last breadcrumb if it is not set on any.
@@ -612,6 +702,10 @@ export namespace Components {
         "value": string;
     }
 }
+export interface AdmiraltyAutocompleteCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLAdmiraltyAutocompleteElement;
+}
 export interface AdmiraltyCheckboxCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLAdmiraltyCheckboxElement;
@@ -689,6 +783,29 @@ export interface AdmiraltyTypeAheadCustomEvent<T> extends CustomEvent<T> {
     target: HTMLAdmiraltyTypeAheadElement;
 }
 declare global {
+    interface HTMLAdmiraltyAutocompleteElementEventMap {
+        "admiraltyChange": AutoCompleteChangeEventDetail;
+    }
+    interface HTMLAdmiraltyAutocompleteElement extends Components.AdmiraltyAutocomplete, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLAdmiraltyAutocompleteElementEventMap>(type: K, listener: (this: HTMLAdmiraltyAutocompleteElement, ev: AdmiraltyAutocompleteCustomEvent<HTMLAdmiraltyAutocompleteElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLAdmiraltyAutocompleteElementEventMap>(type: K, listener: (this: HTMLAdmiraltyAutocompleteElement, ev: AdmiraltyAutocompleteCustomEvent<HTMLAdmiraltyAutocompleteElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLAdmiraltyAutocompleteElement: {
+        prototype: HTMLAdmiraltyAutocompleteElement;
+        new (): HTMLAdmiraltyAutocompleteElement;
+    };
+    interface HTMLAdmiraltyAutocompleteOptionElement extends Components.AdmiraltyAutocompleteOption, HTMLStencilElement {
+    }
+    var HTMLAdmiraltyAutocompleteOptionElement: {
+        prototype: HTMLAdmiraltyAutocompleteOptionElement;
+        new (): HTMLAdmiraltyAutocompleteOptionElement;
+    };
     interface HTMLAdmiraltyBreadcrumbElement extends Components.AdmiraltyBreadcrumb, HTMLStencilElement {
     }
     var HTMLAdmiraltyBreadcrumbElement: {
@@ -909,6 +1026,8 @@ declare global {
     };
     interface HTMLAdmiraltyInputElementEventMap {
         "admiraltyInput": InputChangeEventDetail;
+        "admiraltyFocus": FocusEvent;
+        "admiraltyBlur": FocusEvent;
     }
     /**
      * Once this component works, review whether a form field component should be created so
@@ -1215,6 +1334,8 @@ declare global {
         new (): HTMLAdmiraltyTypeAheadItemElement;
     };
     interface HTMLElementTagNameMap {
+        "admiralty-autocomplete": HTMLAdmiraltyAutocompleteElement;
+        "admiralty-autocomplete-option": HTMLAdmiraltyAutocompleteOptionElement;
         "admiralty-breadcrumb": HTMLAdmiraltyBreadcrumbElement;
         "admiralty-breadcrumbs": HTMLAdmiraltyBreadcrumbsElement;
         "admiralty-button": HTMLAdmiraltyButtonElement;
@@ -1265,6 +1386,98 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface AdmiraltyAutocomplete {
+        /**
+          * The hint that is provided to assistive users.
+         */
+        "assistiveHint"?: string;
+        /**
+          * Automatically select the first matching option.
+         */
+        "autoselect"?: boolean;
+        /**
+          * Toggle automatically confirming a selection when the field is blurred.
+         */
+        "confirmOnBlur"?: boolean;
+        /**
+          * The default CSS namespace.
+         */
+        "cssNamespace"?: string;
+        /**
+          * When `true`, the component cannot be interacted with.
+         */
+        "disabled"?: boolean;
+        /**
+          * When set to `overlay` this option will display the menu as an absolutely positioned overlay instead of inline.
+         */
+        "displayMenu"?: string;
+        /**
+          * TThe text which will be used under the label to describe the input.
+         */
+        "hint"?: string;
+        /**
+          * Classes to add to the component's `<input>` element.
+         */
+        "inputClasses"?: string;
+        /**
+          * Whether to show that the component is in an invalid state.
+         */
+        "invalid"?: boolean;
+        /**
+          * The message to show when the component is invalid.
+         */
+        "invalidMessage"?: string;
+        /**
+          * The text that will be used as a field label.
+         */
+        "label"?: string;
+        /**
+          * Sets HTML attributes and their values on the generated `ul` menu element. Useful for adding `aria-labelledby` and setting to the value of the `id` attribute on your existing label, to provide context to an assistive technology user. e.g. ``` const menuAttributes = {   className: 'custom-className',   class: 'custom-class',   id: 'custom-id',   role: 'custom-role' } ```
+         */
+        "menuAttributes"?: any;
+        /**
+          * Classes to add to the menu displaying the options.
+         */
+        "menuClasses"?: string;
+        /**
+          * Prevent displaying options until the minimum string length is reached. Ignored when show all values is enabled.
+         */
+        "minLength"?: number;
+        /**
+          * The name for the `<input>` element.
+         */
+        "name"?: string;
+        /**
+          * Emitted when the value has changed.
+         */
+        "onAdmiraltyChange"?: (event: AdmiraltyAutocompleteCustomEvent<AutoCompleteChangeEventDetail>) => void;
+        /**
+          * Populate the placeholder attribute on the `<input>` element.
+         */
+        "placeholder"?: string;
+        /**
+          * Populates the required field on the `<input>` element.
+         */
+        "required"?: boolean;
+        /**
+          * Toggle showing all values when the input is clicked, like a default dropdown.
+         */
+        "showAllValues"?: boolean;
+        /**
+          * Toggle whether to display the "No results found" message.
+         */
+        "showNoOptionsFound"?: boolean;
+        /**
+          * The value of the input.
+         */
+        "value"?: string | null;
+    }
+    interface AdmiraltyAutocompleteOption {
+        /**
+          * The text value of the option.
+         */
+        "value"?: any | null;
+    }
     interface AdmiraltyBreadcrumb {
         /**
           * When `true` the breadcrumb will by styled to show that it is the currently active breadcrumb. Defaults to `true` for the last breadcrumb if it is not set on any.
@@ -1594,6 +1807,14 @@ declare namespace LocalJSX {
           * The name of the control, which is submitted with the form data.
          */
         "name"?: string;
+        /**
+          * Emitted when the input loses focus.
+         */
+        "onAdmiraltyBlur"?: (event: AdmiraltyInputCustomEvent<FocusEvent>) => void;
+        /**
+          * Emitted when the input gains focus.
+         */
+        "onAdmiraltyFocus"?: (event: AdmiraltyInputCustomEvent<FocusEvent>) => void;
         /**
           * Emitted when the value has changed.
          */
@@ -1970,6 +2191,8 @@ declare namespace LocalJSX {
         "value"?: string;
     }
     interface IntrinsicElements {
+        "admiralty-autocomplete": AdmiraltyAutocomplete;
+        "admiralty-autocomplete-option": AdmiraltyAutocompleteOption;
         "admiralty-breadcrumb": AdmiraltyBreadcrumb;
         "admiralty-breadcrumbs": AdmiraltyBreadcrumbs;
         "admiralty-button": AdmiraltyButton;
@@ -2023,6 +2246,8 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "admiralty-autocomplete": LocalJSX.AdmiraltyAutocomplete & JSXBase.HTMLAttributes<HTMLAdmiraltyAutocompleteElement>;
+            "admiralty-autocomplete-option": LocalJSX.AdmiraltyAutocompleteOption & JSXBase.HTMLAttributes<HTMLAdmiraltyAutocompleteOptionElement>;
             "admiralty-breadcrumb": LocalJSX.AdmiraltyBreadcrumb & JSXBase.HTMLAttributes<HTMLAdmiraltyBreadcrumbElement>;
             "admiralty-breadcrumbs": LocalJSX.AdmiraltyBreadcrumbs & JSXBase.HTMLAttributes<HTMLAdmiraltyBreadcrumbsElement>;
             "admiralty-button": LocalJSX.AdmiraltyButton & JSXBase.HTMLAttributes<HTMLAdmiraltyButtonElement>;

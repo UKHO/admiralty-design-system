@@ -5,6 +5,7 @@ import SideNav, { SideNavItem } from "@/components/side-nav/side-nav";
 
 const sideNavItems: SideNavItem[] = [
   { path: "/", title: "Overview" },
+  { path: "autocomplete", title: "Autocomplete" },
   { path: "breadcrumbs", title: "Breadcrumbs" },
   { path: "button", title: "Button" },
   { path: "card", title: "Card" },
@@ -37,7 +38,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className={styles.contentContainer}>
       <SideNav rootPath="/components" items={sideNavItems} />
-      <div>{children}</div>
+      <div className={styles.content}>{children}</div>
     </div>
   );
 }

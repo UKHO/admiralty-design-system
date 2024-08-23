@@ -1,3 +1,111 @@
+# v0.18.2 (Tue Aug 20 2024)
+
+#### 🐛 Bug Fix
+
+- `@ukho/admiralty-core`
+  - chore: Update packages [#242](https://github.com/UKHO/admiralty-design-system/pull/242) ([@UKHOGreg](https://github.com/UKHOGreg))
+
+#### Authors: 1
+
+- Greg Williams ([@UKHOGreg](https://github.com/UKHOGreg))
+
+---
+
+# v0.18.1 (Wed Aug 07 2024)
+
+#### 🐛 Bug Fix
+
+- `@ukho/admiralty-core`
+  - Do not clear autocomplete default value before options have been rendered [#239](https://github.com/UKHO/admiralty-design-system/pull/239) ([@buzzub](https://github.com/buzzub))
+
+#### Authors: 1
+
+- Natalie ([@buzzub](https://github.com/buzzub))
+
+---
+
+# v0.18.0 (Mon Aug 05 2024)
+
+#### 🚀 Enhancement
+
+- `@ukho/admiralty-core`
+  - fix: force the header to re-render when the slot contents change [#234](https://github.com/UKHO/admiralty-design-system/pull/234) ([@buzzub](https://github.com/buzzub))
+
+#### Authors: 1
+
+- Natalie ([@buzzub](https://github.com/buzzub))
+
+---
+
+# v0.17.0 (Fri Aug 02 2024)
+
+#### 🚀 Enhancement
+
+- `@ukho/admiralty-core`
+  - feature: do not display error component when no error is present [#232](https://github.com/UKHO/admiralty-design-system/pull/232) ([@buzzub](https://github.com/buzzub))
+
+#### Authors: 1
+
+- Natalie ([@buzzub](https://github.com/buzzub))
+
+---
+
+# v0.16.0 (Fri Aug 02 2024)
+
+#### 🚀 Enhancement
+
+- `@ukho/admiralty-core`
+  - fix: input error spacing [#229](https://github.com/UKHO/admiralty-design-system/pull/229) ([@buzzub](https://github.com/buzzub))
+
+#### Authors: 1
+
+- Natalie ([@buzzub](https://github.com/buzzub))
+
+---
+
+# v0.15.0 (Fri Aug 02 2024)
+
+#### 🚀 Enhancement
+
+- `@ukho/admiralty-angular`, `@ukho/admiralty-core`
+  - Autocomplete dropdown [#197](https://github.com/UKHO/admiralty-design-system/pull/197) ([@UKHOGreg](https://github.com/UKHOGreg) [@ecstaticrainbow](https://github.com/ecstaticrainbow) [@buzzub](https://github.com/buzzub))
+
+#### Authors: 3
+
+- Greg Williams ([@UKHOGreg](https://github.com/UKHOGreg))
+- Natalie ([@buzzub](https://github.com/buzzub))
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
+# v0.14.2 (Tue Jul 31 2024)
+
+#### 🐛 Bug Fix
+
+- `@ukho/admiralty-core`
+  - fix: page width on design system website [#228](https://github.com/UKHO/admiralty-design-system/pull/228) ([@buzzub](https://github.com/buzzub))
+
+#### Authors: 1
+
+- Natalie ([@buzzub](https://github.com/buzzub))
+
+---
+
+# v0.14.1 (Mon Jul 29 2024)
+
+#### 🐛 Bug Fix
+
+- `@ukho/admiralty-core`
+  - Properly describe form validation errors [#166](https://github.com/UKHO/admiralty-design-system/pull/166) ([@lstevens98](https://github.com/lstevens98) [@ecstaticrainbow](https://github.com/ecstaticrainbow) [@buzzub](https://github.com/buzzub))
+
+#### Authors: 3
+
+- Lewis Stevens ([@lstevens98](https://github.com/lstevens98))
+- Natalie ([@buzzub](https://github.com/buzzub))
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
 # v0.14.0 (Thu May 23 2024)
 
 #### 🚀 Enhancement
@@ -662,3 +770,4 @@
 #### Authors: 1
 
 - Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
