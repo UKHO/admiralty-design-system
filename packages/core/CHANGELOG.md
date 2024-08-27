@@ -1,3 +1,23 @@
+# v0.19.0 (Tue Aug 27 2024)
+
+#### 🚀 Enhancement
+
+- Remove aria-hidden attribute from file upload and cater for no files selected [#244](https://github.com/UKHO/admiralty-design-system/pull/244) ([@buzzub](https://github.com/buzzub))
+
+#### 🐛 Bug Fix
+
+- fix: Forward additional attributes name, form and value to button [#240](https://github.com/UKHO/admiralty-design-system/pull/240) ([@buzzub](https://github.com/buzzub))
+
+#### 📝 Documentation
+
+- chore: manually update changelog [#236](https://github.com/UKHO/admiralty-design-system/pull/236) ([@buzzub](https://github.com/buzzub))
+
+#### Authors: 1
+
+- Natalie ([@buzzub](https://github.com/buzzub))
+
+---
+
 # v0.18.2 (Tue Aug 20 2024)
 
 #### 🐛 Bug Fix
