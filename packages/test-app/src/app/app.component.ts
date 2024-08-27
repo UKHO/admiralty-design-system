@@ -71,6 +71,10 @@ export class AppComponent {
     this.active = index;
   }
 
+  onFileInputChange(event: CustomEvent) {
+    console.log('onFileInputChange', event.detail);
+  }
+
   onIncreaseProgressClick() {
     this.progress++;
     console.log('onIncreaseProgressClick', this.progress);
