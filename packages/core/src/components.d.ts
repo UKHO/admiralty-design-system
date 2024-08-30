@@ -130,19 +130,19 @@ export namespace Components {
     interface AdmiraltyButton {
         /**
           * Determines whether the button is disabled. A button in disabled state will not fire click output events.
-        */
+         */
         "disabled": boolean;
         /**
           * When passed Font Awesome Icon name, then an icon will be rendered.
-        */
+         */
         "icon": IconName;
         /**
           * The default behavior of the button. Valid values are `button`, `submit` and `reset`. Default value is `submit`.
-        */
+         */
         "type": 'button' | 'submit' | 'reset';
         /**
           * The type of button to render. Valid values are `primary`, `secondary`, `warning`, `text` and `icon`. Default value is `primary`.
-        */
+         */
         "variant": ButtonVariant;
   }
     interface AdmiraltyCard {
