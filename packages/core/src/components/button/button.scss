@@ -239,6 +239,7 @@ button.icon {
   background-color: var(--button-icon-background-colour, colours.$colour-bg-grey);
   color: colours.$colour-admiralty-blue;
   border: 2px solid colours.$colour-admiralty-blue;
+  padding: 10px 14px;
 
   &:focus {
     padding: 12px 16px 8px;
