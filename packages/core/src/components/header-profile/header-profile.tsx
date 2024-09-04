@@ -105,15 +105,15 @@ export class HeaderProfileComponent {
             <div>
               <div class="desktop" onMouseOver={this.toggleDropdown}>
                 <button onClick={this.handleClickSignedIn} tabindex="0">
-                  {signedInText}
+                  <div>{signedInText}</div>
                 </button>
                 {!signInOnly ? (
                   <div class="sub-menu desktop-hide">
                     <button class="sub-menu-item" onClick={this.handleYourAccount} tabindex="0">
-                      Your Account
+                      <div>Your Account</div>
                     </button>
                     <button class="sub-menu-item" onClick={this.handleSignOut} tabindex="0">
-                      Sign Out
+                      <div>Sign Out</div>
                     </button>
                   </div>
                 ) : null}
@@ -131,7 +131,7 @@ export class HeaderProfileComponent {
             </div>
           ) : (
             <button class="sub-menu-item" onClick={this.handleSignIn} tabindex="0">
-              Sign In
+              <div>Sign In</div>
             </button>
           )}
         </div>

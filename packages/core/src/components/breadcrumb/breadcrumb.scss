@@ -1,7 +1,7 @@
-@use "../../scss/base/responsive";
+@use '../../scss/base/responsive';
 
-@use "../../scss/vars/colours";
-@use "../../scss/vars/typography";
+@use '../../scss/vars/colours';
+@use '../../scss/vars/typography';
 
 :host {
   display: flex;
@@ -23,6 +23,13 @@ a {
 
   &:hover {
     color: colours.$colour-admiralty-blue;
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+    text-decoration-thickness: 0.15em;
+  }
+
+  &:focus {
+    text-decoration: none;
   }
 
   &.active {

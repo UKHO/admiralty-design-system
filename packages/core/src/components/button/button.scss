@@ -1,7 +1,7 @@
-@use "../../scss/base/responsive";
-
-@use "../../scss/vars/colours";
-@use "../../scss/vars/typography";
+@use '../../scss/base/responsive';
+@use '../../scss/vars/colours';
+@use '../../scss/vars/typography';
+@use '../../scss/base/a11y';
 
 @mixin button-defaults {
   display: inline-flex;
@@ -17,7 +17,14 @@
   cursor: pointer;
 
   &:focus {
-    outline: 3px solid colours.$colour-utility-focus;
+    outline: none;
+    box-shadow: none;
+    color: colours.$colour-text;
+    background-color: colours.$colour-utility-focus;
+    border: 2px solid colours.$colour-utility-focus;
+    ::slotted(*) {
+      color: colours.$colour-text !important;
+    }
   }
 
   &:disabled {
@@ -67,6 +74,7 @@ button.primary {
 
   &:hover {
     background-color: colours.$colour-button-hover;
+    color: colours.$colour-button-text;
     border: 2px solid colours.$colour-button-hover;
   }
 
@@ -99,6 +107,7 @@ button.secondary {
 
   &:hover {
     background-color: colours.$colour-button-secondary-hover;
+    color: colours.$colour-button-secondary-text;
     border: 2px solid colours.$colour-button-secondary-border-hover;
   }
 
@@ -135,6 +144,7 @@ button.warning {
 
   &:hover {
     background-color: colours.darken(colours.$colour-utility-error);
+    color: colours.$colour-white;
     border: 2px solid colours.darken(colours.$colour-utility-error);
   }
 
@@ -190,7 +200,14 @@ button.text {
   }
 
   &:focus {
-    outline-offset: 3px;
+    border: none;
+    box-shadow:
+      0 -2px colours.$colour-utility-focus,
+      0 4px colours.$colour-text;
+    text-decoration: none;
+    ::slotted(*) {
+      color: colours.$colour-text !important;
+    }
   }
 
   i {
@@ -209,9 +226,23 @@ button.icon {
   color: colours.$colour-admiralty-blue;
   border: 2px solid colours.$colour-admiralty-blue;
 
+  &:focus {
+    border: 2px solid colours.$colour-utility-focus;
+  }
+
+  &:hover {
+    background-color: darken(colours.$colour-bg-grey, 5);
+    border: 2px solid colours.$colour-admiralty-blue;
+  }
+
   &:enabled:active {
     background-color: colours.$colour-admiralty-blue;
     color: colours.$colour-white;
+    border: 2px solid transparent;
+
+    admiralty-icon {
+      color: colours.$colour-white !important;
+    }
   }
 
   &:disabled {

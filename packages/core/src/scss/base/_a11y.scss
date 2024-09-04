@@ -1,3 +1,5 @@
+@use '../vars/colours';
+
 /* Use for content that should be read by screen readers but not seen */
 .visually-hidden:not(:focus):not(:active) {
   position: absolute !important;
@@ -11,4 +13,14 @@
   clip-path: inset(50%) !important;
   border: 0 !important;
   white-space: nowrap !important;
+}
+
+@mixin focus-highlight() {
+  outline: 3px solid transparent;
+  color: colours.$colour-black;
+  background-color: colours.$colour-utility-focus;
+  box-shadow:
+    0 -2px colours.$colour-utility-focus,
+    0 4px colours.$colour-text;
+  text-decoration: none;
 }

@@ -2,7 +2,7 @@
 @use '../../scss/vars/typography';
 
 .admiralty-file-input {
-  background: #eee;
+  background: colours.$colour-bg-grey;
   display: flex;
   position: relative;
   border: 2px dashed colours.$colour-admiralty-blue;
@@ -15,13 +15,17 @@
   line-height: 24px;
   font-weight: 300;
 
+  &:hover {
+    background-color: darken(colours.$colour-bg-grey, 5);
+  }
+
   &.invalid {
     border-color: colours.$colour-utility-error;
   }
 
   &.drop_zone {
     // active when file is dragged over label
-    background: #fff !important;
+    background: colours.$colour-bg !important;
   }
 
   .upload-icon {
@@ -67,4 +71,9 @@ input[type='file'] {
     outline: 3px solid colours.$colour-utility-focus;
     outline-offset: 2px;
   }
+}
+
+input[type='file']:focus + label {
+  outline: 2px solid colours.$colour-text;
+  box-shadow: colours.$colour-text inset 0 0 0 2px;
 }

@@ -1,6 +1,7 @@
 @use '../../scss/vars/colours' as colours;
 @use '../../scss/base/responsive';
 @use '../../scss/vars/typography';
+@use '../../scss/base/a11y';
 
 @mixin active {
   box-shadow: inset 0 -5px colours.$colour-admiralty-blue;
@@ -12,8 +13,8 @@
   .menu-title {
     font-size: typography.$font-size-normal;
 
-    &:focus {
-      box-shadow: colours.$colour-utility-focus inset 0 0 0 3px;
+    &:focus div {
+      @include a11y.focus-highlight;
     }
   }
 }
@@ -56,7 +57,7 @@ button {
       }
     }
 
-    .menu-title {
+    .menu-title div {
       font-weight: typography.$font-weight-medium;
     }
 
