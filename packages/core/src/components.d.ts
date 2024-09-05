@@ -144,7 +144,7 @@ export namespace Components {
           * The type of button to render. Valid values are `primary`, `secondary`, `warning`, `text` and `icon`. Default value is `primary`.
          */
         "variant": ButtonVariant;
-    }
+  }
     interface AdmiraltyCard {
         /**
           * The title of the card.
@@ -545,9 +545,17 @@ export namespace Components {
     }
     interface AdmiraltyRadioGroup {
         /**
-          * Setting this true displays the radio options vertically (defaults to false)
+          * Whether the radio controls should be disabled
+         */
+        "disabled": boolean;
+        /**
+          * Setting this to false displays the radio options horizontally (defaults to true)
          */
         "displayVertical": boolean;
+        /**
+          * The hint text to display below the label
+         */
+        "hint": string;
         /**
           * Whether to show the input in an invalid state
          */
@@ -556,6 +564,10 @@ export namespace Components {
           * The message to show when the input is invalid
          */
         "invalidMessage": string;
+        /**
+          * The label text to display above the control
+         */
+        "label": string;
         /**
           * The name of the control, which is submitted with the form data
          */
@@ -2056,9 +2068,17 @@ declare namespace LocalJSX {
     }
     interface AdmiraltyRadioGroup {
         /**
-          * Setting this true displays the radio options vertically (defaults to false)
+          * Whether the radio controls should be disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * Setting this to false displays the radio options horizontally (defaults to true)
          */
         "displayVertical"?: boolean;
+        /**
+          * The hint text to display below the label
+         */
+        "hint"?: string;
         /**
           * Whether to show the input in an invalid state
          */
@@ -2067,6 +2087,10 @@ declare namespace LocalJSX {
           * The message to show when the input is invalid
          */
         "invalidMessage"?: string;
+        /**
+          * The label text to display above the control
+         */
+        "label"?: string;
         /**
           * The name of the control, which is submitted with the form data
          */

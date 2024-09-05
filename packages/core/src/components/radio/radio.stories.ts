@@ -14,7 +14,9 @@ const meta: Meta = {
 
 export default meta;
 
-type Story = StoryObj<RadioComponent>;
+type RadioComponentArgs = Partial<RadioComponent & { labelText: string }>;
+
+type Story = StoryObj<RadioComponentArgs>;
 
 const template: Story = {
   render: args =>
