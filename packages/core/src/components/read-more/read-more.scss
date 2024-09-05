@@ -26,7 +26,7 @@ section.expansion {
     align-items: baseline;
     text-align: left;
     text-decoration: underline;
-    font-weight: 300;
+    font-weight: $read-more-heading-font-weight;
 
     &.expanded span {
       font-weight: $read-more-text-weight;
