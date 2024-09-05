@@ -43,7 +43,9 @@
     background-color: $tertiary-colour-block-colour;
     color: $tertiary-colour-block-text-colour;
     .clickAction * {
-      color: $tertiary-colour-block-text-colour;
+      span {
+        color: $tertiary-colour-block-text-colour;
+      }
     }
   }
 }
