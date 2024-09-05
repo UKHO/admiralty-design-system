@@ -13,6 +13,7 @@ describe('admiralty-radio', () => {
           <input aria-checked="false" aria-labelledby="admiralty-radio-0" class="admiralty-radio" id="admiralty-radio-0" name="admiralty-radio-0" tabindex="-1" type="radio" value="admiralty-radio-0">
           <label htmlfor="admiralty-radio-0"></label>
         </div>
+        <div class="conditional unchecked"></div>
       </admiralty-radio>
     `);
   });
@@ -32,6 +33,7 @@ describe('admiralty-radio', () => {
             Option 1
           </label>
         </div>
+        <div class="conditional unchecked"></div>
       </admiralty-radio>
     `);
   });
@@ -51,6 +53,7 @@ describe('admiralty-radio', () => {
             Option 1
           </label>
         </div>
+        <div class="conditional unchecked"></div>
       </admiralty-radio>
     `);
   });
@@ -70,6 +73,7 @@ describe('admiralty-radio', () => {
             Option 1
           </label>
         </div>
+        <div class="conditional unchecked"></div>
       </admiralty-radio>
     `);
   });

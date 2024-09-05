@@ -5,13 +5,16 @@
 
 ## Properties
 
-| Property          | Attribute          | Description                                                                 | Type      | Default        |
-| ----------------- | ------------------ | --------------------------------------------------------------------------- | --------- | -------------- |
-| `displayVertical` | `display-vertical` | Setting this true displays the radio options vertically (defaults to false) | `boolean` | `false`        |
-| `invalid`         | `invalid`          | Whether to show the input in an invalid state                               | `boolean` | `false`        |
-| `invalidMessage`  | `invalid-message`  | The message to show when the input is invalid                               | `string`  | `undefined`    |
-| `name`            | `name`             | The name of the control, which is submitted with the form data              | `string`  | `this.inputId` |
-| `value`           | `value`            | The value of the radio group                                                | `any`     | `undefined`    |
+| Property          | Attribute          | Description                                                                      | Type      | Default        |
+| ----------------- | ------------------ | -------------------------------------------------------------------------------- | --------- | -------------- |
+| `disabled`        | `disabled`         | Whether the radio controls should be disabled                                    | `boolean` | `false`        |
+| `displayVertical` | `display-vertical` | Setting this to false displays the radio options horizontally (defaults to true) | `boolean` | `true`         |
+| `hint`            | `hint`             | The hint text to display below the label                                         | `string`  | `undefined`    |
+| `invalid`         | `invalid`          | Whether to show the input in an invalid state                                    | `boolean` | `false`        |
+| `invalidMessage`  | `invalid-message`  | The message to show when the input is invalid                                    | `string`  | `undefined`    |
+| `label`           | `label`            | The label text to display above the control                                      | `string`  | `undefined`    |
+| `name`            | `name`             | The name of the control, which is submitted with the form data                   | `string`  | `this.inputId` |
+| `value`           | `value`            | The value of the radio group                                                     | `any`     | `undefined`    |
 
 
 ## Events
@@ -25,11 +28,13 @@
 
 ### Depends on
 
+- [admiralty-hint](../hint)
 - [admiralty-input-invalid](../input-invalid)
 
 ### Graph
 ```mermaid
 graph TD;
+  admiralty-radio-group --> admiralty-hint
   admiralty-radio-group --> admiralty-input-invalid
   admiralty-input-invalid --> admiralty-icon
   style admiralty-radio-group fill:#f9f,stroke:#333,stroke-width:4px

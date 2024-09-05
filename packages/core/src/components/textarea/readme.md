@@ -12,7 +12,6 @@
 | `invalid`        | `invalid`         | Whether to show the input in an invalid state                                                                  | `boolean`          | `false`     |
 | `invalidMessage` | `invalid-message` | The message to show when the input is invalid                                                                  | `string`           | `undefined` |
 | `label`          | `label`           | The label which will be used as a placeholder in the unfilled state, and as a field label in the filled state. | `string`           | `''`        |
-| `maxLength`      | `max-length`      | The maximum string length for the input field.                                                                 | `number`           | `undefined` |
 | `value`          | `value`           | The value of the textarea.                                                                                     | `number \| string` | `''`        |
 | `width`          | `width`           | The maximum width for the input field.                                                                         | `number`           | `undefined` |
 
