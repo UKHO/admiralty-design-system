@@ -1,0 +1,15 @@
+@import "../../styles/vars/globals";
+
+$autocomplete-background-colour: var(--admiralty-background-colour) !default;
+$autocomplete-text-colour: var(--admiralty-text-colour) !default;
+$autocomplete-focus-colour: var(--admiralty-focus-outline-colour) !default;
+$autocomplete-error-border-colour: var(--admiralty-colour-danger) !default;
+$autocomplete-disabled-border-colour: var(--admiralty-disabled-colour) !default;
+
+$autocomplete-option-hover-background-colour: var(--admiralty-colour-info) !default;
+$autocomplete-option-hover-text-colour: var(--admiralty-colour-info-contrast) !default;
+
+$autocomplete-option-no-results-background-colour: var(--admiralty-background-colour) !default;
+$autocomplete-option-no-results-text-colour: var(--admiralty-text-colour) !default;
+
+$autocomplete-dropdown-icon-colour: var(--admiralty-disabled-colour) !default;

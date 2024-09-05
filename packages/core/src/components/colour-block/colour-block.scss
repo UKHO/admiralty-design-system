@@ -19,13 +19,9 @@
     cursor: pointer;
 
     span {
-      font-weight: typography.$font-weight-medium;
-      font-size: 21px;
-      line-height: 30px;
-      @include responsive.not-desktop {
-        font-size: 20px;
-        line-height: 30px;
-      }
+      font-weight: $colour-block-action-font-weight;
+      font-size: $colour-block-action-text-size;
+      line-height: $colour-block-action-line-height;
     }
   }
 
@@ -47,7 +43,7 @@
     background-color: $tertiary-colour-block-colour;
     color: $tertiary-colour-block-text-colour;
     .clickAction * {
-      color: colours.$colour-admiralty-blue;
+      color: $tertiary-colour-block-text-colour;
     }
   }
 }
