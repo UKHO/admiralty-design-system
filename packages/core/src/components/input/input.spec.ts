@@ -108,20 +108,3 @@ describe('admiralty-input', () => {
     `);
   });
 });
-
-it('renders with maxlength', async () => {
-  inputId++;
-  errorId++;
-  const page = await newSpecPage({
-    components: [InputComponent],
-    html: `<admiralty-input max-length="1"></admiralty-input>`,
-  });
-  expect(page.root).toEqualHtml(`
-  <admiralty-input max-length="1">
-    <div class="text-input-container">
-      <input autocomplete="off" aria-describedby=" " aria-invalid="false" id="admiralty-input-${inputId}" maxlength="1" name="admiralty-input-7" type="text" value="">
-      <admiralty-input-invalid id="admiralty-input-error-${inputId}" style="display: none;"></admiralty-input-invalid>
-    </div>
-  </admiralty-input>
-`);
-});

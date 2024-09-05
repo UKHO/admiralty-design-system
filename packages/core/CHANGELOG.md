@@ -1,3 +1,50 @@
+# v0.23.0 (Thu Sep 05 2024)
+
+#### 🚀 Enhancement
+
+- Update radio buttons and radio group [#246](https://github.com/UKHO/admiralty-design-system/pull/246) ([@buzzub](https://github.com/buzzub))
+
+#### 🐛 Bug Fix
+
+- Remove maxinput property from input fields [#247](https://github.com/UKHO/admiralty-design-system/pull/247) ([@buzzub](https://github.com/buzzub))
+
+#### Authors: 1
+
+- Natalie ([@buzzub](https://github.com/buzzub))
+
+---
+
+# v0.22.0 (Thu Sep 05 2024)
+
+#### 🚀 Enhancement
+
+- Change Header Component to H2 [#225](https://github.com/UKHO/admiralty-design-system/pull/225) ([@lstevens98](https://github.com/lstevens98) [@buzzub](https://github.com/buzzub))
+
+#### 🐛 Bug Fix
+
+- Update dialogue text to be a h2 [#245](https://github.com/UKHO/admiralty-design-system/pull/245) ([@buzzub](https://github.com/buzzub))
+
+#### Authors: 2
+
+- Lewis Stevens ([@lstevens98](https://github.com/lstevens98))
+- Natalie ([@buzzub](https://github.com/buzzub))
+
+---
+
+# v0.21.0 (Thu Sep 05 2024)
+
+#### 🚀 Enhancement
+
+- feature: header items should be links [#233](https://github.com/UKHO/admiralty-design-system/pull/233) ([@buzzub](https://github.com/buzzub) [@UKHOGreg](https://github.com/UKHOGreg) [@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+#### Authors: 3
+
+- Greg Williams ([@UKHOGreg](https://github.com/UKHOGreg))
+- Natalie ([@buzzub](https://github.com/buzzub))
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
 # v0.20.0 (Thu Sep 05 2024)
 
 #### 🚀 Enhancement

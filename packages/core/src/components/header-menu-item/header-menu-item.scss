@@ -8,6 +8,7 @@
 }
 
 .menu-item {
+  color: colours.$colour-admiralty-blue;
   cursor: pointer;
 
   .menu-title {
@@ -84,7 +85,6 @@ button {
   .menu-item {
     display: block;
     box-sizing: border-box;
-    color: colours.$colour-admiralty-blue;
     background-color: unset;
     text-align: unset;
     text-decoration: unset;

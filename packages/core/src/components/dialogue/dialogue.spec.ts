@@ -12,6 +12,7 @@ describe('admiralty-dialogue', () => {
         <section class="dialogue info">
           <div class="dialogue-title">
             <admiralty-icon class="dialogue-title-icon" icon-name="circle-info"></admiralty-icon>
+            <h2></h2>
           </div>
         </section>
       </admiralty-dialogue>
@@ -28,7 +29,7 @@ describe('admiralty-dialogue', () => {
         <section class="dialogue info">
           <div class="dialogue-title">
             <admiralty-icon class="dialogue-title-icon" icon-name="circle-info"></admiralty-icon>
-            Test
+            <h2>Test</h2>
           </div>
           Content
         </section>
@@ -46,7 +47,7 @@ describe('admiralty-dialogue', () => {
         <section class="dialogue error">
           <div class="dialogue-title">
             <admiralty-icon class="dialogue-title-icon" icon-name="exclamation"></admiralty-icon>
-            Test
+            <h2>Test</h2>
           </div>
           Content
         </section>
@@ -64,7 +65,7 @@ describe('admiralty-dialogue', () => {
         <section class="dialogue success">
           <div class="dialogue-title">
             <admiralty-icon class="dialogue-title-icon" icon-name="check"></admiralty-icon>
-            Test
+            <h2>Test</h2>
           </div>
           Content
         </section>
@@ -82,7 +83,7 @@ describe('admiralty-dialogue', () => {
         <section class="dialogue warning">
           <div class="dialogue-title">
             <admiralty-icon class="dialogue-title-icon" icon-name="triangle-exclamation"></admiralty-icon>
-            Test
+            <h2>Test</h2>
           </div>
           Content
        </section>

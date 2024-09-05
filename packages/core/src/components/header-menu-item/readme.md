@@ -9,7 +9,7 @@
 
 | Property    | Attribute    | Description                                 | Type      | Default     |
 | ----------- | ------------ | ------------------------------------------- | --------- | ----------- |
-| `active`    | `active`     | The text that will be displayed in the menu | `boolean` | `false`     |
+| `active`    | `active`     | Whether the item is active                  | `boolean` | `false`     |
 | `menuTitle` | `menu-title` | The text that will be displayed in the menu | `string`  | `undefined` |
 
 

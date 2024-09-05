@@ -48,3 +48,15 @@
     top: 2px;
   }
 }
+
+.conditional {
+  margin: 10px 0 0 10px;
+  padding-left: 28px;
+  border-left: 4px solid lightgrey;
+  &:empty {
+    margin: 0;
+  }
+  &.unchecked {
+    display: none;
+  }
+}

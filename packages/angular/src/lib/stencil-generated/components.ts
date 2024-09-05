@@ -103,14 +103,14 @@ export declare interface AdmiraltyBreadcrumbs extends Components.AdmiraltyBreadc
 
 
 @ProxyCmp({
-  inputs: ['disabled', 'icon', 'type', 'variant']
+  inputs: ['disabled', 'form', 'icon', 'name', 'type', 'value', 'variant']
 })
 @Component({
   selector: 'admiralty-button',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['disabled', 'icon', 'type', 'variant'],
+  inputs: ['disabled', 'form', 'icon', 'name', 'type', 'value', 'variant'],
 })
 export class AdmiraltyButton {
   protected el: HTMLElement;
@@ -425,6 +425,34 @@ export declare interface AdmiraltyHeaderMenuItem extends Components.AdmiraltyHea
 
 
 @ProxyCmp({
+  inputs: ['active', 'href', 'menuTitle', 'suppressRedirect']
+})
+@Component({
+  selector: 'admiralty-header-menu-link',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['active', 'href', 'menuTitle', 'suppressRedirect'],
+})
+export class AdmiraltyHeaderMenuLink {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['menuItemClick']);
+  }
+}
+
+
+export declare interface AdmiraltyHeaderMenuLink extends Components.AdmiraltyHeaderMenuLink {
+  /**
+   * The event that is fired when a user clicks on the menu.
+   */
+  menuItemClick: EventEmitter<CustomEvent<void>>;
+}
+
+
+@ProxyCmp({
   inputs: ['isSignedIn', 'signInOnly', 'signedInText']
 })
 @Component({
@@ -558,14 +586,14 @@ export declare interface AdmiraltyIcon extends Components.AdmiraltyIcon {}
 
 
 @ProxyCmp({
-  inputs: ['autocomplete', 'disabled', 'hint', 'invalid', 'invalidMessage', 'label', 'maxLength', 'name', 'placeholder', 'required', 'type', 'value', 'width']
+  inputs: ['autocomplete', 'disabled', 'hint', 'invalid', 'invalidMessage', 'label', 'name', 'placeholder', 'required', 'type', 'value', 'width']
 })
 @Component({
   selector: 'admiralty-input',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['autocomplete', 'disabled', 'hint', 'invalid', 'invalidMessage', 'label', 'maxLength', 'name', 'placeholder', 'required', 'type', 'value', 'width'],
+  inputs: ['autocomplete', 'disabled', 'hint', 'invalid', 'invalidMessage', 'label', 'name', 'placeholder', 'required', 'type', 'value', 'width'],
 })
 export class AdmiraltyInput {
   protected el: HTMLElement;
@@ -1131,14 +1159,14 @@ export declare interface AdmiraltyTableRow extends Components.AdmiraltyTableRow 
 
 
 @ProxyCmp({
-  inputs: ['disabled', 'hint', 'invalid', 'invalidMessage', 'label', 'maxLength', 'value', 'width']
+  inputs: ['disabled', 'hint', 'invalid', 'invalidMessage', 'label', 'value', 'width']
 })
 @Component({
   selector: 'admiralty-textarea',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['disabled', 'hint', 'invalid', 'invalidMessage', 'label', 'maxLength', 'value', 'width'],
+  inputs: ['disabled', 'hint', 'invalid', 'invalidMessage', 'label', 'value', 'width'],
 })
 export class AdmiraltyTextarea {
   protected el: HTMLElement;
