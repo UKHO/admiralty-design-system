@@ -216,19 +216,15 @@ button.icon {
   }
 
   &:disabled {
-    background-color: $button-colour-deselected;
+    background-color: $button-disabled-colour-icon;
     border: 2px solid $button-active-border-colour-icon;
-    & > * {
-      opacity: 0.5;
-    }
+    opacity: 0.3;
   }
 
   &:active:disabled {
     background-color: $button-colour-deselected;
     border: 2px solid $button-active-border-colour-icon;
-    & > * {
-      opacity: 0.5;
-    }
+    opacity: 0.3;
   }
 
   i {
