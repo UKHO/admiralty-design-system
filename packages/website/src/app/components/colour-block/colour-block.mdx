@@ -6,41 +6,55 @@ Use all the colour block examples to separate content with a clear call to actio
 
 ## Contents
 
-## ADMIRALTY Blue Rectangle
+## Admiralty Blue
 
-import AdmiraltyBlueRectangle from "@/usage/colour-block/admiralty-blue-rectangle/index.mdx";
+import AdmiraltyBlue from "@/usage/colour-block/admiralty-blue/index.mdx";
 
-<AdmiraltyBlueRectangle />
+<AdmiraltyBlue />
 
-## ADMIRALTY Blue Square
+## Teal
 
-import AdmiraltyBlueSquare from "@/usage/colour-block/admiralty-blue-square/index.mdx";
+import Teal from "@/usage/colour-block/teal/index.mdx";
 
-<AdmiraltyBlueSquare />
+<Teal />
 
-## Bright Blue Rectangle
+## Bright Blue
 
-import BrightBlueRectangle from "@/usage/colour-block/bright-blue-rectangle/index.mdx";
+import BrightBlue from "@/usage/colour-block/bright-blue/index.mdx";
 
-<BrightBlueRectangle />
+<BrightBlue />
 
-## Bright Blue Square
+## No Redirect
 
-import BrightBlueSquare from "@/usage/colour-block/bright-blue-square/index.mdx";
+When the component is being used in a framework that has its own internal navigation, it can be useful to suppress the default browser redirect for the link so that the `colourBlockLinkClicked` event can call a navigation router function. This is useful when you do not want to perform a full page reload when navigating.
 
-<BrightBlueSquare />
+import NoRedirect from "@/usage/colour-block/no-redirect/index.mdx";
 
-## Teal Rectangle
+<NoRedirect />
 
-import TealRectangle from "@/usage/colour-block/teal-rectangle/index.mdx";
+## Listener On Block
 
-<TealRectangle />
+In addition to the link, the entire block can be made clickable. To ensure the component remains accessible a link should remain present.
 
-## Teal Square
+import ListenerOnBlock from "@/usage/colour-block/listener-on-block/index.mdx";
 
-import TealSquare from "@/usage/colour-block/teal-square/index.mdx";
+<ListenerOnBlock />
 
-<TealSquare />
+## No Link
+
+When no link or link text is specified the colour block will just display the header and content.
+
+import NoLink from "@/usage/colour-block/no-link/index.mdx";
+
+<NoLink />
+
+## Rectangle With Longer Content
+
+The height and width can be adjusted to suit the requirements and more complex content can be used.
+
+import RectangleWithLongerContent from "@/usage/colour-block/rectangle-with-longer-content/index.mdx";
+
+<RectangleWithLongerContent />
 
 ## Accessibility
 
@@ -48,7 +62,7 @@ Contrast levels are addressed with correct font colour for the relevant colour b
 
 ## Props
 
-import Props from "@docs/checkbox/props.mdx";
+import Props from "@docs/colour-block/props.mdx";
 
 <Props />
 

@@ -23,19 +23,40 @@ export class ColourBlockComponent {
    */
   @Prop() colour: 'admiralty-blue' | 'teal' | 'bright-blue' = 'admiralty-blue';
   /**
+   * The URL to link to.
+   */
+  @Prop() href: string;
+  /**
+   * The link text.
+   */
+  @Prop() linkText: string;
+  /**
+   * Causes the default browser redirect to be suppressed. Can be used in conjunction with the
+   * `colourBlockLinkClicked` event to use a navigation router and prevent a full page reload
+   * when navigating.
+   */
+  @Prop() suppressRedirect: boolean = false;
+  /**
+   * Allow the card to be clicked. Will emit a `colourBlockLinkClicked` event. A value for `href`
+   * should also be provided to ensure the component conforms to accessibility standards.
+   */
+  @Prop() enableCardEvent: boolean = false;
+  /**
    * An event emitted when this Colour Block link is clicked
    */
   @Event() colourBlockLinkClicked: EventEmitter<string>;
 
-  handleClickAction() {
-    this.emitColourBlockLinkClicked();
-  }
-
-  emitColourBlockLinkClicked() {
+  handleClickAction(ev: MouseEvent) {
+    if (this.suppressRedirect) {
+      ev.preventDefault();
+    }
+    ev.stopPropagation();
     this.colourBlockLinkClicked.emit();
   }
+
   /**
    * The text to display on the action button
+   * @deprecated in favour of `href` and `linkText`
    */
   @Prop() actionText: string;
 
@@ -49,7 +70,9 @@ export class ColourBlockComponent {
         style={{
           height: this.height ? `${this.height}px` : null,
           width: this.width ? `${this.width}px` : null,
+          ...(this.enableCardEvent && { cursor: 'pointer' }),
         }}
+        onClick={ev => (this.enableCardEvent ? this.handleClickAction(ev) : null)}
       >
         <h2>{this.heading}</h2>
         <div
@@ -61,9 +84,14 @@ export class ColourBlockComponent {
           <slot></slot>
         </div>
         {this.actionText ? (
-          <admiralty-button variant="text" class="clickAction" onClick={this.handleClickAction.bind(this)}>
-            <h3>{this.actionText}</h3>
+          <admiralty-button variant="text" class="clickAction" onClick={ev => this.handleClickAction(ev)}>
+            <span>{this.actionText}</span>
           </admiralty-button>
+        ) : null}
+        {this.linkText && this.href ? (
+          <a class="clickAction" href={this.href} onClick={ev => this.handleClickAction(ev)}>
+            <span>{this.linkText}</span>
+          </a>
         ) : null}
       </div>
     );
