@@ -425,6 +425,34 @@ export declare interface AdmiraltyHeaderMenuItem extends Components.AdmiraltyHea
 
 
 @ProxyCmp({
+  inputs: ['active', 'href', 'menuTitle', 'suppressRedirect']
+})
+@Component({
+  selector: 'admiralty-header-menu-link',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['active', 'href', 'menuTitle', 'suppressRedirect'],
+})
+export class AdmiraltyHeaderMenuLink {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['menuItemClick']);
+  }
+}
+
+
+export declare interface AdmiraltyHeaderMenuLink extends Components.AdmiraltyHeaderMenuLink {
+  /**
+   * The event that is fired when a user clicks on the menu.
+   */
+  menuItemClick: EventEmitter<CustomEvent<void>>;
+}
+
+
+@ProxyCmp({
   inputs: ['isSignedIn', 'signInOnly', 'signedInText']
 })
 @Component({
