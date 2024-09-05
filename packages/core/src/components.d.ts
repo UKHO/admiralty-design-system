@@ -133,13 +133,25 @@ export namespace Components {
          */
         "disabled": boolean;
         /**
+          * The `<form>` element to associate the button with (its form owner).
+         */
+        "form": string;
+        /**
           * When passed Font Awesome Icon name, then an icon will be rendered.
          */
         "icon": IconName;
         /**
+          * The name of the button, submitted as a pair with the button's value as part of the form data, when that button is used to submit the form.
+         */
+        "name": string;
+        /**
           * The default behavior of the button. Valid values are `button`, `submit` and `reset`. Default value is `submit`.
          */
         "type": 'button' | 'submit' | 'reset';
+        /**
+          * Defines the value associated with the button's name when it's submitted with the form data. This value is passed to the server in params when the form is submitted using this button.
+         */
+        "value": string;
         /**
           * The type of button to render. Valid values are `primary`, `secondary`, `warning`, `text` and `icon`. Default value is `primary`.
          */
@@ -411,10 +423,6 @@ export namespace Components {
           * The label which will be used above the input to describe the input.
          */
         "label": string;
-        /**
-          * The maximum string length for the input field.
-         */
-        "maxLength"?: number;
         /**
           * The name of the control, which is submitted with the form data.
          */
@@ -710,10 +718,6 @@ export namespace Components {
           * The label which will be used as a placeholder in the unfilled state, and as a field label in the filled state.
          */
         "label": string;
-        /**
-          * The maximum string length for the input field.
-         */
-        "maxLength"?: number;
         /**
           * The value of the textarea.
          */
@@ -1566,13 +1570,25 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
         /**
+          * The `<form>` element to associate the button with (its form owner).
+         */
+        "form"?: string;
+        /**
           * When passed Font Awesome Icon name, then an icon will be rendered.
          */
         "icon"?: IconName;
         /**
+          * The name of the button, submitted as a pair with the button's value as part of the form data, when that button is used to submit the form.
+         */
+        "name"?: string;
+        /**
           * The default behavior of the button. Valid values are `button`, `submit` and `reset`. Default value is `submit`.
          */
         "type"?: 'button' | 'submit' | 'reset';
+        /**
+          * Defines the value associated with the button's name when it's submitted with the form data. This value is passed to the server in params when the form is submitted using this button.
+         */
+        "value"?: string;
         /**
           * The type of button to render. Valid values are `primary`, `secondary`, `warning`, `text` and `icon`. Default value is `primary`.
          */
@@ -1907,10 +1923,6 @@ declare namespace LocalJSX {
           * The label which will be used above the input to describe the input.
          */
         "label"?: string;
-        /**
-          * The maximum string length for the input field.
-         */
-        "maxLength"?: number;
         /**
           * The name of the control, which is submitted with the form data.
          */
@@ -2254,10 +2266,6 @@ declare namespace LocalJSX {
           * The label which will be used as a placeholder in the unfilled state, and as a field label in the filled state.
          */
         "label"?: string;
-        /**
-          * The maximum string length for the input field.
-         */
-        "maxLength"?: number;
         /**
           * Event is fired when the form control changes
           * @event admiraltyChange
