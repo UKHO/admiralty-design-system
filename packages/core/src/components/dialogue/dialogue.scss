@@ -1,6 +1,6 @@
-@use "../../scss/base/responsive";
-@use "../../scss/vars/typography";
-@use "../../scss/vars/colours";
+@use '../../scss/base/responsive';
+@use '../../scss/vars/typography';
+@use '../../scss/vars/colours';
 
 .dialogue {
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
@@ -13,10 +13,6 @@
   }
 
   .dialogue-title {
-    color: colours.$colour-admiralty-blue;
-    font-size: 20px;
-    font-weight: typography.$font-weight-medium;
-    line-height: 30px;
     display: flex;
     align-items: center;
     overflow-wrap: break-word;
@@ -24,7 +20,18 @@
     margin-bottom: 12px;
 
     .dialogue-title-icon {
-      margin-right: 12px;
+      font-size: 18px;
+      color: colours.$colour-admiralty-blue;
+      margin-right: 8px;
+      margin-bottom: 4px;
+    }
+
+    h2 {
+      color: colours.$colour-admiralty-blue;
+      font-size: 20px;
+      font-weight: typography.$font-weight-medium;
+      line-height: 30px;
+      margin: 0;
     }
   }
 
