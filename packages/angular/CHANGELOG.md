@@ -1,3 +1,15 @@
+# v0.20.0 (Thu Sep 05 2024)
+
+#### 🚀 Enhancement
+
+- Improve colour block component accessibility [#238](https://github.com/UKHO/admiralty-design-system/pull/238) ([@buzzub](https://github.com/buzzub))
+
+#### Authors: 1
+
+- Natalie ([@buzzub](https://github.com/buzzub))
+
+---
+
 # v0.17.0 (Fri Aug 02 2024)
 
 #### 🚀 Enhancement

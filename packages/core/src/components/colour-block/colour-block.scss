@@ -1,4 +1,6 @@
 @use '../../scss/vars/colours';
+@use '../../scss/vars/typography';
+@use '../../scss/base/responsive';
 
 .colourBlock {
   height: 100%;
@@ -18,8 +20,14 @@
     align-self: flex-end;
     cursor: pointer;
 
-    h3 {
-      margin-bottom: 0px;
+    span {
+      font-weight: typography.$font-weight-medium;
+      font-size: 21px;
+      line-height: 30px;
+      @include responsive.not-desktop {
+        font-size: 20px;
+        line-height: 30px;
+      }
     }
   }
 
@@ -40,5 +48,8 @@
   &.bright-blue {
     background-color: colours.$colour-bright-blue;
     color: colours.$colour-admiralty-blue;
+    .clickAction * {
+      color: colours.$colour-admiralty-blue;
+    }
   }
 }
