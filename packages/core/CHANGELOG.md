@@ -1,3 +1,20 @@
+# v0.22.0 (Thu Sep 05 2024)
+
+#### 🚀 Enhancement
+
+- Change Header Component to H2 [#225](https://github.com/UKHO/admiralty-design-system/pull/225) ([@lstevens98](https://github.com/lstevens98) [@buzzub](https://github.com/buzzub))
+
+#### 🐛 Bug Fix
+
+- Update dialogue text to be a h2 [#245](https://github.com/UKHO/admiralty-design-system/pull/245) ([@buzzub](https://github.com/buzzub))
+
+#### Authors: 2
+
+- Lewis Stevens ([@lstevens98](https://github.com/lstevens98))
+- Natalie ([@buzzub](https://github.com/buzzub))
+
+---
+
 # v0.21.0 (Thu Sep 05 2024)
 
 #### 🚀 Enhancement
