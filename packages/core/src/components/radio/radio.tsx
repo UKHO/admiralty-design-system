@@ -118,7 +118,7 @@ export class RadioComponent {
 
     return (
       <Host>
-        <div class="admiralty-radio">
+        <div class={{ 'admiralty-radio': true, 'checked': checked }}>
           <input
             class={{ 'invalid': this.invalid, 'admiralty-radio': true }}
             aria-checked={`${checked}`}
@@ -139,6 +139,9 @@ export class RadioComponent {
           <label htmlFor={inputId}>
             <slot />
           </label>
+        </div>
+        <div class={{ conditional: true, checked: checked, unchecked: !checked }}>
+          <slot name="conditional"></slot>
         </div>
       </Host>
     );

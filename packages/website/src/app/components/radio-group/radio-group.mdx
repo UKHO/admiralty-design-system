@@ -14,19 +14,35 @@ import Basic from "@/usage/radio-group/basic/index.mdx";
 
 ## Labelled
 
-Radio groups should be labelled with text that describes them.
+Radio groups should be labelled with text that describes them. A hint can also be provided.
 
 import Labelled from "@/usage/radio-group/labelled/index.mdx";
 
 <Labelled />
 
-## Stacked
+## Disabled
 
-Stack radio buttons vertically when there are more than two options.
+Radio buttons can be disabled.
 
-import Stacked from "@/usage/radio-group/stacked/index.mdx";
+import Disabled from "@/usage/radio-group/disabled/index.mdx";
 
-<Stacked />
+<Disabled />
+
+## Horizontal
+
+When there are only two options and the text is short, radio buttons can be arranged horizontally. For more than two options or when the text is longer, the radio buttons should be stacked (the default).
+
+import Horizontal from "@/usage/radio-group/horizontal/index.mdx";
+
+<Horizontal />
+
+## Conditional
+
+Related content can be revealed conditionally by passing it into a `slot` under the radio option, but only if the content be simple. Conditional content should not be added when the options are displayed horizontally.
+
+import Conditional from "@/usage/radio-group/conditional/index.mdx";
+
+<Conditional />
 
 ## Accessibility
 
@@ -67,3 +83,4 @@ import CustomProps from "@docs/radio-group/customProps.mdx";
 import Slots from "@docs/radio-group/slots.mdx";
 
 <Slots />
+

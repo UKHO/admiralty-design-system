@@ -156,7 +156,7 @@ export namespace Components {
           * The type of button to render. Valid values are `primary`, `secondary`, `warning`, `text` and `icon`. Default value is `primary`.
          */
         "variant": ButtonVariant;
-    }
+  }
     interface AdmiraltyCard {
         /**
           * The title of the card.
@@ -192,12 +192,17 @@ export namespace Components {
     interface AdmiraltyColourBlock {
         /**
           * The text to display on the action button
+          * @deprecated in favour of `href` and `linkText`
          */
         "actionText": string;
         /**
           * The background colour of the component.
          */
         "colour": 'admiralty-blue' | 'teal' | 'bright-blue';
+        /**
+          * Allow the card to be clicked. Will emit a `colourBlockLinkClicked` event. A value for `href` should also be provided to ensure the component conforms to accessibility standards.
+         */
+        "enableCardEvent": boolean;
         /**
           * The heading text to display.
          */
@@ -206,6 +211,18 @@ export namespace Components {
           * The height in pixels of the component.
          */
         "height": number;
+        /**
+          * The URL to link to.
+         */
+        "href": string;
+        /**
+          * The link text.
+         */
+        "linkText": string;
+        /**
+          * Causes the default browser redirect to be suppressed. Can be used in conjunction with the `colourBlockLinkClicked` event to use a navigation router and prevent a full page reload when navigating.
+         */
+        "suppressRedirect": boolean;
         /**
           * The width in pixels of the component.
          */
@@ -311,13 +328,31 @@ export namespace Components {
     }
     interface AdmiraltyHeaderMenuItem {
         /**
-          * The text that will be displayed in the menu
+          * Whether the item is active
          */
         "active"?: boolean;
         /**
           * The text that will be displayed in the menu
          */
         "menuTitle": string;
+    }
+    interface AdmiraltyHeaderMenuLink {
+        /**
+          * Whether the item is active
+         */
+        "active"?: boolean;
+        /**
+          * The URL to link to.
+         */
+        "href": string;
+        /**
+          * The text that will be displayed in the menu.
+         */
+        "menuTitle"?: string;
+        /**
+          * Causes the default browser redirect to be suppressed. Can be used in conjunction with the `onMenuItemClick` event to use a navigation router and prevent a full page reload when navigating.
+         */
+        "suppressRedirect"?: boolean;
     }
     interface AdmiraltyHeaderProfile {
         /**
@@ -518,9 +553,17 @@ export namespace Components {
     }
     interface AdmiraltyRadioGroup {
         /**
-          * Setting this true displays the radio options vertically (defaults to false)
+          * Whether the radio controls should be disabled
+         */
+        "disabled": boolean;
+        /**
+          * Setting this to false displays the radio options horizontally (defaults to true)
          */
         "displayVertical": boolean;
+        /**
+          * The hint text to display below the label
+         */
+        "hint": string;
         /**
           * Whether to show the input in an invalid state
          */
@@ -529,6 +572,10 @@ export namespace Components {
           * The message to show when the input is invalid
          */
         "invalidMessage": string;
+        /**
+          * The label text to display above the control
+         */
+        "label": string;
         /**
           * The name of the control, which is submitted with the form data
          */
@@ -737,6 +784,10 @@ export interface AdmiraltyHeaderCustomEvent<T> extends CustomEvent<T> {
 export interface AdmiraltyHeaderMenuItemCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLAdmiraltyHeaderMenuItemElement;
+}
+export interface AdmiraltyHeaderMenuLinkCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLAdmiraltyHeaderMenuLinkElement;
 }
 export interface AdmiraltyHeaderProfileCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -973,6 +1024,23 @@ declare global {
     var HTMLAdmiraltyHeaderMenuItemElement: {
         prototype: HTMLAdmiraltyHeaderMenuItemElement;
         new (): HTMLAdmiraltyHeaderMenuItemElement;
+    };
+    interface HTMLAdmiraltyHeaderMenuLinkElementEventMap {
+        "menuItemClick": void;
+    }
+    interface HTMLAdmiraltyHeaderMenuLinkElement extends Components.AdmiraltyHeaderMenuLink, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLAdmiraltyHeaderMenuLinkElementEventMap>(type: K, listener: (this: HTMLAdmiraltyHeaderMenuLinkElement, ev: AdmiraltyHeaderMenuLinkCustomEvent<HTMLAdmiraltyHeaderMenuLinkElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLAdmiraltyHeaderMenuLinkElementEventMap>(type: K, listener: (this: HTMLAdmiraltyHeaderMenuLinkElement, ev: AdmiraltyHeaderMenuLinkCustomEvent<HTMLAdmiraltyHeaderMenuLinkElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLAdmiraltyHeaderMenuLinkElement: {
+        prototype: HTMLAdmiraltyHeaderMenuLinkElement;
+        new (): HTMLAdmiraltyHeaderMenuLinkElement;
     };
     interface HTMLAdmiraltyHeaderProfileElementEventMap {
         "signInClicked": void;
@@ -1354,6 +1422,7 @@ declare global {
         "admiralty-footer": HTMLAdmiraltyFooterElement;
         "admiralty-header": HTMLAdmiraltyHeaderElement;
         "admiralty-header-menu-item": HTMLAdmiraltyHeaderMenuItemElement;
+        "admiralty-header-menu-link": HTMLAdmiraltyHeaderMenuLinkElement;
         "admiralty-header-profile": HTMLAdmiraltyHeaderProfileElement;
         "admiralty-header-sub-menu-item": HTMLAdmiraltyHeaderSubMenuItemElement;
         "admiralty-hint": HTMLAdmiraltyHintElement;
@@ -1575,12 +1644,17 @@ declare namespace LocalJSX {
     interface AdmiraltyColourBlock {
         /**
           * The text to display on the action button
+          * @deprecated in favour of `href` and `linkText`
          */
         "actionText"?: string;
         /**
           * The background colour of the component.
          */
         "colour"?: 'admiralty-blue' | 'teal' | 'bright-blue';
+        /**
+          * Allow the card to be clicked. Will emit a `colourBlockLinkClicked` event. A value for `href` should also be provided to ensure the component conforms to accessibility standards.
+         */
+        "enableCardEvent"?: boolean;
         /**
           * The heading text to display.
          */
@@ -1590,9 +1664,21 @@ declare namespace LocalJSX {
          */
         "height"?: number;
         /**
+          * The URL to link to.
+         */
+        "href"?: string;
+        /**
+          * The link text.
+         */
+        "linkText"?: string;
+        /**
           * An event emitted when this Colour Block link is clicked
          */
         "onColourBlockLinkClicked"?: (event: AdmiraltyColourBlockCustomEvent<string>) => void;
+        /**
+          * Causes the default browser redirect to be suppressed. Can be used in conjunction with the `colourBlockLinkClicked` event to use a navigation router and prevent a full page reload when navigating.
+         */
+        "suppressRedirect"?: boolean;
         /**
           * The width in pixels of the component.
          */
@@ -1718,7 +1804,7 @@ declare namespace LocalJSX {
     }
     interface AdmiraltyHeaderMenuItem {
         /**
-          * The text that will be displayed in the menu
+          * Whether the item is active
          */
         "active"?: boolean;
         /**
@@ -1729,6 +1815,28 @@ declare namespace LocalJSX {
           * The event that is fired when a user clicks on the menu
          */
         "onMenuItemClick"?: (event: AdmiraltyHeaderMenuItemCustomEvent<void>) => void;
+    }
+    interface AdmiraltyHeaderMenuLink {
+        /**
+          * Whether the item is active
+         */
+        "active"?: boolean;
+        /**
+          * The URL to link to.
+         */
+        "href"?: string;
+        /**
+          * The text that will be displayed in the menu.
+         */
+        "menuTitle"?: string;
+        /**
+          * The event that is fired when a user clicks on the menu.
+         */
+        "onMenuItemClick"?: (event: AdmiraltyHeaderMenuLinkCustomEvent<void>) => void;
+        /**
+          * Causes the default browser redirect to be suppressed. Can be used in conjunction with the `onMenuItemClick` event to use a navigation router and prevent a full page reload when navigating.
+         */
+        "suppressRedirect"?: boolean;
     }
     interface AdmiraltyHeaderProfile {
         /**
@@ -1972,9 +2080,17 @@ declare namespace LocalJSX {
     }
     interface AdmiraltyRadioGroup {
         /**
-          * Setting this true displays the radio options vertically (defaults to false)
+          * Whether the radio controls should be disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * Setting this to false displays the radio options horizontally (defaults to true)
          */
         "displayVertical"?: boolean;
+        /**
+          * The hint text to display below the label
+         */
+        "hint"?: string;
         /**
           * Whether to show the input in an invalid state
          */
@@ -1983,6 +2099,10 @@ declare namespace LocalJSX {
           * The message to show when the input is invalid
          */
         "invalidMessage"?: string;
+        /**
+          * The label text to display above the control
+         */
+        "label"?: string;
         /**
           * The name of the control, which is submitted with the form data
          */
@@ -2215,6 +2335,7 @@ declare namespace LocalJSX {
         "admiralty-footer": AdmiraltyFooter;
         "admiralty-header": AdmiraltyHeader;
         "admiralty-header-menu-item": AdmiraltyHeaderMenuItem;
+        "admiralty-header-menu-link": AdmiraltyHeaderMenuLink;
         "admiralty-header-profile": AdmiraltyHeaderProfile;
         "admiralty-header-sub-menu-item": AdmiraltyHeaderSubMenuItem;
         "admiralty-hint": AdmiraltyHint;
@@ -2270,6 +2391,7 @@ declare module "@stencil/core" {
             "admiralty-footer": LocalJSX.AdmiraltyFooter & JSXBase.HTMLAttributes<HTMLAdmiraltyFooterElement>;
             "admiralty-header": LocalJSX.AdmiraltyHeader & JSXBase.HTMLAttributes<HTMLAdmiraltyHeaderElement>;
             "admiralty-header-menu-item": LocalJSX.AdmiraltyHeaderMenuItem & JSXBase.HTMLAttributes<HTMLAdmiraltyHeaderMenuItemElement>;
+            "admiralty-header-menu-link": LocalJSX.AdmiraltyHeaderMenuLink & JSXBase.HTMLAttributes<HTMLAdmiraltyHeaderMenuLinkElement>;
             "admiralty-header-profile": LocalJSX.AdmiraltyHeaderProfile & JSXBase.HTMLAttributes<HTMLAdmiraltyHeaderProfileElement>;
             "admiralty-header-sub-menu-item": LocalJSX.AdmiraltyHeaderSubMenuItem & JSXBase.HTMLAttributes<HTMLAdmiraltyHeaderSubMenuItemElement>;
             "admiralty-hint": LocalJSX.AdmiraltyHint & JSXBase.HTMLAttributes<HTMLAdmiraltyHintElement>;

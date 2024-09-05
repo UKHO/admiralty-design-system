@@ -185,14 +185,14 @@ export declare interface AdmiraltyCheckbox extends Components.AdmiraltyCheckbox 
 
 
 @ProxyCmp({
-  inputs: ['actionText', 'colour', 'heading', 'height', 'width']
+  inputs: ['actionText', 'colour', 'enableCardEvent', 'heading', 'height', 'href', 'linkText', 'suppressRedirect', 'width']
 })
 @Component({
   selector: 'admiralty-colour-block',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['actionText', 'colour', 'heading', 'height', 'width'],
+  inputs: ['actionText', 'colour', 'enableCardEvent', 'heading', 'height', 'href', 'linkText', 'suppressRedirect', 'width'],
 })
 export class AdmiraltyColourBlock {
   protected el: HTMLElement;
@@ -419,6 +419,34 @@ export class AdmiraltyHeaderMenuItem {
 export declare interface AdmiraltyHeaderMenuItem extends Components.AdmiraltyHeaderMenuItem {
   /**
    * The event that is fired when a user clicks on the menu
+   */
+  menuItemClick: EventEmitter<CustomEvent<void>>;
+}
+
+
+@ProxyCmp({
+  inputs: ['active', 'href', 'menuTitle', 'suppressRedirect']
+})
+@Component({
+  selector: 'admiralty-header-menu-link',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['active', 'href', 'menuTitle', 'suppressRedirect'],
+})
+export class AdmiraltyHeaderMenuLink {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['menuItemClick']);
+  }
+}
+
+
+export declare interface AdmiraltyHeaderMenuLink extends Components.AdmiraltyHeaderMenuLink {
+  /**
+   * The event that is fired when a user clicks on the menu.
    */
   menuItemClick: EventEmitter<CustomEvent<void>>;
 }

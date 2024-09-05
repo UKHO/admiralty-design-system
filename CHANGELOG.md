@@ -1,3 +1,50 @@
+# v0.22.0 (Thu Sep 05 2024)
+
+#### 🚀 Enhancement
+
+- `@ukho/admiralty-core`
+  - Change Header Component to H2 [#225](https://github.com/UKHO/admiralty-design-system/pull/225) ([@lstevens98](https://github.com/lstevens98) [@buzzub](https://github.com/buzzub))
+
+#### 🐛 Bug Fix
+
+- `@ukho/admiralty-core`
+  - Update dialogue text to be a h2 [#245](https://github.com/UKHO/admiralty-design-system/pull/245) ([@buzzub](https://github.com/buzzub))
+
+#### Authors: 2
+
+- Lewis Stevens ([@lstevens98](https://github.com/lstevens98))
+- Natalie ([@buzzub](https://github.com/buzzub))
+
+---
+
+# v0.21.0 (Thu Sep 05 2024)
+
+#### 🚀 Enhancement
+
+- `@ukho/admiralty-angular`, `@ukho/admiralty-core`
+  - feature: header items should be links [#233](https://github.com/UKHO/admiralty-design-system/pull/233) ([@buzzub](https://github.com/buzzub) [@UKHOGreg](https://github.com/UKHOGreg) [@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+#### Authors: 3
+
+- Greg Williams ([@UKHOGreg](https://github.com/UKHOGreg))
+- Natalie ([@buzzub](https://github.com/buzzub))
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
+# v0.20.0 (Thu Sep 05 2024)
+
+#### 🚀 Enhancement
+
+- `@ukho/admiralty-angular`, `@ukho/admiralty-core`
+  - Improve colour block component accessibility [#238](https://github.com/UKHO/admiralty-design-system/pull/238) ([@buzzub](https://github.com/buzzub))
+
+#### Authors: 1
+
+- Natalie ([@buzzub](https://github.com/buzzub))
+
+---
+
 # v0.19.0 (Tue Aug 27 2024)
 
 #### 🚀 Enhancement
