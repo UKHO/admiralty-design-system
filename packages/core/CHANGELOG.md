@@ -1,3 +1,155 @@
+# v0.19.0 (Tue Aug 27 2024)
+
+#### 🚀 Enhancement
+
+- Remove aria-hidden attribute from file upload and cater for no files selected [#244](https://github.com/UKHO/admiralty-design-system/pull/244) ([@buzzub](https://github.com/buzzub))
+
+#### 🐛 Bug Fix
+
+- fix: Forward additional attributes name, form and value to button [#240](https://github.com/UKHO/admiralty-design-system/pull/240) ([@buzzub](https://github.com/buzzub))
+
+#### 📝 Documentation
+
+- chore: manually update changelog [#236](https://github.com/UKHO/admiralty-design-system/pull/236) ([@buzzub](https://github.com/buzzub))
+
+#### Authors: 1
+
+- Natalie ([@buzzub](https://github.com/buzzub))
+
+---
+
+# v0.18.2 (Tue Aug 20 2024)
+
+#### 🐛 Bug Fix
+
+- chore: Update packages [#242](https://github.com/UKHO/admiralty-design-system/pull/242) ([@UKHOGreg](https://github.com/UKHOGreg))
+
+#### Authors: 1
+
+- Greg Williams ([@UKHOGreg](https://github.com/UKHOGreg))
+
+---
+
+# v0.18.1 (Wed Aug 07 2024)
+
+#### 🐛 Bug Fix
+
+- Do not clear autocomplete default value before options have been rendered [#239](https://github.com/UKHO/admiralty-design-system/pull/239) ([@buzzub](https://github.com/buzzub))
+
+#### Authors: 1
+
+- Natalie ([@buzzub](https://github.com/buzzub))
+
+---
+
+# v0.18.0 (Mon Aug 05 2024)
+
+#### 🚀 Enhancement
+
+- fix: force the header to re-render when the slot contents change [#234](https://github.com/UKHO/admiralty-design-system/pull/234) ([@buzzub](https://github.com/buzzub))
+
+#### Authors: 1
+
+- Natalie ([@buzzub](https://github.com/buzzub))
+
+---
+
+# v0.17.0 (Fri Aug 02 2024)
+
+#### 🚀 Enhancement
+
+- feature: do not display error component when no error is present [#232](https://github.com/UKHO/admiralty-design-system/pull/232) ([@buzzub](https://github.com/buzzub))
+
+#### Authors: 1
+
+- Natalie ([@buzzub](https://github.com/buzzub))
+
+---
+
+# v0.16.0 (Fri Aug 02 2024)
+
+#### 🚀 Enhancement
+
+- fix: input error spacing [#229](https://github.com/UKHO/admiralty-design-system/pull/229) ([@buzzub](https://github.com/buzzub))
+
+#### Authors: 1
+
+- Natalie ([@buzzub](https://github.com/buzzub))
+
+---
+
+# v0.15.0 (Fri Aug 02 2024)
+
+#### 🚀 Enhancement
+
+- Autocomplete dropdown [#197](https://github.com/UKHO/admiralty-design-system/pull/197) ([@UKHOGreg](https://github.com/UKHOGreg) [@ecstaticrainbow](https://github.com/ecstaticrainbow) [@buzzub](https://github.com/buzzub))
+
+#### Authors: 3
+
+- Greg Williams ([@UKHOGreg](https://github.com/UKHOGreg))
+- Natalie ([@buzzub](https://github.com/buzzub))
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
+# v0.14.2 (Tue Jul 31 2024)
+
+#### 🐛 Bug Fix
+
+- fix: page width on design system website [#228](https://github.com/UKHO/admiralty-design-system/pull/228) ([@buzzub](https://github.com/buzzub))
+
+#### Authors: 1
+
+- Natalie ([@buzzub](https://github.com/buzzub))
+
+---
+
+# v0.14.1 (Mon Jul 29 2024)
+
+#### 🐛 Bug Fix
+
+- Properly describe form validation errors [#166](https://github.com/UKHO/admiralty-design-system/pull/166) ([@lstevens98](https://github.com/lstevens98) [@ecstaticrainbow](https://github.com/ecstaticrainbow) [@buzzub](https://github.com/buzzub))
+
+#### Authors: 3
+
+- Lewis Stevens ([@lstevens98](https://github.com/lstevens98))
+- Natalie ([@buzzub](https://github.com/buzzub))
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
+# v0.14.0 (Thu May 23 2024)
+
+#### 🚀 Enhancement
+
+- feat: Add Modal Dialog [#176](https://github.com/UKHO/admiralty-design-system/pull/176) ([@UKHOGreg](https://github.com/UKHOGreg))
+
+#### Authors: 1
+
+- Greg Williams ([@UKHOGreg](https://github.com/UKHOGreg))
+
+---
+
+# v0.13.0 (Tue May 21 2024)
+
+#### 🚀 Enhancement
+
+- Resize Admiralty Button [#175](https://github.com/UKHO/admiralty-design-system/pull/175) ([@lstevens98](https://github.com/lstevens98))
+
+#### 🐛 Bug Fix
+
+- Update Admiralty Stacked Logo [#196](https://github.com/UKHO/admiralty-design-system/pull/196) ([@lstevens98](https://github.com/lstevens98))
+- Fix storybook auto refresh bug [#193](https://github.com/UKHO/admiralty-design-system/pull/193) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+- chore: Upgrade Packages [#190](https://github.com/UKHO/admiralty-design-system/pull/190) ([@UKHOGreg](https://github.com/UKHOGreg))
+
+#### Authors: 3
+
+- Greg Williams ([@UKHOGreg](https://github.com/UKHOGreg))
+- Lewis Stevens ([@lstevens98](https://github.com/lstevens98))
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
 # v0.11.0 (Thu Feb 22 2024)
 
 #### 🚀 Enhancement

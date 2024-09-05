@@ -14,6 +14,7 @@
 
 ### Used by
 
+ - [admiralty-autocomplete](../autocomplete)
  - [admiralty-file-input](../file-input)
  - [admiralty-input](../input)
  - [admiralty-radio-group](../radio-group)
@@ -28,6 +29,7 @@
 ```mermaid
 graph TD;
   admiralty-input-invalid --> admiralty-icon
+  admiralty-autocomplete --> admiralty-input-invalid
   admiralty-file-input --> admiralty-input-invalid
   admiralty-input --> admiralty-input-invalid
   admiralty-radio-group --> admiralty-input-invalid

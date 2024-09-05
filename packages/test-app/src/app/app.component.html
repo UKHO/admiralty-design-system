@@ -5,14 +5,21 @@
   logo-img-url="https://designsystem.admiralty.co.uk/assets/svg/Admiralty%20stacked%20logo.svg"
   nav-title="Design System"
 >
-  <admiralty-header-menu-item menu-title="First Item" slot="items">
-    <admiralty-header-sub-menu-item menu-title="Sub menu 1"></admiralty-header-sub-menu-item>
-    <admiralty-header-sub-menu-item menu-title="Sub menu 2"></admiralty-header-sub-menu-item>
-  </admiralty-header-menu-item>
-  <admiralty-header-menu-item active="true" menu-title="Second Item" slot="items"></admiralty-header-menu-item>
-  <admiralty-header-menu-item menu-title="Third Item" slot="items"></admiralty-header-menu-item>
+  <ng-container *ngFor="let item of headerItems">
+    <admiralty-header-menu-item
+      [menuTitle]="item.title"
+      slot="items"
+      [active]="item.index === active"
+      (menuItemClick)="onHeaderItemClick(item.index)"
+    >
+      <ng-container *ngFor="let subitem of item.items">
+        <admiralty-header-sub-menu-item [menuTitle]="subitem.title"></admiralty-header-sub-menu-item>
+      </ng-container>
+    </admiralty-header-menu-item>
+  </ng-container>
   <admiralty-header-profile isSignedIn="false" slot="profile"></admiralty-header-profile>
 </admiralty-header>
+<admiralty-button (click)="addHeaderItems()">Add header item</admiralty-button>
 <admiralty-breadcrumbs>
   <admiralty-breadcrumb href="https://example.org/test1">Test1</admiralty-breadcrumb>
   <admiralty-breadcrumb href="https://example.org/test2" active="true">Test2</admiralty-breadcrumb>
@@ -21,10 +28,11 @@
 <admiralty-button>Button</admiralty-button>
 <admiralty-card heading="A card">Some content</admiralty-card>
 <admiralty-colour-block
-  actionText="Click here"
   width="400"
   height="400"
   heading="Colour block"
+  linkText="Link"
+  href="http://www.admiralty.co.uk"
   colour="admiralty-blue"
   (colourBlockLinkClicked)="onColourBlockClick()"
 >
@@ -66,21 +74,23 @@
     tempus. Aliquam faucibus ullamcorper libero.
   </p>
 </admiralty-expansion>
-<form [formGroup]="group" (ngSubmit)="onSubmit()">
-  <admiralty-file-input></admiralty-file-input>
+<form [formGroup]="group" (ngSubmit)="onSubmit()" style="margin: 32px">
+  <admiralty-input-invalid>{{ group.value.text }}</admiralty-input-invalid>
+  <admiralty-file-input (fileInputChange)="onFileInputChange($event)" multiple="true"></admiralty-file-input>
   <admiralty-input
     label="Text"
-    [invalid]="blah?.invalid && blah?.touched"
+    [invalid]="text?.invalid && text?.touched"
     invalidMessage="This field is required"
     type="text"
     formControlName="text"
   ></admiralty-input>
   <admiralty-input
     label="Number"
-    [invalid]="blah?.invalid && blah?.touched"
+    [invalid]="number?.invalid && number?.touched"
     invalidMessage="This field is required"
     type="number"
     formControlName="number"
+    value="123"
   ></admiralty-input>
   <admiralty-checkbox formControlName="checkbox" input-id="checkbox" label-text="checkbox 1"></admiralty-checkbox>
   <admiralty-select formControlName="select" hint="Select an option from the list" label="Choose a colour">
@@ -92,6 +102,81 @@
     <admiralty-radio name="radio1" value="radio3">Radio group label 3</admiralty-radio>
   </admiralty-radio-group>
   <admiralty-textarea formControlName="textarea" label="Textarea Label"></admiralty-textarea>
+  {{ group.value.textarea }}
+  <admiralty-autocomplete label="Direction" formControlName="direction">
+    <admiralty-autocomplete-option>North</admiralty-autocomplete-option>
+    <admiralty-autocomplete-option>South</admiralty-autocomplete-option>
+    <admiralty-autocomplete-option>East</admiralty-autocomplete-option>
+    <admiralty-autocomplete-option>West</admiralty-autocomplete-option>
+  </admiralty-autocomplete>
+  <hr />
+  {{ group.value.direction }}
+  <hr />
+  <admiralty-button type="button" (click)="selectDirection()">Go South</admiralty-button>
+  <hr />
+  <admiralty-autocomplete
+    label="Favourite Colour"
+    hint="Please enter your favourite colour"
+    (admiraltyChange)="autocomplete($event)"
+    formControlName="autocomplete"
+  >
+    <admiralty-autocomplete-option value="green">Green</admiralty-autocomplete-option>
+    <admiralty-autocomplete-option value="blue">Blue</admiralty-autocomplete-option>
+    <admiralty-autocomplete-option value="yellow">Yellow</admiralty-autocomplete-option>
+    <admiralty-autocomplete-option value="purple">Purple</admiralty-autocomplete-option>
+    <admiralty-autocomplete-option value="orange">Orange</admiralty-autocomplete-option>
+    <admiralty-autocomplete-option value="black">Black</admiralty-autocomplete-option>
+    <admiralty-autocomplete-option value="white">White</admiralty-autocomplete-option>
+    <admiralty-autocomplete-option value="pink">Pink</admiralty-autocomplete-option>
+    <admiralty-autocomplete-option value="brown">Brown</admiralty-autocomplete-option>
+    <admiralty-autocomplete-option value="grey">Grey</admiralty-autocomplete-option>
+    <admiralty-autocomplete-option value="cyan">Cyan</admiralty-autocomplete-option>
+  </admiralty-autocomplete>
+  <hr />
+  {{ group.value.autocomplete }}
+  <hr />
+  <admiralty-autocomplete
+    label="Country"
+    hint="Select a country"
+    (admiraltyChange)="onCountryChanged($event)"
+    formControlName="country"
+    [invalid]="country?.invalid && (country?.dirty || country?.touched)"
+    invalidMessage="Country must to be selected"
+  >
+    <admiralty-autocomplete-option value="fr">France</admiralty-autocomplete-option>
+    <admiralty-autocomplete-option value="de">Germany</admiralty-autocomplete-option>
+
+    <admiralty-autocomplete-option value="ie">Ireland</admiralty-autocomplete-option>
+    <admiralty-autocomplete-option value="gb"
+      >United Kingdom of Great Britain and Northern Ireland</admiralty-autocomplete-option
+    >
+    <admiralty-autocomplete-option value="us">United States of America</admiralty-autocomplete-option>
+  </admiralty-autocomplete>
+  <hr />
+  {{ group.value.country }}
+  <hr />
+  <admiralty-button type="button" (click)="selectCountry()">Choose United Kingdom</admiralty-button>
+  <hr />
+  <admiralty-autocomplete
+    label="Office location"
+    hint="Please select an office"
+    (admiraltyChange)="onOfficeChanged($event)"
+    formControlName="office"
+    [invalid]="office?.invalid && (office?.dirty || office?.touched)"
+    invalidMessage="Office needs to be selected"
+  >
+    <admiralty-autocomplete-option value="London">London</admiralty-autocomplete-option>
+    <admiralty-autocomplete-option value="Nottingham">Nottingham</admiralty-autocomplete-option>
+    <admiralty-autocomplete-option value="Nottingham Lower">Nottingham Lower</admiralty-autocomplete-option>
+    <admiralty-autocomplete-option value="Leeds">Leeds</admiralty-autocomplete-option>
+    <admiralty-autocomplete-option value="Leeds North">Leeds North</admiralty-autocomplete-option>
+    <admiralty-autocomplete-option value="Leeds South">Leeds South</admiralty-autocomplete-option>
+  </admiralty-autocomplete>
+  <hr />
+  {{ group.value.office }}
+  <hr />
+  <admiralty-button type="button" (click)="selectOffice()">Choose Nottingham</admiralty-button>
+  <hr />
   <admiralty-button type="submit">Submit</admiralty-button>
 </form>
 <admiralty-icon iconName="hippo"></admiralty-icon>
@@ -130,12 +215,12 @@
       <admiralty-radio-group displayVertical="true">
         <admiralty-radio name="grp" value="option1">Option 1</admiralty-radio>
         <admiralty-radio name="grp" value="option2">Option 2</admiralty-radio>
-        <admiralty-radio name="grp" value="option2">Option 3</admiralty-radio>
+        <admiralty-radio name="grp" value="option3">Option 3</admiralty-radio>
       </admiralty-radio-group>
     </div>
   </admiralty-filter-group>
 </admiralty-filter>
-<admiralty-type-ahead label="Please type" results-on-init-focus="false" placeholder="Select an animal">
+<admiralty-type-ahead label="Please type" results-on-init-focus="false" placeholder="Select an animal" value="badger">
   <admiralty-type-ahead-item value="dog"></admiralty-type-ahead-item>
   <admiralty-type-ahead-item value="cat"></admiralty-type-ahead-item>
   <admiralty-type-ahead-item value="elephant"></admiralty-type-ahead-item>
@@ -166,10 +251,12 @@
 
 <admiralty-table caption="Favourite Foods">
   <admiralty-table-header>
-    <admiralty-table-header-cell>Name</admiralty-table-header-cell>
-    <admiralty-table-header-cell>Age</admiralty-table-header-cell>
-    <admiralty-table-header-cell>Other</admiralty-table-header-cell>
-    <admiralty-table-header-cell>Favourite Food</admiralty-table-header-cell>
+    <admiralty-table-row>
+      <admiralty-table-header-cell>Name</admiralty-table-header-cell>
+      <admiralty-table-header-cell>Age</admiralty-table-header-cell>
+      <admiralty-table-header-cell>Other</admiralty-table-header-cell>
+      <admiralty-table-header-cell>Favourite Food</admiralty-table-header-cell>
+    </admiralty-table-row>
   </admiralty-table-header>
   <admiralty-table-body>
     <admiralty-table-row>
@@ -228,3 +315,21 @@
   Our site will be down for maintenance between 20:00 and 22:00 on 1 June 2019. You won't be able to access the site
   during this time.
 </admiralty-dialogue>
+
+<admiralty-button (click)="showModalDialog()">Show Modal Dialog</admiralty-button>
+<admiralty-modal-dialog
+  heading="Do you want to leave this page?"
+  [show]="isModalDialogShown"
+  label="Do you want to leave this page?"
+  description="If you leave this page, your survey won't be saved and can't be recovered"
+>
+  <div slot="content">
+    <admiralty-icon icon-name="triangle-exclamation" icon-prefix="fas"></admiralty-icon>
+    <div>If you leave this page, your survey won&apos;t be saved and can&apos;t be recovered</div>
+  </div>
+  <div slot="actions">
+    <admiralty-button variant="secondary" (click)="hideModalDialog()">Leave page</admiralty-button>
+    <admiralty-button (click)="hideModalDialog()">Continue survey</admiralty-button>
+  </div>
+</admiralty-modal-dialog>
+

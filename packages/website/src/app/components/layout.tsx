@@ -5,6 +5,7 @@ import SideNav, { SideNavItem } from "@/components/side-nav/side-nav";
 
 const sideNavItems: SideNavItem[] = [
   { path: "/", title: "Overview" },
+  { path: "autocomplete", title: "Autocomplete" },
   { path: "breadcrumbs", title: "Breadcrumbs" },
   { path: "button", title: "Button" },
   { path: "card", title: "Card" },
@@ -17,6 +18,7 @@ const sideNavItems: SideNavItem[] = [
   { path: "header", title: "Header" },
   { path: "horizontal-rule", title: "Horizontal Rule" },
   { path: "input", title: "Input" },
+  { path: "modal-dialog", title: "Modal Dialog" },
   { path: "paginator", title: "Paginator" },
   { path: "phase-banner", title: "Phase Banner" },
   { path: "progress-bar", title: "Progress Bar" },
@@ -36,7 +38,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className={styles.contentContainer}>
       <SideNav rootPath="/components" items={sideNavItems} />
-      <div>{children}</div>
+      <div className={styles.content}>{children}</div>
     </div>
   );
 }

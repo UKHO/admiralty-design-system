@@ -5,7 +5,7 @@ describe('file-input', () => {
   it('renders', async () => {
     const page = await newSpecPage({
       components: [FileInputComponent],
-      html: `<admiralty-file-input></ukhho-file-input>`,
+      html: `<admiralty-file-input></admiralty-file-input>`,
     });
     expect(page.root).toEqualHtml(`
       <admiralty-file-input>
@@ -16,9 +16,9 @@ describe('file-input', () => {
               Click to choose a file or drag it
             </span>
           </label>
-          <input aria-hidden="true" aria-label="File Upload" class="admiralty-form-field" id="admiralty-file-input-1" type="file">
+          <input aria-label="Upload a file" class="admiralty-form-field" id="admiralty-file-input-1" type="file">
         </div>
-        <admiralty-input-invalid style="visibility: hidden;"></admiralty-input-invalid>
+        <admiralty-input-invalid style="display: none;"></admiralty-input-invalid>
       </admiralty-file-input>
     `);
   });
@@ -26,7 +26,7 @@ describe('file-input', () => {
   it('renders multiple selection', async () => {
     const page = await newSpecPage({
       components: [FileInputComponent],
-      html: `<admiralty-file-input multiple="true"></ukhho-file-input>`,
+      html: `<admiralty-file-input multiple="true"></admiralty-file-input>`,
     });
     expect(page.root).toEqualHtml(`
       <admiralty-file-input multiple="true">
@@ -37,9 +37,9 @@ describe('file-input', () => {
               Click to choose a file or drag it
             </span>
           </label>
-          <input aria-hidden="true" aria-label="File Upload" class="admiralty-form-field" id="admiralty-file-input-2" multiple="" type="file">
+          <input aria-label="Upload a file" class="admiralty-form-field" id="admiralty-file-input-2" multiple="" type="file">
         </div>
-        <admiralty-input-invalid style="visibility: hidden;"></admiralty-input-invalid>
+        <admiralty-input-invalid style="display: none;"></admiralty-input-invalid>
       </admiralty-file-input>
     `);
   });
@@ -47,7 +47,7 @@ describe('file-input', () => {
   it('renders single selection', async () => {
     const page = await newSpecPage({
       components: [FileInputComponent],
-      html: `<admiralty-file-input multiple="false"></ukhho-file-input>`,
+      html: `<admiralty-file-input multiple="false"></admiralty-file-input>`,
     });
     expect(page.root).toEqualHtml(`
       <admiralty-file-input multiple="false">
@@ -58,9 +58,9 @@ describe('file-input', () => {
               Click to choose a file or drag it
             </span>
           </label>
-          <input aria-hidden="true" aria-label="File Upload" class="admiralty-form-field" id="admiralty-file-input-3" type="file">
+          <input aria-label="Upload a file" class="admiralty-form-field" id="admiralty-file-input-3" type="file">
         </div>
-        <admiralty-input-invalid style="visibility: hidden;"></admiralty-input-invalid>
+        <admiralty-input-invalid style="display: none;"></admiralty-input-invalid>
       </admiralty-file-input>
     `);
   });
@@ -68,7 +68,7 @@ describe('file-input', () => {
   it('renders different label', async () => {
     const page = await newSpecPage({
       components: [FileInputComponent],
-      html: `<admiralty-file-input label="My other label"></ukhho-file-input>`,
+      html: `<admiralty-file-input label="My other label"></admiralty-file-input>`,
     });
     expect(page.root).toEqualHtml(`
       <admiralty-file-input label="My other label">
@@ -79,9 +79,9 @@ describe('file-input', () => {
               My other label
             </span>
           </label>
-          <input aria-hidden="true" aria-label="File Upload" class="admiralty-form-field" id="admiralty-file-input-4" type="file">
+          <input aria-label="Upload a file" class="admiralty-form-field" id="admiralty-file-input-4" type="file">
         </div>
-        <admiralty-input-invalid style="visibility: hidden;"></admiralty-input-invalid>
+        <admiralty-input-invalid style="display: none;"></admiralty-input-invalid>
       </admiralty-file-input>
     `);
   });
@@ -89,7 +89,7 @@ describe('file-input', () => {
   it('renders invalid even without invalidMessage', async () => {
     const page = await newSpecPage({
       components: [FileInputComponent],
-      html: `<admiralty-file-input invalid="true"></ukhho-file-input>`,
+      html: `<admiralty-file-input invalid="true"></admiralty-file-input>`,
     });
     expect(page.root).toEqualHtml(`
       <admiralty-file-input invalid="true">
@@ -100,9 +100,9 @@ describe('file-input', () => {
               Click to choose a file or drag it
             </span>
           </label>
-          <input aria-hidden="true" aria-label="File Upload" class="admiralty-form-field" id="admiralty-file-input-5" type="file">
+          <input aria-label="Upload a file" class="admiralty-form-field" id="admiralty-file-input-5" type="file">
         </div>
-        <admiralty-input-invalid style="visibility: hidden;"></admiralty-input-invalid>
+        <admiralty-input-invalid style="display: none;"></admiralty-input-invalid>
       </admiralty-file-input>
     `);
   });
@@ -110,7 +110,7 @@ describe('file-input', () => {
   it('renders invalid with invalidMessage', async () => {
     const page = await newSpecPage({
       components: [FileInputComponent],
-      html: `<admiralty-file-input invalid="true" invalid-message="This is invalid!"></ukhho-file-input>`,
+      html: `<admiralty-file-input invalid="true" invalid-message="This is invalid!"></admiralty-file-input>`,
     });
     expect(page.root).toEqualHtml(`
       <admiralty-file-input invalid="true" invalid-message="This is invalid!">
@@ -121,9 +121,9 @@ describe('file-input', () => {
               Click to choose a file or drag it
             </span>
           </label>
-          <input aria-hidden="true" aria-label="File Upload" class="admiralty-form-field" id="admiralty-file-input-6" type="file">
+          <input aria-label="Upload a file" class="admiralty-form-field" id="admiralty-file-input-6" type="file">
         </div>
-        <admiralty-input-invalid style="visibility: visible;">
+        <admiralty-input-invalid>
           This is invalid!
         </admiralty-input-invalid>
       </admiralty-file-input>
@@ -156,5 +156,22 @@ describe('file-input', () => {
     comp.changeHandler(event as unknown as Event);
 
     expect(eventSpy).toBeCalledWith({ files: [file] });
+  });
+
+  it('emits fileInputChange event with empty file list', async () => {
+    const comp = new FileInputComponent();
+
+    const eventSpy = jest.spyOn(comp.fileInputChange, 'emit');
+
+    let event = {
+      preventDefault: jest.fn(),
+      target: {
+        files: [],
+      },
+    };
+
+    comp.changeHandler(event as unknown as Event);
+
+    expect(eventSpy).toBeCalledWith({ files: [] });
   });
 });

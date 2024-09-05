@@ -11,7 +11,7 @@
     "fs-extra": "^11.1.1",
     "lerna": "7.1.4",
     "listr": "^0.14.3",
-    "nx": "16.10.0",
+    "nx": "^19.6.1",
     "semver": "^7.5.4"
   },
   "scripts": {
@@ -19,6 +19,7 @@
     "build:core": "yarn exec nx build @ukho/admiralty-core",
     "build:angular": "yarn exec nx build @ukho/admiralty-angular",
     "build:react": "yarn exec nx build @ukho/admiralty-react",
+    "build:test-app": "yarn exec nx build test-app",
     "build:website": "yarn exec nx build website",
     "build:docs": "yarn exec nx build @ukho-internal/admiralty-docs"
   },

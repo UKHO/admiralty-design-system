@@ -5,7 +5,7 @@ import { ValueAccessor } from './value-accessor';
 
 @Directive({
   /* tslint:disable-next-line:directive-selector */
-  selector: 'admiralty-select, admiralty-radio-group',
+  selector: 'admiralty-select, admiralty-radio-group, admiralty-autocomplete',
   host: {
     '(admiraltyChange)': 'handleChangeEvent($event.target.value)'
   },

@@ -8,6 +8,8 @@ import type { JSX } from '@ukho/admiralty-core';
 import { applyPolyfills, defineCustomElements } from '@ukho/admiralty-core/loader';
 
 applyPolyfills().then(() => defineCustomElements());
+export const AdmiraltyAutocomplete = /*@__PURE__*/createReactComponent<JSX.AdmiraltyAutocomplete, HTMLAdmiraltyAutocompleteElement>('admiralty-autocomplete');
+export const AdmiraltyAutocompleteOption = /*@__PURE__*/createReactComponent<JSX.AdmiraltyAutocompleteOption, HTMLAdmiraltyAutocompleteOptionElement>('admiralty-autocomplete-option');
 export const AdmiraltyBreadcrumb = /*@__PURE__*/createReactComponent<JSX.AdmiraltyBreadcrumb, HTMLAdmiraltyBreadcrumbElement>('admiralty-breadcrumb');
 export const AdmiraltyBreadcrumbs = /*@__PURE__*/createReactComponent<JSX.AdmiraltyBreadcrumbs, HTMLAdmiraltyBreadcrumbsElement>('admiralty-breadcrumbs');
 export const AdmiraltyButton = /*@__PURE__*/createReactComponent<JSX.AdmiraltyButton, HTMLAdmiraltyButtonElement>('admiralty-button');
@@ -31,6 +33,7 @@ export const AdmiraltyInput = /*@__PURE__*/createReactComponent<JSX.AdmiraltyInp
 export const AdmiraltyInputInvalid = /*@__PURE__*/createReactComponent<JSX.AdmiraltyInputInvalid, HTMLAdmiraltyInputInvalidElement>('admiralty-input-invalid');
 export const AdmiraltyLabel = /*@__PURE__*/createReactComponent<JSX.AdmiraltyLabel, HTMLAdmiraltyLabelElement>('admiralty-label');
 export const AdmiraltyLink = /*@__PURE__*/createReactComponent<JSX.AdmiraltyLink, HTMLAdmiraltyLinkElement>('admiralty-link');
+export const AdmiraltyModalDialog = /*@__PURE__*/createReactComponent<JSX.AdmiraltyModalDialog, HTMLAdmiraltyModalDialogElement>('admiralty-modal-dialog');
 export const AdmiraltyPaginator = /*@__PURE__*/createReactComponent<JSX.AdmiraltyPaginator, HTMLAdmiraltyPaginatorElement>('admiralty-paginator');
 export const AdmiraltyPhaseBanner = /*@__PURE__*/createReactComponent<JSX.AdmiraltyPhaseBanner, HTMLAdmiraltyPhaseBannerElement>('admiralty-phase-banner');
 export const AdmiraltyProgressBar = /*@__PURE__*/createReactComponent<JSX.AdmiraltyProgressBar, HTMLAdmiraltyProgressBarElement>('admiralty-progress-bar');
