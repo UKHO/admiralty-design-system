@@ -7,7 +7,10 @@ import { RadioGroupChangeEventDetail } from './radio-group-interface';
   scoped: true,
 })
 export class RadioGroupComponent implements ComponentInterface {
-  private inputId = `admiralty-rg-${radioGroupIds++}`;
+  private id = ++radioGroupIds;
+  private inputId: string = `admiralty-rg-${this.id}`;
+  private hintId: string = `admiralty-rg-hint-${this.id}`;
+  private errorId: string = `admiralty-rg-error-${this.id}`;
 
   @Element() el!: HTMLElement;
 
@@ -17,14 +20,29 @@ export class RadioGroupComponent implements ComponentInterface {
   @Prop() name: string = this.inputId;
 
   /**
+   * The label text to display above the control
+   */
+  @Prop() label: string;
+
+  /**
+   * The hint text to display below the label
+   */
+  @Prop() hint: string;
+
+  /**
+   * Whether the radio controls should be disabled
+   */
+  @Prop() disabled: boolean = false;
+
+  /**
    * The value of the radio group
    */
   @Prop({ mutable: true }) value: any | null;
 
   /**
-   * Setting this true displays the radio options vertically (defaults to false)
+   * Setting this to false displays the radio options horizontally (defaults to true)
    */
-  @Prop() displayVertical: boolean = false;
+  @Prop() displayVertical: boolean = true;
 
   /**
    * Whether to show the input in an invalid state
@@ -88,6 +106,7 @@ export class RadioGroupComponent implements ComponentInterface {
     return Array.from(this.el.querySelectorAll('admiralty-radio'));
   }
   private onClick = (e: Event) => {
+    if (this.disabled) return;
     const selectedRadio = e.target && (e.target as HTMLElement).closest('admiralty-radio');
 
     if (selectedRadio) {
@@ -105,10 +124,21 @@ export class RadioGroupComponent implements ComponentInterface {
 
     return (
       <Host>
-        <div class={{ 'radio-group': true, 'stack': displayVertical }} role="radiogroup" onClick={this.onClick}>
-          <slot></slot>
-          <admiralty-input-invalid style={{ ...(!(this.invalid && this.invalidMessage) ? { display: 'none' } : {}) }}>{this.invalidMessage}</admiralty-input-invalid>
-        </div>
+        <fieldset
+          disabled={this.disabled}
+          role="radiogroup"
+          aria-invalid={this.invalid ? 'true' : 'false'}
+          aria-describedby={(this.hint ? this.hintId : '') + ' ' + (this.invalid ? this.errorId : '')}
+        >
+          {this.label ? <legend>{this.label}</legend> : null}
+          {this.hint ? <admiralty-hint id={this.hintId}>{this.hint}</admiralty-hint> : null}
+          <div class={{ 'radio-group': true, 'stack': displayVertical }} onClick={this.onClick}>
+            <slot></slot>
+          </div>
+          <admiralty-input-invalid id={this.errorId} style={{ ...(!(this.invalid && this.invalidMessage) ? { display: 'none' } : {}) }}>
+            {this.invalidMessage}
+          </admiralty-input-invalid>
+        </fieldset>
       </Host>
     );
   }

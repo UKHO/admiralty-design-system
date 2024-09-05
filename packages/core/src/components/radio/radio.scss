@@ -1,5 +1,5 @@
-@use "../../scss/vars/colours" as colours;
-@use "../../scss/vars/typography" as typography;
+@use '../../scss/vars/colours' as colours;
+@use '../../scss/vars/typography' as typography;
 
 .admiralty-radio {
   input {
@@ -26,9 +26,9 @@
     &:checked:after {
       border-radius: 100%;
       background-color: colours.$colour-admiralty-blue;
-      width: .8rem;
-      height: .8rem;
-      content: " ";
+      width: 0.8rem;
+      height: 0.8rem;
+      content: ' ';
     }
 
     &:disabled {
@@ -45,5 +45,17 @@
     font-weight: typography.$font-weight-light;
     position: relative;
     top: 2px;
+  }
+}
+
+.conditional {
+  margin: 10px 0 0 10px;
+  padding-left: 28px;
+  border-left: 4px solid lightgrey;
+  &:empty {
+    margin: 0;
+  }
+  &.unchecked {
+    display: none;
   }
 }

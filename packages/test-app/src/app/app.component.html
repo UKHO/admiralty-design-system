@@ -28,10 +28,11 @@
 <admiralty-button>Button</admiralty-button>
 <admiralty-card heading="A card">Some content</admiralty-card>
 <admiralty-colour-block
-  actionText="Click here"
   width="400"
   height="400"
   heading="Colour block"
+  linkText="Link"
+  href="http://www.admiralty.co.uk"
   colour="admiralty-blue"
   (colourBlockLinkClicked)="onColourBlockClick()"
 >
@@ -75,7 +76,7 @@
 </admiralty-expansion>
 <form [formGroup]="group" (ngSubmit)="onSubmit()" style="margin: 32px">
   <admiralty-input-invalid>{{ group.value.text }}</admiralty-input-invalid>
-  <admiralty-file-input></admiralty-file-input>
+  <admiralty-file-input (fileInputChange)="onFileInputChange($event)" multiple="true"></admiralty-file-input>
   <admiralty-input
     label="Text"
     [invalid]="text?.invalid && text?.touched"
@@ -250,10 +251,12 @@
 
 <admiralty-table caption="Favourite Foods">
   <admiralty-table-header>
-    <admiralty-table-header-cell>Name</admiralty-table-header-cell>
-    <admiralty-table-header-cell>Age</admiralty-table-header-cell>
-    <admiralty-table-header-cell>Other</admiralty-table-header-cell>
-    <admiralty-table-header-cell>Favourite Food</admiralty-table-header-cell>
+    <admiralty-table-row>
+      <admiralty-table-header-cell>Name</admiralty-table-header-cell>
+      <admiralty-table-header-cell>Age</admiralty-table-header-cell>
+      <admiralty-table-header-cell>Other</admiralty-table-header-cell>
+      <admiralty-table-header-cell>Favourite Food</admiralty-table-header-cell>
+    </admiralty-table-row>
   </admiralty-table-header>
   <admiralty-table-body>
     <admiralty-table-row>

@@ -16,7 +16,7 @@ describe('file-input', () => {
               Click to choose a file or drag it
             </span>
           </label>
-          <input aria-hidden="true" aria-label="File Upload" class="admiralty-form-field" id="admiralty-file-input-1" type="file">
+          <input aria-label="Upload a file" class="admiralty-form-field" id="admiralty-file-input-1" type="file">
         </div>
         <admiralty-input-invalid style="display: none;"></admiralty-input-invalid>
       </admiralty-file-input>
@@ -37,7 +37,7 @@ describe('file-input', () => {
               Click to choose a file or drag it
             </span>
           </label>
-          <input aria-hidden="true" aria-label="File Upload" class="admiralty-form-field" id="admiralty-file-input-2" multiple="" type="file">
+          <input aria-label="Upload a file" class="admiralty-form-field" id="admiralty-file-input-2" multiple="" type="file">
         </div>
         <admiralty-input-invalid style="display: none;"></admiralty-input-invalid>
       </admiralty-file-input>
@@ -58,7 +58,7 @@ describe('file-input', () => {
               Click to choose a file or drag it
             </span>
           </label>
-          <input aria-hidden="true" aria-label="File Upload" class="admiralty-form-field" id="admiralty-file-input-3" type="file">
+          <input aria-label="Upload a file" class="admiralty-form-field" id="admiralty-file-input-3" type="file">
         </div>
         <admiralty-input-invalid style="display: none;"></admiralty-input-invalid>
       </admiralty-file-input>
@@ -79,7 +79,7 @@ describe('file-input', () => {
               My other label
             </span>
           </label>
-          <input aria-hidden="true" aria-label="File Upload" class="admiralty-form-field" id="admiralty-file-input-4" type="file">
+          <input aria-label="Upload a file" class="admiralty-form-field" id="admiralty-file-input-4" type="file">
         </div>
         <admiralty-input-invalid style="display: none;"></admiralty-input-invalid>
       </admiralty-file-input>
@@ -100,7 +100,7 @@ describe('file-input', () => {
               Click to choose a file or drag it
             </span>
           </label>
-          <input aria-hidden="true" aria-label="File Upload" class="admiralty-form-field" id="admiralty-file-input-5" type="file">
+          <input aria-label="Upload a file" class="admiralty-form-field" id="admiralty-file-input-5" type="file">
         </div>
         <admiralty-input-invalid style="display: none;"></admiralty-input-invalid>
       </admiralty-file-input>
@@ -121,7 +121,7 @@ describe('file-input', () => {
               Click to choose a file or drag it
             </span>
           </label>
-          <input aria-hidden="true" aria-label="File Upload" class="admiralty-form-field" id="admiralty-file-input-6" type="file">
+          <input aria-label="Upload a file" class="admiralty-form-field" id="admiralty-file-input-6" type="file">
         </div>
         <admiralty-input-invalid>
           This is invalid!
@@ -156,5 +156,22 @@ describe('file-input', () => {
     comp.changeHandler(event as unknown as Event);
 
     expect(eventSpy).toBeCalledWith({ files: [file] });
+  });
+
+  it('emits fileInputChange event with empty file list', async () => {
+    const comp = new FileInputComponent();
+
+    const eventSpy = jest.spyOn(comp.fileInputChange, 'emit');
+
+    let event = {
+      preventDefault: jest.fn(),
+      target: {
+        files: [],
+      },
+    };
+
+    comp.changeHandler(event as unknown as Event);
+
+    expect(eventSpy).toBeCalledWith({ files: [] });
   });
 });
