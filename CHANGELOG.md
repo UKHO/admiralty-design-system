@@ -1,3 +1,21 @@
+# v0.23.0 (Thu Sep 05 2024)
+
+#### 🚀 Enhancement
+
+- `@ukho/admiralty-core`
+  - Update radio buttons and radio group [#246](https://github.com/UKHO/admiralty-design-system/pull/246) ([@buzzub](https://github.com/buzzub))
+
+#### 🐛 Bug Fix
+
+- `@ukho/admiralty-angular`, `@ukho/admiralty-core`
+  - Remove maxinput property from input fields [#247](https://github.com/UKHO/admiralty-design-system/pull/247) ([@buzzub](https://github.com/buzzub))
+
+#### Authors: 1
+
+- Natalie ([@buzzub](https://github.com/buzzub))
+
+---
+
 # v0.22.0 (Thu Sep 05 2024)
 
 #### 🚀 Enhancement
