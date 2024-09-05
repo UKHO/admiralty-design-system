@@ -1,6 +1,6 @@
 {
   "name": "@ukho/admiralty-react",
-  "version": "0.20.0",
+  "version": "0.21.0",
   "private": true,
   "main": "dist/index.js",
   "types": "dist/types/index.d.ts",
@@ -12,7 +12,7 @@
     "dist"
   ],
   "dependencies": {
-    "@ukho/admiralty-core": "^0.20.0"
+    "@ukho/admiralty-core": "^0.21.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.21",
