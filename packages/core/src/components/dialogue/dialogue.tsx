@@ -41,7 +41,7 @@ export class DialogueComponent {
       >
         <div class="dialogue-title">
           <admiralty-icon class="dialogue-title-icon" icon-name={this.getIconNameForType().iconName}></admiralty-icon>
-          {this.heading}
+          <h2>{this.heading}</h2>
         </div>
         <slot></slot>
       </section>
