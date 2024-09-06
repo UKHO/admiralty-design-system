@@ -6,8 +6,8 @@
     appearance: none;
     border: 2px solid colours.$colour-admiralty-blue;
     border-radius: 1rem;
-    height: 1.5rem;
-    width: 1.5rem;
+    height: 1.625rem;
+    width: 1.625rem;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -26,8 +26,8 @@
     &:checked:after {
       border-radius: 100%;
       background-color: colours.$colour-admiralty-blue;
-      width: 0.8rem;
-      height: 0.8rem;
+      width: 0.75rem;
+      height: 0.75rem;
       content: ' ';
     }
 
@@ -36,8 +36,9 @@
     }
 
     &:focus {
-      outline: 3px solid colours.$colour-utility-focus;
+      outline: 4px solid colours.$colour-utility-focus;
       outline-offset: 0;
+      border-width: 3.5px;
     }
   }
   label {
@@ -49,8 +50,8 @@
 }
 
 .conditional {
-  margin: 10px 0 0 10px;
-  padding-left: 28px;
+  margin: 10px 0 0 13px;
+  padding-left: 30px;
   border-left: 4px solid lightgrey;
   &:empty {
     margin: 0;

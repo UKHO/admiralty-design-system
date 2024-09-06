@@ -1,6 +1,7 @@
 @use '../../scss/vars/colours' as colours;
 @use '../../scss/base/responsive';
 @use '../../scss/vars/typography';
+@use '../../scss/base/a11y';
 
 @mixin active {
   box-shadow: inset 0 -5px colours.$colour-admiralty-blue;
@@ -33,11 +34,12 @@
       all: unset;
       height: 100%;
       width: 100%;
-      font-weight: typography.$font-weight-medium;
+      div {
+        font-weight: typography.$font-weight-medium;
+      }
 
-      &:focus {
-        outline: none;
-        box-shadow: colours.$colour-utility-focus inset 0 0 0 3px;
+      &:focus div {
+        @include a11y.focus-highlight;
       }
     }
 

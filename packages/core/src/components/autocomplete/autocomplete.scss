@@ -8,7 +8,7 @@
 .autocomplete__hint,
 .autocomplete__input {
   appearance: none;
-  border: 2px solid #0b0c0c;
+  border: 2px solid colours.$colour-text;
   border-radius: 0; /* Safari 10 on iOS adds implicit border rounding. */
   box-sizing: border-box;
   margin-bottom: 0; /* BUG: Safari 10 on macOS seems to add an implicit margin. */
@@ -22,7 +22,7 @@
 }
 
 .autocomplete__hint {
-  color: #505a5f;
+  color: colours.$colour-text;
   position: absolute;
 }
 
@@ -57,7 +57,7 @@
   background-color: colours.$colour-white;
   border: 2px solid #0b0c0c;
   border-top: 0;
-  color: #0b0c0c;
+  color: colours.$colour-text;
   margin: 0;
   max-height: 342px;
   overflow-x: hidden;

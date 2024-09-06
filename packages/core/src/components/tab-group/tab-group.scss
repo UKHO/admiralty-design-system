@@ -1,6 +1,7 @@
-@use "../../scss/vars/colours";
-@use "../../scss/vars/typography";
-@use "../../scss/base/responsive";
+@use '../../scss/vars/colours';
+@use '../../scss/vars/typography';
+@use '../../scss/base/responsive';
+@use '../../scss/base/a11y';
 
 .tab-group-headers {
   width: 100%;
@@ -33,6 +34,11 @@ hr {
     background-color: unset;
     font-weight: typography.$font-weight-medium;
     font-size: 16px;
+    margin-left: 4px;
+
+    &:first-child {
+      margin-left: 0;
+    }
 
     @include responsive.not-desktop {
       font-size: 14px;
@@ -42,18 +48,20 @@ hr {
       width: unset;
     }
 
+    &:focus-visible {
+      box-shadow: colours.$colour-text inset 0 0 0 2px;
+    }
+
+    &:focus,
+    &.active:focus {
+      @include a11y.focus-highlight;
+      box-shadow: 0px -4px colours.$colour-text inset;
+    }
+
     &:hover {
       background-color: colours.$colour-nav-bg-hover;
-    }
-
-    &:focus {
-      outline-offset: -2px;
-      box-shadow: colours.$colour-text inset 0 0 0 2px;
-    }
-
-    &:focus-visible {
-      outline: 3px solid colours.$colour-utility-focus;
-      box-shadow: colours.$colour-text inset 0 0 0 2px;
+      color: colours.$colour-admiralty-blue;
+      box-shadow: unset;
     }
 
     &.active {

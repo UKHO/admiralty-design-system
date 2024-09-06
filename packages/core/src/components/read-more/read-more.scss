@@ -1,5 +1,6 @@
-@use "../../scss/vars/colours";
-@use "../../scss/vars/typography";
+@use '../../scss/vars/colours';
+@use '../../scss/vars/typography';
+@use '../../scss/base/a11y';
 
 section.expansion {
   padding: 2px 0;
@@ -38,10 +39,8 @@ section.expansion {
       vertical-align: top;
     }
 
-
     &:focus {
-      outline: none;
-      box-shadow: 0 0 0 3px colours.$colour-utility-focus;
+      @include a11y.focus-highlight;
     }
   }
 }
