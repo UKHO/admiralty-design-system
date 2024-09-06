@@ -1,3 +1,22 @@
+# v1.0.0 (Fri Sep 06 2024)
+
+#### 💥 Breaking Change
+
+- `@ukho/admiralty-core`
+  - Unify focus highlight and colours for all components [#248](https://github.com/UKHO/admiralty-design-system/pull/248) ([@buzzub](https://github.com/buzzub) [@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+#### 🔩 Dependency Updates
+
+- Bump ws from 6.2.2 to 6.2.3 in the npm_and_yarn group across 1 directory [#223](https://github.com/UKHO/admiralty-design-system/pull/223) ([@dependabot[bot]](https://github.com/dependabot[bot]) [@buzzub](https://github.com/buzzub))
+
+#### Authors: 3
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Natalie ([@buzzub](https://github.com/buzzub))
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
 # v0.23.2 (Fri Sep 06 2024)
 
 #### 🐛 Bug Fix
