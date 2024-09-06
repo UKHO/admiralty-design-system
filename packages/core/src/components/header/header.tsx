@@ -1,8 +1,8 @@
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
-import { Component, Element, Prop, h, EventEmitter, Event, State } from '@stencil/core';
+import { Component, Element, Prop, h, EventEmitter, Event, State, forceUpdate } from '@stencil/core';
 
 /**
- * @slot items - 'admiralty-header-menu-item menu-title' components are placed here for appropiate styling and behaviour
+ * @slot items - 'admiralty-header-menu-item menu-title' and 'admiralty-header-menu-link menu-title' components are placed here for appropriate styling and behaviour
  * @slot profile - 'admiralty-header-profile' components are placed here (the login/logout) options
  */
 @Component({
@@ -46,8 +46,25 @@ export class HeaderComponent {
 
   @State() displayHamburger = false;
 
+  observer: MutationObserver;
+
+  connectedCallback() {
+    this.observer = new MutationObserver(() => {
+      // when new menu items are added to the slots, we need to trigger a render cycle so that they render correctly
+      forceUpdate(this);
+    });
+    this.observer.observe(this.el, {
+      childList: true,
+      subtree: true,
+    });
+  }
+
+  disconnectedCallback() {
+    this.observer.disconnect();
+  }
+
   componentWillRender() {
-    const childMenus = this.el.querySelectorAll('admiralty-header-menu-item, admiralty-header-profile');
+    const childMenus = this.el.querySelectorAll('admiralty-header-menu-item, admiralty-header-menu-link, admiralty-header-profile');
     this.displayHamburger = childMenus.length > 0;
   }
 
@@ -72,11 +89,11 @@ export class HeaderComponent {
             </a>
             <div class="vertical-seperator"></div>
             {this.headerTitle ? (
-              <h1 class="header-title">
+              <h2 class="header-title">
                 <a onClick={ev => this.handleClick(ev)} href={headerTitleUrl} tabindex="0">
                   {headerTitle}
                 </a>
-              </h1>
+              </h2>
             ) : null}
           </div>
           <div class="header-menus">

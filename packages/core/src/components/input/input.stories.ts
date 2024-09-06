@@ -6,8 +6,7 @@ const meta: Meta = {
   component: 'admiralty-input',
   title: 'Forms/Input',
   parameters: {
-    actions: {
-    },
+    actions: {},
   },
 };
 
@@ -16,116 +15,88 @@ export default meta;
 type Story = StoryObj<InputComponent>;
 
 export const Basic: Story = {
-  render: args => html`
-    <admiralty-input label="${args.label}" hint="${args.hint}" type="${args.type}">
-    </admiralty-input>`,
+  render: args => html` <admiralty-input label="${args.label}" hint="${args.hint}" type="${args.type}"> </admiralty-input>`,
   args: {
     label: 'What is your name?',
     hint: 'Enter your full name',
-    type: 'text'
-  }
+    type: 'text',
+  },
 };
 
 export const FixedWidth: Story = {
-  render: args => html`
-    <admiralty-input label="${args.label}" type="${args.type}" width="${args.width}">
-    </admiralty-input>`,
+  render: args => html` <admiralty-input label="${args.label}" type="${args.type}" width="${args.width}"> </admiralty-input>`,
   args: {
     label: 'How old are you?',
     type: 'number',
-    width: 60
-  }
+    width: 60,
+  },
 };
 
 export const WithPlaceholder: Story = {
-  render: args => html`
-    <admiralty-input label="${args.label}" placeholder="${args.placeholder}">
-    </admiralty-input>`,
+  render: args => html` <admiralty-input label="${args.label}" placeholder="${args.placeholder}"> </admiralty-input>`,
   args: {
     label: 'With Placeholder',
-    placeholder: 'Fill Me In'
-  }
+    placeholder: 'Fill Me In',
+  },
 };
 
 export const Number: Story = {
-  render: args => html`
-    <admiralty-input label="${args.label}" type="${args.type}">
-    </admiralty-input>`,
+  render: args => html` <admiralty-input label="${args.label}" type="${args.type}"> </admiralty-input>`,
   args: {
     label: 'Number',
-    type: 'number'
-  }
+    type: 'number',
+  },
 };
 
 export const Date: Story = {
-  render: args => html`
-    <admiralty-input label="${args.label}" type="${args.type}">
-    </admiralty-input>`,
+  render: args => html` <admiralty-input label="${args.label}" type="${args.type}"> </admiralty-input>`,
   args: {
     label: 'Date',
-    type: 'date'
-  }
+    type: 'date',
+  },
 };
 
 export const Time: Story = {
-  render: args => html`
-    <admiralty-input label="${args.label}" type="${args.type}">
-    </admiralty-input>`,
+  render: args => html` <admiralty-input label="${args.label}" type="${args.type}"> </admiralty-input>`,
   args: {
     label: 'Time',
-    type: 'time'
-  }
+    type: 'time',
+  },
 };
 
 export const Autocomplete: Story = {
-  render: args => html`
-    <admiralty-input label="${args.label}" name="${args.name}" autocomplete="${args.autocomplete}">
-    </admiralty-input>`,
+  render: args => html` <admiralty-input label="${args.label}" name="${args.name}" autocomplete="${args.autocomplete}"> </admiralty-input>`,
   args: {
     label: 'Full Name',
     name: 'name',
-    autocomplete: 'name'
-  }
+    autocomplete: 'name',
+  },
 };
 
 export const AutocompleteOff: Story = {
-  render: args => html`
-    <admiralty-input label="${args.label}" name="${args.name}" autocomplete="${args.autocomplete}">
-    </admiralty-input>`,
+  render: args => html` <admiralty-input label="${args.label}" name="${args.name}" autocomplete="${args.autocomplete}"> </admiralty-input>`,
   args: {
     label: 'What is your name?',
     name: 'name',
-    autocomplete: 'off'
-  }
+    autocomplete: 'off',
+  },
 };
 
 export const Disabled: Story = {
-  render: args => html`
-    <admiralty-input label="${args.label}" hint="${args.hint}" disabled="${args.disabled}">
-    </admiralty-input>`,
+  render: args => html` <admiralty-input label="${args.label}" hint="${args.hint}" disabled="${args.disabled}"> </admiralty-input>`,
   args: {
     label: 'What is your name?',
     hint: 'Enter your full name',
-    disabled: true
-  }
+    disabled: true,
+  },
 };
 
 export const Invalid: Story = {
-  render: args => html`
-    <admiralty-input label="${args.label}" hint="${args.hint}" invalid="${args.invalid}" invalid-message="${args.invalidMessage}">
-    </admiralty-input>`,
+  render: args => html` <admiralty-input label="${args.label}" hint="${args.hint}" invalid="${args.invalid}" invalid-message="${args.invalidMessage}"> </admiralty-input>`,
   args: {
     label: 'What is your name?',
     hint: 'Enter your full name',
     invalid: true,
     invalidMessage: 'That is not a real name',
-  },
-};
-
-export const MaxLength: Story = {
-  render: args => html` <admiralty-input label="${args.label}" max-length="${args.maxLength}"> </admiralty-input>`,
-  args: {
-    label: 'This input field will have a maxlength',
-    maxLength: 1,
   },
 };

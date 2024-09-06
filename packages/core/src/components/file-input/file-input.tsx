@@ -47,14 +47,16 @@ export class FileInputComponent {
    */
   changeHandler(event: Event) {
     event.preventDefault();
-
     this.storeFileInfo((event.target as HTMLInputElement).files);
 
     this.fileInputChange.emit({ files: this.files });
-    console.log('changeHandler:', this.files);
   }
 
   private storeFileInfo(files: FileList) {
+    if (files.length === 0) {
+      this.files = [];
+      return;
+    }
     this.files = this.multiple ? [...(files as unknown as File[])] : [files.item(0)];
   }
 
@@ -90,22 +92,8 @@ export class FileInputComponent {
     if (event.dataTransfer.files) {
       this.storeFileInfo(event.dataTransfer.files);
       this.fileInputChange.emit({ files: this.files });
-      console.log('Drop: ', this.files);
     }
   }
-
-  /**
-   * Takes the bytes of a file and returns it as human readable figure
-   * @param bytes pass bytes throughs as a number
-   * @returns convers the bytes to the appropiate largest figure followed by the  format ie. 'kb', 'mb' etc
-   */
-  sizeOf = function (bytes: number) {
-    if (bytes === 0) {
-      return '0.00 B';
-    }
-    var e = Math.floor(Math.log(bytes) / Math.log(1024));
-    return (bytes / Math.pow(1024, e)).toFixed(2) + ' ' + ' KMGTP'.charAt(e) + 'B';
-  };
 
   render() {
     return (
@@ -115,17 +103,9 @@ export class FileInputComponent {
             <admiralty-icon class="upload-icon" icon-name="upload"></admiralty-icon>
             <span>{this.label}</span>
           </label>
-          <input
-            onChange={event => this.changeHandler(event)}
-            id={this.id}
-            aria-hidden="true"
-            aria-label="File Upload"
-            type="file"
-            class="admiralty-form-field"
-            multiple={this.multiple}
-          />
+          <input onChange={event => this.changeHandler(event)} id={this.id} aria-label="Upload a file" type="file" class="admiralty-form-field" multiple={this.multiple} />
         </div>
-        <admiralty-input-invalid style={{ visibility: this.invalid && this.invalidMessage ? 'visible' : 'hidden' }}>{this.invalidMessage}</admiralty-input-invalid>
+        <admiralty-input-invalid style={{ ...(!(this.invalid && this.invalidMessage) ? { display: 'none' } : {}) }}>{this.invalidMessage}</admiralty-input-invalid>
       </Host>
     );
   }

@@ -14,7 +14,10 @@ import { InputChangeEventDetail } from './input.interface';
   scoped: true,
 })
 export class InputComponent implements ComponentInterface {
-  inputId: string = `admiralty-input-${++nextId}`;
+  private id = ++nextId;
+  inputId: string = `admiralty-input-${this.id}`;
+  hintId: string = `admiralty-input-hint-${this.id}`;
+  errorId: string = `admiralty-input-error-${this.id}`;
 
   private nativeInput?: HTMLInputElement;
 
@@ -54,11 +57,6 @@ export class InputComponent implements ComponentInterface {
   @Prop() width: number;
 
   /**
-   * The maximum string length for the input field.
-   */
-  @Prop() maxLength?: number;
-
-  /**
    * This dictates whether the input is required or not
    */
   @Prop() required: boolean = false;
@@ -89,8 +87,19 @@ export class InputComponent implements ComponentInterface {
   @Event() admiraltyInput: EventEmitter<InputChangeEventDetail>;
 
   /**
+   * Emitted when the input gains focus.
+   */
+  @Event() admiraltyFocus: EventEmitter<FocusEvent>;
+
+  /**
+   * Emitted when the input loses focus.
+   */
+  @Event() admiraltyBlur: EventEmitter<FocusEvent>;
+
+  /**
    * Update the native input element when the value changes
    */
+
   @Watch('value')
   protected valueChanged() {
     const nativeInput = this.nativeInput;
@@ -112,8 +121,17 @@ export class InputComponent implements ComponentInterface {
     return typeof this.value === 'number' ? this.value.toString() : (this.value || '').toString();
   }
 
+  private onBlur = (ev: FocusEvent) => {
+    this.admiraltyBlur.emit(ev);
+  };
+
+  private onFocus = (ev: FocusEvent) => {
+    this.admiraltyFocus.emit(ev);
+  };
+
   render() {
     const value = this.getValue();
+
     return (
       <div class="text-input-container">
         {this.label ? (
@@ -121,7 +139,11 @@ export class InputComponent implements ComponentInterface {
             {this.label}
           </admiralty-label>
         ) : null}
-        {this.hint ? <admiralty-hint disabled={this.disabled}>{this.hint}</admiralty-hint> : null}
+        {this.hint ? (
+          <admiralty-hint id={this.hintId} disabled={this.disabled}>
+            {this.hint}
+          </admiralty-hint>
+        ) : null}
         <input
           ref={input => (this.nativeInput = input)}
           class={{ disabled: this.disabled, invalid: this.invalid }}
@@ -130,16 +152,21 @@ export class InputComponent implements ComponentInterface {
           name={this.name}
           type={this.type}
           value={value}
-          maxLength={this.maxLength}
           onInput={this.onInput}
+          onFocus={this.onFocus}
+          onBlur={this.onBlur}
           placeholder={this.placeholder}
           autoComplete={this.autocomplete}
           required={this.required}
           style={{
             maxWidth: this.width ? `${this.width}px` : null,
           }}
+          aria-invalid={this.invalid ? 'true' : 'false'}
+          aria-describedby={(this.hint ? this.hintId : '') + ' ' + (this.invalid ? this.errorId : '')}
         />
-        <admiralty-input-invalid style={{ visibility: this.invalid && this.invalidMessage ? 'visible' : 'hidden' }}>{this.invalidMessage}</admiralty-input-invalid>
+        <admiralty-input-invalid id={this.errorId} style={{ ...(!(this.invalid && this.invalidMessage) ? { display: 'none' } : {}) }}>
+          {this.invalidMessage}
+        </admiralty-input-invalid>
       </div>
     );
   }

@@ -1,6 +1,15 @@
 import { newSpecPage } from '@stencil/core/testing';
 import { HeaderComponent } from './header';
 
+const mutationObserverMock = jest.fn<MutationObserver, [MutationCallback]>().mockImplementation(() => {
+  return {
+    observe: jest.fn(),
+    disconnect: jest.fn(),
+    takeRecords: jest.fn(),
+  };
+});
+global.MutationObserver = mutationObserverMock;
+
 describe('admiralty-header', () => {
   it('renders', async () => {
     const page = await newSpecPage({
@@ -50,11 +59,11 @@ describe('admiralty-header', () => {
                 <img alt="ADMIRALTY" class="header-image" src="svg/Admiralty stacked logo.svg">
               </a>
               <div class="vertical-seperator"></div>
-              <h1 class="header-title">
+              <h2 class="header-title">
                 <a tabindex="0">
                   Design System
                 </a>
-              </h1>
+              </h2>
             </div>
             <div class="header-menus">
               <div class="mobile-menu-toggle">
@@ -88,11 +97,11 @@ describe('admiralty-header', () => {
                 <img alt="ADMIRALTY" class="header-image" src="svg/Admiralty stacked logo.svg">
               </a>
               <div class="vertical-seperator"></div>
-              <h1 class="header-title">
+              <h2 class="header-title">
                 <a href="null" tabindex="0">
                   Design System
                 </a>
-              </h1>
+              </h2>
             </div>
             <div class="header-menus">
               <div class="mobile-menu-toggle">
@@ -129,11 +138,11 @@ describe('admiralty-header', () => {
                 <img alt="Logo" class="header-image" src="logo.svg">
               </a>
               <div class="vertical-seperator"></div>
-              <h1 class="header-title">
+              <h2 class="header-title">
                 <a href="#" tabindex="0">
                   Design System
                 </a>
-              </h1>
+              </h2>
             </div>
             <div class="header-menus">
               <div class="display-hamburger mobile-menu-toggle">
@@ -172,11 +181,11 @@ describe('admiralty-header', () => {
                 <img alt="Logo" class="header-image" src="logo.svg">
               </a>
               <div class="vertical-seperator"></div>
-              <h1 class="header-title">
+              <h2 class="header-title">
                 <a href="#" tabindex="0">
                   Design System
                 </a>
-              </h1>
+              </h2>
             </div>
             <div class="header-menus">
               <div class="display-hamburger mobile-menu-toggle">
@@ -216,11 +225,11 @@ describe('admiralty-header', () => {
                 <img alt="Logo" class="header-image" src="logo.svg">
               </a>
               <div class="vertical-seperator"></div>
-              <h1 class="header-title">
+              <h2 class="header-title">
                 <a href="#" tabindex="0">
                   Design System
                 </a>
-              </h1>
+              </h2>
             </div>
             <div class="header-menus">
               <div class="display-hamburger mobile-menu-toggle">
@@ -267,11 +276,11 @@ describe('admiralty-header', () => {
                 <img alt="Logo" class="header-image" src="logo.svg">
               </a>
               <div class="vertical-seperator"></div>
-              <h1 class="header-title">
+              <h2 class="header-title">
                 <a href="#" tabindex="0">
                   Design System
                 </a>
-              </h1>
+              </h2>
             </div>
             <div class="header-menus">
               <div class="display-hamburger mobile-menu-toggle">

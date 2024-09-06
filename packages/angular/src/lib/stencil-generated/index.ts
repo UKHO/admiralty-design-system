@@ -2,6 +2,8 @@
 import * as d from './components';
 
 export const DIRECTIVES = [
+  d.AdmiraltyAutocomplete,
+  d.AdmiraltyAutocompleteOption,
   d.AdmiraltyBreadcrumb,
   d.AdmiraltyBreadcrumbs,
   d.AdmiraltyButton,
@@ -16,6 +18,7 @@ export const DIRECTIVES = [
   d.AdmiraltyFooter,
   d.AdmiraltyHeader,
   d.AdmiraltyHeaderMenuItem,
+  d.AdmiraltyHeaderMenuLink,
   d.AdmiraltyHeaderProfile,
   d.AdmiraltyHeaderSubMenuItem,
   d.AdmiraltyHint,
