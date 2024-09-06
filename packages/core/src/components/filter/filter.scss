@@ -1,5 +1,5 @@
-@use "../../scss/vars/colours";
-@use "../../scss/base/typography";
+@use '../../scss/vars/colours';
+@use '../../scss/base/typography';
 
 .filter-heading {
   display: flex;
@@ -7,7 +7,7 @@
   align-items: baseline;
 
   .filter-title {
-    @extend h2
+    @extend h2;
   }
 
   .button-wrapper {
@@ -17,7 +17,7 @@
     button.text-link {
       background-color: unset;
       border: none;
-      color: black;
+      color: colours.$colour-text;
       padding: 0;
       min-width: unset;
       width: unset;
@@ -35,7 +35,7 @@
       outline: none;
     }
     button.text-link:focus::after {
-      content: "";
+      content: '';
       position: absolute;
       top: -3px;
       bottom: 0;

@@ -1,7 +1,7 @@
-@use "../../scss/base/responsive";
-
-@use "../../scss/vars/colours";
-@use "../../scss/vars/typography";
+@use '../../scss/base/responsive';
+@use '../../scss/vars/colours';
+@use '../../scss/vars/typography';
+@use '../../scss/base/a11y';
 
 @mixin button-defaults {
   display: inline-flex;
@@ -17,7 +17,16 @@
   cursor: pointer;
 
   &:focus {
-    outline: 3px solid colours.$colour-utility-focus;
+    outline: none;
+    color: colours.$colour-text;
+    background-color: colours.$colour-utility-focus;
+    border: none;
+    border-bottom: 4px solid colours.$colour-text;
+    padding: 12px 18px 8px;
+
+    ::slotted(*) {
+      color: colours.$colour-text !important;
+    }
   }
 
   &:disabled {
@@ -67,7 +76,17 @@ button.primary {
 
   &:hover {
     background-color: colours.$colour-button-hover;
-    border: 2px solid colours.$colour-button-hover;
+    color: colours.$colour-button-text;
+    border-color: colours.$colour-button-hover;
+    padding: 10px 16px;
+  }
+
+  &:hover:focus {
+    padding: 12px 18px 8px;
+  }
+
+  &:hover:focus:active {
+    padding: 10px 16px;
   }
 
   &:enabled:active {
@@ -99,7 +118,9 @@ button.secondary {
 
   &:hover {
     background-color: colours.$colour-button-secondary-hover;
+    color: colours.$colour-button-secondary-text;
     border: 2px solid colours.$colour-button-secondary-border-hover;
+    padding: 10px 16px;
   }
 
   &:enabled:active {
@@ -135,7 +156,9 @@ button.warning {
 
   &:hover {
     background-color: colours.darken(colours.$colour-utility-error);
+    color: colours.$colour-white;
     border: 2px solid colours.darken(colours.$colour-utility-error);
+    padding: 10px 16px;
   }
 
   &:enabled:active {
@@ -190,7 +213,15 @@ button.text {
   }
 
   &:focus {
-    outline-offset: 3px;
+    border: none;
+    box-shadow:
+      0 -2px colours.$colour-utility-focus,
+      0 4px colours.$colour-text;
+    text-decoration: none;
+    padding: 0;
+    ::slotted(*) {
+      color: colours.$colour-text !important;
+    }
   }
 
   i {
@@ -203,15 +234,31 @@ button.icon {
   @include button-defaults;
   min-height: 44px;
   min-width: 50px;
-  padding: 10px 10px;
+  padding: 10px;
 
   background-color: var(--button-icon-background-colour, colours.$colour-bg-grey);
   color: colours.$colour-admiralty-blue;
   border: 2px solid colours.$colour-admiralty-blue;
+  padding: 10px 14px;
+
+  &:focus {
+    padding: 12px 16px 8px;
+  }
+
+  &:hover {
+    background-color: darken(colours.$colour-bg-grey, 5);
+    border: 2px solid colours.$colour-admiralty-blue;
+    padding: 10px 14px;
+  }
 
   &:enabled:active {
     background-color: colours.$colour-admiralty-blue;
     color: colours.$colour-white;
+    border: 2px solid transparent;
+
+    admiralty-icon {
+      color: colours.$colour-white !important;
+    }
   }
 
   &:disabled {

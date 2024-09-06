@@ -57,7 +57,6 @@ export class PaginatorComponent {
           variant="icon"
           icon={faChevronLeft.iconName}
           disabled={this.currentPage === 1}
-          tabindex={0}
           aria-disabled={this.currentPage === 1}
           onClick={this.prev.bind(this)}
           onKeyDown={e => this.onKeydown(e, this.prev.bind(this))}
@@ -67,7 +66,6 @@ export class PaginatorComponent {
           variant="icon"
           icon={faChevronRight.iconName}
           disabled={this.currentPage === this.pages}
-          tabindex={0}
           aria-disabled={this.currentPage === this.pages}
           onClick={this.next.bind(this)}
           onKeyDown={e => this.onKeydown(e, this.next.bind(this))}

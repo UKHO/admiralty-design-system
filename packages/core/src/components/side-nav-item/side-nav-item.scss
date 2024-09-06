@@ -1,5 +1,5 @@
-@use "../../scss/base/responsive";
-@use "../../scss/vars/colours";
+@use '../../scss/base/responsive';
+@use '../../scss/vars/colours';
 
 a.section {
   cursor: pointer;
@@ -22,12 +22,16 @@ a.section {
     background-color: colours.$colour-nav-bg-hover;
   }
 
-  &:focus {
-    outline-offset: -2px;
-  }
-
   &.navActive {
     background-color: colours.$colour-admiralty-blue;
     color: colours.$colour-white;
+  }
+
+  &:focus {
+    background-color: colours.$colour-utility-focus;
+    color: colours.$colour-text;
+    box-shadow: none;
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid colours.$colour-text;
   }
 }

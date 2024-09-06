@@ -1,8 +1,7 @@
-@use "../../scss/vars/colours";
-@use "../../scss/base/responsive";
-@use "../../scss/base/typography";
-@use "../../scss/vars/typography" as typography-vars;
-
+@use '../../scss/vars/colours';
+@use '../../scss/base/responsive';
+@use '../../scss/base/typography';
+@use '../../scss/vars/typography' as typography-vars;
 
 .text-area-container {
   textarea {
@@ -38,7 +37,7 @@
     &.disabled {
       color: colours.$colour-textinput-text-disabled;
       border-color: colours.$colour-textinput-border-disabled;
-      background: colours.$colour-white;
+      background: colours.$colour-bg;
     }
   }
 }

@@ -8,7 +8,7 @@ export default function ImageBanner() {
         patterns.
       </h1>
       <p>
-        Service used in image:
+        Service used in image:{" "}
         <a href="https://easytide.admiralty.co.uk/" target="_blank">
           EasyTide
         </a>
@@ -16,3 +16,4 @@ export default function ImageBanner() {
     </div>
   );
 }
+

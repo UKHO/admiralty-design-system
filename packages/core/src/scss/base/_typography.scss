@@ -1,6 +1,7 @@
 @use '../vars/colours';
 @use 'responsive';
 @use '../vars/typography';
+@use 'a11y';
 
 * {
   font-family: typography.$font-family;
@@ -15,9 +16,12 @@
 
 a {
   color: colours.$colour-admiralty-blue;
+  text-underline-offset: 0.15em;
   &:focus {
-    outline: 3px solid colours.$colour-utility-focus;
-    outline-offset: 1px;
+    @include a11y.focus-highlight;
+  }
+  &:hover {
+    text-decoration-thickness: 0.15em;
   }
 }
 
@@ -105,7 +109,7 @@ blockquote {
   padding: 24px 18px;
   border-left: 5px solid colours.$colour-admiralty-blue;
   margin-bottom: 30px;
-  background: #eeeeee;
+  background: colours.$colour-bg-grey;
   @include responsive.not-desktop {
     line-height: 24px;
   }

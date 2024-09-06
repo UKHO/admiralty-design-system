@@ -1,4 +1,4 @@
-@use "../vars/responsive";
+@use '../vars/responsive';
 
 @mixin not-desktop() {
   @media (max-width: responsive.$device-size-desktop - 1px) {
@@ -19,7 +19,7 @@
 }
 
 @mixin tablet-or-desktop() {
-  @media (min-width: responsive.$device-size-phone + 1px) {
+  @media (min-width: responsive.$device-size-tablet + 1px) {
     @content;
   }
 }
