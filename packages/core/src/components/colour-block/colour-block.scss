@@ -14,9 +14,12 @@
   }
 
   .clickAction {
-    background-color: unset;
     align-self: flex-end;
     cursor: pointer;
+
+    &:focus * {
+      color: colours.$colour-text !important;
+    }
 
     span {
       font-weight: $colour-block-action-font-weight;

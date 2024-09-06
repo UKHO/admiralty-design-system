@@ -12,7 +12,16 @@
   cursor: pointer;
 
   &:focus {
-    outline: 3px solid $button-focus-colour;
+    outline: none;
+    color: colours.$colour-text;
+    background-color: colours.$colour-utility-focus;
+    border: none;
+    border-bottom: 4px solid $button-focus-colour;
+    padding: 12px 18px 8px;
+
+    ::slotted(*) {
+      color: colours.$colour-text !important;
+    }
   }
 
   &:disabled {
@@ -63,6 +72,17 @@ button.primary {
   &:hover {
     background-color: $button-hover-colour-standard;
     border: 2px solid $button-hover-colour-standard;
+    color: colours.$colour-button-text;
+    border-color: colours.$colour-button-hover;
+    padding: 10px 16px;
+  }
+
+  &:hover:focus {
+    padding: 12px 18px 8px;
+  }
+
+  &:hover:focus:active {
+    padding: 10px 16px;
   }
 
   &:enabled:active {
@@ -94,7 +114,9 @@ button.secondary {
 
   &:hover {
     background-color: $button-hover-colour-secondary;
+    color: colours.$colour-button-secondary-text;
     border: 2px solid $button-hover-border-colour-secondary;
+    padding: 10px 16px;
   }
 
   &:enabled:active {
@@ -124,13 +146,15 @@ button.secondary {
 /* Warning Buttons */
 button.warning {
   @include button;
-  background-color: $button-colour-warning;
-  color: $button-text-colour-warning;
-  border: 2px solid $button-colour-warning;
+  background-color: colours.$colour-utility-error;
+  color: colours.$colour-white;
+  border: 2px solid colours.$colour-utility-error;
 
   &:hover {
     background-color: $button-hover-colour-warning;
+    color: colours.$colour-white;
     border: 2px solid $button-hover-border-colour-warning;
+    padding: 10px 16px;
   }
 
   &:enabled:active {
@@ -185,7 +209,15 @@ button.text {
   }
 
   &:focus {
-    outline-offset: 3px;
+    border: none;
+    box-shadow:
+      0 -2px colours.$colour-utility-focus,
+      0 4px colours.$colour-text;
+    text-decoration: none;
+    padding: 0;
+    ::slotted(*) {
+      color: colours.$colour-text !important;
+    }
   }
 
   i {
@@ -198,21 +230,31 @@ button.icon {
   @include button-defaults;
   min-height: 44px;
   min-width: 50px;
-  padding: 10px 10px;
 
   background-color: $button-colour-icon;
   color: $button-text-colour-icon;
   border: 2px solid $button-border-colour-icon;
+  padding: 10px 14px;
+
+  &:focus {
+    padding: 12px 16px 8px;
+  }
 
   &:hover {
     background-color: $button-hover-colour-icon;
     border: 2px solid $button-hover-border-colour-icon;
+    padding: 10px 14px;
   }
 
   &:enabled:active {
     background-color: $button-active-colour-icon;
     color: $button-active-text-colour-icon;
     border: 2px solid $button-active-border-colour-icon;
+    border: 2px solid transparent;
+
+    admiralty-icon {
+      color: colours.$colour-white !important;
+    }
   }
 
   &:disabled {

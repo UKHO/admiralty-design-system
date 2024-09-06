@@ -1,3 +1,67 @@
+# v0.23.2 (Fri Sep 06 2024)
+
+#### 🐛 Bug Fix
+
+- `@ukho/admiralty-core`
+  - fix: Fix logo alt text so that it matches the image [#204](https://github.com/UKHO/admiralty-design-system/pull/204) ([@UKHOGreg](https://github.com/UKHOGreg) [@buzzub](https://github.com/buzzub))
+
+#### Authors: 2
+
+- Greg Williams ([@UKHOGreg](https://github.com/UKHOGreg))
+- Natalie ([@buzzub](https://github.com/buzzub))
+
+---
+
+# v0.23.1 (Thu Sep 05 2024)
+
+#### 🐛 Bug Fix
+
+- `@ukho/admiralty-core`
+  - Update menu items to be correct colour [#250](https://github.com/UKHO/admiralty-design-system/pull/250) ([@buzzub](https://github.com/buzzub))
+
+#### Authors: 1
+
+- Natalie ([@buzzub](https://github.com/buzzub))
+
+---
+
+# v0.23.0 (Thu Sep 05 2024)
+
+#### 🚀 Enhancement
+
+- `@ukho/admiralty-core`
+  - Update radio buttons and radio group [#246](https://github.com/UKHO/admiralty-design-system/pull/246) ([@buzzub](https://github.com/buzzub))
+
+#### 🐛 Bug Fix
+
+- `@ukho/admiralty-angular`, `@ukho/admiralty-core`
+  - Remove maxinput property from input fields [#247](https://github.com/UKHO/admiralty-design-system/pull/247) ([@buzzub](https://github.com/buzzub))
+
+#### Authors: 1
+
+- Natalie ([@buzzub](https://github.com/buzzub))
+
+---
+
+# v0.22.0 (Thu Sep 05 2024)
+
+#### 🚀 Enhancement
+
+- `@ukho/admiralty-core`
+  - Change Header Component to H2 [#225](https://github.com/UKHO/admiralty-design-system/pull/225) ([@lstevens98](https://github.com/lstevens98) [@buzzub](https://github.com/buzzub))
+
+#### 🐛 Bug Fix
+
+- `@ukho/admiralty-core`
+  - Update dialogue text to be a h2 [#245](https://github.com/UKHO/admiralty-design-system/pull/245) ([@buzzub](https://github.com/buzzub))
+
+#### Authors: 2
+
+- Lewis Stevens ([@lstevens98](https://github.com/lstevens98))
+- Natalie ([@buzzub](https://github.com/buzzub))
+
+---
+
 # v0.21.0 (Thu Sep 05 2024)
 
 #### 🚀 Enhancement

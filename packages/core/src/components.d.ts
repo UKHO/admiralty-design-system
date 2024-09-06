@@ -156,7 +156,7 @@ export namespace Components {
           * The type of button to render. Valid values are `primary`, `secondary`, `warning`, `text` and `icon`. Default value is `primary`.
          */
         "variant": ButtonVariant;
-    }
+  }
     interface AdmiraltyCard {
         /**
           * The title of the card.
@@ -424,10 +424,6 @@ export namespace Components {
          */
         "label": string;
         /**
-          * The maximum string length for the input field.
-         */
-        "maxLength"?: number;
-        /**
           * The name of the control, which is submitted with the form data.
          */
         "name": string;
@@ -557,9 +553,17 @@ export namespace Components {
     }
     interface AdmiraltyRadioGroup {
         /**
-          * Setting this true displays the radio options vertically (defaults to false)
+          * Whether the radio controls should be disabled
+         */
+        "disabled": boolean;
+        /**
+          * Setting this to false displays the radio options horizontally (defaults to true)
          */
         "displayVertical": boolean;
+        /**
+          * The hint text to display below the label
+         */
+        "hint": string;
         /**
           * Whether to show the input in an invalid state
          */
@@ -568,6 +572,10 @@ export namespace Components {
           * The message to show when the input is invalid
          */
         "invalidMessage": string;
+        /**
+          * The label text to display above the control
+         */
+        "label": string;
         /**
           * The name of the control, which is submitted with the form data
          */
@@ -710,10 +718,6 @@ export namespace Components {
           * The label which will be used as a placeholder in the unfilled state, and as a field label in the filled state.
          */
         "label": string;
-        /**
-          * The maximum string length for the input field.
-         */
-        "maxLength"?: number;
         /**
           * The value of the textarea.
          */
@@ -1920,10 +1924,6 @@ declare namespace LocalJSX {
          */
         "label"?: string;
         /**
-          * The maximum string length for the input field.
-         */
-        "maxLength"?: number;
-        /**
           * The name of the control, which is submitted with the form data.
          */
         "name"?: string;
@@ -2080,9 +2080,17 @@ declare namespace LocalJSX {
     }
     interface AdmiraltyRadioGroup {
         /**
-          * Setting this true displays the radio options vertically (defaults to false)
+          * Whether the radio controls should be disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * Setting this to false displays the radio options horizontally (defaults to true)
          */
         "displayVertical"?: boolean;
+        /**
+          * The hint text to display below the label
+         */
+        "hint"?: string;
         /**
           * Whether to show the input in an invalid state
          */
@@ -2091,6 +2099,10 @@ declare namespace LocalJSX {
           * The message to show when the input is invalid
          */
         "invalidMessage"?: string;
+        /**
+          * The label text to display above the control
+         */
+        "label"?: string;
         /**
           * The name of the control, which is submitted with the form data
          */
@@ -2254,10 +2266,6 @@ declare namespace LocalJSX {
           * The label which will be used as a placeholder in the unfilled state, and as a field label in the filled state.
          */
         "label"?: string;
-        /**
-          * The maximum string length for the input field.
-         */
-        "maxLength"?: number;
         /**
           * Event is fired when the form control changes
           * @event admiraltyChange

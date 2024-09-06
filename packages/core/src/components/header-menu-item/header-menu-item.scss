@@ -5,6 +5,7 @@
 }
 
 .menu-item {
+  color: colours.$colour-admiralty-blue;
   cursor: pointer;
 
   .menu-title {
@@ -12,6 +13,8 @@
 
     &:focus {
       box-shadow: $header-menu-item-focus-colour inset 0 0 0 3px;
+    &:focus div {
+      @include a11y.focus-highlight;
     }
   }
 }
@@ -54,7 +57,7 @@ button {
       }
     }
 
-    .menu-title {
+    .menu-title div {
       font-weight: $header-menu-item-title-text-weight;
     }
 

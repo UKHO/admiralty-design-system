@@ -35,7 +35,7 @@ export class HeaderComponent {
   /**
    * The alternate image text for the logo image
    */
-  @Prop() logoAltText: string = 'Admiralty Stacked Logo';
+  @Prop() logoAltText: string = 'ADMIRALTY';
 
   /**
    * Emits an event that can be listened to when the title in the header is clicked
@@ -89,11 +89,11 @@ export class HeaderComponent {
             </a>
             <div class="vertical-seperator"></div>
             {this.headerTitle ? (
-              <h1 class="header-title">
+              <h2 class="header-title">
                 <a onClick={ev => this.handleClick(ev)} href={headerTitleUrl} tabindex="0">
                   {headerTitle}
                 </a>
-              </h1>
+              </h2>
             ) : null}
           </div>
           <div class="header-menus">

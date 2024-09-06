@@ -12,7 +12,9 @@ describe('header-profile', () => {
       <admiralty-header-profile>
         <div class="header-profile">
           <button class="sub-menu-item" tabindex="0">
-            Sign In
+            <div>
+              Sign In
+            </div>
           </button>
         </div>
       </admiralty-header-profile>
@@ -28,7 +30,9 @@ describe('header-profile', () => {
       <admiralty-header-profile is-signed-in="false" signed-in-text="Mr Admiral">
         <div class="header-profile">
           <button class="sub-menu-item" tabindex="0">
-            Sign In
+            <div>
+              Sign In
+            </div>
           </button>
         </div>
       </admiralty-header-profile>
@@ -45,14 +49,20 @@ describe('header-profile', () => {
           <div>
             <div class="desktop">
               <button tabindex="0">
-                Mr Admiral
+                <div>
+                  Mr Admiral
+                </div>
               </button>
               <div class="desktop-hide sub-menu">
                 <button class="sub-menu-item" tabindex="0">
-                  Your Account
+                  <div>
+                    Your Account
+                  </div>
                 </button>
                 <button class="sub-menu-item" tabindex="0">
-                  Sign Out
+                  <div>
+                    Sign Out
+                  </div>
                 </button>
               </div>
             </div>

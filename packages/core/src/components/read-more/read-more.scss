@@ -38,10 +38,10 @@ section.expansion {
       vertical-align: top;
     }
 
-
     &:focus {
       outline: none;
       box-shadow: 0 0 0 3px $read-more-focus-colour;
+      @include a11y.focus-highlight;
     }
   }
 }

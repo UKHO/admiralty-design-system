@@ -5,8 +5,8 @@
     appearance: none;
     border: 2px solid $radio-border-colour;
     border-radius: 1rem;
-    height: 1.5rem;
-    width: 1.5rem;
+    height: 1.625rem;
+    width: 1.625rem;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -25,9 +25,9 @@
     &:checked:after {
       border-radius: 100%;
       background-color: $radio-checked-background-colour;
-      width: .8rem;
-      height: .8rem;
-      content: " ";
+      width: 0.75rem;
+      height: 0.75rem;
+      content: ' ';
     }
 
     &:disabled {
@@ -35,13 +35,26 @@
     }
 
     &:focus {
-      outline: 3px solid $radio-focus-colour;
+      outline: 4px solid $radio-focus-colour;
       outline-offset: 0;
+      border-width: 3.5px;
     }
   }
   label {
     font-weight: $radio-text-weight;
     position: relative;
     top: 2px;
+  }
+}
+
+.conditional {
+  margin: 10px 0 0 13px;
+  padding-left: 30px;
+  border-left: 4px solid lightgrey;
+  &:empty {
+    margin: 0;
+  }
+  &.unchecked {
+    display: none;
   }
 }

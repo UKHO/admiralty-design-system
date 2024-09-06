@@ -21,12 +21,16 @@ a.section {
     background-color: $side-nav-item-hover-background-colour;
   }
 
-  &:focus {
-    outline-offset: -2px;
-  }
-
   &.navActive {
     background-color: $side-nav-item-active-background-colour;
     color: $side-nav-item-active-text-colour;
+  }
+
+  &:focus {
+    background-color: colours.$colour-utility-focus;
+    color: colours.$colour-text;
+    box-shadow: none;
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid colours.$colour-text;
   }
 }

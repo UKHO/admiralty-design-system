@@ -12,9 +12,14 @@ html {
 
 a {
   color: var(--admiralty-colour-primary);
+  text-underline-offset: 0.15em;
   &:focus {
     outline: 3px solid var(--admiralty-focus-outline-colour);
     outline-offset: 1px;
+    @include a11y.focus-highlight;
+  }
+  &:hover {
+    text-decoration-thickness: 0.15em;
   }
 }
 
@@ -94,7 +99,7 @@ blockquote {
   padding: 24px 18px;
   border-left: 5px solid var(--admiralty-colour-primary);
   margin-bottom: 30px;
-  background: #eeeeee;
+  background: colours.$colour-bg-grey;
   @include responsive.not-desktop {
     line-height: 24px;
   }

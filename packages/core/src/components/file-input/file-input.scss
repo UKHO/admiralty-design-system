@@ -13,6 +13,10 @@
   line-height: $file-input-line-height;
   font-weight: $file-input-font-weight;
 
+  &:hover {
+    background-color: darken(colours.$colour-bg-grey, 5);
+  }
+
   &.invalid {
     border-color: $file-input-invalid-border-colour;
   }
@@ -65,4 +69,9 @@ input[type='file'] {
     outline: 3px solid $file-input-focus-colour;
     outline-offset: 2px;
   }
+}
+
+input[type='file']:focus + label {
+  outline: 2px solid colours.$colour-text;
+  box-shadow: colours.$colour-text inset 0 0 0 2px;
 }

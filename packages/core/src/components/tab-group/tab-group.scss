@@ -31,6 +31,11 @@ hr {
     background-color: unset;
     font-weight: $tab-group-heading-text-weight;
     font-size: 16px;
+    margin-left: 4px;
+
+    &:first-child {
+      margin-left: 0;
+    }
 
     @include not-desktop {
       font-size: 14px;
@@ -52,6 +57,18 @@ hr {
     &:focus-visible {
       outline: 3px solid $tab-group-focus-colour;
       box-shadow: $tab-group-focus-colour inset 0 0 0 2px;
+    }
+
+    &:focus,
+    &.active:focus {
+      @include a11y.focus-highlight;
+      box-shadow: 0px -4px colours.$colour-text inset;
+    }
+
+    &:hover {
+      background-color: colours.$colour-nav-bg-hover;
+      color: colours.$colour-admiralty-blue;
+      box-shadow: unset;
     }
 
     &.active {

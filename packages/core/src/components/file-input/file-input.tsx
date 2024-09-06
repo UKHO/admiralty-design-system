@@ -99,11 +99,11 @@ export class FileInputComponent {
     return (
       <Host onDragLeave={event => this.dragLeaveHander(event)} onDragOver={event => this.dragOverHandler(event)} onDrop={event => this.dropHandler(event)}>
         <div class={{ 'admiralty-file-input': true, 'invalid': this.invalid }}>
+          <input onChange={event => this.changeHandler(event)} id={this.id} aria-label="Upload a file" type="file" class="admiralty-form-field" multiple={this.multiple} />
           <label htmlFor={this.id}>
             <admiralty-icon class="upload-icon" icon-name="upload"></admiralty-icon>
             <span>{this.label}</span>
           </label>
-          <input onChange={event => this.changeHandler(event)} id={this.id} aria-label="Upload a file" type="file" class="admiralty-form-field" multiple={this.multiple} />
         </div>
         <admiralty-input-invalid style={{ ...(!(this.invalid && this.invalidMessage) ? { display: 'none' } : {}) }}>{this.invalidMessage}</admiralty-input-invalid>
       </Host>

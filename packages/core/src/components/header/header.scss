@@ -48,6 +48,7 @@
     &:focus {
       outline: 3px solid $header-outline-colour;
       outline-offset: 3px;
+      @include a11y.focus-highlight;
     }
   }
 
@@ -68,12 +69,13 @@
     justify-content: center;
     font-size: 2em;
     line-height: 2em;
-    margin-bottom: unset !important;
+    margin-top: 4px;
+    margin-bottom: unset;
     user-select: none;
 
     @include not-desktop {
       font-size: 24px;
-      line-height: 24px !important;
+      line-height: 24px;
       white-space: pre-wrap;
     }
 
