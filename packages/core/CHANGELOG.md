@@ -1,3 +1,16 @@
+# v1.0.0 (Fri Sep 06 2024)
+
+#### 💥 Breaking Change
+
+- Unify focus highlight and colours for all components [#248](https://github.com/UKHO/admiralty-design-system/pull/248) ([@buzzub](https://github.com/buzzub) [@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+#### Authors: 2
+
+- Natalie ([@buzzub](https://github.com/buzzub))
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
 # v0.23.2 (Fri Sep 06 2024)
 
 #### 🐛 Bug Fix
