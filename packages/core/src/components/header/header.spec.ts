@@ -23,7 +23,7 @@ describe('admiralty-header', () => {
           <nav class="header-menu">
             <div class="header-branding">
               <a class="header-logo" href="https://www.admiralty.co.uk/" tabindex="0">
-                <img alt="Admiralty Stacked Logo" class="header-image" src="svg/Admiralty stacked logo.svg">
+                <img alt="ADMIRALTY" class="header-image" src="svg/Admiralty stacked logo.svg">
               </a>
               <div class="vertical-seperator"></div>
             </div>
@@ -56,7 +56,7 @@ describe('admiralty-header', () => {
           <nav class="header-menu">
             <div class="header-branding">
               <a class="header-logo" href="https://www.admiralty.co.uk/" tabindex="0">
-                <img alt="Admiralty Stacked Logo" class="header-image" src="svg/Admiralty stacked logo.svg">
+                <img alt="ADMIRALTY" class="header-image" src="svg/Admiralty stacked logo.svg">
               </a>
               <div class="vertical-seperator"></div>
               <h2 class="header-title">
@@ -94,7 +94,7 @@ describe('admiralty-header', () => {
           <nav class="header-menu">
             <div class="header-branding">
               <a class="header-logo" href="http://www.example.com" tabindex="0">
-                <img alt="Admiralty Stacked Logo" class="header-image" src="svg/Admiralty stacked logo.svg">
+                <img alt="ADMIRALTY" class="header-image" src="svg/Admiralty stacked logo.svg">
               </a>
               <div class="vertical-seperator"></div>
               <h2 class="header-title">
