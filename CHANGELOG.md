@@ -1,3 +1,16 @@
+# v0.23.1 (Thu Sep 05 2024)
+
+#### 🐛 Bug Fix
+
+- `@ukho/admiralty-core`
+  - Update menu items to be correct colour [#250](https://github.com/UKHO/admiralty-design-system/pull/250) ([@buzzub](https://github.com/buzzub))
+
+#### Authors: 1
+
+- Natalie ([@buzzub](https://github.com/buzzub))
+
+---
+
 # v0.23.0 (Thu Sep 05 2024)
 
 #### 🚀 Enhancement
