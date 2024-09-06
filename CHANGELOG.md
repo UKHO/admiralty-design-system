@@ -1,3 +1,17 @@
+# v0.23.2 (Fri Sep 06 2024)
+
+#### 🐛 Bug Fix
+
+- `@ukho/admiralty-core`
+  - fix: Fix logo alt text so that it matches the image [#204](https://github.com/UKHO/admiralty-design-system/pull/204) ([@UKHOGreg](https://github.com/UKHOGreg) [@buzzub](https://github.com/buzzub))
+
+#### Authors: 2
+
+- Greg Williams ([@UKHOGreg](https://github.com/UKHOGreg))
+- Natalie ([@buzzub](https://github.com/buzzub))
+
+---
+
 # v0.23.1 (Thu Sep 05 2024)
 
 #### 🐛 Bug Fix
