@@ -58,6 +58,25 @@ describe('type-ahead', () => {
     `);
   });
 
+  it('renders a custom identifier', async () => {
+    const page = await newSpecPage({
+      components: [TypeAheadComponent],
+      html: `<admiralty-type-ahead identifier="custom"></admiralty-type-ahead>`,
+    });
+    expect(page.root).toEqualHtml(`
+      <admiralty-type-ahead identifier="custom">
+        <div class="visually-hidden">
+          <div aria-atomic="true" aria-live="polite" class="results-status-a" role="status"></div>
+          <div aria-atomic="true" aria-live="polite" class="results-status-b" role="status"></div>
+        </div>
+        <admiralty-input class="filterTextInput" identifier="custom" type="text"></admiralty-input>
+        <span class="visually-hidden" id="admiralty-typeahead-3-assistive-hint">
+          When autocomplete results are available use up and down arrows to review and enter to select. Touch device users, explore by touch or with swipe gestures.
+        </span>
+      </admiralty-type-ahead>
+    `);
+  });
+
   it('fires valueChanged event', () => {
     const keyPressed = 'd';
 

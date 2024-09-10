@@ -22,6 +22,11 @@ export class InputComponent implements ComponentInterface {
   private nativeInput?: HTMLInputElement;
 
   /**
+   * The unique identifier to give the `input` element
+   */
+  @Prop() identifier: string;
+
+  /**
    * The name of the control, which is submitted with the form data.
    */
   @Prop() name: string = this.inputId;
@@ -131,11 +136,11 @@ export class InputComponent implements ComponentInterface {
 
   render() {
     const value = this.getValue();
-
+    const id = this.identifier ?? this.inputId;
     return (
       <div class="text-input-container">
         {this.label ? (
-          <admiralty-label disabled={this.disabled} for={this.inputId}>
+          <admiralty-label disabled={this.disabled} for={id}>
             {this.label}
           </admiralty-label>
         ) : null}
@@ -148,7 +153,7 @@ export class InputComponent implements ComponentInterface {
           ref={input => (this.nativeInput = input)}
           class={{ disabled: this.disabled, invalid: this.invalid }}
           disabled={this.disabled}
-          id={this.inputId}
+          id={id}
           name={this.name}
           type={this.type}
           value={value}

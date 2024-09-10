@@ -78,6 +78,26 @@ describe('admiralty-radio', () => {
     `);
   });
 
+  it('renders with a custom identifier', async () => {
+    const page = await newSpecPage({
+      components: [RadioComponent],
+      html: `<admiralty-radio identifier="custom" name="rad1" value="option1">Option 1</admiralty-radio>`,
+    });
+
+    expect(page.root).toMatchInlineSnapshot(`
+      <admiralty-radio identifier="custom" name="rad1" value="option1">
+        <!---->
+        <div class="admiralty-radio">
+          <input aria-checked="false" aria-labelledby="custom" class="admiralty-radio" id="custom" name="rad1" tabindex="-1" type="radio" value="option1">
+          <label htmlfor="custom">
+            Option 1
+          </label>
+        </div>
+        <div class="conditional unchecked"></div>
+      </admiralty-radio>
+    `);
+  });
+
   it('fires focus event', async () => {
     const page = await newSpecPage({
       components: [RadioComponent, RadioComponent],

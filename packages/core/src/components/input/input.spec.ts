@@ -2,7 +2,6 @@ import { newSpecPage } from '@stencil/core/testing';
 import { InputComponent } from './input';
 
 let inputId = 1;
-let errorId = 1;
 
 describe('admiralty-input', () => {
   it('renders', async () => {
@@ -22,7 +21,6 @@ describe('admiralty-input', () => {
 
   it('renders with a label', async () => {
     inputId++;
-    errorId++;
     const page = await newSpecPage({
       components: [InputComponent],
       html: `<admiralty-input label="test-label"></admiralty-input>`,
@@ -40,7 +38,6 @@ describe('admiralty-input', () => {
 
   it('renders disabled', async () => {
     inputId++;
-    errorId++;
     const page = await newSpecPage({
       components: [InputComponent],
       html: `<admiralty-input disabled></admiralty-input>`,
@@ -57,7 +54,6 @@ describe('admiralty-input', () => {
 
   it('renders invalid even without invalidMessage', async () => {
     inputId++;
-    errorId++;
     const page = await newSpecPage({
       components: [InputComponent],
       html: `<admiralty-input invalid="true"></admiralty-input>`,
@@ -74,7 +70,6 @@ describe('admiralty-input', () => {
 
   it('renders invalid with invalidMessage', async () => {
     inputId++;
-    errorId++;
     const page = await newSpecPage({
       components: [InputComponent],
       html: `<admiralty-input invalid="true" invalid-message="This is invalid!"></admiralty-input>`,
@@ -93,7 +88,6 @@ describe('admiralty-input', () => {
 
   it('renders with type', async () => {
     inputId++;
-    errorId++;
     const page = await newSpecPage({
       components: [InputComponent],
       html: `<admiralty-input type="date"></admiralty-input>`,
@@ -102,6 +96,22 @@ describe('admiralty-input', () => {
       <admiralty-input type="date">
         <div class="text-input-container">
           <input aria-describedby=" " aria-invalid="false" type="date" autocomplete="off" id="admiralty-input-${inputId}" name="admiralty-input-6" value="">
+          <admiralty-input-invalid id="admiralty-input-error-${inputId}" style="display: none;"></admiralty-input-invalid>
+        </div>
+      </admiralty-input>
+    `);
+  });
+
+  it('renders with a custom identifier', async () => {
+    inputId++;
+    const page = await newSpecPage({
+      components: [InputComponent],
+      html: `<admiralty-input identifier="custom"></admiralty-input>`,
+    });
+    expect(page.root).toEqualHtml(`
+      <admiralty-input identifier="custom">
+        <div class="text-input-container">
+          <input aria-describedby=" " aria-invalid="false" type="text" autocomplete="off" id="custom" name="admiralty-input-7" value="">
           <admiralty-input-invalid id="admiralty-input-error-${inputId}" style="display: none;"></admiralty-input-invalid>
         </div>
       </admiralty-input>

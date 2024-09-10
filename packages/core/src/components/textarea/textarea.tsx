@@ -14,6 +14,11 @@ export class TextareaComponent {
   errorId: string = `admiralty-textarea-error-${this.id}`;
 
   /**
+   * The unique identifier to give the `textarea` element
+   */
+  @Prop() identifier: string;
+
+  /**
    * The label which will be used as a placeholder in the unfilled state, and as a field label in the filled state.
    */
   @Prop() label: string = '';
@@ -90,11 +95,12 @@ export class TextareaComponent {
 
   render() {
     const value = this.getValue();
+    const id = this.identifier ?? this.textareaId;
     return (
       <Host>
         <div class="text-area-container">
           {this.label ? (
-            <admiralty-label for={this.textareaId} disabled={this.disabled}>
+            <admiralty-label for={id} disabled={this.disabled}>
               {this.label}
             </admiralty-label>
           ) : null}
@@ -107,7 +113,7 @@ export class TextareaComponent {
             ref={textArea => (this.nativeTextArea = textArea)}
             class={{ disabled: this.disabled, invalid: this.invalid }}
             style={this.width ? { maxWidth: `${this.width}px` } : {}}
-            id={this.textareaId}
+            id={id}
             value={value}
             onInput={this.onInput}
             onBlur={this.onBlur}

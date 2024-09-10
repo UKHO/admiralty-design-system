@@ -13,6 +13,11 @@ export class RadioComponent {
   @Element() el!: HTMLElement;
 
   /**
+   * The unique identifier to give the `input` element
+   */
+  @Prop() identifier: string;
+
+  /**
    * The tabindex of the radio button.
    * @internal
    */
@@ -114,8 +119,8 @@ export class RadioComponent {
   };
 
   render() {
-    const { buttonTabindex, checked, disabled, inputId, name, value } = this;
-
+    const { buttonTabindex, checked, disabled, identifier, inputId, name, value } = this;
+    const id = identifier ?? inputId;
     return (
       <Host>
         <div class={{ 'admiralty-radio': true, 'checked': checked }}>
@@ -123,8 +128,8 @@ export class RadioComponent {
             class={{ 'invalid': this.invalid, 'admiralty-radio': true }}
             aria-checked={`${checked}`}
             aria-hidden={disabled ? 'true' : null}
-            aria-labelledby={inputId}
-            id={inputId}
+            aria-labelledby={id}
+            id={id}
             name={name}
             tabindex={buttonTabindex}
             onFocus={this.onFocus}
@@ -136,7 +141,7 @@ export class RadioComponent {
             disabled={disabled ? true : null}
             ref={nativeEl => (this.nativeInput = nativeEl as HTMLInputElement)}
           />
-          <label htmlFor={inputId}>
+          <label htmlFor={id}>
             <slot />
           </label>
         </div>

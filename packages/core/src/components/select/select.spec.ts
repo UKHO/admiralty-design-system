@@ -176,6 +176,33 @@ describe('admiralty-select', () => {
     `);
   });
 
+  it('renders with a custom identifier', async () => {
+    const page = await newSpecPage({
+      components: [SelectComponent],
+      html: `<admiralty-select identifier="custom"><option>Test</option></admiralty-select>`,
+    });
+
+    expect(page.root).toMatchInlineSnapshot(`
+      <admiralty-select identifier="custom">
+        <!---->
+        <div class="admiralty-select">
+          <admiralty-label for="custom">
+            Choose a colour
+          </admiralty-label>
+          <div class="select-wrapper">
+            <select aria-disabled="false" aria-label="Choose a colour" class="admiralty-form-control" id="custom">
+              <option>
+                Test
+              </option>
+            </select>
+            <admiralty-icon class="select-down-icon" icon-name="angle-down"></admiralty-icon>
+          </div>
+          <admiralty-input-invalid style="display: none;"></admiralty-input-invalid>
+        </div>
+      </admiralty-select>
+    `);
+  });
+
   it('fires event on selection changed', async () => {
     const page = await newSpecPage({
       components: [SelectComponent],

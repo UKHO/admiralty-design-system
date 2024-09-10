@@ -42,6 +42,11 @@ export class TypeAheadComponent {
   }
 
   /**
+   * The unique identifier to give the `input` element
+   */
+  @Prop() identifier: string;
+
+  /**
    * The value of the textinput
    */
   @Prop() value: string;
@@ -265,6 +270,7 @@ export class TypeAheadComponent {
         <admiralty-input
           type="text"
           ref={el => (this.inputControl = el)}
+          identifier={this.identifier}
           label={this.label}
           hint={this.hint}
           placeholder={this.placeholder}

@@ -130,6 +130,27 @@ describe('file-input', () => {
     `);
   });
 
+  it('renders with a custom identifier', async () => {
+    const page = await newSpecPage({
+      components: [FileInputComponent],
+      html: `<admiralty-file-input identifier="file-1"></admiralty-file-input>`,
+    });
+    expect(page.root).toEqualHtml(`
+      <admiralty-file-input identifier="file-1">
+        <div class="admiralty-file-input">
+          <input aria-label="Upload a file" class="admiralty-form-field" id="file-1" type="file">
+          <label htmlfor="file-1">
+            <admiralty-icon class="upload-icon" icon-name="upload"></admiralty-icon>
+            <span>
+              Click to choose a file or drag it
+            </span>
+          </label>
+        </div>
+        <admiralty-input-invalid style="display: none;"></admiralty-input-invalid>
+      </admiralty-file-input>
+    `);
+  });
+
   const mockFileList = (file: File): FileList => {
     const fileList = {
       length: 1,

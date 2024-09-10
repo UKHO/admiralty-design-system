@@ -10,6 +10,11 @@ export class FileInputComponent {
   @Element() el: HTMLElement;
 
   /**
+   * The unique identifier to give the `input` element
+   */
+  @Prop() identifier: string;
+
+  /**
    * Used to display instructions to the user and is replaced with the filename the user inputs
    */
   @Prop() label: string = 'Click to choose a file or drag it';
@@ -96,11 +101,12 @@ export class FileInputComponent {
   }
 
   render() {
+    const id = this.identifier ?? this.id;
     return (
       <Host onDragLeave={event => this.dragLeaveHander(event)} onDragOver={event => this.dragOverHandler(event)} onDrop={event => this.dropHandler(event)}>
         <div class={{ 'admiralty-file-input': true, 'invalid': this.invalid }}>
-          <input onChange={event => this.changeHandler(event)} id={this.id} aria-label="Upload a file" type="file" class="admiralty-form-field" multiple={this.multiple} />
-          <label htmlFor={this.id}>
+          <input onChange={event => this.changeHandler(event)} id={id} aria-label="Upload a file" type="file" class="admiralty-form-field" multiple={this.multiple} />
+          <label htmlFor={id}>
             <admiralty-icon class="upload-icon" icon-name="upload"></admiralty-icon>
             <span>{this.label}</span>
           </label>

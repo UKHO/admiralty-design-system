@@ -9,7 +9,12 @@ import { SelectChangeEventDetail } from './select.interface';
 export class SelectComponent {
   @Element() el?: HTMLElement;
   private nativeInput?: HTMLSelectElement;
-  id: string = `admiralty-select-${++nextId}`;
+  inputId: string = `admiralty-select-${++nextId}`;
+
+  /**
+   * The unique identifier to give the `select` element
+   */
+  @Prop() identifier: string;
   /**
    * If `true`, the user cannot interact with the select.
    */
@@ -85,8 +90,9 @@ export class SelectComponent {
   }
 
   render() {
-    const { disabled, hint, id, label } = this;
+    const { disabled, hint, identifier, inputId, label } = this;
     const disabledClass = disabled ? 'disabled' : '';
+    const id = identifier ?? inputId;
     return (
       <Host>
         <div class={`admiralty-select ${disabledClass}`}>
