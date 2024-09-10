@@ -7,10 +7,11 @@
 
 ## Properties
 
-| Property  | Attribute | Description                         | Type                                          | Default     |
-| --------- | --------- | ----------------------------------- | --------------------------------------------- | ----------- |
-| `heading` | `heading` | The heading to display.             | `string`                                      | `undefined` |
-| `type`    | `type`    | The type of dialogue box to render. | `"error" \| "info" \| "success" \| "warning"` | `'info'`    |
+| Property      | Attribute      | Description                                                                                                               | Type                                          | Default     |
+| ------------- | -------------- | ------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------- | ----------- |
+| `heading`     | `heading`      | The heading to display.                                                                                                   | `string`                                      | `undefined` |
+| `sectionRole` | `section-role` | The role to give the dialogue section. Set this to `alert` if the dialogue box is being used to summarise error messages. | `"alert"`                                     | `undefined` |
+| `type`        | `type`         | The type of dialogue box to render.                                                                                       | `"error" \| "info" \| "success" \| "warning"` | `'info'`    |
 
 
 ## Dependencies

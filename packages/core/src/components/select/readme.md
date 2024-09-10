@@ -9,6 +9,7 @@
 | ---------------- | ----------------- | ------------------------------------------------------- | ------------------ | ------------------- |
 | `disabled`       | `disabled`        | If `true`, the user cannot interact with the select.    | `boolean`          | `false`             |
 | `hint`           | `hint`            | The text that will be used as a field label.            | `string`           | `null`              |
+| `identifier`     | `identifier`      | The unique identifier to give the `select` element      | `string`           | `undefined`         |
 | `invalid`        | `invalid`         | Whether to show that the select is in an invalid state. | `boolean`          | `false`             |
 | `invalidMessage` | `invalid-message` | The message to show when the select is invalid.         | `string`           | `null`              |
 | `label`          | `label`           | The text that will be used as a field label.            | `string`           | `'Choose a colour'` |
