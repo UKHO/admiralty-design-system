@@ -29,7 +29,7 @@ describe('admiralty-header', () => {
             </div>
             <div class="header-menus">
               <div class="mobile-menu-toggle">
-                <button>
+                <button aria-label="Show menu">
                   <admiralty-icon icon-name="bars"></admiralty-icon>
                 </button>
               </div>
@@ -67,7 +67,7 @@ describe('admiralty-header', () => {
             </div>
             <div class="header-menus">
               <div class="mobile-menu-toggle">
-                <button>
+                <button aria-label="Show menu">
                   <admiralty-icon icon-name="bars"></admiralty-icon>
                 </button>
               </div>
@@ -105,7 +105,7 @@ describe('admiralty-header', () => {
             </div>
             <div class="header-menus">
               <div class="mobile-menu-toggle">
-                <button>
+                <button aria-label="Show menu">
                   <admiralty-icon icon-name="bars"></admiralty-icon>
                 </button>
               </div>
@@ -146,7 +146,7 @@ describe('admiralty-header', () => {
             </div>
             <div class="header-menus">
               <div class="display-hamburger mobile-menu-toggle">
-                <button>
+                <button aria-label="Show menu">
                   <admiralty-icon icon-name="bars"></admiralty-icon>
                 </button>
               </div>
@@ -189,7 +189,7 @@ describe('admiralty-header', () => {
             </div>
             <div class="header-menus">
               <div class="display-hamburger mobile-menu-toggle">
-                <button>
+                <button aria-label="Show menu">
                   <admiralty-icon icon-name="bars"></admiralty-icon>
                 </button>
               </div>
@@ -233,7 +233,7 @@ describe('admiralty-header', () => {
             </div>
             <div class="header-menus">
               <div class="display-hamburger mobile-menu-toggle">
-                <button>
+                <button aria-label="Show menu">
                   <admiralty-icon icon-name="bars"></admiralty-icon>
                 </button>
               </div>
@@ -284,7 +284,7 @@ describe('admiralty-header', () => {
             </div>
             <div class="header-menus">
               <div class="display-hamburger mobile-menu-toggle">
-                <button>
+                <button aria-label="Show menu">
                   <admiralty-icon icon-name="bars"></admiralty-icon>
                 </button>
               </div>
