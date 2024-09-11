@@ -74,23 +74,50 @@
     tempus. Aliquam faucibus ullamcorper libero.
   </p>
 </admiralty-expansion>
-<form [formGroup]="group" (ngSubmit)="onSubmit()" style="margin: 32px">
-  <admiralty-input-invalid>{{ group.value.text }}</admiralty-input-invalid>
+<form
+  [formGroup]="group"
+  (ngSubmit)="onSubmit()"
+  style="margin: 32px; display: flex; flex-direction: column; gap: 16px"
+>
+  <div #errorSummary>
+    <admiralty-error-summary
+      *ngIf="
+        (text?.invalid && text?.touched) ||
+        (number?.invalid && number?.touched) ||
+        (country?.invalid && (country?.dirty || country?.touched)) ||
+        (office?.invalid && (office?.dirty || office?.touched)) ||
+        (direction?.invalid && (direction?.dirty || direction?.touched))
+      "
+    >
+      <admiralty-link *ngIf="text?.invalid && text?.touched" href="#text">Enter some text</admiralty-link>
+      <admiralty-link *ngIf="number?.invalid && number?.touched" href="#number">Enter a number</admiralty-link>
+      <admiralty-link *ngIf="country?.invalid && (country?.dirty || country?.touched)" href="#country"
+        >Country must to be selected</admiralty-link
+      >
+      <admiralty-link *ngIf="office?.invalid && (office?.dirty || office?.touched)" href="#office"
+        >Office needs to be selected</admiralty-link
+      >
+      <admiralty-link *ngIf="direction?.invalid && (direction?.dirty || direction?.touched)" href="#direction"
+        >Direction must to be selected</admiralty-link
+      >
+    </admiralty-error-summary>
+  </div>
   <admiralty-file-input (fileInputChange)="onFileInputChange($event)" multiple="true"></admiralty-file-input>
   <admiralty-input
+    identifier="text"
     label="Text"
     [invalid]="text?.invalid && text?.touched"
-    invalidMessage="This field is required"
+    invalidMessage="Enter some text"
     type="text"
     formControlName="text"
   ></admiralty-input>
   <admiralty-input
+    identifier="number"
     label="Number"
     [invalid]="number?.invalid && number?.touched"
-    invalidMessage="This field is required"
+    invalidMessage="Enter a number"
     type="number"
     formControlName="number"
-    value="123"
   ></admiralty-input>
   <admiralty-checkbox formControlName="checkbox" input-id="checkbox" label-text="checkbox 1"></admiralty-checkbox>
   <admiralty-select formControlName="select" hint="Select an option from the list" label="Choose a colour">
@@ -103,7 +130,15 @@
   </admiralty-radio-group>
   <admiralty-textarea formControlName="textarea" label="Textarea Label"></admiralty-textarea>
   {{ group.value.textarea }}
-  <admiralty-autocomplete label="Direction" formControlName="direction">
+  <admiralty-autocomplete
+    identifier="direction"
+    label="Direction"
+    hint="Select a direction"
+    (admiraltyChange)="onDirectionChanged($event)"
+    formControlName="direction"
+    [invalid]="direction?.invalid && (direction?.dirty || direction?.touched)"
+    invalidMessage="Direction must to be selected"
+  >
     <admiralty-autocomplete-option>North</admiralty-autocomplete-option>
     <admiralty-autocomplete-option>South</admiralty-autocomplete-option>
     <admiralty-autocomplete-option>East</admiralty-autocomplete-option>
@@ -136,6 +171,7 @@
   {{ group.value.autocomplete }}
   <hr />
   <admiralty-autocomplete
+    identifier="country"
     label="Country"
     hint="Select a country"
     (admiraltyChange)="onCountryChanged($event)"
@@ -158,6 +194,7 @@
   <admiralty-button type="button" (click)="selectCountry()">Choose United Kingdom</admiralty-button>
   <hr />
   <admiralty-autocomplete
+    identifier="office"
     label="Office location"
     hint="Please select an office"
     (admiraltyChange)="onOfficeChanged($event)"
