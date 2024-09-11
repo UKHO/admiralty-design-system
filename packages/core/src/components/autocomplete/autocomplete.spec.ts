@@ -188,7 +188,7 @@ describe('autocomplete', () => {
   it('renders with an aria-describedby attribute', async () => {
     const page = await newSpecPage({
       components: [AutocompleteComponent],
-      html: `<admiralty-autocomplete id='autocomplete-default'></admiralty-autocomplete>`,
+      html: `<admiralty-autocomplete identifier='autocomplete-default'></admiralty-autocomplete>`,
     });
 
     expect(page.doc.querySelector('input')).toEqualAttribute('aria-describedby', 'autocomplete-default__assistiveHint');

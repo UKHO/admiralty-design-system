@@ -56,6 +56,10 @@ export namespace Components {
          */
         "hint": string;
         /**
+          * The unique identifier to give the `input` element
+         */
+        "identifier": string;
+        /**
           * Classes to add to the component's `<input>` element.
          */
         "inputClasses": string;
@@ -1529,6 +1533,10 @@ declare namespace LocalJSX {
           * TThe text which will be used under the label to describe the input.
          */
         "hint"?: string;
+        /**
+          * The unique identifier to give the `input` element
+         */
+        "identifier"?: string;
         /**
           * Classes to add to the component's `<input>` element.
          */

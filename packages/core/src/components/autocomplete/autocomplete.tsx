@@ -52,6 +52,10 @@ export class AutocompleteComponent {
   @Element() el!: HTMLAdmiraltyAutocompleteElement;
 
   /**
+   * The unique identifier to give the `input` element
+   */
+  @Prop() identifier: string;
+  /**
    * Automatically select the first matching option.
    */
   @Prop() autoselect: boolean = false;
@@ -490,7 +494,7 @@ export class AutocompleteComponent {
   }
 
   render() {
-    const id = this.el.getAttribute('id') ?? this.name;
+    const id = this.identifier ?? this.name;
     const inputFocused = this.focused === -1;
     const noOptionsAvailable = this.options.length === 0;
     const queryNotEmpty = this.query?.length !== 0;
@@ -603,7 +607,6 @@ export class AutocompleteComponent {
                 'whiteSpace:nowrap;width:1px">' +
                 ` ${index + 1} of ${this.options.length}</span>`
               : '';
-            // console.log(option.text, showFocused, optionModifierFocused);
 
             return (
               <li
