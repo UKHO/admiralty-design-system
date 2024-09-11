@@ -16,6 +16,10 @@
 
 ## Dependencies
 
+### Used by
+
+ - [admiralty-error-summary](../error-summary)
+
 ### Depends on
 
 - [admiralty-icon](../icon)
@@ -24,6 +28,7 @@
 ```mermaid
 graph TD;
   admiralty-dialogue --> admiralty-icon
+  admiralty-error-summary --> admiralty-dialogue
   style admiralty-dialogue fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

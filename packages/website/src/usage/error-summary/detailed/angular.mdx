@@ -1,12 +1,10 @@
 ```html
-<admiralty-dialogue type="error" heading="There's a problem" section-role="alert">
-  <div style="display:flex;flex-direction: column;gap: 8px;">
-    <admiralty-link href="#name">Enter your full name</admiralty-link>
-    <admiralty-link href="#country">Select the country you live in</admiralty-link>
-    <admiralty-link href="#description">Enter a description of the issue</admiralty-link>
-    <admiralty-link href="#file-upload">Select the file that contains the issue</admiralty-link>
-  </div>
-</admiralty-dialogue>
+<admiralty-error-summary heading="There's a problem">
+  <admiralty-link href="#name">Enter your full name</admiralty-link>
+  <admiralty-link href="#country">Select the country you live in</admiralty-link>
+  <admiralty-link href="#description">Enter a description of the issue</admiralty-link>
+  <admiralty-link href="#file-upload">Select the file that contains the issue</admiralty-link>
+</admiralty-error-summary>
 <h2 style="margin: 24px;">Complaint summary</h2>
 <div style="margin: 0 24px;display:flex;flex-direction: column;gap: 36px;">
   <admiralty-input

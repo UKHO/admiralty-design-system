@@ -1,12 +1,10 @@
 ```tsx
-<AdmiraltyDialogue type="error" heading="There's a problem" sectionRole="alert">
-  <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
-    <AdmiraltyLink href="#name">Enter your full name</AdmiraltyLink>
-    <AdmiraltyLink href="#country">Select the country you live in</AdmiraltyLink>
-    <AdmiraltyLink href="#description">Enter a description of the issue</AdmiraltyLink>
-    <AdmiraltyLink href="#file-upload">Select the file that contains the issue</AdmiraltyLink>
-  </div>
-</AdmiraltyDialogue>
+<AdmiraltyErrorSummary heading="There's a problem">
+  <AdmiraltyLink href="#name">Enter your full name</AdmiraltyLink>
+  <AdmiraltyLink href="#country">Select the country you live in</AdmiraltyLink>
+  <AdmiraltyLink href="#description">Enter a description of the issue</AdmiraltyLink>
+  <AdmiraltyLink href="#file-upload">Select the file that contains the issue</AdmiraltyLink>
+</AdmiraltyErrorSummary>
 <h2 style={{ margin: "24px" }}>Complaint summary</h2>
 <div style={{ margin: "0 24px", display: "flex", flexDirection: "column", gap: "36px" }}>
   <AdmiraltyInput

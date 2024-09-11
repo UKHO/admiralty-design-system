@@ -242,6 +242,12 @@ export namespace Components {
          */
         "type": 'info' | 'warning' | 'success' | 'error';
     }
+    interface AdmiraltyErrorSummary {
+        /**
+          * The heading to display.
+         */
+        "heading": string;
+    }
     interface AdmiraltyExpansion {
         /**
           * CWhether the heading should be right aligned.
@@ -955,6 +961,12 @@ declare global {
         prototype: HTMLAdmiraltyDialogueElement;
         new (): HTMLAdmiraltyDialogueElement;
     };
+    interface HTMLAdmiraltyErrorSummaryElement extends Components.AdmiraltyErrorSummary, HTMLStencilElement {
+    }
+    var HTMLAdmiraltyErrorSummaryElement: {
+        prototype: HTMLAdmiraltyErrorSummaryElement;
+        new (): HTMLAdmiraltyErrorSummaryElement;
+    };
     interface HTMLAdmiraltyExpansionElementEventMap {
         "toggled": boolean;
     }
@@ -1443,6 +1455,7 @@ declare global {
         "admiralty-checkbox": HTMLAdmiraltyCheckboxElement;
         "admiralty-colour-block": HTMLAdmiraltyColourBlockElement;
         "admiralty-dialogue": HTMLAdmiraltyDialogueElement;
+        "admiralty-error-summary": HTMLAdmiraltyErrorSummaryElement;
         "admiralty-expansion": HTMLAdmiraltyExpansionElement;
         "admiralty-file-input": HTMLAdmiraltyFileInputElement;
         "admiralty-filter": HTMLAdmiraltyFilterElement;
@@ -1725,6 +1738,12 @@ declare namespace LocalJSX {
           * The type of dialogue box to render.
          */
         "type"?: 'info' | 'warning' | 'success' | 'error';
+    }
+    interface AdmiraltyErrorSummary {
+        /**
+          * The heading to display.
+         */
+        "heading"?: string;
     }
     interface AdmiraltyExpansion {
         /**
@@ -2384,6 +2403,7 @@ declare namespace LocalJSX {
         "admiralty-checkbox": AdmiraltyCheckbox;
         "admiralty-colour-block": AdmiraltyColourBlock;
         "admiralty-dialogue": AdmiraltyDialogue;
+        "admiralty-error-summary": AdmiraltyErrorSummary;
         "admiralty-expansion": AdmiraltyExpansion;
         "admiralty-file-input": AdmiraltyFileInput;
         "admiralty-filter": AdmiraltyFilter;
@@ -2440,6 +2460,7 @@ declare module "@stencil/core" {
             "admiralty-checkbox": LocalJSX.AdmiraltyCheckbox & JSXBase.HTMLAttributes<HTMLAdmiraltyCheckboxElement>;
             "admiralty-colour-block": LocalJSX.AdmiraltyColourBlock & JSXBase.HTMLAttributes<HTMLAdmiraltyColourBlockElement>;
             "admiralty-dialogue": LocalJSX.AdmiraltyDialogue & JSXBase.HTMLAttributes<HTMLAdmiraltyDialogueElement>;
+            "admiralty-error-summary": LocalJSX.AdmiraltyErrorSummary & JSXBase.HTMLAttributes<HTMLAdmiraltyErrorSummaryElement>;
             "admiralty-expansion": LocalJSX.AdmiraltyExpansion & JSXBase.HTMLAttributes<HTMLAdmiraltyExpansionElement>;
             "admiralty-file-input": LocalJSX.AdmiraltyFileInput & JSXBase.HTMLAttributes<HTMLAdmiraltyFileInputElement>;
             "admiralty-filter": LocalJSX.AdmiraltyFilter & JSXBase.HTMLAttributes<HTMLAdmiraltyFilterElement>;
