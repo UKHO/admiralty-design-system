@@ -68,44 +68,42 @@ export const LongContent: Story = {
 };
 
 export const ErrorSummary: Story = {
-  render: args =>
-    html` <admiralty-dialogue type="${args.type}" heading="${args.heading}" section-role="${args.sectionRole}"> ${unsafeHTML(args.content)} </admiralty-dialogue>
-      <h2 style="margin: 24px;">Problem details</h2>
-        <div style="margin: 0 24px;display:flex;flex-direction: column;gap: 36px;">
-          <admiralty-input identifier="name" name="name" label="What is your name?" hint="Enter your full name" type="text" invalid="true" invalid-message="Enter your full name"></admiralty-input>
-          <admiralty-radio-group
-            name="country"
-            label="Where do you live?"
-            hint="Select the country you currently live in"
-            value="other"
-            invalid="true"
-            invalid-message="Select the country you live in"
-          >
-            <admiralty-radio identifier="country" name="country" value="england">England</admiralty-radio>
-            <admiralty-radio identifier="country-2" name="country" value="scotland">Scotland</admiralty-radio>
-            <admiralty-radio identifier="country-3" name="country" value="wales">Wales</admiralty-radio>
-            <admiralty-radio identifier="country-4" name="country" value="northern ireland">Northern Ireland</admiralty-radio>
-          </admiralty-radio-group>
-          <admiralty-textarea
-            identifier="description"
-            name="description"
-            label="What is the problem?"
-            hint="Enter a brief description of the problem"
-            invalid="true"
-            invalid-message="Enter a description of the problem"
-          ></admiralty-textarea>
-          <admiralty-file-input identifier="file-upload" invalid="true" invalid-message="Select the file that contains the problem summary"> </admiralty-file-input>
-        </div>
-      </h2>`,
+  render: args => html`
+    <admiralty-dialogue type="${args.type}" heading="${args.heading}" section-role="${args.sectionRole}"> ${unsafeHTML(args.content)} </admiralty-dialogue>
+    <h2 style="margin: 24px;">Complaint summary</h2>
+    <div style="margin: 0 24px;display:flex;flex-direction: column;gap: 36px;">
+      <admiralty-input identifier="name" label="What is your name?" hint="Enter your full name" type="text" invalid="true" invalid-message="Enter your full name"></admiralty-input>
+      <admiralty-radio-group
+        label="Where do you live?"
+        hint="Select the country you currently live in"
+        value="other"
+        invalid="true"
+        invalid-message="Select the country you live in"
+      >
+        <admiralty-radio identifier="country" value="england">England</admiralty-radio>
+        <admiralty-radio identifier="country-2" value="scotland">Scotland</admiralty-radio>
+        <admiralty-radio identifier="country-3" value="wales">Wales</admiralty-radio>
+        <admiralty-radio identifier="country-4" value="northern ireland">Northern Ireland</admiralty-radio>
+      </admiralty-radio-group>
+      <admiralty-textarea
+        identifier="description"
+        label="What has happened?"
+        hint="Enter a brief description of the issue"
+        invalid="true"
+        invalid-message="Enter a description of the issue"
+      ></admiralty-textarea>
+      <admiralty-file-input identifier="file-upload" invalid="true" invalid-message="Select the file that contains the issue"> </admiralty-file-input>
+    </div>
+  `,
   args: {
     type: 'error',
     heading: "There's a problem",
     content:
       '<div style="display:flex;flex-direction: column;gap: 8px;">' +
-      '<div><admiralty-link href="#name">Enter your full name</admiralty-link></div>' +
-      '<div><admiralty-link href="#country">Select the country you live in</admiralty-link></div>' +
-      '<div><admiralty-link href="#description">Enter a description of the problem</admiralty-link></div>' +
-      '<div><admiralty-link href="#file-upload">Select the file that contains the problem summary</admiralty-link></div>' +
+      '<admiralty-link href="#name">Enter your full name</admiralty-link>' +
+      '<admiralty-link href="#country">Select the country you live in</admiralty-link>' +
+      '<admiralty-link href="#description">Enter a description of the issue</admiralty-link>' +
+      '<admiralty-link href="#file-upload">Select the file that contains the issue</admiralty-link>' +
       '</div>',
     sectionRole: 'alert',
   },

@@ -1,9 +1,11 @@
 # Dialogue
+
 Use dialogue boxes to convey important information to the user.
 
 ## Contents
 
 ## Information
+
 Use this dialogue component to alert users to important information about their experience.
 
 import Information from "@/usage/dialogue/information/index.mdx";
@@ -11,6 +13,7 @@ import Information from "@/usage/dialogue/information/index.mdx";
 <Information />
 
 ## Success
+
 Use the success dialogue to confirm to the user that an important action has successfully taken place.
 
 import Success from "@/usage/dialogue/success/index.mdx";
@@ -18,6 +21,7 @@ import Success from "@/usage/dialogue/success/index.mdx";
 <Success />
 
 ## Warning
+
 Use the warning dialogue to warn users if they're about to do something that is destructive or when the result of an action is unexpected.
 
 import Warning from "@/usage/dialogue/warning/index.mdx";
@@ -25,13 +29,23 @@ import Warning from "@/usage/dialogue/warning/index.mdx";
 <Warning />
 
 ## Error
+
 Use the error dialogue to highlight problems to the user. This might be a problem with information they have provided or a problem with our systems that is preventing them from doing something.
 
 import Error from "@/usage/dialogue/error/index.mdx";
 
 <Error />
 
+## Error Summary
+
+Use the error dialogue to display a summary of error messages. Each message links back to the input that has an error.
+
+import ErrorSummary from "@/usage/dialogue/error-summary/index.mdx";
+
+<ErrorSummary />
+
 ## Accessibility
+
 Our dialogue components are very important as a way of communicating with a user. They are AA WCAG compliant for colour and contrast. Content in these components should be written in easy to understand and direct language.
 
 ## Props
@@ -69,3 +83,4 @@ import CustomProps from "@docs/dialogue/customProps.mdx";
 import Slots from "@docs/dialogue/slots.mdx";
 
 <Slots />
+
