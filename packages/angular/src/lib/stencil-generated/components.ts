@@ -8,14 +8,14 @@ import { Components } from '@ukho/admiralty-core';
 
 
 @ProxyCmp({
-  inputs: ['assistiveHint', 'autoselect', 'confirmOnBlur', 'cssNamespace', 'disabled', 'displayMenu', 'hint', 'identifier', 'inputClasses', 'invalid', 'invalidMessage', 'label', 'menuAttributes', 'menuClasses', 'minLength', 'name', 'placeholder', 'required', 'showAllValues', 'showNoOptionsFound', 'value']
+  inputs: ['assistiveHint', 'autoselect', 'confirmOnBlur', 'cssNamespace', 'disabled', 'displayMenu', 'hint', 'inputClasses', 'invalid', 'invalidMessage', 'label', 'menuAttributes', 'menuClasses', 'minLength', 'name', 'placeholder', 'required', 'showAllValues', 'showNoOptionsFound', 'value']
 })
 @Component({
   selector: 'admiralty-autocomplete',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['assistiveHint', 'autoselect', 'confirmOnBlur', 'cssNamespace', 'disabled', 'displayMenu', 'hint', 'identifier', 'inputClasses', 'invalid', 'invalidMessage', 'label', 'menuAttributes', 'menuClasses', 'minLength', 'name', 'placeholder', 'required', 'showAllValues', 'showNoOptionsFound', 'value'],
+  inputs: ['assistiveHint', 'autoselect', 'confirmOnBlur', 'cssNamespace', 'disabled', 'displayMenu', 'hint', 'inputClasses', 'invalid', 'invalidMessage', 'label', 'menuAttributes', 'menuClasses', 'minLength', 'name', 'placeholder', 'required', 'showAllValues', 'showNoOptionsFound', 'value'],
 })
 export class AdmiraltyAutocomplete {
   protected el: HTMLElement;
@@ -285,14 +285,14 @@ export declare interface AdmiraltyExpansion extends Components.AdmiraltyExpansio
 
 
 @ProxyCmp({
-  inputs: ['identifier', 'invalid', 'invalidMessage', 'label', 'multiple']
+  inputs: ['invalid', 'invalidMessage', 'label', 'multiple']
 })
 @Component({
   selector: 'admiralty-file-input',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['identifier', 'invalid', 'invalidMessage', 'label', 'multiple'],
+  inputs: ['invalid', 'invalidMessage', 'label', 'multiple'],
 })
 export class AdmiraltyFileInput {
   protected el: HTMLElement;
@@ -608,14 +608,14 @@ export declare interface AdmiraltyIcon extends Components.AdmiraltyIcon {}
 
 
 @ProxyCmp({
-  inputs: ['autocomplete', 'disabled', 'hint', 'identifier', 'invalid', 'invalidMessage', 'label', 'name', 'placeholder', 'required', 'type', 'value', 'width']
+  inputs: ['autocomplete', 'disabled', 'hint', 'invalid', 'invalidMessage', 'label', 'name', 'placeholder', 'required', 'type', 'value', 'width']
 })
 @Component({
   selector: 'admiralty-input',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['autocomplete', 'disabled', 'hint', 'identifier', 'invalid', 'invalidMessage', 'label', 'name', 'placeholder', 'required', 'type', 'value', 'width'],
+  inputs: ['autocomplete', 'disabled', 'hint', 'invalid', 'invalidMessage', 'label', 'name', 'placeholder', 'required', 'type', 'value', 'width'],
 })
 export class AdmiraltyInput {
   protected el: HTMLElement;
@@ -806,14 +806,14 @@ export declare interface AdmiraltyProgressBar extends Components.AdmiraltyProgre
 
 
 @ProxyCmp({
-  inputs: ['checked', 'disabled', 'identifier', 'invalid', 'name', 'value']
+  inputs: ['checked', 'disabled', 'invalid', 'name', 'value']
 })
 @Component({
   selector: 'admiralty-radio',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['checked', 'disabled', 'identifier', 'invalid', 'name', 'value'],
+  inputs: ['checked', 'disabled', 'invalid', 'name', 'value'],
 })
 export class AdmiraltyRadio {
   protected el: HTMLElement;
@@ -900,14 +900,14 @@ export declare interface AdmiraltyReadMore extends Components.AdmiraltyReadMore 
 
 
 @ProxyCmp({
-  inputs: ['disabled', 'hint', 'identifier', 'invalid', 'invalidMessage', 'label', 'value', 'width']
+  inputs: ['disabled', 'hint', 'invalid', 'invalidMessage', 'label', 'value', 'width']
 })
 @Component({
   selector: 'admiralty-select',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['disabled', 'hint', 'identifier', 'invalid', 'invalidMessage', 'label', 'value', 'width'],
+  inputs: ['disabled', 'hint', 'invalid', 'invalidMessage', 'label', 'value', 'width'],
 })
 export class AdmiraltySelect {
   protected el: HTMLElement;
@@ -1181,14 +1181,14 @@ export declare interface AdmiraltyTableRow extends Components.AdmiraltyTableRow 
 
 
 @ProxyCmp({
-  inputs: ['disabled', 'hint', 'identifier', 'invalid', 'invalidMessage', 'label', 'value', 'width']
+  inputs: ['disabled', 'hint', 'invalid', 'invalidMessage', 'label', 'value', 'width']
 })
 @Component({
   selector: 'admiralty-textarea',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['disabled', 'hint', 'identifier', 'invalid', 'invalidMessage', 'label', 'value', 'width'],
+  inputs: ['disabled', 'hint', 'invalid', 'invalidMessage', 'label', 'value', 'width'],
 })
 export class AdmiraltyTextarea {
   protected el: HTMLElement;
@@ -1215,14 +1215,14 @@ export declare interface AdmiraltyTextarea extends Components.AdmiraltyTextarea 
 
 
 @ProxyCmp({
-  inputs: ['hint', 'identifier', 'label', 'placeholder', 'resultsOnInitFocus', 'value']
+  inputs: ['hint', 'label', 'placeholder', 'resultsOnInitFocus', 'value']
 })
 @Component({
   selector: 'admiralty-type-ahead',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['hint', 'identifier', 'label', 'placeholder', 'resultsOnInitFocus', 'value'],
+  inputs: ['hint', 'label', 'placeholder', 'resultsOnInitFocus', 'value'],
 })
 export class AdmiraltyTypeAhead {
   protected el: HTMLElement;

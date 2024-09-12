@@ -8,7 +8,6 @@
 | Property             | Attribute               | Description                                                          | Type      | Default     |
 | -------------------- | ----------------------- | -------------------------------------------------------------------- | --------- | ----------- |
 | `hint`               | `hint`                  | The hint which will be used under the label to describe the input.   | `string`  | `undefined` |
-| `identifier`         | `identifier`            | The unique identifier to give the `input` element                    | `string`  | `undefined` |
 | `label`              | `label`                 | The text content of the label for the input box                      | `string`  | `undefined` |
 | `placeholder`        | `placeholder`           | The placeholder text for the input field                             | `string`  | `undefined` |
 | `resultsOnInitFocus` | `results-on-init-focus` | Optional property to show results when input box is initally focused | `boolean` | `false`     |

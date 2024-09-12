@@ -23,7 +23,7 @@ describe('type-ahead', () => {
           <div aria-atomic="true" aria-live="polite" class="results-status-a" role="status"></div>
           <div aria-atomic="true" aria-live="polite" class="results-status-b" role="status"></div>
         </div>
-        <admiralty-input class="filterTextInput" type="text"></admiralty-input>
+        <admiralty-input class="filterTextInput" id="admiralty-typeahead-1-input" type="text"></admiralty-input>
         <span class="visually-hidden" id="admiralty-typeahead-1-assistive-hint">
           When autocomplete results are available use up and down arrows to review and enter to select. Touch device users, explore by touch or with swipe gestures.
         </span>
@@ -48,7 +48,7 @@ describe('type-ahead', () => {
           <div aria-atomic="true" aria-live="polite" class="results-status-a" role="status"></div>
           <div aria-atomic="true" aria-live="polite" class="results-status-b" role="status"></div>
         </div>
-        <admiralty-input class="filterTextInput" label="Please type something" placeholder="This is a test" type="text"></admiralty-input>
+        <admiralty-input class="filterTextInput" id="admiralty-typeahead-2-input" label="Please type something" placeholder="This is a test" type="text"></admiralty-input>
         <span class="visually-hidden" id="admiralty-typeahead-2-assistive-hint">
           When autocomplete results are available use up and down arrows to review and enter to select. Touch device users, explore by touch or with swipe gestures.
         </span>
@@ -58,19 +58,19 @@ describe('type-ahead', () => {
     `);
   });
 
-  it('renders a custom identifier', async () => {
+  it('renders a custom ID', async () => {
     const page = await newSpecPage({
       components: [TypeAheadComponent],
-      html: `<admiralty-type-ahead identifier="custom"></admiralty-type-ahead>`,
+      html: `<admiralty-type-ahead id="custom"></admiralty-type-ahead>`,
     });
     expect(page.root).toEqualHtml(`
-      <admiralty-type-ahead identifier="custom">
+      <admiralty-type-ahead id="custom">
         <div class="visually-hidden">
           <div aria-atomic="true" aria-live="polite" class="results-status-a" role="status"></div>
           <div aria-atomic="true" aria-live="polite" class="results-status-b" role="status"></div>
         </div>
-        <admiralty-input class="filterTextInput" identifier="custom" type="text"></admiralty-input>
-        <span class="visually-hidden" id="admiralty-typeahead-3-assistive-hint">
+        <admiralty-input class="filterTextInput" id="custom-input" type="text"></admiralty-input>
+        <span class="visually-hidden" id="custom-assistive-hint">
           When autocomplete results are available use up and down arrows to review and enter to select. Touch device users, explore by touch or with swipe gestures.
         </span>
       </admiralty-type-ahead>

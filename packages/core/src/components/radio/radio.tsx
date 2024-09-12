@@ -6,16 +6,11 @@ import { Element, Component, Event, h, Prop, Watch, Host, State, Method, EventEm
   scoped: true,
 })
 export class RadioComponent {
-  private inputId = `admiralty-radio-${radioButtonIds++}`;
+  private internalId = ++radioButtonIds;
   private nativeInput!: HTMLInputElement;
   private radioGroup: HTMLAdmiraltyRadioGroupElement | null = null;
 
   @Element() el!: HTMLElement;
-
-  /**
-   * The unique identifier to give the `input` element
-   */
-  @Prop() identifier: string;
 
   /**
    * The tabindex of the radio button.
@@ -26,7 +21,7 @@ export class RadioComponent {
   /**
    * The name of the radio button for use on selection within a radio group
    */
-  @Prop() name: string = this.inputId;
+  @Prop() name: string;
   /**
    * The value of the radio button for use on selection within a radio group
    */
@@ -73,7 +68,8 @@ export class RadioComponent {
 
   connectedCallback() {
     if (this.value === undefined) {
-      this.value = this.inputId;
+      // radio buttons should always be used with a value
+      this.value = `admiralty-radio-${this.internalId}`;
     }
     const radioGroup = (this.radioGroup = this.el.closest('admiralty-radio-group'));
 
@@ -119,8 +115,9 @@ export class RadioComponent {
   };
 
   render() {
-    const { buttonTabindex, checked, disabled, identifier, inputId, name, value } = this;
-    const id = identifier ?? inputId;
+    const { buttonTabindex, checked, disabled, name, value } = this;
+    const id = this.el.id != '' ? this.el.id : `admiralty-radio-${this.internalId}`;
+    const inputId = `${id}-input`;
     return (
       <Host>
         <div class={{ 'admiralty-radio': true, 'checked': checked }}>
@@ -128,8 +125,8 @@ export class RadioComponent {
             class={{ 'invalid': this.invalid, 'admiralty-radio': true }}
             aria-checked={`${checked}`}
             aria-hidden={disabled ? 'true' : null}
-            aria-labelledby={id}
-            id={id}
+            aria-labelledby={inputId}
+            id={inputId}
             name={name}
             tabindex={buttonTabindex}
             onFocus={this.onFocus}
@@ -141,7 +138,7 @@ export class RadioComponent {
             disabled={disabled ? true : null}
             ref={nativeEl => (this.nativeInput = nativeEl as HTMLInputElement)}
           />
-          <label htmlFor={id}>
+          <label htmlFor={inputId}>
             <slot />
           </label>
         </div>

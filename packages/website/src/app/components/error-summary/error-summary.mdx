@@ -1,8 +1,24 @@
 # Error Summary
 
-Use the error summary component at the top of a page to summarise any errors that a user has made. Each error message should use the same wording as the original error displayed next to the component.
+Use the error summary component at the top of a page to summarise any errors that a user has made.
 
-Each error message should be a link that links back to the input component by using the unique `identifier` attribute of the input component.
+Each error message should use the same wording as the original error message that is displayed next to the component.
+
+For the best accessibility experience, each error message should be rendered as a link that links back to
+the input component. e.g.
+
+```html
+<admiralty-link href="#name-input">Enter your name</admiralty-link>
+```
+
+which would link to the input field with the error:
+
+```html
+<admiralty-input id="name" label="What is your name?"></admiralty-input>
+```
+
+To ensure that focus is applied correctly, the internal `<input>` element of the component should be the target of the link, not the outer component wrapper. The ID of the input element is the
+ID of the component suffixed with `-input`. For the example above the ID to link to is `name-input`.
 
 ## Contents
 

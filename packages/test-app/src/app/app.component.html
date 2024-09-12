@@ -104,7 +104,7 @@
   </div>
   <admiralty-file-input (fileInputChange)="onFileInputChange($event)" multiple="true"></admiralty-file-input>
   <admiralty-input
-    identifier="text"
+    id="text"
     label="Text"
     [invalid]="text?.invalid && text?.touched"
     invalidMessage="Enter some text"
@@ -112,7 +112,7 @@
     formControlName="text"
   ></admiralty-input>
   <admiralty-input
-    identifier="number"
+    id="number"
     label="Number"
     [invalid]="number?.invalid && number?.touched"
     invalidMessage="Enter a number"
@@ -131,7 +131,7 @@
   <admiralty-textarea formControlName="textarea" label="Textarea Label"></admiralty-textarea>
   {{ group.value.textarea }}
   <admiralty-autocomplete
-    identifier="direction"
+    id="direction"
     label="Direction"
     hint="Select a direction"
     (admiraltyChange)="onDirectionChanged($event)"
@@ -171,7 +171,7 @@
   {{ group.value.autocomplete }}
   <hr />
   <admiralty-autocomplete
-    identifier="country"
+    id="country"
     label="Country"
     hint="Select a country"
     (admiraltyChange)="onCountryChanged($event)"
@@ -194,7 +194,7 @@
   <admiralty-button type="button" (click)="selectCountry()">Choose United Kingdom</admiralty-button>
   <hr />
   <admiralty-autocomplete
-    identifier="office"
+    id="office"
     label="Office location"
     hint="Please select an office"
     (admiraltyChange)="onOfficeChanged($event)"

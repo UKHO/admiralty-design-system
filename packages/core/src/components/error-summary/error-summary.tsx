@@ -2,14 +2,20 @@ import { Component, Prop, h } from '@stencil/core';
 
 /**
  * @slot - Error messages should be placed in the slot. Each error message should use the same
- * wording as the original error message on the input component. Each error message should be a
- * link that links back to the input component by using the unique `identifier` attribute e.g.
+ * wording as the original error message on the input component.
  *
- *   `<admiralty-link href="#name">Enter your full name</admiralty-link>`
+ * For optimal accessibility, each error message should be rendered as a link that links back to
+ * the input component. e.g.
  *
- * would use the `name` ID to link to the input field:
+ *   `<admiralty-link href="#name-input">Enter your full name</admiralty-link>`
  *
- *   `<admiralty-input identifier="name" label="What is your name?"></admiralty-input>`
+ * would link to the input field:
+ *
+ *   `<admiralty-input id="name" label="What is your name?"></admiralty-input>`
+ *
+ * The `<input>` element of the component should be the target of the link and not the outer
+ * component wrapper so that the focus is applied correctly. The ID of the input element is the
+ * ID suffixed with `-input`.
  */
 @Component({
   tag: 'admiralty-error-summary',

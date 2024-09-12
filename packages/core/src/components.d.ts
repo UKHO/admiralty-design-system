@@ -56,10 +56,6 @@ export namespace Components {
          */
         "hint": string;
         /**
-          * The unique identifier to give the `input` element
-         */
-        "identifier": string;
-        /**
           * Classes to add to the component's `<input>` element.
          */
         "inputClasses": string;
@@ -272,10 +268,6 @@ export namespace Components {
     }
     interface AdmiraltyFileInput {
         /**
-          * The unique identifier to give the `input` element
-         */
-        "identifier": string;
-        /**
           * Whether to show that the file input is in an invalid state.
          */
         "invalid": boolean;
@@ -430,10 +422,6 @@ export namespace Components {
          */
         "hint": string;
         /**
-          * The unique identifier to give the `input` element
-         */
-        "identifier": string;
-        /**
           * Whether to show the input in an invalid state
          */
         "invalid": boolean;
@@ -560,10 +548,6 @@ export namespace Components {
          */
         "disabled"?: boolean;
         /**
-          * The unique identifier to give the `input` element
-         */
-        "identifier": string;
-        /**
           * Determines whether to add the invalid stying to the radio button
          */
         "invalid": boolean;
@@ -626,10 +610,6 @@ export namespace Components {
           * The text that will be used as a field label.
          */
         "hint": string;
-        /**
-          * The unique identifier to give the `select` element
-         */
-        "identifier": string;
         /**
           * Whether to show that the select is in an invalid state.
          */
@@ -737,10 +717,6 @@ export namespace Components {
          */
         "hint": string;
         /**
-          * The unique identifier to give the `textarea` element
-         */
-        "identifier": string;
-        /**
           * Whether to show the input in an invalid state
          */
         "invalid": boolean;
@@ -766,10 +742,6 @@ export namespace Components {
           * The hint which will be used under the label to describe the input.
          */
         "hint": string;
-        /**
-          * The unique identifier to give the `input` element
-         */
-        "identifier": string;
         /**
           * The text content of the label for the input box
          */
@@ -1534,10 +1506,6 @@ declare namespace LocalJSX {
          */
         "hint"?: string;
         /**
-          * The unique identifier to give the `input` element
-         */
-        "identifier"?: string;
-        /**
           * Classes to add to the component's `<input>` element.
          */
         "inputClasses"?: string;
@@ -1777,10 +1745,6 @@ declare namespace LocalJSX {
     }
     interface AdmiraltyFileInput {
         /**
-          * The unique identifier to give the `input` element
-         */
-        "identifier"?: string;
-        /**
           * Whether to show that the file input is in an invalid state.
          */
         "invalid"?: boolean;
@@ -1975,10 +1939,6 @@ declare namespace LocalJSX {
          */
         "hint"?: string;
         /**
-          * The unique identifier to give the `input` element
-         */
-        "identifier"?: string;
-        /**
           * Whether to show the input in an invalid state
          */
         "invalid"?: boolean;
@@ -2121,10 +2081,6 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
         /**
-          * The unique identifier to give the `input` element
-         */
-        "identifier"?: string;
-        /**
           * Determines whether to add the invalid stying to the radio button
          */
         "invalid"?: boolean;
@@ -2206,10 +2162,6 @@ declare namespace LocalJSX {
           * The text that will be used as a field label.
          */
         "hint"?: string;
-        /**
-          * The unique identifier to give the `select` element
-         */
-        "identifier"?: string;
         /**
           * Whether to show that the select is in an invalid state.
          */
@@ -2330,10 +2282,6 @@ declare namespace LocalJSX {
          */
         "hint"?: string;
         /**
-          * The unique identifier to give the `textarea` element
-         */
-        "identifier"?: string;
-        /**
           * Whether to show the input in an invalid state
          */
         "invalid"?: boolean;
@@ -2369,10 +2317,6 @@ declare namespace LocalJSX {
           * The hint which will be used under the label to describe the input.
          */
         "hint"?: string;
-        /**
-          * The unique identifier to give the `input` element
-         */
-        "identifier"?: string;
         /**
           * The text content of the label for the input box
          */

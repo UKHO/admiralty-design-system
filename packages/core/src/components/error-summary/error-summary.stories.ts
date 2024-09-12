@@ -34,7 +34,7 @@ export const Detailed: Story = {
     <admiralty-error-summary heading="${args.heading}">${unsafeHTML(args.content)}</admiralty-error-summary>
     <h2 style="margin: 24px;">Complaint summary</h2>
     <div style="margin: 0 24px;display:flex;flex-direction: column;gap: 36px;">
-      <admiralty-input identifier="name" label="What is your name?" hint="Enter your full name" type="text" invalid="true" invalid-message="Enter your full name"></admiralty-input>
+      <admiralty-input id="name" label="What is your name?" hint="Enter your full name" type="text" invalid="true" invalid-message="Enter your full name"></admiralty-input>
       <admiralty-radio-group
         label="Where do you live?"
         hint="Select the country you currently live in"
@@ -42,27 +42,27 @@ export const Detailed: Story = {
         invalid="true"
         invalid-message="Select the country you live in"
       >
-        <admiralty-radio identifier="country" value="england">England</admiralty-radio>
-        <admiralty-radio identifier="country-2" value="scotland">Scotland</admiralty-radio>
-        <admiralty-radio identifier="country-3" value="wales">Wales</admiralty-radio>
-        <admiralty-radio identifier="country-4" value="northern ireland">Northern Ireland</admiralty-radio>
+        <admiralty-radio id="country" value="england">England</admiralty-radio>
+        <admiralty-radio id="country-2" value="scotland">Scotland</admiralty-radio>
+        <admiralty-radio id="country-3" value="wales">Wales</admiralty-radio>
+        <admiralty-radio id="country-4" value="northern ireland">Northern Ireland</admiralty-radio>
       </admiralty-radio-group>
       <admiralty-textarea
-        identifier="description"
+        id="description"
         label="What has happened?"
         hint="Enter a brief description of the issue"
         invalid="true"
         invalid-message="Enter a description of the issue"
       ></admiralty-textarea>
-      <admiralty-file-input identifier="file-upload" invalid="true" invalid-message="Select the file that contains the issue"> </admiralty-file-input>
+      <admiralty-file-input id="file-upload" invalid="true" invalid-message="Select the file that contains the issue"> </admiralty-file-input>
     </div>
   `,
   args: {
     heading: "There's a problem",
     content:
-      '<admiralty-link href="#name">Enter your full name</admiralty-link>' +
-      '<admiralty-link href="#country">Select the country you live in</admiralty-link>' +
-      '<admiralty-link href="#description">Enter a description of the issue</admiralty-link>' +
-      '<admiralty-link href="#file-upload">Select the file that contains the issue</admiralty-link>',
+      '<admiralty-link href="#name-input">Enter your full name</admiralty-link>' +
+      '<admiralty-link href="#country-input">Select the country you live in</admiralty-link>' +
+      '<admiralty-link href="#description-input">Enter a description of the issue</admiralty-link>' +
+      '<admiralty-link href="#file-upload-input">Select the file that contains the issue</admiralty-link>',
   },
 };

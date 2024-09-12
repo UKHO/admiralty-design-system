@@ -15,14 +15,14 @@ describe('admiralty-textarea', () => {
     expect(page.root).toEqualHtml(`
       <admiralty-textarea label="Description" hint="Please enter description">
         <div class="text-area-container">
-          <admiralty-label for="admiralty-textarea-${id}">
+          <admiralty-label for="admiralty-textarea-${id}-input">
             Description
           </admiralty-label>
-          <admiralty-hint id="admiralty-textarea-hint-${id}">
+          <admiralty-hint id="admiralty-textarea-${id}-hint">
             Please enter description
           </admiralty-hint>
-          <textarea aria-describedby="admiralty-textarea-hint-1 " aria-invalid="false" id="admiralty-textarea-${id}" value=""></textarea>
-          <admiralty-input-invalid id="admiralty-textarea-error-${id}" style="display: none;"></admiralty-input-invalid>
+          <textarea aria-describedby="admiralty-textarea-${id}-hint " aria-invalid="false" id="admiralty-textarea-${id}-input" value=""></textarea>
+          <admiralty-input-invalid id="admiralty-textarea-${id}-error" style="display: none;"></admiralty-input-invalid>
         </div>
       </admiralty-textarea>
     `);
@@ -41,8 +41,8 @@ describe('admiralty-textarea', () => {
     expect(page.root).toEqualHtml(`
       <admiralty-textarea value="${testText}">
         <div class="text-area-container">
-          <textarea aria-describedby=" " aria-invalid="false" id="admiralty-textarea-${id}" value="${testText}"></textarea>
-          <admiralty-input-invalid id="admiralty-textarea-error-${id}" style="display: none;"></admiralty-input-invalid>
+          <textarea aria-describedby=" " aria-invalid="false" id="admiralty-textarea-${id}-input" value="${testText}"></textarea>
+          <admiralty-input-invalid id="admiralty-textarea-${id}-error" style="display: none;"></admiralty-input-invalid>
         </div>
       </admiralty-textarea>
     `);
@@ -59,9 +59,9 @@ describe('admiralty-textarea', () => {
     expect(page.root).toEqualHtml(`
       <admiralty-textarea label="Description" disabled="true">
         <div class="text-area-container">
-          <admiralty-label disabled="" for="admiralty-textarea-${id}">Description</admiralty-label>
-          <textarea aria-describedby=" " aria-invalid="false" class="disabled" id="admiralty-textarea-${id}" value=""></textarea>
-          <admiralty-input-invalid id="admiralty-textarea-error-${id}" style="display: none;"></admiralty-input-invalid>
+          <admiralty-label disabled="" for="admiralty-textarea-${id}-input">Description</admiralty-label>
+          <textarea aria-describedby=" " aria-invalid="false" class="disabled" id="admiralty-textarea-${id}-input" value=""></textarea>
+          <admiralty-input-invalid id="admiralty-textarea-${id}-error" style="display: none;"></admiralty-input-invalid>
         </div>
       </admiralty-textarea>
     `);
@@ -78,9 +78,9 @@ describe('admiralty-textarea', () => {
     expect(page.root).toEqualHtml(`
       <admiralty-textarea label="Description" invalid="true" invalid-message="BAD">
         <div class="text-area-container">
-          <admiralty-label for="admiralty-textarea-${id}">Description</admiralty-label>
-          <textarea aria-describedby=" admiralty-textarea-error-${id}" aria-invalid="true" class="invalid" id="admiralty-textarea-${id}" value=""></textarea>
-          <admiralty-input-invalid id="admiralty-textarea-error-${id}">
+          <admiralty-label for="admiralty-textarea-${id}-input">Description</admiralty-label>
+          <textarea aria-describedby=" admiralty-textarea-${id}-error" aria-invalid="true" class="invalid" id="admiralty-textarea-${id}-input" value=""></textarea>
+          <admiralty-input-invalid id="admiralty-textarea-${id}-error">
             BAD
           </admiralty-input-invalid>
         </div>
@@ -99,33 +99,33 @@ describe('admiralty-textarea', () => {
     expect(page.root).toEqualHtml(`
       <admiralty-textarea label="Description" invalid="true" invalidMessage="">
         <div class="text-area-container">
-          <admiralty-label for="admiralty-textarea-${id}">Description</admiralty-label>
-          <textarea aria-describedby=" admiralty-textarea-error-${id}" aria-invalid="true" class="invalid" id="admiralty-textarea-${id}" value=""></textarea>
-          <admiralty-input-invalid id="admiralty-textarea-error-${id}" style="display: none;"></admiralty-input-invalid>
+          <admiralty-label for="admiralty-textarea-${id}-input">Description</admiralty-label>
+          <textarea aria-describedby=" admiralty-textarea-${id}-error" aria-invalid="true" class="invalid" id="admiralty-textarea-${id}-input" value=""></textarea>
+          <admiralty-input-invalid id="admiralty-textarea-${id}-error" style="display: none;"></admiralty-input-invalid>
         </div>
       </admiralty-textarea>
     `);
   });
 
-  it('renders with a custom identifier', async () => {
-    ++id;
+  it('renders with a custom ID', async () => {
+    const id = 'custom';
 
     const page = await newSpecPage({
       components: [TextareaComponent],
-      html: `<admiralty-textarea identifier="custom" label="Description" hint="Please enter description"></admiralty-textarea>`,
+      html: `<admiralty-textarea id="${id}" label="Description" hint="Please enter description"></admiralty-textarea>`,
     });
 
     expect(page.root).toEqualHtml(`
-      <admiralty-textarea identifier="custom" label="Description" hint="Please enter description">
+      <admiralty-textarea id="${id}" label="Description" hint="Please enter description">
         <div class="text-area-container">
-          <admiralty-label for="custom">
+          <admiralty-label for="${id}-input">
             Description
           </admiralty-label>
-          <admiralty-hint id="admiralty-textarea-hint-${id}">
+          <admiralty-hint id="${id}-hint">
             Please enter description
           </admiralty-hint>
-          <textarea aria-describedby="admiralty-textarea-hint-6 " aria-invalid="false" id="custom" value=""></textarea>
-          <admiralty-input-invalid id="admiralty-textarea-error-${id}" style="display: none;"></admiralty-input-invalid>
+          <textarea aria-describedby="${id}-hint " aria-invalid="false" id="${id}-input" value=""></textarea>
+          <admiralty-input-invalid id="${id}-error" style="display: none;"></admiralty-input-invalid>
         </div>
       </admiralty-textarea>
     `);
