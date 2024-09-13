@@ -173,4 +173,5 @@ export class InputComponent implements ComponentInterface {
     );
   }
 }
+
 let nextId = 0;
