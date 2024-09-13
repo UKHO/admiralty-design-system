@@ -11,6 +11,9 @@ describe('input-invalid', () => {
        <admiralty-input-invalid>
         <admiralty-icon class="error-icon" icon-name="exclamation"></admiralty-icon>
         <p>
+        <span class="visually-hidden">
+          Error:
+        </span>
         Test
         </p>
 </admiralty-input-invalid>
