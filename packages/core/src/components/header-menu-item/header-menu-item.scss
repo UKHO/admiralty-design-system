@@ -8,11 +8,13 @@
 }
 
 .menu-item {
-  color: colours.$colour-admiralty-blue;
   cursor: pointer;
 
   .menu-title {
-    font-size: typography.$font-size-normal;
+    div {
+      font-size: typography.$font-size-normal;
+      color: colours.$colour-admiralty-blue;
+    }
 
     &:focus div {
       @include a11y.focus-highlight;
@@ -90,8 +92,11 @@ button {
     text-decoration: unset;
 
     .menu-title {
-      padding: 12px;
-      font-weight: 500;
+      div {
+        display: inline-block;
+        margin: 12px;
+        font-weight: typography.$font-weight-medium;
+      }
 
       &:hover {
         background-color: colours.$colour-nav-bg-hover;
