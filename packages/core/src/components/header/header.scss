@@ -126,8 +126,10 @@
       }
 
       &:focus {
+        @include a11y.focus-highlight;
+
         outline: none;
-        box-shadow: colours.$colour-utility-focus inset 0 0 0 3px;
+        box-shadow: 0 -4px colours.$colour-text inset;
       }
     }
   }

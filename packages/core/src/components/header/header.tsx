@@ -98,7 +98,7 @@ export class HeaderComponent {
           </div>
           <div class="header-menus">
             <div class={{ 'mobile-menu-toggle': true, 'display-hamburger': this.displayHamburger }}>
-              <button onClick={_ => this.toggleMobileMenu()} aria-expanded={this.mobileMenuOpen}>
+              <button onClick={_ => this.toggleMobileMenu()} aria-expanded={this.mobileMenuOpen} aria-label={this.mobileMenuOpen ? 'Hide menu' : 'Show menu'}>
                 <admiralty-icon icon-name={this.mobileMenuOpen ? faTimes.iconName : faBars.iconName}></admiralty-icon>
               </button>
             </div>

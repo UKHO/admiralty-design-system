@@ -1,5 +1,4 @@
 import { Component, Event, Host, h, Prop, EventEmitter, Element } from '@stencil/core';
-import { Keys } from '../Keys';
 
 @Component({
   tag: 'admiralty-header-profile',
@@ -48,30 +47,12 @@ export class HeaderProfileComponent {
     this.signInClicked.emit();
   };
 
-  handleSignInKeyDown = (ev: KeyboardEvent) => {
-    if (ev.key === Keys.ENTER || ev.key === Keys.SPACE) {
-      this.signInClicked.emit();
-    }
-  };
-
   handleSignOut = () => {
     this.signOutClicked.emit();
   };
 
-  handleSignOutKeyDown = (ev: KeyboardEvent) => {
-    if (ev.key === Keys.ENTER || ev.key === Keys.SPACE) {
-      this.signOutClicked.emit();
-    }
-  };
-
   handleYourAccount = () => {
     this.yourAccountClicked.emit();
-  };
-
-  handleYourAccountKeyDown = (ev: KeyboardEvent) => {
-    if (ev.key === Keys.ENTER || ev.key === Keys.SPACE) {
-      this.yourAccountClicked.emit();
-    }
   };
 
   closeDropdown = () => {
@@ -105,7 +86,7 @@ export class HeaderProfileComponent {
             <div>
               <div class="desktop" onMouseOver={this.toggleDropdown}>
                 <button onClick={this.handleClickSignedIn} tabindex="0">
-                  <div>{signedInText}</div>
+                  <span>{signedInText}</span>
                 </button>
                 {!signInOnly ? (
                   <div class="sub-menu desktop-hide">
@@ -120,18 +101,18 @@ export class HeaderProfileComponent {
               </div>
               {!signInOnly ? (
                 <div class="not-desktop">
-                  <div class="sub-menu-item" onClick={this.handleYourAccount} onKeyDown={this.handleYourAccountKeyDown} tabindex="0">
-                    Your Account
-                  </div>
-                  <div class="sub-menu-item" onClick={this.handleSignOut} onKeyDown={this.handleSignOutKeyDown} tabindex="0">
-                    Sign Out
-                  </div>
+                  <button class="sub-menu-item" onClick={this.handleYourAccount} tabindex="0">
+                    <span>Your Account</span>
+                  </button>
+                  <button class="sub-menu-item" onClick={this.handleSignOut} tabindex="0">
+                    <span>Sign Out</span>
+                  </button>
                 </div>
               ) : null}
             </div>
           ) : (
             <button class="sub-menu-item" onClick={this.handleSignIn} tabindex="0">
-              <div>Sign In</div>
+              <span>Sign In</span>
             </button>
           )}
         </div>
