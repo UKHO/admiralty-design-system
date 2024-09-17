@@ -14,7 +14,7 @@
   font-weight: $file-input-font-weight;
 
   &:hover {
-    background-color: darken(colours.$colour-bg-grey, 5);
+    background-color: $file-input-background-hover-colour;
   }
 
   &.invalid {
@@ -72,6 +72,6 @@ input[type='file'] {
 }
 
 input[type='file']:focus + label {
-  outline: 2px solid colours.$colour-text;
-  box-shadow: colours.$colour-text inset 0 0 0 2px;
+  outline: 2px solid $file-input-focus-text-colour;
+  box-shadow: $file-input-focus-text-colour inset 0 0 0 2px;
 }

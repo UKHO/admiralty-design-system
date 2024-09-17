@@ -1,4 +1,4 @@
-@import "button.vars";
+@import 'button.vars';
 
 @mixin button-defaults {
   display: inline-flex;
@@ -13,14 +13,14 @@
 
   &:focus {
     outline: none;
-    color: colours.$colour-text;
-    background-color: colours.$colour-utility-focus;
+    color: $button-focus-text-colour;
+    background-color: $button-focus-colour;
     border: none;
-    border-bottom: 4px solid $button-focus-colour;
+    border-bottom: 4px solid $button-focus-text-colour;
     padding: 12px 18px 8px;
 
     ::slotted(*) {
-      color: colours.$colour-text !important;
+      color: $button-focus-text-colour !important;
     }
   }
 
@@ -72,8 +72,8 @@ button.primary {
   &:hover {
     background-color: $button-hover-colour-standard;
     border: 2px solid $button-hover-colour-standard;
-    color: colours.$colour-button-text;
-    border-color: colours.$colour-button-hover;
+    color: $button-hover-colour-standard;
+    border-color: $button-hover-border-colour-standard;
     padding: 10px 16px;
   }
 
@@ -114,7 +114,7 @@ button.secondary {
 
   &:hover {
     background-color: $button-hover-colour-secondary;
-    color: colours.$colour-button-secondary-text;
+    color: $button-hover-colour-secondary;
     border: 2px solid $button-hover-border-colour-secondary;
     padding: 10px 16px;
   }
@@ -146,13 +146,13 @@ button.secondary {
 /* Warning Buttons */
 button.warning {
   @include button;
-  background-color: colours.$colour-utility-error;
-  color: colours.$colour-white;
-  border: 2px solid colours.$colour-utility-error;
+  background-color: $button-colour-warning;
+  color: $button-text-colour-warning;
+  border: 2px solid $button-border-colour-warning;
 
   &:hover {
     background-color: $button-hover-colour-warning;
-    color: colours.$colour-white;
+    color: $button-text-colour-warning;
     border: 2px solid $button-hover-border-colour-warning;
     padding: 10px 16px;
   }
@@ -211,12 +211,12 @@ button.text {
   &:focus {
     border: none;
     box-shadow:
-      0 -2px colours.$colour-utility-focus,
-      0 4px colours.$colour-text;
+      0 -2px $button-focus-colour,
+      0 4px $button-focus-text-colour;
     text-decoration: none;
     padding: 0;
     ::slotted(*) {
-      color: colours.$colour-text !important;
+      color: $button-focus-text-colour !important;
     }
   }
 
@@ -253,7 +253,7 @@ button.icon {
     border: 2px solid transparent;
 
     admiralty-icon {
-      color: colours.$colour-white !important;
+      color: $button-active-text-colour-icon !important;
     }
   }
 

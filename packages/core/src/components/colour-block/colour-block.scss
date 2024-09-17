@@ -1,4 +1,4 @@
-@import "colour-block.vars";
+@import 'colour-block.vars';
 
 .colourBlock {
   height: 100%;
@@ -18,7 +18,7 @@
     cursor: pointer;
 
     &:focus * {
-      color: colours.$colour-text !important;
+      color: $colour-block-focus-text-colour !important;
     }
 
     span {

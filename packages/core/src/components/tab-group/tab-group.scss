@@ -61,13 +61,13 @@ hr {
 
     &:focus,
     &.active:focus {
-      @include a11y.focus-highlight;
-      box-shadow: 0px -4px colours.$colour-text inset;
+      @include focus-highlight;
+      box-shadow: 0px -4px $tab-group-focus-text-colour inset;
     }
 
     &:hover {
-      background-color: colours.$colour-nav-bg-hover;
-      color: colours.$colour-admiralty-blue;
+      background-color: $tab-group-heading-hover-background-colour;
+      color: $tab-group-heading-text-colour;
       box-shadow: unset;
     }
 

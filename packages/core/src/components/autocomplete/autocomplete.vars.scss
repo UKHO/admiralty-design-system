@@ -1,8 +1,9 @@
-@import "../../styles/vars/globals";
+@import '../../styles/vars/globals';
 
 $autocomplete-background-colour: var(--admiralty-background-colour) !default;
 $autocomplete-text-colour: var(--admiralty-text-colour) !default;
 $autocomplete-focus-colour: var(--admiralty-focus-outline-colour) !default;
+$autocomplete-input-border-colour: var(--admiralty-text-colour) !default;
 $autocomplete-error-border-colour: var(--admiralty-colour-danger) !default;
 $autocomplete-disabled-border-colour: var(--admiralty-disabled-colour) !default;
 

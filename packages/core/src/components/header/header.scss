@@ -1,4 +1,4 @@
-@import "header.vars";
+@import 'header.vars';
 
 .admiralty-header {
   font-size: $header-text-size;
@@ -48,7 +48,7 @@
     &:focus {
       outline: 3px solid $header-outline-colour;
       outline-offset: 3px;
-      @include a11y.focus-highlight;
+      @include focus-highlight;
     }
   }
 

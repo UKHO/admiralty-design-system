@@ -1,5 +1,7 @@
-@import "../../styles/vars/globals";
+@import '../../styles/vars/globals';
 
 $checkbox-border-colour: var(--admiralty-colour-primary);
 $checkbox-colour: var(--admiralty-colour-primary-contrast);
 $checkbox-text-colour: var(--admiralty-colour-primary);
+$checkbox-focus-colour: var(--admiralty-focus-outline-colour) !default;
+$checkbox-focus-text-colour: var(--admiralty-text-colour) !default;

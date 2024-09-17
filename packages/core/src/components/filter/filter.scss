@@ -1,4 +1,4 @@
-@import "filter.vars";
+@import 'filter.vars';
 
 .filter-heading {
   display: flex;
@@ -20,7 +20,7 @@
     button.text-link {
       background-color: unset;
       border: none;
-      color: colours.$colour-text;
+      color: $filter-title-text-colour;
       padding: 0;
       min-width: unset;
       width: unset;

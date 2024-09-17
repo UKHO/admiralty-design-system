@@ -1,14 +1,9 @@
-@import 'skip-link.vars';
 .skip-link {
-  @extend .visually-hidden;
-  color: $skip-link-text-colour;
+  @extend .visually-hidden !optional;
   display: block;
   padding: 10px 15px;
 
   &:focus {
-    outline: 3px solid $skip-link-focus-colour;
-    outline-offset: 0;
-    background-color: $skip-link-focus-colour;
     position: static !important;
     width: auto !important;
     height: auto !important;

@@ -1,4 +1,4 @@
-@import "./modal-dialog.vars";
+@import './modal-dialog.vars';
 
 .modal-backdrop {
   display: none;
@@ -49,7 +49,7 @@
     //Specifying the specific slot inexplicably
     //makes the selector apply to the slotted div
     ::slotted(div) > admiralty-icon {
-      color: colours.$colour-admiralty-blue;
+      color: $modal-heading-text-colour;
       display: inline-block;
       padding: 3px 12px 3px 0px;
       font-size: 24px;
@@ -57,7 +57,7 @@
     //Specifying the specific slot inexplicably
     //makes the selector apply to the slotted div
     ::slotted(div) > div {
-      color: colours.$colour-admiralty-blue;
+      color: $modal-heading-text-colour;
       max-width: 500px;
       display: inline-block;
       font-weight: 400;

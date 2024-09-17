@@ -1,4 +1,5 @@
-@use "../utils/responsive";
+@use '../utils/a11y';
+@use '../utils/responsive';
 
 $heading-font-weight: 400;
 $list-item-font-weight: 300;
@@ -99,7 +100,7 @@ blockquote {
   padding: 24px 18px;
   border-left: 5px solid var(--admiralty-colour-primary);
   margin-bottom: 30px;
-  background: colours.$colour-bg-grey;
+  background: var(--admiralty-background-colour-grey);
   @include responsive.not-desktop {
     line-height: 24px;
   }

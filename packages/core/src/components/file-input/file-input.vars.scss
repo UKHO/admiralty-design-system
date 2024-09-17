@@ -1,18 +1,18 @@
-@import "../../styles/vars/globals";
+@import '../../styles/vars/globals';
 
 $file-input-font-size: 18px;
 $file-input-line-height: 24px;
 $file-input-font-weight: 300;
 
-$file-input-background-colour: #eee; //TODO: replace with variable
-$file-input-background-hover-colour: var(--admiralty-background-colour);
+$file-input-background-colour: var(--admiralty-background-colour-grey);
+$file-input-background-hover-colour: #d8d8d8; // TODO replace with variable
 $file-input-border-colour: var(--admiralty-colour-primary);
 $file-input-invalid-border-colour: var(--admiralty-colour-danger);
-$file-input-focus-colour: var(--admiralty-focus-outline-colour) !default;
-
+$file-input-focus-colour: var(--admiralty-focus-outline-colour);
+$file-input-focus-text-colour: var(--admiralty-text-colour);
 
 // Icon
-$file-input-icon-colour : var(--admiralty-colour-primary);
+$file-input-icon-colour: var(--admiralty-colour-primary);
 $file-input-icon-size: 24px;
 
 // Label

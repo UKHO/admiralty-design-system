@@ -17,7 +17,6 @@
       border-color: $radio-invalid-border-colour;
 
       &:focus-visible {
-        border-color: unset;
         outline: 3px solid $radio-focus-colour;
       }
     }

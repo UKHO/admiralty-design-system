@@ -1,4 +1,4 @@
-@import "dialogue.vars";
+@import 'dialogue.vars';
 
 .dialogue {
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
@@ -19,15 +19,15 @@
 
     .dialogue-title-icon {
       font-size: 18px;
-      color: colours.$colour-admiralty-blue;
+      color: $dialogue-title-text-colour;
       margin-right: 8px;
       margin-bottom: 4px;
     }
 
     h2 {
-      color: colours.$colour-admiralty-blue;
+      color: $dialogue-title-text-colour;
       font-size: 20px;
-      font-weight: typography.$font-weight-medium;
+      font-weight: $dialogue-title-text-weight;
       line-height: 30px;
       margin: 0;
     }

@@ -41,7 +41,7 @@
       }
 
       &:focus div {
-        @include a11y.focus-highlight;
+        @include focus-highlight;
       }
     }
 

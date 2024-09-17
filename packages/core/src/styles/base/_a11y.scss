@@ -15,7 +15,7 @@
   white-space: nowrap !important;
 }
 
-@mixin focus-highlight() {
+@mixin focus-highlight-old() {
   outline: 3px solid transparent;
   color: colours.$colour-black;
   background-color: colours.$colour-utility-focus;

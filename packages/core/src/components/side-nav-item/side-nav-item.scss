@@ -27,10 +27,10 @@ a.section {
   }
 
   &:focus {
-    background-color: colours.$colour-utility-focus;
-    color: colours.$colour-text;
+    background-color: $side-nav-item-focus-colour;
+    color: $side-nav-item-text-colour;
     box-shadow: none;
     border-top: 3px solid transparent;
-    border-bottom: 3px solid colours.$colour-text;
+    border-bottom: 3px solid $side-nav-item-text-colour;
   }
 }

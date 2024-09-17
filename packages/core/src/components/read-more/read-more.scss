@@ -19,7 +19,7 @@ section.expansion {
     background-color: transparent;
     border: none;
     white-space: unset;
-    color: initial;
+    color: $read-more-text-colour;
     cursor: pointer;
     margin: 8px 0px;
     padding: 4px;
@@ -41,7 +41,7 @@ section.expansion {
     &:focus {
       outline: none;
       box-shadow: 0 0 0 3px $read-more-focus-colour;
-      @include a11y.focus-highlight;
+      @include focus-highlight;
     }
   }
 }

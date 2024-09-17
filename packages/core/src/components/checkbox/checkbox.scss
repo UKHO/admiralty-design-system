@@ -1,4 +1,4 @@
-@import "checkbox.vars";
+@import 'checkbox.vars';
 
 .form-control {
   font-size: 18px;
@@ -53,7 +53,7 @@
       border: 2px solid $checkbox-border-colour;
       left: 0;
       top: 0;
-      background-color:  $checkbox-colour;
+      background-color: $checkbox-colour;
     }
 
     &::after {
@@ -70,8 +70,8 @@
 
   input[type='checkbox']:focus + label:before {
     outline-offset: unset;
-    outline: 3px solid colours.$colour-utility-focus;
-    box-shadow: colours.$colour-dark-blue inset 0 0 0 2px;
+    outline: 3px solid $checkbox-focus-colour;
+    box-shadow: $checkbox-border-colour inset 0 0 0 2px;
   }
 
   &.right-align label {

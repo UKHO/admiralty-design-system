@@ -5,7 +5,7 @@
 }
 
 .menu-item {
-  color: colours.$colour-admiralty-blue;
+  color: $header-menu-item-title-text-colour;
   cursor: pointer;
 
   .menu-title {
@@ -13,88 +13,89 @@
 
     &:focus {
       box-shadow: $header-menu-item-focus-colour inset 0 0 0 3px;
-    &:focus div {
-      @include a11y.focus-highlight;
+      &:focus div {
+        @include focus-highlight;
+      }
     }
   }
-}
 
-button {
-  all: unset;
-  height: 100%;
-  width: 100%;
-}
-
-@include desktop-only {
-  .menu-item {
-    display: flex;
-    flex: 0;
-    flex-direction: column;
+  button {
+    all: unset;
     height: 100%;
-    justify-content: center;
-    line-height: 1.33em;
-    margin-bottom: 0;
-    min-width: 4em;
-    max-width: 11.1em;
-    padding: 0 1.65em;
-    position: relative;
-    text-align: center;
-
-    &:hover {
-      @include active;
-      background-color: $header-menu-item-hover-background-colour;
-
-      .sub-menu {
-        display: flex;
-      }
-    }
-
-    &.active {
-      @include active;
-
-      .sub-menu {
-        display: flex;
-      }
-    }
-
-    .menu-title div {
-      font-weight: $header-menu-item-title-text-weight;
-    }
-
-    .sub-menu {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      border: 1px solid $header-menu-item-divider-colour;
-      right: 0;
-      top: 100%;
-
-      &.desktop-visible {
-        display: flex;
-      }
-
-      &.desktop-hide {
-        display: none;
-      }
-    }
+    width: 100%;
   }
-}
 
-@include not-desktop {
-  .menu-item {
-    display: block;
-    box-sizing: border-box;
-    color: $header-menu-item-title-text-colour;
-    background-color: unset;
-    text-align: unset;
-    text-decoration: unset;
-
-    .menu-title {
-      padding: 12px;
-      font-weight: $header-menu-item-title-text-weight;
+  @include desktop-only {
+    .menu-item {
+      display: flex;
+      flex: 0;
+      flex-direction: column;
+      height: 100%;
+      justify-content: center;
+      line-height: 1.33em;
+      margin-bottom: 0;
+      min-width: 4em;
+      max-width: 11.1em;
+      padding: 0 1.65em;
+      position: relative;
+      text-align: center;
 
       &:hover {
+        @include active;
         background-color: $header-menu-item-hover-background-colour;
+
+        .sub-menu {
+          display: flex;
+        }
+      }
+
+      &.active {
+        @include active;
+
+        .sub-menu {
+          display: flex;
+        }
+      }
+
+      .menu-title div {
+        font-weight: $header-menu-item-title-text-weight;
+      }
+
+      .sub-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        border: 1px solid $header-menu-item-divider-colour;
+        right: 0;
+        top: 100%;
+
+        &.desktop-visible {
+          display: flex;
+        }
+
+        &.desktop-hide {
+          display: none;
+        }
+      }
+    }
+  }
+
+  @include not-desktop {
+    .menu-item {
+      display: block;
+      box-sizing: border-box;
+      color: $header-menu-item-title-text-colour;
+      background-color: unset;
+      text-align: unset;
+      text-decoration: unset;
+
+      .menu-title {
+        padding: 12px;
+        font-weight: $header-menu-item-title-text-weight;
+
+        &:hover {
+          background-color: $header-menu-item-hover-background-colour;
+        }
       }
     }
   }
