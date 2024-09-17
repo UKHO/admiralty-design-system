@@ -12,10 +12,10 @@
 | `invalid` | `boolean` | `false` | Whether to show that the component is in an invalid state. |
 | `invalid-message` | `string` | `null` | The message to show when the component is invalid. |
 | `label` | `string` | `null` | The text that will be used as a field label. |
-| `menu-attributes` | `any` | `undefined` | Sets HTML attributes and their values on the generated `ul` menu element. Useful for adding `aria-labelledby`<br /><br />and setting to the value of the `id` attribute on your existing label, to provide context to an assistive<br /><br />technology user. e.g.<br /><br />```<br /><br />const menuAttributes = {<br /><br />  className: 'custom-className',<br /><br />  class: 'custom-class',<br /><br />  id: 'custom-id',<br /><br />  role: 'custom-role'<br /><br />}<br /><br />``` |
+| `menu-attributes` | `any` | `undefined` | Sets HTML attributes and their values on the generated `ul` menu element. Useful for adding `aria-labelledby` and setting to the value of the `id` attribute on your existing label, to provide context to an assistive technology user. e.g. ``` const menuAttributes = {   className: 'custom-className',   class: 'custom-class',   id: 'custom-id',   role: 'custom-role' } ``` |
 | `menu-classes` | `string` | `undefined` | Classes to add to the menu displaying the options. |
 | `min-length` | `number` | `0` | Prevent displaying options until the minimum string length is reached. Ignored when show all values is enabled. |
-| `name` | `string` | `'input-autocomplete'` | The name for the `<input>` element. |
+| `name` | `string` | `undefined` | The name for the `<input>` element. |
 | `placeholder` | `string` | `''` | Populate the placeholder attribute on the `<input>` element. |
 | `required` | `boolean` | `false` | Populates the required field on the `<input>` element. |
 | `show-all-values` | `boolean` | `true` | Toggle showing all values when the input is clicked, like a default dropdown. |

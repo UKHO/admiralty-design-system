@@ -7,10 +7,7 @@ import { Keys } from '../Keys';
   scoped: true,
 })
 export class TypeAheadComponent {
-  private _id = `admiralty-typeahead-${++id}`;
-
-  hintId = `${this._id}-assistive-hint`;
-  listId = `${this._id}-list`;
+  private internalId = ++id;
 
   @Element() el: HTMLElement;
 
@@ -248,10 +245,20 @@ export class TypeAheadComponent {
   }
 
   private getListItemId(i: number) {
-    return `${this.listId}-item-${i}`;
+    const id = this.getId();
+    return `${id}-list-item-${i}`;
+  }
+
+  private getId() {
+    return this.el.id != '' ? this.el.id : `admiralty-typeahead-${this.internalId}`;
   }
 
   render() {
+    const id = this.getId();
+    const inputId = `${id}-input`;
+    const hintId = `${id}-assistive-hint`;
+    const listId = `${id}-list`;
+
     return (
       <Host onFocusout={_ev => this.handleComponentFocusOut()}>
         <div class="visually-hidden">
@@ -265,6 +272,7 @@ export class TypeAheadComponent {
         <admiralty-input
           type="text"
           ref={el => (this.inputControl = el)}
+          id={inputId}
           label={this.label}
           hint={this.hint}
           placeholder={this.placeholder}
@@ -276,12 +284,12 @@ export class TypeAheadComponent {
           aria-expanded={this.isFocused && this.filterResult.length > 0}
         ></admiralty-input>
 
-        <span id={this.hintId} class="visually-hidden">
+        <span id={hintId} class="visually-hidden">
           When autocomplete results are available use up and down arrows to review and enter to select. Touch device users, explore by touch or with swipe gestures.
         </span>
         {this.filterResult.length > 0 ? (
           <div class="typeahead-list-container" ref={el => (this.listContainer = el)}>
-            <ul class="typeahead-list" id={this.listId} role="listbox">
+            <ul class="typeahead-list" id={listId} role="listbox">
               {this.filterResult.map((item, i) => (
                 <li
                   id={this.getListItemId(i)}
