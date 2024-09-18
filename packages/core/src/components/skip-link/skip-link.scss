@@ -1,16 +1,18 @@
-@use "../../scss/vars/colours";
-@use "../../scss/base/a11y";
+@use '../../scss/vars/colours';
+@use '../../scss/base/a11y';
 
 .skip-link {
   @extend .visually-hidden;
   color: colours.$colour-text;
   display: block;
   padding: 10px 15px;
+  box-shadow: none;
+
+  span {
+    box-shadow: 0 1px colours.$colour-text;
+  }
 
   &:focus {
-    outline: 3px solid colours.$colour-utility-focus;
-    outline-offset: 0;
-    background-color: colours.$colour-utility-focus;
     position: static !important;
     width: auto !important;
     height: auto !important;
