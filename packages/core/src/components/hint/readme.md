@@ -25,6 +25,7 @@
 
  - [admiralty-autocomplete](../autocomplete)
  - [admiralty-input](../input)
+ - [admiralty-radio-group](../radio-group)
  - [admiralty-select](../select)
  - [admiralty-textarea](../textarea)
 
@@ -33,6 +34,7 @@
 graph TD;
   admiralty-autocomplete --> admiralty-hint
   admiralty-input --> admiralty-hint
+  admiralty-radio-group --> admiralty-hint
   admiralty-select --> admiralty-hint
   admiralty-textarea --> admiralty-hint
   style admiralty-hint fill:#f9f,stroke:#333,stroke-width:4px

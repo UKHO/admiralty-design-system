@@ -66,7 +66,6 @@ const TemplateLinksAndAuth: Story = {
       <admiralty-header-profile is-signed-in="${args.signedIn}" signed-in-text="${args.singedInText}" slot="profile"></admiralty-header-profile>
     </admiralty-header>`;
 
-    console.log(template);
     return html`${unsafeHTML(template)}`;
   },
 };
@@ -87,7 +86,6 @@ const TemplateLinksNoAuth: Story = {
       ${menuItems?.join('') ?? ''}
     </admiralty-header>`;
 
-    console.log(template);
     return html`${unsafeHTML(template)}`;
   },
 };
