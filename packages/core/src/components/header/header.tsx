@@ -82,7 +82,7 @@ export class HeaderComponent {
 
     return (
       <div class="admiralty-header">
-        <nav class="header-menu">
+        <div class="header-menu">
           <div class="header-branding">
             <a class="header-logo" href={logoLinkUrl} tabindex="0">
               <img class="header-image" alt={logoAltText} src={logoImgUrl} />
@@ -96,22 +96,22 @@ export class HeaderComponent {
               </h2>
             ) : null}
           </div>
-          <div class="header-menus">
+          <nav role="navigation" class="header-menus" aria-label="Site navigation">
             <div class={{ 'mobile-menu-toggle': true, 'display-hamburger': this.displayHamburger }}>
               <button onClick={_ => this.toggleMobileMenu()} aria-expanded={this.mobileMenuOpen} aria-label={this.mobileMenuOpen ? 'Hide menu' : 'Show menu'}>
                 <admiralty-icon icon-name={this.mobileMenuOpen ? faTimes.iconName : faBars.iconName}></admiralty-icon>
               </button>
             </div>
             <div class={{ 'menu-sections': true, 'mob-menus-visible': this.mobileMenuOpen }}>
-              <div role="navigation" class="menu-items">
+              <div class="menu-items">
                 <slot name="items"></slot>
               </div>
-              <div role="navigation" class="header-profile">
+              <div class="header-profile">
                 <slot name="profile"></slot>
               </div>
             </div>
-          </div>
-        </nav>
+          </nav>
+        </div>
       </div>
     );
   }

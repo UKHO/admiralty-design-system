@@ -1,3 +1,16 @@
+# v1.0.1 (Wed Sep 18 2024)
+
+#### 🐛 Bug Fix
+
+- `@ukho/admiralty-core`
+  - Update focus highlights for header mobile menus [#254](https://github.com/UKHO/admiralty-design-system/pull/254) ([@buzzub](https://github.com/buzzub))
+
+#### Authors: 1
+
+- Natalie ([@buzzub](https://github.com/buzzub))
+
+---
+
 # v1.0.0 (Fri Sep 06 2024)
 
 #### 💥 Breaking Change

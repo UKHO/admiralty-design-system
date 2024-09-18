@@ -12,6 +12,7 @@
     font-weight: $header-menu-link-font-weight;
     text-decoration: none;
     outline-offset: 3px;
+    color: colours.$colour-admiralty-blue;
   }
 }
 
@@ -45,9 +46,22 @@
   .menu-item {
     display: block;
     box-sizing: border-box;
-    color: $header-menu-link-text-colour;
     background-color: unset;
     text-align: unset;
     text-decoration: unset;
+    padding: 12px;
+
+    a {
+      font-weight: typography.$font-weight-medium;
+      &:focus {
+        box-shadow:
+          0 -4px colours.$colour-utility-focus,
+          0 4px colours.$colour-text;
+      }
+    }
+
+    &:hover {
+      background-color: colours.$colour-nav-bg-hover;
+    }
   }
 }

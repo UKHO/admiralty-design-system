@@ -1,5 +1,4 @@
 import { Component, Event, Host, h, Prop, EventEmitter, Element } from '@stencil/core';
-import { Keys } from '../Keys';
 
 @Component({
   tag: 'admiralty-header-profile',
@@ -48,30 +47,12 @@ export class HeaderProfileComponent {
     this.signInClicked.emit();
   };
 
-  handleSignInKeyDown = (ev: KeyboardEvent) => {
-    if (ev.key === Keys.ENTER || ev.key === Keys.SPACE) {
-      this.signInClicked.emit();
-    }
-  };
-
   handleSignOut = () => {
     this.signOutClicked.emit();
   };
 
-  handleSignOutKeyDown = (ev: KeyboardEvent) => {
-    if (ev.key === Keys.ENTER || ev.key === Keys.SPACE) {
-      this.signOutClicked.emit();
-    }
-  };
-
   handleYourAccount = () => {
     this.yourAccountClicked.emit();
-  };
-
-  handleYourAccountKeyDown = (ev: KeyboardEvent) => {
-    if (ev.key === Keys.ENTER || ev.key === Keys.SPACE) {
-      this.yourAccountClicked.emit();
-    }
   };
 
   closeDropdown = () => {
@@ -79,10 +60,10 @@ export class HeaderProfileComponent {
     subMenu.classList.add('desktop-hide');
   };
 
-  toggleDropdown = (_ev: Event) => {
+  toggleDropdown = (showMenu: boolean) => {
     const subMenu: HTMLDivElement = this.el.querySelector('div.sub-menu');
 
-    if (subMenu.classList.contains('desktop-hide')) {
+    if (showMenu) {
       subMenu.classList.add('desktop-visible');
       subMenu.classList.remove('desktop-hide');
     } else {
@@ -93,7 +74,7 @@ export class HeaderProfileComponent {
 
   handleClickSignedIn = (ev: MouseEvent) => {
     ev.stopPropagation();
-    this.toggleDropdown(ev);
+    this.toggleDropdown(false);
   };
 
   render() {
@@ -103,16 +84,16 @@ export class HeaderProfileComponent {
         <div class="header-profile">
           {isSignedIn ? (
             <div>
-              <div class="desktop" onMouseOver={this.toggleDropdown}>
-                <button onClick={this.handleClickSignedIn} tabindex="0">
-                  <div>{signedInText}</div>
+              <div class="desktop" onMouseEnter={() => this.toggleDropdown(true)} onMouseLeave={() => this.toggleDropdown(false)}>
+                <button onClick={this.handleClickSignedIn}>
+                  <span>{signedInText}</span>
                 </button>
                 {!signInOnly ? (
                   <div class="sub-menu desktop-hide">
-                    <button class="sub-menu-item" onClick={this.handleYourAccount} tabindex="0">
+                    <button class="sub-menu-item" onClick={this.handleYourAccount}>
                       <div>Your Account</div>
                     </button>
-                    <button class="sub-menu-item" onClick={this.handleSignOut} tabindex="0">
+                    <button class="sub-menu-item" onClick={this.handleSignOut}>
                       <div>Sign Out</div>
                     </button>
                   </div>
@@ -120,18 +101,18 @@ export class HeaderProfileComponent {
               </div>
               {!signInOnly ? (
                 <div class="not-desktop">
-                  <div class="sub-menu-item" onClick={this.handleYourAccount} onKeyDown={this.handleYourAccountKeyDown} tabindex="0">
-                    Your Account
-                  </div>
-                  <div class="sub-menu-item" onClick={this.handleSignOut} onKeyDown={this.handleSignOutKeyDown} tabindex="0">
-                    Sign Out
-                  </div>
+                  <button class="sub-menu-item" onClick={this.handleYourAccount} tabindex="0">
+                    <span>Your Account</span>
+                  </button>
+                  <button class="sub-menu-item" onClick={this.handleSignOut} tabindex="0">
+                    <span>Sign Out</span>
+                  </button>
                 </div>
               ) : null}
             </div>
           ) : (
-            <button class="sub-menu-item" onClick={this.handleSignIn} tabindex="0">
-              <div>Sign In</div>
+            <button class="sub-menu-item" onClick={this.handleSignIn}>
+              <span>Sign In</span>
             </button>
           )}
         </div>

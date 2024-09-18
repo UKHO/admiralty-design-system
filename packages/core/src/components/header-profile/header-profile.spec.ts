@@ -11,10 +11,10 @@ describe('header-profile', () => {
     expect(page.root).toEqualHtml(`
       <admiralty-header-profile>
         <div class="header-profile">
-          <button class="sub-menu-item" tabindex="0">
-            <div>
+          <button class="sub-menu-item">
+            <span>
               Sign In
-            </div>
+            </span>
           </button>
         </div>
       </admiralty-header-profile>
@@ -29,10 +29,10 @@ describe('header-profile', () => {
     expect(page.root).toMatchInlineSnapshot(`
       <admiralty-header-profile is-signed-in="false" signed-in-text="Mr Admiral">
         <div class="header-profile">
-          <button class="sub-menu-item" tabindex="0">
-            <div>
+          <button class="sub-menu-item">
+            <span>
               Sign In
-            </div>
+            </span>
           </button>
         </div>
       </admiralty-header-profile>
@@ -48,18 +48,18 @@ describe('header-profile', () => {
         <div class="header-profile">
           <div>
             <div class="desktop">
-              <button tabindex="0">
-                <div>
+              <button>
+                <span>
                   Mr Admiral
-                </div>
+                </span>
               </button>
               <div class="desktop-hide sub-menu">
-                <button class="sub-menu-item" tabindex="0">
+                <button class="sub-menu-item">
                   <div>
                     Your Account
                   </div>
                 </button>
-                <button class="sub-menu-item" tabindex="0">
+                <button class="sub-menu-item">
                   <div>
                     Sign Out
                   </div>
@@ -67,12 +67,16 @@ describe('header-profile', () => {
               </div>
             </div>
             <div class="not-desktop">
-              <div class="sub-menu-item" tabindex="0">
-                Your Account
-              </div>
-              <div class="sub-menu-item" tabindex="0">
-                Sign Out
-              </div>
+              <button class="sub-menu-item" tabindex="0">
+                <span>
+                  Your Account
+                </span>
+              </button>
+              <button class="sub-menu-item" tabindex="0">
+                <span>
+                  Sign Out
+                </span>
+              </button>
             </div>
           </div>
         </div>

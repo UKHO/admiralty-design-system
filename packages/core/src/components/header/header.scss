@@ -129,8 +129,10 @@
       }
 
       &:focus {
+        @include a11y.focus-highlight;
+
         outline: none;
-        box-shadow: $header-outline-colour inset 0 0 0 3px;
+        box-shadow: 0 -4px $header-outline-colour inset;
       }
     }
   }

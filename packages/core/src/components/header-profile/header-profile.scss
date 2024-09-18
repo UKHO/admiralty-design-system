@@ -31,15 +31,13 @@
       all: unset;
       height: 100%;
       width: 100%;
-      div {
+      span {
+        color: $header-profile-text-colour;
         font-weight: $header-profile-text-weight;
+        padding: 4px 0;
       }
 
-      &:focus {
-        outline: none;
-        box-shadow: $header-profile-focus-colour inset 0 0 0 3px;
-      }
-
+      &:focus span,
       &:focus div {
         @include focus-highlight;
       }
@@ -94,10 +92,6 @@
         text-align: left;
         width: 100%;
 
-        &:focus {
-          outline: none;
-          box-shadow: $header-profile-focus-colour inset 0 0 0 3px;
-        }
         &:hover {
           background-color: $header-profile-hover-background-colour;
         }
@@ -115,20 +109,28 @@
     .sub-menu-item {
       display: block;
       box-sizing: border-box;
-      font-size: $header-profile-text-size;
-      font-weight: 500;
       background-color: unset;
       text-align: unset;
       text-decoration: unset;
-
+      width: 100%;
       padding: 12px;
+
+      span {
+        padding: 4px 0;
+        color: $header-profile-text-colour;
+        font-size: $header-profile-text-size;
+        font-weight: $header-profile-sub-item-text-weight;
+      }
+
       &:hover {
         background-color: $header-profile-hover-background-colour;
       }
 
       &:focus {
         outline: none;
-        box-shadow: $header-profile-focus-colour inset 0 0 0 3px;
+        span {
+          @include a11y.focus-highlight;
+        }
       }
     }
   }

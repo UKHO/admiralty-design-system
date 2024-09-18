@@ -5,6 +5,8 @@
 }
 
 .header-sub-menu-item {
+  background-color: colours.$colour-bg;
+
   .title {
     font-size: $header-sub-menu-item-text-size;
     font-weight: $header-sub-menu-item-text-weight;
@@ -12,7 +14,10 @@
 
   &:focus {
     outline: none;
-    box-shadow: $header-sub-menu-item-focus-colour inset 0 0 0 3px;
+
+    span {
+      @include a11y.focus-highlight;
+    }
   }
 
   @include desktop-only {
@@ -20,14 +25,12 @@
     color: $header-sub-menu-item-text-colour;
     display: block;
     margin-bottom: 0;
-    padding: 0 0.66em;
-    text-align: center;
+    padding: 10px;
+    text-align: left;
     width: 300px;
 
     .title {
       display: block;
-      padding: 10px;
-      text-align: center;
     }
 
     &:hover {
@@ -51,8 +54,11 @@
     }
 
     &:focus {
-      outline: none;
-      box-shadow: $header-sub-menu-item-focus-colour inset 0 0 0 3px;
+      .title {
+        box-shadow:
+          0 -4px $header-sub-menu-item-focus-colour,
+          0 4px $header-sub-menu-item-text-colour;
+      }
     }
   }
 }
