@@ -87,7 +87,6 @@ export class HeaderProfileComponent {
               <div class="desktop" onMouseEnter={() => this.toggleDropdown(true)} onMouseLeave={() => this.toggleDropdown(false)}>
                 <button onClick={this.handleClickSignedIn}>
                   <span>{signedInText}</span>
-
                 </button>
                 {!signInOnly ? (
                   <div class="sub-menu desktop-hide">

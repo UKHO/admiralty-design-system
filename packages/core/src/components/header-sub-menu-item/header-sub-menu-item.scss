@@ -8,6 +8,8 @@
 }
 
 .header-sub-menu-item {
+  background-color: colours.$colour-bg;
+
   .title {
     font-size: typography.$font-size-normal;
     font-weight: typography.$font-weight-light;
@@ -27,12 +29,11 @@
     display: block;
     margin-bottom: 0;
     padding: 10px;
-    text-align: center;
+    text-align: left;
     width: 300px;
 
     .title {
       display: block;
-      text-align: center;
     }
 
     &:hover {

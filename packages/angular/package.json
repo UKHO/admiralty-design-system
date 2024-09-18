@@ -1,6 +1,6 @@
 {
   "name": "@ukho/admiralty-angular",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "module": "dist/fesm2022/ukho-admiralty-angular.mjs",
   "typings": "dist/index.d.ts",
   "scripts": {
@@ -17,7 +17,7 @@
     "@angular/core": ">=16.2.12"
   },
   "dependencies": {
-    "@ukho/admiralty-core": "^1.0.0",
+    "@ukho/admiralty-core": "^1.0.1",
     "tslib": "^2.5.0"
   },
   "devDependencies": {
@@ -51,3 +51,4 @@
   "url": "https://github.com/UKHO/admiralty-design-system",
   "repository": "git://github.com/UKHO/admiralty-design-system.git"
 }
+
