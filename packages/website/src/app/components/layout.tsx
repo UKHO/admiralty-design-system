@@ -12,6 +12,7 @@ const sideNavItems: SideNavItem[] = [
   { path: "checkbox", title: "Checkbox" },
   { path: "colour-block", title: "Colour Block" },
   { path: "dialogue", title: "Dialogue" },
+  { path: "error-summary", title: "Error Summary" },
   { path: "expansion", title: "Expansion" },
   { path: "file-input", title: "File Input" },
   { path: "footer", title: "Footer" },
@@ -42,3 +43,4 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     </div>
   );
 }
+

@@ -17,6 +17,7 @@ export const AdmiraltyCard = /*@__PURE__*/createReactComponent<JSX.AdmiraltyCard
 export const AdmiraltyCheckbox = /*@__PURE__*/createReactComponent<JSX.AdmiraltyCheckbox, HTMLAdmiraltyCheckboxElement>('admiralty-checkbox');
 export const AdmiraltyColourBlock = /*@__PURE__*/createReactComponent<JSX.AdmiraltyColourBlock, HTMLAdmiraltyColourBlockElement>('admiralty-colour-block');
 export const AdmiraltyDialogue = /*@__PURE__*/createReactComponent<JSX.AdmiraltyDialogue, HTMLAdmiraltyDialogueElement>('admiralty-dialogue');
+export const AdmiraltyErrorSummary = /*@__PURE__*/createReactComponent<JSX.AdmiraltyErrorSummary, HTMLAdmiraltyErrorSummaryElement>('admiralty-error-summary');
 export const AdmiraltyExpansion = /*@__PURE__*/createReactComponent<JSX.AdmiraltyExpansion, HTMLAdmiraltyExpansionElement>('admiralty-expansion');
 export const AdmiraltyFileInput = /*@__PURE__*/createReactComponent<JSX.AdmiraltyFileInput, HTMLAdmiraltyFileInputElement>('admiralty-file-input');
 export const AdmiraltyFilter = /*@__PURE__*/createReactComponent<JSX.AdmiraltyFilter, HTMLAdmiraltyFilterElement>('admiralty-filter');

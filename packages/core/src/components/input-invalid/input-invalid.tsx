@@ -16,6 +16,7 @@ export class InputInvalidComponent {
       <Host>
         <admiralty-icon icon-name={faExclamation.iconName} class="error-icon"></admiralty-icon>
         <p>
+          <span class="visually-hidden">Error:</span>
           <slot></slot>
         </p>
       </Host>

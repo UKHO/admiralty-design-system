@@ -18,6 +18,11 @@ export class DialogueComponent {
    */
   @Prop() heading: string;
 
+  /**
+   * The role to give the dialogue section. Set this to `alert` if the dialogue box is being used to summarise error messages.
+   */
+  @Prop() sectionRole: 'alert';
+
   getIconNameForType(): IconDefinition {
     switch (this.type) {
       case 'info':
@@ -32,12 +37,16 @@ export class DialogueComponent {
   }
 
   render() {
+    const sectionProps = {
+      ...(this.sectionRole && { role: this.sectionRole }),
+    };
     return (
       <section
         class={{
           dialogue: true,
           [this.type]: true,
         }}
+        {...sectionProps}
       >
         <div class="dialogue-title">
           <admiralty-icon class="dialogue-title-icon" icon-name={this.getIconNameForType().iconName}></admiralty-icon>

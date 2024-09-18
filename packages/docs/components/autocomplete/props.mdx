@@ -1,21 +1,24 @@
 
   | Name | Type | Default | Description |
 | --- | --- | --- | --- |
-| `assistive-hint` | `string` | `'When autocomplete results are available use up and down arrows to review and enter to select.  Touch device users, explore by touch or with swipe gestures.'` |  |
-| `autoselect` | `boolean` | `false` |  |
-| `confirm-on-blur` | `boolean` | `true` |  |
-| `css-namespace` | `string` | `'autocomplete'` |  |
-| `display-menu` | `string` | `'inline'` |  |
-| `dropdown-arrow` | `any` | `undefined` |  |
-| `hint-classes` | `any` | `undefined` |  |
-| `input-classes` | `any` | `undefined` |  |
-| `menu-attributes` | `any` | `undefined` |  |
-| `menu-classes` | `any` | `undefined` |  |
-| `min-length` | `number` | `0` |  |
-| `name` | `string` | `'input-autocomplete'` |  |
-| `placeholder` | `string` | `''` |  |
-| `required` | `boolean` | `false` |  |
-| `show-all-values` | `boolean` | `true` |  |
-| `show-no-options-found` | `boolean` | `true` |  |
-| `value` | `string` | `''` | The value of the input. |
+| `assistive-hint` | `string` | `'When autocomplete results are available use up and down arrows to review and enter to select.  Touch device users, explore by touch or with swipe gestures.'` | The hint that is provided to assistive users. |
+| `autoselect` | `boolean` | `false` | Automatically select the first matching option. |
+| `confirm-on-blur` | `boolean` | `true` | Toggle automatically confirming a selection when the field is blurred. |
+| `css-namespace` | `string` | `'autocomplete'` | The default CSS namespace. |
+| `disabled` | `boolean` | `false` | When `true`, the component cannot be interacted with. |
+| `display-menu` | `string` | `'inline'` | When set to `overlay` this option will display the menu as an absolutely positioned overlay instead of inline. |
+| `hint` | `string` | `null` | TThe text which will be used under the label to describe the input. |
+| `input-classes` | `string` | `undefined` | Classes to add to the component's `<input>` element. |
+| `invalid` | `boolean` | `false` | Whether to show that the component is in an invalid state. |
+| `invalid-message` | `string` | `null` | The message to show when the component is invalid. |
+| `label` | `string` | `null` | The text that will be used as a field label. |
+| `menu-attributes` | `any` | `undefined` | Sets HTML attributes and their values on the generated `ul` menu element. Useful for adding `aria-labelledby` and setting to the value of the `id` attribute on your existing label, to provide context to an assistive technology user. e.g. ``` const menuAttributes = {   className: 'custom-className',   class: 'custom-class',   id: 'custom-id',   role: 'custom-role' } ``` |
+| `menu-classes` | `string` | `undefined` | Classes to add to the menu displaying the options. |
+| `min-length` | `number` | `0` | Prevent displaying options until the minimum string length is reached. Ignored when show all values is enabled. |
+| `name` | `string` | `undefined` | The name for the `<input>` element. |
+| `placeholder` | `string` | `''` | Populate the placeholder attribute on the `<input>` element. |
+| `required` | `boolean` | `false` | Populates the required field on the `<input>` element. |
+| `show-all-values` | `boolean` | `true` | Toggle showing all values when the input is clicked, like a default dropdown. |
+| `show-no-options-found` | `boolean` | `true` | Toggle whether to display the "No results found" message. |
+| `value` | `string` | `null` | The value of the input. |
 
