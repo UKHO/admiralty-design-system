@@ -79,10 +79,10 @@ export class HeaderProfileComponent {
     subMenu.classList.add('desktop-hide');
   };
 
-  toggleDropdown = (_ev: Event) => {
+  toggleDropdown = (showMenu: boolean) => {
     const subMenu: HTMLDivElement = this.el.querySelector('div.sub-menu');
 
-    if (subMenu.classList.contains('desktop-hide')) {
+    if (showMenu) {
       subMenu.classList.add('desktop-visible');
       subMenu.classList.remove('desktop-hide');
     } else {
@@ -93,7 +93,7 @@ export class HeaderProfileComponent {
 
   handleClickSignedIn = (ev: MouseEvent) => {
     ev.stopPropagation();
-    this.toggleDropdown(ev);
+    this.toggleDropdown(false);
   };
 
   render() {
@@ -103,16 +103,16 @@ export class HeaderProfileComponent {
         <div class="header-profile">
           {isSignedIn ? (
             <div>
-              <div class="desktop" onMouseOver={this.toggleDropdown}>
-                <button onClick={this.handleClickSignedIn} tabindex="0">
+              <div class="desktop" onMouseEnter={() => this.toggleDropdown(true)} onMouseLeave={() => this.toggleDropdown(false)}>
+                <button onClick={this.handleClickSignedIn}>
                   <div>{signedInText}</div>
                 </button>
                 {!signInOnly ? (
                   <div class="sub-menu desktop-hide">
-                    <button class="sub-menu-item" onClick={this.handleYourAccount} tabindex="0">
+                    <button class="sub-menu-item" onClick={this.handleYourAccount}>
                       <div>Your Account</div>
                     </button>
-                    <button class="sub-menu-item" onClick={this.handleSignOut} tabindex="0">
+                    <button class="sub-menu-item" onClick={this.handleSignOut}>
                       <div>Sign Out</div>
                     </button>
                   </div>
@@ -130,7 +130,7 @@ export class HeaderProfileComponent {
               ) : null}
             </div>
           ) : (
-            <button class="sub-menu-item" onClick={this.handleSignIn} tabindex="0">
+            <button class="sub-menu-item" onClick={this.handleSignIn}>
               <div>Sign In</div>
             </button>
           )}
