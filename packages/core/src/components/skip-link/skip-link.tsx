@@ -14,7 +14,7 @@ export class SkipLinkComponent {
   render() {
     return (
       <a href={this.href} class="skip-link">
-        Skip to main content
+        <span>Skip to main content</span>
       </a>
     );
   }
