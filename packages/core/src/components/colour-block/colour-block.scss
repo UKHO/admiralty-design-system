@@ -25,6 +25,10 @@
       font-weight: $colour-block-action-font-weight;
       font-size: $colour-block-action-text-size;
       line-height: $colour-block-action-line-height;
+      @include not-desktop {
+        font-size: 20px;
+        line-height: 30px;
+      }
     }
   }
 
@@ -46,9 +50,7 @@
     background-color: $tertiary-colour-block-colour;
     color: $tertiary-colour-block-text-colour;
     .clickAction * {
-      span {
-        color: $tertiary-colour-block-text-colour;
-      }
+      color: $tertiary-colour-block-text-colour;
     }
   }
 }

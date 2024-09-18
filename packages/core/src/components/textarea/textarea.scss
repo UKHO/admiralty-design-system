@@ -35,6 +35,7 @@
     &.disabled {
       color: $textarea-disabled-text-colour;
       border-color: $textarea-disabled-border-colour;
+      background: $textarea-disabled-background-colour;
     }
   }
 }

@@ -45,17 +45,7 @@ hr {
       width: unset;
     }
 
-    &:hover {
-      background-color: $tab-group-heading-hover-background-colour;
-    }
-
-    &:focus {
-      outline-offset: -2px;
-      box-shadow: $tab-group-focus-colour inset 0 0 0 2px;
-    }
-
     &:focus-visible {
-      outline: 3px solid $tab-group-focus-colour;
       box-shadow: $tab-group-focus-colour inset 0 0 0 2px;
     }
 

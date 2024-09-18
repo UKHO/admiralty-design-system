@@ -46,8 +46,6 @@
     }
 
     &:focus {
-      outline: 3px solid $header-outline-colour;
-      outline-offset: 3px;
       @include focus-highlight;
     }
   }
@@ -89,10 +87,6 @@
 
       @include not-desktop {
         font-size: 24px;
-      }
-      &:focus {
-        outline: 3px solid $header-outline-colour;
-        outline-offset: 3px;
       }
     }
   }

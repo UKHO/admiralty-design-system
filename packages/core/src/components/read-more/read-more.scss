@@ -26,7 +26,6 @@ section.expansion {
     align-items: baseline;
     text-align: left;
     text-decoration: underline;
-    font-weight: $read-more-heading-font-weight;
 
     &.expanded span {
       font-weight: $read-more-text-weight;
@@ -39,8 +38,6 @@ section.expansion {
     }
 
     &:focus {
-      outline: none;
-      box-shadow: 0 0 0 3px $read-more-focus-colour;
       @include focus-highlight;
     }
   }

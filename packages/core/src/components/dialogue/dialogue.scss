@@ -6,11 +6,11 @@
   overflow-wrap: break-word;
   word-wrap: break-word;
 
+  @include not-desktop {
+    padding: 24px 18px;
+  }
+
   .dialogue-title {
-    font-size: $dialogue-title-text-size;
-    font-weight: $dialogue-title-text-weight;
-    color: $dialogue-title-text-colour;
-    line-height: 30px;
     display: flex;
     align-items: center;
     overflow-wrap: break-word;

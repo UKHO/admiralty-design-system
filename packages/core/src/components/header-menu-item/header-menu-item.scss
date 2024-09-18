@@ -13,11 +13,8 @@
       color: $header-menu-item-title-text-colour;
     }
 
-    &:focus {
-      box-shadow: $header-menu-item-focus-colour inset 0 0 0 3px;
-      &:focus div {
-        @include focus-highlight;
-      }
+    &:focus div {
+      @include focus-highlight;
     }
   }
 
