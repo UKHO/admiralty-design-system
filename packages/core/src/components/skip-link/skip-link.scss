@@ -1,5 +1,7 @@
+@use '../../styles/utils/a11y.scss';
+
 .skip-link {
-  @extend .visually-hidden !optional;
+  @extend .visually-hidden;
   display: block;
   padding: 10px 15px;
 

@@ -14,7 +14,8 @@
     "dist/",
     "loader/",
     "styles/",
-    "docs/"
+    "docs/",
+    "themes/"
   ],
   "scripts": {
     "build": "yarn build.css && stencil build",
