@@ -1,12 +1,15 @@
-@use "../../scss/vars/colours" as colours;
-@use "../../scss/base/responsive";
-@use "../../scss/vars/typography";
+@use '../../scss/vars/colours' as colours;
+@use '../../scss/base/responsive';
+@use '../../scss/vars/typography';
+@use '../../scss/base/a11y';
 
 @mixin active {
   background-color: colours.$colour-nav-bg-hover;
 }
 
 .header-sub-menu-item {
+  background-color: colours.$colour-bg;
+
   .title {
     font-size: typography.$font-size-normal;
     font-weight: typography.$font-weight-light;
@@ -14,7 +17,10 @@
 
   &:focus {
     outline: none;
-    box-shadow: colours.$colour-utility-focus inset 0 0 0 3px;
+
+    span {
+      @include a11y.focus-highlight;
+    }
   }
 
   @include responsive.desktop-only {
@@ -22,14 +28,12 @@
     color: colours.$colour-admiralty-blue;
     display: block;
     margin-bottom: 0;
-    padding: 0 0.66em;
-    text-align: center;
+    padding: 10px;
+    text-align: left;
     width: 300px;
 
     .title {
       display: block;
-      padding: 10px;
-      text-align: center;
     }
 
     &:hover {
@@ -53,8 +57,11 @@
     }
 
     &:focus {
-      outline: none;
-      box-shadow: colours.$colour-utility-focus inset 0 0 0 3px;
+      .title {
+        box-shadow:
+          0 -4px colours.$colour-utility-focus,
+          0 4px colours.$colour-text;
+      }
     }
   }
 }

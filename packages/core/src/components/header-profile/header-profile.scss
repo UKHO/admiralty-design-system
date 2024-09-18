@@ -34,10 +34,13 @@
       all: unset;
       height: 100%;
       width: 100%;
-      div {
+      span {
+        color: colours.$colour-admiralty-blue;
         font-weight: typography.$font-weight-medium;
+        padding: 4px 0;
       }
 
+      &:focus span,
       &:focus div {
         @include a11y.focus-highlight;
       }
@@ -92,10 +95,6 @@
         text-align: left;
         width: 100%;
 
-        &:focus {
-          outline: none;
-          box-shadow: colours.$colour-utility-focus inset 0 0 0 3px;
-        }
         &:hover {
           background-color: colours.$colour-nav-bg-hover;
         }
@@ -113,20 +112,28 @@
     .sub-menu-item {
       display: block;
       box-sizing: border-box;
-      font-size: typography.$font-size-normal;
-      font-weight: 500;
       background-color: unset;
       text-align: unset;
       text-decoration: unset;
-
+      width: 100%;
       padding: 12px;
+
+      span {
+        padding: 4px 0;
+        color: colours.$colour-admiralty-blue;
+        font-size: typography.$font-size-normal;
+        font-weight: typography.$font-weight-medium;
+      }
+
       &:hover {
         background-color: colours.$colour-nav-bg-hover;
       }
 
       &:focus {
         outline: none;
-        box-shadow: colours.$colour-utility-focus inset 0 0 0 3px;
+        span {
+          @include a11y.focus-highlight;
+        }
       }
     }
   }
