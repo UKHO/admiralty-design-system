@@ -1,13 +1,12 @@
-@import "../vars/colours";
-@import "../utils/colour-functions";
+@import '../vars/colours';
+@import '../utils/colour-functions';
 
-// Rest browser defaults
+// Reset browser defaults
 * {
   margin: 0;
   padding: 0;
   border: 0;
 }
-
 
 // Admiralty Font Family
 // -----------------
@@ -50,4 +49,3 @@ body {
     @include generate-colour($colour-name);
   }
 }
-
