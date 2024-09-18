@@ -1,6 +1,7 @@
-@use "../../scss/vars/colours" as colours;
-@use "../../scss/base/responsive";
-@use "../../scss/vars/typography";
+@use '../../scss/vars/colours' as colours;
+@use '../../scss/base/responsive';
+@use '../../scss/vars/typography';
+@use '../../scss/base/a11y';
 
 @mixin active {
   background-color: colours.$colour-nav-bg-hover;
@@ -14,7 +15,10 @@
 
   &:focus {
     outline: none;
-    box-shadow: colours.$colour-utility-focus inset 0 0 0 3px;
+
+    span {
+      @include a11y.focus-highlight;
+    }
   }
 
   @include responsive.desktop-only {
@@ -22,13 +26,12 @@
     color: colours.$colour-admiralty-blue;
     display: block;
     margin-bottom: 0;
-    padding: 0 0.66em;
+    padding: 10px;
     text-align: center;
     width: 300px;
 
     .title {
       display: block;
-      padding: 10px;
       text-align: center;
     }
 
@@ -53,8 +56,11 @@
     }
 
     &:focus {
-      outline: none;
-      box-shadow: colours.$colour-utility-focus inset 0 0 0 3px;
+      .title {
+        box-shadow:
+          0 -4px colours.$colour-utility-focus,
+          0 4px colours.$colour-text;
+      }
     }
   }
 }
