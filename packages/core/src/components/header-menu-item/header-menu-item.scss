@@ -83,7 +83,7 @@
   }
 }
 
-@include responsive.not-desktop {
+@include not-desktop {
   .menu-item {
     display: block;
     box-sizing: border-box;

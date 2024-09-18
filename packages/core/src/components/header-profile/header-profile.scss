@@ -129,7 +129,7 @@
       &:focus {
         outline: none;
         span {
-          @include a11y.focus-highlight;
+          @include focus-highlight;
         }
       }
     }

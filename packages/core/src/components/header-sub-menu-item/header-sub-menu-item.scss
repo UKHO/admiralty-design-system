@@ -1,11 +1,11 @@
-@import "header-sub-menu-item.vars";
+@import 'header-sub-menu-item.vars';
 
 @mixin active {
   background-color: $header-sub-menu-item-hover-background-colour;
 }
 
 .header-sub-menu-item {
-  background-color: colours.$colour-bg;
+  background-color: $header-sub-menu-item-background-colour;
 
   .title {
     font-size: $header-sub-menu-item-text-size;
@@ -16,7 +16,7 @@
     outline: none;
 
     span {
-      @include a11y.focus-highlight;
+      @include focus-highlight;
     }
   }
 

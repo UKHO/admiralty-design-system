@@ -1,9 +1,9 @@
-@import "../../styles/vars/globals";
+@import '../../styles/vars/globals';
 
-$header-menu-link-active-colour : var(--admiralty-colour-primary) !default;
+$header-menu-link-active-colour: var(--admiralty-colour-primary) !default;
 $header-menu-link-text-size: 18px !default;
 $header-menu-link-font-weight: normal !default;
 $header-menu-link-text-colour: var(--admiralty-colour-primary) !default;
 $header-menu-link-hover-background-colour: #f0f0f0 !default;
-
-
+$header-menu-link-focus-colour: var(--admiralty-focus-outline-colour) !default;
+$header-menu-link-focus-text-colour: var(--admiralty-text-colour) !default;
