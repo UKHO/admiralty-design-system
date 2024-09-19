@@ -84,13 +84,13 @@ export class HeaderComponent {
       <div class="admiralty-header">
         <div class="header-menu">
           <div class="header-branding">
-            <a class="header-logo" href={logoLinkUrl} tabindex="0">
+            <a class="header-logo" href={logoLinkUrl}>
               <img class="header-image" alt={logoAltText} src={logoImgUrl} />
             </a>
             <div class="vertical-seperator"></div>
             {this.headerTitle ? (
               <h2 class="header-title">
-                <a onClick={ev => this.handleClick(ev)} href={headerTitleUrl} tabindex="0">
+                <a onClick={ev => this.handleClick(ev)} href={headerTitleUrl}>
                   {headerTitle}
                 </a>
               </h2>

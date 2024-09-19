@@ -17,64 +17,64 @@
       @include focus-highlight;
     }
   }
+}
 
-  button {
-    all: unset;
+button {
+  all: unset;
+  height: 100%;
+  width: 100%;
+}
+
+@include desktop-only {
+  .menu-item {
+    display: flex;
+    flex: 0;
+    flex-direction: column;
     height: 100%;
-    width: 100%;
-  }
+    justify-content: center;
+    line-height: 1.33em;
+    margin-bottom: 0;
+    min-width: 4em;
+    max-width: 11.1em;
+    padding: 0 1.65em;
+    position: relative;
+    text-align: center;
 
-  @include desktop-only {
-    .menu-item {
-      display: flex;
-      flex: 0;
-      flex-direction: column;
-      height: 100%;
-      justify-content: center;
-      line-height: 1.33em;
-      margin-bottom: 0;
-      min-width: 4em;
-      max-width: 11.1em;
-      padding: 0 1.65em;
-      position: relative;
-      text-align: center;
-
-      &:hover {
-        @include active;
-        background-color: $header-menu-item-hover-background-colour;
-
-        .sub-menu {
-          display: flex;
-        }
-      }
-
-      &.active {
-        @include active;
-
-        .sub-menu {
-          display: flex;
-        }
-      }
-
-      .menu-title div {
-        font-weight: $header-menu-item-title-text-weight;
-      }
+    &:hover {
+      @include active;
+      background-color: $header-menu-item-hover-background-colour;
 
       .sub-menu {
+        display: flex;
+      }
+    }
+
+    &.active {
+      @include active;
+
+      .sub-menu {
+        display: flex;
+      }
+    }
+
+    .menu-title div {
+      font-weight: $header-menu-item-title-text-weight;
+    }
+
+    .sub-menu {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      border: 1px solid $header-menu-item-divider-colour;
+      right: 0;
+      top: 100%;
+
+      &.desktop-visible {
+        display: flex;
+      }
+
+      &.desktop-hide {
         display: none;
-        flex-direction: column;
-        position: absolute;
-        border: 1px solid $header-menu-item-divider-colour;
-        right: 0;
-        top: 100%;
-
-        &.desktop-visible {
-          display: flex;
-        }
-
-        &.desktop-hide {
-          display: none;
-        }
       }
     }
   }

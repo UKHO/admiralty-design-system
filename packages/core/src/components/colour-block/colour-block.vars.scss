@@ -7,11 +7,10 @@ $secondary-colour-block-colour: var(--admiralty-colour-secondary);
 $secondary-colour-block-text-colour: var(--admiralty-colour-secondary-contrast);
 
 $tertiary-colour-block-colour: var(--admiralty-colour-tertiary);
-$tertiary-colour-block-text-colour: var(--admiralty-text-colour);
+$tertiary-colour-block-text-colour: var(--admiralty-colour-primary);
 
 $colour-block-action-text-size: 21px;
 $colour-block-action-line-height: 30px;
 $colour-block-action-font-weight: normal;
 
-$colour-block-focus-colour: var(--admiralty-focus-outline-colour) !default;
 $colour-block-focus-text-colour: var(--admiralty-text-colour) !default;
