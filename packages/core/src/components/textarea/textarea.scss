@@ -15,6 +15,7 @@
     box-sizing: border-box;
     vertical-align: top;
     font-weight: $textarea-font-weight;
+    line-height: $textarea-line-height;
 
     background-color: $textarea-background-colour;
 
@@ -35,7 +36,6 @@
     &.disabled {
       color: $textarea-disabled-text-colour;
       border-color: $textarea-disabled-border-colour;
-      background: $textarea-disabled-background-colour;
     }
   }
 }

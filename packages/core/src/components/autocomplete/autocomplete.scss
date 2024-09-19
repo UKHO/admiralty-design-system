@@ -10,6 +10,7 @@
   border: 2px solid $autocomplete-input-border-colour;
   border-radius: 0; /* Safari 10 on iOS adds implicit border rounding. */
   box-sizing: border-box;
+  color: $autocomplete-text-colour;
   margin-bottom: 0; /* BUG: Safari 10 on macOS seems to add an implicit margin. */
   line-height: 1.5;
   width: 100%;

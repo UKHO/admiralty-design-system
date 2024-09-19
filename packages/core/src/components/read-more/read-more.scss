@@ -20,12 +20,14 @@ section.expansion {
     border: none;
     white-space: unset;
     color: $read-more-text-colour;
+    font-weight: unset;
     cursor: pointer;
     margin: 8px 0px;
     padding: 4px;
     align-items: baseline;
     text-align: left;
     text-decoration: underline;
+    text-underline-offset: 0.15em;
 
     &.expanded span {
       font-weight: $read-more-text-weight;
@@ -35,6 +37,10 @@ section.expansion {
       margin-left: 5px;
       margin-right: 8px;
       vertical-align: top;
+    }
+
+    &:hover {
+      text-decoration-thickness: 0.15em;
     }
 
     &:focus {

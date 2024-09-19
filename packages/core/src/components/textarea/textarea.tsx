@@ -112,6 +112,7 @@ export class TextareaComponent {
             class={{ disabled: this.disabled, invalid: this.invalid }}
             style={this.width ? { maxWidth: `${this.width}px` } : {}}
             id={inputId}
+            disabled={this.disabled}
             value={value}
             onInput={this.onInput}
             onBlur={this.onBlur}

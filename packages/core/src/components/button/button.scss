@@ -188,6 +188,7 @@ button.warning {
 button.text {
   @include button-defaults;
   color: $button-text-colour-secondary;
+  font-weight: unset;
 
   &:enabled:active {
     color: $button-text-colour-secondary;

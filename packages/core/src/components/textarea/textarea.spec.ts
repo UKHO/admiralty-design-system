@@ -60,7 +60,7 @@ describe('admiralty-textarea', () => {
       <admiralty-textarea label="Description" disabled="true">
         <div class="text-area-container">
           <admiralty-label disabled="" for="admiralty-textarea-${id}-input">Description</admiralty-label>
-          <textarea aria-describedby=" " aria-invalid="false" class="disabled" id="admiralty-textarea-${id}-input" value=""></textarea>
+          <textarea aria-describedby=" " aria-invalid="false" class="disabled" disabled="" id="admiralty-textarea-${id}-input" value=""></textarea>
           <admiralty-input-invalid id="admiralty-textarea-${id}-error" style="display: none;"></admiralty-input-invalid>
         </div>
       </admiralty-textarea>
