@@ -17,9 +17,9 @@
 @mixin focus-highlight() {
   outline: 3px solid transparent;
   color: var(--admiralty-text-colour);
-  background-color: var(--admiralty-focus-outline-colour);
+  background-color: var(--admiralty-focus-colour);
   box-shadow:
-    0 -2px var(--admiralty-focus-outline-colour),
+    0 -2px var(--admiralty-focus-colour),
     0 4px var(--admiralty-text-colour);
   text-decoration: none;
 }

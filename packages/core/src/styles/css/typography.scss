@@ -15,7 +15,7 @@ a {
   color: var(--admiralty-colour-primary);
   text-underline-offset: 0.15em;
   &:focus {
-    outline: 3px solid var(--admiralty-focus-outline-colour);
+    outline: 3px solid var(--admiralty-focus-colour);
     outline-offset: 1px;
     @include a11y.focus-highlight;
   }
@@ -105,7 +105,7 @@ blockquote {
   padding: 24px 18px;
   border-left: 5px solid var(--admiralty-colour-primary);
   margin-bottom: 30px;
-  background: var(--admiralty-background-colour-grey);
+  background: var(--admiralty-background-colour-tint);
   @include responsive.not-desktop {
     line-height: 24px;
   }
@@ -156,6 +156,6 @@ ol {
 
 .white-text {
   * {
-    color: #ffffff;
+    color: var(--admiralty-colour-primary-contrast);
   }
 }

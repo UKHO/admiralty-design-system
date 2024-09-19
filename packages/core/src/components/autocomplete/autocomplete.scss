@@ -55,7 +55,7 @@
 
 .autocomplete__menu {
   background-color: $autocomplete-background-colour;
-  border: 2px solid #0b0c0c;
+  border: 2px solid $autocomplete-input-border-colour;
   border-top: 0;
   color: $autocomplete-text-colour;
   margin: 0;
@@ -87,7 +87,7 @@
 }
 
 .autocomplete__option {
-  border-bottom: solid #b1b4b6;
+  border-bottom: solid $autocomplete-option-border-colour;
   border-width: 1px 0;
   color: $autocomplete-text-colour;
   cursor: pointer;

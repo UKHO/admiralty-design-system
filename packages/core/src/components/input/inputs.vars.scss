@@ -1,10 +1,10 @@
-@import "../../styles/vars/globals";
+@import '../../styles/vars/globals';
 
 $input-background-colour: var(--admiralty-background-colour);
 $input-border-colour: var(--admiralty-text-colour);
 $input-text-colour: var(--admiralty-text-colour);
 $input-text-weight: 300;
-$input-focus-colour: var(--admiralty-focus-outline-colour) !default;
+$input-focus-colour: var(--admiralty-focus-colour) !default;
 $input-error-border-colour: var(--admiralty-colour-danger) !default;
 $input-disabled-text-colour: var(--admiralty-disabled-colour) !default;
 $input-disabled-border-colour: var(--admiralty-disabled-colour) !default;

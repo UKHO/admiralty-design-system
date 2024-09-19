@@ -68,7 +68,7 @@
   }
 
   & > .modal-actions {
-    background-color: #d9e0e7;
+    background-color: $modal-button-bar-background-colour;
 
     ::slotted(div[slot='actions']) {
       display: flex;
