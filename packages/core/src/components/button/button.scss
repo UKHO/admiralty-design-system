@@ -72,7 +72,7 @@ button.primary {
   &:hover {
     background-color: $button-hover-colour-standard;
     border: 2px solid $button-hover-colour-standard;
-    color: $button-hover-colour-standard;
+    color: $button-hover-text-colour-standard;
     border-color: $button-hover-border-colour-standard;
     padding: 10px 16px;
   }
@@ -114,7 +114,7 @@ button.secondary {
 
   &:hover {
     background-color: $button-hover-colour-secondary;
-    color: $button-hover-colour-secondary;
+    color: $button-hover-text-colour-secondary;
     border: 2px solid $button-hover-border-colour-secondary;
     padding: 10px 16px;
   }
@@ -188,7 +188,6 @@ button.warning {
 button.text {
   @include button-defaults;
   color: $button-text-colour-secondary;
-  font-weight: unset;
 
   &:enabled:active {
     color: $button-text-colour-secondary;
