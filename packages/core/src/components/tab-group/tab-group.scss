@@ -1,7 +1,4 @@
-@use '../../scss/vars/colours';
-@use '../../scss/vars/typography';
-@use '../../scss/base/responsive';
-@use '../../scss/base/a11y';
+@import 'tab-group.vars';
 
 .tab-group-headers {
   width: 100%;
@@ -11,7 +8,7 @@ hr {
   width: 100%;
   height: 2px;
   margin: 6px 0;
-  background-color: colours.$colour-divider;
+  background-color: $tab-group-separator-colour;
 }
 
 .headers {
@@ -30,9 +27,9 @@ hr {
 
     text-align: center;
     text-decoration: none;
-    color: colours.$colour-admiralty-blue;
+    color: $tab-group-heading-text-colour;
     background-color: unset;
-    font-weight: typography.$font-weight-medium;
+    font-weight: $tab-group-heading-text-weight;
     font-size: 16px;
     margin-left: 4px;
 
@@ -40,7 +37,7 @@ hr {
       margin-left: 0;
     }
 
-    @include responsive.not-desktop {
+    @include not-desktop {
       font-size: 14px;
       line-height: 18px;
       padding: 8px;
@@ -49,24 +46,24 @@ hr {
     }
 
     &:focus-visible {
-      box-shadow: colours.$colour-text inset 0 0 0 2px;
+      box-shadow: $tab-group-focus-colour inset 0 0 0 2px;
     }
 
     &:focus,
     &.active:focus {
-      @include a11y.focus-highlight;
-      box-shadow: 0px -4px colours.$colour-text inset;
+      @include focus-highlight;
+      box-shadow: 0px -4px $tab-group-focus-text-colour inset;
     }
 
     &:hover {
-      background-color: colours.$colour-nav-bg-hover;
-      color: colours.$colour-admiralty-blue;
+      background-color: $tab-group-heading-hover-background-colour;
+      color: $tab-group-heading-text-colour;
       box-shadow: unset;
     }
 
     &.active {
-      background-color: colours.$colour-admiralty-blue;
-      color: colours.$colour-white;
+      background-color: $tab-group-active-background-colour;
+      color: $tab-group-active-text-colour;
     }
   }
 }

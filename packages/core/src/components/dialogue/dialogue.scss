@@ -1,6 +1,4 @@
-@use '../../scss/base/responsive';
-@use '../../scss/vars/typography';
-@use '../../scss/vars/colours';
+@import 'dialogue.vars';
 
 .dialogue {
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
@@ -8,7 +6,7 @@
   overflow-wrap: break-word;
   word-wrap: break-word;
 
-  @include responsive.not-desktop {
+  @include not-desktop {
     padding: 24px 18px;
   }
 
@@ -21,35 +19,35 @@
 
     .dialogue-title-icon {
       font-size: 18px;
-      color: colours.$colour-admiralty-blue;
+      color: $dialogue-title-text-colour;
       margin-right: 8px;
       margin-bottom: 4px;
     }
 
     h2 {
-      color: colours.$colour-admiralty-blue;
+      color: $dialogue-title-text-colour;
       font-size: 20px;
-      font-weight: typography.$font-weight-medium;
+      font-weight: $dialogue-title-text-weight;
       line-height: 30px;
       margin: 0;
     }
   }
 
   &.info {
-    border-left: 5px solid colours.$colour-utility-info;
-    background-color: colours.$colour-utility-info-bg;
+    border-left: 5px solid $dialogue-info-accent-colour;
+    background-color: $dialogue-info-colour;
   }
 
   &.error {
-    border-left: 5px solid colours.$colour-utility-error;
-    background-color: colours.$colour-utility-error-bg;
+    border-left: 5px solid $dialogue-error-accent-colour;
+    background-color: $dialogue-error-colour;
   }
   &.success {
-    border-left: 5px solid colours.$colour-utility-success;
-    background-color: colours.$colour-utility-success-bg;
+    border-left: 5px solid $dialogue-success-accent-colour;
+    background-color: $dialogue-success-colour;
   }
   &.warning {
-    border-left: 5px solid colours.$colour-utility-warning;
-    background-color: colours.$colour-utility-warning-bg;
+    border-left: 5px solid $dialogue-warning-accent-colour;
+    background-color: $dialogue-warning-colour;
   }
 }

@@ -1,0 +1,11 @@
+@import '../../styles/vars/globals';
+
+$select-background-colour: var(--admiralty-background-colour);
+$select-border-colour: var(--admiralty-text-colour);
+$select-text-colour: var(--admiralty-text-colour);
+$select-text-weight: 300;
+$select-text-size: 18px;
+$select-focus-colour: var(--admiralty-focus-colour) !default;
+$select-error-border-colour: var(--admiralty-colour-danger) !default;
+$select-disabled-text-colour: var(--admiralty-disabled-colour) !default;
+$select-disabled-border-colour: var(--admiralty-disabled-colour) !default;

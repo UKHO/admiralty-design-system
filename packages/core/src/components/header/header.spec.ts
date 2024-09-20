@@ -22,7 +22,7 @@ describe('admiralty-header', () => {
         <div class="admiralty-header">
           <div class="header-menu">
             <div class="header-branding">
-              <a class="header-logo" href="https://www.admiralty.co.uk/" tabindex="0">
+              <a class="header-logo" href="https://www.admiralty.co.uk/">
                 <img alt="ADMIRALTY" class="header-image" src="svg/Admiralty stacked logo.svg">
               </a>
               <div class="vertical-seperator"></div>
@@ -55,12 +55,12 @@ describe('admiralty-header', () => {
         <div class="admiralty-header">
           <div class="header-menu">
             <div class="header-branding">
-              <a class="header-logo" href="https://www.admiralty.co.uk/" tabindex="0">
+              <a class="header-logo" href="https://www.admiralty.co.uk/">
                 <img alt="ADMIRALTY" class="header-image" src="svg/Admiralty stacked logo.svg">
               </a>
               <div class="vertical-seperator"></div>
               <h2 class="header-title">
-                <a tabindex="0">
+                <a>
                   Design System
                 </a>
               </h2>
@@ -93,12 +93,12 @@ describe('admiralty-header', () => {
         <div class="admiralty-header">
           <div class="header-menu">
             <div class="header-branding">
-              <a class="header-logo" href="http://www.example.com" tabindex="0">
+              <a class="header-logo" href="http://www.example.com">
                 <img alt="ADMIRALTY" class="header-image" src="svg/Admiralty stacked logo.svg">
               </a>
               <div class="vertical-seperator"></div>
               <h2 class="header-title">
-                <a href="null" tabindex="0">
+                <a href="null">
                   Design System
                 </a>
               </h2>
@@ -134,12 +134,12 @@ describe('admiralty-header', () => {
         <div class="admiralty-header">
           <div class="header-menu">
             <div class="header-branding">
-              <a class="header-logo" href="http://www.example.com" tabindex="0">
+              <a class="header-logo" href="http://www.example.com">
                 <img alt="Logo" class="header-image" src="logo.svg">
               </a>
               <div class="vertical-seperator"></div>
               <h2 class="header-title">
-                <a href="#" tabindex="0">
+                <a href="#">
                   Design System
                 </a>
               </h2>
@@ -177,12 +177,12 @@ describe('admiralty-header', () => {
         <div class="admiralty-header">
           <div class="header-menu">
             <div class="header-branding">
-              <a class="header-logo" href="http://www.example.com" tabindex="0">
+              <a class="header-logo" href="http://www.example.com">
                 <img alt="Logo" class="header-image" src="logo.svg">
               </a>
               <div class="vertical-seperator"></div>
               <h2 class="header-title">
-                <a href="#" tabindex="0">
+                <a href="#">
                   Design System
                 </a>
               </h2>
@@ -221,12 +221,12 @@ describe('admiralty-header', () => {
         <div class="admiralty-header">
           <div class="header-menu">
             <div class="header-branding">
-              <a class="header-logo" href="http://www.example.com" tabindex="0">
+              <a class="header-logo" href="http://www.example.com">
                 <img alt="Logo" class="header-image" src="logo.svg">
               </a>
               <div class="vertical-seperator"></div>
               <h2 class="header-title">
-                <a href="#" tabindex="0">
+                <a href="#">
                   Design System
                 </a>
               </h2>
@@ -272,12 +272,12 @@ describe('admiralty-header', () => {
         <div class="admiralty-header">
           <div class="header-menu">
             <div class="header-branding">
-              <a class="header-logo" href="http://www.example.com" tabindex="0">
+              <a class="header-logo" href="http://www.example.com">
                 <img alt="Logo" class="header-image" src="logo.svg">
               </a>
               <div class="vertical-seperator"></div>
               <h2 class="header-title">
-                <a href="#" tabindex="0">
+                <a href="#">
                   Design System
                 </a>
               </h2>

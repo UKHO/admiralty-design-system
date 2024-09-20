@@ -1,23 +1,22 @@
-@use '../vars/colours';
-@use 'responsive';
-@use '../vars/typography';
-@use 'a11y';
+@use '../utils/a11y';
+@use '../utils/responsive';
 
-* {
-  font-family: typography.$font-family;
-  font-size: typography.$font-size-normal;
-  line-height: typography.$font-line-height-normal;
-  font-weight: typography.$font-weight-light;
-  color: colours.$colour-text;
-  @include responsive.not-desktop {
-    font-size: 16px;
-  }
+$heading-font-weight: 400;
+$list-item-font-weight: 300;
+
+html {
+  font-family: var(--admiralty-font-family);
+  font-size: var(--admiralty-font-size);
+  line-height: var(--admiralty-line-height);
+  font-weight: var(--admiralty-font-weight);
 }
 
 a {
-  color: colours.$colour-admiralty-blue;
+  color: var(--admiralty-colour-primary);
   text-underline-offset: 0.15em;
   &:focus {
+    outline: 3px solid var(--admiralty-focus-colour);
+    outline-offset: 1px;
     @include a11y.focus-highlight;
   }
   &:hover {
@@ -26,9 +25,8 @@ a {
 }
 
 h1 {
-  font-family: typography.$font-family;
-  color: colours.$colour-admiralty-blue;
-  font-weight: typography.$font-weight-medium;
+  color: var(--admiralty-colour-primary);
+  font-weight: $heading-font-weight;
   font-size: 48px;
   line-height: 60px;
   margin: 0 0 30px 0;
@@ -39,9 +37,8 @@ h1 {
 }
 
 h2 {
-  font-family: typography.$font-family;
-  color: colours.$colour-admiralty-blue;
-  font-weight: typography.$font-weight-medium;
+  color: var(--admiralty-colour-primary);
+  font-weight: $heading-font-weight;
   font-size: 36px;
   line-height: 48px;
   margin-bottom: 18px;
@@ -54,9 +51,8 @@ h2 {
 h3,
 h4,
 h5 {
-  font-family: typography.$font-family;
-  color: colours.$colour-admiralty-blue;
-  font-weight: typography.$font-weight-medium;
+  color: var(--admiralty-colour-primary);
+  font-weight: $heading-font-weight;
   font-size: 21px;
   line-height: 30px;
   margin-bottom: 12px;
@@ -67,9 +63,8 @@ h5 {
 }
 
 h6 {
-  font-family: typography.$font-family;
-  color: colours.$colour-admiralty-blue;
-  font-weight: typography.$font-weight-medium;
+  color: var(--admiralty-colour-primary);
+  font-weight: $heading-font-weight;
   font-size: 18px;
   line-height: 24px;
   margin-bottom: 12px;
@@ -79,12 +74,15 @@ h6 {
 }
 
 p {
-  font-family: typography.$font-family;
+  font-size: 18px;
+  line-height: 24px;
   margin-bottom: 30px;
+  @include responsive.not-desktop {
+    font-size: 16px;
+  }
 }
 
 .intro {
-  font-family: typography.$font-family;
   font-size: 28px;
   line-height: 36px;
   margin-bottom: 30px;
@@ -94,7 +92,6 @@ p {
 }
 
 .small {
-  font-family: typography.$font-family;
   font-size: 16px;
   @include responsive.not-desktop {
     font-size: 14px;
@@ -103,23 +100,21 @@ p {
 }
 
 blockquote {
-  font-family: typography.$font-family;
   line-height: 30px;
   width: 100%;
   padding: 24px 18px;
-  border-left: 5px solid colours.$colour-admiralty-blue;
+  border-left: 5px solid var(--admiralty-colour-primary);
   margin-bottom: 30px;
-  background: colours.$colour-bg-grey;
+  background: var(--admiralty-background-colour-tint);
   @include responsive.not-desktop {
     line-height: 24px;
   }
 }
 
 ul {
-  font-family: typography.$font-family;
   list-style: none;
   a {
-    font-weight: typography.$font-weight-light;
+    font-weight: $list-item-font-weight;
   }
 
   li {
@@ -129,7 +124,7 @@ ul {
   li:before {
     content: '\25A0';
     font-size: 18px;
-    color: colours.$colour-admiralty-blue;
+    color: var(--admiralty-colour-primary);
     vertical-align: text-bottom;
     margin-right: 12px;
     @include responsive.not-desktop {
@@ -139,17 +134,16 @@ ul {
 }
 
 ol {
-  font-family: typography.$font-family;
   list-style: none;
   counter-reset: li;
 
   a {
-    font-weight: typography.$font-weight-light;
+    font-weight: $list-item-font-weight;
   }
 
   li:before {
     content: counter(li) '.';
-    color: colours.$colour-dark-blue;
+    color: var(--admiralty-colour-primary);
     font-size: 18px;
     margin-right: 12px;
   }
@@ -162,6 +156,6 @@ ol {
 
 .white-text {
   * {
-    color: colours.$colour-white;
+    color: var(--admiralty-colour-primary-contrast);
   }
 }

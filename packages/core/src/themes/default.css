@@ -1,0 +1,90 @@
+/** Admiralty CSS Variables **/
+:root {
+  /** primary **/
+  --admiralty-colour-primary: #09315b;
+  --admiralty-colour-primary-rgb: 9, 49, 91;
+  --admiralty-colour-primary-contrast: #ffffff;
+  --admiralty-colour-primary-contrast-rgb: 255, 255, 255;
+  --admiralty-colour-primary-shade: #082b50;
+  --admiralty-colour-primary-tint: #22466b;
+
+  /** secondary **/
+  --admiralty-colour-secondary: #007e97;
+  --admiralty-colour-secondary-rgb: 0, 126, 151;
+  --admiralty-colour-secondary-contrast: #ffffff;
+  --admiralty-colour-secondary-contrast-rgb: 255, 255, 255;
+  --admiralty-colour-secondary-shade: #006f85;
+  --admiralty-colour-secondary-tint: #1a8ba1;
+
+  /** tertiary **/
+  --admiralty-colour-tertiary: #65c4db;
+  --admiralty-colour-tertiary-rgb: 101, 196, 219;
+  --admiralty-colour-tertiary-contrast: #000000;
+  --admiralty-colour-tertiary-contrast-rgb: 0, 0, 0;
+  --admiralty-colour-tertiary-shade: #59acc1;
+  --admiralty-colour-tertiary-tint: #74cadf;
+
+  /** success **/
+  --admiralty-colour-success: #47a234;
+  --admiralty-colour-success-rgb: 71, 162, 52;
+  --admiralty-colour-success-contrast: #000000;
+  --admiralty-colour-success-contrast-rgb: 0, 0, 0;
+  --admiralty-colour-success-shade: #3e8f2e;
+  --admiralty-colour-success-tint: #59ab48;
+  --admiralty-colour-success-background: #e7f1e5;
+
+  /** warning **/
+  --admiralty-colour-warning: #e3660e;
+  --admiralty-colour-warning-rgb: 227, 102, 14;
+  --admiralty-colour-warning-contrast: #000000;
+  --admiralty-colour-warning-contrast-rgb: 0, 0, 0;
+  --admiralty-colour-warning-shade: #c85a0c;
+  --admiralty-colour-warning-tint: #e67526;
+  --admiralty-colour-warning-background: #f8ede3;
+
+  /** danger **/
+  --admiralty-colour-danger: #e20d0d;
+  --admiralty-colour-danger-rgb: 226, 13, 13;
+  --admiralty-colour-danger-contrast: #ffffff;
+  --admiralty-colour-danger-contrast-rgb: 255, 255, 255;
+  --admiralty-colour-danger-shade: #c70b0b;
+  --admiralty-colour-danger-tint: #e52525;
+  --admiralty-colour-danger-background: #f7e1e1;
+
+  /** info **/
+  --admiralty-colour-info: #0177c1;
+  --admiralty-colour-info-rgb: 1, 119, 193;
+  --admiralty-colour-info-contrast: #ffffff;
+  --admiralty-colour-info-contrast-rgb: 255, 255, 255;
+  --admiralty-colour-info-shade: #0169aa;
+  --admiralty-colour-info-tint: #1a85c7;
+  --admiralty-colour-info-background: #e0ecd3;
+
+  /** light **/
+  --admiralty-colour-light: #d8d8d8;
+  --admiralty-colour-light-rgb: 216, 216, 216;
+  --admiralty-colour-light-contrast: #000000;
+  --admiralty-colour-light-contrast-rgb: 0, 0, 0;
+  --admiralty-colour-light-shade: #bebebe;
+  --admiralty-colour-light-tint: #1a85c7;
+
+  --admiralty-background-colour: #ffffff;
+  --admiralty-background-colour-rgb: 0, 0, 0;
+  --admiralty-hover-background-colour: #eeeeee;
+  --admiralty-hover-background-colour-rgb: 238, 238, 238;
+
+  --admiralty-background-colour-tint: #eeeeee;
+  --admiralty-background-colour-tint-rgb: 238, 238, 238;
+  --admiralty-hover-background-colour-tint: #d0d0d0;
+  --admiralty-hover-background-colour-tint-rgb: 208, 208, 208;
+
+  --admiralty-text-colour: #333333;
+  --admiralty-text-colour-rgb: 51, 51, 51;
+
+  --admiralty-focus-colour: #ffdd00;
+  --admiralty-focus-colour-rgb: 255, 221, 0;
+
+  --admiralty-disabled-colour: #adadad;
+
+  --admiralty-table-row-colour: #eef3f4;
+}

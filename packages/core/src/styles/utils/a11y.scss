@@ -1,6 +1,5 @@
-@use '../vars/colours';
+@import '../vars/colours';
 
-/* Use for content that should be read by screen readers but not seen */
 .visually-hidden:not(:focus):not(:active) {
   position: absolute !important;
   width: 1px !important;
@@ -17,10 +16,10 @@
 
 @mixin focus-highlight() {
   outline: 3px solid transparent;
-  color: colours.$colour-black;
-  background-color: colours.$colour-utility-focus;
+  color: var(--admiralty-text-colour);
+  background-color: var(--admiralty-focus-colour);
   box-shadow:
-    0 -2px colours.$colour-utility-focus,
-    0 4px colours.$colour-text;
+    0 -2px var(--admiralty-focus-colour),
+    0 4px var(--admiralty-text-colour);
   text-decoration: none;
 }

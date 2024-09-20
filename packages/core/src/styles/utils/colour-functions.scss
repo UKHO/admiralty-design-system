@@ -1,0 +1,17 @@
+// Converts a colour to a comma separated rgb.
+// --------------------------------------------------------------------------------------------
+@function colour-to-rgb-list($colour) {
+  @return #{red($colour)},#{green($colour)},#{blue($colour)};
+}
+
+// Mixes a colour with black to create its shade.
+// --------------------------------------------------------------------------------------------
+@function get-colour-shade($colour) {
+  @return mix(#000, $colour, 12%);
+}
+
+// Mixes a colour with white to create its tint.
+// --------------------------------------------------------------------------------------------
+@function get-colour-tint($colour) {
+  @return mix(#fff, $colour, 10%);
+}
