@@ -1,7 +1,9 @@
 {
   "name": "@ukho/admiralty-react",
   "version": "1.0.1",
-  "private": true,
+  "license": "MIT",
+  "url": "https://github.com/UKHO/admiralty-design-system",
+  "repository": "git://github.com/UKHO/admiralty-design-system.git",
   "main": "dist/index.js",
   "types": "dist/types/index.d.ts",
   "scripts": {
@@ -14,6 +16,10 @@
   "dependencies": {
     "@stencil/react-output-target": "^0.7.1",
     "@ukho/admiralty-core": "^1.0.1"
+  },
+  "peerDependencies": {
+    "react": ">=17",
+    "react-dom": ">=17"
   },
   "devDependencies": {
     "@types/react": "^18.3.8",
