@@ -8,6 +8,10 @@
   color: $header-profile-text-colour;
   cursor: pointer;
 
+  & > div {
+    display: flex;
+  }
+
   @include desktop-only {
     .not-desktop {
       display: none;

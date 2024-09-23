@@ -29,7 +29,7 @@ export default function SideNav(props: SideNavProps) {
     }
   }, [activeSideNavId, props.rootPath, router]);
 
-  const onSideNavItemSelected = (event: AdmiraltySideNavItemCustomEvent<string>) => {
+  const onSideNavItemSelected = (event: CustomEvent<string>) => {
     const sideNavItemId: string = event.detail;
     setactiveSideNavId(sideNavItemId);
   };
