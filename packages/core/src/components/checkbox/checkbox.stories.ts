@@ -20,13 +20,17 @@ const defaultArgs = {
   labelText: 'Checkbox 1',
   checked: false,
   disabled: false,
+  labelHidden: false,
 };
 
 const template: Story = {
-  render: args => html`<admiralty-checkbox checked=${args.checked} disabled=${args.disabled} input-id=${args.inputId} label-text=${args.labelText}></admiralty-checkbox>`,
+  render: args => html`<admiralty-checkbox checked=${args.checked} disabled=${args.disabled} input-id=${args.inputId} label-text=${args.labelText} label-hidden=${args.labelHidden}></admiralty-checkbox>`,
 };
 
-export const DefaultCheckbox: Story = { ...template, args: { ...defaultArgs } };
+export const DefaultCheckbox: Story = { ...template, args: {
+  ...defaultArgs,
+  labelText: 'my label'
+} };
 
 export const checkedCheckbox: Story = { ...template, args: { ...defaultArgs, checked: true } };
 
