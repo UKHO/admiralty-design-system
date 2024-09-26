@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Event, Host, h, Prop, Watch } from '@stencil/core';
 import { CheckboxChangeEventDetail } from './checkbox.interface';
-import { FocusEvent } from 'react';
 
 @Component({
   tag: 'admiralty-checkbox',
@@ -40,7 +39,7 @@ export class CheckboxComponent {
   @Prop() value: any | null;
 
   /**
-   * The text that's displayed alongside the checkbox
+   * The label text must be provided and is displayed beside the checkbox, use the labelHidden property to control its visibility.
    */
   @Prop() labelText: string = null;
 
@@ -101,9 +100,9 @@ export class CheckboxComponent {
             id={inputId}
             aria-checked={`${checked}`}
             type="checkbox"
-            onBlur={() => this.onBlur()}
-            onFocus={() => this.onFocus()}
-            onClick={(event: Event) => this.onClick(event)}
+            onBlur={this.onBlur}
+            onFocus={this.onFocus}
+            onClick={this.onClick}
             disabled={disabled}
             name={name}
             checked={checked}

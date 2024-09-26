@@ -35,3 +35,5 @@ export const DefaultCheckbox: Story = { ...template, args: {
 export const checkedCheckbox: Story = { ...template, args: { ...defaultArgs, checked: true } };
 
 export const disabledCheckbox: Story = { ...template, args: { ...defaultArgs, disabled: true } };
+
+export const labelHidden: Story = { ...template, args: { ...defaultArgs, labelHidden: true } };
