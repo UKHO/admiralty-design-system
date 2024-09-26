@@ -36,6 +36,7 @@ Once you've installed the package, you can start using the components in your pr
 To include the styling in the React app, add the necessary CSS to the root app component:
 
 ```typescript
+// layout.tsx
 import "@ukho/admiralty-core/styles/admiralty.bundle.css";
 import "@ukho/admiralty-core/themes/default.css";
 
@@ -43,7 +44,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body>
-        <div>My react app</div>
+        <h1>My react app</h1>
+        <MyComponent />
       </body>
     </html>
   );
@@ -52,7 +54,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
 In an React component template, simply use the components as you would with any other HTML elements:
 
-```jsx
+```tsx
+// MyComponent.tsx
 import React from "react";
 import { AdmiraltyInput } from "@ukho/admiralty-react";
 
