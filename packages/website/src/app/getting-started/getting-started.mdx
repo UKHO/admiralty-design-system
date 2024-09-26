@@ -1,3 +1,82 @@
-# Getting Started
+# Getting started
 
-Add some words here as an introduction to the getting started guide.
+The **Admiralty Design System** is built using StencilJS, and the components are available as JavaScript, Angular, and React packages.
+
+You can use these components to build reusable and consistent UI elements across different projects.
+
+## Contents
+
+1. [Overview](#overview)
+2. [Installation](#installation)
+   - [JavaScript](#javascript)
+   - [Angular](#angular)
+   - [React](#react)
+3. [Best Practices](#best-practices)
+4. [Troubleshooting](#troubleshooting)
+5. [FAQ](#faq)
+
+---
+
+## Installation
+
+### Prerequisites
+
+Before installing, make sure you have the following:
+
+- Node.js (v16.x or later) installed
+- A package manager such as `npm` or `yarn`
+
+### JavaScript
+
+Refer to the specific [JavaScript](getting-started/javascript) page.
+
+### Angular
+
+Refer to the specific [Angular](getting-started/angular) page.
+
+### React
+
+Refer to the specific [React](getting-started/react) page.
+
+---
+
+## Best practices
+
+- **Lazy Loading:** In frameworks like React, make sure to use lazy loading to optimize performance.
+- **Shadow DOM:** StencilJS uses the Shadow DOM to encapsulate styles and behavior. Ensure that you understand how the Shadow DOM may affect your project’s styling strategies.
+- **Accessibility:** Ensure that all components used follow accessibility best practices (like ARIA attributes and keyboard navigation support).
+
+---
+
+## Troubleshooting
+
+If you encounter any issues while using the library, here are some common solutions:
+
+**1. Component not rendering?**
+
+Ensure that you've imported the default styles for the components.
+
+**2. Styles not applying?**
+
+Check whether the component is using the Shadow DOM and if the CSS variables need to be overridden.
+
+**3. Performance issues?**
+
+Consider lazy loading components and using build optimizations in your framework to reduce initial load time.
+
+---
+
+## Frequently asked questions
+
+**1. Can I use this library with Vue.js?**
+
+At the moment, the library is optimized for JavaScript, Angular, and React. However, you can use the web components in any framework that supports custom elements, including Vue.js.
+
+**2. How do I contribute to the library or report a bug?**
+
+Contributions are welcome! Please refer to our [Feedback](/#feedback) section for more details.
+
+**3. Do these components support server-side rendering (SSR)?**
+
+StencilJS components are designed to be compatible with SSR setups like Next.js and Angular Universal. However, some configurations may be required.
+

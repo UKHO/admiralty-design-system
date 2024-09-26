@@ -5,9 +5,10 @@ import SideNav, { SideNavItem } from "@/components/side-nav/side-nav";
 
 const sideNavItems: SideNavItem[] = [
   { path: "/", title: "Overview" },
-  { path: "html", title: "HTML + JS" },
+  { path: "javascript", title: "Javascript" },
   { path: "angular", title: "Angular" },
   { path: "react", title: "React" },
+  { path: "customising-components", title: "Customising" },
 ];
 
 export default function Layout({ children }: { children: React.ReactNode }) {
@@ -18,3 +19,4 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     </div>
   );
 }
+

@@ -1,20 +1,55 @@
-import {AdmiraltyTabGroup, AdmiraltyTab} from '@ukho/admiralty-react';
-
 # Angular
 
-## Step 1 - Install Dependencies
+## Contents
 
-The first step is to install the package so that it can be used in your Angular project. You will need
+1. [Installation](#installation)
+   - [NPM](#npm)
+   - [Yarn](#yarn)
+2. [Using the components](#using-the-components)
 
-<AdmiraltyTabGroup>
-  <AdmiraltyTab label="NPM">
-    ```bash
-    npm install @ukho/admiralty-angular
-    ```
-  </AdmiraltyTab>
-  <AdmiraltyTab label="Yarn">
-    ```bash
-    yarn add @ukho/admiralty-angular
-    ```
-  </AdmiraltyTab>
-</AdmiraltyTabGroup>
+## Installation
+
+For projects using Angular the first step is to install the package using a package manager so that it can be used in your project:
+
+### NPM
+
+```bash
+npm install @ukho/admiralty-angular
+```
+
+or
+
+### Yarn
+
+```bash
+yarn add @ukho/admiralty-angular
+```
+
+---
+
+## Using the components
+
+Once you've installed the package, you can start using the components in your project.
+
+Import the components into your `AppModule` or specific Angular module.
+
+```typescript
+import { NgModule } from "@angular/angular";
+import { BrowserModule } from "@angular/platform-browser";
+import { AppComponent } from "./app.component";
+
+@NgModule({
+  declarations: [AppComponent],
+  imports: [BrowserModule],
+  providers: [],
+  bootstrap: [AppComponent],
+})
+export class AppModule {}
+```
+
+In an Angular component template, simply use the components as you would with any other HTML elements:
+
+```html
+<admiralty-input label="What is your name?" type="text"></admiralty-input>
+```
+

@@ -1,16 +1,61 @@
-import {AdmiraltyTabGroup, AdmiraltyTab} from '@ukho/admiralty-react';
-
 # React
 
-<AdmiraltyTabGroup>
-  <AdmiraltyTab label="NPM">
-    ```bash
-    npm install @ukho/admiralty-react
-    ```
-  </AdmiraltyTab>
-  <AdmiraltyTab label="Yarn">
-    ```bash
-    yarn add @ukho/admiralty-react
-    ```
-  </AdmiraltyTab>
-</AdmiraltyTabGroup>
+## Contents
+
+1. [Installation](#installation)
+   - [NPM](#npm)
+   - [Yarn](#yarn)
+2. [Using the components](#using-the-components)
+
+## Installation
+
+For projects using React the first step is to install the package using a package manager so that it can be used in your project:
+
+### NPM
+
+```bash
+npm install @ukho/admiralty-react
+```
+
+or
+
+### Yarn
+
+```bash
+yarn add @ukho/admiralty-react
+```
+
+---
+
+## Using the components
+
+Once you've installed the package, you can start using the components in your project.
+
+To include the styling in the React app, add the necessary CSS to the root app component:
+
+```typescript
+import "@ukho/admiralty-core/styles/admiralty.bundle.css";
+import "@ukho/admiralty-core/themes/default.css";
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en">
+      <body>
+        <div>My react app</div>
+      </body>
+    </html>
+  );
+}
+```
+
+In an React component template, simply use the components as you would with any other HTML elements:
+
+```jsx
+import React from "react";
+import { AdmiraltyInput } from "@ukho/admiralty-react";
+
+export default function MyComponent() {
+  return <AdmiraltyInput label="What is your name?" type="text"></AdmiraltyInput>;
+}
+```
+
