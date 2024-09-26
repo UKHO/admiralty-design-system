@@ -15,7 +15,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className={styles.contentContainer}>
       <SideNav rootPath="/getting-started" items={sideNavItems} />
-      <div>{children}</div>
+      <div className={styles.content}>{children}</div>
     </div>
   );
 }
