@@ -39,7 +39,7 @@ export class CheckboxComponent {
   @Prop() value: any | null;
 
   /**
-   * The label text must be provided and is displayed beside the checkbox, use the labelHidden property to control its visibility.
+   * The label text must be provided and is displayed beside the checkbox, use the `labelHidden` property to control its visibility.
    */
   @Prop() labelText: string = null;
 
