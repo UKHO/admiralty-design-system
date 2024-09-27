@@ -96,17 +96,15 @@ export class CheckboxComponent {
       <Host>
         <div aria-hidden={disabled ? 'true' : null}
              class={{ 'form-control': true, 'right-align': checkboxRight }}>
-          <input
-            id={inputId}
-            aria-checked={`${checked}`}
-            type="checkbox"
-            onBlur={this.onBlur}
-            onFocus={this.onFocus}
-            onClick={this.onClick}
-            disabled={disabled}
-            name={name}
-            checked={checked}
-          />
+          <input id={inputId}
+                 aria-checked={`${checked}`}
+                 type="checkbox"
+                 onBlur={this.onBlur}
+                 onFocus={this.onFocus}
+                 onClick={this.onClick}
+                 disabled={disabled}
+                 name={name}
+                 checked={checked}/>
           <label htmlFor={inputId}
                  class={{ disabled: disabled }}
                  onClick={this.onClick}>
