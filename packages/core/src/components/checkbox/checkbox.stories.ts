@@ -29,7 +29,7 @@ const template: Story = {
 
 export const DefaultCheckbox: Story = { ...template, args: {
   ...defaultArgs,
-  labelText: 'my label'
+  labelText: 'Checkbox 1'
 } };
 
 export const checkedCheckbox: Story = { ...template, args: { ...defaultArgs, checked: true } };
