@@ -1,0 +1,67 @@
+# Angular
+
+Instructions for how to incorporate the UKHO Design System into an Angular project.
+
+## Contents
+
+1. [Installation](#installation)
+   - [NPM](#npm)
+   - [Yarn](#yarn)
+2. [Using the components](#using-the-components)
+
+## Installation
+
+For projects using Angular the first step is to install the package using a package manager so that it can be used in your project:
+
+### NPM
+
+```bash
+npm install @ukho/admiralty-angular
+```
+
+or
+
+### Yarn
+
+```bash
+yarn add @ukho/admiralty-angular
+```
+
+---
+
+## Using the components
+
+Once you've installed the package, you can start using the components in your project.
+
+Import the components into your `AppModule` or specific Angular module.
+
+```typescript
+// app.module.ts
+import { NgModule } from "@angular/angular";
+import { BrowserModule } from "@angular/platform-browser";
+import { AppComponent } from "./app.component";
+import { DesignSystemModule } from "@ukho/admiralty-angular";
+
+@NgModule({
+  declarations: [AppComponent],
+  imports: [BrowserModule, DesignSystemModule.forRoot()],
+  providers: [],
+  bootstrap: [AppComponent],
+})
+export class AppModule {}
+```
+
+And then import the admiralty styling and theme into the main CSS file for your project
+
+```css
+/* styles.css */
+@import "@ukho/admiralty-core/styles/admiralty.bundle.css";
+@import "@ukho/admiralty-core/themes/default.css";
+```
+
+In an Angular component template, simply use the components as you would with any other HTML elements:
+
+```html
+<admiralty-input label="What is your name?" type="text"></admiralty-input>
+```
+

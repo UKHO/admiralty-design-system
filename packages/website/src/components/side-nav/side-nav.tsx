@@ -1,7 +1,6 @@
 import { AdmiraltySideNav, AdmiraltySideNavItem } from "@ukho/admiralty-react";
 import React, { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { AdmiraltySideNavItemCustomEvent } from "@ukho/admiralty-core";
 import styles from "./styles.module.css";
 
 export interface SideNavProps {
@@ -39,7 +38,7 @@ export default function SideNav(props: SideNavProps) {
       <AdmiraltySideNav ref={sideNavRef}>
         {props.items.map((item, i) => (
           <AdmiraltySideNavItem
-            key={i}
+            key={item.path}
             onSideNavItemSelected={onSideNavItemSelected}
             sideNavItemId={item.path}
             headingTitle={item.title}></AdmiraltySideNavItem>

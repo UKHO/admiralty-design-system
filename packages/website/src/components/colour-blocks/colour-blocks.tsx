@@ -12,10 +12,10 @@ export default function ColourBlocks() {
         colour="admiralty-blue"
         heading="Setting it up"
         linkText="Get started"
-        href="#"
+        href="/getting-started"
         suppressRedirect={true}
         enableCardEvent={true}
-        onColourBlockLinkClicked={() => alert("Coming soon")}>
+        onColourBlockLinkClicked={() => router.push("/getting-started")}>
         Go to Get Started to see how to install the Design System and start using it in your builds.
       </AdmiraltyColourBlock>
       <AdmiraltyColourBlock

@@ -14,6 +14,10 @@ import { useRouter, usePathname } from "next/navigation";
 
 const menuItems = [
   {
+    name: "Getting started",
+    path: "/getting-started",
+  },
+  {
     name: "Principles",
     path: "/principles",
   },
