@@ -12,6 +12,10 @@
     font-weight: $header-sub-menu-item-text-weight;
   }
 
+  a {
+    text-decoration: none;
+  }
+
   &:focus {
     outline: none;
 
@@ -55,9 +59,7 @@
 
     &:focus {
       .title {
-        box-shadow:
-          0 -4px $header-sub-menu-item-focus-colour,
-          0 4px $header-sub-menu-item-text-colour;
+        box-shadow: 0 -4px $header-sub-menu-item-focus-colour, 0 4px $header-sub-menu-item-text-colour;
       }
     }
   }
