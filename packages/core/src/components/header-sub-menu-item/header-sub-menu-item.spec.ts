@@ -9,9 +9,9 @@ describe('header-sub-menu-item', () => {
     });
     expect(page.root).toEqualHtml(`
       <admiralty-header-sub-menu-item menutitle="Item 1">
-        <div class="header-sub-menu-item" tabindex="0">
+        <button class="header-sub-menu-item">
           <span class="title"></span>
-        </div>
+        </button>
       </admiralty-header-sub-menu-item>
     `);
   });

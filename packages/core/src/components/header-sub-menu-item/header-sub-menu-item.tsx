@@ -38,12 +38,6 @@ export class HeaderSubMenuItemComponent {
     return this.subMenuItemClick.emit(this.menuTitle);
   }
 
-  onKeyDown(ev: KeyboardEvent): void {
-    if (ev.key === Keys.ENTER || ev.key === Keys.SPACE) {
-      this.subMenuItemClick.emit(this.menuTitle);
-    }
-  }
-
   render() {
     return (
       <Host>
@@ -55,9 +49,9 @@ export class HeaderSubMenuItemComponent {
             </a>
           </div>
         ) : (
-          <div class="header-sub-menu-item" onClick={ev => this.handleClick(ev)} onKeyDown={ev => this.onKeyDown(ev)} tabindex="0">
+          <button class="header-sub-menu-item" onClick={ev => this.handleClick(ev)}>
             <span class="title">{this.menuTitle}</span>
-          </div>
+          </button>
         )}
       </Host>
     );
