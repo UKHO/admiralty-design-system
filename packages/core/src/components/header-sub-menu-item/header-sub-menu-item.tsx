@@ -1,5 +1,4 @@
 import { Component, Event, EventEmitter, h, Host, Prop } from '@stencil/core';
-import { Keys } from '../Keys';
 
 @Component({
   tag: 'admiralty-header-sub-menu-item',
