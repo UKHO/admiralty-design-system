@@ -16,7 +16,7 @@
 
 @font-face {
   font-family: "JohnstonITC";
-  src: url("/assets/webfonts/JohnstonITC/italic/JohnstonITCStd-MediumIta.woff2")  format("woff2");
+  src: url("/assets/webfonts/JohnstonITC/italic/JohnstonITCStd-MediumIta.woff2") format("woff2");
   src: url("/assets/webfonts/JohnstonITC/italic/JohnstonITCStd-MediumIta.woff") format("woff");
   font-weight: 400;
   font-style: italic;
@@ -33,9 +33,17 @@
 @font-face {
   font-family: "JohnstonITC";
   src: url("/assets/webfonts/JohnstonITC/light-italic/JohnstonITCStd-LightIta.woff2") format("woff2");
-  src: url("/assets/webfonts/JohnstonITC/light-italic/JohnstonITCStd-LightIta.woff")format("woff");
+  src: url("/assets/webfonts/JohnstonITC/light-italic/JohnstonITCStd-LightIta.woff") format("woff");
   font-weight: 300;
   font-style: italic;
+}
+
+@font-face {
+  font-family: "Material Symbols Outlined";
+  font-style: normal;
+  font-weight: 100 700;
+  font-display: block;
+  src: url("/assets/webfonts/MaterialSymbols/outlined/material-symbols-outlined.woff2") format("woff2");
 }
 
 .fa,
@@ -48,3 +56,4 @@
   font-family: "Font Awesome 5 Brands";
   font-weight: 400;
 }
+
