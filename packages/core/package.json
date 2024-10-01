@@ -61,6 +61,7 @@
     "jest-cli": "^29.7.0",
     "jest-environment-node": "^29.7.0",
     "lit": "^3.2.0",
+    "material-symbols": "^0.23.0",
     "puppeteer": "^23.4.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

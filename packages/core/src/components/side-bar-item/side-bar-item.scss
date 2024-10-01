@@ -1,0 +1,62 @@
+@import '~material-symbols';
+@import 'side-bar-item.vars.scss';
+
+@font-face {
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  font-weight: 100 700;
+  font-display: block;
+  src: url('../../styles/webfonts/MaterialSymbols/MaterialSymbols-Outlined.woff2') format('woff2');
+}
+
+li {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+
+  &:before {
+    content: '';
+    display: none;
+  }
+
+  &:hover {
+    box-shadow: 2px 0 $side-bar-item-hover-text-colour inset;
+    a {
+      color: $side-bar-item-hover-text-colour;
+    }
+  }
+
+  &.active {
+    box-shadow: 4px 0 $side-bar-item-hover-text-colour inset;
+    a {
+      color: $side-bar-item-active-text-colour;
+    }
+  }
+}
+
+a {
+  cursor: pointer;
+  margin: 12px 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  user-select: none;
+  text-decoration: none;
+  text-align: center;
+  color: $side-bar-item-text-colour;
+  font-weight: $side-bar-item-font-weight;
+  font-size: $side-bar-item-font-size;
+
+  &:focus {
+    outline: none;
+    border: none;
+    box-shadow: 0 -4px var(--admiralty-text-colour) inset;
+    color: $side-bar-item-text-colour;
+  }
+}
+
+.material-symbols-outlined {
+  font-size: $side-bar-item-icon-font-size;
+}
