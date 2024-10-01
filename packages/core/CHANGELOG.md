@@ -1,3 +1,15 @@
+# v1.0.2 (Tue Oct 01 2024)
+
+#### 🐛 Bug Fix
+
+- Fix: cannot hide admiralty-checkbox label to be accessible [#269](https://github.com/UKHO/admiralty-design-system/pull/269) ([@developernm](https://github.com/developernm))
+
+#### Authors: 1
+
+- [@developernm](https://github.com/developernm)
+
+---
+
 # v1.0.1 (Wed Sep 18 2024)
 
 #### 🐛 Bug Fix

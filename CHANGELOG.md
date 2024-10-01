@@ -1,3 +1,19 @@
+# v1.0.2 (Tue Oct 01 2024)
+
+#### 🐛 Bug Fix
+
+- Update build.yml to remove website exclude rule [#259](https://github.com/UKHO/admiralty-design-system/pull/259) ([@ecstaticrainbow](https://github.com/ecstaticrainbow) [@buzzub](https://github.com/buzzub))
+- `@ukho/admiralty-core`
+  - Fix: cannot hide admiralty-checkbox label to be accessible [#269](https://github.com/UKHO/admiralty-design-system/pull/269) ([@developernm](https://github.com/developernm))
+
+#### Authors: 3
+
+- [@developernm](https://github.com/developernm)
+- Natalie ([@buzzub](https://github.com/buzzub))
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
 # v1.0.1 (Wed Sep 18 2024)
 
 #### 🐛 Bug Fix
