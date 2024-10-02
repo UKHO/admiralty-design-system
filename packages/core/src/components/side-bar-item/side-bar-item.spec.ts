@@ -25,8 +25,8 @@ describe('admiralty-side-bar-item', () => {
     });
     expect(page.root).toEqualHtml(`
       <admiralty-side-bar-item active="true" href="/test">
-        <li class="active">
-          <a href="/test">
+        <li>
+          <a class="active" href="/test">
           <span aria-hidden="true" class="material-symbols-outlined"></span>
             Test
           </a>

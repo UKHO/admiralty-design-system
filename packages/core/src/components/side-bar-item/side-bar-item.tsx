@@ -47,12 +47,14 @@ export class SideBarItemComponent {
 
   render() {
     return (
-      <li
-        class={{
-          active: this.active,
-        }}
-      >
-        <a href={this.href} onClick={ev => this.handleClick(ev)}>
+      <li>
+        <a
+          class={{
+            active: this.active,
+          }}
+          href={this.href}
+          onClick={ev => this.handleClick(ev)}
+        >
           <span aria-hidden="true" class="material-symbols-outlined">
             {this.icon}
           </span>
