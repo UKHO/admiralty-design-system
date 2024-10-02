@@ -514,14 +514,14 @@ the sign in button
 
 
 @ProxyCmp({
-  inputs: ['menuTitle']
+  inputs: ['href', 'menuTitle', 'suppressRedirect']
 })
 @Component({
   selector: 'admiralty-header-sub-menu-item',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['menuTitle'],
+  inputs: ['href', 'menuTitle', 'suppressRedirect'],
 })
 export class AdmiraltyHeaderSubMenuItem {
   protected el: HTMLElement;
@@ -535,7 +535,7 @@ export class AdmiraltyHeaderSubMenuItem {
 
 export declare interface AdmiraltyHeaderSubMenuItem extends Components.AdmiraltyHeaderSubMenuItem {
   /**
-   * The event that is fired when a user clicks on the menu.
+   * The event that is fired when a user clicks on the menu item.
 Event contains the menu item text.
    */
   subMenuItemClick: EventEmitter<CustomEvent<string>>;
