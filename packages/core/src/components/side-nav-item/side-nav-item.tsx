@@ -50,8 +50,6 @@ export class SideNavItemComponent {
           section: true,
           navActive: this.navActive,
         }}
-        tabindex="0"
-        role="button"
         onClick={this.handleClickAction.bind(this)}
         onKeyUp={this.handleKeyUpAction.bind(this)}
       >
