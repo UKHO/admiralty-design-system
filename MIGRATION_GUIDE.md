@@ -39,7 +39,9 @@ import "@ukho/admiralty-core/themes/default.css";
 
 ## Fonts
 
-The Johnston font is no longer included in the bundle and should be added as a dependency in your application or website:
+The Johnston font is no longer included in the bundle and should be added as a dependency in your application or website.
+
+Change the URL to match the location of where the font is being served from and then add the font definitions to your CSS file.
 
 ```css
 @font-face {
