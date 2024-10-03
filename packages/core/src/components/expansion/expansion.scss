@@ -29,13 +29,14 @@ section.expansion {
     margin: 10px 0 22px;
     padding: 0;
     display: flex;
-    align-items: baseline;
+    align-items: flex-end;
     width: 100%;
     text-align: left;
     position: relative;
 
     .expansion-heading-icon {
       color: $expansion-header-icon-colour;
+      font-size: 32px;
       margin-left: 30px;
     }
     &:focus {

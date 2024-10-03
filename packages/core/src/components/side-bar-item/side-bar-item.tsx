@@ -55,9 +55,9 @@ export class SideBarItemComponent {
           href={this.href}
           onClick={ev => this.handleClick(ev)}
         >
-          <span aria-hidden="true" class="material-symbols-outlined">
-            {this.icon}
-          </span>
+          <div class="icon">
+            <admiralty-icon name={this.icon}></admiralty-icon>
+          </div>
           <slot></slot>
         </a>
       </li>

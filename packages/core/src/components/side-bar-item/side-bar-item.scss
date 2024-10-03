@@ -1,13 +1,4 @@
-@import '~material-symbols';
 @import 'side-bar-item.vars.scss';
-
-@font-face {
-  font-family: 'Material Symbols Outlined';
-  font-style: normal;
-  font-weight: 100 700;
-  font-display: block;
-  src: url('../../styles/webfonts/MaterialSymbols/MaterialSymbols-Outlined.woff2') format('woff2');
-}
 
 li {
   display: flex;
@@ -54,6 +45,8 @@ a {
   }
 }
 
-.material-symbols-outlined {
+.icon {
+  display: flex;
+  justify-content: center;
   font-size: $side-bar-item-icon-font-size;
 }

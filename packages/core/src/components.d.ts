@@ -7,20 +7,16 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { AutoCompleteChangeEventDetail } from "./components/autocomplete/autocomplete.interface";
 import { ButtonVariant } from "./components/button/button.types";
-import { IconName, IconPrefix } from "@fortawesome/fontawesome-svg-core";
 import { CheckboxChangeEventDetail } from "./components/checkbox/checkbox.interface";
 import { FileInputChangeEventDetail } from "./components/file-input/file-input.interface";
-import { IconName as IconName1 } from "@fortawesome/free-solid-svg-icons";
 import { InputChangeEventDetail } from "./components/input/input.interface";
 import { RadioGroupChangeEventDetail } from "./components/radio-group/radio-group-interface";
 import { SelectChangeEventDetail } from "./components/select/select.interface";
 import { TextAreaChangeEventDetail } from "./components/textarea/textarea.interface";
 export { AutoCompleteChangeEventDetail } from "./components/autocomplete/autocomplete.interface";
 export { ButtonVariant } from "./components/button/button.types";
-export { IconName, IconPrefix } from "@fortawesome/fontawesome-svg-core";
 export { CheckboxChangeEventDetail } from "./components/checkbox/checkbox.interface";
 export { FileInputChangeEventDetail } from "./components/file-input/file-input.interface";
-export { IconName as IconName1 } from "@fortawesome/free-solid-svg-icons";
 export { InputChangeEventDetail } from "./components/input/input.interface";
 export { RadioGroupChangeEventDetail } from "./components/radio-group/radio-group-interface";
 export { SelectChangeEventDetail } from "./components/select/select.interface";
@@ -139,7 +135,7 @@ export namespace Components {
         /**
           * When passed Font Awesome Icon name, then an icon will be rendered.
          */
-        "icon": IconName;
+        "icon": string;
         /**
           * The name of the button, submitted as a pair with the button's value as part of the form data, when that button is used to submit the form.
          */
@@ -402,13 +398,13 @@ export namespace Components {
     }
     interface AdmiraltyIcon {
         /**
-          * Name of the icon to be rendered  Check out <a href="https://fontawesome.com/search?m=free}">FontAwesome</a>  for a list of icons
+          * Name of the icon to be rendered.  A full list of available icons can be viewed at [https://fonts.google.com/icons](https://fonts.google.com/icons)
          */
-        "iconName": IconName1;
+        "name": string;
         /**
-          * The style prefix to apply to the icon  By default, icons use Font Awesome's solid style
+          * The size of the icon in pixels. When not set, the icon height will be determined by the parent font size.
          */
-        "iconPrefix": IconPrefix;
+        "size": IconSize;
     }
     /**
      * Once this component works, review whether a form field component should be created so
@@ -1671,7 +1667,7 @@ declare namespace LocalJSX {
         /**
           * When passed Font Awesome Icon name, then an icon will be rendered.
          */
-        "icon"?: IconName;
+        "icon"?: string;
         /**
           * The name of the button, submitted as a pair with the button's value as part of the form data, when that button is used to submit the form.
          */
@@ -1997,13 +1993,13 @@ declare namespace LocalJSX {
     }
     interface AdmiraltyIcon {
         /**
-          * Name of the icon to be rendered  Check out <a href="https://fontawesome.com/search?m=free}">FontAwesome</a>  for a list of icons
+          * Name of the icon to be rendered.  A full list of available icons can be viewed at [https://fonts.google.com/icons](https://fonts.google.com/icons)
          */
-        "iconName"?: IconName1;
+        "name"?: string;
         /**
-          * The style prefix to apply to the icon  By default, icons use Font Awesome's solid style
+          * The size of the icon in pixels. When not set, the icon height will be determined by the parent font size.
          */
-        "iconPrefix"?: IconPrefix;
+        "size"?: IconSize;
     }
     /**
      * Once this component works, review whether a form field component should be created so

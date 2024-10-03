@@ -38,14 +38,6 @@
   font-style: italic;
 }
 
-@font-face {
-  font-family: "Material Symbols Outlined";
-  font-style: normal;
-  font-weight: 100 700;
-  font-display: block;
-  src: url("/assets/webfonts/MaterialSymbols/outlined/material-symbols-outlined.woff2") format("woff2");
-}
-
 .fa,
 .fas {
   font-family: "Font Awesome 5 Free";

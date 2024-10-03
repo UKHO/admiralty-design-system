@@ -66,7 +66,9 @@ describe('admiralty-side-bar', () => {
             <admiralty-side-bar-item>
               <li>
                 <a>
-                  <span aria-hidden="true" class="material-symbols-outlined"></span>
+                  <div class="icon">
+                    <admiralty-icon></admiralty-icon>
+                  </div>
                   Test
                 </a>
               </li>
@@ -96,7 +98,9 @@ describe('admiralty-side-bar', () => {
             <admiralty-side-bar-item>
               <li>
                 <a>
-                  <span aria-hidden="true" class="material-symbols-outlined"></span>
+                  <div class="icon">
+                    <admiralty-icon></admiralty-icon>
+                  </div>
                   Test 1
                 </a>
               </li>
@@ -104,7 +108,9 @@ describe('admiralty-side-bar', () => {
             <admiralty-side-bar-item>
               <li>
                 <a>
-                  <span aria-hidden="true" class="material-symbols-outlined"></span>
+                  <div class="icon">
+                    <admiralty-icon></admiralty-icon>
+                  </div>
                   Test 2
                 </a>
               </li>
@@ -112,7 +118,9 @@ describe('admiralty-side-bar', () => {
             <admiralty-side-bar-item>
               <li>
                 <a>
-                  <span aria-hidden="true" class="material-symbols-outlined"></span>
+                  <div class="icon">
+                    <admiralty-icon></admiralty-icon>
+                  </div>
                   Test 3
                 </a>
               </li>
@@ -141,7 +149,9 @@ describe('admiralty-side-bar', () => {
             <admiralty-side-bar-item>
               <li>
                 <a>
-                  <span aria-hidden="true" class="material-symbols-outlined"></span>
+                  <div class="icon">
+                    <admiralty-icon></admiralty-icon>
+                  </div>
                   Test
                 </a>
               </li>
@@ -151,7 +161,9 @@ describe('admiralty-side-bar', () => {
             <admiralty-side-bar-item slot="footer">
               <li>
                 <a>
-                  <span aria-hidden="true" class="material-symbols-outlined"></span>
+                  <div class="icon">
+                    <admiralty-icon></admiralty-icon>
+                  </div>
                   Footer Test
                 </a>
               </li>

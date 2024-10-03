@@ -11,7 +11,7 @@ const meta: Meta = {
   args: {
     itemText: 'Contents',
     active: false,
-    icon: 'list_alt',
+    icon: 'list-alt-outline',
     href: 'http://www.example.com',
   },
 };

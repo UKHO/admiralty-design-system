@@ -29,6 +29,19 @@
 | `"The text to display udner the icon"` |             |
 
 
+## Dependencies
+
+### Depends on
+
+- [admiralty-icon](../icon)
+
+### Graph
+```mermaid
+graph TD;
+  admiralty-side-bar-item --> admiralty-icon
+  style admiralty-side-bar-item fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

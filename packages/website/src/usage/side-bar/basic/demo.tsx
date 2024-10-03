@@ -13,7 +13,7 @@ export default function Demo() {
           active={active === "/contents"}
           href="/contents"
           suppressRedirect={true}
-          icon="list_alt">
+          icon="list-alt-outline">
           Contents
         </AdmiraltySideBarItem>
         <AdmiraltySideBarItem
@@ -21,7 +21,7 @@ export default function Demo() {
           active={active === "/bookmarks"}
           href="/bookmarks"
           suppressRedirect={true}
-          icon="bookmark">
+          icon="bookmark-outline">
           Bookmarks
         </AdmiraltySideBarItem>
         <AdmiraltySideBarItem
@@ -37,7 +37,7 @@ export default function Demo() {
           active={active === "/update"}
           href="/update"
           suppressRedirect={true}
-          icon="download_for_offline"
+          icon="download-for-offline-outline"
           slot="footer">
           Update
         </AdmiraltySideBarItem>
@@ -46,7 +46,7 @@ export default function Demo() {
           active={active === "/settings"}
           href="/settings"
           suppressRedirect={true}
-          icon="settings"
+          icon="settings-outline"
           slot="footer">
           Settings
         </AdmiraltySideBarItem>

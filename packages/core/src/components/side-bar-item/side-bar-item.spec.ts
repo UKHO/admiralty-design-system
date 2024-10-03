@@ -11,7 +11,9 @@ describe('admiralty-side-bar-item', () => {
       <admiralty-side-bar-item>
         <li>
           <a>
-            <span aria-hidden="true" class="material-symbols-outlined"></span>
+            <div class="icon">
+              <admiralty-icon></admiralty-icon>
+            </div>
           </a>
         </li>
       </admiralty-side-bar-item>
@@ -27,7 +29,9 @@ describe('admiralty-side-bar-item', () => {
       <admiralty-side-bar-item active="true" href="/test">
         <li>
           <a class="active" href="/test">
-          <span aria-hidden="true" class="material-symbols-outlined"></span>
+            <div class="icon">
+              <admiralty-icon></admiralty-icon>
+            </div>
             Test
           </a>
         </li>
@@ -45,7 +49,9 @@ describe('admiralty-side-bar-item', () => {
       <admiralty-side-bar-item active="false" href="/test">
         <li>
           <a href="/test">
-          <span aria-hidden="true" class="material-symbols-outlined"></span>
+            <div class="icon">
+              <admiralty-icon></admiralty-icon>
+            </div>
             Test
           </a>
         </li>
