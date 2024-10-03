@@ -380,9 +380,17 @@ export namespace Components {
     }
     interface AdmiraltyHeaderSubMenuItem {
         /**
+          * The URL to link to.
+         */
+        "href": string;
+        /**
           * The text that will be displayed in the menu
          */
         "menuTitle": string;
+        /**
+          * Causes the default browser redirect to be suppressed. Can be used in conjunction with the `onMenuItemClick` event to use a navigation router and prevent a full page reload when navigating.
+         */
+        "suppressRedirect"?: boolean;
     }
     interface AdmiraltyHint {
         /**
@@ -1893,13 +1901,21 @@ declare namespace LocalJSX {
     }
     interface AdmiraltyHeaderSubMenuItem {
         /**
+          * The URL to link to.
+         */
+        "href"?: string;
+        /**
           * The text that will be displayed in the menu
          */
         "menuTitle"?: string;
         /**
-          * The event that is fired when a user clicks on the menu. Event contains the menu item text.
+          * The event that is fired when a user clicks on the menu item. Event contains the menu item text.
          */
         "onSubMenuItemClick"?: (event: AdmiraltyHeaderSubMenuItemCustomEvent<string>) => void;
+        /**
+          * Causes the default browser redirect to be suppressed. Can be used in conjunction with the `onMenuItemClick` event to use a navigation router and prevent a full page reload when navigating.
+         */
+        "suppressRedirect"?: boolean;
     }
     interface AdmiraltyHint {
         /**

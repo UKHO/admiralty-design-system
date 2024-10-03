@@ -67,12 +67,12 @@ describe('header-profile', () => {
               </div>
             </div>
             <div class="not-desktop">
-              <button class="sub-menu-item" tabindex="0">
+              <button class="sub-menu-item">
                 <span>
                   Your Account
                 </span>
               </button>
-              <button class="sub-menu-item" tabindex="0">
+              <button class="sub-menu-item">
                 <span>
                   Sign Out
                 </span>
