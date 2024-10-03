@@ -35,10 +35,10 @@ export class ExpansionComponent {
    */
   @Event() toggled: EventEmitter<boolean>;
 
-  id: string = `admiralty-expansion-${++nextId}`;
+  internalId: string = `admiralty-expansion-${++nextId}`;
 
-  headerId: string = `${this.id}-header`;
-  contentId: string = `${this.id}-content`;
+  headerId: string = `${this.internalId}-header`;
+  contentId: string = `${this.internalId}-content`;
 
   onToggle() {
     this.expanded = !this.expanded;
