@@ -1,13 +1,13 @@
 {
   "name": "@ukho-internal/admiralty-docs",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "private": true,
   "type": "module",
   "scripts": {
     "build": "tsx build.ts"
   },
   "dependencies": {
-    "@ukho/admiralty-core": "^3.0.0"
+    "@ukho/admiralty-core": "^3.0.1"
   },
   "devDependencies": {
     "chalk": "^5.3.0",
