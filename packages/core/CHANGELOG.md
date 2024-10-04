@@ -1,3 +1,15 @@
+# v3.0.1 (Fri Oct 04 2024)
+
+#### 🐛 Bug Fix
+
+- Fixing missing release [#282](https://github.com/UKHO/admiralty-design-system/pull/282) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+#### Authors: 1
+
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
 # v3.0.0 (Fri Oct 04 2024)
 
 #### 💥 Breaking Change
