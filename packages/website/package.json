@@ -1,6 +1,6 @@
 {
   "name": "website",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -13,7 +13,7 @@
     "@types/react": "18.3.8",
     "@types/react-dom": "18.3.0",
     "@ukho-internal/admiralty-docs": "^1.0.1",
-    "@ukho/admiralty-react": "^1.0.1",
+    "@ukho/admiralty-react": "^1.0.2",
     "eslint-config-next": "14.2.13",
     "next": "14.2.13",
     "react": "18.3.1",

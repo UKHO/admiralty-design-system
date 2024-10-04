@@ -84,7 +84,7 @@ export class HeaderProfileComponent {
         <div class="header-profile">
           {isSignedIn ? (
             <div>
-              <div class="desktop" onMouseEnter={() => this.toggleDropdown(true)} onMouseLeave={() => this.toggleDropdown(false)}>
+              <div class="desktop" onMouseOver={this.toggleDropdown}>
                 <button onClick={this.handleClickSignedIn}>
                   <span>{signedInText}</span>
                 </button>
