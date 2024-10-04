@@ -1,3 +1,28 @@
+# v2.0.0 (Fri Oct 04 2024)
+
+#### 💥 Breaking Change
+
+- Refactor styling to use CSS variables instead of SCSS [#165](https://github.com/UKHO/admiralty-design-system/pull/165) ([@ecstaticrainbow](https://github.com/ecstaticrainbow) [@buzzub](https://github.com/buzzub))
+
+#### 🚀 Enhancement
+
+- Replace incorrect colour definition for info dialogue [#265](https://github.com/UKHO/admiralty-design-system/pull/265) ([@buzzub](https://github.com/buzzub))
+- Header nav structure [#255](https://github.com/UKHO/admiralty-design-system/pull/255) ([@buzzub](https://github.com/buzzub))
+- Error summary component [#253](https://github.com/UKHO/admiralty-design-system/pull/253) ([@buzzub](https://github.com/buzzub))
+
+#### 🐛 Bug Fix
+
+- fix: rename id to be internalId [#276](https://github.com/UKHO/admiralty-design-system/pull/276) ([@buzzub](https://github.com/buzzub))
+- Update profile menu mouse events [#256](https://github.com/UKHO/admiralty-design-system/pull/256) ([@buzzub](https://github.com/buzzub))
+- fix: Header sub menu items should be links [#270](https://github.com/UKHO/admiralty-design-system/pull/270) ([@buzzub](https://github.com/buzzub))
+- Upgrading dependencies to latest versions [#266](https://github.com/UKHO/admiralty-design-system/pull/266) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+- Update next with latest changes from main [#260](https://github.com/UKHO/admiralty-design-system/pull/260) ([@buzzub](https://github.com/buzzub))
+
+#### Authors: 2
+
+- Natalie ([@buzzub](https://github.com/buzzub))
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
 # v1.0.2 (Tue Oct 01 2024)
 
 #### 🐛 Bug Fix
