@@ -1,4 +1,4 @@
-import { Component, ComponentInterface, Element, Event, EventEmitter, h, Prop, Watch } from '@stencil/core';
+import { Component, ComponentInterface, Event, EventEmitter, h, Prop, Watch } from '@stencil/core';
 import { InputChangeEventDetail } from './input.interface';
 
 /**
@@ -14,15 +14,17 @@ import { InputChangeEventDetail } from './input.interface';
   scoped: true,
 })
 export class InputComponent implements ComponentInterface {
-  private internalId = ++nextId;
-  private nativeInput?: HTMLInputElement;
+  private id = ++nextId;
+  inputId: string = `admiralty-input-${this.id}`;
+  hintId: string = `admiralty-input-hint-${this.id}`;
+  errorId: string = `admiralty-input-error-${this.id}`;
 
-  @Element() el!: HTMLElement;
+  private nativeInput?: HTMLInputElement;
 
   /**
    * The name of the control, which is submitted with the form data.
    */
-  @Prop() name: string;
+  @Prop() name: string = this.inputId;
 
   /**
    * The label which will be used above the input to describe the input.
@@ -129,20 +131,16 @@ export class InputComponent implements ComponentInterface {
 
   render() {
     const value = this.getValue();
-    const id = this.el.id != '' ? this.el.id : `admiralty-input-${this.internalId}`;
-    const inputId = `${id}-input`;
-    const hintId = `${id}-hint`;
-    const errorId = `${id}-error`;
 
     return (
       <div class="text-input-container">
         {this.label ? (
-          <admiralty-label disabled={this.disabled} for={inputId}>
+          <admiralty-label disabled={this.disabled} for={this.inputId}>
             {this.label}
           </admiralty-label>
         ) : null}
         {this.hint ? (
-          <admiralty-hint id={hintId} disabled={this.disabled}>
+          <admiralty-hint id={this.hintId} disabled={this.disabled}>
             {this.hint}
           </admiralty-hint>
         ) : null}
@@ -150,7 +148,7 @@ export class InputComponent implements ComponentInterface {
           ref={input => (this.nativeInput = input)}
           class={{ disabled: this.disabled, invalid: this.invalid }}
           disabled={this.disabled}
-          id={inputId}
+          id={this.inputId}
           name={this.name}
           type={this.type}
           value={value}
@@ -164,14 +162,13 @@ export class InputComponent implements ComponentInterface {
             maxWidth: this.width ? `${this.width}px` : null,
           }}
           aria-invalid={this.invalid ? 'true' : 'false'}
-          aria-describedby={(this.hint ? hintId : '') + ' ' + (this.invalid ? errorId : '')}
+          aria-describedby={(this.hint ? this.hintId : '') + ' ' + (this.invalid ? this.errorId : '')}
         />
-        <admiralty-input-invalid id={errorId} style={{ ...(!(this.invalid && this.invalidMessage) ? { display: 'none' } : {}) }}>
+        <admiralty-input-invalid id={this.errorId} style={{ ...(!(this.invalid && this.invalidMessage) ? { display: 'none' } : {}) }}>
           {this.invalidMessage}
         </admiralty-input-invalid>
       </div>
     );
   }
 }
-
 let nextId = 0;

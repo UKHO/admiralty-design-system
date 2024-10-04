@@ -1,10 +1,11 @@
-@import 'phase-banner.vars';
+@use "../../scss/base/responsive";
+@use "../../scss/vars/colours";
 
 .phase-banner {
   display: block;
   line-height: 40px;
   padding: 0 18px;
-  @include desktop-only {
+  @include responsive.desktop-only {
     padding: 0 20px;
   }
 
@@ -13,7 +14,7 @@
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: $phase-banner-text-colour;
+    color: colours.$colour-admiralty-blue;
     padding: 6px 8px 3px;
     margin-right: 10px;
   }

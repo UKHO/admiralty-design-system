@@ -1,14 +1,15 @@
-@import 'skip-link.vars.scss';
+@use '../../scss/vars/colours';
+@use '../../scss/base/a11y';
 
 .skip-link {
   @extend .visually-hidden;
-  color: $skip-link-text-colour;
+  color: colours.$colour-text;
   display: block;
   padding: 10px 15px;
   box-shadow: none;
 
   span {
-    box-shadow: 0 2px $skip-link-text-colour;
+    box-shadow: 0 2px colours.$colour-text;
   }
 
   &:focus {

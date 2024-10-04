@@ -1,6 +1,5 @@
 import React, { useRef, ReactNode, useEffect, useState } from "react";
 import "./prism-default.css";
-import "../playground/playground.css";
 import Prism from "prismjs";
 import "prismjs/components/prism-typescript.min";
 import "prismjs/components/prism-jsx.min";
@@ -39,9 +38,7 @@ export default function CopyCodeSnippet({ children }: CopyCodeSnippetProps) {
 
   return (
     <div className="codesnippet-content">
-      <pre ref={codeRef} suppressHydrationWarning={true}>
-        {children}
-      </pre>
+      <pre ref={codeRef}>{children}</pre>
       <button onClick={onCopy} className="copy-button">
         {copied ? "Copied" : "Copy"}
       </button>

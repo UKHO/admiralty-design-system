@@ -20,8 +20,3 @@ runs:
         name: admiralty-angular
         output: ./packages/angular/admiralty-angular.zip
         paths: ./packages/angular/dist
-    - uses: ./.github/workflows/actions/upload-archive
-      with:
-        name: admiralty-react
-        output: ./packages/angular/admiralty-react.zip
-        paths: ./packages/react/dist

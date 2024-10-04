@@ -38,7 +38,7 @@ describe('admiralty-side-nav', () => {
       <admiralty-side-nav>
         <nav class="side-nav">
           <admiralty-side-nav-item>
-            <a class="section"></a>
+            <a class="section" role="button" tabindex="0"></a>
           </admiralty-side-nav-item>
         </nav>
       </admiralty-side-nav>
@@ -58,13 +58,13 @@ describe('admiralty-side-nav', () => {
       <admiralty-side-nav>
         <nav class="side-nav">
           <admiralty-side-nav-item>
-            <a class="section"></a>
+            <a class="section" role="button" tabindex="0"></a>
           </admiralty-side-nav-item>
           <admiralty-side-nav-item>
-            <a class="section"></a>
+            <a class="section" role="button" tabindex="0"></a>
           </admiralty-side-nav-item>
           <admiralty-side-nav-item>
-            <a class="section"></a>
+            <a class="section" role="button" tabindex="0"></a>
           </admiralty-side-nav-item>
         </nav>
       </admiralty-side-nav>

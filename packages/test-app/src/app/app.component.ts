@@ -1,8 +1,9 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { QueryList, ViewChildren } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AdmiraltySideNavItem } from '@ukho/admiralty-angular';
-import { AdmiraltyAutocompleteCustomEvent, AutoCompleteChangeEventDetail } from '@ukho/admiralty-core';
+import { AutoCompleteChangeEventDetail } from '@ukho/admiralty-core/src/components/autocomplete/autocomplete.interface';
+import { AdmiraltyAutocompleteCustomEvent } from '@ukho/admiralty-core';
 
 export interface CommissioningOrganisation {
   id?: number;
@@ -17,12 +18,10 @@ export interface CommissioningOrganisation {
 export class AppComponent {
   @ViewChildren(AdmiraltySideNavItem) sideNavItems!: QueryList<AdmiraltySideNavItem>;
 
-  @ViewChild('errorSummary') errorSummary!: ElementRef;
-
   title = 'test-app';
   group = new FormGroup({
     text: new FormControl('', Validators.required),
-    number: new FormControl('', Validators.required),
+    number: new FormControl(''),
     checkbox: new FormControl(true),
     radio: new FormControl(''),
     select: new FormControl('test1'),
@@ -39,7 +38,7 @@ export class AppComponent {
   number = this.group.get('number');
   office = this.group.get('office');
   country = this.group.get('country');
-  direction = this.group.get('direction');
+  direction = this.group.get('country');
 
   active = 0;
 
@@ -100,11 +99,9 @@ export class AppComponent {
     console.log('onSubmit', this.group, this.group.valid);
     if (this.group.valid) {
       console.log('form submitted');
-      alert('success');
     } else {
       console.log('form has errors');
       this.validateAllFormFields(this.group);
-      this.errorSummary.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
 
@@ -148,10 +145,6 @@ export class AppComponent {
 
   onCountryChanged(event: AdmiraltyAutocompleteCustomEvent<AutoCompleteChangeEventDetail>) {
     console.log('onCountryChanged', event.detail.value);
-  }
-
-  onDirectionChanged(event: AdmiraltyAutocompleteCustomEvent<AutoCompleteChangeEventDetail>) {
-    console.log('onDirectionChanged', event.detail.value);
   }
 
   selectOffice() {

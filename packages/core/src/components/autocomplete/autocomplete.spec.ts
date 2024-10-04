@@ -14,11 +14,11 @@ describe('autocomplete', () => {
       <admiralty-autocomplete>
         <div class="autocomplete__wrapper">
           <div class="autocomplete__input-wrapper">
-            <input aria-autocomplete="list" aria-describedby=" admiralty-autocomplete-1__assistiveHint " aria-expanded="false" aria-owns="admiralty-autocomplete-1__listbox" autocomplete="off" class="autocomplete__input autocomplete__input--show-all-values" id="admiralty-autocomplete-1-input" placeholder="" role="combobox" type="text">
+            <input aria-autocomplete="list" aria-describedby="input-autocomplete__assistiveHint" aria-expanded="false" aria-owns="input-autocomplete__listbox" autocomplete="off" class="autocomplete__input autocomplete__input--show-all-values" id="input-autocomplete" name="input-autocomplete" placeholder="" role="combobox" type="text">
             <admiralty-icon class="autocomplete-down-icon" icon-name="angle-down"></admiralty-icon>
           </div>
-          <ul class="autocomplete__menu autocomplete__menu--hidden autocomplete__menu--inline" id="admiralty-autocomplete-1__listbox" role="listbox"></ul>
-          <span id="admiralty-autocomplete-1__assistiveHint" style="display: none;">
+          <ul class="autocomplete__menu autocomplete__menu--hidden autocomplete__menu--inline" id="input-autocomplete__listbox" role="listbox"></ul>
+          <span id="input-autocomplete__assistiveHint" style="display: none;">
             When autocomplete results are available use up and down arrows to review and enter to select. Touch device users, explore by touch or with swipe gestures.
           </span>
         </div>
@@ -45,56 +45,18 @@ describe('autocomplete', () => {
           United States
         </admiralty-autocomplete-option>
         <div class="autocomplete__wrapper">
-          <admiralty-label for="admiralty-autocomplete-2-input">
+          <admiralty-label for="input-autocomplete">
             Country
           </admiralty-label>
-          <admiralty-hint id="admiralty-autocomplete-2-hint">
+          <admiralty-hint>
             This is the country you were born in
           </admiralty-hint>
           <div class="autocomplete__input-wrapper">
-            <input aria-autocomplete="list" aria-describedby="admiralty-autocomplete-2-hint admiralty-autocomplete-2__assistiveHint " aria-expanded="false" aria-owns="admiralty-autocomplete-2__listbox" autocomplete="off" class="autocomplete__input autocomplete__input--show-all-values" id="admiralty-autocomplete-2-input" placeholder="Country of birth" role="combobox" type="text">
+            <input aria-autocomplete="list" aria-describedby="input-autocomplete__assistiveHint" aria-expanded="false" aria-owns="input-autocomplete__listbox" autocomplete="off" class="autocomplete__input autocomplete__input--show-all-values" id="input-autocomplete" name="input-autocomplete" placeholder="Country of birth" role="combobox" type="text">
             <admiralty-icon class="autocomplete-down-icon" icon-name="angle-down"></admiralty-icon>
           </div>
-          <ul class="autocomplete__menu autocomplete__menu--hidden autocomplete__menu--inline" id="admiralty-autocomplete-2__listbox" role="listbox"></ul>
-          <span id="admiralty-autocomplete-2__assistiveHint" style="display: none;">
-            When autocomplete results are available use up and down arrows to review and enter to select. Touch device users, explore by touch or with swipe gestures.
-          </span>
-        </div>
-      </admiralty-autocomplete>
-    `);
-  });
-
-  it('renders with custom ID', async () => {
-    const page = await newSpecPage({
-      components: [AutocompleteComponent, AutocompleteOptionComponent],
-      html: `
-        <admiralty-autocomplete id="custom" label="Country" placeholder="Country of birth" hint="This is the country you were born in">
-          <admiralty-autocomplete-option value="gb">United Kingdom</admiralty-autocomplete-option>
-          <admiralty-autocomplete-option value="us">United States</admiralty-autocomplete-option>
-        </admiralty-autocomplete>`,
-    });
-
-    expect(page.root).toMatchInlineSnapshot(`
-      <admiralty-autocomplete hint="This is the country you were born in" id="custom" label="Country" placeholder="Country of birth">
-        <admiralty-autocomplete-option id="autocomplete-option-2" role="option" value="gb">
-          United Kingdom
-        </admiralty-autocomplete-option>
-        <admiralty-autocomplete-option id="autocomplete-option-3" role="option" value="us">
-          United States
-        </admiralty-autocomplete-option>
-        <div class="autocomplete__wrapper">
-          <admiralty-label for="custom-input">
-            Country
-          </admiralty-label>
-          <admiralty-hint id="custom-hint">
-            This is the country you were born in
-          </admiralty-hint>
-          <div class="autocomplete__input-wrapper">
-            <input aria-autocomplete="list" aria-describedby="custom-hint custom__assistiveHint " aria-expanded="false" aria-owns="custom__listbox" autocomplete="off" class="autocomplete__input autocomplete__input--show-all-values" id="custom-input" placeholder="Country of birth" role="combobox" type="text">
-            <admiralty-icon class="autocomplete-down-icon" icon-name="angle-down"></admiralty-icon>
-          </div>
-          <ul class="autocomplete__menu autocomplete__menu--hidden autocomplete__menu--inline" id="custom__listbox" role="listbox"></ul>
-          <span id="custom__assistiveHint" style="display: none;">
+          <ul class="autocomplete__menu autocomplete__menu--hidden autocomplete__menu--inline" id="input-autocomplete__listbox" role="listbox"></ul>
+          <span id="input-autocomplete__assistiveHint" style="display: none;">
             When autocomplete results are available use up and down arrows to review and enter to select. Touch device users, explore by touch or with swipe gestures.
           </span>
         </div>
@@ -229,7 +191,7 @@ describe('autocomplete', () => {
       html: `<admiralty-autocomplete id='autocomplete-default'></admiralty-autocomplete>`,
     });
 
-    expect(page.doc.querySelector('input')).toEqualAttribute('aria-describedby', ' autocomplete-default__assistiveHint ');
+    expect(page.doc.querySelector('input')).toEqualAttribute('aria-describedby', 'autocomplete-default__assistiveHint');
   });
 
   describe('renders with an aria-autocomplete attribute', () => {

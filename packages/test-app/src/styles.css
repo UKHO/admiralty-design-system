@@ -1,4 +1,2 @@
 /* You can add global styles to this file, and also import other style files */
-@import "@ukho/admiralty-core/styles/admiralty.bundle.css";
-@import "@ukho/admiralty-core/themes/default.css";
-
+@import "@ukho/admiralty-core/styles/core.css";

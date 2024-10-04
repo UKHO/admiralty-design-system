@@ -1,32 +1,31 @@
-@import 'header-sub-menu-item.vars';
+@use '../../scss/vars/colours' as colours;
+@use '../../scss/base/responsive';
+@use '../../scss/vars/typography';
+@use '../../scss/base/a11y';
 
 @mixin active {
-  background-color: $header-sub-menu-item-hover-background-colour;
+  background-color: colours.$colour-nav-bg-hover;
 }
 
 .header-sub-menu-item {
-  background-color: $header-sub-menu-item-background-colour;
+  background-color: colours.$colour-bg;
 
   .title {
-    font-size: $header-sub-menu-item-text-size;
-    font-weight: $header-sub-menu-item-text-weight;
-  }
-
-  a {
-    text-decoration: none;
+    font-size: typography.$font-size-normal;
+    font-weight: typography.$font-weight-light;
   }
 
   &:focus {
     outline: none;
 
     span {
-      @include focus-highlight;
+      @include a11y.focus-highlight;
     }
   }
 
-  @include desktop-only {
+  @include responsive.desktop-only {
     box-sizing: border-box;
-    color: $header-sub-menu-item-text-colour;
+    color: colours.$colour-admiralty-blue;
     display: block;
     margin-bottom: 0;
     padding: 10px;
@@ -42,12 +41,12 @@
     }
   }
 
-  @include not-desktop {
+  @include responsive.not-desktop {
     display: block;
     box-sizing: border-box;
     padding: 12px 24px;
     cursor: pointer;
-    color: $header-sub-menu-item-text-colour;
+    color: colours.$colour-admiralty-blue;
     font-weight: 500;
     background-color: unset;
     text-align: unset;
@@ -59,7 +58,9 @@
 
     &:focus {
       .title {
-        box-shadow: 0 -4px $header-sub-menu-item-focus-colour, 0 4px $header-sub-menu-item-text-colour;
+        box-shadow:
+          0 -4px colours.$colour-utility-focus,
+          0 4px colours.$colour-text;
       }
     }
   }

@@ -1,6 +1,6 @@
-@import 'horizontal-rule.vars.scss';
+@use "../../scss/vars/colours";
 
 hr {
   width: 100%;
-  border-top: 1px solid $horizontal-rule-border-colour;
+  border-top: 1px solid colours.$colour-line;
 }
