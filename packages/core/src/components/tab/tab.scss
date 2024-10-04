@@ -1,8 +1,8 @@
-@use "../../scss/vars/typography";
+@import 'tab.vars';
 
 .tab-content {
   display: none;
-  font-weight: typography.$font-weight-light;
+  font-weight: $tab-text-weight;
 
   &.active {
     display: block;

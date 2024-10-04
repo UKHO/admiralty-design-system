@@ -12,9 +12,10 @@ export default function ColourBlocks() {
         colour="admiralty-blue"
         heading="Setting it up"
         linkText="Get started"
-        href="#"
+        href="/getting-started"
         suppressRedirect={true}
-        onColourBlockLinkClicked={() => alert("Coming soon")}>
+        enableCardEvent={true}
+        onColourBlockLinkClicked={() => router.push("/getting-started")}>
         Go to Get Started to see how to install the Design System and start using it in your builds.
       </AdmiraltyColourBlock>
       <AdmiraltyColourBlock
@@ -25,6 +26,7 @@ export default function ColourBlocks() {
         linkText="Principles"
         href="/principles"
         suppressRedirect={true}
+        enableCardEvent={true}
         onColourBlockLinkClicked={() => router.push("/principles")}>
         Our Principles section covers our approach to accessibility, design, research and content
       </AdmiraltyColourBlock>
@@ -36,6 +38,7 @@ export default function ColourBlocks() {
         linkText="Components"
         href="/components"
         suppressRedirect={true}
+        enableCardEvent={true}
         onColourBlockLinkClicked={() => router.push("/components")}>
         Visit Components to see examples, usage and accessibility requirements and get the code
       </AdmiraltyColourBlock>
@@ -47,6 +50,7 @@ export default function ColourBlocks() {
         linkText="Patterns"
         href="#"
         suppressRedirect={true}
+        enableCardEvent={true}
         onColourBlockLinkClicked={() => alert("Coming soon")}>
         Patterns have been developed to meet a user need - such as ‘find a location’ or ‘complete a form’
       </AdmiraltyColourBlock>
@@ -58,6 +62,7 @@ export default function ColourBlocks() {
         linkText="Brand guide"
         href="/brand-guide"
         suppressRedirect={true}
+        enableCardEvent={true}
         onColourBlockLinkClicked={() => router.push("/brand-guide")}>
         The Design System helps teams develop products in the ADMIRALTY brand
       </AdmiraltyColourBlock>

@@ -1,14 +1,13 @@
-@use '../../scss/vars/colours';
-
+@import 'table-body.vars';
 :host {
   display: table-row-group;
 }
 
 ::slotted(:nth-child(odd)) {
-  background-color: colours.$colour-table-row-bg;
+  background-color: $table-body-background-colour;
 }
 
 ::slotted(:nth-child(even)) {
-  background-color: colours.$colour-table-row-alt-bg;
+  background-color: $table-body-alt-background-colour;
 }
 

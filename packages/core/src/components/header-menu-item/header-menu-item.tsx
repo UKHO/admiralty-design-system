@@ -110,7 +110,7 @@ export class HeaderMenuItemComponent {
     return (
       <Host onMouseOver={_ => this.handleMouseOver()} onMouseOut={(ev: Event) => this.handleMouseOut(ev)}>
         <div class={menuClass} onClick={ev => this.handleClick(ev)}>
-          <button class="menu-title" tabindex="0">
+          <button class="menu-title">
             <div>{menuTitle}</div>
           </button>
           <div class="sub-menu desktop-hide" onFocusout={ev => this.handleFocusOut(ev)}>

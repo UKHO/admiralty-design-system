@@ -1,0 +1,17 @@
+@import '../../styles/vars/globals';
+
+$header-text-size: 18px;
+$header-text-weight: 300;
+$header-text-line-height: 24px;
+
+$header-background-colour: var(--admiralty-background-colour); // TODO: replace with variable
+$header-border-colour: var(--admiralty-colour-light);
+
+$header-logo-colour: var(--admiralty-colour-primary);
+$header-separator-colour: var(--admiralty-colour-light);
+
+$header-outline-colour: var(--admiralty-text-colour);
+
+$header-title-text-weight: 400;
+
+$header-icon-colour: var(--admiralty-colour-primary);

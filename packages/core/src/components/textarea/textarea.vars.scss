@@ -1,0 +1,12 @@
+@import '../../styles/vars/globals';
+
+$textarea-text-colour: var(--admiralty-text-colour);
+$textarea-font-weight: var(--admiralty-font-weight);
+$textarea-line-height: var(--admiralty-line-height);
+$textarea-border-colour: var(--admiralty-text-colour);
+$textarea-background-colour: var(--admiralty-background-colour);
+$textarea-shadow-colour: var(--admiralty-text-colour);
+$textarea-focus-colour: var(--admiralty-focus-colour) !default;
+$textarea-error-border-colour: var(--admiralty-colour-danger);
+$textarea-disabled-text-colour: var(--admiralty-disabled-colour);
+$textarea-disabled-border-colour: var(--admiralty-disabled-colour);

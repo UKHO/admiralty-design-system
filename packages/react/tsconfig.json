@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "strict": true,
     "allowUnreachableCode": false,
     "allowSyntheticDefaultImports": true,
     "declaration": true,
@@ -8,20 +7,19 @@
     "experimentalDecorators": true,
     "esModuleInterop": true,
     "lib": ["dom", "es2015"],
-    "importHelpers": true,
-    "module": "es2015",
-    "moduleResolution": "node",
+    "module": "esnext",
+    "moduleResolution": "bundler",
     "noImplicitAny": true,
     "noImplicitReturns": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "outDir": "dist-transpiled",
-    "declarationDir": "dist/types",
+    "outDir": "dist",
     "removeComments": false,
-    "inlineSources": true,
-    "sourceMap": true,
     "jsx": "react",
-    "target": "es2017"
+    "target": "es2015",
+    "skipLibCheck": true
   },
-  "include": ["lib"],
+  "include": [
+    "lib"
+  ]
 }
