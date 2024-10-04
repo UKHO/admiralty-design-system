@@ -9,7 +9,7 @@ describe('admiralty-side-nav-item', () => {
     });
     expect(root).toEqualHtml(`
       <admiralty-side-nav-item>
-        <a class="section"></a>
+        <a class="section" role="button" tabindex="0"></a>
       </admiralty-side-nav-item>
     `);
   });

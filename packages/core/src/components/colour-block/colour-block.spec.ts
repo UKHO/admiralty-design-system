@@ -150,6 +150,10 @@ describe('admiralty-colour-block', () => {
 
     const div = page.doc.querySelector('admiralty-colour-block div');
 
+    // const styles = getComputedStyle(div);
+
+    console.log(div.outerHTML);
+
     expect(div.outerHTML).toContain('pointer');
   });
 
@@ -160,6 +164,10 @@ describe('admiralty-colour-block', () => {
     });
 
     const div = page.doc.querySelector('admiralty-colour-block div');
+
+    // const styles = getComputedStyle(div);
+
+    console.log(div.outerHTML);
 
     expect(div.outerHTML).not.toContain('pointer');
   });

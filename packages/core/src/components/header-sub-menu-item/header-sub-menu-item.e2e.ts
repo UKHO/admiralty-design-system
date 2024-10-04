@@ -13,7 +13,7 @@ describe('menu-item', () => {
     const page = await newE2EPage();
     await page.setContent('<admiralty-header-sub-menu-item menuTitle="Item 1"></admiralty-header-sub-menu-item>');
 
-    const element = await page.find('button.header-sub-menu-item');
+    const element = await page.find('div.header-sub-menu-item');
 
     const eventSpy = await page.spyOnEvent('subMenuItemClick');
 

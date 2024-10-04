@@ -29,11 +29,6 @@ runs:
         name: admiralty-angular
         path: ./dist
         filename: admiralty-angular.zip
-    - uses: ./.github/workflows/actions/download-archive
-      with:
-        name: admiralty-react
-        path: ./dist
-        filename: admiralty-react.zip
     - name: Set Git Config
       run: |
         git config --global user.name "${GITHUB_ACTOR}"

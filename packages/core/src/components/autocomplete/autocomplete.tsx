@@ -49,8 +49,6 @@ function filterOptionsByValue(options: Option[], searchTerm: string) {
   scoped: true,
 })
 export class AutocompleteComponent {
-  private internalId = ++nextId;
-
   @Element() el!: HTMLAdmiraltyAutocompleteElement;
 
   /**
@@ -72,7 +70,7 @@ export class AutocompleteComponent {
   /**
    * The name for the `<input>` element.
    */
-  @Prop() name: string;
+  @Prop() name: string = 'input-autocomplete';
   /**
    * Populate the placeholder attribute on the `<input>` element.
    */
@@ -492,11 +490,7 @@ export class AutocompleteComponent {
   }
 
   render() {
-    const id = this.el.id != '' ? this.el.id : `admiralty-autocomplete-${this.internalId}`;
-    const inputId = `${id}-input`;
-    const hintId = `${id}-hint`;
-    const errorId = `${id}-error`;
-
+    const id = this.el.getAttribute('id') ?? this.name;
     const inputFocused = this.focused === -1;
     const noOptionsAvailable = this.options.length === 0;
     const queryNotEmpty = this.query?.length !== 0;
@@ -510,7 +504,7 @@ export class AutocompleteComponent {
 
     const assistiveHintID = id + '__assistiveHint';
     const ariaProps = {
-      'aria-describedby': `${this.hint ? hintId : ''} ${this.ariaHint ? assistiveHintID : ''} ${this.invalid ? errorId : ''}`,
+      'aria-describedby': this.ariaHint ? assistiveHintID : null,
       'aria-expanded': this.menuOpen ? 'true' : 'false',
       'aria-activedescendant': optionFocused ? `${id}__option--${this.focused}` : null,
       'aria-owns': `${id}__listbox`,
@@ -569,15 +563,11 @@ export class AutocompleteComponent {
     return (
       <div class={wrapperClassName} onKeyDown={event => this.handleKeyDown(event)}>
         {this.label ? (
-          <admiralty-label disabled={this.disabled} for={inputId}>
+          <admiralty-label disabled={this.disabled} for={id}>
             {this.label}
           </admiralty-label>
         ) : null}
-        {this.hint ? (
-          <admiralty-hint id={hintId} disabled={this.disabled}>
-            {this.hint}
-          </admiralty-hint>
-        ) : null}
+        {this.hint ? <admiralty-hint disabled={this.disabled}>{this.hint}</admiralty-hint> : null}
         <div class="autocomplete__input-wrapper">
           <input
             {...ariaProps}
@@ -585,7 +575,7 @@ export class AutocompleteComponent {
             aria-disabled={this.disabled}
             autoComplete="off"
             class={inputClassList.join(' ')}
-            id={inputId}
+            id={id}
             onClick={event => this.handleInputClick(event)}
             onBlur={event => this.handleInputBlur(event)}
             onInput={event => this.handleInputChange(event)}
@@ -613,6 +603,7 @@ export class AutocompleteComponent {
                 'whiteSpace:nowrap;width:1px">' +
                 ` ${index + 1} of ${this.options.length}</span>`
               : '';
+            // console.log(option.text, showFocused, optionModifierFocused);
 
             return (
               <li
@@ -643,12 +634,9 @@ export class AutocompleteComponent {
           {this.assistiveHint}
         </span>
         {this.invalid && this.invalidMessage && (
-          <admiralty-input-invalid id={errorId} style={{ visibility: this.invalid && this.invalidMessage ? 'visible' : 'hidden' }}>
-            {this.invalidMessage}
-          </admiralty-input-invalid>
+          <admiralty-input-invalid style={{ visibility: this.invalid && this.invalidMessage ? 'visible' : 'hidden' }}>{this.invalidMessage}</admiralty-input-invalid>
         )}
       </div>
     );
   }
 }
-let nextId = 0;

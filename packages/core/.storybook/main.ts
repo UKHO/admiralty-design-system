@@ -7,10 +7,7 @@ const config: StorybookConfig = {
     name: '@storybook/web-components-vite',
     options: {},
   },
-  core: {
-    builder: '@storybook/builder-vite', // 👈 The builder enabled here.
-  },
-  staticDirs: ['../dist', '../src/assets', '../styles', '../src/themes'],
+  staticDirs: ['../dist', '../src/assets', '../styles'],
   docs: {
     autodocs: true,
   },

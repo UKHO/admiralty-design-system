@@ -7,8 +7,6 @@ import { FileInputChangeEventDetail } from './file-input.interface';
   scoped: true,
 })
 export class FileInputComponent {
-  private internalId = ++nextId;
-
   @Element() el: HTMLElement;
 
   /**
@@ -35,6 +33,8 @@ export class FileInputComponent {
    * Emitted when the added file(s) changes
    */
   @Event() fileInputChange: EventEmitter<FileInputChangeEventDetail>;
+
+  id: string = `admiralty-file-input-${++nextId}`;
 
   /**
    * INTERNAL - The list of files currently in the field
@@ -96,29 +96,16 @@ export class FileInputComponent {
   }
 
   render() {
-    const id = this.el.id != '' ? this.el.id : `admiralty-file-input-${this.internalId}`;
-    const inputId = `${id}-input`;
-    const errorId = `${id}-error`;
     return (
       <Host onDragLeave={event => this.dragLeaveHander(event)} onDragOver={event => this.dragOverHandler(event)} onDrop={event => this.dropHandler(event)}>
         <div class={{ 'admiralty-file-input': true, 'invalid': this.invalid }}>
-          <input
-            onChange={event => this.changeHandler(event)}
-            id={inputId}
-            aria-label="Upload a file"
-            type="file"
-            class="admiralty-form-field"
-            multiple={this.multiple}
-            aria-describedby={this.invalid ? errorId : ''}
-          />
-          <label htmlFor={inputId}>
+          <input onChange={event => this.changeHandler(event)} id={this.id} aria-label="Upload a file" type="file" class="admiralty-form-field" multiple={this.multiple} />
+          <label htmlFor={this.id}>
             <admiralty-icon class="upload-icon" icon-name="upload"></admiralty-icon>
             <span>{this.label}</span>
           </label>
         </div>
-        <admiralty-input-invalid id={errorId} style={{ ...(!(this.invalid && this.invalidMessage) ? { display: 'none' } : {}) }}>
-          {this.invalidMessage}
-        </admiralty-input-invalid>
+        <admiralty-input-invalid style={{ ...(!(this.invalid && this.invalidMessage) ? { display: 'none' } : {}) }}>{this.invalidMessage}</admiralty-input-invalid>
       </Host>
     );
   }

@@ -1,12 +1,13 @@
-@import 'hint.vars';
+@use "../../scss/vars/colours";
+@use "../../scss/vars/typography";
 
 p {
   margin-top: 0;
   margin-bottom: 6px;
   display: block;
-  font-weight: $hint-text-weight;
+  font-weight: typography.$font-weight-light;
 
   &.disabled {
-    color: $hint-disabled-text-colour;
+    color: colours.$colour-textinput-text-disabled;
   }
 }

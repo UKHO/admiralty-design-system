@@ -1,4 +1,7 @@
-@import "breadcrumb.vars";
+@use '../../scss/base/responsive';
+
+@use '../../scss/vars/colours';
+@use '../../scss/vars/typography';
 
 :host {
   display: flex;
@@ -8,19 +11,18 @@
 .breadcrumb-icon {
   margin: 0 10px;
   font-size: 12px;
-  color: $breadcrumb-separator-colour;
 }
 
 a {
   display: inline-block;
-  font-size: $breadcrumb-font-size;
-  font-weight: $breadcrumb-font-weight;
+  font-size: 14px;
+  font-weight: typography.$font-weight-light;
   text-decoration: none;
-  color: $breadcrumb-font-colour;
+  color: colours.$colour-nav-item;
   margin: 10px 2px;
 
   &:hover {
-    color: $breadcrumb-font-colour-hover;
+    color: colours.$colour-admiralty-blue;
     text-decoration: underline;
     text-underline-offset: 0.15em;
     text-decoration-thickness: 0.15em;
@@ -31,7 +33,7 @@ a {
   }
 
   &.active {
-    color: $breadcrumb-font-colour-active;
-    font-weight: $breadcrumb-font-weight-active;
+    color: colours.$colour-admiralty-blue;
+    font-weight: typography.$font-weight-medium;
   }
 }

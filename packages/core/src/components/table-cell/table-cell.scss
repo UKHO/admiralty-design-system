@@ -1,13 +1,14 @@
-@import 'table-cell.vars';
+@use '../../scss/vars/colours';
+@use '../../scss/vars/typography';
 
 :host {
   display: table-cell;
   box-sizing: border-box;
-  color: $table-cell-text-colour;
+  color: colours.$colour-admiralty-blue;
   font-size: 18px;
   line-height: 30px;
   padding: 6px 20px;
-  border-right: 1px solid $table-cell-border-colour;
-  border-bottom: 1px solid $table-cell-border-colour;
-  font-weight: $table-cell-text-weight;
+  border-right: 1px solid colours.$colour-divider;
+  border-bottom: 1px solid colours.$colour-divider;
+  font-weight: typography.$font-weight-light;
 }

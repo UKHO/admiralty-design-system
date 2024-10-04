@@ -2,8 +2,8 @@
   enabled="true"
   logo-alt-text="ADMIRALTY"
   logo-link-url="http://www.example.com"
-  logo-img-url="assets/svg/Admiralty%20stacked%20logo.svg"
-  header-title="Design System"
+  logo-img-url="https://designsystem.admiralty.co.uk/assets/svg/Admiralty%20stacked%20logo.svg"
+  nav-title="Design System"
 >
   <ng-container *ngFor="let item of headerItems">
     <admiralty-header-menu-item
@@ -74,50 +74,23 @@
     tempus. Aliquam faucibus ullamcorper libero.
   </p>
 </admiralty-expansion>
-<form
-  [formGroup]="group"
-  (ngSubmit)="onSubmit()"
-  style="margin: 32px; display: flex; flex-direction: column; gap: 16px"
->
-  <div #errorSummary>
-    <admiralty-error-summary
-      *ngIf="
-        (text?.invalid && text?.touched) ||
-        (number?.invalid && number?.touched) ||
-        (country?.invalid && (country?.dirty || country?.touched)) ||
-        (office?.invalid && (office?.dirty || office?.touched)) ||
-        (direction?.invalid && (direction?.dirty || direction?.touched))
-      "
-    >
-      <admiralty-link *ngIf="text?.invalid && text?.touched" href="#text">Enter some text</admiralty-link>
-      <admiralty-link *ngIf="number?.invalid && number?.touched" href="#number">Enter a number</admiralty-link>
-      <admiralty-link *ngIf="country?.invalid && (country?.dirty || country?.touched)" href="#country"
-        >Country must to be selected</admiralty-link
-      >
-      <admiralty-link *ngIf="office?.invalid && (office?.dirty || office?.touched)" href="#office"
-        >Office needs to be selected</admiralty-link
-      >
-      <admiralty-link *ngIf="direction?.invalid && (direction?.dirty || direction?.touched)" href="#direction"
-        >Direction must to be selected</admiralty-link
-      >
-    </admiralty-error-summary>
-  </div>
+<form [formGroup]="group" (ngSubmit)="onSubmit()" style="margin: 32px">
+  <admiralty-input-invalid>{{ group.value.text }}</admiralty-input-invalid>
   <admiralty-file-input (fileInputChange)="onFileInputChange($event)" multiple="true"></admiralty-file-input>
   <admiralty-input
-    id="text"
     label="Text"
     [invalid]="text?.invalid && text?.touched"
-    invalidMessage="Enter some text"
+    invalidMessage="This field is required"
     type="text"
     formControlName="text"
   ></admiralty-input>
   <admiralty-input
-    id="number"
     label="Number"
     [invalid]="number?.invalid && number?.touched"
-    invalidMessage="Enter a number"
+    invalidMessage="This field is required"
     type="number"
     formControlName="number"
+    value="123"
   ></admiralty-input>
   <admiralty-checkbox formControlName="checkbox" input-id="checkbox" label-text="checkbox 1"></admiralty-checkbox>
   <admiralty-select formControlName="select" hint="Select an option from the list" label="Choose a colour">
@@ -130,15 +103,7 @@
   </admiralty-radio-group>
   <admiralty-textarea formControlName="textarea" label="Textarea Label"></admiralty-textarea>
   {{ group.value.textarea }}
-  <admiralty-autocomplete
-    id="direction"
-    label="Direction"
-    hint="Select a direction"
-    (admiraltyChange)="onDirectionChanged($event)"
-    formControlName="direction"
-    [invalid]="direction?.invalid && (direction?.dirty || direction?.touched)"
-    invalidMessage="Direction must to be selected"
-  >
+  <admiralty-autocomplete label="Direction" formControlName="direction">
     <admiralty-autocomplete-option>North</admiralty-autocomplete-option>
     <admiralty-autocomplete-option>South</admiralty-autocomplete-option>
     <admiralty-autocomplete-option>East</admiralty-autocomplete-option>
@@ -171,7 +136,6 @@
   {{ group.value.autocomplete }}
   <hr />
   <admiralty-autocomplete
-    id="country"
     label="Country"
     hint="Select a country"
     (admiraltyChange)="onCountryChanged($event)"
@@ -194,7 +158,6 @@
   <admiralty-button type="button" (click)="selectCountry()">Choose United Kingdom</admiralty-button>
   <hr />
   <admiralty-autocomplete
-    id="office"
     label="Office location"
     hint="Please select an office"
     (admiraltyChange)="onOfficeChanged($event)"
@@ -369,6 +332,4 @@
     <admiralty-button (click)="hideModalDialog()">Continue survey</admiralty-button>
   </div>
 </admiralty-modal-dialog>
-
-<admiralty-footer image-src="assets/svg/UKHO%20stacked%20logo.svg" />
 

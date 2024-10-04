@@ -1,11 +1,11 @@
-@import 'progress-bar.vars.scss';
+@use '../../scss/vars/colours' as colours;
 
 progress {
   appearance: none;
-  background: $progress-bar-background-colour;
+  background: colours.$colour-button-secondary-hover;
   border: none;
   box-sizing: border-box;
-  color: $progress-bar-text-colour;
+  color: colours.$colour-admiralty-blue;
   display: inline-block;
   font-size: 18px;
   flex: 1;
@@ -13,18 +13,18 @@ progress {
   width: 100%;
 
   &[value].error::-webkit-progress-value {
-    background-color: $progress-bar-error-colour;
+    background-color: colours.$colour-utility-error;
   }
 
   &[value].error::-moz-progress-bar {
-    background-color: $progress-bar-error-colour;
+    background-color: colours.$colour-utility-error;
   }
 
   &[value]::-webkit-progress-value {
-    background-color: $progress-bar-success-colour;
+    background-color: colours.$colour-utility-success;
   }
 
   &[value]::-moz-progress-bar {
-    background-color: $progress-bar-success-colour;
+    background-color: colours.$colour-utility-success;
   }
 }

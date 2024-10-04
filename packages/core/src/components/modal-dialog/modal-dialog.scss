@@ -1,4 +1,6 @@
-@import './modal-dialog.vars';
+@use '../../scss/base/responsive';
+@use '../../scss/vars/colours';
+@use '../../scss/base/typography';
 
 .modal-backdrop {
   display: none;
@@ -8,7 +10,7 @@
   bottom: 0;
   left: 0;
   z-index: 1000;
-  background-color: $modal-backdrop-background-colour;
+  background-color: colours.$colour-black;
   opacity: 0.5;
 }
 .modal-backdrop.show {
@@ -24,15 +26,13 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: $modal-background-colour;
-  border: 1px solid $modal-border-colour;
+  background-color: colours.$colour-white;
+  border: 1px solid colours.$colour-divider;
 
   & > .modal-heading {
     padding: 60px 60px 30px 60px;
-    color: $modal-heading-text-colour;
-    font-weight: 400;
-    font-size: 36px;
-    line-height: 48px;
+
+    @extend h2;
 
     margin-bottom: 0px;
   }
@@ -49,7 +49,7 @@
     //Specifying the specific slot inexplicably
     //makes the selector apply to the slotted div
     ::slotted(div) > admiralty-icon {
-      color: $modal-heading-text-colour;
+      color: colours.$colour-admiralty-blue;
       display: inline-block;
       padding: 3px 12px 3px 0px;
       font-size: 24px;
@@ -57,18 +57,16 @@
     //Specifying the specific slot inexplicably
     //makes the selector apply to the slotted div
     ::slotted(div) > div {
-      color: $modal-heading-text-colour;
+      color: colours.$colour-admiralty-blue;
       max-width: 500px;
       display: inline-block;
-      font-weight: 400;
-      font-size: 18px;
-      line-height: 24px;
+      @extend h6;
       margin-bottom: 0px;
     }
   }
 
   & > .modal-actions {
-    background-color: $modal-button-bar-background-colour;
+    background-color: #d9e0e7;
 
     ::slotted(div[slot='actions']) {
       display: flex;

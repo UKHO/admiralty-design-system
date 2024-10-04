@@ -44,8 +44,10 @@ export const config: Config = {
       strict: true,
     },
     reactOutputTarget({
-      outDir: '../react/lib/',
-      customElementsDir: 'dist/components',
+      componentCorePackage: '@ukho/admiralty-core',
+      proxiesFile: '../react/lib/components/stencil-generated/index.ts',
+      includePolyfills: true,
+      includeDefineCustomElements: true,
       excludeComponents: [
         // only required by storybook example
         'admiralty-paginator-wrapper',
@@ -64,14 +66,10 @@ export const config: Config = {
     {
       type: 'dist',
       esmLoaderPath: '../loader',
-      copy: [
-        { src: '../src/styles/webfonts', dest: '../../styles/webfonts' },
-        { src: '../src/themes', dest: '../../themes' },
-      ],
+      copy: [{ src: '../src/scss/webfonts', dest: '../../styles/webfonts' }],
     },
     {
       type: 'dist-custom-elements',
-      externalRuntime: false,
     },
     {
       type: 'docs-json',

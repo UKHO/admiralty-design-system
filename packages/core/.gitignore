@@ -1,6 +1,7 @@
 dist/
 www/
 loader/
+styles/
 docs/
 
 *~
@@ -25,5 +26,3 @@ Thumbs.db
 UserInterfaceState.xcuserstate
 .env
 /storybook-dist/
-/styles
-/themes

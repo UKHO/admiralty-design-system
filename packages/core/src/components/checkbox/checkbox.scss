@@ -1,4 +1,4 @@
-@import 'checkbox.vars';
+@use '../../scss/vars/colours';
 
 .form-control {
   font-size: 18px;
@@ -51,10 +51,10 @@
       content: '';
       height: 26px;
       width: 26px;
-      border: 2px solid $checkbox-border-colour;
+      border: 2px solid colours.$colour-dark-blue;
       left: 0;
       top: 0;
-      background-color: $checkbox-colour;
+      background-color: colours.$colour-bg;
     }
 
     &::after {
@@ -63,7 +63,7 @@
       border-left: 3px solid;
       border-bottom: 3px solid;
       transform: rotate(-45deg);
-      color: $checkbox-text-colour;
+      color: colours.$colour-admiralty-blue;
       left: 7px;
       top: 8px;
     }
@@ -71,8 +71,8 @@
 
   input[type='checkbox']:focus + label:before {
     outline-offset: unset;
-    outline: 3px solid $checkbox-focus-colour;
-    box-shadow: $checkbox-border-colour inset 0 0 0 2px;
+    outline: 3px solid colours.$colour-utility-focus;
+    box-shadow: colours.$colour-dark-blue inset 0 0 0 2px;
   }
 
   &.right-align label {

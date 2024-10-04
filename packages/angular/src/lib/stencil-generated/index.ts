@@ -11,7 +11,6 @@ export const DIRECTIVES = [
   d.AdmiraltyCheckbox,
   d.AdmiraltyColourBlock,
   d.AdmiraltyDialogue,
-  d.AdmiraltyErrorSummary,
   d.AdmiraltyExpansion,
   d.AdmiraltyFileInput,
   d.AdmiraltyFilter,

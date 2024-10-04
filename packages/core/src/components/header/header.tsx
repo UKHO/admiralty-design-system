@@ -82,36 +82,36 @@ export class HeaderComponent {
 
     return (
       <div class="admiralty-header">
-        <div class="header-menu">
+        <nav class="header-menu">
           <div class="header-branding">
-            <a class="header-logo" href={logoLinkUrl}>
+            <a class="header-logo" href={logoLinkUrl} tabindex="0">
               <img class="header-image" alt={logoAltText} src={logoImgUrl} />
             </a>
             <div class="vertical-seperator"></div>
             {this.headerTitle ? (
               <h2 class="header-title">
-                <a onClick={ev => this.handleClick(ev)} href={headerTitleUrl}>
+                <a onClick={ev => this.handleClick(ev)} href={headerTitleUrl} tabindex="0">
                   {headerTitle}
                 </a>
               </h2>
             ) : null}
           </div>
-          <nav role="navigation" class="header-menus" aria-label="Site navigation">
+          <div class="header-menus">
             <div class={{ 'mobile-menu-toggle': true, 'display-hamburger': this.displayHamburger }}>
               <button onClick={_ => this.toggleMobileMenu()} aria-expanded={this.mobileMenuOpen} aria-label={this.mobileMenuOpen ? 'Hide menu' : 'Show menu'}>
                 <admiralty-icon icon-name={this.mobileMenuOpen ? faTimes.iconName : faBars.iconName}></admiralty-icon>
               </button>
             </div>
             <div class={{ 'menu-sections': true, 'mob-menus-visible': this.mobileMenuOpen }}>
-              <div class="menu-items">
+              <div role="navigation" class="menu-items">
                 <slot name="items"></slot>
               </div>
-              <div class="header-profile">
+              <div role="navigation" class="header-profile">
                 <slot name="profile"></slot>
               </div>
             </div>
-          </nav>
-        </div>
+          </div>
+        </nav>
       </div>
     );
   }

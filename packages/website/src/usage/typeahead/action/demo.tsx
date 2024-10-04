@@ -1,8 +1,9 @@
 import React from "react";
 import { AdmiraltyTypeAhead, AdmiraltyTypeAheadItem } from "@ukho/admiralty-react";
+import { AdmiraltyTypeAheadCustomEvent } from "@ukho/admiralty-core";
 
 export default function Demo() {
-  function itemSelected(event: CustomEvent<string>) {
+  function itemSelected(event: AdmiraltyTypeAheadCustomEvent<string>) {
     console.log(event.detail);
   }
 

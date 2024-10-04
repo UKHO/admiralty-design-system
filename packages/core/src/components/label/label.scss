@@ -1,10 +1,12 @@
-@import 'label.vars.scss';
+@use "../../scss/vars/colours";
+@use "../../scss/vars/typography";
+
 label {
   margin-bottom: 6px;
   display: inline-block;
-  font-weight: $label-text-weight;
+  font-weight: typography.$font-weight-medium;
 
   &.disabled {
-    color: $label-disabled-text-colour;
+    color: colours.$colour-textinput-text-disabled;
   }
 }

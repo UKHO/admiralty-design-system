@@ -8,9 +8,8 @@ import { SelectChangeEventDetail } from './select.interface';
 })
 export class SelectComponent {
   @Element() el?: HTMLElement;
-  private internalId = ++nextId;
   private nativeInput?: HTMLSelectElement;
-
+  id: string = `admiralty-select-${++nextId}`;
   /**
    * If `true`, the user cannot interact with the select.
    */
@@ -86,43 +85,31 @@ export class SelectComponent {
   }
 
   render() {
-    const { disabled, hint, label } = this;
+    const { disabled, hint, id, label } = this;
     const disabledClass = disabled ? 'disabled' : '';
-    const id = this.el.id != '' ? this.el.id : `admiralty-select-${this.internalId}`;
-    const inputId = `${id}-input`;
-    const hintId = `${id}-hint`;
-    const errorId = `${id}-error`;
-
     return (
       <Host>
         <div class={`admiralty-select ${disabledClass}`}>
-          <admiralty-label disabled={this.disabled} for={inputId}>
+          <admiralty-label disabled={this.disabled} for={id}>
             {label}
           </admiralty-label>
-          {hint ? (
-            <admiralty-hint id={hintId} disabled={this.disabled}>
-              {hint}
-            </admiralty-hint>
-          ) : null}
+          {hint ? <admiralty-hint disabled={this.disabled}>{hint}</admiralty-hint> : null}
           <div class="select-wrapper" style={this.width ? { maxWidth: `${this.width}px` } : {}}>
             <select
               ref={select => (this.nativeInput = select)}
-              id={inputId}
+              id={id}
               class={{ 'admiralty-form-control': true, 'invalid': this.invalid, 'disabled': disabled }}
               aria-disabled={disabled ? 'true' : 'false'}
               aria-label={label}
               onChange={event => this.handleSelect(event)}
               onBlur={event => this.handleBlur(event)}
               disabled={disabled}
-              aria-describedby={(this.hint ? hintId : '') + ' ' + (this.invalid ? errorId : '')}
             >
               <slot></slot>
             </select>
             <admiralty-icon class={`select-down-icon ${disabledClass}`} icon-name="angle-down"></admiralty-icon>
           </div>
-          <admiralty-input-invalid id={errorId} style={{ ...(!(this.invalid && this.invalidMessage) ? { display: 'none' } : {}) }}>
-            {this.invalidMessage}
-          </admiralty-input-invalid>
+          <admiralty-input-invalid style={{ ...(!(this.invalid && this.invalidMessage) ? { display: 'none' } : {}) }}>{this.invalidMessage}</admiralty-input-invalid>
         </div>
       </Host>
     );
