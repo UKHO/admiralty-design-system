@@ -1,7 +1,7 @@
 import styles from "./styles.module.css";
 export default function FeedbackDialog() {
   return (
-    <div className={styles.container}>
+    <div className={styles.container} id="feedback">
       <h3>Help improve this design system</h3>
       <p>To help make sure that this page is useful, relevant and up to date, you can:</p>
       <ul className={styles.noListStyle}>
@@ -26,3 +26,4 @@ export default function FeedbackDialog() {
     </div>
   );
 }
+

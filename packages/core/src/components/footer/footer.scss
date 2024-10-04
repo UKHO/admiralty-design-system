@@ -1,23 +1,21 @@
-@use '../../scss/vars/colours';
-@use '../../scss/base/typography';
-@use '../../scss/base/responsive';
+@import 'footer.vars';
 
 footer {
-  @include responsive.tablet-or-desktop {
+  @include tablet-or-desktop {
     flex-direction: row;
     padding: 1.75rem 1.5rem 1.875rem 1rem;
     gap: 1rem;
   }
 
   padding: 1.25rem 1rem 1.5rem 1rem;
-  border-top: colours.$colour-admiralty-blue 0.375rem solid;
-  background: colours.$colour-bg-grey;
+  border-top: $footer-border-colour 0.375rem solid;
+  background: $footer-background-colour;
   display: flex;
   flex-direction: column;
 
   .footer-branding {
     .footer-img {
-      @include responsive.tablet-or-desktop {
+      @include tablet-or-desktop {
         height: 100px;
         margin-bottom: 0;
       }
@@ -38,13 +36,13 @@ footer {
   }
 
   .footer-content {
-    @include responsive.tablet-or-desktop {
+    @include tablet-or-desktop {
       display: flex;
       flex-grow: 1;
       flex-direction: column;
     }
     .footer-links {
-      @include responsive.tablet-or-desktop {
+      @include tablet-or-desktop {
         flex-direction: row;
         align-self: flex-end;
         margin-left: 0;
@@ -65,7 +63,7 @@ footer {
     }
 
     .footer-text {
-      @include responsive.tablet-or-desktop {
+      @include tablet-or-desktop {
         align-self: flex-end;
         margin-left: 0;
       }
@@ -73,14 +71,12 @@ footer {
       margin-left: 0.125rem;
       margin-top: 1rem;
       p {
-        @include responsive.tablet-or-desktop {
+        @include tablet-or-desktop {
           text-align: right;
         }
         margin: 0;
-        font-weight: 300;
-        font-size: 1rem;
-        line-height: 1.5rem;
-        color: colours.$colour-text;
+        font-weight: $footer-text-weight;
+        color: $footer-text-colour;
       }
     }
   }

@@ -1,0 +1,10 @@
+@import '../../styles/vars/globals';
+
+$tab-group-separator-colour: var(--admiralty-colour-light);
+$tab-group-heading-text-colour: var(--admiralty-colour-primary);
+$tab-group-heading-text-weight: 500;
+$tab-group-heading-hover-background-colour: var(--admiralty-hover-background-colour);
+$tab-group-focus-colour: var(--admiralty-focus-colour) !default;
+$tab-group-focus-text-colour: var(--admiralty-text-colour) !default;
+$tab-group-active-background-colour: var(--admiralty-colour-primary);
+$tab-group-active-text-colour: var(--admiralty-colour-primary-contrast);

@@ -1,0 +1,54 @@
+@import '../../styles/vars/globals';
+
+$button-font-size: 18px !default;
+$button-line-height: 24px !default;
+$button-font-weight: 400 !default;
+$button-focus-colour: var(--admiralty-focus-colour) !default;
+$button-focus-text-colour: var(--admiralty-text-colour) !default;
+$button-icon-colour: var(--admiralty-colour-primary) !default;
+
+$button-colour-deselected: var(--admiralty-disabled-colour) !default;
+$button-border-colour-deselected: var(--admiralty-disabled-colour) !default;
+
+// Standard
+$button-colour-standard: var(--admiralty-colour-primary) !default;
+$button-text-colour-standard: var(--admiralty-colour-primary-contrast) !default;
+$button-border-colour-standard: var(--admiralty-colour-primary) !default;
+$button-hover-colour-standard: var(--admiralty-colour-primary-shade) !default;
+$button-hover-text-colour-standard: var(--admiralty-colour-primary-contrast) !default;
+$button-hover-border-colour-standard: var(--admiralty-colour-primary-shade) !default;
+$button-active-colour-standard: var(--admiralty-colour-primary-contrast) !default;
+$button-active-border-colour-standard: var(--admiralty-colour-primary-contrast) !default;
+$button-active-text-colour-standard: var(--admiralty-colour-primary) !default;
+
+// Secondary
+$button-colour-secondary: var(--admiralty-colour-primary-contrast) !default;
+$button-text-colour-secondary: var(--admiralty-colour-primary) !default;
+$button-border-colour-secondary: var(--admiralty-colour-primary) !default;
+$button-hover-colour-secondary: var(--admiralty-hover-background-colour) !default;
+$button-hover-text-colour-secondary: var(--admiralty-colour-primary) !default;
+$button-hover-border-colour-secondary: var(--admiralty-colour-primary-shade) !default;
+$button-active-colour-secondary: var(--admiralty-colour-primary) !default;
+$button-active-border-colour-secondary: var(--admiralty-colour-primary) !default;
+$button-active-text-colour-secondary: var(--admiralty-colour-primary-contrast) !default;
+
+// Warning
+$button-colour-warning: var(--admiralty-colour-danger) !default;
+$button-text-colour-warning: var(--admiralty-colour-danger-contrast) !default;
+$button-border-colour-warning: var(--admiralty-colour-danger) !default;
+$button-hover-colour-warning: var(--admiralty-colour-danger-shade) !default;
+$button-hover-border-colour-warning: var(--admiralty-colour-danger-shade) !default;
+$button-active-colour-warning: var(--admiralty-colour-danger-contrast) !default;
+$button-active-border-colour-warning: var(--admiralty-colour-danger-contrast) !default;
+$button-active-text-colour-warning: var(--admiralty-colour-danger) !default;
+
+// Icon
+$button-colour-icon: var(--admiralty-background-colour-tint) !default;
+$button-text-colour-icon: var(--admiralty-colour-primary) !default;
+$button-border-colour-icon: var(--admiralty-colour-primary) !default;
+$button-hover-colour-icon: var(--admiralty-colour-primary-contrast) !default;
+$button-hover-border-colour-icon: var(--admiralty-colour-primary) !default;
+$button-active-colour-icon: var(--admiralty-colour-primary) !default;
+$button-active-border-colour-icon: var(--admiralty-colour-primary) !default;
+$button-active-text-colour-icon: var(--admiralty-colour-primary-contrast) !default;
+$button-disabled-colour-icon: var(--admiralty-background-colour-tint) !default;
