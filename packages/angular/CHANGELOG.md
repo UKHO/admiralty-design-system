@@ -1,8 +1,29 @@
-# v2.0.0 (Fri Oct 04 2024)
+# v3.0.0 (Fri Oct 04 2024)
 
 #### 💥 Breaking Change
 
 - Release 2.0.0 [#277](https://github.com/UKHO/admiralty-design-system/pull/277) ([@buzzub](https://github.com/buzzub) [@ecstaticrainbow](https://github.com/ecstaticrainbow))
+- Refactor styling to use CSS variables instead of SCSS [#165](https://github.com/UKHO/admiralty-design-system/pull/165) ([@ecstaticrainbow](https://github.com/ecstaticrainbow) [@buzzub](https://github.com/buzzub))
+- Update angular version to 16 [#252](https://github.com/UKHO/admiralty-design-system/pull/252) ([@buzzub](https://github.com/buzzub))
+
+#### 🚀 Enhancement
+
+- Error summary component [#253](https://github.com/UKHO/admiralty-design-system/pull/253) ([@buzzub](https://github.com/buzzub))
+
+#### 🐛 Bug Fix
+
+- Merge branch 'main' into next [#280](https://github.com/UKHO/admiralty-design-system/pull/280) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+- Revert 2.0.0 release [#279](https://github.com/UKHO/admiralty-design-system/pull/279) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+- Bump version to: v2.0.0 \[skip ci\] ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+- Update CHANGELOG.md \[skip ci\] ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+- Merge branch 'main' into next ([@buzzub](https://github.com/buzzub))
+- fix: Header sub menu items should be links [#270](https://github.com/UKHO/admiralty-design-system/pull/270) ([@buzzub](https://github.com/buzzub))
+- Upgrading dependencies to latest versions [#266](https://github.com/UKHO/admiralty-design-system/pull/266) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+- Update next with latest changes from main [#260](https://github.com/UKHO/admiralty-design-system/pull/260) ([@buzzub](https://github.com/buzzub))
+
+#### ⚠️ Pushed to `main`
+
+- Manually bumping the version numbers to 2.0.0 and updated changelogs ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
 
 #### Authors: 2
 
@@ -10,6 +31,10 @@
 - Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
 
 ---
+
+# v2.0.0 (Fri Oct 04 2024)
+
+- Skipped
 
 # v0.23.0 (Thu Sep 05 2024)
 
