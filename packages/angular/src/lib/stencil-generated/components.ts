@@ -147,14 +147,14 @@ export declare interface AdmiraltyCard extends Components.AdmiraltyCard {}
 
 
 @ProxyCmp({
-  inputs: ['checkboxRight', 'checked', 'disabled', 'labelText', 'name', 'value']
+  inputs: ['checkboxRight', 'checked', 'disabled', 'labelHidden', 'labelText', 'name', 'value']
 })
 @Component({
   selector: 'admiralty-checkbox',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['checkboxRight', 'checked', 'disabled', 'labelText', 'name', 'value'],
+  inputs: ['checkboxRight', 'checked', 'disabled', 'labelHidden', 'labelText', 'name', 'value'],
 })
 export class AdmiraltyCheckbox {
   protected el: HTMLElement;
@@ -176,11 +176,11 @@ export declare interface AdmiraltyCheckbox extends Components.AdmiraltyCheckbox 
   /**
    * Event is fired when the form control gains focus @event checkboxFocus
    */
-  checkboxFocus: EventEmitter<CustomEvent<any>>;
+  checkboxFocus: EventEmitter<CustomEvent<FocusEvent>>;
   /**
    * Event is fired when the form control loses focus @event checkboxBlur
    */
-  checkboxBlur: EventEmitter<CustomEvent<any>>;
+  checkboxBlur: EventEmitter<CustomEvent<FocusEvent>>;
 }
 
 

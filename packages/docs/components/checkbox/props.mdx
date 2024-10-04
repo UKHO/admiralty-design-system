@@ -4,7 +4,8 @@
 | `checkbox-right` | `boolean` | `false` | Whether the checkbox should be positioned to the right of the label. |
 | `checked` | `boolean` | `false` | If `true`, the checkbox is selected. |
 | `disabled` | `boolean` | `false` | This dictates whether the form field is disabled. |
-| `label-text` | `string` | `null` | The text that's displayed alongside the checkbox |
+| `label-hidden` | `boolean` | `false` | This visually hides the labelText while preserving accessibility. |
+| `label-text` | `string` | `null` | The label text must be provided and is displayed beside the checkbox, use the `labelHidden` property to control its visibility. |
 | `name` | `string` | `this.inputId` | The name of the control, which is submitted with the form data. |
 | `value` | `any` | `undefined` | The value of the checkbox does not mean if it's checked or not, use the `checked` property for that.  The value of a checkbox is analogous to the value of an `<input type="checkbox">`, it's only used when the checkbox participates in a native `<form>`. |
 

@@ -125,8 +125,8 @@ export const AdmiraltyCard: StencilReactComponent<AdmiraltyCardElement, Admiralt
 
 type AdmiraltyCheckboxEvents = {
     onAdmiraltyChange: EventName<AdmiraltyCheckboxCustomEvent<CheckboxChangeEventDetail>>,
-    onCheckboxFocus: EventName<CustomEvent<any>>,
-    onCheckboxBlur: EventName<CustomEvent<any>>
+    onCheckboxFocus: EventName<AdmiraltyCheckboxCustomEvent<FocusEvent>>,
+    onCheckboxBlur: EventName<AdmiraltyCheckboxCustomEvent<FocusEvent>>
 };
 
 export const AdmiraltyCheckbox: StencilReactComponent<AdmiraltyCheckboxElement, AdmiraltyCheckboxEvents> = /*@__PURE__*/ createComponent<AdmiraltyCheckboxElement, AdmiraltyCheckboxEvents>({
