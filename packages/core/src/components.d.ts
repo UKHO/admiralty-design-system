@@ -177,7 +177,11 @@ export namespace Components {
          */
         "disabled": boolean;
         /**
-          * The text that's displayed alongside the checkbox
+          * This visually hides the labelText while preserving accessibility.
+         */
+        "labelHidden": boolean;
+        /**
+          * The label text must be provided and is displayed beside the checkbox, use the `labelHidden` property to control its visibility.
          */
         "labelText": string;
         /**
@@ -905,8 +909,8 @@ declare global {
     };
     interface HTMLAdmiraltyCheckboxElementEventMap {
         "admiraltyChange": CheckboxChangeEventDetail;
-        "checkboxFocus": any;
-        "checkboxBlur": any;
+        "checkboxFocus": FocusEvent;
+        "checkboxBlur": FocusEvent;
     }
     interface HTMLAdmiraltyCheckboxElement extends Components.AdmiraltyCheckbox, HTMLStencilElement {
         addEventListener<K extends keyof HTMLAdmiraltyCheckboxElementEventMap>(type: K, listener: (this: HTMLAdmiraltyCheckboxElement, ev: AdmiraltyCheckboxCustomEvent<HTMLAdmiraltyCheckboxElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
@@ -1639,7 +1643,11 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
         /**
-          * The text that's displayed alongside the checkbox
+          * This visually hides the labelText while preserving accessibility.
+         */
+        "labelHidden"?: boolean;
+        /**
+          * The label text must be provided and is displayed beside the checkbox, use the `labelHidden` property to control its visibility.
          */
         "labelText"?: string;
         /**
@@ -1655,12 +1663,12 @@ declare namespace LocalJSX {
           * Event is fired when the form control loses focus
           * @event checkboxBlur
          */
-        "onCheckboxBlur"?: (event: AdmiraltyCheckboxCustomEvent<any>) => void;
+        "onCheckboxBlur"?: (event: AdmiraltyCheckboxCustomEvent<FocusEvent>) => void;
         /**
           * Event is fired when the form control gains focus
           * @event checkboxFocus
          */
-        "onCheckboxFocus"?: (event: AdmiraltyCheckboxCustomEvent<any>) => void;
+        "onCheckboxFocus"?: (event: AdmiraltyCheckboxCustomEvent<FocusEvent>) => void;
         /**
           * The value of the checkbox does not mean if it's checked or not, use the `checked` property for that.  The value of a checkbox is analogous to the value of an `<input type="checkbox">`, it's only used when the checkbox participates in a native `<form>`.
          */
