@@ -16,10 +16,17 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
-    "target": "es2022",
-    "module": "es2022",
-    "lib": ["es2022", "dom"],
-    "skipLibCheck": true
+    "target": "es2017",
+    "module": "es2020",
+    "lib": [
+      "es2020",
+      "dom"
+    ],
+    "skipLibCheck": true,
+    "paths": {
+      "@ukho/design-system-angular": ["packages/angular/*"],
+      "@ukho/design-system-core": ["packages/core/*"],
+    },
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
@@ -28,4 +35,3 @@
     "strictTemplates": true
   }
 }
-

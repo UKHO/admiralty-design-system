@@ -1,4 +1,7 @@
-@import 'textarea.vars';
+@use '../../scss/vars/colours';
+@use '../../scss/base/responsive';
+@use '../../scss/base/typography';
+@use '../../scss/vars/typography' as typography-vars;
 
 .text-area-container {
   textarea {
@@ -6,36 +9,35 @@
     position: relative;
     width: 100%;
     min-height: 170px;
-    border: 2px solid $textarea-border-colour;
-    color: $textarea-text-colour;
+    border: 2px solid colours.$colour-text;
+    color: colours.$colour-text;
     padding: 12px 18px;
     outline: none;
     resize: vertical;
     overflow: auto;
     box-sizing: border-box;
     vertical-align: top;
-    font-weight: $textarea-font-weight;
-    line-height: $textarea-line-height;
 
-    background-color: $textarea-background-colour;
+    background-color: colours.$colour-white;
 
     &:focus-visible {
-      outline: 3px solid $textarea-focus-colour;
-      box-shadow: $textarea-shadow-colour inset 0 0 0 2px;
+      outline: 3px solid colours.$colour-utility-focus;
+      box-shadow: colours.$colour-text inset 0 0 0 2px;
     }
 
     &.invalid {
-      border-color: $textarea-error-border-colour;
+      border-color: colours.$colour-utility-error;
 
       &:focus-visible {
         border-color: unset;
-        outline: 3px solid $textarea-focus-colour;
+        outline: 3px solid colours.$colour-utility-focus;
       }
     }
 
     &.disabled {
-      color: $textarea-disabled-text-colour;
-      border-color: $textarea-disabled-border-colour;
+      color: colours.$colour-textinput-text-disabled;
+      border-color: colours.$colour-textinput-border-disabled;
+      background: colours.$colour-bg;
     }
   }
 }

@@ -1,13 +1,16 @@
-@import 'table.vars';
+@use '../../scss/vars/colours';
+@use '../../scss/vars/typography';
+
 
 :host{
   display: table;
 }
 
 caption {
+  font-family: typography.$font-family;
   font-size: 30px;
-  font-weight: $table-caption-text-weight;
-  color: $table-caption-text-colour;
+  font-weight: typography.$font-weight-medium;
+  color: colours.$colour-admiralty-blue;
   margin-bottom: 30px;
   text-align: left;
 }

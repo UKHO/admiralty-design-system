@@ -2,17 +2,17 @@
   "name": "admiralty-design-system",
   "packageManager": "yarn@3.5.0",
   "devDependencies": {
-    "@auto-it/conventional-commits": "^11.2.1",
-    "@auto-it/protected-branch": "^11.2.1",
-    "@auto-it/released": "^11.2.1",
-    "auto": "^11.2.1",
+    "@auto-it/conventional-commits": "^11.0.5",
+    "@auto-it/protected-branch": "^11.0.5",
+    "@auto-it/released": "^11.0.5",
+    "auto": "^11.0.5",
     "colorette": "^2.0.20",
-    "execa": "^9.4.0",
-    "fs-extra": "^11.2.0",
-    "lerna": "8.1.8",
+    "execa": "^7.1.1",
+    "fs-extra": "^11.1.1",
+    "lerna": "7.1.4",
     "listr": "^0.14.3",
-    "nx": "^19.8.0",
-    "semver": "^7.6.3"
+    "nx": "^19.6.1",
+    "semver": "^7.5.4"
   },
   "scripts": {
     "build:all": "yarn exec nx run-many --target=build",

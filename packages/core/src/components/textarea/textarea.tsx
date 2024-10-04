@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop, Element, Event, EventEmitter, Watch } from '@stencil/core';
+import { Component, Host, h, Prop, Event, EventEmitter, Watch } from '@stencil/core';
 import { TextAreaChangeEventDetail } from './textarea.interface';
 
 @Component({
@@ -7,10 +7,11 @@ import { TextAreaChangeEventDetail } from './textarea.interface';
   scoped: true,
 })
 export class TextareaComponent {
-  private internalId = ++nextId;
+  private id = ++nextId;
   private nativeTextArea?: HTMLTextAreaElement;
-
-  @Element() el!: HTMLElement;
+  textareaId: string = `admiralty-textarea-${this.id}`;
+  hintId: string = `admiralty-textarea-hint-${this.id}`;
+  errorId: string = `admiralty-textarea-error-${this.id}`;
 
   /**
    * The label which will be used as a placeholder in the unfilled state, and as a field label in the filled state.
@@ -89,21 +90,16 @@ export class TextareaComponent {
 
   render() {
     const value = this.getValue();
-    const id = this.el.id != '' ? this.el.id : `admiralty-textarea-${this.internalId}`;
-    const inputId = `${id}-input`;
-    const hintId = `${id}-hint`;
-    const errorId = `${id}-error`;
-
     return (
       <Host>
         <div class="text-area-container">
           {this.label ? (
-            <admiralty-label for={inputId} disabled={this.disabled}>
+            <admiralty-label for={this.textareaId} disabled={this.disabled}>
               {this.label}
             </admiralty-label>
           ) : null}
           {this.hint ? (
-            <admiralty-hint id={hintId} disabled={this.disabled}>
+            <admiralty-hint id={this.hintId} disabled={this.disabled}>
               {this.hint}
             </admiralty-hint>
           ) : null}
@@ -111,15 +107,14 @@ export class TextareaComponent {
             ref={textArea => (this.nativeTextArea = textArea)}
             class={{ disabled: this.disabled, invalid: this.invalid }}
             style={this.width ? { maxWidth: `${this.width}px` } : {}}
-            id={inputId}
-            disabled={this.disabled}
+            id={this.textareaId}
             value={value}
             onInput={this.onInput}
             onBlur={this.onBlur}
             aria-invalid={this.invalid ? 'true' : 'false'}
-            aria-describedby={(this.hint ? hintId : '') + ' ' + (this.invalid ? errorId : '')}
+            aria-describedby={(this.hint ? this.hintId : '') + ' ' + (this.invalid ? this.errorId : '')}
           ></textarea>
-          <admiralty-input-invalid id={errorId} style={{ ...(!(this.invalid && this.invalidMessage) ? { display: 'none' } : {}) }}>
+          <admiralty-input-invalid id={this.errorId} style={{ ...(!(this.invalid && this.invalidMessage) ? { display: 'none' } : {}) }}>
             {this.invalidMessage}
           </admiralty-input-invalid>
         </div>

@@ -7,13 +7,13 @@
 
 ## Properties
 
-| Property   | Attribute  | Description                                                                                                    | Type      | Default     |
-| ---------- | ---------- | -------------------------------------------------------------------------------------------------------------- | --------- | ----------- |
-| `checked`  | `checked`  | Determines whether the radio button is selected (or checked)                                                   | `boolean` | `false`     |
-| `disabled` | `disabled` | Determines whether the radio button is disabled. A button in disabled state will not fire click output events. | `boolean` | `false`     |
-| `invalid`  | `invalid`  | Determines whether to add the invalid stying to the radio button                                               | `boolean` | `false`     |
-| `name`     | `name`     | The name of the radio button for use on selection within a radio group                                         | `string`  | `undefined` |
-| `value`    | `value`    | The value of the radio button for use on selection within a radio group                                        | `string`  | `undefined` |
+| Property   | Attribute  | Description                                                                                                    | Type      | Default        |
+| ---------- | ---------- | -------------------------------------------------------------------------------------------------------------- | --------- | -------------- |
+| `checked`  | `checked`  | Determines whether the radio button is selected (or checked)                                                   | `boolean` | `false`        |
+| `disabled` | `disabled` | Determines whether the radio button is disabled. A button in disabled state will not fire click output events. | `boolean` | `false`        |
+| `invalid`  | `invalid`  | Determines whether to add the invalid stying to the radio button                                               | `boolean` | `false`        |
+| `name`     | `name`     | The name of the radio button for use on selection within a radio group                                         | `string`  | `this.inputId` |
+| `value`    | `value`    | The value of the radio button for use on selection within a radio group                                        | `string`  | `undefined`    |
 
 
 ## Events

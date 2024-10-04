@@ -69,6 +69,7 @@ describe('read-more', () => {
     input.dispatchEvent(new Event('click'));
     await page.waitForChanges();
 
+    console.debug(eventSpy);
     expect(eventSpy).toBeCalled();
   });
 });

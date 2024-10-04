@@ -15,6 +15,7 @@ describe('menu-item', () => {
     await page.setContent('<admiralty-header-menu-item menuTitle="Item 1"></admiralty-header-menu-item>');
 
     const element = await page.find('admiralty-header-menu-item >>> .menu-item');
+    console.log(element.innerHTML);
 
     const eventSpy = await page.spyOnEvent('menuItemClick');
 

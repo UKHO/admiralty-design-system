@@ -1,34 +1,36 @@
-@import './file-input.vars';
+@use '../../scss/vars/colours';
+@use '../../scss/vars/typography';
 
 .admiralty-file-input {
-  background: $file-input-background-colour;
+  background: colours.$colour-bg-grey;
   display: flex;
   position: relative;
-  border: 2px dashed $file-input-border-colour;
+  border: 2px dashed colours.$colour-admiralty-blue;
   min-height: 120px;
   align-content: stretch;
   justify-content: stretch;
   margin-bottom: 6px;
-  font-size: $file-input-font-size;
-  line-height: $file-input-line-height;
-  font-weight: $file-input-font-weight;
+  font-family: typography.$font-family;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 300;
 
   &:hover {
-    background-color: $file-input-background-hover-colour;
+    background-color: darken(colours.$colour-bg-grey, 5);
   }
 
   &.invalid {
-    border-color: $file-input-invalid-border-colour;
+    border-color: colours.$colour-utility-error;
   }
 
   &.drop_zone {
     // active when file is dragged over label
-    background: $file-input-background-hover-colour !important;
+    background: colours.$colour-bg !important;
   }
 
   .upload-icon {
-    color: $file-input-icon-colour;
-    font-size: $file-input-icon-size;
+    color: colours.$colour-admiralty-blue;
+    font-size: 24px;
     font-weight: 900;
     margin: 0.4rem auto;
     text-align: center;
@@ -47,10 +49,10 @@ label {
   cursor: pointer;
 
   span {
-    color: $file-input-label-colour;
+    color: colours.$colour-admiralty-blue;
     flex: 0 1;
-    font-size: $file-input-label-font-size;
-    font-weight: $file-input-label-font-weight;
+    font-size: 18px;
+    font-weight: typography.$font-weight-medium;
     text-align: center;
     margin: 0.4rem 0;
   }
@@ -66,12 +68,12 @@ input[type='file'] {
   width: 100%;
 
   &:focus {
-    outline: 3px solid $file-input-focus-colour;
+    outline: 3px solid colours.$colour-utility-focus;
     outline-offset: 2px;
   }
 }
 
 input[type='file']:focus + label {
-  outline: 2px solid $file-input-focus-text-colour;
-  box-shadow: $file-input-focus-text-colour inset 0 0 0 2px;
+  outline: 2px solid colours.$colour-text;
+  box-shadow: colours.$colour-text inset 0 0 0 2px;
 }

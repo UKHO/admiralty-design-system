@@ -60,10 +60,10 @@ export class HeaderProfileComponent {
     subMenu.classList.add('desktop-hide');
   };
 
-  toggleDropdown = (showMenu: boolean) => {
+  toggleDropdown = (_ev: Event) => {
     const subMenu: HTMLDivElement = this.el.querySelector('div.sub-menu');
 
-    if (showMenu) {
+    if (subMenu.classList.contains('desktop-hide')) {
       subMenu.classList.add('desktop-visible');
       subMenu.classList.remove('desktop-hide');
     } else {
@@ -74,7 +74,7 @@ export class HeaderProfileComponent {
 
   handleClickSignedIn = (ev: MouseEvent) => {
     ev.stopPropagation();
-    this.toggleDropdown(false);
+    this.toggleDropdown(ev);
   };
 
   render() {
@@ -85,15 +85,15 @@ export class HeaderProfileComponent {
           {isSignedIn ? (
             <div>
               <div class="desktop" onMouseOver={this.toggleDropdown}>
-                <button onClick={this.handleClickSignedIn}>
+                <button onClick={this.handleClickSignedIn} tabindex="0">
                   <span>{signedInText}</span>
                 </button>
                 {!signInOnly ? (
                   <div class="sub-menu desktop-hide">
-                    <button class="sub-menu-item" onClick={this.handleYourAccount}>
+                    <button class="sub-menu-item" onClick={this.handleYourAccount} tabindex="0">
                       <div>Your Account</div>
                     </button>
-                    <button class="sub-menu-item" onClick={this.handleSignOut}>
+                    <button class="sub-menu-item" onClick={this.handleSignOut} tabindex="0">
                       <div>Sign Out</div>
                     </button>
                   </div>
@@ -101,17 +101,17 @@ export class HeaderProfileComponent {
               </div>
               {!signInOnly ? (
                 <div class="not-desktop">
-                  <button class="sub-menu-item" onClick={this.handleYourAccount}>
+                  <button class="sub-menu-item" onClick={this.handleYourAccount} tabindex="0">
                     <span>Your Account</span>
                   </button>
-                  <button class="sub-menu-item" onClick={this.handleSignOut}>
+                  <button class="sub-menu-item" onClick={this.handleSignOut} tabindex="0">
                     <span>Sign Out</span>
                   </button>
                 </div>
               ) : null}
             </div>
           ) : (
-            <button class="sub-menu-item" onClick={this.handleSignIn}>
+            <button class="sub-menu-item" onClick={this.handleSignIn} tabindex="0">
               <span>Sign In</span>
             </button>
           )}

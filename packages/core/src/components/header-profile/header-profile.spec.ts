@@ -11,7 +11,7 @@ describe('header-profile', () => {
     expect(page.root).toEqualHtml(`
       <admiralty-header-profile>
         <div class="header-profile">
-          <button class="sub-menu-item">
+          <button class="sub-menu-item" tabindex="0">
             <span>
               Sign In
             </span>
@@ -29,7 +29,7 @@ describe('header-profile', () => {
     expect(page.root).toMatchInlineSnapshot(`
       <admiralty-header-profile is-signed-in="false" signed-in-text="Mr Admiral">
         <div class="header-profile">
-          <button class="sub-menu-item">
+          <button class="sub-menu-item" tabindex="0">
             <span>
               Sign In
             </span>
@@ -48,18 +48,18 @@ describe('header-profile', () => {
         <div class="header-profile">
           <div>
             <div class="desktop">
-              <button>
+              <button tabindex="0">
                 <span>
                   Mr Admiral
                 </span>
               </button>
               <div class="desktop-hide sub-menu">
-                <button class="sub-menu-item">
+                <button class="sub-menu-item" tabindex="0">
                   <div>
                     Your Account
                   </div>
                 </button>
-                <button class="sub-menu-item">
+                <button class="sub-menu-item" tabindex="0">
                   <div>
                     Sign Out
                   </div>
@@ -67,12 +67,12 @@ describe('header-profile', () => {
               </div>
             </div>
             <div class="not-desktop">
-              <button class="sub-menu-item">
+              <button class="sub-menu-item" tabindex="0">
                 <span>
                   Your Account
                 </span>
               </button>
-              <button class="sub-menu-item">
+              <button class="sub-menu-item" tabindex="0">
                 <span>
                   Sign Out
                 </span>

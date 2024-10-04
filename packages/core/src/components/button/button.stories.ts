@@ -32,7 +32,7 @@ export const Text: Story = { ...template, args: { variant: 'text' } };
 export const TextCustom: Story = {
   render: args =>
     html`<admiralty-button variant="${args.variant}">
-      <div style="font-size: 16px; color: black; font-weight: 300;">Small type</div>
+      <div style="font-size: 16px; color: black">Small type</div>
     </admiralty-button>`,
   args: { variant: 'text' },
 };

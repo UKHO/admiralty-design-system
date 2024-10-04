@@ -1,7 +1,4 @@
-@import 'icon.vars.scss';
-
 :host {
-  font-size: $icon-size;
   display: inline-block;
 
   min-width: 1em;
@@ -19,10 +16,4 @@ svg {
 
   height: 1em;
   width: 1em;
-}
-
-@include desktop-only {
-  :host {
-    font-size: calc($icon-size * 1.125);
-  }
 }

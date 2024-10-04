@@ -1,40 +1,41 @@
-@import 'inputs.vars';
+@use '../../scss/vars/colours';
+@use '../../scss/vars/typography';
 
 .text-input-container {
   display: flex;
   flex-direction: column;
 
   input {
-    background-color: $input-background-colour;
-    border-color: $input-border-colour;
+    background-color: colours.$colour-white;
+    border-color: colours.$colour-text;
     border-width: 2px;
     border-style: solid;
-    color: $input-text-colour;
+    color: colours.$colour-text;
     font-size: 18px;
     line-height: 24px;
-    font-weight: $input-text-weight;
+    font-weight: typography.$font-weight-light;
 
     padding: 12px;
 
     &:focus {
       outline-offset: unset;
-      outline: 3px solid $input-focus-colour;
-      box-shadow: $input-border-colour inset 0 0 0 2px;
+      outline: 3px solid colours.$colour-utility-focus;
+      box-shadow: colours.$colour-text inset 0 0 0 2px;
     }
 
     &.invalid {
-      border-color: $input-error-border-colour;
+      border-color: colours.$colour-utility-error;
 
       &:focus-visible {
         border-color: unset;
-        outline: 3px solid $input-focus-colour;
+        outline: 3px solid colours.$colour-utility-focus;
       }
     }
 
     &.disabled {
-      color: $input-disabled-text-colour;
-      border-color: $input-disabled-border-colour;
-      background: $input-background-colour;
+      color: colours.$colour-textinput-text-disabled;
+      border-color: colours.$colour-textinput-border-disabled;
+      background: colours.$colour-bg;
     }
   }
 

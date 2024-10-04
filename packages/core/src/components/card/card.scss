@@ -1,19 +1,20 @@
-@import 'card.vars';
+@use "../../scss/base/responsive";
+@use "../../scss/vars/colours";
 
 .card {
   display: flex;
   flex-direction: column;
-  border: 1px solid $card-border-colour;
+  border: 1px solid colours.$colour-divider;
 
   & > h6 {
     height: 60px;
     line-height: 60px;
-    border: 1px solid $card-heading-border-colour;
-    color: $card-heading-text-colour;
-    background-color: $card-heading-colour;
+    border: 1px solid colours.$colour-admiralty-blue;
+    color: colours.$colour-white;
+    background-color: colours.$colour-admiralty-blue;
     margin: 0;
     padding: 0 30px;
-    @include not-desktop {
+    @include responsive.not-desktop {
       padding: 0px 18px;
       height: 48px;
       line-height: 48px;
@@ -24,7 +25,7 @@
     border-top: none;
     flex-grow: 1;
     padding: 30px;
-    @include not-desktop {
+    @include responsive.not-desktop {
       padding: 24px 18px;
     }
   }

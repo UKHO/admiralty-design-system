@@ -1,7 +1,10 @@
-@import 'header-menu-item.vars';
+@use '../../scss/vars/colours' as colours;
+@use '../../scss/base/responsive';
+@use '../../scss/vars/typography';
+@use '../../scss/base/a11y';
 
 @mixin active {
-  box-shadow: inset 0 -5px $header-menu-item-active-colour;
+  box-shadow: inset 0 -5px colours.$colour-admiralty-blue;
 }
 
 .menu-item {
@@ -9,12 +12,12 @@
 
   .menu-title {
     div {
-      font-size: $header-menu-item-title-text-size;
-      color: $header-menu-item-title-text-colour;
+      font-size: typography.$font-size-normal;
+      color: colours.$colour-admiralty-blue;
     }
 
     &:focus div {
-      @include focus-highlight;
+      @include a11y.focus-highlight;
     }
   }
 }
@@ -25,7 +28,7 @@ button {
   width: 100%;
 }
 
-@include desktop-only {
+@include responsive.desktop-only {
   .menu-item {
     display: flex;
     flex: 0;
@@ -42,7 +45,7 @@ button {
 
     &:hover {
       @include active;
-      background-color: $header-menu-item-hover-background-colour;
+      background-color: colours.$colour-nav-bg-hover;
 
       .sub-menu {
         display: flex;
@@ -58,14 +61,14 @@ button {
     }
 
     .menu-title div {
-      font-weight: $header-menu-item-title-text-weight;
+      font-weight: typography.$font-weight-medium;
     }
 
     .sub-menu {
       display: none;
       flex-direction: column;
       position: absolute;
-      border: 1px solid $header-menu-item-divider-colour;
+      border: 1px solid colours.$colour-divider;
       right: 0;
       top: 100%;
 
@@ -80,7 +83,7 @@ button {
   }
 }
 
-@include not-desktop {
+@include responsive.not-desktop {
   .menu-item {
     display: block;
     box-sizing: border-box;
@@ -92,11 +95,11 @@ button {
       div {
         display: inline-block;
         margin: 12px;
-        font-weight: $header-menu-item-title-text-weight;
+        font-weight: typography.$font-weight-medium;
       }
 
       &:hover {
-        background-color: $header-menu-item-hover-background-colour;
+        background-color: colours.$colour-nav-bg-hover;
       }
     }
   }

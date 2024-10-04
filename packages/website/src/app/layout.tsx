@@ -1,10 +1,10 @@
 "use client";
-import "@ukho/admiralty-core/styles/admiralty.bundle.css";
-import "@ukho/admiralty-core/themes/default.css";
+import "@ukho/admiralty-core/styles/core.css";
 import "./globals.css";
 import {
   AdmiraltyFooter,
   AdmiraltyHeader,
+  AdmiraltyHeaderMenuItem,
   AdmiraltyHeaderMenuLink,
   AdmiraltyLink,
   AdmiraltyPhaseBanner,
@@ -13,10 +13,6 @@ import {
 import { useRouter, usePathname } from "next/navigation";
 
 const menuItems = [
-  {
-    name: "Getting started",
-    path: "/getting-started",
-  },
   {
     name: "Principles",
     path: "/principles",
