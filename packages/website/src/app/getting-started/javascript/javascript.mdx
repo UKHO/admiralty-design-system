@@ -1,0 +1,53 @@
+# JavaScript
+
+Instructions for how to incorporate the UKHO Design System into a generic website using JavaScript.
+
+## Contents
+
+1. [Installation](#installation)
+   - [NPM](#npm)
+   - [Yarn](#yarn)
+2. [Using the components](#using-the-components)
+
+## Installation
+
+For projects using plain JavaScript (or any vanilla JavaScript framework) the first step is to install the package using a package manager so that it can be used in your project:
+
+### NPM
+
+```bash
+npm install @ukho/admiralty-core
+```
+
+or
+
+### Yarn
+
+```bash
+yarn add @ukho/admiralty-core
+```
+
+---
+
+## Using the components
+
+Once you've installed the package, you can start using the components in your project.
+
+Import the components by adding the Javascript and CSS bundles to the `index.html`. It's recommended to use [jsdelivr](https://www.jsdelivr.com/) to access the package from a CDN. To get the latest version, add the following inside the `<head>` element.
+
+```html
+<!-- index.html -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ukho/admiralty-core/styles/css/admiralty.bundle.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ukho/admiralty-core/themes/default.css" />
+<script
+  type="module"
+  src="https://cdn.jsdelivr.net/npm/@ukho/admiralty-core/dist/admiralty/admiralty.esm.min.js"
+></script>
+```
+
+Now, you can use the components directly in your HTML files like so:
+
+```html
+<admiralty-input label="What is your name?" type="text"></admiralty-input>
+```
+

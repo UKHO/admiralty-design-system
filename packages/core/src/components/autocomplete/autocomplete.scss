@@ -1,5 +1,4 @@
-@use '../../scss/vars/colours';
-@use '../../scss/vars/typography';
+@import './autocomplete.vars';
 
 .autocomplete__wrapper {
   position: relative;
@@ -8,9 +7,10 @@
 .autocomplete__hint,
 .autocomplete__input {
   appearance: none;
-  border: 2px solid colours.$colour-text;
+  border: 2px solid $autocomplete-input-border-colour;
   border-radius: 0; /* Safari 10 on iOS adds implicit border rounding. */
   box-sizing: border-box;
+  color: $autocomplete-text-colour;
   margin-bottom: 0; /* BUG: Safari 10 on macOS seems to add an implicit margin. */
   line-height: 1.5;
   width: 100%;
@@ -22,7 +22,7 @@
 }
 
 .autocomplete__hint {
-  color: colours.$colour-text;
+  color: $autocomplete-text-colour;
   position: absolute;
 }
 
@@ -35,9 +35,9 @@
 }
 
 .autocomplete__input--focused {
-  outline: 3px solid colours.$colour-utility-focus;
+  outline: 3px solid $autocomplete-focus-colour;
   outline-offset: 0;
-  box-shadow: inset 0 0 0 2px colours.$colour-text;
+  box-shadow: inset 0 0 0 2px $autocomplete-text-colour;
 }
 
 .autocomplete__input--show-all-values {
@@ -46,18 +46,18 @@
 }
 
 .autocomplete__input--invalid {
-  border-color: colours.$colour-utility-error;
+  border-color: $autocomplete-error-border-colour;
 }
 
 .autocomplete__input--disabled {
-  border-color: colours.$colour-textinput-text-disabled;
+  border-color: $autocomplete-disabled-border-colour;
 }
 
 .autocomplete__menu {
-  background-color: colours.$colour-white;
-  border: 2px solid #0b0c0c;
+  background-color: $autocomplete-background-colour;
+  border: 2px solid $autocomplete-input-border-colour;
   border-top: 0;
-  color: colours.$colour-text;
+  color: $autocomplete-text-colour;
   margin: 0;
   max-height: 342px;
   overflow-x: hidden;
@@ -87,9 +87,9 @@
 }
 
 .autocomplete__option {
-  border-bottom: solid #b1b4b6;
+  border-bottom: solid $autocomplete-option-border-colour;
   border-width: 1px 0;
-  color: colours.$colour-text;
+  color: $autocomplete-text-colour;
   cursor: pointer;
   display: block;
   position: relative;
@@ -114,15 +114,15 @@
 
 .autocomplete__option--focused,
 .autocomplete__option:hover {
-  background-color: colours.$colour-utility-info;
-  border-color: colours.$colour-utility-info;
-  color: colours.$colour-white;
+  background-color: $autocomplete-option-hover-background-colour;
+  border-color: $autocomplete-option-hover-background-colour;
+  color: $autocomplete-option-hover-text-colour;
   outline: none;
 }
 
 .autocomplete__option--no-results {
-  background-color: colours.$colour-white;
-  color: colours.$colour-admiralty-blue;
+  background-color: $autocomplete-option-no-results-background-colour;
+  color: $autocomplete-option-no-results-text-colour;
   text-align: center;
 
   margin-top: 50px;
@@ -130,9 +130,9 @@
   cursor: not-allowed;
 }
 .autocomplete__option--no-results:hover {
-  background-color: colours.$colour-white;
-  border-color: colours.$colour-white;
-  color: colours.$colour-admiralty-blue;
+  background-color: $autocomplete-option-no-results-background-colour;
+  border-color: $autocomplete-option-no-results-background-colour;
+  color: $autocomplete-option-no-results-text-colour;
   text-align: center;
 
   margin-top: 50px;
@@ -152,7 +152,7 @@
   padding: 10px;
 }
 
-admiralty-icon {
+.autocomplete-down-icon {
   font-size: 24px;
   font-weight: 300;
   pointer-events: none;
@@ -162,7 +162,7 @@ admiralty-icon {
 }
 
 admiralty-icon.disabled {
-  color: colours.$colour-textinput-text-disabled;
+  color: $autocomplete-dropdown-icon-colour;
 }
 
 admiralty-input-invalid {

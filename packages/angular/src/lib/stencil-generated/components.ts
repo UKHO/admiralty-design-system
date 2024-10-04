@@ -213,14 +213,14 @@ export declare interface AdmiraltyColourBlock extends Components.AdmiraltyColour
 
 
 @ProxyCmp({
-  inputs: ['heading', 'type']
+  inputs: ['heading', 'sectionRole', 'type']
 })
 @Component({
   selector: 'admiralty-dialogue',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['heading', 'type'],
+  inputs: ['heading', 'sectionRole', 'type'],
 })
 export class AdmiraltyDialogue {
   protected el: HTMLElement;
@@ -232,6 +232,28 @@ export class AdmiraltyDialogue {
 
 
 export declare interface AdmiraltyDialogue extends Components.AdmiraltyDialogue {}
+
+
+@ProxyCmp({
+  inputs: ['heading']
+})
+@Component({
+  selector: 'admiralty-error-summary',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['heading'],
+})
+export class AdmiraltyErrorSummary {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface AdmiraltyErrorSummary extends Components.AdmiraltyErrorSummary {}
 
 
 @ProxyCmp({
@@ -492,14 +514,14 @@ the sign in button
 
 
 @ProxyCmp({
-  inputs: ['menuTitle']
+  inputs: ['href', 'menuTitle', 'suppressRedirect']
 })
 @Component({
   selector: 'admiralty-header-sub-menu-item',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['menuTitle'],
+  inputs: ['href', 'menuTitle', 'suppressRedirect'],
 })
 export class AdmiraltyHeaderSubMenuItem {
   protected el: HTMLElement;
@@ -513,7 +535,7 @@ export class AdmiraltyHeaderSubMenuItem {
 
 export declare interface AdmiraltyHeaderSubMenuItem extends Components.AdmiraltyHeaderSubMenuItem {
   /**
-   * The event that is fired when a user clicks on the menu.
+   * The event that is fired when a user clicks on the menu item.
 Event contains the menu item text.
    */
   subMenuItemClick: EventEmitter<CustomEvent<string>>;
@@ -820,14 +842,14 @@ export declare interface AdmiraltyRadio extends Components.AdmiraltyRadio {
 
 
 @ProxyCmp({
-  inputs: ['displayVertical', 'invalid', 'invalidMessage', 'name', 'value']
+  inputs: ['disabled', 'displayVertical', 'hint', 'invalid', 'invalidMessage', 'label', 'name', 'value']
 })
 @Component({
   selector: 'admiralty-radio-group',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['displayVertical', 'invalid', 'invalidMessage', 'name', 'value'],
+  inputs: ['disabled', 'displayVertical', 'hint', 'invalid', 'invalidMessage', 'label', 'name', 'value'],
 })
 export class AdmiraltyRadioGroup {
   protected el: HTMLElement;

@@ -10,7 +10,7 @@ describe('menu-item', () => {
     expect(page.root).toEqualHtml(`
       <admiralty-header-menu-item menutitle="Item 1">
         <div class="menu-item">
-          <button class="menu-title" tabindex="0">
+          <button class="menu-title">
             <div></div>
           </button>
           <div class="desktop-hide sub-menu"></div>
@@ -29,7 +29,7 @@ describe('menu-item', () => {
       <admiralty-header-menu-item active="true" menutitle="Item 1">
         <!---->
         <div class="active menu-item">
-          <button class="menu-title" tabindex="0">
+          <button class="menu-title">
             <div></div>
           </button>
           <div class="desktop-hide sub-menu"></div>
@@ -48,7 +48,7 @@ describe('menu-item', () => {
       <admiralty-header-menu-item active="false" menutitle="Item 1">
         <!---->
         <div class="menu-item">
-          <button class="menu-title" tabindex="0">
+          <button class="menu-title">
             <div></div>
           </button>
           <div class="desktop-hide sub-menu"></div>

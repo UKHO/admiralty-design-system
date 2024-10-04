@@ -1,0 +1,29 @@
+# Customizing components
+
+The components can be customised in a variety of ways.
+
+## Contents
+
+1. [Overview](#overview)
+2. [Styling](#styling)
+
+## Overview
+
+Components in the library can be customized by passing properties (props). These props allow you to modify the look, feel, and behavior of the component. For example a warning button:
+
+```html
+<admiralty-button variant="warning">Cancel request</admiralty-button>
+```
+
+Refer to the [component](/components) documentation for a list of available props and how they can be used.
+
+## Styling
+
+You can also style the components using CSS. If a component exposes custom CSS variables, you can override them in your stylesheet. For example:
+
+```css
+admiralty-button {
+  --admiralty-colour-primary: #66d762;
+  --admiralty-colour-primary-contrast: #f1f1f1;
+}
+```

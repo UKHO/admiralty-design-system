@@ -1,24 +1,21 @@
-@use '../../scss/vars/colours' as colours;
-@use '../../scss/base/responsive';
-@use '../../scss/vars/typography';
-@use '../../scss/base/a11y';
+@import 'header.vars';
 
 .admiralty-header {
-  font-size: 18px;
-  font-weight: typography.$font-weight-light;
-  line-height: 24px;
+  font-size: $header-text-size;
+  font-weight: $header-text-weight;
+  line-height: $header-text-line-height;
 }
 
 .header-menu {
-  border-bottom: 1px solid #d8d8d8;
+  border-bottom: 1px solid $header-border-colour;
   display: flex;
   flex-direction: row;
-  background-color: colours.$colour-bg;
+  background-color: $header-background-colour;
   height: 5em;
   min-height: 5em;
   position: relative;
 
-  @include responsive.not-desktop {
+  @include not-desktop {
     height: 56px;
     min-height: 56px;
     position: relative;
@@ -32,7 +29,7 @@
   font-size: 18px;
   padding: 1.3em 0 1.3em 1.3em;
 
-  @include responsive.not-desktop {
+  @include not-desktop {
     padding-left: 12px;
     padding-top: 12px;
     padding-bottom: 12px;
@@ -41,7 +38,7 @@
 
   a.header-logo {
     background-color: transparent;
-    color: colours.$colour-admiralty-blue;
+    color: $header-logo-colour;
 
     img {
       height: 100%;
@@ -49,15 +46,15 @@
     }
 
     &:focus {
-      @include a11y.focus-highlight;
+      @include focus-highlight;
     }
   }
 
   .vertical-seperator {
-    border-right: 1px solid colours.$colour-divider;
+    border-right: 1px solid $header-separator-colour;
     margin-left: 24px;
     margin-right: 24px;
-    @include responsive.not-desktop {
+    @include not-desktop {
       margin-left: 12px;
       margin-right: 12px;
     }
@@ -74,7 +71,7 @@
     margin-bottom: unset;
     user-select: none;
 
-    @include responsive.not-desktop {
+    @include not-desktop {
       font-size: 24px;
       line-height: 24px;
       white-space: pre-wrap;
@@ -83,12 +80,12 @@
     a {
       cursor: pointer;
       font-size: 1em;
-      font-weight: typography.$font-weight-medium;
+      font-weight: $header-title-text-weight;
       line-height: 1;
       max-width: fit-content;
       text-decoration: none;
 
-      @include responsive.not-desktop {
+      @include not-desktop {
         font-size: 24px;
       }
     }
@@ -102,7 +99,7 @@
   .mobile-menu-toggle {
     display: none;
 
-    @include responsive.not-desktop {
+    @include not-desktop {
       &.display-hamburger {
         display: flex;
       }
@@ -122,19 +119,19 @@
         min-height: 24px;
         text-align: center;
         user-select: none;
-        color: colours.$colour-admiralty-blue;
+        color: $header-icon-colour;
       }
 
       &:focus {
-        @include a11y.focus-highlight;
+        @include focus-highlight;
 
         outline: none;
-        box-shadow: 0 -4px colours.$colour-text inset;
+        box-shadow: 0 -4px $header-outline-colour inset;
       }
     }
   }
 
-  @include responsive.not-desktop {
+  @include not-desktop {
     .menu-sections {
       display: none;
 
@@ -146,13 +143,13 @@
       top: 100%;
       z-index: 999;
       min-width: 100%;
-      @include responsive.tablet-only {
+      @include tablet-only {
         min-width: 50%;
         margin-left: 50%;
       }
 
-      background-color: colours.$colour-white;
-      border: 1px solid colours.$colour-bg-header;
+      background-color: $header-background-colour;
+      border: 1px solid $header-border-colour;
 
       &.mob-menus-visible {
         display: block;
@@ -163,7 +160,7 @@
   .menu-sections,
   .menu-items,
   .header-profile {
-    @include responsive.desktop-only {
+    @include desktop-only {
       display: flex;
       flex: 0;
       flex-direction: row;

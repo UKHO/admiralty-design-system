@@ -1,6 +1,4 @@
-@use '../../scss/vars/colours';
-@use '../../scss/vars/typography';
-@use '../../scss/base/a11y';
+@import 'read-more.vars.scss';
 
 section.expansion {
   padding: 2px 0;
@@ -9,7 +7,7 @@ section.expansion {
     display: none;
     max-height: 0;
     overflow: visible;
-    border-left: 4px solid colours.$colour-utility-info;
+    border-left: 4px solid $read-more-border-colour;
   }
   &.expanded .expansion-content {
     display: block;
@@ -21,16 +19,18 @@ section.expansion {
     background-color: transparent;
     border: none;
     white-space: unset;
-    color: initial;
+    color: $read-more-text-colour;
+    font-weight: unset;
     cursor: pointer;
     margin: 8px 0px;
     padding: 4px;
     align-items: baseline;
     text-align: left;
     text-decoration: underline;
+    text-underline-offset: 0.15em;
 
     &.expanded span {
-      font-weight: typography.$font-weight-medium;
+      font-weight: $read-more-text-weight;
     }
 
     .expansion-heading-icon {
@@ -39,8 +39,12 @@ section.expansion {
       vertical-align: top;
     }
 
+    &:hover {
+      text-decoration-thickness: 0.15em;
+    }
+
     &:focus {
-      @include a11y.focus-highlight;
+      @include focus-highlight;
     }
   }
 }
