@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from '@storybook/web-components';
 import { FooterComponent } from './footer';
 import { html } from 'lit';
+import { FooterType } from './footer.types';
 
 const meta: Meta = {
   component: 'admiralty-footer',
@@ -37,4 +38,20 @@ export const WithLinks: Story = { render: args => html`
   <admiralty-footer>
     <admiralty-link href="http://www.example.com" new-tab="true">Privacy Policy</admiralty-link>
     <admiralty-link href="http://www.example.com">Accessibility</admiralty-link>
+  </admiralty-footer>` };
+
+export const VariantCompact: Story = { render: args => html`
+  <admiralty-footer
+    image-link="${args.imageLink}"
+    variant="${FooterType.Compact}"
+    image-alt="${args.imageAlt}"
+    text="© Crown copyright 2024 UK Hydrographic Office">
+  </admiralty-footer>` };
+
+export const VariantStandard: Story = { render: args => html`
+  <admiralty-footer
+    image-link="${args.imageLink}"
+    variant="${FooterType.Standard}"
+    image-alt="${args.imageAlt}"
+    text="${args.text}">
   </admiralty-footer>` };
