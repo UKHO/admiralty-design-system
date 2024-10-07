@@ -101,10 +101,10 @@ export class HeaderProfileComponent {
               </div>
               {!signInOnly ? (
                 <div class="not-desktop">
-                  <button class="sub-menu-item" onClick={this.handleYourAccount} tabindex="0">
+                  <button class="sub-menu-item" onClick={this.handleYourAccount}>
                     <span>Your Account</span>
                   </button>
-                  <button class="sub-menu-item" onClick={this.handleSignOut} tabindex="0">
+                  <button class="sub-menu-item" onClick={this.handleSignOut}>
                     <span>Sign Out</span>
                   </button>
                 </div>

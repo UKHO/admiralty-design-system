@@ -7,10 +7,10 @@ import { RadioGroupChangeEventDetail } from './radio-group-interface';
   scoped: true,
 })
 export class RadioGroupComponent implements ComponentInterface {
-  private id = ++radioGroupIds;
-  private inputId: string = `admiralty-rg-${this.id}`;
-  private hintId: string = `admiralty-rg-hint-${this.id}`;
-  private errorId: string = `admiralty-rg-error-${this.id}`;
+  private internalId = ++radioGroupIds;
+  private inputId: string = `admiralty-rg-${this.internalId}`;
+  private hintId: string = `admiralty-rg-hint-${this.internalId}`;
+  private errorId: string = `admiralty-rg-error-${this.internalId}`;
 
   @Element() el!: HTMLElement;
 

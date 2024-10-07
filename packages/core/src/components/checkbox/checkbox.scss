@@ -32,6 +32,7 @@
     -webkit-user-select: none;
     -moz-user-select: none;
     user-select: none;
+    min-height: 30px;
     line-height: 30px;
 
     &.disabled {
