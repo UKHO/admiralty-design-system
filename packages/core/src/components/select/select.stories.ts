@@ -42,6 +42,22 @@ const template: Story = {
 
 export const DefaultSelect: Story = { ...template };
 
+export const PlaceholderOption: Story = {
+  render: args => html`<admiralty-select
+    value="none"
+    ?disabled="${args.disabled}"
+    ?invalid=${args.invalid}
+    invalid-message="${args.invalidMessage}"
+    hint="${args.hint}"
+    label="${args.label}"
+    width="${args.width}">
+    <option value="none" disabled>Select an option...</option>
+    <option value="first">first</option>
+    <option value="second">second</option>
+    <option value="third">third</option>
+  </admiralty-select>`,
+};
+
 export const SelectWithError: Story = {
   ...template,
   args: {
