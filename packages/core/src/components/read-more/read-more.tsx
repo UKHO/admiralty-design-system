@@ -22,13 +22,13 @@ export class ReadMoreComponent {
    */
   @Event() admiraltyToggled: EventEmitter<boolean>;
 
-  id: string = `admiralty-read-more-${++nextId}`;
+  internalId: string = `admiralty-read-more-${++nextId}`;
 
-  headerId: string = `${this.id}-header`;
-  contentId: string = `${this.id}-content`;
+  headerId: string = `${this.internalId}-header`;
+  contentId: string = `${this.internalId}-content`;
 
   get expansionIcon(): IconDefinition {
-    return this.expanded ?  faArrowDown : faArrowRight;
+    return this.expanded ? faArrowDown : faArrowRight;
   }
 
   onToggle() {

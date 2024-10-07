@@ -9,6 +9,7 @@ const sideNavItems: SideNavItem[] = [
   { path: "angular", title: "Angular" },
   { path: "react", title: "React" },
   { path: "customising-components", title: "Customising" },
+  { path: "migrating", title: "Migrating" },
 ];
 
 export default function Layout({ children }: { children: React.ReactNode }) {
