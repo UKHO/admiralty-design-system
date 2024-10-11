@@ -8,7 +8,7 @@ import { FooterType, FooterTypes } from './footer.types';
 @Component({
   tag: 'admiralty-footer',
   styleUrl: 'footer.scss',
-  shadow: true
+  scoped: true
 })
 export class FooterComponent {
   @Element() el: HTMLElement;
@@ -49,15 +49,15 @@ export class FooterComponent {
   }
 
   checkSlotContent(): void {
-    const slot = this.el.shadowRoot.querySelector('slot') as HTMLSlotElement;
-    if (slot) {
-      this.hasSlotContent = slot.assignedNodes().length > 1;
+    const links = this.el.querySelectorAll('admiralty-link') as NodeListOf<HTMLAdmiraltyLinkElement>
+    if (links) {
+      this.hasSlotContent = links.length > 0;
     }
   }
 
   render() {
     return (
-      <footer class={`${this.variant === FooterType.Compact && 'footer-compact'}`}>
+      <footer {...(this.variant === FooterType.Compact && { class: 'footer-compact'})}>
         {this.variant !== FooterType.Compact && <div class="footer-branding">
           <div class="footer-img">
             <a href={this.imageLink}>
@@ -66,7 +66,7 @@ export class FooterComponent {
           </div>
         </div>}
         <div class="footer-content">
-          <nav aria-label="Footer Links" class={`footer-links ${this.hasSlotContent && 'text-padding'}`}>
+          <nav aria-label="Footer Links" {...(this.hasSlotContent && this.variant === FooterType.Compact ? {class: 'footer-links text-padding'} : { class: 'footer-links'})}>
             <slot onSlotchange={() => this.handleSlotChange()}></slot>
           </nav>
           <div class="footer-text">
