@@ -212,6 +212,37 @@ describe('admiralty-select', () => {
     `);
   });
 
+  it('renders a placeholder option which is disabled', async () => {
+    const id = 'custom';
+    const page = await newSpecPage({
+      components: [SelectComponent],
+      html: `<admiralty-select id="${id}"><option disabled>Select an option...</option><option>First</option></admiralty-select>`,
+    });
+
+    expect(page.root).toMatchInlineSnapshot(`
+      <admiralty-select id="${id}">
+        <!---->
+        <div class="admiralty-select">
+          <admiralty-label for="${id}-input">
+            Choose a colour
+          </admiralty-label>
+          <div class="select-wrapper">
+            <select aria-describedby=" " aria-disabled="false" aria-label="Choose a colour" class="admiralty-form-control" id="${id}-input">
+              <option disabled="">
+                Select an option...
+              </option>
+              <option>
+                First
+              </option>
+            </select>
+            <admiralty-icon class="select-down-icon" icon-name="angle-down"></admiralty-icon>
+          </div>
+          <admiralty-input-invalid id="${id}-error" style="display: none;"></admiralty-input-invalid>
+        </div>
+      </admiralty-select>
+    `);
+  });
+
   it('fires event on selection changed', async () => {
     const page = await newSpecPage({
       components: [SelectComponent],
