@@ -40,6 +40,14 @@ export const WithLinks: Story = { render: args => html`
     <admiralty-link href="http://www.example.com">Accessibility</admiralty-link>
   </admiralty-footer>` };
 
+export const VariantStandard: Story = { render: args => html`
+  <admiralty-footer
+    image-link="${args.imageLink}"
+    variant="${FooterType.Standard}"
+    image-alt="${args.imageAlt}"
+    text="${args.text}">
+  </admiralty-footer>` };
+
 export const VariantCompact: Story = { render: args => html`
   <admiralty-footer
     image-link="${args.imageLink}"
@@ -48,10 +56,32 @@ export const VariantCompact: Story = { render: args => html`
     text="© Crown copyright 2024 UK Hydrographic Office">
   </admiralty-footer>` };
 
-export const VariantStandard: Story = { render: args => html`
+export const VariantCompactFloatRight: Story = { render: args => html`
   <admiralty-footer
     image-link="${args.imageLink}"
-    variant="${FooterType.Standard}"
+    style="float: right"
+    variant="${FooterType.Compact}"
     image-alt="${args.imageAlt}"
-    text="${args.text}">
+    text="© Crown copyright 2024 UK Hydrographic Office">
+  </admiralty-footer>` };
+
+export const VariantCompactWithLinks: Story = { render: args => html`
+  <admiralty-footer
+    image-link="${args.imageLink}"
+    variant="${FooterType.Compact}"
+    image-alt="${args.imageAlt}"
+    text="© Crown copyright 2024 UK Hydrographic Office">
+    <admiralty-link href="http://www.example.com" new-tab="true">Privacy policy</admiralty-link>
+    <admiralty-link href="http://www.example.com">Accessibility statement</admiralty-link>
+  </admiralty-footer>` };
+
+export const VariantCompactWithLinksFloatRight: Story = { render: args => html`
+  <admiralty-footer
+    image-link="${args.imageLink}"
+    style="float: right"
+    variant="${FooterType.Compact}"
+    image-alt="${args.imageAlt}"
+    text="© Crown copyright 2024 UK Hydrographic Office">
+    <admiralty-link href="http://www.example.com" new-tab="true">Privacy policy</admiralty-link>
+    <admiralty-link href="http://www.example.com">Accessibility statement</admiralty-link>
   </admiralty-footer>` };

@@ -1,4 +1,4 @@
-import { Component, Prop, h } from "@stencil/core";
+import { Component, Prop, h, State, Listen, Element } from '@stencil/core';
 import { FooterType, FooterTypes } from './footer.types';
 
 /**
@@ -8,9 +8,11 @@ import { FooterType, FooterTypes } from './footer.types';
 @Component({
   tag: 'admiralty-footer',
   styleUrl: 'footer.scss',
-  scoped: true,
+  shadow: true
 })
 export class FooterComponent {
+  @Element() el: HTMLElement;
+
   /**
    * The type of footer to render. Valid values are `standard`, `compact`.
    * Default value is `standard`.
@@ -35,102 +37,43 @@ export class FooterComponent {
    */
   @Prop() text = `© Crown copyright ${new Date().getFullYear()} UK Hydrographic Office`;
 
-  render() {
-    switch (this.variant) {
-      case FooterType.Standard:
-        this.imageSrc = 'svg/UKHO stacked logo.svg';
-        break;
-      case FooterType.Compact:
-        this.imageSrc = 'svg/UKHO crest logo.svg';
-        break;
-      default:
-        this.imageSrc = 'svg/UKHO stacked logo.svg'
+  @State() hasSlotContent: boolean = false;
+
+  componentDidRender(): void {
+    this.checkSlotContent()
+  }
+
+  @Listen('slotchange', { capture: true })
+  handleSlotChange() {
+    this.checkSlotContent()
+  }
+
+  checkSlotContent(): void {
+    const slot = this.el.shadowRoot.querySelector('slot') as HTMLSlotElement;
+    if (slot) {
+      this.hasSlotContent = slot.assignedNodes().length > 1;
     }
+  }
 
+  render() {
     return (
-      // NOTE: Set width matches figma designs
-      // <footer class={`${this.variant === FooterType.Compact && 'footer-compact'}`}>
-      //   <div {...(this.variant === FooterType.Compact && { class: 'footer-container'})}>
-      //     <div class="footer-branding">
-      //       <div class="footer-img">
-      //         <a href={this.imageLink}>
-      //           <img src={this.imageSrc} alt={this.imageAlt} />
-      //         </a>
-      //       </div>
-      //     </div>
-      //     {this.variant === FooterType.Compact && <div class="footer-seperator"></div>}
-      //     <div class="footer-content">
-      //       {this.variant !== FooterType.Compact && <nav aria-label="Footer Links" class="footer-links">
-      //         <slot></slot>
-      //       </nav>}
-      //       <div class="footer-text">
-      //         <p>{this.text}</p>
-      //       </div>
-      //     </div>
-      //   </div>
-      // </footer>
-
-      // Note: Pinned to the left and stretched
-      // <footer class={`${this.variant === FooterType.Compact && 'footer-compact'}`}>
-      //   <div class="footer-branding">
-      //     <div class="footer-img">
-      //       <a href={this.imageLink}>
-      //         <img src={this.imageSrc} alt={this.imageAlt} />
-      //       </a>
-      //     </div>
-      //   </div>
-      //   {this.variant === FooterType.Compact && <div class="footer-seperator"></div>}
-      //   <div class="footer-content">
-      //     {this.variant !== FooterType.Compact && <nav aria-label="Footer Links" class="footer-links">
-      //       <slot></slot>
-      //     </nav>}
-      //     <div class="footer-text">
-      //       <p>{this.text}</p>
-      //     </div>
-      //   </div>
-      // </footer>
-
-      // // Note: Centered and stretched
       <footer class={`${this.variant === FooterType.Compact && 'footer-compact'}`}>
-        <div class="footer-container">
-          <div class="footer-branding">
-            <div class="footer-img">
-              <a href={this.imageLink}>
-                <img src={this.imageSrc} alt={this.imageAlt} />
-              </a>
-            </div>
+        {this.variant !== FooterType.Compact && <div class="footer-branding">
+          <div class="footer-img">
+            <a href={this.imageLink}>
+              <img src={this.imageSrc} alt={this.imageAlt} />
+            </a>
           </div>
-          {this.variant === FooterType.Compact && <div class="footer-seperator"></div>}
-          <div class="footer-content">
-            {this.variant !== FooterType.Compact && <nav aria-label="Footer Links" class="footer-links">
-              <slot></slot>
-            </nav>}
-            <div class="footer-text">
-              <p>{this.text}</p>
-            </div>
+        </div>}
+        <div class="footer-content">
+          <nav aria-label="Footer Links" class={`footer-links ${this.hasSlotContent && 'text-padding'}`}>
+            <slot onSlotchange={() => this.handleSlotChange()}></slot>
+          </nav>
+          <div class="footer-text">
+            <p>{this.text}</p>
           </div>
         </div>
       </footer>
-
-
-      // Note: Original
-      // <footer>
-      //   <div class="footer-branding">
-      //     <div class="footer-img">
-      //       <a href={this.imageLink}>
-      //         <img src={this.imageSrc} alt={this.imageAlt} />
-      //       </a>
-      //     </div>
-      //   </div>
-      //   <div class="footer-content">
-      //     <nav aria-label="Footer Links" class="footer-links">
-      //       <slot></slot>
-      //     </nav>
-      //     <div class="footer-text">
-      //       <p>{this.text}</p>
-      //     </div>
-      //   </div>
-      // </footer>
     );
   }
 }

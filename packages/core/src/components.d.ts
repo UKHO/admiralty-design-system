@@ -21,6 +21,7 @@ export { ButtonVariant } from "./components/button/button.types";
 export { IconName, IconPrefix } from "@fortawesome/fontawesome-svg-core";
 export { CheckboxChangeEventDetail } from "./components/checkbox/checkbox.interface";
 export { FileInputChangeEventDetail } from "./components/file-input/file-input.interface";
+export { FooterTypes } from "./components/footer/footer.types";
 export { IconName as IconName1 } from "@fortawesome/free-solid-svg-icons";
 export { InputChangeEventDetail } from "./components/input/input.interface";
 export { RadioGroupChangeEventDetail } from "./components/radio-group/radio-group-interface";
