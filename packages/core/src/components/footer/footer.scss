@@ -118,6 +118,11 @@ footer.footer-compact {
 
       @include not-desktop {
         row-gap: 0;
+
+        &.text-padding {
+          padding-top: .2rem;
+          row-gap: .2rem;
+        }
       }
 
       font-size: 0.625rem;
