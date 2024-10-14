@@ -216,7 +216,7 @@
   <hr />
   <admiralty-button type="submit">Submit</admiralty-button>
 </form>
-<admiralty-icon iconName="hippo"></admiralty-icon>
+<admiralty-icon name="home"></admiralty-icon>
 <admiralty-progress-bar error="false" progression="60" label="Progress Bar Label"></admiralty-progress-bar>
 <admiralty-side-nav label="Software Stage Menu">
   <admiralty-side-nav-item
@@ -361,7 +361,7 @@
   description="If you leave this page, your survey won't be saved and can't be recovered"
 >
   <div slot="content">
-    <admiralty-icon icon-name="triangle-exclamation" icon-prefix="fas"></admiralty-icon>
+    <admiralty-icon name="triangle-exclamation" icon-prefix="fas"></admiralty-icon>
     <div>If you leave this page, your survey won&apos;t be saved and can&apos;t be recovered</div>
   </div>
   <div slot="actions">
@@ -371,4 +371,34 @@
 </admiralty-modal-dialog>
 
 <admiralty-footer image-src="assets/svg/UKHO%20stacked%20logo.svg" />
+
+<div style="background-color: #ccc; display: flex; height: 100vh">
+  <admiralty-side-bar label="Application navigation" logo-img-url="assets/svg/UKHO%20crest.svg">
+    <admiralty-side-bar-item active="false" href="/contents" suppress-redirect="true" icon="list-alt-outline"
+      >Contents</admiralty-side-bar-item
+    >
+    <admiralty-side-bar-item active="true" href="/bookmarks" suppress-redirect="true" icon="bookmark-outline"
+      >Bookmarks</admiralty-side-bar-item
+    >
+    <admiralty-side-bar-item active="false" href="/recents" suppress-redirect="true" icon="history"
+      >Recents</admiralty-side-bar-item
+    >
+    <admiralty-side-bar-item
+      active="false"
+      href="/update"
+      suppress-redirect="true"
+      icon="download-for-offline-outline"
+      slot="footer"
+      >Update</admiralty-side-bar-item
+    >
+    <admiralty-side-bar-item
+      active="false"
+      href="/settings"
+      suppress-redirect="true"
+      icon="settings-outline"
+      slot="footer"
+      >Settings</admiralty-side-bar-item
+    >
+  </admiralty-side-bar>
+</div>
 

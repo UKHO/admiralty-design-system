@@ -16,7 +16,7 @@
 
 @font-face {
   font-family: "JohnstonITC";
-  src: url("/assets/webfonts/JohnstonITC/italic/JohnstonITCStd-MediumIta.woff2")  format("woff2");
+  src: url("/assets/webfonts/JohnstonITC/italic/JohnstonITCStd-MediumIta.woff2") format("woff2");
   src: url("/assets/webfonts/JohnstonITC/italic/JohnstonITCStd-MediumIta.woff") format("woff");
   font-weight: 400;
   font-style: italic;
@@ -33,7 +33,7 @@
 @font-face {
   font-family: "JohnstonITC";
   src: url("/assets/webfonts/JohnstonITC/light-italic/JohnstonITCStd-LightIta.woff2") format("woff2");
-  src: url("/assets/webfonts/JohnstonITC/light-italic/JohnstonITCStd-LightIta.woff")format("woff");
+  src: url("/assets/webfonts/JohnstonITC/light-italic/JohnstonITCStd-LightIta.woff") format("woff");
   font-weight: 300;
   font-style: italic;
 }
@@ -48,3 +48,4 @@
   font-family: "Font Awesome 5 Brands";
   font-weight: 400;
 }
+

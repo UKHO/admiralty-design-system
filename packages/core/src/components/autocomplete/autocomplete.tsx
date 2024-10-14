@@ -600,7 +600,10 @@ export class AutocompleteComponent {
             required={this.required}
             value={this.query}
           />
-          <admiralty-icon class={`autocomplete-down-icon ${this.disabled ? 'disabled' : ''}`} icon-name={this.menuOpen || showNoOptionsFound ? 'angle-up' : 'angle-down'} />
+          <admiralty-icon
+            class={`autocomplete-down-icon ${this.disabled ? 'disabled' : ''}`}
+            name={this.menuOpen || showNoOptionsFound ? 'keyboard-arrow-up-rounded' : 'keyboard-arrow-down-rounded'}
+          />
         </div>
 
         <ul {...computedMenuAttributes} class={menuClassList.join(' ')}>

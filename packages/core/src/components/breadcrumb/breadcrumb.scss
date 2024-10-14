@@ -1,4 +1,4 @@
-@import "breadcrumb.vars";
+@import 'breadcrumb.vars';
 
 :host {
   display: flex;
@@ -6,8 +6,8 @@
 }
 
 .breadcrumb-icon {
-  margin: 0 10px;
-  font-size: 12px;
+  margin: -4px 9px 0px 10px;
+  font-size: 14px;
   color: $breadcrumb-separator-colour;
 }
 

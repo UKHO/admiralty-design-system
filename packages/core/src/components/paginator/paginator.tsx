@@ -1,5 +1,4 @@
 import { Component, Prop, h, Event, EventEmitter } from '@stencil/core';
-import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   tag: 'admiralty-paginator',
@@ -55,7 +54,7 @@ export class PaginatorComponent {
         <p aria-live="polite">{this.label}</p>
         <admiralty-button
           variant="icon"
-          icon={faChevronLeft.iconName}
+          icon="arrow-back-ios-new-rounded"
           disabled={this.currentPage === 1}
           aria-disabled={this.currentPage === 1}
           onClick={this.prev.bind(this)}
@@ -64,7 +63,7 @@ export class PaginatorComponent {
         ></admiralty-button>
         <admiralty-button
           variant="icon"
-          icon={faChevronRight.iconName}
+          icon="arrow-forward-ios-rounded"
           disabled={this.currentPage === this.pages}
           aria-disabled={this.currentPage === this.pages}
           onClick={this.next.bind(this)}

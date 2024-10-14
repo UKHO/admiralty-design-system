@@ -4,6 +4,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 16px;
 
   font-size: $button-font-size;
   line-height: $button-line-height;
@@ -210,9 +211,7 @@ button.text {
 
   &:focus {
     border: none;
-    box-shadow:
-      0 -2px $button-focus-colour,
-      0 4px $button-focus-text-colour;
+    box-shadow: 0 -2px $button-focus-colour, 0 4px $button-focus-text-colour;
     text-decoration: none;
     padding: 0;
     ::slotted(*) {
