@@ -14,8 +14,8 @@
 
 ## CSS Custom Properties
 
-| Name                                 | Description                    |
-| ------------------------------------ | ------------------------------ |
+| Name                                 | Description                     |
+| ------------------------------------ | ------------------------------- |
 | `--admiralty-card-heading-font-size` | Font size of the card's heading |
 
 

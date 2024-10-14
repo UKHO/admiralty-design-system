@@ -1,23 +1,13 @@
 @import 'card.vars';
 @import '../../styles/vars/globals';
 
-:host {
-  // Prev size: 18px (1.125rem)
-  --card-heading-font-size: var(--admiralty-card-heading-font-size, var(--admiralty-font-size-1));
-
-  /**
-   * @prop --admiralty-card-heading-font-size: Font size of the card's heading
-  **/
-}
-
-
 .card {
   display: flex;
   flex-direction: column;
   border: 1px solid $card-border-colour;
 
   & > h6 {
-    font-size: var(--card-heading-font-size);
+    font-size: $card-heading-font-size;
     height: 60px;
     line-height: 60px;
     border: 1px solid $card-heading-border-colour;
