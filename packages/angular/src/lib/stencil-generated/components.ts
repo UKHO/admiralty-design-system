@@ -369,14 +369,14 @@ export declare interface AdmiraltyFilterGroup extends Components.AdmiraltyFilter
 
 
 @ProxyCmp({
-  inputs: ['imageAlt', 'imageLink', 'imageSrc', 'text']
+  inputs: ['imageAlt', 'imageLink', 'imageSrc', 'text', 'variant']
 })
 @Component({
   selector: 'admiralty-footer',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['imageAlt', 'imageLink', 'imageSrc', 'text'],
+  inputs: ['imageAlt', 'imageLink', 'imageSrc', 'text', 'variant'],
 })
 export class AdmiraltyFooter {
   protected el: HTMLElement;
