@@ -38,6 +38,16 @@
 | `admiraltyChange` | Emitted when the value has changed. | `CustomEvent<AutoCompleteChangeEventDetail>` |
 
 
+## CSS Custom Properties
+
+| Name                                          | Description                             |
+| --------------------------------------------- | --------------------------------------- |
+| `--admiralty-autocomplete-icon-font-size`     | Font size of the autocompletes icon     |
+| `--admiralty-autocomplete-label-font-size`    | Font size of the autocompletes label    |
+| `--admiralty-autocomplete-option-font-size`   | Font size of the autocompletes option   |
+| `--admiralty-autocomplete-option-font-weight` | Font weight of the autocompletes option |
+
+
 ## Dependencies
 
 ### Depends on
