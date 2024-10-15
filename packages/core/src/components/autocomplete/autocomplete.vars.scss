@@ -1,11 +1,11 @@
 @import '../../styles/vars/globals';
 
 /**
- * @prop --admiralty-autocomplete-label-font-size: Font size of the autocompletes label
- * @prop --admiralty-autocomplete-option-font-size: Font size of the autocompletes option
- * @prop --admiralty-autocomplete-icon-font-size: Font size of the autocompletes icon
+ * @prop --admiralty-autocomplete-label-font-size: Font size for the autocompletes label
+ * @prop --admiralty-autocomplete-option-font-size: Font size for the autocompletes option
+ * @prop --admiralty-autocomplete-icon-font-size: Font size for the autocompletes icon
 
- * @prop --admiralty-autocomplete-option-font-weight: Font weight of the autocompletes option
+ * @prop --admiralty-autocomplete-option-font-weight: Font weight for the autocompletes option
 **/
 
 $autocomplete-background-colour: var(--admiralty-background-colour) !default;
