@@ -1,4 +1,12 @@
 @import '../../styles/vars/globals';
 
+/**
+ * @prop --admiralty-expansion-title-font-size: Font size of the expansion title
+ * @prop --admiralty-expansion-title-font-weight: Font weight of the expansion title
+**/
+
+$expansion-title-text-size: var(--admiralty-expansion-title-font-size, var(--admiralty-font-size-0));
+$expansion-title-text-weight: var(--admiralty-expansion-title-font-weight, var(--admiralty-font-weight-medium));
+
 $expansion-border-colour: var(--admiralty-colour-light) !default;
 $expansion-header-icon-colour: var(--admiralty-colour-primary) !default;
