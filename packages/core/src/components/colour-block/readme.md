@@ -27,6 +27,14 @@
 | `colourBlockLinkClicked` | An event emitted when this Colour Block link is clicked | `CustomEvent<string>` |
 
 
+## CSS Custom Properties
+
+| Name                                          | Description                            |
+| --------------------------------------------- |----------------------------------------|
+| `--admiralty-colour-block-action-font-size`   | Font size of the colour block action   |
+| `--admiralty-colour-block-action-font-weight` | Font weight of the colour block action |
+
+
 ## Dependencies
 
 ### Depends on
