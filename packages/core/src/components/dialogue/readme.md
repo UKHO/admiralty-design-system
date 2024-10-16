@@ -14,6 +14,14 @@
 | `type`        | `type`         | The type of dialogue box to render.                                                                                       | `"error" \| "info" \| "success" \| "warning"` | `'info'`    |
 
 
+## CSS Custom Properties
+
+| Name                                     | Description                       |
+| ---------------------------------------- | --------------------------------- |
+| `--admiralty-dialogue-title-font-size`   | Font size of the dialogue title   |
+| `--admiralty-dialogue-title-font-weight` | Font weight of the dialogue title |
+
+
 ## Dependencies
 
 ### Used by
