@@ -1,17 +1,20 @@
 @import '../../styles/vars/globals';
 
-$header-text-size: 18px;
-$header-text-weight: 300;
+/**
+ * @prop --admiralty-header-font-size: Font size of the header
+ * @prop --admiralty-header-font-weight: Font weight of the header
+ * @prop --admiralty-header-title-font-weight: Font weight of the header title
+**/
+
+$header-text-size: var(--admiralty-header-font-size, var(--admiralty-font-size-0));
+$header-text-weight: var(--admiralty-header-font-weight, var(--admiralty-font-weight-normal));; // TODO: Need to confirm if this is still required.
+$header-title-text-weight: var(--admiralty-header-title-font-weight, var(--admiralty-font-weight-medium));
 $header-text-line-height: 24px;
 
 $header-background-colour: var(--admiralty-background-colour); // TODO: replace with variable
 $header-border-colour: var(--admiralty-colour-light);
-
 $header-logo-colour: var(--admiralty-colour-primary);
 $header-separator-colour: var(--admiralty-colour-light);
-
 $header-outline-colour: var(--admiralty-text-colour);
-
-$header-title-text-weight: 400;
-
 $header-icon-colour: var(--admiralty-colour-primary);
+

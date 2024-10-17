@@ -31,6 +31,15 @@
 | `"profile"` | 'admiralty-header-profile' components are placed here (the login/logout) options                                                                     |
 
 
+## CSS Custom Properties
+
+| Name                                   | Description                     |
+| -------------------------------------- | ------------------------------- |
+| `--admiralty-header-font-size`         | Font size of the header         |
+| `--admiralty-header-font-weight`       | Font weight of the header       |
+| `--admiralty-header-title-font-weight` | Font weight of the header title |
+
+
 ## Dependencies
 
 ### Depends on
