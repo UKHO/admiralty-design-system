@@ -16,10 +16,11 @@
 
 ## CSS Custom Properties
 
-| Name                                     | Description                       |
-| ---------------------------------------- | --------------------------------- |
-| `--admiralty-dialogue-title-font-size`   | Font size of the dialogue title   |
-| `--admiralty-dialogue-title-font-weight` | Font weight of the dialogue title |
+| Name                                        | Description                          |
+| ------------------------------------------- | ------------------------------------ |
+| `--admiralty-dialogue-title-font-size`      | Font size of the dialogue title      |
+| `--admiralty-dialogue-title-font-weight`    | Font weight of the dialogue title    |
+| `--admiralty-dialogue-title-icon-font-size` | Font size of the dialogue title icon |
 
 
 ## Dependencies
