@@ -25,8 +25,9 @@
       font-weight: $colour-block-action-font-weight;
       font-size: $colour-block-action-text-size;
       line-height: $colour-block-action-line-height;
+
       @include not-desktop {
-        font-size: 20px;
+        font-size: $colour-block-action-not-desktop-text-size;
         line-height: 30px;
       }
     }

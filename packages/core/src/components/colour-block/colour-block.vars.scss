@@ -2,10 +2,12 @@
 
 /**
  * @prop --admiralty-colour-block-action-font-size: Font size of the colour block action
+ * @prop --admiralty-colour-block-action-not-desktop-font-size: Font size of the colour block action when not in desktop view
  * @prop --admiralty-colour-block-action-font-weight: Font weight of the colour block action
 **/
 
 $colour-block-action-text-size: var(--admiralty-colour-block-action-font-size, var(--admiralty-font-size-0));
+$colour-block-action-not-desktop-text-size: var(--admiralty-colour-block-action-not-desktop-font-size, var(--admiralty-font-size-0));
 $colour-block-action-font-weight: var(--admiralty-colour-block-action-font-weight, var(--admiralty-font-weight-normal));
 $colour-block-action-line-height: 30px;
 
