@@ -4,10 +4,7 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "component-library": [
-        "dist/component-library/component-library",
-        "dist/component-library"
-      ]
+      "component-library": ["dist/component-library/component-library", "dist/component-library"]
     },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
@@ -23,20 +20,17 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "es2015",
-    "lib": [
-      "es2017",
-      "dom"
-    ],
-    "skipLibCheck": true,
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true
   },
-  "include": [
-    "src"
-  ],
+  "include": ["src"],
   "angularCompilerOptions": {
     "annotateForClosureCompiler": true,
     "strictMetadataEmit": true,
     "skipTemplateCodegen": true,
     "fullTemplateTypeCheck": false,
     "enableResourceInlining": true,
+    "compilationMode": "partial"
   }
 }
+

@@ -103,14 +103,14 @@ export declare interface AdmiraltyBreadcrumbs extends Components.AdmiraltyBreadc
 
 
 @ProxyCmp({
-  inputs: ['disabled', 'icon', 'type', 'variant']
+  inputs: ['disabled', 'form', 'icon', 'name', 'type', 'value', 'variant']
 })
 @Component({
   selector: 'admiralty-button',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['disabled', 'icon', 'type', 'variant'],
+  inputs: ['disabled', 'form', 'icon', 'name', 'type', 'value', 'variant'],
 })
 export class AdmiraltyButton {
   protected el: HTMLElement;
@@ -147,14 +147,14 @@ export declare interface AdmiraltyCard extends Components.AdmiraltyCard {}
 
 
 @ProxyCmp({
-  inputs: ['checkboxRight', 'checked', 'disabled', 'labelText', 'name', 'value']
+  inputs: ['checkboxRight', 'checked', 'disabled', 'labelHidden', 'labelText', 'name', 'value']
 })
 @Component({
   selector: 'admiralty-checkbox',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['checkboxRight', 'checked', 'disabled', 'labelText', 'name', 'value'],
+  inputs: ['checkboxRight', 'checked', 'disabled', 'labelHidden', 'labelText', 'name', 'value'],
 })
 export class AdmiraltyCheckbox {
   protected el: HTMLElement;
@@ -176,23 +176,23 @@ export declare interface AdmiraltyCheckbox extends Components.AdmiraltyCheckbox 
   /**
    * Event is fired when the form control gains focus @event checkboxFocus
    */
-  checkboxFocus: EventEmitter<CustomEvent<any>>;
+  checkboxFocus: EventEmitter<CustomEvent<FocusEvent>>;
   /**
    * Event is fired when the form control loses focus @event checkboxBlur
    */
-  checkboxBlur: EventEmitter<CustomEvent<any>>;
+  checkboxBlur: EventEmitter<CustomEvent<FocusEvent>>;
 }
 
 
 @ProxyCmp({
-  inputs: ['actionText', 'colour', 'heading', 'height', 'width']
+  inputs: ['actionText', 'colour', 'enableCardEvent', 'heading', 'height', 'href', 'linkText', 'suppressRedirect', 'width']
 })
 @Component({
   selector: 'admiralty-colour-block',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['actionText', 'colour', 'heading', 'height', 'width'],
+  inputs: ['actionText', 'colour', 'enableCardEvent', 'heading', 'height', 'href', 'linkText', 'suppressRedirect', 'width'],
 })
 export class AdmiraltyColourBlock {
   protected el: HTMLElement;
@@ -213,14 +213,14 @@ export declare interface AdmiraltyColourBlock extends Components.AdmiraltyColour
 
 
 @ProxyCmp({
-  inputs: ['heading', 'type']
+  inputs: ['heading', 'sectionRole', 'type']
 })
 @Component({
   selector: 'admiralty-dialogue',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['heading', 'type'],
+  inputs: ['heading', 'sectionRole', 'type'],
 })
 export class AdmiraltyDialogue {
   protected el: HTMLElement;
@@ -232,6 +232,28 @@ export class AdmiraltyDialogue {
 
 
 export declare interface AdmiraltyDialogue extends Components.AdmiraltyDialogue {}
+
+
+@ProxyCmp({
+  inputs: ['heading']
+})
+@Component({
+  selector: 'admiralty-error-summary',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['heading'],
+})
+export class AdmiraltyErrorSummary {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface AdmiraltyErrorSummary extends Components.AdmiraltyErrorSummary {}
 
 
 @ProxyCmp({
@@ -425,6 +447,34 @@ export declare interface AdmiraltyHeaderMenuItem extends Components.AdmiraltyHea
 
 
 @ProxyCmp({
+  inputs: ['active', 'href', 'menuTitle', 'suppressRedirect']
+})
+@Component({
+  selector: 'admiralty-header-menu-link',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['active', 'href', 'menuTitle', 'suppressRedirect'],
+})
+export class AdmiraltyHeaderMenuLink {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['menuItemClick']);
+  }
+}
+
+
+export declare interface AdmiraltyHeaderMenuLink extends Components.AdmiraltyHeaderMenuLink {
+  /**
+   * The event that is fired when a user clicks on the menu.
+   */
+  menuItemClick: EventEmitter<CustomEvent<void>>;
+}
+
+
+@ProxyCmp({
   inputs: ['isSignedIn', 'signInOnly', 'signedInText']
 })
 @Component({
@@ -464,14 +514,14 @@ the sign in button
 
 
 @ProxyCmp({
-  inputs: ['menuTitle']
+  inputs: ['href', 'menuTitle', 'suppressRedirect']
 })
 @Component({
   selector: 'admiralty-header-sub-menu-item',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['menuTitle'],
+  inputs: ['href', 'menuTitle', 'suppressRedirect'],
 })
 export class AdmiraltyHeaderSubMenuItem {
   protected el: HTMLElement;
@@ -485,7 +535,7 @@ export class AdmiraltyHeaderSubMenuItem {
 
 export declare interface AdmiraltyHeaderSubMenuItem extends Components.AdmiraltyHeaderSubMenuItem {
   /**
-   * The event that is fired when a user clicks on the menu.
+   * The event that is fired when a user clicks on the menu item.
 Event contains the menu item text.
    */
   subMenuItemClick: EventEmitter<CustomEvent<string>>;
@@ -558,14 +608,14 @@ export declare interface AdmiraltyIcon extends Components.AdmiraltyIcon {}
 
 
 @ProxyCmp({
-  inputs: ['autocomplete', 'disabled', 'hint', 'invalid', 'invalidMessage', 'label', 'maxLength', 'name', 'placeholder', 'required', 'type', 'value', 'width']
+  inputs: ['autocomplete', 'disabled', 'hint', 'invalid', 'invalidMessage', 'label', 'name', 'placeholder', 'required', 'type', 'value', 'width']
 })
 @Component({
   selector: 'admiralty-input',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['autocomplete', 'disabled', 'hint', 'invalid', 'invalidMessage', 'label', 'maxLength', 'name', 'placeholder', 'required', 'type', 'value', 'width'],
+  inputs: ['autocomplete', 'disabled', 'hint', 'invalid', 'invalidMessage', 'label', 'name', 'placeholder', 'required', 'type', 'value', 'width'],
 })
 export class AdmiraltyInput {
   protected el: HTMLElement;
@@ -814,14 +864,14 @@ export declare interface AdmiraltyRadio extends Components.AdmiraltyRadio {
 
 
 @ProxyCmp({
-  inputs: ['displayVertical', 'invalid', 'invalidMessage', 'name', 'value']
+  inputs: ['disabled', 'displayVertical', 'hint', 'invalid', 'invalidMessage', 'label', 'name', 'value']
 })
 @Component({
   selector: 'admiralty-radio-group',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['displayVertical', 'invalid', 'invalidMessage', 'name', 'value'],
+  inputs: ['disabled', 'displayVertical', 'hint', 'invalid', 'invalidMessage', 'label', 'name', 'value'],
 })
 export class AdmiraltyRadioGroup {
   protected el: HTMLElement;
@@ -1153,14 +1203,14 @@ export declare interface AdmiraltyTableRow extends Components.AdmiraltyTableRow 
 
 
 @ProxyCmp({
-  inputs: ['disabled', 'hint', 'invalid', 'invalidMessage', 'label', 'maxLength', 'value', 'width']
+  inputs: ['disabled', 'hint', 'invalid', 'invalidMessage', 'label', 'value', 'width']
 })
 @Component({
   selector: 'admiralty-textarea',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['disabled', 'hint', 'invalid', 'invalidMessage', 'label', 'maxLength', 'value', 'width'],
+  inputs: ['disabled', 'hint', 'invalid', 'invalidMessage', 'label', 'value', 'width'],
 })
 export class AdmiraltyTextarea {
   protected el: HTMLElement;

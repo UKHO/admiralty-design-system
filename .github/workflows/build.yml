@@ -2,9 +2,6 @@ name: 'Design System Build'
 
 on:
   push:
-    paths-ignore:
-      - 'packages/docs/**'
-      - 'packages/website/**'
 
 jobs:
   build:

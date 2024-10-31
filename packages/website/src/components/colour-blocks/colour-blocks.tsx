@@ -11,8 +11,11 @@ export default function ColourBlocks() {
         height={434}
         colour="admiralty-blue"
         heading="Setting it up"
-        actionText="Get started"
-        onColourBlockLinkClicked={() => alert("Coming soon")}>
+        linkText="Get started"
+        href="/getting-started"
+        suppressRedirect={true}
+        enableCardEvent={true}
+        onColourBlockLinkClicked={() => router.push("/getting-started")}>
         Go to Get Started to see how to install the Design System and start using it in your builds.
       </AdmiraltyColourBlock>
       <AdmiraltyColourBlock
@@ -20,7 +23,10 @@ export default function ColourBlocks() {
         height={434}
         colour="teal"
         heading="How we do things"
-        actionText="Principles"
+        linkText="Principles"
+        href="/principles"
+        suppressRedirect={true}
+        enableCardEvent={true}
         onColourBlockLinkClicked={() => router.push("/principles")}>
         Our Principles section covers our approach to accessibility, design, research and content
       </AdmiraltyColourBlock>
@@ -29,7 +35,10 @@ export default function ColourBlocks() {
         height={434}
         colour="bright-blue"
         heading="Component examples"
-        actionText="Components"
+        linkText="Components"
+        href="/components"
+        suppressRedirect={true}
+        enableCardEvent={true}
         onColourBlockLinkClicked={() => router.push("/components")}>
         Visit Components to see examples, usage and accessibility requirements and get the code
       </AdmiraltyColourBlock>
@@ -38,7 +47,10 @@ export default function ColourBlocks() {
         height={434}
         colour="teal"
         heading="Support user needs"
-        actionText="Patterns"
+        linkText="Patterns"
+        href="#"
+        suppressRedirect={true}
+        enableCardEvent={true}
         onColourBlockLinkClicked={() => alert("Coming soon")}>
         Patterns have been developed to meet a user need - such as ‘find a location’ or ‘complete a form’
       </AdmiraltyColourBlock>
@@ -47,10 +59,14 @@ export default function ColourBlocks() {
         height={434}
         colour="bright-blue"
         heading="Build ‘on brand’"
-        actionText="Brand guide"
+        linkText="Brand guide"
+        href="/brand-guide"
+        suppressRedirect={true}
+        enableCardEvent={true}
         onColourBlockLinkClicked={() => router.push("/brand-guide")}>
         The Design System helps teams develop products in the ADMIRALTY brand
       </AdmiraltyColourBlock>
     </div>
   );
 }
+
