@@ -1,0 +1,21 @@
+@import '../../styles/vars/globals';
+
+$file-input-font-size: 18px;
+$file-input-line-height: 24px;
+$file-input-font-weight: 300;
+
+$file-input-background-colour: var(--admiralty-background-colour-tint);
+$file-input-background-hover-colour: var(--admiralty-hover-background-colour-tint);
+$file-input-border-colour: var(--admiralty-colour-primary);
+$file-input-invalid-border-colour: var(--admiralty-colour-danger);
+$file-input-focus-colour: var(--admiralty-focus-colour);
+$file-input-focus-text-colour: var(--admiralty-text-colour);
+
+// Icon
+$file-input-icon-colour: var(--admiralty-colour-primary);
+$file-input-icon-size: 24px;
+
+// Label
+$file-input-label-colour: var(--admiralty-colour-primary);
+$file-input-label-font-size: 18px;
+$file-input-label-font-weight: 500;

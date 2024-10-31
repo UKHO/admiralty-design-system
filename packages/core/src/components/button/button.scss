@@ -1,23 +1,27 @@
-@use "../../scss/base/responsive";
-
-@use "../../scss/vars/colours";
-@use "../../scss/vars/typography";
+@import 'button.vars';
 
 @mixin button-defaults {
   display: inline-flex;
   align-items: center;
   justify-content: center;
 
-  font-family: typography.$font-family;
-  font-size: typography.$font-size-normal;
-  line-height: typography.$font-line-height-normal;
-  font-size: 18px;
-  font-weight: typography.$font-weight-medium;
+  font-size: $button-font-size;
+  line-height: $button-line-height;
+  font-weight: $button-font-weight;
   background-color: unset;
   cursor: pointer;
 
   &:focus {
-    outline: 3px solid colours.$colour-utility-focus;
+    outline: none;
+    color: $button-focus-text-colour;
+    background-color: $button-focus-colour;
+    border: none;
+    border-bottom: 4px solid $button-focus-text-colour;
+    padding: 12px 18px 8px;
+
+    ::slotted(*) {
+      color: $button-focus-text-colour !important;
+    }
   }
 
   &:disabled {
@@ -30,7 +34,7 @@
   i {
     display: inline-block;
     font-size: 18px;
-    color: colours.$colour-button-icon;
+    color: $button-icon-colour;
     padding: 10px 16px;
   }
 }
@@ -42,7 +46,7 @@
   white-space: nowrap;
   min-width: 50px;
 
-  @include responsive.not-desktop {
+  @include not-desktop {
     min-width: unset;
     max-width: 200px;
     width: 100%;
@@ -53,7 +57,7 @@
   i {
     display: inline-block;
     font-size: 24px;
-    color: colours.$colour-button-icon;
+    color: $button-icon-colour;
     padding-left: 15px;
   }
 }
@@ -61,140 +65,163 @@
 /* Primary Buttons */
 button.primary {
   @include button;
-  background-color: colours.$colour-button-standard;
-  color: colours.$colour-button-text;
-  border: 2px solid colours.$colour-button-standard;
+  background-color: $button-colour-standard;
+  color: $button-text-colour-standard;
+  border: 2px solid $button-border-colour-standard;
 
   &:hover {
-    background-color: colours.$colour-button-hover;
-    border: 2px solid colours.$colour-button-hover;
+    background-color: $button-hover-colour-standard;
+    border: 2px solid $button-hover-colour-standard;
+    color: $button-hover-text-colour-standard;
+    border-color: $button-hover-border-colour-standard;
+    padding: 10px 16px;
+  }
+
+  &:hover:focus {
+    padding: 12px 18px 8px;
+  }
+
+  &:hover:focus:active {
+    padding: 10px 16px;
   }
 
   &:enabled:active {
-    background-color: colours.$colour-button-selected;
-    border: 2px solid colours.$colour-button-border-selected;
-    color: colours.$colour-button-icon-selected;
+    background-color: $button-active-colour-standard;
+    border: 2px solid $button-active-border-colour-standard;
+    color: $button-active-text-colour-standard;
 
     i {
-      color: colours.$colour-button-icon-selected;
+      color: $button-active-text-colour-standard;
     }
 
     p {
-      color: colours.$colour-button-text-selected;
+      color: $button-active-text-colour-standard;
     }
   }
 
   &:disabled {
-    background-color: colours.$colour-button-deselected;
-    border: 2px solid colours.$colour-button-deselected;
+    background-color: $button-colour-deselected;
+    border: 2px solid $button-border-colour-deselected;
   }
 }
 
 /* Secondary Buttons */
 button.secondary {
   @include button;
-  background-color: colours.$colour-button-secondary-standard;
-  color: colours.$colour-button-secondary-text;
-  border: 2px solid colours.$colour-button-secondary-border-standard;
+  background-color: $button-colour-secondary;
+  color: $button-text-colour-secondary;
+  border: 2px solid $button-border-colour-secondary;
 
   &:hover {
-    background-color: colours.$colour-button-secondary-hover;
-    border: 2px solid colours.$colour-button-secondary-border-hover;
+    background-color: $button-hover-colour-secondary;
+    color: $button-hover-text-colour-secondary;
+    border: 2px solid $button-hover-border-colour-secondary;
+    padding: 10px 16px;
   }
 
   &:enabled:active {
-    background-color: colours.$colour-button-secondary-selected;
-    border: 2px solid colours.$colour-button-secondary-selected;
-    color: colours.$colour-button-secondary-icon-selected;
+    background-color: $button-active-colour-secondary;
+    border: 2px solid $button-active-border-colour-secondary;
+    color: $button-active-text-colour-secondary;
 
     i {
-      color: colours.$colour-button-secondary-icon-selected;
+      color: $button-active-text-colour-secondary;
     }
 
     p {
-      color: colours.$colour-button-secondary-text-selected;
+      color: $button-active-text-colour-secondary;
     }
   }
 
   &:disabled {
-    background-color: colours.$colour-button-secondary-deselected;
-    border: 2px solid colours.$colour-button-secondary-deselected;
+    background-color: $button-colour-deselected;
+    border: 2px solid $button-border-colour-deselected;
   }
 
   i {
-    color: colours.$colour-button-secondary-icon;
+    color: $button-text-colour-secondary;
   }
 }
 
 /* Warning Buttons */
 button.warning {
   @include button;
-  background-color: colours.$colour-utility-error;
-  color: colours.$colour-white;
-  border: 2px solid colours.$colour-utility-error;
+  background-color: $button-colour-warning;
+  color: $button-text-colour-warning;
+  border: 2px solid $button-border-colour-warning;
 
   &:hover {
-    background-color: colours.darken(colours.$colour-utility-error);
-    border: 2px solid colours.darken(colours.$colour-utility-error);
+    background-color: $button-hover-colour-warning;
+    color: $button-text-colour-warning;
+    border: 2px solid $button-hover-border-colour-warning;
+    padding: 10px 16px;
   }
 
   &:enabled:active {
-    background-color: colours.$colour-white;
-    border: 2px solid colours.$colour-utility-error;
-    color: colours.$colour-utility-error;
+    background-color: $button-active-colour-warning;
+    border: 2px solid $button-active-border-colour-warning;
+    color: $button-active-text-colour-warning;
 
     i {
-      color: colours.$colour-utility-error;
+      color: $button-active-text-colour-warning;
     }
 
     p {
-      color: colours.$colour-utility-error;
+      color: $button-active-text-colour-warning;
     }
   }
 
   &:disabled {
-    background-color: colours.$colour-button-secondary-deselected;
-    border: 2px solid colours.$colour-button-secondary-deselected;
+    background-color: $button-colour-deselected;
+    border: 2px solid $button-border-colour-deselected;
     & > * {
       opacity: 0.5;
     }
   }
 
   i {
-    color: colours.$colour-white;
+    color: $button-text-colour-warning;
   }
 }
 
 /* Text Buttons */
 button.text {
   @include button-defaults;
-  color: colours.$colour-button-secondary-text;
+  color: $button-text-colour-secondary;
 
   &:enabled:active {
-    color: colours.$colour-button-secondary-text;
+    color: $button-text-colour-secondary;
 
     i {
-      color: colours.$colour-button-secondary-text;
+      color: $button-text-colour-secondary;
     }
 
     p {
-      color: colours.$colour-button-secondary-text;
+      color: $button-text-colour-secondary;
     }
   }
 
   &:disabled {
-    color: colours.$colour-button-secondary-deselected;
+    color: $button-colour-deselected;
     & > * {
       opacity: 0.5;
     }
   }
 
   &:focus {
-    outline-offset: 3px;
+    border: none;
+    box-shadow:
+      0 -2px $button-focus-colour,
+      0 4px $button-focus-text-colour;
+    text-decoration: none;
+    padding: 0;
+    ::slotted(*) {
+      color: $button-focus-text-colour !important;
+    }
   }
 
   i {
-    color: colours.$colour-button-secondary-icon;
+    color: $button-text-colour-secondary;
   }
 }
 
@@ -203,23 +230,43 @@ button.icon {
   @include button-defaults;
   min-height: 44px;
   min-width: 50px;
-  padding: 10px 10px;
 
-  background-color: var(--button-icon-background-colour, colours.$colour-bg-grey);
-  color: colours.$colour-admiralty-blue;
-  border: 2px solid colours.$colour-admiralty-blue;
+  background-color: $button-colour-icon;
+  color: $button-text-colour-icon;
+  border: 2px solid $button-border-colour-icon;
+  padding: 10px 14px;
+
+  &:focus {
+    padding: 12px 16px 8px;
+  }
+
+  &:hover {
+    background-color: $button-hover-colour-icon;
+    border: 2px solid $button-hover-border-colour-icon;
+    padding: 10px 14px;
+  }
 
   &:enabled:active {
-    background-color: colours.$colour-admiralty-blue;
-    color: colours.$colour-white;
+    background-color: $button-active-colour-icon;
+    color: $button-active-text-colour-icon;
+    border: 2px solid $button-active-border-colour-icon;
+    border: 2px solid transparent;
+
+    admiralty-icon {
+      color: $button-active-text-colour-icon !important;
+    }
   }
 
   &:disabled {
+    background-color: $button-disabled-colour-icon;
+    border: 2px solid $button-active-border-colour-icon;
     opacity: 0.3;
   }
 
   &:active:disabled {
-    background-color: colours.$colour-bg-grey;
+    background-color: $button-colour-deselected;
+    border: 2px solid $button-active-border-colour-icon;
+    opacity: 0.3;
   }
 
   i {

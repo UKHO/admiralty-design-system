@@ -16,6 +16,18 @@
 | `text`     | `text`     | The text of the pill.                 | `string`                                       | `undefined`        |
 
 
+## CSS Custom Properties
+
+| Name                                             | Description                                  |
+| ------------------------------------------------ | -------------------------------------------- |
+| `--admiralty-pill-background-colour`             | Background colour of the pill                |
+| `--admiralty-pill-item-number-background-colour` | Background colour for the pill's item number |
+| `--admiralty-pill-item-number-colour`            | Colour for the pill's item number            |
+| `--admiralty-pill-item-selected-icon`            | Colour of the icon for the pill // TODO      |
+| `--admiralty-pill-item-text-colour`              | Item text colour of the pill                 |
+| `--admiralty-secondary-pill-border-colour`       | border colour of the pill                    |
+
+
 ## Dependencies
 
 ### Depends on

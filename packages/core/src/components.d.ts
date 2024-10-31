@@ -133,13 +133,25 @@ export namespace Components {
          */
         "disabled": boolean;
         /**
+          * The `<form>` element to associate the button with (its form owner).
+         */
+        "form": string;
+        /**
           * When passed Font Awesome Icon name, then an icon will be rendered.
          */
         "icon": IconName;
         /**
+          * The name of the button, submitted as a pair with the button's value as part of the form data, when that button is used to submit the form.
+         */
+        "name": string;
+        /**
           * The default behavior of the button. Valid values are `button`, `submit` and `reset`. Default value is `submit`.
          */
         "type": 'button' | 'submit' | 'reset';
+        /**
+          * Defines the value associated with the button's name when it's submitted with the form data. This value is passed to the server in params when the form is submitted using this button.
+         */
+        "value": string;
         /**
           * The type of button to render. Valid values are `primary`, `secondary`, `warning`, `text` and `icon`. Default value is `primary`.
          */
@@ -165,7 +177,11 @@ export namespace Components {
          */
         "disabled": boolean;
         /**
-          * The text that's displayed alongside the checkbox
+          * This visually hides the labelText while preserving accessibility.
+         */
+        "labelHidden": boolean;
+        /**
+          * The label text must be provided and is displayed beside the checkbox, use the `labelHidden` property to control its visibility.
          */
         "labelText": string;
         /**
@@ -180,12 +196,17 @@ export namespace Components {
     interface AdmiraltyColourBlock {
         /**
           * The text to display on the action button
+          * @deprecated in favour of `href` and `linkText`
          */
         "actionText": string;
         /**
           * The background colour of the component.
          */
         "colour": 'admiralty-blue' | 'teal' | 'bright-blue';
+        /**
+          * Allow the card to be clicked. Will emit a `colourBlockLinkClicked` event. A value for `href` should also be provided to ensure the component conforms to accessibility standards.
+         */
+        "enableCardEvent": boolean;
         /**
           * The heading text to display.
          */
@@ -194,6 +215,18 @@ export namespace Components {
           * The height in pixels of the component.
          */
         "height": number;
+        /**
+          * The URL to link to.
+         */
+        "href": string;
+        /**
+          * The link text.
+         */
+        "linkText": string;
+        /**
+          * Causes the default browser redirect to be suppressed. Can be used in conjunction with the `colourBlockLinkClicked` event to use a navigation router and prevent a full page reload when navigating.
+         */
+        "suppressRedirect": boolean;
         /**
           * The width in pixels of the component.
          */
@@ -205,9 +238,19 @@ export namespace Components {
          */
         "heading": string;
         /**
+          * The role to give the dialogue section. Set this to `alert` if the dialogue box is being used to summarise error messages.
+         */
+        "sectionRole": 'alert';
+        /**
           * The type of dialogue box to render.
          */
         "type": 'info' | 'warning' | 'success' | 'error';
+    }
+    interface AdmiraltyErrorSummary {
+        /**
+          * The heading to display.
+         */
+        "heading": string;
     }
     interface AdmiraltyExpansion {
         /**
@@ -299,13 +342,31 @@ export namespace Components {
     }
     interface AdmiraltyHeaderMenuItem {
         /**
-          * The text that will be displayed in the menu
+          * Whether the item is active
          */
         "active"?: boolean;
         /**
           * The text that will be displayed in the menu
          */
         "menuTitle": string;
+    }
+    interface AdmiraltyHeaderMenuLink {
+        /**
+          * Whether the item is active
+         */
+        "active"?: boolean;
+        /**
+          * The URL to link to.
+         */
+        "href": string;
+        /**
+          * The text that will be displayed in the menu.
+         */
+        "menuTitle"?: string;
+        /**
+          * Causes the default browser redirect to be suppressed. Can be used in conjunction with the `onMenuItemClick` event to use a navigation router and prevent a full page reload when navigating.
+         */
+        "suppressRedirect"?: boolean;
     }
     interface AdmiraltyHeaderProfile {
         /**
@@ -323,9 +384,17 @@ export namespace Components {
     }
     interface AdmiraltyHeaderSubMenuItem {
         /**
+          * The URL to link to.
+         */
+        "href": string;
+        /**
           * The text that will be displayed in the menu
          */
         "menuTitle": string;
+        /**
+          * Causes the default browser redirect to be suppressed. Can be used in conjunction with the `onMenuItemClick` event to use a navigation router and prevent a full page reload when navigating.
+         */
+        "suppressRedirect"?: boolean;
     }
     interface AdmiraltyHint {
         /**
@@ -376,10 +445,6 @@ export namespace Components {
           * The label which will be used above the input to describe the input.
          */
         "label": string;
-        /**
-          * The maximum string length for the input field.
-         */
-        "maxLength"?: number;
         /**
           * The name of the control, which is submitted with the form data.
          */
@@ -532,9 +597,17 @@ export namespace Components {
     }
     interface AdmiraltyRadioGroup {
         /**
-          * Setting this true displays the radio options vertically (defaults to false)
+          * Whether the radio controls should be disabled
+         */
+        "disabled": boolean;
+        /**
+          * Setting this to false displays the radio options horizontally (defaults to true)
          */
         "displayVertical": boolean;
+        /**
+          * The hint text to display below the label
+         */
+        "hint": string;
         /**
           * Whether to show the input in an invalid state
          */
@@ -543,6 +616,10 @@ export namespace Components {
           * The message to show when the input is invalid
          */
         "invalidMessage": string;
+        /**
+          * The label text to display above the control
+         */
+        "label": string;
         /**
           * The name of the control, which is submitted with the form data
          */
@@ -686,10 +763,6 @@ export namespace Components {
          */
         "label": string;
         /**
-          * The maximum string length for the input field.
-         */
-        "maxLength"?: number;
-        /**
           * The value of the textarea.
          */
         "value"?: string | number | null;
@@ -755,6 +828,10 @@ export interface AdmiraltyHeaderCustomEvent<T> extends CustomEvent<T> {
 export interface AdmiraltyHeaderMenuItemCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLAdmiraltyHeaderMenuItemElement;
+}
+export interface AdmiraltyHeaderMenuLinkCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLAdmiraltyHeaderMenuLinkElement;
 }
 export interface AdmiraltyHeaderProfileCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -854,8 +931,8 @@ declare global {
     };
     interface HTMLAdmiraltyCheckboxElementEventMap {
         "admiraltyChange": CheckboxChangeEventDetail;
-        "checkboxFocus": any;
-        "checkboxBlur": any;
+        "checkboxFocus": FocusEvent;
+        "checkboxBlur": FocusEvent;
     }
     interface HTMLAdmiraltyCheckboxElement extends Components.AdmiraltyCheckbox, HTMLStencilElement {
         addEventListener<K extends keyof HTMLAdmiraltyCheckboxElementEventMap>(type: K, listener: (this: HTMLAdmiraltyCheckboxElement, ev: AdmiraltyCheckboxCustomEvent<HTMLAdmiraltyCheckboxElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
@@ -893,6 +970,12 @@ declare global {
     var HTMLAdmiraltyDialogueElement: {
         prototype: HTMLAdmiraltyDialogueElement;
         new (): HTMLAdmiraltyDialogueElement;
+    };
+    interface HTMLAdmiraltyErrorSummaryElement extends Components.AdmiraltyErrorSummary, HTMLStencilElement {
+    }
+    var HTMLAdmiraltyErrorSummaryElement: {
+        prototype: HTMLAdmiraltyErrorSummaryElement;
+        new (): HTMLAdmiraltyErrorSummaryElement;
     };
     interface HTMLAdmiraltyExpansionElementEventMap {
         "toggled": boolean;
@@ -991,6 +1074,23 @@ declare global {
     var HTMLAdmiraltyHeaderMenuItemElement: {
         prototype: HTMLAdmiraltyHeaderMenuItemElement;
         new (): HTMLAdmiraltyHeaderMenuItemElement;
+    };
+    interface HTMLAdmiraltyHeaderMenuLinkElementEventMap {
+        "menuItemClick": void;
+    }
+    interface HTMLAdmiraltyHeaderMenuLinkElement extends Components.AdmiraltyHeaderMenuLink, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLAdmiraltyHeaderMenuLinkElementEventMap>(type: K, listener: (this: HTMLAdmiraltyHeaderMenuLinkElement, ev: AdmiraltyHeaderMenuLinkCustomEvent<HTMLAdmiraltyHeaderMenuLinkElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLAdmiraltyHeaderMenuLinkElementEventMap>(type: K, listener: (this: HTMLAdmiraltyHeaderMenuLinkElement, ev: AdmiraltyHeaderMenuLinkCustomEvent<HTMLAdmiraltyHeaderMenuLinkElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLAdmiraltyHeaderMenuLinkElement: {
+        prototype: HTMLAdmiraltyHeaderMenuLinkElement;
+        new (): HTMLAdmiraltyHeaderMenuLinkElement;
     };
     interface HTMLAdmiraltyHeaderProfileElementEventMap {
         "signInClicked": void;
@@ -1371,6 +1471,7 @@ declare global {
         "admiralty-checkbox": HTMLAdmiraltyCheckboxElement;
         "admiralty-colour-block": HTMLAdmiraltyColourBlockElement;
         "admiralty-dialogue": HTMLAdmiraltyDialogueElement;
+        "admiralty-error-summary": HTMLAdmiraltyErrorSummaryElement;
         "admiralty-expansion": HTMLAdmiraltyExpansionElement;
         "admiralty-file-input": HTMLAdmiraltyFileInputElement;
         "admiralty-filter": HTMLAdmiraltyFilterElement;
@@ -1378,6 +1479,7 @@ declare global {
         "admiralty-footer": HTMLAdmiraltyFooterElement;
         "admiralty-header": HTMLAdmiraltyHeaderElement;
         "admiralty-header-menu-item": HTMLAdmiraltyHeaderMenuItemElement;
+        "admiralty-header-menu-link": HTMLAdmiraltyHeaderMenuLinkElement;
         "admiralty-header-profile": HTMLAdmiraltyHeaderProfileElement;
         "admiralty-header-sub-menu-item": HTMLAdmiraltyHeaderSubMenuItemElement;
         "admiralty-hint": HTMLAdmiraltyHintElement;
@@ -1526,13 +1628,25 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
         /**
+          * The `<form>` element to associate the button with (its form owner).
+         */
+        "form"?: string;
+        /**
           * When passed Font Awesome Icon name, then an icon will be rendered.
          */
         "icon"?: IconName;
         /**
+          * The name of the button, submitted as a pair with the button's value as part of the form data, when that button is used to submit the form.
+         */
+        "name"?: string;
+        /**
           * The default behavior of the button. Valid values are `button`, `submit` and `reset`. Default value is `submit`.
          */
         "type"?: 'button' | 'submit' | 'reset';
+        /**
+          * Defines the value associated with the button's name when it's submitted with the form data. This value is passed to the server in params when the form is submitted using this button.
+         */
+        "value"?: string;
         /**
           * The type of button to render. Valid values are `primary`, `secondary`, `warning`, `text` and `icon`. Default value is `primary`.
          */
@@ -1558,7 +1672,11 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
         /**
-          * The text that's displayed alongside the checkbox
+          * This visually hides the labelText while preserving accessibility.
+         */
+        "labelHidden"?: boolean;
+        /**
+          * The label text must be provided and is displayed beside the checkbox, use the `labelHidden` property to control its visibility.
          */
         "labelText"?: string;
         /**
@@ -1574,12 +1692,12 @@ declare namespace LocalJSX {
           * Event is fired when the form control loses focus
           * @event checkboxBlur
          */
-        "onCheckboxBlur"?: (event: AdmiraltyCheckboxCustomEvent<any>) => void;
+        "onCheckboxBlur"?: (event: AdmiraltyCheckboxCustomEvent<FocusEvent>) => void;
         /**
           * Event is fired when the form control gains focus
           * @event checkboxFocus
          */
-        "onCheckboxFocus"?: (event: AdmiraltyCheckboxCustomEvent<any>) => void;
+        "onCheckboxFocus"?: (event: AdmiraltyCheckboxCustomEvent<FocusEvent>) => void;
         /**
           * The value of the checkbox does not mean if it's checked or not, use the `checked` property for that.  The value of a checkbox is analogous to the value of an `<input type="checkbox">`, it's only used when the checkbox participates in a native `<form>`.
          */
@@ -1588,12 +1706,17 @@ declare namespace LocalJSX {
     interface AdmiraltyColourBlock {
         /**
           * The text to display on the action button
+          * @deprecated in favour of `href` and `linkText`
          */
         "actionText"?: string;
         /**
           * The background colour of the component.
          */
         "colour"?: 'admiralty-blue' | 'teal' | 'bright-blue';
+        /**
+          * Allow the card to be clicked. Will emit a `colourBlockLinkClicked` event. A value for `href` should also be provided to ensure the component conforms to accessibility standards.
+         */
+        "enableCardEvent"?: boolean;
         /**
           * The heading text to display.
          */
@@ -1603,9 +1726,21 @@ declare namespace LocalJSX {
          */
         "height"?: number;
         /**
+          * The URL to link to.
+         */
+        "href"?: string;
+        /**
+          * The link text.
+         */
+        "linkText"?: string;
+        /**
           * An event emitted when this Colour Block link is clicked
          */
         "onColourBlockLinkClicked"?: (event: AdmiraltyColourBlockCustomEvent<string>) => void;
+        /**
+          * Causes the default browser redirect to be suppressed. Can be used in conjunction with the `colourBlockLinkClicked` event to use a navigation router and prevent a full page reload when navigating.
+         */
+        "suppressRedirect"?: boolean;
         /**
           * The width in pixels of the component.
          */
@@ -1617,9 +1752,19 @@ declare namespace LocalJSX {
          */
         "heading"?: string;
         /**
+          * The role to give the dialogue section. Set this to `alert` if the dialogue box is being used to summarise error messages.
+         */
+        "sectionRole"?: 'alert';
+        /**
           * The type of dialogue box to render.
          */
         "type"?: 'info' | 'warning' | 'success' | 'error';
+    }
+    interface AdmiraltyErrorSummary {
+        /**
+          * The heading to display.
+         */
+        "heading"?: string;
     }
     interface AdmiraltyExpansion {
         /**
@@ -1731,7 +1876,7 @@ declare namespace LocalJSX {
     }
     interface AdmiraltyHeaderMenuItem {
         /**
-          * The text that will be displayed in the menu
+          * Whether the item is active
          */
         "active"?: boolean;
         /**
@@ -1742,6 +1887,28 @@ declare namespace LocalJSX {
           * The event that is fired when a user clicks on the menu
          */
         "onMenuItemClick"?: (event: AdmiraltyHeaderMenuItemCustomEvent<void>) => void;
+    }
+    interface AdmiraltyHeaderMenuLink {
+        /**
+          * Whether the item is active
+         */
+        "active"?: boolean;
+        /**
+          * The URL to link to.
+         */
+        "href"?: string;
+        /**
+          * The text that will be displayed in the menu.
+         */
+        "menuTitle"?: string;
+        /**
+          * The event that is fired when a user clicks on the menu.
+         */
+        "onMenuItemClick"?: (event: AdmiraltyHeaderMenuLinkCustomEvent<void>) => void;
+        /**
+          * Causes the default browser redirect to be suppressed. Can be used in conjunction with the `onMenuItemClick` event to use a navigation router and prevent a full page reload when navigating.
+         */
+        "suppressRedirect"?: boolean;
     }
     interface AdmiraltyHeaderProfile {
         /**
@@ -1771,13 +1938,21 @@ declare namespace LocalJSX {
     }
     interface AdmiraltyHeaderSubMenuItem {
         /**
+          * The URL to link to.
+         */
+        "href"?: string;
+        /**
           * The text that will be displayed in the menu
          */
         "menuTitle"?: string;
         /**
-          * The event that is fired when a user clicks on the menu. Event contains the menu item text.
+          * The event that is fired when a user clicks on the menu item. Event contains the menu item text.
          */
         "onSubMenuItemClick"?: (event: AdmiraltyHeaderSubMenuItemCustomEvent<string>) => void;
+        /**
+          * Causes the default browser redirect to be suppressed. Can be used in conjunction with the `onMenuItemClick` event to use a navigation router and prevent a full page reload when navigating.
+         */
+        "suppressRedirect"?: boolean;
     }
     interface AdmiraltyHint {
         /**
@@ -1828,10 +2003,6 @@ declare namespace LocalJSX {
           * The label which will be used above the input to describe the input.
          */
         "label"?: string;
-        /**
-          * The maximum string length for the input field.
-         */
-        "maxLength"?: number;
         /**
           * The name of the control, which is submitted with the form data.
          */
@@ -2011,9 +2182,17 @@ declare namespace LocalJSX {
     }
     interface AdmiraltyRadioGroup {
         /**
-          * Setting this true displays the radio options vertically (defaults to false)
+          * Whether the radio controls should be disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * Setting this to false displays the radio options horizontally (defaults to true)
          */
         "displayVertical"?: boolean;
+        /**
+          * The hint text to display below the label
+         */
+        "hint"?: string;
         /**
           * Whether to show the input in an invalid state
          */
@@ -2022,6 +2201,10 @@ declare namespace LocalJSX {
           * The message to show when the input is invalid
          */
         "invalidMessage"?: string;
+        /**
+          * The label text to display above the control
+         */
+        "label"?: string;
         /**
           * The name of the control, which is submitted with the form data
          */
@@ -2186,10 +2369,6 @@ declare namespace LocalJSX {
          */
         "label"?: string;
         /**
-          * The maximum string length for the input field.
-         */
-        "maxLength"?: number;
-        /**
           * Event is fired when the form control changes
           * @event admiraltyChange
          */
@@ -2251,6 +2430,7 @@ declare namespace LocalJSX {
         "admiralty-checkbox": AdmiraltyCheckbox;
         "admiralty-colour-block": AdmiraltyColourBlock;
         "admiralty-dialogue": AdmiraltyDialogue;
+        "admiralty-error-summary": AdmiraltyErrorSummary;
         "admiralty-expansion": AdmiraltyExpansion;
         "admiralty-file-input": AdmiraltyFileInput;
         "admiralty-filter": AdmiraltyFilter;
@@ -2258,6 +2438,7 @@ declare namespace LocalJSX {
         "admiralty-footer": AdmiraltyFooter;
         "admiralty-header": AdmiraltyHeader;
         "admiralty-header-menu-item": AdmiraltyHeaderMenuItem;
+        "admiralty-header-menu-link": AdmiraltyHeaderMenuLink;
         "admiralty-header-profile": AdmiraltyHeaderProfile;
         "admiralty-header-sub-menu-item": AdmiraltyHeaderSubMenuItem;
         "admiralty-hint": AdmiraltyHint;
@@ -2307,6 +2488,7 @@ declare module "@stencil/core" {
             "admiralty-checkbox": LocalJSX.AdmiraltyCheckbox & JSXBase.HTMLAttributes<HTMLAdmiraltyCheckboxElement>;
             "admiralty-colour-block": LocalJSX.AdmiraltyColourBlock & JSXBase.HTMLAttributes<HTMLAdmiraltyColourBlockElement>;
             "admiralty-dialogue": LocalJSX.AdmiraltyDialogue & JSXBase.HTMLAttributes<HTMLAdmiraltyDialogueElement>;
+            "admiralty-error-summary": LocalJSX.AdmiraltyErrorSummary & JSXBase.HTMLAttributes<HTMLAdmiraltyErrorSummaryElement>;
             "admiralty-expansion": LocalJSX.AdmiraltyExpansion & JSXBase.HTMLAttributes<HTMLAdmiraltyExpansionElement>;
             "admiralty-file-input": LocalJSX.AdmiraltyFileInput & JSXBase.HTMLAttributes<HTMLAdmiraltyFileInputElement>;
             "admiralty-filter": LocalJSX.AdmiraltyFilter & JSXBase.HTMLAttributes<HTMLAdmiraltyFilterElement>;
@@ -2314,6 +2496,7 @@ declare module "@stencil/core" {
             "admiralty-footer": LocalJSX.AdmiraltyFooter & JSXBase.HTMLAttributes<HTMLAdmiraltyFooterElement>;
             "admiralty-header": LocalJSX.AdmiraltyHeader & JSXBase.HTMLAttributes<HTMLAdmiraltyHeaderElement>;
             "admiralty-header-menu-item": LocalJSX.AdmiraltyHeaderMenuItem & JSXBase.HTMLAttributes<HTMLAdmiraltyHeaderMenuItemElement>;
+            "admiralty-header-menu-link": LocalJSX.AdmiraltyHeaderMenuLink & JSXBase.HTMLAttributes<HTMLAdmiraltyHeaderMenuLinkElement>;
             "admiralty-header-profile": LocalJSX.AdmiraltyHeaderProfile & JSXBase.HTMLAttributes<HTMLAdmiraltyHeaderProfileElement>;
             "admiralty-header-sub-menu-item": LocalJSX.AdmiraltyHeaderSubMenuItem & JSXBase.HTMLAttributes<HTMLAdmiraltyHeaderSubMenuItemElement>;
             "admiralty-hint": LocalJSX.AdmiraltyHint & JSXBase.HTMLAttributes<HTMLAdmiraltyHintElement>;

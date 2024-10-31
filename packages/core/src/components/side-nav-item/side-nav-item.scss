@@ -1,5 +1,4 @@
-@use "../../scss/base/responsive";
-@use "../../scss/vars/colours";
+@import 'side-nav-item.vars.scss';
 
 a.section {
   cursor: pointer;
@@ -14,20 +13,24 @@ a.section {
 
   text-align: center;
   text-decoration: none;
-  color: colours.$colour-admiralty-blue;
+  color: $side-nav-item-text-colour;
   font-weight: normal;
   font-size: 16px;
 
   &:hover {
-    background-color: colours.$colour-nav-bg-hover;
-  }
-
-  &:focus {
-    outline-offset: -2px;
+    background-color: $side-nav-item-hover-background-colour;
   }
 
   &.navActive {
-    background-color: colours.$colour-admiralty-blue;
-    color: colours.$colour-white;
+    background-color: $side-nav-item-active-background-colour;
+    color: $side-nav-item-active-text-colour;
+  }
+
+  &:focus {
+    background-color: $side-nav-item-focus-colour;
+    color: $side-nav-item-text-colour;
+    box-shadow: none;
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid $side-nav-item-text-colour;
   }
 }

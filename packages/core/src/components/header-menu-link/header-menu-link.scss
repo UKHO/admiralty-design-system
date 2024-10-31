@@ -1,0 +1,67 @@
+@import './header-menu-link.vars';
+
+@mixin active {
+  box-shadow: inset 0 -5px $header-menu-link-active-colour;
+}
+
+.menu-item {
+  cursor: pointer;
+
+  a {
+    font-size: $header-menu-link-text-size;
+    font-weight: $header-menu-link-font-weight;
+    text-decoration: none;
+    outline-offset: 3px;
+    color: $header-menu-link-text-colour;
+  }
+}
+
+@include desktop-only {
+  .menu-item {
+    display: flex;
+    flex: 0;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    line-height: 1.33em;
+    margin-bottom: 0;
+    min-width: 4em;
+    max-width: 11.1em;
+    padding: 0 1.65em;
+    position: relative;
+    text-align: center;
+
+    &:hover {
+      @include active;
+      background-color: $header-menu-link-hover-background-colour;
+    }
+
+    &.active {
+      @include active;
+    }
+  }
+}
+
+@include not-desktop {
+  .menu-item {
+    display: block;
+    box-sizing: border-box;
+    background-color: unset;
+    text-align: unset;
+    text-decoration: unset;
+    padding: 12px;
+
+    a {
+      font-weight: $header-menu-link-font-weight;
+      &:focus {
+        box-shadow:
+          0 -4px $header-menu-link-focus-colour,
+          0 4px $header-menu-link-focus-text-colour;
+      }
+    }
+
+    &:hover {
+      background-color: $header-menu-link-hover-background-colour;
+    }
+  }
+}

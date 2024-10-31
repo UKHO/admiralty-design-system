@@ -1,32 +1,34 @@
-@use '../../scss/vars/colours';
-@use '../../scss/vars/typography';
+@import './file-input.vars';
 
 .admiralty-file-input {
-  background: #eee;
+  background: $file-input-background-colour;
   display: flex;
   position: relative;
-  border: 2px dashed colours.$colour-admiralty-blue;
+  border: 2px dashed $file-input-border-colour;
   min-height: 120px;
   align-content: stretch;
   justify-content: stretch;
   margin-bottom: 6px;
-  font-family: typography.$font-family;
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: 300;
+  font-size: $file-input-font-size;
+  line-height: $file-input-line-height;
+  font-weight: $file-input-font-weight;
+
+  &:hover {
+    background-color: $file-input-background-hover-colour;
+  }
 
   &.invalid {
-    border-color: colours.$colour-utility-error;
+    border-color: $file-input-invalid-border-colour;
   }
 
   &.drop_zone {
     // active when file is dragged over label
-    background: #fff !important;
+    background: $file-input-background-hover-colour !important;
   }
 
   .upload-icon {
-    color: colours.$colour-admiralty-blue;
-    font-size: 24px;
+    color: $file-input-icon-colour;
+    font-size: $file-input-icon-size;
     font-weight: 900;
     margin: 0.4rem auto;
     text-align: center;
@@ -45,10 +47,10 @@ label {
   cursor: pointer;
 
   span {
-    color: colours.$colour-admiralty-blue;
+    color: $file-input-label-colour;
     flex: 0 1;
-    font-size: 18px;
-    font-weight: typography.$font-weight-medium;
+    font-size: $file-input-label-font-size;
+    font-weight: $file-input-label-font-weight;
     text-align: center;
     margin: 0.4rem 0;
   }
@@ -64,7 +66,12 @@ input[type='file'] {
   width: 100%;
 
   &:focus {
-    outline: 3px solid colours.$colour-utility-focus;
+    outline: 3px solid $file-input-focus-colour;
     outline-offset: 2px;
   }
+}
+
+input[type='file']:focus + label {
+  outline: 2px solid $file-input-focus-text-colour;
+  box-shadow: $file-input-focus-text-colour inset 0 0 0 2px;
 }

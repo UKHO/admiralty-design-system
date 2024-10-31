@@ -1,4 +1,4 @@
-@use '../../scss/vars/colours';
+@import "input-invalid.vars";
 
 :host {
   display: flex;
@@ -6,11 +6,12 @@
 }
 
 admiralty-icon {
-  color: colours.$colour-utility-error;
+  color: $input-invalid-text-colour;
   margin: 4px 0;
 }
 
 p {
   margin: 0;
-  color: colours.$colour-utility-error;
+  color: $input-invalid-text-colour;
 }
+

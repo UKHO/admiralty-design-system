@@ -10,7 +10,7 @@ describe('admiralty-link', () => {
     expect(root).toEqualHtml(`
       <admiralty-skip-link href="#main-content">
         <a class="skip-link" href="#main-content">
-          Skip to main content
+          <span>Skip to main content</span>
         </a>
       </admiralty-skip-link>
     `);

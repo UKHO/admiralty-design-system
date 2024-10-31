@@ -17,7 +17,7 @@ export class HeaderMenuItemComponent {
   @Prop() menuTitle: string;
 
   /**
-   * The text that will be displayed in the menu
+   * Whether the item is active
    */
   @Prop() active?: boolean = false;
 
@@ -110,8 +110,8 @@ export class HeaderMenuItemComponent {
     return (
       <Host onMouseOver={_ => this.handleMouseOver()} onMouseOut={(ev: Event) => this.handleMouseOut(ev)}>
         <div class={menuClass} onClick={ev => this.handleClick(ev)}>
-          <button class="menu-title" tabindex="0">
-            {menuTitle}
+          <button class="menu-title">
+            <div>{menuTitle}</div>
           </button>
           <div class="sub-menu desktop-hide" onFocusout={ev => this.handleFocusOut(ev)}>
             <slot />

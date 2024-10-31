@@ -1,4 +1,4 @@
-@use "../../scss/vars/colours";
+@import 'colour-block.vars';
 
 .colourBlock {
   height: 100%;
@@ -14,31 +14,43 @@
   }
 
   .clickAction {
-    background-color: unset;
     align-self: flex-end;
     cursor: pointer;
 
-    h3 {
-      margin-bottom: 0px;
+    &:focus * {
+      color: $colour-block-focus-text-colour !important;
+    }
+
+    span {
+      font-weight: $colour-block-action-font-weight;
+      font-size: $colour-block-action-text-size;
+      line-height: $colour-block-action-line-height;
+      @include not-desktop {
+        font-size: 20px;
+        line-height: 30px;
+      }
     }
   }
 
   &.admiralty-blue {
-    background-color: colours.$colour-admiralty-blue;
+    background-color: $primary-colour-block-colour;
     * {
-      color: colours.$colour-white;
+      color: $primary-colour-block-text-colour;
     }
   }
 
   &.teal {
-    background-color: colours.$colour-teal;
+    background-color: $secondary-colour-block-colour;
     * {
-      color: colours.$colour-white;
+      color: $secondary-colour-block-text-colour;
     }
   }
 
   &.bright-blue {
-    background-color: colours.$colour-bright-blue;
-    color: colours.$colour-admiralty-blue;
+    background-color: $tertiary-colour-block-colour;
+    color: $tertiary-colour-block-text-colour;
+    .clickAction * {
+      color: $tertiary-colour-block-text-colour;
+    }
   }
 }

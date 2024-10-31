@@ -1,5 +1,4 @@
-@use "../../scss/vars/colours";
-@use "../../scss/base/typography";
+@import 'filter.vars';
 
 .filter-heading {
   display: flex;
@@ -7,7 +6,11 @@
   align-items: baseline;
 
   .filter-title {
-    @extend h2
+    color: $filter-title-text-colour;
+    font-weight: $filter-title-text-weight;
+    font-size: $filter-title-text-size;
+    line-height: $filter-title-line-height;
+    margin-bottom: 18px;
   }
 
   .button-wrapper {
@@ -17,7 +20,7 @@
     button.text-link {
       background-color: unset;
       border: none;
-      color: black;
+      color: $filter-title-text-colour;
       padding: 0;
       min-width: unset;
       width: unset;
@@ -35,13 +38,13 @@
       outline: none;
     }
     button.text-link:focus::after {
-      content: "";
+      content: '';
       position: absolute;
       top: -3px;
       bottom: 0;
       right: -3px;
       left: -3px;
-      box-shadow: 0 0 0 3px colours.$colour-utility-focus;
+      box-shadow: 0 0 0 3px $filter-focus-colour;
     }
   }
 }

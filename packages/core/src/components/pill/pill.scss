@@ -1,88 +1,90 @@
-@use '../../scss/vars/colours';
+@use '../../styles/vars/colours';
+@import './pill.vars';
 
-span.pill {
+.pill {
   display: inline-block;
   box-sizing: border-box;
   height: 36px;
-  padding: 8px 15px 8px 15px;
+  padding: 8px 15px;
   border-radius: 20px;
+  line-height: 1rem;
 }
 
-span.pill > span.pill-item + span.pill-item {
+.pill > .pill-item + .pill-item {
   margin: 0px 0px 0px 10px;
 }
 
-span.pill > span.pill-item.pill-item-text {
+.pill > .pill-item.pill-item-text {
   height: 17px;
   display: inline-block;
   vertical-align: top;
 }
 
-span.pill > span.pill-item.pill-item-number {
-  padding: 5px 6px 2px 5px;
-  border-radius: 30px;
+.pill > .pill-item.pill-item-number {
   font-size: 14px;
+  padding: 2px 6px;
+  border-radius: 1rem;
 }
 
-span.pill > span.pill-item.pill-item-selected {
+.pill > .pill-item.pill-item-selected {
   display: inline-block;
   vertical-align: middle;
 }
 
 // admiralty-blue
 
-span.pill.admiralty-blue {
-  background-color: colours.$colour-admiralty-blue;
+.pill.admiralty-blue {
+  background-color: $pill-background-colour; // blue
 }
 
-span.pill.admiralty-blue > span.pill-item.pill-item-text {
-  color: colours.$colour-white;
+.pill.admiralty-blue > .pill-item.pill-item-text {
+  color: $pill-item-text-colour; // white
 }
 
-span.pill.admiralty-blue > span.pill-item.pill-item-number {
-  background-color: colours.$colour-white;
-  color: colours.$colour-admiralty-blue;
+.pill.admiralty-blue > .pill-item.pill-item-number {
+  background-color:$pill-item-number-background-colour; // white
+  color: $pill-item-number-colour; // blue
 }
 
-span.pill.admiralty-blue > span.pill-item.pill-item-selected > admiralty-icon {
-  color: colours.$colour-white;
+.pill.admiralty-blue > .pill-item.pill-item-selected > admiralty-icon {
+  color: $pill-item-selected-icon-colour; // white
 }
 
 // white
 
-span.pill.white {
-  background-color: colours.$colour-white;
-  border: 1px solid colours.$colour-admiralty-blue;
+.pill.white {
+  background-color: $secondary-pill-background-colour; // white
+  border: 1px solid $secondary-pill-border-colour; // blue
 }
 
-span.pill.white > span.pill-item.pill-item-text {
-  color: colours.$colour-admiralty-blue;
+.pill.white > .pill-item.pill-item-text {
+  color: $secondary-pill-item-text-colour; // blue
 }
 
-span.pill.white > span.pill-item.pill-item-number {
-  background-color: colours.$colour-admiralty-blue;
-  color: colours.$colour-white;
+.pill.white > .pill-item.pill-item-number {
+  background-color: $secondary-pill-item-number-background-colour; // blue
+  color: $secondary-pill-item-number-colour; // white
 }
 
-span.pill.white > span.pill-item.pill-item-selected > admiralty-icon {
-  color: colours.$colour-admiralty-blue;
+.pill.white > .pill-item.pill-item-selected > admiralty-icon {
+  color: $secondary-pill-item-selected-icon-colour; // blue
 }
 
 // bright-blue
 
-span.pill.bright-blue {
-  background-color: colours.$colour-utility-info;
+.pill.bright-blue {
+  background-color: $tertiary-pill-background-colour; // info blue
 }
 
-span.pill.bright-blue > span.pill-item.pill-item-text {
-  color: colours.$colour-white;
+.pill.bright-blue > .pill-item.pill-item-text {
+  color: $tertiary-pill-item-text-colour; // white
 }
 
-span.pill.bright-blue > span.pill-item.pill-item-number {
-  background-color: colours.$colour-white;
-  color: colours.$colour-utility-info;
+.pill.bright-blue > .pill-item.pill-item-number {
+  background-color: $tertiary-pill-item-number-background-colour; // white
+  color: $tertiary-pill-item-number-colour; // info blue
 }
 
-span.pill.bright-blue > span.pill-item.pill-item-selected > admiralty-icon {
-  color: colours.$colour-white;
+.pill.bright-blue > .pill-item.pill-item-selected > admiralty-icon {
+  color: $tertiary-pill-item-selected-icon-colour; // white
 }

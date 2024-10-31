@@ -1,4 +1,5 @@
 import { Meta, StoryObj } from '@storybook/web-components';
+import { withActions } from '@storybook/addon-actions/decorator';
 import { HeaderComponent } from './header';
 import { html } from 'lit';
 import {
@@ -7,8 +8,10 @@ import {
   mockMenuItemsWithNoSubItems,
   mockMenuItemsWithSubItemsAndNavActive,
   mockMenuItemsWithNoSubItemsAndNavActive,
+  mockMenuItemsWithRedirectNotSuppressed,
 } from './header.stories.data';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
+import { HeaderItem, HeaderSubItem } from './header.types';
 
 const meta: Meta = {
   component: 'admiralty-header',
@@ -18,18 +21,56 @@ const meta: Meta = {
       handles: ['titledClicked', 'menuItemClick', 'subMenuItemClick', 'signInClicked', 'yourAccountClicked', 'signOutClicked'],
     },
   },
+  decorators: [withActions],
 };
 
 export default meta;
 
-type Story = StoryObj<HeaderComponent>;
+type HeaderComponentArgs = Partial<
+  HeaderComponent & {
+    title: string;
+    signedIn: boolean;
+    singedInText: string;
+    signInOnly: boolean;
+    menuItems: HeaderItem[];
+    showProfileMenu: boolean;
+  }
+>;
+
+type Story = StoryObj<HeaderComponentArgs>;
+
+const renderMenuItems = (menuItems: HeaderItem[] | undefined) =>
+  menuItems
+    ?.map(({ title, navActive = false, href, suppressRedirect = true, subitems }) => {
+      if (href !== undefined) {
+        return `<admiralty-header-menu-link menu-title="${title}" active="${navActive}" slot="items" href="${href}" suppress-redirect="${suppressRedirect}"></admiralty-header-menu-link>`;
+      }
+      return `<admiralty-header-menu-item menu-title="${title}" active="${navActive}" slot="items">
+          ${renderSubMenuItems(subitems)}
+        </admiralty-header-menu-item>`;
+    })
+    .join('');
+
+const renderSubMenuItems = (subMenuItems: HeaderSubItem[] | undefined) =>
+  subMenuItems
+    ?.map(
+      ({ title, href = '', suppressRedirect = true }) => `<admiralty-header-sub-menu-item menu-title="${title}" href="${href}" suppress-redirect="${suppressRedirect}">
+          </admiralty-header-sub-menu-item>`,
+    )
+    .join('');
+
+const renderProfileMenu = ({ showProfileMenu, signedIn, singedInText, signInOnly }: HeaderComponentArgs) =>
+  showProfileMenu
+    ? `<admiralty-header-profile is-signed-in="${signedIn}" signed-in-text="${singedInText}" sign-in-only="${signInOnly}" slot="profile"></admiralty-header-profile>`
+    : '';
 
 const defaultArgs = {
-  title: 'Design System',
-  titleLinkUrl: 'http://www.example.com',
-  logoAltText: 'Admiralty Stacked Logo',
+  headerTitle: 'Design System',
+  headerTitleUrl: 'http://www.example.com',
+  logoAltText: 'ADMIRALTY',
   logoImgUrl: 'svg/Admiralty stacked logo.svg',
   logoLinkUrl: 'http://www.example.com',
+  showProfileMenu: true,
 };
 
 const profileArgs = {
@@ -38,59 +79,21 @@ const profileArgs = {
   signInOnly: false,
 };
 
-const TemplateSignedOut: Story = {
-  render: args => html` <admiralty-header
-    logo-alt-text="${args.logoAltText}"
-    logo-link-url="${args.logoLinkUrl}"
-    logo-img-url="${args.logoImgUrl}"
-    header-title-url="#"
-    header-title="${args.title}"
-  >
-    <admiralty-header-profile is-signed-in="${args.signedIn}" signed-in-text="${args.singedInText}" sign-in-only="${args.signInOnly}" slot="profile"></admiralty-header-profile>
-  </admiralty-header>`,
-};
-
-const TemplateLinksAndAuth: Story = {
-  render: args => {
-    const menuItems = args.menuItems.map(item => {
-      const subItems = item.subitems?.map(si => `<admiralty-header-sub-menu-item menu-title="${si.title}"></admiralty-header-sub-menu-item>`);
-      return `<admiralty-header-menu-item menu-title="${item.title}" active="${item.navActive ?? false}" slot="items">${subItems?.join('')}</admiralty-header-menu-item>
-    `;
-    });
-
-    let template = `<admiralty-header logo-alt-text="${args.logoAltText}" logo-link-url="${args.logoLinkUrl}" logo-img-url="${
-      args.logoImgUrl
-    }" header-title-url="#" header-title="${args.title}">
-      ${menuItems?.join('')}
-      <admiralty-header-profile is-signed-in="${args.signedIn}" signed-in-text="${args.singedInText}" slot="profile"></admiralty-header-profile>
-    </admiralty-header>`;
-
-    console.log(template);
-    return html`${unsafeHTML(template)}`;
-  },
-};
-
-const TemplateLinksNoAuth: Story = {
-  render: args => {
-    const menuItems = args.menuItems?.map(item => {
-      const subItems = item.subitems?.map(si => `<admiralty-header-sub-menu-item menu-title="${si.title}"></admiralty-header-sub-menu-item>`);
-      return `<admiralty-header-menu-item menu-title="${item.title}" active="${item.navActive ?? false}" slot="items">${subItems?.join('') ?? ''}</admiralty-header-menu-item>
-    `;
-    });
-
-    let template = `<admiralty-header logo-alt-text="${args.logoAltText}" logo-link-url="${args.logoLinkUrl}" logo-img-url="${
-      args.logoImgUrl
-    }" header-title-url="#" header-title="${args.title}">
-      ${menuItems?.join('') ?? ''}
-    </admiralty-header>`;
-
-    console.log(template);
-    return html`${unsafeHTML(template)}`;
-  },
+const Template: Story = {
+  render: args =>
+    html` <admiralty-header
+      logo-alt-text="${args.logoAltText}"
+      logo-link-url="${args.logoLinkUrl}"
+      logo-img-url="${args.logoImgUrl}"
+      header-title-url="${args.headerTitleUrl}"
+      header-title="${args.headerTitle}"
+    >
+      ${unsafeHTML(renderMenuItems(args.menuItems))} ${unsafeHTML(renderProfileMenu(args))}
+    </admiralty-header>`,
 };
 
 export const linksAndAuthNotSignedIn: Story = {
-  ...TemplateLinksAndAuth,
+  ...Template,
   args: {
     menuItems: mockMenuItemsWithSubItems,
     ...defaultArgs,
@@ -99,48 +102,53 @@ export const linksAndAuthNotSignedIn: Story = {
 };
 
 export const linksWithNoSubItems: Story = {
-  ...TemplateLinksNoAuth,
+  ...Template,
   args: {
-    menuItems: mockMenuItemsWithNoSubItems,
     ...defaultArgs,
+    menuItems: mockMenuItemsWithNoSubItems,
+    showProfileMenu: false,
     logoImgUrl: 'svg/UKHO linear logo.svg',
   },
 };
 
 export const linksWithNoSubItemsAndNavActive: Story = {
-  ...TemplateLinksNoAuth,
+  ...Template,
   args: {
-    menuItems: mockMenuItemsWithNoSubItemsAndNavActive,
     ...defaultArgs,
+    menuItems: mockMenuItemsWithNoSubItemsAndNavActive,
+    showProfileMenu: false,
   },
 };
 
 export const linksWithSubItemsAndNavActive: Story = {
-  ...TemplateLinksNoAuth,
+  ...Template,
   args: {
-    menuItems: mockMenuItemsWithSubItemsAndNavActive,
     ...defaultArgs,
+    menuItems: mockMenuItemsWithSubItemsAndNavActive,
+    showProfileMenu: false,
   },
 };
 
 export const linksWithSomeSubItems: Story = {
-  ...TemplateLinksNoAuth,
+  ...Template,
   args: {
-    menuItems: mockMenuItemsWithSomeSubItems,
     ...defaultArgs,
+    menuItems: mockMenuItemsWithSomeSubItems,
+    showProfileMenu: false,
   },
 };
 
 export const noLinks: Story = {
-  render: args => html` <admiralty-header header-title="${args.title}" logo-link-url="${args.logoLinkUrl}" headerTitleUrl="${args.titleLinkUrl}"> </admiralty-header>`,
+  ...Template,
   args: {
     ...defaultArgs,
-    titleLinkUrl: null,
+    headerTitleUrl: undefined,
+    showProfileMenu: false,
   },
 };
 
 export const HeaderSignedIn: Story = {
-  ...TemplateSignedOut,
+  ...Template,
   args: {
     ...defaultArgs,
     ...profileArgs,
@@ -149,9 +157,18 @@ export const HeaderSignedIn: Story = {
 };
 
 export const HeaderSignedOut: Story = {
-  ...TemplateSignedOut,
+  ...Template,
   args: {
     ...defaultArgs,
     ...profileArgs,
+  },
+};
+
+export const linksWithRedirectNotSuppressed: Story = {
+  ...Template,
+  args: {
+    ...defaultArgs,
+    menuItems: mockMenuItemsWithRedirectNotSuppressed,
+    showProfileMenu: false,
   },
 };

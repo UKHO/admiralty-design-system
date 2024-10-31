@@ -6,7 +6,7 @@ import { Element, Component, Event, h, Prop, Watch, Host, State, Method, EventEm
   scoped: true,
 })
 export class RadioComponent {
-  private inputId = `admiralty-radio-${radioButtonIds++}`;
+  private internalId = ++radioButtonIds;
   private nativeInput!: HTMLInputElement;
   private radioGroup: HTMLAdmiraltyRadioGroupElement | null = null;
 
@@ -21,7 +21,7 @@ export class RadioComponent {
   /**
    * The name of the radio button for use on selection within a radio group
    */
-  @Prop() name: string = this.inputId;
+  @Prop() name: string;
   /**
    * The value of the radio button for use on selection within a radio group
    */
@@ -68,7 +68,8 @@ export class RadioComponent {
 
   connectedCallback() {
     if (this.value === undefined) {
-      this.value = this.inputId;
+      // radio buttons should always be used with a value
+      this.value = `admiralty-radio-${this.internalId}`;
     }
     const radioGroup = (this.radioGroup = this.el.closest('admiralty-radio-group'));
 
@@ -114,11 +115,12 @@ export class RadioComponent {
   };
 
   render() {
-    const { buttonTabindex, checked, disabled, inputId, name, value } = this;
-
+    const { buttonTabindex, checked, disabled, name, value } = this;
+    const id = this.el.id != '' ? this.el.id : `admiralty-radio-${this.internalId}`;
+    const inputId = `${id}-input`;
     return (
       <Host>
-        <div class="admiralty-radio">
+        <div class={{ 'admiralty-radio': true, 'checked': checked }}>
           <input
             class={{ 'invalid': this.invalid, 'admiralty-radio': true }}
             aria-checked={`${checked}`}
@@ -139,6 +141,9 @@ export class RadioComponent {
           <label htmlFor={inputId}>
             <slot />
           </label>
+        </div>
+        <div class={{ conditional: true, checked: checked, unchecked: !checked }}>
+          <slot name="conditional"></slot>
         </div>
       </Host>
     );
