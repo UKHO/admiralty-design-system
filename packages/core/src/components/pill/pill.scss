@@ -34,57 +34,57 @@
 // admiralty-blue
 
 .pill.admiralty-blue {
-  background-color: $pill-background-colour; // blue
+  background-color: $pill-background-colour;
 }
 
 .pill.admiralty-blue > .pill-item.pill-item-text {
-  color: $pill-item-text-colour; // white
+  color: $pill-item-text-colour;
 }
 
 .pill.admiralty-blue > .pill-item.pill-item-number {
-  background-color:$pill-item-number-background-colour; // white
-  color: $pill-item-number-colour; // blue
+  background-color:$pill-item-number-background-colour;
+  color: $pill-item-number-colour;
 }
 
 .pill.admiralty-blue > .pill-item.pill-item-selected > admiralty-icon {
-  color: $pill-item-selected-icon-colour; // white
+  color: $pill-item-selected-icon-colour;
 }
 
 // white
 
 .pill.white {
-  background-color: $secondary-pill-background-colour; // white
-  border: 1px solid $secondary-pill-border-colour; // blue
+  background-color: $secondary-pill-background-colour;
+  border: 1px solid $secondary-pill-border-colour;
 }
 
 .pill.white > .pill-item.pill-item-text {
-  color: $secondary-pill-item-text-colour; // blue
+  color: $secondary-pill-item-text-colour;
 }
 
 .pill.white > .pill-item.pill-item-number {
-  background-color: $secondary-pill-item-number-background-colour; // blue
-  color: $secondary-pill-item-number-colour; // white
+  background-color: $secondary-pill-item-number-background-colour;
+  color: $secondary-pill-item-number-colour;
 }
 
 .pill.white > .pill-item.pill-item-selected > admiralty-icon {
-  color: $secondary-pill-item-selected-icon-colour; // blue
+  color: $secondary-pill-item-selected-icon-colour;
 }
 
 // bright-blue
 
 .pill.bright-blue {
-  background-color: $tertiary-pill-background-colour; // info blue
+  background-color: $tertiary-pill-background-colour;
 }
 
 .pill.bright-blue > .pill-item.pill-item-text {
-  color: $tertiary-pill-item-text-colour; // white
+  color: $tertiary-pill-item-text-colour;
 }
 
 .pill.bright-blue > .pill-item.pill-item-number {
-  background-color: $tertiary-pill-item-number-background-colour; // white
-  color: $tertiary-pill-item-number-colour; // info blue
+  background-color: $tertiary-pill-item-number-background-colour;
+  color: $tertiary-pill-item-number-colour;
 }
 
 .pill.bright-blue > .pill-item.pill-item-selected > admiralty-icon {
-  color: $tertiary-pill-item-selected-icon-colour; // white
+  color: $tertiary-pill-item-selected-icon-colour;
 }
