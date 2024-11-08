@@ -96,7 +96,7 @@ export namespace Components {
          */
         "required": boolean;
         /**
-          * Toggle showing all values when the input is clicked, like a default dropdown.
+          * Toggle showing all values when the input is clicked, like a default dropdown. This will hide the chevron when set to false.
          */
         "showAllValues": boolean;
         /**
@@ -1562,7 +1562,7 @@ declare namespace LocalJSX {
          */
         "required"?: boolean;
         /**
-          * Toggle showing all values when the input is clicked, like a default dropdown.
+          * Toggle showing all values when the input is clicked, like a default dropdown. This will hide the chevron when set to false.
          */
         "showAllValues"?: boolean;
         /**
