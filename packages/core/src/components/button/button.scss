@@ -243,7 +243,7 @@ button.icon {
   &:hover {
     background-color: $button-hover-colour-icon;
     border: 2px solid $button-hover-border-colour-icon;
-    padding: 10px 14px;
+    padding: 10px;
   }
 
   &:enabled:active {
