@@ -57,8 +57,6 @@ import { AdmiraltyTableHeader as AdmiraltyTableHeaderElement, defineCustomElemen
 import { AdmiraltyTableRow as AdmiraltyTableRowElement, defineCustomElement as defineAdmiraltyTableRow } from "@ukho/admiralty-core/dist/components/admiralty-table-row.js";
 import { AdmiraltyTable as AdmiraltyTableElement, defineCustomElement as defineAdmiraltyTable } from "@ukho/admiralty-core/dist/components/admiralty-table.js";
 import { AdmiraltyTextarea as AdmiraltyTextareaElement, defineCustomElement as defineAdmiraltyTextarea } from "@ukho/admiralty-core/dist/components/admiralty-textarea.js";
-import { AdmiraltyTypeAheadItem as AdmiraltyTypeAheadItemElement, defineCustomElement as defineAdmiraltyTypeAheadItem } from "@ukho/admiralty-core/dist/components/admiralty-type-ahead-item.js";
-import { AdmiraltyTypeAhead as AdmiraltyTypeAheadElement, defineCustomElement as defineAdmiraltyTypeAhead } from "@ukho/admiralty-core/dist/components/admiralty-type-ahead.js";
 import React from 'react';
 
 type AdmiraltyAutocompleteEvents = { onAdmiraltyChange: EventName<AdmiraltyAutocompleteCustomEvent<AutoCompleteChangeEventDetail>> };
@@ -579,30 +577,4 @@ export const AdmiraltyTextarea: StencilReactComponent<AdmiraltyTextareaElement, 
         onAdmiraltyInput: 'admiraltyInput'
     } as AdmiraltyTextareaEvents,
     defineCustomElement: defineAdmiraltyTextarea
-});
-
-type AdmiraltyTypeAheadEvents = {
-    onSelectionChanged: EventName<CustomEvent<string>>,
-    onValueChanged: EventName<CustomEvent<string>>
-};
-
-export const AdmiraltyTypeAhead: StencilReactComponent<AdmiraltyTypeAheadElement, AdmiraltyTypeAheadEvents> = /*@__PURE__*/ createComponent<AdmiraltyTypeAheadElement, AdmiraltyTypeAheadEvents>({
-    tagName: 'admiralty-type-ahead',
-    elementClass: AdmiraltyTypeAheadElement,
-    react: React,
-    events: {
-        onSelectionChanged: 'selectionChanged',
-        onValueChanged: 'valueChanged'
-    } as AdmiraltyTypeAheadEvents,
-    defineCustomElement: defineAdmiraltyTypeAhead
-});
-
-type AdmiraltyTypeAheadItemEvents = NonNullable<unknown>;
-
-export const AdmiraltyTypeAheadItem: StencilReactComponent<AdmiraltyTypeAheadItemElement, AdmiraltyTypeAheadItemEvents> = /*@__PURE__*/ createComponent<AdmiraltyTypeAheadItemElement, AdmiraltyTypeAheadItemEvents>({
-    tagName: 'admiralty-type-ahead-item',
-    elementClass: AdmiraltyTypeAheadItemElement,
-    react: React,
-    events: {} as AdmiraltyTypeAheadItemEvents,
-    defineCustomElement: defineAdmiraltyTypeAheadItem
 });
