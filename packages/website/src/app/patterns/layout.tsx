@@ -5,7 +5,9 @@ import SideNav, { SideNavItem } from "@/components/side-nav/side-nav";
 
 const sideNavItems: SideNavItem[] = [
   { path: "/", title: "Overview", },
-  { path: "test1", title: "Test 1" },
+  { path: "/service-unavailable", title: "Service Unavailable" },
+  { path: "/page-not-found", title: "Page Not Found" },
+  { path: "service-error", title: "Service Error" },
 ];
 
 export default function Layout({ children }: { children: React.ReactNode }) {
