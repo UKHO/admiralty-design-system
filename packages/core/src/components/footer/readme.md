@@ -22,6 +22,14 @@
 |      | Footer links should be placed in the slot e.g. `<admiralty-link href="http://www.example.com">Privacy Policy</admiralty-link>` |
 
 
+## CSS Custom Properties
+
+| Name                                   | Description                     |
+| -------------------------------------- | ------------------------------- |
+| `--admiralty-footer-links-font-weight` | Font weight of the footer links |
+| `--admiralty-footer-text-weight`       | Font weight of the footer text  |
+
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

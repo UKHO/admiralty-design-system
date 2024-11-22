@@ -4,13 +4,14 @@
   display: block;
   line-height: 40px;
   padding: 0 18px;
+
   @include desktop-only {
     padding: 0 20px;
   }
 
   strong {
     border: 2px solid;
-    font-weight: bold;
+    font-weight: $phase-banner-font-weight;
     text-transform: uppercase;
     letter-spacing: 1px;
     color: $phase-banner-text-colour;

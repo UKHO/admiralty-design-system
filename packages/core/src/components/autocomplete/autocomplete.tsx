@@ -569,7 +569,7 @@ export class AutocompleteComponent {
     return (
       <div class={wrapperClassName} onKeyDown={event => this.handleKeyDown(event)}>
         {this.label ? (
-          <admiralty-label disabled={this.disabled} for={inputId}>
+          <admiralty-label class="autocomplete__label" disabled={this.disabled} for={inputId}>
             {this.label}
           </admiralty-label>
         ) : null}
