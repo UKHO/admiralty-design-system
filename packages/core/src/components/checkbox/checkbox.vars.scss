@@ -1,5 +1,13 @@
 @import '../../styles/vars/globals';
 
+/**
+ * @prop --admiralty-checkbox-font-size: Font size of the checkbox
+ * @prop --admiralty-checkbox-font-weight: Font weight of the checkbox
+**/
+
+$checkbox-font-size: var(--admiralty-checkbox-font-size, var(--admiralty-font-size-0));
+$checkbox-font-weight: var(--admiralty-checkbox-font-weight, var(--admiralty-font-weight-normal));
+
 $checkbox-border-colour: var(--admiralty-colour-primary);
 $checkbox-colour: var(--admiralty-colour-primary-contrast);
 $checkbox-text-colour: var(--admiralty-colour-primary);

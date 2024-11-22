@@ -1,7 +1,8 @@
 @import 'checkbox.vars';
 
 .form-control {
-  font-size: 18px;
+  font-size: $checkbox-font-size;
+  font-weight: $checkbox-font-weight;
   position: relative;
   display: inline-block;
 

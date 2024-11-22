@@ -1,5 +1,11 @@
 @import '../../styles/vars/globals';
 
+/**
+ * @prop --admiralty-progress-bar-font-size: Font size for the progress bar
+**/
+
+$progress-bar-font-size: var(--admiralty-progress-bar-font-size, var(--admiralty-font-size-0));
+
 $progress-bar-background-colour: var(--admiralty-background-colour-tint);
 $progress-bar-text-colour: var(--admiralty-colour-primary);
 $progress-bar-success-colour: var(--admiralty-colour-success);
