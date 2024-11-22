@@ -1,3 +1,15 @@
+# v3.1.0 (Mon Nov 11 2024)
+
+#### 🐛 Bug Fix
+
+- Fix: Accessibility Disable Input labels and hint text fail WCAG 1.4.3 [#288](https://github.com/UKHO/admiralty-design-system/pull/288) ([@developernm](https://github.com/developernm))
+
+#### Authors: 1
+
+- [@developernm](https://github.com/developernm)
+
+---
+
 # v3.0.1 (Fri Oct 04 2024)
 
 #### 🐛 Bug Fix
