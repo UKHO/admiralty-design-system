@@ -26,7 +26,7 @@
   display: flex;
   flex-direction: row;
   flex-grow: 1;
-  font-size: 18px;
+  font-size: $header-brand-text-size;
   padding: 1.3em 0 1.3em 1.3em;
 
   @include not-desktop {
@@ -65,7 +65,7 @@
     flex-direction: column;
     flex-grow: 1;
     justify-content: center;
-    font-size: 2em;
+    font-size: $header-title-text-size;
     line-height: 2em;
     margin-top: 4px;
     margin-bottom: unset;

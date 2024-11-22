@@ -30,7 +30,7 @@ hr {
     color: $tab-group-heading-text-colour;
     background-color: unset;
     font-weight: $tab-group-heading-text-weight;
-    font-size: 16px;
+    font-size: $tab-group-heading-text-font;
     margin-left: 4px;
 
     &:first-child {
@@ -38,7 +38,7 @@ hr {
     }
 
     @include not-desktop {
-      font-size: 14px;
+      font-size: $tab-group-heading-not-desktop-text-font;
       line-height: 18px;
       padding: 8px;
       height: unset;

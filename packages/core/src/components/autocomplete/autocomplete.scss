@@ -16,6 +16,12 @@
   width: 100%;
 }
 
+.autocomplete__label {
+  background-color: transparent;
+  position: relative;
+  font-size: $autocomplete-label-font-size;
+}
+
 .autocomplete__input {
   background-color: transparent;
   position: relative;
@@ -143,8 +149,8 @@
 .autocomplete__hint,
 .autocomplete__input,
 .autocomplete__option {
-  font-size: 1rem;
-  font-weight: 300;
+  font-size: $autocomplete-option-font-size;
+  font-weight: $autocomplete-option-font-weight;
 }
 
 .autocomplete__hint,
@@ -153,7 +159,7 @@
 }
 
 .autocomplete-down-icon {
-  font-size: 24px;
+  font-size: $autocomplete-icon-font-size;
   font-weight: 300;
   pointer-events: none;
   position: absolute;
