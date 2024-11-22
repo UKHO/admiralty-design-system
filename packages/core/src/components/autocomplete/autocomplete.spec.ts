@@ -45,7 +45,7 @@ describe('autocomplete', () => {
           United States
         </admiralty-autocomplete-option>
         <div class="autocomplete__wrapper">
-          <admiralty-label for="admiralty-autocomplete-2-input">
+          <admiralty-label class="autocomplete__label" for="admiralty-autocomplete-2-input">
             Country
           </admiralty-label>
           <admiralty-hint id="admiralty-autocomplete-2-hint">
@@ -83,7 +83,7 @@ describe('autocomplete', () => {
           United States
         </admiralty-autocomplete-option>
         <div class="autocomplete__wrapper">
-          <admiralty-label for="custom-input">
+          <admiralty-label class="autocomplete__label" for="custom-input">
             Country
           </admiralty-label>
           <admiralty-hint id="custom-hint">

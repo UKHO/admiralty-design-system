@@ -6,6 +6,8 @@
   display: block;
   padding: 10px 15px;
   box-shadow: none;
+  font-size: $skip-link-font-size;
+  font-weight: $skip-link-font-weight;
 
   span {
     box-shadow: 0 2px $skip-link-text-colour;

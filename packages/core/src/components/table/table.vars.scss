@@ -1,4 +1,10 @@
 @import "../../styles/vars/globals";
 
-$table-caption-text-weight: 500;
+/**
+ * @prop --admiralty-table-heading-font-size: Font size for the table heading
+ * @prop --admiralty-table-heading-font-weight: Font weight for the table heading
+**/
+
+$table-caption-text-size: var(--admiralty-table-heading-font-size, var(--admiralty-font-size-3));
+$table-caption-text-weight: var(--admiralty-table-heading-font-weight, var(--admiralty-font-weight-medium));
 $table-caption-text-colour: var(--admiralty-colour-primary);

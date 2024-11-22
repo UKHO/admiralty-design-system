@@ -1,4 +1,9 @@
 @import "../../styles/vars/globals";
 
-$label-text-weight: 500;
+/**
+ * @prop --admiralty-label-font-weight: Font weight of the label
+**/
+
+$label-text-weight: var(--admiralty-label-font-weight, var(--admiralty-font-weight-medium));
+
 $label-disabled-text-colour: var(--admiralty-disabled-colour);
