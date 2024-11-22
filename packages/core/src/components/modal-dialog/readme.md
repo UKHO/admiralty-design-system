@@ -23,6 +23,16 @@
 | `"content"` | Content of the dialog.  |
 
 
+## CSS Custom Properties
+
+| Name                                       | Description                                 |
+| ------------------------------------------ | ------------------------------------------- |
+| `--admiralty-modal-heading-font-size`      | Font size for the modal dialog heading      |
+| `--admiralty-modal-heading-font-weight`    | Font weight for the modal dialog heading    |
+| `--admiralty-modal-slotted-icon-font-size` | Font size for the modal dialog slotted icon |
+| `--admiralty-modal-slotted-text-font-size` | Font size for the modal dialog slotted text |
+
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

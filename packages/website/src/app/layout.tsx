@@ -65,7 +65,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <AdmiraltyLink href="http://www.example.com" new-tab="true">
             Privacy Policy
           </AdmiraltyLink>
-          <AdmiraltyLink href="http://www.example.com">Accessibility</AdmiraltyLink>
+          <AdmiraltyLink href="/accessbility">Accessibility</AdmiraltyLink>
         </AdmiraltyFooter>
       </body>
     </html>

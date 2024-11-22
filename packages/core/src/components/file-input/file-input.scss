@@ -9,9 +9,9 @@
   align-content: stretch;
   justify-content: stretch;
   margin-bottom: 6px;
-  font-size: $file-input-font-size;
+  font-size: $file-input-font-size; // TODO: Need to confirm if this does anything.
+  font-weight: $file-input-font-weight; // TODO: Need to confirm if this does anything.
   line-height: $file-input-line-height;
-  font-weight: $file-input-font-weight;
 
   &:hover {
     background-color: $file-input-background-hover-colour;

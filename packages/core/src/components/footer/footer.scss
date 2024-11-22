@@ -57,7 +57,7 @@ footer {
 
       ::slotted(admiralty-link) {
         a {
-          font-weight: normal;
+          font-weight: $footer-links-font-weight;
         }
       }
     }

@@ -1,8 +1,17 @@
 @import '../../styles/vars/globals';
 
+/**
+ * @prop --admiralty-tab-group-font-size: Font size for the tab group
+ * @prop --admiralty-tab-group-not-desktop-font-size: Font size for the tab group when not in desktop view
+ * @prop --admiralty-tab-group-font-weight: Font weight for the tab group
+**/
+
+$tab-group-heading-text-font: var(--admiralty-tab-group-font-size, var(--admiralty-font-size-0));
+$tab-group-heading-not-desktop-text-font: var(--admiralty-tab-group-not-desktop-font-size, var(--admiralty-font-size--1));
+$tab-group-heading-text-weight:  var(--admiralty-tab-group-font-weight, var(--admiralty-font-weight-medium));
+
 $tab-group-separator-colour: var(--admiralty-colour-light);
 $tab-group-heading-text-colour: var(--admiralty-colour-primary);
-$tab-group-heading-text-weight: 500;
 $tab-group-heading-hover-background-colour: var(--admiralty-hover-background-colour);
 $tab-group-focus-colour: var(--admiralty-focus-colour) !default;
 $tab-group-focus-text-colour: var(--admiralty-text-colour) !default;
