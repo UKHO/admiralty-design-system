@@ -27,6 +27,14 @@
 | `checkboxFocus`   | Event is fired when the form control gains focus   | `CustomEvent<FocusEvent>`                     |
 
 
+## CSS Custom Properties
+
+| Name                               | Description                 |
+| ---------------------------------- | --------------------------- |
+| `--admiralty-checkbox-font-size`   | Font size of the checkbox   |
+| `--admiralty-checkbox-font-weight` | Font weight of the checkbox |
+
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*
