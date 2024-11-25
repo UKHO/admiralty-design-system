@@ -1,7 +1,15 @@
 @import '../../styles/vars/globals';
 
-$dialogue-title-text-size: 20px;
-$dialogue-title-text-weight: 400;
+/**
+ * @prop --admiralty-dialogue-title-font-size: Font size of the dialogue title
+ * @prop --admiralty-dialogue-title-icon-font-size: Font size of the dialogue title icon
+ * @prop --admiralty-dialogue-title-font-weight: Font weight of the dialogue title
+**/
+
+$dialogue-title-text-size: var(--admiralty-dialogue-title-font-size, var(--admiralty-font-size-0));
+$dialogue-title-icon-size: var(--admiralty-dialogue-title-icon-font-size, var(--admiralty-font-size-0));
+$dialogue-title-text-weight: var(--admiralty-dialogue-title-font-weight, var(--admiralty-font-weight-medium));
+
 $dialogue-title-text-colour: var(--admiralty-colour-primary);
 
 $dialogue-info-colour: var(--admiralty-colour-info-background);

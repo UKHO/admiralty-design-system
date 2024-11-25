@@ -10,12 +10,11 @@ a.section {
   max-width: fit-content;
   box-sizing: border-box;
   user-select: none;
-
   text-align: center;
   text-decoration: none;
   color: $side-nav-item-text-colour;
-  font-weight: normal;
-  font-size: 16px;
+  font-weight: $side-nav-item-weight;
+  font-size: $side-nav-item-size;
 
   &:hover {
     background-color: $side-nav-item-hover-background-colour;

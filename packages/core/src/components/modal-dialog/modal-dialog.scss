@@ -11,6 +11,7 @@
   background-color: $modal-backdrop-background-colour;
   opacity: 0.5;
 }
+
 .modal-backdrop.show {
   display: block;
 }
@@ -30,10 +31,9 @@
   & > .modal-heading {
     padding: 60px 60px 30px 60px;
     color: $modal-heading-text-colour;
-    font-weight: 400;
-    font-size: 36px;
+    font-weight: $modal-heading-font-weight;
+    font-size: $modal-heading-font-size;
     line-height: 48px;
-
     margin-bottom: 0px;
   }
 
@@ -52,7 +52,7 @@
       color: $modal-heading-text-colour;
       display: inline-block;
       padding: 3px 12px 3px 0px;
-      font-size: 24px;
+      font-size: $modal-slotted-icon-font-size;
     }
     //Specifying the specific slot inexplicably
     //makes the selector apply to the slotted div
@@ -61,7 +61,7 @@
       max-width: 500px;
       display: inline-block;
       font-weight: 400;
-      font-size: 18px;
+      font-size: $modal-slotted-text-font-size;
       line-height: 24px;
       margin-bottom: 0px;
     }
