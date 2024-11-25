@@ -1,3 +1,22 @@
+# v3.1.0 (Mon Nov 11 2024)
+
+#### 🚀 Enhancement
+
+- Feat: updated documentation for content design [#272](https://github.com/UKHO/admiralty-design-system/pull/272) ([@developernm](https://github.com/developernm) [@ecstaticrainbow](https://github.com/ecstaticrainbow))
+- Feat: Add accessibility statement to the DS website [#283](https://github.com/UKHO/admiralty-design-system/pull/283) ([@developernm](https://github.com/developernm))
+
+#### 🐛 Bug Fix
+
+- `@ukho/admiralty-core`
+  - Fix: Accessibility Disable Input labels and hint text fail WCAG 1.4.3 [#288](https://github.com/UKHO/admiralty-design-system/pull/288) ([@developernm](https://github.com/developernm))
+
+#### Authors: 2
+
+- [@developernm](https://github.com/developernm)
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
 # v3.0.1 (Fri Oct 04 2024)
 
 #### 🐛 Bug Fix
