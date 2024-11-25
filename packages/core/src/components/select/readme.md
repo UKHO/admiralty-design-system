@@ -12,7 +12,7 @@
 | `invalid`        | `invalid`         | Whether to show that the select is in an invalid state. | `boolean`          | `false`             |
 | `invalidMessage` | `invalid-message` | The message to show when the select is invalid.         | `string`           | `null`              |
 | `label`          | `label`           | The text that will be used as a field label.            | `string`           | `'Choose a colour'` |
-| `value`          | `value`           | The value of the input.                                 | `number \| string` | `''`                |
+| `value`          | `value`           | The value of the option selected as a string or number. | `number \| string` | `''`                |
 | `width`          | `width`           | The maximum width (px) for the input field.             | `number`           | `undefined`         |
 
 

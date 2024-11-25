@@ -39,6 +39,11 @@
     &.disabled {
       cursor: default;
       pointer-events: none;
+      color: $checkbox-disabled-text-colour;
+
+      &::before {
+        border-color: $checkbox-disabled-border-colour;
+      }
     }
 
     &::before,

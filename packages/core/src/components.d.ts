@@ -657,7 +657,7 @@ export namespace Components {
          */
         "label": string;
         /**
-          * The value of the input.
+          * The value of the option selected as a string or number.
          */
         "value"?: string | number | null;
         /**
@@ -2258,7 +2258,7 @@ declare namespace LocalJSX {
          */
         "onAdmiraltyChange"?: (event: AdmiraltySelectCustomEvent<SelectChangeEventDetail>) => void;
         /**
-          * The value of the input.
+          * The value of the option selected as a string or number.
          */
         "value"?: string | number | null;
         /**
