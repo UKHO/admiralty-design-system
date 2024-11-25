@@ -1,8 +1,16 @@
 @import '../../styles/vars/globals';
 
-$file-input-font-size: 18px;
+/**
+ * @prop --admiralty-file-input-font-size: Font size of the file input
+ * @prop --admiralty-file-input-font-weight: Font weight of the file input
+ * @prop --admiralty-file-input-label-font-size: Font size of the file input label
+ * @prop --admiralty-file-input-label-font-weight: Font weight of the file input label
+ * @prop --admiralty-file-input-icon-font-size: Font size of the file input icon
+**/
+
+$file-input-font-size: var(--admiralty-file-input-font-size, var(--admiralty-font-size-0)); // TODO: need to confirm if this variable works.
+$file-input-font-weight: var(--admiralty-file-input-font-weight, var(--admiralty-font-weight-normal)); // TODO: need to confirm if this variable works.
 $file-input-line-height: 24px;
-$file-input-font-weight: 300;
 
 $file-input-background-colour: var(--admiralty-background-colour-tint);
 $file-input-background-hover-colour: var(--admiralty-hover-background-colour-tint);
@@ -13,9 +21,9 @@ $file-input-focus-text-colour: var(--admiralty-text-colour);
 
 // Icon
 $file-input-icon-colour: var(--admiralty-colour-primary);
-$file-input-icon-size: 24px;
+$file-input-icon-size: var(--admiralty-file-input-icon-font-size, var(--admiralty-font-size-2));
 
 // Label
 $file-input-label-colour: var(--admiralty-colour-primary);
-$file-input-label-font-size: 18px;
-$file-input-label-font-weight: 500;
+$file-input-label-font-size: var(--admiralty-file-input-label-font-size, var(--admiralty-font-size-0));
+$file-input-label-font-weight: var(--admiralty-file-input-label-font-weight, var(--admiralty-font-weight-medium));

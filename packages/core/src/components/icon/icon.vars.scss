@@ -1,3 +1,7 @@
 @import '../../styles/vars/globals';
 
-$icon-size: 16px;
+/**
+ * @prop --admiralty-icon-font-size: Font size of the icon
+**/
+
+$icon-size:  var(--admiralty-icon-font-size, var(--admiralty-font-size-0));

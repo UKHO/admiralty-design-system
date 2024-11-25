@@ -1,8 +1,13 @@
 @import '../../styles/vars/globals';
 
+/**
+ * @prop --admiralty-radio-label-font-weight: Font weight for the radio label
+**/
+
+$radio-label-font-weight: var(--admiralty-radio-label-font-weight, var(--admiralty-font-weight-normal));
+
 $radio-border-colour: var(--admiralty-colour-primary);
 $radio-invalid-border-colour: var(--admiralty-colour-danger);
 $radio-focus-colour: var(--admiralty-focus-colour) !default;
 $radio-checked-background-colour: var(--admiralty-colour-primary);
 $radio-disabled-border-colour: var(--admiralty-disabled-colour) !default;
-$radio-text-weight: 300;

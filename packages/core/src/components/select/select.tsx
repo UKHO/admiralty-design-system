@@ -45,7 +45,7 @@ export class SelectComponent {
   @Event() admiraltyBlur: EventEmitter<void>;
 
   /**
-   * The value of the input.
+   * The value of the option selected as a string or number.
    */
   @Prop({ mutable: true }) value?: string | number | null = '';
 

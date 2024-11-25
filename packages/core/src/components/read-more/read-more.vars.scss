@@ -1,6 +1,11 @@
 @import '../../styles/vars/globals';
 
+/**
+ * @prop --admiralty-read-more-font-weight: Font weight for the read more text
+**/
+
+$read-more-font-weight: var(--admiralty-read-more-font-weight, var(--admiralty-font-weight-medium));
+
 $read-more-text-colour: var(--admiralty-text-color);
 $read-more-border-colour: var(--admiralty-colour-info);
 $read-more-heading-font-weight: var(--admiralty-font-weight);
-$read-more-text-weight: 500;

@@ -1,10 +1,18 @@
 @import '../../styles/vars/globals';
 
+/**
+ * @prop --admiralty-select-font-size: Font size for the select text
+ * @prop --admiralty-select-font-weight: Font weight for the select text
+ * @prop --admiralty-select-icon-font-size: Font size for the select icon
+**/
+
+$select-text-weight: var(--admiralty-select-font-weight, var(--admiralty-font-weight-normal));
+$select-text-size: var(--admiralty-select-font-size, var(--admiralty-font-size-0));
+$select-icon-size: var(--admiralty-select-icon-font-size, var(--admiralty-font-size-2));
+
 $select-background-colour: var(--admiralty-background-colour);
 $select-border-colour: var(--admiralty-text-colour);
 $select-text-colour: var(--admiralty-text-colour);
-$select-text-weight: 300;
-$select-text-size: 18px;
 $select-focus-colour: var(--admiralty-focus-colour) !default;
 $select-error-border-colour: var(--admiralty-colour-danger) !default;
 $select-disabled-text-colour: var(--admiralty-disabled-colour) !default;
