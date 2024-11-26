@@ -21,8 +21,10 @@
 | Name                                                       | Description                                            |
 | ---------------------------------------------------------- | ------------------------------------------------------ |
 | `--admiralty-pill-background-colour`                       | Background colour of the pill                          |
+| `--admiralty-pill-item-font-size`                          | Font size for the pill text                            |
 | `--admiralty-pill-item-number-background-colour`           | Background colour for the pill's item number           |
 | `--admiralty-pill-item-number-colour`                      | Colour for the pill's item number                      |
+| `--admiralty-pill-item-number-font-size`                   | Font size for the pill item number                     |
 | `--admiralty-pill-item-selected-icon`                      | Colour of the icon for the pill                        |
 | `--admiralty-pill-item-text-colour`                        | Item text colour of the pill                           |
 | `--admiralty-secondary-pill-background-colour`             | Background colour of the secondary pill                |
