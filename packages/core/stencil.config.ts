@@ -66,7 +66,7 @@ export const config: Config = {
       esmLoaderPath: '../loader',
       copy: [
         { src: '../src/styles/webfonts', dest: '../../styles/webfonts' },
-        { src: '../src/themes', dest: '../../themes' },
+        { src: '../src/themes', dest: '../themes' },
       ],
     },
     {
