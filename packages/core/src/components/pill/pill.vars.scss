@@ -1,4 +1,4 @@
-@use '../../styles/vars/colours';
+@import "../../styles/vars/globals";
 
 /**
  * @prop --admiralty-pill-background-colour: Background colour of the pill
@@ -21,21 +21,21 @@
  * @prop --admiralty-tertiary-pill-item-selected-icon: Colour of the icon for the tertiary pill
 **/
 
-$pill-background-colour: var(--admiralty-pill-background-colour, #{colours.$primary});
-$pill-item-text-colour: var(--admiralty-pill-item-text-colour, #{colours.$light-text});
-$pill-item-number-background-colour: var(--admiralty-pill-item-number-background-colour, #{colours.$light-text});
-$pill-item-number-colour: var(--admiralty-pill-item-number-colour, #{colours.$primary});
-$pill-item-selected-icon-colour: var(--admiralty-pill-item-number-colour, #{colours.$light-text});
+$pill-background-colour: var(--admiralty-pill-background-colour, var(--admiralty-colour-primary));
+$pill-item-text-colour: var(--admiralty-pill-item-text-colour, var(--admiralty-colour-primary-contrast));
+$pill-item-number-background-colour: var(--admiralty-pill-item-number-background-colour, var(--admiralty-colour-primary-contrast));
+$pill-item-number-colour: var(--admiralty-pill-item-number-colour, var(--admiralty-colour-primary));
+$pill-item-selected-icon-colour: var(--admiralty-pill-item-number-colour, var(--admiralty-colour-primary-contrast));
 
-$secondary-pill-background-colour: var(--admiralty-secondary-pill-background-colour, #{colours.$light-text});
-$secondary-pill-border-colour: var(--admiralty-secondary-pill-border-colour, #{colours.$primary});
-$secondary-pill-item-text-colour: var(--admiralty-secondary-pill-item-text-colour, #{colours.$primary});
-$secondary-pill-item-number-background-colour: var(--admiralty-secondary-pill-item-number-background-colour, #{colours.$primary});
-$secondary-pill-item-number-colour: var(--admiralty-secondary-pill-item-number-colour, #{colours.$light-text});
-$secondary-pill-item-selected-icon-colour: var(--admiralty-secondary-pill-item-number-colour, #{colours.$primary});
+$secondary-pill-background-colour: var(--admiralty-secondary-pill-background-colour, var(--admiralty-colour-primary-contrast));
+$secondary-pill-border-colour: var(--admiralty-secondary-pill-border-colour, var(--admiralty-colour-primary));
+$secondary-pill-item-text-colour: var(--admiralty-secondary-pill-item-text-colour, var(--admiralty-colour-primary));
+$secondary-pill-item-number-background-colour: var(--admiralty-secondary-pill-item-number-background-colour, var(--admiralty-colour-primary));
+$secondary-pill-item-number-colour: var(--admiralty-secondary-pill-item-number-colour, var(--admiralty-colour-primary-contrast));
+$secondary-pill-item-selected-icon-colour: var(--admiralty-secondary-pill-item-number-colour, var(--admiralty-colour-primary));
 
-$tertiary-pill-background-colour: var(--admiralty-tertiary-pill-background-colour, #{colours.$info});
-$tertiary-pill-item-text-colour: var(--admiralty-tertiary-pill-item-text-colour, #{colours.$light-text});
-$tertiary-pill-item-number-background-colour: var(--admiralty-tertiary-pill-item-number-background-colour, #{colours.$light-text});
-$tertiary-pill-item-number-colour: var(--admiralty-tertiary-pill-item-number-colour, #{colours.$info});
-$tertiary-pill-item-selected-icon-colour: var(--admiralty-tertiary-pill-item-number-colour, #{colours.$light-text});
+$tertiary-pill-background-colour: var(--admiralty-tertiary-pill-background-colour, var(--admiralty-colour-info));
+$tertiary-pill-item-text-colour: var(--admiralty-tertiary-pill-item-text-colour, var(--admiralty-colour-primary-contrast));
+$tertiary-pill-item-number-background-colour: var(--admiralty-tertiary-pill-item-number-background-colour, var(--admiralty-colour-primary-contrast));
+$tertiary-pill-item-number-colour: var(--admiralty-tertiary-pill-item-number-colour, var(--admiralty-colour-info));
+$tertiary-pill-item-selected-icon-colour: var(--admiralty-tertiary-pill-item-number-colour, var(--admiralty-colour-primary-contrast));
