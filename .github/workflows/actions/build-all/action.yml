@@ -14,7 +14,7 @@ runs:
       with:
         name: admiralty-core
         output: ./packages/core/admiralty-core.zip
-        paths: ./packages/core/dist ./packages/core/loader ./packages/core/styles
+        paths: ./packages/core/dist ./packages/core/loader ./packages/core/styles ./packages/core/docs ./packages/core/themes
     - uses: ./.github/workflows/actions/upload-archive
       with:
         name: admiralty-angular
