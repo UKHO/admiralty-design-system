@@ -17,7 +17,7 @@
     "@angular/core": ">=16.2.12"
   },
   "dependencies": {
-    "@ukho/admiralty-core": "^3.1.1",
+    "@ukho/admiralty-core": "workspace:*",
     "tslib": "^2.7.0"
   },
   "devDependencies": {

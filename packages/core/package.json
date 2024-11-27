@@ -18,8 +18,8 @@
     "themes/"
   ],
   "scripts": {
-    "build": "yarn build.css && stencil build",
-    "build.css": "yarn css.sass && yarn css.minify",
+    "build": "bun run build.css && stencil build",
+    "build.css": "bun run css.sass && bun run css.minify",
     "css.minify": "cleancss -O2 -o styles/admiralty.bundle.css styles/admiralty.bundle.css",
     "css.sass": "sass --embed-sources src/styles/css:./styles",
     "start": "stencil build --dev --watch --serve --no-open",

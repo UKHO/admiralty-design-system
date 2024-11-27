@@ -19,7 +19,7 @@
     "@angular/platform-browser": "^18.2.5",
     "@angular/platform-browser-dynamic": "^18.2.5",
     "@angular/router": "^18.2.5",
-    "@ukho/admiralty-angular": "^3.1.1",
+    "@ukho/admiralty-angular": "workspace:*",
     "rimraf": "^6.0.1",
     "rxjs": "~7.8.1",
     "tslib": "^2.7.0",
