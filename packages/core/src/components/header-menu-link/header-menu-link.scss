@@ -23,7 +23,7 @@
     flex-direction: column;
     height: 100%;
     justify-content: center;
-    line-height: 1.33em;
+    line-height: $header-menu-link-line-height;
     margin-bottom: 0;
     min-width: 4em;
     max-width: 11.1em;
@@ -54,9 +54,7 @@
     a {
       font-weight: $header-menu-link-font-weight;
       &:focus {
-        box-shadow:
-          0 -4px $header-menu-link-focus-colour,
-          0 4px $header-menu-link-focus-text-colour;
+        box-shadow: 0 -4px $header-menu-link-focus-colour, 0 4px $header-menu-link-focus-text-colour;
       }
     }
 

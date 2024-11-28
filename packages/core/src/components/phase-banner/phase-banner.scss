@@ -2,7 +2,7 @@
 
 .phase-banner {
   display: block;
-  line-height: 40px;
+  line-height: $phase-banner-line-height;
   padding: 0 18px;
 
   @include desktop-only {

@@ -28,7 +28,7 @@
       color: $dialogue-title-text-colour;
       font-size: $dialogue-title-text-size;
       font-weight: $dialogue-title-text-weight;
-      line-height: 30px;
+      line-height: $dialogue-title-line-height;
       margin: 0;
     }
   }

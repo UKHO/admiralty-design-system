@@ -10,7 +10,7 @@
 
 $file-input-font-size: var(--admiralty-file-input-font-size, var(--admiralty-font-size-0)); // TODO: need to confirm if this variable works.
 $file-input-font-weight: var(--admiralty-file-input-font-weight, var(--admiralty-font-weight-normal)); // TODO: need to confirm if this variable works.
-$file-input-line-height: 24px;
+$file-input-line-height: var(--admiralty-file-input-line-height, var(--admiralty-line-height-0));
 
 $file-input-background-colour: var(--admiralty-background-colour-tint);
 $file-input-background-hover-colour: var(--admiralty-hover-background-colour-tint);

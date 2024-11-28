@@ -39,7 +39,7 @@ hr {
 
     @include not-desktop {
       font-size: $tab-group-heading-not-desktop-text-font;
-      line-height: 18px;
+      // line-height: 18px;
       padding: 8px;
       height: unset;
       width: unset;

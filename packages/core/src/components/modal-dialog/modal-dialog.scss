@@ -33,7 +33,7 @@
     color: $modal-heading-text-colour;
     font-weight: $modal-heading-font-weight;
     font-size: $modal-heading-font-size;
-    line-height: 48px;
+    line-height: $modal-heading-line-height;
     margin-bottom: 0px;
   }
 
@@ -62,7 +62,7 @@
       display: inline-block;
       font-weight: 400;
       font-size: $modal-slotted-text-font-size;
-      line-height: 24px;
+      line-height: $modal-slotted-line-height;
       margin-bottom: 0px;
     }
   }
