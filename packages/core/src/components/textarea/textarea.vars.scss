@@ -7,7 +7,7 @@
 $textarea-font-weight: var(--admiralty-text-area-font-weight, var(--admiralty-font-weight-normal));
 
 $textarea-text-colour: var(--admiralty-text-colour);
-$textarea-line-height: var(--admiralty-line-height);
+$textarea-line-height: var(--admiralty-textarea-line-height, var(--admiralty-line-height-1));
 $textarea-border-colour: var(--admiralty-text-colour);
 $textarea-background-colour: var(--admiralty-background-colour);
 $textarea-shadow-colour: var(--admiralty-text-colour);

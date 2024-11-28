@@ -6,10 +6,10 @@
  * @prop --admiralty-filter-reset-font-weight: Font weight of the filter reset
 **/
 
-$filter-title-text-size:  var(--admiralty-filter-title-font-size, var(--admiralty-font-size-5));
-$filter-title-text-weight:  var(--admiralty-filter-title-font-weight, var(--admiralty-font-weight-medium));
-$filter-title-line-height: 48px;
-$filter-reset-text-size:  var(--admiralty-filter-reset-font-size, var(--admiralty-font-size-0));
+$filter-title-text-size: var(--admiralty-filter-title-font-size, var(--admiralty-font-size-5));
+$filter-title-text-weight: var(--admiralty-filter-title-font-weight, var(--admiralty-font-weight-medium));
+$filter-title-line-height: var(--admiralty-filter-title-line-height, var(--admiralty-line-height-5));
+$filter-reset-text-size: var(--admiralty-filter-reset-font-size, var(--admiralty-font-size-0));
 
 $filter-title-text-colour: var(--admiralty-colour-primary);
 $filter-focus-colour: var(--admiralty-focus-colour) !default;

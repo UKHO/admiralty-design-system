@@ -7,8 +7,11 @@
  * @prop --admiralty-modal-slotted-text-font-size: Font size for the modal dialog slotted text
 **/
 
+$modal-heading-line-height: var(--admiralty-modal-heading-line-height, var(--admiralty-line-height-5));
 $modal-heading-font-size: var(--admiralty-modal-heading-font-size, var(--admiralty-font-size-5));
 $modal-heading-font-weight: var(--admiralty-modal-heading-font-weight, var(--admiralty-font-weight-medium));
+
+$modal-slotted-line-height: var(--admiralty-modal-slotted-line-height, var(--admiralty-line-height-2));
 $modal-slotted-icon-font-size: var(--admiralty-modal-slotted-icon-font-size, var(--admiralty-font-size-2));
 $modal-slotted-text-font-size: var(--admiralty-modal-slotted-text-font-size, var(--admiralty-font-size-0));
 

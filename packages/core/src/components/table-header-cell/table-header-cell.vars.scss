@@ -1,4 +1,4 @@
-@import "../../styles/vars/globals";
+@import '../../styles/vars/globals';
 
 /**
  * @prop --admiralty-table-header-cell-font-size: Font size for the table header cell
@@ -7,6 +7,7 @@
 
 $table-header-cell-text-size: var(--admiralty-table-header-cell-font-size, var(--admiralty-font-size-0));
 $table-header-cell-text-weight: var(--admiralty-table-header-cell-font-weight, var(--admiralty-font-weight-medium));
+$table-header-cell-line-height: var(--admiralty-table-header-cell-line-height, var(--admiralty-line-height-0));
 
 $table-header-cell-text-colour: var(--admiralty-colour-primary);
 $table-header-cell-border-colour: var(--admiralty-colour-primary);

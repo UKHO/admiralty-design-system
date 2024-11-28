@@ -23,7 +23,7 @@ select {
   box-sizing: border-box;
   color: $select-text-colour;
   font-size: $select-text-size;
-  line-height: 24px;
+  line-height: $select-line-height;
   margin-bottom: 6px;
   position: relative;
   font-weight: $select-text-weight;

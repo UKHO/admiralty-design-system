@@ -7,10 +7,11 @@
 
 $checkbox-font-size: var(--admiralty-checkbox-font-size, var(--admiralty-font-size-0));
 $checkbox-font-weight: var(--admiralty-checkbox-font-weight, var(--admiralty-font-weight-normal));
+$checkbox-line-height: var(--admiralty-checkbox-line-height, var(--admiralty-line-height-0));
 
 $checkbox-border-colour: var(--admiralty-colour-primary);
 $checkbox-colour: var(--admiralty-colour-primary-contrast);
 $checkbox-text-colour: var(--admiralty-colour-primary);
 $checkbox-focus-colour: var(--admiralty-focus-colour) !default;
 $checkbox-disabled-text-colour: var(--admiralty-disabled-text-colour);
-$checkbox-disabled-border-colour: var(--admiralty-disabled-colour)
+$checkbox-disabled-border-colour: var(--admiralty-disabled-colour);

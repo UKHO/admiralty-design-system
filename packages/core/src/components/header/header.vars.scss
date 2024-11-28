@@ -9,11 +9,12 @@
 **/
 
 $header-text-size: var(--admiralty-header-font-size, var(--admiralty-font-size-0));
+$header-text-line-height: var(--admiralty-header-line-height, var(--admiralty-line-height-0));
 $header-brand-text-size: var(--admiralty-header-brand-font-size, var(--admiralty-font-size-0));
 $header-text-weight: var(--admiralty-header-font-weight, var(--admiralty-font-weight-normal)); // TODO: Need to confirm if this is still required.
 $header-title-text-weight: var(--admiralty-header-title-font-weight, var(--admiralty-font-weight-medium));
 $header-title-text-size: var(--admiralty-header-title-font-size, var(--admiralty-font-size-4));
-$header-text-line-height: 24px;
+$header-title-line-height: var(--admiralty-header-title-line-height, var(--admiralty-line-height-4));
 
 $header-background-colour: var(--admiralty-background-colour); // TODO: replace with variable
 $header-border-colour: var(--admiralty-colour-light);
@@ -21,4 +22,3 @@ $header-logo-colour: var(--admiralty-colour-primary);
 $header-separator-colour: var(--admiralty-colour-light);
 $header-outline-colour: var(--admiralty-text-colour);
 $header-icon-colour: var(--admiralty-colour-primary);
-

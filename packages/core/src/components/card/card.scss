@@ -9,7 +9,7 @@
   & > h6 {
     font-size: $card-heading-font-size;
     height: 60px;
-    line-height: 60px;
+    line-height: $card-heading-line-height;
     border: 1px solid $card-heading-border-colour;
     color: $card-heading-text-colour;
     background-color: $card-heading-colour;
@@ -18,7 +18,7 @@
     @include not-desktop {
       padding: 0px 18px;
       height: 48px;
-      line-height: 48px;
+      // line-height: 48px;
     }
   }
 

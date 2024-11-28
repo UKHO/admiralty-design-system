@@ -32,7 +32,7 @@ button {
     flex-direction: column;
     height: 100%;
     justify-content: center;
-    line-height: 1.33em;
+    line-height: $header-menu-item-line-height;
     margin-bottom: 0;
     min-width: 4em;
     max-width: 11.1em;

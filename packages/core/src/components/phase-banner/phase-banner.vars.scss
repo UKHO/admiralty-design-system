@@ -1,9 +1,9 @@
-@import "../../styles/vars/globals";
+@import '../../styles/vars/globals';
 
 /**
  * @prop --admiralty-phase-banner-font-weight: Font weight for the phase banner
 **/
 
 $phase-banner-font-weight: var(--admiralty-phase-banner-font-weight, var(--admiralty-font-weight-bold));
-
 $phase-banner-text-colour: var(--admiralty-colour-primary);
+$phase-banner-line-height: var(--admiralty-phase-banner-line-height, var(--admiralty-line-height-0));

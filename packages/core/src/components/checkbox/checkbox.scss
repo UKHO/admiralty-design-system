@@ -34,7 +34,7 @@
     -moz-user-select: none;
     user-select: none;
     min-height: 30px;
-    line-height: 30px;
+    line-height: $checkbox-line-height;
 
     &.disabled {
       cursor: default;

@@ -5,11 +5,12 @@
  * @prop --admiralty-header-menu-link-font-weight: Font weight of the header menu link
 **/
 
-$header-menu-link-text-size:  var(--admiralty-header-menu-link-font-size, var(--admiralty-font-size-0));
-$header-menu-link-font-weight:  var(--admiralty-header-menu-link-font-weight, var(--admiralty-font-weight-medium));
+$header-menu-link-text-size: var(--admiralty-header-menu-link-font-size, var(--admiralty-font-size-0));
+$header-menu-link-font-weight: var(--admiralty-header-menu-link-font-weight, var(--admiralty-font-weight-medium));
 
 $header-menu-link-active-colour: var(--admiralty-colour-primary) !default;
 $header-menu-link-text-colour: var(--admiralty-colour-primary) !default;
 $header-menu-link-hover-background-colour: var(--admiralty-hover-background-colour) !default;
 $header-menu-link-focus-colour: var(--admiralty-focus-colour) !default;
 $header-menu-link-focus-text-colour: var(--admiralty-text-colour) !default;
+$header-menu-link-line-height: var(--admiralty-header-menu-link-line-height, var(--admiralty-line-height-0));

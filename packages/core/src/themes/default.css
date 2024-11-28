@@ -103,6 +103,18 @@
   --admiralty-font-size-6: 2.75rem;
   --admiralty-font-size-7: 3.5rem;
 
+  --admiralty-line-height--3: 0.8256rem;
+  --admiralty-line-height--2: 0.9rem;
+  --admiralty-line-height--1: 1.05rem;
+  --admiralty-line-height-0: 1.2rem;
+  --admiralty-line-height-1: 1.65rem;
+  --admiralty-line-height-2: 1.8rem;
+  --admiralty-line-height-3: 2.1rem;
+  --admiralty-line-height-4: 2.4rem;
+  --admiralty-line-height-5: 2.7rem;
+  --admiralty-line-height-6: 3.3rem;
+  --admiralty-line-height-7: 4.2rem;
+
   /** Font Weight **/
   --admiralty-font-weight-normal: 300;
   --admiralty-font-weight-medium: 400;

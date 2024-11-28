@@ -7,7 +7,7 @@
 
 $button-font-size: var(--admiralty-button-font-size, var(--admiralty-font-size-0)); // 18px !default;
 $button-font-weight: var(--admiralty-button-font-weight, var(--admiralty-font-weight-medium)); // 400 !default;
-$button-line-height: 24px !default;
+$button-line-height: var(--admiralty-button-line-height, var(--admiralty-line-height-0));
 
 $button-focus-colour: var(--admiralty-focus-colour) !default;
 $button-focus-text-colour: var(--admiralty-text-colour) !default;

@@ -11,7 +11,7 @@
     border-style: solid;
     color: $input-text-colour;
     font-size: $input-text-size;
-    line-height: 24px;
+    line-height: $input-line-height;
     font-weight: $input-text-weight;
 
     padding: 12px;

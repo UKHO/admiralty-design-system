@@ -23,7 +23,7 @@
     font-size: $header-profile-text-size !important;
     height: 100%;
     justify-content: center;
-    line-height: 1.33em;
+    line-height: $header-profile-line-height;
     margin-bottom: 0;
     min-width: 4em;
     max-width: 11.1em;
