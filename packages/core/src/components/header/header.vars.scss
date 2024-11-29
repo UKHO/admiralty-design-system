@@ -4,15 +4,21 @@
  * @prop --admiralty-header-font-size: Font size of the header
  * @prop --admiralty-header-font-weight: Font weight of the header
  * @prop --admiralty-header-title-font-size: Font size of the header title
+ * @prop --admiralty-header-title-not-desktop-font-size: Font size of the header title when not in desktop view
  * @prop --admiralty-header-title-font-weight: Font weight of the header title
  * @prop --admiralty-header-brand-font-size: Font weight of the header brand
+ * @prop --admiralty-header-menu-icon-font-size: Font size of the header menu icon
+ * @prop --admiralty-header-menu-icon-font-weight: Font weight of the header menu icon
 **/
 
 $header-text-size: var(--admiralty-header-font-size, var(--admiralty-font-size-0));
 $header-brand-text-size: var(--admiralty-header-brand-font-size, var(--admiralty-font-size-0));
 $header-text-weight: var(--admiralty-header-font-weight, var(--admiralty-font-weight-normal)); // TODO: Need to confirm if this is still required.
+$header-title-text-size: var(--admiralty-header-title-not-desktop-font-size, var(--admiralty-font-size-2));
+$header-title-not-desktop-text-size: var(--admiralty-header-title-font-size, var(--admiralty-font-size-4));
 $header-title-text-weight: var(--admiralty-header-title-font-weight, var(--admiralty-font-weight-medium));
-$header-title-text-size: var(--admiralty-header-title-font-size, var(--admiralty-font-size-4));
+$header-menu-icon-font-size: var(--admiralty-header-menu-icon-font-size, var(--admiralty-font-size-2));
+$header-menu-icon-font-weight: var(--admiralty-header-menu-icon-font-weight, var(--admiralty-font-weight-bold));
 $header-text-line-height: 24px;
 
 $header-background-colour: var(--admiralty-background-colour); // TODO: replace with variable

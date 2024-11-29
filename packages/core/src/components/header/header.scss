@@ -72,21 +72,21 @@
     user-select: none;
 
     @include not-desktop {
-      font-size: 24px;
+      font-size: $header-title-not-desktop-text-size;
       line-height: 24px;
       white-space: pre-wrap;
     }
 
     a {
       cursor: pointer;
-      font-size: 1em;
+      font-size: var(--admiralty-font-size-0);
       font-weight: $header-title-text-weight;
       line-height: 1;
       max-width: fit-content;
       text-decoration: none;
 
       @include not-desktop {
-        font-size: 24px;
+        font-size: var(--admiralty-font-size-2);
       }
     }
   }
@@ -111,8 +111,8 @@
       background-color: unset;
 
       admiralty-icon {
-        font-size: 24px;
-        font-weight: 900;
+        font-size: $header-menu-icon-font-size;
+        font-weight: $header-menu-icon-font-weight;
         padding: 12px;
         cursor: pointer;
         min-width: 24px;
