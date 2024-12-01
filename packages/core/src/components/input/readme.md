@@ -47,10 +47,6 @@ and checkbox.
 
 ## Dependencies
 
-### Used by
-
- - [admiralty-type-ahead](../type-ahead)
-
 ### Depends on
 
 - [admiralty-label](../label)
@@ -64,7 +60,6 @@ graph TD;
   admiralty-input --> admiralty-hint
   admiralty-input --> admiralty-input-invalid
   admiralty-input-invalid --> admiralty-icon
-  admiralty-type-ahead --> admiralty-input
   style admiralty-input fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
