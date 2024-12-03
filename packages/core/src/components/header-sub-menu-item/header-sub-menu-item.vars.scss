@@ -7,6 +7,7 @@
 
 $header-sub-menu-item-text-size: var(--admiralty-header-sub-menu-item-font-size, var(--admiralty-font-size-0));
 $header-sub-menu-item-text-weight: var(--admiralty-header-sub-menu-item-font-weight, var(--admiralty-font-weight-normal));
+$header-sub-menu-item-not-desktop-text-weight: var(--admiralty-header-sub-menu-item-not-desktop-font-weight, var(--admiralty-font-weight-medium));
 
 $header-sub-menu-item-focus-colour: var(--admiralty-focus-colour);
 $header-sub-menu-item-text-colour: var(--admiralty-colour-primary);

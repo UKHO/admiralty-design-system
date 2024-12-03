@@ -1,8 +1,8 @@
 @use '../utils/a11y';
 @use '../utils/responsive';
 
-$heading-font-weight: 400;
-$list-item-font-weight: 300;
+$heading-font-weight: var(--admiralty-font-weight-medium);
+$list-item-font-weight: var(--admiralty-font-weight-normal);
 
 html {
   font-family: var(--admiralty-font-family);
@@ -27,11 +27,11 @@ a {
 h1 {
   color: var(--admiralty-colour-primary);
   font-weight: $heading-font-weight;
-  font-size: 48px;
+  font-size: var(--admiralty-font-size-6); /** OLD: 48px = 3rem, NEW: 2.75rem = 44px **/;
   line-height: 60px;
   margin: 0 0 30px 0;
   @include responsive.not-desktop {
-    font-size: 46px;
+    font-size: var(--admiralty-font-size-6); /** OLD: 46px = 2.875rem, NEW: 2.75rem = 44px **/
     line-height: 54px;
   }
 }
@@ -39,11 +39,11 @@ h1 {
 h2 {
   color: var(--admiralty-colour-primary);
   font-weight: $heading-font-weight;
-  font-size: 36px;
+  font-size: var(--admiralty-font-size-3); /** OLD: 36px, NEW: 1.75rem = 28px **/;
   line-height: 48px;
   margin-bottom: 18px;
   @include responsive.not-desktop {
-    font-size: 34px;
+    font-size: var(--admiralty-font-size-3); /** OLD: 34px = 2.125rem, NEW: 1.75rem = 28px **/;
     line-height: 42px;
   }
 }
@@ -53,11 +53,11 @@ h4,
 h5 {
   color: var(--admiralty-colour-primary);
   font-weight: $heading-font-weight;
-  font-size: 21px;
+  font-size: var(--admiralty-font-size-0); /** OLD: 21px = 1.313rem, NEW: 1rem = 16px **/;
   line-height: 30px;
   margin-bottom: 12px;
   @include responsive.not-desktop {
-    font-size: 20px;
+    font-size: var(--admiralty-font-size-0); /** OLD: 20px = 1.25rem, NEW: 1rem = 16px **/
     line-height: 30px;
   }
 }
@@ -65,36 +65,36 @@ h5 {
 h6 {
   color: var(--admiralty-colour-primary);
   font-weight: $heading-font-weight;
-  font-size: 18px;
+  font-size: var(--admiralty-font-size--1); /** OLD: 18px = 1.125rem, NEW 0.875 = 14px **/;
   line-height: 24px;
   margin-bottom: 12px;
   @include responsive.not-desktop {
-    font-size: 16px;
+    font-size: var(--admiralty-font-size--1); /** OLD: 16px, NEW 0.875 = 14px **/
   }
 }
 
 p {
-  font-size: 18px;
+  font-size: var(--admiralty-font-size-0); /** OLD: 18px = 1.125rem, NEW 1rem = 16px **/;
   line-height: 24px;
   margin-bottom: 30px;
   @include responsive.not-desktop {
-    font-size: 16px;
+    font-size: var(--admiralty-font-size-0); /** OLD: 16px **/;
   }
 }
 
 .intro {
-  font-size: 28px;
+  font-size: var(--admiralty-font-size-3); /** OLD: 28px **/
   line-height: 36px;
   margin-bottom: 30px;
   @include responsive.not-desktop {
-    font-size: 26px;
+    font-size: var(--admiralty-font-size-2); /** OLD: 26px = 1.625rem, NEW: 1.5rem = 24px **/
   }
 }
 
 .small {
-  font-size: 16px;
+  font-size: var(--admiralty-font-size-0); /** OLD: 16px **/
   @include responsive.not-desktop {
-    font-size: 14px;
+    font-size: var(--admiralty-font-size--1); /** OLD: 14px **/
     line-height: 22px;
   }
 }
@@ -123,12 +123,12 @@ ul {
 
   li:before {
     content: '\25A0';
-    font-size: 18px;
+    font-size: var(--admiralty-font-size-0); /** OLD: 18px = 1.125rem, NEW: 1rem = 16px **/
     color: var(--admiralty-colour-primary);
     vertical-align: text-bottom;
     margin-right: 12px;
     @include responsive.not-desktop {
-      font-size: 8px;
+      font-size: var(--admiralty-font-size-0); /** OLD: 8px = 0.5rem, NEW: 0.688rem = 11px **/
     }
   }
 }
@@ -144,7 +144,7 @@ ol {
   li:before {
     content: counter(li) '.';
     color: var(--admiralty-colour-primary);
-    font-size: 18px;
+    font-size: var(--admiralty-font-size-0); /** OLD: 18px = 1.125rem, NEW: 1rem = 16px **/
     margin-right: 12px;
   }
 

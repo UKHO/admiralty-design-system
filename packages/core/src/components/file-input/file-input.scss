@@ -29,7 +29,7 @@
   .upload-icon {
     color: $file-input-icon-colour;
     font-size: $file-input-icon-size;
-    font-weight: 900;
+    font-weight: $file-input-icon-weight;
     margin: 0.4rem auto;
     text-align: center;
     flex: 0 1;

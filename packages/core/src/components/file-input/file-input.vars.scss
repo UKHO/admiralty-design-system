@@ -6,6 +6,7 @@
  * @prop --admiralty-file-input-label-font-size: Font size of the file input label
  * @prop --admiralty-file-input-label-font-weight: Font weight of the file input label
  * @prop --admiralty-file-input-icon-font-size: Font size of the file input icon
+ * @prop --admiralty-file-input-icon-font-weight: Font weight of the file input icon
 **/
 
 $file-input-font-size: var(--admiralty-file-input-font-size, var(--admiralty-font-size-0)); // TODO: need to confirm if this variable works.
@@ -22,6 +23,7 @@ $file-input-focus-text-colour: var(--admiralty-text-colour);
 // Icon
 $file-input-icon-colour: var(--admiralty-colour-primary);
 $file-input-icon-size: var(--admiralty-file-input-icon-font-size, var(--admiralty-font-size-2));
+$file-input-icon-weight: var(--admiralty-file-input-icon-font-weight, var(--admiralty-font-weight-bold));
 
 // Label
 $file-input-label-colour: var(--admiralty-colour-primary);

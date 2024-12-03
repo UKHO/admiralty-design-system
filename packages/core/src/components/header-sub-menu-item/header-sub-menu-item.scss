@@ -48,7 +48,7 @@
     padding: 12px 24px;
     cursor: pointer;
     color: $header-sub-menu-item-text-colour;
-    font-weight: 500;
+    font-weight: $header-sub-menu-item-not-desktop-text-weight;
     background-color: unset;
     text-align: unset;
     text-decoration: unset;
