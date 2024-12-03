@@ -25,10 +25,14 @@
 
 ## CSS Custom Properties
 
-| Name                                   | Description                     |
-| -------------------------------------- | ------------------------------- |
-| `--admiralty-footer-links-font-weight` | Font weight of the footer links |
-| `--admiralty-footer-text-weight`       | Font weight of the footer text  |
+| Name                                           | Description                              |
+| ---------------------------------------------- | ---------------------------------------- |
+| `--admiralty-footer-compact-background-colour` | Background colour for the compact footer |
+| `--admiralty-footer-compact-font-size`         | Font size for the compact footer         |
+| `--admiralty-footer-compact-font-weight`       | Font weight for the compact footer       |
+| `--admiralty-footer-compact-text-colour`       | Text colour for the compact footer       |
+| `--admiralty-footer-links-font-weight`         | Font weight of the footer links          |
+| `--admiralty-footer-text-weight`               | Font weight of the footer text           |
 
 
 ----------------------------------------------

@@ -125,7 +125,7 @@ footer.footer-compact {
         }
       }
 
-      font-size: 0.625rem;
+      font-size: $footer-compact-font-size;
       justify-content: flex-end;
       line-height: .95rem;
       flex-flow: nowrap;
@@ -142,7 +142,7 @@ footer.footer-compact {
         margin-right: 0;
       }
 
-      width: 13.125rem;
+      width: 14.3rem;
       height: 1.1875rem;
       flex-shrink: 0;
 
