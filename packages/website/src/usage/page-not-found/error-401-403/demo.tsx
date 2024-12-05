@@ -1,42 +1,41 @@
 import React from "react";
+import { AdmiraltyHeader, AdmiraltyFooter, AdmiraltyLink } from "@ukho/admiralty-react";
+import {  } from "@ukho/admiralty-core/storybook-static/components/admiralty-header";
+
 
 export default function Demo() {
   return (
     <>
+      <AdmiraltyHeader headerTitle="Design System" logoImgUrl="/svg/UKHO linear logo.svg"></AdmiraltyHeader>
       <div>
         <article>
           <section>
             <h1>
               You do not have the necessary
-              <br /> permissions to view this page
+              <br />
+              permissions to view this page
             </h1>
           </section>
-          <div>
-            <div>
-              <article>
-                <div>
-                  <p>
-                    Please{' '}
-                    <a href="#">
-                      <strong>log in again.</strong>
-                    </a>{' '}
-                    If that does not work, contact Customer Services.
-                  </p>
-                  <p>
-                    Email:{' '}
-                    <a href="mailto:customerservices@ukho.gov.uk?subject=UKHO%20Data%20Upload%20Permissions%20Issue">
-                      <strong>customerservices@ukho.gov.uk</strong>
-                    </a>
-                    <br />
-                    We aim to respond within two working days.
-                  </p>
-                </div>
-              </article>
-            </div>
-          </div>
+          <section>
+            <p>
+              Please <a href="#"><strong>log in again.</strong></a> If that does not work, contact Customer Services.
+            </p>
+            <p>
+              Email:
+              <a href="mailto:example.email@ukho.gov.uk">
+                <strong>customerservices@ukho.gov.uk</strong>
+              </a>
+              <br />
+              We aim to respond within two working days.
+            </p>
+          </section>
         </article>
       </div>
-      </>
-      );
-    }
+      <AdmiraltyFooter imageSrc="/svg/UKHO stacked logo.svg">
+        <AdmiraltyLink href="http://www.example.com" new-tab="true">Privacy Policy</AdmiraltyLink>
+        <AdmiraltyLink href="http://www.example.com">Accessibility</AdmiraltyLink>
+      </AdmiraltyFooter>
+    </>
+  );
+}
 
