@@ -1,3 +1,15 @@
+# v3.1.1 (Tue Nov 26 2024)
+
+#### 🐛 Bug Fix
+
+- Fix: theme file missing when packaged [#308](https://github.com/UKHO/admiralty-design-system/pull/308) ([@developernm](https://github.com/developernm))
+
+#### Authors: 1
+
+- [@developernm](https://github.com/developernm)
+
+---
+
 # v3.1.0 (Mon Nov 11 2024)
 
 #### 🚀 Enhancement
