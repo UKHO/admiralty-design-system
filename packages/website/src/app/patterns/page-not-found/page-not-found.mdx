@@ -2,13 +2,122 @@
 
 ## Error 401-403
 
+401 and 403 error pages tell someone they page they do not have permission to view the requested page.
+
 import Error401To403 from "@/usage/page-not-found/error-401-403/index.mdx"
 
 <Error401To403 />
 
+### When to use this pattern
+
+Use a ‘401’ page if a user request is trying to access a page that they are not authorised to view on the Admiralty.co.uk website. This happens if the request fails to provide valid authentication e.g. username or password.
+
+Use a ‘403’ page is shown if a user request has provided valid credentials (e.g. username or password) but lacks permission to view the requested resource on Admiralty.co.uk. The user is informed access is forbidden despite having supplied valid authentication.
+
+### How it works
+
+The 401 and 403 pages should display:
+
+• ‘Unauthorised – [service name] – | ADMIRALTY’ as the browser window title\
+• ‘You do not have the necessary permissions to view this page’ as the H1\
+• A text link to a page that allows the user to log in again\
+• Contact information, if it exists and helps meet a user need
+
+Contact information should either:
+
+• be a link to a specific page that includes telephone numbers and opening times
+• include all telephone numbers and opening times
+• The content should be clear, unambiguous and concise, and not blame the user.
+
+### To make your pages compliant with WCAG 2.2:
+
+You must always write contact information in a clear and consistent way on an Error 401/403 – Forbidden page and similar service error pages. This relates to WCAG 2.2 success criterion 3.2.6 Consistent help.
+
+Do not use:
+
+• breadcrumbs\
+• technical jargon like 401, 403 or bad request\
+• informal or humorous words\
+• red text to warn people
+
+### Research on the pattern
+
+More research is needed to find out if people:
+
+• can fix the problem on their own.\
+• understand what has happened.\
+• understand the content and if there is anything missing.
+
+For further information on Admiralty.co.uk Design System user research please visit: User Research
+
+### Help improve this pattern
+
+To help make sure that this page is useful, relevant and up to date, you can:
+
+• take part in the ‘Unauthorised - 401/403 page’ discussion on GitHub and share your research.\
+• propose a change on GitHub – read more about how to propose changes in GitHub.
+
+## Error 404
+
 import Error404 from "@/usage/page-not-found/error-404/index.mdx"
 
+A Page Not Found tells someone the page they were trying to view does not exist. They are also known as 404 pages.
+
 <Error404 />
+
+
+### When to use this pattern
+
+Use a Page Not Found if someone is trying to view a page that does not exist on the website. This happens if someone:
+
+• Clicks a link or button that sends them to a page that does not exist on the website.\
+• Types or copies a web address for a page that does not exist on the website and asks the browser to display that page.\
+• Types a web address incorrectly or copies a web address incompletely and asks the browser to display that page on the website.
+
+Make sure any links to web addresses in your service, letters, forms and on the website are for pages that exist or redirect the user to pages that exist.
+
+### How it works
+
+The Page Not Found should display:
+
+• The browser window title as: Page not found – [service name] – | ADMIRALTY\
+• The H1 as: This page cannot be found\
+• A text link that allows the user to return to the homepage\
+• Contact information, if it exists and helps meet a user need
+
+Contact information should either:
+
+• be a link to a specific page that includes telephone numbers and opening times\
+• include all telephone numbers and opening times\
+• The content should be clear, unambiguous and concise, and not blame the user.
+
+### To make your pages compliant with WCAG 2.2:
+
+You must always write contact information in a clear and consistent way on a Page Not Found and similar service error pages. This relates to WCAG 2.2 success criterion 3.2.6 Consistent help.
+
+Do not use:
+
+• breadcrumbs\
+• technical jargon like ‘404’ or ‘bad request’\
+• informal or humorous words like ‘oops’\
+• red text to warn people
+
+### Research on the pattern
+
+More research is needed to find out if people:
+
+• can fix the problem on their own.\
+• understand what has happened.\
+• understand the content and if there is anything missing
+
+For further information on Admiralty.co.uk Design System user research please visit: User Research
+
+### Help improve this pattern
+
+To help make sure that this page is useful, relevant and up to date, you can:\
+
+• take part in the Page Not Found pages discussion on GitHub and share your research.\
+• propose a change on GitHub – read more about how to propose changes in GitHub.
 
 
 
