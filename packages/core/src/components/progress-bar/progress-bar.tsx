@@ -53,7 +53,7 @@ export class ProgressBarComponent {
 
     return (
       <div class="admiralty-progress">
-        {label ? <admiralty-label for={inputId}>{label} {progressionValue}</admiralty-label> : null}
+        {label ? <admiralty-label for={inputId}>{label}</admiralty-label> : null}
         <progress id={inputId} class={{ error: error }} value={progressionValue} max="100" />
       </div>
     );
