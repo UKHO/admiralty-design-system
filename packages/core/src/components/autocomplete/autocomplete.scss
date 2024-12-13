@@ -160,7 +160,7 @@
 
 .autocomplete-down-icon {
   font-size: $autocomplete-icon-font-size;
-  font-weight: 300;
+  font-weight: $autocomplete-icon-font-weight;
   pointer-events: none;
   position: absolute;
   right: 12px;
