@@ -33,13 +33,16 @@
 
 ## CSS Custom Properties
 
-| Name                                   | Description                     |
-| -------------------------------------- | ------------------------------- |
-| `--admiralty-header-brand-font-size`   | Font weight of the header brand |
-| `--admiralty-header-font-size`         | Font size of the header         |
-| `--admiralty-header-font-weight`       | Font weight of the header       |
-| `--admiralty-header-title-font-size`   | Font size of the header title   |
-| `--admiralty-header-title-font-weight` | Font weight of the header title |
+| Name                                             | Description                                            |
+| ------------------------------------------------ | ------------------------------------------------------ |
+| `--admiralty-header-brand-font-size`             | Font weight of the header brand                        |
+| `--admiralty-header-font-size`                   | Font size of the header                                |
+| `--admiralty-header-font-weight`                 | Font weight of the header                              |
+| `--admiralty-header-menu-icon-font-size`         | Font size of the header menu icon                      |
+| `--admiralty-header-menu-icon-font-weight`       | Font weight of the header menu icon                    |
+| `--admiralty-header-title-font-size`             | Font size of the header title                          |
+| `--admiralty-header-title-font-weight`           | Font weight of the header title                        |
+| `--admiralty-header-title-not-desktop-font-size` | Font size of the header title when not in desktop view |
 
 
 ## Dependencies
