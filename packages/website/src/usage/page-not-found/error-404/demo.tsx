@@ -1,6 +1,5 @@
 import React from "react";
 import { AdmiraltyHeader, AdmiraltyFooter, AdmiraltyLink } from "@ukho/admiralty-react";
-import {  } from "@ukho/admiralty-core/storybook-static/components/admiralty-header";
 
 
 export default function Demo() {
