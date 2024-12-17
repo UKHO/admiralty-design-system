@@ -48,7 +48,5 @@ export const DIRECTIVES = [
   d.AdmiraltyTableHeader,
   d.AdmiraltyTableHeaderCell,
   d.AdmiraltyTableRow,
-  d.AdmiraltyTextarea,
-  d.AdmiraltyTypeAhead,
-  d.AdmiraltyTypeAheadItem
+  d.AdmiraltyTextarea
 ];
