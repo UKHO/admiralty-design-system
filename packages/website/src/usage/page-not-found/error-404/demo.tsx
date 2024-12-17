@@ -1,7 +1,6 @@
 import React from "react";
 import { AdmiraltyHeader, AdmiraltyFooter, AdmiraltyLink } from "@ukho/admiralty-react";
 
-
 export default function Demo() {
   return (
     <>
