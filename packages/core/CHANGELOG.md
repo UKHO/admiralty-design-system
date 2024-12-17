@@ -1,3 +1,15 @@
+# v3.1.2 (Tue Dec 17 2024)
+
+#### 🐛 Bug Fix
+
+- Fix: Progress bar component not rendering on the documentation website [#323](https://github.com/UKHO/admiralty-design-system/pull/323) ([@developernm](https://github.com/developernm))
+
+#### Authors: 1
+
+- [@developernm](https://github.com/developernm)
+
+---
+
 # v3.1.0 (Mon Nov 11 2024)
 
 #### 🐛 Bug Fix
