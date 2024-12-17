@@ -26,6 +26,10 @@ const menuItems = [
     path: "/components",
   },
   {
+    name: "Patterns",
+    path: "/patterns",
+  },
+  {
     name: "Brand Guide",
     path: "/brand-guide",
   },
