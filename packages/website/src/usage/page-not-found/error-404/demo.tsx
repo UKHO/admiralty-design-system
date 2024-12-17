@@ -7,7 +7,7 @@ export default function Demo() {
       <AdmiraltyHeader headerTitle="Design System" logoImgUrl="/svg/UKHO linear logo.svg"></AdmiraltyHeader>
       <div>
         <h1>This page cannot be found</h1>
-        <p>It looks like the page you're looking for doesnt exist.</p>
+        <p>It looks like the page you&#39;re looking for doesnt exist.</p>
         <p>
           <a href="#">
             <strong>Return to homepage</strong>
