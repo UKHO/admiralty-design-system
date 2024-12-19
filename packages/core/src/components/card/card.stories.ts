@@ -15,7 +15,7 @@ export default meta;
 
 type Story = StoryObj<CardComponent>;
 
-export const WithTitle: Story = { 
+export const WithTitle: Story = {
     render: args => html`
         <admiralty-card heading="${args.heading}">Some content</admiralty-card>`,
     args: { heading: 'I am a card' }
@@ -30,4 +30,11 @@ export const WithHtmlContent: Story = {
     render: args => html`
         <admiralty-card heading="${args.heading}">You can put any html content in the body of a card. Such as <a href='#'>links</a> or <b>bold text</b></admiralty-card>`,
     args: { heading: 'I am a card' }
+};
+
+// TODO: Implement the pill into this story.
+export const WithCustomHtmlContent: Story = {
+  render: args => html`
+        <admiralty-card heading="${args.heading}">You can put any html content in the body of a card. Such as <a href='#'>links</a> or <b>bold text</b></admiralty-card>`,
+  args: { heading: 'I am a card' }
 };
