@@ -10,6 +10,7 @@ import { ButtonVariant } from "./components/button/button.types";
 import { IconName, IconPrefix } from "@fortawesome/fontawesome-svg-core";
 import { CheckboxChangeEventDetail } from "./components/checkbox/checkbox.interface";
 import { FileInputChangeEventDetail } from "./components/file-input/file-input.interface";
+import { FooterTypes } from "./components/footer/footer.types";
 import { IconName as IconName1 } from "@fortawesome/free-solid-svg-icons";
 import { InputChangeEventDetail } from "./components/input/input.interface";
 import { RadioGroupChangeEventDetail } from "./components/radio-group/radio-group-interface";
@@ -20,6 +21,7 @@ export { ButtonVariant } from "./components/button/button.types";
 export { IconName, IconPrefix } from "@fortawesome/fontawesome-svg-core";
 export { CheckboxChangeEventDetail } from "./components/checkbox/checkbox.interface";
 export { FileInputChangeEventDetail } from "./components/file-input/file-input.interface";
+export { FooterTypes } from "./components/footer/footer.types";
 export { IconName as IconName1 } from "@fortawesome/free-solid-svg-icons";
 export { InputChangeEventDetail } from "./components/input/input.interface";
 export { RadioGroupChangeEventDetail } from "./components/radio-group/radio-group-interface";
@@ -317,6 +319,10 @@ export namespace Components {
           * The text to display in the footer. The default value displays crown copyright, the current year and `UK Hydrographic Office`.
          */
         "text": string;
+        /**
+          * The type of footer to render. Valid values are `standard`, `compact`. Default value is `standard`.
+         */
+        "variant": FooterTypes;
     }
     interface AdmiraltyHeader {
         /**
@@ -1847,6 +1853,10 @@ declare namespace LocalJSX {
           * The text to display in the footer. The default value displays crown copyright, the current year and `UK Hydrographic Office`.
          */
         "text"?: string;
+        /**
+          * The type of footer to render. Valid values are `standard`, `compact`. Default value is `standard`.
+         */
+        "variant"?: FooterTypes;
     }
     interface AdmiraltyHeader {
         /**
