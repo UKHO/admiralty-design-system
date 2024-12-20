@@ -1,6 +1,7 @@
 import { newSpecPage } from '@stencil/core/testing';
 import { FooterComponent } from './footer';
 import { LinkComponent } from '../link/link';
+import { FooterType } from "./footer.types";
 
 describe('admiralty-footer', () => {
   it('renders', async () => {
@@ -51,6 +52,58 @@ describe('admiralty-footer', () => {
           </div>
           <div class="footer-content">
             <nav aria-label="Footer Links" class="footer-links">
+              <admiralty-link href="http://www.example.com" new-tab="true">
+                <a href="http://www.example.com" target="_blank">Privacy Policy</a>
+              </admiralty-link>
+              <admiralty-link href="http://www.example.com">
+                <a href="http://www.example.com" target="_self">Accessibility</a>
+              </admiralty-link>
+            </nav>
+            <div class="footer-text">
+              <p>
+                testText
+              </p>
+            </div>
+          </div>
+        </footer>
+      </admiralty-footer>
+    `);
+  });
+
+  it('renders compact', async () => {
+    const { root } = await newSpecPage({
+      components: [FooterComponent, LinkComponent],
+      html: `<admiralty-footer text="testText" variant="${FooterType.Compact}"></admiralty-footer>`,
+    });
+    expect(root).toEqualHtml(`
+      <admiralty-footer text="testText" variant="${FooterType.Compact}">
+        <footer class="footer-compact">
+          <div class="footer-content">
+            <nav aria-label="Footer Links" class="footer-links"></nav>
+            <div class="footer-text">
+              <p>
+                testText
+              </p>
+            </div>
+          </div>
+        </footer>
+      </admiralty-footer>
+    `);
+  });
+
+  it('renders compact with links', async () => {
+    const { root } = await newSpecPage({
+      components: [FooterComponent, LinkComponent],
+      html: `<admiralty-footer text="testText" variant="${FooterType.Compact}">
+        <admiralty-link href="http://www.example.com" new-tab="true">Privacy Policy</admiralty-link>
+        <admiralty-link href="http://www.example.com">Accessibility</admiralty-link>
+      </admiralty-footer>`,
+    });
+    expect(root).toEqualHtml(`
+      <admiralty-footer text="testText" variant="${FooterType.Compact}">
+        <footer class="footer-compact">
+          <div class="footer-content">
+            <nav aria-label="Footer Links" class="footer-links text-padding">
               <admiralty-link href="http://www.example.com" new-tab="true">
                 <a href="http://www.example.com" target="_blank">Privacy Policy</a>
               </admiralty-link>
