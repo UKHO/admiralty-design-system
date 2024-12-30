@@ -26,9 +26,9 @@
   & > div {
     border-top: none;
     flex-grow: 1;
-    padding: 30px;
+    padding: $card-padding;
     @include not-desktop {
-      padding: 24px 18px;
+      padding: $card-padding-not-desktop;
     }
   }
 }

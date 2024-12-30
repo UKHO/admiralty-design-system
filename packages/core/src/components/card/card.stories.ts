@@ -27,7 +27,7 @@ interface Args {
 export const WithTitle: Story = {
     render: args => html`
         <admiralty-card heading="${args.heading}">Some content</admiralty-card>`,
-    args: { heading: 'I am a card' }
+    args: { heading: 'I am a card', '--admiralty-card-background-colour': '#eeeeee' } as Args
 };
 
 export const WithoutTitle: Story = {
@@ -51,6 +51,7 @@ export const WithCustomHtmlContent: Story = {
         <admiralty-pill text="Draft"></admiralty-pill>`
 
     element.setAttribute('heading', args.heading);
+
     element.style.setProperty('--admiralty-card-border-colour', args['--admiralty-card-border-colour']);
     element.style.setProperty('--admiralty-card-heading-colour', args['--admiralty-card-heading-colour']);
     element.style.setProperty('--admiralty-card-heading-border-colour', args['--admiralty-card-heading-border-colour']);
@@ -92,5 +93,62 @@ export const WithCustomHtmlBrightBlueContent: Story = {
     '--admiralty-card-heading-border-colour': '#0177c1',
     '--admiralty-card-heading-text-colour': '#FFFFFF',
     '--admiralty-card-background-colour': '#eeeeee',
+  } as Args
+};
+
+export const WithCustomHtmlWithContentNoHeader: Story = {
+  render: (args) => {
+    const element = document.createElement('admiralty-card');
+    element.innerHTML = `<h2>Example heading</h2>
+        <admiralty-pill style="float: right" text="Draft" colour="bright-blue"></admiralty-pill>
+        <p style="line-height: 34px">ID: Random-Id-CS23-018517</p>`
+
+    element.style.setProperty('--admiralty-card-border-colour', args['--admiralty-card-border-colour']);
+    element.style.setProperty('--admiralty-card-heading-colour', args['--admiralty-card-heading-colour']);
+    element.style.setProperty('--admiralty-card-heading-border-colour', args['--admiralty-card-heading-border-colour']);
+    element.style.setProperty('--admiralty-card-heading-text-colour', args['--admiralty-card-heading-text-colour']);
+    element.style.setProperty('--admiralty-card-background-colour', args['--admiralty-card-background-colour']);
+    element.style.setProperty('--admiralty-card-padding', args['--admiralty-card-padding']);
+    element.style.setProperty('--admiralty-card-not-desktop-padding', args['--admiralty-card-not-desktop-padding']);
+    return element;
+  },
+  args: {
+    heading: 'Custom card using CSS variables',
+    '--admiralty-card-border-colour': '#d8d8d8',
+    '--admiralty-card-heading-colour': '#eeeeee',
+    '--admiralty-card-heading-border-colour': '#eeeeee',
+    '--admiralty-card-heading-text-colour': '#09315b',
+    '--admiralty-card-background-colour': '#eeeeee',
+    '--admiralty-card-padding': '10px 10px 0px 10px',
+    '--admiralty-card-not-desktop-padding': '10px 10px 0px 10px',
+  } as Args
+};
+
+
+export const WithCustomHtmlWithContentNoHeaderWhite: Story = {
+  render: (args) => {
+    const element = document.createElement('admiralty-card');
+    element.innerHTML = `<h2>Example heading</h2>
+        <admiralty-pill style="float: right" text="Draft" colour="bright-blue"></admiralty-pill>
+        <p style="line-height: 34px">ID: Random-Id-CS23-018517</p>`
+
+    element.style.setProperty('--admiralty-card-border-colour', args['--admiralty-card-border-colour']);
+    element.style.setProperty('--admiralty-card-heading-colour', args['--admiralty-card-heading-colour']);
+    element.style.setProperty('--admiralty-card-heading-border-colour', args['--admiralty-card-heading-border-colour']);
+    element.style.setProperty('--admiralty-card-heading-text-colour', args['--admiralty-card-heading-text-colour']);
+    element.style.setProperty('--admiralty-card-background-colour', args['--admiralty-card-background-colour']);
+    element.style.setProperty('--admiralty-card-padding', args['--admiralty-card-padding']);
+    element.style.setProperty('--admiralty-card-not-desktop-padding', args['--admiralty-card-not-desktop-padding']);
+    return element;
+  },
+  args: {
+    heading: 'Custom card using CSS variables',
+    '--admiralty-card-border-colour': '#d8d8d8',
+    '--admiralty-card-heading-colour': '#eeeeee',
+    '--admiralty-card-heading-border-colour': '#eeeeee',
+    '--admiralty-card-heading-text-colour': '#09315b',
+    '--admiralty-card-background-colour': '#FFFFFF',
+    '--admiralty-card-padding': '10px 10px 0px 10px',
+    '--admiralty-card-not-desktop-padding': '10px 10px 0px 10px',
   } as Args
 };
