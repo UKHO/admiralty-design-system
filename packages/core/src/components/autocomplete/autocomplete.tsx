@@ -160,6 +160,7 @@ export class AutocompleteComponent {
   @State() hovered: number | null = null;
   @State() menuOpen: boolean = false;
   @State() options: Option[] = [];
+  @State() preferredOptions: Option[] = [{text: 'testing', value: 'testing'}];
   @State() option: Option = null;
   @State() query: string = null;
   @State() validChoiceMade: boolean = false;
@@ -604,6 +605,38 @@ export class AutocompleteComponent {
         </div>
 
         <ul {...computedMenuAttributes} class={menuClassList.join(' ')}>
+          {this.preferredOptions.map((option, index) => {
+            const showFocused = this.focused === -1 ? this.selected === index : this.focused === index;
+            const optionModifierFocused = showFocused && this.hovered === null ? ` ${optionClassName}--focused` : '';
+            const iosPosinsetHtml = isIosDevice()
+              ? `<span id=${id}__option-suffix--${index} style="border:0;clip:rect(0 0 0 0);height:1px;` +
+              'marginBottom:-1px;marginRight:-1px;overflow:hidden;padding:0;position:absolute;' +
+              'whiteSpace:nowrap;width:1px">' +
+              ` ${index + 1} of ${this.options.length}</span>`
+              : '';
+
+            return (
+              <li
+                aria-selected={this.focused === index ? 'true' : 'false'}
+                class={`${optionClassName}${optionModifierFocused}`}
+                innerHTML={this.templateSuggestion(option.text) + iosPosinsetHtml}
+                id={`${id}__option--${index}`}
+                key={index}
+                onBlur={event => this.handleOptionBlur(event, index)}
+                onClick={event => this.handleOptionClick(event, index)}
+                onMouseDown={event => this.handleOptionMouseDown(event)}
+                onMouseEnter={() => this.handleOptionMouseEnter(index)}
+                ref={optionEl => {
+                  this.elementReferences[index] = optionEl;
+                }}
+                role="option"
+                tabIndex={-1}
+                aria-posinset={index + 1}
+                aria-setsize={this.options.length}
+              />
+            );
+          })}
+
           {this.options.map((option, index) => {
             const showFocused = this.focused === -1 ? this.selected === index : this.focused === index;
             const optionModifierFocused = showFocused && this.hovered === null ? ` ${optionClassName}--focused` : '';
