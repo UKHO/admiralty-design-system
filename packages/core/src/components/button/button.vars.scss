@@ -17,16 +17,16 @@ $button-icon-colour: var(--admiralty-colour-primary) !default;
 $button-colour-deselected: var(--admiralty-disabled-colour) !default;
 $button-border-colour-deselected: var(--admiralty-disabled-colour) !default;
 
-// Standard
+// Standard (new)
 $button-colour-standard: var(--admiralty-colour-primary) !default;
 $button-text-colour-standard: var(--admiralty-colour-primary-contrast) !default;
 $button-border-colour-standard: var(--admiralty-colour-primary) !default;
-$button-hover-colour-standard: var(--admiralty-colour-primary-shade) !default;
-$button-hover-text-colour-standard: var(--admiralty-colour-primary-contrast) !default;
+$button-hover-colour-standard: var(--admiralty-colour-light) !default;
+$button-hover-text-colour-standard: var(--admiralty-colour-primary) !default;
 $button-hover-border-colour-standard: var(--admiralty-colour-primary-shade) !default;
-$button-active-colour-standard: var(--admiralty-colour-primary-contrast) !default;
-$button-active-border-colour-standard: var(--admiralty-colour-primary-contrast) !default;
-$button-active-text-colour-standard: var(--admiralty-colour-primary) !default;
+$button-active-colour-standard: var(--admiralty-colour-primary) !default;
+$button-active-border-colour-standard: var(--admiralty-colour-primary) !default;
+$button-active-text-colour-standard: var(--admiralty-colour-primary-contrast) !default;
 
 // Secondary
 $button-colour-secondary: var(--admiralty-colour-primary-contrast) !default;
