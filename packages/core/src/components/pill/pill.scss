@@ -1,0 +1,90 @@
+@import './pill.vars';
+
+.pill {
+  display: inline-block;
+  box-sizing: border-box;
+  height: 36px;
+  padding: 8px 15px;
+  border-radius: 20px;
+  line-height: 19px;
+  font-size: $pill-item-font-size;;
+}
+
+.pill > .pill-item + .pill-item {
+  margin: 0px 0px 0px 10px;
+}
+
+.pill > .pill-item.pill-item-text {
+  height: 17px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.pill > .pill-item.pill-item-number {
+  font-size: $pill-item-number-font-size;
+  padding: 2px 6px;
+  border-radius: 16px;
+}
+
+.pill > .pill-item.pill-item-selected {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+// admiralty-blue
+
+.pill.admiralty-blue {
+  background-color: $pill-background-colour;
+}
+
+.pill.admiralty-blue > .pill-item.pill-item-text {
+  color: $pill-item-text-colour;
+}
+
+.pill.admiralty-blue > .pill-item.pill-item-number {
+  background-color:$pill-item-number-background-colour;
+  color: $pill-item-number-colour;
+}
+
+.pill.admiralty-blue > .pill-item.pill-item-selected > admiralty-icon {
+  color: $pill-item-selected-icon-colour;
+}
+
+// white
+
+.pill.white {
+  background-color: $secondary-pill-background-colour;
+  border: 1px solid $secondary-pill-border-colour;
+}
+
+.pill.white > .pill-item.pill-item-text {
+  color: $secondary-pill-item-text-colour;
+}
+
+.pill.white > .pill-item.pill-item-number {
+  background-color: $secondary-pill-item-number-background-colour;
+  color: $secondary-pill-item-number-colour;
+}
+
+.pill.white > .pill-item.pill-item-selected > admiralty-icon {
+  color: $secondary-pill-item-selected-icon-colour;
+}
+
+// bright-blue
+
+.pill.bright-blue {
+  background-color: $tertiary-pill-background-colour;
+}
+
+.pill.bright-blue > .pill-item.pill-item-text {
+  color: $tertiary-pill-item-text-colour;
+}
+
+.pill.bright-blue > .pill-item.pill-item-number {
+  background-color: $tertiary-pill-item-number-background-colour;
+  color: $tertiary-pill-item-number-colour;
+}
+
+.pill.bright-blue > .pill-item.pill-item-selected > admiralty-icon {
+  color: $tertiary-pill-item-selected-icon-colour;
+}

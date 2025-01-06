@@ -784,6 +784,28 @@ export declare interface AdmiraltyPhaseBanner extends Components.AdmiraltyPhaseB
 
 
 @ProxyCmp({
+  inputs: ['colour', 'label', 'number', 'selected', 'text']
+})
+@Component({
+  selector: 'admiralty-pill',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['colour', 'label', 'number', 'selected', 'text'],
+})
+export class AdmiraltyPill {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface AdmiraltyPill extends Components.AdmiraltyPill {}
+
+
+@ProxyCmp({
   inputs: ['error', 'label', 'progression']
 })
 @Component({
