@@ -40,6 +40,6 @@ export const TextCustom: Story = {
 export const Disabled: Story = { ...template, args: { variant: 'primary', disabled: true } };
 
 export const Icon: Story = {
-  render: args => html`<admiralty-button variant="${args.variant}" icon="${args.icon}"></admiralty-button>`,
-  args: { variant: 'icon', icon: faUserAstronaut.iconName },
+  render: args => html`<admiralty-button variant="${args.variant}" icon="${args.icon}" disabled="${args.disabled}"></admiralty-button>`,
+  args: { variant: 'icon', icon: faUserAstronaut.iconName, disabled: false },
 };

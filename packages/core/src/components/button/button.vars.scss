@@ -50,10 +50,10 @@ $button-active-border-colour-warning: var(--admiralty-colour-danger-contrast) !d
 $button-active-text-colour-warning: var(--admiralty-colour-danger) !default;
 
 // Icon
-$button-colour-icon: var(--admiralty-background-colour-tint) !default;
+$button-colour-icon: var(--admiralty-colour-primary-contrast) !default;
 $button-text-colour-icon: var(--admiralty-colour-primary) !default;
 $button-border-colour-icon: var(--admiralty-colour-primary) !default;
-$button-hover-colour-icon: var(--admiralty-colour-primary-contrast) !default;
+$button-hover-colour-icon: var(--admiralty-hover-background-colour) !default;
 $button-hover-border-colour-icon: var(--admiralty-colour-primary) !default;
 $button-active-colour-icon: var(--admiralty-colour-primary) !default;
 $button-active-border-colour-icon: var(--admiralty-colour-primary) !default;
