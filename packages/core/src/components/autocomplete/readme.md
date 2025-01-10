@@ -45,6 +45,8 @@
 | `--admiralty-autocomplete-icon-font-size`                        | Font size for the autocompletes icon                 |
 | `--admiralty-autocomplete-icon-font-weight`                      | Font weight for the autocompletes icon               |
 | `--admiralty-autocomplete-input-display-all-padding`             | Padding for autocomplete when displaying all options |
+| `--admiralty-autocomplete-input-margin-bottom`                   | Margin bottom for the autocomplete                   |
+| `--admiralty-autocomplete-input-menu-margin`                     | Margin for the menu of the autocomplete              |
 | `--admiralty-autocomplete-input-option-margin-bottom`            | Margin bottom for the options of the autocomplete    |
 | `--admiralty-autocomplete-input-padding`                         | Padding for autocomplete                             |
 | `--admiralty-autocomplete-label-font-size`                       | Font size for the autocompletes label                |
@@ -55,8 +57,6 @@
 | `--admiralty-autocomplete-option-no-results-margin-bottom`       | Autocomplete no results margin bottom                |
 | `--admiralty-autocomplete-option-no-results-margin-top`          | Autocomplete no results margin top                   |
 | `--admiralty-autocomplete-option-padding`                        | Padding for autocomplete options                     |
-| `--autocomplete-input-margin-bottom`                             | Margin bottom for the autocomplete                   |
-| `--autocomplete-input-menu-margin`                               | Margin for the menu of the autocomplete              |
 
 
 ## Dependencies
