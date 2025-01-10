@@ -44,6 +44,8 @@ section.expansion {
     h3 {
       flex-grow: 1;
       margin-bottom: 0;
+      font-size: $expansion-title-text-size;
+      font-weight: $expansion-title-text-weight;
 
       &.expansion-heading-right-align {
         text-align: right;

@@ -1,3 +1,7 @@
 @import "../../styles/vars/globals";
 
-$tab-text-weight: 300;
+/**
+ * @prop --admiralty-tab-content-font-weight: Font weight for the tab content
+**/
+
+$tab-content-font-weight: var(--admiralty-tab-content-font-weight, var(--admiralty-font-weight-normal));
