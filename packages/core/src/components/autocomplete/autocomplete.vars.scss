@@ -15,10 +15,8 @@
  * @prop --admiralty-autocomplete-input-margin-bottom: Margin bottom for the autocomplete
  * @prop --admiralty-autocomplete-input-menu-margin: Margin for the menu of the autocomplete
  * @prop --admiralty-autocomplete-input-option-margin-bottom: Margin bottom for the options of the autocomplete
- * @prop --admiralty-autocomplete-option-no-results-margin-top: Autocomplete no results margin top
- * @prop --admiralty-autocomplete-option-no-results-margin-bottom: Autocomplete no results margin bottom
- * @prop --admiralty-autocomplete-option-no-results-hover-margin-top: Autocomplete no results hover margin top
- * @prop --admiralty-autocomplete-option-no-results-hover-margin-bottom: Autocomplete no results hover margin bottom
+ * @prop --admiralty-autocomplete-option-no-results-margin: Autocomplete no results margin top and bottom
+ * @prop --admiralty-autocomplete-option-no-results-hover-margin: Autocomplete no results hover margin top and bottom
 
 **/
 
@@ -54,7 +52,6 @@ $autocomplete-option-padding: var(--admiralty-autocomplete-option-padding, var(-
 $autocomplete-input-margin-bottom: var(--autocomplete-input-margin-bottom, var(--admiralty-spacing-0));
 $autocomplete-input-menu-margin: var(--autocomplete-input-menu-margin, var(--admiralty-spacing-0));
 $autocomplete-input-option-margin-bottom: var(--admiralty-autocomplete-input-option-margin-bottom, var(--admiralty-spacing-0));
-$autocomplete-option-no-results-margin-top: var(--admiralty-autocomplete-option-no-results-margin-top, 50px);
-$autocomplete-option-no-results-margin-bottom: var(--admiralty-autocomplete-option-no-results-margin-bottom, 50px);
-$autocomplete-option-no-results-hover-margin-top: var(--admiralty-autocomplete-option-no-results-hover-margin-top, 50px);
-$autocomplete-option-no-results-hover-margin-bottom: var(--admiralty-autocomplete-option-no-results-hover-margin-bottom, 50px);
+
+$autocomplete-input-option-no-results-margin: var(--admiralty-autocomplete-option-no-results-margin, 50px 0);
+$autocomplete-option-no-results-hover-margin: var(--admiralty-autocomplete-option-no-results-hover-margin, 50px 0);

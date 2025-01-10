@@ -130,9 +130,7 @@
   background-color: $autocomplete-option-no-results-background-colour;
   color: $autocomplete-option-no-results-text-colour;
   text-align: center;
-
-  margin-top: $autocomplete-option-no-results-margin-top;
-  margin-bottom: $autocomplete-option-no-results-margin-bottom;
+  margin: $autocomplete-input-option-no-results-margin;
   cursor: not-allowed;
 }
 .autocomplete__option--no-results:hover {
@@ -140,9 +138,7 @@
   border-color: $autocomplete-option-no-results-background-colour;
   color: $autocomplete-option-no-results-text-colour;
   text-align: center;
-
-  margin-top: $autocomplete-option-no-results-hover-margin-top;
-  margin-bottom: $autocomplete-option-no-results-hover-margin-bottom;
+  margin: $autocomplete-option-no-results-hover-margin;
   cursor: not-allowed;
 }
 
