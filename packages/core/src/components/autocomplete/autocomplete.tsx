@@ -40,7 +40,7 @@ function filterOptions(options: Option[], searchTerm: string) {
 }
 
 function filterOptionsByValue(options: Option[], searchTerm: string) {
-  return options.filter(({ value }) => value.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1);
+  return options.filter(({ value }) => value.toString().toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1);
 }
 
 @Component({

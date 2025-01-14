@@ -1,3 +1,15 @@
+# v3.1.3 (Mon Jan 06 2025)
+
+#### 🐛 Bug Fix
+
+- Fix: Cannot use a number type in the admiralty-autocomplete-option value property [#325](https://github.com/UKHO/admiralty-design-system/pull/325) ([@developernm](https://github.com/developernm))
+
+#### Authors: 1
+
+- [@developernm](https://github.com/developernm)
+
+---
+
 # v3.1.2 (Tue Dec 17 2024)
 
 #### 🐛 Bug Fix
