@@ -4,6 +4,7 @@
  * @prop --admiralty-autocomplete-label-font-size: Font size for the autocompletes label
  * @prop --admiralty-autocomplete-option-font-size: Font size for the autocompletes option
  * @prop --admiralty-autocomplete-icon-font-size: Font size for the autocompletes icon
+ * @prop --admiralty-autocomplete-icon-font-weight: Font weight for the autocompletes icon
 
  * @prop --admiralty-autocomplete-option-font-weight: Font weight for the autocompletes option
 **/
@@ -27,5 +28,6 @@ $autocomplete-dropdown-icon-colour: var(--admiralty-disabled-colour) !default;
 $autocomplete-label-font-size: var(--admiralty-autocomplete-label-font-size, var(--admiralty-font-size-0));
 $autocomplete-option-font-size: var(--admiralty-autocomplete-option-font-size, var(--admiralty-font-size-0));
 $autocomplete-icon-font-size: var(--admiralty-autocomplete-icon-font-size, var(--admiralty-font-size-2));
+$autocomplete-icon-font-weight: var(--admiralty-autocomplete-icon-font-weight, var(--admiralty-font-weight-normal));
 
 $autocomplete-option-font-weight: var(--admiralty-autocomplete-option-font-weight, var(--admiralty-font-weight-normal));

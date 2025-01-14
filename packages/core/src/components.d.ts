@@ -10,6 +10,7 @@ import { ButtonVariant } from "./components/button/button.types";
 import { IconName, IconPrefix } from "@fortawesome/fontawesome-svg-core";
 import { CheckboxChangeEventDetail } from "./components/checkbox/checkbox.interface";
 import { FileInputChangeEventDetail } from "./components/file-input/file-input.interface";
+import { FooterTypes } from "./components/footer/footer.types";
 import { IconName as IconName1 } from "@fortawesome/free-solid-svg-icons";
 import { InputChangeEventDetail } from "./components/input/input.interface";
 import { RadioGroupChangeEventDetail } from "./components/radio-group/radio-group-interface";
@@ -20,6 +21,7 @@ export { ButtonVariant } from "./components/button/button.types";
 export { IconName, IconPrefix } from "@fortawesome/fontawesome-svg-core";
 export { CheckboxChangeEventDetail } from "./components/checkbox/checkbox.interface";
 export { FileInputChangeEventDetail } from "./components/file-input/file-input.interface";
+export { FooterTypes } from "./components/footer/footer.types";
 export { IconName as IconName1 } from "@fortawesome/free-solid-svg-icons";
 export { InputChangeEventDetail } from "./components/input/input.interface";
 export { RadioGroupChangeEventDetail } from "./components/radio-group/radio-group-interface";
@@ -317,6 +319,10 @@ export namespace Components {
           * The text to display in the footer. The default value displays crown copyright, the current year and `UK Hydrographic Office`.
          */
         "text": string;
+        /**
+          * The type of footer to render. Valid values are `standard`, `compact`. Default value is `standard`.
+         */
+        "variant": FooterTypes;
     }
     interface AdmiraltyHeader {
         /**
@@ -535,6 +541,28 @@ export namespace Components {
           * The phase for the phase banner
          */
         "phase": 'alpha' | 'beta';
+    }
+    interface AdmiraltyPill {
+        /**
+          * The background colour of the pill.
+         */
+        "colour": 'admiralty-blue' | 'white' | 'bright-blue';
+        /**
+          * Label the pill.
+         */
+        "label": string;
+        /**
+          * The number of the pill.
+         */
+        "number": string;
+        /**
+          * Whether to show the pill is selected.
+         */
+        "selected": boolean;
+        /**
+          * The text of the pill.
+         */
+        "text": string;
     }
     interface AdmiraltyProgressBar {
         /**
@@ -1173,6 +1201,12 @@ declare global {
         prototype: HTMLAdmiraltyPhaseBannerElement;
         new (): HTMLAdmiraltyPhaseBannerElement;
     };
+    interface HTMLAdmiraltyPillElement extends Components.AdmiraltyPill, HTMLStencilElement {
+    }
+    var HTMLAdmiraltyPillElement: {
+        prototype: HTMLAdmiraltyPillElement;
+        new (): HTMLAdmiraltyPillElement;
+    };
     interface HTMLAdmiraltyProgressBarElement extends Components.AdmiraltyProgressBar, HTMLStencilElement {
     }
     var HTMLAdmiraltyProgressBarElement: {
@@ -1412,6 +1446,7 @@ declare global {
         "admiralty-paginator": HTMLAdmiraltyPaginatorElement;
         "admiralty-paginator-wrapper": HTMLAdmiraltyPaginatorWrapperElement;
         "admiralty-phase-banner": HTMLAdmiraltyPhaseBannerElement;
+        "admiralty-pill": HTMLAdmiraltyPillElement;
         "admiralty-progress-bar": HTMLAdmiraltyProgressBarElement;
         "admiralty-radio": HTMLAdmiraltyRadioElement;
         "admiralty-radio-group": HTMLAdmiraltyRadioGroupElement;
@@ -1763,6 +1798,10 @@ declare namespace LocalJSX {
           * The text to display in the footer. The default value displays crown copyright, the current year and `UK Hydrographic Office`.
          */
         "text"?: string;
+        /**
+          * The type of footer to render. Valid values are `standard`, `compact`. Default value is `standard`.
+         */
+        "variant"?: FooterTypes;
     }
     interface AdmiraltyHeader {
         /**
@@ -2025,6 +2064,28 @@ declare namespace LocalJSX {
           * The phase for the phase banner
          */
         "phase"?: 'alpha' | 'beta';
+    }
+    interface AdmiraltyPill {
+        /**
+          * The background colour of the pill.
+         */
+        "colour"?: 'admiralty-blue' | 'white' | 'bright-blue';
+        /**
+          * Label the pill.
+         */
+        "label"?: string;
+        /**
+          * The number of the pill.
+         */
+        "number"?: string;
+        /**
+          * Whether to show the pill is selected.
+         */
+        "selected"?: boolean;
+        /**
+          * The text of the pill.
+         */
+        "text"?: string;
     }
     interface AdmiraltyProgressBar {
         /**
@@ -2313,6 +2374,7 @@ declare namespace LocalJSX {
         "admiralty-paginator": AdmiraltyPaginator;
         "admiralty-paginator-wrapper": AdmiraltyPaginatorWrapper;
         "admiralty-phase-banner": AdmiraltyPhaseBanner;
+        "admiralty-pill": AdmiraltyPill;
         "admiralty-progress-bar": AdmiraltyProgressBar;
         "admiralty-radio": AdmiraltyRadio;
         "admiralty-radio-group": AdmiraltyRadioGroup;
@@ -2374,6 +2436,7 @@ declare module "@stencil/core" {
             "admiralty-paginator": LocalJSX.AdmiraltyPaginator & JSXBase.HTMLAttributes<HTMLAdmiraltyPaginatorElement>;
             "admiralty-paginator-wrapper": LocalJSX.AdmiraltyPaginatorWrapper & JSXBase.HTMLAttributes<HTMLAdmiraltyPaginatorWrapperElement>;
             "admiralty-phase-banner": LocalJSX.AdmiraltyPhaseBanner & JSXBase.HTMLAttributes<HTMLAdmiraltyPhaseBannerElement>;
+            "admiralty-pill": LocalJSX.AdmiraltyPill & JSXBase.HTMLAttributes<HTMLAdmiraltyPillElement>;
             "admiralty-progress-bar": LocalJSX.AdmiraltyProgressBar & JSXBase.HTMLAttributes<HTMLAdmiraltyProgressBarElement>;
             "admiralty-radio": LocalJSX.AdmiraltyRadio & JSXBase.HTMLAttributes<HTMLAdmiraltyRadioElement>;
             "admiralty-radio-group": LocalJSX.AdmiraltyRadioGroup & JSXBase.HTMLAttributes<HTMLAdmiraltyRadioGroupElement>;

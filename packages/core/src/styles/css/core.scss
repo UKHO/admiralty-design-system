@@ -13,7 +13,7 @@
 
 html {
   --admiralty-font-family: 'JohnstonITC', Helvetica, sans-serif;
-  --admiralty-font-weight: 300;
+  --admiralty-font-weight: var(--admiralty-font-weight-normal);
   --admiralty-font-size: 18px;
   --admiralty-line-height: 24px;
 }

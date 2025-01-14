@@ -60,7 +60,7 @@
       color: $modal-heading-text-colour;
       max-width: 500px;
       display: inline-block;
-      font-weight: 400;
+      font-weight: var(--admiralty-font-weight-medium);
       font-size: $modal-slotted-text-font-size;
       line-height: 24px;
       margin-bottom: 0px;

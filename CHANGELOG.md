@@ -1,3 +1,30 @@
+# v3.1.2 (Tue Dec 17 2024)
+
+#### 🐛 Bug Fix
+
+- Updating Nx and lerna to the latest version [#309](https://github.com/UKHO/admiralty-design-system/pull/309) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+- `@ukho/admiralty-core`
+  - Fix: Progress bar component not rendering on the documentation website [#323](https://github.com/UKHO/admiralty-design-system/pull/323) ([@developernm](https://github.com/developernm))
+
+#### Authors: 2
+
+- [@developernm](https://github.com/developernm)
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
+# v3.1.1 (Tue Nov 26 2024)
+
+#### 🐛 Bug Fix
+
+- Fix: theme file missing when packaged [#308](https://github.com/UKHO/admiralty-design-system/pull/308) ([@developernm](https://github.com/developernm))
+
+#### Authors: 1
+
+- [@developernm](https://github.com/developernm)
+
+---
+
 # v3.1.0 (Mon Nov 11 2024)
 
 #### 🚀 Enhancement

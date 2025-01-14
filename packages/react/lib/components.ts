@@ -40,6 +40,7 @@ import { AdmiraltyLink as AdmiraltyLinkElement, defineCustomElement as defineAdm
 import { AdmiraltyModalDialog as AdmiraltyModalDialogElement, defineCustomElement as defineAdmiraltyModalDialog } from "@ukho/admiralty-core/dist/components/admiralty-modal-dialog.js";
 import { AdmiraltyPaginator as AdmiraltyPaginatorElement, defineCustomElement as defineAdmiraltyPaginator } from "@ukho/admiralty-core/dist/components/admiralty-paginator.js";
 import { AdmiraltyPhaseBanner as AdmiraltyPhaseBannerElement, defineCustomElement as defineAdmiraltyPhaseBanner } from "@ukho/admiralty-core/dist/components/admiralty-phase-banner.js";
+import { AdmiraltyPill as AdmiraltyPillElement, defineCustomElement as defineAdmiraltyPill } from "@ukho/admiralty-core/dist/components/admiralty-pill.js";
 import { AdmiraltyProgressBar as AdmiraltyProgressBarElement, defineCustomElement as defineAdmiraltyProgressBar } from "@ukho/admiralty-core/dist/components/admiralty-progress-bar.js";
 import { AdmiraltyRadioGroup as AdmiraltyRadioGroupElement, defineCustomElement as defineAdmiraltyRadioGroup } from "@ukho/admiralty-core/dist/components/admiralty-radio-group.js";
 import { AdmiraltyRadio as AdmiraltyRadioElement, defineCustomElement as defineAdmiraltyRadio } from "@ukho/admiralty-core/dist/components/admiralty-radio.js";
@@ -387,6 +388,16 @@ export const AdmiraltyPhaseBanner: StencilReactComponent<AdmiraltyPhaseBannerEle
     react: React,
     events: {} as AdmiraltyPhaseBannerEvents,
     defineCustomElement: defineAdmiraltyPhaseBanner
+});
+
+type AdmiraltyPillEvents = NonNullable<unknown>;
+
+export const AdmiraltyPill: StencilReactComponent<AdmiraltyPillElement, AdmiraltyPillEvents> = /*@__PURE__*/ createComponent<AdmiraltyPillElement, AdmiraltyPillEvents>({
+    tagName: 'admiralty-pill',
+    elementClass: AdmiraltyPillElement,
+    react: React,
+    events: {} as AdmiraltyPillEvents,
+    defineCustomElement: defineAdmiraltyPill
 });
 
 type AdmiraltyProgressBarEvents = NonNullable<unknown>;
