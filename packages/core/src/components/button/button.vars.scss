@@ -3,6 +3,25 @@
 /**
  * @prop --admiralty-button-font-size: Font size of the button
  * @prop --admiralty-button-font-weight: Font weight of the button
+
+ * @prop --admiralty-button-focus-padding: Padding for the button focus
+ * @prop --admiralty-button-defaults-padding: Padding for the button defaults
+ * @prop --admiralty-button-not-desktop-padding: Padding for the button when not in desktop view
+
+ * @prop --admiralty-button-primary-hover-padding: Padding for the primary button when hovering
+ * @prop --admiralty-button-primary-hover-focus-padding: Padding for the primary button when in focus state
+ * @prop --admiralty-button-primary-hover-focus-active-padding: Padding for the primary button when in active state
+
+ * @prop --admiralty-button-secondary-hover-padding: Padding for the secondary button when hovering
+ * @prop --admiralty-button-warning-hover-padding: Padding for the warning button when hovering
+ * @prop --admiralty-button-text-focus-padding: Padding for the button text when focused
+
+ * @prop --admiralty-button-icon-padding: Padding for the button icon
+ * @prop --admiralty-button-icon-focus-padding: Padding for the button icon when focused
+ * @prop --admiralty-button-icon-hover-padding: Padding for the button icon when hovering
+
+ * @prop --admiralty-button-icon-hover-padding: Padding for the button icon when hovering
+ * @prop --admiralty-button-icon-hover-padding: Padding for the button icon when hovering
 **/
 
 $button-font-size: var(--admiralty-button-font-size, var(--admiralty-font-size-0)); // 18px !default;
@@ -59,3 +78,27 @@ $button-active-colour-icon: var(--admiralty-colour-primary) !default;
 $button-active-border-colour-icon: var(--admiralty-colour-primary) !default;
 $button-active-text-colour-icon: var(--admiralty-colour-primary-contrast) !default;
 $button-disabled-colour-icon: var(--admiralty-background-colour-tint) !default;
+
+// Spacing
+$button-focus-padding: var(--admiralty-button-focus-padding, var(--admiralty-spacing-3) 18px var(--admiralty-spacing-2));
+$button-defaults-padding: var(--admiralty-button-defaults-padding, 10px var(--admiralty-spacing-4));
+$button-not-desktop-padding: var(--admiralty-button-not-desktop-padding, 10px var(--admiralty-spacing-4));
+
+// Spacing button primary
+$button-primary-hover-padding: var(--admiralty-button-primary-hover-padding, 10px var(--admiralty-spacing-4));
+$button-primary-hover-focus-padding: var(--admiralty-button-primary-hover-focus-padding, var(--admiralty-spacing-3) 18px var(--admiralty-spacing-2));
+$button-primary-hover-focus-active-padding: var(--admiralty-button-primary-hover-focus-active-padding, 10px var(--admiralty-spacing-4));
+
+// Spacing button secondary
+$button-secondary-hover-padding: var(--admiralty-button-secondary-hover-padding, 10px var(--admiralty-spacing-4));
+
+// Spacing button warning
+$button-warning-hover-padding: var(--admiralty-button-warning-hover-padding, 10px var(--admiralty-spacing-4));
+
+// Spacing button text
+$button-text-focus-padding: var(--admiralty-button-text-focus-padding, var(--admiralty-spacing-0));
+
+// Spacing button icon
+$button-icon-padding: var(--admiralty-button-icon-padding, 9px);
+$button-icon-focus-padding: var(--admiralty-button-icon-focus-padding, var(--admiralty-spacing-3) var(--admiralty-spacing-4) var(--admiralty-spacing-2));
+$button-icon-hover-padding: var(--admiralty-button-icon-hover-padding, 9px);
