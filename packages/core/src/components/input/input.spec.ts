@@ -12,7 +12,7 @@ describe('admiralty-input', () => {
     expect(page.root).toEqualHtml(`
       <admiralty-input>
         <div class="text-input-container">
-          <input aria-describedby=" " aria-invalid="false" autocomplete="off" id="admiralty-input-${id}-input" type="text" value="">
+          <input aria-invalid="false" autocomplete="off" id="admiralty-input-${id}-input" type="text" value="">
           <admiralty-input-invalid id="admiralty-input-${id}-error" style="display: none;"></admiralty-input-invalid>
         </div>
       </admiralty-input>
@@ -29,7 +29,7 @@ describe('admiralty-input', () => {
       <admiralty-input label="test-label">
         <div class="text-input-container">
           <admiralty-label for="admiralty-input-2-input">test-label</admiralty-label>
-          <input aria-describedby=" " aria-invalid="false" autocomplete="off" id="admiralty-input-${id}-input" type="text" value="">
+          <input aria-invalid="false" autocomplete="off" id="admiralty-input-${id}-input" type="text" value="">
           <admiralty-input-invalid id="admiralty-input-${id}-error" style="display: none;"></admiralty-input-invalid>
         </div>
       </admiralty-input>
@@ -45,7 +45,7 @@ describe('admiralty-input', () => {
     expect(page.root).toEqualHtml(`
       <admiralty-input disabled>
         <div class="text-input-container">
-          <input aria-describedby=" " aria-invalid="false" disabled autocomplete="off" class="disabled" id="admiralty-input-${id}-input" type="text" value="">
+          <input aria-invalid="false" disabled autocomplete="off" class="disabled" id="admiralty-input-${id}-input" type="text" value="">
           <admiralty-input-invalid id="admiralty-input-${id}-error" style="display: none;"></admiralty-input-invalid>
         </div>
       </admiralty-input>
@@ -61,7 +61,7 @@ describe('admiralty-input', () => {
     expect(page.root).toEqualHtml(`
       <admiralty-input invalid="true">
         <div class="text-input-container">
-          <input aria-describedby=" admiralty-input-4-error" aria-invalid="true" autocomplete="off" class="invalid" id="admiralty-input-${id}-input" type="text" value="">
+          <input aria-describedby="admiralty-input-4-error" aria-invalid="true" autocomplete="off" class="invalid" id="admiralty-input-${id}-input" type="text" value="">
           <admiralty-input-invalid id="admiralty-input-${id}-error" style="display: none;"></admiralty-input-invalid>
         </div>
       </admiralty-input>
@@ -77,7 +77,7 @@ describe('admiralty-input', () => {
     expect(page.root).toEqualHtml(`
       <admiralty-input invalid="true" invalid-message="This is invalid!">
           <div class="text-input-container">
-              <input aria-describedby=" admiralty-input-5-error" aria-invalid="true" autocomplete="off" class="invalid" id="admiralty-input-${id}-input" type="text" value="">
+              <input aria-describedby="admiralty-input-5-error" aria-invalid="true" autocomplete="off" class="invalid" id="admiralty-input-${id}-input" type="text" value="">
               <admiralty-input-invalid id="admiralty-input-${id}-error">
               This is invalid!
               </admiralty-input-invalid>
@@ -95,7 +95,7 @@ describe('admiralty-input', () => {
     expect(page.root).toEqualHtml(`
       <admiralty-input type="date">
         <div class="text-input-container">
-          <input aria-describedby=" " aria-invalid="false" type="date" autocomplete="off" id="admiralty-input-${id}-input" value="">
+          <input aria-invalid="false" type="date" autocomplete="off" id="admiralty-input-${id}-input" value="">
           <admiralty-input-invalid id="admiralty-input-${id}-error" style="display: none;"></admiralty-input-invalid>
         </div>
       </admiralty-input>
