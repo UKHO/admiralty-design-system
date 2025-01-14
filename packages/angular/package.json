@@ -1,6 +1,6 @@
 {
   "name": "@ukho/admiralty-angular",
-  "version": "3.1.1",
+  "version": "3.1.2",
   "module": "dist/fesm2022/ukho-admiralty-angular.mjs",
   "typings": "dist/index.d.ts",
   "scripts": {

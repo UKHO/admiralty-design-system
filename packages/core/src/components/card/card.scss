@@ -5,6 +5,7 @@
   display: flex;
   flex-direction: column;
   border: 1px solid $card-border-colour;
+  background-color: $card-background-colour;
 
   & > h6 {
     font-size: $card-heading-font-size;
@@ -25,9 +26,9 @@
   & > div {
     border-top: none;
     flex-grow: 1;
-    padding: 30px;
+    padding: $card-padding;
     @include not-desktop {
-      padding: 24px 18px;
+      padding: $card-padding-not-desktop;
     }
   }
 }
