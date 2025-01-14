@@ -33,7 +33,6 @@ const sideNavItems: SideNavItem[] = [
   { path: "tab-group", title: "Tab Group" },
   { path: "table", title: "Table" },
   { path: "textarea", title: "Textarea" },
-  { path: "type-ahead", title: "Typeahead" },
 ];
 
 export default function Layout({ children }: { children: React.ReactNode }) {
