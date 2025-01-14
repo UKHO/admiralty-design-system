@@ -14,9 +14,9 @@
 **/
 
 $card-border-colour: var(--admiralty-card-border-colour, var(--admiralty-colour-light));
-$card-heading-colour: var(--admiralty-card-heading-colour, var(--admiralty-colour-light));
-$card-heading-border-colour: var(--admiralty-card-heading-border-colour, var(--admiralty-colour-light));
-$card-heading-text-colour: var(--admiralty-card-heading-text-colour, var(--admiralty-colour-light));
+$card-heading-colour: var(--admiralty-card-heading-colour, var(--admiralty-colour-primary));
+$card-heading-border-colour: var(--admiralty-card-heading-border-colour, var(--admiralty-colour-primary));
+$card-heading-text-colour: var(--admiralty-card-heading-text-colour, var(--admiralty-colour-primary-contrast));
 $card-background-colour: var(--admiralty-card-background-colour, var(--admiralty-background-colour));
 $card-heading-font-size: var(--admiralty-card-heading-font-size, var(--admiralty-font-size-0));
 
