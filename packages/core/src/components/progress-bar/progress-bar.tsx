@@ -6,7 +6,7 @@ import { Component, h, Prop, State, Watch } from '@stencil/core';
   scoped: true,
 })
 export class ProgressBarComponent {
-  private id = `admiralty-progress-${++progressId}`;
+  private inputId = `admiralty-progress-${++progressId}`;
 
   /**
    * If set, adds a label above the progress bar
@@ -35,18 +35,26 @@ export class ProgressBarComponent {
    */
   @Watch('progression')
   protected progressionChanged() {
+    this.updateProgression();
+  }
+
+  private updateProgression() {
     if (this.progression && this.progression >= 0 && this.progression <= 100) {
       this.progressionValue = this.progression;
     }
   }
 
+  componentDidLoad() {
+    this.updateProgression();
+  }
+
   render() {
-    const { id, label, error, progressionValue } = this;
+    const { inputId ,label, error, progressionValue } = this;
 
     return (
       <div class="admiralty-progress">
-        {label ? <admiralty-label for={id}>{label}</admiralty-label> : null}
-        <progress id={id} class={{ error: error }} value={progressionValue} max="100" />
+        {label ? <admiralty-label for={inputId}>{label}</admiralty-label> : null}
+        <progress id={inputId} class={{ error: error }} value={progressionValue} max="100" />
       </div>
     );
   }
