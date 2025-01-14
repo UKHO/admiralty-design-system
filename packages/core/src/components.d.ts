@@ -98,7 +98,7 @@ export namespace Components {
          */
         "required": boolean;
         /**
-          * Toggle showing all values when the input is clicked, like a default dropdown.
+          * Toggle showing all values when the input is clicked, like a default dropdown. This will hide the chevron when set to false.
          */
         "showAllValues": boolean;
         /**
@@ -777,31 +777,6 @@ export namespace Components {
          */
         "width"?: number;
     }
-    interface AdmiraltyTypeAhead {
-        /**
-          * The hint which will be used under the label to describe the input.
-         */
-        "hint": string;
-        /**
-          * The text content of the label for the input box
-         */
-        "label": string;
-        /**
-          * The placeholder text for the input field
-         */
-        "placeholder": string;
-        /**
-          * Optional property to show results when input box is initally focused
-         */
-        "resultsOnInitFocus": boolean;
-        /**
-          * The value of the textinput
-         */
-        "value": string;
-    }
-    interface AdmiraltyTypeAheadItem {
-        "value": string;
-    }
 }
 export interface AdmiraltyAutocompleteCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -882,10 +857,6 @@ export interface AdmiraltyTabGroupCustomEvent<T> extends CustomEvent<T> {
 export interface AdmiraltyTextareaCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLAdmiraltyTextareaElement;
-}
-export interface AdmiraltyTypeAheadCustomEvent<T> extends CustomEvent<T> {
-    detail: T;
-    target: HTMLAdmiraltyTypeAheadElement;
 }
 declare global {
     interface HTMLAdmiraltyAutocompleteElementEventMap {
@@ -1443,30 +1414,6 @@ declare global {
         prototype: HTMLAdmiraltyTextareaElement;
         new (): HTMLAdmiraltyTextareaElement;
     };
-    interface HTMLAdmiraltyTypeAheadElementEventMap {
-        "selectionChanged": string;
-        "valueChanged": string;
-    }
-    interface HTMLAdmiraltyTypeAheadElement extends Components.AdmiraltyTypeAhead, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLAdmiraltyTypeAheadElementEventMap>(type: K, listener: (this: HTMLAdmiraltyTypeAheadElement, ev: AdmiraltyTypeAheadCustomEvent<HTMLAdmiraltyTypeAheadElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
-        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
-        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
-        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLAdmiraltyTypeAheadElementEventMap>(type: K, listener: (this: HTMLAdmiraltyTypeAheadElement, ev: AdmiraltyTypeAheadCustomEvent<HTMLAdmiraltyTypeAheadElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
-        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
-        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
-    }
-    var HTMLAdmiraltyTypeAheadElement: {
-        prototype: HTMLAdmiraltyTypeAheadElement;
-        new (): HTMLAdmiraltyTypeAheadElement;
-    };
-    interface HTMLAdmiraltyTypeAheadItemElement extends Components.AdmiraltyTypeAheadItem, HTMLStencilElement {
-    }
-    var HTMLAdmiraltyTypeAheadItemElement: {
-        prototype: HTMLAdmiraltyTypeAheadItemElement;
-        new (): HTMLAdmiraltyTypeAheadItemElement;
-    };
     interface HTMLElementTagNameMap {
         "admiralty-autocomplete": HTMLAdmiraltyAutocompleteElement;
         "admiralty-autocomplete-option": HTMLAdmiraltyAutocompleteOptionElement;
@@ -1518,8 +1465,6 @@ declare global {
         "admiralty-table-header-cell": HTMLAdmiraltyTableHeaderCellElement;
         "admiralty-table-row": HTMLAdmiraltyTableRowElement;
         "admiralty-textarea": HTMLAdmiraltyTextareaElement;
-        "admiralty-type-ahead": HTMLAdmiraltyTypeAheadElement;
-        "admiralty-type-ahead-item": HTMLAdmiraltyTypeAheadItemElement;
     }
 }
 declare namespace LocalJSX {
@@ -1597,7 +1542,7 @@ declare namespace LocalJSX {
          */
         "required"?: boolean;
         /**
-          * Toggle showing all values when the input is clicked, like a default dropdown.
+          * Toggle showing all values when the input is clicked, like a default dropdown. This will hide the chevron when set to false.
          */
         "showAllValues"?: boolean;
         /**
@@ -2397,39 +2342,6 @@ declare namespace LocalJSX {
          */
         "width"?: number;
     }
-    interface AdmiraltyTypeAhead {
-        /**
-          * The hint which will be used under the label to describe the input.
-         */
-        "hint"?: string;
-        /**
-          * The text content of the label for the input box
-         */
-        "label"?: string;
-        /**
-          * Optional function that will be executed when the user selects an item from the typeahead
-         */
-        "onSelectionChanged"?: (event: AdmiraltyTypeAheadCustomEvent<string>) => void;
-        /**
-          * Event that is fired whenever the value of the typeahead changes e.g. selection from the dropdown or manually typed entry
-         */
-        "onValueChanged"?: (event: AdmiraltyTypeAheadCustomEvent<string>) => void;
-        /**
-          * The placeholder text for the input field
-         */
-        "placeholder"?: string;
-        /**
-          * Optional property to show results when input box is initally focused
-         */
-        "resultsOnInitFocus"?: boolean;
-        /**
-          * The value of the textinput
-         */
-        "value"?: string;
-    }
-    interface AdmiraltyTypeAheadItem {
-        "value"?: string;
-    }
     interface IntrinsicElements {
         "admiralty-autocomplete": AdmiraltyAutocomplete;
         "admiralty-autocomplete-option": AdmiraltyAutocompleteOption;
@@ -2481,8 +2393,6 @@ declare namespace LocalJSX {
         "admiralty-table-header-cell": AdmiraltyTableHeaderCell;
         "admiralty-table-row": AdmiraltyTableRow;
         "admiralty-textarea": AdmiraltyTextarea;
-        "admiralty-type-ahead": AdmiraltyTypeAhead;
-        "admiralty-type-ahead-item": AdmiraltyTypeAheadItem;
     }
 }
 export { LocalJSX as JSX };
@@ -2563,8 +2473,6 @@ declare module "@stencil/core" {
              */
             "admiralty-table-row": LocalJSX.AdmiraltyTableRow & JSXBase.HTMLAttributes<HTMLAdmiraltyTableRowElement>;
             "admiralty-textarea": LocalJSX.AdmiraltyTextarea & JSXBase.HTMLAttributes<HTMLAdmiraltyTextareaElement>;
-            "admiralty-type-ahead": LocalJSX.AdmiraltyTypeAhead & JSXBase.HTMLAttributes<HTMLAdmiraltyTypeAheadElement>;
-            "admiralty-type-ahead-item": LocalJSX.AdmiraltyTypeAheadItem & JSXBase.HTMLAttributes<HTMLAdmiraltyTypeAheadItemElement>;
         }
     }
 }
