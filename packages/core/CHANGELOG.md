@@ -1,3 +1,44 @@
+# v4.0.0 (Wed Jan 15 2025)
+
+#### 💥 Breaking Change
+
+- Version 4 release [#335](https://github.com/UKHO/admiralty-design-system/pull/335) ([@developernm](https://github.com/developernm) [@ecstaticrainbow](https://github.com/ecstaticrainbow) [@lstevens98](https://github.com/lstevens98))
+- Feat: Update autocomplete to hide chevron and removed typeahead [#292](https://github.com/UKHO/admiralty-design-system/pull/292) ([@developernm](https://github.com/developernm))
+- Feat: Remake typographic scale [#286](https://github.com/UKHO/admiralty-design-system/pull/286) ([@developernm](https://github.com/developernm))
+
+#### 🚀 Enhancement
+
+- Feat: Updated card component stories to display customisable cards using the pill component. [#328](https://github.com/UKHO/admiralty-design-system/pull/328) ([@UKHOGreg](https://github.com/UKHOGreg) [@developernm](https://github.com/developernm) [@ecstaticrainbow](https://github.com/ecstaticrainbow))
+- Fix: Input to behave correctly with aria-describedby [#326](https://github.com/UKHO/admiralty-design-system/pull/326) ([@developernm](https://github.com/developernm) [@lstevens98](https://github.com/lstevens98))
+- Feat: New Pill style component [#287](https://github.com/UKHO/admiralty-design-system/pull/287) ([@UKHOGreg](https://github.com/UKHOGreg) [@developernm](https://github.com/developernm) [@ecstaticrainbow](https://github.com/ecstaticrainbow))
+- Feat: New Minified Footer component [#284](https://github.com/UKHO/admiralty-design-system/pull/284) ([@developernm](https://github.com/developernm))
+- Fix: Update missing typographic sizes [#315](https://github.com/UKHO/admiralty-design-system/pull/315) ([@developernm](https://github.com/developernm))
+
+#### 🐛 Bug Fix
+
+- Merge branch 'main' into merge-next-into-main ([@developernm](https://github.com/developernm))
+- merge: main ([@developernm](https://github.com/developernm))
+- Fix theme typo for font-size-7 [#313](https://github.com/UKHO/admiralty-design-system/pull/313) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+- Merge remote-tracking branch 'origin/main' into next ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+- Fix: Readmore component needs refining [#289](https://github.com/UKHO/admiralty-design-system/pull/289) ([@developernm](https://github.com/developernm) [@ecstaticrainbow](https://github.com/ecstaticrainbow))
+- Docs: updated documentation for admiralty select [#295](https://github.com/UKHO/admiralty-design-system/pull/295) ([@developernm](https://github.com/developernm) [@ecstaticrainbow](https://github.com/ecstaticrainbow))
+- Fix: disabled checkbox [#294](https://github.com/UKHO/admiralty-design-system/pull/294) ([@developernm](https://github.com/developernm) [@ecstaticrainbow](https://github.com/ecstaticrainbow))
+- Merge main into next ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+- Feat: Include documentation to demonstrate a placeholder option [#271](https://github.com/UKHO/admiralty-design-system/pull/271) ([@developernm](https://github.com/developernm))
+
+#### 🔩 Dependency Updates
+
+- Upgrade yarn to v4 [#311](https://github.com/UKHO/admiralty-design-system/pull/311) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+#### Authors: 4
+
+- [@developernm](https://github.com/developernm)
+- Greg Williams ([@UKHOGreg](https://github.com/UKHOGreg))
+- Lewis Stevens ([@lstevens98](https://github.com/lstevens98))
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
 # v3.1.3 (Mon Jan 06 2025)
 
 #### 🐛 Bug Fix
