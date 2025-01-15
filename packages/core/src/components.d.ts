@@ -10,6 +10,7 @@ import { ButtonVariant } from "./components/button/button.types";
 import { IconName, IconPrefix } from "@fortawesome/fontawesome-svg-core";
 import { CheckboxChangeEventDetail } from "./components/checkbox/checkbox.interface";
 import { FileInputChangeEventDetail } from "./components/file-input/file-input.interface";
+import { FooterTypes } from "./components/footer/footer.types";
 import { IconName as IconName1 } from "@fortawesome/free-solid-svg-icons";
 import { InputChangeEventDetail } from "./components/input/input.interface";
 import { RadioGroupChangeEventDetail } from "./components/radio-group/radio-group-interface";
@@ -20,6 +21,7 @@ export { ButtonVariant } from "./components/button/button.types";
 export { IconName, IconPrefix } from "@fortawesome/fontawesome-svg-core";
 export { CheckboxChangeEventDetail } from "./components/checkbox/checkbox.interface";
 export { FileInputChangeEventDetail } from "./components/file-input/file-input.interface";
+export { FooterTypes } from "./components/footer/footer.types";
 export { IconName as IconName1 } from "@fortawesome/free-solid-svg-icons";
 export { InputChangeEventDetail } from "./components/input/input.interface";
 export { RadioGroupChangeEventDetail } from "./components/radio-group/radio-group-interface";
@@ -96,7 +98,7 @@ export namespace Components {
          */
         "required": boolean;
         /**
-          * Toggle showing all values when the input is clicked, like a default dropdown.
+          * Toggle showing all values when the input is clicked, like a default dropdown. This will hide the chevron when set to false.
          */
         "showAllValues": boolean;
         /**
@@ -317,6 +319,10 @@ export namespace Components {
           * The text to display in the footer. The default value displays crown copyright, the current year and `UK Hydrographic Office`.
          */
         "text": string;
+        /**
+          * The type of footer to render. Valid values are `standard`, `compact`. Default value is `standard`.
+         */
+        "variant": FooterTypes;
     }
     interface AdmiraltyHeader {
         /**
@@ -536,6 +542,28 @@ export namespace Components {
          */
         "phase": 'alpha' | 'beta';
     }
+    interface AdmiraltyPill {
+        /**
+          * The background colour of the pill.
+         */
+        "colour": 'admiralty-blue' | 'white' | 'bright-blue';
+        /**
+          * Label the pill.
+         */
+        "label": string;
+        /**
+          * The number of the pill.
+         */
+        "number": string;
+        /**
+          * Whether to show the pill is selected.
+         */
+        "selected": boolean;
+        /**
+          * The text of the pill.
+         */
+        "text": string;
+    }
     interface AdmiraltyProgressBar {
         /**
           * Set to true to indicate an error (turns the progress bar red)
@@ -635,7 +663,7 @@ export namespace Components {
          */
         "label": string;
         /**
-          * The value of the input.
+          * The value of the option selected as a string or number.
          */
         "value"?: string | number | null;
         /**
@@ -749,31 +777,6 @@ export namespace Components {
          */
         "width"?: number;
     }
-    interface AdmiraltyTypeAhead {
-        /**
-          * The hint which will be used under the label to describe the input.
-         */
-        "hint": string;
-        /**
-          * The text content of the label for the input box
-         */
-        "label": string;
-        /**
-          * The placeholder text for the input field
-         */
-        "placeholder": string;
-        /**
-          * Optional property to show results when input box is initally focused
-         */
-        "resultsOnInitFocus": boolean;
-        /**
-          * The value of the textinput
-         */
-        "value": string;
-    }
-    interface AdmiraltyTypeAheadItem {
-        "value": string;
-    }
 }
 export interface AdmiraltyAutocompleteCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -854,10 +857,6 @@ export interface AdmiraltyTabGroupCustomEvent<T> extends CustomEvent<T> {
 export interface AdmiraltyTextareaCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLAdmiraltyTextareaElement;
-}
-export interface AdmiraltyTypeAheadCustomEvent<T> extends CustomEvent<T> {
-    detail: T;
-    target: HTMLAdmiraltyTypeAheadElement;
 }
 declare global {
     interface HTMLAdmiraltyAutocompleteElementEventMap {
@@ -1202,6 +1201,12 @@ declare global {
         prototype: HTMLAdmiraltyPhaseBannerElement;
         new (): HTMLAdmiraltyPhaseBannerElement;
     };
+    interface HTMLAdmiraltyPillElement extends Components.AdmiraltyPill, HTMLStencilElement {
+    }
+    var HTMLAdmiraltyPillElement: {
+        prototype: HTMLAdmiraltyPillElement;
+        new (): HTMLAdmiraltyPillElement;
+    };
     interface HTMLAdmiraltyProgressBarElement extends Components.AdmiraltyProgressBar, HTMLStencilElement {
     }
     var HTMLAdmiraltyProgressBarElement: {
@@ -1409,30 +1414,6 @@ declare global {
         prototype: HTMLAdmiraltyTextareaElement;
         new (): HTMLAdmiraltyTextareaElement;
     };
-    interface HTMLAdmiraltyTypeAheadElementEventMap {
-        "selectionChanged": string;
-        "valueChanged": string;
-    }
-    interface HTMLAdmiraltyTypeAheadElement extends Components.AdmiraltyTypeAhead, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLAdmiraltyTypeAheadElementEventMap>(type: K, listener: (this: HTMLAdmiraltyTypeAheadElement, ev: AdmiraltyTypeAheadCustomEvent<HTMLAdmiraltyTypeAheadElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
-        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
-        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
-        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLAdmiraltyTypeAheadElementEventMap>(type: K, listener: (this: HTMLAdmiraltyTypeAheadElement, ev: AdmiraltyTypeAheadCustomEvent<HTMLAdmiraltyTypeAheadElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
-        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
-        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
-    }
-    var HTMLAdmiraltyTypeAheadElement: {
-        prototype: HTMLAdmiraltyTypeAheadElement;
-        new (): HTMLAdmiraltyTypeAheadElement;
-    };
-    interface HTMLAdmiraltyTypeAheadItemElement extends Components.AdmiraltyTypeAheadItem, HTMLStencilElement {
-    }
-    var HTMLAdmiraltyTypeAheadItemElement: {
-        prototype: HTMLAdmiraltyTypeAheadItemElement;
-        new (): HTMLAdmiraltyTypeAheadItemElement;
-    };
     interface HTMLElementTagNameMap {
         "admiralty-autocomplete": HTMLAdmiraltyAutocompleteElement;
         "admiralty-autocomplete-option": HTMLAdmiraltyAutocompleteOptionElement;
@@ -1465,6 +1446,7 @@ declare global {
         "admiralty-paginator": HTMLAdmiraltyPaginatorElement;
         "admiralty-paginator-wrapper": HTMLAdmiraltyPaginatorWrapperElement;
         "admiralty-phase-banner": HTMLAdmiraltyPhaseBannerElement;
+        "admiralty-pill": HTMLAdmiraltyPillElement;
         "admiralty-progress-bar": HTMLAdmiraltyProgressBarElement;
         "admiralty-radio": HTMLAdmiraltyRadioElement;
         "admiralty-radio-group": HTMLAdmiraltyRadioGroupElement;
@@ -1483,8 +1465,6 @@ declare global {
         "admiralty-table-header-cell": HTMLAdmiraltyTableHeaderCellElement;
         "admiralty-table-row": HTMLAdmiraltyTableRowElement;
         "admiralty-textarea": HTMLAdmiraltyTextareaElement;
-        "admiralty-type-ahead": HTMLAdmiraltyTypeAheadElement;
-        "admiralty-type-ahead-item": HTMLAdmiraltyTypeAheadItemElement;
     }
 }
 declare namespace LocalJSX {
@@ -1562,7 +1542,7 @@ declare namespace LocalJSX {
          */
         "required"?: boolean;
         /**
-          * Toggle showing all values when the input is clicked, like a default dropdown.
+          * Toggle showing all values when the input is clicked, like a default dropdown. This will hide the chevron when set to false.
          */
         "showAllValues"?: boolean;
         /**
@@ -1818,6 +1798,10 @@ declare namespace LocalJSX {
           * The text to display in the footer. The default value displays crown copyright, the current year and `UK Hydrographic Office`.
          */
         "text"?: string;
+        /**
+          * The type of footer to render. Valid values are `standard`, `compact`. Default value is `standard`.
+         */
+        "variant"?: FooterTypes;
     }
     interface AdmiraltyHeader {
         /**
@@ -2081,6 +2065,28 @@ declare namespace LocalJSX {
          */
         "phase"?: 'alpha' | 'beta';
     }
+    interface AdmiraltyPill {
+        /**
+          * The background colour of the pill.
+         */
+        "colour"?: 'admiralty-blue' | 'white' | 'bright-blue';
+        /**
+          * Label the pill.
+         */
+        "label"?: string;
+        /**
+          * The number of the pill.
+         */
+        "number"?: string;
+        /**
+          * Whether to show the pill is selected.
+         */
+        "selected"?: boolean;
+        /**
+          * The text of the pill.
+         */
+        "text"?: string;
+    }
     interface AdmiraltyProgressBar {
         /**
           * Set to true to indicate an error (turns the progress bar red)
@@ -2207,7 +2213,7 @@ declare namespace LocalJSX {
          */
         "onAdmiraltyChange"?: (event: AdmiraltySelectCustomEvent<SelectChangeEventDetail>) => void;
         /**
-          * The value of the input.
+          * The value of the option selected as a string or number.
          */
         "value"?: string | number | null;
         /**
@@ -2336,39 +2342,6 @@ declare namespace LocalJSX {
          */
         "width"?: number;
     }
-    interface AdmiraltyTypeAhead {
-        /**
-          * The hint which will be used under the label to describe the input.
-         */
-        "hint"?: string;
-        /**
-          * The text content of the label for the input box
-         */
-        "label"?: string;
-        /**
-          * Optional function that will be executed when the user selects an item from the typeahead
-         */
-        "onSelectionChanged"?: (event: AdmiraltyTypeAheadCustomEvent<string>) => void;
-        /**
-          * Event that is fired whenever the value of the typeahead changes e.g. selection from the dropdown or manually typed entry
-         */
-        "onValueChanged"?: (event: AdmiraltyTypeAheadCustomEvent<string>) => void;
-        /**
-          * The placeholder text for the input field
-         */
-        "placeholder"?: string;
-        /**
-          * Optional property to show results when input box is initally focused
-         */
-        "resultsOnInitFocus"?: boolean;
-        /**
-          * The value of the textinput
-         */
-        "value"?: string;
-    }
-    interface AdmiraltyTypeAheadItem {
-        "value"?: string;
-    }
     interface IntrinsicElements {
         "admiralty-autocomplete": AdmiraltyAutocomplete;
         "admiralty-autocomplete-option": AdmiraltyAutocompleteOption;
@@ -2401,6 +2374,7 @@ declare namespace LocalJSX {
         "admiralty-paginator": AdmiraltyPaginator;
         "admiralty-paginator-wrapper": AdmiraltyPaginatorWrapper;
         "admiralty-phase-banner": AdmiraltyPhaseBanner;
+        "admiralty-pill": AdmiraltyPill;
         "admiralty-progress-bar": AdmiraltyProgressBar;
         "admiralty-radio": AdmiraltyRadio;
         "admiralty-radio-group": AdmiraltyRadioGroup;
@@ -2419,8 +2393,6 @@ declare namespace LocalJSX {
         "admiralty-table-header-cell": AdmiraltyTableHeaderCell;
         "admiralty-table-row": AdmiraltyTableRow;
         "admiralty-textarea": AdmiraltyTextarea;
-        "admiralty-type-ahead": AdmiraltyTypeAhead;
-        "admiralty-type-ahead-item": AdmiraltyTypeAheadItem;
     }
 }
 export { LocalJSX as JSX };
@@ -2464,6 +2436,7 @@ declare module "@stencil/core" {
             "admiralty-paginator": LocalJSX.AdmiraltyPaginator & JSXBase.HTMLAttributes<HTMLAdmiraltyPaginatorElement>;
             "admiralty-paginator-wrapper": LocalJSX.AdmiraltyPaginatorWrapper & JSXBase.HTMLAttributes<HTMLAdmiraltyPaginatorWrapperElement>;
             "admiralty-phase-banner": LocalJSX.AdmiraltyPhaseBanner & JSXBase.HTMLAttributes<HTMLAdmiraltyPhaseBannerElement>;
+            "admiralty-pill": LocalJSX.AdmiraltyPill & JSXBase.HTMLAttributes<HTMLAdmiraltyPillElement>;
             "admiralty-progress-bar": LocalJSX.AdmiraltyProgressBar & JSXBase.HTMLAttributes<HTMLAdmiraltyProgressBarElement>;
             "admiralty-radio": LocalJSX.AdmiraltyRadio & JSXBase.HTMLAttributes<HTMLAdmiraltyRadioElement>;
             "admiralty-radio-group": LocalJSX.AdmiraltyRadioGroup & JSXBase.HTMLAttributes<HTMLAdmiraltyRadioGroupElement>;
@@ -2500,8 +2473,6 @@ declare module "@stencil/core" {
              */
             "admiralty-table-row": LocalJSX.AdmiraltyTableRow & JSXBase.HTMLAttributes<HTMLAdmiraltyTableRowElement>;
             "admiralty-textarea": LocalJSX.AdmiraltyTextarea & JSXBase.HTMLAttributes<HTMLAdmiraltyTextareaElement>;
-            "admiralty-type-ahead": LocalJSX.AdmiraltyTypeAhead & JSXBase.HTMLAttributes<HTMLAdmiraltyTypeAheadElement>;
-            "admiralty-type-ahead-item": LocalJSX.AdmiraltyTypeAheadItem & JSXBase.HTMLAttributes<HTMLAdmiraltyTypeAheadItemElement>;
         }
     }
 }

@@ -24,6 +24,13 @@
 | `admiraltyChange` | Event fired when the checked radio button changes | `CustomEvent<RadioGroupChangeEventDetail<any>>` |
 
 
+## CSS Custom Properties
+
+| Name                                         | Description                            |
+| -------------------------------------------- | -------------------------------------- |
+| `--admiralty-radio-group-legend-font-weight` | Font weight for the radio group legend |
+
+
 ## Dependencies
 
 ### Depends on

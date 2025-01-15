@@ -86,7 +86,7 @@ export class AutocompleteComponent {
    */
   @Prop() showNoOptionsFound: boolean = true;
   /**
-   * Toggle showing all values when the input is clicked, like a default dropdown.
+   * Toggle showing all values when the input is clicked, like a default dropdown. This will hide the chevron when set to false.
    */
   @Prop() showAllValues: boolean = true;
   /**
@@ -569,7 +569,7 @@ export class AutocompleteComponent {
     return (
       <div class={wrapperClassName} onKeyDown={event => this.handleKeyDown(event)}>
         {this.label ? (
-          <admiralty-label disabled={this.disabled} for={inputId}>
+          <admiralty-label class="autocomplete__label" disabled={this.disabled} for={inputId}>
             {this.label}
           </admiralty-label>
         ) : null}
@@ -600,7 +600,9 @@ export class AutocompleteComponent {
             required={this.required}
             value={this.query}
           />
-          <admiralty-icon class={`autocomplete-down-icon ${this.disabled ? 'disabled' : ''}`} icon-name={this.menuOpen || showNoOptionsFound ? 'angle-up' : 'angle-down'} />
+          {this.showAllValues &&
+            <admiralty-icon class={`autocomplete-down-icon ${this.disabled ? "disabled" : ""}`} icon-name={this.menuOpen || showNoOptionsFound ? "angle-up" : "angle-down"} />
+          }
         </div>
 
         <ul {...computedMenuAttributes} class={menuClassList.join(' ')}>

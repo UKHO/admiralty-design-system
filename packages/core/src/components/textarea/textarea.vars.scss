@@ -1,7 +1,12 @@
 @import '../../styles/vars/globals';
 
+/**
+ * @prop --admiralty-text-area-font-weight: Font weight for the text area
+**/
+
+$textarea-font-weight: var(--admiralty-text-area-font-weight, var(--admiralty-font-weight-normal));
+
 $textarea-text-colour: var(--admiralty-text-colour);
-$textarea-font-weight: var(--admiralty-font-weight);
 $textarea-line-height: var(--admiralty-line-height);
 $textarea-border-colour: var(--admiralty-text-colour);
 $textarea-background-colour: var(--admiralty-background-colour);

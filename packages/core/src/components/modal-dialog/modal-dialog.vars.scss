@@ -1,5 +1,17 @@
 @import '../../styles/vars/globals';
 
+/**
+ * @prop --admiralty-modal-heading-font-size: Font size for the modal dialog heading
+ * @prop --admiralty-modal-heading-font-weight: Font weight for the modal dialog heading
+ * @prop --admiralty-modal-slotted-icon-font-size: Font size for the modal dialog slotted icon
+ * @prop --admiralty-modal-slotted-text-font-size: Font size for the modal dialog slotted text
+**/
+
+$modal-heading-font-size: var(--admiralty-modal-heading-font-size, var(--admiralty-font-size-5));
+$modal-heading-font-weight: var(--admiralty-modal-heading-font-weight, var(--admiralty-font-weight-medium));
+$modal-slotted-icon-font-size: var(--admiralty-modal-slotted-icon-font-size, var(--admiralty-font-size-2));
+$modal-slotted-text-font-size: var(--admiralty-modal-slotted-text-font-size, var(--admiralty-font-size-0));
+
 $modal-backdrop-background-colour: var(--admiralty-colour-light-contrast) !default;
 $modal-heading-text-colour: var(--admiralty-colour-primary) !default;
 $modal-background-colour: var(--admiralty-background-colour) !default;

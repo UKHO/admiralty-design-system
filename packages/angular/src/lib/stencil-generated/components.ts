@@ -369,14 +369,14 @@ export declare interface AdmiraltyFilterGroup extends Components.AdmiraltyFilter
 
 
 @ProxyCmp({
-  inputs: ['imageAlt', 'imageLink', 'imageSrc', 'text']
+  inputs: ['imageAlt', 'imageLink', 'imageSrc', 'text', 'variant']
 })
 @Component({
   selector: 'admiralty-footer',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['imageAlt', 'imageLink', 'imageSrc', 'text'],
+  inputs: ['imageAlt', 'imageLink', 'imageSrc', 'text', 'variant'],
 })
 export class AdmiraltyFooter {
   protected el: HTMLElement;
@@ -781,6 +781,28 @@ export class AdmiraltyPhaseBanner {
 
 
 export declare interface AdmiraltyPhaseBanner extends Components.AdmiraltyPhaseBanner {}
+
+
+@ProxyCmp({
+  inputs: ['colour', 'label', 'number', 'selected', 'text']
+})
+@Component({
+  selector: 'admiralty-pill',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['colour', 'label', 'number', 'selected', 'text'],
+})
+export class AdmiraltyPill {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface AdmiraltyPill extends Components.AdmiraltyPill {}
 
 
 @ProxyCmp({
@@ -1212,60 +1234,5 @@ export declare interface AdmiraltyTextarea extends Components.AdmiraltyTextarea 
    */
   admiraltyInput: EventEmitter<CustomEvent<IAdmiraltyTextareaTextAreaChangeEventDetail>>;
 }
-
-
-@ProxyCmp({
-  inputs: ['hint', 'label', 'placeholder', 'resultsOnInitFocus', 'value']
-})
-@Component({
-  selector: 'admiralty-type-ahead',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>',
-  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['hint', 'label', 'placeholder', 'resultsOnInitFocus', 'value'],
-})
-export class AdmiraltyTypeAhead {
-  protected el: HTMLElement;
-  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
-    c.detach();
-    this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['selectionChanged', 'valueChanged']);
-  }
-}
-
-
-export declare interface AdmiraltyTypeAhead extends Components.AdmiraltyTypeAhead {
-  /**
-   * Optional function that will be executed when the user selects an item from the typeahead
-   */
-  selectionChanged: EventEmitter<CustomEvent<string>>;
-  /**
-   * Event that is fired whenever the value of the typeahead changes
-e.g. selection from the dropdown or manually typed entry
-   */
-  valueChanged: EventEmitter<CustomEvent<string>>;
-}
-
-
-@ProxyCmp({
-  inputs: ['value']
-})
-@Component({
-  selector: 'admiralty-type-ahead-item',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>',
-  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['value'],
-})
-export class AdmiraltyTypeAheadItem {
-  protected el: HTMLElement;
-  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
-    c.detach();
-    this.el = r.nativeElement;
-  }
-}
-
-
-export declare interface AdmiraltyTypeAheadItem extends Components.AdmiraltyTypeAheadItem {}
 
 

@@ -2,7 +2,7 @@
 
 .tab-content {
   display: none;
-  font-weight: $tab-text-weight;
+  font-weight: $tab-content-font-weight;
 
   &.active {
     display: block;

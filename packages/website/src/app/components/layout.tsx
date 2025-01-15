@@ -23,6 +23,7 @@ const sideNavItems: SideNavItem[] = [
   { path: "modal-dialog", title: "Modal Dialog" },
   { path: "paginator", title: "Paginator" },
   { path: "phase-banner", title: "Phase Banner" },
+  { path: "pill", title: "Pill" },
   { path: "progress-bar", title: "Progress Bar" },
   { path: "radio", title: "Radio" },
   { path: "radio-group", title: "Radio Group" },
@@ -33,7 +34,6 @@ const sideNavItems: SideNavItem[] = [
   { path: "tab-group", title: "Tab Group" },
   { path: "table", title: "Table" },
   { path: "textarea", title: "Textarea" },
-  { path: "type-ahead", title: "Typeahead" },
 ];
 
 export default function Layout({ children }: { children: React.ReactNode }) {

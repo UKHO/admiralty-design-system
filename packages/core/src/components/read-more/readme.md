@@ -19,6 +19,13 @@
 | `admiraltyToggled` | The event that is dispatched when the expanded status is toggled. | `CustomEvent<boolean>` |
 
 
+## CSS Custom Properties
+
+| Name                                | Description                        |
+| ----------------------------------- | ---------------------------------- |
+| `--admiralty-read-more-font-weight` | Font weight for the read more text |
+
+
 ## Dependencies
 
 ### Depends on
