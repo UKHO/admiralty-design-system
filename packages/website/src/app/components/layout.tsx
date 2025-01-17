@@ -19,6 +19,7 @@ const sideNavItems: SideNavItem[] = [
   { path: "header", title: "Header" },
   { path: "horizontal-rule", title: "Horizontal Rule" },
   { path: "input", title: "Input" },
+  { path: "link", title: "Link" },
   { path: "modal-dialog", title: "Modal Dialog" },
   { path: "paginator", title: "Paginator" },
   { path: "phase-banner", title: "Phase Banner" },
