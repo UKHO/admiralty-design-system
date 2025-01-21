@@ -15,9 +15,10 @@
     color: $card-heading-text-colour;
     background-color: $card-heading-colour;
     margin: 0;
-    padding: 0 30px;
+    padding: $card-heading-padding;
+
     @include not-desktop {
-      padding: 0px 18px;
+      padding: $card-heading-not-desktop-padding;
       height: 48px;
       line-height: 48px;
     }
@@ -33,6 +34,8 @@
   }
 }
 
+// TODO
+/* Not in use, need to confirm.
 .text-input-form {
   .text-input-wrap {
     margin-bottom: 30px;
@@ -42,3 +45,4 @@
     margin-bottom: 0;
   }
 }
+*/
