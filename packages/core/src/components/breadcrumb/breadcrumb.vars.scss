@@ -1,7 +1,16 @@
-$breadcrumb-font-weight: 300 !default;
-$breadcrumb-font-weight-active: 400 !default;
-$breadcrumb-font-size: 14px !default;
+/**
+ * @prop --admiralty-breadcrumb-icon-font-size: Font size for the breadcrumb icon
+ * @prop --admiralty-breadcrumb-font-size: Font size for the breadcrumb
+ * @prop --admiralty-breadcrumb-font-weight: Font weight for the breadcrumb
+ * @prop --admiralty-breadcrumb-font-weight-active: Font weight for the breadcrumb active
+**/
+
 $breadcrumb-font-colour: var(--admiralty-text-colour) !default;
 $breadcrumb-font-colour-hover: var(--admiralty-colour-primary) !default;
 $breadcrumb-font-colour-active: var(--admiralty-colour-primary) !default;
 $breadcrumb-separator-colour: var(--admiralty-colour-primary) !default;
+
+$breadcrumb-font-size: var(--admiralty-breadcrumb-font-size, var(--admiralty-font-size--1));
+$breadcrumb-icon-font-size: var(--admiralty-breadcrumb-icon-font-size, var(--admiralty-font-size--2));
+$breadcrumb-font-weight: var(--admiralty-breadcrumb-font-weight, var(--admiralty-font-weight-normal));
+$breadcrumb-font-weight-active: var(--admiralty-breadcrumb-font-weight-active, var(--admiralty-font-weight-medium));

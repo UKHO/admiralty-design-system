@@ -40,6 +40,7 @@ import { AdmiraltyLink as AdmiraltyLinkElement, defineCustomElement as defineAdm
 import { AdmiraltyModalDialog as AdmiraltyModalDialogElement, defineCustomElement as defineAdmiraltyModalDialog } from "@ukho/admiralty-core/dist/components/admiralty-modal-dialog.js";
 import { AdmiraltyPaginator as AdmiraltyPaginatorElement, defineCustomElement as defineAdmiraltyPaginator } from "@ukho/admiralty-core/dist/components/admiralty-paginator.js";
 import { AdmiraltyPhaseBanner as AdmiraltyPhaseBannerElement, defineCustomElement as defineAdmiraltyPhaseBanner } from "@ukho/admiralty-core/dist/components/admiralty-phase-banner.js";
+import { AdmiraltyPill as AdmiraltyPillElement, defineCustomElement as defineAdmiraltyPill } from "@ukho/admiralty-core/dist/components/admiralty-pill.js";
 import { AdmiraltyProgressBar as AdmiraltyProgressBarElement, defineCustomElement as defineAdmiraltyProgressBar } from "@ukho/admiralty-core/dist/components/admiralty-progress-bar.js";
 import { AdmiraltyRadioGroup as AdmiraltyRadioGroupElement, defineCustomElement as defineAdmiraltyRadioGroup } from "@ukho/admiralty-core/dist/components/admiralty-radio-group.js";
 import { AdmiraltyRadio as AdmiraltyRadioElement, defineCustomElement as defineAdmiraltyRadio } from "@ukho/admiralty-core/dist/components/admiralty-radio.js";
@@ -57,8 +58,6 @@ import { AdmiraltyTableHeader as AdmiraltyTableHeaderElement, defineCustomElemen
 import { AdmiraltyTableRow as AdmiraltyTableRowElement, defineCustomElement as defineAdmiraltyTableRow } from "@ukho/admiralty-core/dist/components/admiralty-table-row.js";
 import { AdmiraltyTable as AdmiraltyTableElement, defineCustomElement as defineAdmiraltyTable } from "@ukho/admiralty-core/dist/components/admiralty-table.js";
 import { AdmiraltyTextarea as AdmiraltyTextareaElement, defineCustomElement as defineAdmiraltyTextarea } from "@ukho/admiralty-core/dist/components/admiralty-textarea.js";
-import { AdmiraltyTypeAheadItem as AdmiraltyTypeAheadItemElement, defineCustomElement as defineAdmiraltyTypeAheadItem } from "@ukho/admiralty-core/dist/components/admiralty-type-ahead-item.js";
-import { AdmiraltyTypeAhead as AdmiraltyTypeAheadElement, defineCustomElement as defineAdmiraltyTypeAhead } from "@ukho/admiralty-core/dist/components/admiralty-type-ahead.js";
 import React from 'react';
 
 type AdmiraltyAutocompleteEvents = { onAdmiraltyChange: EventName<AdmiraltyAutocompleteCustomEvent<AutoCompleteChangeEventDetail>> };
@@ -391,6 +390,16 @@ export const AdmiraltyPhaseBanner: StencilReactComponent<AdmiraltyPhaseBannerEle
     defineCustomElement: defineAdmiraltyPhaseBanner
 });
 
+type AdmiraltyPillEvents = NonNullable<unknown>;
+
+export const AdmiraltyPill: StencilReactComponent<AdmiraltyPillElement, AdmiraltyPillEvents> = /*@__PURE__*/ createComponent<AdmiraltyPillElement, AdmiraltyPillEvents>({
+    tagName: 'admiralty-pill',
+    elementClass: AdmiraltyPillElement,
+    react: React,
+    events: {} as AdmiraltyPillEvents,
+    defineCustomElement: defineAdmiraltyPill
+});
+
 type AdmiraltyProgressBarEvents = NonNullable<unknown>;
 
 export const AdmiraltyProgressBar: StencilReactComponent<AdmiraltyProgressBarElement, AdmiraltyProgressBarEvents> = /*@__PURE__*/ createComponent<AdmiraltyProgressBarElement, AdmiraltyProgressBarEvents>({
@@ -579,30 +588,4 @@ export const AdmiraltyTextarea: StencilReactComponent<AdmiraltyTextareaElement, 
         onAdmiraltyInput: 'admiraltyInput'
     } as AdmiraltyTextareaEvents,
     defineCustomElement: defineAdmiraltyTextarea
-});
-
-type AdmiraltyTypeAheadEvents = {
-    onSelectionChanged: EventName<CustomEvent<string>>,
-    onValueChanged: EventName<CustomEvent<string>>
-};
-
-export const AdmiraltyTypeAhead: StencilReactComponent<AdmiraltyTypeAheadElement, AdmiraltyTypeAheadEvents> = /*@__PURE__*/ createComponent<AdmiraltyTypeAheadElement, AdmiraltyTypeAheadEvents>({
-    tagName: 'admiralty-type-ahead',
-    elementClass: AdmiraltyTypeAheadElement,
-    react: React,
-    events: {
-        onSelectionChanged: 'selectionChanged',
-        onValueChanged: 'valueChanged'
-    } as AdmiraltyTypeAheadEvents,
-    defineCustomElement: defineAdmiraltyTypeAhead
-});
-
-type AdmiraltyTypeAheadItemEvents = NonNullable<unknown>;
-
-export const AdmiraltyTypeAheadItem: StencilReactComponent<AdmiraltyTypeAheadItemElement, AdmiraltyTypeAheadItemEvents> = /*@__PURE__*/ createComponent<AdmiraltyTypeAheadItemElement, AdmiraltyTypeAheadItemEvents>({
-    tagName: 'admiralty-type-ahead-item',
-    elementClass: AdmiraltyTypeAheadItemElement,
-    react: React,
-    events: {} as AdmiraltyTypeAheadItemEvents,
-    defineCustomElement: defineAdmiraltyTypeAheadItem
 });

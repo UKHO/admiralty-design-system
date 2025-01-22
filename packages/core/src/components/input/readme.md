@@ -37,11 +37,15 @@ and checkbox.
 | `admiraltyInput` | Emitted when the value has changed. | `CustomEvent<InputChangeEventDetail>` |
 
 
+## CSS Custom Properties
+
+| Name                            | Description              |
+| ------------------------------- | ------------------------ |
+| `--admiralty-input-font-size`   | Font size of the input   |
+| `--admiralty-input-font-weight` | Font weight of the input |
+
+
 ## Dependencies
-
-### Used by
-
- - [admiralty-type-ahead](../type-ahead)
 
 ### Depends on
 
@@ -56,7 +60,6 @@ graph TD;
   admiralty-input --> admiralty-hint
   admiralty-input --> admiralty-input-invalid
   admiralty-input-invalid --> admiralty-icon
-  admiralty-type-ahead --> admiralty-input
   style admiralty-input fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

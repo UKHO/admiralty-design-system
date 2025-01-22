@@ -26,7 +26,7 @@
 | `name`               | `name`                  | The name for the `<input>` element.                                                                                                                                                                                                                                                                                                                                                 | `string`  | `undefined`                                                                                                                                                     |
 | `placeholder`        | `placeholder`           | Populate the placeholder attribute on the `<input>` element.                                                                                                                                                                                                                                                                                                                        | `string`  | `''`                                                                                                                                                            |
 | `required`           | `required`              | Populates the required field on the `<input>` element.                                                                                                                                                                                                                                                                                                                              | `boolean` | `false`                                                                                                                                                         |
-| `showAllValues`      | `show-all-values`       | Toggle showing all values when the input is clicked, like a default dropdown.                                                                                                                                                                                                                                                                                                       | `boolean` | `true`                                                                                                                                                          |
+| `showAllValues`      | `show-all-values`       | Toggle showing all values when the input is clicked, like a default dropdown. This will hide the chevron when set to false.                                                                                                                                                                                                                                                         | `boolean` | `true`                                                                                                                                                          |
 | `showNoOptionsFound` | `show-no-options-found` | Toggle whether to display the "No results found" message.                                                                                                                                                                                                                                                                                                                           | `boolean` | `true`                                                                                                                                                          |
 | `value`              | `value`                 | The value of the input.                                                                                                                                                                                                                                                                                                                                                             | `string`  | `null`                                                                                                                                                          |
 
@@ -36,6 +36,17 @@
 | Event             | Description                         | Type                                         |
 | ----------------- | ----------------------------------- | -------------------------------------------- |
 | `admiraltyChange` | Emitted when the value has changed. | `CustomEvent<AutoCompleteChangeEventDetail>` |
+
+
+## CSS Custom Properties
+
+| Name                                          | Description                              |
+| --------------------------------------------- | ---------------------------------------- |
+| `--admiralty-autocomplete-icon-font-size`     | Font size for the autocompletes icon     |
+| `--admiralty-autocomplete-icon-font-weight`   | Font weight for the autocompletes icon   |
+| `--admiralty-autocomplete-label-font-size`    | Font size for the autocompletes label    |
+| `--admiralty-autocomplete-option-font-size`   | Font size for the autocompletes option   |
+| `--admiralty-autocomplete-option-font-weight` | Font weight for the autocompletes option |
 
 
 ## Dependencies

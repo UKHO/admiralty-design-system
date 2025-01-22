@@ -22,6 +22,14 @@
 | `toggled` | The event that is dispatched when the expanded status is toggled. | `CustomEvent<boolean>` |
 
 
+## CSS Custom Properties
+
+| Name                                      | Description                        |
+| ----------------------------------------- | ---------------------------------- |
+| `--admiralty-expansion-title-font-size`   | Font size of the expansion title   |
+| `--admiralty-expansion-title-font-weight` | Font weight of the expansion title |
+
+
 ## Dependencies
 
 ### Used by
