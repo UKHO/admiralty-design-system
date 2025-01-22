@@ -29,11 +29,14 @@
 
 ## CSS Custom Properties
 
-| Name                                   | Description                     |
-| -------------------------------------- | ------------------------------- |
-| `--admiralty-filter-reset-font-weight` | Font weight of the filter reset |
-| `--admiralty-filter-title-font-size`   | Font size of the filter title   |
-| `--admiralty-filter-title-font-weight` | Font weight of the filter title |
+| Name                                       | Description                           |
+| ------------------------------------------ | ------------------------------------- |
+| `--admiralty-filter-button-text-padding`   | Padding for the filter button.        |
+| `--admiralty-filter-button-wrapper-margin` | Margin for the filter button wrapper. |
+| `--admiralty-filter-reset-font-weight`     | Font weight of the filter reset       |
+| `--admiralty-filter-title-font-size`       | Font size of the filter title         |
+| `--admiralty-filter-title-font-weight`     | Font weight of the filter title       |
+| `--admiralty-filter-title-margin`          | Margin for the filter title           |
 
 
 ## Dependencies
