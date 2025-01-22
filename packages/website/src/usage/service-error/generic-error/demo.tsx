@@ -9,7 +9,7 @@ export default function Demo() {
         <h1>An error has occurred</h1>
         <p>We apologise for the inconvenience, but an error has occurred.</p>
         <p>
-          Please <a href="#"><strong>return to the homepage</strong></a> and try again. If the issue persists, please contanct <br/>
+          Please <a href="#"><strong>return to the homepage</strong></a> and try again. If the issue persists, please contact <br/>
           Customer Services for further assistance.
         </p>
         <p>
