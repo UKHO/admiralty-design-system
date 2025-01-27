@@ -36,7 +36,7 @@
 | `--admiralty-filter-reset-font-weight`     | Font weight of the filter reset       |
 | `--admiralty-filter-title-font-size`       | Font size of the filter title         |
 | `--admiralty-filter-title-font-weight`     | Font weight of the filter title       |
-| `--admiralty-filter-title-margin`          | Margin for the filter title           |
+| `--admiralty-filter-title-margin`          | Margin for the filter title.          |
 
 
 ## Dependencies
