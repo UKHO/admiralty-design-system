@@ -60,6 +60,13 @@ export class AppComponent {
     },
   ];
 
+  autocompleteItems = Array.from({ length: 6000 }, (_, i) => i);
+  autoCompleteFilter = (query: string) => {
+    return this.autocompleteItems
+      .filter((x) => x.toString().toLowerCase().indexOf(query.toLowerCase()) !== -1)
+      .map((x) => x.toString());
+  };
+
   addHeaderItems() {
     this.headerItems.push({
       title: `Item ${this.headerItems.length + 1}`,
@@ -166,4 +173,3 @@ export class AppComponent {
     this.group.controls.direction.setValue('South');
   }
 }
-
