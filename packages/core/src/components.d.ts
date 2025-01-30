@@ -54,6 +54,10 @@ export namespace Components {
          */
         "displayMenu": string;
         /**
+          * Custom filter function that can be used instead of rendering options into the DOM.
+         */
+        "filterFunction": (query: string) => Option[];
+        /**
           * TThe text which will be used under the label to describe the input.
          */
         "hint": string;
@@ -1493,6 +1497,10 @@ declare namespace LocalJSX {
           * When set to `overlay` this option will display the menu as an absolutely positioned overlay instead of inline.
          */
         "displayMenu"?: string;
+        /**
+          * Custom filter function that can be used instead of rendering options into the DOM.
+         */
+        "filterFunction"?: (query: string) => Option[];
         /**
           * TThe text which will be used under the label to describe the input.
          */
