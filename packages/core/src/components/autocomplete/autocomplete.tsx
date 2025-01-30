@@ -340,7 +340,7 @@ export class AutocompleteComponent {
 
     const searchForOptions = this.showAllValues || (!queryEmpty && queryChanged && queryLongEnough);
     if (searchForOptions) {
-      const matches = this.filterFunction ? this.filterFunction(this.query).map(x => new Option(x, x)) : filterOptions(this.source, this.query);
+      const matches = this.filterFunction ? this.filterFunction(this.query) : filterOptions(this.source, this.query);
       const optionsAvailable = matches.length > 0;
       this.menuOpen = optionsAvailable;
       this.options = matches;
