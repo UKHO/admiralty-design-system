@@ -23,10 +23,13 @@
 
 ## CSS Custom Properties
 
-| Name                                           | Description                              |
-| ---------------------------------------------- | ---------------------------------------- |
-| `--admiralty-header-sub-menu-item-font-size`   | Font size of the header sub menu item.   |
-| `--admiralty-header-sub-menu-item-font-weight` | Font weight of the header sub menu item. |
+| Name                                                     | Description                              |
+| -------------------------------------------------------- | ---------------------------------------- |
+| `--admiralty-header-sub-menu-item-desktop-margin-bottom` |                                          |
+| `--admiralty-header-sub-menu-item-desktop-padding`       |                                          |
+| `--admiralty-header-sub-menu-item-font-size`             | Font size of the header sub menu item.   |
+| `--admiralty-header-sub-menu-item-font-weight`           | Font weight of the header sub menu item. |
+| `--admiralty-header-sub-menu-item-not-desktop`           |                                          |
 
 
 ----------------------------------------------
