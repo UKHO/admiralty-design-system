@@ -23,13 +23,13 @@
 
 ## CSS Custom Properties
 
-| Name                                                     | Description                              |
-| -------------------------------------------------------- | ---------------------------------------- |
-| `--admiralty-header-sub-menu-item-desktop-margin-bottom` |                                          |
-| `--admiralty-header-sub-menu-item-desktop-padding`       |                                          |
-| `--admiralty-header-sub-menu-item-font-size`             | Font size of the header sub menu item.   |
-| `--admiralty-header-sub-menu-item-font-weight`           | Font weight of the header sub menu item. |
-| `--admiralty-header-sub-menu-item-not-desktop`           |                                          |
+| Name                                                     | Description                                                  |
+| -------------------------------------------------------- | ------------------------------------------------------------ |
+| `--admiralty-header-sub-menu-item-desktop-margin-bottom` | Margin bottom for the sub menu item when in desktop view     |
+| `--admiralty-header-sub-menu-item-desktop-padding`       | Padding for the sub menu item when in desktop view           |
+| `--admiralty-header-sub-menu-item-font-size`             | Font size of the header sub menu item.                       |
+| `--admiralty-header-sub-menu-item-font-weight`           | Font weight of the header sub menu item.                     |
+| `--admiralty-header-sub-menu-item-not-desktop-padding`   | Margin bottom for the sub menu item when not in desktop view |
 
 
 ----------------------------------------------
