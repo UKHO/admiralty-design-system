@@ -9,7 +9,7 @@ import { IconName } from '@fortawesome/fontawesome-svg-core';
 })
 export class ButtonComponent {
   /**
-   * The type of button to render. Valid values are `primary`, `secondary`, `warning`, `text` and `icon`.
+   * The type of button to render. Valid values are `primary`, `secondary`, `warning`, `text`, `icon` and `iconWithText`.
    * Default value is `primary`.
    */
   @Prop() variant: ButtonVariant = 'primary';
@@ -42,14 +42,17 @@ export class ButtonComponent {
   @Prop() value: string;
 
   render() {
-    const { form, name, value } = this;
+    const { form, name, value, variant } = this;
     const props = {
       ...(form && { form }),
       ...(name && { name }),
       ...(value && { value }),
     };
+
+    const buttonClass = `button ${variant} ${variant === 'iconWithText' ? 'icon-with-text' : ''}`;
+
     return (
-      <button type={this.type} disabled={this.disabled} class={this.variant} {...props}>
+      <button type={this.type} disabled={this.disabled} class={buttonClass.trim()} {...props}>
         <slot></slot>
         {this.icon ? <admiralty-icon icon-name={this.icon}></admiralty-icon> : undefined}
       </button>

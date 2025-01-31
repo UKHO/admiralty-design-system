@@ -155,7 +155,7 @@ export namespace Components {
          */
         "value": string;
         /**
-          * The type of button to render. Valid values are `primary`, `secondary`, `warning`, `text` and `icon`. Default value is `primary`.
+          * The type of button to render. Valid values are `primary`, `secondary`, `warning`, `text`, `icon` and `iconWithText`. Default value is `primary`.
          */
         "variant": ButtonVariant;
     }
@@ -1599,7 +1599,7 @@ declare namespace LocalJSX {
          */
         "value"?: string;
         /**
-          * The type of button to render. Valid values are `primary`, `secondary`, `warning`, `text` and `icon`. Default value is `primary`.
+          * The type of button to render. Valid values are `primary`, `secondary`, `warning`, `text`, `icon` and `iconWithText`. Default value is `primary`.
          */
         "variant"?: ButtonVariant;
     }
