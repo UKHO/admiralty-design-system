@@ -9,6 +9,15 @@
  * @prop --admiralty-header-brand-font-size: Font weight of the header brand
  * @prop --admiralty-header-menu-icon-font-size: Font size of the header menu icon
  * @prop --admiralty-header-menu-icon-font-weight: Font weight of the header menu icon
+
+ * @prop --admiralty-header-branding-padding: Padding for the header's branding.
+ * @prop --admiralty-header-branding-not-desktop-padding: Padding for the header's branding when not in desktop view.
+ * @prop --admiralty-header-vertical-separator-margin: Margin for the vertical separator.
+ * @prop --admiralty-header-vertical-separator-not-desktop-margin: Margin for the vertical separator when not in desktop view.
+ * @prop --admiralty-header-title-margin-top: Margin top for the header title.
+ * @prop --admiralty-header-title-margin-bottom: Margin bottom for the header title
+ * @prop --admiralty-header-menu-mobile-button-icon-padding: Padding for the button icon when in mobile view.
+ * @prop --admiralty-header-menu-section-tablet-only-margin-left: Margin left for the menu section when in tablet view only.
 **/
 
 $header-text-size: var(--admiralty-header-font-size, var(--admiralty-font-size-0));
@@ -28,3 +37,11 @@ $header-separator-colour: var(--admiralty-colour-light);
 $header-outline-colour: var(--admiralty-text-colour);
 $header-icon-colour: var(--admiralty-colour-primary);
 
+$header-branding-padding: var(--admiralty-header-branding-padding, 1.3em 0 1.3em 1.3em);
+$header-branding-not-desktop-padding: var(--admiralty-header-branding-not-desktop-padding, var(--admiralty-spacing-3) var(--admiralty-spacing-0) var(--admiralty-spacing-3) var(--admiralty-spacing-3));
+$header-vertical-separator-margin: var(--admiralty-header-vertical-separator-margin, var(--admiralty-spacing-0) var(--admiralty-spacing-6));
+$header-vertical-separator-not-desktop-margin: var(--admiralty-header-vertical-separator-not-desktop-margin, var(--admiralty-spacing-0) var(--admiralty-spacing-3));
+$header-title-margin-top: var(--admiralty-header-title-margin-top, var(--admiralty-spacing-1));
+$header-title-margin-bottom: var(--admiralty-header-title-margin-bottom, var(--admiralty-spacing-unset));
+$header-menu-mobile-button-icon-padding: var(--admiralty-header-menu-mobile-button-icon-padding, var(--admiralty-spacing-3));
+$header-menu-section-tablet-only-margin-left: var(--admiralty-header-menu-section-tablet-only-margin-left, 50%);

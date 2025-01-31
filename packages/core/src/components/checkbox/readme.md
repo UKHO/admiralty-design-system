@@ -29,10 +29,16 @@
 
 ## CSS Custom Properties
 
-| Name                               | Description                 |
-| ---------------------------------- | --------------------------- |
-| `--admiralty-checkbox-font-size`   | Font size of the checkbox   |
-| `--admiralty-checkbox-font-weight` | Font weight of the checkbox |
+| Name                                                 | Description                                     |
+| ---------------------------------------------------- | ----------------------------------------------- |
+| `--admiralty-checkbox-font-size`                     | Font size of the checkbox                       |
+| `--admiralty-checkbox-font-weight`                   | Font weight of the checkbox                     |
+| `--admiralty-checkbox-input-margin`                  | Margin for the checkbox input.                  |
+| `--admiralty-checkbox-input-padding`                 | Padding for the checkbox input.                 |
+| `--admiralty-checkbox-label-alignment-padding-left`  | Padding left for the checkbox label alignment.  |
+| `--admiralty-checkbox-label-alignment-padding-right` | Padding right for the checkbox label alignment. |
+| `--admiralty-checkbox-label-margin-bottom`           | Margin bottom for the checkbox label.           |
+| `--admiralty-checkbox-label-padding-left`            | Padding left for the checkbox label.            |
 
 
 ----------------------------------------------

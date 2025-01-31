@@ -4,6 +4,14 @@
  * @prop --admiralty-header-profile-font-size: Font size of the header profile
  * @prop --admiralty-header-profile-font-weight: Font weight of the header profile
  * @prop --admiralty-header-profile-sub-item-font-weight: Font weight of the header profile sub item
+
+ * @prop --admiralty-header-profile-desktop-only-margin-bottom: Margin bottom for the header profile when in desktop view
+ * @prop --admiralty-header-profile-desktop-only-padding: Padding for the header profile when in desktop view
+ * @prop --admiralty-header-profile-desktop-only-button-padding: Padding for the header profile button when in desktop view
+ * @prop --admiralty-header-profile-desktop-only-sub-menu-item-margin: Margin for the sub menu item of the profile when in desktop view
+ * @prop --admiralty-header-profile-desktop-only-sub-menu-item-padding: padding for the sub menu item of the profile when in desktop view
+ * @prop --admiralty-header-profile-not-desktop-sub-menu-item-padding: Padding for the sub menu item of the profile when not in desktop view
+ * @prop --admiralty-header-profile-not-desktop-sub-menu-item-span-padding:Padding for the span of the sub menu item when not in desktop view
 **/
 
 $header-profile-text-size: var(--admiralty-header-profile-font-size, var(--admiralty-font-size-0));
@@ -14,3 +22,11 @@ $header-profile-active-colour: var(--admiralty-colour-primary);
 $header-profile-text-colour: var(--admiralty-colour-primary);
 $header-profile-hover-background-colour: var(--admiralty-hover-background-colour);
 $header-profile-divider-colour: var(--admiralty-colour-light);
+
+$header-profile-desktop-only-margin-bottom: var(--admiralty-header-profile-desktop-only-margin-bottom, var(--admiralty-spacing-0));
+$header-profile-desktop-only-padding: var(--admiralty-header-profile-desktop-only-padding, var(--admiralty-spacing-0) 1.65em);
+$header-profile-desktop-only-button-padding: var(--admiralty-header-profile-desktop-only-button-padding, var(--admiralty-spacing-1) var(--admiralty-spacing-0));
+$header-profile-desktop-only-sub-menu-item-margin: var(--admiralty-header-profile-desktop-only-sub-menu-item-margin, var(--admiralty-spacing-0));
+$header-profile-desktop-only-sub-menu-item-padding: var(--admiralty-header-profile-desktop-only-sub-menu-item-padding, 10px);
+$header-profile-not-desktop-sub-menu-item-padding: var(--admiralty-header-profile-not-desktop-sub-menu-item-padding, var(--admiralty-spacing-3));
+$header-profile-not-desktop-sub-menu-item-span-padding: var(--admiralty-header-profile-not-desktop-sub-menu-item-span-padding, var(--admiralty-spacing-1) var(--admiralty-spacing-0));
