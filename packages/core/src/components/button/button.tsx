@@ -1,4 +1,4 @@
-import { Component, Prop, h } from '@stencil/core';
+import { Component, Prop, h, Element} from '@stencil/core';
 import { ButtonVariant } from './button.types';
 import { IconName } from '@fortawesome/fontawesome-svg-core';
 
@@ -8,6 +8,7 @@ import { IconName } from '@fortawesome/fontawesome-svg-core';
   scoped: true,
 })
 export class ButtonComponent {
+  @Element() el: HTMLElement;
   /**
    * The type of button to render. Valid values are `primary`, `secondary`, `warning`, `text` and `icon`.
    * Default value is `primary`.
@@ -42,16 +43,19 @@ export class ButtonComponent {
   @Prop() value: string;
 
   render() {
+    const hasSlotContent = this.el.textContent.trim().length > 0;
+
     const { form, name, value } = this;
     const props = {
       ...(form && { form }),
       ...(name && { name }),
       ...(value && { value }),
     };
+
     return (
       <button type={this.type} disabled={this.disabled} class={this.variant} {...props}>
         <slot></slot>
-        {this.icon ? <admiralty-icon icon-name={this.icon}></admiralty-icon> : undefined}
+        {this.icon ? <admiralty-icon icon-name={this.icon} class={`${hasSlotContent? "icon-padding" : ""}`}></admiralty-icon> : undefined}
       </button>
     );
   }
