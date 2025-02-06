@@ -43,7 +43,7 @@ export class ButtonComponent {
   @Prop() value: string;
 
   render() {
-    const hasSlotContent = this.el.textContent.trim().length > 0;
+    const hasTextContent = this.el.textContent.trim().length > 0;
 
     const { form, name, value } = this;
     const props = {
@@ -55,7 +55,7 @@ export class ButtonComponent {
     return (
       <button type={this.type} disabled={this.disabled} class={this.variant} {...props}>
         <slot></slot>
-        {this.icon ? <admiralty-icon icon-name={this.icon} class={`${hasSlotContent? "icon-padding" : ""}`}></admiralty-icon> : undefined}
+        {this.icon ? <admiralty-icon icon-name={this.icon} class={`${hasTextContent? "icon-padding" : ""}`}></admiralty-icon> : undefined}
       </button>
     );
   }
