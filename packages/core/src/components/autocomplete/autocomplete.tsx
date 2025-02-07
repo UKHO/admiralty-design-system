@@ -147,6 +147,11 @@ export class AutocompleteComponent {
   @Prop({ mutable: true }) value?: string | null = null;
 
   /**
+   * Custom filter function that can be used instead of rendering options into the DOM.
+   */
+  @Prop() filterFunction: (query: string) => Option[];
+
+  /**
    * Emitted when the value has changed.
    */
   @Event() admiraltyChange: EventEmitter<AutoCompleteChangeEventDetail>;
@@ -214,10 +219,12 @@ export class AutocompleteComponent {
 
   connectedCallback() {
     this.mutation = watchForOptions<HTMLAdmiraltyAutocompleteOptionElement>(this.el, 'admiralty-autocomplete-option', async () => {
-      this.source = this.childOpts.map(({ textContent, value }) => ({
-        text: textContent?.length > 0 ? textContent : value,
-        value: value ?? textContent,
-      }));
+      this.source = this.filterFunction
+        ? this.filterFunction('')
+        : this.childOpts.map(({ textContent, value }) => ({
+            text: textContent?.length > 0 ? textContent : value,
+            value: value ?? textContent,
+          }));
       if (this.query === null && this.value?.length > 0) {
         const matches = filterOptionsByValue(this.source, this.value);
         this.options = matches;
@@ -335,7 +342,7 @@ export class AutocompleteComponent {
 
     const searchForOptions = this.showAllValues || (!queryEmpty && queryChanged && queryLongEnough);
     if (searchForOptions) {
-      const matches = filterOptions(this.source, this.query);
+      const matches = this.filterFunction ? this.filterFunction(this.query) : filterOptions(this.source, this.query);
       const optionsAvailable = matches.length > 0;
       this.menuOpen = optionsAvailable;
       this.options = matches;
@@ -600,9 +607,9 @@ export class AutocompleteComponent {
             required={this.required}
             value={this.query}
           />
-          {this.showAllValues &&
-            <admiralty-icon class={`autocomplete-down-icon ${this.disabled ? "disabled" : ""}`} icon-name={this.menuOpen || showNoOptionsFound ? "angle-up" : "angle-down"} />
-          }
+          {this.showAllValues && (
+            <admiralty-icon class={`autocomplete-down-icon ${this.disabled ? 'disabled' : ''}`} icon-name={this.menuOpen || showNoOptionsFound ? 'angle-up' : 'angle-down'} />
+          )}
         </div>
 
         <ul {...computedMenuAttributes} class={menuClassList.join(' ')}>
