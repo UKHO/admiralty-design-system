@@ -2,7 +2,17 @@
 
 /**
  * @prop --admiralty-phase-banner-font-weight: Font weight for the phase banner
+
+ * @prop --admiralty-phase-banner-padding: Padding for the phase banner
+ * @prop --admiralty-phase-banner-desktop-padding: Padding for the phase banner when in desktop view
+ * @prop --admiralty-phase-banner-strong-padding: Padding for the phase banners text
+ * @prop --admiralty-phase-banner-strong-margin-right: Margin for the phase banners text
 **/
+
+$phase-banner-padding: var(--admiralty-phase-banner-padding, var(--admiralty-spacing-0) 18px);
+$phase-banner-desktop-padding: var(--admiralty-phase-banner-desktop-padding, var(--admiralty-spacing-0) 20px);
+$phase-banner-strong-padding: var(--admiralty-phase-banner-strong-padding, 6px var(--admiralty-spacing-2) 3px);
+$phase-banner-strong-margin: var(--admiralty-phase-banner-strong-margin-right, 10px);
 
 $phase-banner-font-weight: var(--admiralty-phase-banner-font-weight, var(--admiralty-font-weight-bold));
 
