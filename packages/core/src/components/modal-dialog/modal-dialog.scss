@@ -18,7 +18,7 @@
 
 .modal-dialog {
   display: none;
-  margin: 0 auto;
+  margin: $modal-dialog-margin;
   width: max-content;
   z-index: 1001;
   position: fixed;
@@ -29,18 +29,18 @@
   border: 1px solid $modal-border-colour;
 
   & > .modal-heading {
-    padding: 60px 60px 30px 60px;
+    padding: $modal-dialog-heading-padding;
     color: $modal-heading-text-colour;
     font-weight: $modal-heading-font-weight;
     font-size: $modal-heading-font-size;
     line-height: 48px;
-    margin-bottom: 0px;
+    margin-bottom: $modal-dialog-heading-margin-bottom;
   }
 
   & > .modal-content {
     border-top: none;
     flex-grow: 1;
-    padding: 0px 60px 60px 60px;
+    padding: $modal-dialog-content-padding;
 
     ::slotted(div[slot='content']) {
       display: flex;
@@ -51,7 +51,7 @@
     ::slotted(div) > admiralty-icon {
       color: $modal-heading-text-colour;
       display: inline-block;
-      padding: 3px 12px 3px 0px;
+      padding: $modal-dialog-content-slotted-padding;
       font-size: $modal-slotted-icon-font-size;
     }
     //Specifying the specific slot inexplicably
@@ -63,7 +63,7 @@
       font-weight: var(--admiralty-font-weight-medium);
       font-size: $modal-slotted-text-font-size;
       line-height: 24px;
-      margin-bottom: 0px;
+      margin-bottom: $modal-dialog-content-slotted-margin-bottom;
     }
   }
 
@@ -78,7 +78,7 @@
     //Specifying the specific slot inexplicably
     //makes the selector apply to the slotted div
     ::slotted(div) > admiralty-button {
-      padding: 24px 24px 24px 0px;
+      padding: $modal-dialog-content-slotted-button-padding;
     }
   }
 }
@@ -86,12 +86,13 @@
   display: block;
 }
 
-.text-input-form {
-  .text-input-wrap {
-    margin-bottom: 30px;
-  }
-
-  .text-input-wrap:last-child {
-    margin-bottom: 0;
-  }
-}
+// TODO: not in use need to confirm.
+//.text-input-form {
+//  .text-input-wrap {
+//    margin-bottom: 30px;
+//  }
+//
+//  .text-input-wrap:last-child {
+//    margin-bottom: 0;
+//  }
+//}
