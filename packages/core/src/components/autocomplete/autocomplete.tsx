@@ -219,10 +219,12 @@ export class AutocompleteComponent {
 
   connectedCallback() {
     this.mutation = watchForOptions<HTMLAdmiraltyAutocompleteOptionElement>(this.el, 'admiralty-autocomplete-option', async () => {
-      this.source = this.childOpts.map(({ textContent, value }) => ({
-        text: textContent?.length > 0 ? textContent : value,
-        value: value ?? textContent,
-      }));
+      this.source = this.filterFunction
+        ? this.filterFunction('')
+        : this.childOpts.map(({ textContent, value }) => ({
+            text: textContent?.length > 0 ? textContent : value,
+            value: value ?? textContent,
+          }));
       if (this.query === null && this.value?.length > 0) {
         const matches = filterOptionsByValue(this.source, this.value);
         this.options = matches;

@@ -64,7 +64,7 @@ export class AppComponent {
   autoCompleteFilter = (query: string) => {
     return this.autocompleteItems
       .filter((x) => x.toString().toLowerCase().indexOf(query.toLowerCase()) !== -1)
-      .map((x) => x.toString());
+      .map((x) => ({ text: x.toString(), value: x.toString() }));
   };
 
   addHeaderItems() {
