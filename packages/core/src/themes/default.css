@@ -120,4 +120,5 @@
   --admiralty-spacing-8: 32px; /** 2rem **/
   --admiralty-spacing-auto: auto;
   --admiralty-spacing-unset: unset;
+  --admiralty-spacing-inherit: inherit;
 }
