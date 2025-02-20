@@ -15,9 +15,13 @@
 
 ## CSS Custom Properties
 
-| Name                                   | Description                      |
-| -------------------------------------- | -------------------------------- |
-| `--admiralty-phase-banner-font-weight` | Font weight for the phase banner |
+| Name                                           | Description                                       |
+| ---------------------------------------------- | ------------------------------------------------- |
+| `--admiralty-phase-banner-desktop-padding`     | Padding for the phase banner when in desktop view |
+| `--admiralty-phase-banner-font-weight`         | Font weight for the phase banner                  |
+| `--admiralty-phase-banner-padding`             | Padding for the phase banner                      |
+| `--admiralty-phase-banner-strong-margin-right` | Margin for the phase banners text                 |
+| `--admiralty-phase-banner-strong-padding`      | Padding for the phase banners text                |
 
 
 ----------------------------------------------

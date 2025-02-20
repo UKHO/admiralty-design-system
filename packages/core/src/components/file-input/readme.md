@@ -30,8 +30,11 @@
 | `--admiralty-file-input-font-weight`       | Font weight of the file input       |
 | `--admiralty-file-input-icon-font-size`    | Font size of the file input icon    |
 | `--admiralty-file-input-icon-font-weight`  | Font weight of the file input icon  |
+| `--admiralty-file-input-icon-margin`       | Margin for the file input icon.     |
 | `--admiralty-file-input-label-font-size`   | Font size of the file input label   |
 | `--admiralty-file-input-label-font-weight` | Font weight of the file input label |
+| `--admiralty-file-input-label-margin`      | Margin for the file input label.    |
+| `--admiralty-file-input-margin`            | Margin for the file input.          |
 
 
 ## Dependencies

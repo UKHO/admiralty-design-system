@@ -22,7 +22,15 @@
  * @prop --admiralty-tertiary-pill-item-number-colour: Colour for the tertiary pill's item number
  * @prop --admiralty-tertiary-pill-item-number-background-colour: Background colour for the tertiary pill's item number
  * @prop --admiralty-tertiary-pill-item-selected-icon: Colour of the icon for the tertiary pill
+
+ * @prop --admiralty-pill-padding: padding for the admiralty pill
+ * @prop --admiralty-pill-item-margin: margin for the admiralty pill
+ * @prop --admiralty-pill-item-number-padding: padding for the admiralty pill item number
 **/
+
+$pill-padding: var(--admiralty-pill-padding, 8px 15px);
+$pill-item-margin: var(--admiralty-pill-item-margin, 0 0 0 10px);
+$pill-item-number-padding: var(--admiralty-pill-item-number-padding, 2px 6px);
 
 $pill-item-font-size: var(--admiralty-pill-item-font-size, var(--admiralty-font-size--1));
 $pill-item-number-font-size: var(--admiralty-pill-item-number-font-size, var(--admiralty-font-size--1));

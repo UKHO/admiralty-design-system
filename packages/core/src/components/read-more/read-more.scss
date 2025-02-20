@@ -1,7 +1,7 @@
 @import 'read-more.vars.scss';
 
 section.expansion {
-  padding: 2px 0;
+  padding: $read-more-padding;
 
   .expansion-content {
     display: none;
@@ -12,7 +12,7 @@ section.expansion {
   &.expanded .expansion-content {
     display: block;
     max-height: initial;
-    padding: 2px 5px 2px 33px;
+    padding: $read-more-expanded-content-padding;
   }
 
   button {
@@ -22,8 +22,8 @@ section.expansion {
     color: $read-more-text-colour;
     font-weight: unset;
     cursor: pointer;
-    margin: 8px 0px;
-    padding: 4px;
+    margin: $read-more-button-margin;
+    padding: $read-more-button-padding;
     align-items: baseline;
     text-align: left;
     text-decoration: underline;
@@ -34,9 +34,7 @@ section.expansion {
     }
 
     .expansion-heading-icon {
-      margin-top: 1px;
-      margin-left: 5px;
-      margin-right: 8px;
+      margin: $read-more-button-expansion-heading-icon-margin;
       vertical-align: top;
     }
 

@@ -6,7 +6,7 @@
 }
 
 .breadcrumb-icon {
-  margin: 0 10px;
+  margin: $breadcrumb-icon-margin;
   font-size: $breadcrumb-icon-font-size;
   color: $breadcrumb-separator-colour;
 }
@@ -17,7 +17,7 @@ a {
   font-weight: $breadcrumb-font-weight;
   text-decoration: none;
   color: $breadcrumb-font-colour;
-  margin: 10px 2px;
+  margin: $breadcrumb-href-margin;
 
   &:hover {
     color: $breadcrumb-font-colour-hover;
