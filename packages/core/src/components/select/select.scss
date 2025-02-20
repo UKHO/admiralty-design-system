@@ -24,10 +24,10 @@ select {
   color: $select-text-colour;
   font-size: $select-text-size;
   line-height: 24px;
-  margin-bottom: 6px;
+  margin-bottom: $select-margin-bottom;
   position: relative;
   font-weight: $select-text-weight;
-  padding: 12px;
+  padding: $select-padding;
   width: 100%;
 
   &.invalid {
