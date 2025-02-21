@@ -1,3 +1,24 @@
+# v4.1.0 (Fri Feb 21 2025)
+
+#### 🚀 Enhancement
+
+- `@ukho/admiralty-angular`, `@ukho/admiralty-core`
+  - Adding in the ability to pass in a filter function to the autocomplete [#338](https://github.com/UKHO/admiralty-design-system/pull/338) ([@ecstaticrainbow](https://github.com/ecstaticrainbow) [@developernm](https://github.com/developernm))
+
+#### 🐛 Bug Fix
+
+- Feat: Create Patterns Page [#321](https://github.com/UKHO/admiralty-design-system/pull/321) ([@lstevens98](https://github.com/lstevens98) [@developernm](https://github.com/developernm))
+- `@ukho/admiralty-core`
+  - Fix: option weight [#337](https://github.com/UKHO/admiralty-design-system/pull/337) ([@developernm](https://github.com/developernm))
+
+#### Authors: 3
+
+- [@developernm](https://github.com/developernm)
+- Lewis Stevens ([@lstevens98](https://github.com/lstevens98))
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
 # v4.0.0 (Wed Jan 15 2025)
 
 #### 💥 Breaking Change

@@ -1,3 +1,26 @@
+# v4.1.0 (Fri Feb 21 2025)
+
+#### 🚀 Enhancement
+
+- Adding in the ability to pass in a filter function to the autocomplete [#338](https://github.com/UKHO/admiralty-design-system/pull/338) ([@ecstaticrainbow](https://github.com/ecstaticrainbow) [@developernm](https://github.com/developernm))
+
+#### 🐛 Bug Fix
+
+- Merge branch 'main' into fix-autocomplete-performance ([@developernm](https://github.com/developernm))
+- Fix: option weight [#337](https://github.com/UKHO/admiralty-design-system/pull/337) ([@developernm](https://github.com/developernm))
+- Merge branch 'main' into fix-option-weight ([@developernm](https://github.com/developernm))
+- Making sure the source is set when using filter function ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+- Fixing unneeded option initialisation ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+- Adding in the ability to pass in a filter function ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+- fix: option weight ([@developernm](https://github.com/developernm))
+
+#### Authors: 2
+
+- [@developernm](https://github.com/developernm)
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
 # v4.0.0 (Wed Jan 15 2025)
 
 #### 💥 Breaking Change
