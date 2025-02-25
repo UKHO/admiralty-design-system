@@ -59,11 +59,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </AdmiraltyHeaderMenuLink>
           ))}
         </AdmiraltyHeader>
-        <div>
-          <AdmiraltyPhaseBanner
-            phase="alpha"
-            link="https://github.com/UKHO/admiralty-design-system/issues/new/choose"></AdmiraltyPhaseBanner>
-        </div>
         <main id="main-content">{children}</main>
         <AdmiraltyFooter imageSrc="/svg/UKHO stacked logo.svg">
           <AdmiraltyLink href="http://www.example.com" new-tab="true">
