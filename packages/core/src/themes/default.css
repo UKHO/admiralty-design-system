@@ -108,7 +108,7 @@
   --admiralty-font-weight-medium: 400;
   --admiralty-font-weight-bold: 700;
 
-  /** Padding **/
+  /** Spacing **/
   --admiralty-spacing-0: 0; /** Default **/
   --admiralty-spacing-1: 4px; /** 0.3rem **/
   --admiralty-spacing-2: 8px; /** 0.5rem **/

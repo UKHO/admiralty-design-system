@@ -35,7 +35,7 @@
     display: inline-block;
     font-size: $button-font-size;
     color: $button-icon-colour;
-    padding: 10px 16px; // TODO
+    padding: $button-defaults-idiomatic-padding;
   }
 }
 
@@ -58,7 +58,7 @@
     display: inline-block;
     font-size: $button-idiomatic-font-size;
     color: $button-icon-colour;
-    padding-left: 15px; // TODO
+    padding-left: $button-idiomatic-padding-left;
   }
 }
 
@@ -270,9 +270,9 @@ button.icon {
   }
 
   i {
-    margin: auto;
+    margin: $button-icon-idiomatic-margin;
     font-size: unset;
     color: unset;
-    padding-left: unset; // TODO
+    padding-left: $button-icon-idiomatic-padding;
   }
 }

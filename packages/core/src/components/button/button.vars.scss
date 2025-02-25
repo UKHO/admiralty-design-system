@@ -6,6 +6,7 @@
 
  * @prop --admiralty-button-focus-padding: Padding for the button focus
  * @prop --admiralty-button-defaults-padding: Padding for the button defaults
+ * @prop --admiralty-button-defaults-idiomatic-padding: Padding for the button defaults idiomatic element
  * @prop --admiralty-button-not-desktop-padding: Padding for the button when not in desktop view
 
  * @prop --admiralty-button-primary-hover-padding: Padding for the primary button when hovering
@@ -22,6 +23,11 @@
 
  * @prop --admiralty-button-icon-hover-padding: Padding for the button icon when hovering
  * @prop --admiralty-button-icon-hover-padding: Padding for the button icon when hovering
+
+ * @prop --admiralty-button-idiomatic-padding-left: Padding left for the button idiomatic element
+ * @prop --admiralty-button-idiomatic-padding: Padding left for the button idiomatic element
+ * @prop --admiralty-button-icon-idiomatic-padding: Padding for the button icon idiomatic element
+ * @prop --admiralty-button-icon-idiomatic-margin: Margin for the button icon idiomatic element
 **/
 
 $button-font-size: var(--admiralty-button-font-size, var(--admiralty-font-size-0)); // 18px !default;
@@ -82,7 +88,12 @@ $button-disabled-colour-icon: var(--admiralty-background-colour-tint) !default;
 // Spacing
 $button-focus-padding: var(--admiralty-button-focus-padding, var(--admiralty-spacing-3) 18px var(--admiralty-spacing-2));
 $button-defaults-padding: var(--admiralty-button-defaults-padding, 10px var(--admiralty-spacing-4));
+$button-defaults-idiomatic-padding: var(--admiralty-button-defaults-idiomatic-padding, 10px var(--admiralty-spacing-4));
 $button-not-desktop-padding: var(--admiralty-button-not-desktop-padding, 10px var(--admiralty-spacing-4));
+$button-idiomatic-padding-left: var(--admiralty-button-idiomatic-padding-left, var(--admiralty-spacing-4));
+$button-icon-idiomatic-padding: var(--admiralty-button-icon-idiomatic-padding, var(--admiralty-spacing-unset));
+$button-icon-idiomatic-margin: var(--admiralty-button-icon-idiomatic-margin, var(--admiralty-spacing-auto));
+
 
 // Spacing button primary
 $button-primary-hover-padding: var(--admiralty-button-primary-hover-padding, 10px var(--admiralty-spacing-4));

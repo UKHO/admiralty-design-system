@@ -18,5 +18,5 @@ $breadcrumb-icon-font-size: var(--admiralty-breadcrumb-icon-font-size, var(--adm
 $breadcrumb-font-weight: var(--admiralty-breadcrumb-font-weight, var(--admiralty-font-weight-normal));
 $breadcrumb-font-weight-active: var(--admiralty-breadcrumb-font-weight-active, var(--admiralty-font-weight-medium));
 
-$breadcrumb-icon-margin: var(--admiralty-breadcrumb-icon-margin, 0 10px);
-$breadcrumb-href-margin: var(--admiralty-breadcrumb-href-margin, 10px 2px);
+$breadcrumb-icon-margin: var(--admiralty-breadcrumb-icon-margin, var(--admiralty-spacing-0) var(--admiralty-spacing-2));
+$breadcrumb-href-margin: var(--admiralty-breadcrumb-href-margin, var(--admiralty-spacing-2) var(--admiralty-spacing-1));
