@@ -26,11 +26,12 @@
 
 ## CSS Custom Properties
 
-| Name                                | Description                     |
-| ----------------------------------- | ------------------------------- |
-| `--admiralty-select-font-size`      | Font size for the select text   |
-| `--admiralty-select-font-weight`    | Font weight for the select text |
-| `--admiralty-select-icon-font-size` | Font size for the select icon   |
+| Name                                    | Description                            |
+| --------------------------------------- | -------------------------------------- |
+| `--admiralty-select-font-size`          | Font size for the select text          |
+| `--admiralty-select-font-weight`        | Font weight for the select text        |
+| `--admiralty-select-icon-font-size`     | Font size for the select icon          |
+| `--admiralty-select-option-font-weight` | Font weight for the select option text |
 
 
 ## Dependencies

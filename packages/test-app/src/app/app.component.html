@@ -137,12 +137,9 @@
     (admiraltyChange)="onDirectionChanged($event)"
     formControlName="direction"
     [invalid]="direction?.invalid && (direction?.dirty || direction?.touched)"
+    [filterFunction]="autoCompleteFilter"
     invalidMessage="Direction must to be selected"
   >
-    <admiralty-autocomplete-option>North</admiralty-autocomplete-option>
-    <admiralty-autocomplete-option>South</admiralty-autocomplete-option>
-    <admiralty-autocomplete-option>East</admiralty-autocomplete-option>
-    <admiralty-autocomplete-option>West</admiralty-autocomplete-option>
   </admiralty-autocomplete>
   <hr />
   {{ group.value.direction }}
