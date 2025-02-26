@@ -1,3 +1,15 @@
+# v4.1.1 (Wed Feb 26 2025)
+
+#### 🐛 Bug Fix
+
+- Fix: Button with Text and Icon spacing needs amending [#341](https://github.com/UKHO/admiralty-design-system/pull/341) ([@developernm](https://github.com/developernm))
+
+#### Authors: 1
+
+- [@developernm](https://github.com/developernm)
+
+---
+
 # v4.1.0 (Fri Feb 21 2025)
 
 #### 🚀 Enhancement

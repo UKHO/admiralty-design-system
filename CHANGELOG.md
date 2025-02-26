@@ -1,3 +1,18 @@
+# v4.1.1 (Wed Feb 26 2025)
+
+#### 🐛 Bug Fix
+
+- Fix: Remove Alpha Phase Banner [#342](https://github.com/UKHO/admiralty-design-system/pull/342) ([@lstevens98](https://github.com/lstevens98))
+- `@ukho/admiralty-core`
+  - Fix: Button with Text and Icon spacing needs amending [#341](https://github.com/UKHO/admiralty-design-system/pull/341) ([@developernm](https://github.com/developernm))
+
+#### Authors: 2
+
+- [@developernm](https://github.com/developernm)
+- Lewis Stevens ([@lstevens98](https://github.com/lstevens98))
+
+---
+
 # v4.1.0 (Fri Feb 21 2025)
 
 #### 🚀 Enhancement
