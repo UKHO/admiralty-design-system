@@ -11,7 +11,7 @@
   border-radius: 0; /* Safari 10 on iOS adds implicit border rounding. */
   box-sizing: border-box;
   color: $autocomplete-text-colour;
-  margin-bottom: 0; /* BUG: Safari 10 on macOS seems to add an implicit margin. */
+  margin-bottom: $autocomplete-input-margin-bottom; /* BUG: Safari 10 on macOS seems to add an implicit margin. */
   line-height: 1.5;
   width: 100%;
 }
@@ -37,7 +37,7 @@
 }
 
 .autocomplete__input--default {
-  padding: 12px;
+  padding: $autocomplete-input-padding;
 }
 
 .autocomplete__input--focused {
@@ -47,7 +47,7 @@
 }
 
 .autocomplete__input--show-all-values {
-  padding: 12px 35px 12px 12px; /* Space for arrow. Other padding should match .autocomplete__input--default. */
+  padding: $autocomplete-input-display-all-padding;
   cursor: pointer;
 }
 
@@ -64,7 +64,7 @@
   border: 2px solid $autocomplete-input-border-colour;
   border-top: 0;
   color: $autocomplete-text-colour;
-  margin: 0;
+  margin: $autocomplete-input-menu-margin;
   max-height: 342px;
   overflow-x: hidden;
   padding: 0;
@@ -99,7 +99,7 @@
   cursor: pointer;
   display: block;
   position: relative;
-  margin-bottom: 0;
+  margin-bottom: $autocomplete-input-option-margin-bottom;
 }
 
 .autocomplete__option:before {
@@ -130,9 +130,7 @@
   background-color: $autocomplete-option-no-results-background-colour;
   color: $autocomplete-option-no-results-text-colour;
   text-align: center;
-
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin: $autocomplete-input-option-no-results-margin;
   cursor: not-allowed;
 }
 .autocomplete__option--no-results:hover {
@@ -140,9 +138,7 @@
   border-color: $autocomplete-option-no-results-background-colour;
   color: $autocomplete-option-no-results-text-colour;
   text-align: center;
-
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin: $autocomplete-option-no-results-hover-margin;
   cursor: not-allowed;
 }
 
@@ -155,7 +151,7 @@
 
 .autocomplete__hint,
 .autocomplete__option {
-  padding: 10px;
+  padding: $autocomplete-option-padding;
 }
 
 .autocomplete-down-icon {

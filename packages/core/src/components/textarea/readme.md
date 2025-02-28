@@ -29,6 +29,7 @@
 | Name                                | Description                   |
 | ----------------------------------- | ----------------------------- |
 | `--admiralty-text-area-font-weight` | Font weight for the text area |
+| `--admiralty-text-area-padding`     | Padding for text area         |
 
 
 ## Dependencies

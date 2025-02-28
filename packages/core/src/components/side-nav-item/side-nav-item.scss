@@ -2,7 +2,7 @@
 
 a.section {
   cursor: pointer;
-  padding: 0px 10px;
+  padding: $side-nav-item-padding;
   display: flex;
   flex-direction: column;
   justify-content: center;

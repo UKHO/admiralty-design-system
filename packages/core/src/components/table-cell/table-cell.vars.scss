@@ -3,7 +3,11 @@
 /**
  * @prop --admiralty-table-cell-font-size: Font size for the table cell
  * @prop --admiralty-table-cell-font-weight: Font weight for the table cell
+
+ * @prop --admiralty-table-cell-padding: Padding for the table cell
 **/
+
+$table-cell-padding: var(--admiralty-table-cell-padding, 6px var(--admiralty-spacing-5));
 
 $table-cell-text-size: var(--admiralty-table-cell-font-size, var(--admiralty-font-size-0));
 $table-cell-text-weight: var(--admiralty-table-cell-font-weight, var(--admiralty-font-weight-normal));

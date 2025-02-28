@@ -13,8 +13,7 @@
     font-size: $input-text-size;
     line-height: 24px;
     font-weight: $input-text-weight;
-
-    padding: 12px;
+    padding: $input-padding;
 
     &:focus {
       outline-offset: unset;
@@ -39,6 +38,6 @@
   }
 
   admiralty-input-invalid {
-    margin-top: 6px;
+    margin-top: $input-invalid-margin-top;
   }
 }

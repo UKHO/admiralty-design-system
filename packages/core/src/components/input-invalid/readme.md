@@ -10,6 +10,14 @@
 |      | The error content should be placed in the slot e.g. `<admiralty-input-invalid>This field is required</admiralty-input-invalid>` |
 
 
+## CSS Custom Properties
+
+| Name                                    | Description                       |
+| --------------------------------------- | --------------------------------- |
+| `--admiralty-input-invalid-icon-margin` | Margin for the invalid input icon |
+| `--admiralty-input-invalid-text-margin` | Margin for the invalid input text |
+
+
 ## Dependencies
 
 ### Used by

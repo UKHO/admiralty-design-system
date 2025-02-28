@@ -3,10 +3,10 @@
 .phase-banner {
   display: block;
   line-height: 40px;
-  padding: 0 18px;
+  padding: $phase-banner-padding;
 
   @include desktop-only {
-    padding: 0 20px;
+    padding: $phase-banner-desktop-padding;
   }
 
   strong {
@@ -15,7 +15,7 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     color: $phase-banner-text-colour;
-    padding: 6px 8px 3px;
-    margin-right: 10px;
+    padding: $phase-banner-strong-padding;
+    margin-right: $phase-banner-strong-margin;
   }
 }

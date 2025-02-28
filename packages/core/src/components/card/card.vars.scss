@@ -11,6 +11,10 @@
 
  * @prop --admiralty-card-padding: Padding of the card.
  * @prop --admiralty-card-not-desktop-padding: Padding of the card when not in desktop view.
+
+ * @prop --admiralty-card-heading-padding: Padding for the heading.
+ * @prop --admiralty-card-heading-margin: Margin for the heading.
+ * @prop --admiralty-card-heading-not-desktop-padding: Padding for the heading when not in desktop view.
 **/
 
 $card-border-colour: var(--admiralty-card-border-colour, var(--admiralty-colour-light));
@@ -21,4 +25,9 @@ $card-background-colour: var(--admiralty-card-background-colour, var(--admiralty
 $card-heading-font-size: var(--admiralty-card-heading-font-size, var(--admiralty-font-size-0));
 
 $card-padding: var(--admiralty-card-padding, 30px);
-$card-padding-not-desktop: var(--admiralty-card-not-desktop-padding, 24px 18px);
+$card-padding-not-desktop: var(--admiralty-card-not-desktop-padding, var(--admiralty-spacing-6) 18px);
+
+$card-heading-padding: var(--admiralty-card-heading-padding, var(--admiralty-spacing-0) var(--admiralty-spacing-7));
+$card-heading-margin: var(--admiralty-card-heading-margin, var(--admiralty-spacing-0));
+$card-heading-not-desktop-padding: var(--admiralty-card-heading-not-desktop-padding, var(--admiralty-spacing-0) var(--admiralty-spacing-4));
+
