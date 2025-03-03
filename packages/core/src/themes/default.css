@@ -108,3 +108,17 @@
   --admiralty-font-weight-medium: 400;
   --admiralty-font-weight-bold: 700;
 }
+
+ /** Dark Mode **/
+
+@media (prefers-color-scheme: dark) {
+  .theme {
+    /** Dark **/
+    --admiralty-colour-secondary: #405357;
+    --admiralty-colour-tertiary: #92A9AE;
+    --admiralty-focus-colour: #FBE86C;
+    --admiralty-colour-info: #60A4CE;
+    --admiralty-colour-success: #87BA7C;
+    --admiralty-colour-danger: #D86666;
+  }
+}
