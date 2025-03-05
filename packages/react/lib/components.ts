@@ -46,6 +46,8 @@ import { AdmiraltyRadioGroup as AdmiraltyRadioGroupElement, defineCustomElement 
 import { AdmiraltyRadio as AdmiraltyRadioElement, defineCustomElement as defineAdmiraltyRadio } from "@ukho/admiralty-core/dist/components/admiralty-radio.js";
 import { AdmiraltyReadMore as AdmiraltyReadMoreElement, defineCustomElement as defineAdmiraltyReadMore } from "@ukho/admiralty-core/dist/components/admiralty-read-more.js";
 import { AdmiraltySelect as AdmiraltySelectElement, defineCustomElement as defineAdmiraltySelect } from "@ukho/admiralty-core/dist/components/admiralty-select.js";
+import { AdmiraltySideBarItem as AdmiraltySideBarItemElement, defineCustomElement as defineAdmiraltySideBarItem } from "@ukho/admiralty-core/dist/components/admiralty-side-bar-item.js";
+import { AdmiraltySideBar as AdmiraltySideBarElement, defineCustomElement as defineAdmiraltySideBar } from "@ukho/admiralty-core/dist/components/admiralty-side-bar.js";
 import { AdmiraltySideNavItem as AdmiraltySideNavItemElement, defineCustomElement as defineAdmiraltySideNavItem } from "@ukho/admiralty-core/dist/components/admiralty-side-nav-item.js";
 import { AdmiraltySideNav as AdmiraltySideNavElement, defineCustomElement as defineAdmiraltySideNav } from "@ukho/admiralty-core/dist/components/admiralty-side-nav.js";
 import { AdmiraltySkipLink as AdmiraltySkipLinkElement, defineCustomElement as defineAdmiraltySkipLink } from "@ukho/admiralty-core/dist/components/admiralty-skip-link.js";
@@ -462,6 +464,26 @@ export const AdmiraltySelect: StencilReactComponent<AdmiraltySelectElement, Admi
         onAdmiraltyBlur: 'admiraltyBlur'
     } as AdmiraltySelectEvents,
     defineCustomElement: defineAdmiraltySelect
+});
+
+type AdmiraltySideBarEvents = NonNullable<unknown>;
+
+export const AdmiraltySideBar: StencilReactComponent<AdmiraltySideBarElement, AdmiraltySideBarEvents> = /*@__PURE__*/ createComponent<AdmiraltySideBarElement, AdmiraltySideBarEvents>({
+    tagName: 'admiralty-side-bar',
+    elementClass: AdmiraltySideBarElement,
+    react: React,
+    events: {} as AdmiraltySideBarEvents,
+    defineCustomElement: defineAdmiraltySideBar
+});
+
+type AdmiraltySideBarItemEvents = { onSideBarItemClick: EventName<CustomEvent<string>> };
+
+export const AdmiraltySideBarItem: StencilReactComponent<AdmiraltySideBarItemElement, AdmiraltySideBarItemEvents> = /*@__PURE__*/ createComponent<AdmiraltySideBarItemElement, AdmiraltySideBarItemEvents>({
+    tagName: 'admiralty-side-bar-item',
+    elementClass: AdmiraltySideBarItemElement,
+    react: React,
+    events: { onSideBarItemClick: 'sideBarItemClick' } as AdmiraltySideBarItemEvents,
+    defineCustomElement: defineAdmiraltySideBarItem
 });
 
 type AdmiraltySideNavEvents = NonNullable<unknown>;
