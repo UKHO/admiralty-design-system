@@ -1,0 +1,109 @@
+.display-large-medium {
+  --admiralty-table-cell-font-weight: var(--admiralty-font-weight-medium);
+  --admiralty-table-cell-font-size: var(--admiralty-font-size-7);
+  padding: var(--admiralty-font-size-0);
+}
+
+.display-large-normal {
+  --admiralty-table-cell-font-weight: var(--admiralty-font-weight-normal);
+  --admiralty-table-cell-font-size: var(--admiralty-font-size-7);
+  padding: var(--admiralty-font-size-0);
+}
+
+.display-medium-medium {
+  --admiralty-table-cell-font-weight: var(--admiralty-font-weight-medium);
+  --admiralty-table-cell-font-size: var(--admiralty-font-size-6);
+  padding: var(--admiralty-font-size-0);
+}
+
+.display-medium-normal {
+  --admiralty-table-cell-font-weight: var(--admiralty-font-weight-normal);
+  --admiralty-table-cell-font-size: var(--admiralty-font-size-6);
+  padding: var(--admiralty-font-size-0);
+}
+
+.display-small-normal {
+  --admiralty-table-cell-font-weight: var(--admiralty-font-weight-normal);
+  --admiralty-table-cell-font-size: var(--admiralty-font-size-5);
+  padding: var(--admiralty-font-size-0);
+}
+
+.headline-large-normal {
+  --admiralty-table-cell-font-weight: var(--admiralty-font-weight-normal);
+  --admiralty-table-cell-font-size: var(--admiralty-font-size-6);
+  padding: var(--admiralty-font-size-0);
+}
+
+.headline-medium-normal {
+  --admiralty-table-cell-font-weight: var(--admiralty-font-weight-normal);
+  --admiralty-table-cell-font-size: var(--admiralty-font-size-3);
+  padding: var(--admiralty-font-size-0);
+}
+
+.headline-small-normal {
+  --admiralty-table-cell-font-weight: var(--admiralty-font-weight-normal);
+  --admiralty-table-cell-font-size: var(--admiralty-font-size-2);
+  padding: var(--admiralty-font-size-0);
+}
+
+.title-large-medium {
+  --admiralty-table-cell-font-weight: var(--admiralty-font-weight-normal);
+  --admiralty-table-cell-font-size: var(--admiralty-font-size-1);
+  padding: var(--admiralty-font-size-0);
+}
+
+.title-medium-medium {
+  --admiralty-table-cell-font-weight: var(--admiralty-font-weight-medium);
+  --admiralty-table-cell-font-size: var(--admiralty-font-size-0);
+  padding: var(--admiralty-font-size-0);
+}
+
+.title-small-medium {
+  --admiralty-table-cell-font-weight: var(--admiralty-font-weight-medium);
+  --admiralty-table-cell-font-size: var(--admiralty-font-size--1);
+  padding: var(--admiralty-font-size-0);
+}
+
+.label-large-medium {
+  --admiralty-table-cell-font-weight: var(--admiralty-font-weight-medium);
+  --admiralty-table-cell-font-size: var(--admiralty-font-size--1);
+  padding: var(--admiralty-font-size-0);
+}
+
+.label-medium-medium {
+  --admiralty-table-cell-font-weight: var(--admiralty-font-weight-medium);
+  --admiralty-table-cell-font-size: var(--admiralty-font-size--2);
+  padding: var(--admiralty-font-size-0);
+}
+
+.label-small-medium {
+  --admiralty-table-cell-font-weight: var(--admiralty-font-weight-medium);
+  --admiralty-table-cell-font-size: var(--admiralty-font-size--3);
+  padding: var(--admiralty-font-size-0);
+}
+
+.body-large-normal {
+  --admiralty-table-cell-font-weight: var(--admiralty-font-weight-normal);
+  --admiralty-table-cell-font-size: var(--admiralty-font-size-0);
+  padding: var(--admiralty-font-size-0);
+}
+
+.body-medium-normal {
+  --admiralty-table-cell-font-weight: var(--admiralty-font-weight-normal);
+  --admiralty-table-cell-font-size: var(--admiralty-font-size--1);
+  padding: var(--admiralty-font-size-0);
+}
+
+.body-small-normal {
+  --admiralty-table-cell-font-weight: var(--admiralty-font-weight-normal);
+  --admiralty-table-cell-font-size: var(--admiralty-font-size--2);
+  padding: var(--admiralty-font-size-0);
+}
+
+
+
+
+
+
+
+
