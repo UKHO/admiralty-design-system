@@ -1,62 +1,184 @@
 import styles from "./styles.module.css";
+import "@ukho/admiralty-core/themes/default.css";
+import React from "react";
+import {
+  AdmiraltyTable,
+  AdmiraltyTableBody,
+  AdmiraltyTableCell,
+  AdmiraltyTableHeader,
+  AdmiraltyTableHeaderCell,
+  AdmiraltyTableRow,
+} from "@ukho/admiralty-react";
 
 export default function TypographicScale() {
+  // @ts-ignore
   return (
     <div className={styles.container}>
-      <section className={styles.section}>
-        <h3>Heading 1</h3>
-        <h1>The quick brown fox jumped over the lazy dog.</h1>
-      </section>
-      <section className={styles.section}>
-        <h3>Heading 2</h3>
-        <h2>The quick brown fox jumped over the lazy dog.</h2>
-      </section>
-      <section className={styles.section}>
-        <h3>Heading 3,4,5</h3>
-        <h3>The quick brown fox jumped over the lazy dog.</h3>
-      </section>
-      <section className={styles.section}>
-        <h3>Heading 6</h3>
-        <h6>The quick brown fox jumped over the lazy dog.</h6>
-      </section>
-      <section className={styles.section}>
-        <h3>Intro Text</h3>
-        <p className="intro">The quick brown fox jumped over the lazy dog.</p>
-      </section>
-      <section className={styles.section}>
-        <h3>Paragraph</h3>
-        <p>The quick brown fox jumped over the lazy dog.</p>
-      </section>
-      <section className={styles.section}>
-        <h3>Small</h3>
-        <p className="small">The quick brown fox jumped over the lazy dog.</p>
-      </section>
-      <section className={styles.section}>
-        <h3>Link</h3>
-        <a href="#">The quick brown fox jumped over the lazy dog.</a>
-      </section>
-      <section className={styles.section}>
-        <h3>Block Quote</h3>
-        <blockquote>The quick brown fox jumped over the lazy dog.</blockquote>
-      </section>
-      <section className={styles.section}>
-        <h3>Bulleted List</h3>
-        <ul>
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing.</li>
-          <li>Dolore magna aliqua. Ut enim ad minim veniam.</li>
-          <li>Commodo consequat duis aute irure dolor in.</li>
-          <li>Labore et dolore magna aliqua occaecat.</li>
-        </ul>
-      </section>
-      <section className={styles.section}>
-        <h3>Numbered List</h3>
-        <ol>
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing.</li>
-          <li>Dolore magna aliqua. Ut enim ad minim veniam.</li>
-          <li>Commodo consequat duis aute irure dolor in.</li>
-          <li>Labore et dolore magna aliqua occaecat.</li>
-        </ol>
-      </section>
+      <AdmiraltyTable>
+        <AdmiraltyTableHeader>
+          <AdmiraltyTableRow>
+            <AdmiraltyTableHeaderCell>Rem</AdmiraltyTableHeaderCell>
+            <AdmiraltyTableHeaderCell>PX</AdmiraltyTableHeaderCell>
+            <AdmiraltyTableHeaderCell>Weight</AdmiraltyTableHeaderCell>
+            <AdmiraltyTableHeaderCell>Type</AdmiraltyTableHeaderCell>
+          </AdmiraltyTableRow>
+        </AdmiraltyTableHeader>
+        <AdmiraltyTableBody>
+          <AdmiraltyTableRow>
+            <AdmiraltyTableCell>3.5</AdmiraltyTableCell>
+            <AdmiraltyTableCell>56</AdmiraltyTableCell>
+            <AdmiraltyTableCell>400</AdmiraltyTableCell>
+            <AdmiraltyTableCell style={{
+              '--admiralty-table-cell-font-weight': 'var(--admiralty-font-weight-medium)',
+              '--admiralty-table-cell-font-size': 'var(--admiralty-font-size-7)'
+            }}>Display - Large</AdmiraltyTableCell>
+          </AdmiraltyTableRow>
+          <AdmiraltyTableRow>
+            <AdmiraltyTableCell>3.5</AdmiraltyTableCell>
+            <AdmiraltyTableCell>56</AdmiraltyTableCell>
+            <AdmiraltyTableCell>300</AdmiraltyTableCell>
+            <AdmiraltyTableCell style={{
+              '--admiralty-table-cell-font-weight': 'var(--admiralty-font-weight-normal)',
+              '--admiralty-table-cell-font-size': 'var(--admiralty-font-size-7)'
+            }}>Display - Large</AdmiraltyTableCell>
+          </AdmiraltyTableRow>
+          <AdmiraltyTableRow>
+            <AdmiraltyTableCell>2.75</AdmiraltyTableCell>
+            <AdmiraltyTableCell>44</AdmiraltyTableCell>
+            <AdmiraltyTableCell>400</AdmiraltyTableCell>
+            <AdmiraltyTableCell style={{
+              '--admiralty-table-cell-font-weight': 'var(--admiralty-font-weight-medium)',
+              '--admiralty-table-cell-font-size': 'var(--admiralty-font-size-6)'
+            }}>Display - Medium</AdmiraltyTableCell>
+          </AdmiraltyTableRow>
+          <AdmiraltyTableRow>
+            <AdmiraltyTableCell>2.75</AdmiraltyTableCell>
+            <AdmiraltyTableCell>44</AdmiraltyTableCell>
+            <AdmiraltyTableCell>300</AdmiraltyTableCell>
+            <AdmiraltyTableCell style={{
+              '--admiralty-table-cell-font-weight': 'var(--admiralty-font-weight-normal)',
+              '--admiralty-table-cell-font-size': 'var(--admiralty-font-size-6)'
+            }}>Display - Medium</AdmiraltyTableCell>
+          </AdmiraltyTableRow>
+          <AdmiraltyTableRow>
+            <AdmiraltyTableCell>2.25</AdmiraltyTableCell>
+            <AdmiraltyTableCell>36</AdmiraltyTableCell>
+            <AdmiraltyTableCell>300</AdmiraltyTableCell>
+            <AdmiraltyTableCell style={{
+              '--admiralty-table-cell-font-weight': 'var(--admiralty-font-weight-normal)',
+              '--admiralty-table-cell-font-size': 'var(--admiralty-font-size-5)'
+            }}>Display - Small</AdmiraltyTableCell>
+          </AdmiraltyTableRow>
+          <AdmiraltyTableRow>
+            <AdmiraltyTableCell>2</AdmiraltyTableCell>
+            <AdmiraltyTableCell>32</AdmiraltyTableCell>
+            <AdmiraltyTableCell>300</AdmiraltyTableCell>
+            <AdmiraltyTableCell style={{
+              '--admiralty-table-cell-font-weight': 'var(--admiralty-font-weight-normal)',
+              '--admiralty-table-cell-font-size': 'var(--admiralty-font-size-4)'
+            }}>Headline - Large</AdmiraltyTableCell>
+          </AdmiraltyTableRow>
+          <AdmiraltyTableRow>
+            <AdmiraltyTableCell>1.75</AdmiraltyTableCell>
+            <AdmiraltyTableCell>28</AdmiraltyTableCell>
+            <AdmiraltyTableCell>300</AdmiraltyTableCell>
+            <AdmiraltyTableCell style={{
+              '--admiralty-table-cell-font-weight': 'var(--admiralty-font-weight-normal)',
+              '--admiralty-table-cell-font-size': 'var(--admiralty-font-size-3)'
+            }}>Headline - Medium</AdmiraltyTableCell>
+          </AdmiraltyTableRow>
+          <AdmiraltyTableRow>
+            <AdmiraltyTableCell>1.5</AdmiraltyTableCell>
+            <AdmiraltyTableCell>24</AdmiraltyTableCell>
+            <AdmiraltyTableCell>300</AdmiraltyTableCell>
+            <AdmiraltyTableCell style={{
+              '--admiralty-table-cell-font-weight': 'var(--admiralty-font-weight-normal)',
+              '--admiralty-table-cell-font-size': 'var(--admiralty-font-size-2)'
+            }}>Headline - Small</AdmiraltyTableCell>
+          </AdmiraltyTableRow>
+          <AdmiraltyTableRow>
+            <AdmiraltyTableCell>1.375</AdmiraltyTableCell>
+            <AdmiraltyTableCell>22</AdmiraltyTableCell>
+            <AdmiraltyTableCell>300</AdmiraltyTableCell>
+            <AdmiraltyTableCell style={{
+              '--admiralty-table-cell-font-weight': 'var(--admiralty-font-weight-normal)',
+              '--admiralty-table-cell-font-size': 'var(--admiralty-font-size-1)'
+            }}>Title - Large</AdmiraltyTableCell>
+          </AdmiraltyTableRow>
+          <AdmiraltyTableRow>
+            <AdmiraltyTableCell>1</AdmiraltyTableCell>
+            <AdmiraltyTableCell>16</AdmiraltyTableCell>
+            <AdmiraltyTableCell>400</AdmiraltyTableCell>
+            <AdmiraltyTableCell style={{
+              '--admiralty-table-cell-font-weight': 'var(--admiralty-font-weight-medium)',
+              '--admiralty-table-cell-font-size': 'var(--admiralty-font-size-0)'
+            }}>Title - medium</AdmiraltyTableCell>
+          </AdmiraltyTableRow>
+          <AdmiraltyTableRow>
+            <AdmiraltyTableCell>0.875</AdmiraltyTableCell>
+            <AdmiraltyTableCell>14</AdmiraltyTableCell>
+            <AdmiraltyTableCell>400</AdmiraltyTableCell>
+            <AdmiraltyTableCell style={{
+              '--admiralty-table-cell-font-weight': 'var(--admiralty-font-weight-medium)',
+              '--admiralty-table-cell-font-size': 'var(--admiralty-font-size--1)'
+            }}>Title - small</AdmiraltyTableCell>
+          </AdmiraltyTableRow>
+          <AdmiraltyTableRow>
+            <AdmiraltyTableCell>0.875</AdmiraltyTableCell>
+            <AdmiraltyTableCell>14</AdmiraltyTableCell>
+            <AdmiraltyTableCell>400</AdmiraltyTableCell>
+            <AdmiraltyTableCell style={{
+              '--admiralty-table-cell-font-weight': 'var(--admiralty-font-weight-medium)',
+              '--admiralty-table-cell-font-size': 'var(--admiralty-font-size--1)'
+            }}>Label - Large</AdmiraltyTableCell>
+          </AdmiraltyTableRow>
+          <AdmiraltyTableRow>
+            <AdmiraltyTableCell>0.75</AdmiraltyTableCell>
+            <AdmiraltyTableCell>12</AdmiraltyTableCell>
+            <AdmiraltyTableCell>400</AdmiraltyTableCell>
+            <AdmiraltyTableCell style={{
+              '--admiralty-table-cell-font-weight': 'var(--admiralty-font-weight-medium)',
+              '--admiralty-table-cell-font-size': 'var(--admiralty-font-size--2)'
+            }}>Label - Medium</AdmiraltyTableCell>
+          </AdmiraltyTableRow>
+          <AdmiraltyTableRow>
+            <AdmiraltyTableCell>0.688</AdmiraltyTableCell>
+            <AdmiraltyTableCell>11</AdmiraltyTableCell>
+            <AdmiraltyTableCell>400</AdmiraltyTableCell>
+            <AdmiraltyTableCell style={{
+              '--admiralty-table-cell-font-weight': 'var(--admiralty-font-weight-medium)',
+              '--admiralty-table-cell-font-size': 'var(--admiralty-font-size--3)'
+            }}>Label - Small</AdmiraltyTableCell>
+          </AdmiraltyTableRow>
+          <AdmiraltyTableRow>
+            <AdmiraltyTableCell>1</AdmiraltyTableCell>
+            <AdmiraltyTableCell>16</AdmiraltyTableCell>
+            <AdmiraltyTableCell>300</AdmiraltyTableCell>
+            <AdmiraltyTableCell style={{
+              '--admiralty-table-cell-font-weight': 'var(--admiralty-font-weight-normal)',
+              '--admiralty-table-cell-font-size': 'var(--admiralty-font-size-0)'
+            }}>Body - Large</AdmiraltyTableCell>
+          </AdmiraltyTableRow>
+          <AdmiraltyTableRow>
+            <AdmiraltyTableCell>0.875</AdmiraltyTableCell>
+            <AdmiraltyTableCell>14</AdmiraltyTableCell>
+            <AdmiraltyTableCell>300</AdmiraltyTableCell>
+            <AdmiraltyTableCell style={{
+              '--admiralty-table-cell-font-weight': 'var(--admiralty-font-weight-normal)',
+              '--admiralty-table-cell-font-size': 'var(--admiralty-font-size--1)'
+            }}>Body - Medium</AdmiraltyTableCell>
+          </AdmiraltyTableRow>
+          <AdmiraltyTableRow>
+            <AdmiraltyTableCell>0.75</AdmiraltyTableCell>
+            <AdmiraltyTableCell>12</AdmiraltyTableCell>
+            <AdmiraltyTableCell>300</AdmiraltyTableCell>
+            <AdmiraltyTableCell style={{
+              '--admiralty-table-cell-font-weight': 'var(--admiralty-font-weight-normal)',
+              '--admiralty-table-cell-font-size': 'var(--admiralty-font-size--2)'
+            }}>Body - Small</AdmiraltyTableCell>
+          </AdmiraltyTableRow>
+        </AdmiraltyTableBody>
+      </AdmiraltyTable>
     </div>
   );
 }
