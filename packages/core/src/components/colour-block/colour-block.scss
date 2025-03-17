@@ -33,21 +33,21 @@
     }
   }
 
-  &.admiralty-blue {
+  &.admiralty-primary {
     background-color: $primary-colour-block-colour;
     * {
       color: $primary-colour-block-text-colour;
     }
   }
 
-  &.teal {
+  &.admiralty-secondary {
     background-color: $secondary-colour-block-colour;
     * {
       color: $secondary-colour-block-text-colour;
     }
   }
 
-  &.bright-blue {
+  &.admiralty-tertiary {
     background-color: $tertiary-colour-block-colour;
     color: $tertiary-colour-block-text-colour;
     .clickAction * {

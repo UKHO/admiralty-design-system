@@ -33,20 +33,20 @@
 
 // admiralty-blue
 
-.pill.admiralty-blue {
+.pill.admiralty-primary {
   background-color: $pill-background-colour;
 }
 
-.pill.admiralty-blue > .pill-item.pill-item-text {
+.pill.admiralty-primary > .pill-item.pill-item-text {
   color: $pill-item-text-colour;
 }
 
-.pill.admiralty-blue > .pill-item.pill-item-number {
+.pill.admiralty-primary > .pill-item.pill-item-number {
   background-color:$pill-item-number-background-colour;
   color: $pill-item-number-colour;
 }
 
-.pill.admiralty-blue > .pill-item.pill-item-selected > admiralty-icon {
+.pill.admiralty-primary > .pill-item.pill-item-selected > admiralty-icon {
   color: $pill-item-selected-icon-colour;
 }
 
@@ -72,19 +72,19 @@
 
 // bright-blue
 
-.pill.bright-blue {
+.pill.admiralty-tertiary {
   background-color: $tertiary-pill-background-colour;
 }
 
-.pill.bright-blue > .pill-item.pill-item-text {
+.pill.admiralty-tertiary > .pill-item.pill-item-text {
   color: $tertiary-pill-item-text-colour;
 }
 
-.pill.bright-blue > .pill-item.pill-item-number {
+.pill.admiralty-tertiary > .pill-item.pill-item-number {
   background-color: $tertiary-pill-item-number-background-colour;
   color: $tertiary-pill-item-number-colour;
 }
 
-.pill.bright-blue > .pill-item.pill-item-selected > admiralty-icon {
+.pill.admiralty-tertiary > .pill-item.pill-item-selected > admiralty-icon {
   color: $tertiary-pill-item-selected-icon-colour;
 }

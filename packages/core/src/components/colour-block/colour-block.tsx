@@ -21,7 +21,7 @@ export class ColourBlockComponent {
   /**
    * The background colour of the component.
    */
-  @Prop() colour: 'admiralty-blue' | 'teal' | 'bright-blue' = 'admiralty-blue';
+  @Prop() colour: 'admiralty-primary' | 'admiralty-secondary' | 'admiralty-tertiary';
   /**
    * The URL to link to.
    */
@@ -78,7 +78,7 @@ export class ColourBlockComponent {
         <div
           class={{
             'content': true,
-            'white-text': this.colour === 'admiralty-blue' || this.colour === 'teal',
+            'white-text': this.colour === 'admiralty-primary' || this.colour === 'teal',
           }}
         >
           <slot></slot>

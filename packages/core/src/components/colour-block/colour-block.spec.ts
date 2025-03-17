@@ -9,7 +9,7 @@ describe('admiralty-colour-block', () => {
     });
     expect(root).toEqualHtml(`
       <admiralty-colour-block>
-        <div class="admiralty-blue colourBlock">
+        <div class="admiralty-primary colourBlock">
           <h2></h2>
           <div class="content white-text"></div>
         </div>
@@ -24,7 +24,7 @@ describe('admiralty-colour-block', () => {
     });
     expect(root).toEqualHtml(`
       <admiralty-colour-block heading="Test heading">
-        <div class="admiralty-blue colourBlock">
+        <div class="admiralty-primary colourBlock">
           <h2>Test heading</h2>
           <div class="content white-text">Test content</div>
         </div>
@@ -40,9 +40,9 @@ describe('admiralty-colour-block', () => {
 
     const div = page.doc.querySelector('admiralty-colour-block div');
 
-    expect(div).toHaveClass('teal');
+    expect(div).toHaveClass('admiralty-secondary');
     expect(div).not.toHaveClass('light-blue');
-    expect(div).not.toHaveClass('admiralty-blue');
+    expect(div).not.toHaveClass('admiralty-primary');
   });
 
   it('renders a different colour block', async () => {
