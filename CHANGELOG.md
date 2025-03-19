@@ -1,3 +1,97 @@
+# v4.1.1 (Wed Feb 26 2025)
+
+#### 🐛 Bug Fix
+
+- Fix: Remove Alpha Phase Banner [#342](https://github.com/UKHO/admiralty-design-system/pull/342) ([@lstevens98](https://github.com/lstevens98))
+- `@ukho/admiralty-core`
+  - Fix: Button with Text and Icon spacing needs amending [#341](https://github.com/UKHO/admiralty-design-system/pull/341) ([@developernm](https://github.com/developernm))
+
+#### Authors: 2
+
+- [@developernm](https://github.com/developernm)
+- Lewis Stevens ([@lstevens98](https://github.com/lstevens98))
+
+---
+
+# v4.1.0 (Fri Feb 21 2025)
+
+#### 🚀 Enhancement
+
+- `@ukho/admiralty-angular`, `@ukho/admiralty-core`
+  - Adding in the ability to pass in a filter function to the autocomplete [#338](https://github.com/UKHO/admiralty-design-system/pull/338) ([@ecstaticrainbow](https://github.com/ecstaticrainbow) [@developernm](https://github.com/developernm))
+
+#### 🐛 Bug Fix
+
+- Feat: Create Patterns Page [#321](https://github.com/UKHO/admiralty-design-system/pull/321) ([@lstevens98](https://github.com/lstevens98) [@developernm](https://github.com/developernm))
+- `@ukho/admiralty-core`
+  - Fix: option weight [#337](https://github.com/UKHO/admiralty-design-system/pull/337) ([@developernm](https://github.com/developernm))
+
+#### Authors: 3
+
+- [@developernm](https://github.com/developernm)
+- Lewis Stevens ([@lstevens98](https://github.com/lstevens98))
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
+# v4.0.0 (Wed Jan 15 2025)
+
+#### 💥 Breaking Change
+
+- `@ukho/admiralty-angular`, `@ukho/admiralty-core`, `@ukho/admiralty-react`
+  - Version 4 release [#335](https://github.com/UKHO/admiralty-design-system/pull/335) ([@developernm](https://github.com/developernm) [@ecstaticrainbow](https://github.com/ecstaticrainbow) [@lstevens98](https://github.com/lstevens98))
+  - Feat: Update autocomplete to hide chevron and removed typeahead [#292](https://github.com/UKHO/admiralty-design-system/pull/292) ([@developernm](https://github.com/developernm))
+- `@ukho/admiralty-core`
+  - Feat: Remake typographic scale [#286](https://github.com/UKHO/admiralty-design-system/pull/286) ([@developernm](https://github.com/developernm))
+
+#### 🚀 Enhancement
+
+- `@ukho/admiralty-core`
+  - Feat: Updated card component stories to display customisable cards using the pill component. [#328](https://github.com/UKHO/admiralty-design-system/pull/328) ([@UKHOGreg](https://github.com/UKHOGreg) [@developernm](https://github.com/developernm) [@ecstaticrainbow](https://github.com/ecstaticrainbow))
+  - Fix: Update missing typographic sizes [#315](https://github.com/UKHO/admiralty-design-system/pull/315) ([@developernm](https://github.com/developernm))
+- `@ukho/admiralty-angular`, `@ukho/admiralty-core`, `@ukho/admiralty-react`
+  - Fix: Input to behave correctly with aria-describedby [#326](https://github.com/UKHO/admiralty-design-system/pull/326) ([@developernm](https://github.com/developernm) [@lstevens98](https://github.com/lstevens98))
+  - Feat: New Pill style component [#287](https://github.com/UKHO/admiralty-design-system/pull/287) ([@UKHOGreg](https://github.com/UKHOGreg) [@developernm](https://github.com/developernm) [@ecstaticrainbow](https://github.com/ecstaticrainbow))
+- `@ukho/admiralty-angular`, `@ukho/admiralty-core`
+  - Feat: New Minified Footer component [#284](https://github.com/UKHO/admiralty-design-system/pull/284) ([@developernm](https://github.com/developernm))
+
+#### 🐛 Bug Fix
+
+- 332 Add link component to Documentation Website [#333](https://github.com/UKHO/admiralty-design-system/pull/333) ([@lstevens98](https://github.com/lstevens98))
+- `@ukho/admiralty-core`
+  - Fix theme typo for font-size-7 [#313](https://github.com/UKHO/admiralty-design-system/pull/313) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+  - Fix: Readmore component needs refining [#289](https://github.com/UKHO/admiralty-design-system/pull/289) ([@developernm](https://github.com/developernm) [@ecstaticrainbow](https://github.com/ecstaticrainbow))
+  - Docs: updated documentation for admiralty select [#295](https://github.com/UKHO/admiralty-design-system/pull/295) ([@developernm](https://github.com/developernm) [@ecstaticrainbow](https://github.com/ecstaticrainbow))
+  - Fix: disabled checkbox [#294](https://github.com/UKHO/admiralty-design-system/pull/294) ([@developernm](https://github.com/developernm) [@ecstaticrainbow](https://github.com/ecstaticrainbow))
+  - Feat: Include documentation to demonstrate a placeholder option [#271](https://github.com/UKHO/admiralty-design-system/pull/271) ([@developernm](https://github.com/developernm))
+
+#### 🔩 Dependency Updates
+
+- `@ukho/admiralty-angular`, `@ukho/admiralty-core`, `@ukho/admiralty-react`
+  - Upgrade yarn to v4 [#311](https://github.com/UKHO/admiralty-design-system/pull/311) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+#### Authors: 4
+
+- [@developernm](https://github.com/developernm)
+- Greg Williams ([@UKHOGreg](https://github.com/UKHOGreg))
+- Lewis Stevens ([@lstevens98](https://github.com/lstevens98))
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
+# v3.1.3 (Mon Jan 06 2025)
+
+#### 🐛 Bug Fix
+
+- `@ukho/admiralty-core`
+  - Fix: Cannot use a number type in the admiralty-autocomplete-option value property [#325](https://github.com/UKHO/admiralty-design-system/pull/325) ([@developernm](https://github.com/developernm))
+
+#### Authors: 1
+
+- [@developernm](https://github.com/developernm)
+
+---
+
 # v3.1.2 (Tue Dec 17 2024)
 
 #### 🐛 Bug Fix

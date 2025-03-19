@@ -8,14 +8,14 @@ import { Components } from '@ukho/admiralty-core';
 
 
 @ProxyCmp({
-  inputs: ['assistiveHint', 'autoselect', 'confirmOnBlur', 'cssNamespace', 'disabled', 'displayMenu', 'hint', 'inputClasses', 'invalid', 'invalidMessage', 'label', 'menuAttributes', 'menuClasses', 'minLength', 'name', 'placeholder', 'required', 'showAllValues', 'showNoOptionsFound', 'value']
+  inputs: ['assistiveHint', 'autoselect', 'confirmOnBlur', 'cssNamespace', 'disabled', 'displayMenu', 'filterFunction', 'hint', 'inputClasses', 'invalid', 'invalidMessage', 'label', 'menuAttributes', 'menuClasses', 'minLength', 'name', 'placeholder', 'required', 'showAllValues', 'showNoOptionsFound', 'value']
 })
 @Component({
   selector: 'admiralty-autocomplete',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['assistiveHint', 'autoselect', 'confirmOnBlur', 'cssNamespace', 'disabled', 'displayMenu', 'hint', 'inputClasses', 'invalid', 'invalidMessage', 'label', 'menuAttributes', 'menuClasses', 'minLength', 'name', 'placeholder', 'required', 'showAllValues', 'showNoOptionsFound', 'value'],
+  inputs: ['assistiveHint', 'autoselect', 'confirmOnBlur', 'cssNamespace', 'disabled', 'displayMenu', 'filterFunction', 'hint', 'inputClasses', 'invalid', 'invalidMessage', 'label', 'menuAttributes', 'menuClasses', 'minLength', 'name', 'placeholder', 'required', 'showAllValues', 'showNoOptionsFound', 'value'],
 })
 export class AdmiraltyAutocomplete {
   protected el: HTMLElement;
