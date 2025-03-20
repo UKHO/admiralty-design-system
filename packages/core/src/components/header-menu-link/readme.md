@@ -22,14 +22,6 @@
 | `menuItemClick` | The event that is fired when a user clicks on the menu. | `CustomEvent<void>` |
 
 
-## CSS Custom Properties
-
-| Name                                       | Description                         |
-| ------------------------------------------ | ----------------------------------- |
-| `--admiralty-header-menu-link-font-size`   | Font size of the header menu link   |
-| `--admiralty-header-menu-link-font-weight` | Font weight of the header menu link |
-
-
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

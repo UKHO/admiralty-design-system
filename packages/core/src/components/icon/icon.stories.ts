@@ -6,36 +6,58 @@ const meta: Meta = {
   component: 'admiralty-icon',
   title: 'Icon',
   parameters: {
-    actions: {
-    },
+    actions: {},
+  },
+  args: {
+    name: 'anchor',
+    size: 'unset',
   },
 };
 
 export default meta;
 
-type Story = StoryObj<IconComponent>;
+type IconComponentArgs = Partial<IconComponent & { parentFontSize: string; color: string }>;
+
+type Story = StoryObj<IconComponentArgs>;
 
 const template: Story = {
-    render: args => html`<admiralty-icon icon-name="${args.iconName}" icon-prefix="${args.iconPrefix}"></admiralty-icon>`,
-  };
-  
-export const Solid: Story = { ...template,
-  args: {
-    iconName: 'anchor',
-    iconPrefix: 'fas'
-  }
+  render: args => {
+    const color = args.color ? `color:${args.color};` : '';
+    const fontSize = args.parentFontSize ? `font-size:${args.parentFontSize};` : '';
+    return html`<div style="${color}${fontSize}">
+      <admiralty-icon name="${args.name}" size="${args.size}"></admiralty-icon>
+    </div>`;
+  },
 };
 
-export const Regular: Story = { ...template,
-  args: {
-    iconName: 'paper-plane',
-    iconPrefix: 'far'
-  }
+export const Icon: Story = {
+  render: args => `<admiralty-icon name="${args.name}"></admiralty-icon>`,
 };
 
-export const Brands: Story = { ...template,
+export const MenuIcon: Story = {
+  ...template,
   args: {
-    iconName: 'google',
-    iconPrefix: 'fab'
-  }
+    name: 'menu',
+  },
+};
+
+export const BigIcon: Story = {
+  ...template,
+  args: {
+    size: 48,
+  },
+};
+
+export const InheritFontSize: Story = {
+  ...template,
+  args: {
+    parentFontSize: '32px',
+  },
+};
+
+export const InheritColor: Story = {
+  ...template,
+  args: {
+    color: 'red',
+  },
 };

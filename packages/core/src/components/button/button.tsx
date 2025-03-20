@@ -1,6 +1,5 @@
 import { Component, Prop, h } from '@stencil/core';
 import { ButtonVariant } from './button.types';
-import { IconName } from '@fortawesome/fontawesome-svg-core';
 
 @Component({
   tag: 'admiralty-button',
@@ -16,7 +15,7 @@ export class ButtonComponent {
   /**
    * When passed Font Awesome Icon name, then an icon will be rendered.
    */
-  @Prop() icon: IconName;
+  @Prop() icon: string;
   /**
    * Determines whether the button is disabled. A button in disabled state will not fire click output events.
    */
@@ -51,7 +50,7 @@ export class ButtonComponent {
     return (
       <button type={this.type} disabled={this.disabled} class={this.variant} {...props}>
         <slot></slot>
-        {this.icon ? <admiralty-icon icon-name={this.icon}></admiralty-icon> : undefined}
+        {this.icon ? <admiralty-icon name={this.icon}></admiralty-icon> : undefined}
       </button>
     );
   }

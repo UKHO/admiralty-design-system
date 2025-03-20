@@ -13,13 +13,6 @@
 | `phase`  | `phase`   | The phase for the phase banner                    | `"alpha" \| "beta"` | `'alpha'`   |
 
 
-## CSS Custom Properties
-
-| Name                                   | Description                      |
-| -------------------------------------- | -------------------------------- |
-| `--admiralty-phase-banner-font-weight` | Font weight for the phase banner |
-
-
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

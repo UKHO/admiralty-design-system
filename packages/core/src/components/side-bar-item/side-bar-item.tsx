@@ -56,7 +56,7 @@ export class SideBarItemComponent {
           onClick={ev => this.handleClick(ev)}
         >
           <div class="icon">
-            <admiralty-icon icon-name={this.icon}></admiralty-icon>
+            <admiralty-icon name={this.icon}></admiralty-icon>
           </div>
           <slot></slot>
         </a>

@@ -601,11 +601,12 @@ export class AutocompleteComponent {
             value={this.query}
           />
           {this.showAllValues &&
-            <admiralty-icon class={`autocomplete-down-icon ${this.disabled ? "disabled" : ""}`} icon-name={this.menuOpen || showNoOptionsFound ? "angle-up" : "angle-down"} />
+            <admiralty-icon class={`autocomplete-down-icon ${this.disabled ? "disabled" : ""}`}
+                            name={this.menuOpen || showNoOptionsFound ? "keyboard-arrow-up-rounded" : "keyboard-arrow-down-rounded"} />
           }
         </div>
 
-        <ul {...computedMenuAttributes} class={menuClassList.join(' ')}>
+        <ul {...computedMenuAttributes} class={menuClassList.join(" ")}>
           {this.options.map((option, index) => {
             const showFocused = this.focused === -1 ? this.selected === index : this.focused === index;
             const optionModifierFocused = showFocused && this.hovered === null ? ` ${optionClassName}--focused` : '';
