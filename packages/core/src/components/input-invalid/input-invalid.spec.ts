@@ -9,7 +9,7 @@ describe('input-invalid', () => {
     });
     expect(page.root).toEqualHtml(`
        <admiralty-input-invalid>
-        <admiralty-icon class="error-icon" icon-name="exclamation"></admiralty-icon>
+        <admiralty-icon class="error-icon" name="priority-high"></admiralty-icon>
         <p>
         <span class="visually-hidden">
           Error:

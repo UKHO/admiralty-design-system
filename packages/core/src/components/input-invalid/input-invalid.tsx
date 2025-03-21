@@ -1,5 +1,4 @@
 import { Component, h, Host } from '@stencil/core';
-import { faExclamation } from '@fortawesome/free-solid-svg-icons';
 
 /**
  * @slot - The error content should be placed in the slot e.g.
@@ -14,7 +13,7 @@ export class InputInvalidComponent {
   render() {
     return (
       <Host>
-        <admiralty-icon icon-name={faExclamation.iconName} class="error-icon"></admiralty-icon>
+        <admiralty-icon name="priority-high" class="error-icon"></admiralty-icon>
         <p>
           <span class="visually-hidden">Error:</span>
           <slot></slot>
