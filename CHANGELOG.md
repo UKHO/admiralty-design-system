@@ -1,3 +1,17 @@
+# v4.1.2 (Thu Mar 20 2025)
+
+#### 🐛 Bug Fix
+
+- `@ukho/admiralty-core`
+  - Fix responsiveness on Principles Page [#346](https://github.com/UKHO/admiralty-design-system/pull/346) ([@lstevens98](https://github.com/lstevens98) [@developernm](https://github.com/developernm))
+
+#### Authors: 2
+
+- [@developernm](https://github.com/developernm)
+- Lewis Stevens ([@lstevens98](https://github.com/lstevens98))
+
+---
+
 # v4.1.1 (Wed Feb 26 2025)
 
 #### 🐛 Bug Fix
