@@ -237,7 +237,7 @@ button.icon {
   padding: 9px;
 
   &:focus {
-    padding: 12px 16px 8px;
+    padding: 11px 11px 8px;
   }
 
   &:hover {
@@ -245,6 +245,13 @@ button.icon {
     border: 2px solid $button-hover-border-colour-icon;
     padding: 9px;
   }
+
+  admiralty-icon {
+    &.icon-padding {
+      padding-left: 8px;
+    }
+  }
+
 
   &:enabled:active {
     background-color: $button-active-colour-icon;

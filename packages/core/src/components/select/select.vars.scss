@@ -3,10 +3,12 @@
 /**
  * @prop --admiralty-select-font-size: Font size for the select text
  * @prop --admiralty-select-font-weight: Font weight for the select text
+ * @prop --admiralty-select-option-font-weight: Font weight for the select option text
  * @prop --admiralty-select-icon-font-size: Font size for the select icon
 **/
 
-$select-text-weight: var(--admiralty-select-font-weight, var(--admiralty-font-weight-normal));
+$select-text-weight: var(--admiralty-font-weight-normal, var(--admiralty-font-weight-normal));
+$select-option-text-weight: var(--admiralty-font-weight-normal, var(--admiralty-font-weight-normal));
 $select-text-size: var(--admiralty-select-font-size, var(--admiralty-font-size-0));
 $select-icon-size: var(--admiralty-select-icon-font-size, var(--admiralty-font-size-3));
 

@@ -1,4 +1,4 @@
-import { Component, Prop, h } from '@stencil/core';
+import { Component, Prop, h, Element} from '@stencil/core';
 import { ButtonVariant } from './button.types';
 
 @Component({
@@ -7,6 +7,7 @@ import { ButtonVariant } from './button.types';
   scoped: true,
 })
 export class ButtonComponent {
+  @Element() el: HTMLElement;
   /**
    * The type of button to render. Valid values are `primary`, `secondary`, `warning`, `text` and `icon`.
    * Default value is `primary`.
@@ -41,16 +42,19 @@ export class ButtonComponent {
   @Prop() value: string;
 
   render() {
+    const hasTextContent = this.el.textContent.trim().length > 0;
+
     const { form, name, value } = this;
     const props = {
       ...(form && { form }),
       ...(name && { name }),
       ...(value && { value }),
     };
+
     return (
       <button type={this.type} disabled={this.disabled} class={this.variant} {...props}>
         <slot></slot>
-        {this.icon ? <admiralty-icon name={this.icon}></admiralty-icon> : undefined}
+        {this.icon ? <admiralty-icon name={this.icon} class={`${hasTextContent? "icon-padding" : ""}`}></admiralty-icon> : undefined}
       </button>
     );
   }

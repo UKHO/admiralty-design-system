@@ -5,6 +5,7 @@ export enum UsageTarget {
   Angular = "angular",
   React = "react",
   Vue = "vue",
+  HTML = "html",
 }
 
 export type CodeSnippets = { [key: string]: ReactElement };

@@ -51,7 +51,7 @@ export default function ColourBlocks() {
         href="#"
         suppressRedirect={true}
         enableCardEvent={true}
-        onColourBlockLinkClicked={() => alert("Coming soon")}>
+        onColourBlockLinkClicked={() => router.push("/patterns")}>
         Patterns have been developed to meet a user need - such as ‘find a location’ or ‘complete a form’
       </AdmiraltyColourBlock>
       <AdmiraltyColourBlock
