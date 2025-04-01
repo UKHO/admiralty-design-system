@@ -37,6 +37,7 @@ section.expansion {
     .expansion-heading-icon {
       color: $expansion-header-icon-colour;
       margin-left: 30px;
+      font-size: $expansion-header-icon-size;
     }
     &:focus {
       outline: none;
