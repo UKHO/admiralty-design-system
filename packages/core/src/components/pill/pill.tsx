@@ -1,4 +1,3 @@
-import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import { Component, Prop, h } from '@stencil/core';
 
 @Component({
@@ -42,7 +41,7 @@ export class PillComponent {
         {this.number ? <span class="pill-item pill-item-number">{this.number}</span> : undefined}
         {this.selected ? (
           <span class="pill-item pill-item-selected">
-            <admiralty-icon icon-name={faCheck.iconName}></admiralty-icon>
+            <admiralty-icon name="check-rounded"></admiralty-icon>
           </span>
         ) : undefined}
       </span>
