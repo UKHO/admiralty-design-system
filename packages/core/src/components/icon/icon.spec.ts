@@ -5,10 +5,10 @@ describe('icon', () => {
   it('renders', async () => {
     const page = await newSpecPage({
       components: [IconComponent],
-      html: `<admiralty-icon icon-name="user" icon-prefix="fas"></admiralty-icon>`,
+      html: `<admiralty-icon name="user" icon-prefix="fas"></admiralty-icon>`,
     });
     expect(page.root).toEqualLightHtml(`
-      <admiralty-icon icon-name="user" icon-prefix="fas">
+      <admiralty-icon name="user" icon-prefix="fas">
       </admiralty-icon>
     `);
   });

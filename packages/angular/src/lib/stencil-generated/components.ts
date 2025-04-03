@@ -586,14 +586,14 @@ export declare interface AdmiraltyHr extends Components.AdmiraltyHr {}
 
 
 @ProxyCmp({
-  inputs: ['iconName', 'iconPrefix']
+  inputs: ['name', 'size']
 })
 @Component({
   selector: 'admiralty-icon',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['iconName', 'iconPrefix'],
+  inputs: ['name', 'size'],
 })
 export class AdmiraltyIcon {
   protected el: HTMLElement;
@@ -952,6 +952,56 @@ export declare interface AdmiraltySelect extends Components.AdmiraltySelect {
    * Emitted when the component loses focus.
    */
   admiraltyBlur: EventEmitter<CustomEvent<void>>;
+}
+
+
+@ProxyCmp({
+  inputs: ['label', 'logoImgUrl', 'showLogo']
+})
+@Component({
+  selector: 'admiralty-side-bar',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['label', 'logoImgUrl', 'showLogo'],
+})
+export class AdmiraltySideBar {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface AdmiraltySideBar extends Components.AdmiraltySideBar {}
+
+
+@ProxyCmp({
+  inputs: ['active', 'href', 'icon', 'suppressRedirect']
+})
+@Component({
+  selector: 'admiralty-side-bar-item',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['active', 'href', 'icon', 'suppressRedirect'],
+})
+export class AdmiraltySideBarItem {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['sideBarItemClick']);
+  }
+}
+
+
+export declare interface AdmiraltySideBarItem extends Components.AdmiraltySideBarItem {
+  /**
+   * An event emitted when this Side Bar item is selected containing the sideBarItemId
+   */
+  sideBarItemClick: EventEmitter<CustomEvent<string>>;
 }
 
 

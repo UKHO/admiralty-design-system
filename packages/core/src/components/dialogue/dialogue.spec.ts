@@ -11,7 +11,7 @@ describe('admiralty-dialogue', () => {
       <admiralty-dialogue>
         <section class="dialogue info">
           <div class="dialogue-title">
-            <admiralty-icon class="dialogue-title-icon" icon-name="circle-info"></admiralty-icon>
+            <admiralty-icon class="dialogue-title-icon" name="info-rounded"></admiralty-icon>
             <h2></h2>
           </div>
         </section>
@@ -28,7 +28,7 @@ describe('admiralty-dialogue', () => {
       <admiralty-dialogue type="info" heading="Test">
         <section class="dialogue info">
           <div class="dialogue-title">
-            <admiralty-icon class="dialogue-title-icon" icon-name="circle-info"></admiralty-icon>
+            <admiralty-icon class="dialogue-title-icon" name="info-rounded"></admiralty-icon>
             <h2>Test</h2>
           </div>
           Content
@@ -46,7 +46,7 @@ describe('admiralty-dialogue', () => {
       <admiralty-dialogue type="error" heading="Test">
         <section class="dialogue error">
           <div class="dialogue-title">
-            <admiralty-icon class="dialogue-title-icon" icon-name="exclamation"></admiralty-icon>
+            <admiralty-icon class="dialogue-title-icon" name="priority-high-rounded"></admiralty-icon>
             <h2>Test</h2>
           </div>
           Content
@@ -64,7 +64,7 @@ describe('admiralty-dialogue', () => {
       <admiralty-dialogue type="success" heading="Test">
         <section class="dialogue success">
           <div class="dialogue-title">
-            <admiralty-icon class="dialogue-title-icon" icon-name="check"></admiralty-icon>
+            <admiralty-icon class="dialogue-title-icon" name="check-rounded"></admiralty-icon>
             <h2>Test</h2>
           </div>
           Content
@@ -82,7 +82,7 @@ describe('admiralty-dialogue', () => {
       <admiralty-dialogue type="warning" heading="Test">
         <section class="dialogue warning">
           <div class="dialogue-title">
-            <admiralty-icon class="dialogue-title-icon" icon-name="triangle-exclamation"></admiralty-icon>
+            <admiralty-icon class="dialogue-title-icon" name="warning-rounded"></admiralty-icon>
             <h2>Test</h2>
           </div>
           Content
