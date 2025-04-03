@@ -1,5 +1,9 @@
 @import 'side-bar-item.vars.scss';
 
+:host {
+  --admiralty-icon-font-size: var(--admiralty-font-size-2);
+}
+
 li {
   display: flex;
   justify-content: center;
@@ -25,10 +29,12 @@ a {
   color: $side-bar-item-text-colour;
   font-weight: $side-bar-item-font-weight;
   font-size: $side-bar-item-font-size;
+  padding: .5rem 0;
 
   &.active {
     color: $side-bar-item-active-text-colour;
     box-shadow: 4px 0 $side-bar-item-hover-text-colour inset;
+    margin-left: 1px;
   }
 
   &:hover {
