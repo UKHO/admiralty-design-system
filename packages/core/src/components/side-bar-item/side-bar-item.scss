@@ -8,7 +8,7 @@ li {
   display: flex;
   justify-content: center;
   list-style: none;
-  margin: 0;
+  margin: 0 0 0 1px;
 
   &:before {
     content: '';
@@ -18,7 +18,6 @@ li {
 
 a {
   cursor: pointer;
-  margin: 12px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -34,7 +33,6 @@ a {
   &.active {
     color: $side-bar-item-active-text-colour;
     box-shadow: 4px 0 $side-bar-item-hover-text-colour inset;
-    margin-left: 1px;
   }
 
   &:hover {
@@ -48,6 +46,10 @@ a {
     box-shadow: 4px 0 var(--admiralty-text-colour) inset;
     background-color: $side-bar-item-focus-colour;
     color: $side-bar-item-text-colour;
+
+    &:not(:active) {
+      background-color: transparent;
+    }
   }
 }
 
