@@ -41,7 +41,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
   return (
     <html lang="en">
-      <body style={{backgroundColor: "#333333"}}>
+      <body className="admiralty-text-colour">
         <AdmiraltySkipLink href="#main-content"></AdmiraltySkipLink>
         <AdmiraltyHeader
           headerTitle="Design System"
