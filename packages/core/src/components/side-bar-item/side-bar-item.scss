@@ -30,7 +30,7 @@ a {
   font-size: $side-bar-item-font-size;
   padding: .5rem 0;
 
-  &.active {
+  &:active {
     color: $side-bar-item-active-text-colour;
     box-shadow: 4px 0 $side-bar-item-hover-text-colour inset;
   }

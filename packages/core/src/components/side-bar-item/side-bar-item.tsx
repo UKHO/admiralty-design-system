@@ -48,13 +48,8 @@ export class SideBarItemComponent {
   render() {
     return (
       <li>
-        <a
-          class={{
-            active: this.active,
-          }}
-          href={this.href}
-          onClick={ev => this.handleClick(ev)}
-        >
+        <a href={this.href}
+           onClick={ev => this.handleClick(ev)}>
           <div class="icon">
             <admiralty-icon name={this.icon}></admiralty-icon>
           </div>
