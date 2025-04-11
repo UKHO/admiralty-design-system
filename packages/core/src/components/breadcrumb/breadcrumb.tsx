@@ -1,5 +1,4 @@
 import { Component, Prop, h, Host } from '@stencil/core';
-import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   tag: 'admiralty-breadcrumb',
@@ -28,7 +27,7 @@ export class BreadcrumbComponent {
   render() {
     return (
       <Host>
-        {!this.first && <admiralty-icon class="breadcrumb-icon" icon-name={faChevronRight.iconName}></admiralty-icon>}
+        {!this.first && <admiralty-icon class="breadcrumb-icon" name="arrow-forward-ios-rounded"></admiralty-icon>}
         <a class={{ active: this.active }} href={this.href || '#'}>
           <slot></slot>
         </a>

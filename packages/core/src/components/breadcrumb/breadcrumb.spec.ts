@@ -9,7 +9,7 @@ describe('admiralty-breadcrumb', () => {
     });
     expect(root).toEqualHtml(`
       <admiralty-breadcrumb>
-        <admiralty-icon class="breadcrumb-icon" icon-name="chevron-right"></admiralty-icon>
+        <admiralty-icon class="breadcrumb-icon" name="arrow-forward-ios-rounded"></admiralty-icon>
         <a href="#"></a>
       </admiralty-breadcrumb>
     `);
@@ -22,7 +22,7 @@ describe('admiralty-breadcrumb', () => {
     });
     expect(root).toEqualHtml(`
       <admiralty-breadcrumb href="https://www.example.com">
-        <admiralty-icon class="breadcrumb-icon" icon-name="chevron-right"></admiralty-icon>
+        <admiralty-icon class="breadcrumb-icon" name="arrow-forward-ios-rounded"></admiralty-icon>
         <a href="https://www.example.com">
           Test
         </a>
