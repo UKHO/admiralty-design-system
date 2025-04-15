@@ -246,6 +246,13 @@ button.icon {
     padding: $button-icon-hover-padding;
   }
 
+  admiralty-icon {
+    &.icon-padding {
+      padding-left: 8px;
+    }
+  }
+
+
   &:enabled:active {
     background-color: $button-active-colour-icon;
     color: $button-active-text-colour-icon;

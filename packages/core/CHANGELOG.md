@@ -1,3 +1,51 @@
+# v4.1.2 (Thu Mar 20 2025)
+
+#### 🐛 Bug Fix
+
+- Fix responsiveness on Principles Page [#346](https://github.com/UKHO/admiralty-design-system/pull/346) ([@lstevens98](https://github.com/lstevens98) [@developernm](https://github.com/developernm))
+
+#### Authors: 2
+
+- [@developernm](https://github.com/developernm)
+- Lewis Stevens ([@lstevens98](https://github.com/lstevens98))
+
+---
+
+# v4.1.1 (Wed Feb 26 2025)
+
+#### 🐛 Bug Fix
+
+- Fix: Button with Text and Icon spacing needs amending [#341](https://github.com/UKHO/admiralty-design-system/pull/341) ([@developernm](https://github.com/developernm))
+
+#### Authors: 1
+
+- [@developernm](https://github.com/developernm)
+
+---
+
+# v4.1.0 (Fri Feb 21 2025)
+
+#### 🚀 Enhancement
+
+- Adding in the ability to pass in a filter function to the autocomplete [#338](https://github.com/UKHO/admiralty-design-system/pull/338) ([@ecstaticrainbow](https://github.com/ecstaticrainbow) [@developernm](https://github.com/developernm))
+
+#### 🐛 Bug Fix
+
+- Merge branch 'main' into fix-autocomplete-performance ([@developernm](https://github.com/developernm))
+- Fix: option weight [#337](https://github.com/UKHO/admiralty-design-system/pull/337) ([@developernm](https://github.com/developernm))
+- Merge branch 'main' into fix-option-weight ([@developernm](https://github.com/developernm))
+- Making sure the source is set when using filter function ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+- Fixing unneeded option initialisation ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+- Adding in the ability to pass in a filter function ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+- fix: option weight ([@developernm](https://github.com/developernm))
+
+#### Authors: 2
+
+- [@developernm](https://github.com/developernm)
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
 # v4.0.0 (Wed Jan 15 2025)
 
 #### 💥 Breaking Change

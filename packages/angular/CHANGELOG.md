@@ -1,3 +1,21 @@
+# v4.1.0 (Fri Feb 21 2025)
+
+#### 🚀 Enhancement
+
+- Adding in the ability to pass in a filter function to the autocomplete [#338](https://github.com/UKHO/admiralty-design-system/pull/338) ([@ecstaticrainbow](https://github.com/ecstaticrainbow) [@developernm](https://github.com/developernm))
+
+#### 🐛 Bug Fix
+
+- Merge branch 'main' into fix-autocomplete-performance ([@developernm](https://github.com/developernm))
+- Adding in the ability to pass in a filter function ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+#### Authors: 2
+
+- [@developernm](https://github.com/developernm)
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
 # v4.0.0 (Wed Jan 15 2025)
 
 #### 💥 Breaking Change

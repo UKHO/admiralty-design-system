@@ -12,10 +12,10 @@ hr {
 }
 
 .headers {
-  display: flex;
   overflow-x: auto;
-
   white-space: nowrap;
+  display: flex;
+  flex-wrap: wrap;
 
   .heading {
     cursor: pointer;

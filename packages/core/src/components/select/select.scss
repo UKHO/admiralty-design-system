@@ -30,6 +30,10 @@ select {
   padding: $select-padding;
   width: 100%;
 
+  option {
+    font-weight: $select-option-text-weight;
+  }
+
   &.invalid {
     border-color: $select-error-border-colour;
   }
