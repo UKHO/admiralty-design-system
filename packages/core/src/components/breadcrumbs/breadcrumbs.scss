@@ -6,5 +6,5 @@
   display: inline-flex;
   border-bottom: 1px solid $breadcrumbs-divider-colour;
   background-color: $breadcrumbs-background-colour;
-  padding: 0 20px;
+  padding: $breadcrumbs-padding;
 }

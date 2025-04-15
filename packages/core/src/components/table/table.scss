@@ -8,6 +8,6 @@ caption {
   font-size: $table-caption-text-size;
   font-weight: $table-caption-text-weight;
   color: $table-caption-text-colour;
-  margin-bottom: 30px;
+  margin-bottom: $table-caption-margin-bottom;
   text-align: left;
 }

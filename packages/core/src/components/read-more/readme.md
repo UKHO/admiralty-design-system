@@ -21,9 +21,14 @@
 
 ## CSS Custom Properties
 
-| Name                                | Description                        |
-| ----------------------------------- | ---------------------------------- |
-| `--admiralty-read-more-font-weight` | Font weight for the read more text |
+| Name                                                  | Description                                     |
+| ----------------------------------------------------- | ----------------------------------------------- |
+| `--admiralty-read-more-button-margin`                 | Margin for the read more button                 |
+| `--admiralty-read-more-button-padding`                | Padding for the read more button                |
+| `--admiralty-read-more-expanded-content-padding`      | Padding for the read more expanded content      |
+| `--admiralty-read-more-expansion-heading-icon-margin` | Margin for the read more expansion heading icon |
+| `--admiralty-read-more-font-weight`                   | Font weight for the read more text              |
+| `--admiralty-read-more-padding`                       | Padding for the read more expansion             |
 
 
 ## Dependencies

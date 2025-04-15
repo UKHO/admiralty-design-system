@@ -6,7 +6,7 @@
   color: $table-cell-text-colour;
   font-size: $table-cell-text-size;
   line-height: 30px;
-  padding: 6px 20px;
+  padding: $table-cell-padding;
   border-right: 1px solid $table-cell-border-colour;
   border-bottom: 1px solid $table-cell-border-colour;
   font-weight: $table-cell-text-weight;

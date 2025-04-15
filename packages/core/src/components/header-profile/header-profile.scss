@@ -24,10 +24,10 @@
     height: 100%;
     justify-content: center;
     line-height: 1.33em;
-    margin-bottom: 0;
+    margin-bottom: $header-profile-desktop-only-margin-bottom;
     min-width: 4em;
     max-width: 11.1em;
-    padding: 0 1.65em;
+    padding: $header-profile-desktop-only-padding;
     position: relative;
     text-align: center;
 
@@ -38,7 +38,7 @@
       span {
         color: $header-profile-text-colour;
         font-weight: $header-profile-text-weight;
-        padding: 4px 0;
+        padding: $header-profile-desktop-only-button-padding;
       }
 
       &:focus span,
@@ -84,7 +84,7 @@
 
       .sub-menu-item {
         box-sizing: content-box;
-        margin: 0;
+        margin: $header-profile-desktop-only-sub-menu-item-margin;
         width: 100%;
 
         all: unset;
@@ -92,7 +92,7 @@
         display: block;
         font-weight: $header-profile-sub-item-text-weight;
         height: 100%;
-        padding: 10px;
+        padding: $header-profile-desktop-only-sub-menu-item-padding;
         text-align: left;
         width: 100%;
 
@@ -117,10 +117,10 @@
       text-align: unset;
       text-decoration: unset;
       width: 100%;
-      padding: 12px;
+      padding: $header-profile-not-desktop-sub-menu-item-padding;
 
       span {
-        padding: 4px 0;
+        padding: $header-profile-not-desktop-sub-menu-item-span-padding;
         color: $header-profile-text-colour;
         font-size: $header-profile-text-size;
         font-weight: $header-profile-text-weight;

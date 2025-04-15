@@ -14,16 +14,19 @@
 
 ## CSS Custom Properties
 
-| Name                                     | Description                                   |
-| ---------------------------------------- | --------------------------------------------- |
-| `--admiralty-card-background-colour`     | Background colour of the card.                |
-| `--admiralty-card-border-colour`         | Border colour of the card.                    |
-| `--admiralty-card-heading-border-colour` | Heading border colour of the card.            |
-| `--admiralty-card-heading-colour`        | Heading colour of the card.                   |
-| `--admiralty-card-heading-font-size`     | Font size of the card's heading.              |
-| `--admiralty-card-heading-text-colour`   | Heading text colour of the card.              |
-| `--admiralty-card-not-desktop-padding`   | Padding of the card when not in desktop view. |
-| `--admiralty-card-padding`               | Padding of the card.                          |
+| Name                                           | Description                                       |
+| ---------------------------------------------- | ------------------------------------------------- |
+| `--admiralty-card-background-colour`           | Background colour of the card.                    |
+| `--admiralty-card-border-colour`               | Border colour of the card.                        |
+| `--admiralty-card-heading-border-colour`       | Heading border colour of the card.                |
+| `--admiralty-card-heading-colour`              | Heading colour of the card.                       |
+| `--admiralty-card-heading-font-size`           | Font size of the card's heading.                  |
+| `--admiralty-card-heading-margin`              | Margin for the heading.                           |
+| `--admiralty-card-heading-not-desktop-padding` | Padding for the heading when not in desktop view. |
+| `--admiralty-card-heading-padding`             | Padding for the heading.                          |
+| `--admiralty-card-heading-text-colour`         | Heading text colour of the card.                  |
+| `--admiralty-card-not-desktop-padding`         | Padding of the card when not in desktop view.     |
+| `--admiralty-card-padding`                     | Padding of the card.                              |
 
 
 ----------------------------------------------

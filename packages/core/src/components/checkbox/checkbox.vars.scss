@@ -3,6 +3,14 @@
 /**
  * @prop --admiralty-checkbox-font-size: Font size of the checkbox
  * @prop --admiralty-checkbox-font-weight: Font weight of the checkbox
+
+ * @prop --admiralty-checkbox-input-padding: Padding for the checkbox input.
+ * @prop --admiralty-checkbox-input-margin: Margin for the checkbox input.
+ * @prop --admiralty-checkbox-label-padding-left: Padding left for the checkbox label.
+ * @prop --admiralty-checkbox-label-margin-bottom: Margin bottom for the checkbox label.
+
+ * @prop --admiralty-checkbox-label-alignment-padding-left: Padding left for the checkbox label alignment.
+ * @prop --admiralty-checkbox-label-alignment-padding-right: Padding right for the checkbox label alignment.
 **/
 
 $checkbox-font-size: var(--admiralty-checkbox-font-size, var(--admiralty-font-size-0));
@@ -13,4 +21,12 @@ $checkbox-colour: var(--admiralty-colour-primary-contrast);
 $checkbox-text-colour: var(--admiralty-colour-primary);
 $checkbox-focus-colour: var(--admiralty-focus-colour) !default;
 $checkbox-disabled-text-colour: var(--admiralty-disabled-text-colour);
-$checkbox-disabled-border-colour: var(--admiralty-disabled-colour)
+$checkbox-disabled-border-colour: var(--admiralty-disabled-colour);
+
+$checkbox-input-padding: var(--admiralty-checkbox-input-padding, var(--admiralty-spacing-0));
+$checkbox-input-margin: var(--admiralty-checkbox-input-margin, var(--admiralty-spacing-0));
+$checkbox-label-padding-left: var(--admiralty-checkbox-label-padding-left, 42px);
+$checkbox-label-margin-bottom: var(--admiralty-checkbox-label-margin-bottom, 14px);
+
+$checkbox-label-alignment-padding-left: var(--admiralty-checkbox-label-alignment-padding-left, var(--admiralty-spacing-unset));
+$checkbox-label-alignment-padding-right: var(--admiralty-checkbox-label-alignment-padding-right, 35px);

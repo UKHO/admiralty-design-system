@@ -1,0 +1,11 @@
+@import '../../styles/vars/globals';
+
+/**
+ * @prop --admiralty-paginator-button-margin: Margin for the paginator button
+ * @prop --admiralty-paginator-paragraph-padding: Padding for the paginator paragraph
+ * @prop --admiralty-paginator-paragraph-margin-bottom: Margin bottom for the paginator paragraph
+**/
+
+$paginator-button-margin: var(--admiralty-paginator-button-margin, 6px);
+$paginator-paragraph-padding: var(--admiralty-paginator-paragraph-padding, var(--admiralty-spacing-0) 18px var(--admiralty-spacing-0) var(--admiralty-spacing-0));
+$paginator-paragraph-margin-bottom: var(--admiralty-paginator-paragraph-margin-bottom, var(--admiralty-spacing-0));
