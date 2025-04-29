@@ -13,38 +13,40 @@ import Basic from "@/usage/pill/basic/index.mdx"
 <Basic />
 
 ## Colour
-Pills can be displayed in different colours when necessary, but use colour thoughtfully to maintain clarity and consistency. Excessive use of colour can overwhelm users and reduce readability.
-
-Best practise when using colour:
-
-- Sufficient contrast between text and background to meet WCAG 2.1 AA standards.
-- Colour is not the only way information is conveyed use text, icons, or patterns where necessary.
-- Consistency across the design system to avoid confusion and improve user experience. Consider using predefined colour options to maintain uniformity and accessibility across services.
+<div style={{ paddingBottom: "30px" }}>
+  - Sufficient contrast between text and background to meet WCAG 2.1 AA standards.
+  - Colour is not the only way information is conveyed — use text, icons, or patterns where necessary.
+  - Consistency across the design system to avoid confusion and improve user experience. Consider using predefined colour options to maintain uniformity and accessibility across services.
+</div>
 
 import Colours from "@/usage/pill/colours/index.mdx"
 
 <Colours />
 
 ## Number
-Number pills are used to display numerical values, such as unread messages, notification counts, or selected filters. They provide a quick visual reference for users without taking up too much space.
+<div style={{ paddingBottom: "30px" }}>
+  Number pills are used to display numerical values, such as unread messages, notification counts, or selected filters. They provide a quick visual reference for users without taking up too much space.
 
-Best Practices when using number pills:
+  Best Practices when using number pills:
 
-- Update dynamically, if the number represents real-time data (e.g., unread notifications), ensure it updates automatically.
-- Consider accessibility,  screen readers should announce the meaning of the number, not just the figure itself (e.g., "3 new messages" instead of "3").
+  - Update dynamically, if the number represents real-time data (e.g., unread notifications), ensure it updates automatically.
+  - Consider accessibility,  screen readers should announce the meaning of the number, not just the figure itself (e.g., "3 new messages" instead of "3").
+</div>
 
 import Numbers from "@/usage/pill/number/index.mdx"
 
 <Numbers />
 
 ## Selected
-Selected pills indicate an active choice, often used in filters, multi-select options, or tagging systems. A tick icon helps reinforce selection visually.
+<div style={{ paddingBottom: "30px" }}>
+  Selected pills indicate an active choice, often used in filters, multi-select options, or tagging systems. A tick icon helps reinforce selection visually.
 
-Best Practice for selected pills:
+  Best Practice for selected pills:
 
-- <b>Use clear visual cues</b>, combine the tick icon with a colour change to make selection obvious.
-- <b>Allow deselection</b>, users should be able to remove a selected pill easily,  by clicking it again.
-- <b>Maintain accessibility</b>, screen readers should announce that the pill is selected, using attributes like aria-selected="true" or aria-checked="true".
+  - <b>Use clear visual cues</b>, combine the tick icon with a colour change to make selection obvious.
+  - <b>Allow deselection</b>, users should be able to remove a selected pill easily,  by clicking it again.
+  - <b>Maintain accessibility</b>, screen readers should announce that the pill is selected, using attributes like aria-selected="true" or aria-checked="true".
+</div>
 
 import Selected from "@/usage/pill/selected/index.mdx"
 
