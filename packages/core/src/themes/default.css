@@ -3,8 +3,8 @@
   /** primary **/
   --admiralty-colour-primary: #09315b;
   --admiralty-colour-primary-rgb: 9, 49, 91;
-  --admiralty-colour-primary-contrast: #ffffff;
-  --admiralty-colour-primary-contrast-rgb: 255, 255, 255;
+  --admiralty-colour-primary-contrast: #eeeeee;
+  --admiralty-colour-primary-contrast-rgb: 238, 238, 238;
   --admiralty-colour-primary-shade: #082b50;
   --admiralty-colour-primary-tint: #22466b;
 
@@ -73,8 +73,8 @@
   --admiralty-hover-background-colour: #eeeeee;
   --admiralty-hover-background-colour-rgb: 238, 238, 238;
 
-  --admiralty-background-colour-tint: #eeeeee;
-  --admiralty-background-colour-tint-rgb: 238, 238, 238;
+  --admiralty-background-colour-tint: #ffffff;
+  --admiralty-background-colour-tint-rgb: 255, 255, 255;
   --admiralty-hover-background-colour-tint: #d0d0d0;
   --admiralty-hover-background-colour-tint-rgb: 208, 208, 208;
 
