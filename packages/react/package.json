@@ -14,7 +14,7 @@
     "dist"
   ],
   "dependencies": {
-    "@stencil/react-output-target": "^0.7.1",
+    "@stencil/react-output-target": "^0.8.2",
     "@ukho/admiralty-core": "^4.1.2"
   },
   "peerDependencies": {
