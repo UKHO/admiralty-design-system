@@ -7,6 +7,16 @@
  * @prop --admiralty-autocomplete-icon-font-weight: Font weight for the autocompletes icon
 
  * @prop --admiralty-autocomplete-option-font-weight: Font weight for the autocompletes option
+
+ * @prop --admiralty-autocomplete-input-padding: Padding for autocomplete
+ * @prop --admiralty-autocomplete-input-display-all-padding: Padding for autocomplete when displaying all options
+ * @prop --admiralty-autocomplete-option-padding: Padding for autocomplete options
+
+ * @prop --admiralty-autocomplete-input-margin-bottom: Margin bottom for the autocomplete
+ * @prop --admiralty-autocomplete-input-menu-margin: Margin for the menu of the autocomplete
+ * @prop --admiralty-autocomplete-input-option-margin-bottom: Margin bottom for the options of the autocomplete
+ * @prop --admiralty-autocomplete-option-no-results-margin: Autocomplete no results margin top and bottom
+ * @prop --admiralty-autocomplete-option-no-results-hover-margin: Autocomplete no results hover margin top and bottom
 **/
 
 $autocomplete-background-colour: var(--admiralty-background-colour) !default;
@@ -29,5 +39,15 @@ $autocomplete-label-font-size: var(--admiralty-autocomplete-label-font-size, var
 $autocomplete-option-font-size: var(--admiralty-autocomplete-option-font-size, var(--admiralty-font-size-0));
 $autocomplete-icon-font-size: var(--admiralty-autocomplete-icon-font-size, var(--admiralty-font-size-2));
 $autocomplete-icon-font-weight: var(--admiralty-autocomplete-icon-font-weight, var(--admiralty-font-weight-normal));
-
 $autocomplete-option-font-weight: var(--admiralty-autocomplete-option-font-weight, var(--admiralty-font-weight-normal));
+
+$autocomplete-input-padding: var(--admiralty-autocomplete-input-padding, var(--admiralty-spacing-3));
+$autocomplete-input-display-all-padding: var(--admiralty-autocomplete-input-display-all-padding, 12px 35px 12px 12px);
+$autocomplete-option-padding: var(--admiralty-autocomplete-option-padding, var(--admiralty-spacing-2));
+
+$autocomplete-input-margin-bottom: var(--autocomplete-input-margin-bottom, var(--admiralty-spacing-0));
+$autocomplete-input-menu-margin: var(--autocomplete-input-menu-margin, var(--admiralty-spacing-0));
+$autocomplete-input-option-margin-bottom: var(--admiralty-autocomplete-input-option-margin-bottom, var(--admiralty-spacing-0));
+
+$autocomplete-input-option-no-results-margin: var(--admiralty-autocomplete-option-no-results-margin, 50px 0);
+$autocomplete-option-no-results-hover-margin: var(--admiralty-autocomplete-option-no-results-hover-margin, 50px 0);

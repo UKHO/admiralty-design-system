@@ -20,10 +20,27 @@
 
 ## CSS Custom Properties
 
-| Name                             | Description               |
-| -------------------------------- | ------------------------- |
-| `--admiralty-button-font-size`   | Font size of the button   |
-| `--admiralty-button-font-weight` | Font weight of the button |
+| Name                                                    | Description                                         |
+| ------------------------------------------------------- | --------------------------------------------------- |
+| `--admiralty-button-defaults-idiomatic-padding`         | Padding for the button defaults idiomatic element   |
+| `--admiralty-button-defaults-padding`                   | Padding for the button defaults                     |
+| `--admiralty-button-focus-padding`                      | Padding for the button focus                        |
+| `--admiralty-button-font-size`                          | Font size of the button                             |
+| `--admiralty-button-font-weight`                        | Font weight of the button                           |
+| `--admiralty-button-icon-focus-padding`                 | Padding for the button icon when focused            |
+| `--admiralty-button-icon-hover-padding`                 | Padding for the button icon when hovering           |
+| `--admiralty-button-icon-idiomatic-margin`              | Margin for the button icon idiomatic element        |
+| `--admiralty-button-icon-idiomatic-padding`             | Padding for the button icon idiomatic element       |
+| `--admiralty-button-icon-padding`                       | Padding for the button icon                         |
+| `--admiralty-button-idiomatic-padding`                  | Padding left for the button idiomatic element       |
+| `--admiralty-button-idiomatic-padding-left`             | Padding left for the button idiomatic element       |
+| `--admiralty-button-not-desktop-padding`                | Padding for the button when not in desktop view     |
+| `--admiralty-button-primary-hover-focus-active-padding` | Padding for the primary button when in active state |
+| `--admiralty-button-primary-hover-focus-padding`        | Padding for the primary button when in focus state  |
+| `--admiralty-button-primary-hover-padding`              | Padding for the primary button when hovering        |
+| `--admiralty-button-secondary-hover-padding`            | Padding for the secondary button when hovering      |
+| `--admiralty-button-text-focus-padding`                 | Padding for the button text when focused            |
+| `--admiralty-button-warning-hover-padding`              | Padding for the warning button when hovering        |
 
 
 ## Dependencies

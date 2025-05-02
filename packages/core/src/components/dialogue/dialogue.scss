@@ -2,12 +2,12 @@
 
 .dialogue {
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
-  padding: 30px 18px;
+  padding: $dialogue-padding;
   overflow-wrap: break-word;
   word-wrap: break-word;
 
   @include not-desktop {
-    padding: 24px 18px;
+    padding: $dialogue-not-desktop-padding;
   }
 
   .dialogue-title {
@@ -15,13 +15,13 @@
     align-items: center;
     overflow-wrap: break-word;
     word-wrap: break-word;
-    margin-bottom: 12px;
+    margin-bottom: $dialogue-title-margin-bottom;
 
     .dialogue-title-icon {
       font-size: $dialogue-title-icon-size;
       color: $dialogue-title-text-colour;
-      margin-right: 8px;
-      margin-bottom: 4px;
+      margin-right: $dialogue-title-icon-margin-right;
+      margin-bottom: $dialogue-title-icon-margin-bottom;
     }
 
     h2 {
@@ -29,7 +29,7 @@
       font-size: $dialogue-title-text-size;
       font-weight: $dialogue-title-text-weight;
       line-height: 30px;
-      margin: 0;
+      margin: $dialogue-title-heading-margin;
     }
   }
 

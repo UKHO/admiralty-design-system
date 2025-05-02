@@ -1,3 +1,11 @@
 @import "../../styles/vars/globals";
 
+/**
+ * @prop --admiralty-input-invalid-icon-margin: Margin for the invalid input icon
+ * @prop --admiralty-input-invalid-text-margin: Margin for the invalid input text
+**/
+
+$input-invalid-icon-margin: var(--admiralty-input-invalid-icon-margin, var(--admiralty-spacing-1) var(--admiralty-spacing-0));
+$input-invalid-text-margin: var(--admiralty-input-invalid-text-margin, var(--admiralty-spacing-0));
+
 $input-invalid-text-colour: var(--admiralty-colour-danger);
