@@ -4,19 +4,7 @@
  * @prop --admiralty-tab-group-font-size: Font size for the tab group
  * @prop --admiralty-tab-group-not-desktop-font-size: Font size for the tab group when not in desktop view
  * @prop --admiralty-tab-group-font-weight: Font weight for the tab group
-
- * @prop --admiralty-tab-group-horizontal-rule-margin: Margin for the tab group horizontal rule
- * @prop --admiralty-tab-group-heading-margin-left: Margin left for the tab group heading
- * @prop --admiralty-tab-group-heading-padding: Padding for the tab group heading
- * @prop --admiralty-tab-group-heading-not-desktop-padding: Padding for the tab group heading when not in desktop view
- * @prop --admiralty-tab-group-heading-first-child-margin-left: Margin left for the tab group heading first child
 **/
-
-$tab-group-horizontal-rule-margin: var(--admiralty-tab-group-horizontal-rule-margin, 6px var(--admiralty-spacing-0));
-$tab-group-heading-margin-left: var(--admiralty-tab-group-heading-margin-left, var(--admiralty-spacing-1));
-$tab-group-heading-padding: var(--admiralty-tab-group-heading-padding, 10px);
-$tab-group-heading-not-desktop-padding: var(--admiralty-tab-group-heading-not-desktop-padding, var(--admiralty-spacing-2));
-$tab-group-heading-first-child-margin-left: var(--admiralty-tab-group-heading-first-child-margin-left, var(--admiralty-spacing-0));
 
 $tab-group-heading-text-font: var(--admiralty-tab-group-font-size, var(--admiralty-font-size-0));
 $tab-group-heading-not-desktop-text-font: var(--admiralty-tab-group-not-desktop-font-size, var(--admiralty-font-size--1));

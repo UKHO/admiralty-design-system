@@ -22,7 +22,6 @@ The table cell is a wrapper for a standard <td> element and should be used insid
 | ------------------------------------ | ------------------------------ |
 | `--admiralty-table-cell-font-size`   | Font size for the table cell   |
 | `--admiralty-table-cell-font-weight` | Font weight for the table cell |
-| `--admiralty-table-cell-padding`     | Padding for the table cell     |
 
 
 ----------------------------------------------
