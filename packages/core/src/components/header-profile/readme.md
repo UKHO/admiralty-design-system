@@ -23,15 +23,6 @@
 | `yourAccountClicked` | The event that is fired when the user clicks on the 'Your account' button | `CustomEvent<void>` |
 
 
-## CSS Custom Properties
-
-| Name                                              | Description                                |
-| ------------------------------------------------- | ------------------------------------------ |
-| `--admiralty-header-profile-font-size`            | Font size of the header profile            |
-| `--admiralty-header-profile-font-weight`          | Font weight of the header profile          |
-| `--admiralty-header-profile-sub-item-font-weight` | Font weight of the header profile sub item |
-
-
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

@@ -1,7 +1,8 @@
-import { Component, Event, EventEmitter, Prop, h } from '@stencil/core';
+import { Component, Event, EventEmitter, Prop, h, Host, Element } from "@stencil/core";
+import { SideBarItemVariant } from "./side-bar-item.types";
 
 /**
- * @slot The text to display udner the icon
+ * @slot The text to display under the icon for secondary variant
  */
 @Component({
   tag: 'admiralty-side-bar-item',
@@ -9,6 +10,25 @@ import { Component, Event, EventEmitter, Prop, h } from '@stencil/core';
   scoped: true,
 })
 export class SideBarItemComponent {
+  private internalId: number = ++nextId;
+
+  @Element() el!: HTMLAdmiraltySideBarItemElement;
+  /**
+   * The type of side bar item to render. Valid values are `primary` and `secondary`.
+   * Default value is `primary`.
+   */
+  @Prop() variant: SideBarItemVariant = SideBarItemVariant.Primary;
+
+  /**
+   * The event that is dispatched when the expanded status is toggled.
+   */
+  @Event() toggled: EventEmitter<boolean>;
+
+  /**
+   * Whether the component is expanded.
+   */
+  @Prop({ mutable: true, reflect: true }) expanded = false;
+
   /**
    * The name of the icon to display. A full list of available icons can be viewed at [https://fonts.google.com/icons](https://fonts.google.com/icons)
    */
@@ -20,6 +40,11 @@ export class SideBarItemComponent {
   @Prop() href: string;
 
   /**
+   * Item text for the button or link depending on variant
+   */
+  @Prop() itemText: string;
+
+  /**
    * Causes the default browser redirect to be suppressed. Can be used in conjunction with the
    * `onSideBarItemClick` event to use a navigation router and prevent a full page reload when navigating.
    */
@@ -29,33 +54,74 @@ export class SideBarItemComponent {
    * Represents whether this SideBarItem is 'active' and will be styled differently than SideBarItems
    * that are not 'active'. There should only be one SideBarItem that is 'active' per SideBar.
    */
-  @Prop() active: boolean = false;
+  @Prop({ mutable: true, reflect: true }) active?: boolean = false; // { mutable: true, reflect: true }
 
   /**
    * An event emitted when this Side Bar item is selected containing the sideBarItemId
    */
-  @Event() sideBarItemClick: EventEmitter<string>;
+  @Event() sideBarItemClick: EventEmitter<{ id: number, href: string }>;
 
-  handleClick(ev: MouseEvent): CustomEvent<string> {
+  onToggle() {
+    this.expanded = !this.expanded;
+    this.toggled.emit(this.expanded);
+  }
+
+  handleClick(ev: MouseEvent): CustomEvent<{id: number, href: string}> {
     if (this.suppressRedirect) {
       ev.preventDefault();
     }
     ev.stopPropagation();
 
-    return this.sideBarItemClick.emit(this.href);
+    this.el.dispatchEvent(new CustomEvent('side-bar-item-active', {
+      detail: { id: this.internalId },
+      bubbles: true,
+      composed: true
+    }))
+
+    return this.sideBarItemClick.emit({id: this.internalId, href: this.href});
+  }
+
+  getExpansionIcon(): string {
+    return this.expanded ? 'keyboard-arrow-up-rounded' : 'keyboard-arrow-down-rounded';
   }
 
   render() {
     return (
-      <li>
-        <a href={this.href}
-           onClick={ev => this.handleClick(ev)}>
-          <div class="icon">
-            <admiralty-icon name={this.icon}></admiralty-icon>
-          </div>
-          <slot></slot>
-        </a>
-      </li>
+      <Host data-side-bar-item-id={'side-bar-item-' + this.internalId}>
+        <li>
+          {this.variant === SideBarItemVariant.Primary &&
+            <a class={{ 'primary-link': true, 'active': this.active }} href={this.href}
+               onClick={ev => this.handleClick(ev)}>
+              <div class="icon">
+                <admiralty-icon name={this.icon}></admiralty-icon>
+              </div>
+              {this.itemText}
+            </a>
+          }
+
+          {this.variant === SideBarItemVariant.Secondary &&
+            <div class="side-bar-item">
+              <button class="side-bar-item-button" onClick={() => this.onToggle()}>
+                {this.itemText}
+                <div class="icon">
+                  <admiralty-icon size="30" name={this.getExpansionIcon()}></admiralty-icon>
+                </div>
+              </button>
+              <div class="slot" hidden={!this.expanded}>
+                <slot></slot>
+              </div>
+            </div>
+          }
+
+          {this.variant === SideBarItemVariant.Tertiary &&
+            <a class={{ 'tertiary-link': true, 'active': this.active }} href={this.href}
+               onClick={ev => this.handleClick(ev)}>
+              {this.itemText}
+            </a>
+          }
+        </li>
+      </Host>
     );
   }
 }
+let nextId = 0;

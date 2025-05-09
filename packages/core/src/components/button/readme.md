@@ -18,14 +18,6 @@
 | `variant`  | `variant`  | The type of button to render. Valid values are `primary`, `secondary`, `warning`, `text` and `icon`. Default value is `primary`.                                                       | `"icon" \| "primary" \| "secondary" \| "text" \| "warning"` | `'primary'` |
 
 
-## CSS Custom Properties
-
-| Name                             | Description               |
-| -------------------------------- | ------------------------- |
-| `--admiralty-button-font-size`   | Font size of the button   |
-| `--admiralty-button-font-weight` | Font weight of the button |
-
-
 ## Dependencies
 
 ### Used by

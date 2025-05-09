@@ -10,7 +10,7 @@
 | `label`        | `label`          | A label for accessibility purposes to describe what this navigation is for.         | `string`  | `undefined`            |
 | `logoImgUrl`   | `logo-img-url`   | The URI of the logo image                                                           | `string`  | `'svg/UKHO crest.svg'` |
 | `showLogo`     | `show-logo`      | Set this to false to hide the logo that is displayed in the bottom of the side bar. | `boolean` | `true`                 |
-| `sideBarWidth` | `side-bar-width` | Sets the side bar width                                                             | `string`  | `'100px'`              |
+| `sideBarWidth` | `side-bar-width` | Sets the sidebar width                                                              | `string`  | `'100px'`              |
 
 
 ## Slots

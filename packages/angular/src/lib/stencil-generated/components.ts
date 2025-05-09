@@ -956,14 +956,14 @@ export declare interface AdmiraltySelect extends Components.AdmiraltySelect {
 
 
 @ProxyCmp({
-  inputs: ['label', 'logoImgUrl', 'showLogo']
+  inputs: ['label', 'logoImgUrl', 'showLogo', 'sideBarWidth']
 })
 @Component({
   selector: 'admiralty-side-bar',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['label', 'logoImgUrl', 'showLogo'],
+  inputs: ['label', 'logoImgUrl', 'showLogo', 'sideBarWidth'],
 })
 export class AdmiraltySideBar {
   protected el: HTMLElement;
@@ -978,30 +978,34 @@ export declare interface AdmiraltySideBar extends Components.AdmiraltySideBar {}
 
 
 @ProxyCmp({
-  inputs: ['active', 'href', 'icon', 'suppressRedirect']
+  inputs: ['active', 'expanded', 'href', 'icon', 'itemText', 'suppressRedirect', 'variant']
 })
 @Component({
   selector: 'admiralty-side-bar-item',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['active', 'href', 'icon', 'suppressRedirect'],
+  inputs: ['active', 'expanded', 'href', 'icon', 'itemText', 'suppressRedirect', 'variant'],
 })
 export class AdmiraltySideBarItem {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['sideBarItemClick']);
+    proxyOutputs(this, this.el, ['toggled', 'sideBarItemClick']);
   }
 }
 
 
 export declare interface AdmiraltySideBarItem extends Components.AdmiraltySideBarItem {
   /**
+   * The event that is dispatched when the expanded status is toggled.
+   */
+  toggled: EventEmitter<CustomEvent<boolean>>;
+  /**
    * An event emitted when this Side Bar item is selected containing the sideBarItemId
    */
-  sideBarItemClick: EventEmitter<CustomEvent<string>>;
+  sideBarItemClick: EventEmitter<CustomEvent<{ id: number, href: string }>>;
 }
 
 

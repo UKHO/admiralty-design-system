@@ -27,14 +27,6 @@
 |      | 'admiralty-sub-header-menu-item' a number of components can be placed here to add sub items |
 
 
-## CSS Custom Properties
-
-| Name                                        | Description                          |
-| ------------------------------------------- | ------------------------------------ |
-| `--admiralty-header-menu-title-font-size`   | Font size of the header menu title   |
-| `--admiralty-header-menu-title-font-weight` | Font weight of the header menu title |
-
-
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

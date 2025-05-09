@@ -25,13 +25,6 @@
 | `admiraltyFocus`  | Emitted when the radio button gains focus. | `CustomEvent<void>` |
 
 
-## CSS Custom Properties
-
-| Name                                  | Description                     |
-| ------------------------------------- | ------------------------------- |
-| `--admiralty-radio-label-font-weight` | Font weight for the radio label |
-
-
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

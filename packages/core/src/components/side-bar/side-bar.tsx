@@ -1,4 +1,4 @@
-import { Component, h, Prop } from '@stencil/core';
+import { Component, Element, h, Prop } from '@stencil/core';
 
 /**
  * @slot - 'admiralty-side-bar-item' components should be placed here in the default slot
@@ -11,6 +11,7 @@ import { Component, h, Prop } from '@stencil/core';
   scoped: true,
 })
 export class SideBarComponent {
+  @Element() el!: HTMLAdmiraltySideBarElement;
   /**
    * A label for accessibility purposes to describe what this navigation is for.
    */
@@ -27,15 +28,34 @@ export class SideBarComponent {
   @Prop() logoImgUrl: string = 'svg/UKHO crest.svg';
 
   /**
-   * Sets the side bar width
+   * Sets the sidebar width
    */
   @Prop() sideBarWidth: string = '100px';
+
+  componentDidLoad() {
+    this.el.addEventListener('side-bar-item-active', this.handleActiveSideBarItem);
+  }
+
+  handleActiveSideBarItem = (e: CustomEvent<{ id: string}>) => {
+    const items = this.el.querySelectorAll('[data-side-bar-item-id]');
+    items.forEach(item => {
+      const anchor = (item as any).querySelector('a');
+      if ((item as any).getAttribute('data-side-bar-item-id') === 'side-bar-item-' + e.detail.id) {
+        anchor.classList.add('active');
+      } else {
+        const anchor = (item as any).querySelector('a');
+        anchor?.classList.remove('active');
+      }
+
+      (item as any).active = item.getAttribute('data-side-bar-item-id') === 'side-bar-item-' + e.detail.id
+    })
+  }
 
   render() {
     return (
       <nav aria-label={this.label}>
         <ul style={{ width: this.sideBarWidth ? this.sideBarWidth !== '' ? this.sideBarWidth : '100px' : '100px' }}>
-          <slot></slot>
+          <slot name="items"></slot>
         </ul>
         <ul>
           <slot name="footer"></slot>
