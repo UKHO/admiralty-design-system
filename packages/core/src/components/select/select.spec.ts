@@ -24,7 +24,7 @@ describe('admiralty-select', () => {
                 Test
               </option>
             </select>
-            <admiralty-icon class="select-down-icon" icon-name="angle-down"></admiralty-icon>
+            <admiralty-icon class="select-down-icon" name="keyboard-arrow-down-rounded"></admiralty-icon>
           </div>
           <admiralty-input-invalid id="admiralty-select-${id}-error" style="display: none;"></admiralty-input-invalid>
         </div>
@@ -54,7 +54,7 @@ describe('admiralty-select', () => {
           <div class="select-wrapper">
             <select aria-describedby="admiralty-select-${id}-hint " aria-disabled="false" aria-label="Choose a colour" class="admiralty-form-control" id="admiralty-select-${id}-input">
             </select>
-            <admiralty-icon class="select-down-icon" icon-name="angle-down"></admiralty-icon>
+            <admiralty-icon class="select-down-icon" name="keyboard-arrow-down-rounded"></admiralty-icon>
           </div>
           <admiralty-input-invalid id="admiralty-select-${id}-error" style="display: none;"></admiralty-input-invalid>
         </div>
@@ -84,7 +84,7 @@ describe('admiralty-select', () => {
           <div class="select-wrapper">
             <select aria-describedby="admiralty-select-${id}-hint " aria-disabled="false" aria-label="Choose a colour" class="admiralty-form-control" id="admiralty-select-${id}-input">
             </select>
-            <admiralty-icon class="select-down-icon" icon-name="angle-down"></admiralty-icon>
+            <admiralty-icon class="select-down-icon" name="keyboard-arrow-down-rounded"></admiralty-icon>
           </div>
           <admiralty-input-invalid id="admiralty-select-${id}-error" style="display: none;"></admiralty-input-invalid>
         </div>
@@ -114,7 +114,7 @@ describe('admiralty-select', () => {
           <div class="select-wrapper">
             <select aria-describedby="admiralty-select-${id}-hint admiralty-select-${id}-error" aria-disabled="false" aria-label="Choose a colour" class="admiralty-form-control invalid" id="admiralty-select-${id}-input">
             </select>
-            <admiralty-icon class="select-down-icon" icon-name="angle-down"></admiralty-icon>
+            <admiralty-icon class="select-down-icon" name="keyboard-arrow-down-rounded"></admiralty-icon>
           </div>
           <admiralty-input-invalid id="admiralty-select-${id}-error">
             The colour must be green
@@ -146,7 +146,7 @@ describe('admiralty-select', () => {
           <div class="select-wrapper">
             <select aria-describedby="admiralty-select-${id}-hint " aria-disabled="true" aria-label="Choose a colour" class="admiralty-form-control disabled" disabled="" id="admiralty-select-${id}-input">
             </select>
-            <admiralty-icon class="disabled select-down-icon" icon-name="angle-down"></admiralty-icon>
+            <admiralty-icon class="disabled select-down-icon" name="keyboard-arrow-down-rounded"></admiralty-icon>
           </div>
           <admiralty-input-invalid id="admiralty-select-${id}-error" style="display: none;"></admiralty-input-invalid>
         </div>
@@ -176,7 +176,7 @@ describe('admiralty-select', () => {
           <div class="select-wrapper" style="max-width: 150px;">
             <select aria-describedby="admiralty-select-${id}-hint " aria-disabled="false" aria-label="Choose a colour" class="admiralty-form-control" id="admiralty-select-${id}-input">
             </select>
-            <admiralty-icon class="select-down-icon" icon-name="angle-down"></admiralty-icon>
+            <admiralty-icon class="select-down-icon" name="keyboard-arrow-down-rounded"></admiralty-icon>
           </div>
           <admiralty-input-invalid id="admiralty-select-${id}-error" style="display: none;"></admiralty-input-invalid>
         </div>
@@ -204,7 +204,7 @@ describe('admiralty-select', () => {
                 Test
               </option>
             </select>
-            <admiralty-icon class="select-down-icon" icon-name="angle-down"></admiralty-icon>
+            <admiralty-icon class="select-down-icon" name="keyboard-arrow-down-rounded"></admiralty-icon>
           </div>
           <admiralty-input-invalid id="${id}-error" style="display: none;"></admiralty-input-invalid>
         </div>
@@ -235,7 +235,7 @@ describe('admiralty-select', () => {
                 First
               </option>
             </select>
-            <admiralty-icon class="select-down-icon" icon-name="angle-down"></admiralty-icon>
+            <admiralty-icon class="select-down-icon" name="keyboard-arrow-down-rounded"></admiralty-icon>
           </div>
           <admiralty-input-invalid id="${id}-error" style="display: none;"></admiralty-input-invalid>
         </div>

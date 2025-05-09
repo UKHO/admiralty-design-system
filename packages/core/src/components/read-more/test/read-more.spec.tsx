@@ -11,7 +11,7 @@ describe('read-more', () => {
       <admiralty-read-more>
         <section class="expansion">
           <button aria-controls="admiralty-read-more-1-content" id="admiralty-read-more-1-header" type="button">
-            <admiralty-icon class="expansion-heading-icon" icon-name="arrow-right"></admiralty-icon>
+            <admiralty-icon class="expansion-heading-icon" name="arrow-forward-rounded"></admiralty-icon>
             <span></span>
             <span class="visually-hidden">
               , Show this section
@@ -36,7 +36,7 @@ describe('read-more', () => {
         <!---->
         <section class="expansion">
           <button aria-controls="admiralty-read-more-2-content" id="admiralty-read-more-2-header" type="button">
-            <admiralty-icon class="expansion-heading-icon" icon-name="arrow-right"></admiralty-icon>
+            <admiralty-icon class="expansion-heading-icon" name="arrow-forward-rounded"></admiralty-icon>
             <span>
               Readmore Heading
             </span>

@@ -15,7 +15,7 @@ describe('autocomplete', () => {
         <div class="autocomplete__wrapper">
           <div class="autocomplete__input-wrapper">
             <input aria-autocomplete="list" aria-describedby=" admiralty-autocomplete-1__assistiveHint " aria-expanded="false" aria-owns="admiralty-autocomplete-1__listbox" autocomplete="off" class="autocomplete__input autocomplete__input--show-all-values" id="admiralty-autocomplete-1-input" placeholder="" role="combobox" type="text">
-            <admiralty-icon class="autocomplete-down-icon" icon-name="angle-down"></admiralty-icon>
+            <admiralty-icon class="autocomplete-down-icon" name="keyboard-arrow-down-rounded"></admiralty-icon>
           </div>
           <ul class="autocomplete__menu autocomplete__menu--hidden autocomplete__menu--inline" id="admiralty-autocomplete-1__listbox" role="listbox"></ul>
           <span id="admiralty-autocomplete-1__assistiveHint" style="display: none;">
@@ -53,7 +53,7 @@ describe('autocomplete', () => {
           </admiralty-hint>
           <div class="autocomplete__input-wrapper">
             <input aria-autocomplete="list" aria-describedby="admiralty-autocomplete-2-hint admiralty-autocomplete-2__assistiveHint " aria-expanded="false" aria-owns="admiralty-autocomplete-2__listbox" autocomplete="off" class="autocomplete__input autocomplete__input--show-all-values" id="admiralty-autocomplete-2-input" placeholder="Country of birth" role="combobox" type="text">
-            <admiralty-icon class="autocomplete-down-icon" icon-name="angle-down"></admiralty-icon>
+            <admiralty-icon class="autocomplete-down-icon" name="keyboard-arrow-down-rounded"></admiralty-icon>
           </div>
           <ul class="autocomplete__menu autocomplete__menu--hidden autocomplete__menu--inline" id="admiralty-autocomplete-2__listbox" role="listbox"></ul>
           <span id="admiralty-autocomplete-2__assistiveHint" style="display: none;">
@@ -91,7 +91,7 @@ describe('autocomplete', () => {
           </admiralty-hint>
           <div class="autocomplete__input-wrapper">
             <input aria-autocomplete="list" aria-describedby="custom-hint custom__assistiveHint " aria-expanded="false" aria-owns="custom__listbox" autocomplete="off" class="autocomplete__input autocomplete__input--show-all-values" id="custom-input" placeholder="Country of birth" role="combobox" type="text">
-            <admiralty-icon class="autocomplete-down-icon" icon-name="angle-down"></admiralty-icon>
+            <admiralty-icon class="autocomplete-down-icon" name="keyboard-arrow-down-rounded"></admiralty-icon>
           </div>
           <ul class="autocomplete__menu autocomplete__menu--hidden autocomplete__menu--inline" id="custom__listbox" role="listbox"></ul>
           <span id="custom__assistiveHint" style="display: none;">
