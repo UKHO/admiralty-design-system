@@ -22,6 +22,20 @@
 | `toggled` | The event that is dispatched when the expanded status is toggled. | `CustomEvent<boolean>` |
 
 
+## CSS Custom Properties
+
+| Name                                                 | Description                               |
+| ---------------------------------------------------- | ----------------------------------------- |
+| `--admiralty-expansion-button-heading-margin-bottom` | Margin bottom for the button heading.     |
+| `--admiralty-expansion-button-icon-margin-left`      | Margin left for the button icon.          |
+| `--admiralty-expansion-button-margin`                | Margin for the expansion button.          |
+| `--admiralty-expansion-button-padding`               | Padding for the expansion button.         |
+| `--admiralty-expansion-content-padding-bottom`       | Padding bottom for the expansion content. |
+| `--admiralty-expansion-padding`                      | Padding for the expansion.                |
+| `--admiralty-expansion-title-font-size`              | Font size of the expansion title          |
+| `--admiralty-expansion-title-font-weight`            | Font weight of the expansion title        |
+
+
 ## Dependencies
 
 ### Used by

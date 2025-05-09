@@ -13,6 +13,7 @@ import { FooterTypes } from "./components/footer/footer.types";
 import { InputChangeEventDetail } from "./components/input/input.interface";
 import { RadioGroupChangeEventDetail } from "./components/radio-group/radio-group-interface";
 import { SelectChangeEventDetail } from "./components/select/select.interface";
+import { SideBarItemVariant } from "./components/side-bar-item/side-bar-item.types";
 import { TextAreaChangeEventDetail } from "./components/textarea/textarea.interface";
 export { AutoCompleteChangeEventDetail, Option } from "./components/autocomplete/autocomplete.interface";
 export { ButtonVariant } from "./components/button/button.types";
@@ -22,6 +23,7 @@ export { FooterTypes } from "./components/footer/footer.types";
 export { InputChangeEventDetail } from "./components/input/input.interface";
 export { RadioGroupChangeEventDetail } from "./components/radio-group/radio-group-interface";
 export { SelectChangeEventDetail } from "./components/select/select.interface";
+export { SideBarItemVariant } from "./components/side-bar-item/side-bar-item.types";
 export { TextAreaChangeEventDetail } from "./components/textarea/textarea.interface";
 export namespace Components {
     interface AdmiraltyAutocomplete {
@@ -685,7 +687,7 @@ export namespace Components {
          */
         "showLogo": boolean;
         /**
-          * Sets the side bar width
+          * Sets the sidebar width
          */
         "sideBarWidth": string;
     }
@@ -695,6 +697,10 @@ export namespace Components {
          */
         "active": boolean;
         /**
+          * Whether the component is expanded.
+         */
+        "expanded": boolean;
+        /**
           * The URL to link to.
          */
         "href": string;
@@ -703,9 +709,17 @@ export namespace Components {
          */
         "icon": string;
         /**
+          * Item text for the button or link depending on variant
+         */
+        "itemText": string;
+        /**
           * Causes the default browser redirect to be suppressed. Can be used in conjunction with the `onSideBarItemClick` event to use a navigation router and prevent a full page reload when navigating.
          */
         "suppressRedirect"?: boolean;
+        /**
+          * The type of side bar item to render. Valid values are `primary` and `secondary`. Default value is `primary`.
+         */
+        "variant": SideBarItemVariant;
     }
     interface AdmiraltySideBarWrapper {
     }
@@ -1333,6 +1347,7 @@ declare global {
         new (): HTMLAdmiraltySideBarElement;
     };
     interface HTMLAdmiraltySideBarItemElementEventMap {
+        "toggled": boolean;
         "sideBarItemClick": string;
     }
     interface HTMLAdmiraltySideBarItemElement extends Components.AdmiraltySideBarItem, HTMLStencilElement {
@@ -2313,7 +2328,7 @@ declare namespace LocalJSX {
          */
         "showLogo"?: boolean;
         /**
-          * Sets the side bar width
+          * Sets the sidebar width
          */
         "sideBarWidth"?: string;
     }
@@ -2323,6 +2338,10 @@ declare namespace LocalJSX {
          */
         "active"?: boolean;
         /**
+          * Whether the component is expanded.
+         */
+        "expanded"?: boolean;
+        /**
           * The URL to link to.
          */
         "href"?: string;
@@ -2331,13 +2350,25 @@ declare namespace LocalJSX {
          */
         "icon"?: string;
         /**
+          * Item text for the button or link depending on variant
+         */
+        "itemText"?: string;
+        /**
           * An event emitted when this Side Bar item is selected containing the sideBarItemId
          */
         "onSideBarItemClick"?: (event: AdmiraltySideBarItemCustomEvent<string>) => void;
         /**
+          * The event that is dispatched when the expanded status is toggled.
+         */
+        "onToggled"?: (event: AdmiraltySideBarItemCustomEvent<boolean>) => void;
+        /**
           * Causes the default browser redirect to be suppressed. Can be used in conjunction with the `onSideBarItemClick` event to use a navigation router and prevent a full page reload when navigating.
          */
         "suppressRedirect"?: boolean;
+        /**
+          * The type of side bar item to render. Valid values are `primary` and `secondary`. Default value is `primary`.
+         */
+        "variant"?: SideBarItemVariant;
     }
     interface AdmiraltySideBarWrapper {
     }
