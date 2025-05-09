@@ -1,16 +1,14 @@
-@import './paginator.vars';
-
 nav.standard {
   display: flex;
   flex-direction: row;
   align-items: center;
 
   admiralty-button {
-    margin: $paginator-button-margin;
+    margin: 6px;
   }
 
   p {
-    padding: $paginator-paragraph-padding;
-    margin-bottom: $paginator-paragraph-margin-bottom;
+    padding: 0px 18px 0px 0px;
+    margin-bottom: 0px;
   }
 }

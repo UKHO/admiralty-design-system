@@ -2,19 +2,7 @@
 
 /**
  * @prop --admiralty-read-more-font-weight: Font weight for the read more text
-
- * @prop --admiralty-read-more-padding: Padding for the read more expansion
- * @prop --admiralty-read-more-expanded-content-padding: Padding for the read more expanded content
- * @prop --admiralty-read-more-button-margin: Margin for the read more button
- * @prop --admiralty-read-more-button-padding: Padding for the read more button
- * @prop --admiralty-read-more-expansion-heading-icon-margin: Margin for the read more expansion heading icon
 **/
-
-$read-more-padding: var(--admiralty-read-more-padding, 2px var(--admiralty-spacing-0));
-$read-more-expanded-content-padding: var(--admiralty-read-more-expanded-content-padding, 2px 5px 2px 33px);
-$read-more-button-margin: var(--admiralty-read-more-button-margin, var(--admiralty-spacing-2) var(--admiralty-spacing-0));
-$read-more-button-padding: var(--admiralty-read-more-button-padding, var(--admiralty-spacing-1));
-$read-more-button-expansion-heading-icon-margin: var(--admiralty-read-more-expansion-heading-icon-margin, 1px var(--admiralty-spacing-2) 1px 5px);
 
 $read-more-font-weight: var(--admiralty-read-more-font-weight, var(--admiralty-font-weight-medium));
 

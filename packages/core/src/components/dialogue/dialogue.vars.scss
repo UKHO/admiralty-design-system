@@ -4,13 +4,6 @@
  * @prop --admiralty-dialogue-title-font-size: Font size of the dialogue title
  * @prop --admiralty-dialogue-title-icon-font-size: Font size of the dialogue title icon
  * @prop --admiralty-dialogue-title-font-weight: Font weight of the dialogue title
-
- * @prop --admiralty-dialogue-padding: Padding for the dialogue.
- * @prop --admiralty-dialogue-not-desktop-padding: Padding for the dialogue when not in desktop view.
- * @prop --admiralty-dialogue-title-margin-bottom: Margin bottom for the dialogue title.
- * @prop --admiralty-dialogue-title-icon-margin-bottom: Margin bottom for the dialogue icon.
- * @prop --admiralty-dialogue-title-icon-margin-right: Margin right for the dialogue icon.
- * @prop --admiralty-dialogue-title-heading-margin: Margin bottom for the dialogue title heading.
 **/
 
 $dialogue-title-text-size: var(--admiralty-dialogue-title-font-size, var(--admiralty-font-size-1));
@@ -34,10 +27,3 @@ $dialogue-success-text-colour: var(--admiralty-colour-primary);
 $dialogue-warning-colour: var(--admiralty-colour-warning-background);
 $dialogue-warning-accent-colour: var(--admiralty-colour-warning);
 $dialogue-warning-text-colour: var(--admiralty-colour-primary);
-
-$dialogue-padding: var(--admiralty-dialogue-padding, 30px 18px);
-$dialogue-not-desktop-padding: var(--admiralty-dialogue-not-desktop-padding, var(--admiralty-spacing-6) 18px);
-$dialogue-title-margin-bottom: var(--admiralty-dialogue-title-margin-bottom, var(--admiralty-spacing-3));
-$dialogue-title-icon-margin-bottom: var(--admiralty-dialogue-title-icon-margin-bottom, var(--admiralty-spacing-1));
-$dialogue-title-icon-margin-right: var(--admiralty-dialogue-title-icon-margin-right, var(--admiralty-spacing-2));
-$dialogue-title-heading-margin: var(--admiralty-dialogue-title-heading-margin, var(--admiralty-spacing-0))

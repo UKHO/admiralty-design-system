@@ -3,13 +3,7 @@
 /**
  * @prop --admiralty-input-font-size: Font size of the input
  * @prop --admiralty-input-font-weight: Font weight of the input
-
- * @prop --admiralty-input-padding: Padding for the input.
- * @prop --admiralty-input-invalid-margin-top: Margin top for invalid input.
 **/
-
-$input-padding: var(--admiralty-input-padding, var(--admiralty-spacing-3));
-$input-invalid-margin-top: var(--admiralty-input-invalid-margin-top, 6px);
 
 $input-text-size: var(--admiralty-input-font-size, var(--admiralty-font-size-0));
 $input-text-weight: var(--admiralty-input-font-weight, var(--admiralty-font-weight-normal));

@@ -12,10 +12,10 @@
     position: absolute;
     top: 0;
     left: 0;
-    padding: $checkbox-input-padding;
+    padding: 0;
     width: 30px;
     height: 30px;
-    margin: $checkbox-input-margin;
+    margin: 0;
     z-index: 1;
     cursor: pointer;
 
@@ -27,8 +27,8 @@
   label {
     position: relative;
     display: inline-block;
-    padding-left: $checkbox-label-padding-left;
-    margin-bottom: $checkbox-label-margin-bottom;
+    padding-left: 42px;
+    margin-bottom: 14px;
     cursor: pointer;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -82,8 +82,8 @@
   }
 
   &.right-align label {
-    padding-left: $checkbox-label-alignment-padding-left;
-    padding-right: $checkbox-label-alignment-padding-right;
+    padding-left: unset;
+    padding-right: 35px;
 
     &::before {
       left: unset;

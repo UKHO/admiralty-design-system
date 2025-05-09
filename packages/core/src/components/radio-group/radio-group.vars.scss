@@ -1,15 +1,5 @@
 /**
  * @prop --admiralty-radio-group-legend-font-weight: Font weight for the radio group legend
-
- * @prop --admiralty-radio-group-slotted-margin-right: Margin right for the slotted data of the radio group
- * @prop --admiralty-radio-group-stack-slotted-margin-bottom: Margin bottom for the slotted data of the radio group stack
- * @prop --admiralty-radio-group-fieldset-padding: Padding for the fieldset of the radio group
- * @prop --admiralty-radio-group-legend-margin-bottom: Margin bottom for the legend of the radio group
 **/
-
-$radio-group-slotted-margin-right: var(--admiralty-radio-group-slotted-margin-right, 2em);
-$radio-group-stack-slotted-margin-bottom: var(--admiralty-radio-group-stack-slotted-margin-bottom, 10px);
-$radio-group-fieldset-padding: var(--admiralty-radio-group-fieldset-padding, var(--admiralty-spacing-0));
-$radio-group-legend-margin-bottom: var(--admiralty-radio-group-legend-margin-bottom, 6px);
 
 $radio-group-legend-font-weight: var(--admiralty-radio-group-legend-font-weight, var(--admiralty-font-weight-medium));

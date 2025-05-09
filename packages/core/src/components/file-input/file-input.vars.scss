@@ -7,10 +7,6 @@
  * @prop --admiralty-file-input-label-font-weight: Font weight of the file input label
  * @prop --admiralty-file-input-icon-font-size: Font size of the file input icon
  * @prop --admiralty-file-input-icon-font-weight: Font weight of the file input icon
-
- * @prop --admiralty-file-input-margin: Margin for the file input.
- * @prop --admiralty-file-input-icon-margin: Margin for the file input icon.
- * @prop --admiralty-file-input-label-margin: Margin for the file input label.
 **/
 
 $file-input-font-size: var(--admiralty-file-input-font-size, var(--admiralty-font-size-0)); // TODO: need to confirm if this variable works.
@@ -33,8 +29,3 @@ $file-input-icon-weight: var(--admiralty-file-input-icon-font-weight, var(--admi
 $file-input-label-colour: var(--admiralty-colour-primary);
 $file-input-label-font-size: var(--admiralty-file-input-label-font-size, var(--admiralty-font-size-0));
 $file-input-label-font-weight: var(--admiralty-file-input-label-font-weight, var(--admiralty-font-weight-medium));
-
-// Spacing
-$file-input-margin: var(--admiralty-file-input-margin, 6px);
-$file-input-icon-margin: var(--admiralty-file-input-icon-margin, var(--admiralty-spacing-2) var(--admiralty-spacing-auto));
-$file-input-label-margin: var(--admiralty-file-input-label-margin, var(--admiralty-spacing-2) var(--admiralty-spacing-0));
