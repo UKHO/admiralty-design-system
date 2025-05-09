@@ -33,10 +33,10 @@ button {
     height: 100%;
     justify-content: center;
     line-height: 1.33em;
-    margin-bottom: 0;
+    margin-bottom: $header-menu-item-desktop-margin-bottom;
     min-width: 4em;
     max-width: 11.1em;
-    padding: 0 1.65em;
+    padding: $header-menu-item-desktop-padding;
     position: relative;
     text-align: center;
 
@@ -91,7 +91,7 @@ button {
     .menu-title {
       div {
         display: inline-block;
-        margin: 12px;
+        margin: $header-menu-item-title-not-desktop-margin;
         font-weight: $header-menu-item-title-text-weight;
       }
 

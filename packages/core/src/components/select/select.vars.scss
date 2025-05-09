@@ -5,9 +5,15 @@
  * @prop --admiralty-select-font-weight: Font weight for the select text
  * @prop --admiralty-select-option-font-weight: Font weight for the select option text
  * @prop --admiralty-select-icon-font-size: Font size for the select icon
+
+ * @prop --admiralty-select-margin-bottom: Margin bottom for the select
+ * @prop --admiralty-select-padding: Padding for the select
 **/
 
-$select-text-weight: var(--admiralty-font-weight-normal, var(--admiralty-font-weight-normal));
+$select-margin-bottom: var(--admiralty-select-margin-bottom, 6px);
+$select-padding: var(--admiralty-select-padding, var(--admiralty-spacing-3));
+
+$select-text-weight: var(--admiralty-select-font-weight, var(--admiralty-font-weight-normal));
 $select-option-text-weight: var(--admiralty-font-weight-normal, var(--admiralty-font-weight-normal));
 $select-text-size: var(--admiralty-select-font-size, var(--admiralty-font-size-0));
 $select-icon-size: var(--admiralty-select-icon-font-size, var(--admiralty-font-size-5));

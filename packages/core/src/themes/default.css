@@ -107,4 +107,18 @@
   --admiralty-font-weight-normal: 300;
   --admiralty-font-weight-medium: 400;
   --admiralty-font-weight-bold: 700;
+
+  /** Spacing **/
+  --admiralty-spacing-0: 0; /** Default **/
+  --admiralty-spacing-1: 4px; /** 0.3rem **/
+  --admiralty-spacing-2: 8px; /** 0.5rem **/
+  --admiralty-spacing-3: 12px; /** 0.8rem **/
+  --admiralty-spacing-4: 16px; /** 1rem **/
+  --admiralty-spacing-5: 20px; /** 1.3rem **/
+  --admiralty-spacing-6: 24px; /** 1.5rem **/
+  --admiralty-spacing-7: 28px; /** 1.8rem **/
+  --admiralty-spacing-8: 32px; /** 2rem **/
+  --admiralty-spacing-auto: auto;
+  --admiralty-spacing-unset: unset;
+  --admiralty-spacing-inherit: inherit;
 }

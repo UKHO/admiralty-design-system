@@ -22,6 +22,17 @@
 | `menuItemClick` | The event that is fired when a user clicks on the menu. | `CustomEvent<void>` |
 
 
+## CSS Custom Properties
+
+| Name                                                      | Description                                                       |
+| --------------------------------------------------------- | ----------------------------------------------------------------- |
+| `--admiralty-header-menu-link-desktop-only-margin-bottom` | Margin bottom for the header menu link when in desktop view only. |
+| `--admiralty-header-menu-link-desktop-only-padding`       | Padding for the header menu link when in desktop view only.       |
+| `--admiralty-header-menu-link-font-size`                  | Font size of the header menu link                                 |
+| `--admiralty-header-menu-link-font-weight`                | Font weight of the header menu link                               |
+| `--admiralty-header-menu-link-padding`                    | Padding for the header menu link when not in desktop view.        |
+
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*
