@@ -27,6 +27,7 @@
 | --------------------------------------- | --------------------------------- |
 | `--admiralty-side-nav-item-font-size`   | Font size for the side nav item   |
 | `--admiralty-side-nav-item-font-weight` | Font weight for the side nav item |
+| `--admiralty-side-nav-item-padding`     | Padding for the side nav item     |
 
 
 ----------------------------------------------

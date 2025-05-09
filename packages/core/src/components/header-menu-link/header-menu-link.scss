@@ -24,10 +24,10 @@
     height: 100%;
     justify-content: center;
     line-height: 1.33em;
-    margin-bottom: 0;
+    margin-bottom: $header-menu-link-desktop-only-margin-bottom;
     min-width: 4em;
     max-width: 11.1em;
-    padding: 0 1.65em;
+    padding: $header-menu-link-desktop-only-padding;
     position: relative;
     text-align: center;
 
@@ -49,7 +49,7 @@
     background-color: unset;
     text-align: unset;
     text-decoration: unset;
-    padding: 12px;
+    padding: $header-menu-link-padding;
 
     a {
       font-weight: $header-menu-link-font-weight;

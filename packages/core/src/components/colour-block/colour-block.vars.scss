@@ -4,6 +4,8 @@
  * @prop --admiralty-colour-block-action-font-size: Font size of the colour block action
  * @prop --admiralty-colour-block-action-not-desktop-font-size: Font size of the colour block action when not in desktop view
  * @prop --admiralty-colour-block-action-font-weight: Font weight of the colour block action
+
+ * @prop --admiralty-colour-block-padding: Padding for the colour block
 **/
 
 $colour-block-action-text-size: var(--admiralty-colour-block-action-font-size, var(--admiralty-font-size-1));
@@ -21,3 +23,5 @@ $tertiary-colour-block-colour: var(--admiralty-colour-tertiary);
 $tertiary-colour-block-text-colour: var(--admiralty-colour-primary);
 
 $colour-block-focus-text-colour: var(--admiralty-text-colour) !default;
+
+$colour-block-padding: var(--admiralty-colour-block-padding, 30px 18px);

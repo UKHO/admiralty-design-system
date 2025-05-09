@@ -4,7 +4,7 @@
   @extend .visually-hidden;
   color: $skip-link-text-colour;
   display: block;
-  padding: 10px 15px;
+  padding: $skip-link-padding;
   box-shadow: none;
   font-size: $skip-link-font-size;
   font-weight: $skip-link-font-weight;
@@ -17,7 +17,7 @@
     position: static !important;
     width: auto !important;
     height: auto !important;
-    margin: inherit !important;
+    margin: $skip-link-focus-margin !important;
     overflow: visible !important;
     clip: auto !important;
     -webkit-clip-path: none !important;
