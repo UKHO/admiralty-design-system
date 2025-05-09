@@ -1,10 +1,30 @@
 @import '../../styles/vars/globals';
 
+/**
+ * @prop --admiralty-tertiary-link-font-weight: Font weight for tertiary link
+ * @prop --admiralty-tertiary-link-active-font-weight: Font weight for tertiary link active
+ * @prop --admiralty-side-bar-item-font-weight: Font weight for the side bar item
+ * @prop --admiralty-side-bar-item-font-size: Font size for the side bar item
+ * @prop --admiralty-side-bar-item-icon-font-size: Font size for the side bar item icon
+**/
+
 $side-bar-item-text-colour: var(--admiralty-text-colour);
 $side-bar-item-hover-text-colour: var(--admiralty-colour-primary);
 $side-bar-item-hover-background-colour: var(--admiralty-table-row-colour);
 $side-bar-item-active-text-colour: var(--admiralty-colour-primary);
 $side-bar-item-focus-colour: var(--admiralty-focus-colour) !default;
-$side-bar-item-font-weight: 500;
-$side-bar-item-font-size: 16px;
-$side-bar-item-icon-font-size: 32px;
+
+$side-bar-item-font-weight: var(--admiralty-side-bar-item-font-weight ,var(--admiralty-font-weight-medium)); // 500;
+$side-bar-item-font-size: var(--admiralty-side-bar-item-font-size ,var(--admiralty-font-size-0)); // 16px;
+$side-bar-item-icon-font-size: var(--admiralty-side-bar-item-icon-font-size ,var(--admiralty-font-size-4)); // 32px;
+
+$tertiary-link-font-weight: var(--admiralty-tertiary-link-font-weight, var(--admiralty-font-weight-normal));
+$tertiary-link-font-colour: var(--admiralty-colour-light-contrast);
+$tertiary-link-background-hover-colour: var(--admiralty-hover-background-colour);
+
+$tertiary-link-active-background-colour: var(--admiralty-colour-primary);
+$tertiary-link-active-text-colour: var(--admiralty-colour-primary-contrast);
+$tertiary-link-active-font-weight: var(--admiralty-tertiary-link-active-font-weight, var(--admiralty-font-weight-medium));
+
+$tertiary-link-focus-background-colour: var(--admiralty-focus-colour);
+$tertiary-link-focus-text-colour: var(--admiralty-colour-primary);
