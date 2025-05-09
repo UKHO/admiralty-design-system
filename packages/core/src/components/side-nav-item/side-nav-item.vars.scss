@@ -3,11 +3,7 @@
 /**
  * @prop --admiralty-side-nav-item-font-size: Font size for the side nav item
  * @prop --admiralty-side-nav-item-font-weight: Font weight for the side nav item
-
- * @prop --admiralty-side-nav-item-padding: Padding for the side nav item
 **/
-
-$side-nav-item-padding: var(--admiralty-side-nav-item-padding, var(--admiralty-spacing-0) 10px);
 
 $side-nav-item-size: var(--admiralty-side-nav-item-font-size, var(--admiralty-font-size-0));
 $side-nav-item-weight: var(--admiralty-side-nav-item-font-weight, var(--admiralty-font-weight-medium));

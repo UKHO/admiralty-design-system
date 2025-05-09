@@ -3,10 +3,6 @@
 /**
  * @prop --admiralty-header-sub-menu-item-font-size: Font size of the header sub menu item.
  * @prop --admiralty-header-sub-menu-item-font-weight: Font weight of the header sub menu item.
-
- * @prop --admiralty-header-sub-menu-item-desktop-margin-bottom: Margin bottom for the sub menu item when in desktop view
- * @prop --admiralty-header-sub-menu-item-desktop-padding: Padding for the sub menu item when in desktop view
- * @prop --admiralty-header-sub-menu-item-not-desktop-padding:  Margin bottom for the sub menu item when not in desktop view
 **/
 
 $header-sub-menu-item-text-size: var(--admiralty-header-sub-menu-item-font-size, var(--admiralty-font-size-0));
@@ -17,7 +13,3 @@ $header-sub-menu-item-focus-colour: var(--admiralty-focus-colour);
 $header-sub-menu-item-text-colour: var(--admiralty-colour-primary);
 $header-sub-menu-item-background-colour: var(--admiralty-background-colour);
 $header-sub-menu-item-hover-background-colour: var(--admiralty-hover-background-colour);
-
-$header-sub-menu-item-desktop-margin-bottom: var(--admiralty-header-sub-menu-item-desktop-margin-bottom, var(--admiralty-spacing-0));
-$header-sub-menu-item-desktop-padding: var(--admiralty-header-sub-menu-item-desktop-padding, 10px);
-$header-sub-menu-item-not-desktop-padding: var(--admiralty-header-sub-menu-item-not-desktop-padding, var(--admiralty-spacing-3) var(--admiralty-spacing-6));

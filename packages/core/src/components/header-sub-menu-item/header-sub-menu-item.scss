@@ -28,8 +28,8 @@
     box-sizing: border-box;
     color: $header-sub-menu-item-text-colour;
     display: block;
-    margin-bottom: $header-sub-menu-item-desktop-margin-bottom;
-    padding: $header-sub-menu-item-desktop-padding;
+    margin-bottom: 0;
+    padding: 10px;
     text-align: left;
     width: 300px;
 
@@ -45,7 +45,7 @@
   @include not-desktop {
     display: block;
     box-sizing: border-box;
-    padding: $header-sub-menu-item-not-desktop-padding;
+    padding: 12px 24px;
     cursor: pointer;
     color: $header-sub-menu-item-text-colour;
     font-weight: $header-sub-menu-item-not-desktop-text-weight;

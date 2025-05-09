@@ -37,16 +37,6 @@ and checkbox.
 | `admiraltyInput` | Emitted when the value has changed. | `CustomEvent<InputChangeEventDetail>` |
 
 
-## CSS Custom Properties
-
-| Name                                   | Description                   |
-| -------------------------------------- | ----------------------------- |
-| `--admiralty-input-font-size`          | Font size of the input        |
-| `--admiralty-input-font-weight`        | Font weight of the input      |
-| `--admiralty-input-invalid-margin-top` | Margin top for invalid input. |
-| `--admiralty-input-padding`            | Padding for the input.        |
-
-
 ## Dependencies
 
 ### Depends on

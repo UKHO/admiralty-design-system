@@ -1,7 +1,7 @@
 @import 'expansion.vars';
 
 section.expansion {
-  padding: $expansion-padding;
+  padding: 2px 0;
   border-bottom: 1px solid transparent;
   &.bordered {
     border-bottom: 1px solid $expansion-border-colour;
@@ -15,7 +15,7 @@ section.expansion {
   &.expanded .expansion-content {
     display: block;
     max-height: initial;
-    padding-bottom: $expansion-content-padding-bottom;
+    padding: 12px 0;
   }
 
   button {
@@ -26,24 +26,25 @@ section.expansion {
     max-width: unset;
     white-space: unset;
     cursor: pointer;
-    margin: $expansion-button-margin;
-    padding: $expansion-button-padding;
+    margin: 12px 0;
+    padding: 0;
     display: flex;
-    align-items: baseline;
+    align-items: center;
     width: 100%;
     text-align: left;
     position: relative;
 
     .expansion-heading-icon {
       color: $expansion-header-icon-colour;
-      margin-left: $expansion-button-icon-margin-left;
+      margin-left: 30px;
+      font-size: $expansion-header-icon-size;
     }
     &:focus {
       outline: none;
     }
     h3 {
       flex-grow: 1;
-      margin-bottom: $expansion-button-heading-margin-bottom;
+      margin-bottom: 0;
       font-size: $expansion-title-text-size;
       font-weight: $expansion-title-text-weight;
 

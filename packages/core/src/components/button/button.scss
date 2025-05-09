@@ -17,7 +17,7 @@
     background-color: $button-focus-colour;
     border: none;
     border-bottom: 4px solid $button-focus-text-colour;
-    padding: $button-focus-padding;
+    padding: 12px 18px 8px;
 
     ::slotted(*) {
       color: $button-focus-text-colour !important;
@@ -35,14 +35,14 @@
     display: inline-block;
     font-size: $button-font-size;
     color: $button-icon-colour;
-    padding: $button-defaults-idiomatic-padding;
+    padding: 10px 16px;
   }
 }
 
 @mixin button {
   @include button-defaults;
   height: 44px;
-  padding: $button-defaults-padding;
+  padding: 10px 16px;
   white-space: nowrap;
   min-width: 50px;
 
@@ -51,14 +51,14 @@
     max-width: 200px;
     width: 100%;
     height: 44px;
-    padding: $button-not-desktop-padding;
+    padding: 10px 16px;
   }
 
   i {
     display: inline-block;
     font-size: $button-idiomatic-font-size;
     color: $button-icon-colour;
-    padding-left: $button-idiomatic-padding-left;
+    padding-left: 15px;
   }
 }
 
@@ -74,15 +74,15 @@ button.primary {
     border: 2px solid $button-hover-colour-standard;
     color: $button-hover-text-colour-standard;
     border-color: $button-hover-border-colour-standard;
-    padding: $button-primary-hover-padding;
+    padding: 10px 16px;
   }
 
   &:hover:focus {
-    padding: $button-primary-hover-focus-padding;
+    padding: 12px 18px 8px;
   }
 
   &:hover:focus:active {
-    padding: $button-primary-hover-focus-active-padding;
+    padding: 10px 16px;
   }
 
   &:enabled:active {
@@ -116,7 +116,7 @@ button.secondary {
     background-color: $button-hover-colour-secondary;
     color: $button-hover-text-colour-secondary;
     border: 2px solid $button-hover-border-colour-secondary;
-    padding: $button-secondary-hover-padding;
+    padding: 10px 16px;
   }
 
   &:enabled:active {
@@ -154,7 +154,7 @@ button.warning {
     background-color: $button-hover-colour-warning;
     color: $button-text-colour-warning;
     border: 2px solid $button-hover-border-colour-warning;
-    padding: $button-warning-hover-padding;
+    padding: 10px 16px;
   }
 
   &:enabled:active {
@@ -214,7 +214,7 @@ button.text {
       0 -2px $button-focus-colour,
       0 4px $button-focus-text-colour;
     text-decoration: none;
-    padding: $button-text-focus-padding;
+    padding: 0;
     ::slotted(*) {
       color: $button-focus-text-colour !important;
     }
@@ -234,16 +234,16 @@ button.icon {
   background-color: $button-colour-icon;
   color: $button-text-colour-icon;
   border: 2px solid $button-border-colour-icon;
-  padding: $button-icon-padding;
+  padding: 9px;
 
   &:focus {
-    padding: $button-icon-focus-padding;
+    padding: 11px 11px 8px;
   }
 
   &:hover {
     background-color: $button-hover-colour-icon;
     border: 2px solid $button-hover-border-colour-icon;
-    padding: $button-icon-hover-padding;
+    padding: 9px;
   }
 
   admiralty-icon {
@@ -277,9 +277,9 @@ button.icon {
   }
 
   i {
-    margin: $button-icon-idiomatic-margin;
+    margin: auto;
     font-size: unset;
     color: unset;
-    padding-left: $button-icon-idiomatic-padding;
+    padding-left: unset;
   }
 }

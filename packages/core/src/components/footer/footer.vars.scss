@@ -8,23 +8,6 @@
  * @prop --admiralty-footer-compact-text-colour: Text colour for the compact footer
  * @prop --admiralty-footer-compact-font-size: Font size for the compact footer
  * @prop --admiralty-footer-compact-font-weight: Font weight for the compact footer
-
- * @prop --admiralty-footer-padding: Padding for the footer
- * @prop --admiralty-footer-desktop-padding: Padding for the footer when in desktop view
- * @prop --admiralty-footer-compact-padding: Padding for the footer compact view
- * @prop --admiralty-footer-compact-links-not-desktop-padding-top: Padding top for the footer compact links when not in desktop view
- * @prop --admiralty-footer-compact-links-margin-left: Margin left for the compact links.
- * @prop --admiralty-footer-branding-image-margin-bottom: Margin bottom for the branding image.
- * @prop --admiralty-footer-branding-image-desktop-margin-bottom: Margin bottom for the branding image when in desktop view
- * @prop --admiralty-footer-content-text-margin-left: Margin left for footer text.
- * @prop --admiralty-footer-content-text-margin-top: Margin top for footer text.
- * @prop --admiralty-footer-content-text-paragraph-margin: Margin for footer text paragraph.
- * @prop --admiralty-footer-content-links-desktop-margin-left: Margin left for content links when in desktop view
- * @prop --admiralty-footer-content-links-margin-left: Margin left for content links
- * @prop --admiralty-footer-content-text-desktop-margin-left: Margin left for footer text when in desktop view.
- * @prop --admiralty-footer-compact-content-text-phone-margin-right: Margin right for compact footer text when in phone view
- * @prop --admiralty-footer-compact-content-text-margin-left: Margin left for compact footer text
- * @prop --admiralty-footer-compact-content-text-margin-top: Margin top for compact footer text
 **/
 
 $footer-text-weight: var(--admiralty-footer-text-weight, var(--admiralty-font-weight-normal));
@@ -38,20 +21,3 @@ $footer-compact-font-weight: var(--admiralty-footer-compact-font-weight, var(--a
 $footer-border-colour: var(--admiralty-colour-primary);
 $footer-background-colour: var(--admiralty-background-colour-tint);
 $footer-text-colour: var(--admiralty-text-colour);
-
-$footer-padding: var(--admiralty-footer-padding, 1.25rem 1rem 1.5rem 1rem);
-$footer-desktop-padding: var(--admiralty-footer-desktop-padding, 1.75rem 1.5rem 1.875rem 1rem);
-$footer-compact-padding: var(--admiralty-footer-compact-padding, 0.5rem 0.5rem);
-$footer-compact-links-not-desktop-padding-top: var(--admiralty-footer-compact-links-not-desktop-padding-top, .2rem);
-$footer-compact-links-margin-left: var(--admiralty-footer-compact-links-margin-left, 1.25rem);
-$footer-branding-image-margin-bottom: var(--admiralty-footer-branding-image-margin-bottom, 1rem);
-$footer-branding-image-desktop-margin-bottom: var(--admiralty-footer-branding-image-desktop-margin-bottom, var(--admiralty-spacing-0));
-$footer-content-text-margin-left: var(--admiralty-footer-content-text-margin-left, 0.125rem);
-$footer-content-text-margin-top: var(--admiralty-footer-content-text-margin-top, 1rem);
-$footer-content-text-paragraph-margin: var(--admiralty-footer-content-text-paragraph-margin, var(--admiralty-spacing-0));
-$footer-content-links-desktop-margin-left: var(--admiralty-footer-content-links-desktop-margin-left, var(--admiralty-spacing-0));
-$footer-content-links-margin-left: var(--admiralty-footer-content-links-margin-left, 0.125rem);
-$footer-content-text-desktop-margin-left: var(--admiralty-footer-content-text-desktop-margin-left, var(--admiralty-spacing-0));
-$footer-compact-content-text-phone-margin-right: var(--admiralty-footer-compact-content-text-phone-margin-right, var(--admiralty-spacing-0));
-$footer-compact-content-text-margin-left: var(--admiralty-footer-compact-content-text-margin-left, var(--admiralty-spacing-0));
-$footer-compact-content-text-margin-top: var(--admiralty-footer-compact-content-text-margin-top, var(--admiralty-spacing-0));

@@ -10,18 +10,18 @@
     font-weight: $filter-title-text-weight;
     font-size: $filter-title-text-size;
     line-height: $filter-title-line-height;
-    margin-bottom: $filter-title-margin;
+    margin-bottom: 18px;
   }
 
   .button-wrapper {
     position: relative;
-    margin-left: $filter-button-wrapper-margin;
+    margin-left: 28px;
     /* TODO: If reused, move class to button component */
     button.text-link {
       background-color: unset;
       border: none;
       color: $filter-title-text-colour;
-      padding: $filter-button-text-padding;
+      padding: 0;
       min-width: unset;
       width: unset;
       height: unset;

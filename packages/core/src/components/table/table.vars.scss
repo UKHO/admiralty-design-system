@@ -3,11 +3,7 @@
 /**
  * @prop --admiralty-table-heading-font-size: Font size for the table heading
  * @prop --admiralty-table-heading-font-weight: Font weight for the table heading
-
- * @prop --admiralty-table-caption-margin-bottom: Margin bottom for the table caption
 **/
-
-$table-caption-margin-bottom: var(--admiralty-table-caption-margin-bottom, 30px);
 
 $table-caption-text-size: var(--admiralty-table-heading-font-size, var(--admiralty-font-size-3));
 $table-caption-text-weight: var(--admiralty-table-heading-font-weight, var(--admiralty-font-weight-medium));

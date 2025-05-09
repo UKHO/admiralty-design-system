@@ -27,17 +27,6 @@
 |      | 'admiralty-sub-header-menu-item' a number of components can be placed here to add sub items |
 
 
-## CSS Custom Properties
-
-| Name                                                    | Description                                                      |
-| ------------------------------------------------------- | ---------------------------------------------------------------- |
-| `--admiralty-header-menu-item-desktop-margin-bottom`    | Margin bottom for the menu item for the header                   |
-| `--admiralty-header-menu-item-desktop-padding`          | Padding for the menu item for the header                         |
-| `--admiralty-header-menu-item-title-not-desktop-margin` | Margin for the menu item for the header when not in desktop view |
-| `--admiralty-header-menu-title-font-size`               | Font size of the header menu title                               |
-| `--admiralty-header-menu-title-font-weight`             | Font weight of the header menu title                             |
-
-
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*
