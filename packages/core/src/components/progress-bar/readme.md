@@ -14,13 +14,6 @@
 | `progression` | `progression` | * A value from 0 - 100 that visually represents the current progression | `number`  | `0`         |
 
 
-## CSS Custom Properties
-
-| Name                                 | Description                    |
-| ------------------------------------ | ------------------------------ |
-| `--admiralty-progress-bar-font-size` | Font size for the progress bar |
-
-
 ## Dependencies
 
 ### Depends on

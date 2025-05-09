@@ -40,6 +40,10 @@ export const Secondary: Story = { ...template, args: { variant: SideBarItemVaria
 
 export const Tertiary: Story = { ...template, args: { variant: SideBarItemVariant.Tertiary } };
 
+export const Secondary: Story = { ...template, args: { variant: SideBarItemVariant.Secondary } };
+
+export const Tertiary: Story = { ...template, args: { variant: SideBarItemVariant.Tertiary } };
+
 export const NavActive: Story = {
   ...template,
   args: {
