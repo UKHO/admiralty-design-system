@@ -34,7 +34,7 @@ const template: Story = {
     html` <div style="width: 100px;"><admiralty-side-bar-item ?active="${args.active}" variant="${args.variant}" href="${args.href}" icon="${args.icon}" item-text="${args.itemText}"></admiralty-side-bar-item></div>`,
 };
 
-export const Basic: Story = { ...template };
+export const Basic: Story = { ...template, args: { variant: SideBarItemVariant.Primary } };
 
 export const Secondary: Story = { ...template, args: { variant: SideBarItemVariant.Secondary } };
 
