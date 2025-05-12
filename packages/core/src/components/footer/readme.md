@@ -23,6 +23,18 @@
 |      | Footer links should be placed in the slot e.g. `<admiralty-link href="http://www.example.com">Privacy Policy</admiralty-link>` |
 
 
+## CSS Custom Properties
+
+| Name                                           | Description                              |
+| ---------------------------------------------- | ---------------------------------------- |
+| `--admiralty-footer-compact-background-colour` | Background colour for the compact footer |
+| `--admiralty-footer-compact-font-size`         | Font size for the compact footer         |
+| `--admiralty-footer-compact-font-weight`       | Font weight for the compact footer       |
+| `--admiralty-footer-compact-text-colour`       | Text colour for the compact footer       |
+| `--admiralty-footer-links-font-weight`         | Font weight of the footer links          |
+| `--admiralty-footer-text-weight`               | Font weight of the footer text           |
+
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

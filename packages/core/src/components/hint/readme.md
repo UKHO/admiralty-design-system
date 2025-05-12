@@ -19,6 +19,13 @@
 |      | The hint content should be placed in the slot e.g. `<admiralty-hint>Enter your full name</admiralty-hint>` |
 
 
+## CSS Custom Properties
+
+| Name                           | Description             |
+| ------------------------------ | ----------------------- |
+| `--admiralty-hint-font-weight` | Font weight of the hint |
+
+
 ## Dependencies
 
 ### Used by

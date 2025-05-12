@@ -21,6 +21,14 @@
 | `subMenuItemClick` | The event that is fired when a user clicks on the menu item. Event contains the menu item text. | `CustomEvent<string>` |
 
 
+## CSS Custom Properties
+
+| Name                                           | Description                              |
+| ---------------------------------------------- | ---------------------------------------- |
+| `--admiralty-header-sub-menu-item-font-size`   | Font size of the header sub menu item.   |
+| `--admiralty-header-sub-menu-item-font-weight` | Font weight of the header sub menu item. |
+
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*
