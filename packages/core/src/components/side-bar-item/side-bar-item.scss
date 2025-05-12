@@ -36,7 +36,7 @@ a.primary-link {
     font-size: $side-bar-item-icon-font-size;
   }
 
-  &:active {
+  &.active {
     color: $side-bar-item-active-text-colour;
     box-shadow: 4px 0 $side-bar-item-hover-text-colour inset;
   }
@@ -73,6 +73,7 @@ a.primary-link {
     cursor: pointer;
     padding: 0 .5rem;
     overflow-wrap: break-word;
+    margin-bottom: .3rem;
 
     &.active {
       color: $side-bar-item-active-text-colour;
