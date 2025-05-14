@@ -59,40 +59,45 @@ a.primary-link {
   }
 }
 
-.side-bar-item {
+.secondary-item {
   flex: 1;
   display: flex;
   flex-flow: column;
 
-  .side-bar-item-button {
+  .secondary-item-button {
     display: inline-flex;
     align-items: center;
     font-size: $side-bar-item-font-size;
     font-weight: $side-bar-item-font-weight;
     background-color: unset;
     cursor: pointer;
-    padding: 0 .5rem;
+    padding: .3rem .5rem;
     overflow-wrap: break-word;
-    margin-bottom: .3rem;
-
-    &.active {
-      color: $side-bar-item-active-text-colour;
-    }
 
     &:hover {
-      color: $side-bar-item-hover-text-colour;
-      background-color: $side-bar-item-hover-background-colour;
+      color: $tertiary-link-font-colour;
+      font-weight: $side-bar-item-font-weight;
+      background-color: $tertiary-link-background-hover-colour;
     }
 
-    &:focus {
+    &:focus-visible,
+    &.active:focus-visible {
       outline: none;
-      border: none;
-      background-color: $side-bar-item-focus-colour;
-      color: $side-bar-item-text-colour;
+      box-shadow: inset 0 -4px 0 0  $tertiary-link-focus-text-colour;
+      background-color: $tertiary-link-focus-background-colour;
+      color: $tertiary-link-focus-text-colour;
+    }
 
-      &:not(:active) {
-        background-color: transparent;
-      }
+    &.active {
+      font-weight: 500;
+      background-color: $tertiary-link-active-background-colour; // blue
+      color: $tertiary-link-active-text-colour; // white
+    }
+
+    &:active {
+      background-color: $tertiary-link-focus-background-colour; // yellow
+      color: $tertiary-link-focus-text-colour; // blue
+      box-shadow: inset 0 -4px 0 0  $tertiary-link-focus-text-colour;
     }
 
     .slot {
@@ -133,34 +138,30 @@ a.primary-link {
     font-size: $side-bar-item-font-size;
     padding: .5rem 1.5rem;
 
-    &.active {
-      background-color: $tertiary-link-active-background-colour;
-      color: $tertiary-link-active-text-colour;
-    }
-
     &:hover {
       color: $tertiary-link-font-colour;
       font-weight: $side-bar-item-font-weight;
       background-color: $tertiary-link-background-hover-colour;
     }
 
-    &:focus {
+    &:focus-visible,
+    &.active:focus-visible {
       outline: none;
-      font-weight: $side-bar-item-font-weight;
-      background-color: $tertiary-link-focus-background-colour;
       box-shadow: inset 0 -4px 0 0  $tertiary-link-focus-text-colour;
+      background-color: $tertiary-link-focus-background-colour;
       color: $tertiary-link-focus-text-colour;
-
-      //&:not(:active) {
-      //  background-color: $side-bar-item-active-text-colour;
-      //}
     }
 
-    &:focus-visible {
-      outline: none;
+    &.active {
+      font-weight: $tertiary-link-active-font-weight;
+      background-color: $tertiary-link-active-background-colour; // blue
+      color: $tertiary-link-active-text-colour; // white
+    }
+
+    &:active {
+      background-color: $tertiary-link-focus-background-colour; // yellow
+      color: $tertiary-link-focus-text-colour; // blue
       box-shadow: inset 0 -4px 0 0  $tertiary-link-focus-text-colour;
-      background-color: $tertiary-link-focus-background-colour;
-      color: $tertiary-link-focus-text-colour;
     }
   }
 }

@@ -33,6 +33,14 @@
 | `"The text to display under the icon for secondary variant"` |             |
 
 
+## CSS Custom Properties
+
+| Name                                           | Description                          |
+| ---------------------------------------------- | ------------------------------------ |
+| `--admiralty-tertiary-link-active-font-weight` | Font weight for tertiary link active |
+| `--admiralty-tertiary-link-font-weight`        | Font weight for tertiary link        |
+
+
 ## Dependencies
 
 ### Depends on

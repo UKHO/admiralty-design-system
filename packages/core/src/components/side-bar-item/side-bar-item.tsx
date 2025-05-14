@@ -63,6 +63,15 @@ export class SideBarItemComponent {
 
   onToggle() {
     this.expanded = !this.expanded;
+
+    if (this.expanded) {
+      this.el.dispatchEvent(new CustomEvent('side-bar-item-active', {
+        detail: { id: this.internalId },
+        bubbles: true,
+        composed: true
+      }))
+    }
+
     this.toggled.emit(this.expanded);
   }
 
@@ -100,8 +109,8 @@ export class SideBarItemComponent {
           }
 
           {this.variant === SideBarItemVariant.Secondary &&
-            <div class="side-bar-item">
-              <button class="side-bar-item-button" onClick={() => this.onToggle()}>
+            <div class="secondary-item">
+              <button class={{ 'secondary-item-button': true, 'active': this.active }} onClick={() => this.onToggle()}>
                 {this.itemText}
                 <div class="icon">
                   <admiralty-icon size="30" name={this.getExpansionIcon()}></admiralty-icon>

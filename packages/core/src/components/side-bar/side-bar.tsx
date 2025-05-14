@@ -53,8 +53,8 @@ export class SideBarComponent {
 
   render() {
     return (
-      <nav aria-label={this.label}>
-        <ul style={{ width: this.sideBarWidth ? this.sideBarWidth !== '' ? this.sideBarWidth : '100px' : '100px' }}>
+      <nav aria-label={this.label} style={{ width: this.sideBarWidth ? this.sideBarWidth !== '' ? this.sideBarWidth : '100px' : '100px' }}>
+        <ul>
           <slot name="items"></slot>
         </ul>
         <ul>
