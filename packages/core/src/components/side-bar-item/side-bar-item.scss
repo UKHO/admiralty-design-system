@@ -90,13 +90,13 @@ a.primary-link {
 
     &.active {
       font-weight: 500;
-      background-color: $tertiary-link-active-background-colour; // blue
-      color: $tertiary-link-active-text-colour; // white
+      background-color: $tertiary-link-active-background-colour;
+      color: $tertiary-link-active-text-colour;
     }
 
     &:active {
-      background-color: $tertiary-link-focus-background-colour; // yellow
-      color: $tertiary-link-focus-text-colour; // blue
+      background-color: $tertiary-link-focus-background-colour;
+      color: $tertiary-link-focus-text-colour;
       box-shadow: inset 0 -4px 0 0  $tertiary-link-focus-text-colour;
     }
 
@@ -154,13 +154,13 @@ a.primary-link {
 
     &.active {
       font-weight: $tertiary-link-active-font-weight;
-      background-color: $tertiary-link-active-background-colour; // blue
-      color: $tertiary-link-active-text-colour; // white
+      background-color: $tertiary-link-active-background-colour;
+      color: $tertiary-link-active-text-colour;
     }
 
     &:active {
-      background-color: $tertiary-link-focus-background-colour; // yellow
-      color: $tertiary-link-focus-text-colour; // blue
+      background-color: $tertiary-link-focus-background-colour;
+      color: $tertiary-link-focus-text-colour;
       box-shadow: inset 0 -4px 0 0  $tertiary-link-focus-text-colour;
     }
   }

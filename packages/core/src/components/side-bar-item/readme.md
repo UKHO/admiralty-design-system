@@ -37,6 +37,9 @@
 
 | Name                                           | Description                          |
 | ---------------------------------------------- | ------------------------------------ |
+| `--admiralty-side-bar-item-font-size`          | Font size for the side bar item      |
+| `--admiralty-side-bar-item-font-weight`        | Font weight for the side bar item    |
+| `--admiralty-side-bar-item-icon-font-size`     | Font size for the side bar item icon |
 | `--admiralty-tertiary-link-active-font-weight` | Font weight for tertiary link active |
 | `--admiralty-tertiary-link-font-weight`        | Font weight for tertiary link        |
 
