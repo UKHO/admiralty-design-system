@@ -110,6 +110,19 @@ $button-hover-colour-icon: var(--admiralty-colour-primary-shade) !default;
 $button-hover-border-colour-icon: var(--admiralty-colour-primary-contrast) !default;
 $button-hover-border-colour-standard: var(--admiralty-colour-primary-shade) !default;
 $button-active-colour-icon: var(--admiralty-colour-primary-contrast) !default;
-$button-active-border-colour-icon: var(--admiralty-colour-primary-contrast) !default;
+$button-active-border-colour-icon: var(--admiralty-colour-primary) !default;
 $button-active-text-colour-icon: var(--admiralty-colour-primary) !default;
 $button-disabled-colour-icon: var(--admiralty-disabled-colour) !default;
+
+// Icon Secondary
+$button-colour-icon-secondary: var(--admiralty-colour-primary-contrast) !default;
+$button-text-colour-icon-secondary: var(--admiralty-colour-primary) !default;
+$button-border-colour-icon-secondary: var(--admiralty-colour-primary) !default;
+$button-hover-colour-icon-secondary: var(--admiralty-hover-background-colour) !default;
+$button-hover-border-colour-icon-secondary: var(--admiralty-colour-primary) !default;
+$button-hover-border-colour-standard-secondary: var(--admiralty-colour-primary-shade) !default;
+$button-active-colour-icon-secondary: var(--admiralty-colour-primary) !default;
+$button-active-border-colour-icon-secondary: var(--admiralty-colour-primary) !default;
+$button-active-text-colour-icon-secondary: var(--admiralty-colour-primary-contrast) !default;
+$button-disabled-colour-icon: var(--admiralty-disabled-colour) !default;
+
