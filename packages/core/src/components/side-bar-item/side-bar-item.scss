@@ -68,6 +68,7 @@ a.primary-link {
     display: inline-flex;
     align-items: center;
     font-size: $side-bar-item-font-size;
+    white-space: nowrap;
     font-weight: $side-bar-item-font-weight;
     background-color: unset;
     cursor: pointer;
