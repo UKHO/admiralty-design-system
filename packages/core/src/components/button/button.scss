@@ -268,6 +268,11 @@ button.icon {
     opacity: 0.3;
   }
 
+  &.borderless {
+    border: none;
+    background-color: yellow;
+  }
+
   &:active:disabled {
     background-color: $button-colour-deselected;
     border: 2px solid $button-disabled-colour-icon;
@@ -322,6 +327,10 @@ button.icon-secondary {
     background-color: $button-disabled-colour-icon;
     border: 2px solid $button-active-border-colour-icon;
     opacity: 0.3;
+  }
+
+  &.borderless {
+    border: none;
   }
 
   &:active:disabled {
