@@ -40,6 +40,8 @@ jobs:
           node-version: 20.x
           cache: 'yarn'
           cache-dependency-path: 'yarn.lock'
+      - name: Configure npm auth
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
       - name: Verify NPM Token
         run: npm whoami
         env:
