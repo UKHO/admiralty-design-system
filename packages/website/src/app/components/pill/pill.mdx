@@ -1,80 +1,33 @@
 # Pill
-Pills are small, rounded UI elements used to display concise information such as labels, categories, statuses, or filters. They help users quickly scan and interact with key details without overwhelming the interface.
-
-This page provides guidance on when and how to use pills effectively, including accessibility best practices, implementation details, and design considerations in line with WCAG and UK Government Digital Service (GDS) standards. [View this component on GitHub](https://github.com/UKHO/admiralty-design-system/tree/main/packages/core/src/components/pill)
+Use a pill to display filters, sort functionality or notifications. [View this component on GitHub](https://github.com/UKHO/admiralty-design-system/tree/main/packages/core/src/components/pill)
 
 ## Contents
 
 ## Basic
-Pills are often used in navigation, tagging systems, and filtering interfaces. They can be static (display-only) or interactive, allowing users to select, remove, or modify them.
+Use the pill component to display filters, sort functionality or notifications.
 
 import Basic from "@/usage/pill/basic/index.mdx"
 
 <Basic />
 
 ## Colour
-<div style={{ paddingBottom: "30px" }}>
-  - Sufficient contrast between text and background to meet WCAG 2.1 AA standards.
-  - Colour is not the only way information is conveyed — use text, icons, or patterns where necessary.
-  - Consistency across the design system to avoid confusion and improve user experience. Consider using predefined colour options to maintain uniformity and accessibility across services.
-</div>
+Use the pill with various colours
 
 import Colours from "@/usage/pill/colours/index.mdx"
 
 <Colours />
 
 ## Number
-<div style={{ paddingBottom: "30px" }}>
-  Number pills are used to display numerical values, such as unread messages, notification counts, or selected filters. They provide a quick visual reference for users without taking up too much space.
-
-  Best Practices when using number pills:
-
-  - Update dynamically, if the number represents real-time data (e.g., unread notifications), ensure it updates automatically.
-  - Consider accessibility,  screen readers should announce the meaning of the number, not just the figure itself (e.g., "3 new messages" instead of "3").
-</div>
+Use the pill with notification like tags
 
 import Numbers from "@/usage/pill/number/index.mdx"
 
 <Numbers />
 
 ## Selected
-<div style={{ paddingBottom: "30px" }}>
-  Selected pills indicate an active choice, often used in filters, multi-select options, or tagging systems. A tick icon helps reinforce selection visually.
-
-  Best Practice for selected pills:
-
-  - <b>Use clear visual cues</b>, combine the tick icon with a colour change to make selection obvious.
-  - <b>Allow deselection</b>, users should be able to remove a selected pill easily,  by clicking it again.
-  - <b>Maintain accessibility</b>, screen readers should announce that the pill is selected, using attributes like aria-selected="true" or aria-checked="true".
-</div>
+Use the pill and highlight that its been selected
 
 import Selected from "@/usage/pill/selected/index.mdx"
 
 <Selected />
-
-## Accessibility
-Provide detailed instructions to ensure the "Pill" component is accessible to all users:
-
-<b>Screen Reader Compatibility </b>: Ensure that screen readers can accurately interpret and convey the content and purpose of each pill. This may involve using appropriate ARIA roles and labels.
-
-<b>Keyboard Navigation</b>: Confirm that users can navigate and interact with pill elements using keyboard controls alone, facilitating accessibility for those with motor impairments.
-
-<b>Colour Contrast</b>: Adhere to WCAG guidelines by maintaining sufficient contrast between pill text and background colours to assist users with visual impairments.
-
-## Content Design
-
-<b>Clarity</b>: Keep pill text concise and descriptive to ensure users quickly understand its purpose.
-
-<b>Consistent Terminology</b>: Use uniform language across all pills to prevent confusion and enhance user experience.
-
-<b>Avoid Overuse</b>: Utilise pills carefully to prevent overwhelming users with excessive information.
-
-## Implementation (technical specifications for developers)
-<b>Props</b>: List configurable properties, such as text content, colour variants, and selectable states.
-
-<b>Events</b>: Detail events emitted by the component, like selection or removal actions.
-
-<b>CSS Custom Properties</b>: Offer information on customizable CSS variables for styling purposes.
-
-
 

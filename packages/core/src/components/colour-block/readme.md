@@ -34,7 +34,6 @@
 | `--admiralty-colour-block-action-font-size`             | Font size of the colour block action                          |
 | `--admiralty-colour-block-action-font-weight`           | Font weight of the colour block action                        |
 | `--admiralty-colour-block-action-not-desktop-font-size` | Font size of the colour block action when not in desktop view |
-| `--admiralty-colour-block-padding`                      | Padding for the colour block                                  |
 
 
 ## Dependencies

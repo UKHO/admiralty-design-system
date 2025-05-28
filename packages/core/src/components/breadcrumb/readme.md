@@ -20,9 +20,7 @@
 | `--admiralty-breadcrumb-font-size`          | Font size for the breadcrumb          |
 | `--admiralty-breadcrumb-font-weight`        | Font weight for the breadcrumb        |
 | `--admiralty-breadcrumb-font-weight-active` | Font weight for the breadcrumb active |
-| `--admiralty-breadcrumb-href-margin`        | Margin for the hyperlink              |
 | `--admiralty-breadcrumb-icon-font-size`     | Font size for the breadcrumb icon     |
-| `--admiralty-breadcrumb-icon-margin`        | Margin for the breadcrumb icon        |
 
 
 ## Dependencies

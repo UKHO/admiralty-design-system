@@ -4,14 +4,14 @@
   display: inline-block;
   box-sizing: border-box;
   height: 36px;
-  padding: $pill-padding;
+  padding: 8px 15px;
   border-radius: 20px;
   line-height: 19px;
   font-size: $pill-item-font-size;;
 }
 
 .pill > .pill-item + .pill-item {
-  margin: $pill-item-margin;
+  margin: 0px 0px 0px 10px;
 }
 
 .pill > .pill-item.pill-item-text {
@@ -22,7 +22,7 @@
 
 .pill > .pill-item.pill-item-number {
   font-size: $pill-item-number-font-size;
-  padding: $pill-item-number-padding;
+  padding: 2px 6px;
   border-radius: 16px;
 }
 

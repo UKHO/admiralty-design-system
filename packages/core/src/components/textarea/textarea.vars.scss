@@ -2,11 +2,7 @@
 
 /**
  * @prop --admiralty-text-area-font-weight: Font weight for the text area
-
- * @prop --admiralty-text-area-padding: Padding for text area
 **/
-
-$textarea-padding: var(--admiralty-text-area-padding, var(--admiralty-spacing-3) 18px);
 
 $textarea-font-weight: var(--admiralty-text-area-font-weight, var(--admiralty-font-weight-normal));
 
