@@ -1,2 +1,9 @@
+/**
+ * @prop --admiralty-breadcrumbs-padding: Breadcrumbs padding split vertically and horizontally
+**/
+
 $breadcrumbs-background-colour: var(--admiralty-background-colour) !default;
 $breadcrumbs-divider-colour: var(--admiralty-colour-light) !default;
+
+$breadcrumbs-padding: var(--admiralty-breadcrumbs-padding, var(--admiralty-spacing-0) var(--admiralty-spacing-5));
+

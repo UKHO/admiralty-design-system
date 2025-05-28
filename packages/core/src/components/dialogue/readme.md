@@ -16,11 +16,17 @@
 
 ## CSS Custom Properties
 
-| Name                                        | Description                          |
-| ------------------------------------------- | ------------------------------------ |
-| `--admiralty-dialogue-title-font-size`      | Font size of the dialogue title      |
-| `--admiralty-dialogue-title-font-weight`    | Font weight of the dialogue title    |
-| `--admiralty-dialogue-title-icon-font-size` | Font size of the dialogue title icon |
+| Name                                            | Description                                        |
+| ----------------------------------------------- | -------------------------------------------------- |
+| `--admiralty-dialogue-not-desktop-padding`      | Padding for the dialogue when not in desktop view. |
+| `--admiralty-dialogue-padding`                  | Padding for the dialogue.                          |
+| `--admiralty-dialogue-title-font-size`          | Font size of the dialogue title                    |
+| `--admiralty-dialogue-title-font-weight`        | Font weight of the dialogue title                  |
+| `--admiralty-dialogue-title-heading-margin`     | Margin bottom for the dialogue title heading.      |
+| `--admiralty-dialogue-title-icon-font-size`     | Font size of the dialogue title icon               |
+| `--admiralty-dialogue-title-icon-margin-bottom` | Margin bottom for the dialogue icon.               |
+| `--admiralty-dialogue-title-icon-margin-right`  | Margin right for the dialogue icon.                |
+| `--admiralty-dialogue-title-margin-bottom`      | Margin bottom for the dialogue title.              |
 
 
 ## Dependencies

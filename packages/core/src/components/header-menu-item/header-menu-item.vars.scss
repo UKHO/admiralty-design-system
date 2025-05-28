@@ -3,7 +3,15 @@
 /**
  * @prop --admiralty-header-menu-title-font-size: Font size of the header menu title
  * @prop --admiralty-header-menu-title-font-weight: Font weight of the header menu title
+
+ * @prop --admiralty-header-menu-item-desktop-padding: Padding for the menu item for the header
+ * @prop --admiralty-header-menu-item-desktop-margin-bottom: Margin bottom for the menu item for the header
+ * @prop --admiralty-header-menu-item-title-not-desktop-margin: Margin for the menu item for the header when not in desktop view
 **/
+
+$header-menu-item-desktop-padding: var(--admiralty-header-menu-item-desktop-padding, var(--admiralty-spacing-0) 1.65em);
+$header-menu-item-desktop-margin-bottom: var(--admiralty-header-menu-item-desktop-margin-bottom, var(--admiralty-spacing-0));
+$header-menu-item-title-not-desktop-margin: var(--admiralty-header-menu-item-title-not-desktop-margin, var(--admiralty-spacing-3));
 
 $header-menu-item-title-text-size: var(--admiralty-header-menu-title-font-size, var(--admiralty-font-size-0));
 $header-menu-item-title-text-weight: var(--admiralty-header-menu-title-font-weight, var(--admiralty-font-weight-medium));

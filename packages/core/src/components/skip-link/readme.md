@@ -14,10 +14,12 @@
 
 ## CSS Custom Properties
 
-| Name                                | Description                   |
-| ----------------------------------- | ----------------------------- |
-| `--admiralty-skip-link-font-size`   | Font size for the skip link   |
-| `--admiralty-skip-link-font-weight` | Font weight for the skip link |
+| Name                                 | Description                    |
+| ------------------------------------ | ------------------------------ |
+| `--admiralty-skip-link-focus-margin` | Margin for the skip link focus |
+| `--admiralty-skip-link-font-size`    | Font size for the skip link    |
+| `--admiralty-skip-link-font-weight`  | Font weight for the skip link  |
+| `--admiralty-skip-link-padding`      | Padding for the skip link      |
 
 
 ----------------------------------------------

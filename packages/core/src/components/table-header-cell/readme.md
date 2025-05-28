@@ -22,6 +22,7 @@ The table header cell element is used for showing headings for the columns
 | ------------------------------------------- | ------------------------------------- |
 | `--admiralty-table-header-cell-font-size`   | Font size for the table header cell   |
 | `--admiralty-table-header-cell-font-weight` | Font weight for the table header cell |
+| `--admiralty-table-header-cell-padding`     | Padding for the table header cell     |
 
 
 ----------------------------------------------
