@@ -30,11 +30,6 @@ a {
   font-size: $side-bar-item-font-size;
   padding: .5rem 0;
 
-  &:active {
-    color: $side-bar-item-active-text-colour;
-    box-shadow: 4px 0 $side-bar-item-hover-text-colour inset;
-  }
-
   &:hover {
     color: $side-bar-item-hover-text-colour;
     background-color: $side-bar-item-hover-background-colour;
@@ -43,13 +38,23 @@ a {
   &:focus {
     outline: none;
     border: none;
-    box-shadow: 4px 0 var(--admiralty-text-colour) inset;
+    box-shadow: 4px 0 $side-bar-item-hover-text-colour inset;
     background-color: $side-bar-item-focus-colour;
     color: $side-bar-item-text-colour;
 
     &:not(:active) {
       background-color: transparent;
     }
+  }
+
+  &.active {
+    color: $side-bar-item-active-text-colour;
+    box-shadow: 4px 0 $side-bar-item-hover-text-colour inset;
+  }
+
+  &:active {
+    color: $side-bar-item-active-text-colour;
+    box-shadow: 4px 0 $side-bar-item-hover-text-colour inset;
   }
 }
 

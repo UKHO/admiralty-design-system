@@ -1,4 +1,4 @@
-import { Component, Event, EventEmitter, Prop, h } from '@stencil/core';
+import { Component, Event, EventEmitter, Prop, h, Element, Watch } from '@stencil/core';
 
 /**
  * @slot The text to display udner the icon
@@ -9,6 +9,8 @@ import { Component, Event, EventEmitter, Prop, h } from '@stencil/core';
   scoped: true,
 })
 export class SideBarItemComponent {
+  private internalId = ++nextId;
+  @Element() el: HTMLElement;
   /**
    * The name of the icon to display. A full list of available icons can be viewed at [https://fonts.google.com/icons](https://fonts.google.com/icons)
    */
@@ -36,6 +38,38 @@ export class SideBarItemComponent {
    */
   @Event() sideBarItemClick: EventEmitter<string>;
 
+  @Watch('active')
+  handleActiveChange(newValue: boolean) {
+    const anchor = this.el.querySelector('a');
+    if (anchor) {
+      anchor.classList.toggle('active', newValue)
+    }
+  }
+
+  componentDidLoad() {
+    this.handleActiveChange(this.active)
+  }
+
+  handleMouseDown(id: string) {
+    this.active = true;
+    const allItems = document.querySelectorAll('admiralty-side-bar-item');
+    allItems.forEach(item => {
+      const anchor = (item.shadowRoot ?? item).querySelector('a');
+      if (anchor && anchor.id !== id) {
+        anchor.classList.remove('active');
+      } else {
+        anchor.classList.add('active')
+      }
+    })
+
+    document.addEventListener('mouseup', this.handleGlobalMouseUp);
+  }
+
+  handleGlobalMouseUp() {
+    this.active = false;
+    document.addEventListener('mouseup', this.handleGlobalMouseUp);
+  }
+
   handleClick(ev: MouseEvent): CustomEvent<string> {
     if (this.suppressRedirect) {
       ev.preventDefault();
@@ -49,6 +83,8 @@ export class SideBarItemComponent {
     return (
       <li>
         <a href={this.href}
+           id={'side-bar-item-' + this.internalId}
+           onMouseDown={() => this.handleMouseDown('side-bar-item-' + this.internalId)}
            onClick={ev => this.handleClick(ev)}>
           <div class="icon">
             <admiralty-icon name={this.icon}></admiralty-icon>
@@ -59,3 +95,4 @@ export class SideBarItemComponent {
     );
   }
 }
+let nextId = 0;
