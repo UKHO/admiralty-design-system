@@ -8,7 +8,7 @@
   min-height: 120px;
   align-content: stretch;
   justify-content: stretch;
-  margin-bottom: $file-input-margin;
+  margin-bottom: 6px;
   font-size: $file-input-font-size; // TODO: Need to confirm if this does anything.
   font-weight: $file-input-font-weight; // TODO: Need to confirm if this does anything.
   line-height: $file-input-line-height;
@@ -30,7 +30,7 @@
     color: $file-input-icon-colour;
     font-size: $file-input-icon-size;
     font-weight: $file-input-icon-weight;
-    margin: $file-input-icon-margin;
+    margin: 0.4rem auto;
     text-align: center;
     flex: 0 1;
   }
@@ -52,7 +52,7 @@ label {
     font-size: $file-input-label-font-size;
     font-weight: $file-input-label-font-weight;
     text-align: center;
-    margin: $file-input-label-margin;
+    margin: 0.4rem 0;
   }
 }
 

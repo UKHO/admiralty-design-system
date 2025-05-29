@@ -5,7 +5,7 @@
   flex-direction: row;
 
   ::slotted(*) {
-    margin-right: $radio-group-slotted-margin-right !important;
+    margin-right: 2em !important;
   }
 }
 
@@ -13,15 +13,15 @@
   flex-direction: column;
 
   ::slotted(*) {
-    margin-bottom: $radio-group-stack-slotted-margin-bottom !important;
+    margin-bottom: 10px !important;
   }
 }
 
 fieldset {
-  padding: $radio-group-fieldset-padding;
+  padding: 0;
 }
 
 legend {
-  margin-bottom: $radio-group-legend-margin-bottom;
+  margin-bottom: 6px;
   font-weight: $radio-group-legend-font-weight;
 }

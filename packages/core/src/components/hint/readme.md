@@ -24,7 +24,6 @@
 | Name                           | Description             |
 | ------------------------------ | ----------------------- |
 | `--admiralty-hint-font-weight` | Font weight of the hint |
-| `--admiralty-hint-margin`      | Margin for the hint     |
 
 
 ## Dependencies

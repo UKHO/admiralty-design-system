@@ -2,18 +2,7 @@
 
 /**
  * @prop --admiralty-radio-label-font-weight: Font weight for the radio label
- * @prop --admiralty-radio-label-font-weight: Font weight for the radio label
-
- * @prop --admiralty-radio-input-margin-right: Margin right for the radio input
- * @prop --admiralty-radio-conditional-margin: Margin for the conditional slot
- * @prop --admiralty-radio-conditional-padding-left: Padding left for the conditional slot
- * @prop --admiralty-radio-conditional-margin-empty: Margin for when slot is empty
 **/
-
-$radio-input-margin-right: var(--admiralty-radio-input-margin-right, 18px);
-$radio-conditional-margin: var(--admiralty-radio-conditional-margin, 10px var(--admiralty-spacing-0) var(--admiralty-spacing-0) 13px);
-$radio-conditional-padding-left: var(--admiralty-radio-conditional-padding-left, 30px);
-$radio-conditional-margin-empty: var(--admiralty-radio-conditional-margin-empty, var(--admiralty-spacing-0));
 
 $radio-label-font-weight: var(--admiralty-radio-label-font-weight, var(--admiralty-font-weight-normal));
 

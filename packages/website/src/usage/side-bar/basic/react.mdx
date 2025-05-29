@@ -1,0 +1,24 @@
+```tsx
+<AdmiraltySideBar label="Application navigation" logoImgUrl="assets/svg/UKHO%20crest.svg">
+  <AdmiraltySideBarItem active={false} href="/contents" suppressRedirect={true} icon="list-alt-outline">
+    Contents
+  </AdmiraltySideBarItem>
+  <AdmiraltySideBarItem active={true} href="/bookmarks" suppressRedirect={true} icon="bookmark-outline">
+    Bookmarks
+  </AdmiraltySideBarItem>
+  <AdmiraltySideBarItem active={false} href="/recents" suppressRedirect={true} icon="history">
+    Recents
+  </AdmiraltySideBarItem>
+  <AdmiraltySideBarItem
+    active={false}
+    href="/update"
+    suppressRedirect={true}
+    icon="download-for-offline-outline"
+    slot="footer">
+    Update
+  </AdmiraltySideBarItem>
+  <AdmiraltySideBarItem active={false} href="/settings" suppressRedirect={true} icon="settings-outline" slot="footer">
+    Settings
+  </AdmiraltySideBarItem>
+</AdmiraltySideBar>
+```

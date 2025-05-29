@@ -1,6 +1,4 @@
 import { Meta, StoryObj } from '@storybook/web-components';
-import { ButtonVariant } from './button.types';
-import { faUserAstronaut } from '@fortawesome/free-solid-svg-icons';
 import { ButtonComponent } from './button';
 import { html } from 'lit';
 
@@ -41,10 +39,29 @@ export const Disabled: Story = { ...template, args: { variant: 'primary', disabl
 
 export const Icon: Story = {
   render: args => html`<admiralty-button variant="${args.variant}" icon="${args.icon}"></admiralty-button>`,
-  args: { variant: 'icon', icon: faUserAstronaut.iconName },
+  args: { variant: 'icon', icon: 'refresh' },
 };
 
-export const IconWithText: Story = {
-  render: args => html`<admiralty-button variant="${args.variant}" icon="${args.icon}">Button</admiralty-button>`,
-  args: { variant: 'icon', icon: faUserAstronaut.iconName },
+export const IconBorderless: Story = {
+  render: args => html`<admiralty-button variant="${args.variant}" icon="${args.icon}" borderless="${args.borderless}"></admiralty-button>`,
+  args: { variant: 'icon-secondary', icon: 'refresh', borderless: true },
+};
+
+export const IconSecondary: Story = {
+  render: args => html`<admiralty-button variant="${args.variant}" icon="${args.icon}"></admiralty-button>`,
+  args: { variant: 'icon-secondary', icon: 'refresh' },
+};
+
+export const IconDisabled: Story = {
+  render: args => html`<admiralty-button variant="${args.variant}" icon="${args.icon}" ?disabled="${args.disabled}"></admiralty-button>`,
+  args: {
+    variant: 'icon',
+    icon: 'refresh',
+    disabled: true,
+  },
+};
+
+export const TextWithIcon: Story = {
+  render: args => html`<admiralty-button variant="${args.variant}" icon="${args.icon}">Start</admiralty-button>`,
+  args: { variant: 'icon', icon: 'arrow-forward-ios-rounded' },
 };

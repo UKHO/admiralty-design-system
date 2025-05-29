@@ -27,10 +27,12 @@
   flex-direction: row;
   flex-grow: 1;
   font-size: $header-brand-text-size;
-  padding: $header-branding-padding;
+  padding: 1.3em 0 1.3em 1.3em;
 
   @include not-desktop {
-    padding: $header-branding-not-desktop-padding;
+    padding-left: 12px;
+    padding-top: 12px;
+    padding-bottom: 12px;
     flex-grow: 1;
   }
 
@@ -50,9 +52,11 @@
 
   .vertical-seperator {
     border-right: 1px solid $header-separator-colour;
-    margin: $header-vertical-separator-margin;
+    margin-left: 24px;
+    margin-right: 24px;
     @include not-desktop {
-      margin: $header-vertical-separator-not-desktop-margin;
+      margin-left: 12px;
+      margin-right: 12px;
     }
   }
 
@@ -63,8 +67,8 @@
     justify-content: center;
     font-size: $header-title-text-size;
     line-height: 2em;
-    margin-top: $header-title-margin-top;
-    margin-bottom: $header-title-margin-bottom;
+    margin-top: 4px;
+    margin-bottom: unset;
     user-select: none;
 
     @include not-desktop {
@@ -109,7 +113,7 @@
       admiralty-icon {
         font-size: $header-menu-icon-font-size;
         font-weight: $header-menu-icon-font-weight;
-        padding: $header-menu-mobile-button-icon-padding;
+        padding: 12px;
         cursor: pointer;
         min-width: 24px;
         min-height: 24px;
@@ -141,7 +145,7 @@
       min-width: 100%;
       @include tablet-only {
         min-width: 50%;
-        margin-left: $header-menu-section-tablet-only-margin-left;
+        margin-left: 50%;
       }
 
       background-color: $header-background-colour;

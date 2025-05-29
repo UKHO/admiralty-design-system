@@ -11,7 +11,7 @@
     align-items: center;
     justify-content: center;
     vertical-align: middle;
-    margin-right: $radio-input-margin-right;
+    margin-right: 18px;
 
     &.invalid {
       border-color: $radio-invalid-border-colour;
@@ -48,11 +48,11 @@
 }
 
 .conditional {
-  margin: $radio-conditional-margin;
-  padding-left: $radio-conditional-padding-left;
+  margin: 10px 0 0 13px;
+  padding-left: 30px;
   border-left: 4px solid lightgrey;
   &:empty {
-    margin: $radio-conditional-margin-empty;
+    margin: 0;
   }
   &.unchecked {
     display: none;

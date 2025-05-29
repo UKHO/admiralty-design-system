@@ -15,7 +15,7 @@ describe('admiralty-expansion', () => {
             <span class="visually-hidden">
               , Show this section
             </span>
-            <admiralty-icon class="expansion-heading-icon" icon-name="chevron-down"></admiralty-icon>
+            <admiralty-icon class="expansion-heading-icon" name="keyboard-arrow-down-rounded"></admiralty-icon>
           </button>
           <div aria-labelledby="admiralty-expansion-1-header" class="expansion-content" hidden="" id="admiralty-expansion-1-content"></div>
         </section>

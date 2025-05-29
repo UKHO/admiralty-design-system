@@ -7,7 +7,7 @@
 hr {
   width: 100%;
   height: 2px;
-  margin: $tab-group-horizontal-rule-margin;
+  margin: 6px 0;
   background-color: $tab-group-separator-colour;
 }
 
@@ -19,7 +19,7 @@ hr {
 
   .heading {
     cursor: pointer;
-    padding: $tab-group-heading-padding;
+    padding: 10px;
     height: 42px;
     max-width: fit-content;
     box-sizing: border-box;
@@ -31,16 +31,16 @@ hr {
     background-color: unset;
     font-weight: $tab-group-heading-text-weight;
     font-size: $tab-group-heading-text-font;
-    margin-left: $tab-group-heading-margin-left;
+    margin-left: 4px;
 
     &:first-child {
-      margin-left: $tab-group-heading-first-child-margin-left;
+      margin-left: 0;
     }
 
     @include not-desktop {
       font-size: $tab-group-heading-not-desktop-text-font;
       line-height: 18px;
-      padding: $tab-group-heading-not-desktop-padding;
+      padding: 8px;
       height: unset;
       width: unset;
     }

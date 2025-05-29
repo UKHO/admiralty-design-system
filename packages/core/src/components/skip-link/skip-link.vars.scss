@@ -3,13 +3,7 @@
 /**
  * @prop --admiralty-skip-link-font-size: Font size for the skip link
  * @prop --admiralty-skip-link-font-weight: Font weight for the skip link
-
- * @prop --admiralty-skip-link-padding: Padding for the skip link
- * @prop --admiralty-skip-link-focus-margin: Margin for the skip link focus
 **/
-
-$skip-link-padding: var(--admiralty-skip-link-padding, 10px 15px);
-$skip-link-focus-margin: var(--admiralty-skip-link-focus-margin, var(--admiralty-spacing-inherit));
 
 $skip-link-font-size: var(--admiralty-skip-link-font-size, var(--admiralty-font-size-0));
 $skip-link-font-weight: var(--admiralty-skip-link-font-weight, var(--admiralty-font-weight-normal));

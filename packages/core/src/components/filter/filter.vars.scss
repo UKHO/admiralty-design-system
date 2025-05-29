@@ -4,20 +4,12 @@
  * @prop --admiralty-filter-title-font-size: Font size of the filter title
  * @prop --admiralty-filter-title-font-weight: Font weight of the filter title
  * @prop --admiralty-filter-reset-font-weight: Font weight of the filter reset
-
- * @prop --admiralty-filter-button-text-padding: Padding for the filter button.
- * @prop --admiralty-filter-button-wrapper-margin: Margin for the filter button wrapper.
- * @prop --admiralty-filter-title-margin: Margin for the filter title.
 **/
 
-$filter-title-text-size: var(--admiralty-filter-title-font-size, var(--admiralty-font-size-5));
-$filter-title-text-weight: var(--admiralty-filter-title-font-weight, var(--admiralty-font-weight-medium));
+$filter-title-text-size:  var(--admiralty-filter-title-font-size, var(--admiralty-font-size-5));
+$filter-title-text-weight:  var(--admiralty-filter-title-font-weight, var(--admiralty-font-weight-medium));
 $filter-title-line-height: 48px;
-$filter-reset-text-size: var(--admiralty-filter-reset-font-size, var(--admiralty-font-size-0));
+$filter-reset-text-size:  var(--admiralty-filter-reset-font-size, var(--admiralty-font-size-0));
 
 $filter-title-text-colour: var(--admiralty-colour-primary);
 $filter-focus-colour: var(--admiralty-focus-colour) !default;
-
-$filter-button-text-padding: var(--admiralty-filter-button-text-padding, var(--admiralty-font-size-0));
-$filter-button-wrapper-margin: var(--admiralty-filter-button-wrapper-margin, var(--admiralty-spacing-7));
-$filter-title-margin: var(--admiralty-filter-title-margin, 18px);

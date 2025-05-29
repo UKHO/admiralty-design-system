@@ -13,7 +13,7 @@
   pointer-events: none;
   position: absolute;
   right: 12px;
-  top: 12px;
+  top: 8px;
 }
 
 select {
@@ -24,10 +24,10 @@ select {
   color: $select-text-colour;
   font-size: $select-text-size;
   line-height: 24px;
-  margin-bottom: $select-margin-bottom;
+  margin-bottom: 6px;
   position: relative;
   font-weight: $select-text-weight;
-  padding: $select-padding;
+  padding: 12px;
   width: 100%;
 
   option {
