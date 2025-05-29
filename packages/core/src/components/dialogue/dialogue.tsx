@@ -1,6 +1,4 @@
 import { Component, Prop, h } from '@stencil/core';
-import { faCheck, faCircleInfo, faExclamation, faTriangleExclamation } from '@fortawesome/free-solid-svg-icons';
-import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 
 @Component({
   tag: 'admiralty-dialogue',
@@ -23,16 +21,16 @@ export class DialogueComponent {
    */
   @Prop() sectionRole: 'alert';
 
-  getIconNameForType(): IconDefinition {
+  getIconNameForType(): string {
     switch (this.type) {
       case 'info':
-        return faCircleInfo;
+        return 'info-rounded';
       case 'warning':
-        return faTriangleExclamation;
+        return 'warning-rounded';
       case 'success':
-        return faCheck;
+        return 'check-rounded';
       case 'error':
-        return faExclamation;
+        return 'priority-high-rounded';
     }
   }
 
@@ -49,7 +47,7 @@ export class DialogueComponent {
         {...sectionProps}
       >
         <div class="dialogue-title">
-          <admiralty-icon class="dialogue-title-icon" icon-name={this.getIconNameForType().iconName}></admiralty-icon>
+          <admiralty-icon class="dialogue-title-icon" name={this.getIconNameForType()}></admiralty-icon>
           <h2>{this.heading}</h2>
         </div>
         <slot></slot>

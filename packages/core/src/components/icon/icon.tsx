@@ -1,10 +1,9 @@
-import { Component, h, Host, Prop } from '@stencil/core';
-import { fas, IconName } from '@fortawesome/free-solid-svg-icons';
-import { icon, IconPrefix, library } from '@fortawesome/fontawesome-svg-core';
-import { far } from '@fortawesome/free-regular-svg-icons';
-import { fab } from '@fortawesome/free-brands-svg-icons';
+import { Component, h, Host, Prop } from "@stencil/core";
+import icons from '@iconify-json/material-symbols/icons.json';
+import { getIconData, iconToSVG, iconToHTML, replaceIDs } from '@iconify/utils';
+import { IconifyJSON } from '@iconify/types';
 
-library.add(fas, far, fab);
+type IconSize = number | 'unset';
 
 @Component({
   tag: 'admiralty-icon',
@@ -13,23 +12,39 @@ library.add(fas, far, fab);
 })
 export class IconComponent {
   /**
-   * Name of the icon to be rendered
+   * Name of the icon to be rendered.
    *
-   * Check out <a href="https://fontawesome.com/search?m=free}">FontAwesome</a>  for a list of icons
+   * A full list of available icons can be viewed at [https://fonts.google.com/icons](https://fonts.google.com/icons)
    */
-  @Prop() iconName: IconName;
+  @Prop() name: string;
   /**
-   * The style prefix to apply to the icon
-   *
-   * By default, icons use Font Awesome's solid style
+   * The size of the icon in pixels. When not set, the icon height will be determined by the parent font size.
    */
-  @Prop() iconPrefix: IconPrefix = 'fas';
+  @Prop() size: IconSize = 'unset';
+
+  getIcon(iconName: string, iconSize: IconSize) {
+    const iconData = getIconData(icons as IconifyJSON, iconName);
+    if (!iconData) {
+      return '';
+    }
+
+    const renderData = iconToSVG(iconData, {
+      height: iconSize,
+    });
+
+    return iconToHTML(replaceIDs(renderData.body), renderData.attributes);
+  }
+
   render() {
-    const iconObject = icon({ prefix: this.iconPrefix, iconName: this.iconName });
-    if (iconObject)
+    const icon = this.getIcon(this.name, this.size);
+    if (icon)
       return (
-        <Host>
-          <div class="icon-inner fa-fw" innerHTML={iconObject.html[0]}></div>
+        <Host
+          style={{
+            contain: this.size === 'unset' ? 'strict' : 'initial',
+          }}
+        >
+          <div innerHTML={icon}></div>
         </Host>
       );
   }
