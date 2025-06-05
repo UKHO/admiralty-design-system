@@ -5,7 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { AutoCompleteChangeEventDetail } from "./components/autocomplete/autocomplete.interface";
+import { AutoCompleteChangeEventDetail, Option } from "./components/autocomplete/autocomplete.interface";
 import { ButtonVariant } from "./components/button/button.types";
 import { IconName, IconPrefix } from "@fortawesome/fontawesome-svg-core";
 import { CheckboxChangeEventDetail } from "./components/checkbox/checkbox.interface";
@@ -16,7 +16,7 @@ import { InputChangeEventDetail } from "./components/input/input.interface";
 import { RadioGroupChangeEventDetail } from "./components/radio-group/radio-group-interface";
 import { SelectChangeEventDetail } from "./components/select/select.interface";
 import { TextAreaChangeEventDetail } from "./components/textarea/textarea.interface";
-export { AutoCompleteChangeEventDetail } from "./components/autocomplete/autocomplete.interface";
+export { AutoCompleteChangeEventDetail, Option } from "./components/autocomplete/autocomplete.interface";
 export { ButtonVariant } from "./components/button/button.types";
 export { IconName, IconPrefix } from "@fortawesome/fontawesome-svg-core";
 export { CheckboxChangeEventDetail } from "./components/checkbox/checkbox.interface";
