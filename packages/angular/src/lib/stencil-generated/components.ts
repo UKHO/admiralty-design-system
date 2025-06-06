@@ -1005,7 +1005,7 @@ export declare interface AdmiraltySideBarItem extends Components.AdmiraltySideBa
   /**
    * An event emitted when this Side Bar item is selected containing the sideBarItemId
    */
-  sideBarItemClick: EventEmitter<CustomEvent<{ id: number, href: string }>>;
+  sideBarItemClick: EventEmitter<CustomEvent<string>>;
 }
 
 

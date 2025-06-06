@@ -20,10 +20,10 @@
 
 ## Events
 
-| Event              | Description                                                                       | Type                                         |
-| ------------------ | --------------------------------------------------------------------------------- | -------------------------------------------- |
-| `sideBarItemClick` | An event emitted when this Side Bar item is selected containing the sideBarItemId | `CustomEvent<{ id: number; href: string; }>` |
-| `toggled`          | The event that is dispatched when the expanded status is toggled.                 | `CustomEvent<boolean>`                       |
+| Event              | Description                                                                       | Type                   |
+| ------------------ | --------------------------------------------------------------------------------- | ---------------------- |
+| `sideBarItemClick` | An event emitted when this Side Bar item is selected containing the sideBarItemId | `CustomEvent<string>`  |
+| `toggled`          | The event that is dispatched when the expanded status is toggled.                 | `CustomEvent<boolean>` |
 
 
 ## Slots

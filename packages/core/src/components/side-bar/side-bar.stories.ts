@@ -69,11 +69,14 @@ export const TemplateWithSecondaryItems: Story = {
     <admiralty-side-bar-wrapper>
       <admiralty-side-bar label="Application navigation" show-logo="false" side-bar-width="${args.sideBarWidth}">
         <admiralty-side-bar-item expanded="${true}" slot="items" href="/contents" suppress-redirect="${args.suppressRedirect}" icon="list-alt-outline" item-text="Components" variant="secondary">
-          <admiralty-side-bar-item active="${false}" id="migrating" href="/Test" suppress-redirect="true" item-text="Migrating" variant="tertiary"></admiralty-side-bar-item>
-          <admiralty-side-bar-item href="/Test" id="customising" suppress-redirect="true" item-text="Customising" variant="tertiary"></admiralty-side-bar-item>
-          <admiralty-side-bar-item active="${true}" id="angular" href="/Test" suppress-redirect="true" item-text="Angular" variant="tertiary"></admiralty-side-bar-item>
+          <admiralty-side-bar-item active="${false}" id="migrating" href="/Migrating" suppress-redirect="true" item-text="Migrating" variant="tertiary"></admiralty-side-bar-item>
+          <admiralty-side-bar-item active="${false}" id="customising" href="/Customising" suppress-redirect="true" item-text="Customising" variant="tertiary"></admiralty-side-bar-item>
+          <admiralty-side-bar-item active="${true}" id="angular" href="/Angular" suppress-redirect="true" item-text="Angular" variant="tertiary"></admiralty-side-bar-item>
         </admiralty-side-bar-item>
-        <admiralty-side-bar-item active="${false}" href="/bookmarks" slot="items" suppress-redirect="${args.suppressRedirect}" icon="bookmark-outline" item-text="Patterns" variant="secondary"></admiralty-side-bar-item>
+
+        <admiralty-side-bar-item active="${false}" href="/bookmarks" slot="items" suppress-redirect="${args.suppressRedirect}" icon="bookmark-outline" item-text="Patterns" variant="secondary">
+          <admiralty-side-bar-item active="${false}" id="overview" href="/overview" suppress-redirect="true" item-text="Overview" variant="tertiary"></admiralty-side-bar-item>
+        </admiralty-side-bar-item>
         <admiralty-side-bar-item active="${false}" href="/recents" slot="items" suppress-redirect="${args.suppressRedirect}" icon="history" item-text="Recents" variant="secondary"></admiralty-side-bar-item>
       </admiralty-side-bar>
     </admiralty-side-bar-wrapper>

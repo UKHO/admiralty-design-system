@@ -695,7 +695,7 @@ export namespace Components {
         /**
           * Represents whether this SideBarItem is 'active' and will be styled differently than SideBarItems that are not 'active'. There should only be one SideBarItem that is 'active' per SideBar.
          */
-        "active"?: boolean;
+        "active": boolean;
         /**
           * Whether the component is expanded.
          */
@@ -1348,7 +1348,7 @@ declare global {
     };
     interface HTMLAdmiraltySideBarItemElementEventMap {
         "toggled": boolean;
-        "sideBarItemClick": { id: number, href: string };
+        "sideBarItemClick": string;
     }
     interface HTMLAdmiraltySideBarItemElement extends Components.AdmiraltySideBarItem, HTMLStencilElement {
         addEventListener<K extends keyof HTMLAdmiraltySideBarItemElementEventMap>(type: K, listener: (this: HTMLAdmiraltySideBarItemElement, ev: AdmiraltySideBarItemCustomEvent<HTMLAdmiraltySideBarItemElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
@@ -2356,7 +2356,7 @@ declare namespace LocalJSX {
         /**
           * An event emitted when this Side Bar item is selected containing the sideBarItemId
          */
-        "onSideBarItemClick"?: (event: AdmiraltySideBarItemCustomEvent<{ id: number, href: string }>) => void;
+        "onSideBarItemClick"?: (event: AdmiraltySideBarItemCustomEvent<string>) => void;
         /**
           * The event that is dispatched when the expanded status is toggled.
          */

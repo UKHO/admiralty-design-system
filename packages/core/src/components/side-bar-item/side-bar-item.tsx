@@ -1,5 +1,5 @@
-import { Component, Event, EventEmitter, Prop, h, Host, Element } from "@stencil/core";
-import { SideBarItemVariant } from "./side-bar-item.types";
+import { Component, Event, EventEmitter, Prop, h, Element, Watch, Host } from '@stencil/core';
+import { SideBarItemVariant } from './side-bar-item.types';
 
 /**
  * @slot The text to display under the icon for secondary variant
@@ -54,12 +54,24 @@ export class SideBarItemComponent {
    * Represents whether this SideBarItem is 'active' and will be styled differently than SideBarItems
    * that are not 'active'. There should only be one SideBarItem that is 'active' per SideBar.
    */
-  @Prop({ mutable: true, reflect: true }) active?: boolean = false; // { mutable: true, reflect: true }
+  @Prop({ mutable: true, reflect: true }) active: boolean = false; // { mutable: true, reflect: true }
 
   /**
    * An event emitted when this Side Bar item is selected containing the sideBarItemId
    */
-  @Event() sideBarItemClick: EventEmitter<{ id: number, href: string }>;
+  @Event() sideBarItemClick: EventEmitter<string>;
+
+  @Watch('active')
+  handleActiveChange(newValue: boolean) {
+    const anchor = this.el.querySelector('a');
+    if (anchor) {
+      anchor.classList.toggle('active', newValue)
+    }
+  }
+
+  componentDidLoad() {
+    this.handleActiveChange(this.active)
+  }
 
   onToggle() {
     this.expanded = !this.expanded;
@@ -75,7 +87,23 @@ export class SideBarItemComponent {
     this.toggled.emit(this.expanded);
   }
 
-  handleClick(ev: MouseEvent): CustomEvent<{id: number, href: string}> {
+  handleMouseDown(id: string) {
+    this.active = true;
+    const allItems = document.querySelectorAll('admiralty-side-bar-item');
+    allItems.forEach(item => {
+      let anchor: any = (item.shadowRoot ?? item).querySelector('a');
+      if (anchor && anchor.id.toString() === id.toString()) {
+        anchor.classList.add('active')
+      } else {
+        if(anchor === null) {
+          anchor = (item.shadowRoot ?? item).querySelector('button');
+        }
+        anchor.classList.remove('active');
+      }
+    })
+  }
+
+  handleClick(ev: MouseEvent): CustomEvent<string> {
     if (this.suppressRedirect) {
       ev.preventDefault();
     }
@@ -85,9 +113,10 @@ export class SideBarItemComponent {
       detail: { id: this.internalId },
       bubbles: true,
       composed: true
-    }))
+    }));
 
-    return this.sideBarItemClick.emit({id: this.internalId, href: this.href});
+    // BUG: when changing this to object it the item loses active state for some reason when click elsewhere.
+    return this.sideBarItemClick.emit(this.href);
   }
 
   getExpansionIcon(): string {
@@ -99,7 +128,10 @@ export class SideBarItemComponent {
       <Host data-side-bar-item-id={'side-bar-item-' + this.internalId}>
         <li>
           {this.variant === SideBarItemVariant.Primary &&
-            <a class={{ 'primary-link': true, 'active': this.active }} href={this.href}
+            <a id={"side-bar-item-anchor-" + this.internalId}
+               class="primary-link"
+               href={this.href}
+               onMouseDown={() => this.handleMouseDown("side-bar-item-anchor-" + this.internalId)}
                onClick={ev => this.handleClick(ev)}>
               <div class="icon">
                 <admiralty-icon name={this.icon}></admiralty-icon>
@@ -110,7 +142,9 @@ export class SideBarItemComponent {
 
           {this.variant === SideBarItemVariant.Secondary &&
             <div class="secondary-item">
-              <button class={{ 'secondary-item-button': true, 'active': this.active }} onClick={() => this.onToggle()}>
+              <button id={"side-bar-item-button-" + this.internalId}
+                      class={{ 'secondary-item-button': true, 'active': this.active }}
+                      onClick={() => this.onToggle()}>
                 {this.itemText}
                 <div class="icon">
                   <admiralty-icon size="30" name={this.getExpansionIcon()}></admiralty-icon>
@@ -123,7 +157,10 @@ export class SideBarItemComponent {
           }
 
           {this.variant === SideBarItemVariant.Tertiary &&
-            <a class={{ 'tertiary-link': true, 'active': this.active }} href={this.href}
+            <a id={"side-bar-item-anchor-" + this.internalId}
+               class={{ "tertiary-link": true, 'active': this.active }}
+               href={this.href}
+               onMouseDown={() => this.handleMouseDown("side-bar-item-anchor-" + this.internalId)}
                onClick={ev => this.handleClick(ev)}>
               {this.itemText}
             </a>

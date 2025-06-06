@@ -478,7 +478,7 @@ export const AdmiraltySideBar: StencilReactComponent<AdmiraltySideBarElement, Ad
 
 type AdmiraltySideBarItemEvents = {
     onToggled: EventName<CustomEvent<boolean>>,
-    onSideBarItemClick: EventName<CustomEvent<{ id: number, href: string }>>
+    onSideBarItemClick: EventName<CustomEvent<string>>
 };
 
 export const AdmiraltySideBarItem: StencilReactComponent<AdmiraltySideBarItemElement, AdmiraltySideBarItemEvents> = /*@__PURE__*/ createComponent<AdmiraltySideBarItemElement, AdmiraltySideBarItemEvents>({
