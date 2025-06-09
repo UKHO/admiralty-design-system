@@ -38,6 +38,8 @@ export const DIRECTIVES = [
   d.AdmiraltyRadioGroup,
   d.AdmiraltyReadMore,
   d.AdmiraltySelect,
+  d.AdmiraltySideBar,
+  d.AdmiraltySideBarItem,
   d.AdmiraltySideNav,
   d.AdmiraltySideNavItem,
   d.AdmiraltySkipLink,
