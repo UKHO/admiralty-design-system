@@ -10,7 +10,7 @@ describe('admiralty-side-bar-item', () => {
     expect(root).toEqualHtml(`
       <admiralty-side-bar-item>
         <li>
-          <a>
+          <a class="active" id="side-bar-item-1">
             <div class="icon">
               <admiralty-icon></admiralty-icon>
             </div>
@@ -28,7 +28,7 @@ describe('admiralty-side-bar-item', () => {
     expect(page.root).toEqualHtml(`
       <admiralty-side-bar-item active="true" href="/test">
         <li>
-          <a href="/test">
+          <a class="active" href="/test" id="side-bar-item-2">
             <div class="icon">
               <admiralty-icon></admiralty-icon>
             </div>
@@ -48,7 +48,7 @@ describe('admiralty-side-bar-item', () => {
     expect(page.root).toEqualHtml(`
       <admiralty-side-bar-item active="false" href="/test">
         <li>
-          <a href="/test">
+          <a class="active" href="/test" id="side-bar-item-3">
             <div class="icon">
               <admiralty-icon></admiralty-icon>
             </div>
