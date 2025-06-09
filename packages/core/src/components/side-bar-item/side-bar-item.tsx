@@ -28,7 +28,7 @@ export class SideBarItemComponent {
    * Whether the component is expanded.
    */
   @Prop({ mutable: true, reflect: true }) expanded = false;
-
+      
   /**
    * The name of the icon to display. A full list of available icons can be viewed at [https://fonts.google.com/icons](https://fonts.google.com/icons)
    */
