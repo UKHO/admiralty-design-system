@@ -684,6 +684,10 @@ export namespace Components {
           * Set this to false to hide the logo that is displayed in the bottom of the side bar.
          */
         "showLogo": boolean;
+        /**
+          * Sets the side bar width
+         */
+        "sideBarWidth": string;
     }
     interface AdmiraltySideBarItem {
         /**
@@ -2308,6 +2312,10 @@ declare namespace LocalJSX {
           * Set this to false to hide the logo that is displayed in the bottom of the side bar.
          */
         "showLogo"?: boolean;
+        /**
+          * Sets the side bar width
+         */
+        "sideBarWidth"?: string;
     }
     interface AdmiraltySideBarItem {
         /**

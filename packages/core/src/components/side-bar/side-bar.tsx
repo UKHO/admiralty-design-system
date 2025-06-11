@@ -26,10 +26,15 @@ export class SideBarComponent {
    */
   @Prop() logoImgUrl: string = 'svg/UKHO crest.svg';
 
+  /**
+   * Sets the side bar width
+   */
+  @Prop() sideBarWidth: string = '100px';
+
   render() {
     return (
       <nav aria-label={this.label}>
-        <ul>
+        <ul style={{ width: this.sideBarWidth ? this.sideBarWidth !== '' ? this.sideBarWidth : '100px' : '100px' }}>
           <slot></slot>
         </ul>
         <ul>

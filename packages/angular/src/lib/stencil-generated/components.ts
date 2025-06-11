@@ -956,14 +956,14 @@ export declare interface AdmiraltySelect extends Components.AdmiraltySelect {
 
 
 @ProxyCmp({
-  inputs: ['label', 'logoImgUrl', 'showLogo']
+  inputs: ['label', 'logoImgUrl', 'showLogo', 'sideBarWidth']
 })
 @Component({
   selector: 'admiralty-side-bar',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['label', 'logoImgUrl', 'showLogo'],
+  inputs: ['label', 'logoImgUrl', 'showLogo', 'sideBarWidth'],
 })
 export class AdmiraltySideBar {
   protected el: HTMLElement;
