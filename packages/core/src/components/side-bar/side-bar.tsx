@@ -1,4 +1,4 @@
-import { Component, h, Prop } from '@stencil/core';
+import { Component, Element, h, Prop } from '@stencil/core';
 
 /**
  * @slot - 'admiralty-side-bar-item' components should be placed here in the default slot
@@ -11,26 +11,30 @@ import { Component, h, Prop } from '@stencil/core';
   scoped: true,
 })
 export class SideBarComponent {
+  @Element() el!: HTMLAdmiraltySideBarElement;
   /**
    * A label for accessibility purposes to describe what this navigation is for.
    */
   @Prop() label: string;
-
   /**
    * Set this to false to hide the logo that is displayed in the bottom of the side bar.
    */
   @Prop() showLogo: boolean = true;
-
   /**
    * The URI of the logo image
    */
   @Prop() logoImgUrl: string = 'svg/UKHO crest.svg';
 
+  /**
+   * Sets the sidebar width
+   */
+  @Prop() sideBarWidth: string = '100px';
+
   render() {
     return (
-      <nav aria-label={this.label}>
+      <nav aria-label={this.label} style={{ width: this.sideBarWidth ? this.sideBarWidth !== '' ? this.sideBarWidth : '100px' : '100px' }}>
         <ul>
-          <slot></slot>
+          <slot name="items"></slot>
         </ul>
         <ul>
           <slot name="footer"></slot>
