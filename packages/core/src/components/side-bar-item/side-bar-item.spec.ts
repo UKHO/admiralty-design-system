@@ -8,9 +8,9 @@ describe('admiralty-side-bar-item', () => {
       html: '<admiralty-side-bar-item></admiralty-side-bar-item>',
     });
     expect(root).toEqualHtml(`
-      <admiralty-side-bar-item>
+      <admiralty-side-bar-item data-side-bar-item-id="side-bar-item-1">
         <li>
-          <a class="active" id="side-bar-item-1">
+          <a class="active primary-link" id="side-bar-item-anchor-1">
             <div class="icon">
               <admiralty-icon></admiralty-icon>
             </div>
@@ -23,12 +23,12 @@ describe('admiralty-side-bar-item', () => {
   it('renders active side bar item', async () => {
     const page = await newSpecPage({
       components: [SideBarItemComponent],
-      html: `<admiralty-side-bar-item href="/test" active="true">Test</admiralty-side-bar-item>`,
+      html: `<admiralty-side-bar-item href="/test" active="true" item-text="Test"></admiralty-side-bar-item>`,
     });
     expect(page.root).toEqualHtml(`
-      <admiralty-side-bar-item active="true" href="/test">
+      <admiralty-side-bar-item active="" data-side-bar-item-id="side-bar-item-2" href="/test" item-text="Test">
         <li>
-          <a class="active" href="/test" id="side-bar-item-2">
+          <a class="active primary-link" href="/test" id="side-bar-item-anchor-2">
             <div class="icon">
               <admiralty-icon></admiralty-icon>
             </div>
@@ -42,13 +42,13 @@ describe('admiralty-side-bar-item', () => {
   it('renders inactive side bar item', async () => {
     const page = await newSpecPage({
       components: [SideBarItemComponent],
-      html: `<admiralty-side-bar-item href="/test" active="false">Test</admiralty-side-bar-item>`,
+      html: `<admiralty-side-bar-item href="/test" active="false" item-text="Test"></admiralty-side-bar-item>`,
     });
 
     expect(page.root).toEqualHtml(`
-      <admiralty-side-bar-item active="false" href="/test">
+      <admiralty-side-bar-item active="false" data-side-bar-item-id="side-bar-item-3" href="/test" item-text="Test">
         <li>
-          <a class="active" href="/test" id="side-bar-item-3">
+          <a class="active primary-link" href="/test" id="side-bar-item-anchor-3">
             <div class="icon">
               <admiralty-icon></admiralty-icon>
             </div>
