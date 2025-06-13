@@ -1,7 +1,8 @@
 @import 'hint.vars';
 
 p {
-  margin: $hint-margin;
+  margin-top: 0;
+  margin-bottom: 6px;
   display: block;
   font-weight: $hint-text-weight;
 
@@ -9,7 +10,3 @@ p {
     color: $hint-disabled-text-colour;
   }
 }
-
-
-
-

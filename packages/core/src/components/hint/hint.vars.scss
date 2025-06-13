@@ -2,12 +2,7 @@
 
 /**
  * @prop --admiralty-hint-font-weight: Font weight of the hint
- * @prop --admiralty-hint-margin: Margin for the hint
 **/
 
 $hint-text-weight: var(--admiralty-hint-font-weight, var(--admiralty-font-weight-normal));
-$hint-disabled-text-colour: var(--admiralty-disabled-text-colour);
-
-$hint-margin: var(--admiralty-hint-margin, var(--admiralty-spacing-0) var(--admiralty-spacing-0) 6px var(--admiralty-spacing-0));
-
-
+$hint-disabled-text-colour: var(--admiralty-disabled-text-colour)

@@ -25,11 +25,10 @@ Use tables to make information easier for users to scan and compare
 
 ## CSS Custom Properties
 
-| Name                                      | Description                         |
-| ----------------------------------------- | ----------------------------------- |
-| `--admiralty-table-caption-margin-bottom` | Margin bottom for the table caption |
-| `--admiralty-table-heading-font-size`     | Font size for the table heading     |
-| `--admiralty-table-heading-font-weight`   | Font weight for the table heading   |
+| Name                                    | Description                       |
+| --------------------------------------- | --------------------------------- |
+| `--admiralty-table-heading-font-size`   | Font size for the table heading   |
+| `--admiralty-table-heading-font-weight` | Font weight for the table heading |
 
 
 ----------------------------------------------

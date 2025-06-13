@@ -62,8 +62,8 @@ export class ExpansionComponent {
           <admiralty-icon class="expansion-heading-icon" name={this.getExpansionIcon()}></admiralty-icon>
         </button>
         <div class="expansion-content" id={this.contentId} aria-labelledby={this.headerId} hidden={!this.expanded}>
-          <slot></slot>
-        </div>
+                <slot></slot>
+              </div>
       </section>
     );
   }

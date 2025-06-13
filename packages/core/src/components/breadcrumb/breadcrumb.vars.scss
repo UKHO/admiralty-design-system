@@ -3,9 +3,6 @@
  * @prop --admiralty-breadcrumb-font-size: Font size for the breadcrumb
  * @prop --admiralty-breadcrumb-font-weight: Font weight for the breadcrumb
  * @prop --admiralty-breadcrumb-font-weight-active: Font weight for the breadcrumb active
-
- * @prop --admiralty-breadcrumb-icon-margin: Margin for the breadcrumb icon
- * @prop --admiralty-breadcrumb-href-margin: Margin for the hyperlink
 **/
 
 $breadcrumb-font-colour: var(--admiralty-text-colour) !default;
@@ -17,6 +14,3 @@ $breadcrumb-font-size: var(--admiralty-breadcrumb-font-size, var(--admiralty-fon
 $breadcrumb-icon-font-size: var(--admiralty-breadcrumb-icon-font-size, var(--admiralty-font-size--2));
 $breadcrumb-font-weight: var(--admiralty-breadcrumb-font-weight, var(--admiralty-font-weight-normal));
 $breadcrumb-font-weight-active: var(--admiralty-breadcrumb-font-weight-active, var(--admiralty-font-weight-medium));
-
-$breadcrumb-icon-margin: var(--admiralty-breadcrumb-icon-margin, var(--admiralty-spacing-0) var(--admiralty-spacing-2));
-$breadcrumb-href-margin: var(--admiralty-breadcrumb-href-margin, var(--admiralty-spacing-2) var(--admiralty-spacing-1));

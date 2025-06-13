@@ -3,11 +3,7 @@
 /**
  * @prop --admiralty-table-header-cell-font-size: Font size for the table header cell
  * @prop --admiralty-table-header-cell-font-weight: Font weight for the table header cell
-
- * @prop --admiralty-table-header-cell-padding: Padding for the table header cell
 **/
-
-$table-header-cell-padding: var(--admiralty-table-header-cell-padding, 6px var(--admiralty-spacing-5));
 
 $table-header-cell-text-size: var(--admiralty-table-header-cell-font-size, var(--admiralty-font-size-0));
 $table-header-cell-text-weight: var(--admiralty-table-header-cell-font-weight, var(--admiralty-font-weight-medium));

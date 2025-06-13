@@ -72,18 +72,6 @@ export const Countries: Story = {
     </admiralty-autocomplete>`,
   args: { label: 'Country', hint: 'Select a country' },
 };
-export const NoResults: Story = {
-  render: args =>
-    html` <admiralty-autocomplete
-      label="${args.label}"
-      hint="${args.hint}"
-      ?invalid="${args.invalid}"
-      invalid-message="${args.invalidMessage}"
-      ?disabled="${args.disabled}"
-      value="${args.value}">
-    </admiralty-autocomplete>`,
-  args: { label: 'No Results' },
-};
 
 export const CountriesPreSelected: Story = {
   render: args =>

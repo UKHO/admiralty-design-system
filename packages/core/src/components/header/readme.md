@@ -33,24 +33,16 @@
 
 ## CSS Custom Properties
 
-| Name                                                       | Description                                                 |
-| ---------------------------------------------------------- | ----------------------------------------------------------- |
-| `--admiralty-header-brand-font-size`                       | Font weight of the header brand                             |
-| `--admiralty-header-branding-not-desktop-padding`          | Padding for the header's branding when not in desktop view. |
-| `--admiralty-header-branding-padding`                      | Padding for the header's branding.                          |
-| `--admiralty-header-font-size`                             | Font size of the header                                     |
-| `--admiralty-header-font-weight`                           | Font weight of the header                                   |
-| `--admiralty-header-menu-icon-font-size`                   | Font size of the header menu icon                           |
-| `--admiralty-header-menu-icon-font-weight`                 | Font weight of the header menu icon                         |
-| `--admiralty-header-menu-mobile-button-icon-padding`       | Padding for the button icon when in mobile view.            |
-| `--admiralty-header-menu-section-tablet-only-margin-left`  | Margin left for the menu section when in tablet view only.  |
-| `--admiralty-header-title-font-size`                       | Font size of the header title                               |
-| `--admiralty-header-title-font-weight`                     | Font weight of the header title                             |
-| `--admiralty-header-title-margin-bottom`                   | Margin bottom for the header title                          |
-| `--admiralty-header-title-margin-top`                      | Margin top for the header title.                            |
-| `--admiralty-header-title-not-desktop-font-size`           | Font size of the header title when not in desktop view      |
-| `--admiralty-header-vertical-separator-margin`             | Margin for the vertical separator.                          |
-| `--admiralty-header-vertical-separator-not-desktop-margin` | Margin for the vertical separator when not in desktop view. |
+| Name                                             | Description                                            |
+| ------------------------------------------------ | ------------------------------------------------------ |
+| `--admiralty-header-brand-font-size`             | Font weight of the header brand                        |
+| `--admiralty-header-font-size`                   | Font size of the header                                |
+| `--admiralty-header-font-weight`                 | Font weight of the header                              |
+| `--admiralty-header-menu-icon-font-size`         | Font size of the header menu icon                      |
+| `--admiralty-header-menu-icon-font-weight`       | Font weight of the header menu icon                    |
+| `--admiralty-header-title-font-size`             | Font size of the header title                          |
+| `--admiralty-header-title-font-weight`           | Font weight of the header title                        |
+| `--admiralty-header-title-not-desktop-font-size` | Font size of the header title when not in desktop view |
 
 
 ## Dependencies
