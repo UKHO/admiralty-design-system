@@ -113,22 +113,28 @@ blockquote {
 
 ul {
   list-style: none;
+  padding-left: 1.5rem;
+
   a {
     font-weight: $list-item-font-weight;
   }
 
   li {
+    position: relative;
+    padding-left: 1.5rem;
     margin-bottom: 12px;
-  }
 
-  li:before {
-    content: '\25A0';
-    font-size: var(--admiralty-font-size-0); /** OLD: 18px = 1.125rem, NEW: 1rem = 16px **/
-    color: var(--admiralty-colour-primary);
-    vertical-align: text-bottom;
-    margin-right: 12px;
-    @include responsive.not-desktop {
-      font-size: var(--admiralty-font-size-0); /** OLD: 8px = 0.5rem, NEW: 0.688rem = 11px **/
+    &::before {
+      content: '\25A0';
+      position: absolute;
+      left: 0;
+      top: 0.15em; // Fixes vertical alignment with text
+      font-size: var(--admiralty-font-size-0); /** OLD: 18px = 1.125rem, NEW: 1rem = 16px **/
+      line-height: 1;
+      color: var(--admiralty-colour-primary);
+      @include responsive.not-desktop {
+        font-size: var(--admiralty-font-size-0); /** OLD: 8px = 0.5rem, NEW: 0.688rem = 11px **/
+      }
     }
   }
 }
@@ -136,21 +142,27 @@ ul {
 ol {
   list-style: none;
   counter-reset: li;
+  padding-left: 1.5rem;
 
   a {
     font-weight: $list-item-font-weight;
   }
 
-  li:before {
-    content: counter(li) '.';
-    color: var(--admiralty-colour-primary);
-    font-size: var(--admiralty-font-size-0); /** OLD: 18px = 1.125rem, NEW: 1rem = 16px **/
-    margin-right: 12px;
-  }
-
   li {
+    position: relative;
     counter-increment: li;
+    padding-left: 1.5rem;
     margin-bottom: 12px;
+
+    &::before {
+      content: counter(li) '.';
+      position: absolute;
+      left: 0;
+      top: 0.15em; // Fixes vertical alignment with text
+      font-size: var(--admiralty-font-size-0); /** OLD: 18px = 1.125rem, NEW: 1rem = 16px **/
+      line-height: 1;
+      color: var(--admiralty-colour-primary);
+    }
   }
 }
 
