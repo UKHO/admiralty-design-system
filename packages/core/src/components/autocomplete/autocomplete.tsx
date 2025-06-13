@@ -4,12 +4,7 @@
 
 import { Component, forceUpdate, Prop, State, h, Element, EventEmitter, Event, Watch } from '@stencil/core';
 import { watchForOptions } from './optionsWatcher';
-import { AutoCompleteChangeEventDetail } from './autocomplete.interface';
-
-interface Option {
-  text: string;
-  value: any;
-}
+import { AutoCompleteChangeEventDetail, Option } from './autocomplete.interface';
 
 const keyCodes = {
   13: 'enter',
