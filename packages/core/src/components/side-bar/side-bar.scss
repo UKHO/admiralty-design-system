@@ -6,13 +6,12 @@ nav {
   justify-content: space-between;
   height: 100%;
   background-color: $side-bar-background-colour;
+  border-right: 1px solid $side-bar-right-border-colour;
 }
 
 ul {
   display: flex;
   flex-direction: column;
-  //width: 100px;
-
 }
 
 .logo {
