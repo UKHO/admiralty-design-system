@@ -476,13 +476,19 @@ export const AdmiraltySideBar: StencilReactComponent<AdmiraltySideBarElement, Ad
     defineCustomElement: defineAdmiraltySideBar
 });
 
-type AdmiraltySideBarItemEvents = { onSideBarItemClick: EventName<CustomEvent<string>> };
+type AdmiraltySideBarItemEvents = {
+    onToggled: EventName<CustomEvent<boolean>>,
+    onSideBarItemClick: EventName<CustomEvent<string>>
+};
 
 export const AdmiraltySideBarItem: StencilReactComponent<AdmiraltySideBarItemElement, AdmiraltySideBarItemEvents> = /*@__PURE__*/ createComponent<AdmiraltySideBarItemElement, AdmiraltySideBarItemEvents>({
     tagName: 'admiralty-side-bar-item',
     elementClass: AdmiraltySideBarItemElement,
     react: React,
-    events: { onSideBarItemClick: 'sideBarItemClick' } as AdmiraltySideBarItemEvents,
+    events: {
+        onToggled: 'toggled',
+        onSideBarItemClick: 'sideBarItemClick'
+    } as AdmiraltySideBarItemEvents,
     defineCustomElement: defineAdmiraltySideBarItem
 });
 
