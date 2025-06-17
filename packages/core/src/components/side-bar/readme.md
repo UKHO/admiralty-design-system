@@ -17,8 +17,8 @@
 
 | Slot       | Description                                                                                                                |
 | ---------- | -------------------------------------------------------------------------------------------------------------------------- |
-|            | 'admiralty-side-bar-item' components should be placed here in the default slot                                             |
 | `"footer"` | additional 'admiralty-side-bar-item' components can be placed in the footer slot to display at the bottom of the side bar. |
+| `"items"`  | 'admiralty-side-bar-item' components should be placed here in the items slot                                               |
 
 
 ----------------------------------------------
