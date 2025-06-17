@@ -10,7 +10,7 @@ describe('admiralty-side-bar', () => {
     });
     expect(root).toEqualHtml(`
       <admiralty-side-bar>
-        <nav>
+        <nav style="width: 100px;">
           <ul></ul>
           <ul>
             <img alt="UKHO Logo" aria-hidden="true" class="logo" src="svg/UKHO crest.svg">
@@ -27,7 +27,7 @@ describe('admiralty-side-bar', () => {
     });
     expect(root).toEqualHtml(`
       <admiralty-side-bar label="test label">
-        <nav aria-label="test label">
+        <nav aria-label="test label" style="width: 100px;">
           <ul></ul>
           <ul>
             <img alt="UKHO Logo" aria-hidden="true" class="logo" src="svg/UKHO crest.svg">
@@ -44,7 +44,7 @@ describe('admiralty-side-bar', () => {
     });
     expect(root).toEqualHtml(`
       <admiralty-side-bar show-logo="false">
-        <nav>
+        <nav style="width: 100px;">
           <ul></ul>
           <ul></ul>
         </nav>
@@ -56,16 +56,16 @@ describe('admiralty-side-bar', () => {
     const { root } = await newSpecPage({
       components: [SideBarComponent, SideBarItemComponent],
       html: `<admiralty-side-bar>
-        <admiralty-side-bar-item>Test</admiralty-side-bar-item>
+        <admiralty-side-bar-item item-text="Test" slot="items"></admiralty-side-bar-item>
       </admiralty-side-bar>`,
     });
     expect(root).toEqualHtml(`
       <admiralty-side-bar>
-        <nav>
+        <nav style="width: 100px;">
           <ul>
-            <admiralty-side-bar-item>
+            <admiralty-side-bar-item data-side-bar-item-id="side-bar-item-1" item-text="Test" slot="items">
               <li>
-                <a class="active" id="side-bar-item-1">
+                <a class="active primary-link" id="side-bar-item-anchor-1">
                   <div class="icon">
                     <admiralty-icon></admiralty-icon>
                   </div>
@@ -86,18 +86,18 @@ describe('admiralty-side-bar', () => {
     const { root } = await newSpecPage({
       components: [SideBarComponent, SideBarItemComponent],
       html: `<admiralty-side-bar>
-        <admiralty-side-bar-item>Test 1</admiralty-side-bar-item>
-        <admiralty-side-bar-item>Test 2</admiralty-side-bar-item>
-        <admiralty-side-bar-item>Test 3</admiralty-side-bar-item>
+        <admiralty-side-bar-item item-text="Test 1" slot="items"></admiralty-side-bar-item>
+        <admiralty-side-bar-item item-text="Test 2" slot="items"></admiralty-side-bar-item>
+        <admiralty-side-bar-item item-text="Test 3" slot="items"></admiralty-side-bar-item>
       </admiralty-side-bar>`,
     });
     expect(root).toEqualHtml(`
       <admiralty-side-bar>
-        <nav>
+        <nav style="width: 100px;">
           <ul>
-            <admiralty-side-bar-item>
+            <admiralty-side-bar-item data-side-bar-item-id="side-bar-item-2" item-text="Test 1" slot="items">
               <li>
-                <a class="active" id="side-bar-item-2">
+                <a class="active primary-link" id="side-bar-item-anchor-2">
                   <div class="icon">
                     <admiralty-icon></admiralty-icon>
                   </div>
@@ -105,19 +105,19 @@ describe('admiralty-side-bar', () => {
                 </a>
               </li>
             </admiralty-side-bar-item>
-            <admiralty-side-bar-item>
+            <admiralty-side-bar-item data-side-bar-item-id="side-bar-item-3" item-text="Test 2" slot="items">
               <li>
-                <a class="active" id="side-bar-item-3">
+                <a class="active primary-link" id="side-bar-item-anchor-3">
                   <div class="icon">
                     <admiralty-icon></admiralty-icon>
-                  </div>
+                 </div>
                   Test 2
                 </a>
               </li>
             </admiralty-side-bar-item>
-            <admiralty-side-bar-item>
+            <admiralty-side-bar-item data-side-bar-item-id="side-bar-item-4" item-text="Test 3" slot="items">
               <li>
-                <a class="active" id="side-bar-item-4">
+                <a class="active primary-link" id="side-bar-item-anchor-4">
                   <div class="icon">
                     <admiralty-icon></admiralty-icon>
                   </div>
@@ -138,17 +138,17 @@ describe('admiralty-side-bar', () => {
     const { root } = await newSpecPage({
       components: [SideBarComponent, SideBarItemComponent],
       html: `<admiralty-side-bar>
-        <admiralty-side-bar-item>Test</admiralty-side-bar-item>
-        <admiralty-side-bar-item slot="footer">Footer Test</admiralty-side-bar-item>
+        <admiralty-side-bar-item item-text="Test" slot="items"></admiralty-side-bar-item>
+        <admiralty-side-bar-item item-text="Footer Test" slot="footer"></admiralty-side-bar-item>
       </admiralty-side-bar>`,
     });
     expect(root).toEqualHtml(`
       <admiralty-side-bar>
-        <nav>
+        <nav style="width: 100px;">
           <ul>
-            <admiralty-side-bar-item>
+            <admiralty-side-bar-item data-side-bar-item-id="side-bar-item-5" item-text="Test" slot="items">
               <li>
-                <a class="active" id="side-bar-item-5">
+                <a class="active primary-link" id="side-bar-item-anchor-5">
                   <div class="icon">
                     <admiralty-icon></admiralty-icon>
                   </div>
@@ -158,9 +158,9 @@ describe('admiralty-side-bar', () => {
             </admiralty-side-bar-item>
           </ul>
           <ul>
-            <admiralty-side-bar-item slot="footer">
+            <admiralty-side-bar-item data-side-bar-item-id="side-bar-item-6" item-text="Footer Test" slot="footer">
               <li>
-                <a class="active" id="side-bar-item-6">
+                <a class="active primary-link" id="side-bar-item-anchor-6">
                   <div class="icon">
                     <admiralty-icon></admiralty-icon>
                   </div>

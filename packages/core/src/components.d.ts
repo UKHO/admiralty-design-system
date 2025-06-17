@@ -5,7 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { AutoCompleteChangeEventDetail } from "./components/autocomplete/autocomplete.interface";
+import { AutoCompleteChangeEventDetail, Option } from "./components/autocomplete/autocomplete.interface";
 import { ButtonVariant } from "./components/button/button.types";
 import { CheckboxChangeEventDetail } from "./components/checkbox/checkbox.interface";
 import { FileInputChangeEventDetail } from "./components/file-input/file-input.interface";
@@ -13,8 +13,9 @@ import { FooterTypes } from "./components/footer/footer.types";
 import { InputChangeEventDetail } from "./components/input/input.interface";
 import { RadioGroupChangeEventDetail } from "./components/radio-group/radio-group-interface";
 import { SelectChangeEventDetail } from "./components/select/select.interface";
+import { SideBarItemVariant } from "./components/side-bar-item/side-bar-item.types";
 import { TextAreaChangeEventDetail } from "./components/textarea/textarea.interface";
-export { AutoCompleteChangeEventDetail } from "./components/autocomplete/autocomplete.interface";
+export { AutoCompleteChangeEventDetail, Option } from "./components/autocomplete/autocomplete.interface";
 export { ButtonVariant } from "./components/button/button.types";
 export { CheckboxChangeEventDetail } from "./components/checkbox/checkbox.interface";
 export { FileInputChangeEventDetail } from "./components/file-input/file-input.interface";
@@ -22,6 +23,7 @@ export { FooterTypes } from "./components/footer/footer.types";
 export { InputChangeEventDetail } from "./components/input/input.interface";
 export { RadioGroupChangeEventDetail } from "./components/radio-group/radio-group-interface";
 export { SelectChangeEventDetail } from "./components/select/select.interface";
+export { SideBarItemVariant } from "./components/side-bar-item/side-bar-item.types";
 export { TextAreaChangeEventDetail } from "./components/textarea/textarea.interface";
 export namespace Components {
     interface AdmiraltyAutocomplete {
@@ -684,12 +686,20 @@ export namespace Components {
           * Set this to false to hide the logo that is displayed in the bottom of the side bar.
          */
         "showLogo": boolean;
+        /**
+          * Sets the sidebar width
+         */
+        "sideBarWidth": string;
     }
     interface AdmiraltySideBarItem {
         /**
           * Represents whether this SideBarItem is 'active' and will be styled differently than SideBarItems that are not 'active'. There should only be one SideBarItem that is 'active' per SideBar.
          */
         "active": boolean;
+        /**
+          * Whether the component is expanded.
+         */
+        "expanded": boolean;
         /**
           * The URL to link to.
          */
@@ -699,9 +709,17 @@ export namespace Components {
          */
         "icon": string;
         /**
+          * Item text for the button or link depending on variant
+         */
+        "itemText": string;
+        /**
           * Causes the default browser redirect to be suppressed. Can be used in conjunction with the `onSideBarItemClick` event to use a navigation router and prevent a full page reload when navigating.
          */
         "suppressRedirect"?: boolean;
+        /**
+          * The type of side bar item to render. Valid values are `primary` and `secondary`. Default value is `primary`.
+         */
+        "variant": SideBarItemVariant;
     }
     interface AdmiraltySideBarWrapper {
     }
@@ -1329,6 +1347,7 @@ declare global {
         new (): HTMLAdmiraltySideBarElement;
     };
     interface HTMLAdmiraltySideBarItemElementEventMap {
+        "toggled": boolean;
         "sideBarItemClick": string;
     }
     interface HTMLAdmiraltySideBarItemElement extends Components.AdmiraltySideBarItem, HTMLStencilElement {
@@ -2308,12 +2327,20 @@ declare namespace LocalJSX {
           * Set this to false to hide the logo that is displayed in the bottom of the side bar.
          */
         "showLogo"?: boolean;
+        /**
+          * Sets the sidebar width
+         */
+        "sideBarWidth"?: string;
     }
     interface AdmiraltySideBarItem {
         /**
           * Represents whether this SideBarItem is 'active' and will be styled differently than SideBarItems that are not 'active'. There should only be one SideBarItem that is 'active' per SideBar.
          */
         "active"?: boolean;
+        /**
+          * Whether the component is expanded.
+         */
+        "expanded"?: boolean;
         /**
           * The URL to link to.
          */
@@ -2323,13 +2350,25 @@ declare namespace LocalJSX {
          */
         "icon"?: string;
         /**
+          * Item text for the button or link depending on variant
+         */
+        "itemText"?: string;
+        /**
           * An event emitted when this Side Bar item is selected containing the sideBarItemId
          */
         "onSideBarItemClick"?: (event: AdmiraltySideBarItemCustomEvent<string>) => void;
         /**
+          * The event that is dispatched when the expanded status is toggled.
+         */
+        "onToggled"?: (event: AdmiraltySideBarItemCustomEvent<boolean>) => void;
+        /**
           * Causes the default browser redirect to be suppressed. Can be used in conjunction with the `onSideBarItemClick` event to use a navigation router and prevent a full page reload when navigating.
          */
         "suppressRedirect"?: boolean;
+        /**
+          * The type of side bar item to render. Valid values are `primary` and `secondary`. Default value is `primary`.
+         */
+        "variant"?: SideBarItemVariant;
     }
     interface AdmiraltySideBarWrapper {
     }
