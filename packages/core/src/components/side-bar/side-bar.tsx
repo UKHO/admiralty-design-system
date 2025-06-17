@@ -1,7 +1,7 @@
 import { Component, Element, h, Prop } from '@stencil/core';
 
 /**
- * @slot - 'admiralty-side-bar-item' components should be placed here in the default slot
+ * @slot items - 'admiralty-side-bar-item' components should be placed here in the items slot
  * @slot footer - additional 'admiralty-side-bar-item' components can be placed in the footer slot
  * to display at the bottom of the side bar.
  */
