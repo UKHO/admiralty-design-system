@@ -67,3 +67,5 @@ build-storybook.log
 !.yarn/plugins
 .pnp.*
 .nx/*
+.cursor/rules/nx-rules.mdc
+.github/instructions/nx.instructions.md
