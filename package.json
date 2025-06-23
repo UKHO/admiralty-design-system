@@ -16,9 +16,9 @@
   },
   "scripts": {
     "build:all": "nx run-many -t build",
-    "build:core": "nx build @ukho/admiralty-core",
-    "build:angular": "nx build @ukho/admiralty-angular",
-    "build:react": "nx build @ukho/admiralty-react",
+    "build:core": "nx build --no-cache @ukho/admiralty-core",
+    "build:angular": "nx build --no-cache @ukho/admiralty-angular",
+    "build:react": "nx build --no-cache @ukho/admiralty-react",
     "build:test-app": "nx build test-app",
     "build:website": "nx build website",
     "build:docs": "nx build @ukho-internal/admiralty-docs"
