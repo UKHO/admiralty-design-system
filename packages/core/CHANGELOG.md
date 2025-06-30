@@ -1,3 +1,15 @@
+# v4.2.1 (Fri Jun 06 2025)
+
+#### 🐛 Bug Fix
+
+- Fixing the broken option export causing Angular builds to fail when using autocomplete component [#366](https://github.com/UKHO/admiralty-design-system/pull/366) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+#### Authors: 1
+
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
 # v4.1.2 (Thu Mar 20 2025)
 
 #### 🐛 Bug Fix

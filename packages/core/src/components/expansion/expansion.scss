@@ -15,7 +15,7 @@ section.expansion {
   &.expanded .expansion-content {
     display: block;
     max-height: initial;
-    padding: 12px 0;
+    padding-bottom: $expansion-content-padding-bottom;
   }
 
   button {
@@ -26,8 +26,8 @@ section.expansion {
     max-width: unset;
     white-space: unset;
     cursor: pointer;
-    margin: 12px 0;
-    padding: 0;
+    margin: $expansion-button-margin;
+    padding: $expansion-button-padding;
     display: flex;
     align-items: center;
     width: 100%;
@@ -36,8 +36,8 @@ section.expansion {
 
     .expansion-heading-icon {
       color: $expansion-header-icon-colour;
-      margin-left: 30px;
       font-size: $expansion-header-icon-size;
+      margin-left: $expansion-button-icon-margin-left;
     }
     &:focus {
       outline: none;

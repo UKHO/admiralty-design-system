@@ -1,3 +1,42 @@
+# v4.2.1 (Fri Jun 06 2025)
+
+#### 🐛 Bug Fix
+
+- `@ukho/admiralty-core`
+  - Fixing the broken option export causing Angular builds to fail when using autocomplete component [#366](https://github.com/UKHO/admiralty-design-system/pull/366) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+#### Authors: 1
+
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
+# v4.2.0 (Mon May 12 2025)
+
+#### 🚀 Enhancement
+
+- Feat: Read-more component page content amendment [#344](https://github.com/UKHO/admiralty-design-system/pull/344) ([@developernm](https://github.com/developernm))
+
+#### 🐛 Bug Fix
+
+- Update Pill Content [#351](https://github.com/UKHO/admiralty-design-system/pull/351) ([@lstevens98](https://github.com/lstevens98))
+- [Snyk] Security upgrade next from 14.2.13 to 14.2.25 [#350](https://github.com/UKHO/admiralty-design-system/pull/350) ([@snyk-io[bot]](https://github.com/snyk-io[bot]) [@gyro2009](https://github.com/gyro2009))
+- View component in GitHub links [#345](https://github.com/UKHO/admiralty-design-system/pull/345) ([@lstevens98](https://github.com/lstevens98))
+
+#### 🏠 Internal
+
+- Removing the specific version tie for the github actions [#352](https://github.com/UKHO/admiralty-design-system/pull/352) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+#### Authors: 5
+
+- [@developernm](https://github.com/developernm)
+- [@gyro2009](https://github.com/gyro2009)
+- [@snyk-io[bot]](https://github.com/snyk-io[bot])
+- Lewis Stevens ([@lstevens98](https://github.com/lstevens98))
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
 # v4.1.2 (Thu Mar 20 2025)
 
 #### 🐛 Bug Fix
