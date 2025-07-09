@@ -125,46 +125,46 @@ li {
       padding: 12px 0;
     }
   }
+}
 
-  .tertiary-link {
-    all: unset;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    flex: 1;
-    user-select: none;
-    text-decoration: none;
-    text-align: left;
-    color: $side-bar-item-text-colour;
-    font-weight: $tertiary-link-font-weight;
-    font-size: $side-bar-item-font-size;
-    padding: .5rem 1.5rem;
+.tertiary-link {
+  all: unset;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  flex: 1;
+  user-select: none;
+  text-decoration: none;
+  text-align: left;
+  color: $side-bar-item-text-colour;
+  font-weight: $tertiary-link-font-weight;
+  font-size: $side-bar-item-font-size;
+  padding: .5rem 1.5rem;
 
-    &:hover {
-      color: $tertiary-link-font-colour;
-      font-weight: $side-bar-item-font-weight;
-      background-color: $tertiary-link-background-hover-colour;
-    }
+  &:hover {
+    color: $tertiary-link-font-colour;
+    font-weight: $side-bar-item-font-weight;
+    background-color: $tertiary-link-background-hover-colour;
+  }
 
-    &:focus-visible,
-    &.active:focus-visible {
-      outline: none;
-      box-shadow: inset 0 -4px 0 0  $tertiary-link-focus-text-colour;
-      background-color: $tertiary-link-focus-background-colour;
-      color: $tertiary-link-focus-text-colour;
-    }
+  &:focus-visible,
+  &.active:focus-visible {
+    outline: none;
+    box-shadow: inset 0 -4px 0 0  $tertiary-link-focus-text-colour;
+    background-color: $tertiary-link-focus-background-colour;
+    color: $tertiary-link-focus-text-colour;
+  }
 
-    &.active {
-      font-weight: $tertiary-link-active-font-weight;
-      background-color: $tertiary-link-active-background-colour;
-      color: $tertiary-link-active-text-colour;
-    }
+  &.active {
+    font-weight: $tertiary-link-active-font-weight;
+    background-color: $tertiary-link-active-background-colour;
+    color: $tertiary-link-active-text-colour;
+  }
 
-    &:active {
-      background-color: $tertiary-link-focus-background-colour;
-      color: $tertiary-link-focus-text-colour;
-      box-shadow: inset 0 -4px 0 0  $tertiary-link-focus-text-colour;
-    }
+  &:active {
+    background-color: $tertiary-link-focus-background-colour;
+    color: $tertiary-link-focus-text-colour;
+    box-shadow: inset 0 -4px 0 0  $tertiary-link-focus-text-colour;
   }
 }

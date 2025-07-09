@@ -25,6 +25,7 @@ export const DIRECTIVES = [
   d.AdmiraltyHint,
   d.AdmiraltyHr,
   d.AdmiraltyIcon,
+  d.AdmiraltyIconSideBarItem,
   d.AdmiraltyInput,
   d.AdmiraltyInputInvalid,
   d.AdmiraltyLabel,
@@ -51,5 +52,6 @@ export const DIRECTIVES = [
   d.AdmiraltyTableHeader,
   d.AdmiraltyTableHeaderCell,
   d.AdmiraltyTableRow,
+  d.AdmiraltyTextSideBarItem,
   d.AdmiraltyTextarea
 ];

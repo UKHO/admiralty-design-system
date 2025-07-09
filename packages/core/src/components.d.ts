@@ -14,6 +14,7 @@ import { InputChangeEventDetail } from "./components/input/input.interface";
 import { RadioGroupChangeEventDetail } from "./components/radio-group/radio-group-interface";
 import { SelectChangeEventDetail } from "./components/select/select.interface";
 import { SideBarItemVariant } from "./components/side-bar-item/side-bar-item.types";
+import { TextSideBarItemVariant } from "./components/text-side-bar-item/text-side-bar-item.types";
 import { TextAreaChangeEventDetail } from "./components/textarea/textarea.interface";
 export { AutoCompleteChangeEventDetail, Option } from "./components/autocomplete/autocomplete.interface";
 export { ButtonVariant } from "./components/button/button.types";
@@ -24,6 +25,7 @@ export { InputChangeEventDetail } from "./components/input/input.interface";
 export { RadioGroupChangeEventDetail } from "./components/radio-group/radio-group-interface";
 export { SelectChangeEventDetail } from "./components/select/select.interface";
 export { SideBarItemVariant } from "./components/side-bar-item/side-bar-item.types";
+export { TextSideBarItemVariant } from "./components/text-side-bar-item/text-side-bar-item.types";
 export { TextAreaChangeEventDetail } from "./components/textarea/textarea.interface";
 export namespace Components {
     interface AdmiraltyAutocomplete {
@@ -422,6 +424,32 @@ export namespace Components {
          */
         "size": IconSize;
     }
+    interface AdmiraltyIconSideBarItem {
+        /**
+          * Represents whether this SideBarItem is 'active' and will be styled differently than SideBarItems that are not 'active'. There should only be one SideBarItem that is 'active' per SideBar.
+         */
+        "active": boolean;
+        /**
+          * Whether the component is expanded.
+         */
+        "expanded": boolean;
+        /**
+          * The URL to link to.
+         */
+        "href": string;
+        /**
+          * The name of the icon to display. A full list of available icons can be viewed at [https://fonts.google.com/icons](https://fonts.google.com/icons)
+         */
+        "icon": string;
+        /**
+          * Item text for the button or link depending on variant
+         */
+        "itemText": string;
+        /**
+          * Causes the default browser redirect to be suppressed. Can be used in conjunction with the `onIconSideBarItemClick` event to use a navigation router and prevent a full page reload when navigating.
+         */
+        "suppressRedirect"?: boolean;
+    }
     /**
      * Once this component works, review whether a form field component should be created so
      * that shared properties such as `label`, `hint`, `disabled` etc. can be defined once.
@@ -799,6 +827,36 @@ export namespace Components {
      */
     interface AdmiraltyTableRow {
     }
+    interface AdmiraltyTextSideBarItem {
+        /**
+          * Represents whether this SideBarItem is 'active' and will be styled differently than SideBarItems that are not 'active'. There should only be one SideBarItem that is 'active' per SideBar.
+         */
+        "active": boolean;
+        /**
+          * Whether the component is expanded.
+         */
+        "expanded": boolean;
+        /**
+          * The URL to link to.
+         */
+        "href": string;
+        /**
+          * The name of the icon to display. A full list of available icons can be viewed at [https://fonts.google.com/icons](https://fonts.google.com/icons)
+         */
+        "icon": string;
+        /**
+          * Item text for the button or link depending on variant
+         */
+        "itemText": string;
+        /**
+          * Causes the default browser redirect to be suppressed. Can be used in conjunction with the `onTextSideBarItemClick` event to use a navigation router and prevent a full page reload when navigating.
+         */
+        "suppressRedirect"?: boolean;
+        /**
+          * The type of text side bar item to render. Valid values are `primary` and `secondary`. Default value is `primary`.
+         */
+        "variant": TextSideBarItemVariant;
+    }
     interface AdmiraltyTextarea {
         /**
           * This dictates whether the form field is disabled.
@@ -874,6 +932,10 @@ export interface AdmiraltyHeaderSubMenuItemCustomEvent<T> extends CustomEvent<T>
     detail: T;
     target: HTMLAdmiraltyHeaderSubMenuItemElement;
 }
+export interface AdmiraltyIconSideBarItemCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLAdmiraltyIconSideBarItemElement;
+}
 export interface AdmiraltyInputCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLAdmiraltyInputElement;
@@ -909,6 +971,10 @@ export interface AdmiraltySideNavItemCustomEvent<T> extends CustomEvent<T> {
 export interface AdmiraltyTabGroupCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLAdmiraltyTabGroupElement;
+}
+export interface AdmiraltyTextSideBarItemCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLAdmiraltyTextSideBarItemElement;
 }
 export interface AdmiraltyTextareaCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -1178,6 +1244,24 @@ declare global {
     var HTMLAdmiraltyIconElement: {
         prototype: HTMLAdmiraltyIconElement;
         new (): HTMLAdmiraltyIconElement;
+    };
+    interface HTMLAdmiraltyIconSideBarItemElementEventMap {
+        "toggled": boolean;
+        "iconSideBarItemClick": string;
+    }
+    interface HTMLAdmiraltyIconSideBarItemElement extends Components.AdmiraltyIconSideBarItem, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLAdmiraltyIconSideBarItemElementEventMap>(type: K, listener: (this: HTMLAdmiraltyIconSideBarItemElement, ev: AdmiraltyIconSideBarItemCustomEvent<HTMLAdmiraltyIconSideBarItemElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLAdmiraltyIconSideBarItemElementEventMap>(type: K, listener: (this: HTMLAdmiraltyIconSideBarItemElement, ev: AdmiraltyIconSideBarItemCustomEvent<HTMLAdmiraltyIconSideBarItemElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLAdmiraltyIconSideBarItemElement: {
+        prototype: HTMLAdmiraltyIconSideBarItemElement;
+        new (): HTMLAdmiraltyIconSideBarItemElement;
     };
     interface HTMLAdmiraltyInputElementEventMap {
         "admiraltyInput": InputChangeEventDetail;
@@ -1482,6 +1566,24 @@ declare global {
         prototype: HTMLAdmiraltyTableRowElement;
         new (): HTMLAdmiraltyTableRowElement;
     };
+    interface HTMLAdmiraltyTextSideBarItemElementEventMap {
+        "toggled": boolean;
+        "textSideBarItemClick": string;
+    }
+    interface HTMLAdmiraltyTextSideBarItemElement extends Components.AdmiraltyTextSideBarItem, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLAdmiraltyTextSideBarItemElementEventMap>(type: K, listener: (this: HTMLAdmiraltyTextSideBarItemElement, ev: AdmiraltyTextSideBarItemCustomEvent<HTMLAdmiraltyTextSideBarItemElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLAdmiraltyTextSideBarItemElementEventMap>(type: K, listener: (this: HTMLAdmiraltyTextSideBarItemElement, ev: AdmiraltyTextSideBarItemCustomEvent<HTMLAdmiraltyTextSideBarItemElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLAdmiraltyTextSideBarItemElement: {
+        prototype: HTMLAdmiraltyTextSideBarItemElement;
+        new (): HTMLAdmiraltyTextSideBarItemElement;
+    };
     interface HTMLAdmiraltyTextareaElementEventMap {
         "textareaBlur": any;
         "admiraltyInput": TextAreaChangeEventDetail;
@@ -1524,6 +1626,7 @@ declare global {
         "admiralty-hint": HTMLAdmiraltyHintElement;
         "admiralty-hr": HTMLAdmiraltyHrElement;
         "admiralty-icon": HTMLAdmiraltyIconElement;
+        "admiralty-icon-side-bar-item": HTMLAdmiraltyIconSideBarItemElement;
         "admiralty-input": HTMLAdmiraltyInputElement;
         "admiralty-input-invalid": HTMLAdmiraltyInputInvalidElement;
         "admiralty-label": HTMLAdmiraltyLabelElement;
@@ -1553,6 +1656,7 @@ declare global {
         "admiralty-table-header": HTMLAdmiraltyTableHeaderElement;
         "admiralty-table-header-cell": HTMLAdmiraltyTableHeaderCellElement;
         "admiralty-table-row": HTMLAdmiraltyTableRowElement;
+        "admiralty-text-side-bar-item": HTMLAdmiraltyTextSideBarItemElement;
         "admiralty-textarea": HTMLAdmiraltyTextareaElement;
     }
 }
@@ -2020,6 +2124,40 @@ declare namespace LocalJSX {
          */
         "size"?: IconSize;
     }
+    interface AdmiraltyIconSideBarItem {
+        /**
+          * Represents whether this SideBarItem is 'active' and will be styled differently than SideBarItems that are not 'active'. There should only be one SideBarItem that is 'active' per SideBar.
+         */
+        "active"?: boolean;
+        /**
+          * Whether the component is expanded.
+         */
+        "expanded"?: boolean;
+        /**
+          * The URL to link to.
+         */
+        "href"?: string;
+        /**
+          * The name of the icon to display. A full list of available icons can be viewed at [https://fonts.google.com/icons](https://fonts.google.com/icons)
+         */
+        "icon"?: string;
+        /**
+          * Item text for the button or link depending on variant
+         */
+        "itemText"?: string;
+        /**
+          * An event emitted when this Side Bar item is selected containing the sideBarItemId
+         */
+        "onIconSideBarItemClick"?: (event: AdmiraltyIconSideBarItemCustomEvent<string>) => void;
+        /**
+          * The event that is dispatched when the expanded status is toggled.
+         */
+        "onToggled"?: (event: AdmiraltyIconSideBarItemCustomEvent<boolean>) => void;
+        /**
+          * Causes the default browser redirect to be suppressed. Can be used in conjunction with the `onIconSideBarItemClick` event to use a navigation router and prevent a full page reload when navigating.
+         */
+        "suppressRedirect"?: boolean;
+    }
     /**
      * Once this component works, review whether a form field component should be created so
      * that shared properties such as `label`, `hint`, `disabled` etc. can be defined once.
@@ -2453,6 +2591,44 @@ declare namespace LocalJSX {
      */
     interface AdmiraltyTableRow {
     }
+    interface AdmiraltyTextSideBarItem {
+        /**
+          * Represents whether this SideBarItem is 'active' and will be styled differently than SideBarItems that are not 'active'. There should only be one SideBarItem that is 'active' per SideBar.
+         */
+        "active"?: boolean;
+        /**
+          * Whether the component is expanded.
+         */
+        "expanded"?: boolean;
+        /**
+          * The URL to link to.
+         */
+        "href"?: string;
+        /**
+          * The name of the icon to display. A full list of available icons can be viewed at [https://fonts.google.com/icons](https://fonts.google.com/icons)
+         */
+        "icon"?: string;
+        /**
+          * Item text for the button or link depending on variant
+         */
+        "itemText"?: string;
+        /**
+          * An event emitted when this Side Bar item is selected containing the sideBarItemId
+         */
+        "onTextSideBarItemClick"?: (event: AdmiraltyTextSideBarItemCustomEvent<string>) => void;
+        /**
+          * The event that is dispatched when the expanded status is toggled.
+         */
+        "onToggled"?: (event: AdmiraltyTextSideBarItemCustomEvent<boolean>) => void;
+        /**
+          * Causes the default browser redirect to be suppressed. Can be used in conjunction with the `onTextSideBarItemClick` event to use a navigation router and prevent a full page reload when navigating.
+         */
+        "suppressRedirect"?: boolean;
+        /**
+          * The type of text side bar item to render. Valid values are `primary` and `secondary`. Default value is `primary`.
+         */
+        "variant"?: TextSideBarItemVariant;
+    }
     interface AdmiraltyTextarea {
         /**
           * This dictates whether the form field is disabled.
@@ -2517,6 +2693,7 @@ declare namespace LocalJSX {
         "admiralty-hint": AdmiraltyHint;
         "admiralty-hr": AdmiraltyHr;
         "admiralty-icon": AdmiraltyIcon;
+        "admiralty-icon-side-bar-item": AdmiraltyIconSideBarItem;
         "admiralty-input": AdmiraltyInput;
         "admiralty-input-invalid": AdmiraltyInputInvalid;
         "admiralty-label": AdmiraltyLabel;
@@ -2546,6 +2723,7 @@ declare namespace LocalJSX {
         "admiralty-table-header": AdmiraltyTableHeader;
         "admiralty-table-header-cell": AdmiraltyTableHeaderCell;
         "admiralty-table-row": AdmiraltyTableRow;
+        "admiralty-text-side-bar-item": AdmiraltyTextSideBarItem;
         "admiralty-textarea": AdmiraltyTextarea;
     }
 }
@@ -2576,6 +2754,7 @@ declare module "@stencil/core" {
             "admiralty-hint": LocalJSX.AdmiraltyHint & JSXBase.HTMLAttributes<HTMLAdmiraltyHintElement>;
             "admiralty-hr": LocalJSX.AdmiraltyHr & JSXBase.HTMLAttributes<HTMLAdmiraltyHrElement>;
             "admiralty-icon": LocalJSX.AdmiraltyIcon & JSXBase.HTMLAttributes<HTMLAdmiraltyIconElement>;
+            "admiralty-icon-side-bar-item": LocalJSX.AdmiraltyIconSideBarItem & JSXBase.HTMLAttributes<HTMLAdmiraltyIconSideBarItemElement>;
             /**
              * Once this component works, review whether a form field component should be created so
              * that shared properties such as `label`, `hint`, `disabled` etc. can be defined once.
@@ -2629,6 +2808,7 @@ declare module "@stencil/core" {
              * The table row element should be used to define rows within the table body
              */
             "admiralty-table-row": LocalJSX.AdmiraltyTableRow & JSXBase.HTMLAttributes<HTMLAdmiraltyTableRowElement>;
+            "admiralty-text-side-bar-item": LocalJSX.AdmiraltyTextSideBarItem & JSXBase.HTMLAttributes<HTMLAdmiraltyTextSideBarItemElement>;
             "admiralty-textarea": LocalJSX.AdmiraltyTextarea & JSXBase.HTMLAttributes<HTMLAdmiraltyTextareaElement>;
         }
     }
