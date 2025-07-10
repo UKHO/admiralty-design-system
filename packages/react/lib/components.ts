@@ -62,6 +62,7 @@ import { AdmiraltyTableHeader as AdmiraltyTableHeaderElement, defineCustomElemen
 import { AdmiraltyTableRow as AdmiraltyTableRowElement, defineCustomElement as defineAdmiraltyTableRow } from "@ukho/admiralty-core/dist/components/admiralty-table-row.js";
 import { AdmiraltyTable as AdmiraltyTableElement, defineCustomElement as defineAdmiraltyTable } from "@ukho/admiralty-core/dist/components/admiralty-table.js";
 import { AdmiraltyTextSideBarItem as AdmiraltyTextSideBarItemElement, defineCustomElement as defineAdmiraltyTextSideBarItem } from "@ukho/admiralty-core/dist/components/admiralty-text-side-bar-item.js";
+import { AdmiraltyTextSideBar as AdmiraltyTextSideBarElement, defineCustomElement as defineAdmiraltyTextSideBar } from "@ukho/admiralty-core/dist/components/admiralty-text-side-bar.js";
 import { AdmiraltyTextarea as AdmiraltyTextareaElement, defineCustomElement as defineAdmiraltyTextarea } from "@ukho/admiralty-core/dist/components/admiralty-textarea.js";
 import React from 'react';
 
@@ -629,6 +630,16 @@ export const AdmiraltyTableRow: StencilReactComponent<AdmiraltyTableRowElement, 
     react: React,
     events: {} as AdmiraltyTableRowEvents,
     defineCustomElement: defineAdmiraltyTableRow
+});
+
+type AdmiraltyTextSideBarEvents = NonNullable<unknown>;
+
+export const AdmiraltyTextSideBar: StencilReactComponent<AdmiraltyTextSideBarElement, AdmiraltyTextSideBarEvents> = /*@__PURE__*/ createComponent<AdmiraltyTextSideBarElement, AdmiraltyTextSideBarEvents>({
+    tagName: 'admiralty-text-side-bar',
+    elementClass: AdmiraltyTextSideBarElement,
+    react: React,
+    events: {} as AdmiraltyTextSideBarEvents,
+    defineCustomElement: defineAdmiraltyTextSideBar
 });
 
 type AdmiraltyTextSideBarItemEvents = {

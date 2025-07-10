@@ -1311,6 +1311,28 @@ export declare interface AdmiraltyTableRow extends Components.AdmiraltyTableRow 
 
 
 @ProxyCmp({
+  inputs: ['label', 'logoImgUrl', 'showLogo', 'textSideBarWidth']
+})
+@Component({
+  selector: 'admiralty-text-side-bar',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['label', 'logoImgUrl', 'showLogo', 'textSideBarWidth'],
+})
+export class AdmiraltyTextSideBar {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface AdmiraltyTextSideBar extends Components.AdmiraltyTextSideBar {}
+
+
+@ProxyCmp({
   inputs: ['active', 'expanded', 'href', 'icon', 'itemText', 'suppressRedirect', 'variant']
 })
 @Component({

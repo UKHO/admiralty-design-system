@@ -847,6 +847,24 @@ export namespace Components {
      */
     interface AdmiraltyTableRow {
     }
+    interface AdmiraltyTextSideBar {
+        /**
+          * A label for accessibility purposes to describe what this navigation is for.
+         */
+        "label": string;
+        /**
+          * The URI of the logo image
+         */
+        "logoImgUrl": string;
+        /**
+          * Set this to false to hide the logo that is displayed in the bottom of the side bar.
+         */
+        "showLogo": boolean;
+        /**
+          * Sets the sidebar width
+         */
+        "textSideBarWidth": string;
+    }
     interface AdmiraltyTextSideBarItem {
         /**
           * Represents whether this SideBarItem is 'active' and will be styled differently than SideBarItems that are not 'active'. There should only be one SideBarItem that is 'active' per SideBar.
@@ -876,6 +894,8 @@ export namespace Components {
           * The type of text side bar item to render. Valid values are `primary` and `secondary`. Default value is `primary`.
          */
         "variant": TextSideBarItemVariant;
+    }
+    interface AdmiraltyTextSideBarWrapper {
     }
     interface AdmiraltyTextarea {
         /**
@@ -1598,6 +1618,12 @@ declare global {
         prototype: HTMLAdmiraltyTableRowElement;
         new (): HTMLAdmiraltyTableRowElement;
     };
+    interface HTMLAdmiraltyTextSideBarElement extends Components.AdmiraltyTextSideBar, HTMLStencilElement {
+    }
+    var HTMLAdmiraltyTextSideBarElement: {
+        prototype: HTMLAdmiraltyTextSideBarElement;
+        new (): HTMLAdmiraltyTextSideBarElement;
+    };
     interface HTMLAdmiraltyTextSideBarItemElementEventMap {
         "toggled": boolean;
         "textSideBarItemClick": string;
@@ -1615,6 +1641,12 @@ declare global {
     var HTMLAdmiraltyTextSideBarItemElement: {
         prototype: HTMLAdmiraltyTextSideBarItemElement;
         new (): HTMLAdmiraltyTextSideBarItemElement;
+    };
+    interface HTMLAdmiraltyTextSideBarWrapperElement extends Components.AdmiraltyTextSideBarWrapper, HTMLStencilElement {
+    }
+    var HTMLAdmiraltyTextSideBarWrapperElement: {
+        prototype: HTMLAdmiraltyTextSideBarWrapperElement;
+        new (): HTMLAdmiraltyTextSideBarWrapperElement;
     };
     interface HTMLAdmiraltyTextareaElementEventMap {
         "textareaBlur": any;
@@ -1690,7 +1722,9 @@ declare global {
         "admiralty-table-header": HTMLAdmiraltyTableHeaderElement;
         "admiralty-table-header-cell": HTMLAdmiraltyTableHeaderCellElement;
         "admiralty-table-row": HTMLAdmiraltyTableRowElement;
+        "admiralty-text-side-bar": HTMLAdmiraltyTextSideBarElement;
         "admiralty-text-side-bar-item": HTMLAdmiraltyTextSideBarItemElement;
+        "admiralty-text-side-bar-wrapper": HTMLAdmiraltyTextSideBarWrapperElement;
         "admiralty-textarea": HTMLAdmiraltyTextareaElement;
     }
 }
@@ -2645,6 +2679,24 @@ declare namespace LocalJSX {
      */
     interface AdmiraltyTableRow {
     }
+    interface AdmiraltyTextSideBar {
+        /**
+          * A label for accessibility purposes to describe what this navigation is for.
+         */
+        "label"?: string;
+        /**
+          * The URI of the logo image
+         */
+        "logoImgUrl"?: string;
+        /**
+          * Set this to false to hide the logo that is displayed in the bottom of the side bar.
+         */
+        "showLogo"?: boolean;
+        /**
+          * Sets the sidebar width
+         */
+        "textSideBarWidth"?: string;
+    }
     interface AdmiraltyTextSideBarItem {
         /**
           * Represents whether this SideBarItem is 'active' and will be styled differently than SideBarItems that are not 'active'. There should only be one SideBarItem that is 'active' per SideBar.
@@ -2682,6 +2734,8 @@ declare namespace LocalJSX {
           * The type of text side bar item to render. Valid values are `primary` and `secondary`. Default value is `primary`.
          */
         "variant"?: TextSideBarItemVariant;
+    }
+    interface AdmiraltyTextSideBarWrapper {
     }
     interface AdmiraltyTextarea {
         /**
@@ -2779,7 +2833,9 @@ declare namespace LocalJSX {
         "admiralty-table-header": AdmiraltyTableHeader;
         "admiralty-table-header-cell": AdmiraltyTableHeaderCell;
         "admiralty-table-row": AdmiraltyTableRow;
+        "admiralty-text-side-bar": AdmiraltyTextSideBar;
         "admiralty-text-side-bar-item": AdmiraltyTextSideBarItem;
+        "admiralty-text-side-bar-wrapper": AdmiraltyTextSideBarWrapper;
         "admiralty-textarea": AdmiraltyTextarea;
     }
 }
@@ -2866,7 +2922,9 @@ declare module "@stencil/core" {
              * The table row element should be used to define rows within the table body
              */
             "admiralty-table-row": LocalJSX.AdmiraltyTableRow & JSXBase.HTMLAttributes<HTMLAdmiraltyTableRowElement>;
+            "admiralty-text-side-bar": LocalJSX.AdmiraltyTextSideBar & JSXBase.HTMLAttributes<HTMLAdmiraltyTextSideBarElement>;
             "admiralty-text-side-bar-item": LocalJSX.AdmiraltyTextSideBarItem & JSXBase.HTMLAttributes<HTMLAdmiraltyTextSideBarItemElement>;
+            "admiralty-text-side-bar-wrapper": LocalJSX.AdmiraltyTextSideBarWrapper & JSXBase.HTMLAttributes<HTMLAdmiraltyTextSideBarWrapperElement>;
             "admiralty-textarea": LocalJSX.AdmiraltyTextarea & JSXBase.HTMLAttributes<HTMLAdmiraltyTextareaElement>;
         }
     }
