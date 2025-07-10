@@ -33,6 +33,7 @@ import { AdmiraltyHeader as AdmiraltyHeaderElement, defineCustomElement as defin
 import { AdmiraltyHint as AdmiraltyHintElement, defineCustomElement as defineAdmiraltyHint } from "@ukho/admiralty-core/dist/components/admiralty-hint.js";
 import { AdmiraltyHr as AdmiraltyHrElement, defineCustomElement as defineAdmiraltyHr } from "@ukho/admiralty-core/dist/components/admiralty-hr.js";
 import { AdmiraltyIconSideBarItem as AdmiraltyIconSideBarItemElement, defineCustomElement as defineAdmiraltyIconSideBarItem } from "@ukho/admiralty-core/dist/components/admiralty-icon-side-bar-item.js";
+import { AdmiraltyIconSideBar as AdmiraltyIconSideBarElement, defineCustomElement as defineAdmiraltyIconSideBar } from "@ukho/admiralty-core/dist/components/admiralty-icon-side-bar.js";
 import { AdmiraltyIcon as AdmiraltyIconElement, defineCustomElement as defineAdmiraltyIcon } from "@ukho/admiralty-core/dist/components/admiralty-icon.js";
 import { AdmiraltyInputInvalid as AdmiraltyInputInvalidElement, defineCustomElement as defineAdmiraltyInputInvalid } from "@ukho/admiralty-core/dist/components/admiralty-input-invalid.js";
 import { AdmiraltyInput as AdmiraltyInputElement, defineCustomElement as defineAdmiraltyInput } from "@ukho/admiralty-core/dist/components/admiralty-input.js";
@@ -314,6 +315,16 @@ export const AdmiraltyIcon: StencilReactComponent<AdmiraltyIconElement, Admiralt
     react: React,
     events: {} as AdmiraltyIconEvents,
     defineCustomElement: defineAdmiraltyIcon
+});
+
+type AdmiraltyIconSideBarEvents = NonNullable<unknown>;
+
+export const AdmiraltyIconSideBar: StencilReactComponent<AdmiraltyIconSideBarElement, AdmiraltyIconSideBarEvents> = /*@__PURE__*/ createComponent<AdmiraltyIconSideBarElement, AdmiraltyIconSideBarEvents>({
+    tagName: 'admiralty-icon-side-bar',
+    elementClass: AdmiraltyIconSideBarElement,
+    react: React,
+    events: {} as AdmiraltyIconSideBarEvents,
+    defineCustomElement: defineAdmiraltyIconSideBar
 });
 
 type AdmiraltyIconSideBarItemEvents = {

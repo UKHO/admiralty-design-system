@@ -608,6 +608,28 @@ export declare interface AdmiraltyIcon extends Components.AdmiraltyIcon {}
 
 
 @ProxyCmp({
+  inputs: ['iconSideBarWidth', 'label', 'logoImgUrl', 'showLogo']
+})
+@Component({
+  selector: 'admiralty-icon-side-bar',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['iconSideBarWidth', 'label', 'logoImgUrl', 'showLogo'],
+})
+export class AdmiraltyIconSideBar {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface AdmiraltyIconSideBar extends Components.AdmiraltyIconSideBar {}
+
+
+@ProxyCmp({
   inputs: ['active', 'expanded', 'href', 'icon', 'itemText', 'suppressRedirect']
 })
 @Component({

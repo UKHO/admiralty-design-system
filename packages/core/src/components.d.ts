@@ -424,6 +424,24 @@ export namespace Components {
          */
         "size": IconSize;
     }
+    interface AdmiraltyIconSideBar {
+        /**
+          * Sets the sidebar width
+         */
+        "iconSideBarWidth": string;
+        /**
+          * A label for accessibility purposes to describe what this navigation is for.
+         */
+        "label": string;
+        /**
+          * The URI of the logo image
+         */
+        "logoImgUrl": string;
+        /**
+          * Set this to false to hide the logo that is displayed in the bottom of the side bar.
+         */
+        "showLogo": boolean;
+    }
     interface AdmiraltyIconSideBarItem {
         /**
           * Represents whether this SideBarItem is 'active' and will be styled differently than SideBarItems that are not 'active'. There should only be one SideBarItem that is 'active' per SideBar.
@@ -449,6 +467,8 @@ export namespace Components {
           * Causes the default browser redirect to be suppressed. Can be used in conjunction with the `onIconSideBarItemClick` event to use a navigation router and prevent a full page reload when navigating.
          */
         "suppressRedirect"?: boolean;
+    }
+    interface AdmiraltyIconSideBarWrapper {
     }
     /**
      * Once this component works, review whether a form field component should be created so
@@ -1245,6 +1265,12 @@ declare global {
         prototype: HTMLAdmiraltyIconElement;
         new (): HTMLAdmiraltyIconElement;
     };
+    interface HTMLAdmiraltyIconSideBarElement extends Components.AdmiraltyIconSideBar, HTMLStencilElement {
+    }
+    var HTMLAdmiraltyIconSideBarElement: {
+        prototype: HTMLAdmiraltyIconSideBarElement;
+        new (): HTMLAdmiraltyIconSideBarElement;
+    };
     interface HTMLAdmiraltyIconSideBarItemElementEventMap {
         "toggled": boolean;
         "iconSideBarItemClick": string;
@@ -1262,6 +1288,12 @@ declare global {
     var HTMLAdmiraltyIconSideBarItemElement: {
         prototype: HTMLAdmiraltyIconSideBarItemElement;
         new (): HTMLAdmiraltyIconSideBarItemElement;
+    };
+    interface HTMLAdmiraltyIconSideBarWrapperElement extends Components.AdmiraltyIconSideBarWrapper, HTMLStencilElement {
+    }
+    var HTMLAdmiraltyIconSideBarWrapperElement: {
+        prototype: HTMLAdmiraltyIconSideBarWrapperElement;
+        new (): HTMLAdmiraltyIconSideBarWrapperElement;
     };
     interface HTMLAdmiraltyInputElementEventMap {
         "admiraltyInput": InputChangeEventDetail;
@@ -1626,7 +1658,9 @@ declare global {
         "admiralty-hint": HTMLAdmiraltyHintElement;
         "admiralty-hr": HTMLAdmiraltyHrElement;
         "admiralty-icon": HTMLAdmiraltyIconElement;
+        "admiralty-icon-side-bar": HTMLAdmiraltyIconSideBarElement;
         "admiralty-icon-side-bar-item": HTMLAdmiraltyIconSideBarItemElement;
+        "admiralty-icon-side-bar-wrapper": HTMLAdmiraltyIconSideBarWrapperElement;
         "admiralty-input": HTMLAdmiraltyInputElement;
         "admiralty-input-invalid": HTMLAdmiraltyInputInvalidElement;
         "admiralty-label": HTMLAdmiraltyLabelElement;
@@ -2124,6 +2158,24 @@ declare namespace LocalJSX {
          */
         "size"?: IconSize;
     }
+    interface AdmiraltyIconSideBar {
+        /**
+          * Sets the sidebar width
+         */
+        "iconSideBarWidth"?: string;
+        /**
+          * A label for accessibility purposes to describe what this navigation is for.
+         */
+        "label"?: string;
+        /**
+          * The URI of the logo image
+         */
+        "logoImgUrl"?: string;
+        /**
+          * Set this to false to hide the logo that is displayed in the bottom of the side bar.
+         */
+        "showLogo"?: boolean;
+    }
     interface AdmiraltyIconSideBarItem {
         /**
           * Represents whether this SideBarItem is 'active' and will be styled differently than SideBarItems that are not 'active'. There should only be one SideBarItem that is 'active' per SideBar.
@@ -2157,6 +2209,8 @@ declare namespace LocalJSX {
           * Causes the default browser redirect to be suppressed. Can be used in conjunction with the `onIconSideBarItemClick` event to use a navigation router and prevent a full page reload when navigating.
          */
         "suppressRedirect"?: boolean;
+    }
+    interface AdmiraltyIconSideBarWrapper {
     }
     /**
      * Once this component works, review whether a form field component should be created so
@@ -2693,7 +2747,9 @@ declare namespace LocalJSX {
         "admiralty-hint": AdmiraltyHint;
         "admiralty-hr": AdmiraltyHr;
         "admiralty-icon": AdmiraltyIcon;
+        "admiralty-icon-side-bar": AdmiraltyIconSideBar;
         "admiralty-icon-side-bar-item": AdmiraltyIconSideBarItem;
+        "admiralty-icon-side-bar-wrapper": AdmiraltyIconSideBarWrapper;
         "admiralty-input": AdmiraltyInput;
         "admiralty-input-invalid": AdmiraltyInputInvalid;
         "admiralty-label": AdmiraltyLabel;
@@ -2754,7 +2810,9 @@ declare module "@stencil/core" {
             "admiralty-hint": LocalJSX.AdmiraltyHint & JSXBase.HTMLAttributes<HTMLAdmiraltyHintElement>;
             "admiralty-hr": LocalJSX.AdmiraltyHr & JSXBase.HTMLAttributes<HTMLAdmiraltyHrElement>;
             "admiralty-icon": LocalJSX.AdmiraltyIcon & JSXBase.HTMLAttributes<HTMLAdmiraltyIconElement>;
+            "admiralty-icon-side-bar": LocalJSX.AdmiraltyIconSideBar & JSXBase.HTMLAttributes<HTMLAdmiraltyIconSideBarElement>;
             "admiralty-icon-side-bar-item": LocalJSX.AdmiraltyIconSideBarItem & JSXBase.HTMLAttributes<HTMLAdmiraltyIconSideBarItemElement>;
+            "admiralty-icon-side-bar-wrapper": LocalJSX.AdmiraltyIconSideBarWrapper & JSXBase.HTMLAttributes<HTMLAdmiraltyIconSideBarWrapperElement>;
             /**
              * Once this component works, review whether a form field component should be created so
              * that shared properties such as `label`, `hint`, `disabled` etc. can be defined once.

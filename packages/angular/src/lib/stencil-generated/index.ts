@@ -25,6 +25,7 @@ export const DIRECTIVES = [
   d.AdmiraltyHint,
   d.AdmiraltyHr,
   d.AdmiraltyIcon,
+  d.AdmiraltyIconSideBar,
   d.AdmiraltyIconSideBarItem,
   d.AdmiraltyInput,
   d.AdmiraltyInputInvalid,
