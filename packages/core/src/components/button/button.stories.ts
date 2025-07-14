@@ -42,6 +42,25 @@ export const Icon: Story = {
   args: { variant: 'icon', icon: 'refresh' },
 };
 
+export const IconBorderless: Story = {
+  render: args => html`<admiralty-button variant="${args.variant}" icon="${args.icon}" borderless="${args.borderless}"></admiralty-button>`,
+  args: { variant: 'icon-secondary', icon: 'refresh', borderless: true },
+};
+
+export const IconSecondary: Story = {
+  render: args => html`<admiralty-button variant="${args.variant}" icon="${args.icon}"></admiralty-button>`,
+  args: { variant: 'icon-secondary', icon: 'refresh' },
+};
+
+export const IconDisabled: Story = {
+  render: args => html`<admiralty-button variant="${args.variant}" icon="${args.icon}" ?disabled="${args.disabled}"></admiralty-button>`,
+  args: {
+    variant: 'icon',
+    icon: 'refresh',
+    disabled: true,
+  },
+};
+
 export const TextWithIcon: Story = {
   render: args => html`<admiralty-button variant="${args.variant}" icon="${args.icon}">Start</admiralty-button>`,
   args: { variant: 'icon', icon: 'arrow-forward-ios-rounded' },
