@@ -80,7 +80,7 @@ $button-text-colour-icon: var(--admiralty-colour-primary-contrast) !default;
 $button-border-colour-icon: var(--admiralty-colour-primary) !default;
 $button-hover-border-colour-icon: var(--admiralty-colour-primary) !default;
 $button-active-border-colour-icon: var(--admiralty-colour-primary) !default;
-$button-disabled-colour-icon: var(--admiralty-background-colour-tint) !default;
+$button-disabled-colour-icon: var(--admiralty-disabled-colour) !default;
 
 $button-focus-padding: var(--admiralty-button-focus-padding, var(--admiralty-spacing-3) 18px var(--admiralty-spacing-2));
 $button-defaults-padding: var(--admiralty-button-defaults-padding, 10px var(--admiralty-spacing-4));
