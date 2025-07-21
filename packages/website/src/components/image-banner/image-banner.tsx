@@ -1,17 +1,15 @@
+import { AdmiraltyButton } from "@ukho/admiralty-react";
 import "./image-banner.css";
 
 export default function ImageBanner() {
   return (
     <div className="banner-image">
+      <div className="ukho"></div>
       <h1>
-        Build your product or service using the ADMIRALTY and UK Hydrographic Office brand guide, components and
-        patterns.
+        Build your product or service using the ADMIRALTY and UK Hydrographic Office.
       </h1>
       <p>
-        Service used in image:{" "}
-        <a href="https://easytide.admiralty.co.uk/" target="_blank">
-          EasyTide
-        </a>
+        <AdmiraltyButton variant="primary">Get started</AdmiraltyButton>
       </p>
     </div>
   );
