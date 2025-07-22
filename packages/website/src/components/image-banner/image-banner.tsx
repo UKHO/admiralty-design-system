@@ -9,7 +9,7 @@ export default function ImageBanner() {
         Build your product or service using the ADMIRALTY and UK Hydrographic Office.
       </h1>
       <p>
-        <AdmiraltyButton variant="primary">Get started</AdmiraltyButton>
+        <AdmiraltyButton variant="secondary">Get started</AdmiraltyButton>
       </p>
     </div>
   );
