@@ -53,7 +53,7 @@ export class PaginatorComponent {
       <nav aria-label="pagination" class="standard">
         <p aria-live="polite">{this.label}</p>
         <admiralty-button
-          variant="icon"
+          variant="icon-secondary"
           icon="arrow-back-ios-new-rounded"
           disabled={this.currentPage === 1}
           aria-disabled={this.currentPage === 1}
@@ -62,7 +62,7 @@ export class PaginatorComponent {
           aria-label="Previous Page"
         ></admiralty-button>
         <admiralty-button
-          variant="icon"
+          variant="icon-secondary"
           icon="arrow-forward-ios-rounded"
           disabled={this.currentPage === this.pages}
           aria-disabled={this.currentPage === this.pages}

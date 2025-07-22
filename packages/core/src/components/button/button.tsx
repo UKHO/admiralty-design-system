@@ -25,6 +25,11 @@ export class ButtonComponent {
    * The default behavior of the button. Valid values are `button`, `submit` and `reset`.
    * Default value is `submit`.
    */
+
+  @Prop() borderless = false;
+  /**
+   * Default value is false
+   */
   @Prop() type: 'button' | 'submit' | 'reset' = 'submit';
   /**
    * The `<form>` element to associate the button with (its form owner).
@@ -52,7 +57,7 @@ export class ButtonComponent {
     };
 
     return (
-      <button type={this.type} disabled={this.disabled} class={this.variant} {...props}>
+      <button type={this.type} disabled={this.disabled} class={{[this.variant]:true, 'borderless': this.borderless}} {...props}>
         <slot></slot>
         {this.icon ? <admiralty-icon name={this.icon} class={`${hasTextContent? "icon-padding" : ""}`}></admiralty-icon> : undefined}
       </button>
