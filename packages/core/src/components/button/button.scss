@@ -252,12 +252,10 @@ button.icon {
     }
   }
 
-
   &:enabled:active {
     background-color: $button-active-colour-icon;
     color: $button-active-text-colour-icon;
     border: 2px solid $button-active-border-colour-icon;
-    border: 2px solid transparent;
 
     admiralty-icon {
       color: $button-active-text-colour-icon !important;
@@ -266,8 +264,73 @@ button.icon {
 
   &:disabled {
     background-color: $button-disabled-colour-icon;
+    border: 2px solid $button-disabled-colour-icon;
+    opacity: 0.3;
+  }
+
+  &.borderless {
+    border: none;
+    background-color: yellow;
+  }
+
+  &:active:disabled {
+    background-color: $button-colour-deselected;
+    border: 2px solid $button-disabled-colour-icon;
+    opacity: 0.3;
+  }
+
+  i {
+    margin: auto;
+    font-size: unset;
+    color: unset;
+    padding-left: unset;
+  }
+}
+button.icon-secondary {
+  @include button-defaults;
+  min-height: 44px;
+  min-width: 50px;
+
+  background-color: $button-colour-icon-secondary;
+  color: $button-text-colour-icon-secondary;
+  border: 2px solid $button-border-colour-icon-secondary;
+  padding: 9px;
+
+  &:focus {
+    padding: 11px 11px 8px;
+  }
+
+  &:hover {
+    background-color: $button-hover-colour-icon-secondary;
+    border: 2px solid $button-hover-border-colour-icon-secondary;
+    padding: 9px;
+  }
+
+  admiralty-icon {
+    &.icon-padding {
+      padding-left: 8px;
+    }
+  }
+
+  &:enabled:active {
+    background-color: $button-active-colour-icon-secondary;
+    color: $button-active-text-colour-icon-secondary;
+    border: 2px solid $button-active-border-colour-icon-secondary;
+    border: 2px solid transparent;
+
+    admiralty-icon {
+      color: $button-active-text-colour-icon-secondary !important;
+    }
+  }
+
+  &:disabled {
+    background-color: $button-disabled-colour-icon;
     border: 2px solid $button-active-border-colour-icon;
     opacity: 0.3;
+  }
+
+  &.borderless {
+    border: none;
   }
 
   &:active:disabled {
