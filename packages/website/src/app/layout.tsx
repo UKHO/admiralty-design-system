@@ -14,7 +14,7 @@ import { useRouter, usePathname } from 'next/navigation';
 import { TextSideBarItemVariant } from '@ukho/admiralty-core';
 
 const componentChildren: any[] = [
-  { name: 'Overview', variant: 'text', path: '/components' },
+  // { name: 'Overview', variant: 'text', path: '/components' },
   { path: '/components/autocomplete', variant: 'text', name: 'Autocomplete' },
   { path: '/components/breadcrumbs', variant: 'text', name: 'Breadcrumbs' },
   { path: '/components/button', variant: 'text', name: 'Button' },
@@ -59,7 +59,7 @@ const gettingStartedChildren: any[] = [
 ];
 
 const principleChildren: any[] = [
-  { path: '/principles', variant: 'text', name: 'Overview' },
+  // { path: '/principles', variant: 'text', name: 'Overview' },
   { path: '/principles/accessibility', variant: 'text', name: 'Accessibility' },
   { path: '/principles/contentdesign', variant: 'text', name: 'Content Design' },
   { path: '/principles/design', variant: 'text', name: 'Design' },
@@ -74,7 +74,7 @@ const patternsChildren: any[] = [
 ];
 
 const brandChildren: any[] = [
-  { name: 'Overview', variant: 'text', path: '/brand-guide' },
+  // { name: 'Overview', variant: 'text', path: '/brand-guide' },
   { name: 'Typography', variant: 'text', path: '/brand-guide/typography' },
   { name: 'Colour', variant: 'text', path: '/brand-guide/colour' },
   { name: 'Images', variant: 'text', path: '/brand-guide/images' },
@@ -94,7 +94,7 @@ const sideBarItems = [
     slot: 'items',
     children: [
       {
-        name: 'Overview',
+        name: 'v5.0.0',
         variant: 'text',
         path: ''
       }
