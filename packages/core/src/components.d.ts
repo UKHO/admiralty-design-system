@@ -13,7 +13,6 @@ import { FooterTypes } from "./components/footer/footer.types";
 import { InputChangeEventDetail } from "./components/input/input.interface";
 import { RadioGroupChangeEventDetail } from "./components/radio-group/radio-group-interface";
 import { SelectChangeEventDetail } from "./components/select/select.interface";
-import { SideBarItemVariant } from "./components/side-bar-item/side-bar-item.types";
 import { TextSideBarItemVariant } from "./components/text-side-bar-item/text-side-bar-item.types";
 import { TextAreaChangeEventDetail } from "./components/textarea/textarea.interface";
 export { AutoCompleteChangeEventDetail, Option } from "./components/autocomplete/autocomplete.interface";
@@ -24,7 +23,6 @@ export { FooterTypes } from "./components/footer/footer.types";
 export { InputChangeEventDetail } from "./components/input/input.interface";
 export { RadioGroupChangeEventDetail } from "./components/radio-group/radio-group-interface";
 export { SelectChangeEventDetail } from "./components/select/select.interface";
-export { SideBarItemVariant } from "./components/side-bar-item/side-bar-item.types";
 export { TextSideBarItemVariant } from "./components/text-side-bar-item/text-side-bar-item.types";
 export { TextAreaChangeEventDetail } from "./components/textarea/textarea.interface";
 export namespace Components {
@@ -135,6 +133,10 @@ export namespace Components {
     }
     interface AdmiraltyButton {
         /**
+          * The default behavior of the button. Valid values are `button`, `submit` and `reset`. Default value is `submit`.
+         */
+        "borderless": boolean;
+        /**
           * Determines whether the button is disabled. A button in disabled state will not fire click output events.
          */
         "disabled": boolean;
@@ -151,7 +153,7 @@ export namespace Components {
          */
         "name": string;
         /**
-          * The default behavior of the button. Valid values are `button`, `submit` and `reset`. Default value is `submit`.
+          * Default value is false
          */
         "type": 'button' | 'submit' | 'reset';
         /**
@@ -721,56 +723,6 @@ export namespace Components {
          */
         "width"?: number;
     }
-    interface AdmiraltySideBar {
-        /**
-          * A label for accessibility purposes to describe what this navigation is for.
-         */
-        "label": string;
-        /**
-          * The URI of the logo image
-         */
-        "logoImgUrl": string;
-        /**
-          * Set this to false to hide the logo that is displayed in the bottom of the side bar.
-         */
-        "showLogo": boolean;
-        /**
-          * Sets the sidebar width
-         */
-        "sideBarWidth": string;
-    }
-    interface AdmiraltySideBarItem {
-        /**
-          * Represents whether this SideBarItem is 'active' and will be styled differently than SideBarItems that are not 'active'. There should only be one SideBarItem that is 'active' per SideBar.
-         */
-        "active": boolean;
-        /**
-          * Whether the component is expanded.
-         */
-        "expanded": boolean;
-        /**
-          * The URL to link to.
-         */
-        "href": string;
-        /**
-          * The name of the icon to display. A full list of available icons can be viewed at [https://fonts.google.com/icons](https://fonts.google.com/icons)
-         */
-        "icon": string;
-        /**
-          * Item text for the button or link depending on variant
-         */
-        "itemText": string;
-        /**
-          * Causes the default browser redirect to be suppressed. Can be used in conjunction with the `onSideBarItemClick` event to use a navigation router and prevent a full page reload when navigating.
-         */
-        "suppressRedirect"?: boolean;
-        /**
-          * The type of side bar item to render. Valid values are `primary` and `secondary`. Default value is `primary`.
-         */
-        "variant": SideBarItemVariant;
-    }
-    interface AdmiraltySideBarWrapper {
-    }
     interface AdmiraltySideNav {
         /**
           * A label for accessibility purposes to describe what this Side Nav navigation is for e.g. Product Menu, Map Tool Menu etc.
@@ -999,10 +951,6 @@ export interface AdmiraltyReadMoreCustomEvent<T> extends CustomEvent<T> {
 export interface AdmiraltySelectCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLAdmiraltySelectElement;
-}
-export interface AdmiraltySideBarItemCustomEvent<T> extends CustomEvent<T> {
-    detail: T;
-    target: HTMLAdmiraltySideBarItemElement;
 }
 export interface AdmiraltySideNavItemCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -1476,36 +1424,6 @@ declare global {
         prototype: HTMLAdmiraltySelectElement;
         new (): HTMLAdmiraltySelectElement;
     };
-    interface HTMLAdmiraltySideBarElement extends Components.AdmiraltySideBar, HTMLStencilElement {
-    }
-    var HTMLAdmiraltySideBarElement: {
-        prototype: HTMLAdmiraltySideBarElement;
-        new (): HTMLAdmiraltySideBarElement;
-    };
-    interface HTMLAdmiraltySideBarItemElementEventMap {
-        "toggled": boolean;
-        "sideBarItemClick": string;
-    }
-    interface HTMLAdmiraltySideBarItemElement extends Components.AdmiraltySideBarItem, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLAdmiraltySideBarItemElementEventMap>(type: K, listener: (this: HTMLAdmiraltySideBarItemElement, ev: AdmiraltySideBarItemCustomEvent<HTMLAdmiraltySideBarItemElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
-        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
-        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
-        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLAdmiraltySideBarItemElementEventMap>(type: K, listener: (this: HTMLAdmiraltySideBarItemElement, ev: AdmiraltySideBarItemCustomEvent<HTMLAdmiraltySideBarItemElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
-        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
-        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
-    }
-    var HTMLAdmiraltySideBarItemElement: {
-        prototype: HTMLAdmiraltySideBarItemElement;
-        new (): HTMLAdmiraltySideBarItemElement;
-    };
-    interface HTMLAdmiraltySideBarWrapperElement extends Components.AdmiraltySideBarWrapper, HTMLStencilElement {
-    }
-    var HTMLAdmiraltySideBarWrapperElement: {
-        prototype: HTMLAdmiraltySideBarWrapperElement;
-        new (): HTMLAdmiraltySideBarWrapperElement;
-    };
     interface HTMLAdmiraltySideNavElement extends Components.AdmiraltySideNav, HTMLStencilElement {
     }
     var HTMLAdmiraltySideNavElement: {
@@ -1707,9 +1625,6 @@ declare global {
         "admiralty-radio-group": HTMLAdmiraltyRadioGroupElement;
         "admiralty-read-more": HTMLAdmiraltyReadMoreElement;
         "admiralty-select": HTMLAdmiraltySelectElement;
-        "admiralty-side-bar": HTMLAdmiraltySideBarElement;
-        "admiralty-side-bar-item": HTMLAdmiraltySideBarItemElement;
-        "admiralty-side-bar-wrapper": HTMLAdmiraltySideBarWrapperElement;
         "admiralty-side-nav": HTMLAdmiraltySideNavElement;
         "admiralty-side-nav-item": HTMLAdmiraltySideNavItemElement;
         "admiralty-side-nav-wrapper": HTMLAdmiraltySideNavWrapperElement;
@@ -1840,6 +1755,10 @@ declare namespace LocalJSX {
     }
     interface AdmiraltyButton {
         /**
+          * The default behavior of the button. Valid values are `button`, `submit` and `reset`. Default value is `submit`.
+         */
+        "borderless"?: boolean;
+        /**
           * Determines whether the button is disabled. A button in disabled state will not fire click output events.
          */
         "disabled"?: boolean;
@@ -1856,7 +1775,7 @@ declare namespace LocalJSX {
          */
         "name"?: string;
         /**
-          * The default behavior of the button. Valid values are `button`, `submit` and `reset`. Default value is `submit`.
+          * Default value is false
          */
         "type"?: 'button' | 'submit' | 'reset';
         /**
@@ -2540,64 +2459,6 @@ declare namespace LocalJSX {
          */
         "width"?: number;
     }
-    interface AdmiraltySideBar {
-        /**
-          * A label for accessibility purposes to describe what this navigation is for.
-         */
-        "label"?: string;
-        /**
-          * The URI of the logo image
-         */
-        "logoImgUrl"?: string;
-        /**
-          * Set this to false to hide the logo that is displayed in the bottom of the side bar.
-         */
-        "showLogo"?: boolean;
-        /**
-          * Sets the sidebar width
-         */
-        "sideBarWidth"?: string;
-    }
-    interface AdmiraltySideBarItem {
-        /**
-          * Represents whether this SideBarItem is 'active' and will be styled differently than SideBarItems that are not 'active'. There should only be one SideBarItem that is 'active' per SideBar.
-         */
-        "active"?: boolean;
-        /**
-          * Whether the component is expanded.
-         */
-        "expanded"?: boolean;
-        /**
-          * The URL to link to.
-         */
-        "href"?: string;
-        /**
-          * The name of the icon to display. A full list of available icons can be viewed at [https://fonts.google.com/icons](https://fonts.google.com/icons)
-         */
-        "icon"?: string;
-        /**
-          * Item text for the button or link depending on variant
-         */
-        "itemText"?: string;
-        /**
-          * An event emitted when this Side Bar item is selected containing the sideBarItemId
-         */
-        "onSideBarItemClick"?: (event: AdmiraltySideBarItemCustomEvent<string>) => void;
-        /**
-          * The event that is dispatched when the expanded status is toggled.
-         */
-        "onToggled"?: (event: AdmiraltySideBarItemCustomEvent<boolean>) => void;
-        /**
-          * Causes the default browser redirect to be suppressed. Can be used in conjunction with the `onSideBarItemClick` event to use a navigation router and prevent a full page reload when navigating.
-         */
-        "suppressRedirect"?: boolean;
-        /**
-          * The type of side bar item to render. Valid values are `primary` and `secondary`. Default value is `primary`.
-         */
-        "variant"?: SideBarItemVariant;
-    }
-    interface AdmiraltySideBarWrapper {
-    }
     interface AdmiraltySideNav {
         /**
           * A label for accessibility purposes to describe what this Side Nav navigation is for e.g. Product Menu, Map Tool Menu etc.
@@ -2818,9 +2679,6 @@ declare namespace LocalJSX {
         "admiralty-radio-group": AdmiraltyRadioGroup;
         "admiralty-read-more": AdmiraltyReadMore;
         "admiralty-select": AdmiraltySelect;
-        "admiralty-side-bar": AdmiraltySideBar;
-        "admiralty-side-bar-item": AdmiraltySideBarItem;
-        "admiralty-side-bar-wrapper": AdmiraltySideBarWrapper;
         "admiralty-side-nav": AdmiraltySideNav;
         "admiralty-side-nav-item": AdmiraltySideNavItem;
         "admiralty-side-nav-wrapper": AdmiraltySideNavWrapper;
@@ -2889,9 +2747,6 @@ declare module "@stencil/core" {
             "admiralty-radio-group": LocalJSX.AdmiraltyRadioGroup & JSXBase.HTMLAttributes<HTMLAdmiraltyRadioGroupElement>;
             "admiralty-read-more": LocalJSX.AdmiraltyReadMore & JSXBase.HTMLAttributes<HTMLAdmiraltyReadMoreElement>;
             "admiralty-select": LocalJSX.AdmiraltySelect & JSXBase.HTMLAttributes<HTMLAdmiraltySelectElement>;
-            "admiralty-side-bar": LocalJSX.AdmiraltySideBar & JSXBase.HTMLAttributes<HTMLAdmiraltySideBarElement>;
-            "admiralty-side-bar-item": LocalJSX.AdmiraltySideBarItem & JSXBase.HTMLAttributes<HTMLAdmiraltySideBarItemElement>;
-            "admiralty-side-bar-wrapper": LocalJSX.AdmiraltySideBarWrapper & JSXBase.HTMLAttributes<HTMLAdmiraltySideBarWrapperElement>;
             "admiralty-side-nav": LocalJSX.AdmiraltySideNav & JSXBase.HTMLAttributes<HTMLAdmiraltySideNavElement>;
             "admiralty-side-nav-item": LocalJSX.AdmiraltySideNavItem & JSXBase.HTMLAttributes<HTMLAdmiraltySideNavItemElement>;
             "admiralty-side-nav-wrapper": LocalJSX.AdmiraltySideNavWrapper & JSXBase.HTMLAttributes<HTMLAdmiraltySideNavWrapperElement>;
