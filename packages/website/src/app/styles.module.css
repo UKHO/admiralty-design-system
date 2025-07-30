@@ -2,3 +2,33 @@
   padding: 70px 142px 70px 142px;
   background-color: #eeeeee;
 }
+
+.pageWrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.middle {
+  display:flex;
+  flex: 1;
+  min-height: 0
+}
+
+.sideBar {
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 100%;
+  flex-shrink: 0;
+  padding-bottom: 150px;
+}
+
+.mainContent {
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: 150px;
+}
+
+.pageFooter {
+  margin: 0;
+}

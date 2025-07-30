@@ -12,6 +12,7 @@ import {
 } from '@ukho/admiralty-react';
 import { useRouter, usePathname } from 'next/navigation';
 import { TextSideBarItemVariant } from '@ukho/admiralty-core';
+import styles from "./styles.module.css";
 
 const componentChildren: any[] = [
   // { name: 'Overview', variant: 'text', path: '/components' },
@@ -130,14 +131,14 @@ const sideBarItems = [
     slot: 'items',
     children: [
       {
-        name: 'Report a bug',
+        name: 'Improve our design system',
         variant: 'text',
-        path: ''
+        path: '/get-help/improve-design-system'
       },
       {
         name: 'Contact Us',
         variant: 'text',
-        path: ''
+        path: '/get-help/contact-us'
       }
     ]
   }
@@ -150,38 +151,40 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang='en'>
       <body>
-        <AdmiraltySkipLink href='#main-content'></AdmiraltySkipLink>
-        <AdmiraltyHeader
-          headerTitle='Design System'
-          onTitledClicked={() => router.push('/')}
-          logoImgUrl='/svg/Admiralty stacked logo.svg'>
-        </AdmiraltyHeader>
-        <div style={{ display: 'flex', minHeight: '66vh' }}>
-          <AdmiraltyTextSideBar textSideBarWidth='250px' showLogo={false}>
-            {sideBarItems.map(({ name, variant, slot, children }) => (
-              <AdmiraltyTextSideBarItem key={name} suppress-redirect='true'
-                                    variant={variant as TextSideBarItemVariant}
-                                    slot={slot}
-                                    itemText={name}>
-                {children.map(({ name, variant, path }) => (
-                  <AdmiraltyTextSideBarItem key={name}
-                                        onTextSideBarItemClick={() => router.push(path)}
-                                        suppress-redirect='true'
-                                        variant={variant as TextSideBarItemVariant}
-                                        itemText={name}>
-                  </AdmiraltyTextSideBarItem>
-                ))}
-              </AdmiraltyTextSideBarItem>
-            ))}
-          </AdmiraltyTextSideBar>
-          <main id='main-content'>{children}</main>
+        <div className={styles.pageWrapper}>
+          <AdmiraltySkipLink href='#main-content'></AdmiraltySkipLink>
+          <AdmiraltyHeader
+            headerTitle='Design System'
+            onTitledClicked={() => router.push('/')}
+            logoImgUrl='/svg/Admiralty stacked logo.svg'>
+          </AdmiraltyHeader>
+          <div className={styles.middle}>
+            <AdmiraltyTextSideBar className={styles.sideBar} textSideBarWidth='250px' showLogo={false}>
+              {sideBarItems.map(({ name, variant, slot, children }) => (
+                <AdmiraltyTextSideBarItem key={name} suppress-redirect='true'
+                                          variant={variant as TextSideBarItemVariant}
+                                          slot={slot}
+                                          itemText={name}>
+                  {children.map(({ name, variant, path }) => (
+                    <AdmiraltyTextSideBarItem key={name}
+                                              onTextSideBarItemClick={() => router.push(path)}
+                                              suppress-redirect='true'
+                                              variant={variant as TextSideBarItemVariant}
+                                              itemText={name}>
+                    </AdmiraltyTextSideBarItem>
+                  ))}
+                </AdmiraltyTextSideBarItem>
+              ))}
+            </AdmiraltyTextSideBar>
+            <main className={styles.mainContent} id='main-content'>{children}</main>
+          </div>
+          <AdmiraltyFooter className={styles.pageFooter} imageSrc='/svg/UKHO stacked logo.svg'>
+            <AdmiraltyLink href='http://www.example.com' new-tab='true'>
+              Privacy Policy
+            </AdmiraltyLink>
+            <AdmiraltyLink href='/accessbility'>Accessibility</AdmiraltyLink>
+          </AdmiraltyFooter>
         </div>
-        <AdmiraltyFooter imageSrc='/svg/UKHO stacked logo.svg'>
-          <AdmiraltyLink href='http://www.example.com' new-tab='true'>
-            Privacy Policy
-          </AdmiraltyLink>
-          <AdmiraltyLink href='/accessbility'>Accessibility</AdmiraltyLink>
-        </AdmiraltyFooter>
       </body>
     </html>
   );
