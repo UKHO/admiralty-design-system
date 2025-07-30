@@ -19,7 +19,7 @@ describe('admiralty-header', () => {
     expect(page.root).toMatchInlineSnapshot(`
       <admiralty-header>
         <!---->
-        <div class="admiralty-header">
+        <div class="admiralty-header" role="banner">
           <div class="header-menu">
             <div class="header-branding">
               <a class="header-logo" href="https://www.admiralty.co.uk/">
@@ -52,7 +52,7 @@ describe('admiralty-header', () => {
     expect(page.root).toMatchInlineSnapshot(`
       <admiralty-header header-title="Design System">
         <!---->
-        <div class="admiralty-header">
+        <div class="admiralty-header" role="banner">
           <div class="header-menu">
             <div class="header-branding">
               <a class="header-logo" href="https://www.admiralty.co.uk/">
@@ -90,7 +90,7 @@ describe('admiralty-header', () => {
     expect(page.root).toMatchInlineSnapshot(`
       <admiralty-header header-title="Design System" header-title-url="null" logo-link-url="http://www.example.com">
         <!---->
-        <div class="admiralty-header">
+        <div class="admiralty-header" role="banner">
           <div class="header-menu">
             <div class="header-branding">
               <a class="header-logo" href="http://www.example.com">
@@ -131,7 +131,7 @@ describe('admiralty-header', () => {
     expect(page.root).toMatchInlineSnapshot(`
       <admiralty-header header-title="Design System" header-title-url="#" logo-alt-text="Logo" logo-img-url="logo.svg" logo-link-url="http://www.example.com">
         <!---->
-        <div class="admiralty-header">
+        <div class="admiralty-header" role="banner">
           <div class="header-menu">
             <div class="header-branding">
               <a class="header-logo" href="http://www.example.com">
@@ -174,7 +174,7 @@ describe('admiralty-header', () => {
     expect(page.root).toMatchInlineSnapshot(`
       <admiralty-header header-title="Design System" header-title-url="#" logo-alt-text="Logo" logo-img-url="logo.svg" logo-link-url="http://www.example.com">
         <!---->
-        <div class="admiralty-header">
+        <div class="admiralty-header" role="banner">
           <div class="header-menu">
             <div class="header-branding">
               <a class="header-logo" href="http://www.example.com">
@@ -218,7 +218,7 @@ describe('admiralty-header', () => {
     expect(page.root).toMatchInlineSnapshot(`
       <admiralty-header header-title="Design System" header-title-url="#" logo-alt-text="Logo" logo-img-url="logo.svg" logo-link-url="http://www.example.com">
         <!---->
-        <div class="admiralty-header">
+        <div class="admiralty-header" role="banner">
           <div class="header-menu">
             <div class="header-branding">
               <a class="header-logo" href="http://www.example.com">
@@ -269,7 +269,7 @@ describe('admiralty-header', () => {
     expect(page.root).toMatchInlineSnapshot(`
       <admiralty-header header-title="Design System" header-title-url="#" logo-alt-text="Logo" logo-img-url="logo.svg" logo-link-url="http://www.example.com">
         <!---->
-        <div class="admiralty-header">
+        <div class="admiralty-header" role="banner">
           <div class="header-menu">
             <div class="header-branding">
               <a class="header-logo" href="http://www.example.com">

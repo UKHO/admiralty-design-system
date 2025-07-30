@@ -80,7 +80,7 @@ export class HeaderComponent {
     const { logoAltText, logoLinkUrl, logoImgUrl, headerTitle, headerTitleUrl } = this;
 
     return (
-      <div class="admiralty-header">
+      <div class="admiralty-header" role="banner">
         <div class="header-menu">
           <div class="header-branding">
             <a class="header-logo" href={logoLinkUrl}>

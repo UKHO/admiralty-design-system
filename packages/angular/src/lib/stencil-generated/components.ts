@@ -103,14 +103,14 @@ export declare interface AdmiraltyBreadcrumbs extends Components.AdmiraltyBreadc
 
 
 @ProxyCmp({
-  inputs: ['disabled', 'form', 'icon', 'name', 'type', 'value', 'variant']
+  inputs: ['borderless', 'disabled', 'form', 'icon', 'name', 'type', 'value', 'variant']
 })
 @Component({
   selector: 'admiralty-button',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['disabled', 'form', 'icon', 'name', 'type', 'value', 'variant'],
+  inputs: ['borderless', 'disabled', 'form', 'icon', 'name', 'type', 'value', 'variant'],
 })
 export class AdmiraltyButton {
   protected el: HTMLElement;
