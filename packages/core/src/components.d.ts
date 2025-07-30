@@ -133,6 +133,10 @@ export namespace Components {
     }
     interface AdmiraltyButton {
         /**
+          * The default behavior of the button. Valid values are `button`, `submit` and `reset`. Default value is `submit`.
+         */
+        "borderless": boolean;
+        /**
           * Determines whether the button is disabled. A button in disabled state will not fire click output events.
          */
         "disabled": boolean;
@@ -149,7 +153,7 @@ export namespace Components {
          */
         "name": string;
         /**
-          * The default behavior of the button. Valid values are `button`, `submit` and `reset`. Default value is `submit`.
+          * Default value is false
          */
         "type": 'button' | 'submit' | 'reset';
         /**
@@ -1668,6 +1672,10 @@ declare namespace LocalJSX {
     }
     interface AdmiraltyButton {
         /**
+          * The default behavior of the button. Valid values are `button`, `submit` and `reset`. Default value is `submit`.
+         */
+        "borderless"?: boolean;
+        /**
           * Determines whether the button is disabled. A button in disabled state will not fire click output events.
          */
         "disabled"?: boolean;
@@ -1684,7 +1692,7 @@ declare namespace LocalJSX {
          */
         "name"?: string;
         /**
-          * The default behavior of the button. Valid values are `button`, `submit` and `reset`. Default value is `submit`.
+          * Default value is false
          */
         "type"?: 'button' | 'submit' | 'reset';
         /**
