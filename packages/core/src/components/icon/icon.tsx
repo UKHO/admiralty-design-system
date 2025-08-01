@@ -3,7 +3,7 @@ import icons from '@iconify-json/material-symbols/icons.json';
 import { getIconData, iconToSVG, iconToHTML, replaceIDs } from '@iconify/utils';
 import { IconifyJSON } from '@iconify/types';
 
-type IconSize = number | 'unset';
+export type IconSize = number | 'unset';
 
 @Component({
   tag: 'admiralty-icon',
