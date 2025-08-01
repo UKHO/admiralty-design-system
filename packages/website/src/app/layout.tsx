@@ -178,7 +178,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </AdmiraltyTextSideBar>
             <main className={styles.mainContent} id='main-content'>{children}</main>
           </div>
-          <AdmiraltyFooter className={styles.pageFooter} imageSrc='/svg/UKHO stacked logo.svg'>
+          <AdmiraltyFooter className={styles.pageFooter} imageSrc='/svg/UKHO linear logo.svg'>
             <AdmiraltyLink href='http://www.example.com' new-tab='true'>
               Privacy Policy
             </AdmiraltyLink>
