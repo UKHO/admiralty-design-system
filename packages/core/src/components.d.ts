@@ -10,7 +10,6 @@ import { ButtonVariant } from "./components/button/button.types";
 import { CheckboxChangeEventDetail } from "./components/checkbox/checkbox.interface";
 import { FileInputChangeEventDetail } from "./components/file-input/file-input.interface";
 import { FooterTypes } from "./components/footer/footer.types";
-import { IconSize } from "./components/icon/icon";
 import { InputChangeEventDetail } from "./components/input/input.interface";
 import { RadioGroupChangeEventDetail } from "./components/radio-group/radio-group-interface";
 import { SelectChangeEventDetail } from "./components/select/select.interface";
@@ -21,7 +20,6 @@ export { ButtonVariant } from "./components/button/button.types";
 export { CheckboxChangeEventDetail } from "./components/checkbox/checkbox.interface";
 export { FileInputChangeEventDetail } from "./components/file-input/file-input.interface";
 export { FooterTypes } from "./components/footer/footer.types";
-export { IconSize } from "./components/icon/icon";
 export { InputChangeEventDetail } from "./components/input/input.interface";
 export { RadioGroupChangeEventDetail } from "./components/radio-group/radio-group-interface";
 export { SelectChangeEventDetail } from "./components/select/select.interface";
@@ -426,7 +424,7 @@ export namespace Components {
         /**
           * The size of the icon in pixels. When not set, the icon height will be determined by the parent font size.
          */
-        "size": IconSize;
+        "size": number | 'unset';
     }
     /**
      * Once this component works, review whether a form field component should be created so
@@ -2028,7 +2026,7 @@ declare namespace LocalJSX {
         /**
           * The size of the icon in pixels. When not set, the icon height will be determined by the parent font size.
          */
-        "size"?: IconSize;
+        "size"?: number | 'unset';
     }
     /**
      * Once this component works, review whether a form field component should be created so
