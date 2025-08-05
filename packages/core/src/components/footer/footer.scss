@@ -16,10 +16,10 @@ footer {
   .footer-branding {
     .footer-img {
       @include tablet-or-desktop {
-        height: 100px;
+        height: $footer-branding-image-desktop-height; // 100px;
         margin-bottom: $footer-branding-image-desktop-margin-bottom;
       }
-      height: 86px;
+      height: $footer-branding-image-height; // 86px;
       margin-bottom: $footer-branding-image-margin-bottom;
       box-sizing: border-box;
 

@@ -21,6 +21,7 @@ ul ul {
 
 admiralty-footer {
   margin-top: 48px;
+  --admiralty-footer-img-desktop-height: 66px;
 }
 
 h2 {
