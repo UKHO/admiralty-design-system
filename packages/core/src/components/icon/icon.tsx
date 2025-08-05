@@ -3,8 +3,6 @@ import icons from '@iconify-json/material-symbols/icons.json';
 import { getIconData, iconToSVG, iconToHTML, replaceIDs } from '@iconify/utils';
 import { IconifyJSON } from '@iconify/types';
 
-type IconSize = number | 'unset';
-
 @Component({
   tag: 'admiralty-icon',
   styleUrl: 'icon.scss',
@@ -20,9 +18,9 @@ export class IconComponent {
   /**
    * The size of the icon in pixels. When not set, the icon height will be determined by the parent font size.
    */
-  @Prop() size: IconSize = 'unset';
+  @Prop() size: number | 'unset' = 'unset';
 
-  getIcon(iconName: string, iconSize: IconSize) {
+  getIcon(iconName: string, iconSize: number | 'unset') {
     const iconData = getIconData(icons as IconifyJSON, iconName);
     if (!iconData) {
       return '';

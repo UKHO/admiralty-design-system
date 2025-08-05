@@ -144,7 +144,7 @@ export class SideBarItemComponent {
                       onClick={() => this.onToggle()}>
                 {this.itemText}
                 <div class="icon">
-                  <admiralty-icon size="30" name={this.getExpansionIcon()}></admiralty-icon>
+                  <admiralty-icon size={30} name={this.getExpansionIcon()}></admiralty-icon>
                 </div>
               </button>
               <div class="slot" hidden={!this.expanded}>
