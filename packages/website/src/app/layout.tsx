@@ -97,7 +97,7 @@ const sideBarItems = [
       {
         name: 'v5.0.0',
         variant: 'text',
-        path: ''
+        path: '/updates/v5'
       }
     ]
   },
