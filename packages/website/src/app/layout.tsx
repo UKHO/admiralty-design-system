@@ -131,7 +131,7 @@ const sideBarItems = [
     slot: 'items',
     children: [
       {
-        name: 'Improve our design system',
+        name: 'Give feedback',
         variant: 'text',
         path: '/get-help/improve-design-system'
       },
