@@ -48,6 +48,7 @@ export class TextSideBarItemComponent {
    * `onTextSideBarItemClick` event to use a navigation router and prevent a full page reload when navigating.
    */
   @Prop() suppressRedirect?: boolean = false;
+
   /**
    * Represents whether this SideBarItem is 'active' and will be styled differently than SideBarItems
    * that are not 'active'. There should only be one SideBarItem that is 'active' per SideBar.
@@ -66,6 +67,7 @@ export class TextSideBarItemComponent {
       anchor.classList.toggle('active', newValue)
     }
   }
+
   componentDidLoad() {
     this.handleActiveChange(this.active)
   }
@@ -142,7 +144,17 @@ export class TextSideBarItemComponent {
 
           {this.variant === TextSideBarItemVariant.Text &&
             <a id={"text-side-bar-item-anchor-" + this.internalId}
-               class={{ "text-link": true, 'active': this.active }}
+               class={{ 'text-link': true, 'active': this.active }}
+               href={this.href}
+               onMouseDown={() => this.handleMouseDown("text-side-bar-item-anchor-" + this.internalId)}
+               onClick={ev => this.handleClick(ev)}>
+              {this.itemText}
+            </a>
+          }
+
+          {this.variant === TextSideBarItemVariant.TextLink &&
+            <a id={"text-side-bar-item-anchor-" + this.internalId}
+               class={{ 'text-link is-main-link': true, 'active': this.active }}
                href={this.href}
                onMouseDown={() => this.handleMouseDown("text-side-bar-item-anchor-" + this.internalId)}
                onClick={ev => this.handleClick(ev)}>

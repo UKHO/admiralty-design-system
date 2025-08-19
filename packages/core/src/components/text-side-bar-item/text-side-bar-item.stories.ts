@@ -19,7 +19,7 @@ const meta: Meta = {
     active: false,
     variant: TextSideBarItemVariant.Expandable,
     icon: 'list-alt-outline',
-    href: 'http://www.example.com',
+    href: 'http://www.example.com'
   },
 };
 
@@ -37,6 +37,8 @@ const template: Story = {
 export const Expandable: Story = { ...template, args: { variant: TextSideBarItemVariant.Expandable } };
 
 export const Text: Story = { ...template, args: { variant: TextSideBarItemVariant.Text } };
+
+export const TextLink: Story = { ...template, args: { variant: TextSideBarItemVariant.TextLink } };
 
 export const NavActive: Story = {
   ...template,
