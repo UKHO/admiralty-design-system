@@ -96,6 +96,11 @@ li {
   font-size: $expandable-side-bar-item-font-size;
   padding: .5rem 1.5rem;
 
+  &.is-main-link {
+    font-weight: $text-link-is-main-font-weight;
+    padding: .5rem;
+  }
+
   &:hover {
     color: $text-link-font-colour;
     font-weight: $expandable-side-bar-item-font-weight;
