@@ -424,7 +424,7 @@ export namespace Components {
         /**
           * The size of the icon in pixels. When not set, the icon height will be determined by the parent font size.
          */
-        "size": IconSize;
+        "size": number | 'unset';
     }
     interface AdmiraltyIconSideBar {
         /**
@@ -2109,7 +2109,7 @@ declare namespace LocalJSX {
         /**
           * The size of the icon in pixels. When not set, the icon height will be determined by the parent font size.
          */
-        "size"?: IconSize;
+        "size"?: number | 'unset';
     }
     interface AdmiraltyIconSideBar {
         /**
