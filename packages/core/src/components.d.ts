@@ -133,6 +133,10 @@ export namespace Components {
     }
     interface AdmiraltyButton {
         /**
+          * The default behavior of the button. Valid values are `button`, `submit` and `reset`. Default value is `submit`.
+         */
+        "borderless": boolean;
+        /**
           * Determines whether the button is disabled. A button in disabled state will not fire click output events.
          */
         "disabled": boolean;
@@ -149,7 +153,7 @@ export namespace Components {
          */
         "name": string;
         /**
-          * The default behavior of the button. Valid values are `button`, `submit` and `reset`. Default value is `submit`.
+          * Default value is false
          */
         "type": 'button' | 'submit' | 'reset';
         /**
@@ -420,7 +424,7 @@ export namespace Components {
         /**
           * The size of the icon in pixels. When not set, the icon height will be determined by the parent font size.
          */
-        "size": IconSize;
+        "size": number | 'unset';
     }
     /**
      * Once this component works, review whether a form field component should be created so
@@ -1668,6 +1672,10 @@ declare namespace LocalJSX {
     }
     interface AdmiraltyButton {
         /**
+          * The default behavior of the button. Valid values are `button`, `submit` and `reset`. Default value is `submit`.
+         */
+        "borderless"?: boolean;
+        /**
           * Determines whether the button is disabled. A button in disabled state will not fire click output events.
          */
         "disabled"?: boolean;
@@ -1684,7 +1692,7 @@ declare namespace LocalJSX {
          */
         "name"?: string;
         /**
-          * The default behavior of the button. Valid values are `button`, `submit` and `reset`. Default value is `submit`.
+          * Default value is false
          */
         "type"?: 'button' | 'submit' | 'reset';
         /**
@@ -2018,7 +2026,7 @@ declare namespace LocalJSX {
         /**
           * The size of the icon in pixels. When not set, the icon height will be determined by the parent font size.
          */
-        "size"?: IconSize;
+        "size"?: number | 'unset';
     }
     /**
      * Once this component works, review whether a form field component should be created so

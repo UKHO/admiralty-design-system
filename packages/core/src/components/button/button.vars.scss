@@ -75,15 +75,12 @@ $button-active-border-colour-warning: var(--admiralty-colour-danger-contrast) !d
 $button-active-text-colour-warning: var(--admiralty-colour-danger) !default;
 
 // Icon
-$button-colour-icon: var(--admiralty-background-colour-tint) !default;
-$button-text-colour-icon: var(--admiralty-colour-primary) !default;
+$button-colour-icon: var(--admiralty-colour-primary) !default;
+$button-text-colour-icon: var(--admiralty-colour-primary-contrast) !default;
 $button-border-colour-icon: var(--admiralty-colour-primary) !default;
-$button-hover-colour-icon: var(--admiralty-colour-primary-contrast) !default;
 $button-hover-border-colour-icon: var(--admiralty-colour-primary) !default;
-$button-active-colour-icon: var(--admiralty-colour-primary) !default;
 $button-active-border-colour-icon: var(--admiralty-colour-primary) !default;
-$button-active-text-colour-icon: var(--admiralty-colour-primary-contrast) !default;
-$button-disabled-colour-icon: var(--admiralty-background-colour-tint) !default;
+$button-disabled-colour-icon: var(--admiralty-disabled-colour) !default;
 
 $button-focus-padding: var(--admiralty-button-focus-padding, var(--admiralty-spacing-3) 18px var(--admiralty-spacing-2));
 $button-defaults-padding: var(--admiralty-button-defaults-padding, 10px var(--admiralty-spacing-4));
@@ -106,3 +103,24 @@ $button-text-focus-padding: var(--admiralty-button-text-focus-padding, var(--adm
 $button-icon-padding: var(--admiralty-button-icon-padding, var(--admiralty-spacing-2));
 $button-icon-focus-padding: var(--admiralty-button-icon-focus-padding, var(--admiralty-spacing-3) var(--admiralty-spacing-4) var(--admiralty-spacing-2));
 $button-icon-hover-padding: var(--admiralty-button-icon-hover-padding, var(--admiralty-spacing-2));
+
+$button-hover-colour-icon: var(--admiralty-colour-primary-shade) !default;
+$button-hover-border-colour-icon: var(--admiralty-colour-primary) !default;
+$button-hover-border-colour-standard: var(--admiralty-colour-primary-shade) !default;
+$button-active-colour-icon: var(--admiralty-colour-primary-contrast) !default;
+$button-active-border-colour-icon: var(--admiralty-colour-primary) !default;
+$button-active-text-colour-icon: var(--admiralty-colour-primary) !default;
+$button-disabled-colour-icon: var(--admiralty-disabled-colour) !default;
+
+// Icon Secondary
+$button-colour-icon-secondary: var(--admiralty-colour-primary-contrast) !default;
+$button-text-colour-icon-secondary: var(--admiralty-colour-primary) !default;
+$button-border-colour-icon-secondary: var(--admiralty-colour-primary) !default;
+$button-hover-colour-icon-secondary: var(--admiralty-hover-background-colour) !default;
+$button-hover-border-colour-icon-secondary: var(--admiralty-colour-primary) !default;
+$button-hover-border-colour-standard-secondary: var(--admiralty-colour-primary-shade) !default;
+$button-active-colour-icon-secondary: var(--admiralty-colour-primary) !default;
+$button-active-border-colour-icon-secondary: var(--admiralty-colour-primary) !default;
+$button-active-text-colour-icon-secondary: var(--admiralty-colour-primary-contrast) !default;
+$button-disabled-colour-icon: var(--admiralty-disabled-colour) !default;
+
