@@ -10,12 +10,11 @@ import {
   AdmiraltyTextSideBarItem,
   AdmiraltySkipLink,
 } from "@ukho/admiralty-react";
-import { useRouter, usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { TextSideBarItemVariant } from "@ukho/admiralty-core";
 import styles from "./styles.module.css";
 
 const componentChildren: any[] = [
-  // { name: 'Overview', variant: 'text', path: '/components' },
   { path: "/components/autocomplete", variant: "text", name: "Autocomplete" },
   { path: "/components/breadcrumbs", variant: "text", name: "Breadcrumbs" },
   { path: "/components/button", variant: "text", name: "Button" },
@@ -29,6 +28,7 @@ const componentChildren: any[] = [
   { path: "/components/footer", variant: "text", name: "Footer" },
   { path: "/components/header", variant: "text", name: "Header" },
   { path: "/components/horizontal-rule", variant: "text", name: "Horizontal Rule" },
+  { path: "/components/icon-side-bar", variant: "text", name: "Icon Side Bar" },
   { path: "/components/input", variant: "text", name: "Input" },
   { path: "/components/link", variant: "text", name: "Link" },
   { path: "/components/modal-dialog", variant: "text", name: "Modal Dialog" },
@@ -40,14 +40,12 @@ const componentChildren: any[] = [
   { path: "/components/radio-group", variant: "text", name: "Radio Group" },
   { path: "/components/read-more", variant: "text", name: "Readmore" },
   { path: "/components/select", variant: "text", name: "Select" },
-  { path: "/components/side-bar", variant: "text", name: "Side Bar" },
   { path: "/components/side-nav", variant: "text", name: "Side Nav" },
   { path: "/components/skip-link", variant: "text", name: "Skip Link" },
   { path: "/components/tab-group", variant: "text", name: "Tab Group" },
   { path: "/components/table", variant: "text", name: "Table" },
   { path: "/components/textarea", variant: "text", name: "Textarea" },
   { path: "/components/text-side-bar", variant: "text", name: "Text Side Bar" },
-  { path: "/components/icon-side-bar", variant: "text", name: "Icon Side Bar" },
 ];
 
 const gettingStartedChildren: any[] = [
@@ -60,7 +58,6 @@ const gettingStartedChildren: any[] = [
 ];
 
 const principleChildren: any[] = [
-  // { path: '/principles', variant: 'text', name: 'Overview' },
   { path: "/principles/accessibility", variant: "text", name: "Accessibility" },
   { path: "/principles/contentdesign", variant: "text", name: "Content Design" },
   { path: "/principles/design", variant: "text", name: "Design" },
@@ -75,7 +72,6 @@ const patternsChildren: any[] = [
 ];
 
 const brandChildren: any[] = [
-  // { name: 'Overview', variant: 'text', path: '/brand-guide' },
   { name: "Typography", variant: "text", path: "/brand-guide/typography" },
   { name: "Colour", variant: "text", path: "/brand-guide/colour" },
   { name: "Images", variant: "text", path: "/brand-guide/images" },
@@ -146,7 +142,6 @@ const sideBarItems = [
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const router = useRouter();
-  const pathname = usePathname();
 
   return (
     <html lang="en">
