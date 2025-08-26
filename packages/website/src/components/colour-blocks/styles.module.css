@@ -1,5 +1,14 @@
 .colourBlocksContainer {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 80px;
+  place-content: center;
+  gap: 3rem;
+}
+
+.latestUpdates {
+  height: 250px;
+  width: 1000px;
+  background-color: #FFFFFF;
+  padding: 30px 18px;
 }
