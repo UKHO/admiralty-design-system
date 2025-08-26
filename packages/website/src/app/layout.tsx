@@ -157,7 +157,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             headerTitle="Design System"
             onTitledClicked={() => router.push("/")}
             logoImgUrl="/svg/Admiralty stacked logo.svg"></AdmiraltyHeader>
-          <div className={styles.homePageWrapper}>
+          <div className={styles.splitContentWrapper}>
             <div className={styles.middle}>
               <AdmiraltyTextSideBar className={styles.sideBar} textSideBarWidth="250px" showLogo={false}>
                 {sideBarItems.map(({ name, variant, slot, children }) => (
