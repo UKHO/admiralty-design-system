@@ -608,6 +608,60 @@ export declare interface AdmiraltyIcon extends Components.AdmiraltyIcon {}
 
 
 @ProxyCmp({
+  inputs: ['iconSideBarWidth', 'label', 'logoImgUrl', 'showLogo']
+})
+@Component({
+  selector: 'admiralty-icon-side-bar',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['iconSideBarWidth', 'label', 'logoImgUrl', 'showLogo'],
+})
+export class AdmiraltyIconSideBar {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface AdmiraltyIconSideBar extends Components.AdmiraltyIconSideBar {}
+
+
+@ProxyCmp({
+  inputs: ['active', 'expanded', 'href', 'icon', 'itemText', 'suppressRedirect']
+})
+@Component({
+  selector: 'admiralty-icon-side-bar-item',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['active', 'expanded', 'href', 'icon', 'itemText', 'suppressRedirect'],
+})
+export class AdmiraltyIconSideBarItem {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['toggled', 'iconSideBarItemClick']);
+  }
+}
+
+
+export declare interface AdmiraltyIconSideBarItem extends Components.AdmiraltyIconSideBarItem {
+  /**
+   * The event that is dispatched when the expanded status is toggled.
+   */
+  toggled: EventEmitter<CustomEvent<boolean>>;
+  /**
+   * An event emitted when this Side Bar item is selected containing the sideBarItemId
+   */
+  iconSideBarItemClick: EventEmitter<CustomEvent<string>>;
+}
+
+
+@ProxyCmp({
   inputs: ['autocomplete', 'disabled', 'hint', 'invalid', 'invalidMessage', 'label', 'name', 'placeholder', 'required', 'type', 'value', 'width']
 })
 @Component({
@@ -956,60 +1010,6 @@ export declare interface AdmiraltySelect extends Components.AdmiraltySelect {
 
 
 @ProxyCmp({
-  inputs: ['label', 'logoImgUrl', 'showLogo', 'sideBarWidth']
-})
-@Component({
-  selector: 'admiralty-side-bar',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>',
-  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['label', 'logoImgUrl', 'showLogo', 'sideBarWidth'],
-})
-export class AdmiraltySideBar {
-  protected el: HTMLElement;
-  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
-    c.detach();
-    this.el = r.nativeElement;
-  }
-}
-
-
-export declare interface AdmiraltySideBar extends Components.AdmiraltySideBar {}
-
-
-@ProxyCmp({
-  inputs: ['active', 'expanded', 'href', 'icon', 'itemText', 'suppressRedirect', 'variant']
-})
-@Component({
-  selector: 'admiralty-side-bar-item',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>',
-  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['active', 'expanded', 'href', 'icon', 'itemText', 'suppressRedirect', 'variant'],
-})
-export class AdmiraltySideBarItem {
-  protected el: HTMLElement;
-  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
-    c.detach();
-    this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['toggled', 'sideBarItemClick']);
-  }
-}
-
-
-export declare interface AdmiraltySideBarItem extends Components.AdmiraltySideBarItem {
-  /**
-   * The event that is dispatched when the expanded status is toggled.
-   */
-  toggled: EventEmitter<CustomEvent<boolean>>;
-  /**
-   * An event emitted when this Side Bar item is selected containing the sideBarItemId
-   */
-  sideBarItemClick: EventEmitter<CustomEvent<string>>;
-}
-
-
-@ProxyCmp({
   inputs: ['label']
 })
 @Component({
@@ -1254,6 +1254,60 @@ export class AdmiraltyTableRow {
 
 
 export declare interface AdmiraltyTableRow extends Components.AdmiraltyTableRow {}
+
+
+@ProxyCmp({
+  inputs: ['label', 'logoImgUrl', 'showLogo', 'textSideBarWidth']
+})
+@Component({
+  selector: 'admiralty-text-side-bar',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['label', 'logoImgUrl', 'showLogo', 'textSideBarWidth'],
+})
+export class AdmiraltyTextSideBar {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface AdmiraltyTextSideBar extends Components.AdmiraltyTextSideBar {}
+
+
+@ProxyCmp({
+  inputs: ['active', 'expanded', 'href', 'icon', 'itemText', 'suppressRedirect', 'variant']
+})
+@Component({
+  selector: 'admiralty-text-side-bar-item',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['active', 'expanded', 'href', 'icon', 'itemText', 'suppressRedirect', 'variant'],
+})
+export class AdmiraltyTextSideBarItem {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['toggled', 'textSideBarItemClick']);
+  }
+}
+
+
+export declare interface AdmiraltyTextSideBarItem extends Components.AdmiraltyTextSideBarItem {
+  /**
+   * The event that is dispatched when the expanded status is toggled.
+   */
+  toggled: EventEmitter<CustomEvent<boolean>>;
+  /**
+   * An event emitted when this Side Bar item is selected containing the sideBarItemId
+   */
+  textSideBarItemClick: EventEmitter<CustomEvent<string>>;
+}
 
 
 @ProxyCmp({
