@@ -1,6 +1,6 @@
 {
   "name": "test-app",
-  "version": "4.2.1",
+  "version": "5.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --host=0.0.0.0",
@@ -19,7 +19,7 @@
     "@angular/platform-browser": "^18.2.5",
     "@angular/platform-browser-dynamic": "^18.2.5",
     "@angular/router": "^18.2.5",
-    "@ukho/admiralty-angular": "^4.2.1",
+    "@ukho/admiralty-angular": "^5.0.0",
     "rimraf": "^6.0.1",
     "rxjs": "~7.8.1",
     "tslib": "^2.7.0",

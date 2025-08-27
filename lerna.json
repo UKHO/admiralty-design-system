@@ -4,6 +4,6 @@
     "packages/*"
   ],
   "npmClient": "yarn",
-  "version": "4.5.3",
+  "version": "5.0.0",
   "useNx": true
 }
