@@ -22,9 +22,10 @@
 
 ## CSS Custom Properties
 
-| Name                            | Description              |
-| ------------------------------- | ------------------------ |
-| `--admiralty-label-font-weight` | Font weight of the label |
+| Name                              | Description                 |
+| --------------------------------- | --------------------------- |
+| `--admiralty-label-font-weight`   | Font weight of the label    |
+| `--admiralty-label-margin-bottom` | Margin bottom for the label |
 
 
 ## Dependencies

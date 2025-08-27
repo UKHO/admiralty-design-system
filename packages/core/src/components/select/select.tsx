@@ -118,7 +118,7 @@ export class SelectComponent {
             >
               <slot></slot>
             </select>
-            <admiralty-icon class={`select-down-icon ${disabledClass}`} icon-name="angle-down"></admiralty-icon>
+            <admiralty-icon class={`select-down-icon ${disabledClass}`} name="keyboard-arrow-down-rounded"></admiralty-icon>
           </div>
           <admiralty-input-invalid id={errorId} style={{ ...(!(this.invalid && this.invalidMessage) ? { display: 'none' } : {}) }}>
             {this.invalidMessage}

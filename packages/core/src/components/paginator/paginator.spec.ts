@@ -11,8 +11,8 @@ describe('admiralty-paginator', () => {
       <admiralty-paginator>
         <nav aria-label="pagination" class="standard">
           <p aria-live="polite"></p>
-          <admiralty-button aria-disabled="" aria-label="Previous Page" disabled="" icon="chevron-left" variant="icon"></admiralty-button>
-          <admiralty-button aria-disabled="" aria-label="Next Page" disabled="" icon="chevron-right" variant="icon"></admiralty-button>
+          <admiralty-button aria-disabled="" aria-label="Previous Page" disabled="" icon="arrow-back-ios-new-rounded" variant="icon-secondary"></admiralty-button>
+          <admiralty-button aria-disabled="" aria-label="Next Page" disabled="" icon="arrow-forward-ios-rounded" variant="icon-secondary"></admiralty-button>
         </nav>
       </admiralty-paginator>
     `);

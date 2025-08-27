@@ -3,11 +3,11 @@
 footer {
   @include tablet-or-desktop {
     flex-direction: row;
-    padding: 1.75rem 1.5rem 1.875rem 1rem;
+    padding: $footer-desktop-padding;
     gap: 1rem;
   }
 
-  padding: 1.25rem 1rem 1.5rem 1rem;
+  padding: $footer-padding;
   border-top: $footer-border-colour 0.375rem solid;
   background: $footer-background-colour;
   display: flex;
@@ -16,11 +16,11 @@ footer {
   .footer-branding {
     .footer-img {
       @include tablet-or-desktop {
-        height: 100px;
-        margin-bottom: 0;
+        height: $footer-branding-image-desktop-height; // 100px;
+        margin-bottom: $footer-branding-image-desktop-margin-bottom;
       }
-      height: 86px;
-      margin-bottom: 1rem;
+      height: $footer-branding-image-height; // 86px;
+      margin-bottom: $footer-branding-image-margin-bottom;
       box-sizing: border-box;
 
       a {
@@ -45,13 +45,13 @@ footer {
       @include tablet-or-desktop {
         flex-direction: row;
         align-self: flex-end;
-        margin-left: 0;
+        margin-left: $footer-content-links-desktop-margin-left;
         gap: 1.5rem;
       }
       display: flex;
       flex-direction: column;
       align-self: flex-start;
-      margin-left: 0.125rem;
+      margin-left: $footer-content-links-margin-left;
       gap: 0.5rem;
       flex-grow: 1;
 
@@ -65,16 +65,16 @@ footer {
     .footer-text {
       @include tablet-or-desktop {
         align-self: flex-end;
-        margin-left: 0;
+        margin-left: $footer-content-text-desktop-margin-left;
       }
       align-self: flex-start;
-      margin-left: 0.125rem;
-      margin-top: 1rem;
+      margin-left: $footer-content-text-margin-left;
+      margin-top: $footer-content-text-margin-top;
       p {
         @include tablet-or-desktop {
           text-align: right;
         }
-        margin: 0;
+        margin: $footer-content-text-paragraph-margin;
         font-weight: $footer-text-weight;
         color: $footer-text-colour;
       }
@@ -88,7 +88,7 @@ footer.footer-compact {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  padding: 0.5rem 0.5rem;
+  padding: $footer-compact-padding;
   gap: 0.5rem;
   opacity: .70;
   background-color: $footer-compact-background-colour;
@@ -120,7 +120,7 @@ footer.footer-compact {
         row-gap: 0;
 
         &.text-padding {
-          padding-top: .2rem;
+          padding-top: $footer-compact-links-not-desktop-padding-top;
           row-gap: .2rem;
         }
       }
@@ -133,13 +133,13 @@ footer.footer-compact {
       flex-wrap: wrap;
 
       &.text-padding {
-        margin-left: 1.25rem;
+        margin-left: $footer-compact-links-margin-left;
       }
     }
 
     .footer-text {
       @include phone-only {
-        margin-right: 0;
+        margin-right: $footer-compact-content-text-phone-margin-right;
       }
 
       width: 14.3rem;
@@ -147,8 +147,8 @@ footer.footer-compact {
       flex-shrink: 0;
 
       align-self: flex-end;
-      margin-left: 0;
-      margin-top: 0;
+      margin-left: $footer-compact-content-text-margin-left;
+      margin-top: $footer-compact-content-text-margin-top;
 
       p {
         color: $footer-compact-text-colour;

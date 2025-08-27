@@ -59,7 +59,7 @@ describe('admiralty-button', () => {
       <admiralty-button variant="icon" icon="fas fa-chevron-right">
         <button class="icon" type="submit">
           Icon
-          <admiralty-icon class="icon-padding" icon-name="fas fa-chevron-right"></admiralty-icon>
+          <admiralty-icon class="icon-padding" name="fas fa-chevron-right"></admiralty-icon>
         </button>
       </admiralty-button>
     `);

@@ -1,4 +1,3 @@
-import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { Component, Element, Prop, h, EventEmitter, Event, State, forceUpdate } from '@stencil/core';
 
 /**
@@ -81,7 +80,7 @@ export class HeaderComponent {
     const { logoAltText, logoLinkUrl, logoImgUrl, headerTitle, headerTitleUrl } = this;
 
     return (
-      <div class="admiralty-header">
+      <div class="admiralty-header" role="banner">
         <div class="header-menu">
           <div class="header-branding">
             <a class="header-logo" href={logoLinkUrl}>
@@ -99,10 +98,10 @@ export class HeaderComponent {
           <nav role="navigation" class="header-menus" aria-label="Site navigation">
             <div class={{ 'mobile-menu-toggle': true, 'display-hamburger': this.displayHamburger }}>
               <button onClick={_ => this.toggleMobileMenu()} aria-expanded={this.mobileMenuOpen} aria-label={this.mobileMenuOpen ? 'Hide menu' : 'Show menu'}>
-                <admiralty-icon icon-name={this.mobileMenuOpen ? faTimes.iconName : faBars.iconName}></admiralty-icon>
+                <admiralty-icon name={this.mobileMenuOpen ? "close-rounded" : "menu-rounded"}></admiralty-icon>
               </button>
             </div>
-            <div class={{ 'menu-sections': true, 'mob-menus-visible': this.mobileMenuOpen }}>
+            <div class={{ "menu-sections": true, 'mob-menus-visible': this.mobileMenuOpen }}>
               <div class="menu-items">
                 <slot name="items"></slot>
               </div>

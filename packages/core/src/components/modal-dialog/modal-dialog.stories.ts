@@ -18,7 +18,7 @@ export const Basic: Story = {
   render: args =>
     html`<admiralty-modal-dialog heading="${args.heading}" ?show="${args.show}" label="${args.label}" description="${args.description}">
       <div slot="content">
-        <admiralty-icon icon-name="triangle-exclamation" icon-prefix="fas"></admiralty-icon>
+        <admiralty-icon name="warning-rounded"></admiralty-icon>
         <div>If you leave this page, your survey won't be saved and can't be recovered</div>
       </div>
       <div slot="actions">
@@ -45,7 +45,7 @@ export const Hidden: Story = {
   render: args =>
     html`<admiralty-modal-dialog heading="${args.heading}" ?show="${args.show}" label="${args.label}" description="${args.description}">
       <div slot="content">
-        <admiralty-icon icon-name="triangle-exclamation" icon-prefix="fas"></admiralty-icon>
+        <admiralty-icon name="warning-rounded"></admiralty-icon>
         <div>If you leave this page, your survey won't be saved and can't be recovered</div>
       </div>
       <div slot="actions">

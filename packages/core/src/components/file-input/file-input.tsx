@@ -112,7 +112,7 @@ export class FileInputComponent {
             aria-describedby={this.invalid ? errorId : ''}
           />
           <label htmlFor={inputId}>
-            <admiralty-icon class="upload-icon" icon-name="upload"></admiralty-icon>
+            <admiralty-icon class="upload-icon" name="upload"></admiralty-icon>
             <span>{this.label}</span>
           </label>
         </div>

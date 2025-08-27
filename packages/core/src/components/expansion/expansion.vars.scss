@@ -3,6 +3,13 @@
 /**
  * @prop --admiralty-expansion-title-font-size: Font size of the expansion title
  * @prop --admiralty-expansion-title-font-weight: Font weight of the expansion title
+
+ * @prop --admiralty-expansion-padding: Padding for the expansion.
+ * @prop --admiralty-expansion-content-padding-bottom: Padding bottom for the expansion content.
+ * @prop --admiralty-expansion-button-padding: Padding for the expansion button.
+ * @prop --admiralty-expansion-button-margin: Margin for the expansion button.
+ * @prop --admiralty-expansion-button-icon-margin-left: Margin left for the button icon.
+ * @prop --admiralty-expansion-button-heading-margin-bottom: Margin bottom for the button heading.
 **/
 
 $expansion-title-text-size: var(--admiralty-expansion-title-font-size, var(--admiralty-font-size-1));
@@ -10,3 +17,11 @@ $expansion-title-text-weight: var(--admiralty-expansion-title-font-weight, var(-
 
 $expansion-border-colour: var(--admiralty-colour-light) !default;
 $expansion-header-icon-colour: var(--admiralty-colour-primary) !default;
+$expansion-header-icon-size: var(--admiralty-font-size-5) !default;
+
+$expansion-padding: var(--admiralty-expansion-padding, 2px 0);
+$expansion-content-padding-bottom: var(--admiralty-expansion-content-padding-bottom, var(--admiralty-spacing-3));
+$expansion-button-padding: var(--admiralty-expansion-button-padding, var(--admiralty-spacing-0));
+$expansion-button-margin: var(--admiralty-expansion-button-margin, 10px var(--admiralty-spacing-0) 22px);
+$expansion-button-icon-margin-left: var(--admiralty-expansion-button-icon-margin-left, 30px);
+$expansion-button-heading-margin-bottom: var(--admiralty-expansion-button-heading-margin-bottom, var(--admiralty-spacing-0));

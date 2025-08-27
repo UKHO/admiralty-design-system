@@ -1,7 +1,7 @@
 @import 'label.vars.scss';
 
 label {
-  margin-bottom: 6px;
+  margin-bottom: $label-margin-bottom;
   display: inline-block;
   font-weight: $label-text-weight;
 

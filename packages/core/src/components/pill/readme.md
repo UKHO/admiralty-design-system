@@ -22,11 +22,14 @@
 | ---------------------------------------------------------- | ------------------------------------------------------ |
 | `--admiralty-pill-background-colour`                       | Background colour of the pill                          |
 | `--admiralty-pill-item-font-size`                          | Font size for the pill text                            |
+| `--admiralty-pill-item-margin`                             | margin for the admiralty pill                          |
 | `--admiralty-pill-item-number-background-colour`           | Background colour for the pill's item number           |
 | `--admiralty-pill-item-number-colour`                      | Colour for the pill's item number                      |
 | `--admiralty-pill-item-number-font-size`                   | Font size for the pill item number                     |
+| `--admiralty-pill-item-number-padding`                     | padding for the admiralty pill item number             |
 | `--admiralty-pill-item-selected-icon`                      | Colour of the icon for the pill                        |
 | `--admiralty-pill-item-text-colour`                        | Item text colour of the pill                           |
+| `--admiralty-pill-padding`                                 | padding for the admiralty pill                         |
 | `--admiralty-secondary-pill-background-colour`             | Background colour of the secondary pill                |
 | `--admiralty-secondary-pill-border-colour`                 | border colour of the secondary pill                    |
 | `--admiralty-secondary-pill-item-number-background-colour` | Background colour for the secondary pill's item number |

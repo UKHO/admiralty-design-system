@@ -11,14 +11,14 @@
     "fs-extra": "^11.2.0",
     "lerna": "8.1.9",
     "listr": "^0.14.3",
-    "nx": "20.1.3",
+    "nx": "21.2.1",
     "semver": "^7.6.3"
   },
   "scripts": {
-    "build:all": "nx run-many --target=build",
-    "build:core": "yarn exec nx build --no-cache @ukho/admiralty-core",
-    "build:angular": "yarn exec nx build --no-cache @ukho/admiralty-angular",
-    "build:react": "yarn exec nx build --no-cache @ukho/admiralty-react",
+    "build:all": "nx run-many -t build",
+    "build:core": "nx build --no-cache @ukho/admiralty-core",
+    "build:angular": "nx build --no-cache @ukho/admiralty-angular",
+    "build:react": "nx build --no-cache @ukho/admiralty-react",
     "build:test-app": "nx build test-app",
     "build:website": "nx build website",
     "build:docs": "nx build @ukho-internal/admiralty-docs"

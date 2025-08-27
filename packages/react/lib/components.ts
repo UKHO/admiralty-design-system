@@ -32,6 +32,8 @@ import { AdmiraltyHeaderSubMenuItem as AdmiraltyHeaderSubMenuItemElement, define
 import { AdmiraltyHeader as AdmiraltyHeaderElement, defineCustomElement as defineAdmiraltyHeader } from "@ukho/admiralty-core/dist/components/admiralty-header.js";
 import { AdmiraltyHint as AdmiraltyHintElement, defineCustomElement as defineAdmiraltyHint } from "@ukho/admiralty-core/dist/components/admiralty-hint.js";
 import { AdmiraltyHr as AdmiraltyHrElement, defineCustomElement as defineAdmiraltyHr } from "@ukho/admiralty-core/dist/components/admiralty-hr.js";
+import { AdmiraltyIconSideBarItem as AdmiraltyIconSideBarItemElement, defineCustomElement as defineAdmiraltyIconSideBarItem } from "@ukho/admiralty-core/dist/components/admiralty-icon-side-bar-item.js";
+import { AdmiraltyIconSideBar as AdmiraltyIconSideBarElement, defineCustomElement as defineAdmiraltyIconSideBar } from "@ukho/admiralty-core/dist/components/admiralty-icon-side-bar.js";
 import { AdmiraltyIcon as AdmiraltyIconElement, defineCustomElement as defineAdmiraltyIcon } from "@ukho/admiralty-core/dist/components/admiralty-icon.js";
 import { AdmiraltyInputInvalid as AdmiraltyInputInvalidElement, defineCustomElement as defineAdmiraltyInputInvalid } from "@ukho/admiralty-core/dist/components/admiralty-input-invalid.js";
 import { AdmiraltyInput as AdmiraltyInputElement, defineCustomElement as defineAdmiraltyInput } from "@ukho/admiralty-core/dist/components/admiralty-input.js";
@@ -57,6 +59,8 @@ import { AdmiraltyTableHeaderCell as AdmiraltyTableHeaderCellElement, defineCust
 import { AdmiraltyTableHeader as AdmiraltyTableHeaderElement, defineCustomElement as defineAdmiraltyTableHeader } from "@ukho/admiralty-core/dist/components/admiralty-table-header.js";
 import { AdmiraltyTableRow as AdmiraltyTableRowElement, defineCustomElement as defineAdmiraltyTableRow } from "@ukho/admiralty-core/dist/components/admiralty-table-row.js";
 import { AdmiraltyTable as AdmiraltyTableElement, defineCustomElement as defineAdmiraltyTable } from "@ukho/admiralty-core/dist/components/admiralty-table.js";
+import { AdmiraltyTextSideBarItem as AdmiraltyTextSideBarItemElement, defineCustomElement as defineAdmiraltyTextSideBarItem } from "@ukho/admiralty-core/dist/components/admiralty-text-side-bar-item.js";
+import { AdmiraltyTextSideBar as AdmiraltyTextSideBarElement, defineCustomElement as defineAdmiraltyTextSideBar } from "@ukho/admiralty-core/dist/components/admiralty-text-side-bar.js";
 import { AdmiraltyTextarea as AdmiraltyTextareaElement, defineCustomElement as defineAdmiraltyTextarea } from "@ukho/admiralty-core/dist/components/admiralty-textarea.js";
 import React from 'react';
 
@@ -310,6 +314,32 @@ export const AdmiraltyIcon: StencilReactComponent<AdmiraltyIconElement, Admiralt
     react: React,
     events: {} as AdmiraltyIconEvents,
     defineCustomElement: defineAdmiraltyIcon
+});
+
+type AdmiraltyIconSideBarEvents = NonNullable<unknown>;
+
+export const AdmiraltyIconSideBar: StencilReactComponent<AdmiraltyIconSideBarElement, AdmiraltyIconSideBarEvents> = /*@__PURE__*/ createComponent<AdmiraltyIconSideBarElement, AdmiraltyIconSideBarEvents>({
+    tagName: 'admiralty-icon-side-bar',
+    elementClass: AdmiraltyIconSideBarElement,
+    react: React,
+    events: {} as AdmiraltyIconSideBarEvents,
+    defineCustomElement: defineAdmiraltyIconSideBar
+});
+
+type AdmiraltyIconSideBarItemEvents = {
+    onToggled: EventName<CustomEvent<boolean>>,
+    onIconSideBarItemClick: EventName<CustomEvent<string>>
+};
+
+export const AdmiraltyIconSideBarItem: StencilReactComponent<AdmiraltyIconSideBarItemElement, AdmiraltyIconSideBarItemEvents> = /*@__PURE__*/ createComponent<AdmiraltyIconSideBarItemElement, AdmiraltyIconSideBarItemEvents>({
+    tagName: 'admiralty-icon-side-bar-item',
+    elementClass: AdmiraltyIconSideBarItemElement,
+    react: React,
+    events: {
+        onToggled: 'toggled',
+        onIconSideBarItemClick: 'iconSideBarItemClick'
+    } as AdmiraltyIconSideBarItemEvents,
+    defineCustomElement: defineAdmiraltyIconSideBarItem
 });
 
 type AdmiraltyInputEvents = {
@@ -572,6 +602,32 @@ export const AdmiraltyTableRow: StencilReactComponent<AdmiraltyTableRowElement, 
     react: React,
     events: {} as AdmiraltyTableRowEvents,
     defineCustomElement: defineAdmiraltyTableRow
+});
+
+type AdmiraltyTextSideBarEvents = NonNullable<unknown>;
+
+export const AdmiraltyTextSideBar: StencilReactComponent<AdmiraltyTextSideBarElement, AdmiraltyTextSideBarEvents> = /*@__PURE__*/ createComponent<AdmiraltyTextSideBarElement, AdmiraltyTextSideBarEvents>({
+    tagName: 'admiralty-text-side-bar',
+    elementClass: AdmiraltyTextSideBarElement,
+    react: React,
+    events: {} as AdmiraltyTextSideBarEvents,
+    defineCustomElement: defineAdmiraltyTextSideBar
+});
+
+type AdmiraltyTextSideBarItemEvents = {
+    onToggled: EventName<CustomEvent<boolean>>,
+    onTextSideBarItemClick: EventName<CustomEvent<string>>
+};
+
+export const AdmiraltyTextSideBarItem: StencilReactComponent<AdmiraltyTextSideBarItemElement, AdmiraltyTextSideBarItemEvents> = /*@__PURE__*/ createComponent<AdmiraltyTextSideBarItemElement, AdmiraltyTextSideBarItemEvents>({
+    tagName: 'admiralty-text-side-bar-item',
+    elementClass: AdmiraltyTextSideBarItemElement,
+    react: React,
+    events: {
+        onToggled: 'toggled',
+        onTextSideBarItemClick: 'textSideBarItemClick'
+    } as AdmiraltyTextSideBarItemEvents,
+    defineCustomElement: defineAdmiraltyTextSideBarItem
 });
 
 type AdmiraltyTextareaEvents = {

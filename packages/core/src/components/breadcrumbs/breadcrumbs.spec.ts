@@ -53,13 +53,13 @@ describe('admiralty-breadcrumbs', () => {
             </a>
           </admiralty-breadcrumb>
           <admiralty-breadcrumb>
-            <admiralty-icon class="breadcrumb-icon" icon-name="chevron-right"></admiralty-icon>
+            <admiralty-icon class="breadcrumb-icon" name="arrow-forward-ios-rounded"></admiralty-icon>
             <a href="#">
               Test2
             </a>
           </admiralty-breadcrumb>
           <admiralty-breadcrumb>
-            <admiralty-icon class="breadcrumb-icon" icon-name="chevron-right"></admiralty-icon>
+            <admiralty-icon class="breadcrumb-icon" name="arrow-forward-ios-rounded"></admiralty-icon>
             <a class="active" href="#">
               Test3
             </a>

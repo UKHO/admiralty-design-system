@@ -1,3 +1,38 @@
 .contentContainer {
   padding: 70px 142px 70px 142px;
+  background-color: #eeeeee;
+}
+
+.pageWrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.splitContentWrapper {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.middle {
+  display:flex;
+  flex: 1;
+}
+
+.sideBar {
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.mainContent {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.pageFooter {
+  margin: 0;
 }
