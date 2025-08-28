@@ -1,3 +1,49 @@
+# v5.0.0 (Wed Aug 27 2025)
+
+#### 💥 Breaking Change
+
+- `@ukho/admiralty-angular`, `@ukho/admiralty-core`, `@ukho/admiralty-react`
+  - Feat: version 5 release [#390](https://github.com/UKHO/admiralty-design-system/pull/390) ([@developernm](https://github.com/developernm) [@ecstaticrainbow](https://github.com/ecstaticrainbow) [@lstevens98](https://github.com/lstevens98))
+- `@ukho/admiralty-core`
+  - Feat: Add spacing CSS variables [#334](https://github.com/UKHO/admiralty-design-system/pull/334) ([@developernm](https://github.com/developernm))
+
+#### 🚀 Enhancement
+
+- Update setup-node to v4 [#362](https://github.com/UKHO/admiralty-design-system/pull/362) ([@developernm](https://github.com/developernm))
+- `@ukho/admiralty-core`
+  - Feat: website with side bar implementation [#373](https://github.com/UKHO/admiralty-design-system/pull/373) ([@developernm](https://github.com/developernm) [@ecstaticrainbow](https://github.com/ecstaticrainbow))
+  - Updating the fonts to JohnstonITC Pro [#377](https://github.com/UKHO/admiralty-design-system/pull/377) ([@ecstaticrainbow](https://github.com/ecstaticrainbow) [@developernm](https://github.com/developernm))
+- `@ukho/admiralty-angular`, `@ukho/admiralty-core`, `@ukho/admiralty-react`
+  - Feat: split side bar component into icon side bar and text side bar [#383](https://github.com/UKHO/admiralty-design-system/pull/383) ([@developernm](https://github.com/developernm))
+  - Feat: Side bar variant 202448 [#371](https://github.com/UKHO/admiralty-design-system/pull/371) ([@developernm](https://github.com/developernm))
+  - Feat: Side bar implementation 199888 [#348](https://github.com/UKHO/admiralty-design-system/pull/348) ([@developernm](https://github.com/developernm))
+  - Merge: main into next [#360](https://github.com/UKHO/admiralty-design-system/pull/360) ([@developernm](https://github.com/developernm) [@snyk-io[bot]](https://github.com/snyk-io[bot]) [@ecstaticrainbow](https://github.com/ecstaticrainbow) [@lstevens98](https://github.com/lstevens98))
+
+#### 🐛 Bug Fix
+
+- Add build provenance [#376](https://github.com/UKHO/admiralty-design-system/pull/376) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+- Update line endings to LF [#375](https://github.com/UKHO/admiralty-design-system/pull/375) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+- `@ukho/admiralty-core`
+  - Fix missing icon size type [#387](https://github.com/UKHO/admiralty-design-system/pull/387) ([@developernm](https://github.com/developernm))
+  - Update Paginator to use Secondary Icon [#385](https://github.com/UKHO/admiralty-design-system/pull/385) ([@lstevens98](https://github.com/lstevens98))
+  - Fix Icon Button Hoverstate + Add Borderless Icon Variant [#382](https://github.com/UKHO/admiralty-design-system/pull/382) ([@lstevens98](https://github.com/lstevens98))
+  - Fix sidebar issues [#372](https://github.com/UKHO/admiralty-design-system/pull/372) ([@developernm](https://github.com/developernm))
+- `@ukho/admiralty-angular`, `@ukho/admiralty-core`
+  - Fix: header missing landmark [#386](https://github.com/UKHO/admiralty-design-system/pull/386) ([@developernm](https://github.com/developernm))
+
+#### 🔩 Dependency Updates
+
+- Upgrade NX [#374](https://github.com/UKHO/admiralty-design-system/pull/374) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+#### Authors: 4
+
+- [@developernm](https://github.com/developernm)
+- [@snyk-io[bot]](https://github.com/snyk-io[bot])
+- Lewis Stevens ([@lstevens98](https://github.com/lstevens98))
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
 # v4.2.1 (Fri Jun 06 2025)
 
 #### 🐛 Bug Fix

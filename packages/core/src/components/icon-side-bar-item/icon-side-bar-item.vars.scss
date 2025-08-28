@@ -1,0 +1,17 @@
+@import '../../styles/vars/globals';
+
+/**
+ * @prop --admiralty-icon-side-bar-item-font-weight: Font weight for the side bar item
+ * @prop --admiralty-icon-side-bar-item-font-size: Font size for the side bar item
+ * @prop --admiralty-icon-side-bar-item-icon-font-size: Font size for the side bar item icon
+**/
+
+$icon-side-bar-item-text-colour: var(--admiralty-text-colour);
+$icon-side-bar-item-hover-text-colour: var(--admiralty-colour-primary);
+$icon-side-bar-item-hover-background-colour: var(--admiralty-table-row-colour);
+$icon-side-bar-item-active-text-colour: var(--admiralty-colour-primary);
+$icon-side-bar-item-focus-colour: var(--admiralty-focus-colour) !default;
+
+$icon-side-bar-item-font-weight: var(--admiralty-icon-side-bar-item-font-weight ,var(--admiralty-font-weight-medium)); // 500;
+$icon-side-bar-item-font-size: var(--admiralty-icon-side-bar-item-font-size ,var(--admiralty-font-size-0)); // 16px;
+$icon-side-bar-item-icon-font-size: var(--admiralty-icon-side-bar-item-icon-font-size ,var(--admiralty-font-size-4)); // 32px;

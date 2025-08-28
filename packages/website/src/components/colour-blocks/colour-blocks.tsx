@@ -6,65 +6,34 @@ export default function ColourBlocks() {
   const router = useRouter();
   return (
     <div className={styles.colourBlocksContainer}>
-      <AdmiraltyColourBlock
-        width={434}
-        height={434}
-        colour="admiralty-blue"
-        heading="Setting it up"
-        linkText="Get started"
-        href="/getting-started"
-        suppressRedirect={true}
-        enableCardEvent={true}
-        onColourBlockLinkClicked={() => router.push("/getting-started")}>
-        Go to Get Started to see how to install the Design System and start using it in your builds.
-      </AdmiraltyColourBlock>
+      <div className={styles.latestUpdates}>
+        <h2>Updates</h2>
+        <h3>Last Updated January 2025</h3>
+        <p>We released ADMIRALTY Design System update 4.0.0.0 on the 21st January 2025. This new version contains updates to Typography, accessibility and the website. We have also added new components including a new pill component and the new minified footer.</p>
+      </div>
       <AdmiraltyColourBlock
         width={434}
         height={434}
         colour="teal"
-        heading="How we do things"
-        linkText="Principles"
+        heading="Help us improve our design system"
+        linkText="Contact us"
         href="/principles"
         suppressRedirect={true}
         enableCardEvent={true}
         onColourBlockLinkClicked={() => router.push("/principles")}>
-        Our Principles section covers our approach to accessibility, design, research and content
+        Share your research or feedback on our github, propose a change or report a bug.
       </AdmiraltyColourBlock>
       <AdmiraltyColourBlock
         width={434}
         height={434}
         colour="bright-blue"
-        heading="Component examples"
-        linkText="Components"
+        heading="Figma kit"
+        linkText="Use our Figma kit"
         href="/components"
         suppressRedirect={true}
         enableCardEvent={true}
         onColourBlockLinkClicked={() => router.push("/components")}>
-        Visit Components to see examples, usage and accessibility requirements and get the code
-      </AdmiraltyColourBlock>
-      <AdmiraltyColourBlock
-        width={434}
-        height={434}
-        colour="teal"
-        heading="Support user needs"
-        linkText="Patterns"
-        href="#"
-        suppressRedirect={true}
-        enableCardEvent={true}
-        onColourBlockLinkClicked={() => router.push("/patterns")}>
-        Patterns have been developed to meet a user need - such as ‘find a location’ or ‘complete a form’
-      </AdmiraltyColourBlock>
-      <AdmiraltyColourBlock
-        width={434}
-        height={434}
-        colour="bright-blue"
-        heading="Build ‘on brand’"
-        linkText="Brand guide"
-        href="/brand-guide"
-        suppressRedirect={true}
-        enableCardEvent={true}
-        onColourBlockLinkClicked={() => router.push("/brand-guide")}>
-        The Design System helps teams develop products in the ADMIRALTY brand
+        Our Figma kits helps people create designs that are consistent with one another. They are maintained by the ADMIRALTY UKHO Design Team
       </AdmiraltyColourBlock>
     </div>
   );

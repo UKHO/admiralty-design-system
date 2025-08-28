@@ -1,0 +1,33 @@
+import React, { useState } from "react";
+import { AdmiraltyTextSideBar, AdmiraltyTextSideBarItem } from "@ukho/admiralty-react";
+
+export default function Demo() {
+  return (
+    <div style={{ backgroundColor: "#ccc", display: "flex", height: "500px" }}>
+      <AdmiraltyTextSideBar label="Application navigation" show-logo="false" text-side-bar-width="180px">
+        <AdmiraltyTextSideBarItem expanded={true} slot="items" href="/contents"
+                                  suppress-redirect={true} icon="list-alt-outline"
+                                  item-text="Components" variant="expandable">
+          <AdmiraltyTextSideBarItem active={false} id="migrating"
+                                    href="/Migrating" suppress-redirect={true}
+                                    item-text="Migrating" variant="text"></AdmiraltyTextSideBarItem>
+          <AdmiraltyTextSideBarItem active={false} id="customising"
+                                    href="/Customising" suppress-redirect={true}
+                                    item-text="Customising" variant="text"></AdmiraltyTextSideBarItem>
+          <AdmiraltyTextSideBarItem active={true} id="angular" href="/Angular"
+                                    suppress-redirect={true} item-text="Angular" variant="text"></AdmiraltyTextSideBarItem>
+        </AdmiraltyTextSideBarItem>
+        <AdmiraltyTextSideBarItem active={false} href="/bookmarks" slot="items"
+                                  suppress-redirect={true} icon="bookmark-outline" item-text="Patterns" variant="expandable">
+          <AdmiraltyTextSideBarItem active={false} id="overview" href="/overview"
+                                    suppress-redirect={true} item-text="Overview" variant="text"></AdmiraltyTextSideBarItem>
+        </AdmiraltyTextSideBarItem>
+        <AdmiraltyTextSideBarItem active={false} href="/recents" slot="items" suppress-redirect={true}
+                                  icon="history" item-text="Recents" variant="expandable">
+          <AdmiraltyTextSideBarItem active={false} id="other" href="/other"
+                                    suppress-redirect={true} item-text="Other" variant="text"></AdmiraltyTextSideBarItem>
+        </AdmiraltyTextSideBarItem>
+      </AdmiraltyTextSideBar>
+    </div>
+  );
+}

@@ -1,0 +1,129 @@
+@import 'text-side-bar-item.vars.scss';
+
+:host {
+  --admiralty-icon-font-size: var(--admiralty-font-size-2);
+}
+
+li {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0 0 0 1px;
+  &:before {
+    content: '';
+    display: none;
+  }
+}
+
+.expandable-item {
+  flex: 1;
+  display: flex;
+  flex-flow: column;
+
+  .expandable-item-button {
+    display: inline-flex;
+    align-items: center;
+    font-size: $expandable-side-bar-item-font-size;
+    white-space: nowrap;
+    font-weight: $expandable-side-bar-item-font-weight;
+    background-color: unset;
+    cursor: pointer;
+    padding: .3rem .5rem;
+    overflow-wrap: break-word;
+
+    &:hover {
+      color: $text-link-font-colour;
+      font-weight: $expandable-side-bar-item-font-weight;
+      background-color: $text-link-background-hover-colour;
+    }
+
+    &:focus-visible,
+    &.active:focus-visible {
+      outline: none;
+      box-shadow: inset 0 -4px 0 0  $text-link-focus-text-colour;
+      background-color: $text-link-focus-background-colour;
+      color: $text-link-focus-text-colour;
+    }
+
+    &.active {
+      font-weight: 500;
+      background-color: $text-link-active-background-colour;
+      color: $text-link-active-text-colour;
+    }
+
+    &:active {
+      background-color: $text-link-focus-background-colour;
+      color: $text-link-focus-text-colour;
+      box-shadow: inset 0 -4px 0 0  $text-link-focus-text-colour;
+    }
+
+    .slot {
+      line-height: 2.5rem;
+    }
+
+    .icon {
+      display: flex;
+      width: 100%;
+      justify-content: right;
+      font-size: $expandable-side-bar-item-icon-font-size;
+    }
+
+    .expansion-content {
+      display: none;
+      max-height: 0;
+      overflow: visible;
+    }
+    &.expanded .expansion-content {
+      display: block;
+      max-height: initial;
+      padding: 12px 0;
+    }
+  }
+}
+
+.text-link {
+  all: unset;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  flex: 1;
+  user-select: none;
+  text-decoration: none;
+  text-align: left;
+  color: $text-side-bar-item-text-colour;
+  font-weight: $text-link-font-weight;
+  font-size: $expandable-side-bar-item-font-size;
+  padding: .5rem 1.5rem;
+
+  &.is-main-link {
+    font-weight: $text-link-is-main-font-weight;
+    padding: .5rem;
+  }
+
+  &:hover {
+    color: $text-link-font-colour;
+    font-weight: $expandable-side-bar-item-font-weight;
+    background-color: $text-link-background-hover-colour;
+  }
+
+  &:focus-visible,
+  &.active:focus-visible {
+    outline: none;
+    box-shadow: inset 0 -4px 0 0  $text-link-focus-text-colour;
+    background-color: $text-link-focus-background-colour;
+    color: $text-link-focus-text-colour;
+  }
+
+  &.active {
+    font-weight: $text-link-active-font-weight;
+    background-color: $text-link-active-background-colour;
+    color: $text-link-active-text-colour;
+  }
+
+  &:active {
+    background-color: $text-link-focus-background-colour;
+    color: $text-link-focus-text-colour;
+    box-shadow: inset 0 -4px 0 0  $text-link-focus-text-colour;
+  }
+}
