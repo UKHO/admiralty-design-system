@@ -1,3 +1,15 @@
+# v5.0.1 (Tue Sep 02 2025)
+
+#### 🐛 Bug Fix
+
+- Fixed issues after v5 release [#391](https://github.com/UKHO/admiralty-design-system/pull/391) ([@developernm](https://github.com/developernm))
+
+#### Authors: 1
+
+- [@developernm](https://github.com/developernm)
+
+---
+
 # v5.0.0 (Wed Aug 27 2025)
 
 #### 💥 Breaking Change
