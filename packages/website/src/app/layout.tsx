@@ -179,7 +179,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </div>
             <div>
               <AdmiraltyFooter className={styles.pageFooter} imageSrc="/svg/UKHO linear logo.svg">
-                <AdmiraltyLink href="http://www.example.com" new-tab="true">
+                <AdmiraltyLink href="https://www.admiralty.co.uk/privacy-policy" new-tab="true">
                   Privacy Policy
                 </AdmiraltyLink>
                 <AdmiraltyLink href="/accessbility">Accessibility</AdmiraltyLink>
