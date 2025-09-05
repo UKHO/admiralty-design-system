@@ -1,46 +1,25 @@
 import { MDXContent } from "mdx/types";
-import React, { ComponentType, ReactElement, useEffect, useMemo, useRef, useState } from "react";
-import { CodeSnippets, UsageTarget } from "@/components/playground/playground.types";
+import React, { ComponentType, JSX } from "react";
+import { LanguageTarget } from "@/components/playground/playground.types";
 import { AdmiraltyTab, AdmiraltyTabGroup } from "@ukho/admiralty-react";
 import "./playground.css";
 
 interface PlaygroundProps {
-  code: { [key in UsageTarget]?: MDXContent };
+  code: { [key in LanguageTarget]?: MDXContent };
   demo: ComponentType;
 }
 
 interface PlaygroundTabProps {
-  codeSnippet: ReactElement;
-  usageTarget: UsageTarget;
+  codeSnippet: JSX.Element;
+  languageTarget: string | undefined;
 }
 
 const PlaygroundTab = (props: PlaygroundTabProps) => {
-  return <AdmiraltyTab label={props.usageTarget}>{props.codeSnippet}</AdmiraltyTab>;
+  return <AdmiraltyTab label={props.languageTarget}>{props.codeSnippet}</AdmiraltyTab>;
 };
 
-function isUsageTarget(key: string): key is UsageTarget {
-  return Object.values(UsageTarget).includes(key as UsageTarget);
-}
 
 export default function Playground(props: PlaygroundProps) {
-  const [codeSnippets, setCodeSnippets] = useState<CodeSnippets>({});
-  useEffect(() => {
-    const codeSnippets: CodeSnippets = {};
-    for (const key in props.code) {
-      if (props.code.hasOwnProperty(key) && isUsageTarget(key)) {
-        const value = props.code[key];
-        if (typeof value === "function") {
-          if (value) {
-            codeSnippets[key] = value({});
-          }
-        }
-      }
-    }
-    setCodeSnippets(codeSnippets);
-  }, [props.code]);
-
-  const sortedUsageTargets = useMemo(() => Object.keys(UsageTarget).sort(), []);
-
   return (
     <div className="playground-container">
       <div className="demo-container">
@@ -48,20 +27,15 @@ export default function Playground(props: PlaygroundProps) {
       </div>
       <div className="codesnippet-container">
         <AdmiraltyTabGroup>
-          {sortedUsageTargets.map((lang) => {
-            /**
-             * If code was not passed for this target
-             * then we should disable the button.
-             */
-            let langKey = lang as keyof typeof UsageTarget;
-            const usageTarget = UsageTarget[langKey];
-            const hasCode = props.code[usageTarget] !== undefined;
-            if (hasCode) {
+          {Object.values(LanguageTarget).sort().map((language) => {
+            const RawCode: MDXContent | undefined = props.code[language];
+            const enumKey: string | undefined = Object.entries(LanguageTarget).find(([_,val]) => val === language)?.[0];
+            if (RawCode) {
               return (
                 <PlaygroundTab
-                  key={lang}
-                  codeSnippet={codeSnippets[usageTarget]}
-                  usageTarget={usageTarget}></PlaygroundTab>
+                  key={language}
+                  codeSnippet={<RawCode />}
+                  languageTarget={enumKey}></PlaygroundTab>
               );
             }
           })}
