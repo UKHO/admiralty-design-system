@@ -168,6 +168,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                         onTextSideBarItemClick={() => router.push(path)}
                         suppress-redirect="true"
                         variant={variant as TextSideBarItemVariant}
+                        href={path}
                         itemText={name}></AdmiraltyTextSideBarItem>
                     ))}
                   </AdmiraltyTextSideBarItem>
