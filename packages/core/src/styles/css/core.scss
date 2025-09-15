@@ -25,6 +25,13 @@ body {
   color: var(--admiralty-text-colour);
 }
 
+@media (prefers-color-scheme: dark) {
+  body {
+    background: var(--admiralty-background-dark);
+    color: var(--admiralty-text-colour-dark);
+  }
+}
+
 // Admiralty Colours
 // --------------------------------------------------
 // Generates the colour classes and variables based on the

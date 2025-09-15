@@ -1,5 +1,10 @@
 /** Admiralty CSS Variables **/
 :root {
+
+    /** dark **/
+
+    --admiralty-background-dark: #333333;
+    --admiralty-text-colour-dark: #ffffff;
   /** primary **/
   --admiralty-colour-primary: #09315b;
   --admiralty-colour-primary-rgb: 9, 49, 91;
