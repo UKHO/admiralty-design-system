@@ -22,7 +22,14 @@
   }
 }
 
-.header-branding {
+@media (prefers-color-scheme: dark) {
+  .header-menu {
+    --admiralty-background-colour: #333333;
+    --admiralty-border-colour: #ffffff;
+  }
+}
+
+.header-branding { //TODO: Find a way to change branding image when toggling darkmode
   display: flex;
   flex-direction: row;
   flex-grow: 1;
