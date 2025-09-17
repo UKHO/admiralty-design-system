@@ -24,8 +24,8 @@
 
 @media (prefers-color-scheme: dark) {
   .header-menu {
-    --admiralty-background-colour: #333333;
-    --admiralty-border-colour: #ffffff;
+    --admiralty-background-colour: var(--admiralty-header-dark);
+    --admiralty-border-colour: var(--admiralty-heading-colour-dark);
   }
 }
 

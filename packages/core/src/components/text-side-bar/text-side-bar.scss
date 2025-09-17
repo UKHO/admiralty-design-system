@@ -12,6 +12,12 @@ nav {
   background-color: $side-bar-background-colour;
 }
 
+@media(prefers-color-scheme: dark) {
+  nav {
+    background-color: var(--admiralty-sidebar-dark);
+  }
+}
+
 ul {
   display: flex;
   flex-direction: column;

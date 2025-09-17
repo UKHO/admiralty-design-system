@@ -7,6 +7,9 @@
     --admiralty-heading-colour-dark: #ffffff;
     --admiralty-link-colour-dark: #ffffff;
 
+    --admiralty-header-dark: #404040;
+    --admiralty-sidebar-dark: #404040;
+
   /** primary **/
   --admiralty-colour-primary: #09315b;
   --admiralty-colour-primary-rgb: 9, 49, 91;
