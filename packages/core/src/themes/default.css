@@ -123,8 +123,8 @@
   --admiralty-spacing-inherit: inherit;
 }
 
+/** Dark Mode **/
 @media (prefers-color-scheme: dark) {
-    /** Admiralty Dark Mode CSS Variables (Refined) **/
     :root {
         /** primary **/
         --admiralty-colour-primary: #ffffff;
