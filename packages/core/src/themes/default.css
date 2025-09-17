@@ -122,3 +122,135 @@
   --admiralty-spacing-unset: unset;
   --admiralty-spacing-inherit: inherit;
 }
+
+@media (prefers-color-scheme: dark) {
+    /** Admiralty Dark Mode CSS Variables (Refined) **/
+    :root {
+        /** primary **/
+        --admiralty-colour-primary: #ffffff;
+        --admiralty-colour-primary-rgb: 255, 255, 255;
+        --admiralty-colour-primary-contrast: #333333;
+        --admiralty-colour-primary-contrast-rgb: 51, 51, 51;
+        --admiralty-colour-primary-shade: #cccccc;
+        --admiralty-colour-primary-tint: #e6e6e6;
+
+        /** secondary **/
+        --admiralty-colour-secondary: #ffffff;
+        --admiralty-colour-secondary-rgb: 255, 255, 255;
+        --admiralty-colour-secondary-contrast: #333333;
+        --admiralty-colour-secondary-contrast-rgb: 51, 51, 51;
+        --admiralty-colour-secondary-shade: #cccccc;
+        --admiralty-colour-secondary-tint: #e6e6e6;
+
+        /** tertiary **/
+        --admiralty-colour-tertiary: #ffffff;
+        --admiralty-colour-tertiary-rgb: 255, 255, 255;
+        --admiralty-colour-tertiary-contrast: #000000;
+        --admiralty-colour-tertiary-contrast-rgb: 0, 0, 0;
+        --admiralty-colour-tertiary-shade: #cccccc;
+        --admiralty-colour-tertiary-tint: #e6e6e6;
+
+        /** success (muted green for dark mode) **/
+        --admiralty-colour-success: #3a7d2b;
+        --admiralty-colour-success-rgb: 58, 125, 43;
+        --admiralty-colour-success-contrast: #ffffff;
+        --admiralty-colour-success-contrast-rgb: 255, 255, 255;
+        --admiralty-colour-success-shade: #2f6423;
+        --admiralty-colour-success-tint: #4b9a3c;
+        --admiralty-colour-success-background: #1f2d1c;
+
+        /** warning (muted amber for dark mode) **/
+        --admiralty-colour-warning: #cc7a29;
+        --admiralty-colour-warning-rgb: 204, 122, 41;
+        --admiralty-colour-warning-contrast: #ffffff;
+        --admiralty-colour-warning-contrast-rgb: 255, 255, 255;
+        --admiralty-colour-warning-shade: #a65f1f;
+        --admiralty-colour-warning-tint: #e5943c;
+        --admiralty-colour-warning-background: #2d241a;
+
+        /** danger (softer red for dark mode) **/
+        --admiralty-colour-danger: #b82525;
+        --admiralty-colour-danger-rgb: 184, 37, 37;
+        --admiralty-colour-danger-contrast: #ffffff;
+        --admiralty-colour-danger-contrast-rgb: 255, 255, 255;
+        --admiralty-colour-danger-shade: #931e1e;
+        --admiralty-colour-danger-tint: #d43c3c;
+        --admiralty-colour-danger-background: #2d1a1a;
+
+        /** info **/
+        --admiralty-colour-info: #ffffff;
+        --admiralty-colour-info-rgb: 255, 255, 255;
+        --admiralty-colour-info-contrast: #333333;
+        --admiralty-colour-info-contrast-rgb: 51, 51, 51;
+        --admiralty-colour-info-shade: #cccccc;
+        --admiralty-colour-info-tint: #e6e6e6;
+        --admiralty-colour-info-background: #1c2227;
+
+        /** light (shifted to a darker gray for dark mode) **/
+        --admiralty-colour-light: #555555;
+        --admiralty-colour-light-rgb: 85, 85, 85;
+        --admiralty-colour-light-contrast: #ffffff;
+        --admiralty-colour-light-contrast-rgb: 255, 255, 255;
+        --admiralty-colour-light-shade: #444444;
+        --admiralty-colour-light-tint: #666666;
+
+        /** backgrounds **/
+        --admiralty-background-colour: #333333;
+        --admiralty-background-colour-rgb: 51, 51, 51;
+        --admiralty-hover-background-colour: #444444;
+        --admiralty-hover-background-colour-rgb: 68, 68, 68;
+
+        --admiralty-background-colour-tint: #444444;
+        --admiralty-background-colour-tint-rgb: 68, 68, 68;
+        --admiralty-hover-background-colour-tint: #555555;
+        --admiralty-hover-background-colour-tint-rgb: 85, 85, 85;
+
+        /** text **/
+        --admiralty-text-colour: #ffffff;
+        --admiralty-text-colour-rgb: 255, 255, 255;
+
+        /** focus **/
+        --admiralty-focus-colour: #ffdd00;
+        --admiralty-focus-colour-rgb: 255, 221, 0;
+
+        /** disabled **/
+        --admiralty-disabled-colour: #666666;
+        --admiralty-disabled-text-colour: #888888;
+
+        /** table rows **/
+        --admiralty-table-row-colour: #2a2a2a;
+
+        /** Typographic Scale **/
+        --admiralty-font-size--3: 0.688rem;
+        --admiralty-font-size--2: 0.75rem;
+        --admiralty-font-size--1: 0.875rem;
+
+        --admiralty-font-size-0: 1rem;
+        --admiralty-font-size-1: 1.375rem;
+        --admiralty-font-size-2: 1.5rem;
+        --admiralty-font-size-3: 1.75rem;
+        --admiralty-font-size-4: 2rem;
+        --admiralty-font-size-5: 2.25rem;
+        --admiralty-font-size-6: 2.75rem;
+        --admiralty-font-size-7: 3.5rem;
+
+        /** Font Weight **/
+        --admiralty-font-weight-normal: 300;
+        --admiralty-font-weight-medium: 400;
+        --admiralty-font-weight-bold: 700;
+
+        /** Spacing **/
+        --admiralty-spacing-0: 0; /** Default **/
+        --admiralty-spacing-1: 4px; /** 0.3rem **/
+        --admiralty-spacing-2: 8px; /** 0.5rem **/
+        --admiralty-spacing-3: 12px; /** 0.8rem **/
+        --admiralty-spacing-4: 16px; /** 1rem **/
+        --admiralty-spacing-5: 20px; /** 1.3rem **/
+        --admiralty-spacing-6: 24px; /** 1.5rem **/
+        --admiralty-spacing-7: 28px; /** 1.8rem **/
+        --admiralty-spacing-8: 32px; /** 2rem **/
+        --admiralty-spacing-auto: auto;
+        --admiralty-spacing-unset: unset;
+        --admiralty-spacing-inherit: inherit;
+    }
+}
