@@ -1,0 +1,36 @@
+name: 'Send Release Email'
+description: 'Send release notification email via SendGrid'
+
+inputs:
+  SENDGRID_API_KEY:
+    required: true
+  FROM_EMAIL:
+    required: true
+  RECIPIENTS:
+    required: true
+  SEND_RELEASE_EMAIL:
+    required: true
+  SG_TEMPLATE_ID:
+    required: true
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Install SendGrid SDK
+      run: yarn add @sendgrid/mail
+      shell: bash
+    - name: Send Release Email
+      run: |
+        if [ "${{ inputs.SEND_RELEASE_EMAIL }}" = "true" ]; then
+          echo "Sending release email to recipients"
+          node scripts/send-release-email.js
+        else
+          echo "SEND_RELEASE_EMAIL is not 'true', skipping email."
+        fi
+      shell: bash
+      env:
+        SENDGRID_API_KEY: ${{ inputs.SENDGRID_API_KEY }}
+        FROM_EMAIL: ${{ inputs.FROM_EMAIL}}
+        RECIPIENTS: ${{ inputs.RECIPIENTS }}
+        SEND_RELEASE_EMAIL: ${{ inputs.SEND_RELEASE_EMAIL }}
+        SG_TEMPLATE_ID: ${{ inputs.SG_TEMPLATE_ID }}
