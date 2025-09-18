@@ -1,3 +1,17 @@
+# v5.1.0 (Thu Sep 18 2025)
+
+#### 🐛 Bug Fix
+
+- Merge branch 'main' into fix-playground ([@developernm](https://github.com/developernm))
+- Removing the webfonts directories from the repo [#394](https://github.com/UKHO/admiralty-design-system/pull/394) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+#### Authors: 2
+
+- [@developernm](https://github.com/developernm)
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
 # v5.0.0 (Wed Aug 27 2025)
 
 #### 💥 Breaking Change

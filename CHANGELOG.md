@@ -1,3 +1,25 @@
+# v5.1.0 (Thu Sep 18 2025)
+
+#### 🚀 Enhancement
+
+- Feat: release email logic [#402](https://github.com/UKHO/admiralty-design-system/pull/402) ([@developernm](https://github.com/developernm))
+
+#### 🐛 Bug Fix
+
+- Upgrade: updated packages in the website [#397](https://github.com/UKHO/admiralty-design-system/pull/397) ([@developernm](https://github.com/developernm))
+- Fix: website docs for JavaScript install [#396](https://github.com/UKHO/admiralty-design-system/pull/396) ([@developernm](https://github.com/developernm))
+- Fix: side nav item not focusing when tabbing [#395](https://github.com/UKHO/admiralty-design-system/pull/395) ([@developernm](https://github.com/developernm))
+- Fix: playground rendering all options upon refresh [#393](https://github.com/UKHO/admiralty-design-system/pull/393) ([@developernm](https://github.com/developernm))
+- `@ukho/admiralty-core`
+  - Removing the webfonts directories from the repo [#394](https://github.com/UKHO/admiralty-design-system/pull/394) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+#### Authors: 2
+
+- [@developernm](https://github.com/developernm)
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
 # v5.0.1 (Tue Sep 02 2025)
 
 #### 🐛 Bug Fix
