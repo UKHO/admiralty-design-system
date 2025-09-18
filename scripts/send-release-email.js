@@ -10,7 +10,7 @@ if (!templateId || !fromEmail) {
 }
 
 if (recipients.length === 0) {
-  console.error(`❌ No recipients set. Please defined RECIPIENTS repository environment variable`)
+  console.error(`❌ No recipients set. Please define RECIPIENTS repository environment variable`)
 }
 
 const msg = {
