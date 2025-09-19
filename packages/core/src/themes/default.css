@@ -135,7 +135,7 @@
         --admiralty-colour-primary-tint: #e6e6e6;
 
         /** secondary **/
-        --admiralty-colour-secondary: #ffffff;
+        --admiralty-colour-secondary: #405357;
         --admiralty-colour-secondary-rgb: 255, 255, 255;
         --admiralty-colour-secondary-contrast: #333333;
         --admiralty-colour-secondary-contrast-rgb: 51, 51, 51;
@@ -143,7 +143,7 @@
         --admiralty-colour-secondary-tint: #e6e6e6;
 
         /** tertiary **/
-        --admiralty-colour-tertiary: #ffffff;
+        --admiralty-colour-tertiary: #92a9ae;
         --admiralty-colour-tertiary-rgb: 255, 255, 255;
         --admiralty-colour-tertiary-contrast: #000000;
         --admiralty-colour-tertiary-contrast-rgb: 0, 0, 0;
@@ -151,7 +151,7 @@
         --admiralty-colour-tertiary-tint: #e6e6e6;
 
         /** success (muted green for dark mode) **/
-        --admiralty-colour-success: #3a7d2b;
+        --admiralty-colour-success: #87ba7c;
         --admiralty-colour-success-rgb: 58, 125, 43;
         --admiralty-colour-success-contrast: #ffffff;
         --admiralty-colour-success-contrast-rgb: 255, 255, 255;
@@ -160,7 +160,7 @@
         --admiralty-colour-success-background: #1f2d1c;
 
         /** warning (muted amber for dark mode) **/
-        --admiralty-colour-warning: #cc7a29;
+        --admiralty-colour-warning: #de995d;
         --admiralty-colour-warning-rgb: 204, 122, 41;
         --admiralty-colour-warning-contrast: #ffffff;
         --admiralty-colour-warning-contrast-rgb: 255, 255, 255;
@@ -169,7 +169,7 @@
         --admiralty-colour-warning-background: #2d241a;
 
         /** danger (softer red for dark mode) **/
-        --admiralty-colour-danger: #b82525;
+        --admiralty-colour-danger: #d86666;
         --admiralty-colour-danger-rgb: 184, 37, 37;
         --admiralty-colour-danger-contrast: #ffffff;
         --admiralty-colour-danger-contrast-rgb: 255, 255, 255;
@@ -178,7 +178,7 @@
         --admiralty-colour-danger-background: #2d1a1a;
 
         /** info **/
-        --admiralty-colour-info: #ffffff;
+        --admiralty-colour-info: #60a4ce;
         --admiralty-colour-info-rgb: 255, 255, 255;
         --admiralty-colour-info-contrast: #333333;
         --admiralty-colour-info-contrast-rgb: 51, 51, 51;
@@ -210,7 +210,7 @@
         --admiralty-text-colour-rgb: 255, 255, 255;
 
         /** focus **/
-        --admiralty-focus-colour: #ffdd00;
+        --admiralty-focus-colour: #fbe86c;
         --admiralty-focus-colour-rgb: 255, 221, 0;
 
         /** disabled **/
