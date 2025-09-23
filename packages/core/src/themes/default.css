@@ -158,7 +158,7 @@
         --admiralty-colour-success-contrast-rgb: 255, 255, 255;
         --admiralty-colour-success-shade: #2f6423;
         --admiralty-colour-success-tint: #4b9a3c;
-        --admiralty-colour-success-background: #1f2d1c;
+        --admiralty-colour-success-background: #404040;
 
         /** warning (muted amber for dark mode) **/
         --admiralty-colour-warning: #de995d;
@@ -167,7 +167,7 @@
         --admiralty-colour-warning-contrast-rgb: 255, 255, 255;
         --admiralty-colour-warning-shade: #a65f1f;
         --admiralty-colour-warning-tint: #e5943c;
-        --admiralty-colour-warning-background: #2d241a;
+        --admiralty-colour-warning-background: #404040;
 
         /** danger (softer red for dark mode) **/
         --admiralty-colour-danger: #d86666;
@@ -176,7 +176,7 @@
         --admiralty-colour-danger-contrast-rgb: 255, 255, 255;
         --admiralty-colour-danger-shade: #931e1e;
         --admiralty-colour-danger-tint: #d43c3c;
-        --admiralty-colour-danger-background: #2d1a1a;
+        --admiralty-colour-danger-background: #404040;
 
         /** info **/
         --admiralty-colour-info: #60a4ce;
@@ -185,7 +185,7 @@
         --admiralty-colour-info-contrast-rgb: 51, 51, 51;
         --admiralty-colour-info-shade: #cccccc;
         --admiralty-colour-info-tint: #e6e6e6;
-        --admiralty-colour-info-background: #1c2227;
+        --admiralty-colour-info-background: #404040;
 
         /** light (shifted to a darker gray for dark mode) **/
         --admiralty-colour-light: #555555;
@@ -194,7 +194,7 @@
         --admiralty-colour-light-contrast-rgb: 255, 255, 255;
         --admiralty-colour-light-shade: #444444;
         --admiralty-colour-light-tint: #666666;
-        --admiralty-header-background-colour: #666666;
+        --admiralty-header-background-colour: #404040;
 
 
         /** backgrounds **/
