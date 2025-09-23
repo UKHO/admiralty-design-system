@@ -9,7 +9,7 @@ export default function ColourBlocks() {
       <div className={styles.latestUpdates}>
         <h2>Updates</h2>
         <h3>Last Updated January 2025</h3>
-        <p>We released ADMIRALTY Design System update 4.0.0.0 on the 21st January 2025. This new version contains updates to Typography, accessibility and the website. We have also added new components including a new pill component and the new minified footer.</p>
+        <p>We released ADMIRALTY Design System update 5.0 on the 27th August 2025. This major update brings enhancements to typography, accessibility, and the website itself. It also introduces serveral new components, including a Pill, a Minified Footer, and new Icon Sidebar and Text Sidebar components.</p>
       </div>
       <AdmiraltyColourBlock
         width={434}
@@ -17,10 +17,9 @@ export default function ColourBlocks() {
         colour="teal"
         heading="Help us improve our design system"
         linkText="Contact us"
-        href="/principles"
         suppressRedirect={true}
         enableCardEvent={true}
-        onColourBlockLinkClicked={() => router.push("/principles")}>
+        onColourBlockLinkClicked={() => router.push("/get-help/contact-us")}>
         Share your research or feedback on our github, propose a change or report a bug.
       </AdmiraltyColourBlock>
       <AdmiraltyColourBlock
@@ -29,7 +28,6 @@ export default function ColourBlocks() {
         colour="bright-blue"
         heading="Figma kit"
         linkText="Use our Figma kit"
-        href="/components"
         suppressRedirect={true}
         enableCardEvent={true}
         onColourBlockLinkClicked={() => router.push("/components")}>

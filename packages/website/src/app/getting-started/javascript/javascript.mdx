@@ -11,7 +11,7 @@ Instructions for how to incorporate the UKHO Design System into a generic websit
 
 ## Installation
 
-For projects using plain JavaScript (or any vanilla JavaScript framework) the first step is to install the package using a package manager so that it can be used in your project:
+If your project uses plain JavaScript (or any vanilla framework) and you are able to use a package manager (```npm``` or ```yarn```), start by installing the package so its available in your project.
 
 ### NPM
 
@@ -33,11 +33,13 @@ yarn add @ukho/admiralty-core
 
 Once you've installed the package, you can start using the components in your project.
 
+Alternatively, if your project does not have the capability to use a package manager, you can include the package directly via the below CDN links instead.
+
 Import the components by adding the Javascript and CSS bundles to the `index.html`. It's recommended to use [jsdelivr](https://www.jsdelivr.com/) to access the package from a CDN. To get the latest version, add the following inside the `<head>` element.
 
 ```html
 <!-- index.html -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ukho/admiralty-core/styles/css/admiralty.bundle.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ukho/admiralty-core/styles/admiralty.bundle.css" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ukho/admiralty-core/themes/default.css" />
 <script
   type="module"

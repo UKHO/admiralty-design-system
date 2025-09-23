@@ -1,3 +1,43 @@
+# v5.0.0 (Wed Aug 27 2025)
+
+#### 💥 Breaking Change
+
+- Feat: version 5 release [#390](https://github.com/UKHO/admiralty-design-system/pull/390) ([@developernm](https://github.com/developernm) [@ecstaticrainbow](https://github.com/ecstaticrainbow) [@lstevens98](https://github.com/lstevens98))
+
+#### 🚀 Enhancement
+
+- Feat: split side bar component into icon side bar and text side bar [#383](https://github.com/UKHO/admiralty-design-system/pull/383) ([@developernm](https://github.com/developernm))
+- feat: split off text side bar component ([@developernm](https://github.com/developernm))
+- feat: created the icon side bar ([@developernm](https://github.com/developernm))
+- feat: split side bar component into 2 icon-side-bar-item and text-side-bar-item ([@developernm](https://github.com/developernm))
+- Feat: Side bar variant 202448 [#371](https://github.com/UKHO/admiralty-design-system/pull/371) ([@developernm](https://github.com/developernm))
+- feat: sidebar variant ([@developernm](https://github.com/developernm))
+- Feat: Side bar implementation 199888 [#348](https://github.com/UKHO/admiralty-design-system/pull/348) ([@developernm](https://github.com/developernm))
+- Merge: main into next [#360](https://github.com/UKHO/admiralty-design-system/pull/360) ([@developernm](https://github.com/developernm) [@snyk-io[bot]](https://github.com/snyk-io[bot]) [@ecstaticrainbow](https://github.com/ecstaticrainbow) [@lstevens98](https://github.com/lstevens98))
+- feat: merge next ([@developernm](https://github.com/developernm))
+- feat: side bar functionality ([@developernm](https://github.com/developernm))
+
+#### 🐛 Bug Fix
+
+- Merge branch 'next' into feat-split-side-bar ([@developernm](https://github.com/developernm))
+- merge: feat-split-side-bar into this branch ([@developernm](https://github.com/developernm))
+- remove: deleted old side bar logic everywhere from core, website, docs etc ([@developernm](https://github.com/developernm))
+- Merge branch 'feat-split-side-bar' into feat-sidebar-website ([@developernm](https://github.com/developernm))
+- Merge branch 'next' into 199888-feat-side-bar ([@developernm](https://github.com/developernm))
+- Merge branch 'main' into update-next-branch ([@developernm](https://github.com/developernm))
+- merge: next ([@developernm](https://github.com/developernm))
+- Merge branch 'main' into 303-feat-css-spacing ([@developernm](https://github.com/developernm))
+- Merge branch 'next' into 303-feat-css-spacing ([@developernm](https://github.com/developernm))
+
+#### Authors: 4
+
+- [@developernm](https://github.com/developernm)
+- [@snyk-io[bot]](https://github.com/snyk-io[bot])
+- Lewis Stevens ([@lstevens98](https://github.com/lstevens98))
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
 # v4.0.0 (Wed Jan 15 2025)
 
 #### 💥 Breaking Change

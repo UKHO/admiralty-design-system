@@ -168,6 +168,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                         onTextSideBarItemClick={() => router.push(path)}
                         suppress-redirect="true"
                         variant={variant as TextSideBarItemVariant}
+                        href={path}
                         itemText={name}></AdmiraltyTextSideBarItem>
                     ))}
                   </AdmiraltyTextSideBarItem>
@@ -179,7 +180,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </div>
             <div>
               <AdmiraltyFooter className={styles.pageFooter} imageSrc="/svg/UKHO linear logo.svg">
-                <AdmiraltyLink href="http://www.example.com" new-tab="true">
+                <AdmiraltyLink href="https://www.admiralty.co.uk/privacy-policy" new-tab="true">
                   Privacy Policy
                 </AdmiraltyLink>
                 <AdmiraltyLink href="/accessbility">Accessibility</AdmiraltyLink>
