@@ -194,8 +194,6 @@
         --admiralty-colour-light-contrast-rgb: 255, 255, 255;
         --admiralty-colour-light-shade: #444444;
         --admiralty-colour-light-tint: #666666;
-        --admiralty-header-background-colour: #404040;
-
 
         /** backgrounds **/
         --admiralty-background-colour: #333333;
@@ -207,6 +205,7 @@
         --admiralty-background-colour-tint-rgb: 68, 68, 68;
         --admiralty-hover-background-colour-tint: #555555;
         --admiralty-hover-background-colour-tint-rgb: 85, 85, 85;
+        --admiralty-header-background-colour: #404040;
 
         /** text **/
         --admiralty-text-colour: #ffffff;
