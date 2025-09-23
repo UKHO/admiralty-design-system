@@ -4597,12 +4597,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/eslint-plugin-next@npm:14.2.31":
-  version: 14.2.31
-  resolution: "@next/eslint-plugin-next@npm:14.2.31"
+"@next/eslint-plugin-next@npm:14.2.32":
+  version: 14.2.32
+  resolution: "@next/eslint-plugin-next@npm:14.2.32"
   dependencies:
     glob: "npm:10.3.10"
-  checksum: 10/37f754bfc79e1cbf3a3f0ed8df6ca58533d97830e0bfe8090b6a9c8fb9fbc59a6172e21d16af0e88648d0d220f5bc712c13295cf041c51b414986248a546f78d
+  checksum: 10/d88ae51fe9083bd92b80af818552122778cf3ebdd8edb7632903f2fac73c474a9b64a0600bdde67c34f7ef28c1ed5850210e34a54879e2edc750719fd234899d
   languageName: node
   linkType: hard
 
@@ -6841,12 +6841,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:22.15.30":
-  version: 22.15.30
-  resolution: "@types/node@npm:22.15.30"
+"@types/node@npm:22.17.2":
+  version: 22.17.2
+  resolution: "@types/node@npm:22.17.2"
   dependencies:
     undici-types: "npm:~6.21.0"
-  checksum: 10/16d03f30df7851eea4f31d9a2470a53b24dc7d3909ed1782e2538e3aafe398451da17b83d6f730dfdcd0a843ccdbe841176ecfbde6bdb51963e8d11f58a10ade
+  checksum: 10/b830746c65e014d7d47102ab2f24ec74bdb60156b9b75af42e75d81375f211904347125c00543b5fd7119223b3157726bc9814619205571c0a0afd6ce3c43abb
   languageName: node
   linkType: hard
 
@@ -6930,13 +6930,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:18.3.8, @types/react@npm:^18.3.8":
-  version: 18.3.8
-  resolution: "@types/react@npm:18.3.8"
+"@types/react@npm:18.3.24":
+  version: 18.3.24
+  resolution: "@types/react@npm:18.3.24"
   dependencies:
     "@types/prop-types": "npm:*"
     csstype: "npm:^3.0.2"
-  checksum: 10/75e64e7f481c28e6c8ce6dae12f49ccc3f36c7b10b82da3eb7728ad9c02bec58a2c967105603e38665902e8db9296962c7718bc2062e2cb64a16e92333bd1f4b
+  checksum: 10/3f8529961afa40696f4a677e0f4399cb5da1fca9828c00634f884db261fc29a68af0b0397611fff4dd81847ac85036a1b72e987eafd994cdf4ddb1a1bcce7d61
   languageName: node
   linkType: hard
 
@@ -6947,6 +6947,16 @@ __metadata:
     "@types/prop-types": "npm:*"
     csstype: "npm:^3.0.2"
   checksum: 10/baa6b8a75c471c89ebf3477b4feab57102ced25f0c1e553dd04ef6a1f0def28d5e0172fa626a631f22e223f840b5aaa2403b2d4bb671c83c5a9d6c7ae39c7a05
+  languageName: node
+  linkType: hard
+
+"@types/react@npm:^18.3.8":
+  version: 18.3.8
+  resolution: "@types/react@npm:18.3.8"
+  dependencies:
+    "@types/prop-types": "npm:*"
+    csstype: "npm:^3.0.2"
+  checksum: 10/75e64e7f481c28e6c8ce6dae12f49ccc3f36c7b10b82da3eb7728ad9c02bec58a2c967105603e38665902e8db9296962c7718bc2062e2cb64a16e92333bd1f4b
   languageName: node
   linkType: hard
 
@@ -11349,11 +11359,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-next@npm:14.2.31":
-  version: 14.2.31
-  resolution: "eslint-config-next@npm:14.2.31"
+"eslint-config-next@npm:14.2.32":
+  version: 14.2.32
+  resolution: "eslint-config-next@npm:14.2.32"
   dependencies:
-    "@next/eslint-plugin-next": "npm:14.2.31"
+    "@next/eslint-plugin-next": "npm:14.2.32"
     "@rushstack/eslint-patch": "npm:^1.3.3"
     "@typescript-eslint/eslint-plugin": "npm:^5.4.2 || ^6.0.0 || ^7.0.0 || ^8.0.0"
     "@typescript-eslint/parser": "npm:^5.4.2 || ^6.0.0 || ^7.0.0 || ^8.0.0"
@@ -11369,7 +11379,7 @@ __metadata:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 10/a9e1b1fc3be3a6349391ef5dffcd1db4eb4993fe3191ddb99859791e1df3f7173e6b12a5911a359698d816644dbb0a4e1bba1e263ff2c4374ef74873b6deb3a3
+  checksum: 10/0c19e091ae241e258c3862ef4a3c5e55d7d48fd7457e3b7f3e1f2a8863fb879245d6d736830dc5b706acf9ec3761159877109a677a9c0075821038057af0cc8b
   languageName: node
   linkType: hard
 
@@ -23505,14 +23515,14 @@ __metadata:
     "@mdx-js/react": "npm:^3.0.1"
     "@next/mdx": "npm:^14.2.13"
     "@types/mdx": "npm:^2.0.13"
-    "@types/node": "npm:22.15.30"
+    "@types/node": "npm:22.17.2"
     "@types/prismjs": "npm:^1.26.4"
-    "@types/react": "npm:18.3.8"
+    "@types/react": "npm:18.3.24"
     "@types/react-dom": "npm:18.3.0"
     "@ukho-internal/admiralty-docs": "npm:^5.0.1"
     "@ukho/admiralty-react": "npm:^5.0.1"
     eslint: "npm:^8.57.1"
-    eslint-config-next: "npm:14.2.31"
+    eslint-config-next: "npm:14.2.32"
     next: "npm:14.2.32"
     prismjs: "npm:^1.29.0"
     react: "npm:18.3.1"
