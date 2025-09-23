@@ -19,6 +19,8 @@ li {
   flex: 1;
   display: flex;
   flex-flow: column;
+  background-color: $side-bar-background-colour;
+
 
   .expandable-item-button {
     display: inline-flex;
@@ -26,7 +28,7 @@ li {
     font-size: $expandable-side-bar-item-font-size;
     white-space: nowrap;
     font-weight: $expandable-side-bar-item-font-weight;
-    background-color: unset;
+    background-color: $side-bar-background-colour;
     cursor: pointer;
     padding: .3rem .5rem;
     overflow-wrap: break-word;
