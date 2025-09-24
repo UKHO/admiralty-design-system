@@ -19,7 +19,7 @@
   /** tertiary **/
   --admiralty-colour-tertiary: #65c4db;
   --admiralty-colour-tertiary-rgb: 101, 196, 219;
-  --admiralty-colour-tertiary-contrast: #000000;
+  --admiralty-colour-tertiary-contrast: #09315b;
   --admiralty-colour-tertiary-contrast-rgb: 0, 0, 0;
   --admiralty-colour-tertiary-shade: #59acc1;
   --admiralty-colour-tertiary-tint: #74cadf;
@@ -146,7 +146,7 @@
         /** tertiary **/
         --admiralty-colour-tertiary: #92a9ae;
         --admiralty-colour-tertiary-rgb: 255, 255, 255;
-        --admiralty-colour-tertiary-contrast: #333333;
+        --admiralty-colour-tertiary-contrast: #ffffff;
         --admiralty-colour-tertiary-contrast-rgb: 0, 0, 0;
         --admiralty-colour-tertiary-shade: #cccccc;
         --admiralty-colour-tertiary-tint: #e6e6e6;
