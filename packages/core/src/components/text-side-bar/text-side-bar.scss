@@ -4,6 +4,12 @@
   border-right: 1px solid $side-bar-right-border-colour;
 }
 
+@media(prefers-color-scheme: dark) {
+  :host {
+    color-scheme: dark;
+  }
+}
+
 nav {
   display: flex;
   flex-direction: column;
