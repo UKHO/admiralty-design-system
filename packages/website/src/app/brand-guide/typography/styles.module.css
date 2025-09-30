@@ -3,6 +3,13 @@
   padding: 24px;
 }
 
+.typographicScaleTable {
+  width: 100%;
+  display: grid;
+  padding-bottom: 50px;
+  border-top: 1px solid #d0d0d0;
+}
+
 .section {
   margin-bottom: 15px;
 }
@@ -136,25 +143,34 @@
 .pLarge{
   font-size: var(--admiralty-font-size--1);
   font-weight: var(--admiralty-font-weight-normal);
+  color: var(--admiralty-colour-light-contrast);
 }
 
 .pLargeMobile{
   font-size: var(--admiralty-font-size-0);
   font-weight: var(--admiralty-font-weight-normal);
+  color: var(--admiralty-colour-light-contrast);
 }
 
 
 .pMedium {
   font-size: var(--admiralty-font-size--2);
   font-weight: var(--admiralty-font-weight-normal);
+  color: var(--admiralty-colour-light-contrast);
 }
 
 .pSmall {
   font-size: var(--admiralty-font-size--3);
   font-weight: var(--admiralty-font-weight-normal);
+  color: var(--admiralty-colour-light-contrast);
 }
 
 .pSmallMobile {
   font-size: var(--admiralty-font-size--2);
   font-weight: var(--admiralty-font-weight-normal);
+  color: var(--admiralty-colour-light-contrast);
+}
+
+.pTitle {
+  color: var(--admiralty-colour-light-contrast);
 }

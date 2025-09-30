@@ -8,7 +8,7 @@ import {
 
 export default function TypographicScaleTablet() {
   return (
-    <div className={styles.container}>
+    <div className={styles.typographicScaleTable}>
       <AdmiraltyTable>
         <AdmiraltyTableHeader>
           <AdmiraltyTableRow>

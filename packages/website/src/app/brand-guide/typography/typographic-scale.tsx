@@ -56,15 +56,15 @@ export default function TypographicScale() {
       </section>
 
       <section className={styles.section}>
-        <h3>Paragraph - Small</h3>
+        <h3 className={styles.pTitle}>Paragraph - Small</h3>
         <p className={styles.pLarge}>The quick brown fox jumped over the lazy dog.</p>
       </section>
       <section className={styles.section}>
-        <h3>Paragraph - Medium</h3>
+        <h3 className={styles.pTitle}>Paragraph - Medium</h3>
         <p className={styles.pMedium}>The quick brown fox jumped over the lazy dog.</p>
       </section>
       <section className={styles.section}>
-        <h3>Paragraph - Large</h3>
+        <h3 className={styles.pTitle}>Paragraph - Large</h3>
         <p className={styles.pSmall}>The quick brown fox jumped over the lazy dog.</p>
       </section>
     </div>
