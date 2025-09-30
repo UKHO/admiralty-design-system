@@ -44,6 +44,11 @@
   font-weight: var(--admiralty-font-weight-medium);
 }
 
+.h1MediumMobile {
+  font-size: 2.625rem;
+  font-weight: var(--admiralty-font-weight-medium);
+}
+
 .h1Small {
   font-size: var(--admiralty-font-size-5);
   font-weight: var(--admiralty-font-weight-medium);
@@ -52,6 +57,11 @@
 
 .h2Large{
   font-size: var(--admiralty-font-size-4);
+  font-weight: var(--admiralty-font-weight-medium);
+}
+
+.h2LargeMobile{
+  font-size: 1.875rem;
   font-weight: var(--admiralty-font-weight-medium);
 }
 
@@ -71,12 +81,27 @@
   font-weight: var(--admiralty-font-weight-medium);
 }
 
+.h345LargeMobile{
+  font-size: 1.25rem;
+  font-weight: var(--admiralty-font-weight-medium);
+}
+
 .h345Medium {
   font-size: var(--admiralty-font-size-0);
   font-weight: var(--admiralty-font-weight-medium);
 }
 
+.h345MediumMobile {
+  font-size: var(--admiralty-font-size-0);
+  font-weight: var(--admiralty-font-weight-medium);
+}
+
 .h345Small {
+  font-size: var(--admiralty-font-size--1);
+  font-weight: var(--admiralty-font-weight-medium);
+}
+
+.h345SmallMobile {
   font-size: var(--admiralty-font-size--1);
   font-weight: var(--admiralty-font-weight-medium);
 }
@@ -87,7 +112,17 @@
   font-weight: var(--admiralty-font-weight-medium);
 }
 
+.labelLargeMobile{
+  font-size: var(--admiralty-font-size--1);
+  font-weight: var(--admiralty-font-weight-medium);
+}
+
 .labelMedium {
+  font-size: var(--admiralty-font-size--2);
+  font-weight: var(--admiralty-font-weight-medium);
+}
+
+.labelMediumMobile {
   font-size: var(--admiralty-font-size--2);
   font-weight: var(--admiralty-font-weight-medium);
 }
@@ -103,6 +138,12 @@
   font-weight: var(--admiralty-font-weight-normal);
 }
 
+.pLargeMobile{
+  font-size: var(--admiralty-font-size-0);
+  font-weight: var(--admiralty-font-weight-normal);
+}
+
+
 .pMedium {
   font-size: var(--admiralty-font-size--2);
   font-weight: var(--admiralty-font-weight-normal);
@@ -110,5 +151,10 @@
 
 .pSmall {
   font-size: var(--admiralty-font-size--3);
+  font-weight: var(--admiralty-font-weight-normal);
+}
+
+.pSmallMobile {
+  font-size: var(--admiralty-font-size--2);
   font-weight: var(--admiralty-font-weight-normal);
 }
