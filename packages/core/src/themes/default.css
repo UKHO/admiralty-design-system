@@ -76,6 +76,9 @@
 
   --admiralty-table-row-colour: #eef3f4;
 
+    /** Components **/
+    --text-side-bar-item-active-background-colour: #09315b;
+
   /** Typographic Scale **/
   --admiralty-font-size--3: 0.688rem;
   --admiralty-font-size--2: 0.75rem;
@@ -183,40 +186,9 @@
         --admiralty-disabled-colour: #666666;
         --admiralty-disabled-text-colour: #888888;
 
-        /** table rows **/
         --admiralty-table-row-colour: #2a2a2a;
 
-        /** Typographic Scale **/
-        --admiralty-font-size--3: 0.688rem;
-        --admiralty-font-size--2: 0.75rem;
-        --admiralty-font-size--1: 0.875rem;
-
-        --admiralty-font-size-0: 1rem;
-        --admiralty-font-size-1: 1.375rem;
-        --admiralty-font-size-2: 1.5rem;
-        --admiralty-font-size-3: 1.75rem;
-        --admiralty-font-size-4: 2rem;
-        --admiralty-font-size-5: 2.25rem;
-        --admiralty-font-size-6: 2.75rem;
-        --admiralty-font-size-7: 3.5rem;
-
-        /** Font Weight **/
-        --admiralty-font-weight-normal: 300;
-        --admiralty-font-weight-medium: 400;
-        --admiralty-font-weight-bold: 700;
-
-        /** Spacing **/
-        --admiralty-spacing-0: 0; /** Default **/
-        --admiralty-spacing-1: 4px; /** 0.3rem **/
-        --admiralty-spacing-2: 8px; /** 0.5rem **/
-        --admiralty-spacing-3: 12px; /** 0.8rem **/
-        --admiralty-spacing-4: 16px; /** 1rem **/
-        --admiralty-spacing-5: 20px; /** 1.3rem **/
-        --admiralty-spacing-6: 24px; /** 1.5rem **/
-        --admiralty-spacing-7: 28px; /** 1.8rem **/
-        --admiralty-spacing-8: 32px; /** 2rem **/
-        --admiralty-spacing-auto: auto;
-        --admiralty-spacing-unset: unset;
-        --admiralty-spacing-inherit: inherit;
+        /** Components **/
+        --text-side-bar-item-active-background-colour: #404040;
     }
 }
