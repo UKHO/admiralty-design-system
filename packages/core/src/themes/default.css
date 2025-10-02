@@ -78,6 +78,8 @@
 
     /** Components **/
     --text-side-bar-item-active-background-colour: #09315b;
+    --text-side-bar-item-focus-border-colour: #09315b;
+    --text-side-bar-focus-background-colour: #ffdd00;
 
   /** Typographic Scale **/
   --admiralty-font-size--3: 0.688rem;
@@ -189,6 +191,8 @@
         --admiralty-table-row-colour: #2a2a2a;
 
         /** Components **/
-        --text-side-bar-item-active-background-colour: #404040;
+        --text-side-bar-item-active-background-colour: #333333;
+        --text-side-bar-item-focus-border-colour: #fbe86c;
+        --text-side-bar-focus-background-colour: #333333
     }
 }

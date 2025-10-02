@@ -16,8 +16,12 @@ $side-bar-item-hover-background-colour: var(--admiralty-table-row-colour);
 $side-bar-item-active-text-colour: var(--admiralty-colour-primary);
 $side-bar-item-focus-colour: var(--admiralty-focus-colour) !default;
 $side-bar-background-colour: var(--admiralty-header-background-colour);
-$text-side-bar-item-border-colour: var(--admiralty-colour-secondary-contrast);
+
+$text-side-bar-item-active-border-colour: var(--admiralty-colour-secondary-contrast);
 $text-side-bar-item-active-background-colour: var(--text-side-bar-item-active-background-colour);
+
+$text-side-bar-focus-border-colour: var(--text-side-bar-item-focus-border-colour);
+$text-side-bar-focus-background-colour: var(--text-side-bar-focus-background-colour);
 
 $expandable-side-bar-item-font-weight: var(--admiralty-side-bar-item-font-weight ,var(--admiralty-font-weight-medium)); // 500;
 $expandable-side-bar-item-font-size: var(--admiralty-side-bar-item-font-size ,var(--admiralty-font-size-0)); // 16px;
