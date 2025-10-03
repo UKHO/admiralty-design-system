@@ -8,7 +8,7 @@ import {
 
 export default function SpacingVariables() {
   return (
-    <div className={styles.spacingVariablesTable}>
+    <div className={styles.borderTop}>
       <AdmiraltyTable>
         <AdmiraltyTableHeader>
           <AdmiraltyTableRow>
