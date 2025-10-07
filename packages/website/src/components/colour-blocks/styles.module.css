@@ -9,6 +9,6 @@
 .latestUpdates {
   height: 250px;
   width: 1000px;
-  background-color: #FFFFFF;
+  background-color: var(--admiralty-background-colour);
   padding: 30px 18px;
 }
