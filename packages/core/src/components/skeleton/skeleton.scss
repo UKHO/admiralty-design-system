@@ -1,0 +1,34 @@
+:host {
+  --skeleton-bg: hsl(210 16% 90%);
+  --skeleton-sheen: hsl(210 16% 95%);
+  --skeleton-duration: 1.4s;
+  --_width: 100%;
+  --_height: 1rem;
+  --_radius: var(--skeleton-radius, .5rem);
+
+  display: inline-block;
+  width: var(--_width);
+  height: var(--_height);
+  border-radius: var(--_radius);
+  overflow: hidden;
+}
+
+.block {
+  width: 100%;
+  height: 100%;
+  background:
+    linear-gradient(90deg, var(--skeleton-bg) 0%, var(--skeleton-sheen) 50%, var(--skeleton-bg) 100%);
+  background-size: 200% 100%;
+  animation: sheen var(--skeleton-duration) linear infinite;
+}
+
+// Checks OS accessibility options for reduced motion to then turn the animation off.
+@media (prefers-reduced-motion: reduce) {
+  .block { animation: none; background: var(--skeleton-bg); }
+}
+:host(.no-animation) .block { animation: none; background: var(--skeleton-bg)}
+
+@keyframes sheen {
+  0% { background-position: 200% 0 }
+  100% { background-position: -200% 0 }
+}
