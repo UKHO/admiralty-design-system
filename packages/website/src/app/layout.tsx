@@ -116,7 +116,7 @@ const sideBarItems = [
     children: brandChildren,
   },
   {
-    name: "Principles",
+    name: "How we design",
     variant: "expandable",
     slot: "items",
     children: principleChildren,
