@@ -51,3 +51,11 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           ADMIN_TOKEN: ${{ secrets.ADMIN_TOKEN }}
+      - uses: ./.github/workflows/actions/release-email
+        name: Send Release Email
+        with:
+          SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
+          FROM_EMAIL: ${{ vars.FROM_EMAIL}}
+          RECIPIENTS: ${{ vars.RECIPIENTS }}
+          SEND_RELEASE_EMAIL: ${{ vars.SEND_RELEASE_EMAIL }}
+          SG_TEMPLATE_ID: ${{ vars.SG_TEMPLATE_ID }}
