@@ -30,6 +30,7 @@ li {
     cursor: pointer;
     padding: .3rem .5rem;
     overflow-wrap: break-word;
+    color: $expandable-side-bar-item-text-colour;
 
     &:hover {
       color: $text-link-font-colour;
