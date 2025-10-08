@@ -1,6 +1,9 @@
+@import './skeleton.vars';
+
 :host {
-  --skeleton-bg: hsl(210 16% 90%);
-  --skeleton-sheen: hsl(210 16% 95%);
+  --skeleton-bg: $skeleton-background-colour;
+  --skeleton-sheen: $skeleton-background-sheen-colour;
+
   --skeleton-duration: 1.4s;
   --_width: 100%;
   --_height: 1rem;

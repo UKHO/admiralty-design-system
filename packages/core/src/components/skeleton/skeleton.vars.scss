@@ -1,0 +1,9 @@
+@import "../../styles/vars/globals";
+
+/**
+ * @prop --admiralty-skeleton-background-colour: background colour for loading elements.
+ * @prop --admiralty-skeleton-background-sheen-colour: background sheen animation colour for loading elements
+**/
+
+$skeleton-background-colour: var(--admiralty-skeleton-background-colour, var(--admiralty-loading-colour));
+$skeleton-background-sheen-colour: var(--admiralty-skeleton-background-sheen-colour, var(--admiralty-loading-sheen-colour));
