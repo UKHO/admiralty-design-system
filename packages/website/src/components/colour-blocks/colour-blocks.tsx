@@ -16,8 +16,7 @@ export default function ColourBlocks() {
         height={434}
         colour="teal"
         heading="Help us improve our design system"
-        linkText="Contact us"
-        suppressRedirect={true}
+        actionText="Contact us"
         enableCardEvent={true}
         onColourBlockLinkClicked={() => router.push("/get-help/contact-us")}>
         Share your research or feedback on our github, propose a change or report a bug.
@@ -27,10 +26,10 @@ export default function ColourBlocks() {
         height={434}
         colour="bright-blue"
         heading="Figma kit"
-        linkText="Use our Figma kit"
         suppressRedirect={true}
-        enableCardEvent={true}
-        onColourBlockLinkClicked={() => router.push("/components")}>
+        enableCardEvent={false}
+        actionText="Coming soon"
+        onColourBlockLinkClicked={() => router.push("#")}>
         Our Figma kits helps people create designs that are consistent with one another. They are maintained by the ADMIRALTY UKHO Design Team
       </AdmiraltyColourBlock>
     </div>
