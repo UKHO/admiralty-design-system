@@ -8,7 +8,7 @@ describe('admiralty-skeleton', () => {
       html: '<admiralty-skeleton></admiralty-skeleton>',
     });
     expect(root).toEqualHtml(`
-      <admiralty-skeleton aria-hidden="true" role="presentation">
+      <admiralty-skeleton aria-hidden="true" role="presentation" style="height: 1rem; width: 100%; border-radius: .5rem;">
         <div class="block"></div>
       </admiralty-skeleton>
     `);
