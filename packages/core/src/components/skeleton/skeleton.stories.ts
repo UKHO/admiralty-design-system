@@ -15,9 +15,13 @@ const template: Story = {
   render: args => html`<admiralty-skeleton width="${args.width}" height="${args.height}" radius="${args.radius}"></admiralty-skeleton>`,
 };
 
-export const Standard: Story = { ...template };
+export const Basic: Story = {  render: args => html`<admiralty-skeleton></admiralty-skeleton>`};
 
 export const SquareSkeleton: Story = { ...template, args: { width: '200px', height: '200px', radius: '.5rem' } };
+
+export const NoRadius: Story = { ...template, args: { width: '200px', height: '200px', radius: '0' } };
+
+export const WithRadiusCircle: Story = { ...template, args: { width: '200px', height: '200px', radius: '10rem' } };
 
 export const MultiSkeleton: Story = { render: args =>
     html`<div>
@@ -50,7 +54,3 @@ export const MultiSkeleton: Story = { render: args =>
           </div>
         </div>`
 };
-
-export const NoRadius: Story = { ...template, args: { width: '200px', height: '200px', radius: '0' } };
-
-export const WithRadiusCircle: Story = { ...template, args: { width: '200px', height: '200px', radius: '10rem' } };

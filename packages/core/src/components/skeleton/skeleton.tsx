@@ -9,17 +9,17 @@ export class SkeletonComponent {
   /**
    * Height of the skeleton component, default is set to 1rem.
    */
-  @Prop() height?: string;
+  @Prop() height?: string = '1rem';
 
   /**
    * Width of the skeleton component, default is set to 100%.
    */
-  @Prop({ mutable: true, reflect: true }) width?: string;
+  @Prop() width?: string = '100%';
 
   /**
    * Radius of the skeleton component, default is .5rem.
    */
-  @Prop() radius?: string;
+  @Prop() radius?: string = '.5rem';
 
   /**
    * Hides the animation of a shimmer on the skeleton component, default is set to false, set to true if you require no animation.
@@ -27,14 +27,17 @@ export class SkeletonComponent {
   @Prop({ mutable: true, reflect: true }) noAnimation: boolean = false;
 
   render() {
-    const styles: Record<string, string> = {};
-    if (this.height) styles['--_height'] = this.height;
-    if (this.width) styles['--_width'] = this.width;
-    if (this.radius) styles['--_radius'] = this.radius;
+
+    // const height: string = this.height? `height: ${this.height}` : '';
+    const height: string = this.height? this.height : '';
+    // const width: string = this.width? `width: ${this.width}` : '';
+    const width: string = this.width? this.width : '';
+    // const radius: string = this.radius? `width: ${this.radius}` : '';
+    const radius: string = this.radius? this.radius : '';
 
     return (<Host role="presentation"
                   aria-hidden="true"
-                  style={styles}
+                  style={{ 'height': height, 'width': width, 'border-radius': radius }}
                   class={{ 'no-animation': this.noAnimation }}>
       <div class="block"></div>
     </Host>)
