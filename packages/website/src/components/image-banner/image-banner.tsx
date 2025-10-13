@@ -9,7 +9,7 @@ export default function ImageBanner() {
       <div className="ukho"></div>
       <div className="banner-title">
         <h1>
-          Build your product or service using the ADMIRALTY and UK Hydrographic Office.
+          Build your product or service using the ADMIRALTY and UK Hydrographic Office design system.
         </h1>
       </div>
       <div className="button-container">
