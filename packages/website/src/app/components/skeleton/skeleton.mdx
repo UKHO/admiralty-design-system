@@ -1,6 +1,6 @@
 # Skeleton
 
-Use the skeleton component as a placeholder for components that are waiting for more information.
+Skeleton loading provides a placeholder while content is loading, such as when data is being fetched from an API or the user has a slow internet connection. It helps users understand that something is happening and reduces perceived waiting time.
 
 ## Contents
 
@@ -33,6 +33,13 @@ import NoRadiusSkeleton from "@/usage/skeleton/no-radius/index.mdx"
 import MultiSkeleton from "@/usage/skeleton/multi-skeleton/index.mdx"
 
 <MultiSkeleton />
+
+## Accessibility
+
+- Announce loading state: Use aria-busy="true" on containers while content is loading, and set it to false once loaded.
+- Avoid motion triggers: If you use shimmer or animation effects, ensure they meet WCAG 2.3.3 (animation from interactions) and that users can disable them via prefers-reduced-motion. · Do not trap focus: Skeleton elements should not receive keyboard focus.
+- Readable timing: Avoid skeleton that flash or change too quickly, as this can cause confusion for users relying on screen readers.
+- Fallback content: Always provide accessible fallback text (for example, “Loading content…” for assistive technologies).
 
 ## Props
 
