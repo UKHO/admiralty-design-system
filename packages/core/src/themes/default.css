@@ -82,6 +82,7 @@
     --text-side-bar-focus-background-colour: #ffdd00;
     --tab-group-active-shadow-colour: #09315b;
     --tab-group-active-background-colour: #09315b;
+    --admiralty-card-background-colour: #ffffff;
 
   /** Typographic Scale **/
   --admiralty-font-size--3: 0.688rem;
@@ -197,7 +198,8 @@
         --text-side-bar-item-focus-border-colour: #fbe86c;
         --text-side-bar-focus-background-colour: #333333;
         --tab-group-active-shadow-colour: #ffffff;
-        --tab-group-active-background-colour: #333333
+        --tab-group-active-background-colour: #333333;
+        --admiralty-card-background-colour: #404040;
 
     }
 }
