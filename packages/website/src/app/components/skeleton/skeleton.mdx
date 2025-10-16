@@ -4,6 +4,35 @@ Skeleton loading provides a placeholder while content is loading, such as when d
 
 ## Contents
 
+## Why it’s useful
+
+### Skeleton loading:
+
+- Reduces perceived waiting time by showing progress visually.
+- Gives users confidence that the system is working, not frozen.
+- Helps maintain layout stability and prevents elements from jumping as content loads.
+- Creates a more polished and consistent loading experience across products.
+
+## When to use
+
+### Use skeleton loading:
+
+- When data or content needs to be loaded asynchronously (for example, from an API).
+- When page or component rendering might take more than 2 – 10 seconds to load.
+- When users might be on low-bandwidth connections and need reassurance that content is coming.
+- For repeated patterns of content such as cards, lists, tables, or profile elements where a skeleton can visually match the final layout.
+
+## When not to use
+
+### Don’t use skeleton loading:
+
+- To hide or distract from poor performance.
+- If the load time exceeds 10 seconds, then it recommended that a progress bar is used as they give users a state of the system and how much longer they will need to wait.
+- If the load time is less than 2 seconds skeleton loading is not necessary, as they likely wont make a difference to user experience and flashing up on the page can be annoying to users.
+- If the skeleton pattern doesn’t closely resemble the eventual content structure this can cause confusion or disorientation when the content loads.
+
+<br/>
+
 ## Basic
 
 import Basic from "@/usage/skeleton/basic/index.mdx"
@@ -33,13 +62,6 @@ import NoRadiusSkeleton from "@/usage/skeleton/no-radius/index.mdx"
 import MultiSkeleton from "@/usage/skeleton/multi-skeleton/index.mdx"
 
 <MultiSkeleton />
-
-## Accessibility
-
-- Announce loading state: Use aria-busy="true" on containers while content is loading, and set it to false once loaded.
-- Avoid motion triggers: If you use shimmer or animation effects, ensure they meet WCAG 2.3.3 (animation from interactions) and that users can disable them via prefers-reduced-motion. · Do not trap focus: Skeleton elements should not receive keyboard focus.
-- Readable timing: Avoid skeleton that flash or change too quickly, as this can cause confusion for users relying on screen readers.
-- Fallback content: Always provide accessible fallback text (for example, “Loading content…” for assistive technologies).
 
 ## Props
 
@@ -76,3 +98,34 @@ import CustomProps from "@docs/skeleton/customProps.mdx";
 import Slots from "@docs/skeleton/slots.mdx";
 
 <Slots />
+
+## Behaviour
+
+- Skeletons should reflect the shape and approximate layout of the content being loaded (for example, blocks where text or images will appear).
+- The transition from skeleton to real content should be smooth and instantaneous once data is ready.
+- Skeletons should never remain visible for more than 10 seconds. If content still hasn’t loaded by then, display an error message or a retry option.
+- The skeleton should not be interactive or selectable, it represents unavailable content.
+
+## Accessibility
+
+- Announce loading state: Use aria-busy="true" on containers while content is loading, and set it to false once loaded.
+- Avoid motion triggers: If you use shimmer or animation effects, ensure they meet WCAG 2.3.3 (animation from interactions) and that users can disable them via prefers-reduced-motion. · Do not trap focus: Skeleton elements should not receive keyboard focus.
+- Readable timing: Avoid skeleton that flash or change too quickly, as this can cause confusion for users relying on screen readers.
+- Fallback content: Always provide accessible fallback text (for example, “Loading content…” for assistive technologies).
+
+## Good practice
+
+- Match the skeleton’s structure and proportions to the final content as closely as possible.
+- Use neutral background colours that work in both light and dark modes.
+- Keep animation subtle and consistent across components.
+- Combine skeleton loading with lazy loading images or data only when they come into view).to improve perceived and actual performance.
+- If only part of a page is loading (such as a table section or an image), apply skeletons locally rather than across the entire page.
+
+## Content design considerations
+
+- Be clear and honest, if content takes longer than expected, communicate it rather than leaving users waiting indefinitely.
+- Use plain language for any accompanying messages (e.g. “Loading your data…” rather than “Fetching API results…”).
+- Keep tone neutral and reassuring.
+- Avoid filler or decorative text, skeletons should be purely visual indicators, not contain placeholder words or icons that might mislead users.
+
+<br/>
