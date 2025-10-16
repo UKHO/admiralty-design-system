@@ -1,8 +1,12 @@
 .banner-image {
-  width: 100%;
-  height: 450px;
+  width: 100vw;
+  max-width: 100%;
   background-color: #09315b;
-  display: inline-block;
+  padding: 3rem 0;
+
+  .banner-title {
+    display: flex;
+  }
 
   .ukho {
     width: 400px;
@@ -11,7 +15,11 @@
     background-image: url("/svg/UKHO stacked logo.svg");
     background-repeat: no-repeat;
     margin-left: 142px;
-    margin-top: 30px;
+  }
+
+  .button-container {
+    margin-left: 142px;
+    display: inline-block;
   }
 
   & h1 {
