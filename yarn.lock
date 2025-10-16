@@ -4590,19 +4590,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/env@npm:14.2.26":
-  version: 14.2.26
-  resolution: "@next/env@npm:14.2.26"
-  checksum: 10/0caa679cdf9367501daf1bff0e762b720613a3ee1689e5585bfb7c792fdd07c251bc1f7488919a296047eb1f2b82ceb13955b673143468cad338a87b7d98c196
+"@next/env@npm:14.2.32":
+  version: 14.2.32
+  resolution: "@next/env@npm:14.2.32"
+  checksum: 10/12390cb61c82f4c150a8a3d18bd419f1274e4e12792753b7e853813b9429f9b831d7dfdd0ea1c915fc7c7891da6e8f82542dcf3a371219bc08aee98065f1d68c
   languageName: node
   linkType: hard
 
-"@next/eslint-plugin-next@npm:14.2.13":
-  version: 14.2.13
-  resolution: "@next/eslint-plugin-next@npm:14.2.13"
+"@next/eslint-plugin-next@npm:14.2.32":
+  version: 14.2.32
+  resolution: "@next/eslint-plugin-next@npm:14.2.32"
   dependencies:
     glob: "npm:10.3.10"
-  checksum: 10/eadbb427761ba87f2704e034185e71dbef294ec00a4ccb774296c21f9b2ef94ca4be5384d5d9ca3dd2106b92d266cc41df9175eed2eeb26d3885c44a6d22dafe
+  checksum: 10/d88ae51fe9083bd92b80af818552122778cf3ebdd8edb7632903f2fac73c474a9b64a0600bdde67c34f7ef28c1ed5850210e34a54879e2edc750719fd234899d
   languageName: node
   linkType: hard
 
@@ -4623,65 +4623,65 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/swc-darwin-arm64@npm:14.2.26":
-  version: 14.2.26
-  resolution: "@next/swc-darwin-arm64@npm:14.2.26"
+"@next/swc-darwin-arm64@npm:14.2.32":
+  version: 14.2.32
+  resolution: "@next/swc-darwin-arm64@npm:14.2.32"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"@next/swc-darwin-x64@npm:14.2.26":
-  version: 14.2.26
-  resolution: "@next/swc-darwin-x64@npm:14.2.26"
+"@next/swc-darwin-x64@npm:14.2.32":
+  version: 14.2.32
+  resolution: "@next/swc-darwin-x64@npm:14.2.32"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"@next/swc-linux-arm64-gnu@npm:14.2.26":
-  version: 14.2.26
-  resolution: "@next/swc-linux-arm64-gnu@npm:14.2.26"
+"@next/swc-linux-arm64-gnu@npm:14.2.32":
+  version: 14.2.32
+  resolution: "@next/swc-linux-arm64-gnu@npm:14.2.32"
   conditions: os=linux & cpu=arm64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@next/swc-linux-arm64-musl@npm:14.2.26":
-  version: 14.2.26
-  resolution: "@next/swc-linux-arm64-musl@npm:14.2.26"
+"@next/swc-linux-arm64-musl@npm:14.2.32":
+  version: 14.2.32
+  resolution: "@next/swc-linux-arm64-musl@npm:14.2.32"
   conditions: os=linux & cpu=arm64 & libc=musl
   languageName: node
   linkType: hard
 
-"@next/swc-linux-x64-gnu@npm:14.2.26":
-  version: 14.2.26
-  resolution: "@next/swc-linux-x64-gnu@npm:14.2.26"
+"@next/swc-linux-x64-gnu@npm:14.2.32":
+  version: 14.2.32
+  resolution: "@next/swc-linux-x64-gnu@npm:14.2.32"
   conditions: os=linux & cpu=x64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@next/swc-linux-x64-musl@npm:14.2.26":
-  version: 14.2.26
-  resolution: "@next/swc-linux-x64-musl@npm:14.2.26"
+"@next/swc-linux-x64-musl@npm:14.2.32":
+  version: 14.2.32
+  resolution: "@next/swc-linux-x64-musl@npm:14.2.32"
   conditions: os=linux & cpu=x64 & libc=musl
   languageName: node
   linkType: hard
 
-"@next/swc-win32-arm64-msvc@npm:14.2.26":
-  version: 14.2.26
-  resolution: "@next/swc-win32-arm64-msvc@npm:14.2.26"
+"@next/swc-win32-arm64-msvc@npm:14.2.32":
+  version: 14.2.32
+  resolution: "@next/swc-win32-arm64-msvc@npm:14.2.32"
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
 
-"@next/swc-win32-ia32-msvc@npm:14.2.26":
-  version: 14.2.26
-  resolution: "@next/swc-win32-ia32-msvc@npm:14.2.26"
+"@next/swc-win32-ia32-msvc@npm:14.2.32":
+  version: 14.2.32
+  resolution: "@next/swc-win32-ia32-msvc@npm:14.2.32"
   conditions: os=win32 & cpu=ia32
   languageName: node
   linkType: hard
 
-"@next/swc-win32-x64-msvc@npm:14.2.26":
-  version: 14.2.26
-  resolution: "@next/swc-win32-x64-msvc@npm:14.2.26"
+"@next/swc-win32-x64-msvc@npm:14.2.32":
+  version: 14.2.32
+  resolution: "@next/swc-win32-x64-msvc@npm:14.2.32"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
@@ -6841,12 +6841,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:22.5.5, @types/node@npm:^22.5.5":
-  version: 22.5.5
-  resolution: "@types/node@npm:22.5.5"
+"@types/node@npm:22.17.2":
+  version: 22.17.2
+  resolution: "@types/node@npm:22.17.2"
   dependencies:
-    undici-types: "npm:~6.19.2"
-  checksum: 10/172d02c8e6d921699edcf559c28b3805616bd6481af1b3cb0299f89ad9a6f33b71050434c06ce7b503166054a26275344187c443f99f745d0b12601372452f19
+    undici-types: "npm:~6.21.0"
+  checksum: 10/b830746c65e014d7d47102ab2f24ec74bdb60156b9b75af42e75d81375f211904347125c00543b5fd7119223b3157726bc9814619205571c0a0afd6ce3c43abb
   languageName: node
   linkType: hard
 
@@ -6856,6 +6856,15 @@ __metadata:
   dependencies:
     undici-types: "npm:~6.19.2"
   checksum: 10/d46e0abf437b36bdf89011287aa43873d68ea6f2521a11b5c9a033056fd0d07af36daf51439010e8d41c62c55d0b00e9b5e09ed00bb2617723f73f28a873903a
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^22.5.5":
+  version: 22.5.5
+  resolution: "@types/node@npm:22.5.5"
+  dependencies:
+    undici-types: "npm:~6.19.2"
+  checksum: 10/172d02c8e6d921699edcf559c28b3805616bd6481af1b3cb0299f89ad9a6f33b71050434c06ce7b503166054a26275344187c443f99f745d0b12601372452f19
   languageName: node
   linkType: hard
 
@@ -7211,17 +7220,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ukho-internal/admiralty-docs@npm:^4.2.1, @ukho-internal/admiralty-docs@workspace:packages/docs":
+"@ukho-internal/admiralty-docs@npm:^5.0.1, @ukho-internal/admiralty-docs@workspace:packages/docs":
   version: 0.0.0-use.local
   resolution: "@ukho-internal/admiralty-docs@workspace:packages/docs"
   dependencies:
-    "@ukho/admiralty-core": "npm:^4.2.1"
+    "@ukho/admiralty-core": "npm:^5.0.1"
     chalk: "npm:^5.3.0"
     tsx: "npm:^4.19.1"
   languageName: unknown
   linkType: soft
 
-"@ukho/admiralty-angular@npm:^4.2.1, @ukho/admiralty-angular@workspace:packages/angular":
+"@ukho/admiralty-angular@npm:^5.0.1, @ukho/admiralty-angular@workspace:packages/angular":
   version: 0.0.0-use.local
   resolution: "@ukho/admiralty-angular@workspace:packages/angular"
   dependencies:
@@ -7237,7 +7246,7 @@ __metadata:
     "@angular/platform-browser-dynamic": "npm:^18.2.5"
     "@angular/router": "npm:^18.2.5"
     "@types/node": "npm:^22.5.5"
-    "@ukho/admiralty-core": "npm:^4.2.1"
+    "@ukho/admiralty-core": "npm:^5.0.1"
     ng-packagr: "npm:^18.2.1"
     postcss: "npm:^8.4.47"
     postcss-import: "npm:^16.1.0"
@@ -7252,7 +7261,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@ukho/admiralty-core@npm:^4.2.1, @ukho/admiralty-core@workspace:packages/core":
+"@ukho/admiralty-core@npm:^5.0.1, @ukho/admiralty-core@workspace:packages/core":
   version: 0.0.0-use.local
   resolution: "@ukho/admiralty-core@workspace:packages/core"
   dependencies:
@@ -7295,13 +7304,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@ukho/admiralty-react@npm:^4.2.1, @ukho/admiralty-react@workspace:packages/react":
+"@ukho/admiralty-react@npm:^5.0.1, @ukho/admiralty-react@workspace:packages/react":
   version: 0.0.0-use.local
   resolution: "@ukho/admiralty-react@workspace:packages/react"
   dependencies:
     "@stencil/react-output-target": "npm:^0.7.1"
     "@types/react": "npm:^18.3.8"
-    "@ukho/admiralty-core": "npm:^4.2.1"
+    "@ukho/admiralty-core": "npm:^5.0.1"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
     typescript: "npm:^5.6.2"
@@ -11340,11 +11349,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-next@npm:14.2.13":
-  version: 14.2.13
-  resolution: "eslint-config-next@npm:14.2.13"
+"eslint-config-next@npm:14.2.32":
+  version: 14.2.32
+  resolution: "eslint-config-next@npm:14.2.32"
   dependencies:
-    "@next/eslint-plugin-next": "npm:14.2.13"
+    "@next/eslint-plugin-next": "npm:14.2.32"
     "@rushstack/eslint-patch": "npm:^1.3.3"
     "@typescript-eslint/eslint-plugin": "npm:^5.4.2 || ^6.0.0 || ^7.0.0 || ^8.0.0"
     "@typescript-eslint/parser": "npm:^5.4.2 || ^6.0.0 || ^7.0.0 || ^8.0.0"
@@ -11360,7 +11369,7 @@ __metadata:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 10/6931978b930506f7d31b71d2b38ed75dcff6baafbd50dd64ceab27e0de18a37ac3eeed43a1f910e7ead3b711b43769399d0bd9f69eef864e2268240c9fe56f7e
+  checksum: 10/0c19e091ae241e258c3862ef4a3c5e55d7d48fd7457e3b7f3e1f2a8863fb879245d6d736830dc5b706acf9ec3761159877109a677a9c0075821038057af0cc8b
   languageName: node
   linkType: hard
 
@@ -17295,20 +17304,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next@npm:14.2.26":
-  version: 14.2.26
-  resolution: "next@npm:14.2.26"
+"next@npm:14.2.32":
+  version: 14.2.32
+  resolution: "next@npm:14.2.32"
   dependencies:
-    "@next/env": "npm:14.2.26"
-    "@next/swc-darwin-arm64": "npm:14.2.26"
-    "@next/swc-darwin-x64": "npm:14.2.26"
-    "@next/swc-linux-arm64-gnu": "npm:14.2.26"
-    "@next/swc-linux-arm64-musl": "npm:14.2.26"
-    "@next/swc-linux-x64-gnu": "npm:14.2.26"
-    "@next/swc-linux-x64-musl": "npm:14.2.26"
-    "@next/swc-win32-arm64-msvc": "npm:14.2.26"
-    "@next/swc-win32-ia32-msvc": "npm:14.2.26"
-    "@next/swc-win32-x64-msvc": "npm:14.2.26"
+    "@next/env": "npm:14.2.32"
+    "@next/swc-darwin-arm64": "npm:14.2.32"
+    "@next/swc-darwin-x64": "npm:14.2.32"
+    "@next/swc-linux-arm64-gnu": "npm:14.2.32"
+    "@next/swc-linux-arm64-musl": "npm:14.2.32"
+    "@next/swc-linux-x64-gnu": "npm:14.2.32"
+    "@next/swc-linux-x64-musl": "npm:14.2.32"
+    "@next/swc-win32-arm64-msvc": "npm:14.2.32"
+    "@next/swc-win32-ia32-msvc": "npm:14.2.32"
+    "@next/swc-win32-x64-msvc": "npm:14.2.32"
     "@swc/helpers": "npm:0.5.5"
     busboy: "npm:1.6.0"
     caniuse-lite: "npm:^1.0.30001579"
@@ -17349,7 +17358,7 @@ __metadata:
       optional: true
   bin:
     next: dist/bin/next
-  checksum: 10/9bd8b2ef40076b251d036c6d3a3b435095ff941bab7166ebc3c75bd832c1812eb368f8dae1e56ef4bf600a81d0ad8190d778d610aa062ffa7c4c4f126cae7f13
+  checksum: 10/a08b4fca3ce15e95a9d170672a70d64ad41f4c5cb5d741bbdb9dfdf3e3f8eb9235f99c934a5619edeba611263de57fb29b42488511c295533bab79d95e3500b8
   languageName: node
   linkType: hard
 
@@ -22129,7 +22138,7 @@ __metadata:
     "@angular/router": "npm:^18.2.5"
     "@fortawesome/fontawesome-free": "npm:~6.6.0"
     "@types/node": "npm:^22.5.5"
-    "@ukho/admiralty-angular": "npm:^4.2.1"
+    "@ukho/admiralty-angular": "npm:^5.0.1"
     rimraf: "npm:^6.0.1"
     rxjs: "npm:~7.8.1"
     tslib: "npm:^2.7.0"
@@ -22730,13 +22739,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:5.6.2, typescript@npm:^5.6.2":
-  version: 5.6.2
-  resolution: "typescript@npm:5.6.2"
+"typescript@npm:5.9.2":
+  version: 5.9.2
+  resolution: "typescript@npm:5.9.2"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 10/f95365d4898f357823e93d334ecda9fcade54f009b397c7d05b7621cd9e865981033cf89ccde0f3e3a7b73b1fdbae18e92bc77db237b43e912f053fef0f9a53b
+  checksum: 10/cc2fe6c822819de5d453fa25aa9f32096bf70dde215d481faa1ad84a283dfb264e33988ed8f6d36bc803dd0b16dbe943efa311a798ef76d5b3892a05dfbfd628
   languageName: node
   linkType: hard
 
@@ -22750,6 +22759,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"typescript@npm:^5.6.2":
+  version: 5.6.2
+  resolution: "typescript@npm:5.6.2"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 10/f95365d4898f357823e93d334ecda9fcade54f009b397c7d05b7621cd9e865981033cf89ccde0f3e3a7b73b1fdbae18e92bc77db237b43e912f053fef0f9a53b
+  languageName: node
+  linkType: hard
+
 "typescript@patch:typescript@npm%3A5.5.4#optional!builtin<compat/typescript>":
   version: 5.5.4
   resolution: "typescript@patch:typescript@npm%3A5.5.4#optional!builtin<compat/typescript>::version=5.5.4&hash=379a07"
@@ -22760,13 +22779,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A5.6.2#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A^5.6.2#optional!builtin<compat/typescript>":
-  version: 5.6.2
-  resolution: "typescript@patch:typescript@npm%3A5.6.2#optional!builtin<compat/typescript>::version=5.6.2&hash=8c6c40"
+"typescript@patch:typescript@npm%3A5.9.2#optional!builtin<compat/typescript>":
+  version: 5.9.2
+  resolution: "typescript@patch:typescript@npm%3A5.9.2#optional!builtin<compat/typescript>::version=5.9.2&hash=5786d5"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 10/8bfc7ca0d9feca4c3fcbd6c70741abfcd714197d6448e68225ae71e462447d904d3bfba49759a8fbe4956d87f054e2d346833c8349c222daa594a2626d4e1be8
+  checksum: 10/bd810ab13e8e557225a8b5122370385440b933e4e077d5c7641a8afd207fdc8be9c346e3c678adba934b64e0e70b0acf5eef9493ea05170a48ce22bef845fdc7
   languageName: node
   linkType: hard
 
@@ -22777,6 +22796,16 @@ __metadata:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: 10/d75ca10141afc64fd3474b41a8b082b640555bed388d237558aed64e5827ddadb48f90932c7f4205883f18f5bcab8b6a739a2cfac95855604b0dfeb34bc2f3eb
+  languageName: node
+  linkType: hard
+
+"typescript@patch:typescript@npm%3A^5.6.2#optional!builtin<compat/typescript>":
+  version: 5.6.2
+  resolution: "typescript@patch:typescript@npm%3A5.6.2#optional!builtin<compat/typescript>::version=5.6.2&hash=8c6c40"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 10/8bfc7ca0d9feca4c3fcbd6c70741abfcd714197d6448e68225ae71e462447d904d3bfba49759a8fbe4956d87f054e2d346833c8349c222daa594a2626d4e1be8
   languageName: node
   linkType: hard
 
@@ -22836,6 +22865,13 @@ __metadata:
   version: 6.19.8
   resolution: "undici-types@npm:6.19.8"
   checksum: 10/cf0b48ed4fc99baf56584afa91aaffa5010c268b8842f62e02f752df209e3dea138b372a60a963b3b2576ed932f32329ce7ddb9cb5f27a6c83040d8cd74b7a70
+  languageName: node
+  linkType: hard
+
+"undici-types@npm:~6.21.0":
+  version: 6.21.0
+  resolution: "undici-types@npm:6.21.0"
+  checksum: 10/ec8f41aa4359d50f9b59fa61fe3efce3477cc681908c8f84354d8567bb3701fafdddf36ef6bff307024d3feb42c837cf6f670314ba37fc8145e219560e473d14
   languageName: node
   linkType: hard
 
@@ -23469,15 +23505,15 @@ __metadata:
     "@mdx-js/react": "npm:^3.0.1"
     "@next/mdx": "npm:^14.2.13"
     "@types/mdx": "npm:^2.0.13"
-    "@types/node": "npm:22.5.5"
+    "@types/node": "npm:22.17.2"
     "@types/prismjs": "npm:^1.26.4"
     "@types/react": "npm:18.3.8"
     "@types/react-dom": "npm:18.3.0"
-    "@ukho-internal/admiralty-docs": "npm:^4.2.1"
-    "@ukho/admiralty-react": "npm:^4.2.1"
+    "@ukho-internal/admiralty-docs": "npm:^5.0.1"
+    "@ukho/admiralty-react": "npm:^5.0.1"
     eslint: "npm:^8.57.1"
-    eslint-config-next: "npm:14.2.13"
-    next: "npm:14.2.26"
+    eslint-config-next: "npm:14.2.32"
+    next: "npm:14.2.32"
     prismjs: "npm:^1.29.0"
     react: "npm:18.3.1"
     react-dom: "npm:18.3.1"
@@ -23485,7 +23521,7 @@ __metadata:
     rehype-slug: "npm:^6.0.0"
     remark-gfm: "npm:^4.0.0"
     remark-toc: "npm:^9.0.0"
-    typescript: "npm:5.6.2"
+    typescript: "npm:5.9.2"
   languageName: unknown
   linkType: soft
 
