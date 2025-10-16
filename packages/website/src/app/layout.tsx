@@ -41,6 +41,7 @@ const componentChildren: any[] = [
   { path: "/components/read-more", variant: "text", name: "Readmore" },
   { path: "/components/select", variant: "text", name: "Select" },
   { path: "/components/side-nav", variant: "text", name: "Side Nav" },
+  { path: "/components/skeleton", variant: "text", name: "Skeleton" },
   { path: "/components/skip-link", variant: "text", name: "Skip Link" },
   { path: "/components/tab-group", variant: "text", name: "Tab Group" },
   { path: "/components/table", variant: "text", name: "Table" },

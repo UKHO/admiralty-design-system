@@ -745,6 +745,24 @@ export namespace Components {
     }
     interface AdmiraltySideNavWrapper {
     }
+    interface AdmiraltySkeleton {
+        /**
+          * Height of the skeleton component, default is set to 1rem.
+         */
+        "height"?: string;
+        /**
+          * Hides the animation of a shimmer on the skeleton component, default is set to false, set to true if you require no animation.
+         */
+        "noAnimation": boolean;
+        /**
+          * Radius of the skeleton component, default is .5rem.
+         */
+        "radius"?: string;
+        /**
+          * Width of the skeleton component, default is set to 100%.
+         */
+        "width"?: string;
+    }
     interface AdmiraltySkipLink {
         /**
           * The HTML ID that the skip link will jump to when activated.
@@ -1453,6 +1471,12 @@ declare global {
         prototype: HTMLAdmiraltySideNavWrapperElement;
         new (): HTMLAdmiraltySideNavWrapperElement;
     };
+    interface HTMLAdmiraltySkeletonElement extends Components.AdmiraltySkeleton, HTMLStencilElement {
+    }
+    var HTMLAdmiraltySkeletonElement: {
+        prototype: HTMLAdmiraltySkeletonElement;
+        new (): HTMLAdmiraltySkeletonElement;
+    };
     interface HTMLAdmiraltySkipLinkElement extends Components.AdmiraltySkipLink, HTMLStencilElement {
     }
     var HTMLAdmiraltySkipLinkElement: {
@@ -1628,6 +1652,7 @@ declare global {
         "admiralty-side-nav": HTMLAdmiraltySideNavElement;
         "admiralty-side-nav-item": HTMLAdmiraltySideNavItemElement;
         "admiralty-side-nav-wrapper": HTMLAdmiraltySideNavWrapperElement;
+        "admiralty-skeleton": HTMLAdmiraltySkeletonElement;
         "admiralty-skip-link": HTMLAdmiraltySkipLinkElement;
         "admiralty-tab": HTMLAdmiraltyTabElement;
         "admiralty-tab-group": HTMLAdmiraltyTabGroupElement;
@@ -2485,6 +2510,24 @@ declare namespace LocalJSX {
     }
     interface AdmiraltySideNavWrapper {
     }
+    interface AdmiraltySkeleton {
+        /**
+          * Height of the skeleton component, default is set to 1rem.
+         */
+        "height"?: string;
+        /**
+          * Hides the animation of a shimmer on the skeleton component, default is set to false, set to true if you require no animation.
+         */
+        "noAnimation"?: boolean;
+        /**
+          * Radius of the skeleton component, default is .5rem.
+         */
+        "radius"?: string;
+        /**
+          * Width of the skeleton component, default is set to 100%.
+         */
+        "width"?: string;
+    }
     interface AdmiraltySkipLink {
         /**
           * The HTML ID that the skip link will jump to when activated.
@@ -2682,6 +2725,7 @@ declare namespace LocalJSX {
         "admiralty-side-nav": AdmiraltySideNav;
         "admiralty-side-nav-item": AdmiraltySideNavItem;
         "admiralty-side-nav-wrapper": AdmiraltySideNavWrapper;
+        "admiralty-skeleton": AdmiraltySkeleton;
         "admiralty-skip-link": AdmiraltySkipLink;
         "admiralty-tab": AdmiraltyTab;
         "admiralty-tab-group": AdmiraltyTabGroup;
@@ -2750,6 +2794,7 @@ declare module "@stencil/core" {
             "admiralty-side-nav": LocalJSX.AdmiraltySideNav & JSXBase.HTMLAttributes<HTMLAdmiraltySideNavElement>;
             "admiralty-side-nav-item": LocalJSX.AdmiraltySideNavItem & JSXBase.HTMLAttributes<HTMLAdmiraltySideNavItemElement>;
             "admiralty-side-nav-wrapper": LocalJSX.AdmiraltySideNavWrapper & JSXBase.HTMLAttributes<HTMLAdmiraltySideNavWrapperElement>;
+            "admiralty-skeleton": LocalJSX.AdmiraltySkeleton & JSXBase.HTMLAttributes<HTMLAdmiraltySkeletonElement>;
             "admiralty-skip-link": LocalJSX.AdmiraltySkipLink & JSXBase.HTMLAttributes<HTMLAdmiraltySkipLinkElement>;
             "admiralty-tab": LocalJSX.AdmiraltyTab & JSXBase.HTMLAttributes<HTMLAdmiraltyTabElement>;
             "admiralty-tab-group": LocalJSX.AdmiraltyTabGroup & JSXBase.HTMLAttributes<HTMLAdmiraltyTabGroupElement>;
