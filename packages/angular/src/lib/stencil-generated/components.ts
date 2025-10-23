@@ -662,14 +662,14 @@ export declare interface AdmiraltyIconSideBarItem extends Components.AdmiraltyIc
 
 
 @ProxyCmp({
-  inputs: ['autocomplete', 'disabled', 'hint', 'invalid', 'invalidMessage', 'label', 'name', 'placeholder', 'required', 'type', 'value', 'width']
+  inputs: ['autocomplete', 'disabled', 'hint', 'invalid', 'invalidMessage', 'label', 'loading', 'loadingHeight', 'loadingRadius', 'loadingWidth', 'name', 'placeholder', 'required', 'type', 'value', 'width']
 })
 @Component({
   selector: 'admiralty-input',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['autocomplete', 'disabled', 'hint', 'invalid', 'invalidMessage', 'label', 'name', 'placeholder', 'required', 'type', 'value', 'width'],
+  inputs: ['autocomplete', 'disabled', 'hint', 'invalid', 'invalidMessage', 'label', 'loading', 'loadingHeight', 'loadingRadius', 'loadingWidth', 'name', 'placeholder', 'required', 'type', 'value', 'width'],
 })
 export class AdmiraltyInput {
   protected el: HTMLElement;

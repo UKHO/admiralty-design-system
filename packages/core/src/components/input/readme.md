@@ -20,6 +20,10 @@ and checkbox.
 | `invalid`        | `invalid`         | Whether to show the input in an invalid state                                             | `boolean`                                                                           | `false`     |
 | `invalidMessage` | `invalid-message` | The message to show when the input is invalid                                             | `string`                                                                            | `undefined` |
 | `label`          | `label`           | The label which will be used above the input to describe the input.                       | `string`                                                                            | `undefined` |
+| `loading`        | `loading`         | Whether the component is loading if so then show the skeleton                             | `boolean`                                                                           | `false`     |
+| `loadingHeight`  | `loading-height`  | Height of the loading bar                                                                 | `string`                                                                            | `undefined` |
+| `loadingRadius`  | `loading-radius`  | Radius of the loading bar                                                                 | `string`                                                                            | `undefined` |
+| `loadingWidth`   | `loading-width`   | Width of the loading bar                                                                  | `string`                                                                            | `undefined` |
 | `name`           | `name`            | The name of the control, which is submitted with the form data.                           | `string`                                                                            | `undefined` |
 | `placeholder`    | `placeholder`     | The placeholder text to show in the input                                                 | `string`                                                                            | `undefined` |
 | `required`       | `required`        | This dictates whether the input is required or not                                        | `boolean`                                                                           | `false`     |
@@ -51,6 +55,7 @@ and checkbox.
 
 ### Depends on
 
+- [admiralty-skeleton](../skeleton)
 - [admiralty-label](../label)
 - [admiralty-hint](../hint)
 - [admiralty-input-invalid](../input-invalid)
@@ -58,6 +63,7 @@ and checkbox.
 ### Graph
 ```mermaid
 graph TD;
+  admiralty-input --> admiralty-skeleton
   admiralty-input --> admiralty-label
   admiralty-input --> admiralty-hint
   admiralty-input --> admiralty-input-invalid

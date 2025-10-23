@@ -100,3 +100,33 @@ export const Invalid: Story = {
     invalidMessage: 'That is not a real name',
   },
 };
+
+export const Loading: Story = {
+  render: args => html` <admiralty-input loading="${args.loading}" hint="${args.hint}" invalid="${args.invalid}" invalid-message="${args.invalidMessage}"> </admiralty-input>`,
+  args: {
+    hint: 'Enter your full name',
+    invalid: true,
+    invalidMessage: 'That is not a real name',
+    loading: true
+  },
+};
+
+export const FixedWidthLoading: Story = {
+  render: args => html`<admiralty-input label="${args.label}"
+                                        loading="${args.loading}"
+                                        .loadingWidth="${args.loadingWidth}"
+                                        .loadingHeight="${args.loadingHeight}"
+                                        .loadingRadius="${args.loadingRadius}"
+                                        type="${args.type}"
+                                        width="${args.width}"></admiralty-input>`,
+  args: {
+    label: 'How old are you?',
+    type: 'number',
+    width: 60,
+    loading: true,
+    loadingWidth: '60px',
+    loadingHeight: '1rem',
+    loadingRadius: '.5rem'
+  },
+};
+

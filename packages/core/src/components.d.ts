@@ -504,6 +504,22 @@ export namespace Components {
          */
         "label": string;
         /**
+          * Whether the component is loading if so then show the skeleton
+         */
+        "loading": boolean;
+        /**
+          * Height of the loading bar
+         */
+        "loadingHeight"?: string;
+        /**
+          * Radius of the loading bar
+         */
+        "loadingRadius"?: string;
+        /**
+          * Width of the loading bar
+         */
+        "loadingWidth"?: string;
+        /**
           * The name of the control, which is submitted with the form data.
          */
         "name": string;
@@ -2221,6 +2237,22 @@ declare namespace LocalJSX {
           * The label which will be used above the input to describe the input.
          */
         "label"?: string;
+        /**
+          * Whether the component is loading if so then show the skeleton
+         */
+        "loading"?: boolean;
+        /**
+          * Height of the loading bar
+         */
+        "loadingHeight"?: string;
+        /**
+          * Radius of the loading bar
+         */
+        "loadingRadius"?: string;
+        /**
+          * Width of the loading bar
+         */
+        "loadingWidth"?: string;
         /**
           * The name of the control, which is submitted with the form data.
          */
