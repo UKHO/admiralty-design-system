@@ -76,6 +76,22 @@ export namespace Components {
          */
         "label": string;
         /**
+          * Whether the component is loading if so then show the skeleton
+         */
+        "loading": boolean;
+        /**
+          * Height of the loading bar
+         */
+        "loadingHeight"?: string;
+        /**
+          * Radius of the loading bar
+         */
+        "loadingRadius"?: string;
+        /**
+          * Width of the loading bar
+         */
+        "loadingWidth"?: string;
+        /**
           * Sets HTML attributes and their values on the generated `ul` menu element. Useful for adding `aria-labelledby` and setting to the value of the `id` attribute on your existing label, to provide context to an assistive technology user. e.g. ``` const menuAttributes = {   className: 'custom-className',   class: 'custom-class',   id: 'custom-id',   role: 'custom-role' } ```
          */
         "menuAttributes": any;
@@ -1750,6 +1766,22 @@ declare namespace LocalJSX {
           * The text that will be used as a field label.
          */
         "label"?: string;
+        /**
+          * Whether the component is loading if so then show the skeleton
+         */
+        "loading"?: boolean;
+        /**
+          * Height of the loading bar
+         */
+        "loadingHeight"?: string;
+        /**
+          * Radius of the loading bar
+         */
+        "loadingRadius"?: string;
+        /**
+          * Width of the loading bar
+         */
+        "loadingWidth"?: string;
         /**
           * Sets HTML attributes and their values on the generated `ul` menu element. Useful for adding `aria-labelledby` and setting to the value of the `id` attribute on your existing label, to provide context to an assistive technology user. e.g. ``` const menuAttributes = {   className: 'custom-className',   class: 'custom-class',   id: 'custom-id',   role: 'custom-role' } ```
          */

@@ -21,6 +21,10 @@
 | `invalid`            | `invalid`               | Whether to show that the component is in an invalid state.                                                                                                                                                                                                                                                                                                                          | `boolean`                     | `false`                                                                                                                                                         |
 | `invalidMessage`     | `invalid-message`       | The message to show when the component is invalid.                                                                                                                                                                                                                                                                                                                                  | `string`                      | `null`                                                                                                                                                          |
 | `label`              | `label`                 | The text that will be used as a field label.                                                                                                                                                                                                                                                                                                                                        | `string`                      | `null`                                                                                                                                                          |
+| `loading`            | `loading`               | Whether the component is loading if so then show the skeleton                                                                                                                                                                                                                                                                                                                       | `boolean`                     | `false`                                                                                                                                                         |
+| `loadingHeight`      | `loading-height`        | Height of the loading bar                                                                                                                                                                                                                                                                                                                                                           | `string`                      | `undefined`                                                                                                                                                     |
+| `loadingRadius`      | `loading-radius`        | Radius of the loading bar                                                                                                                                                                                                                                                                                                                                                           | `string`                      | `undefined`                                                                                                                                                     |
+| `loadingWidth`       | `loading-width`         | Width of the loading bar                                                                                                                                                                                                                                                                                                                                                            | `string`                      | `undefined`                                                                                                                                                     |
 | `menuAttributes`     | `menu-attributes`       | Sets HTML attributes and their values on the generated `ul` menu element. Useful for adding `aria-labelledby` and setting to the value of the `id` attribute on your existing label, to provide context to an assistive technology user. e.g. ``` const menuAttributes = {   className: 'custom-className',   class: 'custom-class',   id: 'custom-id',   role: 'custom-role' } ``` | `any`                         | `undefined`                                                                                                                                                     |
 | `menuClasses`        | `menu-classes`          | Classes to add to the menu displaying the options.                                                                                                                                                                                                                                                                                                                                  | `string`                      | `undefined`                                                                                                                                                     |
 | `minLength`          | `min-length`            | Prevent displaying options until the minimum string length is reached. Ignored when show all values is enabled.                                                                                                                                                                                                                                                                     | `number`                      | `0`                                                                                                                                                             |
@@ -39,10 +43,30 @@
 | `admiraltyChange` | Emitted when the value has changed. | `CustomEvent<AutoCompleteChangeEventDetail>` |
 
 
+## CSS Custom Properties
+
+| Name                                                      | Description                                          |
+| --------------------------------------------------------- | ---------------------------------------------------- |
+| `--admiralty-autocomplete-icon-font-size`                 | Font size for the autocompletes icon                 |
+| `--admiralty-autocomplete-icon-font-weight`               | Font weight for the autocompletes icon               |
+| `--admiralty-autocomplete-input-display-all-padding`      | Padding for autocomplete when displaying all options |
+| `--admiralty-autocomplete-input-margin-bottom`            | Margin bottom for the autocomplete                   |
+| `--admiralty-autocomplete-input-menu-margin`              | Margin for the menu of the autocomplete              |
+| `--admiralty-autocomplete-input-option-margin-bottom`     | Margin bottom for the options of the autocomplete    |
+| `--admiralty-autocomplete-input-padding`                  | Padding for autocomplete                             |
+| `--admiralty-autocomplete-label-font-size`                | Font size for the autocompletes label                |
+| `--admiralty-autocomplete-option-font-size`               | Font size for the autocompletes option               |
+| `--admiralty-autocomplete-option-font-weight`             | Font weight for the autocompletes option             |
+| `--admiralty-autocomplete-option-no-results-hover-margin` | Autocomplete no results hover margin top and bottom  |
+| `--admiralty-autocomplete-option-no-results-margin`       | Autocomplete no results margin top and bottom        |
+| `--admiralty-autocomplete-option-padding`                 | Padding for autocomplete options                     |
+
+
 ## Dependencies
 
 ### Depends on
 
+- [admiralty-skeleton](../skeleton)
 - [admiralty-label](../label)
 - [admiralty-hint](../hint)
 - [admiralty-icon](../icon)
@@ -51,6 +75,7 @@
 ### Graph
 ```mermaid
 graph TD;
+  admiralty-autocomplete --> admiralty-skeleton
   admiralty-autocomplete --> admiralty-label
   admiralty-autocomplete --> admiralty-hint
   admiralty-autocomplete --> admiralty-icon

@@ -2,7 +2,7 @@
  * This component takes heavy inspiration from the autocomplete component created by alphagov: https://github.com/alphagov/accessible-autocomplete
  */
 
-import { Component, forceUpdate, Prop, State, h, Element, EventEmitter, Event, Watch } from '@stencil/core';
+import { Component, forceUpdate, Prop, State, h, Element, EventEmitter, Event, Watch, Host } from "@stencil/core";
 import { watchForOptions } from './optionsWatcher';
 import { AutoCompleteChangeEventDetail, Option } from './autocomplete.interface';
 
@@ -145,6 +145,26 @@ export class AutocompleteComponent {
    * Custom filter function that can be used instead of rendering options into the DOM.
    */
   @Prop() filterFunction: (query: string) => Option[];
+
+  /**
+   * Whether the component is loading if so then show the skeleton
+   */
+  @Prop() loading: boolean = false;
+
+  /**
+   * Width of the loading bar
+   */
+  @Prop() loadingWidth?: string;
+
+  /**
+   * Height of the loading bar
+   */
+  @Prop() loadingHeight?: string;
+
+  /**
+   * Radius of the loading bar
+   */
+  @Prop() loadingRadius?: string;
 
   /**
    * Emitted when the value has changed.
@@ -493,7 +513,18 @@ export class AutocompleteComponent {
     }
   }
 
-  render() {
+  renderSkeleton() {
+    return <Host>
+      <div class="loading-wrapper">
+        <admiralty-skeleton key={`${this.loadingWidth}-${this.loadingHeight}`}
+                            width={this.loadingWidth}
+                            height={this.loadingHeight}
+                            radius={this.loadingRadius}></admiralty-skeleton>
+      </div>
+    </Host>
+  }
+
+  renderContent() {
     const id = this.el.id != '' ? this.el.id : `admiralty-autocomplete-${this.internalId}`;
     const inputId = `${id}-input`;
     const hintId = `${id}-hint`;
@@ -654,6 +685,10 @@ export class AutocompleteComponent {
         )}
       </div>
     );
+  }
+
+  render(): void {
+    return this.loading? this.renderSkeleton() : this.renderContent();
   }
 }
 let nextId = 0;

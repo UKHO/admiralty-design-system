@@ -19,12 +19,14 @@
 
 ### Used by
 
+ - [admiralty-autocomplete](../autocomplete)
  - [admiralty-icon](../icon)
  - [admiralty-input](../input)
 
 ### Graph
 ```mermaid
 graph TD;
+  admiralty-autocomplete --> admiralty-skeleton
   admiralty-icon --> admiralty-skeleton
   admiralty-input --> admiralty-skeleton
   style admiralty-skeleton fill:#f9f,stroke:#333,stroke-width:4px
