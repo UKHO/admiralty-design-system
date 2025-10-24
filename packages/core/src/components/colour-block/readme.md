@@ -27,16 +27,6 @@
 | `colourBlockLinkClicked` | An event emitted when this Colour Block link is clicked | `CustomEvent<string>` |
 
 
-## CSS Custom Properties
-
-| Name                                                    | Description                                                   |
-| ------------------------------------------------------- | ------------------------------------------------------------- |
-| `--admiralty-colour-block-action-font-size`             | Font size of the colour block action                          |
-| `--admiralty-colour-block-action-font-weight`           | Font weight of the colour block action                        |
-| `--admiralty-colour-block-action-not-desktop-font-size` | Font size of the colour block action when not in desktop view |
-| `--admiralty-colour-block-padding`                      | Padding for the colour block                                  |
-
-
 ## Dependencies
 
 ### Depends on
@@ -48,6 +38,7 @@
 graph TD;
   admiralty-colour-block --> admiralty-button
   admiralty-button --> admiralty-icon
+  admiralty-icon --> admiralty-skeleton
   style admiralty-colour-block fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

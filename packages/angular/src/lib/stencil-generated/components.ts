@@ -586,14 +586,14 @@ export declare interface AdmiraltyHr extends Components.AdmiraltyHr {}
 
 
 @ProxyCmp({
-  inputs: ['name', 'size']
+  inputs: ['loading', 'loadingHeight', 'loadingRadius', 'loadingWidth', 'name', 'size']
 })
 @Component({
   selector: 'admiralty-icon',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['name', 'size'],
+  inputs: ['loading', 'loadingHeight', 'loadingRadius', 'loadingWidth', 'name', 'size'],
 })
 export class AdmiraltyIcon {
   protected el: HTMLElement;

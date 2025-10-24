@@ -32,15 +32,6 @@
 | `"The text to display under the icon for secondary variant"` |             |
 
 
-## CSS Custom Properties
-
-| Name                                            | Description                          |
-| ----------------------------------------------- | ------------------------------------ |
-| `--admiralty-icon-side-bar-item-font-size`      | Font size for the side bar item      |
-| `--admiralty-icon-side-bar-item-font-weight`    | Font weight for the side bar item    |
-| `--admiralty-icon-side-bar-item-icon-font-size` | Font size for the side bar item icon |
-
-
 ## Dependencies
 
 ### Depends on
@@ -51,6 +42,7 @@
 ```mermaid
 graph TD;
   admiralty-icon-side-bar-item --> admiralty-icon
+  admiralty-icon --> admiralty-skeleton
   style admiralty-icon-side-bar-item fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

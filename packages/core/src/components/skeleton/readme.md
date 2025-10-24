@@ -15,24 +15,17 @@
 | `width`       | `width`        | Width of the skeleton component, default is set to 100%.                                                                      | `string`  | `'100%'`  |
 
 
-## CSS Custom Properties
-
-| Name                                           | Description                                            |
-| ---------------------------------------------- | ------------------------------------------------------ |
-| `--admiralty-skeleton-animation-duration`      | duration of the sheen going across the skeleton        |
-| `--admiralty-skeleton-background-colour`       | background colour for loading elements.                |
-| `--admiralty-skeleton-background-sheen-colour` | background sheen animation colour for loading elements |
-
-
 ## Dependencies
 
 ### Used by
 
+ - [admiralty-icon](../icon)
  - [admiralty-input](../input)
 
 ### Graph
 ```mermaid
 graph TD;
+  admiralty-icon --> admiralty-skeleton
   admiralty-input --> admiralty-skeleton
   style admiralty-skeleton fill:#f9f,stroke:#333,stroke-width:4px
 ```

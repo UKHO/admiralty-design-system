@@ -418,6 +418,22 @@ export namespace Components {
     }
     interface AdmiraltyIcon {
         /**
+          * Whether the component is loading if so then show the skeleton
+         */
+        "loading": boolean;
+        /**
+          * Height of the loading bar
+         */
+        "loadingHeight"?: string;
+        /**
+          * Radius of the loading bar
+         */
+        "loadingRadius"?: string;
+        /**
+          * Width of the loading bar
+         */
+        "loadingWidth"?: string;
+        /**
           * Name of the icon to be rendered.  A full list of available icons can be viewed at [https://fonts.google.com/icons](https://fonts.google.com/icons)
          */
         "name": string;
@@ -2143,6 +2159,22 @@ declare namespace LocalJSX {
     interface AdmiraltyHr {
     }
     interface AdmiraltyIcon {
+        /**
+          * Whether the component is loading if so then show the skeleton
+         */
+        "loading"?: boolean;
+        /**
+          * Height of the loading bar
+         */
+        "loadingHeight"?: string;
+        /**
+          * Radius of the loading bar
+         */
+        "loadingRadius"?: string;
+        /**
+          * Width of the loading bar
+         */
+        "loadingWidth"?: string;
         /**
           * Name of the icon to be rendered.  A full list of available icons can be viewed at [https://fonts.google.com/icons](https://fonts.google.com/icons)
          */

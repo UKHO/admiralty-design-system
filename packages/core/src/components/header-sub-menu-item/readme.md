@@ -21,17 +21,6 @@
 | `subMenuItemClick` | The event that is fired when a user clicks on the menu item. Event contains the menu item text. | `CustomEvent<string>` |
 
 
-## CSS Custom Properties
-
-| Name                                                     | Description                                                  |
-| -------------------------------------------------------- | ------------------------------------------------------------ |
-| `--admiralty-header-sub-menu-item-desktop-margin-bottom` | Margin bottom for the sub menu item when in desktop view     |
-| `--admiralty-header-sub-menu-item-desktop-padding`       | Padding for the sub menu item when in desktop view           |
-| `--admiralty-header-sub-menu-item-font-size`             | Font size of the header sub menu item.                       |
-| `--admiralty-header-sub-menu-item-font-weight`           | Font weight of the header sub menu item.                     |
-| `--admiralty-header-sub-menu-item-not-desktop-padding`   | Margin bottom for the sub menu item when not in desktop view |
-
-
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

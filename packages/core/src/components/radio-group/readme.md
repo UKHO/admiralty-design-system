@@ -24,17 +24,6 @@
 | `admiraltyChange` | Event fired when the checked radio button changes | `CustomEvent<RadioGroupChangeEventDetail<any>>` |
 
 
-## CSS Custom Properties
-
-| Name                                                  | Description                                                 |
-| ----------------------------------------------------- | ----------------------------------------------------------- |
-| `--admiralty-radio-group-fieldset-padding`            | Padding for the fieldset of the radio group                 |
-| `--admiralty-radio-group-legend-font-weight`          | Font weight for the radio group legend                      |
-| `--admiralty-radio-group-legend-margin-bottom`        | Margin bottom for the legend of the radio group             |
-| `--admiralty-radio-group-slotted-margin-right`        | Margin right for the slotted data of the radio group        |
-| `--admiralty-radio-group-stack-slotted-margin-bottom` | Margin bottom for the slotted data of the radio group stack |
-
-
 ## Dependencies
 
 ### Depends on
@@ -48,6 +37,7 @@ graph TD;
   admiralty-radio-group --> admiralty-hint
   admiralty-radio-group --> admiralty-input-invalid
   admiralty-input-invalid --> admiralty-icon
+  admiralty-icon --> admiralty-skeleton
   style admiralty-radio-group fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

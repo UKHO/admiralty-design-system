@@ -24,14 +24,6 @@
 | `textareaBlur`   | Event is fired when the form control loses focus | `CustomEvent<any>`                       |
 
 
-## CSS Custom Properties
-
-| Name                                | Description                   |
-| ----------------------------------- | ----------------------------- |
-| `--admiralty-text-area-font-weight` | Font weight for the text area |
-| `--admiralty-text-area-padding`     | Padding for text area         |
-
-
 ## Dependencies
 
 ### Depends on
@@ -47,6 +39,7 @@ graph TD;
   admiralty-textarea --> admiralty-hint
   admiralty-textarea --> admiralty-input-invalid
   admiralty-input-invalid --> admiralty-icon
+  admiralty-icon --> admiralty-skeleton
   style admiralty-textarea fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

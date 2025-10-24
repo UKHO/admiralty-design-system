@@ -21,15 +21,6 @@
 | `pageChange` | Dispatched when the previous or next button is pressed. The event detail contains the requested page number. | `CustomEvent<number>` |
 
 
-## CSS Custom Properties
-
-| Name                                            | Description                               |
-| ----------------------------------------------- | ----------------------------------------- |
-| `--admiralty-paginator-button-margin`           | Margin for the paginator button           |
-| `--admiralty-paginator-paragraph-margin-bottom` | Margin bottom for the paginator paragraph |
-| `--admiralty-paginator-paragraph-padding`       | Padding for the paginator paragraph       |
-
-
 ## Dependencies
 
 ### Depends on
@@ -41,6 +32,7 @@
 graph TD;
   admiralty-paginator --> admiralty-button
   admiralty-button --> admiralty-icon
+  admiralty-icon --> admiralty-skeleton
   style admiralty-paginator fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

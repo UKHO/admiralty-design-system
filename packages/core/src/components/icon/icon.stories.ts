@@ -61,3 +61,18 @@ export const InheritColor: Story = {
     color: 'red',
   },
 };
+
+export const LoadingIcon: Story = {
+  render: args => {
+    const color = args.color ? `color:${args.color};` : '';
+    const fontSize = args.parentFontSize ? `font-size:${args.parentFontSize};` : '';
+    return html`<div style="${color}${fontSize}">
+      <admiralty-icon name="${args.name}" size="${args.size}" loading="${args.loading}"></admiralty-icon>
+    </div>`;
+  },
+  args: {
+    color: 'red',
+    size: 48,
+    loading: true
+  },
+};
