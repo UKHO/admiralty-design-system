@@ -166,3 +166,9 @@ footer.footer-compact {
     }
   }
 }
+
+@media (prefers-color-scheme: dark) { // Avoid clash with backgrounds in darkmode
+  footer.footer-compact {
+    opacity: 1;
+  }
+}
