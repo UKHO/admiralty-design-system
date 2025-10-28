@@ -14,6 +14,10 @@
 | `disabled`      | `disabled`       | This dictates whether the form field is disabled.                                                                                                                                                                                                            | `boolean` | `false`        |
 | `labelHidden`   | `label-hidden`   | This visually hides the labelText while preserving accessibility.                                                                                                                                                                                            | `boolean` | `false`        |
 | `labelText`     | `label-text`     | The label text must be provided and is displayed beside the checkbox, use the `labelHidden` property to control its visibility.                                                                                                                              | `string`  | `null`         |
+| `loading`       | `loading`        | Whether the component is loading if so then show the skeleton                                                                                                                                                                                                | `boolean` | `false`        |
+| `loadingHeight` | `loading-height` | Height of the loading bar                                                                                                                                                                                                                                    | `string`  | `undefined`    |
+| `loadingRadius` | `loading-radius` | Radius of the loading bar                                                                                                                                                                                                                                    | `string`  | `undefined`    |
+| `loadingWidth`  | `loading-width`  | Width of the loading bar                                                                                                                                                                                                                                     | `string`  | `undefined`    |
 | `name`          | `name`           | The name of the control, which is submitted with the form data.                                                                                                                                                                                              | `string`  | `this.inputId` |
 | `value`         | `value`          | The value of the checkbox does not mean if it's checked or not, use the `checked` property for that.  The value of a checkbox is analogous to the value of an `<input type="checkbox">`, it's only used when the checkbox participates in a native `<form>`. | `any`     | `undefined`    |
 
@@ -26,6 +30,33 @@
 | `checkboxBlur`    | Event is fired when the form control loses focus   | `CustomEvent<FocusEvent>`                     |
 | `checkboxFocus`   | Event is fired when the form control gains focus   | `CustomEvent<FocusEvent>`                     |
 
+
+## CSS Custom Properties
+
+| Name                                                 | Description                                     |
+| ---------------------------------------------------- | ----------------------------------------------- |
+| `--admiralty-checkbox-font-size`                     | Font size of the checkbox                       |
+| `--admiralty-checkbox-font-weight`                   | Font weight of the checkbox                     |
+| `--admiralty-checkbox-input-margin`                  | Margin for the checkbox input.                  |
+| `--admiralty-checkbox-input-padding`                 | Padding for the checkbox input.                 |
+| `--admiralty-checkbox-label-alignment-padding-left`  | Padding left for the checkbox label alignment.  |
+| `--admiralty-checkbox-label-alignment-padding-right` | Padding right for the checkbox label alignment. |
+| `--admiralty-checkbox-label-margin-bottom`           | Margin bottom for the checkbox label.           |
+| `--admiralty-checkbox-label-padding-left`            | Padding left for the checkbox label.            |
+
+
+## Dependencies
+
+### Depends on
+
+- [admiralty-skeleton](../skeleton)
+
+### Graph
+```mermaid
+graph TD;
+  admiralty-checkbox --> admiralty-skeleton
+  style admiralty-checkbox fill:#f9f,stroke:#333,stroke-width:4px
+```
 
 ----------------------------------------------
 

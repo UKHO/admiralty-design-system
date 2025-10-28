@@ -209,6 +209,22 @@ export namespace Components {
          */
         "labelText": string;
         /**
+          * Whether the component is loading if so then show the skeleton
+         */
+        "loading": boolean;
+        /**
+          * Height of the loading bar
+         */
+        "loadingHeight"?: string;
+        /**
+          * Radius of the loading bar
+         */
+        "loadingRadius"?: string;
+        /**
+          * Width of the loading bar
+         */
+        "loadingWidth"?: string;
+        /**
           * The name of the control, which is submitted with the form data.
          */
         "name": string;
@@ -1903,6 +1919,22 @@ declare namespace LocalJSX {
           * The label text must be provided and is displayed beside the checkbox, use the `labelHidden` property to control its visibility.
          */
         "labelText"?: string;
+        /**
+          * Whether the component is loading if so then show the skeleton
+         */
+        "loading"?: boolean;
+        /**
+          * Height of the loading bar
+         */
+        "loadingHeight"?: string;
+        /**
+          * Radius of the loading bar
+         */
+        "loadingRadius"?: string;
+        /**
+          * Width of the loading bar
+         */
+        "loadingWidth"?: string;
         /**
           * The name of the control, which is submitted with the form data.
          */
