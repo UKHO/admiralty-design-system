@@ -70,6 +70,8 @@
   --admiralty-text-colour: #333333;
 
   --admiralty-focus-colour: #ffdd00;
+    --admiralty-focus-contrast: #09315b;
+
 
   --admiralty-disabled-colour: #adadad;
   --admiralty-disabled-text-colour: #757575;
@@ -186,6 +188,7 @@
 
         /** focus **/
         --admiralty-focus-colour: #fbe86c;
+        --admiralty-focus-contrast: #2a2a2a;
 
         /** disabled **/
         --admiralty-disabled-colour: #666666;
