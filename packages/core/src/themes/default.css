@@ -179,7 +179,7 @@
 
         --admiralty-background-colour-tint: #444444;
         --admiralty-hover-background-colour-tint: #555555;
-        --admiralty-header-background-colour: #404040;
+        --admiralty-header-background-colour: #333333;
 
         /** text **/
         --admiralty-text-colour: #ffffff;
@@ -194,7 +194,7 @@
         --admiralty-table-row-colour: #2a2a2a;
 
         /** Components **/
-        --text-side-bar-item-active-background-colour: #333333;
+        --text-side-bar-item-active-background-colour: #444444;
         --text-side-bar-item-focus-border-colour: #fbe86c;
         --text-side-bar-focus-background-colour: #333333;
         --tab-group-active-shadow-colour: #ffffff;
