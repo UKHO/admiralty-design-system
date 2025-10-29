@@ -50,6 +50,7 @@ import { AdmiraltyReadMore as AdmiraltyReadMoreElement, defineCustomElement as d
 import { AdmiraltySelect as AdmiraltySelectElement, defineCustomElement as defineAdmiraltySelect } from "@ukho/admiralty-core/dist/components/admiralty-select.js";
 import { AdmiraltySideNavItem as AdmiraltySideNavItemElement, defineCustomElement as defineAdmiraltySideNavItem } from "@ukho/admiralty-core/dist/components/admiralty-side-nav-item.js";
 import { AdmiraltySideNav as AdmiraltySideNavElement, defineCustomElement as defineAdmiraltySideNav } from "@ukho/admiralty-core/dist/components/admiralty-side-nav.js";
+import { AdmiraltySkeleton as AdmiraltySkeletonElement, defineCustomElement as defineAdmiraltySkeleton } from "@ukho/admiralty-core/dist/components/admiralty-skeleton.js";
 import { AdmiraltySkipLink as AdmiraltySkipLinkElement, defineCustomElement as defineAdmiraltySkipLink } from "@ukho/admiralty-core/dist/components/admiralty-skip-link.js";
 import { AdmiraltyTabGroup as AdmiraltyTabGroupElement, defineCustomElement as defineAdmiraltyTabGroup } from "@ukho/admiralty-core/dist/components/admiralty-tab-group.js";
 import { AdmiraltyTab as AdmiraltyTabElement, defineCustomElement as defineAdmiraltyTab } from "@ukho/admiralty-core/dist/components/admiralty-tab.js";
@@ -512,6 +513,16 @@ export const AdmiraltySideNavItem: StencilReactComponent<AdmiraltySideNavItemEle
     react: React,
     events: { onSideNavItemSelected: 'sideNavItemSelected' } as AdmiraltySideNavItemEvents,
     defineCustomElement: defineAdmiraltySideNavItem
+});
+
+type AdmiraltySkeletonEvents = NonNullable<unknown>;
+
+export const AdmiraltySkeleton: StencilReactComponent<AdmiraltySkeletonElement, AdmiraltySkeletonEvents> = /*@__PURE__*/ createComponent<AdmiraltySkeletonElement, AdmiraltySkeletonEvents>({
+    tagName: 'admiralty-skeleton',
+    elementClass: AdmiraltySkeletonElement,
+    react: React,
+    events: {} as AdmiraltySkeletonEvents,
+    defineCustomElement: defineAdmiraltySkeleton
 });
 
 type AdmiraltySkipLinkEvents = NonNullable<unknown>;

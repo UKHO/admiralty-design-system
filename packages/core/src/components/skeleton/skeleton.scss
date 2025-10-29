@@ -1,0 +1,26 @@
+@import './skeleton.vars';
+
+:host {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.block {
+  width: 100%;
+  height: 100%;
+  background:
+    linear-gradient(90deg, $skeleton-background-colour 0%, $skeleton-background-sheen-colour 50%, $skeleton-background-colour 100%);
+  background-size: 200% 100%;
+  animation: sheen $skeleton-animation-duration linear infinite;
+}
+
+// Checks OS accessibility options for reduced motion to then turn the animation off.
+@media (prefers-reduced-motion: reduce) {
+  .block { animation: none; background: $skeleton-background-colour; }
+}
+:host(.no-animation) .block { animation: none; background: $skeleton-background-colour}
+
+@keyframes sheen {
+  0% { background-position: 200% 0 }
+  100% { background-position: -200% 0 }
+}
