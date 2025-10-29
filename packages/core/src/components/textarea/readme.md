@@ -24,6 +24,14 @@
 | `textareaBlur`   | Event is fired when the form control loses focus | `CustomEvent<any>`                       |
 
 
+## CSS Custom Properties
+
+| Name                                | Description                   |
+| ----------------------------------- | ----------------------------- |
+| `--admiralty-text-area-font-weight` | Font weight for the text area |
+| `--admiralty-text-area-padding`     | Padding for text area         |
+
+
 ## Dependencies
 
 ### Depends on

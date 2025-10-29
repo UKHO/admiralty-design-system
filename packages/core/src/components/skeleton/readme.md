@@ -15,6 +15,15 @@
 | `width`       | `width`        | Width of the skeleton component, default is set to 100%.                                                                      | `string`  | `'100%'`  |
 
 
+## CSS Custom Properties
+
+| Name                                           | Description                                            |
+| ---------------------------------------------- | ------------------------------------------------------ |
+| `--admiralty-skeleton-animation-duration`      | duration of the sheen going across the skeleton        |
+| `--admiralty-skeleton-background-colour`       | background colour for loading elements.                |
+| `--admiralty-skeleton-background-sheen-colour` | background sheen animation colour for loading elements |
+
+
 ## Dependencies
 
 ### Used by

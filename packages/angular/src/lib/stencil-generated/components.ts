@@ -147,14 +147,14 @@ export declare interface AdmiraltyCard extends Components.AdmiraltyCard {}
 
 
 @ProxyCmp({
-  inputs: ['checkboxRight', 'checked', 'disabled', 'labelHidden', 'labelText', 'name', 'value']
+  inputs: ['checkboxRight', 'checked', 'disabled', 'labelHidden', 'labelText', 'loading', 'loadingHeight', 'loadingRadius', 'loadingWidth', 'name', 'value']
 })
 @Component({
   selector: 'admiralty-checkbox',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['checkboxRight', 'checked', 'disabled', 'labelHidden', 'labelText', 'name', 'value'],
+  inputs: ['checkboxRight', 'checked', 'disabled', 'labelHidden', 'labelText', 'loading', 'loadingHeight', 'loadingRadius', 'loadingWidth', 'name', 'value'],
 })
 export class AdmiraltyCheckbox {
   protected el: HTMLElement;

@@ -24,6 +24,18 @@
 | `admiraltyChange` | Emitted when the value has changed.     | `CustomEvent<SelectChangeEventDetail>` |
 
 
+## CSS Custom Properties
+
+| Name                                    | Description                            |
+| --------------------------------------- | -------------------------------------- |
+| `--admiralty-select-font-size`          | Font size for the select text          |
+| `--admiralty-select-font-weight`        | Font weight for the select text        |
+| `--admiralty-select-icon-font-size`     | Font size for the select icon          |
+| `--admiralty-select-margin-bottom`      | Margin bottom for the select           |
+| `--admiralty-select-option-font-weight` | Font weight for the select option text |
+| `--admiralty-select-padding`            | Padding for the select                 |
+
+
 ## Dependencies
 
 ### Depends on
