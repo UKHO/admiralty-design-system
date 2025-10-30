@@ -7,7 +7,7 @@ export default function Demo() {
       label="Favourite colour"
       hint="Select a colour that you like the most"
       name="favouritecolour"
-      loading="true">
+      loading={true}>
       <AdmiraltyAutocompleteOption value="red">Red</AdmiraltyAutocompleteOption>
       <AdmiraltyAutocompleteOption value="green">Green</AdmiraltyAutocompleteOption>
       <AdmiraltyAutocompleteOption value="blue">Blue</AdmiraltyAutocompleteOption>
