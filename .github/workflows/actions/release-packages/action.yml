@@ -4,9 +4,6 @@ inputs:
   GITHUB_TOKEN:
     description: GITHUB_TOKEN used to create release
     required: true
-  NPM_TOKEN:
-    description: NPM_TOKEN used to publish to npm
-    required: true
   ADMIN_TOKEN:
     description: ADMIN_TOKEN used to access the git repo
     required: true
@@ -40,7 +37,6 @@ runs:
     - name: Create Release
       env:
         GITHUB_TOKEN: ${{ inputs.GITHUB_TOKEN }}
-        NPM_TOKEN: ${{ inputs.NPM_TOKEN }}
         PROTECTED_BRANCH_REVIEWER_TOKEN: ${{ inputs.ADMIN_TOKEN }}
       run: |
         yarn install --immutable
