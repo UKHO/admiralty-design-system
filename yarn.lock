@@ -3615,68 +3615,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fortawesome/fontawesome-common-types@npm:6.6.0":
-  version: 6.6.0
-  resolution: "@fortawesome/fontawesome-common-types@npm:6.6.0"
-  checksum: 10/2c730897466fa3b9ae01a4d0943e24fffbc5cbeb4fdae3df044e49619e52763a431d5d5324e9c607995ab36f3dcc90a45958b44020b23b5e148fb66e3b668875
-  languageName: node
-  linkType: hard
-
-"@fortawesome/fontawesome-free@npm:~6.6.0":
-  version: 6.6.0
-  resolution: "@fortawesome/fontawesome-free@npm:6.6.0"
-  checksum: 10/4673599d6a6e66db5542384fbe870ca8c06a450a20c629ed242e5f617a0a035f393fe8dfac9010688aa5d58a44bedc4c789cff0318956ae50c43bf98b4c7cb54
-  languageName: node
-  linkType: hard
-
-"@fortawesome/fontawesome-svg-core@npm:^6.6.0":
-  version: 6.6.0
-  resolution: "@fortawesome/fontawesome-svg-core@npm:6.6.0"
-  dependencies:
-    "@fortawesome/fontawesome-common-types": "npm:6.6.0"
-  checksum: 10/b13afc5aed1598bcba86ad93fc413ecbcfdb4310015c72cfe205b18d7a1c0534e3ebacd6db49fae2e0240af15593b2281ad3dbeb9e85fc41d6de281142f030f1
-  languageName: node
-  linkType: hard
-
-"@fortawesome/free-brands-svg-icons@npm:^6.6.0":
-  version: 6.6.0
-  resolution: "@fortawesome/free-brands-svg-icons@npm:6.6.0"
-  dependencies:
-    "@fortawesome/fontawesome-common-types": "npm:6.6.0"
-  checksum: 10/d998d8fde3f8e82a820a9d9be531f076bd5458ce370d20457f3e780c5052e6127c4343c8a99d68606fed4571397571576f06b4d623e6932eafb56d9bc15bb1f5
-  languageName: node
-  linkType: hard
-
-"@fortawesome/free-regular-svg-icons@npm:^6.6.0":
-  version: 6.6.0
-  resolution: "@fortawesome/free-regular-svg-icons@npm:6.6.0"
-  dependencies:
-    "@fortawesome/fontawesome-common-types": "npm:6.6.0"
-  checksum: 10/a5b9d42a4eb0ea9ef55a44ee2bdfd7d4bf54aac0a6af623eb194bf53603f996450182c49363a423ecd8b880d342b12d6444ffeb4067d823974237de1c692b8d4
-  languageName: node
-  linkType: hard
-
-"@fortawesome/free-solid-svg-icons@npm:^6.6.0":
-  version: 6.6.0
-  resolution: "@fortawesome/free-solid-svg-icons@npm:6.6.0"
-  dependencies:
-    "@fortawesome/fontawesome-common-types": "npm:6.6.0"
-  checksum: 10/cd46d6cb4e334a5b92d15b68b417dc0940f5133af2489f2714018068cad7fe2df849dd02d8fae2c7376d1cf9ca12e7ff65da8620b6612efd0f32b38e93ec4b0a
-  languageName: node
-  linkType: hard
-
-"@fortawesome/react-fontawesome@npm:^0.2.2":
-  version: 0.2.2
-  resolution: "@fortawesome/react-fontawesome@npm:0.2.2"
-  dependencies:
-    prop-types: "npm:^15.8.1"
-  peerDependencies:
-    "@fortawesome/fontawesome-svg-core": ~1 || ~6
-    react: ">=16.3"
-  checksum: 10/05537fd7c34d43e0d8823df0195cb6fd935ff78e296e2d362e668bcf75f13d71c70c7fd6d596dff4e37b5f27e0ae43b98cb4732e0d91570f30b8a5581bbe2704
-  languageName: node
-  linkType: hard
-
 "@humanwhocodes/config-array@npm:^0.13.0":
   version: 0.13.0
   resolution: "@humanwhocodes/config-array@npm:0.13.0"
@@ -7873,10 +7811,6 @@ __metadata:
     "@babel/core": "npm:^7.25.2"
     "@babel/preset-env": "npm:^7.25.4"
     "@babel/preset-typescript": "npm:^7.24.7"
-    "@fortawesome/fontawesome-svg-core": "npm:^6.6.0"
-    "@fortawesome/free-brands-svg-icons": "npm:^6.6.0"
-    "@fortawesome/free-regular-svg-icons": "npm:^6.6.0"
-    "@fortawesome/free-solid-svg-icons": "npm:^6.6.0"
     "@iconify-json/material-symbols": "npm:^1.2.2"
     "@iconify/types": "npm:^2.0.0"
     "@iconify/utils": "npm:^2.1.33"
@@ -23470,7 +23404,6 @@ __metadata:
     "@angular/platform-browser": "npm:^18.2.5"
     "@angular/platform-browser-dynamic": "npm:^18.2.5"
     "@angular/router": "npm:^18.2.5"
-    "@fortawesome/fontawesome-free": "npm:~6.6.0"
     "@types/node": "npm:^22.5.5"
     "@ukho/admiralty-angular": "npm:^5.0.1"
     rimraf: "npm:^6.0.1"
@@ -24894,7 +24827,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "website@workspace:packages/website"
   dependencies:
-    "@fortawesome/react-fontawesome": "npm:^0.2.2"
     "@mdx-js/loader": "npm:^3.0.1"
     "@mdx-js/react": "npm:^3.0.1"
     "@next/mdx": "npm:^14.2.13"
