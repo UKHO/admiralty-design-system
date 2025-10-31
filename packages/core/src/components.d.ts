@@ -145,7 +145,7 @@ export namespace Components {
          */
         "form": string;
         /**
-          * When passed Font Awesome Icon name, then an icon will be rendered.
+          * When passed Material Icon name, then an icon will be rendered.
          */
         "icon": string;
         /**
@@ -1792,7 +1792,7 @@ declare namespace LocalJSX {
          */
         "form"?: string;
         /**
-          * When passed Font Awesome Icon name, then an icon will be rendered.
+          * When passed Material Icon name, then an icon will be rendered.
          */
         "icon"?: string;
         /**
