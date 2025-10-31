@@ -2,10 +2,10 @@
   "name": "admiralty-design-system",
   "packageManager": "yarn@4.5.3",
   "devDependencies": {
-    "@auto-it/conventional-commits": "^11.2.1",
-    "@auto-it/protected-branch": "^11.2.1",
-    "@auto-it/released": "^11.2.1",
-    "auto": "^11.2.1",
+    "@auto-it/conventional-commits": "^11.3.0",
+    "@auto-it/protected-branch": "^11.3.0",
+    "@auto-it/released": "^11.3.0",
+    "auto": "^11.3.0",
     "colorette": "^2.0.20",
     "execa": "^9.4.0",
     "fs-extra": "^11.2.0",
@@ -32,6 +32,12 @@
   "author": "UKHO",
   "auto": {
     "plugins": [
+      [
+        "protected-branch",
+        {
+          "releaseTemporaryBranchPrefix": "protected-release-"
+        }
+      ],
       "npm",
       "conventional-commits",
       "released"
