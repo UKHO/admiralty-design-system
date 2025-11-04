@@ -14,7 +14,7 @@ export class SkeletonComponent {
   /**
    * Width of the skeleton component, default is set to 100%.
    */
-  @Prop({ mutable: true, reflect: true }) width?: string = '100%';
+  @Prop({ mutable: true }) width?: string = '100%';
 
   /**
    * Radius of the skeleton component, default is .5rem.
