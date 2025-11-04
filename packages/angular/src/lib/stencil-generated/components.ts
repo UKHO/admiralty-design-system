@@ -1060,6 +1060,28 @@ export declare interface AdmiraltySideNavItem extends Components.AdmiraltySideNa
 
 
 @ProxyCmp({
+  inputs: ['height', 'noAnimation', 'radius', 'width']
+})
+@Component({
+  selector: 'admiralty-skeleton',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['height', 'noAnimation', 'radius', 'width'],
+})
+export class AdmiraltySkeleton {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface AdmiraltySkeleton extends Components.AdmiraltySkeleton {}
+
+
+@ProxyCmp({
   inputs: ['href']
 })
 @Component({

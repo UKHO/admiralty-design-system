@@ -15,8 +15,6 @@ angular/documentation.json
 .env
 **/coverage
 
-# Use fontawesome from NPM package
-projects/site/public/assets/fonts/fontawesome
 
 # dependencies
 **/node_modules
