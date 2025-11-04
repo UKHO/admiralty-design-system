@@ -1,4 +1,4 @@
-import { Component, Prop, h, Element} from '@stencil/core';
+import { Component, Prop, h, Element } from '@stencil/core';
 import { ButtonVariant } from './button.types';
 
 @Component({
@@ -14,7 +14,7 @@ export class ButtonComponent {
    */
   @Prop() variant: ButtonVariant = 'primary';
   /**
-   * When passed Font Awesome Icon name, then an icon will be rendered.
+   * When passed Material Icon name, then an icon will be rendered.
    */
   @Prop() icon: string;
   /**
@@ -57,9 +57,9 @@ export class ButtonComponent {
     };
 
     return (
-      <button type={this.type} disabled={this.disabled} class={{[this.variant]:true, 'borderless': this.borderless}} {...props}>
+      <button type={this.type} disabled={this.disabled} class={{ [this.variant]: true, borderless: this.borderless }} {...props}>
         <slot></slot>
-        {this.icon ? <admiralty-icon name={this.icon} class={`${hasTextContent? "icon-padding" : ""}`}></admiralty-icon> : undefined}
+        {this.icon ? <admiralty-icon name={this.icon} class={`${hasTextContent ? 'icon-padding' : ''}`}></admiralty-icon> : undefined}
       </button>
     );
   }
