@@ -1,0 +1,18 @@
+:host {
+  display: block;
+}
+
+.tooltip {
+  position: fixed;
+  padding: 8px 12px;
+  color: black;
+  background: white;
+  z-index: 999;
+  white-space: nowrap;
+  transition: opacity 0.2s ease-in-out;
+  opacity: 0;
+}
+
+:host(.visible) .tooltip {
+  opacity: 1;
+}
