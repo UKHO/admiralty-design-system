@@ -75,6 +75,9 @@
   --admiralty-disabled-colour: #adadad;
   --admiralty-disabled-text-colour: #757575;
 
+  --admiralty-loading-colour: #e1e6ea;
+  --admiralty-loading-sheen-colour: #f0f2f4;
+
   --admiralty-table-row-colour: #eef3f4;
 
     /** Components **/

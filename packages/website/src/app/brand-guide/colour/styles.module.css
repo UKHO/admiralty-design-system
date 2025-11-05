@@ -2,4 +2,23 @@
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
+  margin-bottom: 50px;
+}
+
+.colourSwatch {
+  border-radius: .25em;
+  box-shadow: 0 .125em .25em 0 rgba(0, 0, 0, .1), inset 0 0 0 1px rgba(0, 0, 0, .1);
+  display: inline-flex;
+  font-size: .875em;
+  gap: .375em;
+  line-height: 1;
+  min-height: 1.5rem;
+  min-width: 1.5rem;
+  padding: .5rem;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+.cell {
+  align-content: center;
 }

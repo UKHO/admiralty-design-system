@@ -26,10 +26,11 @@ $text-side-bar-focus-background-colour: var(--text-side-bar-focus-background-col
 $expandable-side-bar-item-font-weight: var(--admiralty-side-bar-item-font-weight ,var(--admiralty-font-weight-medium)); // 500;
 $expandable-side-bar-item-font-size: var(--admiralty-side-bar-item-font-size ,var(--admiralty-font-size-0)); // 16px;
 $expandable-side-bar-item-icon-font-size: var(--admiralty-side-bar-item-icon-font-size ,var(--admiralty-font-size-4)); // 32px;
+$expandable-side-bar-item-text-colour: var(--admiralty-side-bar-item-text-colour, var(--admiralty-colour-primary));
 
 $text-link-font-weight: var(--admiralty-text-link-font-weight, var(--admiralty-font-weight-normal));
 $text-link-is-main-font-weight: var(--admiralty-text-link-is-main-font-weight, var(--admiralty-font-weight-medium));
-$text-link-font-colour: var(--admiralty-colour-light-contrast);
+$text-link-font-colour: var(--admiralty-colour-primary);
 $text-link-background-hover-colour: var(--admiralty-hover-background-colour);
 
 $text-link-active-background-colour: var(--admiralty-colour-primary);
