@@ -70,8 +70,7 @@
   --admiralty-text-colour: #333333;
 
   --admiralty-focus-colour: #ffdd00;
-    --admiralty-focus-contrast: #09315b;
-
+  --admiralty-focus-contrast: #09315b;
 
   --admiralty-disabled-colour: #adadad;
   --admiralty-disabled-text-colour: #757575;
@@ -79,12 +78,13 @@
   --admiralty-table-row-colour: #eef3f4;
 
     /** Components **/
-    --text-side-bar-item-active-background-colour: #09315b;
-    --text-side-bar-item-focus-border-colour: #09315b;
-    --text-side-bar-focus-background-colour: #ffdd00;
-    --tab-group-active-shadow-colour: #09315b;
-    --tab-group-active-background-colour: #09315b;
-    --admiralty-card-background-colour: #ffffff;
+  --text-side-bar-item-active-background-colour: #09315b;
+  --text-side-bar-item-focus-border-colour: #09315b;
+  --text-side-bar-focus-background-colour: #ffdd00;
+  --tab-group-active-shadow-colour: #09315b;
+  --tab-group-active-background-colour: #09315b;
+  --admiralty-card-background-colour: #ffffff;
+
 
   /** Typographic Scale **/
   --admiralty-font-size--3: 0.688rem;
