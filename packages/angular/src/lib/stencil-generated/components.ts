@@ -1366,3 +1366,25 @@ export declare interface AdmiraltyTextarea extends Components.AdmiraltyTextarea 
 }
 
 
+@ProxyCmp({
+  inputs: ['alignment', 'placement', 'tooltipContent']
+})
+@Component({
+  selector: 'admiralty-tooltip',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['alignment', 'placement', 'tooltipContent'],
+})
+export class AdmiraltyTooltip {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface AdmiraltyTooltip extends Components.AdmiraltyTooltip {}
+
+

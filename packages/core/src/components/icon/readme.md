@@ -11,13 +11,6 @@
 | `size`   | `size`    | The size of the icon in pixels. When not set, the icon height will be determined by the parent font size.                                          | `"unset" \| number` | `'unset'`   |
 
 
-## CSS Custom Properties
-
-| Name                         | Description           |
-| ---------------------------- | --------------------- |
-| `--admiralty-icon-font-size` | Font size of the icon |
-
-
 ## Dependencies
 
 ### Used by

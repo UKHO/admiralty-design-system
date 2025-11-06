@@ -63,6 +63,7 @@ import { AdmiraltyTable as AdmiraltyTableElement, defineCustomElement as defineA
 import { AdmiraltyTextSideBarItem as AdmiraltyTextSideBarItemElement, defineCustomElement as defineAdmiraltyTextSideBarItem } from "@ukho/admiralty-core/dist/components/admiralty-text-side-bar-item.js";
 import { AdmiraltyTextSideBar as AdmiraltyTextSideBarElement, defineCustomElement as defineAdmiraltyTextSideBar } from "@ukho/admiralty-core/dist/components/admiralty-text-side-bar.js";
 import { AdmiraltyTextarea as AdmiraltyTextareaElement, defineCustomElement as defineAdmiraltyTextarea } from "@ukho/admiralty-core/dist/components/admiralty-textarea.js";
+import { AdmiraltyTooltip as AdmiraltyTooltipElement, defineCustomElement as defineAdmiraltyTooltip } from "@ukho/admiralty-core/dist/components/admiralty-tooltip.js";
 import React from 'react';
 
 type AdmiraltyAutocompleteEvents = { onAdmiraltyChange: EventName<AdmiraltyAutocompleteCustomEvent<AutoCompleteChangeEventDetail>> };
@@ -655,4 +656,14 @@ export const AdmiraltyTextarea: StencilReactComponent<AdmiraltyTextareaElement, 
         onAdmiraltyInput: 'admiraltyInput'
     } as AdmiraltyTextareaEvents,
     defineCustomElement: defineAdmiraltyTextarea
+});
+
+type AdmiraltyTooltipEvents = NonNullable<unknown>;
+
+export const AdmiraltyTooltip: StencilReactComponent<AdmiraltyTooltipElement, AdmiraltyTooltipEvents> = /*@__PURE__*/ createComponent<AdmiraltyTooltipElement, AdmiraltyTooltipEvents>({
+    tagName: 'admiralty-tooltip',
+    elementClass: AdmiraltyTooltipElement,
+    react: React,
+    events: {} as AdmiraltyTooltipEvents,
+    defineCustomElement: defineAdmiraltyTooltip
 });

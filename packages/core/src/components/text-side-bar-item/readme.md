@@ -33,18 +33,6 @@
 | `"The text to display under the icon for secondary variant"` |             |
 
 
-## CSS Custom Properties
-
-| Name                                        | Description                                   |
-| ------------------------------------------- | --------------------------------------------- |
-| `--admiralty-side-bar-item-font-size`       | Font size for the side bar item               |
-| `--admiralty-side-bar-item-font-weight`     | Font weight for the side bar item             |
-| `--admiralty-side-bar-item-icon-font-size`  | Font size for the side bar item icon          |
-| `--admiralty-text-link-active-font-weight`  | Font weight for text link active              |
-| `--admiralty-text-link-font-weight`         | Font weight for text link                     |
-| `--admiralty-text-link-is-main-font-weight` | Font weight for text link that is a main link |
-
-
 ## Dependencies
 
 ### Depends on

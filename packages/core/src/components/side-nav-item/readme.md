@@ -21,15 +21,6 @@
 | `sideNavItemSelected` | An event emitted when this Side Nav item is selected containing the sideNavItemId | `CustomEvent<string>` |
 
 
-## CSS Custom Properties
-
-| Name                                    | Description                       |
-| --------------------------------------- | --------------------------------- |
-| `--admiralty-side-nav-item-font-size`   | Font size for the side nav item   |
-| `--admiralty-side-nav-item-font-weight` | Font weight for the side nav item |
-| `--admiralty-side-nav-item-padding`     | Padding for the side nav item     |
-
-
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*
