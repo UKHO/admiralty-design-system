@@ -9,7 +9,6 @@ type Alignment = 'start' | 'centre' | 'end'
   scoped: true,
 })
 export class TooltipComponent {
-  @Prop({ mutable: true }) tooltipContent: string;
   @Prop({ reflect: true }) placement?: Placement = 'top';
   @Prop({ reflect: true }) alignment?: Alignment = 'start';
 

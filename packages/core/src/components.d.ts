@@ -900,7 +900,6 @@ export namespace Components {
     interface AdmiraltyTooltip {
         "alignment"?: Alignment;
         "placement"?: Placement;
-        "tooltipContent": string;
     }
 }
 export interface AdmiraltyAutocompleteCustomEvent<T> extends CustomEvent<T> {
@@ -2696,7 +2695,6 @@ declare namespace LocalJSX {
     interface AdmiraltyTooltip {
         "alignment"?: Alignment;
         "placement"?: Placement;
-        "tooltipContent"?: string;
     }
     interface IntrinsicElements {
         "admiralty-autocomplete": AdmiraltyAutocomplete;

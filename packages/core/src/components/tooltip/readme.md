@@ -7,11 +7,10 @@
 
 ## Properties
 
-| Property         | Attribute         | Description | Type                                     | Default     |
-| ---------------- | ----------------- | ----------- | ---------------------------------------- | ----------- |
-| `alignment`      | `alignment`       |             | `"centre" \| "end" \| "start"`           | `'start'`   |
-| `placement`      | `placement`       |             | `"bottom" \| "left" \| "right" \| "top"` | `'top'`     |
-| `tooltipContent` | `tooltip-content` |             | `string`                                 | `undefined` |
+| Property    | Attribute   | Description | Type                                     | Default   |
+| ----------- | ----------- | ----------- | ---------------------------------------- | --------- |
+| `alignment` | `alignment` |             | `"centre" \| "end" \| "start"`           | `'start'` |
+| `placement` | `placement` |             | `"bottom" \| "left" \| "right" \| "top"` | `'top'`   |
 
 
 ----------------------------------------------
