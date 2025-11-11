@@ -7,10 +7,11 @@
 
 ## Properties
 
-| Property    | Attribute   | Description | Type                                     | Default   |
-| ----------- | ----------- | ----------- | ---------------------------------------- | --------- |
-| `alignment` | `alignment` |             | `"centre" \| "end" \| "start"`           | `'start'` |
-| `placement` | `placement` |             | `"bottom" \| "left" \| "right" \| "top"` | `'top'`   |
+| Property           | Attribute   | Description | Type                                     | Default     |
+| ------------------ | ----------- | ----------- | ---------------------------------------- | ----------- |
+| `alignment`        | `alignment` |             | `"centre" \| "end" \| "start"`           | `'start'`   |
+| `for` _(required)_ | `for`       |             | `string`                                 | `undefined` |
+| `placement`        | `placement` |             | `"bottom" \| "left" \| "right" \| "top"` | `'top'`     |
 
 
 ----------------------------------------------

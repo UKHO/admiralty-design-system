@@ -1,7 +1,9 @@
 @import 'tooltip.vars';
 
 :host {
-  display: inline;
+  //display: inline;
+  //position: fixed;
+  //inset: 0;
 }
 
 .anchor {
@@ -22,7 +24,8 @@
 }
 
 .tooltip {
-  position: absolute;
+  //position: absolute;
+  position: fixed;
   padding: 8px 12px;
   color: black;
   background: white;
@@ -30,10 +33,20 @@
   white-space: nowrap;
   cursor: pointer;
   filter: drop-shadow(0 0 6px #b2b2b2);
+
+
+
   opacity: 0;
   visibility: hidden;
   transform: translate(0,0) scale(.98);
   transition: opacity 0.2s ease-in-out;
+}
+
+:host([data-open]) .tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0,0) scale(1);
+  transition: opacity 0.2s ease-in-out;// opacity .12s ease, transform .12s ease, visibility 0s;
 }
 
 .arrow {
@@ -46,16 +59,16 @@
 
 
 /* TOP */
-.tooltip[data-placement="top"] {
-  bottom: calc(100% + 8px);
-  left: 50%;
-  border-top: 2px solid $tooltip-border-colour;
-  transform: translateX(-50%) scale(.98);
-}
-:host(:hover) .tooltip[data-placement="top"],
-:host(:focus-within) .tooltip[data-placement="top"] {
-  transform: translateX(-50%) scale(1);
-}
+//.tooltip[data-placement="top"] {
+//  bottom: calc(100% + 8px);
+//  left: 50%;
+//  border-top: 2px solid $tooltip-border-colour;
+//  transform: translateX(-50%) scale(.98);
+//}
+//:host(:hover) .tooltip[data-placement="top"],
+//:host(:focus-within) .tooltip[data-placement="top"] {
+//  transform: translateX(-50%) scale(1);
+//}
 .tooltip[data-placement="top"] .arrow {
   left: 50%;
   bottom: calc(-1 * 8px / 2);
@@ -64,16 +77,16 @@
 
 
 /* BOTTOM */
-.tooltip[data-placement="bottom"] {
-  top: calc(100% + 8px);
-  left: 50%;
-  border-bottom: 2px solid $tooltip-border-colour;
-  transform: translateX(-50%) scale(.98);
-}
-:host(:hover) .tooltip[data-placement="bottom"],
-:host(:focus-within) .tooltip[data-placement="bottom"] {
-  transform: translateX(-50%) scale(1);
-}
+//.tooltip[data-placement="bottom"] {
+//  top: calc(100% + 8px);
+//  left: 50%;
+//  border-bottom: 2px solid $tooltip-border-colour;
+//  transform: translateX(-50%) scale(.98);
+//}
+//:host(:hover) .tooltip[data-placement="bottom"],
+//:host(:focus-within) .tooltip[data-placement="bottom"] {
+//  transform: translateX(-50%) scale(1);
+//}
 .tooltip[data-placement="bottom"] .arrow {
   left: 50%;
   top: calc(-1 * 8px / 2);
@@ -82,16 +95,16 @@
 
 
 /* LEFT */
-.tooltip[data-placement="left"] {
-  right: calc(100% + 8px);
-  top: 50%;
-  border-bottom: 2px solid $tooltip-border-colour;
-  transform: translateY(-50%) scale(.98);
-}
-:host(:hover) .tooltip[data-placement="left"],
-:host(:focus-within) .tooltip[data-placement="left"] {
-  transform: translateY(-50%) scale(1);
-}
+//.tooltip[data-placement="left"] {
+//  right: calc(100% + 8px);
+//  top: 50%;
+//  border-bottom: 2px solid $tooltip-border-colour;
+//  transform: translateY(-50%) scale(.98);
+//}
+//:host(:hover) .tooltip[data-placement="left"],
+//:host(:focus-within) .tooltip[data-placement="left"] {
+//  transform: translateY(-50%) scale(1);
+//}
 .tooltip[data-placement="left"] .arrow {
   top: 50%;
   right: calc(-1 * 8px / 2);
@@ -100,16 +113,16 @@
 
 
 /* RIGHT */
-.tooltip[data-placement="right"] {
-  left: calc(100% + 8px);
-  top: 50%;
-  border-bottom: 2px solid $tooltip-border-colour;
-  transform: translateY(-50%) scale(.98);
-}
-:host(:hover) .tooltip[data-placement="right"],
-:host(:focus-within) .tooltip[data-placement="right"] {
-  transform: translateY(-50%) scale(1);
-}
+//.tooltip[data-placement="right"] {
+//  left: calc(100% + 8px);
+//  top: 50%;
+//  border-bottom: 2px solid $tooltip-border-colour;
+//  transform: translateY(-50%) scale(.98);
+//}
+//:host(:hover) .tooltip[data-placement="right"],
+//:host(:focus-within) .tooltip[data-placement="right"] {
+//  transform: translateY(-50%) scale(1);
+//}
 .tooltip[data-placement="right"] .arrow {
   top: 50%;
   left: calc(-1 * 8px / 2);

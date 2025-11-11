@@ -899,6 +899,7 @@ export namespace Components {
     }
     interface AdmiraltyTooltip {
         "alignment"?: Alignment;
+        "for": string;
         "placement"?: Placement;
     }
 }
@@ -2694,6 +2695,7 @@ declare namespace LocalJSX {
     }
     interface AdmiraltyTooltip {
         "alignment"?: Alignment;
+        "for": string;
         "placement"?: Placement;
     }
     interface IntrinsicElements {

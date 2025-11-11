@@ -12,9 +12,10 @@ export default meta;
 type Story = StoryObj<TooltipComponent>;
 
 const template: Story = {
-  render: args => html`<div>
-    <admiralty-tooltip placement="${args.placement}" alignment="${args.alignment}">
-      <admiralty-button slot="trigger">submit</admiralty-button>Tooltip description
+  render: args => html`<div style="margin: 300px">
+    <admiralty-label id="myButton">my label</admiralty-label>
+    <admiralty-tooltip for="myButton" placement="${args.placement}" alignment="${args.alignment}">
+      Tooltip description
     </admiralty-tooltip>
   </div>`,
 };
@@ -33,6 +34,7 @@ const richTemplate: Story = {
     </admiralty-tooltip>
   </div>`,
 };
+
 
 export const Basic: Story = {
   ...template

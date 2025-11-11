@@ -25,6 +25,17 @@
 | `admiraltyFocus`  | Emitted when the radio button gains focus. | `CustomEvent<void>` |
 
 
+## CSS Custom Properties
+
+| Name                                         | Description                           |
+| -------------------------------------------- | ------------------------------------- |
+| `--admiralty-radio-conditional-margin`       | Margin for the conditional slot       |
+| `--admiralty-radio-conditional-margin-empty` | Margin for when slot is empty         |
+| `--admiralty-radio-conditional-padding-left` | Padding left for the conditional slot |
+| `--admiralty-radio-input-margin-right`       | Margin right for the radio input      |
+| `--admiralty-radio-label-font-weight`        | Font weight for the radio label       |
+
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*
