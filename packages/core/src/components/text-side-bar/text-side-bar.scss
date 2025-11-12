@@ -4,7 +4,7 @@
   border-right: 1px solid $side-bar-right-border-colour;
 }
 
-@media(prefers-color-scheme: dark) {
+@media(prefers-color-scheme: dark) { // Changes browser scrollbar to dark
   :host {
     color-scheme: dark;
   }
