@@ -11,7 +11,7 @@ export default meta;
 
 type Story = StoryObj<TooltipComponent>;
 
-const template: Story = {
+const template: Story = { // style="margin: 300px"
   render: args => html`<div style="margin: 300px">
     <admiralty-label id="myButton">my label</admiralty-label>
     <admiralty-tooltip for="myButton" placement="${args.placement}" alignment="${args.alignment}">

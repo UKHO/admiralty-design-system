@@ -34,8 +34,6 @@ export class TooltipComponent {
     this.target.addEventListener('focus', show, true);
     this.target.addEventListener('blur', hide, true);
 
-    console.log('runnning component did load')
-
     this.updateTooltipPosition();
   }
 
@@ -50,37 +48,69 @@ export class TooltipComponent {
       const r = this.target!.getBoundingClientRect();
       const tooltip = this.host.querySelector('.tooltip') as HTMLElement;
       const gap = 8;
+
       this.map = {
         top: () => {
           console.log('top');
           tooltip.style.top = `${r.top - gap}px`;
           tooltip.style.left = `${r.left + r.width/2}px`;
-          tooltip.style.transform = `translate(-50%, -100%)`;
+          tooltip.style.transform = `translate(-50%, calc(-100% - ${gap}px)) scale(1)`;
         },
         bottom: () => {
           console.log('bottom');
           tooltip.style.top = `${r.bottom + gap}px`;
           tooltip.style.left = `${r.left + r.width/2}px`;
-          tooltip.style.transform = `translate(-50%, 0)`;
+          tooltip.style.transform = `translate(-50%, ${gap}px) scale(1)`;
         },
         left: () => {
           console.log('left', r.left);
           tooltip.style.top = `${r.top + r.height/2}px`;
           tooltip.style.left = `${r.left - 20}px`; // `${r.left - gap}px`;
-          tooltip.style.transform = `translate(-100%, -50%)`;
+          tooltip.style.transform = `translate(calc(-100% - ${gap}px), -50%) scale(1)`;
         },
         right: () => {
           console.log('right', r.right);
           tooltip.style.top = `${r.top + r.height/2}px`;
           tooltip.style.left = `${r.right + 20}px`; // `${r.right - gap}px`;
-          tooltip.style.transform = `translate(0, -50%)`;
+          tooltip.style.transform = `translate(${gap}px, -50%) scale(1)`;
         },
       };
 
       if (this.map[this.placement]) {
         this.map[this.placement]();
       } else {
-        console.log('not found')
+        const spaceAbove = r.top;
+        const spaceBelow = window.innerHeight - r.bottom;
+        const spaceLeft = r.left;
+        const spaceRight = window.innerWidth - r.right;
+
+        if (spaceLeft > spaceRight) {
+          this.placement = 'left'
+          console.log('will display on the left');
+          this.map[this.placement]();
+          return;
+        }
+
+        if (spaceRight > spaceLeft) {
+          this.placement = 'right'
+          console.log('will display on the right');
+          this.map[this.placement]();
+          return;
+        }
+
+        if (spaceAbove > spaceBelow) {
+          this.placement = 'top'
+          console.log('will display on the top');
+          this.map[this.placement]();
+          return;
+        }
+
+        if (spaceBelow > spaceAbove) {
+          this.placement = 'bottom'
+          console.log('will display on the below');
+          this.map[this.placement]();
+          return;
+        }
       }
     }
 
