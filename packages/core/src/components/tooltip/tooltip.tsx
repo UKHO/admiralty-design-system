@@ -42,6 +42,37 @@ export class TooltipComponent {
     console.log('changed: ', event)
   }
 
+  checkElementOffScreen(el: HTMLElement) {
+    const rect = el.getBoundingClientRect();
+    const viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+    const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+
+    const status = {
+      topOff: rect.top < 0,
+      bottomOff: rect.bottom > viewportHeight,
+      leftOff: rect.left < 0,
+      rightOff: rect.right > viewportWidth,
+    };
+
+    // Check if any side is off screen
+    const isOffScreen = status.topOff || status.bottomOff || status.leftOff || status.rightOff;
+
+    if (isOffScreen) {
+      let message = 'Element is off screen. Sides off: ';
+      const sides = [];
+      if (status.topOff) sides.push('top');
+      if (status.bottomOff) sides.push('bottom');
+      if (status.leftOff) sides.push('left');
+      if (status.rightOff) sides.push('right');
+
+      console.log(message + sides.join(', '));
+    } else {
+      console.log('Element is on screen (at least partially).');
+    }
+
+    return status;
+  }
+
   updateTooltipPosition() {
 
     const position = () => {
@@ -88,6 +119,7 @@ export class TooltipComponent {
           this.placement = 'left'
           console.log('will display on the left');
           this.map[this.placement]();
+          this.handleOffScreen(tooltip, gap);
           return;
         }
 
@@ -95,6 +127,7 @@ export class TooltipComponent {
           this.placement = 'right'
           console.log('will display on the right');
           this.map[this.placement]();
+          this.handleOffScreen(tooltip, gap);
           return;
         }
 
@@ -102,6 +135,7 @@ export class TooltipComponent {
           this.placement = 'top'
           console.log('will display on the top');
           this.map[this.placement]();
+          this.handleOffScreen(tooltip, gap);
           return;
         }
 
@@ -109,6 +143,7 @@ export class TooltipComponent {
           this.placement = 'bottom'
           console.log('will display on the below');
           this.map[this.placement]();
+          this.handleOffScreen(tooltip, gap);
           return;
         }
       }
@@ -116,6 +151,21 @@ export class TooltipComponent {
 
     this.target.addEventListener('mouseenter', position);
     this.target.addEventListener('focus', position, true);
+  }
+
+  handleOffScreen(tooltip: HTMLElement, gap: number) {
+    const isOffScreen = this.checkElementOffScreen(this.host.querySelector('.tooltip') as HTMLElement);
+    if (isOffScreen.leftOff) {
+      console.log('its off left')
+      tooltip.style.transform = `translate(0, ${gap}px) scale(1)`;
+      tooltip.style.left = '0';
+    }
+
+    if (isOffScreen.rightOff) {
+      console.log('its off right')
+      tooltip.style.transform = `translate(0, ${gap}px) scale(1)`;
+      tooltip.style.right = '0';
+    }
   }
 
   render(): void {
