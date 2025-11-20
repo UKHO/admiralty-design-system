@@ -21,20 +21,20 @@ const template: Story = { // style="margin: 300px"
 };
 
 const richTemplate: Story = {
-  render: args => html`<div style="margin: 60px 200px">
-    <admiralty-tooltip placement="${args.placement}" alignment="${args.alignment}">
+  render: args => html`<div style="margin: 90px 10px">
+    <admiralty-label id="myButton">my label</admiralty-label>
+    <admiralty-tooltip for="myButton" placement="${args.placement}" alignment="${args.alignment}">
       <admiralty-button slot="trigger">submit</admiralty-button>
       <div>
-        <h3>Black Rock</h3>
-        <h4>Underwater/awash rock</h4>
-
-        <h6>details</h6>
-        <p>50</p>
+        <h3 style="margin: 0;">Black Rock</h3>
+        <p>Underwater/awash rock</p>
+        <h6 style="margin: 0;">Details</h6>
+        <p style="margin: 0">50°42'.50N | °30'.63W</p>
+        <a>Covers and uncovers</a>
       </div>
     </admiralty-tooltip>
   </div>`,
 };
-
 
 export const Basic: Story = {
   ...template
@@ -98,4 +98,8 @@ export const BottomAlignEnd: Story = {
     placement: 'bottom',
     alignment: 'end'
   }
+};
+
+export const BasicRichToolTip: Story = {
+  ...richTemplate
 };
