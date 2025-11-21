@@ -89,10 +89,14 @@
   --tab-group-active-background-colour: #09315b;
 
   --admiralty-card-background-colour: #ffffff;
+  --admiralty-card-heading-colour: #09315b;
+  --admiralty-card-heading-text-colour: #ffffff;
+  --admiralty-card-heading-border-colour: #09315b;
 
   --colour-block-blue-background-colour: #09315b;
   --colour-block-blue-text-colour: #ffffff;
   --colour-block-bright-blue-text-colour: #09315b;
+
 
   /** Typographic Scale **/
   --admiralty-font-size--3: 0.688rem;
@@ -213,6 +217,9 @@
         --tab-group-active-background-colour: #333333;
 
         --admiralty-card-background-colour: #404040;
+        --admiralty-card-heading-colour: #2B323A;
+        --admiralty-card-heading-text-colour: #ffffff;
+        --admiralty-card-heading-border-colour: #404040;
 
         --colour-block-blue-background-colour: #2B323A;
         --colour-block-blue-text-colour: #ffffff;
