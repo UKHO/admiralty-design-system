@@ -12,7 +12,7 @@ export class TooltipComponent {
   @Element() host!: HTMLElement;
   @Prop() for!: string;
   @Prop({ reflect: true }) placement?: Placement = 'top';
-  @Prop({ reflect: true }) alignment?: Alignment = 'start';
+  @Prop({ reflect: true }) alignment?: Alignment = 'centre';
   private target?: HTMLElement;
 
   private map?: {
