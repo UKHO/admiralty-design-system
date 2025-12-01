@@ -56,5 +56,9 @@ section.expansion {
     &:focus {
       @include focus-highlight;
     }
+
+    &:focus h3 {
+      color: black;
+    }
   }
 }
