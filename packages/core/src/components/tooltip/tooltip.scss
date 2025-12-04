@@ -18,17 +18,14 @@
 }
 
 .tooltip {
-  //position: absolute;
   position: fixed;
-  padding: 8px 12px;
+  padding: 0.75rem;
   color: black;
   background: white;
   z-index: 999;
   white-space: nowrap;
   cursor: pointer;
-  filter: drop-shadow(0 0 6px #b2b2b2);
-
-
+  box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.06), 0 1px 10px 0 rgba(0, 0, 0, 0.10);
 
   opacity: 0;
   visibility: hidden;
