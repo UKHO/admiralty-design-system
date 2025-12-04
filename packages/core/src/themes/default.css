@@ -208,6 +208,9 @@
 
         --admiralty-table-row-colour: #2a2a2a;
 
+        --admiralty-loading-colour: #3a3d40;
+        --admiralty-loading-sheen-colour: #44484d;
+
         /** Components **/
         --text-side-bar-item-active-background-colour: #444444;
         --text-side-bar-item-focus-border-colour: #fbe86c;
