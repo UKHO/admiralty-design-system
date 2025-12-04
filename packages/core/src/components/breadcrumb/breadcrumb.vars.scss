@@ -13,6 +13,9 @@ $breadcrumb-font-colour-hover: var(--admiralty-colour-primary) !default;
 $breadcrumb-font-colour-active: var(--admiralty-colour-primary) !default;
 $breadcrumb-separator-colour: var(--admiralty-colour-primary) !default;
 
+$focus-text-colour: var(--admiralty-focus-contrast) !default;
+$focus-background-colour: var(--admiralty-focus-colour) !default;
+
 $breadcrumb-font-size: var(--admiralty-breadcrumb-font-size, var(--admiralty-font-size--1));
 $breadcrumb-icon-font-size: var(--admiralty-breadcrumb-icon-font-size, var(--admiralty-font-size--2));
 $breadcrumb-font-weight: var(--admiralty-breadcrumb-font-weight, var(--admiralty-font-weight-normal));

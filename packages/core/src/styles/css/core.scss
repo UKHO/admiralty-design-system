@@ -23,6 +23,9 @@ html {
 body {
   background: var(--admiralty-background-colour);
   color: var(--admiralty-text-colour);
+  &:focus {
+    color: var(--admiralty-focus-contrast);
+  }
 }
 
 // Admiralty Colours

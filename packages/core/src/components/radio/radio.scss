@@ -35,8 +35,7 @@
     }
 
     &:focus {
-      outline: 4px solid $radio-focus-colour;
-      outline-offset: 0;
+      border-color: $radio-focus-colour;
       border-width: 3.5px;
     }
   }
