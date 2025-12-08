@@ -30,11 +30,7 @@ export class CheckboxComponent {
   @Prop({ mutable: true, reflect: true }) checked: boolean = false;
 
   /**
-   * The value of the checkbox does not mean if it's checked or not, use the `checked`
-   * property for that.
-   *
-   * The value of a checkbox is analogous to the value of an `<input type="checkbox">`,
-   * it's only used when the checkbox participates in a native `<form>`.
+   * The value of the checkbox does not mean if it's checked or not; use `checked` for that.
    */
   @Prop() value: any | null;
 
@@ -44,25 +40,22 @@ export class CheckboxComponent {
   @Prop() labelText: string = null;
 
   /**
-   * This visually hides the labelText while preserving accessibility.
+   * Visually hides the labelText while keeping it accessible.
    */
   @Prop() labelHidden: boolean = false;
 
   /**
-   * Event is fired when the form control changes state
-   * @event admiraltyChange
+   * Event fired when the form control changes state.
    */
   @Event() admiraltyChange: EventEmitter<CheckboxChangeEventDetail>;
 
   /**
-   * Event is fired when the form control gains focus
-   * @event checkboxFocus
+   * Event fired when the input gains focus.
    */
   @Event() checkboxFocus: EventEmitter<FocusEvent>;
 
   /**
-   * Event is fired when the form control loses focus
-   * @event checkboxBlur
+   * Event fired when the input loses focus.
    */
   @Event() checkboxBlur: EventEmitter<FocusEvent>;
 
@@ -78,15 +71,15 @@ export class CheckboxComponent {
     this.checkboxBlur.emit();
   };
 
-  private onClick = (event: Event) => {
-    if (!this.disabled) {
-      event.preventDefault();
-      this.checked = !this.checked;
-    }
-  };
-
   private onFocus = () => {
     this.checkboxFocus.emit();
+  };
+
+  private onChange = (event: Event) => {
+    if (!this.disabled) {
+      const input = event.target as HTMLInputElement;
+      this.checked = input.checked;
+    }
   };
 
   render() {
@@ -94,21 +87,27 @@ export class CheckboxComponent {
 
     return (
       <Host>
-        <div aria-hidden={disabled ? 'true' : null}
-             class={{ 'form-control': true, 'right-align': checkboxRight }}>
-          <input id={inputId}
-                 aria-checked={`${checked}`}
-                 type="checkbox"
-                 onBlur={this.onBlur}
-                 onFocus={this.onFocus}
-                 onClick={this.onClick}
-                 disabled={disabled}
-                 name={name}
-                 checked={checked}/>
+        <div
+          aria-hidden={disabled ? 'true' : null}
+          class={{ 'form-control': true, 'right-align': checkboxRight }}
+        >
+          <input
+            id={inputId}
+            aria-checked={`${checked}`}
+            type="checkbox"
+            onBlur={this.onBlur}
+            onFocus={this.onFocus}
+            onChange={this.onChange}
+            disabled={disabled}
+            name={name}
+            checked={checked}
+          />
+
           <label htmlFor={inputId}
-                 class={{ disabled: disabled }}
-                 onClick={this.onClick}>
-            <span {...(labelHidden && { class: 'visually-hidden' })}>{labelText}</span>
+                 class={{ disabled: disabled }}>
+            <span {...(labelHidden && { class: 'visually-hidden' })}>
+              {labelText}
+            </span>
           </label>
         </div>
       </Host>
