@@ -29,8 +29,11 @@
 }
 
 .mainContent {
-  flex: 1;
-  overflow-y: auto;
+  max-width: 1200px; /* value includes sidebar */
+  width: 100%;
+  margin: 0 auto;   /* centers horizontally */
+  padding: 0 16px;
+  box-sizing: border-box;
 }
 
 .pageFooter {
