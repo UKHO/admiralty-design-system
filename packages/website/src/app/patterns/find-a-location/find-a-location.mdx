@@ -2,6 +2,8 @@
 
 Use the find a location pattern to show location-based information alongside an interactive map. It helps users understand where things are and access detailed information about a place.
 
+<img src="/patterns/find-a-location/find-a-location.png" height="400" alt="find a location img" />
+
 ## Overview
 The ‘Find a Location’ pattern should be used when users need to interact with location-based content. It works best when the map and panel support each other, the map provides spatial context, and the panel gives details and actions.
 
@@ -94,10 +96,16 @@ Controls should:
 
 Avoid overloading the map with too many controls, prioritise the ones that support your users’ main tasks.
 
+<img src="/patterns/find-a-location/sidebar.png" height="800" alt="sidebar img" />
+<img src="/patterns/find-a-location/side-content.png" height="800" alt="side content img" />
+<img src="/patterns/find-a-location/maps.png" height="800" alt="maps img" />
+
 # Typography
 The side panel uses the smaller typographic scale from the design system. This ensures text remains clear and readable in more compact layouts without overwhelming the interface.
 
 Headings, body text and links follow the same hierarchy and spacing  as other components. Use consistent text sizes, weights and line heights to maintain visual rhythm between the panel, sidebar and map.
+
+<img src="/patterns/find-a-location/typography.png" height="350" alt="maps img" />
 
 ## Spacing:
 The pattern uses the design system’s 8 point spacing scale to create consistent rhythm and alignment across the layout.
@@ -114,15 +122,15 @@ Use spacing tokens to separate sections, group related elements and maintain vis
 The geo-display pattern must be usable by everyone, including people who use screen readers, keyboard navigation, screen magnifiers, or who have cognitive or motor impairments. It includes interactive elements (like maps, panels, and navigation), so it's especially important to get accessibility right.
 
 ### 1. Keyboard navigation
-* All interactive elements (sidebar links, map controls, buttons, etc.) must be reachable and operable using a keyboard alone.
-* Use logical tab order. Focus should move in the order: sidebar → map controls → side panel content.[
-* Ensure focus moves appropriately when dynamic content is opened (e.g. when a panel opens or updates with new details)
+  * All interactive elements (sidebar links, map controls, buttons, etc.) must be reachable and operable using a keyboard alone.
+  * Use logical tab order. Focus should move in the order: sidebar → map controls → side panel content.[
+  * Ensure focus moves appropriately when dynamic content is opened (e.g. when a panel opens or updates with new details)
 
 ### 2. Screen reader support
 Use ARIA landmarks and roles to help screen reader users navigate the layout:
-    * nav for sidebar navigation
-    * main for map and panel area
-    * aside for the side panel
+  * nav for sidebar navigation
+  * main for map and panel area
+  * aside for the side panel
 
 Use aria-labels or aria-labelled by to clearly describe:
     * The map region (e.g. "map showing location results")
