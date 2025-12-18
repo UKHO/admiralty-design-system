@@ -21,7 +21,7 @@ runs:
       shell: bash
     - name: Send Release Email
       run: |
-        if [ "${{ inputs.SEND_RELEASE_EMAIL }}" = "true" ]; then
+        if [ "$SEND_RELEASE_EMAIL" = "true" ]; then
           echo "Sending release email to recipients"
           node scripts/send-release-email.js
         else
