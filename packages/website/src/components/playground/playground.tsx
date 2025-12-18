@@ -26,7 +26,9 @@ export default function Playground(props: PlaygroundProps) {
       </div>
       <div className="codesnippet-container">
         <AdmiraltyTabGroup>
-          {Object.values(LanguageTarget).sort().map((language: LanguageTarget) => {
+          {Object.values(LanguageTarget)
+            .sort((a: LanguageTarget, b: LanguageTarget): number => a.toString().localeCompare(b.toString()))
+            .map((language: LanguageTarget) => {
             const RawCode: MDXContent | undefined = props.code[language];
             const enumKey: string | undefined = Object.entries(LanguageTarget).find(([_,val]: [string, LanguageTarget]): boolean => val === language)?.[0];
             if (RawCode) {

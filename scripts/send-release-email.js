@@ -27,15 +27,14 @@ const msg = {
 };
 
 sendGridMail.setApiKey(process.env.SENDGRID_API_KEY);
-sendGridMail.sendMultiple(msg)
-  .then(() => console.log(`✔️ Release email successfully sent!`))
-  .catch(err => {
-    console.error(`❌ Release email failed to send!`)
-    if (err.response?.body) {
-      console.error(JSON.stringify(err.response.body, null, 2));
-    } else {
-      console.error(err.message);
-    }
 
+(async () => {
+  try {
+    await sendGridMail.sendMultiple(msg);
+    console.log('✔️ Release email successfully sent!');
+  } catch (err) {
+    console.error('❌ Failed to send release email:');
+    console.error(err.response ? err.response.body : err.message);
     process.exit(1);
-  });
+  }
+})();
