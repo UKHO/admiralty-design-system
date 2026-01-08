@@ -71,6 +71,7 @@ const patternsChildren: any[] = [
   { name: "Service Unavailable", variant: "text", path: "/patterns/service-unavailable" },
   { name: "Service Error", variant: "text", path: "/patterns/service-error" },
   { name: "Find a location", variant: "text", path: "/patterns/find-a-location " },
+  { name: "Data Collection", variant: "text", path: "/patterns/data-collection" },
 ];
 
 const brandChildren: any[] = [
