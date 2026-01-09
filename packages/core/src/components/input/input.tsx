@@ -1,4 +1,4 @@
-import { Component, ComponentInterface, Element, Event, EventEmitter, h, Prop, Watch } from '@stencil/core';
+import { Component, ComponentInterface, Element, Event, EventEmitter, h, Host, Prop, Watch } from "@stencil/core";
 import { InputChangeEventDetail } from './input.interface';
 
 /**
@@ -38,6 +38,26 @@ export class InputComponent implements ComponentInterface {
    * This dictates whether the form field is disabled.
    */
   @Prop() disabled = false;
+
+  /**
+   * Whether the component is loading if so then show the skeleton
+   */
+  @Prop() loading: boolean = false;
+
+  /**
+   * Width of the loading bar
+   */
+  @Prop() loadingWidth?: string;
+
+  /**
+   * Height of the loading bar
+   */
+  @Prop() loadingHeight?: string;
+
+  /**
+   * Radius of the loading bar
+   */
+  @Prop() loadingRadius?: string;
 
   /**
    * The input type, options are: text; number; date; time; email; password; tel; url
@@ -127,7 +147,22 @@ export class InputComponent implements ComponentInterface {
     this.admiraltyFocus.emit(ev);
   };
 
-  render() {
+  renderSkeleton() {
+    return <Host>
+      <div class="loading-wrapper">
+        {this.label && <admiralty-skeleton key={`${this.width}-${this.loadingHeight}`}
+                                           width={this.loadingWidth}
+                                           height={this.loadingHeight}
+                                           radius={this.loadingRadius}></admiralty-skeleton>}
+        <admiralty-skeleton  key={`${this.width}-${this.loadingHeight}`}
+                             width={this.loadingWidth}
+                             height={this.loadingHeight}
+                             radius={this.loadingRadius}></admiralty-skeleton>
+      </div>
+    </Host>
+  }
+
+  renderContent() {
     const value = this.getValue();
     const id = this.el.id != '' ? this.el.id : `admiralty-input-${this.internalId}`;
     const inputId = `${id}-input`;
@@ -171,6 +206,10 @@ export class InputComponent implements ComponentInterface {
         </admiralty-input-invalid>
       </div>
     );
+  }
+
+  render(): any {
+    return this.loading? this.renderSkeleton() : this.renderContent();
   }
 }
 

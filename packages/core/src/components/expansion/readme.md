@@ -50,6 +50,7 @@
 ```mermaid
 graph TD;
   admiralty-expansion --> admiralty-icon
+  admiralty-icon --> admiralty-skeleton
   admiralty-filter-group --> admiralty-expansion
   style admiralty-expansion fill:#f9f,stroke:#333,stroke-width:4px
 ```
