@@ -15,7 +15,6 @@ a {
   color: var(--admiralty-colour-primary);
   text-underline-offset: 0.15em;
   &:focus {
-    outline: 3px solid var(--admiralty-focus-colour);
     outline-offset: 1px;
     @include a11y.focus-highlight;
   }

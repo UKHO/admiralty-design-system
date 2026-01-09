@@ -1,14 +1,40 @@
-.colourBlocksContainer {
-  display: flex;
+.homePageContainer {
+  display: grid;
   flex-wrap: wrap;
   margin-bottom: 80px;
   place-content: center;
   gap: 3rem;
+  align-items: center;
 }
 
 .latestUpdates {
   height: 250px;
   width: 1000px;
-  background-color: #FFFFFF;
+  background-color: var(--admiralty-background-colour);
   padding: 30px 18px;
 }
+
+.colourBlocksContainer {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1000px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 1024px) {
+    .latestUpdates,
+    .colourBlocksContainer {
+        width: 100%;
+        max-width: none;
+    }
+
+    .colourBlocksContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+

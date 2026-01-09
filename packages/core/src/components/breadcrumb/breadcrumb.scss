@@ -28,6 +28,8 @@ a {
 
   &:focus {
     text-decoration: none;
+    background-color: $focus-background-colour;
+    color: $focus-text-colour;
   }
 
   &.active {
