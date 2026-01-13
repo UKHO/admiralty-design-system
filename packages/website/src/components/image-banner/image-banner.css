@@ -38,5 +38,12 @@
   & a:not(:focus) {
     color: #ffffff;
   }
+
+}
+
+@media (prefers-color-scheme: dark) {
+    .banner-image {
+        background-color: var(--admiralty-background-colour);
+    }
 }
 

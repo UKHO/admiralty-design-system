@@ -13,15 +13,16 @@ $colour-block-action-not-desktop-text-size: var(--admiralty-colour-block-action-
 $colour-block-action-font-weight: var(--admiralty-colour-block-action-font-weight, var(--admiralty-font-weight-medium));
 $colour-block-action-line-height: 30px;
 
-$primary-colour-block-colour: var(--admiralty-colour-primary);
-$primary-colour-block-text-colour: var(--admiralty-colour-primary-contrast);
+$primary-colour-block-colour: var(--colour-block-blue-background-colour);
+$primary-colour-block-text-colour: var(--colour-block-blue-text-colour);
+$primary-colour-block-focus-text-colour: var(--admiralty-focus-contrast);
 
 $secondary-colour-block-colour: var(--admiralty-colour-secondary);
 $secondary-colour-block-text-colour: var(--admiralty-colour-secondary-contrast);
 
 $tertiary-colour-block-colour: var(--admiralty-colour-tertiary);
-$tertiary-colour-block-text-colour: var(--admiralty-colour-primary);
+$tertiary-colour-block-text-colour: var(--colour-block-bright-blue-text-colour);
 
-$colour-block-focus-text-colour: var(--admiralty-text-colour) !default;
+$colour-block-focus-text-colour: var(--admiralty-focus-contrast) !default;
 
 $colour-block-padding: var(--admiralty-colour-block-padding, 30px 18px);

@@ -64,6 +64,7 @@ hr {
     &.active {
       background-color: $tab-group-active-background-colour;
       color: $tab-group-active-text-colour;
+      box-shadow: 0px -4px $tab-group-active-shadow-colour inset;
     }
   }
 }
