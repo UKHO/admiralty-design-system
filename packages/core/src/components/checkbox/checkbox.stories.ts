@@ -37,3 +37,14 @@ export const checkedCheckbox: Story = { ...template, args: { ...defaultArgs, che
 export const disabledCheckbox: Story = { ...template, args: { ...defaultArgs, disabled: true } };
 
 export const labelHidden: Story = { ...template, args: { ...defaultArgs, labelHidden: true } };
+
+export const CheckboxLoading: Story = {
+  render: args => html`<admiralty-checkbox checked=${args.checked}
+                                           disabled=${args.disabled}
+                                           input-id=${args.inputId}
+                                           loading="${args.loading}"
+                                           .loadingWidth="${args.loadingWidth}"
+                                           .loadingHeight="${args.loadingHeight}"
+                                           .loadingRadius="${args.loadingRadius}"></admiralty-checkbox>`,
+  args: { ...defaultArgs, loadingWidth: '60px', loadingHeight: '1rem', loadingRadius: '.5rem', loading: true }
+};

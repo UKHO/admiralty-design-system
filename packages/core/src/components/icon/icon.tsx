@@ -20,6 +20,26 @@ export class IconComponent {
    */
   @Prop() size: number | 'unset' = 'unset';
 
+  /**
+   * Whether the component is loading if so then show the skeleton
+   */
+  @Prop() loading: boolean = false;
+
+  /**
+   * Width of the loading bar
+   */
+  @Prop() loadingWidth?: string;
+
+  /**
+   * Height of the loading bar
+   */
+  @Prop() loadingHeight?: string;
+
+  /**
+   * Radius of the loading bar
+   */
+  @Prop() loadingRadius?: string;
+
   getIcon(iconName: string, iconSize: number | 'unset') {
     const iconData = getIconData(icons as IconifyJSON, iconName);
     if (!iconData) {
@@ -33,17 +53,28 @@ export class IconComponent {
     return iconToHTML(replaceIDs(renderData.body), renderData.attributes);
   }
 
-  render() {
+  renderSkeleton() {
+    return <Host>
+      <div class="loading-wrapper">
+        <admiralty-skeleton key={`${this.loadingWidth}-${this.loadingHeight}`}
+                            width={this.loadingWidth}
+                            height={this.loadingHeight}
+                            radius={this.loadingRadius}></admiralty-skeleton>
+      </div>
+    </Host>
+  }
+
+  renderContent() {
     const icon = this.getIcon(this.name, this.size);
     if (icon)
       return (
-        <Host
-          style={{
-            contain: this.size === 'unset' ? 'strict' : 'initial',
-          }}
-        >
+        <Host style={{ contain: this.size === 'unset' ? 'strict' : 'initial' }}>
           <div innerHTML={icon}></div>
         </Host>
       );
+  }
+
+  render(): void {
+    return this.loading? this.renderSkeleton() : this.renderContent();
   }
 }
