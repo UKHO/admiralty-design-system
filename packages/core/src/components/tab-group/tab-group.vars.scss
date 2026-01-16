@@ -27,5 +27,6 @@ $tab-group-heading-text-colour: var(--admiralty-colour-primary);
 $tab-group-heading-hover-background-colour: var(--admiralty-hover-background-colour);
 $tab-group-focus-colour: var(--admiralty-focus-colour) !default;
 $tab-group-focus-text-colour: var(--admiralty-text-colour) !default;
-$tab-group-active-background-colour: var(--admiralty-colour-primary);
-$tab-group-active-text-colour: var(--admiralty-colour-primary-contrast);
+$tab-group-active-background-colour: var(--tab-group-active-background-colour);
+$tab-group-active-text-colour: var(--admiralty-colour-secondary-contrast);
+$tab-group-active-shadow-colour: var(--tab-group-active-shadow-colour);
