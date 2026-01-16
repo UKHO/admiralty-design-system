@@ -9,8 +9,8 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@ukho-internal/admiralty-docs": "^5.0.1",
-    "@ukho/admiralty-react": "^5.0.1",
+    "@ukho-internal/admiralty-docs": "workspace:*",
+    "@ukho/admiralty-react": "workspace:*",
     "eslint-config-next": "16.0.10",
     "next": "16.0.10",
     "react": "19.2.3",
