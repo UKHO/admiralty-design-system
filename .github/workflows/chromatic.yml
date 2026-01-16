@@ -16,8 +16,6 @@ jobs:
           fetch-depth: '0'
       - name: Install pnpm
         uses: pnpm/action-setup@v4
-        with:
-          version: 10
       - name: Install Packages
         run: |
           pnpm install --frozen-lockfile
