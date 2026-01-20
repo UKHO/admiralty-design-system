@@ -1,3 +1,24 @@
 .introText {
   --admiralty-font-size-0: 28px;
 }
+
+.imagesRow {
+  display: flex;
+  gap: 2rem;
+  align-items: center;   /* vertical centering */
+  flex-wrap: nowrap;     /* keep them on one row */
+}
+
+.imageWrapper {
+  display: inline-block;
+  border: 2px solid #ccc;
+  padding: 12px;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.image {
+  display: block;
+  max-width: 100%;       /* don’t exceed wrapper */
+}
+
