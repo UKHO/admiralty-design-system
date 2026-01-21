@@ -3,7 +3,7 @@
   "packages": [
     "packages/*"
   ],
-  "npmClient": "yarn",
+  "npmClient": "pnpm",
   "version": "5.0.1",
   "useNx": true
 }
