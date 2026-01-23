@@ -2,7 +2,6 @@
 :root {
   /** primary **/
   --admiralty-colour-primary: #09315b;
-  --admiralty-colour-primary-rgb: 9, 49, 91;
   --admiralty-colour-primary-contrast: #ffffff;
   --admiralty-colour-primary-contrast-rgb: 255, 255, 255;
   --admiralty-colour-primary-shade: #082b50;
@@ -10,7 +9,6 @@
 
   /** secondary **/
   --admiralty-colour-secondary: #007e97;
-  --admiralty-colour-secondary-rgb: 0, 126, 151;
   --admiralty-colour-secondary-contrast: #ffffff;
   --admiralty-colour-secondary-contrast-rgb: 255, 255, 255;
   --admiralty-colour-secondary-shade: #006f85;
@@ -18,15 +16,13 @@
 
   /** tertiary **/
   --admiralty-colour-tertiary: #65c4db;
-  --admiralty-colour-tertiary-rgb: 101, 196, 219;
-  --admiralty-colour-tertiary-contrast: #000000;
+  --admiralty-colour-tertiary-contrast: #09315b;
   --admiralty-colour-tertiary-contrast-rgb: 0, 0, 0;
   --admiralty-colour-tertiary-shade: #59acc1;
   --admiralty-colour-tertiary-tint: #74cadf;
 
   /** success **/
   --admiralty-colour-success: #47a234;
-  --admiralty-colour-success-rgb: 71, 162, 52;
   --admiralty-colour-success-contrast: #000000;
   --admiralty-colour-success-contrast-rgb: 0, 0, 0;
   --admiralty-colour-success-shade: #3e8f2e;
@@ -35,7 +31,6 @@
 
   /** warning **/
   --admiralty-colour-warning: #e3660e;
-  --admiralty-colour-warning-rgb: 227, 102, 14;
   --admiralty-colour-warning-contrast: #000000;
   --admiralty-colour-warning-contrast-rgb: 0, 0, 0;
   --admiralty-colour-warning-shade: #c85a0c;
@@ -44,7 +39,6 @@
 
   /** danger **/
   --admiralty-colour-danger: #e20d0d;
-  --admiralty-colour-danger-rgb: 226, 13, 13;
   --admiralty-colour-danger-contrast: #ffffff;
   --admiralty-colour-danger-contrast-rgb: 255, 255, 255;
   --admiralty-colour-danger-shade: #c70b0b;
@@ -53,7 +47,6 @@
 
   /** info **/
   --admiralty-colour-info: #0177c1;
-  --admiralty-colour-info-rgb: 1, 119, 193;
   --admiralty-colour-info-contrast: #ffffff;
   --admiralty-colour-info-contrast-rgb: 255, 255, 255;
   --admiralty-colour-info-shade: #0169aa;
@@ -62,27 +55,22 @@
 
   /** light **/
   --admiralty-colour-light: #d8d8d8;
-  --admiralty-colour-light-rgb: 216, 216, 216;
   --admiralty-colour-light-contrast: #000000;
   --admiralty-colour-light-contrast-rgb: 0, 0, 0;
   --admiralty-colour-light-shade: #bebebe;
   --admiralty-colour-light-tint: #1a85c7;
 
   --admiralty-background-colour: #ffffff;
-  --admiralty-background-colour-rgb: 0, 0, 0;
   --admiralty-hover-background-colour: #eeeeee;
-  --admiralty-hover-background-colour-rgb: 238, 238, 238;
 
   --admiralty-background-colour-tint: #eeeeee;
-  --admiralty-background-colour-tint-rgb: 238, 238, 238;
   --admiralty-hover-background-colour-tint: #d0d0d0;
-  --admiralty-hover-background-colour-tint-rgb: 208, 208, 208;
+  --admiralty-header-background-colour: #ffffff;
 
   --admiralty-text-colour: #333333;
-  --admiralty-text-colour-rgb: 51, 51, 51;
 
   --admiralty-focus-colour: #ffdd00;
-  --admiralty-focus-colour-rgb: 255, 221, 0;
+  --admiralty-focus-contrast: #09315b;
 
   --admiralty-disabled-colour: #adadad;
   --admiralty-disabled-text-colour: #757575;
@@ -91,6 +79,24 @@
   --admiralty-loading-sheen-colour: #f0f2f4;
 
   --admiralty-table-row-colour: #eef3f4;
+
+  /** Components **/
+  --text-side-bar-item-active-background-colour: #09315b;
+  --text-side-bar-item-focus-border-colour: #09315b;
+  --text-side-bar-focus-background-colour: #ffdd00;
+
+  --tab-group-active-shadow-colour: #09315b;
+  --tab-group-active-background-colour: #09315b;
+
+  --admiralty-card-background-colour: #ffffff;
+  --admiralty-card-heading-colour: #09315b;
+  --admiralty-card-heading-text-colour: #ffffff;
+  --admiralty-card-heading-border-colour: #09315b;
+
+  --colour-block-blue-background-colour: #09315b;
+  --colour-block-blue-text-colour: #ffffff;
+  --colour-block-bright-blue-text-colour: #09315b;
+
 
   /** Typographic Scale **/
   --admiralty-font-size--3: 0.688rem;
@@ -126,4 +132,100 @@
   --admiralty-spacing-inherit: inherit;
 }
 
+/** Dark Mode **/
+@media (prefers-color-scheme: dark) {
+    :root {
+        /** primary **/
+        --admiralty-colour-primary: #ffffff;
+        --admiralty-colour-primary-contrast: #333333;
+        --admiralty-colour-primary-shade: #cccccc;
+        --admiralty-colour-primary-tint: #e6e6e6;
 
+        /** secondary **/
+        --admiralty-colour-secondary: #405357;
+        --admiralty-colour-secondary-contrast: #ffffff;
+        --admiralty-colour-secondary-shade: #cccccc;
+        --admiralty-colour-secondary-tint: #e6e6e6;
+
+        /** tertiary **/
+        --admiralty-colour-tertiary: #92a9ae;
+        --admiralty-colour-tertiary-contrast: #ffffff;
+        --admiralty-colour-tertiary-shade: #cccccc;
+        --admiralty-colour-tertiary-tint: #e6e6e6;
+
+        /** success (muted green for dark mode) **/
+        --admiralty-colour-success: #87ba7c;
+        --admiralty-colour-success-contrast: #ffffff;
+        --admiralty-colour-success-shade: #2f6423;
+        --admiralty-colour-success-tint: #4b9a3c;
+        --admiralty-colour-success-background: #404040;
+
+        /** warning (muted amber for dark mode) **/
+        --admiralty-colour-warning: #de995d;
+        --admiralty-colour-warning-contrast: #ffffff;
+        --admiralty-colour-warning-shade: #a65f1f;
+        --admiralty-colour-warning-tint: #e5943c;
+        --admiralty-colour-warning-background: #404040;
+
+        /** danger (softer red for dark mode) **/
+        --admiralty-colour-danger: #d86666;
+        --admiralty-colour-danger-contrast: #ffffff;
+        --admiralty-colour-danger-shade: #931e1e;
+        --admiralty-colour-danger-tint: #d43c3c;
+        --admiralty-colour-danger-background: #404040;
+
+        /** info **/
+        --admiralty-colour-info: #60a4ce;
+        --admiralty-colour-info-contrast: #333333;
+        --admiralty-colour-info-shade: #cccccc;
+        --admiralty-colour-info-tint: #e6e6e6;
+        --admiralty-colour-info-background: #404040;
+
+        /** light (shifted to a darker gray for dark mode) **/
+        --admiralty-colour-light: #555555;
+        --admiralty-colour-light-contrast: #ffffff;
+        --admiralty-colour-light-shade: #444444;
+        --admiralty-colour-light-tint: #666666;
+
+        /** backgrounds **/
+        --admiralty-background-colour: #333333;
+        --admiralty-hover-background-colour: #444444;
+
+        --admiralty-background-colour-tint: #444444;
+        --admiralty-hover-background-colour-tint: #555555;
+        --admiralty-header-background-colour: #333333;
+
+        /** text **/
+        --admiralty-text-colour: #ffffff;
+
+        /** focus **/
+        --admiralty-focus-colour: #fbe86c;
+        --admiralty-focus-contrast: #2a2a2a;
+
+        /** disabled **/
+        --admiralty-disabled-colour: #666666;
+        --admiralty-disabled-text-colour: #888888;
+
+        --admiralty-table-row-colour: #2a2a2a;
+
+        --admiralty-loading-colour: #3a3d40;
+        --admiralty-loading-sheen-colour: #44484d;
+
+        /** Components **/
+        --text-side-bar-item-active-background-colour: #444444;
+        --text-side-bar-item-focus-border-colour: #fbe86c;
+        --text-side-bar-focus-background-colour: #333333;
+
+        --tab-group-active-shadow-colour: #ffffff;
+        --tab-group-active-background-colour: #333333;
+
+        --admiralty-card-background-colour: #404040;
+        --admiralty-card-heading-colour: #2B323A;
+        --admiralty-card-heading-text-colour: #ffffff;
+        --admiralty-card-heading-border-colour: #404040;
+
+        --colour-block-blue-background-colour: #2B323A;
+        --colour-block-blue-text-colour: #ffffff;
+        --colour-block-bright-blue-text-colour: #333333;
+    }
+}
