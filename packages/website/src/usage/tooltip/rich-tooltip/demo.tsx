@@ -11,7 +11,7 @@ export default function Demo() {
           <h3 style={{ margin: 0 }}>Black Rock</h3>
           <p>Underwater/awash rock</p>
           <h6 style={{ margin: 0 }}>Details</h6>
-          <p style={{ margin: 0 }}>50°42'.50N | °30'.63W</p>
+          <p style={{ margin: 0 }}>50°42&apos;.50N | °30&apos;.63W</p>
           <a>Covers and uncovers</a>
         </div>
       </AdmiraltyTooltip>
