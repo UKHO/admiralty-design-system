@@ -30,7 +30,7 @@ $header-menu-icon-font-size: var(--admiralty-header-menu-icon-font-size, var(--a
 $header-menu-icon-font-weight: var(--admiralty-header-menu-icon-font-weight, var(--admiralty-font-weight-bold));
 $header-text-line-height: 24px;
 
-$header-background-colour: var(--admiralty-background-colour); // TODO: replace with variable
+$header-background-colour: var(--admiralty-header-background-colour);
 $header-border-colour: var(--admiralty-colour-light);
 $header-logo-colour: var(--admiralty-colour-primary);
 $header-separator-colour: var(--admiralty-colour-light);
