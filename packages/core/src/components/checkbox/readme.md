@@ -14,6 +14,10 @@
 | `disabled`      | `disabled`       | This dictates whether the form field is disabled.                                                                                                                                                                                                            | `boolean` | `false`        |
 | `labelHidden`   | `label-hidden`   | This visually hides the labelText while preserving accessibility.                                                                                                                                                                                            | `boolean` | `false`        |
 | `labelText`     | `label-text`     | The label text must be provided and is displayed beside the checkbox, use the `labelHidden` property to control its visibility.                                                                                                                              | `string`  | `null`         |
+| `loading`       | `loading`        | Whether the component is loading if so then show the skeleton                                                                                                                                                                                                | `boolean` | `false`        |
+| `loadingHeight` | `loading-height` | Height of the loading bar                                                                                                                                                                                                                                    | `string`  | `undefined`    |
+| `loadingRadius` | `loading-radius` | Radius of the loading bar                                                                                                                                                                                                                                    | `string`  | `undefined`    |
+| `loadingWidth`  | `loading-width`  | Width of the loading bar                                                                                                                                                                                                                                     | `string`  | `undefined`    |
 | `name`          | `name`           | The name of the control, which is submitted with the form data.                                                                                                                                                                                              | `string`  | `this.inputId` |
 | `value`         | `value`          | The value of the checkbox does not mean if it's checked or not, use the `checked` property for that.  The value of a checkbox is analogous to the value of an `<input type="checkbox">`, it's only used when the checkbox participates in a native `<form>`. | `any`     | `undefined`    |
 
@@ -40,6 +44,19 @@
 | `--admiralty-checkbox-label-margin-bottom`           | Margin bottom for the checkbox label.           |
 | `--admiralty-checkbox-label-padding-left`            | Padding left for the checkbox label.            |
 
+
+## Dependencies
+
+### Depends on
+
+- [admiralty-skeleton](../skeleton)
+
+### Graph
+```mermaid
+graph TD;
+  admiralty-checkbox --> admiralty-skeleton
+  style admiralty-checkbox fill:#f9f,stroke:#333,stroke-width:4px
+```
 
 ----------------------------------------------
 

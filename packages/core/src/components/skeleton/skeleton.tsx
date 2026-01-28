@@ -14,7 +14,7 @@ export class SkeletonComponent {
   /**
    * Width of the skeleton component, default is set to 100%.
    */
-  @Prop() width?: string = '100%';
+  @Prop({ mutable: true }) width?: string = '100%';
 
   /**
    * Radius of the skeleton component, default is .5rem.
@@ -28,15 +28,13 @@ export class SkeletonComponent {
 
   render() {
 
-    // const height: string = this.height? `height: ${this.height}` : '';
-    const height: string = this.height? this.height : '';
-    // const width: string = this.width? `width: ${this.width}` : '';
-    const width: string = this.width? this.width : '';
-    // const radius: string = this.radius? `width: ${this.radius}` : '';
-    const radius: string = this.radius? this.radius : '';
+    const height: string = this.height ?? this.height;
+    const width: string = this.width ?? this.width;
+    const radius: string = this.radius ?? this.radius;
 
     return (<Host role="presentation"
                   aria-hidden="true"
+                  key={`${height}-${width}-${radius}`}
                   style={{ 'height': height, 'width': width, 'border-radius': radius }}
                   class={{ 'no-animation': this.noAnimation }}>
       <div class="block"></div>

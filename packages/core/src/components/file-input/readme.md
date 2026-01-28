@@ -49,6 +49,7 @@
 graph TD;
   admiralty-file-input --> admiralty-icon
   admiralty-file-input --> admiralty-input-invalid
+  admiralty-icon --> admiralty-skeleton
   admiralty-input-invalid --> admiralty-icon
   style admiralty-file-input fill:#f9f,stroke:#333,stroke-width:4px
 ```

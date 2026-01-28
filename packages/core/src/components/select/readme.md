@@ -52,6 +52,7 @@ graph TD;
   admiralty-select --> admiralty-hint
   admiralty-select --> admiralty-icon
   admiralty-select --> admiralty-input-invalid
+  admiralty-icon --> admiralty-skeleton
   admiralty-input-invalid --> admiralty-icon
   style admiralty-select fill:#f9f,stroke:#333,stroke-width:4px
 ```

@@ -48,6 +48,7 @@
 graph TD;
   admiralty-colour-block --> admiralty-button
   admiralty-button --> admiralty-icon
+  admiralty-icon --> admiralty-skeleton
   style admiralty-colour-block fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

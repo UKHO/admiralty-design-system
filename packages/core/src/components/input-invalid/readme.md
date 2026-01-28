@@ -37,6 +37,7 @@
 ```mermaid
 graph TD;
   admiralty-input-invalid --> admiralty-icon
+  admiralty-icon --> admiralty-skeleton
   admiralty-autocomplete --> admiralty-input-invalid
   admiralty-file-input --> admiralty-input-invalid
   admiralty-input --> admiralty-input-invalid

@@ -41,6 +41,7 @@
 ```mermaid
 graph TD;
   admiralty-read-more --> admiralty-icon
+  admiralty-icon --> admiralty-skeleton
   style admiralty-read-more fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

@@ -60,6 +60,7 @@
 ```mermaid
 graph TD;
   admiralty-button --> admiralty-icon
+  admiralty-icon --> admiralty-skeleton
   admiralty-colour-block --> admiralty-button
   admiralty-filter --> admiralty-button
   admiralty-paginator --> admiralty-button

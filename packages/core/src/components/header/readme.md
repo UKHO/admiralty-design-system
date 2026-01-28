@@ -63,6 +63,7 @@
 ```mermaid
 graph TD;
   admiralty-header --> admiralty-icon
+  admiralty-icon --> admiralty-skeleton
   style admiralty-header fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

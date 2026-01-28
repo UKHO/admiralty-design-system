@@ -170,3 +170,9 @@ admiralty-icon.disabled {
 admiralty-input-invalid {
   margin-top: 6px;
 }
+
+.loading-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

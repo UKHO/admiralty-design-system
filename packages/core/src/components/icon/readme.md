@@ -5,10 +5,14 @@
 
 ## Properties
 
-| Property | Attribute | Description                                                                                                                                        | Type                | Default     |
-| -------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- | ----------- |
-| `name`   | `name`    | Name of the icon to be rendered.  A full list of available icons can be viewed at [https://fonts.google.com/icons](https://fonts.google.com/icons) | `string`            | `undefined` |
-| `size`   | `size`    | The size of the icon in pixels. When not set, the icon height will be determined by the parent font size.                                          | `"unset" \| number` | `'unset'`   |
+| Property        | Attribute        | Description                                                                                                                                        | Type                | Default     |
+| --------------- | ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- | ----------- |
+| `loading`       | `loading`        | Whether the component is loading if so then show the skeleton                                                                                      | `boolean`           | `false`     |
+| `loadingHeight` | `loading-height` | Height of the loading bar                                                                                                                          | `string`            | `undefined` |
+| `loadingRadius` | `loading-radius` | Radius of the loading bar                                                                                                                          | `string`            | `undefined` |
+| `loadingWidth`  | `loading-width`  | Width of the loading bar                                                                                                                           | `string`            | `undefined` |
+| `name`          | `name`           | Name of the icon to be rendered.  A full list of available icons can be viewed at [https://fonts.google.com/icons](https://fonts.google.com/icons) | `string`            | `undefined` |
+| `size`          | `size`           | The size of the icon in pixels. When not set, the icon height will be determined by the parent font size.                                          | `"unset" \| number` | `'unset'`   |
 
 
 ## CSS Custom Properties
@@ -36,9 +40,14 @@
  - [admiralty-select](../select)
  - [admiralty-text-side-bar-item](../text-side-bar-item)
 
+### Depends on
+
+- [admiralty-skeleton](../skeleton)
+
 ### Graph
 ```mermaid
 graph TD;
+  admiralty-icon --> admiralty-skeleton
   admiralty-autocomplete --> admiralty-icon
   admiralty-breadcrumb --> admiralty-icon
   admiralty-button --> admiralty-icon

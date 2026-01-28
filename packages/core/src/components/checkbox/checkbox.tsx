@@ -66,6 +66,26 @@ export class CheckboxComponent {
    */
   @Event() checkboxBlur: EventEmitter<FocusEvent>;
 
+  /**
+   * Whether the component is loading if so then show the skeleton
+   */
+  @Prop() loading: boolean = false;
+
+  /**
+   * Width of the loading bar
+   */
+  @Prop() loadingWidth?: string;
+
+  /**
+   * Height of the loading bar
+   */
+  @Prop() loadingHeight?: string;
+
+  /**
+   * Radius of the loading bar
+   */
+  @Prop() loadingRadius?: string;
+
   @Watch('checked')
   checkedChanged(isChecked: boolean) {
     this.admiraltyChange.emit({
@@ -89,7 +109,18 @@ export class CheckboxComponent {
     this.checkboxFocus.emit();
   };
 
-  render() {
+  renderSkeleton() {
+    return <Host>
+      <div class="loading-wrapper">
+        <admiralty-skeleton key={`${this.loadingWidth}-${this.loadingHeight}`}
+                            width={this.loadingWidth}
+                            height={this.loadingHeight}
+                            radius={this.loadingRadius}></admiralty-skeleton>
+      </div>
+    </Host>
+  }
+
+  renderContent() {
     const { checked, checkboxRight, disabled, inputId, labelText, name, labelHidden } = this;
 
     return (
@@ -113,6 +144,10 @@ export class CheckboxComponent {
         </div>
       </Host>
     );
+  }
+
+  render(): any {
+    return this.loading? this.renderSkeleton() : this.renderContent();
   }
 }
 
