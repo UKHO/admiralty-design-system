@@ -45,7 +45,7 @@ importers:
   packages/angular:
     dependencies:
       '@ukho/admiralty-core':
-        specifier: ^5.0.1
+        specifier: ^5.1.0
         version: 5.1.0
       tslib:
         specifier: ^2.7.0
@@ -224,7 +224,7 @@ importers:
   packages/docs:
     dependencies:
       '@ukho/admiralty-core':
-        specifier: ^5.0.1
+        specifier: ^5.1.0
         version: 5.1.0
     devDependencies:
       chalk:
@@ -243,7 +243,7 @@ importers:
         specifier: ^0.7.1
         version: 0.7.1(@stencil/core@4.21.0)(@types/react@18.3.27)(react@18.3.1)
       '@ukho/admiralty-core':
-        specifier: ^5.0.1
+        specifier: ^5.1.0
         version: 5.1.0
     devDependencies:
       '@types/react':
