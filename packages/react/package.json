@@ -15,7 +15,7 @@
   ],
   "dependencies": {
     "@stencil/react-output-target": "^0.7.1",
-    "@ukho/admiralty-core": "^5.1.0"
+    "@ukho/admiralty-core": "workspace:*"
   },
   "peerDependencies": {
     "react": ">=17",

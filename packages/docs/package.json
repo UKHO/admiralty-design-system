@@ -7,7 +7,7 @@
     "build": "tsx build.ts"
   },
   "dependencies": {
-    "@ukho/admiralty-core": "^5.1.0"
+    "@ukho/admiralty-core": "workspace:*"
   },
   "devDependencies": {
     "chalk": "^5.3.0",
