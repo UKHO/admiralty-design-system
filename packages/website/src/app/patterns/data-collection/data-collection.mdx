@@ -1,0 +1,150 @@
+import styles from "./styles.module.css";
+
+# Data collection
+
+<div className={styles.introText}>
+  The Data Collection pattern provides a consistent, accessible way to gather information from users through structured forms. It helps teams design and build data entry experiences that are clear, efficient, and easy to use, reducing user error and supporting accurate data submission.
+</div>
+
+<div className={styles.imagesRow}>
+  <div className={styles.imageWrapper}>
+    <img
+      className={styles.image}
+      src="/patterns/data-collection/step1of8.png"
+      height="647"
+      alt="Persistent expansion"
+    />
+  </div>
+
+  <div className={styles.imageWrapper}>
+    <img
+      className={styles.image}
+      src="/patterns/data-collection/step4of8.png"
+      height="789"
+      alt="Step 4 of 8"
+    />
+  </div>
+</div>
+
+## Overview
+
+This pattern is designed for services that require users to input data into one or more fields, often as part of a step-by-step process. It supports single-page and multi-page forms, maintaining consistency across different services built with the ADMIRALTY  Design System.   When to use this pattern
+
+#### When to use this pattern
+
+Use the Data Collection pattern when you need to:
+* Collect structured data from users.
+* Create a form as part of a wider journey that includes validation, confirmation, or submission steps.
+* Maintain consistency across multiple services that require similar input processes.
+
+#### When not to use this pattern
+
+Do not use this pattern for:
+* Gathering unstructured feedback or comments.
+* Displaying read-only data.
+
+#### Good practice
+
+* Keep questions relevant and concise. Only ask for information that is necessary to complete the task, refer to our <strong>[Content Design](../..//principles/contentdesign)</strong> for advice on how write good form content.
+* Group related fields to support mental models and reduce cognitive load.
+* Use clear, action-focused button labels (e.g. Continue, Submit report, Save and return).
+* Provide feedback after submission, such as confirmation messages or summary screens.
+* Test with users early and often to validate the form’s clarity and accessibility.
+* Avoid long forms where possible; break them into logical steps to improve completion rates.
+
+<br/>
+## Anatomy
+import AnatomyPage from "app/patterns/data-collection/anatomy"
+
+Each Data Collection page is made up of the following key elements:
+
+<h4 style={{ margin: '0', padding: '0' }}>Header</h4>
+Use the header to signal to users they are in the right place. Contains primary site navigation, title and key logos.
+
+<h4 style={{ margin: '0', padding: '0' }}>Breadcrumb</h4>
+Displays the user’s location within the form and allows easy navigation back to previous sections.
+
+<h4 style={{ margin: '0', padding: '0' }}>Back link</h4>
+Appears at the top and bottom of the page to let users return to the previous step without losing their progress.
+
+<h4 style={{ margin: '0', padding: '0' }}>Page title</h4>
+Introduces the page with a clear title `<h1>` and optional introductory text. It sets context and helps users understand the purpose of the form. For multistep journey include what step of the journey they are on for example ‘Step 1 of 4 - Survey details’
+
+<h4 style={{ margin: '0', padding: '0' }}>Primary content area</h4>
+Contains form fields, instructions, and supporting content. Use `<h2>` headings and bordered left field set to group related inputs and maintain a clear information hierarchy.
+
+<h4 style={{ margin: '0', padding: '0' }}>Primary call to action (CTA)</h4>
+The main button that advances the user to the next step, usually labelled Continue.
+
+<h4 style={{ margin: '0', padding: '0' }}>Footer</h4>
+Provide users with consistent, useful links as well as trust and reassurance.
+
+  <div className={styles.imagesRow}>
+    <div className={styles.imageWrapper}>
+      <img
+        className={styles.image}
+        src="/patterns/data-collection/step5of8.png"
+        height="563"
+        alt="Persistent expansion"
+      />
+    </div>
+
+    <div className={styles.imageWrapper}>
+      <img
+        className={styles.image}
+        src="/patterns/data-collection/survey-submitted.png"
+        height="350"
+        alt="Step 4 of 8"
+      />
+    </div>
+  </div>
+
+## Using a stepped process
+
+Each part of the journey can be divided into steps, with each step presented on its own page. The content and tasks within a step should align with the user’s mental model for that stage of the journey, helping them understand what’s being asked and why. For example, a multi-step form might include pages titled ‘Enter personal details’ or‘ Provide contact information’.
+
+A stepped or multi-page process helps users complete complex forms more confidently by breaking large tasks into manageable sections. Clearly showing users where they are in the journey, how many steps remain, builds trust and encourages them to continue.
+
+To create the best experience, keep each step focused on a single, coherent task, provide clear navigation (such as Back and Continue buttons), and ensure progress indicators remain consistent throughout. When users can easily track their progress and see an end point, they’re more likely to stay engaged and complete the form successfully.
+
+## Spacing
+
+The pattern uses the design system’s 8 point spacing scale to create consistent rhythm and alignment across the layout.
+
+Use spacing to separate sections, group related elements and maintain visual balance between sections of content.
+
+* Apply smaller increments (12px) for tight relationships, such as between labels and their content.
+* Use medium increments (20px or 28px) for spacing between components within the same section.
+* Apply larger increments (40px or 60px) to separate major areas, such the start of a new content section or image.
+
+Keep spacing consistent with the rest of the design system, don’t introduce new values outside the scale.
+
+
+
+
+## Typography
+
+Follow the ADMIRALTY Design System typographic scale:
+
+* H1 for the main page title.
+* Use H2 for section titles within the form.
+* Use paragraph text for any additional content or guidance applicable to the whole page.
+* Use ‘small text’ for labels and hint text
+* On smaller screens, the typographic scale should adapt according to the responsive typography settings in the design system.
+
+
+## Accessibility
+
+To ensure the form is accessible to all users:
+
+* Each form input must have a clearly associated label.
+* Provide help text or examples where necessary to explain data formats or required inputs.
+* Use error messages that clearly explain what went wrong and how to fix it.
+* Ensure that keyboard navigation works for all interactive elements.
+* Maintain sufficient colour contrast between text, labels, and background.
+* When using multi-step forms, ensure that progress indicators and navigation are announced to screen readers.
+* Validate inputs both client-side and server-side for data integrity and user safety.
+
+
+
+

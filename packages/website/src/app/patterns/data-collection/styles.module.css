@@ -1,0 +1,24 @@
+.introText p {
+  --admiralty-font-size-0: 28px;
+  line-height: 36px;
+}
+
+.imagesRow {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.imageWrapper {
+  display: inline-block;
+  border: 1px solid #d0d0d0;
+  padding: 12px;
+  background: #fff;
+}
+
+.image {
+  display: block;
+  max-width: 100%;
+}
+

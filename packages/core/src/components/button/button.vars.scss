@@ -36,7 +36,7 @@ $button-idiomatic-font-size: var(--admiralty-button-idiomatic-font-size, var(--a
 $button-line-height: 24px !default;
 
 $button-focus-colour: var(--admiralty-focus-colour) !default;
-$button-focus-text-colour: var(--admiralty-text-colour) !default;
+$button-focus-text-colour: var(--admiralty-focus-contrast) !default;
 $button-icon-colour: var(--admiralty-colour-primary) !default;
 
 $button-colour-deselected: var(--admiralty-disabled-colour) !default;

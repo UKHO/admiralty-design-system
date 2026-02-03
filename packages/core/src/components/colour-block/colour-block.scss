@@ -49,7 +49,9 @@
 
   &.bright-blue {
     background-color: $tertiary-colour-block-colour;
-    color: $tertiary-colour-block-text-colour;
+    * {
+      color: $tertiary-colour-block-text-colour;
+    }
     .clickAction * {
       color: $tertiary-colour-block-text-colour;
     }
