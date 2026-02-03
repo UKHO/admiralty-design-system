@@ -1,6 +1,6 @@
 {
   "name": "admiralty-design-system",
-  "packageManager": "pnpm@10.28.0",
+  "packageManager": "yarn@4.5.3",
   "devDependencies": {
     "@auto-it/conventional-commits": "^11.3.0",
     "@auto-it/protected-branch": "^11.3.0",
@@ -9,7 +9,7 @@
     "colorette": "^2.0.20",
     "execa": "^9.4.0",
     "fs-extra": "^11.2.0",
-    "lerna": "^9.0.3",
+    "lerna": "9.0.0",
     "listr": "^0.14.3",
     "nx": "21.2.1",
     "semver": "^7.6.3"

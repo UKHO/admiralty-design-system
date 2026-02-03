@@ -52,6 +52,7 @@ export class ExpansionComponent {
       <section
         class={{
           expansion: true,
+          expanded: this.expanded,
           bordered: !this.hideBorder,
         }}
       >
@@ -60,7 +61,7 @@ export class ExpansionComponent {
           <span class="visually-hidden">, {this.expanded ? 'Hide' : 'Show'} this section</span>
           <admiralty-icon class="expansion-heading-icon" name={this.getExpansionIcon()}></admiralty-icon>
         </button>
-        <div class={{ 'expansion-content': true, 'expanded': this.expanded }} id={this.contentId} aria-labelledby={this.headerId} hidden={!this.expanded}>
+        <div class="expansion-content" id={this.contentId} aria-labelledby={this.headerId} hidden={!this.expanded}>
           <slot></slot>
         </div>
       </section>

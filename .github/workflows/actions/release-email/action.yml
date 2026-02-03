@@ -17,7 +17,7 @@ runs:
   using: 'composite'
   steps:
     - name: Install SendGrid SDK
-      run: pnpm add @sendgrid/mail
+      run: yarn add @sendgrid/mail
       shell: bash
     - name: Send Release Email
       run: |

@@ -1,1 +1,1 @@
-npm install -g pnpm@latest-10
+yarn install

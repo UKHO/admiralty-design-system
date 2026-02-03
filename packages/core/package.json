@@ -1,6 +1,6 @@
 {
   "name": "@ukho/admiralty-core",
-  "version": "5.1.0",
+  "version": "5.0.1",
   "description": "Stencil Component Starter",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
@@ -18,8 +18,8 @@
     "themes/"
   ],
   "scripts": {
-    "build": "pnpm run build.css && stencil build",
-    "build.css": "pnpm run css.sass && pnpm run css.minify",
+    "build": "yarn run build.css && stencil build",
+    "build.css": "yarn run css.sass && yarn run css.minify",
     "css.minify": "cleancss -O2 -o styles/admiralty.bundle.css styles/admiralty.bundle.css",
     "css.sass": "sass --embed-sources src/styles/css:./styles",
     "start": "stencil build --dev --watch --serve --no-open",
@@ -32,7 +32,7 @@
     "storybook-nb": "npx storybook dev -p 6006",
     "storybook-dev": "concurrently \"stencil build --debug --dev --watch\" \"npx storybook dev --no-open -p 6006\"",
     "build-storybook": "storybook build",
-    "story": "pnpm start & pnpm storybook"
+    "story": "yarn start & yarn storybook"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",

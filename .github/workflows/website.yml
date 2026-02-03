@@ -15,13 +15,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 20.x
-          cache: 'pnpm'
-          cache-dependency-path: 'pnpm-lock.yaml'
+          cache: "yarn"
+          cache-dependency-path: "yarn.lock"
       - uses: ./.github/workflows/actions/build-website
         name: Build
 
@@ -31,13 +29,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 20.x
-          cache: 'pnpm'
-          cache-dependency-path: 'pnpm-lock.yaml'
+          cache: "yarn"
+          cache-dependency-path: "yarn.lock"
       - uses: ./.github/workflows/actions/deploy-website
         name: Deploy Website
         with:

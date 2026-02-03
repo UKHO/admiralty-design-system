@@ -14,11 +14,12 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: '0'
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
+      - uses: ./.github/workflows/actions/yarn-cache
+        name: Restore Yarn Cache
       - name: Install Packages
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
         run: |
-          pnpm install --frozen-lockfile
+          yarn install --immutable
         working-directory: ./packages/core
       - uses: ./.github/workflows/actions/build-all
         name: Build
