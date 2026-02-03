@@ -1,13 +1,13 @@
 {
   "name": "@ukho/admiralty-react",
-  "version": "5.0.1",
+  "version": "5.1.0",
   "license": "MIT",
   "url": "https://github.com/UKHO/admiralty-design-system",
   "repository": "git://github.com/UKHO/admiralty-design-system.git",
   "main": "dist/index.js",
   "types": "dist/types/index.d.ts",
   "scripts": {
-    "build": "npm run tsc",
+    "build": "pnpm run tsc",
     "tsc": "tsc"
   },
   "files": [
@@ -15,14 +15,15 @@
   ],
   "dependencies": {
     "@stencil/react-output-target": "^0.7.1",
-    "@ukho/admiralty-core": "^5.0.1"
+    "@ukho/admiralty-core": "workspace:*"
   },
   "peerDependencies": {
     "react": ">=17",
     "react-dom": ">=17"
   },
   "devDependencies": {
-    "@types/react": "^18.3.8",
+    "@types/react": "^18.3.7",
+    "@types/react-dom": "^18.3.7",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "typescript": "^5.6.2"
