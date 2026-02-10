@@ -323,6 +323,7 @@
 
 <admiralty-progress-bar [progression]="progress"></admiralty-progress-bar>
 <admiralty-button (click)="onIncreaseProgressClick()">Increase Progress</admiralty-button>
+
 <admiralty-dialogue type="info" heading="Info">
   Our site will be down for maintenance between 20:00 and 22:00 on 1 June 2019. You won't be able to access the site
   during this time.
@@ -345,5 +346,76 @@
   </div>
 </admiralty-modal-dialog>
 
+<h2>Progress Tracker with Form Validation</h2>
+<div style="display: flex; gap: 20px">
+  <div id="progress-tracker-content" style="flex: 1">
+    <!-- Example form for current step -->
+    <div style="margin: 20px 0; padding: 20px; border: 1px solid #ccc; border-radius: 4px">
+      <h3>Current Step: {{ currentStepId }}</h3>
+
+      <div *ngIf="currentStepId === 'location'" [formGroup]="locationForm">
+        <admiralty-label for="latitude">Latitude</admiralty-label>
+        <admiralty-input id="latitude" formControlName="latitude" placeholder="Enter latitude"></admiralty-input>
+
+        <admiralty-label for="longitude">Longitude</admiralty-label>
+        <admiralty-input id="longitude" formControlName="longitude" placeholder="Enter longitude"></admiralty-input>
+      </div>
+
+      <div *ngIf="currentStepId === 'object'" [formGroup]="objectForm">
+        <admiralty-label for="celestialObject">Celestial Object</admiralty-label>
+        <admiralty-select id="celestialObject" formControlName="celestialObject">
+          <option value="">Select an object</option>
+          <option value="Sun">Sun</option>
+          <option value="Moon">Moon</option>
+          <option value="Venus">Venus</option>
+        </admiralty-select>
+      </div>
+
+      <div *ngIf="currentStepId === 'information-type'" [formGroup]="informationForm">
+        <admiralty-label for="informationType">Information Type</admiralty-label>
+        <admiralty-select id="informationType" formControlName="informationType">
+          <option value="">Select information type</option>
+          <option value="meridian">Meridian Transit</option>
+          <option value="rising">Rising</option>
+          <option value="setting">Setting</option>
+        </admiralty-select>
+
+        <admiralty-label for="depression">Depression (degrees)</admiralty-label>
+        <admiralty-input
+          id="depression"
+          type="number"
+          formControlName="depression"
+          placeholder="Enter depression"
+        ></admiralty-input>
+      </div>
+
+      <div *ngIf="currentStepId === 'date'" [formGroup]="dateForm">
+        <admiralty-label for="selectedDate">Date</admiralty-label>
+        <admiralty-input id="selectedDate" type="date" formControlName="selectedDate"></admiralty-input>
+      </div>
+
+      <div *ngIf="currentStepId === 'download'">
+        <p>Ready to download your data!</p>
+        <admiralty-button>Download Now</admiralty-button>
+      </div>
+
+      <div style="margin-top: 20px">
+        <admiralty-button (click)="completeCurrentStep()">
+          {{ currentStepId === "download" ? "Download" : "Continue to Next Step" }}
+        </admiralty-button>
+      </div>
+    </div>
+  </div>
+  <div style="flex: 0 0 300px">
+    <admiralty-progress-tracker
+      [steps]="progressTrackerSteps"
+      [allowBackNavigation]="true"
+      [validateBeforeNavigation]="true"
+      [validateStep]="validateCurrentStep"
+      (stepClicked)="onProgressStepClicked($event)"
+    >
+    </admiralty-progress-tracker>
+  </div>
+</div>
 <admiralty-footer image-src="assets/svg/UKHO%20stacked%20logo.svg" />
 
