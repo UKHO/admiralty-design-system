@@ -2,7 +2,7 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 import { QueryList, ViewChildren } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AdmiraltySideNavItem } from '@ukho/admiralty-angular';
-import { AdmiraltyAutocompleteCustomEvent, AutoCompleteChangeEventDetail } from '@ukho/admiralty-core';
+import { AdmiraltyAutocompleteCustomEvent, AutoCompleteChangeEventDetail, ProgressStep } from '@ukho/admiralty-core';
 
 export interface CommissioningOrganisation {
   id?: number;
@@ -172,5 +172,124 @@ export class AppComponent {
 
   selectDirection() {
     this.group.controls.direction.setValue('South');
+  }
+
+  // Form-integrated progress tracker
+  progressTrackerSteps: ProgressStep[] = [
+    {
+      id: 'location',
+      title: 'Choose location',
+      status: 'current' as const
+    },
+    {
+      id: 'object',
+      title: 'Choose object',
+      status: 'upcoming' as const
+    },
+    {
+      id: 'information-type',
+      title: 'Choose information type',
+      status: 'upcoming' as const
+    },
+    {
+      id: 'date',
+      title: 'Choose date',
+      status: 'upcoming' as const,
+    },
+    {
+      id: 'download',
+      title: 'Download data',
+      status: 'upcoming' as const,
+    },
+  ];
+
+  // Form groups for each step
+  locationForm = new FormGroup({
+    latitude: new FormControl('', Validators.required),
+    longitude: new FormControl('', Validators.required),
+  });
+
+  objectForm = new FormGroup({
+    celestialObject: new FormControl('', Validators.required),
+  });
+
+  informationForm = new FormGroup({
+    informationType: new FormControl('', Validators.required),
+    depression: new FormControl('', [Validators.required, Validators.min(0)]),
+  });
+
+  dateForm = new FormGroup({
+    selectedDate: new FormControl('', Validators.required),
+  });
+
+  currentStepId = 'location';
+
+  // Handle step navigation with form validation
+  onProgressStepClicked(event: any) {
+    const { stepId, stepIndex } = event.detail;
+    console.log('Step clicked:', stepId, stepIndex);
+
+    // Update current step
+    this.currentStepId = stepId;
+    this.updateProgressTrackerSteps(stepId);
+  }
+
+  // Validate current step before allowing navigation
+  validateCurrentStep = (stepId: string, stepIndex: number): boolean => {
+    const stepForms: { [key: string]: FormGroup } = {
+      'location': this.locationForm,
+      'object': this.objectForm,
+      'information-type': this.informationForm,
+      'date': this.dateForm,
+    };
+
+    const form = stepForms[stepId];
+    if (form) {
+      form.markAllAsTouched();
+      const isValid = form.valid;
+
+      if (!isValid) {
+        // Update step to show error
+        this.progressTrackerSteps = this.progressTrackerSteps.map(step =>
+          step.id === stepId
+            ? { ...step, status: 'error' as const, errorMessage: 'Please complete all required fields' }
+            : step
+        );
+      }
+
+      return isValid;
+    }
+
+    return true;
+  };
+
+  // Update progress tracker steps based on current step
+  updateProgressTrackerSteps(currentStepId: string) {
+    const stepOrder = ['location', 'object', 'information-type', 'date', 'download'];
+    const currentIndex = stepOrder.indexOf(currentStepId);
+
+    this.progressTrackerSteps = this.progressTrackerSteps.map((step, index) => {
+      if (index < currentIndex) {
+        return { ...step, status: 'complete' as const, errorMessage: undefined };
+      } else if (step.id === currentStepId) {
+        return { ...step, status: 'current' as const, errorMessage: undefined };
+      } else {
+        return { ...step, status: 'upcoming' as const, errorMessage: undefined };
+      }
+    });
+  }
+
+  // Complete current step and move to next
+  completeCurrentStep() {
+    const stepOrder = ['location', 'object', 'information-type', 'date', 'download'];
+    const currentIndex = stepOrder.indexOf(this.currentStepId);
+
+    if (this.validateCurrentStep(this.currentStepId, currentIndex)) {
+      const nextStepId = stepOrder[currentIndex + 1];
+      if (nextStepId) {
+        this.currentStepId = nextStepId;
+        this.updateProgressTrackerSteps(nextStepId);
+      }
+    }
   }
 }

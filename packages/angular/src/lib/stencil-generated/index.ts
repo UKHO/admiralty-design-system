@@ -36,6 +36,7 @@ export const DIRECTIVES = [
   d.AdmiraltyPhaseBanner,
   d.AdmiraltyPill,
   d.AdmiraltyProgressBar,
+  d.AdmiraltyProgressTracker,
   d.AdmiraltyRadio,
   d.AdmiraltyRadioGroup,
   d.AdmiraltyReadMore,

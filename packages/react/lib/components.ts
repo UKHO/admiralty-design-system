@@ -9,7 +9,7 @@
 
 import type { EventName, StencilReactComponent } from '@stencil/react-output-target/runtime';
 import { createComponent } from '@stencil/react-output-target/runtime';
-import { type AdmiraltyAutocompleteCustomEvent, type AdmiraltyCheckboxCustomEvent, type AdmiraltyFileInputCustomEvent, type AdmiraltyInputCustomEvent, type AdmiraltyRadioGroupCustomEvent, type AdmiraltySelectCustomEvent, type AdmiraltyTextareaCustomEvent, type AutoCompleteChangeEventDetail, type CheckboxChangeEventDetail, type FileInputChangeEventDetail, type InputChangeEventDetail, type RadioGroupChangeEventDetail, type SelectChangeEventDetail, type TextAreaChangeEventDetail } from "@ukho/admiralty-core";
+import { type AdmiraltyAutocompleteCustomEvent, type AdmiraltyCheckboxCustomEvent, type AdmiraltyFileInputCustomEvent, type AdmiraltyInputCustomEvent, type AdmiraltyProgressTrackerCustomEvent, type AdmiraltyRadioGroupCustomEvent, type AdmiraltySelectCustomEvent, type AdmiraltyTextareaCustomEvent, type AutoCompleteChangeEventDetail, type CheckboxChangeEventDetail, type FileInputChangeEventDetail, type InputChangeEventDetail, type RadioGroupChangeEventDetail, type SelectChangeEventDetail, type StepNavigationDetail, type StepValidationDetail, type TextAreaChangeEventDetail } from "@ukho/admiralty-core";
 import { AdmiraltyAutocompleteOption as AdmiraltyAutocompleteOptionElement, defineCustomElement as defineAdmiraltyAutocompleteOption } from "@ukho/admiralty-core/dist/components/admiralty-autocomplete-option.js";
 import { AdmiraltyAutocomplete as AdmiraltyAutocompleteElement, defineCustomElement as defineAdmiraltyAutocomplete } from "@ukho/admiralty-core/dist/components/admiralty-autocomplete.js";
 import { AdmiraltyBreadcrumb as AdmiraltyBreadcrumbElement, defineCustomElement as defineAdmiraltyBreadcrumb } from "@ukho/admiralty-core/dist/components/admiralty-breadcrumb.js";
@@ -44,6 +44,7 @@ import { AdmiraltyPaginator as AdmiraltyPaginatorElement, defineCustomElement as
 import { AdmiraltyPhaseBanner as AdmiraltyPhaseBannerElement, defineCustomElement as defineAdmiraltyPhaseBanner } from "@ukho/admiralty-core/dist/components/admiralty-phase-banner.js";
 import { AdmiraltyPill as AdmiraltyPillElement, defineCustomElement as defineAdmiraltyPill } from "@ukho/admiralty-core/dist/components/admiralty-pill.js";
 import { AdmiraltyProgressBar as AdmiraltyProgressBarElement, defineCustomElement as defineAdmiraltyProgressBar } from "@ukho/admiralty-core/dist/components/admiralty-progress-bar.js";
+import { AdmiraltyProgressTracker as AdmiraltyProgressTrackerElement, defineCustomElement as defineAdmiraltyProgressTracker } from "@ukho/admiralty-core/dist/components/admiralty-progress-tracker.js";
 import { AdmiraltyRadioGroup as AdmiraltyRadioGroupElement, defineCustomElement as defineAdmiraltyRadioGroup } from "@ukho/admiralty-core/dist/components/admiralty-radio-group.js";
 import { AdmiraltyRadio as AdmiraltyRadioElement, defineCustomElement as defineAdmiraltyRadio } from "@ukho/admiralty-core/dist/components/admiralty-radio.js";
 import { AdmiraltyReadMore as AdmiraltyReadMoreElement, defineCustomElement as defineAdmiraltyReadMore } from "@ukho/admiralty-core/dist/components/admiralty-read-more.js";
@@ -439,6 +440,22 @@ export const AdmiraltyProgressBar: StencilReactComponent<AdmiraltyProgressBarEle
     react: React,
     events: {} as AdmiraltyProgressBarEvents,
     defineCustomElement: defineAdmiraltyProgressBar
+});
+
+type AdmiraltyProgressTrackerEvents = {
+    onStepClicked: EventName<AdmiraltyProgressTrackerCustomEvent<StepNavigationDetail>>,
+    onStepValidationRequested: EventName<AdmiraltyProgressTrackerCustomEvent<StepValidationDetail>>
+};
+
+export const AdmiraltyProgressTracker: StencilReactComponent<AdmiraltyProgressTrackerElement, AdmiraltyProgressTrackerEvents> = /*@__PURE__*/ createComponent<AdmiraltyProgressTrackerElement, AdmiraltyProgressTrackerEvents>({
+    tagName: 'admiralty-progress-tracker',
+    elementClass: AdmiraltyProgressTrackerElement,
+    react: React,
+    events: {
+        onStepClicked: 'stepClicked',
+        onStepValidationRequested: 'stepValidationRequested'
+    } as AdmiraltyProgressTrackerEvents,
+    defineCustomElement: defineAdmiraltyProgressTracker
 });
 
 type AdmiraltyRadioEvents = {
