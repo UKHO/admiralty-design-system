@@ -7,6 +7,10 @@ export interface ProgressStep {
   title: string;
   status: StepStatus;
   summary?: string;
+  /**
+   * Bullet summaries shown under the step title
+   */
+  bulletSummaries?: string[];
   errorMessage?: string;
   isValid?: boolean;
 }
@@ -89,14 +93,14 @@ export class ProgressTrackerComponent {
     if (status === 'current') {
       return (
         <span class="progress-tracker__marker progress-tracker__marker--current" aria-label="Current step">
-          <span class="progress-tracker__marker-number">{stepNumber}</span>
+          {/* <span class="progress-tracker__marker-number">{stepNumber}</span> */}
         </span>
       );
     }
 
     return (
       <span class="progress-tracker__marker progress-tracker__marker--upcoming" aria-label="Upcoming step">
-        <span class="progress-tracker__marker-number">{stepNumber}</span>
+        {/* <span class="progress-tracker__marker-number">{stepNumber}</span> */}
       </span>
     );
   }
@@ -195,6 +199,13 @@ export class ProgressTrackerComponent {
                       <div class="progress-tracker__content">
                         <div class="progress-tracker__title">{step.title}</div>
                         {step.summary && <div class="progress-tracker__summary">{step.summary}</div>}
+                        {step.bulletSummaries && step.bulletSummaries.length > 0 && (
+                          <ul class="progress-tracker__bullet-summary">
+                            {step.bulletSummaries.map((bullet, bulletIdx) => (
+                              <li key={bulletIdx}>{bullet}</li>
+                            ))}
+                          </ul>
+                        )}
                         {step.status === 'error' && step.errorMessage && (
                           <div class="progress-tracker__error" role="alert">
                             {step.errorMessage}
@@ -214,6 +225,13 @@ export class ProgressTrackerComponent {
                       <div class="progress-tracker__content">
                         <div class="progress-tracker__title">{step.title}</div>
                         {step.summary && <div class="progress-tracker__summary">{step.summary}</div>}
+                        {step.bulletSummaries && step.bulletSummaries.length > 0 && (
+                          <ul class="progress-tracker__bullet-summary">
+                            {step.bulletSummaries.map((bullet, bulletIdx) => (
+                              <li key={bulletIdx}>{bullet}</li>
+                            ))}
+                          </ul>
+                        )}
                         {step.status === 'error' && step.errorMessage && (
                           <div class="progress-tracker__error" role="alert">
                             {step.errorMessage}

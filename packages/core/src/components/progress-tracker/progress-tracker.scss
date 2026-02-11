@@ -1,13 +1,24 @@
 /* progress-tracker component styles */
 @import '../../styles/vars/colours';
 
-.progress-tracker {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+$pt-button-background-color: #6fb961;
+$pt-button-border-color: #4aab37;
+$pt-button-upcoming-border: #09315b;
+$pt-vertical-line-color: #09315b;
 
+.progress-tracker {
   &__list {
     list-style: none;
     padding: 0;
     margin: 0;
+  }
+
+  .progress-tracker__item.sc-admiralty-progress-tracker::before {
+    content: none !important;
+  }
+
+  .progress-tracker__bullet-summary.sc-admiralty-progress-tracker li.sc-admiralty-progress-tracker::before {
+    content: none !important;
   }
 
   &__item {
@@ -77,13 +88,14 @@
     position: relative;
 
     &--complete {
-      background-color: $success;
+      background-color: $pt-button-background-color;
+      border: 2px solid $pt-button-border-color;
       color: white;
     }
 
     &--current {
-      background-color: $success;
-      box-shadow: 0 0 0 4px rgba($success, 0.2);
+      background-color: $pt-button-background-color;
+      border: 2px solid $pt-button-border-color;
       color: white;
       font-weight: 700;
       font-size: 14px;
@@ -91,7 +103,7 @@
 
     &--upcoming {
       background-color: white;
-      border: 2px solid $primary;
+      border: 2px solid $pt-button-upcoming-border;
       color: $primary;
       font-weight: 700;
       font-size: 14px;
@@ -119,7 +131,7 @@
   &__line {
     width: 2px;
     flex: 1;
-    background-color: $secondary;
+    background-color: $pt-vertical-line-color;
     margin-top: 4px;
   }
 
@@ -132,11 +144,29 @@
   }
 
   &__title {
-    font-size: 19px;
-    font-weight: 700;
-    color: $primary;
+    font-size: 18px;
+    font-weight: 500;
+    color: $primary !important;
     margin: 0;
     transition: color 200ms ease-in-out;
+  }
+
+  &__bullet-summary {
+    list-style-position: inside;
+    font-size: 14px;
+    color: #505a5f;
+    margin: 8px 0 4px 0;
+    padding: 0;
+    line-height: 1.5;
+
+    li {
+      margin-bottom: 4px;
+      padding-left: 0;
+      list-style: inside;
+      font-size: 18px;
+      color: #333333;
+      font-weight: 300;
+    }
   }
 
   &__summary {
@@ -161,17 +191,29 @@
   }
 
   // Styling for different states
-  &__item--complete &__title {
-    color: $primary;
+  &__item--complete {
+    .progress-tracker__title {
+      color: $primary;
+    }
+
+    .progress-tracker__line {
+      background-color: $pt-button-border-color;
+    }
   }
 
-  &__item--current &__title {
-    color: $primary;
+  &__item--current {
+    .progress-tracker__title {
+      color: $primary;
+    }
   }
 
   &__item--upcoming {
     .progress-tracker__title {
       color: #505a5f;
+    }
+
+    .progress-tracker__bullet-summary {
+      color: #8a8c8e;
     }
 
     .progress-tracker__summary {
@@ -208,6 +250,10 @@
     }
 
     &__summary {
+      color: #b0b0b0;
+    }
+
+    &__bullet-summary {
       color: #b0b0b0;
     }
   }

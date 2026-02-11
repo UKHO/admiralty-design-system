@@ -5,13 +5,15 @@ const exampleSteps = [
         id: 'location',
         title: 'Choose location',
         status: 'complete',
-        summary: '51deg 30m 35s N, 0deg 7m 5s W',
+        summary: 'Specify geographic coordinates',
+        bulletSummaries: ['Latitude: 51deg 30m 35s N', 'Longitude: 0deg 7m 5s W'],
     },
     {
         id: 'object',
         title: 'Choose object',
         status: 'complete',
-        summary: 'Sun',
+        summary: 'Select from available celestial objects',
+        bulletSummaries: ['Sun, Moon, or Venus'],
     },
     {
         id: 'information-type',
