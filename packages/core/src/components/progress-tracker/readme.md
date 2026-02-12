@@ -42,19 +42,6 @@ Use child `admiralty-progress-tracker-step` components to define your steps:
 </admiralty-progress-tracker>
 ```
 
-### Legacy JavaScript Approach (Deprecated)
-
-The legacy approach using the `steps` prop is still supported for backward compatibility but is deprecated:
-
-```javascript
-const tracker = document.querySelector('admiralty-progress-tracker');
-tracker.steps = [
-  { id: 'step1', title: 'First Step', status: 'complete' },
-  { id: 'step2', title: 'Second Step', status: 'current' },
-  { id: 'step3', title: 'Third Step', status: 'upcoming' },
-];
-```
-
 ## Features
 
 - **Visual Status Indicators**: Each step displays a visual marker showing its status (complete, current, upcoming, or error)
@@ -66,7 +53,6 @@ tracker.steps = [
 
 <!-- Auto Generated Below -->
 
-
 ## Properties
 
 | Property                   | Attribute                    | Description                                                     | Type                                                                 | Default     |
@@ -75,7 +61,6 @@ tracker.steps = [
 | `validateBeforeNavigation` | `validate-before-navigation` | Whether to validate the current step before allowing navigation | `boolean`                                                            | `false`     |
 | `validateStep`             | --                           | Function to validate a step (returns true if valid)             | `(stepId: string, stepIndex: number) => boolean \| Promise<boolean>` | `undefined` |
 
-
 ## Events
 
 | Event                     | Description                               | Type                                |
@@ -83,13 +68,11 @@ tracker.steps = [
 | `stepClicked`             | Emitted when user clicks on a step        | `CustomEvent<StepNavigationDetail>` |
 | `stepValidationRequested` | Emitted when step validation is requested | `CustomEvent<StepValidationDetail>` |
 
-
 ## Slots
 
 | Slot | Description                                           |
 | ---- | ----------------------------------------------------- |
 |      | Place admiralty-progress-tracker-step components here |
-
 
 ## Dependencies
 
@@ -98,12 +81,13 @@ tracker.steps = [
 - [admiralty-icon](../icon)
 
 ### Graph
+
 ```mermaid
 graph TD;
   admiralty-progress-tracker --> admiralty-icon
   style admiralty-progress-tracker fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
-----------------------------------------------
+---
 
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_
