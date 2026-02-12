@@ -124,6 +124,7 @@
   &-check {
     width: $progress-tracker-check-width;
     height: $progress-tracker-check-height;
+    color: $progress-tracker-check-color;
   }
 
   &-line {
@@ -160,7 +161,6 @@
     li {
       margin-bottom: $progress-tracker-bullet-item-margin-bottom;
       padding-left: 0;
-      // list-style: inside;
       font-size: $progress-tracker-bullet-item-font-size;
       color: $progress-tracker-bullet-item-colour;
       font-weight: $progress-tracker-bullet-item-font-weight;

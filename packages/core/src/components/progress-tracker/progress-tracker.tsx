@@ -80,9 +80,7 @@ export class ProgressTrackerComponent {
 
   private updateStepsFromChildren() {
     // Query for child step components
-    const stepElements = Array.from(
-      this.el.querySelectorAll('admiralty-progress-tracker-step')
-    ) as HTMLElement[];
+    const stepElements = Array.from(this.el.querySelectorAll('admiralty-progress-tracker-step')) as HTMLElement[];
 
     this.currentSteps = stepElements.map((stepEl: any) => {
       // Get bullet summaries from slotted content
@@ -114,7 +112,9 @@ export class ProgressTrackerComponent {
 
   private renderCheckIcon() {
     return (
-      <admiralty-icon name="check-mark" class="progress-tracker-check" aria-hidden="true"></admiralty-icon>
+      <span class="progress-tracker-check">
+        <admiralty-icon class="icon-padding" name="check"></admiralty-icon>
+      </span>
     );
   }
 
@@ -128,23 +128,14 @@ export class ProgressTrackerComponent {
     }
 
     if (status === 'error') {
-      return (
-        <span class="progress-tracker-marker progress-tracker-marker--error" aria-label="Step has errors">
-        </span>
-      );
+      return <span class="progress-tracker-marker progress-tracker-marker--error" aria-label="Step has errors"></span>;
     }
 
     if (status === 'current') {
-      return (
-        <span class="progress-tracker-marker progress-tracker-marker--current" aria-label="Current step">
-        </span>
-      );
+      return <span class="progress-tracker-marker progress-tracker-marker--current" aria-label="Current step"></span>;
     }
 
-    return (
-      <span class="progress-tracker-marker progress-tracker-marker--upcoming" aria-label="Upcoming step">
-      </span>
-    );
+    return <span class="progress-tracker-marker progress-tracker-marker--upcoming" aria-label="Upcoming step"></span>;
   }
 
   private getCurrentStepIndex(): number {
@@ -204,7 +195,7 @@ export class ProgressTrackerComponent {
 
   render() {
     const steps = this.getSteps();
-    
+
     return (
       <Host role="region" aria-label="Progress tracking">
         <nav class="progress-tracker" aria-label="Progress tracker - step navigation">
