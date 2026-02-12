@@ -12,6 +12,7 @@ import { FileInputChangeEventDetail } from "./components/file-input/file-input.i
 import { FooterTypes } from "./components/footer/footer.types";
 import { InputChangeEventDetail } from "./components/input/input.interface";
 import { ProgressStep, StepNavigationDetail, StepValidationDetail } from "./components/progress-tracker/progress-tracker";
+import { StepStatus } from "./components/progress-tracker-step/progress-tracker-step";
 import { RadioGroupChangeEventDetail } from "./components/radio-group/radio-group-interface";
 import { SelectChangeEventDetail } from "./components/select/select.interface";
 import { TextSideBarItemVariant } from "./components/text-side-bar-item/text-side-bar-item.types";
@@ -23,6 +24,7 @@ export { FileInputChangeEventDetail } from "./components/file-input/file-input.i
 export { FooterTypes } from "./components/footer/footer.types";
 export { InputChangeEventDetail } from "./components/input/input.interface";
 export { ProgressStep, StepNavigationDetail, StepValidationDetail } from "./components/progress-tracker/progress-tracker";
+export { StepStatus } from "./components/progress-tracker-step/progress-tracker-step";
 export { RadioGroupChangeEventDetail } from "./components/radio-group/radio-group-interface";
 export { SelectChangeEventDetail } from "./components/select/select.interface";
 export { TextSideBarItemVariant } from "./components/text-side-bar-item/text-side-bar-item.types";
@@ -638,7 +640,7 @@ export namespace Components {
          */
         "allowBackNavigation": boolean;
         /**
-          * Array of steps to display in the progress tracker
+          * @deprecated Use child admiralty-progress-tracker-step components instead. Array of steps to display in the progress tracker (legacy prop for backward compatibility)
          */
         "steps": ProgressStep[];
         /**
@@ -649,6 +651,35 @@ export namespace Components {
           * Function to validate a step (returns true if valid)
          */
         "validateStep"?: (stepId: string, stepIndex: number) => boolean | Promise<boolean>;
+    }
+    /**
+     * A step component used within admiralty-progress-tracker to define individual steps in a progress flow.
+     */
+    interface AdmiraltyProgressTrackerStep {
+        /**
+          * Optional error message displayed when status is 'error'
+         */
+        "errorMessage"?: string;
+        "isClickable": boolean;
+        "isFocused": boolean;
+        "isLast": boolean;
+        /**
+          * The current status of the step
+         */
+        "status": StepStatus;
+        /**
+          * Unique identifier for the step
+         */
+        "stepId": string;
+        "stepNumber": number;
+        /**
+          * The title text displayed for the step
+         */
+        "stepTitle": string;
+        /**
+          * Optional summary text displayed below the title
+         */
+        "summary"?: string;
     }
     interface AdmiraltyRadio {
         /**
@@ -1413,6 +1444,15 @@ declare global {
         prototype: HTMLAdmiraltyProgressTrackerElement;
         new (): HTMLAdmiraltyProgressTrackerElement;
     };
+    /**
+     * A step component used within admiralty-progress-tracker to define individual steps in a progress flow.
+     */
+    interface HTMLAdmiraltyProgressTrackerStepElement extends Components.AdmiraltyProgressTrackerStep, HTMLStencilElement {
+    }
+    var HTMLAdmiraltyProgressTrackerStepElement: {
+        prototype: HTMLAdmiraltyProgressTrackerStepElement;
+        new (): HTMLAdmiraltyProgressTrackerStepElement;
+    };
     interface HTMLAdmiraltyRadioElementEventMap {
         "admiraltyFocus": void;
         "admiraltyBlur": void;
@@ -1688,6 +1728,7 @@ declare global {
         "admiralty-pill": HTMLAdmiraltyPillElement;
         "admiralty-progress-bar": HTMLAdmiraltyProgressBarElement;
         "admiralty-progress-tracker": HTMLAdmiraltyProgressTrackerElement;
+        "admiralty-progress-tracker-step": HTMLAdmiraltyProgressTrackerStepElement;
         "admiralty-radio": HTMLAdmiraltyRadioElement;
         "admiralty-radio-group": HTMLAdmiraltyRadioGroupElement;
         "admiralty-read-more": HTMLAdmiraltyReadMoreElement;
@@ -2421,7 +2462,7 @@ declare namespace LocalJSX {
          */
         "onStepValidationRequested"?: (event: AdmiraltyProgressTrackerCustomEvent<StepValidationDetail>) => void;
         /**
-          * Array of steps to display in the progress tracker
+          * @deprecated Use child admiralty-progress-tracker-step components instead. Array of steps to display in the progress tracker (legacy prop for backward compatibility)
          */
         "steps"?: ProgressStep[];
         /**
@@ -2432,6 +2473,35 @@ declare namespace LocalJSX {
           * Function to validate a step (returns true if valid)
          */
         "validateStep"?: (stepId: string, stepIndex: number) => boolean | Promise<boolean>;
+    }
+    /**
+     * A step component used within admiralty-progress-tracker to define individual steps in a progress flow.
+     */
+    interface AdmiraltyProgressTrackerStep {
+        /**
+          * Optional error message displayed when status is 'error'
+         */
+        "errorMessage"?: string;
+        "isClickable"?: boolean;
+        "isFocused"?: boolean;
+        "isLast"?: boolean;
+        /**
+          * The current status of the step
+         */
+        "status"?: StepStatus;
+        /**
+          * Unique identifier for the step
+         */
+        "stepId": string;
+        "stepNumber"?: number;
+        /**
+          * The title text displayed for the step
+         */
+        "stepTitle": string;
+        /**
+          * Optional summary text displayed below the title
+         */
+        "summary"?: string;
     }
     interface AdmiraltyRadio {
         /**
@@ -2788,6 +2858,7 @@ declare namespace LocalJSX {
         "admiralty-pill": AdmiraltyPill;
         "admiralty-progress-bar": AdmiraltyProgressBar;
         "admiralty-progress-tracker": AdmiraltyProgressTracker;
+        "admiralty-progress-tracker-step": AdmiraltyProgressTrackerStep;
         "admiralty-radio": AdmiraltyRadio;
         "admiralty-radio-group": AdmiraltyRadioGroup;
         "admiralty-read-more": AdmiraltyReadMore;
@@ -2858,6 +2929,10 @@ declare module "@stencil/core" {
             "admiralty-pill": LocalJSX.AdmiraltyPill & JSXBase.HTMLAttributes<HTMLAdmiraltyPillElement>;
             "admiralty-progress-bar": LocalJSX.AdmiraltyProgressBar & JSXBase.HTMLAttributes<HTMLAdmiraltyProgressBarElement>;
             "admiralty-progress-tracker": LocalJSX.AdmiraltyProgressTracker & JSXBase.HTMLAttributes<HTMLAdmiraltyProgressTrackerElement>;
+            /**
+             * A step component used within admiralty-progress-tracker to define individual steps in a progress flow.
+             */
+            "admiralty-progress-tracker-step": LocalJSX.AdmiraltyProgressTrackerStep & JSXBase.HTMLAttributes<HTMLAdmiraltyProgressTrackerStepElement>;
             "admiralty-radio": LocalJSX.AdmiraltyRadio & JSXBase.HTMLAttributes<HTMLAdmiraltyRadioElement>;
             "admiralty-radio-group": LocalJSX.AdmiraltyRadioGroup & JSXBase.HTMLAttributes<HTMLAdmiraltyRadioGroupElement>;
             "admiralty-read-more": LocalJSX.AdmiraltyReadMore & JSXBase.HTMLAttributes<HTMLAdmiraltyReadMoreElement>;

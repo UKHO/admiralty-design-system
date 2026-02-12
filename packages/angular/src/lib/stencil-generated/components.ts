@@ -917,6 +917,28 @@ export declare interface AdmiraltyProgressTracker extends Components.AdmiraltyPr
 
 
 @ProxyCmp({
+  inputs: ['errorMessage', 'status', 'stepId', 'stepTitle', 'summary']
+})
+@Component({
+  selector: 'admiralty-progress-tracker-step',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['errorMessage', 'status', 'stepId', 'stepTitle', 'summary'],
+})
+export class AdmiraltyProgressTrackerStep {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface AdmiraltyProgressTrackerStep extends Components.AdmiraltyProgressTrackerStep {}
+
+
+@ProxyCmp({
   inputs: ['checked', 'disabled', 'invalid', 'name', 'value']
 })
 @Component({

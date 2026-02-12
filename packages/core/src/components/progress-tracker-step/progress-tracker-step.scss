@@ -1,0 +1,5 @@
+// The step component itself is hidden as it's just a data container
+// All styling is handled by the parent progress-tracker component
+:host {
+  display: none;
+}

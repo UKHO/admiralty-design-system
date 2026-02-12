@@ -1,4 +1,4 @@
-import { Component, h, Prop, Event, EventEmitter, State, Host } from '@stencil/core';
+import { Component, h, Prop, Event, EventEmitter, State, Host, Element } from '@stencil/core';
 
 export type StepStatus = 'complete' | 'current' | 'upcoming' | 'error';
 
@@ -26,14 +26,20 @@ export interface StepValidationDetail {
   isValid: boolean;
 }
 
+/**
+ * @slot - Place admiralty-progress-tracker-step components here
+ */
 @Component({
   tag: 'admiralty-progress-tracker',
   styleUrl: 'progress-tracker.scss',
   scoped: true,
 })
 export class ProgressTrackerComponent {
+  @Element() el!: HTMLElement;
+
   /**
-   * Array of steps to display in the progress tracker
+   * @deprecated Use child admiralty-progress-tracker-step components instead.
+   * Array of steps to display in the progress tracker (legacy prop for backward compatibility)
    */
   @Prop() steps: ProgressStep[] = [];
 
@@ -64,6 +70,65 @@ export class ProgressTrackerComponent {
 
   @State() focusedStepIndex: number | null = null;
   @State() validationErrors: Map<string, string> = new Map();
+  @State() internalSteps: ProgressStep[] = [];
+
+  componentWillLoad() {
+    this.updateStepsFromChildren();
+  }
+
+  componentDidLoad() {
+    // Set up a mutation observer to watch for child changes
+    const observer = new MutationObserver(() => {
+      this.updateStepsFromChildren();
+    });
+
+    observer.observe(this.el, {
+      childList: true,
+      subtree: true,
+      attributes: true,
+      attributeFilter: ['step-id', 'title', 'status', 'summary', 'error-message'],
+    });
+  }
+
+  private updateStepsFromChildren() {
+    // If legacy 'steps' prop is used, use that instead
+    if (this.steps && this.steps.length > 0) {
+      this.internalSteps = this.steps;
+      return;
+    }
+
+    // Query for child step components
+    const stepElements = Array.from(
+      this.el.querySelectorAll('admiralty-progress-tracker-step')
+    ) as HTMLElement[];
+
+    this.internalSteps = stepElements.map((stepEl: any) => {
+      // Get bullet summaries from slotted content
+      const bulletSummaries: string[] = [];
+      const bulletList = stepEl.querySelector('[slot="bullet-summaries"]');
+      if (bulletList) {
+        const items = bulletList.querySelectorAll('li');
+        items.forEach((item: any) => {
+          if (item.textContent) {
+            bulletSummaries.push(item.textContent.trim());
+          }
+        });
+      }
+
+      return {
+        id: stepEl.stepId || '',
+        title: stepEl.stepTitle || '',
+        status: stepEl.status || 'upcoming',
+        summary: stepEl.summary,
+        errorMessage: stepEl.errorMessage,
+        bulletSummaries: bulletSummaries.length > 0 ? bulletSummaries : undefined,
+      };
+    });
+  }
+
+  private getSteps(): ProgressStep[] {
+    return this.internalSteps;
+  }
 
   private renderCheckIcon() {
     return (
@@ -73,7 +138,7 @@ export class ProgressTrackerComponent {
     );
   }
 
-  private renderMarker(status: StepStatus, stepNumber: number) {
+  private renderMarker(status: StepStatus) {
     if (status === 'complete') {
       return (
         <span class="progress-tracker__marker progress-tracker__marker--complete" aria-label="Step completed">
@@ -85,7 +150,6 @@ export class ProgressTrackerComponent {
     if (status === 'error') {
       return (
         <span class="progress-tracker__marker progress-tracker__marker--error" aria-label="Step has errors">
-          <span class="progress-tracker__marker-number">{stepNumber}</span>
         </span>
       );
     }
@@ -93,26 +157,25 @@ export class ProgressTrackerComponent {
     if (status === 'current') {
       return (
         <span class="progress-tracker__marker progress-tracker__marker--current" aria-label="Current step">
-          {/* <span class="progress-tracker__marker-number">{stepNumber}</span> */}
         </span>
       );
     }
 
     return (
       <span class="progress-tracker__marker progress-tracker__marker--upcoming" aria-label="Upcoming step">
-        {/* <span class="progress-tracker__marker-number">{stepNumber}</span> */}
       </span>
     );
   }
 
   private getCurrentStepIndex(): number {
-    return this.steps.findIndex(step => step.status === 'current');
+    return this.getSteps().findIndex(step => step.status === 'current');
   }
 
   private isStepClickable(index: number): boolean {
     if (!this.allowBackNavigation) return false;
     const currentIndex = this.getCurrentStepIndex();
-    return index < currentIndex || this.steps[index].status === 'current';
+    const steps = this.getSteps();
+    return index < currentIndex || steps[index].status === 'current';
   }
 
   private async handleStepClick(stepId: string, index: number) {
@@ -120,8 +183,9 @@ export class ProgressTrackerComponent {
 
     // If validation is required and we're navigating forward
     const currentIndex = this.getCurrentStepIndex();
+    const steps = this.getSteps();
     if (this.validateBeforeNavigation && index > currentIndex) {
-      const currentStep = this.steps[currentIndex];
+      const currentStep = steps[currentIndex];
       if (currentStep && this.validateStep) {
         const isValid = await this.validateStep(currentStep.id, currentIndex);
         this.stepValidationRequested.emit({
@@ -145,7 +209,8 @@ export class ProgressTrackerComponent {
     // Arrow navigation
     else if (event.key === 'ArrowDown' || event.key === 'ArrowRight') {
       event.preventDefault();
-      const nextStep = this.steps[index + 1];
+      const steps = this.getSteps();
+      const nextStep = steps[index + 1];
       if (nextStep) {
         this.focusedStepIndex = index + 1;
       }
@@ -158,12 +223,14 @@ export class ProgressTrackerComponent {
   }
 
   render() {
+    const steps = this.getSteps();
+    
     return (
       <Host role="region" aria-label="Progress tracking">
         <nav class="progress-tracker" aria-label="Progress tracker - step navigation">
           <ol class="progress-tracker__list">
-            {this.steps.map((step, idx) => {
-              const isLast = idx === this.steps.length - 1;
+            {steps.map((step, idx) => {
+              const isLast = idx === steps.length - 1;
               const isClickable = this.isStepClickable(idx);
               const ariaLabel = `${idx + 1}. ${step.title}. Status: ${step.status}`;
 
@@ -191,7 +258,7 @@ export class ProgressTrackerComponent {
                     >
                       {/* Left marker + vertical line */}
                       <div class="progress-tracker__rail" aria-hidden="true">
-                        {this.renderMarker(step.status, idx + 1)}
+                        {this.renderMarker(step.status)}
                         {!isLast && <span class="progress-tracker__line" />}
                       </div>
 
@@ -217,7 +284,7 @@ export class ProgressTrackerComponent {
                     <div class="progress-tracker__step-disabled" role="button" aria-disabled="true" aria-label={ariaLabel}>
                       {/* Left marker + vertical line */}
                       <div class="progress-tracker__rail" aria-hidden="true">
-                        {this.renderMarker(step.status, idx + 1)}
+                        {this.renderMarker(step.status)}
                         {!isLast && <span class="progress-tracker__line" />}
                       </div>
 
@@ -245,6 +312,10 @@ export class ProgressTrackerComponent {
             })}
           </ol>
         </nav>
+        {/* Hidden slot for child step components */}
+        <div style={{ display: 'none' }}>
+          <slot></slot>
+        </div>
       </Host>
     );
   }
