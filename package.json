@@ -35,7 +35,8 @@
       [
         "protected-branch",
         {
-          "releaseTemporaryBranchPrefix": "protected-release-"
+          "releaseTemporaryBranchPrefix": "protected-release-",
+          "requiredStatusChecks": ["build", "test-core-spec", "chromatic-deployment"]
         }
       ],
       "npm",

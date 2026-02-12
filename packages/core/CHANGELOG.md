@@ -1,3 +1,38 @@
+# v5.3.0 (Tue Feb 03 2026)
+
+#### 🚀 Enhancement
+
+- Release 5.3.0 [#445](https://github.com/UKHO/admiralty-design-system/pull/445) ([@developernm](https://github.com/developernm) [@ecstaticrainbow](https://github.com/ecstaticrainbow) [@lstevens98](https://github.com/lstevens98))
+- Add dark mode [#404](https://github.com/UKHO/admiralty-design-system/pull/404) ([@lstevens98](https://github.com/lstevens98))
+- Feat: skeleton component [#411](https://github.com/UKHO/admiralty-design-system/pull/411) ([@developernm](https://github.com/developernm))
+- Merge main into next [#406](https://github.com/UKHO/admiralty-design-system/pull/406) ([@developernm](https://github.com/developernm) [@ecstaticrainbow](https://github.com/ecstaticrainbow) [@lstevens98](https://github.com/lstevens98))
+- feat: update unit test ([@developernm](https://github.com/developernm))
+- feat: updated css styling and removed unwanted code ([@developernm](https://github.com/developernm))
+- feat: update website with skeleton ([@developernm](https://github.com/developernm))
+- feat: skeleton view initial commit ([@developernm](https://github.com/developernm))
+
+#### 🐛 Bug Fix
+
+- Manually update package.jsons to 5.2.0 ([@lstevens98](https://github.com/lstevens98))
+- Reapply "Merge branch 'main' into next" ([@lstevens98](https://github.com/lstevens98))
+- Revert "Merge branch 'main' into next" ([@lstevens98](https://github.com/lstevens98))
+- Merge branch 'main' into next ([@lstevens98](https://github.com/lstevens98))
+- Removing any references of fontawesome in the repository [#420](https://github.com/UKHO/admiralty-design-system/pull/420) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+- Merge branch 'next' into feat-skeleton-component ([@developernm](https://github.com/developernm))
+- Merge branch 'main' into update-next ([@developernm](https://github.com/developernm))
+- test: updated the styles into the unit test ([@developernm](https://github.com/developernm))
+- Merge branch 'next' into update-next ([@developernm](https://github.com/developernm))
+- test: updated unit test ([@developernm](https://github.com/developernm))
+- test: update spec ([@developernm](https://github.com/developernm))
+
+#### Authors: 3
+
+- [@developernm](https://github.com/developernm)
+- Lewis Stevens ([@lstevens98](https://github.com/lstevens98))
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
 # v5.0.0 (Wed Aug 27 2025)
 
 #### 💥 Breaking Change
