@@ -185,23 +185,3 @@ export const WithErrors = () => html`
         ></admiralty-progress-tracker-step>
     </admiralty-progress-tracker>
 `;
-
-// Legacy example using the deprecated 'steps' prop for backward compatibility
-export const LegacyPropApproach = () => {
-    const element = document.createElement('admiralty-progress-tracker') as any;
-    element.steps = [
-        { id: 'step1', title: 'Account creation', status: 'complete', summary: 'Email verified' },
-        { id: 'step2', title: 'Payment setup', status: 'current', summary: 'Card required' },
-        { id: 'step3', title: 'Verification', status: 'upcoming' },
-    ];
-    element.allowBackNavigation = true;
-
-    const container = document.createElement('div');
-    const warning = document.createElement('p');
-    warning.textContent = '⚠️ This example uses the deprecated "steps" prop. Use child components instead.';
-    warning.style.cssText = 'padding: 10px; background: #fff3cd; border: 1px solid #ffc107; border-radius: 4px; margin-bottom: 20px;';
-
-    container.appendChild(warning);
-    container.appendChild(element);
-    return container;
-};
