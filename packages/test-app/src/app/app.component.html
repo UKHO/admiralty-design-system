@@ -408,14 +408,24 @@
   </div>
   <div style="flex: 0 0 300px">
     <admiralty-progress-tracker
-      [steps]="progressTrackerSteps"
       [allowBackNavigation]="true"
       [validateBeforeNavigation]="true"
       [validateStep]="validateCurrentStep"
       (stepClicked)="onProgressStepClicked($event)"
     >
+      <admiralty-progress-tracker-step
+        *ngFor="let step of progressTrackerSteps"
+        [stepId]="step.id"
+        [stepTitle]="step.title"
+        [status]="step.status"
+        [summary]="step.summary"
+        [errorMessage]="step.errorMessage"
+      >
+        <ul slot="bullet-summaries" *ngIf="step.bulletSummaries && step.bulletSummaries.length > 0">
+          <li *ngFor="let bullet of step.bulletSummaries">{{ bullet }}</li>
+        </ul>
+      </admiralty-progress-tracker-step>
     </admiralty-progress-tracker>
   </div>
 </div>
 <admiralty-footer image-src="assets/svg/UKHO%20stacked%20logo.svg" />
-

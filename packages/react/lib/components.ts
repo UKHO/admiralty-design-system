@@ -44,6 +44,7 @@ import { AdmiraltyPaginator as AdmiraltyPaginatorElement, defineCustomElement as
 import { AdmiraltyPhaseBanner as AdmiraltyPhaseBannerElement, defineCustomElement as defineAdmiraltyPhaseBanner } from "@ukho/admiralty-core/dist/components/admiralty-phase-banner.js";
 import { AdmiraltyPill as AdmiraltyPillElement, defineCustomElement as defineAdmiraltyPill } from "@ukho/admiralty-core/dist/components/admiralty-pill.js";
 import { AdmiraltyProgressBar as AdmiraltyProgressBarElement, defineCustomElement as defineAdmiraltyProgressBar } from "@ukho/admiralty-core/dist/components/admiralty-progress-bar.js";
+import { AdmiraltyProgressTrackerStep as AdmiraltyProgressTrackerStepElement, defineCustomElement as defineAdmiraltyProgressTrackerStep } from "@ukho/admiralty-core/dist/components/admiralty-progress-tracker-step.js";
 import { AdmiraltyProgressTracker as AdmiraltyProgressTrackerElement, defineCustomElement as defineAdmiraltyProgressTracker } from "@ukho/admiralty-core/dist/components/admiralty-progress-tracker.js";
 import { AdmiraltyRadioGroup as AdmiraltyRadioGroupElement, defineCustomElement as defineAdmiraltyRadioGroup } from "@ukho/admiralty-core/dist/components/admiralty-radio-group.js";
 import { AdmiraltyRadio as AdmiraltyRadioElement, defineCustomElement as defineAdmiraltyRadio } from "@ukho/admiralty-core/dist/components/admiralty-radio.js";
@@ -456,6 +457,16 @@ export const AdmiraltyProgressTracker: StencilReactComponent<AdmiraltyProgressTr
         onStepValidationRequested: 'stepValidationRequested'
     } as AdmiraltyProgressTrackerEvents,
     defineCustomElement: defineAdmiraltyProgressTracker
+});
+
+type AdmiraltyProgressTrackerStepEvents = NonNullable<unknown>;
+
+export const AdmiraltyProgressTrackerStep: StencilReactComponent<AdmiraltyProgressTrackerStepElement, AdmiraltyProgressTrackerStepEvents> = /*@__PURE__*/ createComponent<AdmiraltyProgressTrackerStepElement, AdmiraltyProgressTrackerStepEvents>({
+    tagName: 'admiralty-progress-tracker-step',
+    elementClass: AdmiraltyProgressTrackerStepElement,
+    react: React,
+    events: {} as AdmiraltyProgressTrackerStepEvents,
+    defineCustomElement: defineAdmiraltyProgressTrackerStep
 });
 
 type AdmiraltyRadioEvents = {
