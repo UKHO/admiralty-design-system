@@ -21,7 +21,7 @@ $progress-tracker-button-padding: 0;
 $progress-tracker-button-text-align: left;
 
 // Marker styling (from step component)
-$progress-tracker-marker-size: 32px;
+$progress-tracker-marker-size: 24px;
 $progress-tracker-marker-border-width: 2px;
 $progress-tracker-marker-border-radius: 50%;
 $progress-tracker-marker-transition: all 200ms ease-in-out;
@@ -102,5 +102,6 @@ $progress-tracker-line-complete-colour: var(--admiralty-colour-success-shade);
 $progress-tracker-line-error-colour: var(--admiralty-colour-danger);
 
 // Icon styling
-$progress-tracker-check-width: 16px;
-$progress-tracker-check-height: 16px;
+$progress-tracker-check-width: 20px;
+$progress-tracker-check-height: 20px;
+$progress-tracker-check-color: var(--admiralty-colour-primary-contrast);
