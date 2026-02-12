@@ -2,19 +2,6 @@ import { Component, h, Prop, Event, EventEmitter, State, Host, Element } from '@
 
 export type StepStatus = 'complete' | 'current' | 'upcoming' | 'error';
 
-export interface ProgressStep {
-  id: string;
-  title: string;
-  status: StepStatus;
-  summary?: string;
-  /**
-   * Bullet summaries shown under the step title
-   */
-  bulletSummaries?: string[];
-  errorMessage?: string;
-  isValid?: boolean;
-}
-
 export interface StepNavigationDetail {
   stepId: string;
   stepIndex: number;
@@ -36,12 +23,6 @@ export interface StepValidationDetail {
 })
 export class ProgressTrackerComponent {
   @Element() el!: HTMLElement;
-
-  /**
-   * @deprecated Use child admiralty-progress-tracker-step components instead.
-   * Array of steps to display in the progress tracker (legacy prop for backward compatibility)
-   */
-  @Prop() steps: ProgressStep[] = [];
 
   /**
    * Whether navigation to previous steps is allowed
@@ -70,7 +51,14 @@ export class ProgressTrackerComponent {
 
   @State() focusedStepIndex: number | null = null;
   @State() validationErrors: Map<string, string> = new Map();
-  @State() internalSteps: ProgressStep[] = [];
+  @State() currentSteps: Array<{
+    id: string;
+    title: string;
+    status: StepStatus;
+    summary?: string;
+    bulletSummaries?: string[];
+    errorMessage?: string;
+  }> = [];
 
   componentWillLoad() {
     this.updateStepsFromChildren();
@@ -91,18 +79,12 @@ export class ProgressTrackerComponent {
   }
 
   private updateStepsFromChildren() {
-    // If legacy 'steps' prop is used, use that instead
-    if (this.steps && this.steps.length > 0) {
-      this.internalSteps = this.steps;
-      return;
-    }
-
     // Query for child step components
     const stepElements = Array.from(
       this.el.querySelectorAll('admiralty-progress-tracker-step')
     ) as HTMLElement[];
 
-    this.internalSteps = stepElements.map((stepEl: any) => {
+    this.currentSteps = stepElements.map((stepEl: any) => {
       // Get bullet summaries from slotted content
       const bulletSummaries: string[] = [];
       const bulletList = stepEl.querySelector('[slot="bullet-summaries"]');
@@ -126,22 +108,20 @@ export class ProgressTrackerComponent {
     });
   }
 
-  private getSteps(): ProgressStep[] {
-    return this.internalSteps;
+  private getSteps() {
+    return this.currentSteps;
   }
 
   private renderCheckIcon() {
     return (
-      <svg class="progress-tracker__check" width="14" height="14" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
-        <path d="M7.6 13.4 4.5 10.3a1 1 0 0 1 1.4-1.4l1.7 1.7 6-6a1 1 0 1 1 1.4 1.4l-6.7 6.7a1 1 0 0 1-1.4 0Z" fill="currentColor" />
-      </svg>
+      <admiralty-icon name="check-mark" class="progress-tracker-check" aria-hidden="true"></admiralty-icon>
     );
   }
 
   private renderMarker(status: StepStatus) {
     if (status === 'complete') {
       return (
-        <span class="progress-tracker__marker progress-tracker__marker--complete" aria-label="Step completed">
+        <span class="progress-tracker-marker progress-tracker-marker--complete" aria-label="Step completed">
           {this.renderCheckIcon()}
         </span>
       );
@@ -149,20 +129,20 @@ export class ProgressTrackerComponent {
 
     if (status === 'error') {
       return (
-        <span class="progress-tracker__marker progress-tracker__marker--error" aria-label="Step has errors">
+        <span class="progress-tracker-marker progress-tracker-marker--error" aria-label="Step has errors">
         </span>
       );
     }
 
     if (status === 'current') {
       return (
-        <span class="progress-tracker__marker progress-tracker__marker--current" aria-label="Current step">
+        <span class="progress-tracker-marker progress-tracker-marker--current" aria-label="Current step">
         </span>
       );
     }
 
     return (
-      <span class="progress-tracker__marker progress-tracker__marker--upcoming" aria-label="Upcoming step">
+      <span class="progress-tracker-marker progress-tracker-marker--upcoming" aria-label="Upcoming step">
       </span>
     );
   }
@@ -228,7 +208,7 @@ export class ProgressTrackerComponent {
     return (
       <Host role="region" aria-label="Progress tracking">
         <nav class="progress-tracker" aria-label="Progress tracker - step navigation">
-          <ol class="progress-tracker__list">
+          <ol class="progress-tracker-list">
             {steps.map((step, idx) => {
               const isLast = idx === steps.length - 1;
               const isClickable = this.isStepClickable(idx);
@@ -238,10 +218,10 @@ export class ProgressTrackerComponent {
                 <li
                   key={step.id}
                   class={{
-                    'progress-tracker__item': true,
-                    [`progress-tracker__item--${step.status}`]: true,
-                    'progress-tracker__item--last': isLast,
-                    'progress-tracker__item--clickable': isClickable,
+                    'progress-tracker-item': true,
+                    [`progress-tracker-item--${step.status}`]: true,
+                    'progress-tracker-item--last': isLast,
+                    'progress-tracker-item--clickable': isClickable,
                   }}
                   role="listitem"
                   aria-current={step.status === 'current' ? 'step' : undefined}
@@ -249,7 +229,7 @@ export class ProgressTrackerComponent {
                   {/* Clickable button for completed/current steps */}
                   {isClickable ? (
                     <button
-                      class="progress-tracker__button"
+                      class="progress-tracker-button"
                       onClick={() => this.handleStepClick(step.id, idx)}
                       onKeyDown={e => this.handleStepKeyDown(e, step.id, idx)}
                       tabindex={this.focusedStepIndex === idx ? 0 : -1}
@@ -257,50 +237,50 @@ export class ProgressTrackerComponent {
                       type="button"
                     >
                       {/* Left marker + vertical line */}
-                      <div class="progress-tracker__rail" aria-hidden="true">
+                      <div class="progress-tracker-rail" aria-hidden="true">
                         {this.renderMarker(step.status)}
-                        {!isLast && <span class="progress-tracker__line" />}
+                        {!isLast && <span class="progress-tracker-line" />}
                       </div>
 
                       {/* Right content */}
-                      <div class="progress-tracker__content">
-                        <div class="progress-tracker__title">{step.title}</div>
-                        {step.summary && <div class="progress-tracker__summary">{step.summary}</div>}
+                      <div class="progress-tracker-content">
+                        <div class="progress-tracker-title">{step.title}</div>
+                        {step.summary && <div class="progress-tracker-summary">{step.summary}</div>}
                         {step.bulletSummaries && step.bulletSummaries.length > 0 && (
-                          <ul class="progress-tracker__bullet-summary">
+                          <ul class="progress-tracker-bullet-summary">
                             {step.bulletSummaries.map((bullet, bulletIdx) => (
                               <li key={bulletIdx}>{bullet}</li>
                             ))}
                           </ul>
                         )}
                         {step.status === 'error' && step.errorMessage && (
-                          <div class="progress-tracker__error" role="alert">
+                          <div class="progress-tracker-error" role="alert">
                             {step.errorMessage}
                           </div>
                         )}
                       </div>
                     </button>
                   ) : (
-                    <div class="progress-tracker__step-disabled" role="button" aria-disabled="true" aria-label={ariaLabel}>
+                    <div class="progress-tracker-step-disabled" role="button" aria-disabled="true" aria-label={ariaLabel}>
                       {/* Left marker + vertical line */}
-                      <div class="progress-tracker__rail" aria-hidden="true">
+                      <div class="progress-tracker-rail" aria-hidden="true">
                         {this.renderMarker(step.status)}
-                        {!isLast && <span class="progress-tracker__line" />}
+                        {!isLast && <span class="progress-tracker-line" />}
                       </div>
 
                       {/* Right content */}
-                      <div class="progress-tracker__content">
-                        <div class="progress-tracker__title">{step.title}</div>
-                        {step.summary && <div class="progress-tracker__summary">{step.summary}</div>}
+                      <div class="progress-tracker-content">
+                        <div class="progress-tracker-title">{step.title}</div>
+                        {step.summary && <div class="progress-tracker-summary">{step.summary}</div>}
                         {step.bulletSummaries && step.bulletSummaries.length > 0 && (
-                          <ul class="progress-tracker__bullet-summary">
+                          <ul class="progress-tracker-bullet-summary">
                             {step.bulletSummaries.map((bullet, bulletIdx) => (
                               <li key={bulletIdx}>{bullet}</li>
                             ))}
                           </ul>
                         )}
                         {step.status === 'error' && step.errorMessage && (
-                          <div class="progress-tracker__error" role="alert">
+                          <div class="progress-tracker-error" role="alert">
                             {step.errorMessage}
                           </div>
                         )}

@@ -1,188 +1,186 @@
 /* progress-tracker component styles */
-@import '../../styles/vars/colours';
-
-$pt-button-background-color: #6fb961;
-$pt-button-border-color: #4aab37;
-$pt-button-upcoming-border: #09315b;
-$pt-vertical-line-color: #09315b;
+@import './progress-tracker.vars';
 
 .progress-tracker {
-  &__list {
+  background-color: $progress-tracker-background;
+
+  .progress-tracker-list,
+  .progress-tracker-item,
+  .progress-tracker-bullet-summary {
+    &.sc-admiralty-progress-tracker li.sc-admiralty-progress-tracker::before {
+      content: none !important;
+    }
+  }
+
+  &-list {
     list-style: none;
-    padding: 0;
-    margin: 0;
+    padding: $progress-tracker-list-padding;
+    margin: $progress-tracker-list-margin;
   }
 
-  .progress-tracker__item.sc-admiralty-progress-tracker::before {
-    content: none !important;
-  }
-
-  .progress-tracker__bullet-summary.sc-admiralty-progress-tracker li.sc-admiralty-progress-tracker::before {
-    content: none !important;
-  }
-
-  &__item {
+  &-item {
     display: flex;
-    gap: 16px;
+    gap: $progress-tracker-item-gap;
     position: relative;
-    min-height: 60px;
+    min-height: $progress-tracker-item-min-height;
 
     &--last {
       min-height: auto;
     }
   }
 
-  &__button {
+  &-button {
     all: unset;
     display: flex;
-    gap: 16px;
+    gap: $progress-tracker-item-gap;
     width: 100%;
-    text-align: left;
+    text-align: $progress-tracker-button-text-align;
     cursor: pointer;
     position: relative;
-    min-height: 60px;
-    padding: 0;
-    background: transparent;
+    min-height: $progress-tracker-item-min-height;
+    padding: $progress-tracker-button-padding;
+    background: $progress-tracker-button-background;
     border: none;
     border-radius: 0;
 
     &:hover {
-      .progress-tracker__title {
+      .progress-tracker-title {
         text-decoration: underline;
       }
     }
 
     &:focus {
-      outline: none;
+      outline: $progress-tracker-button-focus-outline;
+      outline-offset: $progress-tracker-button-focus-outline-offset;
 
-      .progress-tracker__marker {
-        box-shadow: inset 0 0 0 3px #ffdd00;
+      .progress-tracker-marker {
+        box-shadow: $progress-tracker-marker-focus-shadow;
       }
     }
   }
 
-  &__step-disabled {
+  &-step-disabled {
     display: flex;
-    gap: 16px;
+    gap: $progress-tracker-item-gap;
     width: 100%;
     cursor: not-allowed;
   }
 
-  &__rail {
+  &-rail {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    flex-shrink: 0;
-    width: 32px;
+    align-items: $progress-tracker-rail-align-items;
+    flex-shrink: $progress-tracker-rail-flex-shrink;
+    width: $progress-tracker-rail-width;
   }
 
-  &__marker {
+  &-marker {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
+    width: $progress-tracker-marker-size;
+    height: $progress-tracker-marker-size;
+    border-radius: $progress-tracker-marker-border-radius;
     flex-shrink: 0;
-    transition: all 200ms ease-in-out;
+    transition: $progress-tracker-marker-transition;
     position: relative;
+    font-size: var(--admiralty-font-size--1, 0.875rem);
 
     &--complete {
-      background-color: $pt-button-background-color;
-      border: 2px solid $pt-button-border-color;
-      color: white;
+      background-color: $progress-tracker-marker-complete-background;
+      border: $progress-tracker-marker-border-width solid $progress-tracker-marker-complete-border;
+      color: $progress-tracker-marker-complete-text;
+      font-weight: var(--admiralty-font-weight-bold, 700);
     }
 
     &--current {
-      background-color: $pt-button-background-color;
-      border: 2px solid $pt-button-border-color;
-      color: white;
-      font-weight: 700;
-      font-size: 14px;
+      background-color: $progress-tracker-marker-current-background;
+      border: $progress-tracker-marker-border-width solid $progress-tracker-marker-current-border;
+      color: $progress-tracker-marker-current-text;
+      font-weight: $progress-tracker-marker-current-font-weight;
     }
 
     &--upcoming {
-      background-color: white;
-      border: 2px solid $pt-button-upcoming-border;
-      color: $primary;
-      font-weight: 700;
-      font-size: 14px;
+      background-color: $progress-tracker-marker-upcoming-background;
+      border: $progress-tracker-marker-border-width solid $progress-tracker-marker-upcoming-border;
+      color: $progress-tracker-marker-upcoming-text;
+      font-weight: $progress-tracker-marker-upcoming-font-weight;
     }
 
     &--error {
-      background-color: #d4351c;
-      box-shadow: 0 0 0 4px rgba(#d4351c, 0.2);
-      color: white;
-      font-weight: 700;
-      font-size: 14px;
+      background-color: $progress-tracker-marker-error-background;
+      border: $progress-tracker-marker-border-width solid $progress-tracker-marker-error-border;
+      box-shadow: $progress-tracker-marker-error-shadow;
+      color: $progress-tracker-marker-error-text;
+      font-weight: $progress-tracker-marker-error-font-weight;
     }
   }
 
-  &__marker-number {
+  &-marker-number {
     display: block;
     line-height: 1;
   }
 
-  &__check {
-    width: 16px;
-    height: 16px;
+  &-check {
+    width: $progress-tracker-check-width;
+    height: $progress-tracker-check-height;
   }
 
-  &__line {
-    width: 2px;
+  &-line {
+    width: $progress-tracker-line-width;
     flex: 1;
-    background-color: $pt-vertical-line-color;
-    margin-top: 4px;
+    background-color: $progress-tracker-line-colour;
+    margin-top: $progress-tracker-line-margin-top;
   }
 
-  &__content {
-    flex: 1;
-    padding-bottom: 24px;
+  &-content {
+    flex: $progress-tracker-content-flex;
+    padding-bottom: $progress-tracker-content-padding-bottom;
     display: flex;
-    flex-direction: column;
+    flex-direction: $progress-tracker-content-flex-direction;
     justify-content: center;
   }
 
-  &__title {
-    font-size: 18px;
-    font-weight: 500;
-    color: $primary !important;
+  &-title {
+    font-size: $progress-tracker-title-font-size;
+    font-weight: $progress-tracker-title-font-weight;
+    color: $progress-tracker-title-colour;
     margin: 0;
-    transition: color 200ms ease-in-out;
+    transition: $progress-tracker-title-transition;
   }
 
-  &__bullet-summary {
+  &-bullet-summary {
     list-style-position: inside;
-    font-size: 14px;
-    color: #505a5f;
-    margin: 8px 0 4px 0;
-    padding: 0;
+    font-size: $progress-tracker-bullet-summary-font-size;
+    color: $progress-tracker-bullet-summary-colour;
+    margin: $progress-tracker-bullet-summary-margin;
+    padding: $progress-tracker-bullet-summary-padding;
     line-height: 1.5;
 
     li {
-      margin-bottom: 4px;
+      margin-bottom: $progress-tracker-bullet-item-margin-bottom;
       padding-left: 0;
-      list-style: inside;
-      font-size: 18px;
-      color: #333333;
-      font-weight: 300;
+      // list-style: inside;
+      font-size: $progress-tracker-bullet-item-font-size;
+      color: $progress-tracker-bullet-item-colour;
+      font-weight: $progress-tracker-bullet-item-font-weight;
     }
   }
 
-  &__summary {
-    font-size: 14px;
-    color: #505a5f;
-    margin-top: 4px;
+  &-summary {
+    font-size: $progress-tracker-summary-font-size;
+    color: $progress-tracker-summary-colour;
+    margin-top: $progress-tracker-summary-margin-top;
   }
 
-  &__error {
-    font-size: 14px;
-    color: #d4351c;
-    font-weight: 600;
-    margin-top: 4px;
-    display: flex;
-    align-items: flex-start;
-    gap: 4px;
+  &-error {
+    font-size: $progress-tracker-error-font-size;
+    color: $progress-tracker-error-colour;
+    font-weight: $progress-tracker-error-font-weight;
+    margin-top: $progress-tracker-error-margin-top;
+    display: $progress-tracker-error-display;
+    align-items: $progress-tracker-error-align-items;
+    gap: $progress-tracker-error-gap;
 
     &::before {
       content: '⚠';
@@ -191,70 +189,50 @@ $pt-vertical-line-color: #09315b;
   }
 
   // Styling for different states
-  &__item--complete {
-    .progress-tracker__title {
-      color: $primary;
+  &-item--complete {
+    .progress-tracker-title {
+      color: $progress-tracker-title-colour;
     }
 
-    .progress-tracker__line {
-      background-color: $pt-button-border-color;
-    }
-  }
-
-  &__item--current {
-    .progress-tracker__title {
-      color: $primary;
+    .progress-tracker-line {
+      background-color: $progress-tracker-line-complete-colour;
     }
   }
 
-  &__item--upcoming {
-    .progress-tracker__title {
-      color: #505a5f;
-    }
-
-    .progress-tracker__bullet-summary {
-      color: #8a8c8e;
-    }
-
-    .progress-tracker__summary {
-      color: #8a8c8e;
+  &-item--current {
+    .progress-tracker-title {
+      color: $progress-tracker-title-colour;
     }
   }
 
-  &__item--error {
-    .progress-tracker__title {
-      color: #d4351c;
+  &-item--upcoming {
+    .progress-tracker-title {
+      color: $progress-tracker-summary-disabled-colour;
     }
 
-    .progress-tracker__line {
-      background-color: #d4351c;
+    .progress-tracker-bullet-summary {
+      color: $progress-tracker-summary-disabled-colour;
     }
-  }
 
-  &__item--clickable {
-    .progress-tracker__button:focus-visible {
-      outline: 2px solid #ffdd00;
-      outline-offset: 2px;
+    .progress-tracker-summary {
+      color: $progress-tracker-summary-disabled-colour;
     }
   }
 
-  // Dark mode support
-  @media (prefers-color-scheme: dark) {
-    &__marker--upcoming {
-      background-color: #1a1a1a;
-      border-color: #e0e0e0;
+  &-item--error {
+    .progress-tracker-title {
+      color: var(--admiralty-colour-danger);
     }
 
-    &__title {
-      color: #e0e0e0;
+    .progress-tracker-line {
+      background-color: $progress-tracker-line-error-colour;
     }
+  }
 
-    &__summary {
-      color: #b0b0b0;
-    }
-
-    &__bullet-summary {
-      color: #b0b0b0;
+  &-item--clickable {
+    .progress-tracker-button:focus-visible {
+      outline: $progress-tracker-button-focus-outline;
+      outline-offset: $progress-tracker-button-focus-outline-offset;
     }
   }
 }

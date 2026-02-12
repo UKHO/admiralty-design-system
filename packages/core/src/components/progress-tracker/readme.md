@@ -69,12 +69,11 @@ tracker.steps = [
 
 ## Properties
 
-| Property                   | Attribute                    | Description                                                                                                                                                                                                        | Type                                                                 | Default     |
-| -------------------------- | ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------- | ----------- |
-| `allowBackNavigation`      | `allow-back-navigation`      | Whether navigation to previous steps is allowed                                                                                                                                                                    | `boolean`                                                            | `true`      |
-| `steps`                    | --                           | <span style="color:red">**[DEPRECATED]**</span> Use child admiralty-progress-tracker-step components instead. Array of steps to display in the progress tracker (legacy prop for backward compatibility)<br/><br/> | `ProgressStep[]`                                                     | `[]`        |
-| `validateBeforeNavigation` | `validate-before-navigation` | Whether to validate the current step before allowing navigation                                                                                                                                                    | `boolean`                                                            | `false`     |
-| `validateStep`             | --                           | Function to validate a step (returns true if valid)                                                                                                                                                                | `(stepId: string, stepIndex: number) => boolean \| Promise<boolean>` | `undefined` |
+| Property                   | Attribute                    | Description                                                     | Type                                                                 | Default     |
+| -------------------------- | ---------------------------- | --------------------------------------------------------------- | -------------------------------------------------------------------- | ----------- |
+| `allowBackNavigation`      | `allow-back-navigation`      | Whether navigation to previous steps is allowed                 | `boolean`                                                            | `true`      |
+| `validateBeforeNavigation` | `validate-before-navigation` | Whether to validate the current step before allowing navigation | `boolean`                                                            | `false`     |
+| `validateStep`             | --                           | Function to validate a step (returns true if valid)             | `(stepId: string, stepIndex: number) => boolean \| Promise<boolean>` | `undefined` |
 
 
 ## Events
@@ -91,6 +90,19 @@ tracker.steps = [
 | ---- | ----------------------------------------------------- |
 |      | Place admiralty-progress-tracker-step components here |
 
+
+## Dependencies
+
+### Depends on
+
+- [admiralty-icon](../icon)
+
+### Graph
+```mermaid
+graph TD;
+  admiralty-progress-tracker --> admiralty-icon
+  style admiralty-progress-tracker fill:#f9f,stroke:#333,stroke-width:4px
+```
 
 ----------------------------------------------
 
