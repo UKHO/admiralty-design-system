@@ -235,12 +235,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.updateProgressTrackerSteps(this.currentStepId);
-    this.updateProgressTrackerSummaries();
-
-    this.locationForm.valueChanges.subscribe(() => this.updateProgressTrackerSummaries());
-    this.objectForm.valueChanges.subscribe(() => this.updateProgressTrackerSummaries());
-    this.informationForm.valueChanges.subscribe(() => this.updateProgressTrackerSummaries());
-    this.dateForm.valueChanges.subscribe(() => this.updateProgressTrackerSummaries());
   }
 
   private getStepBullets(stepId: string): string[] | undefined {
@@ -296,12 +290,7 @@ export class AppComponent implements OnInit {
     return undefined;
   }
 
-  private updateProgressTrackerSummaries() {
-    this.progressTrackerSteps = this.progressTrackerSteps.map(step => ({
-      ...step,
-      bulletSummaries: this.getStepBullets(step.id),
-    }));
-  }
+
 
   // Handle step navigation with form validation
   onProgressStepClicked(event: any) {
@@ -387,6 +376,12 @@ export class AppComponent implements OnInit {
     const currentIndex = stepOrder.indexOf(this.currentStepId);
 
     if (this.validateCurrentStep(this.currentStepId, currentIndex)) {
+      // Update bullets for the current step before moving to next
+      this.progressTrackerSteps = this.progressTrackerSteps.map(step => ({
+        ...step,
+        bulletSummaries: this.getStepBullets(step.id),
+      }));
+
       const nextStepId = stepOrder[currentIndex + 1];
       if (nextStepId) {
         this.currentStepId = nextStepId;
