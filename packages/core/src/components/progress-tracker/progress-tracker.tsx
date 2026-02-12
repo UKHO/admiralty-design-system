@@ -65,17 +65,19 @@ export class ProgressTrackerComponent {
   }
 
   componentDidLoad() {
-    // Set up a mutation observer to watch for child changes
-    const observer = new MutationObserver(() => {
-      this.updateStepsFromChildren();
-    });
+    // Set up a mutation observer to watch for child changes (only in browser environment)
+    if (typeof MutationObserver !== 'undefined') {
+      const observer = new MutationObserver(() => {
+        this.updateStepsFromChildren();
+      });
 
-    observer.observe(this.el, {
-      childList: true,
-      subtree: true,
-      attributes: true,
-      attributeFilter: ['step-id', 'title', 'status', 'summary', 'error-message'],
-    });
+      observer.observe(this.el, {
+        childList: true,
+        subtree: true,
+        attributes: true,
+        attributeFilter: ['step-id', 'title', 'status', 'summary', 'error-message'],
+      });
+    }
   }
 
   private updateStepsFromChildren() {
