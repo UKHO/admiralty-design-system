@@ -882,14 +882,14 @@ export declare interface AdmiraltyProgressBar extends Components.AdmiraltyProgre
 
 
 @ProxyCmp({
-  inputs: ['allowBackNavigation', 'steps', 'validateBeforeNavigation', 'validateStep']
+  inputs: ['allowBackNavigation', 'validateBeforeNavigation', 'validateStep']
 })
 @Component({
   selector: 'admiralty-progress-tracker',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['allowBackNavigation', 'steps', 'validateBeforeNavigation', 'validateStep'],
+  inputs: ['allowBackNavigation', 'validateBeforeNavigation', 'validateStep'],
 })
 export class AdmiraltyProgressTracker {
   protected el: HTMLElement;

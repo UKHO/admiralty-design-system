@@ -1,5 +1,11 @@
+@import './progress-tracker-step.vars';
+
 // The step component itself is hidden as it's just a data container
-// All styling is handled by the parent progress-tracker component
+// All rendering is handled by the parent progress-tracker component
+// This file contains styling variables for the step component's properties
 :host {
   display: none;
 }
+
+// Export step-specific styling for use by parent and child components
+// This ensures consistent styling across all step-related elements

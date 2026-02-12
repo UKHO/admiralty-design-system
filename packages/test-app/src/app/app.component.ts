@@ -2,11 +2,20 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { QueryList, ViewChildren } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AdmiraltySideNavItem } from '@ukho/admiralty-angular';
-import { AdmiraltyAutocompleteCustomEvent, AutoCompleteChangeEventDetail, ProgressStep } from '@ukho/admiralty-core';
+import { AdmiraltyAutocompleteCustomEvent, AutoCompleteChangeEventDetail } from '@ukho/admiralty-core';
 
 export interface CommissioningOrganisation {
   id?: number;
   organisationName?: string;
+}
+
+interface ProgressTrackerStep {
+  id: string;
+  title: string;
+  status: 'complete' | 'current' | 'upcoming' | 'error';
+  summary?: string;
+  errorMessage?: string;
+  bulletSummaries?: string[];
 }
 
 @Component({
@@ -175,31 +184,31 @@ export class AppComponent implements OnInit {
   }
 
   // Form-integrated progress tracker
-  progressTrackerSteps: ProgressStep[] = [
+  progressTrackerSteps: ProgressTrackerStep[] = [
     {
       id: 'location',
       title: 'Choose location',
-      status: 'current' as const
+      status: 'current'
     },
     {
       id: 'object',
       title: 'Choose object',
-      status: 'upcoming' as const
+      status: 'upcoming'
     },
     {
       id: 'information-type',
       title: 'Choose information type',
-      status: 'upcoming' as const
+      status: 'upcoming'
     },
     {
       id: 'date',
       title: 'Choose date',
-      status: 'upcoming' as const
+      status: 'upcoming'
     },
     {
       id: 'download',
       title: 'Download data',
-      status: 'upcoming' as const,
+      status: 'upcoming',
     },
   ];
 

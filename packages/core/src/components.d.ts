@@ -11,7 +11,7 @@ import { CheckboxChangeEventDetail } from "./components/checkbox/checkbox.interf
 import { FileInputChangeEventDetail } from "./components/file-input/file-input.interface";
 import { FooterTypes } from "./components/footer/footer.types";
 import { InputChangeEventDetail } from "./components/input/input.interface";
-import { ProgressStep, StepNavigationDetail, StepValidationDetail } from "./components/progress-tracker/progress-tracker";
+import { StepNavigationDetail, StepValidationDetail } from "./components/progress-tracker/progress-tracker";
 import { StepStatus } from "./components/progress-tracker-step/progress-tracker-step";
 import { RadioGroupChangeEventDetail } from "./components/radio-group/radio-group-interface";
 import { SelectChangeEventDetail } from "./components/select/select.interface";
@@ -23,7 +23,7 @@ export { CheckboxChangeEventDetail } from "./components/checkbox/checkbox.interf
 export { FileInputChangeEventDetail } from "./components/file-input/file-input.interface";
 export { FooterTypes } from "./components/footer/footer.types";
 export { InputChangeEventDetail } from "./components/input/input.interface";
-export { ProgressStep, StepNavigationDetail, StepValidationDetail } from "./components/progress-tracker/progress-tracker";
+export { StepNavigationDetail, StepValidationDetail } from "./components/progress-tracker/progress-tracker";
 export { StepStatus } from "./components/progress-tracker-step/progress-tracker-step";
 export { RadioGroupChangeEventDetail } from "./components/radio-group/radio-group-interface";
 export { SelectChangeEventDetail } from "./components/select/select.interface";
@@ -639,10 +639,6 @@ export namespace Components {
           * Whether navigation to previous steps is allowed
          */
         "allowBackNavigation": boolean;
-        /**
-          * @deprecated Use child admiralty-progress-tracker-step components instead. Array of steps to display in the progress tracker (legacy prop for backward compatibility)
-         */
-        "steps": ProgressStep[];
         /**
           * Whether to validate the current step before allowing navigation
          */
@@ -2461,10 +2457,6 @@ declare namespace LocalJSX {
           * Emitted when step validation is requested
          */
         "onStepValidationRequested"?: (event: AdmiraltyProgressTrackerCustomEvent<StepValidationDetail>) => void;
-        /**
-          * @deprecated Use child admiralty-progress-tracker-step components instead. Array of steps to display in the progress tracker (legacy prop for backward compatibility)
-         */
-        "steps"?: ProgressStep[];
         /**
           * Whether to validate the current step before allowing navigation
          */
