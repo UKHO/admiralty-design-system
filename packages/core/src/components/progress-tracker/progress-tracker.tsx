@@ -172,10 +172,10 @@ export class ProgressTrackerComponent {
 
   private getCurrentStepIndex(): number {
     const steps = this.getSteps();
-    
+
     // Look for current step (either 'current' or 'error' status means it's the current step)
     const currentIndex = steps.findIndex(step => step.status === 'current' || step.status === 'error');
-    
+
     // Default to 0 if no current step is marked
     return currentIndex === -1 ? 0 : currentIndex;
   }
@@ -300,7 +300,7 @@ export class ProgressTrackerComponent {
                       </div>
                     </button>
                   ) : (
-                    <div class="progress-tracker-step-disabled">
+                    <div class="progress-tracker-step-disabled" aria-label={ariaLabel}>
                       {/* Left marker + vertical line */}
                       <div class="progress-tracker-rail" aria-hidden="true">
                         {this.renderMarker(step.status)}
