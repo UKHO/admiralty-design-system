@@ -300,7 +300,7 @@ export class ProgressTrackerComponent {
                       </div>
                     </button>
                   ) : (
-                    <div class="progress-tracker-step-disabled" role="button" aria-disabled="true" aria-label={ariaLabel}>
+                    <div class="progress-tracker-step-disabled">
                       {/* Left marker + vertical line */}
                       <div class="progress-tracker-rail" aria-hidden="true">
                         {this.renderMarker(step.status)}
