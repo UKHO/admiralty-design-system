@@ -43,12 +43,6 @@
     border: none;
     border-radius: 0;
 
-    &:hover {
-      .progress-tracker-title {
-        text-decoration: underline;
-      }
-    }
-
     &:focus {
       outline: $progress-tracker-button-focus-outline;
       outline-offset: $progress-tracker-button-focus-outline-offset;
