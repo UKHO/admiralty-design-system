@@ -122,13 +122,14 @@ describe('admiralty-progress-tracker', () => {
     expect(items[1].classList.contains('progress-tracker-item--clickable')).toBe(true);
   });
 
-  it('makes future steps clickable when validateBeforeNavigation is true', async () => {
+  it('does not make future steps clickable', async () => {
     const page = await newSpecPage({
       components: [ProgressTrackerComponent, ProgressTrackerStepComponent],
       html: `
-        <admiralty-progress-tracker validate-before-navigation="true">
+        <admiralty-progress-tracker>
           <admiralty-progress-tracker-step step-id="step1" step-title="Step 1" status="current"></admiralty-progress-tracker-step>
           <admiralty-progress-tracker-step step-id="step2" step-title="Step 2" status="upcoming"></admiralty-progress-tracker-step>
+          <admiralty-progress-tracker-step step-id="step3" step-title="Step 3" status="upcoming"></admiralty-progress-tracker-step>
         </admiralty-progress-tracker>
       `,
     });
@@ -136,11 +137,12 @@ describe('admiralty-progress-tracker', () => {
     await page.waitForChanges();
 
     const buttons = page.root.querySelectorAll('.progress-tracker-button');
-    expect(buttons.length).toBe(2); // both steps should be clickable
+    expect(buttons.length).toBe(1); // only current step should be clickable
 
     const items = page.root.querySelectorAll('.progress-tracker-item');
     expect(items[0].classList.contains('progress-tracker-item--clickable')).toBe(true);
-    expect(items[1].classList.contains('progress-tracker-item--clickable')).toBe(true);
+    expect(items[1].classList.contains('progress-tracker-item--clickable')).toBe(false);
+    expect(items[2].classList.contains('progress-tracker-item--clickable')).toBe(false);
   });
 
   it('sets tabindex=0 on first clickable step and -1 on others', async () => {
@@ -187,64 +189,5 @@ describe('admiralty-progress-tracker', () => {
       stepId: 'step1',
       stepIndex: 0,
     });
-  });
-
-  it('emits stepValidationRequested when navigating forward with validation enabled', async () => {
-    const validateStep = jest.fn().mockReturnValue(true);
-    const page = await newSpecPage({
-      components: [ProgressTrackerComponent, ProgressTrackerStepComponent],
-      html: `
-        <admiralty-progress-tracker validate-before-navigation="true">
-          <admiralty-progress-tracker-step step-id="step1" step-title="Step 1" status="current"></admiralty-progress-tracker-step>
-          <admiralty-progress-tracker-step step-id="step2" step-title="Step 2" status="upcoming"></admiralty-progress-tracker-step>
-        </admiralty-progress-tracker>
-      `,
-    });
-
-    page.rootInstance.validateStep = validateStep;
-    await page.waitForChanges();
-
-    const validationSpy = jest.fn();
-    page.root.addEventListener('stepValidationRequested', validationSpy);
-
-    const buttons = page.root.querySelectorAll('.progress-tracker-button');
-    (buttons[1] as HTMLButtonElement).click();
-
-    await page.waitForChanges();
-
-    expect(validateStep).toHaveBeenCalledWith('step1', 0);
-    expect(validationSpy).toHaveBeenCalled();
-    expect(validationSpy.mock.calls[0][0].detail).toEqual({
-      stepId: 'step1',
-      stepIndex: 0,
-      isValid: true,
-    });
-  });
-
-  it('prevents navigation when validation fails', async () => {
-    const validateStep = jest.fn().mockReturnValue(false);
-    const page = await newSpecPage({
-      components: [ProgressTrackerComponent, ProgressTrackerStepComponent],
-      html: `
-        <admiralty-progress-tracker validate-before-navigation="true">
-          <admiralty-progress-tracker-step step-id="step1" step-title="Step 1" status="current"></admiralty-progress-tracker-step>
-          <admiralty-progress-tracker-step step-id="step2" step-title="Step 2" status="upcoming"></admiralty-progress-tracker-step>
-        </admiralty-progress-tracker>
-      `,
-    });
-
-    page.rootInstance.validateStep = validateStep;
-    await page.waitForChanges();
-
-    const stepClickedSpy = jest.fn();
-    page.root.addEventListener('stepClicked', stepClickedSpy);
-
-    const buttons = page.root.querySelectorAll('.progress-tracker-button');
-    (buttons[1] as HTMLButtonElement).click();
-
-    await page.waitForChanges();
-
-    expect(validateStep).toHaveBeenCalledWith('step1', 0);
-    expect(stepClickedSpy).not.toHaveBeenCalled();
   });
 });

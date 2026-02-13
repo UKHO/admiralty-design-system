@@ -656,9 +656,6 @@ export namespace Components {
           * Optional error message displayed when status is 'error'
          */
         "errorMessage"?: string;
-        "isClickable": boolean;
-        "isFocused": boolean;
-        "isLast": boolean;
         /**
           * The current status of the step
          */
@@ -667,7 +664,6 @@ export namespace Components {
           * Unique identifier for the step
          */
         "stepId": string;
-        "stepNumber": number;
         /**
           * The title text displayed for the step
          */
@@ -2474,9 +2470,6 @@ declare namespace LocalJSX {
           * Optional error message displayed when status is 'error'
          */
         "errorMessage"?: string;
-        "isClickable"?: boolean;
-        "isFocused"?: boolean;
-        "isLast"?: boolean;
         /**
           * The current status of the step
          */
@@ -2485,7 +2478,6 @@ declare namespace LocalJSX {
           * Unique identifier for the step
          */
         "stepId": string;
-        "stepNumber"?: number;
         /**
           * The title text displayed for the step
          */

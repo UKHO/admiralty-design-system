@@ -29,30 +29,6 @@ export class ProgressTrackerStepComponent {
   @Prop() status: StepStatus = 'upcoming';
 
   /**
-   * @internal
-   * Whether this is the last step (set by parent)
-   */
-  @Prop() isLast = false;
-
-  /**
-   * @internal
-   * Whether this step is clickable (set by parent)
-   */
-  @Prop() isClickable = false;
-
-  /**
-   * @internal
-   * The step number (set by parent)
-   */
-  @Prop() stepNumber = 0;
-
-  /**
-   * @internal
-   * Whether this step is focused (set by parent)
-   */
-  @Prop() isFocused = false;
-
-  /**
    * Optional summary text displayed below the title
    */
   @Prop() summary?: string;
