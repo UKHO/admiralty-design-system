@@ -49,7 +49,7 @@ export class ProgressTrackerComponent {
    */
   @Event() stepValidationRequested: EventEmitter<StepValidationDetail>;
 
-  @State() focusedStepIndex: number | null = null;
+  @State() focusedStepIndex: number | null = 0;
   @State() validationErrors: Map<string, string> = new Map();
   @State() currentSteps: Array<{
     id: string;
@@ -60,24 +60,55 @@ export class ProgressTrackerComponent {
     errorMessage?: string;
   }> = [];
 
+  private observer: MutationObserver;
+
   componentWillLoad() {
     this.updateStepsFromChildren();
   }
 
   componentDidLoad() {
+    // Update steps after children have hydrated
+    this.updateStepsFromChildren();
+
+    // Initialize focusedStepIndex to the first clickable step
+    this.initializeFocusedStep();
+
     // Set up a mutation observer to watch for child changes (only in browser environment)
     if (typeof MutationObserver !== 'undefined') {
-      const observer = new MutationObserver(() => {
+      this.observer = new MutationObserver(() => {
         this.updateStepsFromChildren();
+        // Re-initialize focus if the first clickable step changed
+        if (this.focusedStepIndex === null || !this.isStepClickable(this.focusedStepIndex)) {
+          this.initializeFocusedStep();
+        }
       });
 
-      observer.observe(this.el, {
+      this.observer.observe(this.el, {
         childList: true,
         subtree: true,
         attributes: true,
-        attributeFilter: ['step-id', 'title', 'status', 'summary', 'error-message'],
+        attributeFilter: ['step-id', 'step-title', 'status', 'summary', 'error-message'],
       });
     }
+  }
+
+  disconnectedCallback() {
+    if (this.observer) {
+      this.observer.disconnect();
+    }
+  }
+
+  private initializeFocusedStep() {
+    // Find the first clickable step
+    const steps = this.getSteps();
+    for (let i = 0; i < steps.length; i++) {
+      if (this.isStepClickable(i)) {
+        this.focusedStepIndex = i;
+        return;
+      }
+    }
+    // If no clickable step exists, focus the first step
+    this.focusedStepIndex = steps.length > 0 ? 0 : null;
   }
 
   private updateStepsFromChildren() {
@@ -98,11 +129,11 @@ export class ProgressTrackerComponent {
       }
 
       return {
-        id: stepEl.stepId || '',
-        title: stepEl.stepTitle || '',
-        status: stepEl.status || 'upcoming',
-        summary: stepEl.summary,
-        errorMessage: stepEl.errorMessage,
+        id: stepEl.getAttribute('step-id') || stepEl.stepId || '',
+        title: stepEl.getAttribute('step-title') || stepEl.stepTitle || '',
+        status: (stepEl.getAttribute('status') || stepEl.status || 'upcoming') as StepStatus,
+        summary: stepEl.getAttribute('summary') || stepEl.summary,
+        errorMessage: stepEl.getAttribute('error-message') || stepEl.errorMessage,
         bulletSummaries: bulletSummaries.length > 0 ? bulletSummaries : undefined,
       };
     });
@@ -145,10 +176,19 @@ export class ProgressTrackerComponent {
   }
 
   private isStepClickable(index: number): boolean {
-    if (!this.allowBackNavigation) return false;
     const currentIndex = this.getCurrentStepIndex();
     const steps = this.getSteps();
-    return index < currentIndex || steps[index].status === 'current';
+
+    // Allow clicking on current step
+    if (steps[index].status === 'current') return true;
+
+    // Allow clicking on previous steps if allowBackNavigation is true
+    if (this.allowBackNavigation && index < currentIndex) return true;
+
+    // Allow clicking on future steps if validateBeforeNavigation is enabled
+    if (this.validateBeforeNavigation && index > currentIndex) return true;
+
+    return false;
   }
 
   private async handleStepClick(stepId: string, index: number) {
@@ -186,12 +226,23 @@ export class ProgressTrackerComponent {
       const nextStep = steps[index + 1];
       if (nextStep) {
         this.focusedStepIndex = index + 1;
+        this.focusButton(index + 1);
       }
     } else if (event.key === 'ArrowUp' || event.key === 'ArrowLeft') {
       event.preventDefault();
       if (index > 0) {
         this.focusedStepIndex = index - 1;
+        this.focusButton(index - 1);
       }
+    }
+  }
+
+  private focusButton(stepIndex: number) {
+    // Query for all buttons and focus the one at the specified index
+    const buttons = Array.from(this.el.querySelectorAll('.progress-tracker-button'));
+    const button = buttons[stepIndex] as HTMLButtonElement;
+    if (button) {
+      button.focus();
     }
   }
 

@@ -43,7 +43,7 @@ $progress-tracker-marker-upcoming-font-weight: var(--admiralty-font-weight-bold)
 
 $progress-tracker-marker-error-background: var(--admiralty-colour-danger);
 $progress-tracker-marker-error-border: var(--admiralty-colour-danger-shade);
-$progress-tracker-marker-error-shadow: 0 0 0 4px rgba(var(--admiralty-colour-danger), 0.2);
+$progress-tracker-marker-error-shadow: 0 0 0 4px color-mix(in srgb, var(--admiralty-colour-danger) 20%, transparent);
 $progress-tracker-marker-error-text: var(--admiralty-colour-danger-contrast);
 $progress-tracker-marker-error-font-weight: var(--admiralty-font-weight-bold);
 
@@ -69,7 +69,7 @@ $progress-tracker-title-colour: var(--admiralty-colour-primary);
 $progress-tracker-title-transition: color 200ms ease-in-out;
 
 // Summary styling
-$progress-tracker-summary-font-size: var(--admiralty-spacing-4);
+$progress-tracker-summary-font-size: var(--admiralty-font-size-0);
 $progress-tracker-summary-colour: var(--admiralty-text-colour);
 $progress-tracker-summary-margin-top: var(--admiralty-spacing-2);
 $progress-tracker-summary-disabled-colour: var(--admiralty-disabled-text-colour);

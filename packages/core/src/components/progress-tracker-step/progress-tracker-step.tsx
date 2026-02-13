@@ -7,6 +7,7 @@ export type StepStatus = 'complete' | 'current' | 'upcoming' | 'error';
  */
 @Component({
   tag: 'admiralty-progress-tracker-step',
+  styleUrl: 'progress-tracker-step.scss',
   scoped: true,
 })
 export class ProgressTrackerStepComponent {
