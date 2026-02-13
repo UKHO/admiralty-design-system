@@ -4,12 +4,10 @@
 .progress-tracker {
   background-color: $progress-tracker-background;
 
-  .progress-tracker-list,
-  .progress-tracker-item,
-  .progress-tracker-bullet-summary {
-    &.sc-admiralty-progress-tracker li.sc-admiralty-progress-tracker::before {
-      content: none !important;
-    }
+  // Hide default list styling on nested lists
+  .progress-tracker-list li::before,
+  .progress-tracker-bullet-summary li::before {
+    content: none !important;
   }
 
   &-list {
