@@ -407,19 +407,14 @@
     </div>
   </div>
   <div style="flex: 0 0 300px">
-    <admiralty-progress-tracker
-      [allowBackNavigation]="true"
-      [validateBeforeNavigation]="true"
-      [validateStep]="validateCurrentStep"
-      (stepClicked)="onProgressStepClicked($event)"
-    >
+    <admiralty-progress-tracker [attr.allow-back-navigation]="true" (stepClicked)="onProgressStepClicked($event)">
       <admiralty-progress-tracker-step
         *ngFor="let step of progressTrackerSteps"
-        [stepId]="step.id"
-        [stepTitle]="step.title"
-        [status]="step.status"
-        [summary]="step.summary"
-        [errorMessage]="step.errorMessage"
+        [attr.step-id]="step.id"
+        [attr.step-title]="step.title"
+        [attr.status]="step.status"
+        [attr.summary]="step.summary"
+        [attr.error-message]="step.errorMessage"
       >
         <ul slot="bullet-summaries" *ngIf="step.bulletSummaries && step.bulletSummaries.length > 0">
           <li *ngFor="let bullet of step.bulletSummaries">{{ bullet }}</li>

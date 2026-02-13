@@ -190,4 +190,56 @@ describe('admiralty-progress-tracker', () => {
       stepIndex: 0,
     });
   });
+
+  it('makes all previous steps clickable when error status exists on current step', async () => {
+    const page = await newSpecPage({
+      components: [ProgressTrackerComponent, ProgressTrackerStepComponent],
+      html: `
+        <admiralty-progress-tracker allow-back-navigation="true">
+          <admiralty-progress-tracker-step step-id="step1" step-title="Step 1" status="complete"></admiralty-progress-tracker-step>
+          <admiralty-progress-tracker-step step-id="step2" step-title="Step 2" status="complete"></admiralty-progress-tracker-step>
+          <admiralty-progress-tracker-step step-id="step3" step-title="Step 3" status="complete"></admiralty-progress-tracker-step>
+          <admiralty-progress-tracker-step step-id="step4" step-title="Step 4" status="error" error-message="Validation failed"></admiralty-progress-tracker-step>
+          <admiralty-progress-tracker-step step-id="step5" step-title="Step 5" status="upcoming"></admiralty-progress-tracker-step>
+        </admiralty-progress-tracker>
+      `,
+    });
+
+    await page.waitForChanges();
+
+    const buttons = page.root.querySelectorAll('.progress-tracker-button');
+    // step1, step2, step3, and step4 should be clickable (step1-3 are complete, step4 is current with error)
+    expect(buttons.length).toBe(4);
+
+    const items = page.root.querySelectorAll('.progress-tracker-item');
+    expect(items[0].classList.contains('progress-tracker-item--clickable')).toBe(true); // complete
+    expect(items[1].classList.contains('progress-tracker-item--clickable')).toBe(true); // complete
+    expect(items[2].classList.contains('progress-tracker-item--clickable')).toBe(true); // complete
+    expect(items[3].classList.contains('progress-tracker-item--clickable')).toBe(true); // error (current)
+    expect(items[4].classList.contains('progress-tracker-item--clickable')).toBe(false); // upcoming
+  });
+
+  it('makes previous steps clickable when validation error exists, even if allowBackNavigation is false', async () => {
+    const page = await newSpecPage({
+      components: [ProgressTrackerComponent, ProgressTrackerStepComponent],
+      html: `
+        <admiralty-progress-tracker allow-back-navigation="false">
+          <admiralty-progress-tracker-step step-id="step1" step-title="Step 1" status="complete"></admiralty-progress-tracker-step>
+          <admiralty-progress-tracker-step step-id="step2" step-title="Step 2" status="current" error-message="Validation failed"></admiralty-progress-tracker-step>
+          <admiralty-progress-tracker-step step-id="step3" step-title="Step 3" status="upcoming"></admiralty-progress-tracker-step>
+        </admiralty-progress-tracker>
+      `,
+    });
+
+    await page.waitForChanges();
+
+    const buttons = page.root.querySelectorAll('.progress-tracker-button');
+    // step1 and step2 should be clickable (step1 because of validation error on current step, step2 because it's current)
+    expect(buttons.length).toBe(2);
+
+    const items = page.root.querySelectorAll('.progress-tracker-item');
+    expect(items[0].classList.contains('progress-tracker-item--clickable')).toBe(true); // previous step clickable due to error on current step
+    expect(items[1].classList.contains('progress-tracker-item--clickable')).toBe(true); // current step
+    expect(items[2].classList.contains('progress-tracker-item--clickable')).toBe(false); // future step not clickable
+  });
 });

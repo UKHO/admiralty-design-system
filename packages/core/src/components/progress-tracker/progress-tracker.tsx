@@ -59,7 +59,7 @@ export class ProgressTrackerComponent {
     errorMessage?: string;
   }> = [];
 
-  private observer: MutationObserver;
+  private observer?: MutationObserver;
 
   componentWillLoad() {
     this.updateStepsFromChildren();
@@ -171,42 +171,32 @@ export class ProgressTrackerComponent {
   }
 
   private getCurrentStepIndex(): number {
-    const currentIndex = this.getSteps().findIndex(step => step.status === 'current');
+    const steps = this.getSteps();
+    
+    // Look for current step (either 'current' or 'error' status means it's the current step)
+    const currentIndex = steps.findIndex(step => step.status === 'current' || step.status === 'error');
+    
     // Default to 0 if no current step is marked
     return currentIndex === -1 ? 0 : currentIndex;
   }
 
   private isStepClickable(index: number): boolean {
     const currentIndex = this.getCurrentStepIndex();
+    const currentStep = this.getSteps()[currentIndex];
+    const hasValidationError = currentStep && currentStep.errorMessage;
 
     // Allow clicking on current step
     if (index === currentIndex) return true;
 
-    // Allow clicking on previous steps if allowBackNavigation is true
-    if (this.allowBackNavigation && index < currentIndex) return true;
+    // Allow clicking on previous steps if allowBackNavigation is true OR if there's a validation error
+    if ((this.allowBackNavigation || hasValidationError) && index < currentIndex) return true;
 
     // Future steps (after current) are not clickable
     return false;
   }
 
-  private async handleStepClick(stepId: string, index: number) {
+  private handleStepClick(stepId: string, index: number) {
     if (!this.isStepClickable(index)) return;
-
-    // If validation is required and we're navigating forward
-    const currentIndex = this.getCurrentStepIndex();
-    const steps = this.getSteps();
-    if (this.validateBeforeNavigation && index > currentIndex) {
-      const currentStep = steps[currentIndex];
-      if (currentStep && this.validateStep) {
-        const isValid = await this.validateStep(currentStep.id, currentIndex);
-        this.stepValidationRequested.emit({
-          stepId: currentStep.id,
-          stepIndex: currentIndex,
-          isValid,
-        });
-        if (!isValid) return;
-      }
-    }
 
     this.stepClicked.emit({ stepId, stepIndex: index });
   }
