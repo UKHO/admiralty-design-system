@@ -10,6 +10,6 @@ import { DesignSystemModule } from '@ukho/admiralty-angular';
   declarations: [AppComponent],
   imports: [BrowserModule, FormsModule, ReactiveFormsModule, DesignSystemModule.forRoot()],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
