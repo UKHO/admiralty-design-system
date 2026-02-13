@@ -15,7 +15,7 @@ $progress-tracker-step-complete-text: var(--admiralty-colour-success-contrast);
 // Error state colors
 $progress-tracker-step-error-background: var(--admiralty-colour-danger);
 $progress-tracker-step-error-border: var(--admiralty-colour-danger-shade);
-$progress-tracker-step-error-shadow: rgba(--admiralty-colour-danger, 0.2);
+$progress-tracker-step-error-shadow: 0 0 0 4px color-mix(in srgb, var(--admiralty-colour-danger) 20%, transparent);
 $progress-tracker-step-error-text: var(--admiralty-colour-danger-contrast);
 
 // Upcoming state colors

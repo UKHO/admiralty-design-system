@@ -2,7 +2,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { QueryList, ViewChildren } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AdmiraltySideNavItem } from '@ukho/admiralty-angular';
-import { AdmiraltyAutocompleteCustomEvent, AutoCompleteChangeEventDetail } from '@ukho/admiralty-core';
+import { AdmiraltyAutocompleteCustomEvent, AutoCompleteChangeEventDetail, AdmiraltyProgressTrackerCustomEvent, StepNavigationDetail } from '@ukho/admiralty-core';
 
 export interface CommissioningOrganisation {
   id?: number;
@@ -293,7 +293,7 @@ export class AppComponent implements OnInit {
 
 
   // Handle step navigation with form validation
-  onProgressStepClicked(event: any) {
+  onProgressStepClicked(event: AdmiraltyProgressTrackerCustomEvent<StepNavigationDetail>) {
     const { stepId, stepIndex } = event.detail;
     console.log('Step clicked:', stepId, stepIndex);
 
