@@ -9,7 +9,7 @@
     "colorette": "^2.0.20",
     "execa": "^9.4.0",
     "fs-extra": "^11.2.0",
-    "lerna": "^9.0.3",
+    "lerna": "^9.0.4",
     "listr": "^0.14.3",
     "nx": "21.2.1",
     "semver": "^7.6.3"
@@ -36,7 +36,11 @@
         "protected-branch",
         {
           "releaseTemporaryBranchPrefix": "protected-release-",
-          "requiredStatusChecks": ["build", "test-core-spec", "chromatic-deployment"]
+          "requiredStatusChecks": [
+            "build",
+            "test-core-spec",
+            "chromatic-deployment"
+          ]
         }
       ],
       "npm",
