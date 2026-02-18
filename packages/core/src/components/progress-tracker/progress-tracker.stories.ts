@@ -1,11 +1,23 @@
+﻿import { Meta, StoryObj } from '@storybook/web-components';
+import { ProgressTrackerComponent } from './progress-tracker';
 import { html } from 'lit';
 
-export default {
-    title: 'Components/Progress Tracker',
+const meta: Meta = {
     component: 'admiralty-progress-tracker',
+    title: 'Progress Tracker',
+    parameters: {
+        actions: {
+            handles: ['stepClicked', 'stepValidationRequested'],
+        },
+    },
 };
 
-export const Default = () => html`
+export default meta;
+
+type Story = StoryObj<ProgressTrackerComponent>;
+
+export const Default: Story = {
+    render: () => html`
     <admiralty-progress-tracker allow-back-navigation>
         <admiralty-progress-tracker-step
             step-id="location"
@@ -49,9 +61,11 @@ export const Default = () => html`
             status="upcoming"
         ></admiralty-progress-tracker-step>
     </admiralty-progress-tracker>
-`;
+  `,
+};
 
-export const AllComplete = () => html`
+export const AllComplete: Story = {
+    render: () => html`
     <admiralty-progress-tracker>
         <admiralty-progress-tracker-step
             step-id="step1"
@@ -73,10 +87,12 @@ export const AllComplete = () => html`
             status="complete"
         ></admiralty-progress-tracker-step>
     </admiralty-progress-tracker>
-`;
+  `,
+};
 
-export const WithNavigation = () => {
-    const template = html`
+export const WithNavigation: Story = {
+    render: () => {
+        const template = html`
         <admiralty-progress-tracker allow-back-navigation>
             <admiralty-progress-tracker-step
                 step-id="step1"
@@ -100,17 +116,19 @@ export const WithNavigation = () => {
         </admiralty-progress-tracker>
     `;
 
-    setTimeout(() => {
-        const element = document.querySelector('admiralty-progress-tracker');
-        element?.addEventListener('stepClicked', (evt: any) => {
-            alert(`Navigating to step: ${evt.detail.stepId}`);
-        });
-    }, 0);
+        setTimeout(() => {
+            const element = document.querySelector('admiralty-progress-tracker');
+            element?.addEventListener('stepClicked', (evt: any) => {
+                alert(`Navigating to step: ${evt.detail.stepId}`);
+            });
+        }, 0);
 
-    return template;
+        return template;
+    },
 };
 
-export const NoBackNavigation = () => html`
+export const NoBackNavigation: Story = {
+    render: () => html`
     <admiralty-progress-tracker allow-back-navigation="false">
         <admiralty-progress-tracker-step
             step-id="location"
@@ -154,9 +172,11 @@ export const NoBackNavigation = () => html`
             status="upcoming"
         ></admiralty-progress-tracker-step>
     </admiralty-progress-tracker>
-`;
+  `,
+};
 
-export const WithErrors = () => html`
+export const WithErrors: Story = {
+    render: () => html`
     <admiralty-progress-tracker allow-back-navigation>
         <admiralty-progress-tracker-step
             step-id="step1"
@@ -184,4 +204,5 @@ export const WithErrors = () => html`
             status="upcoming"
         ></admiralty-progress-tracker-step>
     </admiralty-progress-tracker>
-`;
+  `,
+};
