@@ -92,7 +92,7 @@ describe('admiralty-progress-tracker', () => {
 
     await page.waitForChanges();
 
-    const buttons = page.root.querySelectorAll('.progress-tracker-button');
+    const buttons = page.root.querySelectorAll('.progress-tracker-title[type="button"]');
     expect(buttons.length).toBe(2); // step1 and step2 should be clickable
 
     const items = page.root.querySelectorAll('.progress-tracker-item');
@@ -114,7 +114,7 @@ describe('admiralty-progress-tracker', () => {
 
     await page.waitForChanges();
 
-    const buttons = page.root.querySelectorAll('.progress-tracker-button');
+    const buttons = page.root.querySelectorAll('.progress-tracker-title[type="button"]');
     expect(buttons.length).toBe(1); // only current step should be clickable
 
     const items = page.root.querySelectorAll('.progress-tracker-item');
@@ -136,7 +136,7 @@ describe('admiralty-progress-tracker', () => {
 
     await page.waitForChanges();
 
-    const buttons = page.root.querySelectorAll('.progress-tracker-button');
+    const buttons = page.root.querySelectorAll('.progress-tracker-title[type="button"]');
     expect(buttons.length).toBe(1); // only current step should be clickable
 
     const items = page.root.querySelectorAll('.progress-tracker-item');
@@ -145,7 +145,7 @@ describe('admiralty-progress-tracker', () => {
     expect(items[2].classList.contains('progress-tracker-item--clickable')).toBe(false);
   });
 
-  it('sets tabindex=0 on first clickable step and -1 on others', async () => {
+  it('sets tabindex=0 on all clickable steps for tab navigation', async () => {
     const page = await newSpecPage({
       components: [ProgressTrackerComponent, ProgressTrackerStepComponent],
       html: `
@@ -158,9 +158,9 @@ describe('admiralty-progress-tracker', () => {
 
     await page.waitForChanges();
 
-    const buttons = page.root.querySelectorAll('.progress-tracker-button');
+    const buttons = page.root.querySelectorAll('.progress-tracker-title[type="button"]');
     expect(buttons[0].getAttribute('tabindex')).toBe('0');
-    expect(buttons[1].getAttribute('tabindex')).toBe('-1');
+    expect(buttons[1].getAttribute('tabindex')).toBe('0');
   });
 
   it('emits stepClicked event with correct detail when step is clicked', async () => {
@@ -179,7 +179,7 @@ describe('admiralty-progress-tracker', () => {
     const stepClickedSpy = jest.fn();
     page.root.addEventListener('stepClicked', stepClickedSpy);
 
-    const button = page.root.querySelector('.progress-tracker-button') as HTMLButtonElement;
+    const button = page.root.querySelector('.progress-tracker-title[type="button"]') as HTMLButtonElement;
     button.click();
 
     await page.waitForChanges();
@@ -207,7 +207,7 @@ describe('admiralty-progress-tracker', () => {
 
     await page.waitForChanges();
 
-    const buttons = page.root.querySelectorAll('.progress-tracker-button');
+    const buttons = page.root.querySelectorAll('.progress-tracker-title[type="button"]');
     // step1, step2, step3, and step4 should be clickable (step1-3 are complete, step4 is current with error)
     expect(buttons.length).toBe(4);
 
@@ -233,7 +233,7 @@ describe('admiralty-progress-tracker', () => {
 
     await page.waitForChanges();
 
-    const buttons = page.root.querySelectorAll('.progress-tracker-button');
+    const buttons = page.root.querySelectorAll('.progress-tracker-title[type="button"]');
     // step1 and step2 should be clickable (step1 because of validation error on current step, step2 because it's current)
     expect(buttons.length).toBe(2);
 

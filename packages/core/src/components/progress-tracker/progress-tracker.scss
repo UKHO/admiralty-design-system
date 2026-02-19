@@ -27,30 +27,6 @@
     }
   }
 
-  &-button {
-    all: unset;
-    display: flex;
-    gap: $progress-tracker-item-gap;
-    width: 100%;
-    text-align: $progress-tracker-button-text-align;
-    cursor: pointer;
-    position: relative;
-    min-height: $progress-tracker-item-min-height;
-    padding: $progress-tracker-button-padding;
-    background: $progress-tracker-button-background;
-    border: none;
-    border-radius: 0;
-
-    &:focus {
-      outline: $progress-tracker-button-focus-outline;
-      outline-offset: $progress-tracker-button-focus-outline-offset;
-
-      .progress-tracker-marker {
-        box-shadow: $progress-tracker-marker-focus-shadow;
-      }
-    }
-  }
-
   &-step-disabled {
     display: flex;
     gap: $progress-tracker-item-gap;
@@ -140,6 +116,29 @@
     color: $progress-tracker-title-colour;
     margin: 0;
     transition: $progress-tracker-title-transition;
+
+    // Button-specific styles when title is clickable
+    &[type='button'] {
+      all: unset;
+      font-size: $progress-tracker-title-font-size;
+      font-weight: $progress-tracker-title-font-weight;
+      color: $progress-tracker-title-colour;
+      margin: 0;
+      transition: $progress-tracker-title-transition;
+      background: transparent;
+      cursor: pointer;
+      text-align: $progress-tracker-button-text-align;
+      padding: $progress-tracker-button-padding;
+      border: none;
+      border-radius: 0;
+      display: block;
+      width: 100%;
+
+      &:focus-visible {
+        outline: $progress-tracker-button-focus-outline;
+        outline-offset: $progress-tracker-button-focus-outline-offset;
+      }
+    }
   }
 
   &-bullet-summary {
@@ -218,13 +217,6 @@
 
     .progress-tracker-line {
       background-color: $progress-tracker-line-error-colour;
-    }
-  }
-
-  &-item--clickable {
-    .progress-tracker-button:focus-visible {
-      outline: $progress-tracker-button-focus-outline;
-      outline-offset: $progress-tracker-button-focus-outline-offset;
     }
   }
 }

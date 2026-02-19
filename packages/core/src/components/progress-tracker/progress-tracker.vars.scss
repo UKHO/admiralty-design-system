@@ -102,6 +102,6 @@ $progress-tracker-line-complete-colour: var(--admiralty-colour-success-shade);
 $progress-tracker-line-error-colour: var(--admiralty-colour-danger);
 
 // Icon styling
-$progress-tracker-check-width: 20px;
+$progress-tracker-check-width: auto;
 $progress-tracker-check-height: 20px;
 $progress-tracker-check-color: var(--admiralty-colour-primary-contrast);
