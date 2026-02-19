@@ -135,8 +135,10 @@
       width: 100%;
 
       &:focus-visible {
-        outline: $progress-tracker-button-focus-outline;
-        outline-offset: $progress-tracker-button-focus-outline-offset;
+        outline: none;
+        color: var(--admiralty-focus-contrast);
+        background-color: var(--admiralty-focus-colour);
+        border-bottom: 4px solid var(--admiralty-focus-contrast);
       }
     }
   }
