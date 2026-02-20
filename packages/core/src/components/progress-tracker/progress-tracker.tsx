@@ -13,9 +13,6 @@ export interface StepValidationDetail {
   isValid: boolean;
 }
 
-/**
- * @slot - No slots available for this component.
- */
 @Component({
   tag: 'admiralty-progress-tracker',
   styleUrl: 'progress-tracker.scss',
