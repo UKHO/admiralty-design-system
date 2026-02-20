@@ -53,7 +53,6 @@ Use child `admiralty-progress-tracker-step` components to define your steps:
 
 <!-- Auto Generated Below -->
 
-
 ## Properties
 
 | Property                   | Attribute                    | Description                                                     | Type                                                                 | Default     |
@@ -62,7 +61,6 @@ Use child `admiralty-progress-tracker-step` components to define your steps:
 | `validateBeforeNavigation` | `validate-before-navigation` | Whether to validate the current step before allowing navigation | `boolean`                                                            | `false`     |
 | `validateStep`             | --                           | Function to validate a step (returns true if valid)             | `(stepId: string, stepIndex: number) => boolean \| Promise<boolean>` | `undefined` |
 
-
 ## Events
 
 | Event                     | Description                               | Type                                |
@@ -70,13 +68,9 @@ Use child `admiralty-progress-tracker-step` components to define your steps:
 | `stepClicked`             | Emitted when user clicks on a step        | `CustomEvent<StepNavigationDetail>` |
 | `stepValidationRequested` | Emitted when step validation is requested | `CustomEvent<StepValidationDetail>` |
 
-
 ## Slots
 
-| Slot | Description                                           |
-| ---- | ----------------------------------------------------- |
-|      | Place admiralty-progress-tracker-step components here |
-
+No slots available for this component.
 
 ## Dependencies
 
@@ -85,12 +79,13 @@ Use child `admiralty-progress-tracker-step` components to define your steps:
 - [admiralty-icon](../icon)
 
 ### Graph
+
 ```mermaid
 graph TD;
   admiralty-progress-tracker --> admiralty-icon
   style admiralty-progress-tracker fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
-----------------------------------------------
+---
 
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_

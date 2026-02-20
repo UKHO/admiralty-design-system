@@ -14,7 +14,7 @@ export interface StepValidationDetail {
 }
 
 /**
- * @slot - Place admiralty-progress-tracker-step components here
+ * @slot - No slots available for this component.
  */
 @Component({
   tag: 'admiralty-progress-tracker',
