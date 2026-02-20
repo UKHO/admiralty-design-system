@@ -86,9 +86,9 @@ $progress-tracker-bullet-item-colour: var(--admiralty-text-colour);
 $progress-tracker-bullet-item-font-weight: var(--admiralty-font-weight-normal);
 
 // Error message styling
-$progress-tracker-error-font-size: var(--admiralty-font-size--1);
+$progress-tracker-error-font-size: var(--admiralty-font-size-0);
 $progress-tracker-error-colour: var(--admiralty-colour-danger);
-$progress-tracker-error-font-weight: var(--admiralty-font-weight-bold);
+$progress-tracker-error-font-weight: var(--admiralty-font-weight-normal);
 $progress-tracker-error-margin-top: var(--admiralty-spacing-2);
 $progress-tracker-error-display: flex;
 $progress-tracker-error-align-items: flex-start;
