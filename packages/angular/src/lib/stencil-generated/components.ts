@@ -1366,3 +1366,33 @@ export declare interface AdmiraltyTextarea extends Components.AdmiraltyTextarea 
 }
 
 
+@ProxyCmp({
+  inputs: ['ariaLabel', 'disabled', 'theme']
+})
+@Component({
+  selector: 'admiralty-theme-toggle',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['ariaLabel', 'disabled', 'theme'],
+})
+export class AdmiraltyThemeToggle {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['admiraltyThemeChange']);
+  }
+}
+
+
+import type { ThemeToggleChangeEventDetail as IAdmiraltyThemeToggleThemeToggleChangeEventDetail } from '@ukho/admiralty-core';
+
+export declare interface AdmiraltyThemeToggle extends Components.AdmiraltyThemeToggle {
+  /**
+   * Event is fired when the theme preference changes @event admiraltyThemeChange
+   */
+  admiraltyThemeChange: EventEmitter<CustomEvent<IAdmiraltyThemeToggleThemeToggleChangeEventDetail>>;
+}
+
+

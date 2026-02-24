@@ -1,0 +1,27 @@
+@import '../../styles/vars/globals';
+
+/**
+ * Theme Toggle Component Styles
+ * 
+ * @prop --admiralty-theme-toggle-background-colour: Background colour of the toggle button
+ * @prop --admiralty-theme-toggle-hover-background-colour: Hover background colour
+ * @prop --admiralty-theme-toggle-active-background-colour: Active background colour
+ * @prop --admiralty-theme-toggle-icon-colour: Colour of the toggle icons
+ * @prop --admiralty-theme-toggle-slider-background-colour: Background colour of the slider
+ * @prop --admiralty-theme-toggle-slider-colour: Colour of the active slider indicator
+ * @prop --admiralty-theme-toggle-focus-colour: Focus outline colour
+ * @prop --admiralty-theme-toggle-disabled-opacity: Opacity when disabled
+ * @prop --admiralty-theme-toggle-size: Size of the toggle button
+ * @prop --admiralty-theme-toggle-border-radius: Border radius of the toggle button
+ */
+
+$theme-toggle-background-colour: var(--admiralty-theme-toggle-background-colour, var(--admiralty-colour-light));
+$theme-toggle-hover-background-colour: var(--admiralty-theme-toggle-hover-background-colour, var(--admiralty-colour-light-shade));
+$theme-toggle-active-background-colour: var(--admiralty-theme-toggle-active-background-colour, var(--admiralty-colour-light-shade));
+$theme-toggle-icon-colour: var(--admiralty-theme-toggle-icon-colour, var(--admiralty-colour-primary));
+$theme-toggle-slider-background-colour: var(--admiralty-theme-toggle-slider-background-colour, var(--admiralty-colour-primary));
+$theme-toggle-slider-colour: var(--admiralty-theme-toggle-slider-colour, var(--admiralty-colour-primary-contrast));
+$theme-toggle-focus-colour: var(--admiralty-theme-toggle-focus-colour, var(--admiralty-focus-colour));
+$theme-toggle-disabled-opacity: var(--admiralty-theme-toggle-disabled-opacity, 0.5);
+$theme-toggle-size: var(--admiralty-theme-toggle-size, 44px);
+$theme-toggle-border-radius: var(--admiralty-theme-toggle-border-radius, 20px);

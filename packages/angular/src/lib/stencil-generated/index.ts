@@ -54,5 +54,6 @@ export const DIRECTIVES = [
   d.AdmiraltyTableRow,
   d.AdmiraltyTextSideBar,
   d.AdmiraltyTextSideBarItem,
-  d.AdmiraltyTextarea
+  d.AdmiraltyTextarea,
+  d.AdmiraltyThemeToggle
 ];
