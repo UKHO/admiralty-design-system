@@ -9,7 +9,7 @@
 
 import type { EventName, StencilReactComponent } from '@stencil/react-output-target/runtime';
 import { createComponent } from '@stencil/react-output-target/runtime';
-import { type AdmiraltyAutocompleteCustomEvent, type AdmiraltyCheckboxCustomEvent, type AdmiraltyFileInputCustomEvent, type AdmiraltyInputCustomEvent, type AdmiraltyRadioGroupCustomEvent, type AdmiraltySelectCustomEvent, type AdmiraltyTextareaCustomEvent, type AutoCompleteChangeEventDetail, type CheckboxChangeEventDetail, type FileInputChangeEventDetail, type InputChangeEventDetail, type RadioGroupChangeEventDetail, type SelectChangeEventDetail, type TextAreaChangeEventDetail } from "@ukho/admiralty-core";
+import { type AdmiraltyAutocompleteCustomEvent, type AdmiraltyCheckboxCustomEvent, type AdmiraltyFileInputCustomEvent, type AdmiraltyInputCustomEvent, type AdmiraltyRadioGroupCustomEvent, type AdmiraltySelectCustomEvent, type AdmiraltyTextareaCustomEvent, type AdmiraltyThemeToggleCustomEvent, type AutoCompleteChangeEventDetail, type CheckboxChangeEventDetail, type FileInputChangeEventDetail, type InputChangeEventDetail, type RadioGroupChangeEventDetail, type SelectChangeEventDetail, type TextAreaChangeEventDetail, type ThemeToggleChangeEventDetail } from "@ukho/admiralty-core";
 import { AdmiraltyAutocompleteOption as AdmiraltyAutocompleteOptionElement, defineCustomElement as defineAdmiraltyAutocompleteOption } from "@ukho/admiralty-core/dist/components/admiralty-autocomplete-option.js";
 import { AdmiraltyAutocomplete as AdmiraltyAutocompleteElement, defineCustomElement as defineAdmiraltyAutocomplete } from "@ukho/admiralty-core/dist/components/admiralty-autocomplete.js";
 import { AdmiraltyBreadcrumb as AdmiraltyBreadcrumbElement, defineCustomElement as defineAdmiraltyBreadcrumb } from "@ukho/admiralty-core/dist/components/admiralty-breadcrumb.js";
@@ -63,6 +63,7 @@ import { AdmiraltyTable as AdmiraltyTableElement, defineCustomElement as defineA
 import { AdmiraltyTextSideBarItem as AdmiraltyTextSideBarItemElement, defineCustomElement as defineAdmiraltyTextSideBarItem } from "@ukho/admiralty-core/dist/components/admiralty-text-side-bar-item.js";
 import { AdmiraltyTextSideBar as AdmiraltyTextSideBarElement, defineCustomElement as defineAdmiraltyTextSideBar } from "@ukho/admiralty-core/dist/components/admiralty-text-side-bar.js";
 import { AdmiraltyTextarea as AdmiraltyTextareaElement, defineCustomElement as defineAdmiraltyTextarea } from "@ukho/admiralty-core/dist/components/admiralty-textarea.js";
+import { AdmiraltyThemeToggle as AdmiraltyThemeToggleElement, defineCustomElement as defineAdmiraltyThemeToggle } from "@ukho/admiralty-core/dist/components/admiralty-theme-toggle.js";
 import React from 'react';
 
 type AdmiraltyAutocompleteEvents = { onAdmiraltyChange: EventName<AdmiraltyAutocompleteCustomEvent<AutoCompleteChangeEventDetail>> };
@@ -655,4 +656,14 @@ export const AdmiraltyTextarea: StencilReactComponent<AdmiraltyTextareaElement, 
         onAdmiraltyInput: 'admiraltyInput'
     } as AdmiraltyTextareaEvents,
     defineCustomElement: defineAdmiraltyTextarea
+});
+
+type AdmiraltyThemeToggleEvents = { onAdmiraltyThemeChange: EventName<AdmiraltyThemeToggleCustomEvent<ThemeToggleChangeEventDetail>> };
+
+export const AdmiraltyThemeToggle: StencilReactComponent<AdmiraltyThemeToggleElement, AdmiraltyThemeToggleEvents> = /*@__PURE__*/ createComponent<AdmiraltyThemeToggleElement, AdmiraltyThemeToggleEvents>({
+    tagName: 'admiralty-theme-toggle',
+    elementClass: AdmiraltyThemeToggleElement,
+    react: React,
+    events: { onAdmiraltyThemeChange: 'admiraltyThemeChange' } as AdmiraltyThemeToggleEvents,
+    defineCustomElement: defineAdmiraltyThemeToggle
 });
