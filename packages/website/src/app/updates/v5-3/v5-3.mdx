@@ -1,8 +1,11 @@
 import styles from "./styles.css"
+import { BeforeAfterSlider } from './image-slider'
 
 # Version 5.3.0 Release Notes
 
 ### Release date 13/02/2026
+
+
 
 ## Summary
 
@@ -15,34 +18,14 @@ Following feedback from our user we have introduced Dark Mode to improve usabili
 and support user preference-based theming. Potentially a first step in moving toward other themes
 such as dark and dusk mode used onboard ships.
 
-<div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
-  <img
-    src="/updates/v5-3/get-help-light.png"
-    alt="Light mode example"
-    style={{
-      width: "100%",
-      maxWidth: "600px",
-      height: "auto",
-      flex: "1",
-      padding: "8px",
-      border: "2px solid grey",
-      borderRadius: "6px"
-    }}
-  />
-  <img
-    src="/updates/v5-3/get-help-dark.png"
-    alt="Dark mode example"
-    style={{
-      width: "100%",
-      maxWidth: "600px",
-      height: "auto",
-      flex: "1",
-      padding: "8px",
-      border: "2px solid grey",
-      borderRadius: "6px"
-    }}
-  />
-</div>
+<BeforeAfterSlider
+  beforeSrc="/updates/v5-3/get-help-light.png"
+  afterSrc="/updates/v5-3/get-help-dark.png"
+  beforeAlt="Get Help page in light mode"
+  afterAlt="Get Help page in dark mode"
+  aspectRatio="16 / 10"
+  maxWidth={1100}
+/>
 
 ### What's Included
 
