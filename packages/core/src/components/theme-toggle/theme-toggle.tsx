@@ -34,8 +34,25 @@ export class ThemeToggleComponent {
    */
   @Event() admiraltyThemeChange: EventEmitter<ThemeToggleChangeEventDetail>;
 
+  private mediaQueryList: MediaQueryList | null = null;
+
   @Watch('theme')
   themeChanged(newTheme: ThemePreference) {
+    // Clean up listener if switching away from auto
+    if (newTheme !== 'auto' && this.mediaQueryList) {
+      if (this.mediaQueryList.removeEventListener) {
+        this.mediaQueryList.removeEventListener('change', this.handleSystemPreferenceChange);
+      } else if (this.mediaQueryList.removeListener) {
+        this.mediaQueryList.removeListener(this.handleSystemPreferenceChange);
+      }
+      this.mediaQueryList = null;
+    }
+
+    // Set up listener if switching to auto
+    if (newTheme === 'auto' && !this.mediaQueryList) {
+      this.setupSystemPreferenceListener();
+    }
+
     this.applyTheme(newTheme);
     this.persistTheme(newTheme);
     this.admiraltyThemeChange.emit({
@@ -61,7 +78,53 @@ export class ThemeToggleComponent {
   componentDidLoad() {
     // Apply theme after component is loaded
     this.applyTheme(this.theme);
+
+    // Listen for system preference changes (only if using auto theme)
+    if (this.theme === 'auto') {
+      this.setupSystemPreferenceListener();
+    }
   }
+
+  disconnectedCallback() {
+    // Clean up media query listener when component is removed
+    if (this.mediaQueryList) {
+      if (this.mediaQueryList.removeEventListener) {
+        this.mediaQueryList.removeEventListener('change', this.handleSystemPreferenceChange);
+      } else if (this.mediaQueryList.removeListener) {
+        this.mediaQueryList.removeListener(this.handleSystemPreferenceChange);
+      }
+    }
+  }
+
+  /**
+   * Set up listener for system preference changes
+   */
+  private setupSystemPreferenceListener = () => {
+    if (window.matchMedia) {
+      this.mediaQueryList = window.matchMedia('(prefers-color-scheme: dark)');
+      // Use addEventListener if available (modern), fall back to addListener (legacy)
+      if (this.mediaQueryList.addEventListener) {
+        this.mediaQueryList.addEventListener('change', this.handleSystemPreferenceChange);
+      } else if (this.mediaQueryList.addListener) {
+        this.mediaQueryList.addListener(this.handleSystemPreferenceChange);
+      }
+    }
+  };
+
+  /**
+   * Handle when system preference changes
+   */
+  private handleSystemPreferenceChange = () => {
+    // Only apply if theme is still set to 'auto'
+    if (this.theme === 'auto') {
+      // Update the rendered theme without changing the theme prop
+      this.applyTheme('auto');
+      this.admiraltyThemeChange.emit({
+        theme: 'auto',
+        isDarkMode: this.isDarkMode(),
+      });
+    }
+  };
 
   /**
    * Toggle between light and dark mode

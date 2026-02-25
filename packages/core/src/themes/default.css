@@ -522,3 +522,37 @@
     --colour-block-bright-blue-text-colour: #333333;
   }
 }
+
+/* Theme Toggle Support - Manual Dark Mode */
+:root.admiralty-dark-mode .admiralty-header a.header-logo img {
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(0deg);
+}
+
+:root.admiralty-dark-mode footer img {
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(0deg);
+}
+
+:root.admiralty-dark-mode footer.footer-compact {
+  opacity: 1;
+}
+
+:root.admiralty-dark-mode admiralty-text-side-bar {
+  color-scheme: dark;
+}
+
+/* Theme Toggle Support - Manual Light Mode */
+:root.admiralty-light-mode .admiralty-header a.header-logo img {
+  filter: none;
+}
+
+:root.admiralty-light-mode footer img {
+  filter: none;
+}
+
+:root.admiralty-light-mode footer.footer-compact {
+  opacity: initial;
+}
+
+:root.admiralty-light-mode admiralty-text-side-bar {
+  color-scheme: light;
+}

@@ -389,6 +389,81 @@ describe('admiralty-theme-toggle', () => {
       await page.waitForChanges();
       expect(localStorage.getItem('admiralty-theme-preference')).toBe('light');
     });
+
+    it('should load saved theme from localStorage on new page load', async () => {
+      // Mock system preference to dark
+      Object.defineProperty(window, 'matchMedia', {
+        writable: true,
+        configurable: true,
+        value: jest.fn().mockImplementation(() => ({
+          matches: true, // dark preference
+          media: '(prefers-color-scheme: dark)',
+        })),
+      });
+
+      // Clear any previous state
+      localStorage.clear();
+
+      // Simulate: User sets theme and navigates away
+      // First component saves dark theme to localStorage
+      const page1 = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle theme="light"></admiralty-theme-toggle>`,
+      });
+      const button = page1.root.querySelector('button');
+      button.click();
+      await page1.waitForChanges();
+      expect(localStorage.getItem('admiralty-theme-preference')).toBe('dark');
+
+      // Simulate: User navigates to a different page (new component instance)
+      // New component has no explicit theme prop, should load from localStorage
+      const page2 = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle></admiralty-theme-toggle>`,
+      });
+      await page2.waitForChanges();
+      const component = page2.rootInstance;
+
+      // Should have loaded 'dark' from localStorage
+      expect(component.theme).toBe('dark');
+
+      // Button should show dark mode classes
+      const button2 = page2.root.querySelector('button');
+      expect(button2.classList.contains('dark')).toBe(true);
+    });
+
+    it('should load saved light theme from localStorage on new page load', async () => {
+      // Mock system preference to light to avoid interference
+      Object.defineProperty(window, 'matchMedia', {
+        writable: true,
+        configurable: true,
+        value: jest.fn().mockImplementation(() => ({
+          matches: false, // light preference
+          media: '(prefers-color-scheme: dark)',
+        })),
+      });
+
+      // Clear any previous state
+      localStorage.clear();
+
+      // Set localStorage to light
+      localStorage.setItem('admiralty-theme-preference', 'light');
+
+      // New component instance without explicit theme prop
+      const page = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle></admiralty-theme-toggle>`,
+      });
+      await page.waitForChanges();
+      const component = page.rootInstance;
+
+      // Should have loaded 'light' from localStorage
+      expect(component.theme).toBe('light');
+
+      // Button should show light mode classes
+      const button = page.root.querySelector('button');
+      expect(button.classList.contains('light')).toBe(true);
+    });
   });
 
   describe('document styling', () => {
