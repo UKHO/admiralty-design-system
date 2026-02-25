@@ -44,15 +44,23 @@ export class ThemeToggleComponent {
     });
   }
 
-  componentDidLoad() {
-    // Load theme preference from localStorage
-    const savedTheme = this.loadTheme();
-    if (savedTheme) {
-      this.theme = savedTheme;
-    } else {
-      // Initialize with current system preference
-      this.theme = this.getSystemTheme();
+  componentWillLoad() {
+    // Only load theme preference if theme prop is still at default value
+    if (this.theme === 'auto') {
+      // Load theme preference from localStorage
+      const savedTheme = this.loadTheme();
+      if (savedTheme) {
+        this.theme = savedTheme;
+      } else {
+        // Initialize with current system preference
+        this.theme = this.getSystemTheme();
+      }
     }
+  }
+
+  componentDidLoad() {
+    // Apply theme after component is loaded
+    this.applyTheme(this.theme);
   }
 
   /**

@@ -21,6 +21,22 @@
 | `admiraltyThemeChange` | Event is fired when the theme preference changes | `CustomEvent<ThemeToggleChangeEventDetail>` |
 
 
+## CSS Custom Properties
+
+| Name                                                | Description                            |
+| --------------------------------------------------- | -------------------------------------- |
+| `--admiralty-theme-toggle-active-background-colour` | Active background colour               |
+| `--admiralty-theme-toggle-background-colour`        | Background colour of the toggle button |
+| `--admiralty-theme-toggle-border-radius`            | Border radius of the toggle button     |
+| `--admiralty-theme-toggle-disabled-opacity`         | Opacity when disabled                  |
+| `--admiralty-theme-toggle-focus-colour`             | Focus outline colour                   |
+| `--admiralty-theme-toggle-hover-background-colour`  | Hover background colour                |
+| `--admiralty-theme-toggle-icon-colour`              | Colour of the toggle icons             |
+| `--admiralty-theme-toggle-size`                     | Size of the toggle button              |
+| `--admiralty-theme-toggle-slider-background-colour` | Background colour of the slider        |
+| `--admiralty-theme-toggle-slider-colour`            | Colour of the active slider indicator  |
+
+
 ## Dependencies
 
 ### Depends on
