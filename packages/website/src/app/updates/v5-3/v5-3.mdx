@@ -1,0 +1,122 @@
+import styles from "./styles.css"
+
+# Version 5.3.0 Release Notes
+
+### Release date 13/02/2026
+
+## Summary
+
+This release introduces Dark Mode and a new Patterns section to support more consistent,
+accessible, and scalable service design.
+
+## Dark Mode
+
+Following feedback from our user we have introduced Dark Mode to improve usability in low-light environments
+and support user preference-based theming. Potentially a first step in moving toward other themes
+such as dark and dusk mode used onboard ships.
+
+<div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
+  <img
+    src="/updates/v5-3/get-help-light.png"
+    alt="Light mode example"
+    style={{
+      width: "100%",
+      maxWidth: "600px",
+      height: "auto",
+      flex: "1",
+      padding: "8px",
+      border: "2px solid grey",
+      borderRadius: "6px"
+    }}
+  />
+  <img
+    src="/updates/v5-3/get-help-dark.png"
+    alt="Dark mode example"
+    style={{
+      width: "100%",
+      maxWidth: "600px",
+      height: "auto",
+      flex: "1",
+      padding: "8px",
+      border: "2px solid grey",
+      borderRadius: "6px"
+    }}
+  />
+</div>
+
+### What's Included
+
+- Full system colour support for dark theme
+- Updated semantic colour mappings (background, surface, text, border, focus, status)
+- Accessible contrast ratios across all core components
+- Dark mode variants for:
+  - Core components
+  - Navigation patterns
+  - Data visualisation elements
+  - Form controls and validation states
+
+### How it works
+
+Products can enable Dark Mode using the browser settings,
+we are working to implement a dark mode switch/ toggle in the near future.
+
+### Accessibility
+
+Dark Mode has been tested to meet WCAG 2.2 AA contrast standards. Particular attention has been given to:
+
+- Text readability
+- Status colours (success, warning, error)
+- Focus states
+- Data-heavy interfaces
+
+### Implementation Guidelines
+
+- Do not manually override component colours.
+- Use semantic tokens only.
+- Test content-heavy screens for contrast regressions.
+
+## Patterns
+
+We’ve launched a new Patterns section to support teams in solving common service design challenges consistently.
+Patterns go beyond components. They provide guidance on structure, behaviour, and user intent.
+
+### What's included
+
+Initial patterns include:
+  - Page layout structure for a geo-display and complex form
+  - Content grouping strategies
+  - Multi-step processes
+
+Each pattern includes:
+  - When to use it
+  - When not to use it
+  - Accessibility considerations
+  - Content design guidance
+  - Interaction behaviour
+  - Example layouts
+  - Relationship to components
+
+### Why patterns?
+
+Components alone don’t guarantee coherent services. Patterns help teams:
+  - Avoid reinventing solutions
+  - Reduce inconsistency across products
+  - Align with user mental models
+  - Design at a service level, not just a UI level
+
+We plan in the future to introduce patterns for error messaging, complex tables and a  database search and filter.
+
+## Minor Updates
+
+- Removed dependency on Font Awesome
+- Added [Data Collection](https://designsystem.admiralty.co.uk/patterns/data-collection) and [Find A Location](https://designsystem.admiralty.co.uk/patterns/find-a-location) pattern pages
+- Updated several component examples on Documentation Website
+
+## In our next release, we're planning to introduce:
+- New "Progress Tracker" component
+- Toggle button for Dark Mode
+- Several package updates for improved security and maintainability
+- Documentation Website improvements
+
+
+
