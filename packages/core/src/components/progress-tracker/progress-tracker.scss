@@ -1,0 +1,225 @@
+/* progress-tracker component styles */
+@import './progress-tracker.vars';
+
+.progress-tracker {
+  background-color: $progress-tracker-background;
+
+  // Hide default list styling on nested lists
+  .progress-tracker-list li::before,
+  .progress-tracker-bullet-summary li::before {
+    content: none !important;
+  }
+
+  &-list {
+    list-style: none;
+    padding: $progress-tracker-list-padding;
+    margin: $progress-tracker-list-margin;
+  }
+
+  &-item {
+    display: flex;
+    gap: $progress-tracker-item-gap;
+    position: relative;
+    min-height: $progress-tracker-item-min-height;
+    margin-bottom: $progress-tracker-line-margin-bottom;
+
+    &--last {
+      min-height: auto;
+    }
+  }
+
+  &-step-disabled {
+    display: flex;
+    gap: $progress-tracker-item-gap;
+    width: 100%;
+    cursor: not-allowed;
+  }
+
+  &-rail {
+    display: flex;
+    flex-direction: column;
+    align-items: $progress-tracker-rail-align-items;
+    flex-shrink: $progress-tracker-rail-flex-shrink;
+    width: $progress-tracker-rail-width;
+  }
+
+  &-marker {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: $progress-tracker-marker-size;
+    height: $progress-tracker-marker-size;
+    border-radius: $progress-tracker-marker-border-radius;
+    flex-shrink: 0;
+    transition: $progress-tracker-marker-transition;
+    position: relative;
+    font-size: var(--admiralty-font-size--1, 0.875rem);
+
+    &--complete {
+      background-color: $progress-tracker-marker-complete-background;
+      border: $progress-tracker-marker-border-width solid $progress-tracker-marker-complete-border;
+      color: $progress-tracker-marker-complete-text;
+      font-weight: var(--admiralty-font-weight-bold, 700);
+    }
+
+    &--current {
+      background-color: $progress-tracker-marker-current-background;
+      border: $progress-tracker-marker-border-width solid $progress-tracker-marker-current-border;
+      color: $progress-tracker-marker-current-text;
+      font-weight: $progress-tracker-marker-current-font-weight;
+    }
+
+    &--upcoming {
+      background-color: $progress-tracker-marker-upcoming-background;
+      border: $progress-tracker-marker-border-width solid $progress-tracker-marker-upcoming-border;
+      color: $progress-tracker-marker-upcoming-text;
+      font-weight: $progress-tracker-marker-upcoming-font-weight;
+    }
+
+    &--error {
+      background-color: $progress-tracker-marker-error-background;
+      border: $progress-tracker-marker-border-width solid $progress-tracker-marker-error-border;
+      box-shadow: $progress-tracker-marker-error-shadow;
+      color: $progress-tracker-marker-error-text;
+      font-weight: $progress-tracker-marker-error-font-weight;
+    }
+  }
+
+  &-marker-number {
+    display: block;
+    line-height: 1;
+  }
+
+  &-check {
+    width: $progress-tracker-check-width;
+    height: $progress-tracker-check-height;
+    color: $progress-tracker-check-color;
+  }
+
+  &-line {
+    width: $progress-tracker-line-width;
+    flex: 1;
+    background-color: $progress-tracker-line-colour;
+    margin-top: $progress-tracker-line-margin-top;
+  }
+
+  &-content {
+    flex: $progress-tracker-content-flex;
+    padding-bottom: $progress-tracker-content-padding-bottom;
+    display: flex;
+    flex-direction: $progress-tracker-content-flex-direction;
+    justify-content: center;
+  }
+
+  &-title {
+    font-size: $progress-tracker-title-font-size;
+    font-weight: $progress-tracker-title-font-weight;
+    color: $progress-tracker-title-colour;
+    margin: 0;
+    transition: $progress-tracker-title-transition;
+
+    // Button-specific styles when title is clickable
+    &[type='button'] {
+      all: unset;
+      font-size: $progress-tracker-title-font-size;
+      font-weight: $progress-tracker-title-font-weight;
+      color: $progress-tracker-title-colour;
+      margin: 0;
+      transition: $progress-tracker-title-transition;
+      background: transparent;
+      cursor: pointer;
+      text-align: $progress-tracker-button-text-align;
+      padding: $progress-tracker-button-padding;
+      border: none;
+      border-radius: 0;
+      display: block;
+      width: 100%;
+
+      &:focus-visible {
+        outline: none;
+        color: var(--admiralty-focus-contrast);
+        background-color: var(--admiralty-focus-colour);
+        border-bottom: 4px solid var(--admiralty-focus-contrast);
+      }
+    }
+  }
+
+  &-bullet-summary {
+    list-style-position: inside;
+    font-size: $progress-tracker-bullet-summary-font-size;
+    color: $progress-tracker-bullet-summary-colour;
+    margin: $progress-tracker-bullet-summary-margin;
+    padding: $progress-tracker-bullet-summary-padding;
+    line-height: 1.5;
+
+    li {
+      margin-bottom: $progress-tracker-bullet-item-margin-bottom;
+      padding-left: 0;
+      font-size: $progress-tracker-bullet-item-font-size;
+      color: $progress-tracker-bullet-item-colour;
+      font-weight: $progress-tracker-bullet-item-font-weight;
+    }
+  }
+
+  &-summary {
+    font-size: $progress-tracker-summary-font-size;
+    color: $progress-tracker-summary-colour;
+    margin-top: $progress-tracker-summary-margin-top;
+  }
+
+  &-error {
+    font-size: $progress-tracker-error-font-size;
+    color: $progress-tracker-error-colour;
+    font-weight: $progress-tracker-error-font-weight;
+    margin-top: $progress-tracker-error-margin-top;
+    display: $progress-tracker-error-display;
+    align-items: $progress-tracker-error-align-items;
+    gap: $progress-tracker-error-gap;
+
+    &::before {
+      content: '⚠';
+      flex-shrink: 0;
+    }
+  }
+
+  // Styling for different states
+  &-item--complete {
+    .progress-tracker-title {
+      color: $progress-tracker-title-colour;
+    }
+
+    .progress-tracker-line {
+      background-color: $progress-tracker-line-complete-colour;
+    }
+  }
+
+  &-item--current {
+    .progress-tracker-title {
+      color: $progress-tracker-title-colour;
+    }
+  }
+
+  &-item--upcoming {
+    .progress-tracker-title {
+      color: $progress-tracker-summary-disabled-colour;
+    }
+
+    .progress-tracker-bullet-summary {
+      color: $progress-tracker-summary-disabled-colour;
+    }
+
+    .progress-tracker-summary {
+      color: $progress-tracker-summary-disabled-colour;
+    }
+  }
+
+  &-item--error {
+    .progress-tracker-title {
+      color: var(--admiralty-colour-danger);
+    }
+
+    .progress-tracker-line {
+      background-color: $progress-tracker-line-error-colour;
+    }
+  }
+}

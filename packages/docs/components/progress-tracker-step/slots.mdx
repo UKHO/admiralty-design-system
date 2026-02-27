@@ -1,0 +1,15 @@
+| Name               | Description                                                                                                                                                     |
+| ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `bullet-summaries` | A list element (`<ul>` or `<ol>`) containing bullet points to display below the step title. The parent progress tracker will extract and render the list items. |
+
+## Example
+
+```html
+<admiralty-progress-tracker-step step-id="step1" step-title="Review Details">
+  <ul slot="bullet-summaries">
+    <li>Personal information</li>
+    <li>Contact details</li>
+    <li>Preferences</li>
+  </ul>
+</admiralty-progress-tracker-step>
+```

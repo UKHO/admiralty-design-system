@@ -12,4 +12,4 @@ import { DesignSystemModule } from '@ukho/admiralty-angular';
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

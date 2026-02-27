@@ -1,0 +1,108 @@
+@import '../../styles/vars/globals';
+
+// Progress Tracker Component Variables
+// ========================================
+
+// Container styling
+$progress-tracker-background: var(--admiralty-background-colour);
+$progress-tracker-text-colour: var(--admiralty-text-colour);
+
+// List styling
+$progress-tracker-list-padding: 0;
+$progress-tracker-list-margin: 0;
+
+// Item styling
+$progress-tracker-item-gap: var(--admiralty-spacing-4);
+$progress-tracker-item-min-height: 60px;
+
+// Button styling
+$progress-tracker-button-background: transparent;
+$progress-tracker-button-padding: 0;
+$progress-tracker-button-text-align: left;
+
+// Marker styling (from step component)
+$progress-tracker-marker-size: 24px;
+$progress-tracker-marker-border-width: 2px;
+$progress-tracker-marker-border-radius: 50%;
+$progress-tracker-marker-transition: all 200ms ease-in-out;
+
+// Marker state colors
+$progress-tracker-marker-complete-background: var(--admiralty-colour-success);
+$progress-tracker-marker-complete-border: var(--admiralty-colour-success-shade);
+$progress-tracker-marker-complete-text: var(--admiralty-colour-success-contrast);
+
+$progress-tracker-marker-current-background: var(--admiralty-colour-success);
+$progress-tracker-marker-current-border: var(--admiralty-colour-success-shade);
+$progress-tracker-marker-current-text: var(--admiralty-colour-success-contrast);
+$progress-tracker-marker-current-font-weight: var(--admiralty-font-weight-bold);
+
+$progress-tracker-marker-upcoming-background: var(--admiralty-background-colour);
+$progress-tracker-marker-upcoming-border: var(--admiralty-colour-primary);
+$progress-tracker-marker-upcoming-text: var(--admiralty-colour-primary);
+$progress-tracker-marker-upcoming-font-weight: var(--admiralty-font-weight-bold);
+
+$progress-tracker-marker-error-background: var(--admiralty-colour-danger);
+$progress-tracker-marker-error-border: var(--admiralty-colour-danger-shade);
+$progress-tracker-marker-error-shadow: 0 0 0 4px color-mix(in srgb, var(--admiralty-colour-danger) 20%, transparent);
+$progress-tracker-marker-error-text: var(--admiralty-colour-danger-contrast);
+$progress-tracker-marker-error-font-weight: var(--admiralty-font-weight-bold);
+
+// Focus styling
+$progress-tracker-marker-focus-shadow: inset 0 0 0 3px var(--admiralty-focus-colour);
+$progress-tracker-button-focus-outline: 2px solid var(--admiralty-focus-colour);
+$progress-tracker-button-focus-outline-offset: 2px;
+
+// Rail (marker container) styling
+$progress-tracker-rail-width: 32px;
+$progress-tracker-rail-flex-shrink: 0;
+$progress-tracker-rail-align-items: center;
+
+// Content area styling
+$progress-tracker-content-flex: 1;
+$progress-tracker-content-padding-bottom: var(--admiralty-spacing-6);
+$progress-tracker-content-flex-direction: column;
+
+// Title styling
+$progress-tracker-title-font-size: var(--admiralty-font-size-0);
+$progress-tracker-title-font-weight: var(--admiralty-font-weight-medium);
+$progress-tracker-title-colour: var(--admiralty-colour-primary);
+$progress-tracker-title-transition: color 200ms ease-in-out;
+
+// Summary styling
+$progress-tracker-summary-font-size: var(--admiralty-font-size-0);
+$progress-tracker-summary-colour: var(--admiralty-text-colour);
+$progress-tracker-summary-margin-top: var(--admiralty-spacing-2);
+$progress-tracker-summary-disabled-colour: var(--admiralty-disabled-text-colour);
+
+// Bullet summary styling
+$progress-tracker-bullet-summary-font-size: var(--admiralty-font-size--1);
+$progress-tracker-bullet-summary-colour: var(--admiralty-text-colour);
+$progress-tracker-bullet-summary-margin: var(--admiralty-spacing-2) 0 var(--admiralty-spacing-1) 0;
+$progress-tracker-bullet-summary-padding: 0;
+
+$progress-tracker-bullet-item-margin-bottom: var(--admiralty-spacing-1);
+$progress-tracker-bullet-item-font-size: var(--admiralty-font-size-0);
+$progress-tracker-bullet-item-colour: var(--admiralty-text-colour);
+$progress-tracker-bullet-item-font-weight: var(--admiralty-font-weight-normal);
+
+// Error message styling
+$progress-tracker-error-font-size: var(--admiralty-font-size-0);
+$progress-tracker-error-colour: var(--admiralty-colour-danger);
+$progress-tracker-error-font-weight: var(--admiralty-font-weight-normal);
+$progress-tracker-error-margin-top: var(--admiralty-spacing-2);
+$progress-tracker-error-display: flex;
+$progress-tracker-error-align-items: flex-start;
+$progress-tracker-error-gap: var(--admiralty-spacing-1);
+
+// Line styling
+$progress-tracker-line-width: 2px;
+$progress-tracker-line-colour: var(--admiralty-colour-primary);
+$progress-tracker-line-margin-top: var(--admiralty-spacing-1);
+$progress-tracker-line-margin-bottom: var(--admiralty-spacing-1);
+$progress-tracker-line-complete-colour: var(--admiralty-colour-success-shade);
+$progress-tracker-line-error-colour: var(--admiralty-colour-danger);
+
+// Icon styling
+$progress-tracker-check-width: auto;
+$progress-tracker-check-height: 20px;
+$progress-tracker-check-color: var(--admiralty-colour-secondary-contrast);

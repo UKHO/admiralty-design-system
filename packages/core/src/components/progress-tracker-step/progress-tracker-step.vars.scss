@@ -1,0 +1,48 @@
+@import '../../styles/vars/globals';
+
+// Progress Tracker Step Component Variables
+// ==============================================
+
+// Step marker styling
+$progress-tracker-step-marker-size: 32px;
+$progress-tracker-step-marker-padding: var(--admiralty-spacing-4);
+
+// Complete/Current state colors
+$progress-tracker-step-complete-background: var(--admiralty-colour-success);
+$progress-tracker-step-complete-border: var(--admiralty-colour-success-shade);
+$progress-tracker-step-complete-text: var(--admiralty-colour-success-contrast);
+
+// Error state colors
+$progress-tracker-step-error-background: var(--admiralty-colour-danger);
+$progress-tracker-step-error-border: var(--admiralty-colour-danger-shade);
+$progress-tracker-step-error-shadow: 0 0 0 4px color-mix(in srgb, var(--admiralty-colour-danger) 20%, transparent);
+$progress-tracker-step-error-text: var(--admiralty-colour-danger-contrast);
+
+// Upcoming state colors
+$progress-tracker-step-upcoming-background: var(--admiralty-background-colour);
+$progress-tracker-step-upcoming-border: var(--admiralty-colour-primary);
+$progress-tracker-step-upcoming-text: var(--admiralty-colour-primary);
+
+// Disabled state colors
+$progress-tracker-step-disabled-text: var(--admiralty-disabled-text-colour);
+
+// Focus styling
+$progress-tracker-step-focus-colour: var(--admiralty-focus-colour);
+
+// Text styling
+$progress-tracker-step-title-font-size: var(--admiralty-font-size-1);
+$progress-tracker-step-title-font-weight: var(--admiralty-font-weight-medium);
+$progress-tracker-step-summary-font-size: var(--admiralty-font-size--1);
+$progress-tracker-step-summary-text-colour: var(--admiralty-text-colour);
+$progress-tracker-step-summary-disabled-colour: var(--admiralty-disabled-text-colour);
+
+// Spacing
+$progress-tracker-step-gap: var(--admiralty-spacing-4);
+$progress-tracker-step-min-height: 60px;
+$progress-tracker-step-content-padding-bottom: var(--admiralty-spacing-6);
+
+// Vertical line styling
+$progress-tracker-step-line-width: 2px;
+$progress-tracker-step-line-colour: var(--admiralty-colour-primary);
+$progress-tracker-step-line-complete-colour: var(--admiralty-colour-success-shade);
+$progress-tracker-step-line-error-colour: var(--admiralty-colour-danger);
