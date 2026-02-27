@@ -21,6 +21,7 @@
     gap: $progress-tracker-item-gap;
     position: relative;
     min-height: $progress-tracker-item-min-height;
+    margin-bottom: $progress-tracker-line-margin-bottom;
 
     &--last {
       min-height: auto;

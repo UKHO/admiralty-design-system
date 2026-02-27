@@ -98,10 +98,11 @@ $progress-tracker-error-gap: var(--admiralty-spacing-1);
 $progress-tracker-line-width: 2px;
 $progress-tracker-line-colour: var(--admiralty-colour-primary);
 $progress-tracker-line-margin-top: var(--admiralty-spacing-1);
+$progress-tracker-line-margin-bottom: var(--admiralty-spacing-1);
 $progress-tracker-line-complete-colour: var(--admiralty-colour-success-shade);
 $progress-tracker-line-error-colour: var(--admiralty-colour-danger);
 
 // Icon styling
 $progress-tracker-check-width: auto;
 $progress-tracker-check-height: 20px;
-$progress-tracker-check-color: var(--admiralty-colour-primary-contrast);
+$progress-tracker-check-color: var(--admiralty-colour-secondary-contrast);
