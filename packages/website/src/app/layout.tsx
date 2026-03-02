@@ -57,6 +57,11 @@ const gettingStartedChildren: any[] = [
   { path: "/getting-started/migrating", variant: "text", name: "Migrating" },
 ];
 
+const updatesChildren: any[] = [
+  { path: "/updates/v5-3", variant: "text", name: "v5.3.0"},
+  { path: "/updates/v5", variant: "text", name: "v5.0.0" },
+];
+
 const principleChildren: any[] = [
   { path: "/principles/accessibility", variant: "text", name: "Accessibility" },
   { path: "/principles/contentdesign", variant: "text", name: "Content Design" },
@@ -80,6 +85,7 @@ const brandChildren: any[] = [
   { name: "Logos", variant: "text", path: "/brand-guide/logos" },
 ];
 
+
 const sideBarItems = [
   {
     name: "Getting Started",
@@ -91,13 +97,7 @@ const sideBarItems = [
     name: "Updates",
     variant: "expandable",
     slot: "items",
-    children: [
-      {
-        name: "v5.0.0",
-        variant: "text",
-        path: "/updates/v5",
-      },
-    ],
+    children: updatesChildren,
   },
   {
     name: "Components",
