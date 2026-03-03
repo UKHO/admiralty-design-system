@@ -27,6 +27,11 @@ export class ProgressTrackerComponent {
   @Prop() allowBackNavigation = true;
 
   /**
+   * Whether navigation to future steps is allowed
+   */
+  @Prop() allowForwardNavigation = false;
+
+  /**
    * Whether to validate the current step before allowing navigation
    */
   @Prop() validateBeforeNavigation = false;
@@ -188,14 +193,48 @@ export class ProgressTrackerComponent {
     // Allow clicking on previous steps if allowBackNavigation is true OR if there's a validation error
     if ((this.allowBackNavigation || hasValidationError) && index < currentIndex) return true;
 
-    // Future steps (after current) are not clickable
+    // Allow clicking on future steps if allowForwardNavigation is true
+    if (this.allowForwardNavigation && index > currentIndex) return true;
+
+    // Future steps (after current) are not clickable by default
     return false;
   }
 
-  private handleStepClick(stepId: string, index: number) {
+  private async handleStepClick(stepId: string, index: number) {
     if (!this.isStepClickable(index)) return;
 
+    const currentIndex = this.getCurrentStepIndex();
+    const currentStep = this.getSteps()[currentIndex];
+
+    // If navigating away from the current step and validation is enabled, validate first
+    if (this.validateBeforeNavigation && index !== currentIndex && currentStep) {
+      const isValid = await this.validateCurrentStep(currentStep.id, currentIndex);
+
+      // If validation fails, emit event to notify parent and prevent navigation
+      if (!isValid) {
+        this.stepValidationRequested.emit({
+          stepId: currentStep.id,
+          stepIndex: currentIndex,
+          isValid: false,
+        });
+        return;
+      }
+    }
+
     this.stepClicked.emit({ stepId, stepIndex: index });
+  }
+
+  private async validateCurrentStep(stepId: string, stepIndex: number): Promise<boolean> {
+    if (this.validateStep) {
+      try {
+        const result = await this.validateStep(stepId, stepIndex);
+        return result === true;
+      } catch (error) {
+        console.error('Validation error:', error);
+        return false;
+      }
+    }
+    return true;
   }
 
   private handleStepKeyDown(event: KeyboardEvent, stepId: string, index: number) {

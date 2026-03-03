@@ -407,7 +407,13 @@
     </div>
   </div>
   <div style="flex: 0 0 300px">
-    <admiralty-progress-tracker [attr.allow-back-navigation]="true" (stepClicked)="onProgressStepClicked($event)">
+    <admiralty-progress-tracker
+      allow-back-navigation="true"
+      allow-forward-navigation="true"
+      validate-before-navigation="true"
+      [validateStep]="validateCurrentStep"
+      (stepClicked)="onProgressStepClicked($event)"
+    >
       <admiralty-progress-tracker-step
         *ngFor="let step of progressTrackerSteps"
         [attr.step-id]="step.id"
