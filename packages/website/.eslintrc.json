@@ -1,4 +1,0 @@
-{
-  "parserOptions": { "sourceType": "module" },
-  "extends": "next/core-web-vitals"
-}

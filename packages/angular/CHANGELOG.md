@@ -1,3 +1,29 @@
+# v5.3.0 (Tue Feb 03 2026)
+
+#### 🚀 Enhancement
+
+- Release 5.3.0 [#445](https://github.com/UKHO/admiralty-design-system/pull/445) ([@developernm](https://github.com/developernm) [@ecstaticrainbow](https://github.com/ecstaticrainbow) [@lstevens98](https://github.com/lstevens98))
+- Feat: skeleton component [#411](https://github.com/UKHO/admiralty-design-system/pull/411) ([@developernm](https://github.com/developernm))
+- Merge main into next [#406](https://github.com/UKHO/admiralty-design-system/pull/406) ([@developernm](https://github.com/developernm) [@ecstaticrainbow](https://github.com/ecstaticrainbow) [@lstevens98](https://github.com/lstevens98))
+- feat: skeleton view initial commit ([@developernm](https://github.com/developernm))
+
+#### 🐛 Bug Fix
+
+- Manually update package.jsons to 5.2.0 ([@lstevens98](https://github.com/lstevens98))
+- Reapply "Merge branch 'main' into next" ([@lstevens98](https://github.com/lstevens98))
+- Revert "Merge branch 'main' into next" ([@lstevens98](https://github.com/lstevens98))
+- Merge branch 'main' into next ([@lstevens98](https://github.com/lstevens98))
+- Merge branch 'next' into feat-skeleton-component ([@developernm](https://github.com/developernm))
+- Merge branch 'next' into update-next ([@developernm](https://github.com/developernm))
+
+#### Authors: 3
+
+- [@developernm](https://github.com/developernm)
+- Lewis Stevens ([@lstevens98](https://github.com/lstevens98))
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
 # v5.0.0 (Wed Aug 27 2025)
 
 #### 💥 Breaking Change

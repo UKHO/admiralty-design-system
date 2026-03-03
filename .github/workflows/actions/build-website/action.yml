@@ -5,10 +5,10 @@ runs:
   steps:
     - name: Install Packages
       run: |
-        yarn install --immutable
+        pnpm install --frozen-lockfile
       shell: bash
     - name: Build
-      run: yarn build:website
+      run: pnpm build:website
       shell: bash
     - uses: ./.github/workflows/actions/upload-archive
       with:
