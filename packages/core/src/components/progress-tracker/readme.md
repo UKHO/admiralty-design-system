@@ -27,14 +27,7 @@ Use child `admiralty-progress-tracker-step` components to define your steps:
 
 ```html
 <admiralty-progress-tracker [allowBackNavigation]="true" (stepClicked)="onStepClicked($event)">
-  <admiralty-progress-tracker-step
-    *ngFor="let step of steps"
-    [stepId]="step.id"
-    [stepTitle]="step.title"
-    [status]="step.status"
-    [summary]="step.summary"
-    [errorMessage]="step.errorMessage"
-  >
+  <admiralty-progress-tracker-step *ngFor="let step of steps" [stepId]="step.id" [stepTitle]="step.title" [status]="step.status" [summary]="step.summary">
     <ul slot="bullet-summaries" *ngIf="step.bulletSummaries?.length">
       <li *ngFor="let bullet of step.bulletSummaries">{{ bullet }}</li>
     </ul>
@@ -46,31 +39,26 @@ Use child `admiralty-progress-tracker-step` components to define your steps:
 
 - **Visual Status Indicators**: Each step displays a visual marker showing its status (complete, current, upcoming, or error)
 - **Navigation**: Optionally allow users to navigate back to previous steps
-- **Validation**: Validate steps before allowing forward navigation
-- **Error States**: Display error messages for steps that fail validation
 - **Summary Information**: Show bullet point summaries under each step
 - **Accessibility**: Full keyboard navigation and screen reader support
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
-| Property                   | Attribute                    | Description                                                     | Type                                                                 | Default     |
-| -------------------------- | ---------------------------- | --------------------------------------------------------------- | -------------------------------------------------------------------- | ----------- |
-| `allowBackNavigation`      | `allow-back-navigation`      | Whether navigation to previous steps is allowed                 | `boolean`                                                            | `true`      |
-| `validateBeforeNavigation` | `validate-before-navigation` | Whether to validate the current step before allowing navigation | `boolean`                                                            | `false`     |
-| `validateStep`             | --                           | Function to validate a step (returns true if valid)             | `(stepId: string, stepIndex: number) => boolean \| Promise<boolean>` | `undefined` |
+| Property                 | Attribute                  | Description                                     | Type      | Default |
+| ------------------------ | -------------------------- | ----------------------------------------------- | --------- | ------- |
+| `allowBackNavigation`    | `allow-back-navigation`    | Whether navigation to previous steps is allowed | `boolean` | `true`  |
+| `allowForwardNavigation` | `allow-forward-navigation` | Whether navigation to future steps is allowed   | `boolean` | `true`  |
+
 
 ## Events
 
-| Event                     | Description                               | Type                                |
-| ------------------------- | ----------------------------------------- | ----------------------------------- |
-| `stepClicked`             | Emitted when user clicks on a step        | `CustomEvent<StepNavigationDetail>` |
-| `stepValidationRequested` | Emitted when step validation is requested | `CustomEvent<StepValidationDetail>` |
+| Event         | Description                        | Type                                |
+| ------------- | ---------------------------------- | ----------------------------------- |
+| `stepClicked` | Emitted when user clicks on a step | `CustomEvent<StepNavigationDetail>` |
 
-## Slots
-
-No slots available for this component.
 
 ## Dependencies
 
@@ -79,13 +67,12 @@ No slots available for this component.
 - [admiralty-icon](../icon)
 
 ### Graph
-
 ```mermaid
 graph TD;
   admiralty-progress-tracker --> admiralty-icon
   style admiralty-progress-tracker fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
----
+----------------------------------------------
 
-_Built with [StencilJS](https://stenciljs.com/)_
+*Built with [StencilJS](https://stenciljs.com/)*

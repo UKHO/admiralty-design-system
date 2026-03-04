@@ -9,7 +9,7 @@
 
 import type { EventName, StencilReactComponent } from '@stencil/react-output-target/runtime';
 import { createComponent } from '@stencil/react-output-target/runtime';
-import { type AdmiraltyAutocompleteCustomEvent, type AdmiraltyCheckboxCustomEvent, type AdmiraltyFileInputCustomEvent, type AdmiraltyInputCustomEvent, type AdmiraltyProgressTrackerCustomEvent, type AdmiraltyRadioGroupCustomEvent, type AdmiraltySelectCustomEvent, type AdmiraltyTextareaCustomEvent, type AutoCompleteChangeEventDetail, type CheckboxChangeEventDetail, type FileInputChangeEventDetail, type InputChangeEventDetail, type RadioGroupChangeEventDetail, type SelectChangeEventDetail, type StepNavigationDetail, type StepValidationDetail, type TextAreaChangeEventDetail } from "@ukho/admiralty-core";
+import { type AdmiraltyAutocompleteCustomEvent, type AdmiraltyCheckboxCustomEvent, type AdmiraltyFileInputCustomEvent, type AdmiraltyInputCustomEvent, type AdmiraltyProgressTrackerCustomEvent, type AdmiraltyRadioGroupCustomEvent, type AdmiraltySelectCustomEvent, type AdmiraltyTextareaCustomEvent, type AutoCompleteChangeEventDetail, type CheckboxChangeEventDetail, type FileInputChangeEventDetail, type InputChangeEventDetail, type RadioGroupChangeEventDetail, type SelectChangeEventDetail, type StepNavigationDetail, type TextAreaChangeEventDetail } from "@ukho/admiralty-core";
 import { AdmiraltyAutocompleteOption as AdmiraltyAutocompleteOptionElement, defineCustomElement as defineAdmiraltyAutocompleteOption } from "@ukho/admiralty-core/dist/components/admiralty-autocomplete-option.js";
 import { AdmiraltyAutocomplete as AdmiraltyAutocompleteElement, defineCustomElement as defineAdmiraltyAutocomplete } from "@ukho/admiralty-core/dist/components/admiralty-autocomplete.js";
 import { AdmiraltyBreadcrumb as AdmiraltyBreadcrumbElement, defineCustomElement as defineAdmiraltyBreadcrumb } from "@ukho/admiralty-core/dist/components/admiralty-breadcrumb.js";
@@ -443,19 +443,13 @@ export const AdmiraltyProgressBar: StencilReactComponent<AdmiraltyProgressBarEle
     defineCustomElement: defineAdmiraltyProgressBar
 });
 
-type AdmiraltyProgressTrackerEvents = {
-    onStepClicked: EventName<AdmiraltyProgressTrackerCustomEvent<StepNavigationDetail>>,
-    onStepValidationRequested: EventName<AdmiraltyProgressTrackerCustomEvent<StepValidationDetail>>
-};
+type AdmiraltyProgressTrackerEvents = { onStepClicked: EventName<AdmiraltyProgressTrackerCustomEvent<StepNavigationDetail>> };
 
 export const AdmiraltyProgressTracker: StencilReactComponent<AdmiraltyProgressTrackerElement, AdmiraltyProgressTrackerEvents> = /*@__PURE__*/ createComponent<AdmiraltyProgressTrackerElement, AdmiraltyProgressTrackerEvents>({
     tagName: 'admiralty-progress-tracker',
     elementClass: AdmiraltyProgressTrackerElement,
     react: React,
-    events: {
-        onStepClicked: 'stepClicked',
-        onStepValidationRequested: 'stepValidationRequested'
-    } as AdmiraltyProgressTrackerEvents,
+    events: { onStepClicked: 'stepClicked' } as AdmiraltyProgressTrackerEvents,
     defineCustomElement: defineAdmiraltyProgressTracker
 });
 

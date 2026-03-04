@@ -346,7 +346,7 @@
   </div>
 </admiralty-modal-dialog>
 
-<h2>Progress Tracker with Form Validation</h2>
+<h2>Progress Tracker with Form</h2>
 <div style="display: flex; gap: 20px">
   <div id="progress-tracker-content" style="flex: 1">
     <!-- Example form for current step -->
@@ -410,8 +410,6 @@
     <admiralty-progress-tracker
       allow-back-navigation="true"
       allow-forward-navigation="true"
-      validate-before-navigation="true"
-      [validateStep]="validateCurrentStep"
       (stepClicked)="onProgressStepClicked($event)"
     >
       <admiralty-progress-tracker-step
@@ -420,7 +418,6 @@
         [attr.step-title]="step.title"
         [attr.status]="step.status"
         [attr.summary]="step.summary"
-        [attr.error-message]="step.errorMessage"
       >
         <ul slot="bullet-summaries" *ngIf="step.bulletSummaries && step.bulletSummaries.length > 0">
           <li *ngFor="let bullet of step.bulletSummaries">{{ bullet }}</li>

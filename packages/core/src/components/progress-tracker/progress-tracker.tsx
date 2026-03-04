@@ -1,16 +1,10 @@
 import { Component, h, Prop, Event, EventEmitter, State, Host, Element } from '@stencil/core';
 
-export type StepStatus = 'complete' | 'current' | 'upcoming' | 'error';
+export type StepStatus = 'complete' | 'current' | 'upcoming';
 
 export interface StepNavigationDetail {
   stepId: string;
   stepIndex: number;
-}
-
-export interface StepValidationDetail {
-  stepId: string;
-  stepIndex: number;
-  isValid: boolean;
 }
 
 @Component({
@@ -29,27 +23,12 @@ export class ProgressTrackerComponent {
   /**
    * Whether navigation to future steps is allowed
    */
-  @Prop() allowForwardNavigation = false;
-
-  /**
-   * Whether to validate the current step before allowing navigation
-   */
-  @Prop() validateBeforeNavigation = false;
-
-  /**
-   * Function to validate a step (returns true if valid)
-   */
-  @Prop() validateStep?: (stepId: string, stepIndex: number) => boolean | Promise<boolean>;
+  @Prop() allowForwardNavigation = true;
 
   /**
    * Emitted when user clicks on a step
    */
   @Event() stepClicked: EventEmitter<StepNavigationDetail>;
-
-  /**
-   * Emitted when step validation is requested
-   */
-  @Event() stepValidationRequested: EventEmitter<StepValidationDetail>;
 
   @State() focusedStepIndex: number | null = 0;
   @State() currentSteps: Array<{
@@ -58,7 +37,6 @@ export class ProgressTrackerComponent {
     status: StepStatus;
     summary?: string;
     bulletSummaries?: string[];
-    errorMessage?: string;
   }> = [];
 
   private observer?: MutationObserver;
@@ -88,7 +66,7 @@ export class ProgressTrackerComponent {
         childList: true,
         subtree: true,
         attributes: true,
-        attributeFilter: ['step-id', 'step-title', 'status', 'summary', 'error-message'],
+        attributeFilter: ['step-id', 'step-title', 'status', 'summary'],
       });
     }
   }
@@ -134,7 +112,6 @@ export class ProgressTrackerComponent {
         title: stepEl.getAttribute('step-title') || stepEl.stepTitle || '',
         status: (stepEl.getAttribute('status') || stepEl.status || 'upcoming') as StepStatus,
         summary: stepEl.getAttribute('summary') || stepEl.summary,
-        errorMessage: stepEl.getAttribute('error-message') || stepEl.errorMessage,
         bulletSummaries: bulletSummaries.length > 0 ? bulletSummaries : undefined,
       };
     });
@@ -161,10 +138,6 @@ export class ProgressTrackerComponent {
       );
     }
 
-    if (status === 'error') {
-      return <span class="progress-tracker-marker progress-tracker-marker--error" aria-label="Step has errors"></span>;
-    }
-
     if (status === 'current') {
       return <span class="progress-tracker-marker progress-tracker-marker--current" aria-label="Current step"></span>;
     }
@@ -175,8 +148,8 @@ export class ProgressTrackerComponent {
   private getCurrentStepIndex(): number {
     const steps = this.getSteps();
 
-    // Look for current step (either 'current' or 'error' status means it's the current step)
-    const currentIndex = steps.findIndex(step => step.status === 'current' || step.status === 'error');
+    // Look for current step
+    const currentIndex = steps.findIndex(step => step.status === 'current');
 
     // Default to 0 if no current step is marked
     return currentIndex === -1 ? 0 : currentIndex;
@@ -184,14 +157,12 @@ export class ProgressTrackerComponent {
 
   private isStepClickable(index: number): boolean {
     const currentIndex = this.getCurrentStepIndex();
-    const currentStep = this.getSteps()[currentIndex];
-    const hasValidationError = currentStep && currentStep.errorMessage;
 
     // Allow clicking on current step
     if (index === currentIndex) return true;
 
-    // Allow clicking on previous steps if allowBackNavigation is true OR if there's a validation error
-    if ((this.allowBackNavigation || hasValidationError) && index < currentIndex) return true;
+    // Allow clicking on previous steps if allowBackNavigation is true
+    if (this.allowBackNavigation && index < currentIndex) return true;
 
     // Allow clicking on future steps if allowForwardNavigation is true
     if (this.allowForwardNavigation && index > currentIndex) return true;
@@ -200,41 +171,10 @@ export class ProgressTrackerComponent {
     return false;
   }
 
-  private async handleStepClick(stepId: string, index: number) {
+  private handleStepClick(stepId: string, index: number) {
     if (!this.isStepClickable(index)) return;
 
-    const currentIndex = this.getCurrentStepIndex();
-    const currentStep = this.getSteps()[currentIndex];
-
-    // If navigating away from the current step and validation is enabled, validate first
-    if (this.validateBeforeNavigation && index !== currentIndex && currentStep) {
-      const isValid = await this.validateCurrentStep(currentStep.id, currentIndex);
-
-      // If validation fails, emit event to notify parent and prevent navigation
-      if (!isValid) {
-        this.stepValidationRequested.emit({
-          stepId: currentStep.id,
-          stepIndex: currentIndex,
-          isValid: false,
-        });
-        return;
-      }
-    }
-
     this.stepClicked.emit({ stepId, stepIndex: index });
-  }
-
-  private async validateCurrentStep(stepId: string, stepIndex: number): Promise<boolean> {
-    if (this.validateStep) {
-      try {
-        const result = await this.validateStep(stepId, stepIndex);
-        return result === true;
-      } catch (error) {
-        console.error('Validation error:', error);
-        return false;
-      }
-    }
-    return true;
   }
 
   private handleStepKeyDown(event: KeyboardEvent, stepId: string, index: number) {
@@ -331,11 +271,6 @@ export class ProgressTrackerComponent {
                           <li key={bulletIdx}>{bullet}</li>
                         ))}
                       </ul>
-                    )}
-                    {step.status === 'error' && step.errorMessage && (
-                      <div class="progress-tracker-error" role="alert">
-                        {step.errorMessage}
-                      </div>
                     )}
                   </div>
                 </li>

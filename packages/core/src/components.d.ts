@@ -11,7 +11,7 @@ import { CheckboxChangeEventDetail } from "./components/checkbox/checkbox.interf
 import { FileInputChangeEventDetail } from "./components/file-input/file-input.interface";
 import { FooterTypes } from "./components/footer/footer.types";
 import { InputChangeEventDetail } from "./components/input/input.interface";
-import { StepNavigationDetail, StepValidationDetail } from "./components/progress-tracker/progress-tracker";
+import { StepNavigationDetail } from "./components/progress-tracker/progress-tracker";
 import { StepStatus } from "./components/progress-tracker-step/progress-tracker-step";
 import { RadioGroupChangeEventDetail } from "./components/radio-group/radio-group-interface";
 import { SelectChangeEventDetail } from "./components/select/select.interface";
@@ -23,7 +23,7 @@ export { CheckboxChangeEventDetail } from "./components/checkbox/checkbox.interf
 export { FileInputChangeEventDetail } from "./components/file-input/file-input.interface";
 export { FooterTypes } from "./components/footer/footer.types";
 export { InputChangeEventDetail } from "./components/input/input.interface";
-export { StepNavigationDetail, StepValidationDetail } from "./components/progress-tracker/progress-tracker";
+export { StepNavigationDetail } from "./components/progress-tracker/progress-tracker";
 export { StepStatus } from "./components/progress-tracker-step/progress-tracker-step";
 export { RadioGroupChangeEventDetail } from "./components/radio-group/radio-group-interface";
 export { SelectChangeEventDetail } from "./components/select/select.interface";
@@ -640,22 +640,14 @@ export namespace Components {
          */
         "allowBackNavigation": boolean;
         /**
-          * Whether to validate the current step before allowing navigation
+          * Whether navigation to future steps is allowed
          */
-        "validateBeforeNavigation": boolean;
-        /**
-          * Function to validate a step (returns true if valid)
-         */
-        "validateStep"?: (stepId: string, stepIndex: number) => boolean | Promise<boolean>;
+        "allowForwardNavigation": boolean;
     }
     /**
      * A step component used within admiralty-progress-tracker to define individual steps in a progress flow.
      */
     interface AdmiraltyProgressTrackerStep {
-        /**
-          * Optional error message displayed when status is 'error'
-         */
-        "errorMessage"?: string;
         /**
           * The current status of the step
          */
@@ -1420,7 +1412,6 @@ declare global {
     };
     interface HTMLAdmiraltyProgressTrackerElementEventMap {
         "stepClicked": StepNavigationDetail;
-        "stepValidationRequested": StepValidationDetail;
     }
     interface HTMLAdmiraltyProgressTrackerElement extends Components.AdmiraltyProgressTracker, HTMLStencilElement {
         addEventListener<K extends keyof HTMLAdmiraltyProgressTrackerElementEventMap>(type: K, listener: (this: HTMLAdmiraltyProgressTrackerElement, ev: AdmiraltyProgressTrackerCustomEvent<HTMLAdmiraltyProgressTrackerElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
@@ -2446,30 +2437,18 @@ declare namespace LocalJSX {
          */
         "allowBackNavigation"?: boolean;
         /**
+          * Whether navigation to future steps is allowed
+         */
+        "allowForwardNavigation"?: boolean;
+        /**
           * Emitted when user clicks on a step
          */
         "onStepClicked"?: (event: AdmiraltyProgressTrackerCustomEvent<StepNavigationDetail>) => void;
-        /**
-          * Emitted when step validation is requested
-         */
-        "onStepValidationRequested"?: (event: AdmiraltyProgressTrackerCustomEvent<StepValidationDetail>) => void;
-        /**
-          * Whether to validate the current step before allowing navigation
-         */
-        "validateBeforeNavigation"?: boolean;
-        /**
-          * Function to validate a step (returns true if valid)
-         */
-        "validateStep"?: (stepId: string, stepIndex: number) => boolean | Promise<boolean>;
     }
     /**
      * A step component used within admiralty-progress-tracker to define individual steps in a progress flow.
      */
     interface AdmiraltyProgressTrackerStep {
-        /**
-          * Optional error message displayed when status is 'error'
-         */
-        "errorMessage"?: string;
         /**
           * The current status of the step
          */

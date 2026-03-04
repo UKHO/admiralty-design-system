@@ -28,13 +28,12 @@ A step component used within admiralty-progress-tracker to define individual ste
 
 ## Properties
 
-| Property                 | Attribute       | Description                                             | Type                                               | Default      |
-| ------------------------ | --------------- | ------------------------------------------------------- | -------------------------------------------------- | ------------ |
-| `errorMessage`           | `error-message` | Optional error message displayed when status is 'error' | `string`                                           | `undefined`  |
-| `status`                 | `status`        | The current status of the step                          | `"complete" \| "current" \| "error" \| "upcoming"` | `'upcoming'` |
-| `stepId` _(required)_    | `step-id`       | Unique identifier for the step                          | `string`                                           | `undefined`  |
-| `stepTitle` _(required)_ | `step-title`    | The title text displayed for the step                   | `string`                                           | `undefined`  |
-| `summary`                | `summary`       | Optional summary text displayed below the title         | `string`                                           | `undefined`  |
+| Property                 | Attribute    | Description                                     | Type                                               | Default      |
+| ------------------------ | ------------ | ----------------------------------------------- | -------------------------------------------------- | ------------ |
+| `status`                 | `status`     | The current status of the step                  | `"complete" \| "current" \| "error" \| "upcoming"` | `'upcoming'` |
+| `stepId` _(required)_    | `step-id`    | Unique identifier for the step                  | `string`                                           | `undefined`  |
+| `stepTitle` _(required)_ | `step-title` | The title text displayed for the step           | `string`                                           | `undefined`  |
+| `summary`                | `summary`    | Optional summary text displayed below the title | `string`                                           | `undefined`  |
 
 
 ----------------------------------------------

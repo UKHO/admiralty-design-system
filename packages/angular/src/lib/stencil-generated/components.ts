@@ -882,49 +882,44 @@ export declare interface AdmiraltyProgressBar extends Components.AdmiraltyProgre
 
 
 @ProxyCmp({
-  inputs: ['allowBackNavigation', 'validateBeforeNavigation', 'validateStep']
+  inputs: ['allowBackNavigation', 'allowForwardNavigation']
 })
 @Component({
   selector: 'admiralty-progress-tracker',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['allowBackNavigation', 'validateBeforeNavigation', 'validateStep'],
+  inputs: ['allowBackNavigation', 'allowForwardNavigation'],
 })
 export class AdmiraltyProgressTracker {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['stepClicked', 'stepValidationRequested']);
+    proxyOutputs(this, this.el, ['stepClicked']);
   }
 }
 
 
 import type { StepNavigationDetail as IAdmiraltyProgressTrackerStepNavigationDetail } from '@ukho/admiralty-core';
-import type { StepValidationDetail as IAdmiraltyProgressTrackerStepValidationDetail } from '@ukho/admiralty-core';
 
 export declare interface AdmiraltyProgressTracker extends Components.AdmiraltyProgressTracker {
   /**
    * Emitted when user clicks on a step
    */
   stepClicked: EventEmitter<CustomEvent<IAdmiraltyProgressTrackerStepNavigationDetail>>;
-  /**
-   * Emitted when step validation is requested
-   */
-  stepValidationRequested: EventEmitter<CustomEvent<IAdmiraltyProgressTrackerStepValidationDetail>>;
 }
 
 
 @ProxyCmp({
-  inputs: ['errorMessage', 'status', 'stepId', 'stepTitle', 'summary']
+  inputs: ['status', 'stepId', 'stepTitle', 'summary']
 })
 @Component({
   selector: 'admiralty-progress-tracker-step',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['errorMessage', 'status', 'stepId', 'stepTitle', 'summary'],
+  inputs: ['status', 'stepId', 'stepTitle', 'summary'],
 })
 export class AdmiraltyProgressTrackerStep {
   protected el: HTMLElement;

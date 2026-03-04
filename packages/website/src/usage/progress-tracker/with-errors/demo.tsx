@@ -10,12 +10,7 @@ export default function Demo() {
         status="complete"
         summary="Username created"
       />
-      <AdmiraltyProgressTrackerStep
-        stepId="step2"
-        stepTitle="Email Verification"
-        status="error"
-        errorMessage="Email address is invalid. Please check and try again."
-      />
+      <AdmiraltyProgressTrackerStep stepId="step2" stepTitle="Email Verification" status="error" />
       <AdmiraltyProgressTrackerStep stepId="step3" stepTitle="Profile Details" status="upcoming" />
     </AdmiraltyProgressTracker>
   );

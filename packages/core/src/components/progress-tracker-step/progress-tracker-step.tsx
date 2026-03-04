@@ -33,11 +33,6 @@ export class ProgressTrackerStepComponent {
    */
   @Prop() summary?: string;
 
-  /**
-   * Optional error message displayed when status is 'error'
-   */
-  @Prop() errorMessage?: string;
-
   render() {
     // This component is just a data container, the parent renders it
     // We return a hidden host element that contains the slotted content

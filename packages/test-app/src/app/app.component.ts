@@ -2,7 +2,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { QueryList, ViewChildren } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AdmiraltySideNavItem } from '@ukho/admiralty-angular';
-import { AdmiraltyAutocompleteCustomEvent, AutoCompleteChangeEventDetail, AdmiraltyProgressTrackerCustomEvent, StepNavigationDetail } from '@ukho/admiralty-core';
+import { AdmiraltyAutocompleteCustomEvent, AdmiraltyProgressTrackerCustomEvent, AutoCompleteChangeEventDetail, StepNavigationDetail } from '@ukho/admiralty-core';
 
 export interface CommissioningOrganisation {
   id?: number;
@@ -14,7 +14,6 @@ interface ProgressTrackerStep {
   title: string;
   status: 'complete' | 'current' | 'upcoming' | 'error';
   summary?: string;
-  errorMessage?: string;
   bulletSummaries?: string[];
 }
 
@@ -214,21 +213,21 @@ export class AppComponent implements OnInit {
 
   // Form groups for each step
   locationForm = new FormGroup({
-    latitude: new FormControl('', Validators.required),
-    longitude: new FormControl('', Validators.required),
+    latitude: new FormControl(''),
+    longitude: new FormControl(''),
   });
 
   objectForm = new FormGroup({
-    celestialObject: new FormControl('', Validators.required),
+    celestialObject: new FormControl(''),
   });
 
   informationForm = new FormGroup({
-    informationType: new FormControl('', Validators.required),
-    depression: new FormControl('', [Validators.required, Validators.min(0)]),
+    informationType: new FormControl(''),
+    depression: new FormControl(''),
   });
 
   dateForm = new FormGroup({
-    selectedDate: new FormControl('', Validators.required),
+    selectedDate: new FormControl(''),
   });
 
   currentStepId = 'location';
@@ -239,52 +238,49 @@ export class AppComponent implements OnInit {
 
   private getStepBullets(stepId: string): string[] | undefined {
     if (stepId === 'location') {
-      const latitude = this.locationForm.controls.latitude.value || 'Not set';
-      const longitude = this.locationForm.controls.longitude.value || 'Not set';
-      if (latitude === 'Not set' || longitude === 'Not set') {
-        return [];
+      const latitude = this.locationForm.controls.latitude.value;
+      const longitude = this.locationForm.controls.longitude.value;
+      const bullets: string[] = [];
+
+      if (latitude) {
+        bullets.push(latitude);
       }
-      return [
-        `${latitude}`,
-        `${longitude}`,
-      ];
+      if (longitude) {
+        bullets.push(longitude);
+      }
+
+      return bullets.length > 0 ? bullets : [];
     }
 
     if (stepId === 'object') {
-      const selected = this.objectForm.controls.celestialObject.value || 'Not selected';
-      if (selected === 'Not selected') {
-        return [];
+      const selected = this.objectForm.controls.celestialObject.value;
+      if (selected) {
+        return [selected];
       }
-      return [
-        `${selected}`,
-      ];
+      return [];
     }
 
     if (stepId === 'information-type') {
       const informationType = this.informationForm.controls.informationType.value;
       const depression = this.informationForm.controls.depression.value;
-      const isInformationTypeSet = informationType !== null && informationType !== undefined && informationType !== '';
-      const isDepressionSet = depression !== null && depression !== undefined && depression !== '';
+      const bullets: string[] = [];
 
-      if (!isInformationTypeSet || !isDepressionSet) {
-        return [];
+      if (informationType) {
+        bullets.push(informationType);
+      }
+      if (depression !== null && depression !== undefined && depression !== '') {
+        bullets.push(depression);
       }
 
-      return [
-        `${informationType}`,
-        `${depression}`,
-      ];
+      return bullets;
     }
 
     if (stepId === 'date') {
       const selectedDate = this.dateForm.controls.selectedDate.value;
-      if (selectedDate === null || selectedDate === undefined || selectedDate === '') {
-        return [];
+      if (selectedDate) {
+        return [selectedDate];
       }
-
-      return [
-        `${selectedDate}`,
-      ];
+      return [];
     }
 
     return undefined;
@@ -292,7 +288,7 @@ export class AppComponent implements OnInit {
 
 
 
-  // Handle step navigation with form validation
+  // Handle step navigation
   onProgressStepClicked(event: AdmiraltyProgressTrackerCustomEvent<StepNavigationDetail>) {
     const { stepId, stepIndex } = event.detail;
     console.log('Step clicked:', stepId, stepIndex);
@@ -301,43 +297,6 @@ export class AppComponent implements OnInit {
     this.currentStepId = stepId;
     this.updateProgressTrackerSteps(stepId);
   }
-
-  // Validate current step before allowing navigation
-  validateCurrentStep = (stepId: string, stepIndex: number): boolean => {
-    const stepForms: { [key: string]: FormGroup } = {
-      'location': this.locationForm,
-      'object': this.objectForm,
-      'information-type': this.informationForm,
-      'date': this.dateForm,
-    };
-
-    const form = stepForms[stepId];
-    if (form) {
-      form.markAllAsTouched();
-      const isValid = form.valid;
-
-      if (!isValid) {
-        // Update step to show error
-        this.progressTrackerSteps = this.progressTrackerSteps.map(step =>
-          step.id === stepId
-            ? {
-              ...step,
-              status: 'error' as const,
-              errorMessage: 'Please complete all required fields',
-              bulletSummaries: this.getStepBullets(step.id),
-            }
-            : {
-              ...step,
-              bulletSummaries: this.getStepBullets(step.id),
-            }
-        );
-      }
-
-      return isValid;
-    }
-
-    return true;
-  };
 
   // Update progress tracker steps based on current step
   updateProgressTrackerSteps(currentStepId: string) {
@@ -349,7 +308,6 @@ export class AppComponent implements OnInit {
         return {
           ...step,
           status: 'complete' as const,
-          errorMessage: undefined,
           bulletSummaries: this.getStepBullets(step.id),
         };
       }
@@ -357,14 +315,12 @@ export class AppComponent implements OnInit {
         return {
           ...step,
           status: 'current' as const,
-          errorMessage: undefined,
           bulletSummaries: this.getStepBullets(step.id),
         };
       }
       return {
         ...step,
         status: 'upcoming' as const,
-        errorMessage: undefined,
         bulletSummaries: this.getStepBullets(step.id),
       };
     });
@@ -375,18 +331,16 @@ export class AppComponent implements OnInit {
     const stepOrder = ['location', 'object', 'information-type', 'date', 'download'];
     const currentIndex = stepOrder.indexOf(this.currentStepId);
 
-    if (this.validateCurrentStep(this.currentStepId, currentIndex)) {
-      // Update bullets for the current step before moving to next
-      this.progressTrackerSteps = this.progressTrackerSteps.map(step => ({
-        ...step,
-        bulletSummaries: this.getStepBullets(step.id),
-      }));
+    // Update bullets for the current step before moving to next
+    this.progressTrackerSteps = this.progressTrackerSteps.map(step => ({
+      ...step,
+      bulletSummaries: this.getStepBullets(step.id),
+    }));
 
-      const nextStepId = stepOrder[currentIndex + 1];
-      if (nextStepId) {
-        this.currentStepId = nextStepId;
-        this.updateProgressTrackerSteps(nextStepId);
-      }
+    const nextStepId = stepOrder[currentIndex + 1];
+    if (nextStepId) {
+      this.currentStepId = nextStepId;
+      this.updateProgressTrackerSteps(nextStepId);
     }
   }
 }
