@@ -2,17 +2,17 @@
   "name": "admiralty-design-system",
   "packageManager": "pnpm@10.28.0",
   "devDependencies": {
-    "@auto-it/conventional-commits": "^11.3.0",
-    "@auto-it/protected-branch": "^11.3.0",
-    "@auto-it/released": "^11.3.0",
-    "auto": "^11.3.0",
+    "@auto-it/conventional-commits": "^11.3.6",
+    "@auto-it/protected-branch": "^11.3.6",
+    "@auto-it/released": "^11.3.6",
+    "auto": "^11.3.6",
     "colorette": "^2.0.20",
-    "execa": "^9.4.0",
-    "fs-extra": "^11.2.0",
-    "lerna": "^9.0.3",
+    "execa": "^9.6.1",
+    "fs-extra": "^11.3.4",
+    "lerna": "^9.0.5",
     "listr": "^0.14.3",
-    "nx": "21.2.1",
-    "semver": "^7.6.3"
+    "nx": "22.5.3",
+    "semver": "^7.7.4"
   },
   "scripts": {
     "build:all": "nx run-many -t build",
@@ -36,7 +36,11 @@
         "protected-branch",
         {
           "releaseTemporaryBranchPrefix": "protected-release-",
-          "requiredStatusChecks": ["build", "test-core-spec", "chromatic-deployment"]
+          "requiredStatusChecks": [
+            "build",
+            "test-core-spec",
+            "chromatic-deployment"
+          ]
         }
       ],
       "npm",
