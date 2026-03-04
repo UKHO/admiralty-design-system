@@ -75,12 +75,12 @@ describe('admiralty-progress-tracker', () => {
     await page.waitForChanges();
 
     const buttons = page.root.querySelectorAll('.progress-tracker-title[type="button"]');
-    expect(buttons.length).toBe(2); // step1 and step2 should be clickable
+    expect(buttons.length).toBe(3); // step1, step2, and step3 should be clickable
 
     const items = page.root.querySelectorAll('.progress-tracker-item');
     expect(items[0].classList.contains('progress-tracker-item--clickable')).toBe(true);
     expect(items[1].classList.contains('progress-tracker-item--clickable')).toBe(true);
-    expect(items[2].classList.contains('progress-tracker-item--clickable')).toBe(false);
+    expect(items[2].classList.contains('progress-tracker-item--clickable')).toBe(true);
   });
 
   it('makes future steps non-clickable when allowBackNavigation is false', async () => {
