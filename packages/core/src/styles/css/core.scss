@@ -28,6 +28,14 @@ body {
   }
 }
 
+.admiralty-intro p {
+  font-family: 'JohnstonITCPro';
+  font-size: var(--admiralty-font-size-3);
+  font-weight: var(--admiralty-font-weight-light);
+  line-height: var(--admiralty-spacing-9);
+  letter-spacing: var(--admiralty-spacing-0);
+}
+
 // Admiralty Colours
 // --------------------------------------------------
 // Generates the colour classes and variables based on the
