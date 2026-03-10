@@ -151,4 +151,28 @@ describe('admiralty-theme-toggle', () => {
       expect(element.getAttribute('theme')).toBe('dark');
     });
   });
+
+  describe('Disabled toggle', () => {
+    it('Given the toggle is disabled and in light mode', async () => {
+      const page = await newE2EPage();
+      await page.setContent('<admiralty-theme-toggle theme="light" disabled></admiralty-theme-toggle>');
+      const element = await page.find('admiralty-theme-toggle');
+      expect(element.getAttribute('theme')).toBe('light');
+      const button = await page.find('admiralty-theme-toggle >>> button');
+      expect(button.getAttribute('disabled')).not.toBeNull();
+    });
+
+    it('When the user clicks the disabled toggle, the theme does not change', async () => {
+      const page = await newE2EPage();
+      await page.setContent('<admiralty-theme-toggle theme="light" disabled></admiralty-theme-toggle>');
+      const themeChangeEvent = await page.spyOnEvent('admiraltyThemeChange');
+      const button = await page.find('admiralty-theme-toggle >>> button');
+      await button.click();
+      await page.waitForChanges();
+
+      const element = await page.find('admiralty-theme-toggle');
+      expect(element.getAttribute('theme')).toBe('light');
+      expect(themeChangeEvent).not.toHaveReceivedEvent();
+    });
+  });
 });
