@@ -13,10 +13,10 @@ describe('admiralty-theme-toggle', () => {
           <button aria-label="Toggle dark mode" class="theme-toggle light" type="button">
             <span class="toggle-background-slider"></span>
             <span class="toggle-icon sun-icon">
-              <admiralty-icon name="light-mode"></admiralty-icon>
+              <admiralty-icon name="light-mode-outline"></admiralty-icon>
             </span>
             <span class="toggle-icon moon-icon">
-              <admiralty-icon name="dark-mode"></admiralty-icon>
+              <admiralty-icon name="dark-mode-outline"></admiralty-icon>
             </span>
           </button>
         </admiralty-theme-toggle>
@@ -50,8 +50,8 @@ describe('admiralty-theme-toggle', () => {
       const moonIcon = page.root.querySelector('.moon-icon admiralty-icon');
       expect(sunIcon).toBeTruthy();
       expect(moonIcon).toBeTruthy();
-      expect(sunIcon.getAttribute('name')).toBe('light-mode');
-      expect(moonIcon.getAttribute('name')).toBe('dark-mode');
+      expect(sunIcon.getAttribute('name')).toBe('light-mode-outline');
+      expect(moonIcon.getAttribute('name')).toBe('dark-mode-outline');
     });
 
     it('should render with custom aria-label', async () => {

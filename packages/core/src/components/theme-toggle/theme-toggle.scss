@@ -2,10 +2,10 @@
 
 .theme-toggle {
   position: relative;
-  width: 74px;
-  height: 40px;
+  width: 76px;
+  height: 38px;
   border-radius: 20px;
-  border: 2px solid var(--admiralty-colour-primary);
+  border: 1px solid var(--admiralty-colour-primary);
   background-color: var(--admiralty-background-colour);
   cursor: pointer;
   padding: 0;
@@ -48,14 +48,14 @@
   border-radius: 18px;
   transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   z-index: 0;
-  border: 1px solid var(--admiralty-colour-primary);
+  border: 1px solid var(--admiralty-hover-background-colour-tint);
 
   .theme-toggle.light & {
     transform: translateX(0);
   }
 
   .theme-toggle.dark & {
-    transform: translateX(34px);
+    transform: translateX(37px);
   }
 }
 

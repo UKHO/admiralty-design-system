@@ -242,10 +242,10 @@ export class ThemeToggleComponent {
         >
           <span class="toggle-background-slider"></span>
           <span class="toggle-icon sun-icon">
-            <admiralty-icon name="light-mode"></admiralty-icon>
+            <admiralty-icon name="light-mode-outline"></admiralty-icon>
           </span>
           <span class="toggle-icon moon-icon">
-            <admiralty-icon name="dark-mode"></admiralty-icon>
+            <admiralty-icon name="dark-mode-outline"></admiralty-icon>
           </span>
         </button>
       </Host>
