@@ -9,7 +9,7 @@ describe('admiralty-theme-toggle', () => {
         html: `<admiralty-theme-toggle></admiralty-theme-toggle>`,
       });
       expect(page.root).toEqualHtml(`
-        <admiralty-theme-toggle theme="light">
+        <admiralty-theme-toggle theme="auto">
           <button aria-label="Toggle dark mode" class="theme-toggle light" type="button">
             <span class="toggle-background-slider"></span>
             <span class="toggle-icon sun-icon">
@@ -363,7 +363,7 @@ describe('admiralty-theme-toggle', () => {
     it('should save auto theme to localStorage', async () => {
       const page = await newSpecPage({
         components: [ThemeToggleComponent],
-        html: `<admiralty-theme-toggle theme="auto"></admiralty-theme-toggle>`,
+        html: `<admiralty-theme-toggle theme="dark"></admiralty-theme-toggle>`,
       });
       const component = page.rootInstance;
       component.theme = 'auto';
@@ -390,7 +390,7 @@ describe('admiralty-theme-toggle', () => {
       expect(localStorage.getItem('admiralty-theme-preference')).toBe('light');
     });
 
-    it('should load saved theme from localStorage on new page load', async () => {
+    it('should keep auto preference and render dark effective theme when system is dark', async () => {
       // Mock system preference to dark
       Object.defineProperty(window, 'matchMedia', {
         writable: true,
@@ -401,22 +401,6 @@ describe('admiralty-theme-toggle', () => {
         })),
       });
 
-      // Clear any previous state
-      localStorage.clear();
-
-      // Simulate: User sets theme and navigates away
-      // First component saves dark theme to localStorage
-      const page1 = await newSpecPage({
-        components: [ThemeToggleComponent],
-        html: `<admiralty-theme-toggle theme="light"></admiralty-theme-toggle>`,
-      });
-      const button = page1.root.querySelector('button');
-      button.click();
-      await page1.waitForChanges();
-      expect(localStorage.getItem('admiralty-theme-preference')).toBe('dark');
-
-      // Simulate: User navigates to a different page (new component instance)
-      // New component has no explicit theme prop, should load from localStorage
       const page2 = await newSpecPage({
         components: [ThemeToggleComponent],
         html: `<admiralty-theme-toggle></admiralty-theme-toggle>`,
@@ -424,15 +408,15 @@ describe('admiralty-theme-toggle', () => {
       await page2.waitForChanges();
       const component = page2.rootInstance;
 
-      // Should have loaded 'dark' from localStorage
-      expect(component.theme).toBe('dark');
+      // Preference remains auto while effective appearance follows the system.
+      expect(component.theme).toBe('auto');
 
       // Button should show dark mode classes
       const button2 = page2.root.querySelector('button');
       expect(button2.classList.contains('dark')).toBe(true);
     });
 
-    it('should load saved light theme from localStorage on new page load', async () => {
+    it('should keep auto preference and render light effective theme when system is light', async () => {
       // Mock system preference to light to avoid interference
       Object.defineProperty(window, 'matchMedia', {
         writable: true,
@@ -443,12 +427,6 @@ describe('admiralty-theme-toggle', () => {
         })),
       });
 
-      // Clear any previous state
-      localStorage.clear();
-
-      // Set localStorage to light
-      localStorage.setItem('admiralty-theme-preference', 'light');
-
       // New component instance without explicit theme prop
       const page = await newSpecPage({
         components: [ThemeToggleComponent],
@@ -457,8 +435,8 @@ describe('admiralty-theme-toggle', () => {
       await page.waitForChanges();
       const component = page.rootInstance;
 
-      // Should have loaded 'light' from localStorage
-      expect(component.theme).toBe('light');
+      // Preference remains auto while effective appearance follows the system.
+      expect(component.theme).toBe('auto');
 
       // Button should show light mode classes
       const button = page.root.querySelector('button');
@@ -895,7 +873,7 @@ describe('admiralty-theme-toggle', () => {
   });
 
   describe('localStorage error handling', () => {
-    it('should fall back to system theme when localStorage throws on load', async () => {
+    it('should keep auto preference when localStorage throws on load', async () => {
       Object.defineProperty(window, 'matchMedia', {
         writable: true,
         configurable: true,
@@ -918,8 +896,8 @@ describe('admiralty-theme-toggle', () => {
       await page.waitForChanges();
 
       const component = page.rootInstance;
-      // Should resolve to system preference (light in this mock), not crash
-      expect(['light', 'dark']).toContain(component.theme);
+      // Should keep auto preference so system changes continue to be followed.
+      expect(component.theme).toBe('auto');
 
       getItemSpy.mockRestore();
     });
@@ -942,7 +920,7 @@ describe('admiralty-theme-toggle', () => {
       setItemSpy.mockRestore();
     });
 
-    it('should fall back to system theme when localStorage has an invalid value', async () => {
+    it('should keep auto preference when localStorage has an invalid value', async () => {
       Object.defineProperty(window, 'matchMedia', {
         writable: true,
         configurable: true,
@@ -963,8 +941,8 @@ describe('admiralty-theme-toggle', () => {
       await page.waitForChanges();
 
       const component = page.rootInstance;
-      // Invalid stored value should be ignored; falls back to system preference
-      expect(['light', 'dark']).toContain(component.theme);
+      // Invalid stored value should be ignored and leave preference as auto.
+      expect(component.theme).toBe('auto');
     });
   });
 

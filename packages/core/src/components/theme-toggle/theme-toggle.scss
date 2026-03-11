@@ -2,11 +2,11 @@
 
 .theme-toggle {
   position: relative;
-  width: 76px;
-  height: 38px;
-  border-radius: 20px;
-  border: 1px solid var(--admiralty-colour-primary);
-  background-color: var(--admiralty-background-colour);
+  width: $theme-toggle-width;
+  height: $theme-toggle-height;
+  border-radius: $theme-toggle-border-radius;
+  border: 1px solid $theme-toggle-icon-colour;
+  background-color: $theme-toggle-background-colour;
   cursor: pointer;
   padding: 0;
   display: inline-flex;
@@ -15,16 +15,8 @@
   transition: border-color 0.3s ease;
   gap: 1px;
 
-  &:hover:not(.disabled) {
-    border-color: var(--admiralty-colour-primary-shade);
-  }
-
-  &:active:not(.disabled) {
-    border-color: var(--admiralty-colour-primary-shade);
-  }
-
   &:focus {
-    outline: 3px solid var(--admiralty-focus-colour);
+    outline: 3px solid $theme-toggle-focus-colour;
     outline-offset: 2px;
   }
 
@@ -33,7 +25,7 @@
   }
 
   &.disabled {
-    opacity: 0.5;
+    opacity: $theme-toggle-disabled-opacity;
     cursor: not-allowed;
   }
 }
@@ -41,21 +33,21 @@
 .toggle-background-slider {
   position: absolute;
   top: 2px;
-  left: 2px;
-  width: 30px;
-  height: 30px;
-  background-color: var(--admiralty-background-colour-tint);
-  border-radius: 18px;
+  left: 3px;
+  width: $theme-toggle-slider-size;
+  height: $theme-toggle-slider-size;
+  background-color: $theme-toggle-slider-background-colour;
+  border-radius: $theme-toggle-slider-border-radius;
   transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   z-index: 0;
-  border: 1px solid var(--admiralty-hover-background-colour-tint);
+  border: 1px solid $theme-toggle-slider-colour;
 
   .theme-toggle.light & {
     transform: translateX(0);
   }
 
   .theme-toggle.dark & {
-    transform: translateX(37px);
+    transform: translateX($theme-toggle-slider-offset);
   }
 }
 
@@ -75,18 +67,18 @@
   }
 
   .theme-toggle {
-    color: var(--admiralty-colour-primary);
+    color: $theme-toggle-icon-colour;
   }
 }
 
 .sun-icon {
   .theme-toggle & {
-    color: var(--admiralty-colour-primary);
+    color: $theme-toggle-icon-colour;
   }
 }
 
 .moon-icon {
   .theme-toggle & {
-    color: var(--admiralty-colour-primary);
+    color: $theme-toggle-icon-colour;
   }
 }

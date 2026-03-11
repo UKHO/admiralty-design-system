@@ -14,7 +14,8 @@ export type ThemePreference = 'light' | 'dark' | 'auto';
 export class ThemeToggleComponent {
   /**
    * The current theme preference. Can be 'light', 'dark', or 'auto' (system preference).
-   * Default value is 'auto'.
+   * Default value is 'auto'. When no saved preference exists, it remains 'auto'
+   * so OS theme changes continue to be followed.
    */
   @Prop({ reflect: true, mutable: true }) theme: ThemePreference = 'auto';
 
@@ -61,21 +62,18 @@ export class ThemeToggleComponent {
     });
   }
 
-  componentWillLoad() {
-    // Only load theme preference if theme prop is still at default value
+  componentDidLoad() {
+    // Resolve a persisted preference when currently in auto mode.
+    // If nothing is saved, keep 'auto' as the preference and derive the effective
+    // theme from the current system setting.
     if (this.theme === 'auto') {
-      // Load theme preference from localStorage
       const savedTheme = this.loadTheme();
       if (savedTheme) {
         this.theme = savedTheme;
-      } else {
-        // Initialize with current system preference
-        this.theme = this.getSystemTheme();
+        return;
       }
     }
-  }
 
-  componentDidLoad() {
     // Apply theme after component is loaded
     this.applyTheme(this.theme);
 
@@ -170,10 +168,16 @@ export class ThemeToggleComponent {
    * Apply theme by updating document class and CSS variables
    */
   private applyTheme = (themePreference: ThemePreference) => {
-    const effectiveTheme = themePreference === 'auto' ? this.getSystemTheme() : themePreference;
+    // In auto mode, clear explicit overrides and let CSS follow system preference.
+    if (themePreference === 'auto') {
+      document.body.classList.remove('admiralty-dark-mode');
+      document.body.classList.remove('admiralty-light-mode');
+      document.body.removeAttribute('data-theme');
+      return;
+    }
 
-    // Update body element to apply theme classes
-    if (effectiveTheme === 'dark') {
+    // Update body element to apply explicit theme classes.
+    if (themePreference === 'dark') {
       // Add class to force dark mode
       document.body.classList.add('admiralty-dark-mode');
       document.body.classList.remove('admiralty-light-mode');
@@ -185,13 +189,6 @@ export class ThemeToggleComponent {
       document.body.classList.remove('admiralty-dark-mode');
       // Optionally set data attribute
       document.body.setAttribute('data-theme', 'light');
-    }
-
-    // For 'auto', remove both classes to allow system preference
-    if (themePreference === 'auto') {
-      document.body.classList.remove('admiralty-dark-mode');
-      document.body.classList.remove('admiralty-light-mode');
-      document.body.removeAttribute('data-theme');
     }
   };
 
