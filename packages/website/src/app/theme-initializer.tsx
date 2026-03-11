@@ -32,19 +32,19 @@ export function ThemeInitializer() {
                   : themeToApply;
 
                 if (effectiveTheme === 'dark') {
-                  document.documentElement.classList.add('admiralty-dark-mode');
-                  document.documentElement.classList.remove('admiralty-light-mode');
-                  document.documentElement.setAttribute('data-theme', 'dark');
+                  document.body.classList.add('admiralty-dark-mode');
+                  document.body.classList.remove('admiralty-light-mode');
+                  document.body.setAttribute('data-theme', 'dark');
                 } else {
-                  document.documentElement.classList.add('admiralty-light-mode');
-                  document.documentElement.classList.remove('admiralty-dark-mode');
-                  document.documentElement.setAttribute('data-theme', 'light');
+                  document.body.classList.add('admiralty-light-mode');
+                  document.body.classList.remove('admiralty-dark-mode');
+                  document.body.setAttribute('data-theme', 'light');
                 }
 
                 if (themeToApply === 'auto') {
-                  document.documentElement.classList.remove('admiralty-dark-mode');
-                  document.documentElement.classList.remove('admiralty-light-mode');
-                  document.documentElement.removeAttribute('data-theme');
+                  document.body.classList.remove('admiralty-dark-mode');
+                  document.body.classList.remove('admiralty-light-mode');
+                  document.body.removeAttribute('data-theme');
                 }
               } catch (e) {
                 // Silently fail if localStorage is not available
@@ -88,19 +88,19 @@ function applyTheme(themePreference: string) {
       : themePreference;
 
   if (effectiveTheme === "dark") {
-    document.documentElement.classList.add("admiralty-dark-mode");
-    document.documentElement.classList.remove("admiralty-light-mode");
-    document.documentElement.setAttribute("data-theme", "dark");
+    document.body.classList.add("admiralty-dark-mode");
+    document.body.classList.remove("admiralty-light-mode");
+    document.body.setAttribute("data-theme", "dark");
   } else {
-    document.documentElement.classList.add("admiralty-light-mode");
-    document.documentElement.classList.remove("admiralty-dark-mode");
-    document.documentElement.setAttribute("data-theme", "light");
+    document.body.classList.add("admiralty-light-mode");
+    document.body.classList.remove("admiralty-dark-mode");
+    document.body.setAttribute("data-theme", "light");
   }
 
   // Remove attributes if auto mode
   if (themePreference === "auto") {
-    document.documentElement.classList.remove("admiralty-dark-mode");
-    document.documentElement.classList.remove("admiralty-light-mode");
-    document.documentElement.removeAttribute("data-theme");
+    document.body.classList.remove("admiralty-dark-mode");
+    document.body.classList.remove("admiralty-light-mode");
+    document.body.removeAttribute("data-theme");
   }
 }

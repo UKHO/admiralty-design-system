@@ -230,7 +230,7 @@
 }
 
 /** Theme Toggle: Force Light Mode **/
-:root.admiralty-light-mode {
+body.admiralty-light-mode {
   /** primary **/
   --admiralty-colour-primary: #09315b;
   --admiralty-colour-primary-contrast: #ffffff;
@@ -330,7 +330,7 @@
 }
 
 /** Theme Toggle: Force Dark Mode **/
-:root.admiralty-dark-mode {
+body.admiralty-dark-mode {
   /** primary **/
   --admiralty-colour-primary: #ffffff;
   --admiralty-colour-primary-contrast: #333333;

@@ -469,16 +469,16 @@ describe('admiralty-theme-toggle', () => {
   describe('document styling', () => {
     beforeEach(() => {
       // Clear any previously set theme classes
-      document.documentElement.classList.remove('admiralty-dark-mode');
-      document.documentElement.classList.remove('admiralty-light-mode');
-      document.documentElement.removeAttribute('data-theme');
+      document.body.classList.remove('admiralty-dark-mode');
+      document.body.classList.remove('admiralty-light-mode');
+      document.body.removeAttribute('data-theme');
     });
 
     afterEach(() => {
       // Clean up after tests
-      document.documentElement.classList.remove('admiralty-dark-mode');
-      document.documentElement.classList.remove('admiralty-light-mode');
-      document.documentElement.removeAttribute('data-theme');
+      document.body.classList.remove('admiralty-dark-mode');
+      document.body.classList.remove('admiralty-light-mode');
+      document.body.removeAttribute('data-theme');
     });
 
     it('should add light-mode class to document element for light theme', async () => {
@@ -487,8 +487,8 @@ describe('admiralty-theme-toggle', () => {
         html: `<admiralty-theme-toggle theme="light"></admiralty-theme-toggle>`,
       });
       await page.waitForChanges();
-      expect(document.documentElement.classList.contains('admiralty-light-mode')).toBe(true);
-      expect(document.documentElement.classList.contains('admiralty-dark-mode')).toBe(false);
+      expect(document.body.classList.contains('admiralty-light-mode')).toBe(true);
+      expect(document.body.classList.contains('admiralty-dark-mode')).toBe(false);
     });
 
     it('should add dark-mode class to document element for dark theme', async () => {
@@ -497,8 +497,8 @@ describe('admiralty-theme-toggle', () => {
         html: `<admiralty-theme-toggle theme="dark"></admiralty-theme-toggle>`,
       });
       await page.waitForChanges();
-      expect(document.documentElement.classList.contains('admiralty-dark-mode')).toBe(true);
-      expect(document.documentElement.classList.contains('admiralty-light-mode')).toBe(false);
+      expect(document.body.classList.contains('admiralty-dark-mode')).toBe(true);
+      expect(document.body.classList.contains('admiralty-light-mode')).toBe(false);
     });
 
     it('should set data-theme attribute to light', async () => {
@@ -507,7 +507,7 @@ describe('admiralty-theme-toggle', () => {
         html: `<admiralty-theme-toggle theme="light"></admiralty-theme-toggle>`,
       });
       await page.waitForChanges();
-      expect(document.documentElement.getAttribute('data-theme')).toBe('light');
+      expect(document.body.getAttribute('data-theme')).toBe('light');
     });
 
     it('should set data-theme attribute to dark', async () => {
@@ -516,7 +516,7 @@ describe('admiralty-theme-toggle', () => {
         html: `<admiralty-theme-toggle theme="dark"></admiralty-theme-toggle>`,
       });
       await page.waitForChanges();
-      expect(document.documentElement.getAttribute('data-theme')).toBe('dark');
+      expect(document.body.getAttribute('data-theme')).toBe('dark');
     });
 
     it('should remove theme classes for auto mode', async () => {
@@ -528,14 +528,14 @@ describe('admiralty-theme-toggle', () => {
       await page.waitForChanges();
 
       // Clean first - remove residual state from previous tests
-      document.documentElement.classList.remove('admiralty-dark-mode');
-      document.documentElement.classList.remove('admiralty-light-mode');
-      document.documentElement.removeAttribute('data-theme');
+      document.body.classList.remove('admiralty-dark-mode');
+      document.body.classList.remove('admiralty-light-mode');
+      document.body.removeAttribute('data-theme');
 
       // Now check that auto mode doesn't set specific classes
-      expect(document.documentElement.classList.contains('admiralty-light-mode')).toBe(false);
-      expect(document.documentElement.classList.contains('admiralty-dark-mode')).toBe(false);
-      expect(document.documentElement.getAttribute('data-theme')).toBeNull();
+      expect(document.body.classList.contains('admiralty-light-mode')).toBe(false);
+      expect(document.body.classList.contains('admiralty-dark-mode')).toBe(false);
+      expect(document.body.getAttribute('data-theme')).toBeNull();
     });
 
     it('should update document classes when theme changes', async () => {
@@ -546,13 +546,13 @@ describe('admiralty-theme-toggle', () => {
       const component = page.rootInstance;
       await page.waitForChanges();
 
-      expect(document.documentElement.classList.contains('admiralty-light-mode')).toBe(true);
+      expect(document.body.classList.contains('admiralty-light-mode')).toBe(true);
 
       component.theme = 'dark';
       await page.waitForChanges();
 
-      expect(document.documentElement.classList.contains('admiralty-dark-mode')).toBe(true);
-      expect(document.documentElement.classList.contains('admiralty-light-mode')).toBe(false);
+      expect(document.body.classList.contains('admiralty-dark-mode')).toBe(true);
+      expect(document.body.classList.contains('admiralty-light-mode')).toBe(false);
     });
   });
 
@@ -1030,3 +1030,4 @@ describe('admiralty-theme-toggle', () => {
     });
   });
 });
+

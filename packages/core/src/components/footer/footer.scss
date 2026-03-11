@@ -42,12 +42,12 @@ footer {
   }
 
   /* Theme Toggle Support - Manual Dark Mode */
-  :host-context(:root.admiralty-dark-mode) img {
+  :host-context(body.admiralty-dark-mode) img {
     filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(0deg);
   }
 
   /* Theme Toggle Support - Manual Light Mode */
-  :host-context(:root.admiralty-light-mode) img {
+  :host-context(body.admiralty-light-mode) img {
     filter: none;
   }
 
@@ -178,12 +178,12 @@ footer.footer-compact {
 }
 
 /* Theme Toggle Support - Manual Dark Mode */
-:host.footer-compact:host-context(:root.admiralty-dark-mode) {
+:host.footer-compact:host-context(body.admiralty-dark-mode) {
   opacity: 1;
 }
 
 /* Theme Toggle Support - Manual Light Mode */
-:host.footer-compact:host-context(:root.admiralty-light-mode) {
+:host.footer-compact:host-context(body.admiralty-light-mode) {
   opacity: initial;
 }
 

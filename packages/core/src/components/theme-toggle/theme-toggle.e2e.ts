@@ -106,7 +106,7 @@ describe('admiralty-theme-toggle', () => {
 
       // Verify document element has the class applied
       const hasLightModeClass = await page.evaluate(() => {
-        return document.documentElement.classList.contains('admiralty-light-mode');
+        return document.body.classList.contains('admiralty-light-mode');
       });
       expect(hasLightModeClass).toBe(true);
     });

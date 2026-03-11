@@ -172,26 +172,26 @@ export class ThemeToggleComponent {
   private applyTheme = (themePreference: ThemePreference) => {
     const effectiveTheme = themePreference === 'auto' ? this.getSystemTheme() : themePreference;
 
-    // Update document element for CSS media query override
+    // Update body element to apply theme classes
     if (effectiveTheme === 'dark') {
       // Add class to force dark mode
-      document.documentElement.classList.add('admiralty-dark-mode');
-      document.documentElement.classList.remove('admiralty-light-mode');
+      document.body.classList.add('admiralty-dark-mode');
+      document.body.classList.remove('admiralty-light-mode');
       // Optionally set data attribute
-      document.documentElement.setAttribute('data-theme', 'dark');
+      document.body.setAttribute('data-theme', 'dark');
     } else {
       // Add class to force light mode
-      document.documentElement.classList.add('admiralty-light-mode');
-      document.documentElement.classList.remove('admiralty-dark-mode');
+      document.body.classList.add('admiralty-light-mode');
+      document.body.classList.remove('admiralty-dark-mode');
       // Optionally set data attribute
-      document.documentElement.setAttribute('data-theme', 'light');
+      document.body.setAttribute('data-theme', 'light');
     }
 
     // For 'auto', remove both classes to allow system preference
     if (themePreference === 'auto') {
-      document.documentElement.classList.remove('admiralty-dark-mode');
-      document.documentElement.classList.remove('admiralty-light-mode');
-      document.documentElement.removeAttribute('data-theme');
+      document.body.classList.remove('admiralty-dark-mode');
+      document.body.classList.remove('admiralty-light-mode');
+      document.body.removeAttribute('data-theme');
     }
   };
 
