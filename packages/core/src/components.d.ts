@@ -15,6 +15,8 @@ import { RadioGroupChangeEventDetail } from "./components/radio-group/radio-grou
 import { SelectChangeEventDetail } from "./components/select/select.interface";
 import { TextSideBarItemVariant } from "./components/text-side-bar-item/text-side-bar-item.types";
 import { TextAreaChangeEventDetail } from "./components/textarea/textarea.interface";
+import { ThemePreference } from "./components/theme-toggle/theme-toggle";
+import { ThemeToggleChangeEventDetail } from "./components/theme-toggle/theme-toggle.interface";
 export { AutoCompleteChangeEventDetail, Option } from "./components/autocomplete/autocomplete.interface";
 export { ButtonVariant } from "./components/button/button.types";
 export { CheckboxChangeEventDetail } from "./components/checkbox/checkbox.interface";
@@ -25,6 +27,8 @@ export { RadioGroupChangeEventDetail } from "./components/radio-group/radio-grou
 export { SelectChangeEventDetail } from "./components/select/select.interface";
 export { TextSideBarItemVariant } from "./components/text-side-bar-item/text-side-bar-item.types";
 export { TextAreaChangeEventDetail } from "./components/textarea/textarea.interface";
+export { ThemePreference } from "./components/theme-toggle/theme-toggle";
+export { ThemeToggleChangeEventDetail } from "./components/theme-toggle/theme-toggle.interface";
 export namespace Components {
     interface AdmiraltyAutocomplete {
         /**
@@ -897,6 +901,20 @@ export namespace Components {
          */
         "width"?: number;
     }
+    interface AdmiraltyThemeToggle {
+        /**
+          * Label for accessibility. Defaults to "Toggle dark mode".
+         */
+        "ariaLabel": string;
+        /**
+          * Whether the toggle should be disabled.
+         */
+        "disabled": boolean;
+        /**
+          * The current theme preference. Can be 'light', 'dark', or 'auto' (system preference). Default value is 'auto'.
+         */
+        "theme": ThemePreference;
+    }
 }
 export interface AdmiraltyAutocompleteCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -985,6 +1003,10 @@ export interface AdmiraltyTextSideBarItemCustomEvent<T> extends CustomEvent<T> {
 export interface AdmiraltyTextareaCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLAdmiraltyTextareaElement;
+}
+export interface AdmiraltyThemeToggleCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLAdmiraltyThemeToggleElement;
 }
 declare global {
     interface HTMLAdmiraltyAutocompleteElementEventMap {
@@ -1608,6 +1630,23 @@ declare global {
         prototype: HTMLAdmiraltyTextareaElement;
         new (): HTMLAdmiraltyTextareaElement;
     };
+    interface HTMLAdmiraltyThemeToggleElementEventMap {
+        "admiraltyThemeChange": ThemeToggleChangeEventDetail;
+    }
+    interface HTMLAdmiraltyThemeToggleElement extends Components.AdmiraltyThemeToggle, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLAdmiraltyThemeToggleElementEventMap>(type: K, listener: (this: HTMLAdmiraltyThemeToggleElement, ev: AdmiraltyThemeToggleCustomEvent<HTMLAdmiraltyThemeToggleElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLAdmiraltyThemeToggleElementEventMap>(type: K, listener: (this: HTMLAdmiraltyThemeToggleElement, ev: AdmiraltyThemeToggleCustomEvent<HTMLAdmiraltyThemeToggleElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLAdmiraltyThemeToggleElement: {
+        prototype: HTMLAdmiraltyThemeToggleElement;
+        new (): HTMLAdmiraltyThemeToggleElement;
+    };
     interface HTMLElementTagNameMap {
         "admiralty-autocomplete": HTMLAdmiraltyAutocompleteElement;
         "admiralty-autocomplete-option": HTMLAdmiraltyAutocompleteOptionElement;
@@ -1666,6 +1705,7 @@ declare global {
         "admiralty-text-side-bar-item": HTMLAdmiraltyTextSideBarItemElement;
         "admiralty-text-side-bar-wrapper": HTMLAdmiraltyTextSideBarWrapperElement;
         "admiralty-textarea": HTMLAdmiraltyTextareaElement;
+        "admiralty-theme-toggle": HTMLAdmiraltyThemeToggleElement;
     }
 }
 declare namespace LocalJSX {
@@ -2681,6 +2721,25 @@ declare namespace LocalJSX {
          */
         "width"?: number;
     }
+    interface AdmiraltyThemeToggle {
+        /**
+          * Label for accessibility. Defaults to "Toggle dark mode".
+         */
+        "ariaLabel"?: string;
+        /**
+          * Whether the toggle should be disabled.
+         */
+        "disabled"?: boolean;
+        /**
+          * Event is fired when the theme preference changes
+          * @event admiraltyThemeChange
+         */
+        "onAdmiraltyThemeChange"?: (event: AdmiraltyThemeToggleCustomEvent<ThemeToggleChangeEventDetail>) => void;
+        /**
+          * The current theme preference. Can be 'light', 'dark', or 'auto' (system preference). Default value is 'auto'.
+         */
+        "theme"?: ThemePreference;
+    }
     interface IntrinsicElements {
         "admiralty-autocomplete": AdmiraltyAutocomplete;
         "admiralty-autocomplete-option": AdmiraltyAutocompleteOption;
@@ -2739,6 +2798,7 @@ declare namespace LocalJSX {
         "admiralty-text-side-bar-item": AdmiraltyTextSideBarItem;
         "admiralty-text-side-bar-wrapper": AdmiraltyTextSideBarWrapper;
         "admiralty-textarea": AdmiraltyTextarea;
+        "admiralty-theme-toggle": AdmiraltyThemeToggle;
     }
 }
 export { LocalJSX as JSX };
@@ -2826,6 +2886,7 @@ declare module "@stencil/core" {
             "admiralty-text-side-bar-item": LocalJSX.AdmiraltyTextSideBarItem & JSXBase.HTMLAttributes<HTMLAdmiraltyTextSideBarItemElement>;
             "admiralty-text-side-bar-wrapper": LocalJSX.AdmiraltyTextSideBarWrapper & JSXBase.HTMLAttributes<HTMLAdmiraltyTextSideBarWrapperElement>;
             "admiralty-textarea": LocalJSX.AdmiraltyTextarea & JSXBase.HTMLAttributes<HTMLAdmiraltyTextareaElement>;
+            "admiralty-theme-toggle": LocalJSX.AdmiraltyThemeToggle & JSXBase.HTMLAttributes<HTMLAdmiraltyThemeToggleElement>;
         }
     }
 }

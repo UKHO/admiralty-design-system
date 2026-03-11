@@ -19,6 +19,20 @@
   </ng-container>
   <admiralty-header-profile isSignedIn="false" slot="profile"></admiralty-header-profile>
 </admiralty-header>
+<div
+  style="
+    padding: 16px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 16px;
+    border: 1px solid var(--admiralty-colour-primary);
+  "
+>
+  <admiralty-theme-toggle></admiralty-theme-toggle>
+  <span>Toggle Light/Dark Mode</span>
+</div>
+<br />
 <admiralty-button (click)="addHeaderItems()">Add header item</admiralty-button>
 <admiralty-breadcrumbs>
   <admiralty-breadcrumb href="https://example.org/test1">Test1</admiralty-breadcrumb>
@@ -346,4 +360,3 @@
 </admiralty-modal-dialog>
 
 <admiralty-footer image-src="assets/svg/UKHO%20stacked%20logo.svg" />
-
