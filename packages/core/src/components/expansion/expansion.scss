@@ -11,14 +11,15 @@ section.expansion {
     display: none;
     max-height: 0;
     overflow: visible;
-  }
-  &.expanded .expansion-content {
-    display: block;
-    max-height: initial;
-    padding-bottom: $expansion-content-padding-bottom;
+
+    &.expanded {
+      display: block;
+      max-height: initial;
+      padding-bottom: $expansion-content-padding-bottom;
+    }
   }
 
-  button {
+  .expansion-heading-button {
     background-color: transparent;
     border: none;
     height: initial;
