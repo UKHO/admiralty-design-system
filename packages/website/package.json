@@ -13,7 +13,7 @@
     "@ukho/admiralty-core": "workspace:*",
     "@ukho/admiralty-react": "workspace:*",
     "eslint-config-next": "16.0.10",
-    "next": "16.0.10",
+    "next": "16.1.5",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "typescript": "^5.9.3"
@@ -28,7 +28,7 @@
     "@types/react": "19.2.7",
     "@types/react-dom": "19.2.3",
     "eslint": "^9",
-    "prismjs": "^1.29.0",
+    "prismjs": "^1.30.0",
     "rehype-autolink-headings": "^7.1.0",
     "rehype-slug": "^6.0.0",
     "remark-gfm": "^4.0.1",
