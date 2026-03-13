@@ -13,7 +13,7 @@ export interface CommissioningOrganisation {
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  standalone: false
+  standalone: false,
 })
 export class AppComponent {
   @ViewChildren(AdmiraltySideNavItem) sideNavItems!: QueryList<AdmiraltySideNavItem>;
@@ -146,19 +146,19 @@ export class AppComponent {
     this.isModalDialogShown = false;
   }
 
-  autocomplete(event: AdmiraltyAutocompleteCustomEvent<AutoCompleteChangeEventDetail>) {
+  autocomplete(event: CustomEvent<AutoCompleteChangeEventDetail>) {
     console.log(event.detail.value);
   }
 
-  onOfficeChanged(event: AdmiraltyAutocompleteCustomEvent<AutoCompleteChangeEventDetail>) {
+  onOfficeChanged(event: CustomEvent<AutoCompleteChangeEventDetail>) {
     console.log('onOfficeChanged', event.detail.value);
   }
 
-  onCountryChanged(event: AdmiraltyAutocompleteCustomEvent<AutoCompleteChangeEventDetail>) {
+  onCountryChanged(event: CustomEvent<AutoCompleteChangeEventDetail>) {
     console.log('onCountryChanged', event.detail.value);
   }
 
-  onDirectionChanged(event: AdmiraltyAutocompleteCustomEvent<AutoCompleteChangeEventDetail>) {
+  onDirectionChanged(event: CustomEvent<AutoCompleteChangeEventDetail>) {
     console.log('onDirectionChanged', event.detail.value);
   }
 
