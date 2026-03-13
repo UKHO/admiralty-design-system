@@ -1,22 +1,14 @@
-## Tracker
+# Tracker
 
-<div style={{ paddingBottom: "30px" }}>
-  Use the progress tracker to display the steps in a multi-step process. [View this component on
-  GitHub](https://github.com/UKHO/admiralty-design-system/tree/main/packages/core/src/components/progress-tracker)
-</div>
+Use the progress tracker to display the steps in a multi-step process. [View this component on GitHub](https://github.com/UKHO/admiralty-design-system/tree/main/packages/core/src/components/progress-tracker)
 
-<div className="admiralty-intro">
-  Use the tracker component to help users understand progress through a service or the current status of a task.
-  Trackers should reduce uncertainty and help users plan what to do next.
-</div>
+<admiralty-intro>Use the tracker component to help users understand progress through a service or the current status of a task. Trackers should reduce uncertainty and help users plan what to do next.</admiralty-intro>
 
-<hr style={{ border: "1px solid #e0e0e0" }} />
+---
 
 ## Contents
 
 ## When to use this component
-
-<div style={{ paddingBottom: "30px" }}>
 
 Use a tracker when users need to:
 
@@ -25,25 +17,19 @@ Use a tracker when users need to:
 - Check the status of an application or request
 - Return later and continue a task
 
-</div>
-
-<div style={{ paddingBottom: "30px" }}>
 Do not use a tracker:
 
 - For short, simple journeys (1 to 3 screens)
 - If there is no meaningful concept of progress
 - As a visual embellishment
 
-</div>
-
 ## Types of tracker
 
-<div>Choose the pattern that matches the user need.</div>
+Choose the pattern that matches the user need.
 
 ### Step tracker (linear journeys)
 
-<div style={{ paddingBottom: "30px" }}>
-  Use for multi-step forms where users complete sections in order.
+Use for multi-step forms where users complete sections in order.
 
 The step tracker:
 
@@ -53,11 +39,7 @@ The step tracker:
 - Does not allow users to skip ahead unless the service supports it
 - Allows user to step back in the journey to return to a previous step to amend cached data
 
-</div>
-
-<div style={{ paddingBottom: "30px" }}>
-  Do not show page validation errors in the tracker. Use an error summary and inline validation instead.
-</div>
+Do not show page validation errors in the tracker. Use an error summary and inline validation instead.
 
 import Basic from "@/usage/progress-tracker/basic/index.mdx";
 
@@ -65,8 +47,7 @@ import Basic from "@/usage/progress-tracker/basic/index.mdx";
 
 ### Task tracker (checklist style)
 
-<div style={{ paddingBottom: "30px" }}>
-  Use when users can complete sections in any order or return later.
+Use when users can complete sections in any order or return later.
 
 The task tracker shows the status of each section. For example:
 
@@ -74,14 +55,9 @@ The task tracker shows the status of each section. For example:
 - Payment setup
 - Verification
 
-</div>
+Use clear text labels. Do not rely on colour alone to communicate status.
 
-<div style={{ paddingBottom: "30px" }}>
-  Use clear text labels. Do not rely on colour alone to communicate status.
-  
-  Avoid using the word "Error" unless something has genuinely failed.
-
-</div>
+Avoid using the word "Error" unless something has genuinely failed.
 
 import AllComplete from "@/usage/progress-tracker/all-complete/index.mdx";
 
@@ -89,8 +65,7 @@ import AllComplete from "@/usage/progress-tracker/all-complete/index.mdx";
 
 ### Status tracker (system-driven progress)
 
-<div style={{ paddingBottom: "30px" }}>
-  Use when the tracker reflects the system's progress, not the user's progress.
+Use when the tracker reflects the system's progress, not the user's progress.
 
 For example:
 
@@ -99,33 +74,22 @@ For example:
 - More information needed
 - Approved
 
-</div>
-
-<div>
-  If user action is required, clearly explain what they must do next.
-
-</div>
+If user action is required, clearly explain what they must do next.
 
 ## Content design
 
-<div style={{ paddingBottom: "30px" }}>
-  Follow plain English principles.
+Follow plain English principles.
 
 - Use short, descriptive step names
 - Avoid internal or technical terminology
 - Keep labels consistent throughout the journey
 - Do not change step names part way through a service
 
-</div>
-
-<div style={{ paddingBottom: "30px" }}>Avoid motivational or celebratory language. Keep tone factual and calm.</div>
+Avoid motivational or celebratory language. Keep tone factual and calm.
 
 ## Accessibility
 
-<div style={{ paddingBottom: "30px" }}>
-  The component provides step information through ARIA labels and semantic HTML. Each step is marked with its status
-  (complete, current, or upcoming) to help assistive technology users understand the progress flow.
-</div>
+The component provides step information through ARIA labels and semantic HTML. Each step is marked with its status (complete, current, or upcoming) to help assistive technology users understand the progress flow.
 
 ## Props
 
@@ -138,3 +102,27 @@ import Props from "@docs/progress-tracker/props.mdx";
 import Events from "@docs/progress-tracker/events.mdx";
 
 <Events />
+
+## Methods
+
+import Methods from "@docs/progress-tracker/methods.mdx";
+
+<Methods />
+
+## CSS Shadow Parts
+
+import Parts from "@docs/progress-tracker/parts.mdx";
+
+<Parts />
+
+## CSS Custom Properties
+
+import CustomProps from "@docs/progress-tracker/customProps.mdx";
+
+<CustomProps />
+
+## Slots
+
+import Slots from "@docs/progress-tracker/slots.mdx";
+
+<Slots />
