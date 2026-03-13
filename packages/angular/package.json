@@ -4,7 +4,6 @@
   "module": "dist/fesm2022/ukho-admiralty-angular.mjs",
   "typings": "dist/index.d.ts",
   "scripts": {
-    "ng": "ng",
     "prepublishOnly": "node scripts/updatePackageVersion.js",
     "build": "ng-packagr -p ng-package.json -c tsconfig.json",
     "test": "jest --passWithNoTests",
