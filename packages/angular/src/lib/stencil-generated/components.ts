@@ -882,6 +882,58 @@ export declare interface AdmiraltyProgressBar extends Components.AdmiraltyProgre
 
 
 @ProxyCmp({
+  inputs: ['allowBackNavigation', 'allowForwardNavigation']
+})
+@Component({
+  selector: 'admiralty-progress-tracker',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['allowBackNavigation', 'allowForwardNavigation'],
+})
+export class AdmiraltyProgressTracker {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['stepClicked']);
+  }
+}
+
+
+import type { StepNavigationDetail as IAdmiraltyProgressTrackerStepNavigationDetail } from '@ukho/admiralty-core';
+
+export declare interface AdmiraltyProgressTracker extends Components.AdmiraltyProgressTracker {
+  /**
+   * Emitted when user clicks on a step
+   */
+  stepClicked: EventEmitter<CustomEvent<IAdmiraltyProgressTrackerStepNavigationDetail>>;
+}
+
+
+@ProxyCmp({
+  inputs: ['status', 'stepId', 'stepTitle', 'summary']
+})
+@Component({
+  selector: 'admiralty-progress-tracker-step',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['status', 'stepId', 'stepTitle', 'summary'],
+})
+export class AdmiraltyProgressTrackerStep {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface AdmiraltyProgressTrackerStep extends Components.AdmiraltyProgressTrackerStep {}
+
+
+@ProxyCmp({
   inputs: ['checked', 'disabled', 'invalid', 'name', 'value']
 })
 @Component({

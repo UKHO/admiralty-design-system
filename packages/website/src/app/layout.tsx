@@ -36,6 +36,7 @@ const componentChildren: any[] = [
   { path: "/components/phase-banner", variant: "text", name: "Phase Banner" },
   { path: "/components/pill", variant: "text", name: "Pill" },
   { path: "/components/progress-bar", variant: "text", name: "Progress Bar" },
+  { path: "/components/progress-tracker", variant: "text", name: "Progress Tracker" },
   { path: "/components/radio", variant: "text", name: "Radio" },
   { path: "/components/radio-group", variant: "text", name: "Radio Group" },
   { path: "/components/read-more", variant: "text", name: "Readmore" },
