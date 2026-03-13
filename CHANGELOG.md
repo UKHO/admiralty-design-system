@@ -1,3 +1,42 @@
+# v5.3.0 (Tue Feb 03 2026)
+
+#### 🚀 Enhancement
+
+- Remove chromatic skip [#421](https://github.com/UKHO/admiralty-design-system/pull/421) ([@developernm](https://github.com/developernm) [@ecstaticrainbow](https://github.com/ecstaticrainbow))
+- `@ukho/admiralty-angular`, `@ukho/admiralty-core`, `@ukho-internal/admiralty-docs`, `@ukho/admiralty-react`, `test-app`, `website`
+  - Release 5.3.0 [#445](https://github.com/UKHO/admiralty-design-system/pull/445) ([@developernm](https://github.com/developernm) [@ecstaticrainbow](https://github.com/ecstaticrainbow) [@lstevens98](https://github.com/lstevens98))
+  - Merge main into next [#406](https://github.com/UKHO/admiralty-design-system/pull/406) ([@developernm](https://github.com/developernm) [@ecstaticrainbow](https://github.com/ecstaticrainbow) [@lstevens98](https://github.com/lstevens98))
+- `@ukho/admiralty-core`, `website`
+  - Add dark mode [#404](https://github.com/UKHO/admiralty-design-system/pull/404) ([@lstevens98](https://github.com/lstevens98))
+- `website`
+  - Feat: changes for data collection page [#430](https://github.com/UKHO/admiralty-design-system/pull/430) ([@developernm](https://github.com/developernm))
+  - Feat: typography page [#410](https://github.com/UKHO/admiralty-design-system/pull/410) ([@developernm](https://github.com/developernm))
+- `@ukho/admiralty-angular`, `@ukho/admiralty-core`, `@ukho-internal/admiralty-docs`, `@ukho/admiralty-react`, `website`
+  - Feat: skeleton component [#411](https://github.com/UKHO/admiralty-design-system/pull/411) ([@developernm](https://github.com/developernm))
+
+#### 🐛 Bug Fix
+
+- Removing the NPM token from the publish [#419](https://github.com/UKHO/admiralty-design-system/pull/419) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+- Adding auto branch protection plugin [#418](https://github.com/UKHO/admiralty-design-system/pull/418) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+- `website`
+  - Remove Skeleton Loading from Docs Site [#446](https://github.com/UKHO/admiralty-design-system/pull/446) ([@lstevens98](https://github.com/lstevens98))
+  - Find A Location and Data Collection pages [#435](https://github.com/UKHO/admiralty-design-system/pull/435) ([@lstevens98](https://github.com/lstevens98))
+- `@ukho/admiralty-core`, `@ukho-internal/admiralty-docs`, `test-app`, `website`
+  - Removing any references of fontawesome in the repository [#420](https://github.com/UKHO/admiralty-design-system/pull/420) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+#### 📝 Documentation
+
+- `website`
+  - Remove icon attribute from primary button example [#427](https://github.com/UKHO/admiralty-design-system/pull/427) ([@lstevens98](https://github.com/lstevens98))
+
+#### Authors: 3
+
+- [@developernm](https://github.com/developernm)
+- Lewis Stevens ([@lstevens98](https://github.com/lstevens98))
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
 # v5.0.1 (Tue Sep 02 2025)
 
 #### 🐛 Bug Fix

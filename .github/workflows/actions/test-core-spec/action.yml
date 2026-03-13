@@ -5,7 +5,7 @@ runs:
   steps:
     - name: Install Packages
       run: |
-        yarn install --immutable
+        pnpm install --frozen-lockfile
       shell: bash
     - name: Test
       run: npm run test:spec -- --ci

@@ -897,6 +897,11 @@ export namespace Components {
          */
         "width"?: number;
     }
+    interface AdmiraltyTooltip {
+        "alignment"?: Alignment;
+        "for": string;
+        "placement"?: Placement;
+    }
 }
 export interface AdmiraltyAutocompleteCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -1608,6 +1613,12 @@ declare global {
         prototype: HTMLAdmiraltyTextareaElement;
         new (): HTMLAdmiraltyTextareaElement;
     };
+    interface HTMLAdmiraltyTooltipElement extends Components.AdmiraltyTooltip, HTMLStencilElement {
+    }
+    var HTMLAdmiraltyTooltipElement: {
+        prototype: HTMLAdmiraltyTooltipElement;
+        new (): HTMLAdmiraltyTooltipElement;
+    };
     interface HTMLElementTagNameMap {
         "admiralty-autocomplete": HTMLAdmiraltyAutocompleteElement;
         "admiralty-autocomplete-option": HTMLAdmiraltyAutocompleteOptionElement;
@@ -1666,6 +1677,7 @@ declare global {
         "admiralty-text-side-bar-item": HTMLAdmiraltyTextSideBarItemElement;
         "admiralty-text-side-bar-wrapper": HTMLAdmiraltyTextSideBarWrapperElement;
         "admiralty-textarea": HTMLAdmiraltyTextareaElement;
+        "admiralty-tooltip": HTMLAdmiraltyTooltipElement;
     }
 }
 declare namespace LocalJSX {
@@ -2681,6 +2693,11 @@ declare namespace LocalJSX {
          */
         "width"?: number;
     }
+    interface AdmiraltyTooltip {
+        "alignment"?: Alignment;
+        "for": string;
+        "placement"?: Placement;
+    }
     interface IntrinsicElements {
         "admiralty-autocomplete": AdmiraltyAutocomplete;
         "admiralty-autocomplete-option": AdmiraltyAutocompleteOption;
@@ -2739,6 +2756,7 @@ declare namespace LocalJSX {
         "admiralty-text-side-bar-item": AdmiraltyTextSideBarItem;
         "admiralty-text-side-bar-wrapper": AdmiraltyTextSideBarWrapper;
         "admiralty-textarea": AdmiraltyTextarea;
+        "admiralty-tooltip": AdmiraltyTooltip;
     }
 }
 export { LocalJSX as JSX };
@@ -2826,6 +2844,7 @@ declare module "@stencil/core" {
             "admiralty-text-side-bar-item": LocalJSX.AdmiraltyTextSideBarItem & JSXBase.HTMLAttributes<HTMLAdmiraltyTextSideBarItemElement>;
             "admiralty-text-side-bar-wrapper": LocalJSX.AdmiraltyTextSideBarWrapper & JSXBase.HTMLAttributes<HTMLAdmiraltyTextSideBarWrapperElement>;
             "admiralty-textarea": LocalJSX.AdmiraltyTextarea & JSXBase.HTMLAttributes<HTMLAdmiraltyTextareaElement>;
+            "admiralty-tooltip": LocalJSX.AdmiraltyTooltip & JSXBase.HTMLAttributes<HTMLAdmiraltyTooltipElement>;
         }
     }
 }

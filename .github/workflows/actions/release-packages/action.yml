@@ -39,6 +39,6 @@ runs:
         GITHUB_TOKEN: ${{ inputs.GITHUB_TOKEN }}
         PROTECTED_BRANCH_REVIEWER_TOKEN: ${{ inputs.ADMIN_TOKEN }}
       run: |
-        yarn install --immutable
+        pnpm install --frozen-lockfile
         npx auto shipit -vv
       shell: bash

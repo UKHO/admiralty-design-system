@@ -1,10 +1,10 @@
 "use client";
 
-import SkeletonPage from "./skeleton.mdx";
+import TooltipPage from "./tooltip.mdx";
 export default function Home() {
   return (
     <div>
-      <SkeletonPage></SkeletonPage>
+      <TooltipPage></TooltipPage>
     </div>
   );
 }
