@@ -53,6 +53,7 @@
 ```mermaid
 graph TD;
   admiralty-pill --> admiralty-icon
+  admiralty-icon --> admiralty-skeleton
   style admiralty-pill fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

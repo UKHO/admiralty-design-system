@@ -61,11 +61,9 @@ export const Countries: Story = {
       ?invalid="${args.invalid}"
       invalid-message="${args.invalidMessage}"
       ?disabled="${args.disabled}"
-      value="${args.value}"
-    >
+      value="${args.value}">
       <admiralty-autocomplete-option value="fr">France</admiralty-autocomplete-option>
       <admiralty-autocomplete-option value="de">Germany</admiralty-autocomplete-option>
-
       <admiralty-autocomplete-option value="ie">Ireland</admiralty-autocomplete-option>
       <admiralty-autocomplete-option value="gb">United Kingdom of Great Britain and Northern Ireland</admiralty-autocomplete-option>
       <admiralty-autocomplete-option value="us">United States of America</admiralty-autocomplete-option>
@@ -93,14 +91,31 @@ export const CountriesPreSelected: Story = {
       ?invalid="${args.invalid}"
       invalid-message="${args.invalidMessage}"
       ?disabled="${args.disabled}"
-      value="${args.value}"
-    >
+      value="${args.value}">
       <admiralty-autocomplete-option value="fr">France</admiralty-autocomplete-option>
       <admiralty-autocomplete-option value="de">Germany</admiralty-autocomplete-option>
-
       <admiralty-autocomplete-option value="ie">Ireland</admiralty-autocomplete-option>
       <admiralty-autocomplete-option value="gb">United Kingdom of Great Britain and Northern Ireland</admiralty-autocomplete-option>
       <admiralty-autocomplete-option value="us">United States of America</admiralty-autocomplete-option>
     </admiralty-autocomplete>`,
   args: { label: 'Country', hint: 'Select a country', value: 'gb' },
+};
+
+export const LoadingAutocomplete: Story = {
+  render: args =>
+    html` <admiralty-autocomplete
+      label="${args.label}"
+      hint="${args.hint}"
+      ?invalid="${args.invalid}"
+      invalid-message="${args.invalidMessage}"
+      loading="${args.loading}"
+      ?disabled="${args.disabled}"
+      value="${args.value}">
+      <admiralty-autocomplete-option value="fr">France</admiralty-autocomplete-option>
+      <admiralty-autocomplete-option value="de">Germany</admiralty-autocomplete-option>
+      <admiralty-autocomplete-option value="ie">Ireland</admiralty-autocomplete-option>
+      <admiralty-autocomplete-option value="gb">United Kingdom of Great Britain and Northern Ireland</admiralty-autocomplete-option>
+      <admiralty-autocomplete-option value="us">United States of America</admiralty-autocomplete-option>
+    </admiralty-autocomplete>`,
+  args: { label: 'Country', hint: 'Select a country', value: 'gb', loading: true },
 };
