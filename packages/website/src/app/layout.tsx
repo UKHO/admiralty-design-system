@@ -13,6 +13,7 @@ import {
 import { useRouter } from "next/navigation";
 import { TextSideBarItemVariant } from "@ukho/admiralty-core";
 import styles from "./styles.module.css";
+import { ThemeInitializer } from "./theme-initializer";
 
 const componentChildren: any[] = [
   { path: "/components/autocomplete", variant: "text", name: "Autocomplete" },
@@ -45,6 +46,7 @@ const componentChildren: any[] = [
   { path: "/components/skip-link", variant: "text", name: "Skip Link" },
   { path: "/components/tab-group", variant: "text", name: "Tab Group" },
   { path: "/components/table", variant: "text", name: "Table" },
+  { path: "/components/theme-toggle", variant: "text", name: "Theme Toggle" },
   { path: "/components/textarea", variant: "text", name: "Textarea" },
   { path: "/components/text-side-bar", variant: "text", name: "Text Side Bar" },
 ];
@@ -149,6 +151,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body>
+        <ThemeInitializer />
         <div className={styles.pageWrapper}>
           <AdmiraltySkipLink href="#main-content"></AdmiraltySkipLink>
           <AdmiraltyHeader
