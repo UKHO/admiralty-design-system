@@ -1,12 +1,20 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { QueryList, ViewChildren } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AdmiraltySideNavItem } from '@ukho/admiralty-angular';
-import { AdmiraltyAutocompleteCustomEvent, AutoCompleteChangeEventDetail } from '@ukho/admiralty-core';
+import { AdmiraltyAutocompleteCustomEvent, AdmiraltyProgressTrackerCustomEvent, AutoCompleteChangeEventDetail, StepNavigationDetail } from '@ukho/admiralty-core';
 
 export interface CommissioningOrganisation {
   id?: number;
   organisationName?: string;
+}
+
+interface ProgressTrackerStep {
+  id: string;
+  title: string;
+  status: 'complete' | 'current' | 'upcoming' | 'error';
+  summary?: string;
+  bulletSummaries?: string[];
 }
 
 @Component({
@@ -15,7 +23,7 @@ export interface CommissioningOrganisation {
   styleUrls: ['./app.component.css'],
   standalone: false
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   @ViewChildren(AdmiraltySideNavItem) sideNavItems!: QueryList<AdmiraltySideNavItem>;
 
   @ViewChild('errorSummary') errorSummary!: ElementRef;
@@ -172,5 +180,167 @@ export class AppComponent {
 
   selectDirection() {
     this.group.controls.direction.setValue('South');
+  }
+
+  // Form-integrated progress tracker
+  progressTrackerSteps: ProgressTrackerStep[] = [
+    {
+      id: 'location',
+      title: 'Choose location',
+      status: 'current'
+    },
+    {
+      id: 'object',
+      title: 'Choose object',
+      status: 'upcoming'
+    },
+    {
+      id: 'information-type',
+      title: 'Choose information type',
+      status: 'upcoming'
+    },
+    {
+      id: 'date',
+      title: 'Choose date',
+      status: 'upcoming'
+    },
+    {
+      id: 'download',
+      title: 'Download data',
+      status: 'upcoming',
+    },
+  ];
+
+  // Form groups for each step
+  locationForm = new FormGroup({
+    latitude: new FormControl(''),
+    longitude: new FormControl(''),
+  });
+
+  objectForm = new FormGroup({
+    celestialObject: new FormControl(''),
+  });
+
+  informationForm = new FormGroup({
+    informationType: new FormControl(''),
+    depression: new FormControl(''),
+  });
+
+  dateForm = new FormGroup({
+    selectedDate: new FormControl(''),
+  });
+
+  currentStepId = 'location';
+
+  ngOnInit() {
+    this.updateProgressTrackerSteps(this.currentStepId);
+  }
+
+  private getStepBullets(stepId: string): string[] | undefined {
+    if (stepId === 'location') {
+      const latitude = this.locationForm.controls.latitude.value;
+      const longitude = this.locationForm.controls.longitude.value;
+      const bullets: string[] = [];
+
+      if (latitude) {
+        bullets.push(latitude);
+      }
+      if (longitude) {
+        bullets.push(longitude);
+      }
+
+      return bullets.length > 0 ? bullets : [];
+    }
+
+    if (stepId === 'object') {
+      const selected = this.objectForm.controls.celestialObject.value;
+      if (selected) {
+        return [selected];
+      }
+      return [];
+    }
+
+    if (stepId === 'information-type') {
+      const informationType = this.informationForm.controls.informationType.value;
+      const depression = this.informationForm.controls.depression.value;
+      const bullets: string[] = [];
+
+      if (informationType) {
+        bullets.push(informationType);
+      }
+      if (depression !== null && depression !== undefined && depression !== '') {
+        bullets.push(depression);
+      }
+
+      return bullets;
+    }
+
+    if (stepId === 'date') {
+      const selectedDate = this.dateForm.controls.selectedDate.value;
+      if (selectedDate) {
+        return [selectedDate];
+      }
+      return [];
+    }
+
+    return undefined;
+  }
+
+
+
+  // Handle step navigation
+  onProgressStepClicked(event: AdmiraltyProgressTrackerCustomEvent<StepNavigationDetail>) {
+    const { stepId, stepIndex } = event.detail;
+    console.log('Step clicked:', stepId, stepIndex);
+
+    // Update current step
+    this.currentStepId = stepId;
+    this.updateProgressTrackerSteps(stepId);
+  }
+
+  // Update progress tracker steps based on current step
+  updateProgressTrackerSteps(currentStepId: string) {
+    const stepOrder = ['location', 'object', 'information-type', 'date', 'download'];
+    const currentIndex = stepOrder.indexOf(currentStepId);
+
+    this.progressTrackerSteps = this.progressTrackerSteps.map((step, index) => {
+      if (index < currentIndex) {
+        return {
+          ...step,
+          status: 'complete' as const,
+          bulletSummaries: this.getStepBullets(step.id),
+        };
+      }
+      if (step.id === currentStepId) {
+        return {
+          ...step,
+          status: 'current' as const,
+          bulletSummaries: this.getStepBullets(step.id),
+        };
+      }
+      return {
+        ...step,
+        status: 'upcoming' as const,
+        bulletSummaries: this.getStepBullets(step.id),
+      };
+    });
+  }
+
+  // Complete current step and move to next
+  completeCurrentStep() {
+    const stepOrder = ['location', 'object', 'information-type', 'date', 'download'];
+    const currentIndex = stepOrder.indexOf(this.currentStepId);
+
+    // Update bullets for the current step before moving to next
+    this.progressTrackerSteps = this.progressTrackerSteps.map(step => ({
+      ...step,
+      bulletSummaries: this.getStepBullets(step.id),
+    }));
+
+    const nextStepId = stepOrder[currentIndex + 1];
+    if (nextStepId) {
+      this.currentStepId = nextStepId;
+      this.updateProgressTrackerSteps(nextStepId);
+    }
   }
 }
