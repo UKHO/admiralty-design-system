@@ -9,7 +9,7 @@
 
 import type { EventName, StencilReactComponent } from '@stencil/react-output-target/runtime';
 import { createComponent } from '@stencil/react-output-target/runtime';
-import { type AdmiraltyAutocompleteCustomEvent, type AdmiraltyCheckboxCustomEvent, type AdmiraltyFileInputCustomEvent, type AdmiraltyInputCustomEvent, type AdmiraltyProgressTrackerCustomEvent, type AdmiraltyRadioGroupCustomEvent, type AdmiraltySelectCustomEvent, type AdmiraltyTextareaCustomEvent, type AutoCompleteChangeEventDetail, type CheckboxChangeEventDetail, type FileInputChangeEventDetail, type InputChangeEventDetail, type RadioGroupChangeEventDetail, type SelectChangeEventDetail, type StepNavigationDetail, type TextAreaChangeEventDetail } from "@ukho/admiralty-core";
+import { type AdmiraltyAutocompleteCustomEvent, type AdmiraltyCheckboxCustomEvent, type AdmiraltyFileInputCustomEvent, type AdmiraltyInputCustomEvent, type AdmiraltyRadioGroupCustomEvent, type AdmiraltySelectCustomEvent, type AdmiraltyTextareaCustomEvent, type AutoCompleteChangeEventDetail, type CheckboxChangeEventDetail, type FileInputChangeEventDetail, type InputChangeEventDetail, type RadioGroupChangeEventDetail, type SelectChangeEventDetail, type TextAreaChangeEventDetail } from "@ukho/admiralty-core";
 import { AdmiraltyAutocompleteOption as AdmiraltyAutocompleteOptionElement, defineCustomElement as defineAdmiraltyAutocompleteOption } from "@ukho/admiralty-core/dist/components/admiralty-autocomplete-option.js";
 import { AdmiraltyAutocomplete as AdmiraltyAutocompleteElement, defineCustomElement as defineAdmiraltyAutocomplete } from "@ukho/admiralty-core/dist/components/admiralty-autocomplete.js";
 import { AdmiraltyBreadcrumb as AdmiraltyBreadcrumbElement, defineCustomElement as defineAdmiraltyBreadcrumb } from "@ukho/admiralty-core/dist/components/admiralty-breadcrumb.js";
@@ -44,8 +44,6 @@ import { AdmiraltyPaginator as AdmiraltyPaginatorElement, defineCustomElement as
 import { AdmiraltyPhaseBanner as AdmiraltyPhaseBannerElement, defineCustomElement as defineAdmiraltyPhaseBanner } from "@ukho/admiralty-core/dist/components/admiralty-phase-banner.js";
 import { AdmiraltyPill as AdmiraltyPillElement, defineCustomElement as defineAdmiraltyPill } from "@ukho/admiralty-core/dist/components/admiralty-pill.js";
 import { AdmiraltyProgressBar as AdmiraltyProgressBarElement, defineCustomElement as defineAdmiraltyProgressBar } from "@ukho/admiralty-core/dist/components/admiralty-progress-bar.js";
-import { AdmiraltyProgressTrackerStep as AdmiraltyProgressTrackerStepElement, defineCustomElement as defineAdmiraltyProgressTrackerStep } from "@ukho/admiralty-core/dist/components/admiralty-progress-tracker-step.js";
-import { AdmiraltyProgressTracker as AdmiraltyProgressTrackerElement, defineCustomElement as defineAdmiraltyProgressTracker } from "@ukho/admiralty-core/dist/components/admiralty-progress-tracker.js";
 import { AdmiraltyRadioGroup as AdmiraltyRadioGroupElement, defineCustomElement as defineAdmiraltyRadioGroup } from "@ukho/admiralty-core/dist/components/admiralty-radio-group.js";
 import { AdmiraltyRadio as AdmiraltyRadioElement, defineCustomElement as defineAdmiraltyRadio } from "@ukho/admiralty-core/dist/components/admiralty-radio.js";
 import { AdmiraltyReadMore as AdmiraltyReadMoreElement, defineCustomElement as defineAdmiraltyReadMore } from "@ukho/admiralty-core/dist/components/admiralty-read-more.js";
@@ -65,7 +63,6 @@ import { AdmiraltyTable as AdmiraltyTableElement, defineCustomElement as defineA
 import { AdmiraltyTextSideBarItem as AdmiraltyTextSideBarItemElement, defineCustomElement as defineAdmiraltyTextSideBarItem } from "@ukho/admiralty-core/dist/components/admiralty-text-side-bar-item.js";
 import { AdmiraltyTextSideBar as AdmiraltyTextSideBarElement, defineCustomElement as defineAdmiraltyTextSideBar } from "@ukho/admiralty-core/dist/components/admiralty-text-side-bar.js";
 import { AdmiraltyTextarea as AdmiraltyTextareaElement, defineCustomElement as defineAdmiraltyTextarea } from "@ukho/admiralty-core/dist/components/admiralty-textarea.js";
-import { AdmiraltyThemeToggle as AdmiraltyThemeToggleElement, defineCustomElement as defineAdmiraltyThemeToggle } from "@ukho/admiralty-core/dist/components/admiralty-theme-toggle.js";
 import React from 'react';
 
 type AdmiraltyAutocompleteEvents = { onAdmiraltyChange: EventName<AdmiraltyAutocompleteCustomEvent<AutoCompleteChangeEventDetail>> };
@@ -444,26 +441,6 @@ export const AdmiraltyProgressBar: StencilReactComponent<AdmiraltyProgressBarEle
     defineCustomElement: defineAdmiraltyProgressBar
 });
 
-type AdmiraltyProgressTrackerEvents = { onStepClicked: EventName<AdmiraltyProgressTrackerCustomEvent<StepNavigationDetail>> };
-
-export const AdmiraltyProgressTracker: StencilReactComponent<AdmiraltyProgressTrackerElement, AdmiraltyProgressTrackerEvents> = /*@__PURE__*/ createComponent<AdmiraltyProgressTrackerElement, AdmiraltyProgressTrackerEvents>({
-    tagName: 'admiralty-progress-tracker',
-    elementClass: AdmiraltyProgressTrackerElement,
-    react: React,
-    events: { onStepClicked: 'stepClicked' } as AdmiraltyProgressTrackerEvents,
-    defineCustomElement: defineAdmiraltyProgressTracker
-});
-
-type AdmiraltyProgressTrackerStepEvents = NonNullable<unknown>;
-
-export const AdmiraltyProgressTrackerStep: StencilReactComponent<AdmiraltyProgressTrackerStepElement, AdmiraltyProgressTrackerStepEvents> = /*@__PURE__*/ createComponent<AdmiraltyProgressTrackerStepElement, AdmiraltyProgressTrackerStepEvents>({
-    tagName: 'admiralty-progress-tracker-step',
-    elementClass: AdmiraltyProgressTrackerStepElement,
-    react: React,
-    events: {} as AdmiraltyProgressTrackerStepEvents,
-    defineCustomElement: defineAdmiraltyProgressTrackerStep
-});
-
 type AdmiraltyRadioEvents = {
     onAdmiraltyFocus: EventName<CustomEvent<void>>,
     onAdmiraltyBlur: EventName<CustomEvent<void>>,
@@ -678,14 +655,4 @@ export const AdmiraltyTextarea: StencilReactComponent<AdmiraltyTextareaElement, 
         onAdmiraltyInput: 'admiraltyInput'
     } as AdmiraltyTextareaEvents,
     defineCustomElement: defineAdmiraltyTextarea
-});
-
-type AdmiraltyThemeToggleEvents = { onAdmiraltyThemeChange: EventName<AdmiraltyThemeToggleCustomEvent<ThemeToggleChangeEventDetail>> };
-
-export const AdmiraltyThemeToggle: StencilReactComponent<AdmiraltyThemeToggleElement, AdmiraltyThemeToggleEvents> = /*@__PURE__*/ createComponent<AdmiraltyThemeToggleElement, AdmiraltyThemeToggleEvents>({
-    tagName: 'admiralty-theme-toggle',
-    elementClass: AdmiraltyThemeToggleElement,
-    react: React,
-    events: { onAdmiraltyThemeChange: 'admiraltyThemeChange' } as AdmiraltyThemeToggleEvents,
-    defineCustomElement: defineAdmiraltyThemeToggle
 });

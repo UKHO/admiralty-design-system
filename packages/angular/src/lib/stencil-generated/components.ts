@@ -882,58 +882,6 @@ export declare interface AdmiraltyProgressBar extends Components.AdmiraltyProgre
 
 
 @ProxyCmp({
-  inputs: ['allowBackNavigation', 'allowForwardNavigation']
-})
-@Component({
-  selector: 'admiralty-progress-tracker',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>',
-  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['allowBackNavigation', 'allowForwardNavigation'],
-})
-export class AdmiraltyProgressTracker {
-  protected el: HTMLElement;
-  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
-    c.detach();
-    this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['stepClicked']);
-  }
-}
-
-
-import type { StepNavigationDetail as IAdmiraltyProgressTrackerStepNavigationDetail } from '@ukho/admiralty-core';
-
-export declare interface AdmiraltyProgressTracker extends Components.AdmiraltyProgressTracker {
-  /**
-   * Emitted when user clicks on a step
-   */
-  stepClicked: EventEmitter<CustomEvent<IAdmiraltyProgressTrackerStepNavigationDetail>>;
-}
-
-
-@ProxyCmp({
-  inputs: ['status', 'stepId', 'stepTitle', 'summary']
-})
-@Component({
-  selector: 'admiralty-progress-tracker-step',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>',
-  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['status', 'stepId', 'stepTitle', 'summary'],
-})
-export class AdmiraltyProgressTrackerStep {
-  protected el: HTMLElement;
-  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
-    c.detach();
-    this.el = r.nativeElement;
-  }
-}
-
-
-export declare interface AdmiraltyProgressTrackerStep extends Components.AdmiraltyProgressTrackerStep {}
-
-
-@ProxyCmp({
   inputs: ['checked', 'disabled', 'invalid', 'name', 'value']
 })
 @Component({
@@ -1415,36 +1363,6 @@ export declare interface AdmiraltyTextarea extends Components.AdmiraltyTextarea 
    * Event is fired when the form control changes @event admiraltyChange
    */
   admiraltyInput: EventEmitter<CustomEvent<IAdmiraltyTextareaTextAreaChangeEventDetail>>;
-}
-
-
-@ProxyCmp({
-  inputs: ['ariaLabel', 'disabled', 'theme']
-})
-@Component({
-  selector: 'admiralty-theme-toggle',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>',
-  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['ariaLabel', 'disabled', 'theme'],
-})
-export class AdmiraltyThemeToggle {
-  protected el: HTMLElement;
-  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
-    c.detach();
-    this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['admiraltyThemeChange']);
-  }
-}
-
-
-import type { ThemeToggleChangeEventDetail as IAdmiraltyThemeToggleThemeToggleChangeEventDetail } from '@ukho/admiralty-core';
-
-export declare interface AdmiraltyThemeToggle extends Components.AdmiraltyThemeToggle {
-  /**
-   * Event is fired when the theme preference changes @event admiraltyThemeChange
-   */
-  admiraltyThemeChange: EventEmitter<CustomEvent<IAdmiraltyThemeToggleThemeToggleChangeEventDetail>>;
 }
 
 
