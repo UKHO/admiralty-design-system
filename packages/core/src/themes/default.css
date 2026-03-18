@@ -112,6 +112,7 @@
   --admiralty-font-size-7: 3.5rem;
 
   /** Font Weight **/
+  --admiralty-font-weight-light: 200;
   --admiralty-font-weight-normal: 300;
   --admiralty-font-weight-medium: 400;
   --admiralty-font-weight-bold: 700;
@@ -126,6 +127,7 @@
   --admiralty-spacing-6: 24px; /** 1.5rem **/
   --admiralty-spacing-7: 28px; /** 1.8rem **/
   --admiralty-spacing-8: 32px; /** 2rem **/
+  --admiralty-spacing-9: 36px; /** 2.3rem **/
   --admiralty-spacing-auto: auto;
   --admiralty-spacing-unset: unset;
   --admiralty-spacing-inherit: inherit;
