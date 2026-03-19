@@ -1,3 +1,30 @@
+# v5.5.0 (Thu Mar 19 2026)
+
+#### 🚀 Enhancement
+
+- Release 5.4.0 - Update package numbers [#467](https://github.com/UKHO/admiralty-design-system/pull/467) ([@lstevens98](https://github.com/lstevens98) [@mohamme15315](https://github.com/mohamme15315))
+- Release 5.4.0 [#464](https://github.com/UKHO/admiralty-design-system/pull/464) (mohamme15315@mastek.com [@lstevens98](https://github.com/lstevens98) [@mohamme15315](https://github.com/mohamme15315))
+- Progress tracker component [#454](https://github.com/UKHO/admiralty-design-system/pull/454) (mohamme15315@mastek.com [@mohamme15315](https://github.com/mohamme15315))
+- feat(progress-tracker): introduce admiralty-progress-tracker-step component for step management (mohamme15315@mastek.com)
+- feat(progress-tracker): add new component for step navigation with validation (mohamme15315@mastek.com)
+
+#### 🐛 Bug Fix
+
+- Update package numbers ([@lstevens98](https://github.com/lstevens98))
+- 274538 Dark Mode Toggle Switch [#459](https://github.com/UKHO/admiralty-design-system/pull/459) (mohamme15315@mastek.com [@lstevens98](https://github.com/lstevens98) [@mohamme15315](https://github.com/mohamme15315))
+- Merge branch 'next' into 274538-dark-mode-toggle-switch ([@lstevens98](https://github.com/lstevens98))
+- refactor(progress-tracker): remove error message handling and validation logic (mohamme15315@mastek.com)
+- Implement dark mode toggle with associated CSS variables and documentation updates (mohamme15315@mastek.com)
+- Merge branch 'main' into progress-tracker-component (mohamme15315@mastek.com)
+
+#### Authors: 3
+
+- [@mohamme15315](https://github.com/mohamme15315)
+- Lewis Stevens ([@lstevens98](https://github.com/lstevens98))
+- Mohammed Khan (mohamme15315@mastek.com)
+
+---
+
 # v5.3.0 (Tue Feb 03 2026)
 
 #### 🚀 Enhancement

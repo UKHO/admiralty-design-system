@@ -1,3 +1,30 @@
+# v5.4.0 (Thu Mar 19 2026)
+
+#### 🚀 Enhancement
+
+- `@ukho/admiralty-angular`, `@ukho/admiralty-core`, `@ukho-internal/admiralty-docs`, `@ukho/admiralty-react`, `test-app`, `website`
+  - Release 5.4.0 - Update package numbers [#467](https://github.com/UKHO/admiralty-design-system/pull/467) ([@lstevens98](https://github.com/lstevens98) [@mohamme15315](https://github.com/mohamme15315))
+  - Release 5.4.0 [#464](https://github.com/UKHO/admiralty-design-system/pull/464) (mohamme15315@mastek.com [@lstevens98](https://github.com/lstevens98) [@mohamme15315](https://github.com/mohamme15315))
+  - Progress tracker component [#454](https://github.com/UKHO/admiralty-design-system/pull/454) (mohamme15315@mastek.com [@mohamme15315](https://github.com/mohamme15315))
+
+#### 🐛 Bug Fix
+
+- Add CodeQL workflow [#450](https://github.com/UKHO/admiralty-design-system/pull/450) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+- Adding required status checks to auto plugin [#449](https://github.com/UKHO/admiralty-design-system/pull/449) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+- `@ukho/admiralty-core`
+  - 274538 Dark Mode Toggle Switch Default.css File changes [#469](https://github.com/UKHO/admiralty-design-system/pull/469) (mohamme15315@mastek.com [@mohamme15315](https://github.com/mohamme15315))
+- `@ukho/admiralty-angular`, `@ukho/admiralty-core`, `@ukho-internal/admiralty-docs`, `@ukho/admiralty-react`, `test-app`, `website`
+  - 274538 Dark Mode Toggle Switch [#459](https://github.com/UKHO/admiralty-design-system/pull/459) (mohamme15315@mastek.com [@lstevens98](https://github.com/lstevens98) [@mohamme15315](https://github.com/mohamme15315))
+
+#### Authors: 4
+
+- [@mohamme15315](https://github.com/mohamme15315)
+- Lewis Stevens ([@lstevens98](https://github.com/lstevens98))
+- Mohammed Khan (mohamme15315@mastek.com)
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
 # v5.3.0 (Tue Feb 03 2026)
 
 #### 🚀 Enhancement

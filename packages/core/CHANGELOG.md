@@ -1,3 +1,67 @@
+# v5.5.0 (Thu Mar 19 2026)
+
+#### 🚀 Enhancement
+
+- Release 5.4.0 - Update package numbers [#467](https://github.com/UKHO/admiralty-design-system/pull/467) ([@lstevens98](https://github.com/lstevens98) [@mohamme15315](https://github.com/mohamme15315))
+- Release 5.4.0 [#464](https://github.com/UKHO/admiralty-design-system/pull/464) (mohamme15315@mastek.com [@lstevens98](https://github.com/lstevens98) [@mohamme15315](https://github.com/mohamme15315))
+- Progress tracker component [#454](https://github.com/UKHO/admiralty-design-system/pull/454) (mohamme15315@mastek.com [@mohamme15315](https://github.com/mohamme15315))
+- feat(progress-tracker): enhance CSS custom properties and update documentation for clarity (mohamme15315@mastek.com)
+- feat(progress-tracker): enhance introduction styling and update text for clarity (mohamme15315@mastek.com)
+- feat(progress-tracker): add forward navigation and validation features to progress tracker component (mohamme15315@mastek.com)
+- feat(progress-tracker): add new usage examples and documentation for progress tracker component (mohamme15315@mastek.com)
+- feat(progress-tracker): refactor button implementation and improve accessibility for clickable steps (mohamme15315@mastek.com)
+- feat(progress-tracker): update story definitions to use StoryObj type and enhance event handling (mohamme15315@mastek.com)
+- feat(progress-tracker): enhance step navigation logic to allow previous steps to be clickable when validation errors exist (mohamme15315@mastek.com)
+- feat(progress-tracker): remove unused properties from step component and improve step navigation logic (mohamme15315@mastek.com)
+- feat(progress-tracker): enhance step navigation and error handling with improved focus management and validation events (mohamme15315@mastek.com)
+- feat(progress-tracker): remove hover text-decoration from button title for cleaner interaction (mohamme15315@mastek.com)
+- feat(progress-tracker): enhance component functionality with child step integration and mutation observer setup (mohamme15315@mastek.com)
+- feat(progress-tracker): remove deprecated legacy JavaScript approach from documentation (mohamme15315@mastek.com)
+- feat(progress-tracker): update marker and check icon styles for improved visibility (mohamme15315@mastek.com)
+- feat(progress-tracker): implement progress tracker component with step functionality (mohamme15315@mastek.com)
+- feat(progress-tracker): introduce admiralty-progress-tracker-step component for step management (mohamme15315@mastek.com)
+- feat(progress-tracker): enhance step summaries with bullet points and update styles (mohamme15315@mastek.com)
+- feat(progress-tracker): add new component for step navigation with validation (mohamme15315@mastek.com)
+
+#### 🐛 Bug Fix
+
+- 274538 Dark Mode Toggle Switch Default.css File changes [#469](https://github.com/UKHO/admiralty-design-system/pull/469) (mohamme15315@mastek.com [@mohamme15315](https://github.com/mohamme15315))
+- Add CSS variables for light font weight and additional spacing (mohamme15315@mastek.com)
+- Refactor CSS for dark mode and light mode theme toggles (mohamme15315@mastek.com)
+- Update package numbers ([@lstevens98](https://github.com/lstevens98))
+- 274538 Dark Mode Toggle Switch [#459](https://github.com/UKHO/admiralty-design-system/pull/459) (mohamme15315@mastek.com [@lstevens98](https://github.com/lstevens98) [@mohamme15315](https://github.com/mohamme15315))
+- Merge branch 'next' into 274538-dark-mode-toggle-switch ([@lstevens98](https://github.com/lstevens98))
+- Enhance theme toggle component with improved styling, accessibility, and documentation updates (mohamme15315@mastek.com)
+- Refactor theme toggle implementation to use body element for dark and light mode classes (mohamme15315@mastek.com)
+- Update theme toggle styles and icon names for dark mode compatibility (mohamme15315@mastek.com)
+- Add tests for disabled toggle state and auto theme switching functionality (mohamme15315@mastek.com)
+- Fix toggle background slider dimensions for consistency (mohamme15315@mastek.com)
+- fixed failing test cases (mohamme15315@mastek.com)
+- refactor(progress-tracker): remove error message handling and validation logic (mohamme15315@mastek.com)
+- fix(progress-tracker): add margin-bottom to progress tracker items for improved spacing (mohamme15315@mastek.com)
+- Add theme toggle component and documentation updates (mohamme15315@mastek.com)
+- Update theme toggle background color to match design system (mohamme15315@mastek.com)
+- Add theme toggle support for header, footer, and sidebar with manual dark/light mode styles (mohamme15315@mastek.com)
+- Enhance theme toggle functionality with localStorage support and system preference listener (mohamme15315@mastek.com)
+- Refactor theme loading logic to only apply saved preference if default value is set; ensure theme is applied after component load (mohamme15315@mastek.com)
+- Implement dark mode toggle with associated CSS variables and documentation updates (mohamme15315@mastek.com)
+- Add theme toggle component with accessibility features and styling (mohamme15315@mastek.com)
+- refactor(progress-tracker): remove unnecessary slot documentation comment (mohamme15315@mastek.com)
+- fix(progress-tracker): adjust error message font size and weight for improved readability (mohamme15315@mastek.com)
+- fix(progress-tracker): enhance focus styles for better accessibility on buttons (mohamme15315@mastek.com)
+- fix(progress-tracker): clean up whitespace and improve accessibility by adding aria-label to disabled step elements (mohamme15315@mastek.com)
+- fix(progress-tracker): simplify SCSS by consolidating list styling rules for nested lists (mohamme15315@mastek.com)
+- fix(progress-tracker): remove unnecessary aria attributes from disabled step elements (mohamme15315@mastek.com)
+- Merge branch 'main' into progress-tracker-component (mohamme15315@mastek.com)
+
+#### Authors: 3
+
+- [@mohamme15315](https://github.com/mohamme15315)
+- Lewis Stevens ([@lstevens98](https://github.com/lstevens98))
+- Mohammed Khan (mohamme15315@mastek.com)
+
+---
+
 # v5.3.0 (Tue Feb 03 2026)
 
 #### 🚀 Enhancement
