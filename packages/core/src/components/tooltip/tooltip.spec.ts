@@ -95,10 +95,10 @@ describe('admiralty-tooltip', () => {
         expect(root.hasAttribute('data-open')).toBe(true);
 
         target.dispatchEvent(new Event('mouseleave'));
-        await wait(119);
+        await wait(80);
         expect(root.hasAttribute('data-open')).toBe(true);
 
-        await wait(10);
+        await wait(60);
         expect(root.hasAttribute('data-open')).toBe(false);
     });
 

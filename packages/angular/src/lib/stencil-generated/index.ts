@@ -36,6 +36,8 @@ export const DIRECTIVES = [
   d.AdmiraltyPhaseBanner,
   d.AdmiraltyPill,
   d.AdmiraltyProgressBar,
+  d.AdmiraltyProgressTracker,
+  d.AdmiraltyProgressTrackerStep,
   d.AdmiraltyRadio,
   d.AdmiraltyRadioGroup,
   d.AdmiraltyReadMore,
@@ -55,5 +57,6 @@ export const DIRECTIVES = [
   d.AdmiraltyTextSideBar,
   d.AdmiraltyTextSideBarItem,
   d.AdmiraltyTextarea,
+  d.AdmiraltyThemeToggle,
   d.AdmiraltyTooltip
 ];

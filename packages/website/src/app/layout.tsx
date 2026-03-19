@@ -13,6 +13,7 @@ import {
 import { useRouter } from "next/navigation";
 import { TextSideBarItemVariant } from "@ukho/admiralty-core";
 import styles from "./styles.module.css";
+import { ThemeInitializer } from "./theme-initializer";
 
 const componentChildren: any[] = [
   { path: "/components/autocomplete", variant: "text", name: "Autocomplete" },
@@ -36,6 +37,7 @@ const componentChildren: any[] = [
   { path: "/components/phase-banner", variant: "text", name: "Phase Banner" },
   { path: "/components/pill", variant: "text", name: "Pill" },
   { path: "/components/progress-bar", variant: "text", name: "Progress Bar" },
+  { path: "/components/progress-tracker", variant: "text", name: "Progress Tracker" },
   { path: "/components/radio", variant: "text", name: "Radio" },
   { path: "/components/radio-group", variant: "text", name: "Radio Group" },
   { path: "/components/read-more", variant: "text", name: "Readmore" },
@@ -44,6 +46,7 @@ const componentChildren: any[] = [
   { path: "/components/skip-link", variant: "text", name: "Skip Link" },
   { path: "/components/tab-group", variant: "text", name: "Tab Group" },
   { path: "/components/table", variant: "text", name: "Table" },
+  { path: "/components/theme-toggle", variant: "text", name: "Theme Toggle" },
   { path: "/components/textarea", variant: "text", name: "Textarea" },
   { path: "/components/text-side-bar", variant: "text", name: "Text Side Bar" },
   { path: "/components/tooltip", variant: "text", name: "Tooltip" },
@@ -149,6 +152,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body>
+        <ThemeInitializer />
         <div className={styles.pageWrapper}>
           <AdmiraltySkipLink href="#main-content"></AdmiraltySkipLink>
           <AdmiraltyHeader
