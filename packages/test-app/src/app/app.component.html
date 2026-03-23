@@ -436,17 +436,22 @@
       allow-forward-navigation="true"
       (stepClicked)="onProgressStepClicked($event)"
     >
-      <admiralty-progress-tracker-step
-        *ngFor="let step of progressTrackerSteps"
-        [attr.step-id]="step.id"
-        [attr.step-title]="step.title"
-        [attr.status]="step.status"
-        [attr.summary]="step.summary"
-      >
-        <ul slot="bullet-summaries" *ngIf="step.bulletSummaries && step.bulletSummaries.length > 0">
-          <li *ngFor="let bullet of step.bulletSummaries">{{ bullet }}</li>
-        </ul>
-      </admiralty-progress-tracker-step>
+      @for (step of progressTrackerSteps; track step) {
+        <admiralty-progress-tracker-step
+          [stepId]="step.id"
+          [stepTitle]="step.title"
+          [status]="step.status"
+          [summary]="step.summary"
+        >
+          @if (step.bulletSummaries && step.bulletSummaries.length > 0) {
+            <ul slot="bullet-summaries">
+              @for (bullet of step.bulletSummaries; track bullet) {
+                <li>{{ bullet }}</li>
+              }
+            </ul>
+          }
+        </admiralty-progress-tracker-step>
+      }
     </admiralty-progress-tracker>
   </div>
 </div>

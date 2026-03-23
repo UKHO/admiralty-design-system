@@ -2,7 +2,12 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { QueryList, ViewChildren } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AdmiraltySideNavItem } from '@ukho/admiralty-angular';
-import { AdmiraltyAutocompleteCustomEvent, AdmiraltyProgressTrackerCustomEvent, AutoCompleteChangeEventDetail, StepNavigationDetail } from '@ukho/admiralty-core';
+import {
+  AdmiraltyAutocompleteCustomEvent,
+  AdmiraltyProgressTrackerCustomEvent,
+  AutoCompleteChangeEventDetail,
+  StepNavigationDetail,
+} from '@ukho/admiralty-core';
 
 export interface CommissioningOrganisation {
   id?: number;
@@ -187,22 +192,22 @@ export class AppComponent implements OnInit {
     {
       id: 'location',
       title: 'Choose location',
-      status: 'current'
+      status: 'current',
     },
     {
       id: 'object',
       title: 'Choose object',
-      status: 'upcoming'
+      status: 'upcoming',
     },
     {
       id: 'information-type',
       title: 'Choose information type',
-      status: 'upcoming'
+      status: 'upcoming',
     },
     {
       id: 'date',
       title: 'Choose date',
-      status: 'upcoming'
+      status: 'upcoming',
     },
     {
       id: 'download',
@@ -286,10 +291,8 @@ export class AppComponent implements OnInit {
     return undefined;
   }
 
-
-
   // Handle step navigation
-  onProgressStepClicked(event: AdmiraltyProgressTrackerCustomEvent<StepNavigationDetail>) {
+  onProgressStepClicked(event: CustomEvent<StepNavigationDetail>) {
     const { stepId, stepIndex } = event.detail;
     console.log('Step clicked:', stepId, stepIndex);
 
@@ -332,7 +335,7 @@ export class AppComponent implements OnInit {
     const currentIndex = stepOrder.indexOf(this.currentStepId);
 
     // Update bullets for the current step before moving to next
-    this.progressTrackerSteps = this.progressTrackerSteps.map(step => ({
+    this.progressTrackerSteps = this.progressTrackerSteps.map((step) => ({
       ...step,
       bulletSummaries: this.getStepBullets(step.id),
     }));
