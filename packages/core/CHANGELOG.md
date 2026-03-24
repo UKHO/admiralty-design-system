@@ -1,3 +1,16 @@
+# v5.5.1 (Tue Mar 24 2026)
+
+#### 🐛 Bug Fix
+
+- Updating all dependencies to latest minor versions [#460](https://github.com/UKHO/admiralty-design-system/pull/460) ([@ecstaticrainbow](https://github.com/ecstaticrainbow) [@lstevens98](https://github.com/lstevens98))
+
+#### Authors: 2
+
+- Lewis Stevens ([@lstevens98](https://github.com/lstevens98))
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
 # v5.5.0 (Mon Mar 23 2026)
 
 #### 🚀 Enhancement

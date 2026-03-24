@@ -35,7 +35,7 @@ describe('admiralty-label', () => {
     });
     expect(page.root).toEqualHtml(`
       <admiralty-label for="test">
-        <label htmlfor="test">
+        <label for="test">
             Stuff
         </label>
       </admiralty-label>
