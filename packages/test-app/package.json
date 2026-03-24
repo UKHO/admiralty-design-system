@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^21.2.3",
-    "@angular/cli": "21.2.2",
+    "@angular/cli": "^21.2.3",
     "@angular/compiler-cli": "^21.2.5",
     "@fortawesome/fontawesome-free": "~6.6.0",
     "@types/node": "^22.19.15",
