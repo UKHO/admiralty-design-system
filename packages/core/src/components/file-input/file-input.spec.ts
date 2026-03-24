@@ -14,7 +14,7 @@ describe('file-input', () => {
       <admiralty-file-input>
         <div class="admiralty-file-input">
           <input aria-describedby="" aria-label="Upload a file" class="admiralty-form-field" id="admiralty-file-input-${id}-input" type="file">
-          <label htmlfor="admiralty-file-input-${id}-input">
+          <label for="admiralty-file-input-${id}-input">
             <admiralty-icon class="upload-icon" name="upload"></admiralty-icon>
             <span>
               Click to choose a file or drag it
@@ -36,7 +36,7 @@ describe('file-input', () => {
       <admiralty-file-input multiple="true">
         <div class="admiralty-file-input">
           <input aria-describedby="" aria-label="Upload a file" class="admiralty-form-field" id="admiralty-file-input-${id}-input" multiple="" type="file">
-          <label htmlfor="admiralty-file-input-${id}-input">
+          <label for="admiralty-file-input-${id}-input">
             <admiralty-icon class="upload-icon" name="upload"></admiralty-icon>
             <span>
               Click to choose a file or drag it
@@ -58,7 +58,7 @@ describe('file-input', () => {
       <admiralty-file-input multiple="false">
         <div class="admiralty-file-input">
           <input aria-describedby="" aria-label="Upload a file" class="admiralty-form-field" id="admiralty-file-input-${id}-input" type="file">
-          <label htmlfor="admiralty-file-input-${id}-input">
+          <label for="admiralty-file-input-${id}-input">
             <admiralty-icon class="upload-icon" name="upload"></admiralty-icon>
             <span>
               Click to choose a file or drag it
@@ -80,7 +80,7 @@ describe('file-input', () => {
       <admiralty-file-input label="My other label">
         <div class="admiralty-file-input">
           <input aria-describedby="" aria-label="Upload a file" class="admiralty-form-field" id="admiralty-file-input-${id}-input" type="file">
-          <label htmlfor="admiralty-file-input-${id}-input">
+          <label for="admiralty-file-input-${id}-input">
             <admiralty-icon class="upload-icon" name="upload"></admiralty-icon>
             <span>
               My other label
@@ -102,7 +102,7 @@ describe('file-input', () => {
       <admiralty-file-input invalid="true">
         <div class="admiralty-file-input invalid">
           <input aria-describedby="admiralty-file-input-${id}-error" aria-label="Upload a file" class="admiralty-form-field" id="admiralty-file-input-${id}-input" type="file">
-          <label htmlfor="admiralty-file-input-${id}-input">
+          <label for="admiralty-file-input-${id}-input">
             <admiralty-icon class="upload-icon" name="upload"></admiralty-icon>
             <span>
               Click to choose a file or drag it
@@ -124,7 +124,7 @@ describe('file-input', () => {
       <admiralty-file-input invalid="true" invalid-message="This is invalid!">
         <div class="admiralty-file-input invalid">
           <input aria-describedby="admiralty-file-input-${id}-error" aria-label="Upload a file" class="admiralty-form-field" id="admiralty-file-input-${id}-input" type="file">
-          <label htmlfor="admiralty-file-input-${id}-input">
+          <label for="admiralty-file-input-${id}-input">
             <admiralty-icon class="upload-icon" name="upload"></admiralty-icon>
             <span>
               Click to choose a file or drag it
@@ -148,7 +148,7 @@ describe('file-input', () => {
       <admiralty-file-input id="${id}">
         <div class="admiralty-file-input">
           <input aria-describedby="" aria-label="Upload a file" class="admiralty-form-field" id="${id}-input" type="file">
-          <label htmlfor="${id}-input">
+          <label for="${id}-input">
             <admiralty-icon class="upload-icon" name="upload"></admiralty-icon>
             <span>
               Click to choose a file or drag it
