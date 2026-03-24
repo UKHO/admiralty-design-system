@@ -48,6 +48,7 @@ graph TD;
   admiralty-radio-group --> admiralty-hint
   admiralty-radio-group --> admiralty-input-invalid
   admiralty-input-invalid --> admiralty-icon
+  admiralty-icon --> admiralty-skeleton
   style admiralty-radio-group fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

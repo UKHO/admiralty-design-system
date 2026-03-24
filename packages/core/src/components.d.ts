@@ -84,6 +84,22 @@ export namespace Components {
          */
         "label": string;
         /**
+          * Whether the component is loading if so then show the skeleton
+         */
+        "loading": boolean;
+        /**
+          * Height of the loading bar
+         */
+        "loadingHeight"?: string;
+        /**
+          * Radius of the loading bar
+         */
+        "loadingRadius"?: string;
+        /**
+          * Width of the loading bar
+         */
+        "loadingWidth"?: string;
+        /**
           * Sets HTML attributes and their values on the generated `ul` menu element. Useful for adding `aria-labelledby` and setting to the value of the `id` attribute on your existing label, to provide context to an assistive technology user. e.g. ``` const menuAttributes = {   className: 'custom-className',   class: 'custom-class',   id: 'custom-id',   role: 'custom-role' } ```
          */
         "menuAttributes": any;
@@ -200,6 +216,22 @@ export namespace Components {
           * The label text must be provided and is displayed beside the checkbox, use the `labelHidden` property to control its visibility.
          */
         "labelText": string;
+        /**
+          * Whether the component is loading if so then show the skeleton
+         */
+        "loading": boolean;
+        /**
+          * Height of the loading bar
+         */
+        "loadingHeight"?: string;
+        /**
+          * Radius of the loading bar
+         */
+        "loadingRadius"?: string;
+        /**
+          * Width of the loading bar
+         */
+        "loadingWidth"?: string;
         /**
           * The name of the control, which is submitted with the form data.
          */
@@ -426,6 +458,22 @@ export namespace Components {
     }
     interface AdmiraltyIcon {
         /**
+          * Whether the component is loading if so then show the skeleton
+         */
+        "loading": boolean;
+        /**
+          * Height of the loading bar
+         */
+        "loadingHeight"?: string;
+        /**
+          * Radius of the loading bar
+         */
+        "loadingRadius"?: string;
+        /**
+          * Width of the loading bar
+         */
+        "loadingWidth"?: string;
+        /**
           * Name of the icon to be rendered.  A full list of available icons can be viewed at [https://fonts.google.com/icons](https://fonts.google.com/icons)
          */
         "name": string;
@@ -511,6 +559,22 @@ export namespace Components {
           * The label which will be used above the input to describe the input.
          */
         "label": string;
+        /**
+          * Whether the component is loading if so then show the skeleton
+         */
+        "loading": boolean;
+        /**
+          * Height of the loading bar
+         */
+        "loadingHeight"?: string;
+        /**
+          * Radius of the loading bar
+         */
+        "loadingRadius"?: string;
+        /**
+          * Width of the loading bar
+         */
+        "loadingWidth"?: string;
         /**
           * The name of the control, which is submitted with the form data.
          */
@@ -1826,6 +1890,22 @@ declare namespace LocalJSX {
          */
         "label"?: string;
         /**
+          * Whether the component is loading if so then show the skeleton
+         */
+        "loading"?: boolean;
+        /**
+          * Height of the loading bar
+         */
+        "loadingHeight"?: string;
+        /**
+          * Radius of the loading bar
+         */
+        "loadingRadius"?: string;
+        /**
+          * Width of the loading bar
+         */
+        "loadingWidth"?: string;
+        /**
           * Sets HTML attributes and their values on the generated `ul` menu element. Useful for adding `aria-labelledby` and setting to the value of the `id` attribute on your existing label, to provide context to an assistive technology user. e.g. ``` const menuAttributes = {   className: 'custom-className',   class: 'custom-class',   id: 'custom-id',   role: 'custom-role' } ```
          */
         "menuAttributes"?: any;
@@ -1946,6 +2026,22 @@ declare namespace LocalJSX {
           * The label text must be provided and is displayed beside the checkbox, use the `labelHidden` property to control its visibility.
          */
         "labelText"?: string;
+        /**
+          * Whether the component is loading if so then show the skeleton
+         */
+        "loading"?: boolean;
+        /**
+          * Height of the loading bar
+         */
+        "loadingHeight"?: string;
+        /**
+          * Radius of the loading bar
+         */
+        "loadingRadius"?: string;
+        /**
+          * Width of the loading bar
+         */
+        "loadingWidth"?: string;
         /**
           * The name of the control, which is submitted with the form data.
          */
@@ -2235,6 +2331,22 @@ declare namespace LocalJSX {
     }
     interface AdmiraltyIcon {
         /**
+          * Whether the component is loading if so then show the skeleton
+         */
+        "loading"?: boolean;
+        /**
+          * Height of the loading bar
+         */
+        "loadingHeight"?: string;
+        /**
+          * Radius of the loading bar
+         */
+        "loadingRadius"?: string;
+        /**
+          * Width of the loading bar
+         */
+        "loadingWidth"?: string;
+        /**
           * Name of the icon to be rendered.  A full list of available icons can be viewed at [https://fonts.google.com/icons](https://fonts.google.com/icons)
          */
         "name"?: string;
@@ -2328,6 +2440,22 @@ declare namespace LocalJSX {
           * The label which will be used above the input to describe the input.
          */
         "label"?: string;
+        /**
+          * Whether the component is loading if so then show the skeleton
+         */
+        "loading"?: boolean;
+        /**
+          * Height of the loading bar
+         */
+        "loadingHeight"?: string;
+        /**
+          * Radius of the loading bar
+         */
+        "loadingRadius"?: string;
+        /**
+          * Width of the loading bar
+         */
+        "loadingWidth"?: string;
         /**
           * The name of the control, which is submitted with the form data.
          */

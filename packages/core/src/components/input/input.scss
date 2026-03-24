@@ -41,3 +41,9 @@
     margin-top: $input-invalid-margin-top;
   }
 }
+
+.loading-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

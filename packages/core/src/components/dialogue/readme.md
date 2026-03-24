@@ -43,6 +43,7 @@
 ```mermaid
 graph TD;
   admiralty-dialogue --> admiralty-icon
+  admiralty-icon --> admiralty-skeleton
   admiralty-error-summary --> admiralty-dialogue
   style admiralty-dialogue fill:#f9f,stroke:#333,stroke-width:4px
 ```

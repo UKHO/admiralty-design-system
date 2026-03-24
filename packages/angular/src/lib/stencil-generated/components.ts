@@ -8,14 +8,14 @@ import { Components } from '@ukho/admiralty-core';
 
 
 @ProxyCmp({
-  inputs: ['assistiveHint', 'autoselect', 'confirmOnBlur', 'cssNamespace', 'disabled', 'displayMenu', 'filterFunction', 'hint', 'inputClasses', 'invalid', 'invalidMessage', 'label', 'menuAttributes', 'menuClasses', 'minLength', 'name', 'placeholder', 'required', 'showAllValues', 'showNoOptionsFound', 'value']
+  inputs: ['assistiveHint', 'autoselect', 'confirmOnBlur', 'cssNamespace', 'disabled', 'displayMenu', 'filterFunction', 'hint', 'inputClasses', 'invalid', 'invalidMessage', 'label', 'loading', 'loadingHeight', 'loadingRadius', 'loadingWidth', 'menuAttributes', 'menuClasses', 'minLength', 'name', 'placeholder', 'required', 'showAllValues', 'showNoOptionsFound', 'value']
 })
 @Component({
   selector: 'admiralty-autocomplete',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['assistiveHint', 'autoselect', 'confirmOnBlur', 'cssNamespace', 'disabled', 'displayMenu', 'filterFunction', 'hint', 'inputClasses', 'invalid', 'invalidMessage', 'label', 'menuAttributes', 'menuClasses', 'minLength', 'name', 'placeholder', 'required', 'showAllValues', 'showNoOptionsFound', 'value'],
+  inputs: ['assistiveHint', 'autoselect', 'confirmOnBlur', 'cssNamespace', 'disabled', 'displayMenu', 'filterFunction', 'hint', 'inputClasses', 'invalid', 'invalidMessage', 'label', 'loading', 'loadingHeight', 'loadingRadius', 'loadingWidth', 'menuAttributes', 'menuClasses', 'minLength', 'name', 'placeholder', 'required', 'showAllValues', 'showNoOptionsFound', 'value'],
 })
 export class AdmiraltyAutocomplete {
   protected el: HTMLElement;
@@ -147,14 +147,14 @@ export declare interface AdmiraltyCard extends Components.AdmiraltyCard {}
 
 
 @ProxyCmp({
-  inputs: ['checkboxRight', 'checked', 'disabled', 'labelHidden', 'labelText', 'name', 'value']
+  inputs: ['checkboxRight', 'checked', 'disabled', 'labelHidden', 'labelText', 'loading', 'loadingHeight', 'loadingRadius', 'loadingWidth', 'name', 'value']
 })
 @Component({
   selector: 'admiralty-checkbox',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['checkboxRight', 'checked', 'disabled', 'labelHidden', 'labelText', 'name', 'value'],
+  inputs: ['checkboxRight', 'checked', 'disabled', 'labelHidden', 'labelText', 'loading', 'loadingHeight', 'loadingRadius', 'loadingWidth', 'name', 'value'],
 })
 export class AdmiraltyCheckbox {
   protected el: HTMLElement;
@@ -586,14 +586,14 @@ export declare interface AdmiraltyHr extends Components.AdmiraltyHr {}
 
 
 @ProxyCmp({
-  inputs: ['name', 'size']
+  inputs: ['loading', 'loadingHeight', 'loadingRadius', 'loadingWidth', 'name', 'size']
 })
 @Component({
   selector: 'admiralty-icon',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['name', 'size'],
+  inputs: ['loading', 'loadingHeight', 'loadingRadius', 'loadingWidth', 'name', 'size'],
 })
 export class AdmiraltyIcon {
   protected el: HTMLElement;
@@ -662,14 +662,14 @@ export declare interface AdmiraltyIconSideBarItem extends Components.AdmiraltyIc
 
 
 @ProxyCmp({
-  inputs: ['autocomplete', 'disabled', 'hint', 'invalid', 'invalidMessage', 'label', 'name', 'placeholder', 'required', 'type', 'value', 'width']
+  inputs: ['autocomplete', 'disabled', 'hint', 'invalid', 'invalidMessage', 'label', 'loading', 'loadingHeight', 'loadingRadius', 'loadingWidth', 'name', 'placeholder', 'required', 'type', 'value', 'width']
 })
 @Component({
   selector: 'admiralty-input',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['autocomplete', 'disabled', 'hint', 'invalid', 'invalidMessage', 'label', 'name', 'placeholder', 'required', 'type', 'value', 'width'],
+  inputs: ['autocomplete', 'disabled', 'hint', 'invalid', 'invalidMessage', 'label', 'loading', 'loadingHeight', 'loadingRadius', 'loadingWidth', 'name', 'placeholder', 'required', 'type', 'value', 'width'],
 })
 export class AdmiraltyInput {
   protected el: HTMLElement;
