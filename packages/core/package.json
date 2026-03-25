@@ -60,7 +60,6 @@
     "jest-cli": "^29.7.0",
     "jest-environment-node": "^29.7.0",
     "lit": "^3.3.2",
-    "puppeteer": "^23.11.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "rimraf": "^6.1.3",
