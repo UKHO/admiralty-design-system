@@ -1,3 +1,15 @@
+# v5.5.2 (Wed Mar 25 2026)
+
+#### 🐛 Bug Fix
+
+- Merge remote-tracking branch 'origin/main' into upgrade-angular-to-latest ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+#### Authors: 1
+
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
 # v5.5.1 (Tue Mar 24 2026)
 
 #### 🐛 Bug Fix

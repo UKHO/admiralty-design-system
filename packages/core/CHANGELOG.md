@@ -1,3 +1,19 @@
+# v5.5.2 (Wed Mar 25 2026)
+
+#### 🐛 Bug Fix
+
+- Upgrade Angular to v21 [#461](https://github.com/UKHO/admiralty-design-system/pull/461) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+- Upgrading to the latest angular package versions ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+- Merge remote-tracking branch 'origin/main' into upgrade-angular-to-latest ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+- adding the themes copy back in ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+- Updating angular dependency in the angular package ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+#### Authors: 1
+
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
 # v5.5.1 (Tue Mar 24 2026)
 
 #### 🐛 Bug Fix
