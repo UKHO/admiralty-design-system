@@ -2,7 +2,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { QueryList, ViewChildren } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AdmiraltySideNavItem } from '@ukho/admiralty-angular';
-import { AdmiraltyAutocompleteCustomEvent, AdmiraltyProgressTrackerCustomEvent, AutoCompleteChangeEventDetail, StepNavigationDetail } from '@ukho/admiralty-core';
+import { AutoCompleteChangeEventDetail, StepNavigationDetail } from '@ukho/admiralty-core';
 
 export interface CommissioningOrganisation {
   id?: number;
@@ -21,7 +21,7 @@ interface ProgressTrackerStep {
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  standalone: false
+  standalone: false,
 })
 export class AppComponent implements OnInit {
   @ViewChildren(AdmiraltySideNavItem) sideNavItems!: QueryList<AdmiraltySideNavItem>;
@@ -154,19 +154,19 @@ export class AppComponent implements OnInit {
     this.isModalDialogShown = false;
   }
 
-  autocomplete(event: AdmiraltyAutocompleteCustomEvent<AutoCompleteChangeEventDetail>) {
+  autocomplete(event: CustomEvent<AutoCompleteChangeEventDetail>) {
     console.log(event.detail.value);
   }
 
-  onOfficeChanged(event: AdmiraltyAutocompleteCustomEvent<AutoCompleteChangeEventDetail>) {
+  onOfficeChanged(event: CustomEvent<AutoCompleteChangeEventDetail>) {
     console.log('onOfficeChanged', event.detail.value);
   }
 
-  onCountryChanged(event: AdmiraltyAutocompleteCustomEvent<AutoCompleteChangeEventDetail>) {
+  onCountryChanged(event: CustomEvent<AutoCompleteChangeEventDetail>) {
     console.log('onCountryChanged', event.detail.value);
   }
 
-  onDirectionChanged(event: AdmiraltyAutocompleteCustomEvent<AutoCompleteChangeEventDetail>) {
+  onDirectionChanged(event: CustomEvent<AutoCompleteChangeEventDetail>) {
     console.log('onDirectionChanged', event.detail.value);
   }
 
@@ -187,22 +187,22 @@ export class AppComponent implements OnInit {
     {
       id: 'location',
       title: 'Choose location',
-      status: 'current'
+      status: 'current',
     },
     {
       id: 'object',
       title: 'Choose object',
-      status: 'upcoming'
+      status: 'upcoming',
     },
     {
       id: 'information-type',
       title: 'Choose information type',
-      status: 'upcoming'
+      status: 'upcoming',
     },
     {
       id: 'date',
       title: 'Choose date',
-      status: 'upcoming'
+      status: 'upcoming',
     },
     {
       id: 'download',
@@ -286,10 +286,8 @@ export class AppComponent implements OnInit {
     return undefined;
   }
 
-
-
   // Handle step navigation
-  onProgressStepClicked(event: AdmiraltyProgressTrackerCustomEvent<StepNavigationDetail>) {
+  onProgressStepClicked(event: CustomEvent<StepNavigationDetail>) {
     const { stepId, stepIndex } = event.detail;
     console.log('Step clicked:', stepId, stepIndex);
 
@@ -332,7 +330,7 @@ export class AppComponent implements OnInit {
     const currentIndex = stepOrder.indexOf(this.currentStepId);
 
     // Update bullets for the current step before moving to next
-    this.progressTrackerSteps = this.progressTrackerSteps.map(step => ({
+    this.progressTrackerSteps = this.progressTrackerSteps.map((step) => ({
       ...step,
       bulletSummaries: this.getStepBullets(step.id),
     }));
