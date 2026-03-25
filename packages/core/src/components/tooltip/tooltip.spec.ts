@@ -2,10 +2,6 @@ import { newSpecPage } from '@stencil/core/testing';
 import { TooltipComponent } from './tooltip';
 
 describe('admiralty-tooltip', () => {
-    beforeEach(() => {
-        jest.spyOn(console, 'log').mockImplementation(() => undefined);
-    });
-
     afterEach(() => {
         jest.restoreAllMocks();
         document.body.innerHTML = '';
@@ -67,7 +63,7 @@ describe('admiralty-tooltip', () => {
 
         expect(page.root).toEqualHtml(`
 			<admiralty-tooltip alignment="centre" for="x" placement="top">
-				<div class="tooltip" data-alignment="centre" data-placement="top" role="tooltip">
+                <div aria-hidden="true" class="tooltip" data-alignment="centre" data-placement="top" id="x-tooltip" role="tooltip">
 					Tooltip description
 					<span aria-hidden="true" class="arrow"></span>
 				</div>
@@ -89,10 +85,15 @@ describe('admiralty-tooltip', () => {
     });
 
     it('opens on target mouseenter and hides after delayed mouseleave', async () => {
-        const { root, target } = await setupWithTarget('top');
+        const { root, target, tooltipEl } = await setupWithTarget('top');
+
+        expect(tooltipEl.id).toBe('tooltip-target-tooltip');
+        expect(tooltipEl.getAttribute('aria-hidden')).toBe('true');
 
         target.dispatchEvent(new Event('mouseenter'));
         expect(root.hasAttribute('data-open')).toBe(true);
+        expect(target.getAttribute('aria-describedby')).toBe('tooltip-target-tooltip');
+        expect(tooltipEl.getAttribute('aria-hidden')).toBe('false');
 
         target.dispatchEvent(new Event('mouseleave'));
         await wait(80);
@@ -100,6 +101,8 @@ describe('admiralty-tooltip', () => {
 
         await wait(60);
         expect(root.hasAttribute('data-open')).toBe(false);
+        expect(target.hasAttribute('aria-describedby')).toBe(false);
+        expect(tooltipEl.getAttribute('aria-hidden')).toBe('true');
     });
 
     it('cancels a pending hide when the trigger is hovered again before timeout', async () => {
@@ -240,7 +243,8 @@ describe('admiralty-tooltip', () => {
         instance.handleOffScreen(tooltipEl, 8);
 
         expect(tooltipEl.style.left).toBe('0');
-        expect(tooltipEl.style.transform).toBe('translate(0, 8px) scale(1)');
+        expect(tooltipEl.style.right).toBe('');
+        expect(tooltipEl.style.transform).toBe('translate(-50%, calc(-100% - 8px)) scale(1)');
     });
 
     it('handleOffScreen corrects right overflow', async () => {
@@ -255,7 +259,8 @@ describe('admiralty-tooltip', () => {
         instance.handleOffScreen(tooltipEl, 8);
 
         expect(tooltipEl.style.right).toBe('0');
-        expect(tooltipEl.style.transform).toBe('translate(0, 8px) scale(1)');
+        expect(tooltipEl.style.left).toBe('');
+        expect(tooltipEl.style.transform).toBe('translate(-50%, calc(-100% - 8px)) scale(1)');
     });
 
     it('positions tooltip for top placement', async () => {
@@ -399,15 +404,18 @@ describe('admiralty-tooltip', () => {
         expect((instance as any).target).toBeNull();
     });
 
-    it('logs placement changes via watcher', async () => {
-        const page = await newSpecPage({
-            components: [TooltipComponent],
-            html: `<admiralty-tooltip for="x">Tooltip content</admiralty-tooltip>`,
-        });
+    it('recalculates tooltip position when placement changes', async () => {
+        const { page, root, target, tooltipEl } = await setupWithTarget('top');
 
-        const instance = page.rootInstance as TooltipComponent;
-        instance.onPlacementChange('left');
+        target.dispatchEvent(new Event('mouseenter'));
+        expect(tooltipEl.style.transform).toBe('translate(-50%, calc(-100% - 8px)) scale(1)');
 
-        expect(console.log).toHaveBeenCalledWith('changed: ', 'left');
+        root.setAttribute('placement', 'bottom');
+        await page.waitForChanges();
+        target.dispatchEvent(new Event('mouseenter'));
+
+        expect(tooltipEl.style.top).toBe('108px');
+        expect(tooltipEl.style.left).toBe('220px');
+        expect(tooltipEl.style.transform).toBe('translate(-50%, 8px) scale(1)');
     });
 });

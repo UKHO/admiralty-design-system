@@ -1,20 +1,19 @@
 import React from "react";
-import { AdmiraltyButton, AdmiraltyLabel, AdmiraltyTooltip } from "@ukho/admiralty-react/dist";
+import { AdmiraltyButton, AdmiraltyTooltip } from "@ukho/admiralty-react";
 
 export default function Demo() {
   return (
     <div>
-      <AdmiraltyLabel id="myButtonRich">Hover over this label</AdmiraltyLabel>
-      <AdmiraltyTooltip for="myButtonRich" placement="${args.placement}" alignment="${args.alignment}">
-        <AdmiraltyButton slot="trigger">submit</AdmiraltyButton>
+      <AdmiraltyButton id="myButtonRich">Hover over me</AdmiraltyButton>
+      <AdmiraltyTooltip for="myButtonRich" placement="bottom" alignment="centre">
         <div>
-          <h3 style={{ margin: 0 }}>Black Rock</h3>
+          <h3>Black Rock</h3>
           <p>Underwater/awash rock</p>
-          <h6 style={{ margin: 0 }}>Details</h6>
-          <p style={{ margin: 0 }}>50°42&apos;.50N | °30&apos;.63W</p>
+          <h6>Details</h6>
+          <p>50°42&apos;.50N | °30&apos;.63W</p>
           <a>Covers and uncovers</a>
         </div>
       </AdmiraltyTooltip>
     </div>
-  )
+  );
 }

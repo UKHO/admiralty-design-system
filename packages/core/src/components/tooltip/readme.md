@@ -1,9 +1,6 @@
-# admiralty-tooltip-wrapper
-
-
+# admiralty-tooltip
 
 <!-- Auto Generated Below -->
-
 
 ## Properties
 
@@ -13,7 +10,6 @@
 | `for` _(required)_ | `for`       |             | `string`                                 | `undefined` |
 | `placement`        | `placement` |             | `"bottom" \| "left" \| "right" \| "top"` | `'top'`     |
 
+---
 
-----------------------------------------------
-
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_

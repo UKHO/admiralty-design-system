@@ -1,4 +1,4 @@
-import { Component, h, Host, Prop, Element, Watch } from '@stencil/core';
+import { Component, h, Host, Prop, Element } from '@stencil/core';
 
 type Placement = 'top' | 'bottom' | 'left' | 'right';
 type Alignment = 'start' | 'centre' | 'end';
@@ -15,6 +15,7 @@ export class TooltipComponent {
   @Prop({ reflect: true }) alignment?: Alignment = 'centre';
   private target?: HTMLElement;
   private tooltipEl?: HTMLElement;
+  private tooltipId?: string;
   private hideTimeout?: ReturnType<typeof setTimeout>;
 
   private map?: {
@@ -24,6 +25,93 @@ export class TooltipComponent {
     right: () => void;
   };
 
+  private positionTooltip = () => {
+    if (!this.target) return;
+
+    const r = this.target.getBoundingClientRect();
+    const tooltip = this.tooltipEl ?? (this.host.querySelector('.tooltip') as HTMLElement);
+    if (!tooltip) return;
+
+    const gap = 8;
+
+    this.map = {
+      top: () => {
+        tooltip.style.top = `${r.top - gap}px`;
+        tooltip.style.left = `${r.left + r.width / 2}px`;
+        tooltip.style.transform = `translate(-50%, calc(-100% - ${gap}px)) scale(1)`;
+      },
+      bottom: () => {
+        tooltip.style.top = `${r.bottom + gap}px`;
+        tooltip.style.left = `${r.left + r.width / 2}px`;
+        tooltip.style.transform = `translate(-50%, ${gap}px) scale(1)`;
+      },
+      left: () => {
+        tooltip.style.top = `${r.top + r.height / 2}px`;
+        tooltip.style.left = `${r.left - 20}px`; // `${r.left - gap}px`;
+        tooltip.style.transform = `translate(calc(-100% - ${gap}px), -50%) scale(1)`;
+      },
+      right: () => {
+        tooltip.style.top = `${r.top + r.height / 2}px`;
+        tooltip.style.left = `${r.right + 20}px`; // `${r.right - gap}px`;
+        tooltip.style.transform = `translate(${gap}px, -50%) scale(1)`;
+      },
+    };
+
+    if (this.map[this.placement]) {
+      this.map[this.placement]();
+      return;
+    }
+
+    const spaceAbove = r.top;
+    const spaceBelow = window.innerHeight - r.bottom;
+    const spaceLeft = r.left;
+    const spaceRight = window.innerWidth - r.right;
+
+    if (spaceLeft > spaceRight) {
+      this.placement = 'left';
+      this.map[this.placement]();
+      this.handleOffScreen(tooltip, gap);
+      return;
+    }
+
+    if (spaceRight > spaceLeft) {
+      this.placement = 'right';
+      this.map[this.placement]();
+      this.handleOffScreen(tooltip, gap);
+      return;
+    }
+
+    if (spaceAbove > spaceBelow) {
+      this.placement = 'top';
+      this.map[this.placement]();
+      this.handleOffScreen(tooltip, gap);
+      return;
+    }
+
+    if (spaceBelow > spaceAbove) {
+      this.placement = 'bottom';
+      this.map[this.placement]();
+      this.handleOffScreen(tooltip, gap);
+      return;
+    }
+  };
+
+  private addPositionListeners = () => {
+    if (!this.target) return;
+
+    // Ensure updateTooltipPosition can be called repeatedly without duplicating handlers.
+    this.removePositionListeners();
+    this.target.addEventListener('mouseenter', this.positionTooltip);
+    this.target.addEventListener('focus', this.positionTooltip, true);
+  };
+
+  private removePositionListeners = () => {
+    if (!this.target) return;
+
+    this.target.removeEventListener('mouseenter', this.positionTooltip);
+    this.target.removeEventListener('focus', this.positionTooltip, true);
+  };
+
   private show = () => {
     if (this.hideTimeout) {
       clearTimeout(this.hideTimeout);
@@ -31,10 +119,56 @@ export class TooltipComponent {
     }
 
     this.host.setAttribute('data-open', '');
+    this.setTooltipA11yState(true);
   };
 
   private hide = () => {
     this.host.removeAttribute('data-open');
+    this.setTooltipA11yState(false);
+  };
+
+  private addTargetDescribedBy = () => {
+    if (!this.target || !this.tooltipId) return;
+
+    const current = this.target.getAttribute('aria-describedby') || '';
+    const ids = current
+      .split(/\s+/)
+      .map(id => id.trim())
+      .filter(Boolean);
+
+    if (!ids.includes(this.tooltipId)) {
+      ids.push(this.tooltipId);
+      this.target.setAttribute('aria-describedby', ids.join(' '));
+    }
+  };
+
+  private removeTargetDescribedBy = () => {
+    if (!this.target || !this.tooltipId) return;
+
+    const current = this.target.getAttribute('aria-describedby') || '';
+    const ids = current
+      .split(/\s+/)
+      .map(id => id.trim())
+      .filter(id => id && id !== this.tooltipId);
+
+    if (ids.length > 0) {
+      this.target.setAttribute('aria-describedby', ids.join(' '));
+    } else {
+      this.target.removeAttribute('aria-describedby');
+    }
+  };
+
+  private setTooltipA11yState = (isOpen: boolean) => {
+    if (!this.tooltipEl) return;
+
+    this.tooltipEl.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+
+    if (isOpen) {
+      this.addTargetDescribedBy();
+      return;
+    }
+
+    this.removeTargetDescribedBy();
   };
 
   private scheduleHide = () => {
@@ -52,6 +186,15 @@ export class TooltipComponent {
   componentDidLoad(): void {
     this.target = document.getElementById(this.for) as HTMLElement;
     this.tooltipEl = this.host.querySelector('.tooltip') as HTMLElement;
+
+    if (this.tooltipEl) {
+      if (!this.tooltipEl.id) {
+        this.tooltipEl.id = `${this.for}-tooltip`;
+      }
+
+      this.tooltipId = this.tooltipEl.id;
+      this.tooltipEl.setAttribute('aria-hidden', 'true');
+    }
 
     if (!this.target) return;
 
@@ -74,7 +217,11 @@ export class TooltipComponent {
       this.hideTimeout = undefined;
     }
 
+    this.removeTargetDescribedBy();
+
     if (!this.target) return;
+
+    this.removePositionListeners();
 
     this.target.removeEventListener('mouseenter', this.show);
     this.target.removeEventListener('mouseleave', this.scheduleHide);
@@ -85,11 +232,6 @@ export class TooltipComponent {
     this.tooltipEl?.removeEventListener('mouseleave', this.scheduleHide);
     this.tooltipEl?.removeEventListener('focusin', this.show);
     this.tooltipEl?.removeEventListener('focusout', this.scheduleHide);
-  }
-
-  @Watch('placement')
-  onPlacementChange(event: any) {
-    console.log('changed: ', event);
   }
 
   checkElementOffScreen(el: HTMLElement) {
@@ -104,115 +246,34 @@ export class TooltipComponent {
       rightOff: rect.right > viewportWidth,
     };
 
-    // Check if any side is off screen
-    const isOffScreen = status.topOff || status.bottomOff || status.leftOff || status.rightOff;
-
-    if (isOffScreen) {
-      let message = 'Element is off screen. Sides off: ';
-      const sides = [];
-      if (status.topOff) sides.push('top');
-      if (status.bottomOff) sides.push('bottom');
-      if (status.leftOff) sides.push('left');
-      if (status.rightOff) sides.push('right');
-
-      console.log(message + sides.join(', '));
-    } else {
-      console.log('Element is on screen (at least partially).');
-    }
-
     return status;
   }
 
   updateTooltipPosition() {
-    const position = () => {
-      const r = this.target!.getBoundingClientRect();
-      const tooltip = this.host.querySelector('.tooltip') as HTMLElement;
-      const gap = 8;
-
-      this.map = {
-        top: () => {
-          console.log('top');
-          tooltip.style.top = `${r.top - gap}px`;
-          tooltip.style.left = `${r.left + r.width / 2}px`;
-          tooltip.style.transform = `translate(-50%, calc(-100% - ${gap}px)) scale(1)`;
-        },
-        bottom: () => {
-          console.log('bottom');
-          tooltip.style.top = `${r.bottom + gap}px`;
-          tooltip.style.left = `${r.left + r.width / 2}px`;
-          tooltip.style.transform = `translate(-50%, ${gap}px) scale(1)`;
-        },
-        left: () => {
-          console.log('left', r.left);
-          tooltip.style.top = `${r.top + r.height / 2}px`;
-          tooltip.style.left = `${r.left - 20}px`; // `${r.left - gap}px`;
-          tooltip.style.transform = `translate(calc(-100% - ${gap}px), -50%) scale(1)`;
-        },
-        right: () => {
-          console.log('right', r.right);
-          tooltip.style.top = `${r.top + r.height / 2}px`;
-          tooltip.style.left = `${r.right + 20}px`; // `${r.right - gap}px`;
-          tooltip.style.transform = `translate(${gap}px, -50%) scale(1)`;
-        },
-      };
-
-      if (this.map[this.placement]) {
-        this.map[this.placement]();
-      } else {
-        const spaceAbove = r.top;
-        const spaceBelow = window.innerHeight - r.bottom;
-        const spaceLeft = r.left;
-        const spaceRight = window.innerWidth - r.right;
-
-        if (spaceLeft > spaceRight) {
-          this.placement = 'left';
-          console.log('will display on the left');
-          this.map[this.placement]();
-          this.handleOffScreen(tooltip, gap);
-          return;
-        }
-
-        if (spaceRight > spaceLeft) {
-          this.placement = 'right';
-          console.log('will display on the right');
-          this.map[this.placement]();
-          this.handleOffScreen(tooltip, gap);
-          return;
-        }
-
-        if (spaceAbove > spaceBelow) {
-          this.placement = 'top';
-          console.log('will display on the top');
-          this.map[this.placement]();
-          this.handleOffScreen(tooltip, gap);
-          return;
-        }
-
-        if (spaceBelow > spaceAbove) {
-          this.placement = 'bottom';
-          console.log('will display on the below');
-          this.map[this.placement]();
-          this.handleOffScreen(tooltip, gap);
-          return;
-        }
-      }
-    };
-
-    this.target.addEventListener('mouseenter', position);
-    this.target.addEventListener('focus', position, true);
+    this.addPositionListeners();
   }
 
   handleOffScreen(tooltip: HTMLElement, gap: number) {
     const isOffScreen = this.checkElementOffScreen(this.host.querySelector('.tooltip') as HTMLElement);
+
+    const placementTransform =
+      this.placement === 'top'
+        ? `translate(-50%, calc(-100% - ${gap}px)) scale(1)`
+        : this.placement === 'bottom'
+          ? `translate(-50%, ${gap}px) scale(1)`
+          : this.placement === 'left'
+            ? `translate(calc(-100% - ${gap}px), -50%) scale(1)`
+            : `translate(${gap}px, -50%) scale(1)`;
+
     if (isOffScreen.leftOff) {
-      console.log('its off left');
-      tooltip.style.transform = `translate(0, ${gap}px) scale(1)`;
+      tooltip.style.transform = placementTransform;
       tooltip.style.left = '0';
+      tooltip.style.right = '';
     }
 
     if (isOffScreen.rightOff) {
-      console.log('its off right');
-      tooltip.style.transform = `translate(0, ${gap}px) scale(1)`;
+      tooltip.style.transform = placementTransform;
+      tooltip.style.left = '';
       tooltip.style.right = '0';
     }
   }

@@ -1,13 +1,11 @@
 import React from "react";
-import { AdmiraltyLabel, AdmiraltyTooltip } from "@ukho/admiralty-react/dist";
+import { AdmiraltyButton, AdmiraltyTooltip } from "@ukho/admiralty-react";
 
 export default function Demo() {
   return (
     <div>
-      <AdmiraltyLabel id="myButton">Hover over this label</AdmiraltyLabel>
-      <AdmiraltyTooltip for="myButton">
-        Tooltip description
-      </AdmiraltyTooltip>
+      <AdmiraltyButton id="myButton">Hover over me</AdmiraltyButton>
+      <AdmiraltyTooltip for="myButton">Tooltip description</AdmiraltyTooltip>
     </div>
-  )
+  );
 }

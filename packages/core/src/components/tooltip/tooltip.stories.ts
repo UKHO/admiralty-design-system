@@ -24,7 +24,6 @@ const richTemplate: Story = {
   render: args => html`<div style="margin: 90px 10px">
     <admiralty-label id="myButton">my label</admiralty-label>
     <admiralty-tooltip for="myButton" placement="${args.placement}" alignment="${args.alignment}">
-      <admiralty-button slot="trigger">submit</admiralty-button>
       <div>
         <h3 style="margin: 0;">Black Rock</h3>
         <p>Underwater/awash rock</p>
