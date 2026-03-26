@@ -2,6 +2,7 @@
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property           | Attribute   | Description | Type                                     | Default     |
@@ -10,6 +11,7 @@
 | `for` _(required)_ | `for`       |             | `string`                                 | `undefined` |
 | `placement`        | `placement` |             | `"bottom" \| "left" \| "right" \| "top"` | `'top'`     |
 
----
 
-_Built with [StencilJS](https://stenciljs.com/)_
+----------------------------------------------
+
+*Built with [StencilJS](https://stenciljs.com/)*
