@@ -1,5 +1,6 @@
 name: "Design System Website"
-
+permissions:
+  contents: read
 on:
   push:
     branches:
