@@ -89,6 +89,11 @@ export class FileInputComponent {
     event.preventDefault();
     this.el.querySelector('.admiralty-file-input').classList.remove('drop_zone');
 
+    // Guard against null dataTransfer (permitted by the DragEvent spec)
+    if (!event.dataTransfer) {
+      return;
+    }
+
     if (event.dataTransfer.files) {
       this.storeFileInfo(event.dataTransfer.files);
       this.fileInputChange.emit({ files: this.files });
