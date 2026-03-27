@@ -33,3 +33,9 @@
 .copy-button:focus {
     opacity: 1;
 }
+
+body.admiralty-dark-mode .copy-button {
+    background-color: rgba(0, 0, 0,.3);
+    color: var(--admiralty-colour-primary);
+    border: 2px solid var(--admiralty-colour-primary);
+}

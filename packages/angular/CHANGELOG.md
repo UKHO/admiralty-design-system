@@ -1,3 +1,60 @@
+# v5.5.2 (Wed Mar 25 2026)
+
+#### 🐛 Bug Fix
+
+- Upgrade Angular to v21 [#461](https://github.com/UKHO/admiralty-design-system/pull/461) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+- Upgrading to the latest angular package versions ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+- Merge remote-tracking branch 'origin/main' into upgrade-angular-to-latest ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+- removing ng script from angular package ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+- Updating angular dependency in the angular package ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+#### Authors: 1
+
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
+# v5.5.1 (Tue Mar 24 2026)
+
+#### 🐛 Bug Fix
+
+- Updating all dependencies to latest minor versions [#460](https://github.com/UKHO/admiralty-design-system/pull/460) ([@ecstaticrainbow](https://github.com/ecstaticrainbow) [@lstevens98](https://github.com/lstevens98))
+
+#### Authors: 2
+
+- Lewis Stevens ([@lstevens98](https://github.com/lstevens98))
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
+# v5.5.0 (Mon Mar 23 2026)
+
+#### 🚀 Enhancement
+
+- Release 5.4.0 - Update package numbers [#467](https://github.com/UKHO/admiralty-design-system/pull/467) ([@lstevens98](https://github.com/lstevens98) [@mohamme15315](https://github.com/mohamme15315))
+- Release 5.4.0 [#464](https://github.com/UKHO/admiralty-design-system/pull/464) (mohamme15315@mastek.com [@lstevens98](https://github.com/lstevens98) [@mohamme15315](https://github.com/mohamme15315))
+- Progress tracker component [#454](https://github.com/UKHO/admiralty-design-system/pull/454) (mohamme15315@mastek.com [@mohamme15315](https://github.com/mohamme15315))
+- feat(progress-tracker): implement progress tracker component with step functionality (mohamme15315@mastek.com)
+- feat(progress-tracker): introduce admiralty-progress-tracker-step component for step management (mohamme15315@mastek.com)
+- feat(progress-tracker): add new component for step navigation with validation (mohamme15315@mastek.com)
+
+#### 🐛 Bug Fix
+
+- Update package numbers ([@lstevens98](https://github.com/lstevens98))
+- 274538 Dark Mode Toggle Switch [#459](https://github.com/UKHO/admiralty-design-system/pull/459) (mohamme15315@mastek.com [@lstevens98](https://github.com/lstevens98) [@mohamme15315](https://github.com/mohamme15315))
+- Merge branch 'next' into 274538-dark-mode-toggle-switch ([@lstevens98](https://github.com/lstevens98))
+- refactor(progress-tracker): remove error message handling and validation logic (mohamme15315@mastek.com)
+- Add theme toggle component with accessibility features and styling (mohamme15315@mastek.com)
+- Merge branch 'main' into progress-tracker-component (mohamme15315@mastek.com)
+
+#### Authors: 3
+
+- [@mohamme15315](https://github.com/mohamme15315)
+- Lewis Stevens ([@lstevens98](https://github.com/lstevens98))
+- Mohammed Khan (mohamme15315@mastek.com)
+
+---
+
 # v5.3.0 (Tue Feb 03 2026)
 
 #### 🚀 Enhancement

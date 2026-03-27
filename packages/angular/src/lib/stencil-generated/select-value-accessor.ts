@@ -1,4 +1,4 @@
-import { Directive, ElementRef } from '@angular/core';
+import { Directive, ElementRef, forwardRef } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 
 import { ValueAccessor } from './value-accessor';
@@ -7,15 +7,16 @@ import { ValueAccessor } from './value-accessor';
   /* tslint:disable-next-line:directive-selector */
   selector: 'admiralty-select, admiralty-radio-group, admiralty-autocomplete',
   host: {
-    '(admiraltyChange)': 'handleChangeEvent($event.target.value)'
+    '(admiraltyChange)': 'handleChangeEvent($event.target?.["value"])'
   },
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: SelectValueAccessor,
+      useExisting: forwardRef(() => SelectValueAccessor),
       multi: true
     }
-  ]
+  ],
+standalone: false
 })
 export class SelectValueAccessor extends ValueAccessor {
   constructor(el: ElementRef) {

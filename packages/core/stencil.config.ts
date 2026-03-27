@@ -60,6 +60,7 @@ export const config: Config = {
         'admiralty-paginator-wrapper',
       ],
       valueAccessorConfigs: angularValueAccessorBindings,
+      outputType: 'component',
     }),
     {
       type: 'dist',
