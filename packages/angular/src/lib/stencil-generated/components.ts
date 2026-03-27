@@ -59,7 +59,7 @@ export class AdmiraltyAutocompleteOption {
 }
 
 
-export declare interface AdmiraltyAutocompleteOption extends Components.AdmiraltyAutocompleteOption {}
+export declare interface AdmiraltyAutocompleteOption extends Components.AdmiraltyAutocompleteOption { }
 
 
 @ProxyCmp({
@@ -82,7 +82,7 @@ export class AdmiraltyBreadcrumb {
 }
 
 
-export declare interface AdmiraltyBreadcrumb extends Components.AdmiraltyBreadcrumb {}
+export declare interface AdmiraltyBreadcrumb extends Components.AdmiraltyBreadcrumb { }
 
 
 @ProxyCmp({
@@ -104,7 +104,7 @@ export class AdmiraltyBreadcrumbs {
 }
 
 
-export declare interface AdmiraltyBreadcrumbs extends Components.AdmiraltyBreadcrumbs {}
+export declare interface AdmiraltyBreadcrumbs extends Components.AdmiraltyBreadcrumbs { }
 
 
 @ProxyCmp({
@@ -127,7 +127,7 @@ export class AdmiraltyButton {
 }
 
 
-export declare interface AdmiraltyButton extends Components.AdmiraltyButton {}
+export declare interface AdmiraltyButton extends Components.AdmiraltyButton { }
 
 
 @ProxyCmp({
@@ -150,7 +150,7 @@ export class AdmiraltyCard {
 }
 
 
-export declare interface AdmiraltyCard extends Components.AdmiraltyCard {}
+export declare interface AdmiraltyCard extends Components.AdmiraltyCard { }
 
 
 @ProxyCmp({
@@ -245,7 +245,7 @@ export class AdmiraltyDialogue {
 }
 
 
-export declare interface AdmiraltyDialogue extends Components.AdmiraltyDialogue {}
+export declare interface AdmiraltyDialogue extends Components.AdmiraltyDialogue { }
 
 
 @ProxyCmp({
@@ -268,7 +268,7 @@ export class AdmiraltyErrorSummary {
 }
 
 
-export declare interface AdmiraltyErrorSummary extends Components.AdmiraltyErrorSummary {}
+export declare interface AdmiraltyErrorSummary extends Components.AdmiraltyErrorSummary { }
 
 
 @ProxyCmp({
@@ -388,7 +388,7 @@ export class AdmiraltyFilterGroup {
 }
 
 
-export declare interface AdmiraltyFilterGroup extends Components.AdmiraltyFilterGroup {}
+export declare interface AdmiraltyFilterGroup extends Components.AdmiraltyFilterGroup { }
 
 
 @ProxyCmp({
@@ -411,7 +411,7 @@ export class AdmiraltyFooter {
 }
 
 
-export declare interface AdmiraltyFooter extends Components.AdmiraltyFooter {}
+export declare interface AdmiraltyFooter extends Components.AdmiraltyFooter { }
 
 
 @ProxyCmp({
@@ -598,7 +598,7 @@ export class AdmiraltyHint {
 }
 
 
-export declare interface AdmiraltyHint extends Components.AdmiraltyHint {}
+export declare interface AdmiraltyHint extends Components.AdmiraltyHint { }
 
 
 @ProxyCmp({
@@ -620,7 +620,7 @@ export class AdmiraltyHr {
 }
 
 
-export declare interface AdmiraltyHr extends Components.AdmiraltyHr {}
+export declare interface AdmiraltyHr extends Components.AdmiraltyHr { }
 
 
 @ProxyCmp({
@@ -643,7 +643,7 @@ export class AdmiraltyIcon {
 }
 
 
-export declare interface AdmiraltyIcon extends Components.AdmiraltyIcon {}
+export declare interface AdmiraltyIcon extends Components.AdmiraltyIcon { }
 
 
 @ProxyCmp({
@@ -666,7 +666,7 @@ export class AdmiraltyIconSideBar {
 }
 
 
-export declare interface AdmiraltyIconSideBar extends Components.AdmiraltyIconSideBar {}
+export declare interface AdmiraltyIconSideBar extends Components.AdmiraltyIconSideBar { }
 
 
 @ProxyCmp({
@@ -765,7 +765,7 @@ export class AdmiraltyInputInvalid {
 }
 
 
-export declare interface AdmiraltyInputInvalid extends Components.AdmiraltyInputInvalid {}
+export declare interface AdmiraltyInputInvalid extends Components.AdmiraltyInputInvalid { }
 
 
 @ProxyCmp({
@@ -788,7 +788,7 @@ export class AdmiraltyLabel {
 }
 
 
-export declare interface AdmiraltyLabel extends Components.AdmiraltyLabel {}
+export declare interface AdmiraltyLabel extends Components.AdmiraltyLabel { }
 
 
 @ProxyCmp({
@@ -811,7 +811,7 @@ export class AdmiraltyLink {
 }
 
 
-export declare interface AdmiraltyLink extends Components.AdmiraltyLink {}
+export declare interface AdmiraltyLink extends Components.AdmiraltyLink { }
 
 
 @ProxyCmp({
@@ -834,7 +834,7 @@ export class AdmiraltyModalDialog {
 }
 
 
-export declare interface AdmiraltyModalDialog extends Components.AdmiraltyModalDialog {}
+export declare interface AdmiraltyModalDialog extends Components.AdmiraltyModalDialog { }
 
 
 @ProxyCmp({
@@ -888,7 +888,7 @@ export class AdmiraltyPhaseBanner {
 }
 
 
-export declare interface AdmiraltyPhaseBanner extends Components.AdmiraltyPhaseBanner {}
+export declare interface AdmiraltyPhaseBanner extends Components.AdmiraltyPhaseBanner { }
 
 
 @ProxyCmp({
@@ -911,7 +911,7 @@ export class AdmiraltyPill {
 }
 
 
-export declare interface AdmiraltyPill extends Components.AdmiraltyPill {}
+export declare interface AdmiraltyPill extends Components.AdmiraltyPill { }
 
 
 @ProxyCmp({
@@ -934,7 +934,7 @@ export class AdmiraltyProgressBar {
 }
 
 
-export declare interface AdmiraltyProgressBar extends Components.AdmiraltyProgressBar {}
+export declare interface AdmiraltyProgressBar extends Components.AdmiraltyProgressBar { }
 
 
 @ProxyCmp({
@@ -986,7 +986,7 @@ export class AdmiraltyProgressTrackerStep {
 }
 
 
-export declare interface AdmiraltyProgressTrackerStep extends Components.AdmiraltyProgressTrackerStep {}
+export declare interface AdmiraltyProgressTrackerStep extends Components.AdmiraltyProgressTrackerStep { }
 
 
 @ProxyCmp({
@@ -1148,7 +1148,7 @@ export class AdmiraltySideNav {
 }
 
 
-export declare interface AdmiraltySideNav extends Components.AdmiraltySideNav {}
+export declare interface AdmiraltySideNav extends Components.AdmiraltySideNav { }
 
 
 @ProxyCmp({
@@ -1201,7 +1201,7 @@ export class AdmiraltySkeleton {
 }
 
 
-export declare interface AdmiraltySkeleton extends Components.AdmiraltySkeleton {}
+export declare interface AdmiraltySkeleton extends Components.AdmiraltySkeleton { }
 
 
 @ProxyCmp({
@@ -1224,7 +1224,7 @@ export class AdmiraltySkipLink {
 }
 
 
-export declare interface AdmiraltySkipLink extends Components.AdmiraltySkipLink {}
+export declare interface AdmiraltySkipLink extends Components.AdmiraltySkipLink { }
 
 
 @ProxyCmp({
@@ -1247,7 +1247,7 @@ export class AdmiraltyTab {
 }
 
 
-export declare interface AdmiraltyTab extends Components.AdmiraltyTab {}
+export declare interface AdmiraltyTab extends Components.AdmiraltyTab { }
 
 
 @ProxyCmp({
@@ -1298,7 +1298,7 @@ export class AdmiraltyTable {
 }
 
 
-export declare interface AdmiraltyTable extends Components.AdmiraltyTable {}
+export declare interface AdmiraltyTable extends Components.AdmiraltyTable { }
 
 
 @ProxyCmp({
@@ -1320,7 +1320,7 @@ export class AdmiraltyTableBody {
 }
 
 
-export declare interface AdmiraltyTableBody extends Components.AdmiraltyTableBody {}
+export declare interface AdmiraltyTableBody extends Components.AdmiraltyTableBody { }
 
 
 @ProxyCmp({
@@ -1342,7 +1342,7 @@ export class AdmiraltyTableCell {
 }
 
 
-export declare interface AdmiraltyTableCell extends Components.AdmiraltyTableCell {}
+export declare interface AdmiraltyTableCell extends Components.AdmiraltyTableCell { }
 
 
 @ProxyCmp({
@@ -1364,7 +1364,7 @@ export class AdmiraltyTableHeader {
 }
 
 
-export declare interface AdmiraltyTableHeader extends Components.AdmiraltyTableHeader {}
+export declare interface AdmiraltyTableHeader extends Components.AdmiraltyTableHeader { }
 
 
 @ProxyCmp({
@@ -1386,7 +1386,7 @@ export class AdmiraltyTableHeaderCell {
 }
 
 
-export declare interface AdmiraltyTableHeaderCell extends Components.AdmiraltyTableHeaderCell {}
+export declare interface AdmiraltyTableHeaderCell extends Components.AdmiraltyTableHeaderCell { }
 
 
 @ProxyCmp({
@@ -1408,7 +1408,7 @@ export class AdmiraltyTableRow {
 }
 
 
-export declare interface AdmiraltyTableRow extends Components.AdmiraltyTableRow {}
+export declare interface AdmiraltyTableRow extends Components.AdmiraltyTableRow { }
 
 
 @ProxyCmp({
@@ -1431,7 +1431,7 @@ export class AdmiraltyTextSideBar {
 }
 
 
-export declare interface AdmiraltyTextSideBar extends Components.AdmiraltyTextSideBar {}
+export declare interface AdmiraltyTextSideBar extends Components.AdmiraltyTextSideBar { }
 
 
 @ProxyCmp({
@@ -1534,5 +1534,27 @@ export declare interface AdmiraltyThemeToggle extends Components.AdmiraltyThemeT
    */
   admiraltyThemeChange: EventEmitter<CustomEvent<IAdmiraltyThemeToggleThemeToggleChangeEventDetail>>;
 }
+
+
+@ProxyCmp({
+  inputs: ['alignment', 'for', 'placement']
+})
+@Component({
+  selector: 'admiralty-tooltip',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['alignment', 'for', 'placement'],
+})
+export class AdmiraltyTooltip {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface AdmiraltyTooltip extends Components.AdmiraltyTooltip { }
 
 
