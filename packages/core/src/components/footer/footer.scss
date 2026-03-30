@@ -64,6 +64,7 @@ footer {
         gap: 1.5rem;
       }
       display: flex;
+      flex-grow: 1;
       margin-left: $footer-content-links-margin-left;
       gap: 1.5rem;
 
