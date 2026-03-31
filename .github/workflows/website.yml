@@ -1,6 +1,8 @@
 name: "Design System Website"
 permissions:
   contents: read
+  issues: write
+  pull-requests: write
 on:
   push:
     branches:
