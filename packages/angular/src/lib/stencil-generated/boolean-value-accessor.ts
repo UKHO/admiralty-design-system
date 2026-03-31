@@ -1,4 +1,4 @@
-import { Directive, ElementRef, forwardRef } from '@angular/core';
+import { Directive, ElementRef } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 
 import { ValueAccessor } from './value-accessor';
@@ -7,22 +7,21 @@ import { ValueAccessor } from './value-accessor';
   /* tslint:disable-next-line:directive-selector */
   selector: 'admiralty-checkbox',
   host: {
-    '(admiraltyChange)': 'handleChangeEvent($event.target?.["checked"])'
+    '(admiraltyChange)': 'handleChangeEvent($event.target.checked)'
   },
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => BooleanValueAccessor),
+      useExisting: BooleanValueAccessor,
       multi: true
     }
-  ],
-standalone: false
+  ]
 })
 export class BooleanValueAccessor extends ValueAccessor {
   constructor(el: ElementRef) {
     super(el);
   }
-  override writeValue(value: any) {
+  writeValue(value: any) {
     this.el.nativeElement.checked = this.lastValue = value == null ? false : value;
   }
 }
