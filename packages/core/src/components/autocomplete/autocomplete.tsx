@@ -117,16 +117,16 @@ export class AutocompleteComponent {
    */
   @Prop() menuClasses: string;
   /**
-   * The text that will be used as a field label.
-   */
-  @Prop() iconName?: string;
-  /**
    * Optional icon to show in the autocomplete toggle area.
    * If not provided, the default chevron up/down icons will be used.
    */
+  @Prop() iconName?: string;
+  /**
+   * The text that will be used as a field label.
+   */
   @Prop() label: string = null;
   /**
-   * TThe text which will be used under the label to describe the input.
+   * The text which will be used under the label to describe the input.
    */
   @Prop() hint: string = null;
   /**

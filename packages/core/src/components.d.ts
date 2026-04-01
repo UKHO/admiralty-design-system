@@ -70,12 +70,12 @@ export namespace Components {
          */
         "filterFunction": (query: string) => Option[];
         /**
-          * TThe text which will be used under the label to describe the input.
+          * The text which will be used under the label to describe the input.
           * @default null
          */
         "hint": string;
         /**
-          * The text that will be used as a field label.
+          * Optional icon to show in the autocomplete toggle area. If not provided, the default chevron up/down icons will be used.
          */
         "iconName"?: string;
         /**
@@ -93,7 +93,7 @@ export namespace Components {
          */
         "invalidMessage": string;
         /**
-          * Optional icon to show in the autocomplete toggle area. If not provided, the default chevron up/down icons will be used.
+          * The text that will be used as a field label.
           * @default null
          */
         "label": string;
@@ -1939,12 +1939,12 @@ declare namespace LocalJSX {
          */
         "filterFunction"?: (query: string) => Option[];
         /**
-          * TThe text which will be used under the label to describe the input.
+          * The text which will be used under the label to describe the input.
           * @default null
          */
         "hint"?: string;
         /**
-          * The text that will be used as a field label.
+          * Optional icon to show in the autocomplete toggle area. If not provided, the default chevron up/down icons will be used.
          */
         "iconName"?: string;
         /**
@@ -1962,7 +1962,7 @@ declare namespace LocalJSX {
          */
         "invalidMessage"?: string;
         /**
-          * Optional icon to show in the autocomplete toggle area. If not provided, the default chevron up/down icons will be used.
+          * The text that will be used as a field label.
           * @default null
          */
         "label"?: string;
