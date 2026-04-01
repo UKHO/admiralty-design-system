@@ -1,6 +1,6 @@
 {
   "name": "test-app",
-  "version": "5.5.2",
+  "version": "5.5.3",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --host=0.0.0.0",

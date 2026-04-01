@@ -1,3 +1,19 @@
+# v5.5.3 (Mon Mar 30 2026)
+
+#### 🐛 Bug Fix
+
+- fix: DataTransfer null check in FileInput component [#482](https://github.com/UKHO/admiralty-design-system/pull/482) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+#### 🔩 Dependency Updates
+
+- Remove puppeteer dependency [#478](https://github.com/UKHO/admiralty-design-system/pull/478) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+#### Authors: 1
+
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
 # v5.5.2 (Wed Mar 25 2026)
 
 #### 🐛 Bug Fix
