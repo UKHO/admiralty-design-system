@@ -946,13 +946,15 @@ export declare interface AdmiraltyProgressBar extends Components.AdmiraltyProgre
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['allowBackNavigation', 'allowForwardNavigation'],
+  outputs: ['stepClicked'],
+  standalone: false
 })
 export class AdmiraltyProgressTracker {
-  protected el: HTMLElement;
+  protected el: HTMLAdmiraltyProgressTrackerElement;
+  @Output() stepClicked = new EventEmitter<CustomEvent<IAdmiraltyProgressTrackerStepNavigationDetail>>();
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['stepClicked']);
   }
 }
 
@@ -975,10 +977,11 @@ export declare interface AdmiraltyProgressTracker extends Components.AdmiraltyPr
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['status', 'stepId', 'stepTitle', 'summary'],
+  inputs: ['status', { name: 'stepId', required: true }, { name: 'stepTitle', required: true }, 'summary'],
+  standalone: false
 })
 export class AdmiraltyProgressTrackerStep {
-  protected el: HTMLElement;
+  protected el: HTMLAdmiraltyProgressTrackerStepElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -1515,13 +1518,15 @@ export declare interface AdmiraltyTextarea extends Components.AdmiraltyTextarea 
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['ariaLabel', 'disabled', 'theme'],
+  outputs: ['admiraltyThemeChange'],
+  standalone: false
 })
 export class AdmiraltyThemeToggle {
-  protected el: HTMLElement;
+  protected el: HTMLAdmiraltyThemeToggleElement;
+  @Output() admiraltyThemeChange = new EventEmitter<CustomEvent<IAdmiraltyThemeToggleThemeToggleChangeEventDetail>>();
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['admiraltyThemeChange']);
   }
 }
 
@@ -1534,5 +1539,28 @@ export declare interface AdmiraltyThemeToggle extends Components.AdmiraltyThemeT
    */
   admiraltyThemeChange: EventEmitter<CustomEvent<IAdmiraltyThemeToggleThemeToggleChangeEventDetail>>;
 }
+
+
+@ProxyCmp({
+  inputs: ['alignment', 'for', 'placement']
+})
+@Component({
+  selector: 'admiralty-tooltip',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['alignment', { name: 'for', required: true }, 'placement'],
+  standalone: false
+})
+export class AdmiraltyTooltip {
+  protected el: HTMLAdmiraltyTooltipElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface AdmiraltyTooltip extends Components.AdmiraltyTooltip {}
 
 

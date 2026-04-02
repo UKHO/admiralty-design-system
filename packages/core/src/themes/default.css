@@ -429,7 +429,7 @@ body.admiralty-dark-mode {
 
 /** Theme Toggle: Prevent double dark mode application when theme toggle is in use **/
 @media (prefers-color-scheme: dark) {
-  :root:not(.admiralty-light-mode):not(.admiralty-dark-mode) {
+  body:not(.admiralty-light-mode):not(.admiralty-dark-mode) {
     /** primary **/
     --admiralty-colour-primary: #ffffff;
     --admiralty-colour-primary-contrast: #333333;
