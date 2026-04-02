@@ -47,6 +47,7 @@
 - **Guided agent prompts** live in `.github/prompts/`:
   - `new-component.prompt.md` — interactively scaffolds all files for a new Stencil component
 - Copilot workspace guidance lives in `.github/copilot-instructions.md`.
+- Scoped agent guidance files live in `.github/instructions/`.
 - **JetBrains / WebStorm**: no repo-specific `.junie/guidelines.md` is currently present; when needed, start prompts with explicit repo context.
 - **Cursor**: `.cursor/rules/` is not present in this repo; do not assume repo-specific auto-loaded rules.
 - For any tool without auto-discovery, start prompts with: `Follow AGENTS.md in this repo.`

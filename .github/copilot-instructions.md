@@ -13,6 +13,7 @@ This is a pnpm + Nx monorepo for the ADMIRALTY Design System. `packages/core` (S
 
 ## Rules
 
+- Use scoped guidance in `.github/instructions/README.md` and the linked files there when the task is domain-specific.
 - Always implement new component logic in `packages/core/src/components/**` as a Stencil component first.
 - Use ADMIRALTY custom events: `admiraltyInput` (text/number inputs), `admiraltyChange` (select/checkbox/radio-group), `admiraltyRadioChange` (radio). Do not invent new event names.
 - Use `@Watch` for prop-driven state sync (see `input.tsx`, `radio.tsx`).
