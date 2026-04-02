@@ -21,10 +21,8 @@ Use this file for command selection and validation order.
 
 ## Guided component validation order
 Run in this order and report each result:
-1. `pnpm build:core`
+1. `pnpm build:all`
 2. `cd packages/core && pnpm test:spec`
-3. `pnpm build:docs`
-4. `pnpm build:website`
 
 ## CI/release facts used by agents
 - CI uses Node `20.x` (`.github/workflows/*.yml`).
