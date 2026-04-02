@@ -6,24 +6,33 @@ import styles from "./styles.module.css";
   The Data Collection pattern provides a consistent, accessible way to gather information from users through structured forms. It helps teams design and build data entry experiences that are clear, efficient, and easy to use, reducing user error and supporting accurate data submission.
 </div>
 
-<div className={styles.imagesRow}>
-  <div className={styles.imageWrapper}>
-    <img
-      className={styles.image}
-      src="/patterns/data-collection/step1of8.png"
-      height="647"
-      alt="Persistent expansion"
-    />
-  </div>
-
-  <div className={styles.imageWrapper}>
-    <img
-      className={styles.image}
-      src="/patterns/data-collection/step4of8.png"
-      height="789"
-      alt="Step 4 of 8"
-    />
-  </div>
+<div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
+  <img
+    src="/patterns/data-collection/step1of8.png"
+    alt="Light mode example"
+    style={{
+      width: "100%",
+      maxWidth: "450px",
+      height: "auto",
+      flex: "1",
+      padding: "8px",
+      border: "2px solid grey",
+      borderRadius: "6px"
+    }}
+  />
+  <img
+    src="/patterns/data-collection/step4of8.png"
+    alt="Dark mode example"
+    style={{
+      width: "100%",
+      maxWidth: "450px",
+      height: "650px",
+      flex: "1",
+      padding: "8px",
+      border: "2px solid grey",
+      borderRadius: "6px"
+    }}
+  />
 </div>
 
 ## Overview
@@ -79,25 +88,32 @@ The main button that advances the user to the next step, usually labelled Contin
 <h4 style={{ margin: '0', padding: '0' }}>Footer</h4>
 Provide users with consistent, useful links as well as trust and reassurance.
 
-  <div className={styles.imagesRow}>
-    <div className={styles.imageWrapper}>
-      <img
-        className={styles.image}
-        src="/patterns/data-collection/step5of8.png"
-        height="563"
-        alt="Persistent expansion"
-      />
-    </div>
-
-    <div className={styles.imageWrapper}>
-      <img
-        className={styles.image}
-        src="/patterns/data-collection/survey-submitted.png"
-        height="350"
-        alt="Step 4 of 8"
-      />
-    </div>
-  </div>
+<div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
+  <img
+    src="/patterns/data-collection/step5of8.png"
+    alt="Light mode example"
+    style={{
+      maxWidth: "500px",
+      height: "auto",
+      flex: "1",
+      padding: "8px",
+      border: "2px solid grey",
+      borderRadius: "6px"
+    }}
+  />
+  <img
+    src="/patterns/data-collection/survey-submitted.png"
+    alt="Dark mode example"
+    style={{
+      maxWidth: "500px",
+      height: "350px",
+      flex: "1",
+      padding: "8px",
+      border: "2px solid grey",
+      borderRadius: "6px"
+    }}
+  />
+</div>
 
 ## Using a stepped process
 
