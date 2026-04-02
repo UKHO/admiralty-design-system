@@ -8,14 +8,14 @@ import { Components } from '@ukho/admiralty-core';
 
 
 @ProxyCmp({
-  inputs: ['assistiveHint', 'autoselect', 'confirmOnBlur', 'cssNamespace', 'disabled', 'displayMenu', 'filterFunction', 'hint', 'inputClasses', 'invalid', 'invalidMessage', 'label', 'menuAttributes', 'menuClasses', 'minLength', 'name', 'placeholder', 'required', 'showAllValues', 'showNoOptionsFound', 'value']
+  inputs: ['assistiveHint', 'autoselect', 'confirmOnBlur', 'cssNamespace', 'disabled', 'displayMenu', 'filterFunction', 'hint', 'iconName', 'inputClasses', 'invalid', 'invalidMessage', 'label', 'menuAttributes', 'menuClasses', 'minLength', 'name', 'placeholder', 'required', 'showAllValues', 'showNoOptionsFound', 'value']
 })
 @Component({
   selector: 'admiralty-autocomplete',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['assistiveHint', 'autoselect', 'confirmOnBlur', 'cssNamespace', 'disabled', 'displayMenu', 'filterFunction', 'hint', 'inputClasses', 'invalid', 'invalidMessage', 'label', 'menuAttributes', 'menuClasses', 'minLength', 'name', 'placeholder', 'required', 'showAllValues', 'showNoOptionsFound', 'value'],
+  inputs: ['assistiveHint', 'autoselect', 'confirmOnBlur', 'cssNamespace', 'disabled', 'displayMenu', 'filterFunction', 'hint', 'iconName', 'inputClasses', 'invalid', 'invalidMessage', 'label', 'menuAttributes', 'menuClasses', 'minLength', 'name', 'placeholder', 'required', 'showAllValues', 'showNoOptionsFound', 'value'],
   outputs: ['admiraltyChange'],
   standalone: false
 })
@@ -946,13 +946,15 @@ export declare interface AdmiraltyProgressBar extends Components.AdmiraltyProgre
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['allowBackNavigation', 'allowForwardNavigation'],
+  outputs: ['stepClicked'],
+  standalone: false
 })
 export class AdmiraltyProgressTracker {
-  protected el: HTMLElement;
+  protected el: HTMLAdmiraltyProgressTrackerElement;
+  @Output() stepClicked = new EventEmitter<CustomEvent<IAdmiraltyProgressTrackerStepNavigationDetail>>();
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['stepClicked']);
   }
 }
 
@@ -975,10 +977,11 @@ export declare interface AdmiraltyProgressTracker extends Components.AdmiraltyPr
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['status', 'stepId', 'stepTitle', 'summary'],
+  inputs: ['status', { name: 'stepId', required: true }, { name: 'stepTitle', required: true }, 'summary'],
+  standalone: false
 })
 export class AdmiraltyProgressTrackerStep {
-  protected el: HTMLElement;
+  protected el: HTMLAdmiraltyProgressTrackerStepElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -1515,13 +1518,15 @@ export declare interface AdmiraltyTextarea extends Components.AdmiraltyTextarea 
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['ariaLabel', 'disabled', 'theme'],
+  outputs: ['admiraltyThemeChange'],
+  standalone: false
 })
 export class AdmiraltyThemeToggle {
-  protected el: HTMLElement;
+  protected el: HTMLAdmiraltyThemeToggleElement;
+  @Output() admiraltyThemeChange = new EventEmitter<CustomEvent<IAdmiraltyThemeToggleThemeToggleChangeEventDetail>>();
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['admiraltyThemeChange']);
   }
 }
 
