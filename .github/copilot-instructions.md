@@ -37,10 +37,8 @@ cd packages/website && pnpm dev
 - When a task requires validation or generation, attempt to run the needed `pnpm` command(s) instead of only listing them.
 - Prefer repo scripts from `package.json` and package scripts from `packages/core/package.json` over ad-hoc shell commands.
 - For guided component creation prompts, attempt validation commands in order and report result for each command:
-  1. `pnpm build:core`
+  1. `pnpm build:all`
   2. `cd packages/core && pnpm test:spec`
-  3. `pnpm build:docs`
-  4. `pnpm build:website`
 - If command execution is blocked (permissions/tooling/session limits), state that clearly and provide the exact command(s) for the user to run manually.
 
 ## Never touch these (generated on build)

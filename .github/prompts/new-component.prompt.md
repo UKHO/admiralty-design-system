@@ -61,9 +61,7 @@ Once you have all answers, generate the following files. Use the patterns from `
 - Add the new component to the nav list in `packages/website/src/app/layout.tsx` (`componentChildren` array) in alphabetical order.
 - Attempt to run the validation commands in order and report pass/fail for each one. If command execution is unavailable in the current session, clearly say so and then print the exact commands for manual execution:
   ```bash
-  pnpm build:core
+  pnpm build:all
   cd packages/core && pnpm test:spec
-  pnpm build:docs
-  pnpm build:website
   ```
 
