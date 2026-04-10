@@ -1,5 +1,5 @@
 // Core CSS, always required
-@import "core";
+@use 'core';
 
 // Global CSS: typography and normalize
-@import "global.bundle";
+@use 'global.bundle';

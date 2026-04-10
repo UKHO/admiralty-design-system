@@ -1,4 +1,4 @@
-﻿import { Meta, StoryObj } from '@storybook/web-components';
+﻿import { Meta, StoryObj } from '@storybook/web-components-vite';
 import { ProgressTrackerComponent } from './progress-tracker';
 import { html } from 'lit';
 

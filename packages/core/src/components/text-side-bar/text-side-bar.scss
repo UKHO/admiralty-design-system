@@ -1,4 +1,4 @@
-@import 'text-side-bar.vars';
+@use 'text-side-bar.vars' as *;
 
 :host {
   border-right: 1px solid $side-bar-right-border-colour;

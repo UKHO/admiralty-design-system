@@ -1,4 +1,4 @@
-@import "breadcrumbs.vars";
+@use 'breadcrumbs.vars' as *;
 
 .breadcrumbs {
   width: 100%;

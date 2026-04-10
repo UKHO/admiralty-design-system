@@ -1,4 +1,4 @@
-@import 'table-cell.vars';
+@use 'table-cell.vars' as *;
 
 :host {
   display: table-cell;

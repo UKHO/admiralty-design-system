@@ -1,4 +1,4 @@
-@import 'progress-bar.vars.scss';
+@use 'progress-bar.vars.scss' as *;
 
 progress {
   appearance: none;

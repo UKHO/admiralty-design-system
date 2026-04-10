@@ -1,4 +1,4 @@
-@import './progress-tracker-step.vars';
+@use './progress-tracker-step.vars' as *;
 
 // The step component itself is hidden as it's just a data container
 // All rendering is handled by the parent progress-tracker component

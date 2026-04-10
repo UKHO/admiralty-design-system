@@ -1,4 +1,4 @@
-@import 'tab.vars';
+@use 'tab.vars' as *;
 
 .tab-content {
   display: none;

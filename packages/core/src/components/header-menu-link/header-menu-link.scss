@@ -1,4 +1,5 @@
-@import './header-menu-link.vars';
+@use '../../styles/vars/globals' as *;
+@use './header-menu-link.vars' as *;
 
 @mixin active {
   box-shadow: inset 0 -5px $header-menu-link-active-colour;

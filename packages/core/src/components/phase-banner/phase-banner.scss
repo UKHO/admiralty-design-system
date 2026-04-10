@@ -1,4 +1,5 @@
-@import 'phase-banner.vars';
+@use '../../styles/vars/globals' as *;
+@use 'phase-banner.vars' as *;
 
 .phase-banner {
   display: block;

@@ -1,4 +1,4 @@
-@import './modal-dialog.vars';
+@use './modal-dialog.vars' as *;
 
 .modal-backdrop {
   display: none;

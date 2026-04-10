@@ -164,7 +164,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 {sideBarItems.map(({ name, variant, slot, children }) => (
                   <AdmiraltyTextSideBarItem
                     key={name}
-                    suppress-redirect="true"
+                    suppressRedirect={true}
                     variant={variant as TextSideBarItemVariant}
                     slot={slot}
                     itemText={name}>
@@ -172,7 +172,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                       <AdmiraltyTextSideBarItem
                         key={name}
                         onTextSideBarItemClick={() => router.push(path)}
-                        suppress-redirect="true"
+                        suppressRedirect={true}
                         variant={variant as TextSideBarItemVariant}
                         href={path}
                         itemText={name}></AdmiraltyTextSideBarItem>
@@ -186,7 +186,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </div>
             <div>
               <AdmiraltyFooter className={styles.pageFooter} imageSrc="/svg/UKHO linear logo.svg">
-                <AdmiraltyLink href="https://www.admiralty.co.uk/privacy-policy" new-tab="true">
+                <AdmiraltyLink href="https://www.admiralty.co.uk/privacy-policy" newTab={true}>
                   Privacy Policy
                 </AdmiraltyLink>
                 <AdmiraltyLink href="/accessbility">Accessibility</AdmiraltyLink>
@@ -198,3 +198,4 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   );
 }
+

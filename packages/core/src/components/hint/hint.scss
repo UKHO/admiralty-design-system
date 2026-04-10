@@ -1,4 +1,4 @@
-@import 'hint.vars';
+@use 'hint.vars' as *;
 
 p {
   margin: $hint-margin;

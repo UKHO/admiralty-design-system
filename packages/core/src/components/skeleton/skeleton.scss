@@ -1,4 +1,4 @@
-@import './skeleton.vars';
+@use './skeleton.vars' as *;
 
 :host {
   display: inline-block;

@@ -1,4 +1,5 @@
-@import 'tab-group.vars';
+@use '../../styles/vars/globals' as *;
+@use 'tab-group.vars' as *;
 
 .tab-group-headers {
   width: 100%;

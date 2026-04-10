@@ -1,4 +1,5 @@
-@import 'read-more.vars.scss';
+@use '../../styles/vars/globals' as *;
+@use 'read-more.vars.scss' as *;
 
 section.expansion {
   padding: $read-more-padding;

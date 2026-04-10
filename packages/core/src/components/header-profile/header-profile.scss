@@ -1,4 +1,5 @@
-@import 'header-profile.vars';
+@use '../../styles/vars/globals' as *;
+@use 'header-profile.vars' as *;
 
 @mixin active {
   box-shadow: inset 0 -5px $header-profile-active-colour;

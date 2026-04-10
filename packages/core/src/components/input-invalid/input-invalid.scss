@@ -1,4 +1,4 @@
-@import "input-invalid.vars";
+@use 'input-invalid.vars' as *;
 
 :host {
   display: flex;

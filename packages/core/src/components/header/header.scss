@@ -1,4 +1,5 @@
-@import 'header.vars';
+@use '../../styles/vars/globals' as *;
+@use 'header.vars' as *;
 
 .admiralty-header {
   font-size: $header-text-size;

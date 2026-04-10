@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/web-components';
+import { Meta, StoryObj } from '@storybook/web-components-vite';
 import { ErrorSummaryComponent } from './error-summary';
 import { html } from 'lit';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';

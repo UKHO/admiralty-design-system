@@ -1,4 +1,4 @@
-@import './theme-toggle.vars';
+@use './theme-toggle.vars' as *;
 
 .theme-toggle {
   position: relative;

@@ -1,4 +1,4 @@
-@import 'icon-side-bar-item.vars.scss';
+@use 'icon-side-bar-item.vars.scss' as *;
 
 :host {
   --admiralty-icon-font-size: var(--admiralty-font-size-2);

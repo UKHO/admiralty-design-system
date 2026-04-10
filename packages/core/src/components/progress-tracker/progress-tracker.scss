@@ -1,5 +1,5 @@
 /* progress-tracker component styles */
-@import './progress-tracker.vars';
+@use './progress-tracker.vars' as *;
 
 .progress-tracker {
   background-color: $progress-tracker-background;

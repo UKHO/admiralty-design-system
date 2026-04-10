@@ -1,4 +1,5 @@
-@import 'icon.vars.scss';
+@use '../../styles/vars/globals' as *;
+@use 'icon.vars.scss' as *;
 
 :host {
   font-size: $icon-size;

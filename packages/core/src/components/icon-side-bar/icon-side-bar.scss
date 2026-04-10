@@ -1,4 +1,4 @@
-@import 'icon-side-bar.vars.scss';
+@use 'icon-side-bar.vars.scss' as *;
 
 nav {
   display: flex;

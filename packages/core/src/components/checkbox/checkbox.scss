@@ -1,4 +1,4 @@
-@import 'checkbox.vars';
+@use 'checkbox.vars' as *;
 
 .form-control {
   font-size: $checkbox-font-size;

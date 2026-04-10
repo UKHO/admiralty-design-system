@@ -1,4 +1,4 @@
-@import './autocomplete.vars';
+@use './autocomplete.vars' as *;
 
 .autocomplete__wrapper {
   position: relative;

@@ -1,5 +1,5 @@
-@import '../vars/colours';
-@import '../utils/colour-functions';
+@use '../vars/colours' as *;
+@use '../utils/colour-functions' as *;
 // JohnstonITCPro font imported from CDN
 @import url('https://cdn.fonts.net/kit/aa1c2560-9670-43e2-85b0-f27b25f69c56/aa1c2560-9670-43e2-85b0-f27b25f69c56_enhanced.css');
 
