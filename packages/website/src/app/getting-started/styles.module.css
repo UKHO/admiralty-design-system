@@ -1,9 +1,16 @@
 .contentContainer {
   display: flex;
-  padding: 60px 142px
+  padding: 60px 142px;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .content {
   min-width: 0;
+  flex: 1;
+  max-width: 700px;
+  margin: 0 auto;
+  width: 100%;
 }
-

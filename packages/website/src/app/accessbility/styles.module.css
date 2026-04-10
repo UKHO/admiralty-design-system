@@ -1,4 +1,15 @@
 .contentContainer {
   display: flex;
   padding: 60px 11rem 0 11rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.content {
+  flex: 1;
+  max-width: 700px;
+  margin: 0 auto;
+  width: 100%;
 }
