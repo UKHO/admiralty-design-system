@@ -1,4 +1,4 @@
-@import '../../styles/vars/globals';
+@use '../../styles/vars/globals' as *;
 
 /**
  * @prop --admiralty-header-sub-menu-item-font-size: Font size of the header sub menu item.

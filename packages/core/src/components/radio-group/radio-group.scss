@@ -1,4 +1,4 @@
-@import 'radio-group.vars';
+@use 'radio-group.vars' as *;
 
 .radio-group {
   display: flex;

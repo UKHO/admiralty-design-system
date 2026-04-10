@@ -37,26 +37,32 @@ export namespace Components {
     interface AdmiraltyAutocomplete {
         /**
           * The hint that is provided to assistive users.
+          * @default 'When autocomplete results are available use up and down arrows to review and enter to select.  Touch device users, explore by touch or with swipe gestures.'
          */
         "assistiveHint": string;
         /**
           * Automatically select the first matching option.
+          * @default false
          */
         "autoselect": boolean;
         /**
           * Toggle automatically confirming a selection when the field is blurred.
+          * @default true
          */
         "confirmOnBlur": boolean;
         /**
           * The default CSS namespace.
+          * @default 'autocomplete'
          */
         "cssNamespace": string;
         /**
           * When `true`, the component cannot be interacted with.
+          * @default false
          */
         "disabled": boolean;
         /**
           * When set to `overlay` this option will display the menu as an absolutely positioned overlay instead of inline.
+          * @default 'inline'
          */
         "displayMenu": string;
         /**
@@ -65,6 +71,7 @@ export namespace Components {
         "filterFunction": (query: string) => Option[];
         /**
           * TThe text which will be used under the label to describe the input.
+          * @default null
          */
         "hint": string;
         /**
@@ -73,14 +80,17 @@ export namespace Components {
         "inputClasses": string;
         /**
           * Whether to show that the component is in an invalid state.
+          * @default false
          */
         "invalid": boolean;
         /**
           * The message to show when the component is invalid.
+          * @default null
          */
         "invalidMessage": string;
         /**
           * The text that will be used as a field label.
+          * @default null
          */
         "label": string;
         /**
@@ -93,6 +103,7 @@ export namespace Components {
         "menuClasses": string;
         /**
           * Prevent displaying options until the minimum string length is reached. Ignored when show all values is enabled.
+          * @default 0
          */
         "minLength": number;
         /**
@@ -101,22 +112,27 @@ export namespace Components {
         "name": string;
         /**
           * Populate the placeholder attribute on the `<input>` element.
+          * @default ''
          */
         "placeholder": string;
         /**
           * Populates the required field on the `<input>` element.
+          * @default false
          */
         "required": boolean;
         /**
           * Toggle showing all values when the input is clicked, like a default dropdown. This will hide the chevron when set to false.
+          * @default true
          */
         "showAllValues": boolean;
         /**
           * Toggle whether to display the "No results found" message.
+          * @default true
          */
         "showNoOptionsFound": boolean;
         /**
           * The value of the input.
+          * @default null
          */
         "value"?: string | null;
     }
@@ -129,6 +145,7 @@ export namespace Components {
     interface AdmiraltyBreadcrumb {
         /**
           * When `true` the breadcrumb will by styled to show that it is the currently active breadcrumb. Defaults to `true` for the last breadcrumb if it is not set on any.
+          * @default false
          */
         "active": boolean;
         "first": boolean;
@@ -142,10 +159,12 @@ export namespace Components {
     interface AdmiraltyButton {
         /**
           * The default behavior of the button. Valid values are `button`, `submit` and `reset`. Default value is `submit`.
+          * @default false
          */
         "borderless": boolean;
         /**
           * Determines whether the button is disabled. A button in disabled state will not fire click output events.
+          * @default false
          */
         "disabled": boolean;
         /**
@@ -162,6 +181,7 @@ export namespace Components {
         "name": string;
         /**
           * Default value is false
+          * @default 'submit'
          */
         "type": 'button' | 'submit' | 'reset';
         /**
@@ -170,6 +190,7 @@ export namespace Components {
         "value": string;
         /**
           * The type of button to render. Valid values are `primary`, `secondary`, `warning`, `text` and `icon`. Default value is `primary`.
+          * @default 'primary'
          */
         "variant": ButtonVariant;
     }
@@ -182,26 +203,32 @@ export namespace Components {
     interface AdmiraltyCheckbox {
         /**
           * Whether the checkbox should be positioned to the right of the label.
+          * @default false
          */
         "checkboxRight": boolean;
         /**
           * If `true`, the checkbox is selected.
+          * @default false
          */
         "checked": boolean;
         /**
           * This dictates whether the form field is disabled.
+          * @default false
          */
         "disabled": boolean;
         /**
           * This visually hides the labelText while preserving accessibility.
+          * @default false
          */
         "labelHidden": boolean;
         /**
           * The label text must be provided and is displayed beside the checkbox, use the `labelHidden` property to control its visibility.
+          * @default null
          */
         "labelText": string;
         /**
           * The name of the control, which is submitted with the form data.
+          * @default this.inputId
          */
         "name": string;
         /**
@@ -217,10 +244,12 @@ export namespace Components {
         "actionText": string;
         /**
           * The background colour of the component.
+          * @default 'admiralty-blue'
          */
         "colour": 'admiralty-blue' | 'teal' | 'bright-blue';
         /**
           * Allow the card to be clicked. Will emit a `colourBlockLinkClicked` event. A value for `href` should also be provided to ensure the component conforms to accessibility standards.
+          * @default false
          */
         "enableCardEvent": boolean;
         /**
@@ -241,6 +270,7 @@ export namespace Components {
         "linkText": string;
         /**
           * Causes the default browser redirect to be suppressed. Can be used in conjunction with the `colourBlockLinkClicked` event to use a navigation router and prevent a full page reload when navigating.
+          * @default false
          */
         "suppressRedirect": boolean;
         /**
@@ -259,22 +289,26 @@ export namespace Components {
         "sectionRole": 'alert';
         /**
           * The type of dialogue box to render.
+          * @default 'info'
          */
         "type": 'info' | 'warning' | 'success' | 'error';
     }
     interface AdmiraltyErrorSummary {
         /**
           * The heading to display.
+          * @default "There's a problem"
          */
         "heading": string;
     }
     interface AdmiraltyExpansion {
         /**
           * CWhether the heading should be right aligned.
+          * @default false
          */
         "alignHeadingRight": boolean;
         /**
           * Whether the component is expanded.
+          * @default false
          */
         "expanded": boolean;
         /**
@@ -283,30 +317,36 @@ export namespace Components {
         "heading": string;
         /**
           * Whether the border on the bottom of the component should be hidden.
+          * @default false
          */
         "hideBorder": boolean;
     }
     interface AdmiraltyFileInput {
         /**
           * Whether to show that the file input is in an invalid state.
+          * @default false
          */
         "invalid": boolean;
         /**
           * The message to show when the file input is invalid.
+          * @default null
          */
         "invalidMessage": string;
         /**
           * Used to display instructions to the user and is replaced with the filename the user inputs
+          * @default 'Click to choose a file or drag it'
          */
         "label": string;
         /**
           * If true, enables multiple files to be selected or dragged
+          * @default false
          */
         "multiple": boolean;
     }
     interface AdmiraltyFilter {
         /**
           * The title of the filter
+          * @default 'Filter'
          */
         "filterTitle": string;
     }
@@ -319,22 +359,27 @@ export namespace Components {
     interface AdmiraltyFooter {
         /**
           * A description for the image displayed in the footer. This might be shown if the image fails to load or get read out by screen readers.
+          * @default 'Admiralty Maritime Data Solutions | UK Hydrographic Office'
          */
         "imageAlt": string;
         /**
           * The URL that the image links to.
+          * @default 'https://www.admiralty.co.uk/'
          */
         "imageLink": string;
         /**
           * The source of the image displayed in the footer.
+          * @default 'svg/UKHO stacked logo.svg'
          */
         "imageSrc": string;
         /**
           * The text to display in the footer. The default value displays crown copyright, the current year and `UK Hydrographic Office`.
+          * @default `© Crown copyright ${new Date().getFullYear()} UK Hydrographic Office`
          */
         "text": string;
         /**
           * The type of footer to render. Valid values are `standard`, `compact`. Default value is `standard`.
+          * @default FooterType.Standard
          */
         "variant": FooterTypes;
     }
@@ -345,24 +390,29 @@ export namespace Components {
         "headerTitle": string;
         /**
           * The url that clicking on the nav link will take you too
+          * @default null
          */
         "headerTitleUrl": string;
         /**
           * The alternate image text for the logo image
+          * @default 'ADMIRALTY'
          */
         "logoAltText": string;
         /**
           * The uri of the logo image
+          * @default 'svg/Admiralty stacked logo.svg'
          */
         "logoImgUrl": string;
         /**
           * The destination url when the logo is clicked
+          * @default 'https://www.admiralty.co.uk/'
          */
         "logoLinkUrl": string;
     }
     interface AdmiraltyHeaderMenuItem {
         /**
           * Whether the item is active
+          * @default false
          */
         "active"?: boolean;
         /**
@@ -373,6 +423,7 @@ export namespace Components {
     interface AdmiraltyHeaderMenuLink {
         /**
           * Whether the item is active
+          * @default false
          */
         "active"?: boolean;
         /**
@@ -385,20 +436,24 @@ export namespace Components {
         "menuTitle"?: string;
         /**
           * Causes the default browser redirect to be suppressed. Can be used in conjunction with the `onMenuItemClick` event to use a navigation router and prevent a full page reload when navigating.
+          * @default false
          */
         "suppressRedirect"?: boolean;
     }
     interface AdmiraltyHeaderProfile {
         /**
           * A boolean to indicate if the user is signed in or not
+          * @default false
          */
         "isSignedIn": boolean;
         /**
           * A boolean to indicate if the component should hide the sign-out and account buttons, useful for internal sites where the user must be always signed in.
+          * @default false
          */
         "signInOnly": boolean;
         /**
           * The text that is displayed after the user signs in
+          * @default 'replace'
          */
         "signedInText": string;
     }
@@ -413,6 +468,7 @@ export namespace Components {
         "menuTitle": string;
         /**
           * Causes the default browser redirect to be suppressed. Can be used in conjunction with the `onMenuItemClick` event to use a navigation router and prevent a full page reload when navigating.
+          * @default false
          */
         "suppressRedirect"?: boolean;
     }
@@ -431,12 +487,14 @@ export namespace Components {
         "name": string;
         /**
           * The size of the icon in pixels. When not set, the icon height will be determined by the parent font size.
+          * @default 'unset'
          */
         "size": number | 'unset';
     }
     interface AdmiraltyIconSideBar {
         /**
           * Sets the sidebar width
+          * @default '150px'
          */
         "iconSideBarWidth": string;
         /**
@@ -445,20 +503,24 @@ export namespace Components {
         "label": string;
         /**
           * The URI of the logo image
+          * @default 'svg/UKHO crest.svg'
          */
         "logoImgUrl": string;
         /**
           * Set this to false to hide the logo that is displayed in the bottom of the side bar.
+          * @default true
          */
         "showLogo": boolean;
     }
     interface AdmiraltyIconSideBarItem {
         /**
           * Represents whether this SideBarItem is 'active' and will be styled differently than SideBarItems that are not 'active'. There should only be one SideBarItem that is 'active' per SideBar.
+          * @default false
          */
         "active": boolean;
         /**
           * Whether the component is expanded.
+          * @default false
          */
         "expanded": boolean;
         /**
@@ -475,6 +537,7 @@ export namespace Components {
         "itemText": string;
         /**
           * Causes the default browser redirect to be suppressed. Can be used in conjunction with the `onIconSideBarItemClick` event to use a navigation router and prevent a full page reload when navigating.
+          * @default false
          */
         "suppressRedirect"?: boolean;
     }
@@ -489,10 +552,12 @@ export namespace Components {
     interface AdmiraltyInput {
         /**
           * Indicates whether the value of the control can be automatically completed by the browser.
+          * @default 'off'
          */
         "autocomplete": string;
         /**
           * This dictates whether the form field is disabled.
+          * @default false
          */
         "disabled": boolean;
         /**
@@ -501,6 +566,7 @@ export namespace Components {
         "hint": string;
         /**
           * Whether to show the input in an invalid state
+          * @default false
          */
         "invalid": boolean;
         /**
@@ -521,14 +587,17 @@ export namespace Components {
         "placeholder": string;
         /**
           * This dictates whether the input is required or not
+          * @default false
          */
         "required": boolean;
         /**
           * The input type, options are: text; number; date; time; email; password; tel; url
+          * @default 'text'
          */
         "type": 'text' | 'number' | 'date' | 'time' | 'email' | 'password' | 'tel' | 'url';
         /**
           * The value of the input.
+          * @default ''
          */
         "value"?: string | number | null;
         /**
@@ -555,6 +624,7 @@ export namespace Components {
         "href": string;
         /**
           * Whether to open the URL in a new tab.
+          * @default false
          */
         "newTab": boolean;
     }
@@ -573,20 +643,24 @@ export namespace Components {
         "label": string;
         /**
           * Whether to show the modal dialog.
+          * @default false
          */
         "show": boolean;
     }
     interface AdmiraltyPaginator {
         /**
           * The current page. Defaults to 1.
+          * @default 1
          */
         "currentPage": number;
         /**
           * The label to display.
+          * @default ''
          */
         "label": string;
         /**
           * The total number of pages. Defaults to 1.
+          * @default 1
          */
         "pages": number;
     }
@@ -599,12 +673,14 @@ export namespace Components {
         "link": string;
         /**
           * The phase for the phase banner
+          * @default 'alpha'
          */
         "phase": 'alpha' | 'beta';
     }
     interface AdmiraltyPill {
         /**
           * The background colour of the pill.
+          * @default 'admiralty-blue'
          */
         "colour": 'admiralty-blue' | 'white' | 'bright-blue';
         /**
@@ -617,6 +693,7 @@ export namespace Components {
         "number": string;
         /**
           * Whether to show the pill is selected.
+          * @default false
          */
         "selected": boolean;
         /**
@@ -627,6 +704,7 @@ export namespace Components {
     interface AdmiraltyProgressBar {
         /**
           * Set to true to indicate an error (turns the progress bar red)
+          * @default false
          */
         "error": boolean;
         /**
@@ -635,16 +713,19 @@ export namespace Components {
         "label"?: string;
         /**
           * * A value from 0 - 100 that visually represents the current progression
+          * @default 0
          */
         "progression": number;
     }
     interface AdmiraltyProgressTracker {
         /**
           * Whether navigation to previous steps is allowed
+          * @default true
          */
         "allowBackNavigation": boolean;
         /**
           * Whether navigation to future steps is allowed
+          * @default true
          */
         "allowForwardNavigation": boolean;
     }
@@ -654,6 +735,7 @@ export namespace Components {
     interface AdmiraltyProgressTrackerStep {
         /**
           * The current status of the step
+          * @default 'upcoming'
          */
         "status": StepStatus;
         /**
@@ -672,14 +754,17 @@ export namespace Components {
     interface AdmiraltyRadio {
         /**
           * Determines whether the radio button is selected (or checked)
+          * @default false
          */
         "checked"?: boolean;
         /**
           * Determines whether the radio button is disabled. A button in disabled state will not fire click output events.
+          * @default false
          */
         "disabled"?: boolean;
         /**
           * Determines whether to add the invalid stying to the radio button
+          * @default false
          */
         "invalid": boolean;
         /**
@@ -695,10 +780,12 @@ export namespace Components {
     interface AdmiraltyRadioGroup {
         /**
           * Whether the radio controls should be disabled
+          * @default false
          */
         "disabled": boolean;
         /**
           * Setting this to false displays the radio options horizontally (defaults to true)
+          * @default true
          */
         "displayVertical": boolean;
         /**
@@ -707,6 +794,7 @@ export namespace Components {
         "hint": string;
         /**
           * Whether to show the input in an invalid state
+          * @default false
          */
         "invalid": boolean;
         /**
@@ -719,6 +807,7 @@ export namespace Components {
         "label": string;
         /**
           * The name of the control, which is submitted with the form data
+          * @default this.inputId
          */
         "name": string;
         /**
@@ -735,26 +824,32 @@ export namespace Components {
     interface AdmiraltySelect {
         /**
           * If `true`, the user cannot interact with the select.
+          * @default false
          */
         "disabled": boolean;
         /**
           * The text that will be used as a field label.
+          * @default null
          */
         "hint": string;
         /**
           * Whether to show that the select is in an invalid state.
+          * @default false
          */
         "invalid": boolean;
         /**
           * The message to show when the select is invalid.
+          * @default null
          */
         "invalidMessage": string;
         /**
           * The text that will be used as a field label.
+          * @default 'Choose a colour'
          */
         "label": string;
         /**
           * The value of the option selected as a string or number.
+          * @default ''
          */
         "value"?: string | number | null;
         /**
@@ -775,6 +870,7 @@ export namespace Components {
         "headingTitle": string;
         /**
           * Represents whether this SideNavItem is 'active' and will be styled differently than SideNavItems that are not 'active'. The intent behind the design for SideNav is for there to only be ONE SideNavItem that is 'active' per SideNav
+          * @default false
          */
         "navActive": boolean;
         /**
@@ -787,42 +883,53 @@ export namespace Components {
     interface AdmiraltySkeleton {
         /**
           * Height of the skeleton component, default is set to 1rem.
+          * @default '1rem'
          */
         "height"?: string;
         /**
           * Hides the animation of a shimmer on the skeleton component, default is set to false, set to true if you require no animation.
+          * @default false
          */
         "noAnimation": boolean;
         /**
           * Radius of the skeleton component, default is .5rem.
+          * @default '.5rem'
          */
         "radius"?: string;
         /**
           * Width of the skeleton component, default is set to 100%.
+          * @default '100%'
          */
         "width"?: string;
     }
     interface AdmiraltySkipLink {
         /**
           * The HTML ID that the skip link will jump to when activated.
+          * @default '#main-content'
          */
         "href": string;
     }
     interface AdmiraltyTab {
         /**
           * Tab label
+          * @default ''
          */
         "label": string;
         /**
           * Tab content Id.  To be set internally by parent tab group component.
+          * @default ""
          */
         "tabContentId": string;
         /**
           * Tab label Id.  To be set internally by parent tab group component.
+          * @default ""
          */
         "tabLabelId": string;
     }
     interface AdmiraltyTabGroup {
+        /**
+          * @default 0
+         */
         "selectedIndex": number;
     }
     /**
@@ -863,24 +970,29 @@ export namespace Components {
         "label": string;
         /**
           * The URI of the logo image
+          * @default 'svg/UKHO crest.svg'
          */
         "logoImgUrl": string;
         /**
           * Set this to false to hide the logo that is displayed in the bottom of the side bar.
+          * @default true
          */
         "showLogo": boolean;
         /**
           * Sets the sidebar width
+          * @default '150px'
          */
         "textSideBarWidth": string;
     }
     interface AdmiraltyTextSideBarItem {
         /**
           * Represents whether this SideBarItem is 'active' and will be styled differently than SideBarItems that are not 'active'. There should only be one SideBarItem that is 'active' per SideBar.
+          * @default false
          */
         "active": boolean;
         /**
           * Whether the component is expanded.
+          * @default false
          */
         "expanded": boolean;
         /**
@@ -897,10 +1009,12 @@ export namespace Components {
         "itemText": string;
         /**
           * Causes the default browser redirect to be suppressed. Can be used in conjunction with the `onTextSideBarItemClick` event to use a navigation router and prevent a full page reload when navigating.
+          * @default false
          */
         "suppressRedirect"?: boolean;
         /**
           * The type of text side bar item to render. Valid values are `primary` and `secondary`. Default value is `primary`.
+          * @default TextSideBarItemVariant.Expandable
          */
         "variant": TextSideBarItemVariant;
     }
@@ -909,6 +1023,7 @@ export namespace Components {
     interface AdmiraltyTextarea {
         /**
           * This dictates whether the form field is disabled.
+          * @default false
          */
         "disabled": boolean;
         /**
@@ -917,6 +1032,7 @@ export namespace Components {
         "hint": string;
         /**
           * Whether to show the input in an invalid state
+          * @default false
          */
         "invalid": boolean;
         /**
@@ -925,10 +1041,12 @@ export namespace Components {
         "invalidMessage": string;
         /**
           * The label which will be used as a placeholder in the unfilled state, and as a field label in the filled state.
+          * @default ''
          */
         "label": string;
         /**
           * The value of the textarea.
+          * @default ''
          */
         "value"?: string | number | null;
         /**
@@ -939,14 +1057,17 @@ export namespace Components {
     interface AdmiraltyThemeToggle {
         /**
           * Label for accessibility. Defaults to "Toggle dark mode".
+          * @default 'Toggle dark mode'
          */
         "ariaLabel": string;
         /**
           * Whether the toggle should be disabled.
+          * @default false
          */
         "disabled": boolean;
         /**
-          * The current theme preference. Can be 'light', 'dark', or 'auto' (system preference). Default value is 'auto'.
+          * The current theme preference. Can be 'light', 'dark', or 'auto' (system preference). Default value is 'auto'. When no saved preference exists, it remains 'auto' so OS theme changes continue to be followed.
+          * @default 'auto'
          */
         "theme": ThemePreference;
     }
@@ -1776,29 +1897,37 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    type OneOf<K extends string, PropT, AttrT = PropT> = { [P in K]: PropT } & { [P in `attr:${K}` | `prop:${K}`]?: never } | { [P in `attr:${K}`]: AttrT } & { [P in K | `prop:${K}`]?: never } | { [P in `prop:${K}`]: PropT } & { [P in K | `attr:${K}`]?: never };
+
     interface AdmiraltyAutocomplete {
         /**
           * The hint that is provided to assistive users.
+          * @default 'When autocomplete results are available use up and down arrows to review and enter to select.  Touch device users, explore by touch or with swipe gestures.'
          */
         "assistiveHint"?: string;
         /**
           * Automatically select the first matching option.
+          * @default false
          */
         "autoselect"?: boolean;
         /**
           * Toggle automatically confirming a selection when the field is blurred.
+          * @default true
          */
         "confirmOnBlur"?: boolean;
         /**
           * The default CSS namespace.
+          * @default 'autocomplete'
          */
         "cssNamespace"?: string;
         /**
           * When `true`, the component cannot be interacted with.
+          * @default false
          */
         "disabled"?: boolean;
         /**
           * When set to `overlay` this option will display the menu as an absolutely positioned overlay instead of inline.
+          * @default 'inline'
          */
         "displayMenu"?: string;
         /**
@@ -1807,6 +1936,7 @@ declare namespace LocalJSX {
         "filterFunction"?: (query: string) => Option[];
         /**
           * TThe text which will be used under the label to describe the input.
+          * @default null
          */
         "hint"?: string;
         /**
@@ -1815,14 +1945,17 @@ declare namespace LocalJSX {
         "inputClasses"?: string;
         /**
           * Whether to show that the component is in an invalid state.
+          * @default false
          */
         "invalid"?: boolean;
         /**
           * The message to show when the component is invalid.
+          * @default null
          */
         "invalidMessage"?: string;
         /**
           * The text that will be used as a field label.
+          * @default null
          */
         "label"?: string;
         /**
@@ -1835,6 +1968,7 @@ declare namespace LocalJSX {
         "menuClasses"?: string;
         /**
           * Prevent displaying options until the minimum string length is reached. Ignored when show all values is enabled.
+          * @default 0
          */
         "minLength"?: number;
         /**
@@ -1847,22 +1981,27 @@ declare namespace LocalJSX {
         "onAdmiraltyChange"?: (event: AdmiraltyAutocompleteCustomEvent<AutoCompleteChangeEventDetail>) => void;
         /**
           * Populate the placeholder attribute on the `<input>` element.
+          * @default ''
          */
         "placeholder"?: string;
         /**
           * Populates the required field on the `<input>` element.
+          * @default false
          */
         "required"?: boolean;
         /**
           * Toggle showing all values when the input is clicked, like a default dropdown. This will hide the chevron when set to false.
+          * @default true
          */
         "showAllValues"?: boolean;
         /**
           * Toggle whether to display the "No results found" message.
+          * @default true
          */
         "showNoOptionsFound"?: boolean;
         /**
           * The value of the input.
+          * @default null
          */
         "value"?: string | null;
     }
@@ -1875,6 +2014,7 @@ declare namespace LocalJSX {
     interface AdmiraltyBreadcrumb {
         /**
           * When `true` the breadcrumb will by styled to show that it is the currently active breadcrumb. Defaults to `true` for the last breadcrumb if it is not set on any.
+          * @default false
          */
         "active"?: boolean;
         "first": boolean;
@@ -1888,10 +2028,12 @@ declare namespace LocalJSX {
     interface AdmiraltyButton {
         /**
           * The default behavior of the button. Valid values are `button`, `submit` and `reset`. Default value is `submit`.
+          * @default false
          */
         "borderless"?: boolean;
         /**
           * Determines whether the button is disabled. A button in disabled state will not fire click output events.
+          * @default false
          */
         "disabled"?: boolean;
         /**
@@ -1908,6 +2050,7 @@ declare namespace LocalJSX {
         "name"?: string;
         /**
           * Default value is false
+          * @default 'submit'
          */
         "type"?: 'button' | 'submit' | 'reset';
         /**
@@ -1916,6 +2059,7 @@ declare namespace LocalJSX {
         "value"?: string;
         /**
           * The type of button to render. Valid values are `primary`, `secondary`, `warning`, `text` and `icon`. Default value is `primary`.
+          * @default 'primary'
          */
         "variant"?: ButtonVariant;
     }
@@ -1928,26 +2072,32 @@ declare namespace LocalJSX {
     interface AdmiraltyCheckbox {
         /**
           * Whether the checkbox should be positioned to the right of the label.
+          * @default false
          */
         "checkboxRight"?: boolean;
         /**
           * If `true`, the checkbox is selected.
+          * @default false
          */
         "checked"?: boolean;
         /**
           * This dictates whether the form field is disabled.
+          * @default false
          */
         "disabled"?: boolean;
         /**
           * This visually hides the labelText while preserving accessibility.
+          * @default false
          */
         "labelHidden"?: boolean;
         /**
           * The label text must be provided and is displayed beside the checkbox, use the `labelHidden` property to control its visibility.
+          * @default null
          */
         "labelText"?: string;
         /**
           * The name of the control, which is submitted with the form data.
+          * @default this.inputId
          */
         "name"?: string;
         /**
@@ -1978,10 +2128,12 @@ declare namespace LocalJSX {
         "actionText"?: string;
         /**
           * The background colour of the component.
+          * @default 'admiralty-blue'
          */
         "colour"?: 'admiralty-blue' | 'teal' | 'bright-blue';
         /**
           * Allow the card to be clicked. Will emit a `colourBlockLinkClicked` event. A value for `href` should also be provided to ensure the component conforms to accessibility standards.
+          * @default false
          */
         "enableCardEvent"?: boolean;
         /**
@@ -2006,6 +2158,7 @@ declare namespace LocalJSX {
         "onColourBlockLinkClicked"?: (event: AdmiraltyColourBlockCustomEvent<string>) => void;
         /**
           * Causes the default browser redirect to be suppressed. Can be used in conjunction with the `colourBlockLinkClicked` event to use a navigation router and prevent a full page reload when navigating.
+          * @default false
          */
         "suppressRedirect"?: boolean;
         /**
@@ -2024,22 +2177,26 @@ declare namespace LocalJSX {
         "sectionRole"?: 'alert';
         /**
           * The type of dialogue box to render.
+          * @default 'info'
          */
         "type"?: 'info' | 'warning' | 'success' | 'error';
     }
     interface AdmiraltyErrorSummary {
         /**
           * The heading to display.
+          * @default "There's a problem"
          */
         "heading"?: string;
     }
     interface AdmiraltyExpansion {
         /**
           * CWhether the heading should be right aligned.
+          * @default false
          */
         "alignHeadingRight"?: boolean;
         /**
           * Whether the component is expanded.
+          * @default false
          */
         "expanded"?: boolean;
         /**
@@ -2048,6 +2205,7 @@ declare namespace LocalJSX {
         "heading"?: string;
         /**
           * Whether the border on the bottom of the component should be hidden.
+          * @default false
          */
         "hideBorder"?: boolean;
         /**
@@ -2058,18 +2216,22 @@ declare namespace LocalJSX {
     interface AdmiraltyFileInput {
         /**
           * Whether to show that the file input is in an invalid state.
+          * @default false
          */
         "invalid"?: boolean;
         /**
           * The message to show when the file input is invalid.
+          * @default null
          */
         "invalidMessage"?: string;
         /**
           * Used to display instructions to the user and is replaced with the filename the user inputs
+          * @default 'Click to choose a file or drag it'
          */
         "label"?: string;
         /**
           * If true, enables multiple files to be selected or dragged
+          * @default false
          */
         "multiple"?: boolean;
         /**
@@ -2080,6 +2242,7 @@ declare namespace LocalJSX {
     interface AdmiraltyFilter {
         /**
           * The title of the filter
+          * @default 'Filter'
          */
         "filterTitle"?: string;
         /**
@@ -2100,22 +2263,27 @@ declare namespace LocalJSX {
     interface AdmiraltyFooter {
         /**
           * A description for the image displayed in the footer. This might be shown if the image fails to load or get read out by screen readers.
+          * @default 'Admiralty Maritime Data Solutions | UK Hydrographic Office'
          */
         "imageAlt"?: string;
         /**
           * The URL that the image links to.
+          * @default 'https://www.admiralty.co.uk/'
          */
         "imageLink"?: string;
         /**
           * The source of the image displayed in the footer.
+          * @default 'svg/UKHO stacked logo.svg'
          */
         "imageSrc"?: string;
         /**
           * The text to display in the footer. The default value displays crown copyright, the current year and `UK Hydrographic Office`.
+          * @default `© Crown copyright ${new Date().getFullYear()} UK Hydrographic Office`
          */
         "text"?: string;
         /**
           * The type of footer to render. Valid values are `standard`, `compact`. Default value is `standard`.
+          * @default FooterType.Standard
          */
         "variant"?: FooterTypes;
     }
@@ -2126,18 +2294,22 @@ declare namespace LocalJSX {
         "headerTitle"?: string;
         /**
           * The url that clicking on the nav link will take you too
+          * @default null
          */
         "headerTitleUrl"?: string;
         /**
           * The alternate image text for the logo image
+          * @default 'ADMIRALTY'
          */
         "logoAltText"?: string;
         /**
           * The uri of the logo image
+          * @default 'svg/Admiralty stacked logo.svg'
          */
         "logoImgUrl"?: string;
         /**
           * The destination url when the logo is clicked
+          * @default 'https://www.admiralty.co.uk/'
          */
         "logoLinkUrl"?: string;
         /**
@@ -2148,6 +2320,7 @@ declare namespace LocalJSX {
     interface AdmiraltyHeaderMenuItem {
         /**
           * Whether the item is active
+          * @default false
          */
         "active"?: boolean;
         /**
@@ -2162,6 +2335,7 @@ declare namespace LocalJSX {
     interface AdmiraltyHeaderMenuLink {
         /**
           * Whether the item is active
+          * @default false
          */
         "active"?: boolean;
         /**
@@ -2178,12 +2352,14 @@ declare namespace LocalJSX {
         "onMenuItemClick"?: (event: AdmiraltyHeaderMenuLinkCustomEvent<void>) => void;
         /**
           * Causes the default browser redirect to be suppressed. Can be used in conjunction with the `onMenuItemClick` event to use a navigation router and prevent a full page reload when navigating.
+          * @default false
          */
         "suppressRedirect"?: boolean;
     }
     interface AdmiraltyHeaderProfile {
         /**
           * A boolean to indicate if the user is signed in or not
+          * @default false
          */
         "isSignedIn"?: boolean;
         /**
@@ -2200,10 +2376,12 @@ declare namespace LocalJSX {
         "onYourAccountClicked"?: (event: AdmiraltyHeaderProfileCustomEvent<void>) => void;
         /**
           * A boolean to indicate if the component should hide the sign-out and account buttons, useful for internal sites where the user must be always signed in.
+          * @default false
          */
         "signInOnly"?: boolean;
         /**
           * The text that is displayed after the user signs in
+          * @default 'replace'
          */
         "signedInText"?: string;
     }
@@ -2222,6 +2400,7 @@ declare namespace LocalJSX {
         "onSubMenuItemClick"?: (event: AdmiraltyHeaderSubMenuItemCustomEvent<string>) => void;
         /**
           * Causes the default browser redirect to be suppressed. Can be used in conjunction with the `onMenuItemClick` event to use a navigation router and prevent a full page reload when navigating.
+          * @default false
          */
         "suppressRedirect"?: boolean;
     }
@@ -2240,12 +2419,14 @@ declare namespace LocalJSX {
         "name"?: string;
         /**
           * The size of the icon in pixels. When not set, the icon height will be determined by the parent font size.
+          * @default 'unset'
          */
         "size"?: number | 'unset';
     }
     interface AdmiraltyIconSideBar {
         /**
           * Sets the sidebar width
+          * @default '150px'
          */
         "iconSideBarWidth"?: string;
         /**
@@ -2254,20 +2435,24 @@ declare namespace LocalJSX {
         "label"?: string;
         /**
           * The URI of the logo image
+          * @default 'svg/UKHO crest.svg'
          */
         "logoImgUrl"?: string;
         /**
           * Set this to false to hide the logo that is displayed in the bottom of the side bar.
+          * @default true
          */
         "showLogo"?: boolean;
     }
     interface AdmiraltyIconSideBarItem {
         /**
           * Represents whether this SideBarItem is 'active' and will be styled differently than SideBarItems that are not 'active'. There should only be one SideBarItem that is 'active' per SideBar.
+          * @default false
          */
         "active"?: boolean;
         /**
           * Whether the component is expanded.
+          * @default false
          */
         "expanded"?: boolean;
         /**
@@ -2292,6 +2477,7 @@ declare namespace LocalJSX {
         "onToggled"?: (event: AdmiraltyIconSideBarItemCustomEvent<boolean>) => void;
         /**
           * Causes the default browser redirect to be suppressed. Can be used in conjunction with the `onIconSideBarItemClick` event to use a navigation router and prevent a full page reload when navigating.
+          * @default false
          */
         "suppressRedirect"?: boolean;
     }
@@ -2306,10 +2492,12 @@ declare namespace LocalJSX {
     interface AdmiraltyInput {
         /**
           * Indicates whether the value of the control can be automatically completed by the browser.
+          * @default 'off'
          */
         "autocomplete"?: string;
         /**
           * This dictates whether the form field is disabled.
+          * @default false
          */
         "disabled"?: boolean;
         /**
@@ -2318,6 +2506,7 @@ declare namespace LocalJSX {
         "hint"?: string;
         /**
           * Whether to show the input in an invalid state
+          * @default false
          */
         "invalid"?: boolean;
         /**
@@ -2350,14 +2539,17 @@ declare namespace LocalJSX {
         "placeholder"?: string;
         /**
           * This dictates whether the input is required or not
+          * @default false
          */
         "required"?: boolean;
         /**
           * The input type, options are: text; number; date; time; email; password; tel; url
+          * @default 'text'
          */
         "type"?: 'text' | 'number' | 'date' | 'time' | 'email' | 'password' | 'tel' | 'url';
         /**
           * The value of the input.
+          * @default ''
          */
         "value"?: string | number | null;
         /**
@@ -2384,6 +2576,7 @@ declare namespace LocalJSX {
         "href"?: string;
         /**
           * Whether to open the URL in a new tab.
+          * @default false
          */
         "newTab"?: boolean;
     }
@@ -2402,16 +2595,19 @@ declare namespace LocalJSX {
         "label"?: string;
         /**
           * Whether to show the modal dialog.
+          * @default false
          */
         "show"?: boolean;
     }
     interface AdmiraltyPaginator {
         /**
           * The current page. Defaults to 1.
+          * @default 1
          */
         "currentPage"?: number;
         /**
           * The label to display.
+          * @default ''
          */
         "label"?: string;
         /**
@@ -2420,6 +2616,7 @@ declare namespace LocalJSX {
         "onPageChange"?: (event: AdmiraltyPaginatorCustomEvent<number>) => void;
         /**
           * The total number of pages. Defaults to 1.
+          * @default 1
          */
         "pages"?: number;
     }
@@ -2432,12 +2629,14 @@ declare namespace LocalJSX {
         "link"?: string;
         /**
           * The phase for the phase banner
+          * @default 'alpha'
          */
         "phase"?: 'alpha' | 'beta';
     }
     interface AdmiraltyPill {
         /**
           * The background colour of the pill.
+          * @default 'admiralty-blue'
          */
         "colour"?: 'admiralty-blue' | 'white' | 'bright-blue';
         /**
@@ -2450,6 +2649,7 @@ declare namespace LocalJSX {
         "number"?: string;
         /**
           * Whether to show the pill is selected.
+          * @default false
          */
         "selected"?: boolean;
         /**
@@ -2460,6 +2660,7 @@ declare namespace LocalJSX {
     interface AdmiraltyProgressBar {
         /**
           * Set to true to indicate an error (turns the progress bar red)
+          * @default false
          */
         "error"?: boolean;
         /**
@@ -2468,16 +2669,19 @@ declare namespace LocalJSX {
         "label"?: string;
         /**
           * * A value from 0 - 100 that visually represents the current progression
+          * @default 0
          */
         "progression"?: number;
     }
     interface AdmiraltyProgressTracker {
         /**
           * Whether navigation to previous steps is allowed
+          * @default true
          */
         "allowBackNavigation"?: boolean;
         /**
           * Whether navigation to future steps is allowed
+          * @default true
          */
         "allowForwardNavigation"?: boolean;
         /**
@@ -2491,6 +2695,7 @@ declare namespace LocalJSX {
     interface AdmiraltyProgressTrackerStep {
         /**
           * The current status of the step
+          * @default 'upcoming'
          */
         "status"?: StepStatus;
         /**
@@ -2509,14 +2714,17 @@ declare namespace LocalJSX {
     interface AdmiraltyRadio {
         /**
           * Determines whether the radio button is selected (or checked)
+          * @default false
          */
         "checked"?: boolean;
         /**
           * Determines whether the radio button is disabled. A button in disabled state will not fire click output events.
+          * @default false
          */
         "disabled"?: boolean;
         /**
           * Determines whether to add the invalid stying to the radio button
+          * @default false
          */
         "invalid"?: boolean;
         /**
@@ -2543,10 +2751,12 @@ declare namespace LocalJSX {
     interface AdmiraltyRadioGroup {
         /**
           * Whether the radio controls should be disabled
+          * @default false
          */
         "disabled"?: boolean;
         /**
           * Setting this to false displays the radio options horizontally (defaults to true)
+          * @default true
          */
         "displayVertical"?: boolean;
         /**
@@ -2555,6 +2765,7 @@ declare namespace LocalJSX {
         "hint"?: string;
         /**
           * Whether to show the input in an invalid state
+          * @default false
          */
         "invalid"?: boolean;
         /**
@@ -2567,6 +2778,7 @@ declare namespace LocalJSX {
         "label"?: string;
         /**
           * The name of the control, which is submitted with the form data
+          * @default this.inputId
          */
         "name"?: string;
         /**
@@ -2591,22 +2803,27 @@ declare namespace LocalJSX {
     interface AdmiraltySelect {
         /**
           * If `true`, the user cannot interact with the select.
+          * @default false
          */
         "disabled"?: boolean;
         /**
           * The text that will be used as a field label.
+          * @default null
          */
         "hint"?: string;
         /**
           * Whether to show that the select is in an invalid state.
+          * @default false
          */
         "invalid"?: boolean;
         /**
           * The message to show when the select is invalid.
+          * @default null
          */
         "invalidMessage"?: string;
         /**
           * The text that will be used as a field label.
+          * @default 'Choose a colour'
          */
         "label"?: string;
         /**
@@ -2619,6 +2836,7 @@ declare namespace LocalJSX {
         "onAdmiraltyChange"?: (event: AdmiraltySelectCustomEvent<SelectChangeEventDetail>) => void;
         /**
           * The value of the option selected as a string or number.
+          * @default ''
          */
         "value"?: string | number | null;
         /**
@@ -2639,6 +2857,7 @@ declare namespace LocalJSX {
         "headingTitle"?: string;
         /**
           * Represents whether this SideNavItem is 'active' and will be styled differently than SideNavItems that are not 'active'. The intent behind the design for SideNav is for there to only be ONE SideNavItem that is 'active' per SideNav
+          * @default false
          */
         "navActive"?: boolean;
         /**
@@ -2655,43 +2874,54 @@ declare namespace LocalJSX {
     interface AdmiraltySkeleton {
         /**
           * Height of the skeleton component, default is set to 1rem.
+          * @default '1rem'
          */
         "height"?: string;
         /**
           * Hides the animation of a shimmer on the skeleton component, default is set to false, set to true if you require no animation.
+          * @default false
          */
         "noAnimation"?: boolean;
         /**
           * Radius of the skeleton component, default is .5rem.
+          * @default '.5rem'
          */
         "radius"?: string;
         /**
           * Width of the skeleton component, default is set to 100%.
+          * @default '100%'
          */
         "width"?: string;
     }
     interface AdmiraltySkipLink {
         /**
           * The HTML ID that the skip link will jump to when activated.
+          * @default '#main-content'
          */
         "href"?: string;
     }
     interface AdmiraltyTab {
         /**
           * Tab label
+          * @default ''
          */
         "label"?: string;
         /**
           * Tab content Id.  To be set internally by parent tab group component.
+          * @default ""
          */
         "tabContentId"?: string;
         /**
           * Tab label Id.  To be set internally by parent tab group component.
+          * @default ""
          */
         "tabLabelId"?: string;
     }
     interface AdmiraltyTabGroup {
         "onAdmiraltyTabSelected"?: (event: AdmiraltyTabGroupCustomEvent<number>) => void;
+        /**
+          * @default 0
+         */
         "selectedIndex"?: number;
     }
     /**
@@ -2732,24 +2962,29 @@ declare namespace LocalJSX {
         "label"?: string;
         /**
           * The URI of the logo image
+          * @default 'svg/UKHO crest.svg'
          */
         "logoImgUrl"?: string;
         /**
           * Set this to false to hide the logo that is displayed in the bottom of the side bar.
+          * @default true
          */
         "showLogo"?: boolean;
         /**
           * Sets the sidebar width
+          * @default '150px'
          */
         "textSideBarWidth"?: string;
     }
     interface AdmiraltyTextSideBarItem {
         /**
           * Represents whether this SideBarItem is 'active' and will be styled differently than SideBarItems that are not 'active'. There should only be one SideBarItem that is 'active' per SideBar.
+          * @default false
          */
         "active"?: boolean;
         /**
           * Whether the component is expanded.
+          * @default false
          */
         "expanded"?: boolean;
         /**
@@ -2774,10 +3009,12 @@ declare namespace LocalJSX {
         "onToggled"?: (event: AdmiraltyTextSideBarItemCustomEvent<boolean>) => void;
         /**
           * Causes the default browser redirect to be suppressed. Can be used in conjunction with the `onTextSideBarItemClick` event to use a navigation router and prevent a full page reload when navigating.
+          * @default false
          */
         "suppressRedirect"?: boolean;
         /**
           * The type of text side bar item to render. Valid values are `primary` and `secondary`. Default value is `primary`.
+          * @default TextSideBarItemVariant.Expandable
          */
         "variant"?: TextSideBarItemVariant;
     }
@@ -2786,6 +3023,7 @@ declare namespace LocalJSX {
     interface AdmiraltyTextarea {
         /**
           * This dictates whether the form field is disabled.
+          * @default false
          */
         "disabled"?: boolean;
         /**
@@ -2794,6 +3032,7 @@ declare namespace LocalJSX {
         "hint"?: string;
         /**
           * Whether to show the input in an invalid state
+          * @default false
          */
         "invalid"?: boolean;
         /**
@@ -2802,6 +3041,7 @@ declare namespace LocalJSX {
         "invalidMessage"?: string;
         /**
           * The label which will be used as a placeholder in the unfilled state, and as a field label in the filled state.
+          * @default ''
          */
         "label"?: string;
         /**
@@ -2816,6 +3056,7 @@ declare namespace LocalJSX {
         "onTextareaBlur"?: (event: AdmiraltyTextareaCustomEvent<any>) => void;
         /**
           * The value of the textarea.
+          * @default ''
          */
         "value"?: string | number | null;
         /**
@@ -2826,10 +3067,12 @@ declare namespace LocalJSX {
     interface AdmiraltyThemeToggle {
         /**
           * Label for accessibility. Defaults to "Toggle dark mode".
+          * @default 'Toggle dark mode'
          */
         "ariaLabel"?: string;
         /**
           * Whether the toggle should be disabled.
+          * @default false
          */
         "disabled"?: boolean;
         /**
@@ -2838,164 +3081,456 @@ declare namespace LocalJSX {
          */
         "onAdmiraltyThemeChange"?: (event: AdmiraltyThemeToggleCustomEvent<ThemeToggleChangeEventDetail>) => void;
         /**
-          * The current theme preference. Can be 'light', 'dark', or 'auto' (system preference). Default value is 'auto'.
+          * The current theme preference. Can be 'light', 'dark', or 'auto' (system preference). Default value is 'auto'. When no saved preference exists, it remains 'auto' so OS theme changes continue to be followed.
+          * @default 'auto'
          */
         "theme"?: ThemePreference;
     }
+
+    interface AdmiraltyAutocompleteAttributes {
+        "autoselect": boolean;
+        "cssNamespace": string;
+        "displayMenu": string;
+        "minLength": number;
+        "name": string;
+        "placeholder": string;
+        "confirmOnBlur": boolean;
+        "showNoOptionsFound": boolean;
+        "showAllValues": boolean;
+        "required": boolean;
+        "assistiveHint": string;
+        "menuAttributes": string;
+        "inputClasses": string;
+        "menuClasses": string;
+        "label": string;
+        "hint": string;
+        "invalid": boolean;
+        "invalidMessage": string;
+        "disabled": boolean;
+        "value": string | null;
+    }
+    interface AdmiraltyAutocompleteOptionAttributes {
+        "value": string;
+    }
+    interface AdmiraltyBreadcrumbAttributes {
+        "active": boolean;
+        "first": boolean;
+        "href": string | undefined;
+    }
+    interface AdmiraltyButtonAttributes {
+        "variant": ButtonVariant;
+        "icon": string;
+        "disabled": boolean;
+        "borderless": boolean;
+        "type": 'button' | 'submit' | 'reset';
+        "form": string;
+        "name": string;
+        "value": string;
+    }
+    interface AdmiraltyCardAttributes {
+        "heading": string;
+    }
+    interface AdmiraltyCheckboxAttributes {
+        "checkboxRight": boolean;
+        "disabled": boolean;
+        "name": string;
+        "checked": boolean;
+        "value": string;
+        "labelText": string;
+        "labelHidden": boolean;
+    }
+    interface AdmiraltyColourBlockAttributes {
+        "width": number;
+        "height": number;
+        "heading": string;
+        "colour": 'admiralty-blue' | 'teal' | 'bright-blue';
+        "href": string;
+        "linkText": string;
+        "suppressRedirect": boolean;
+        "enableCardEvent": boolean;
+        "actionText": string;
+    }
+    interface AdmiraltyDialogueAttributes {
+        "type": 'info' | 'warning' | 'success' | 'error';
+        "heading": string;
+        "sectionRole": 'alert';
+    }
+    interface AdmiraltyErrorSummaryAttributes {
+        "heading": string;
+    }
+    interface AdmiraltyExpansionAttributes {
+        "heading": string;
+        "expanded": boolean;
+        "alignHeadingRight": boolean;
+        "hideBorder": boolean;
+    }
+    interface AdmiraltyFileInputAttributes {
+        "label": string;
+        "multiple": boolean;
+        "invalid": boolean;
+        "invalidMessage": string;
+    }
+    interface AdmiraltyFilterAttributes {
+        "filterTitle": string;
+    }
+    interface AdmiraltyFilterGroupAttributes {
+        "groupTitle": string;
+    }
+    interface AdmiraltyFooterAttributes {
+        "variant": FooterTypes;
+        "imageLink": string;
+        "imageSrc": string;
+        "imageAlt": string;
+        "text": string;
+    }
+    interface AdmiraltyHeaderAttributes {
+        "headerTitle": string;
+        "headerTitleUrl": string;
+        "logoLinkUrl": string;
+        "logoImgUrl": string;
+        "logoAltText": string;
+    }
+    interface AdmiraltyHeaderMenuItemAttributes {
+        "menuTitle": string;
+        "active": boolean;
+    }
+    interface AdmiraltyHeaderMenuLinkAttributes {
+        "menuTitle": string;
+        "active": boolean;
+        "href": string;
+        "suppressRedirect": boolean;
+    }
+    interface AdmiraltyHeaderProfileAttributes {
+        "isSignedIn": boolean;
+        "signedInText": string;
+        "signInOnly": boolean;
+    }
+    interface AdmiraltyHeaderSubMenuItemAttributes {
+        "menuTitle": string;
+        "href": string;
+        "suppressRedirect": boolean;
+    }
+    interface AdmiraltyHintAttributes {
+        "disabled": boolean;
+    }
+    interface AdmiraltyIconAttributes {
+        "name": string;
+        "size": string;
+    }
+    interface AdmiraltyIconSideBarAttributes {
+        "label": string;
+        "showLogo": boolean;
+        "logoImgUrl": string;
+        "iconSideBarWidth": string;
+    }
+    interface AdmiraltyIconSideBarItemAttributes {
+        "expanded": boolean;
+        "icon": string;
+        "href": string;
+        "itemText": string;
+        "suppressRedirect": boolean;
+        "active": boolean;
+    }
+    interface AdmiraltyInputAttributes {
+        "name": string;
+        "label": string;
+        "hint": string;
+        "disabled": boolean;
+        "type": 'text' | 'number' | 'date' | 'time' | 'email' | 'password' | 'tel' | 'url';
+        "placeholder": string;
+        "width": number;
+        "required": boolean;
+        "invalid": boolean;
+        "invalidMessage": string;
+        "autocomplete": string;
+        "value": string;
+    }
+    interface AdmiraltyLabelAttributes {
+        "disabled": boolean;
+        "for": string;
+    }
+    interface AdmiraltyLinkAttributes {
+        "href": string;
+        "newTab": boolean;
+    }
+    interface AdmiraltyModalDialogAttributes {
+        "heading": string;
+        "label": string;
+        "description": string;
+        "show": boolean;
+    }
+    interface AdmiraltyPaginatorAttributes {
+        "pages": number;
+        "currentPage": number;
+        "label": string;
+    }
+    interface AdmiraltyPhaseBannerAttributes {
+        "phase": 'alpha' | 'beta';
+        "link": string;
+    }
+    interface AdmiraltyPillAttributes {
+        "text": string;
+        "number": string;
+        "label": string;
+        "colour": 'admiralty-blue' | 'white' | 'bright-blue';
+        "selected": boolean;
+    }
+    interface AdmiraltyProgressBarAttributes {
+        "label": string;
+        "progression": number;
+        "error": boolean;
+    }
+    interface AdmiraltyProgressTrackerAttributes {
+        "allowBackNavigation": boolean;
+        "allowForwardNavigation": boolean;
+    }
+    interface AdmiraltyProgressTrackerStepAttributes {
+        "stepId": string;
+        "stepTitle": string;
+        "status": StepStatus;
+        "summary": string;
+    }
+    interface AdmiraltyRadioAttributes {
+        "name": string;
+        "value": string | null;
+        "disabled": boolean;
+        "checked": boolean;
+        "invalid": boolean;
+    }
+    interface AdmiraltyRadioGroupAttributes {
+        "name": string;
+        "label": string;
+        "hint": string;
+        "disabled": boolean;
+        "value": string;
+        "displayVertical": boolean;
+        "invalid": boolean;
+        "invalidMessage": string;
+    }
+    interface AdmiraltyReadMoreAttributes {
+        "heading": string;
+    }
+    interface AdmiraltySelectAttributes {
+        "disabled": boolean;
+        "invalid": boolean;
+        "invalidMessage": string;
+        "hint": string;
+        "label": string;
+        "width": number;
+        "value": string;
+    }
+    interface AdmiraltySideNavAttributes {
+        "label": string;
+    }
+    interface AdmiraltySideNavItemAttributes {
+        "sideNavItemId": string;
+        "headingTitle": string;
+        "navActive": boolean;
+    }
+    interface AdmiraltySkeletonAttributes {
+        "height": string;
+        "width": string;
+        "radius": string;
+        "noAnimation": boolean;
+    }
+    interface AdmiraltySkipLinkAttributes {
+        "href": string;
+    }
+    interface AdmiraltyTabAttributes {
+        "label": string;
+        "tabLabelId": string;
+        "tabContentId": string;
+    }
+    interface AdmiraltyTabGroupAttributes {
+        "selectedIndex": number;
+    }
+    interface AdmiraltyTableAttributes {
+        "caption": string;
+    }
+    interface AdmiraltyTextSideBarAttributes {
+        "label": string;
+        "showLogo": boolean;
+        "logoImgUrl": string;
+        "textSideBarWidth": string;
+    }
+    interface AdmiraltyTextSideBarItemAttributes {
+        "variant": TextSideBarItemVariant;
+        "expanded": boolean;
+        "icon": string;
+        "href": string;
+        "itemText": string;
+        "suppressRedirect": boolean;
+        "active": boolean;
+    }
+    interface AdmiraltyTextareaAttributes {
+        "label": string;
+        "hint": string;
+        "width": number;
+        "disabled": boolean;
+        "invalid": boolean;
+        "invalidMessage": string;
+        "value": string;
+    }
+    interface AdmiraltyThemeToggleAttributes {
+        "theme": ThemePreference;
+        "disabled": boolean;
+        "ariaLabel": string;
+    }
+
     interface IntrinsicElements {
-        "admiralty-autocomplete": AdmiraltyAutocomplete;
-        "admiralty-autocomplete-option": AdmiraltyAutocompleteOption;
-        "admiralty-breadcrumb": AdmiraltyBreadcrumb;
+        "admiralty-autocomplete": Omit<AdmiraltyAutocomplete, keyof AdmiraltyAutocompleteAttributes> & { [K in keyof AdmiraltyAutocomplete & keyof AdmiraltyAutocompleteAttributes]?: AdmiraltyAutocomplete[K] } & { [K in keyof AdmiraltyAutocomplete & keyof AdmiraltyAutocompleteAttributes as `attr:${K}`]?: AdmiraltyAutocompleteAttributes[K] } & { [K in keyof AdmiraltyAutocomplete & keyof AdmiraltyAutocompleteAttributes as `prop:${K}`]?: AdmiraltyAutocomplete[K] };
+        "admiralty-autocomplete-option": Omit<AdmiraltyAutocompleteOption, keyof AdmiraltyAutocompleteOptionAttributes> & { [K in keyof AdmiraltyAutocompleteOption & keyof AdmiraltyAutocompleteOptionAttributes]?: AdmiraltyAutocompleteOption[K] } & { [K in keyof AdmiraltyAutocompleteOption & keyof AdmiraltyAutocompleteOptionAttributes as `attr:${K}`]?: AdmiraltyAutocompleteOptionAttributes[K] } & { [K in keyof AdmiraltyAutocompleteOption & keyof AdmiraltyAutocompleteOptionAttributes as `prop:${K}`]?: AdmiraltyAutocompleteOption[K] };
+        "admiralty-breadcrumb": Omit<AdmiraltyBreadcrumb, keyof AdmiraltyBreadcrumbAttributes> & { [K in keyof AdmiraltyBreadcrumb & keyof AdmiraltyBreadcrumbAttributes]?: AdmiraltyBreadcrumb[K] } & { [K in keyof AdmiraltyBreadcrumb & keyof AdmiraltyBreadcrumbAttributes as `attr:${K}`]?: AdmiraltyBreadcrumbAttributes[K] } & { [K in keyof AdmiraltyBreadcrumb & keyof AdmiraltyBreadcrumbAttributes as `prop:${K}`]?: AdmiraltyBreadcrumb[K] } & OneOf<"first", AdmiraltyBreadcrumb["first"], AdmiraltyBreadcrumbAttributes["first"]>;
         "admiralty-breadcrumbs": AdmiraltyBreadcrumbs;
-        "admiralty-button": AdmiraltyButton;
-        "admiralty-card": AdmiraltyCard;
-        "admiralty-checkbox": AdmiraltyCheckbox;
-        "admiralty-colour-block": AdmiraltyColourBlock;
-        "admiralty-dialogue": AdmiraltyDialogue;
-        "admiralty-error-summary": AdmiraltyErrorSummary;
-        "admiralty-expansion": AdmiraltyExpansion;
-        "admiralty-file-input": AdmiraltyFileInput;
-        "admiralty-filter": AdmiraltyFilter;
-        "admiralty-filter-group": AdmiraltyFilterGroup;
-        "admiralty-footer": AdmiraltyFooter;
-        "admiralty-header": AdmiraltyHeader;
-        "admiralty-header-menu-item": AdmiraltyHeaderMenuItem;
-        "admiralty-header-menu-link": AdmiraltyHeaderMenuLink;
-        "admiralty-header-profile": AdmiraltyHeaderProfile;
-        "admiralty-header-sub-menu-item": AdmiraltyHeaderSubMenuItem;
-        "admiralty-hint": AdmiraltyHint;
+        "admiralty-button": Omit<AdmiraltyButton, keyof AdmiraltyButtonAttributes> & { [K in keyof AdmiraltyButton & keyof AdmiraltyButtonAttributes]?: AdmiraltyButton[K] } & { [K in keyof AdmiraltyButton & keyof AdmiraltyButtonAttributes as `attr:${K}`]?: AdmiraltyButtonAttributes[K] } & { [K in keyof AdmiraltyButton & keyof AdmiraltyButtonAttributes as `prop:${K}`]?: AdmiraltyButton[K] };
+        "admiralty-card": Omit<AdmiraltyCard, keyof AdmiraltyCardAttributes> & { [K in keyof AdmiraltyCard & keyof AdmiraltyCardAttributes]?: AdmiraltyCard[K] } & { [K in keyof AdmiraltyCard & keyof AdmiraltyCardAttributes as `attr:${K}`]?: AdmiraltyCardAttributes[K] } & { [K in keyof AdmiraltyCard & keyof AdmiraltyCardAttributes as `prop:${K}`]?: AdmiraltyCard[K] };
+        "admiralty-checkbox": Omit<AdmiraltyCheckbox, keyof AdmiraltyCheckboxAttributes> & { [K in keyof AdmiraltyCheckbox & keyof AdmiraltyCheckboxAttributes]?: AdmiraltyCheckbox[K] } & { [K in keyof AdmiraltyCheckbox & keyof AdmiraltyCheckboxAttributes as `attr:${K}`]?: AdmiraltyCheckboxAttributes[K] } & { [K in keyof AdmiraltyCheckbox & keyof AdmiraltyCheckboxAttributes as `prop:${K}`]?: AdmiraltyCheckbox[K] };
+        "admiralty-colour-block": Omit<AdmiraltyColourBlock, keyof AdmiraltyColourBlockAttributes> & { [K in keyof AdmiraltyColourBlock & keyof AdmiraltyColourBlockAttributes]?: AdmiraltyColourBlock[K] } & { [K in keyof AdmiraltyColourBlock & keyof AdmiraltyColourBlockAttributes as `attr:${K}`]?: AdmiraltyColourBlockAttributes[K] } & { [K in keyof AdmiraltyColourBlock & keyof AdmiraltyColourBlockAttributes as `prop:${K}`]?: AdmiraltyColourBlock[K] };
+        "admiralty-dialogue": Omit<AdmiraltyDialogue, keyof AdmiraltyDialogueAttributes> & { [K in keyof AdmiraltyDialogue & keyof AdmiraltyDialogueAttributes]?: AdmiraltyDialogue[K] } & { [K in keyof AdmiraltyDialogue & keyof AdmiraltyDialogueAttributes as `attr:${K}`]?: AdmiraltyDialogueAttributes[K] } & { [K in keyof AdmiraltyDialogue & keyof AdmiraltyDialogueAttributes as `prop:${K}`]?: AdmiraltyDialogue[K] };
+        "admiralty-error-summary": Omit<AdmiraltyErrorSummary, keyof AdmiraltyErrorSummaryAttributes> & { [K in keyof AdmiraltyErrorSummary & keyof AdmiraltyErrorSummaryAttributes]?: AdmiraltyErrorSummary[K] } & { [K in keyof AdmiraltyErrorSummary & keyof AdmiraltyErrorSummaryAttributes as `attr:${K}`]?: AdmiraltyErrorSummaryAttributes[K] } & { [K in keyof AdmiraltyErrorSummary & keyof AdmiraltyErrorSummaryAttributes as `prop:${K}`]?: AdmiraltyErrorSummary[K] };
+        "admiralty-expansion": Omit<AdmiraltyExpansion, keyof AdmiraltyExpansionAttributes> & { [K in keyof AdmiraltyExpansion & keyof AdmiraltyExpansionAttributes]?: AdmiraltyExpansion[K] } & { [K in keyof AdmiraltyExpansion & keyof AdmiraltyExpansionAttributes as `attr:${K}`]?: AdmiraltyExpansionAttributes[K] } & { [K in keyof AdmiraltyExpansion & keyof AdmiraltyExpansionAttributes as `prop:${K}`]?: AdmiraltyExpansion[K] };
+        "admiralty-file-input": Omit<AdmiraltyFileInput, keyof AdmiraltyFileInputAttributes> & { [K in keyof AdmiraltyFileInput & keyof AdmiraltyFileInputAttributes]?: AdmiraltyFileInput[K] } & { [K in keyof AdmiraltyFileInput & keyof AdmiraltyFileInputAttributes as `attr:${K}`]?: AdmiraltyFileInputAttributes[K] } & { [K in keyof AdmiraltyFileInput & keyof AdmiraltyFileInputAttributes as `prop:${K}`]?: AdmiraltyFileInput[K] };
+        "admiralty-filter": Omit<AdmiraltyFilter, keyof AdmiraltyFilterAttributes> & { [K in keyof AdmiraltyFilter & keyof AdmiraltyFilterAttributes]?: AdmiraltyFilter[K] } & { [K in keyof AdmiraltyFilter & keyof AdmiraltyFilterAttributes as `attr:${K}`]?: AdmiraltyFilterAttributes[K] } & { [K in keyof AdmiraltyFilter & keyof AdmiraltyFilterAttributes as `prop:${K}`]?: AdmiraltyFilter[K] };
+        "admiralty-filter-group": Omit<AdmiraltyFilterGroup, keyof AdmiraltyFilterGroupAttributes> & { [K in keyof AdmiraltyFilterGroup & keyof AdmiraltyFilterGroupAttributes]?: AdmiraltyFilterGroup[K] } & { [K in keyof AdmiraltyFilterGroup & keyof AdmiraltyFilterGroupAttributes as `attr:${K}`]?: AdmiraltyFilterGroupAttributes[K] } & { [K in keyof AdmiraltyFilterGroup & keyof AdmiraltyFilterGroupAttributes as `prop:${K}`]?: AdmiraltyFilterGroup[K] };
+        "admiralty-footer": Omit<AdmiraltyFooter, keyof AdmiraltyFooterAttributes> & { [K in keyof AdmiraltyFooter & keyof AdmiraltyFooterAttributes]?: AdmiraltyFooter[K] } & { [K in keyof AdmiraltyFooter & keyof AdmiraltyFooterAttributes as `attr:${K}`]?: AdmiraltyFooterAttributes[K] } & { [K in keyof AdmiraltyFooter & keyof AdmiraltyFooterAttributes as `prop:${K}`]?: AdmiraltyFooter[K] };
+        "admiralty-header": Omit<AdmiraltyHeader, keyof AdmiraltyHeaderAttributes> & { [K in keyof AdmiraltyHeader & keyof AdmiraltyHeaderAttributes]?: AdmiraltyHeader[K] } & { [K in keyof AdmiraltyHeader & keyof AdmiraltyHeaderAttributes as `attr:${K}`]?: AdmiraltyHeaderAttributes[K] } & { [K in keyof AdmiraltyHeader & keyof AdmiraltyHeaderAttributes as `prop:${K}`]?: AdmiraltyHeader[K] };
+        "admiralty-header-menu-item": Omit<AdmiraltyHeaderMenuItem, keyof AdmiraltyHeaderMenuItemAttributes> & { [K in keyof AdmiraltyHeaderMenuItem & keyof AdmiraltyHeaderMenuItemAttributes]?: AdmiraltyHeaderMenuItem[K] } & { [K in keyof AdmiraltyHeaderMenuItem & keyof AdmiraltyHeaderMenuItemAttributes as `attr:${K}`]?: AdmiraltyHeaderMenuItemAttributes[K] } & { [K in keyof AdmiraltyHeaderMenuItem & keyof AdmiraltyHeaderMenuItemAttributes as `prop:${K}`]?: AdmiraltyHeaderMenuItem[K] };
+        "admiralty-header-menu-link": Omit<AdmiraltyHeaderMenuLink, keyof AdmiraltyHeaderMenuLinkAttributes> & { [K in keyof AdmiraltyHeaderMenuLink & keyof AdmiraltyHeaderMenuLinkAttributes]?: AdmiraltyHeaderMenuLink[K] } & { [K in keyof AdmiraltyHeaderMenuLink & keyof AdmiraltyHeaderMenuLinkAttributes as `attr:${K}`]?: AdmiraltyHeaderMenuLinkAttributes[K] } & { [K in keyof AdmiraltyHeaderMenuLink & keyof AdmiraltyHeaderMenuLinkAttributes as `prop:${K}`]?: AdmiraltyHeaderMenuLink[K] };
+        "admiralty-header-profile": Omit<AdmiraltyHeaderProfile, keyof AdmiraltyHeaderProfileAttributes> & { [K in keyof AdmiraltyHeaderProfile & keyof AdmiraltyHeaderProfileAttributes]?: AdmiraltyHeaderProfile[K] } & { [K in keyof AdmiraltyHeaderProfile & keyof AdmiraltyHeaderProfileAttributes as `attr:${K}`]?: AdmiraltyHeaderProfileAttributes[K] } & { [K in keyof AdmiraltyHeaderProfile & keyof AdmiraltyHeaderProfileAttributes as `prop:${K}`]?: AdmiraltyHeaderProfile[K] };
+        "admiralty-header-sub-menu-item": Omit<AdmiraltyHeaderSubMenuItem, keyof AdmiraltyHeaderSubMenuItemAttributes> & { [K in keyof AdmiraltyHeaderSubMenuItem & keyof AdmiraltyHeaderSubMenuItemAttributes]?: AdmiraltyHeaderSubMenuItem[K] } & { [K in keyof AdmiraltyHeaderSubMenuItem & keyof AdmiraltyHeaderSubMenuItemAttributes as `attr:${K}`]?: AdmiraltyHeaderSubMenuItemAttributes[K] } & { [K in keyof AdmiraltyHeaderSubMenuItem & keyof AdmiraltyHeaderSubMenuItemAttributes as `prop:${K}`]?: AdmiraltyHeaderSubMenuItem[K] };
+        "admiralty-hint": Omit<AdmiraltyHint, keyof AdmiraltyHintAttributes> & { [K in keyof AdmiraltyHint & keyof AdmiraltyHintAttributes]?: AdmiraltyHint[K] } & { [K in keyof AdmiraltyHint & keyof AdmiraltyHintAttributes as `attr:${K}`]?: AdmiraltyHintAttributes[K] } & { [K in keyof AdmiraltyHint & keyof AdmiraltyHintAttributes as `prop:${K}`]?: AdmiraltyHint[K] };
         "admiralty-hr": AdmiraltyHr;
-        "admiralty-icon": AdmiraltyIcon;
-        "admiralty-icon-side-bar": AdmiraltyIconSideBar;
-        "admiralty-icon-side-bar-item": AdmiraltyIconSideBarItem;
+        "admiralty-icon": Omit<AdmiraltyIcon, keyof AdmiraltyIconAttributes> & { [K in keyof AdmiraltyIcon & keyof AdmiraltyIconAttributes]?: AdmiraltyIcon[K] } & { [K in keyof AdmiraltyIcon & keyof AdmiraltyIconAttributes as `attr:${K}`]?: AdmiraltyIconAttributes[K] } & { [K in keyof AdmiraltyIcon & keyof AdmiraltyIconAttributes as `prop:${K}`]?: AdmiraltyIcon[K] };
+        "admiralty-icon-side-bar": Omit<AdmiraltyIconSideBar, keyof AdmiraltyIconSideBarAttributes> & { [K in keyof AdmiraltyIconSideBar & keyof AdmiraltyIconSideBarAttributes]?: AdmiraltyIconSideBar[K] } & { [K in keyof AdmiraltyIconSideBar & keyof AdmiraltyIconSideBarAttributes as `attr:${K}`]?: AdmiraltyIconSideBarAttributes[K] } & { [K in keyof AdmiraltyIconSideBar & keyof AdmiraltyIconSideBarAttributes as `prop:${K}`]?: AdmiraltyIconSideBar[K] };
+        "admiralty-icon-side-bar-item": Omit<AdmiraltyIconSideBarItem, keyof AdmiraltyIconSideBarItemAttributes> & { [K in keyof AdmiraltyIconSideBarItem & keyof AdmiraltyIconSideBarItemAttributes]?: AdmiraltyIconSideBarItem[K] } & { [K in keyof AdmiraltyIconSideBarItem & keyof AdmiraltyIconSideBarItemAttributes as `attr:${K}`]?: AdmiraltyIconSideBarItemAttributes[K] } & { [K in keyof AdmiraltyIconSideBarItem & keyof AdmiraltyIconSideBarItemAttributes as `prop:${K}`]?: AdmiraltyIconSideBarItem[K] };
         "admiralty-icon-side-bar-wrapper": AdmiraltyIconSideBarWrapper;
-        "admiralty-input": AdmiraltyInput;
+        "admiralty-input": Omit<AdmiraltyInput, keyof AdmiraltyInputAttributes> & { [K in keyof AdmiraltyInput & keyof AdmiraltyInputAttributes]?: AdmiraltyInput[K] } & { [K in keyof AdmiraltyInput & keyof AdmiraltyInputAttributes as `attr:${K}`]?: AdmiraltyInputAttributes[K] } & { [K in keyof AdmiraltyInput & keyof AdmiraltyInputAttributes as `prop:${K}`]?: AdmiraltyInput[K] };
         "admiralty-input-invalid": AdmiraltyInputInvalid;
-        "admiralty-label": AdmiraltyLabel;
-        "admiralty-link": AdmiraltyLink;
-        "admiralty-modal-dialog": AdmiraltyModalDialog;
-        "admiralty-paginator": AdmiraltyPaginator;
+        "admiralty-label": Omit<AdmiraltyLabel, keyof AdmiraltyLabelAttributes> & { [K in keyof AdmiraltyLabel & keyof AdmiraltyLabelAttributes]?: AdmiraltyLabel[K] } & { [K in keyof AdmiraltyLabel & keyof AdmiraltyLabelAttributes as `attr:${K}`]?: AdmiraltyLabelAttributes[K] } & { [K in keyof AdmiraltyLabel & keyof AdmiraltyLabelAttributes as `prop:${K}`]?: AdmiraltyLabel[K] };
+        "admiralty-link": Omit<AdmiraltyLink, keyof AdmiraltyLinkAttributes> & { [K in keyof AdmiraltyLink & keyof AdmiraltyLinkAttributes]?: AdmiraltyLink[K] } & { [K in keyof AdmiraltyLink & keyof AdmiraltyLinkAttributes as `attr:${K}`]?: AdmiraltyLinkAttributes[K] } & { [K in keyof AdmiraltyLink & keyof AdmiraltyLinkAttributes as `prop:${K}`]?: AdmiraltyLink[K] };
+        "admiralty-modal-dialog": Omit<AdmiraltyModalDialog, keyof AdmiraltyModalDialogAttributes> & { [K in keyof AdmiraltyModalDialog & keyof AdmiraltyModalDialogAttributes]?: AdmiraltyModalDialog[K] } & { [K in keyof AdmiraltyModalDialog & keyof AdmiraltyModalDialogAttributes as `attr:${K}`]?: AdmiraltyModalDialogAttributes[K] } & { [K in keyof AdmiraltyModalDialog & keyof AdmiraltyModalDialogAttributes as `prop:${K}`]?: AdmiraltyModalDialog[K] };
+        "admiralty-paginator": Omit<AdmiraltyPaginator, keyof AdmiraltyPaginatorAttributes> & { [K in keyof AdmiraltyPaginator & keyof AdmiraltyPaginatorAttributes]?: AdmiraltyPaginator[K] } & { [K in keyof AdmiraltyPaginator & keyof AdmiraltyPaginatorAttributes as `attr:${K}`]?: AdmiraltyPaginatorAttributes[K] } & { [K in keyof AdmiraltyPaginator & keyof AdmiraltyPaginatorAttributes as `prop:${K}`]?: AdmiraltyPaginator[K] };
         "admiralty-paginator-wrapper": AdmiraltyPaginatorWrapper;
-        "admiralty-phase-banner": AdmiraltyPhaseBanner;
-        "admiralty-pill": AdmiraltyPill;
-        "admiralty-progress-bar": AdmiraltyProgressBar;
-        "admiralty-progress-tracker": AdmiraltyProgressTracker;
-        "admiralty-progress-tracker-step": AdmiraltyProgressTrackerStep;
-        "admiralty-radio": AdmiraltyRadio;
-        "admiralty-radio-group": AdmiraltyRadioGroup;
-        "admiralty-read-more": AdmiraltyReadMore;
-        "admiralty-select": AdmiraltySelect;
-        "admiralty-side-nav": AdmiraltySideNav;
-        "admiralty-side-nav-item": AdmiraltySideNavItem;
+        "admiralty-phase-banner": Omit<AdmiraltyPhaseBanner, keyof AdmiraltyPhaseBannerAttributes> & { [K in keyof AdmiraltyPhaseBanner & keyof AdmiraltyPhaseBannerAttributes]?: AdmiraltyPhaseBanner[K] } & { [K in keyof AdmiraltyPhaseBanner & keyof AdmiraltyPhaseBannerAttributes as `attr:${K}`]?: AdmiraltyPhaseBannerAttributes[K] } & { [K in keyof AdmiraltyPhaseBanner & keyof AdmiraltyPhaseBannerAttributes as `prop:${K}`]?: AdmiraltyPhaseBanner[K] };
+        "admiralty-pill": Omit<AdmiraltyPill, keyof AdmiraltyPillAttributes> & { [K in keyof AdmiraltyPill & keyof AdmiraltyPillAttributes]?: AdmiraltyPill[K] } & { [K in keyof AdmiraltyPill & keyof AdmiraltyPillAttributes as `attr:${K}`]?: AdmiraltyPillAttributes[K] } & { [K in keyof AdmiraltyPill & keyof AdmiraltyPillAttributes as `prop:${K}`]?: AdmiraltyPill[K] };
+        "admiralty-progress-bar": Omit<AdmiraltyProgressBar, keyof AdmiraltyProgressBarAttributes> & { [K in keyof AdmiraltyProgressBar & keyof AdmiraltyProgressBarAttributes]?: AdmiraltyProgressBar[K] } & { [K in keyof AdmiraltyProgressBar & keyof AdmiraltyProgressBarAttributes as `attr:${K}`]?: AdmiraltyProgressBarAttributes[K] } & { [K in keyof AdmiraltyProgressBar & keyof AdmiraltyProgressBarAttributes as `prop:${K}`]?: AdmiraltyProgressBar[K] };
+        "admiralty-progress-tracker": Omit<AdmiraltyProgressTracker, keyof AdmiraltyProgressTrackerAttributes> & { [K in keyof AdmiraltyProgressTracker & keyof AdmiraltyProgressTrackerAttributes]?: AdmiraltyProgressTracker[K] } & { [K in keyof AdmiraltyProgressTracker & keyof AdmiraltyProgressTrackerAttributes as `attr:${K}`]?: AdmiraltyProgressTrackerAttributes[K] } & { [K in keyof AdmiraltyProgressTracker & keyof AdmiraltyProgressTrackerAttributes as `prop:${K}`]?: AdmiraltyProgressTracker[K] };
+        "admiralty-progress-tracker-step": Omit<AdmiraltyProgressTrackerStep, keyof AdmiraltyProgressTrackerStepAttributes> & { [K in keyof AdmiraltyProgressTrackerStep & keyof AdmiraltyProgressTrackerStepAttributes]?: AdmiraltyProgressTrackerStep[K] } & { [K in keyof AdmiraltyProgressTrackerStep & keyof AdmiraltyProgressTrackerStepAttributes as `attr:${K}`]?: AdmiraltyProgressTrackerStepAttributes[K] } & { [K in keyof AdmiraltyProgressTrackerStep & keyof AdmiraltyProgressTrackerStepAttributes as `prop:${K}`]?: AdmiraltyProgressTrackerStep[K] } & OneOf<"stepId", AdmiraltyProgressTrackerStep["stepId"], AdmiraltyProgressTrackerStepAttributes["stepId"]> & OneOf<"stepTitle", AdmiraltyProgressTrackerStep["stepTitle"], AdmiraltyProgressTrackerStepAttributes["stepTitle"]>;
+        "admiralty-radio": Omit<AdmiraltyRadio, keyof AdmiraltyRadioAttributes> & { [K in keyof AdmiraltyRadio & keyof AdmiraltyRadioAttributes]?: AdmiraltyRadio[K] } & { [K in keyof AdmiraltyRadio & keyof AdmiraltyRadioAttributes as `attr:${K}`]?: AdmiraltyRadioAttributes[K] } & { [K in keyof AdmiraltyRadio & keyof AdmiraltyRadioAttributes as `prop:${K}`]?: AdmiraltyRadio[K] };
+        "admiralty-radio-group": Omit<AdmiraltyRadioGroup, keyof AdmiraltyRadioGroupAttributes> & { [K in keyof AdmiraltyRadioGroup & keyof AdmiraltyRadioGroupAttributes]?: AdmiraltyRadioGroup[K] } & { [K in keyof AdmiraltyRadioGroup & keyof AdmiraltyRadioGroupAttributes as `attr:${K}`]?: AdmiraltyRadioGroupAttributes[K] } & { [K in keyof AdmiraltyRadioGroup & keyof AdmiraltyRadioGroupAttributes as `prop:${K}`]?: AdmiraltyRadioGroup[K] };
+        "admiralty-read-more": Omit<AdmiraltyReadMore, keyof AdmiraltyReadMoreAttributes> & { [K in keyof AdmiraltyReadMore & keyof AdmiraltyReadMoreAttributes]?: AdmiraltyReadMore[K] } & { [K in keyof AdmiraltyReadMore & keyof AdmiraltyReadMoreAttributes as `attr:${K}`]?: AdmiraltyReadMoreAttributes[K] } & { [K in keyof AdmiraltyReadMore & keyof AdmiraltyReadMoreAttributes as `prop:${K}`]?: AdmiraltyReadMore[K] };
+        "admiralty-select": Omit<AdmiraltySelect, keyof AdmiraltySelectAttributes> & { [K in keyof AdmiraltySelect & keyof AdmiraltySelectAttributes]?: AdmiraltySelect[K] } & { [K in keyof AdmiraltySelect & keyof AdmiraltySelectAttributes as `attr:${K}`]?: AdmiraltySelectAttributes[K] } & { [K in keyof AdmiraltySelect & keyof AdmiraltySelectAttributes as `prop:${K}`]?: AdmiraltySelect[K] };
+        "admiralty-side-nav": Omit<AdmiraltySideNav, keyof AdmiraltySideNavAttributes> & { [K in keyof AdmiraltySideNav & keyof AdmiraltySideNavAttributes]?: AdmiraltySideNav[K] } & { [K in keyof AdmiraltySideNav & keyof AdmiraltySideNavAttributes as `attr:${K}`]?: AdmiraltySideNavAttributes[K] } & { [K in keyof AdmiraltySideNav & keyof AdmiraltySideNavAttributes as `prop:${K}`]?: AdmiraltySideNav[K] };
+        "admiralty-side-nav-item": Omit<AdmiraltySideNavItem, keyof AdmiraltySideNavItemAttributes> & { [K in keyof AdmiraltySideNavItem & keyof AdmiraltySideNavItemAttributes]?: AdmiraltySideNavItem[K] } & { [K in keyof AdmiraltySideNavItem & keyof AdmiraltySideNavItemAttributes as `attr:${K}`]?: AdmiraltySideNavItemAttributes[K] } & { [K in keyof AdmiraltySideNavItem & keyof AdmiraltySideNavItemAttributes as `prop:${K}`]?: AdmiraltySideNavItem[K] };
         "admiralty-side-nav-wrapper": AdmiraltySideNavWrapper;
-        "admiralty-skeleton": AdmiraltySkeleton;
-        "admiralty-skip-link": AdmiraltySkipLink;
-        "admiralty-tab": AdmiraltyTab;
-        "admiralty-tab-group": AdmiraltyTabGroup;
-        "admiralty-table": AdmiraltyTable;
+        "admiralty-skeleton": Omit<AdmiraltySkeleton, keyof AdmiraltySkeletonAttributes> & { [K in keyof AdmiraltySkeleton & keyof AdmiraltySkeletonAttributes]?: AdmiraltySkeleton[K] } & { [K in keyof AdmiraltySkeleton & keyof AdmiraltySkeletonAttributes as `attr:${K}`]?: AdmiraltySkeletonAttributes[K] } & { [K in keyof AdmiraltySkeleton & keyof AdmiraltySkeletonAttributes as `prop:${K}`]?: AdmiraltySkeleton[K] };
+        "admiralty-skip-link": Omit<AdmiraltySkipLink, keyof AdmiraltySkipLinkAttributes> & { [K in keyof AdmiraltySkipLink & keyof AdmiraltySkipLinkAttributes]?: AdmiraltySkipLink[K] } & { [K in keyof AdmiraltySkipLink & keyof AdmiraltySkipLinkAttributes as `attr:${K}`]?: AdmiraltySkipLinkAttributes[K] } & { [K in keyof AdmiraltySkipLink & keyof AdmiraltySkipLinkAttributes as `prop:${K}`]?: AdmiraltySkipLink[K] };
+        "admiralty-tab": Omit<AdmiraltyTab, keyof AdmiraltyTabAttributes> & { [K in keyof AdmiraltyTab & keyof AdmiraltyTabAttributes]?: AdmiraltyTab[K] } & { [K in keyof AdmiraltyTab & keyof AdmiraltyTabAttributes as `attr:${K}`]?: AdmiraltyTabAttributes[K] } & { [K in keyof AdmiraltyTab & keyof AdmiraltyTabAttributes as `prop:${K}`]?: AdmiraltyTab[K] };
+        "admiralty-tab-group": Omit<AdmiraltyTabGroup, keyof AdmiraltyTabGroupAttributes> & { [K in keyof AdmiraltyTabGroup & keyof AdmiraltyTabGroupAttributes]?: AdmiraltyTabGroup[K] } & { [K in keyof AdmiraltyTabGroup & keyof AdmiraltyTabGroupAttributes as `attr:${K}`]?: AdmiraltyTabGroupAttributes[K] } & { [K in keyof AdmiraltyTabGroup & keyof AdmiraltyTabGroupAttributes as `prop:${K}`]?: AdmiraltyTabGroup[K] };
+        "admiralty-table": Omit<AdmiraltyTable, keyof AdmiraltyTableAttributes> & { [K in keyof AdmiraltyTable & keyof AdmiraltyTableAttributes]?: AdmiraltyTable[K] } & { [K in keyof AdmiraltyTable & keyof AdmiraltyTableAttributes as `attr:${K}`]?: AdmiraltyTableAttributes[K] } & { [K in keyof AdmiraltyTable & keyof AdmiraltyTableAttributes as `prop:${K}`]?: AdmiraltyTable[K] };
         "admiralty-table-body": AdmiraltyTableBody;
         "admiralty-table-cell": AdmiraltyTableCell;
         "admiralty-table-header": AdmiraltyTableHeader;
         "admiralty-table-header-cell": AdmiraltyTableHeaderCell;
         "admiralty-table-row": AdmiraltyTableRow;
-        "admiralty-text-side-bar": AdmiraltyTextSideBar;
-        "admiralty-text-side-bar-item": AdmiraltyTextSideBarItem;
+        "admiralty-text-side-bar": Omit<AdmiraltyTextSideBar, keyof AdmiraltyTextSideBarAttributes> & { [K in keyof AdmiraltyTextSideBar & keyof AdmiraltyTextSideBarAttributes]?: AdmiraltyTextSideBar[K] } & { [K in keyof AdmiraltyTextSideBar & keyof AdmiraltyTextSideBarAttributes as `attr:${K}`]?: AdmiraltyTextSideBarAttributes[K] } & { [K in keyof AdmiraltyTextSideBar & keyof AdmiraltyTextSideBarAttributes as `prop:${K}`]?: AdmiraltyTextSideBar[K] };
+        "admiralty-text-side-bar-item": Omit<AdmiraltyTextSideBarItem, keyof AdmiraltyTextSideBarItemAttributes> & { [K in keyof AdmiraltyTextSideBarItem & keyof AdmiraltyTextSideBarItemAttributes]?: AdmiraltyTextSideBarItem[K] } & { [K in keyof AdmiraltyTextSideBarItem & keyof AdmiraltyTextSideBarItemAttributes as `attr:${K}`]?: AdmiraltyTextSideBarItemAttributes[K] } & { [K in keyof AdmiraltyTextSideBarItem & keyof AdmiraltyTextSideBarItemAttributes as `prop:${K}`]?: AdmiraltyTextSideBarItem[K] };
         "admiralty-text-side-bar-wrapper": AdmiraltyTextSideBarWrapper;
-        "admiralty-textarea": AdmiraltyTextarea;
-        "admiralty-theme-toggle": AdmiraltyThemeToggle;
+        "admiralty-textarea": Omit<AdmiraltyTextarea, keyof AdmiraltyTextareaAttributes> & { [K in keyof AdmiraltyTextarea & keyof AdmiraltyTextareaAttributes]?: AdmiraltyTextarea[K] } & { [K in keyof AdmiraltyTextarea & keyof AdmiraltyTextareaAttributes as `attr:${K}`]?: AdmiraltyTextareaAttributes[K] } & { [K in keyof AdmiraltyTextarea & keyof AdmiraltyTextareaAttributes as `prop:${K}`]?: AdmiraltyTextarea[K] };
+        "admiralty-theme-toggle": Omit<AdmiraltyThemeToggle, keyof AdmiraltyThemeToggleAttributes> & { [K in keyof AdmiraltyThemeToggle & keyof AdmiraltyThemeToggleAttributes]?: AdmiraltyThemeToggle[K] } & { [K in keyof AdmiraltyThemeToggle & keyof AdmiraltyThemeToggleAttributes as `attr:${K}`]?: AdmiraltyThemeToggleAttributes[K] } & { [K in keyof AdmiraltyThemeToggle & keyof AdmiraltyThemeToggleAttributes as `prop:${K}`]?: AdmiraltyThemeToggle[K] };
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "admiralty-autocomplete": LocalJSX.AdmiraltyAutocomplete & JSXBase.HTMLAttributes<HTMLAdmiraltyAutocompleteElement>;
-            "admiralty-autocomplete-option": LocalJSX.AdmiraltyAutocompleteOption & JSXBase.HTMLAttributes<HTMLAdmiraltyAutocompleteOptionElement>;
-            "admiralty-breadcrumb": LocalJSX.AdmiraltyBreadcrumb & JSXBase.HTMLAttributes<HTMLAdmiraltyBreadcrumbElement>;
-            "admiralty-breadcrumbs": LocalJSX.AdmiraltyBreadcrumbs & JSXBase.HTMLAttributes<HTMLAdmiraltyBreadcrumbsElement>;
-            "admiralty-button": LocalJSX.AdmiraltyButton & JSXBase.HTMLAttributes<HTMLAdmiraltyButtonElement>;
-            "admiralty-card": LocalJSX.AdmiraltyCard & JSXBase.HTMLAttributes<HTMLAdmiraltyCardElement>;
-            "admiralty-checkbox": LocalJSX.AdmiraltyCheckbox & JSXBase.HTMLAttributes<HTMLAdmiraltyCheckboxElement>;
-            "admiralty-colour-block": LocalJSX.AdmiraltyColourBlock & JSXBase.HTMLAttributes<HTMLAdmiraltyColourBlockElement>;
-            "admiralty-dialogue": LocalJSX.AdmiraltyDialogue & JSXBase.HTMLAttributes<HTMLAdmiraltyDialogueElement>;
-            "admiralty-error-summary": LocalJSX.AdmiraltyErrorSummary & JSXBase.HTMLAttributes<HTMLAdmiraltyErrorSummaryElement>;
-            "admiralty-expansion": LocalJSX.AdmiraltyExpansion & JSXBase.HTMLAttributes<HTMLAdmiraltyExpansionElement>;
-            "admiralty-file-input": LocalJSX.AdmiraltyFileInput & JSXBase.HTMLAttributes<HTMLAdmiraltyFileInputElement>;
-            "admiralty-filter": LocalJSX.AdmiraltyFilter & JSXBase.HTMLAttributes<HTMLAdmiraltyFilterElement>;
-            "admiralty-filter-group": LocalJSX.AdmiraltyFilterGroup & JSXBase.HTMLAttributes<HTMLAdmiraltyFilterGroupElement>;
-            "admiralty-footer": LocalJSX.AdmiraltyFooter & JSXBase.HTMLAttributes<HTMLAdmiraltyFooterElement>;
-            "admiralty-header": LocalJSX.AdmiraltyHeader & JSXBase.HTMLAttributes<HTMLAdmiraltyHeaderElement>;
-            "admiralty-header-menu-item": LocalJSX.AdmiraltyHeaderMenuItem & JSXBase.HTMLAttributes<HTMLAdmiraltyHeaderMenuItemElement>;
-            "admiralty-header-menu-link": LocalJSX.AdmiraltyHeaderMenuLink & JSXBase.HTMLAttributes<HTMLAdmiraltyHeaderMenuLinkElement>;
-            "admiralty-header-profile": LocalJSX.AdmiraltyHeaderProfile & JSXBase.HTMLAttributes<HTMLAdmiraltyHeaderProfileElement>;
-            "admiralty-header-sub-menu-item": LocalJSX.AdmiraltyHeaderSubMenuItem & JSXBase.HTMLAttributes<HTMLAdmiraltyHeaderSubMenuItemElement>;
-            "admiralty-hint": LocalJSX.AdmiraltyHint & JSXBase.HTMLAttributes<HTMLAdmiraltyHintElement>;
-            "admiralty-hr": LocalJSX.AdmiraltyHr & JSXBase.HTMLAttributes<HTMLAdmiraltyHrElement>;
-            "admiralty-icon": LocalJSX.AdmiraltyIcon & JSXBase.HTMLAttributes<HTMLAdmiraltyIconElement>;
-            "admiralty-icon-side-bar": LocalJSX.AdmiraltyIconSideBar & JSXBase.HTMLAttributes<HTMLAdmiraltyIconSideBarElement>;
-            "admiralty-icon-side-bar-item": LocalJSX.AdmiraltyIconSideBarItem & JSXBase.HTMLAttributes<HTMLAdmiraltyIconSideBarItemElement>;
-            "admiralty-icon-side-bar-wrapper": LocalJSX.AdmiraltyIconSideBarWrapper & JSXBase.HTMLAttributes<HTMLAdmiraltyIconSideBarWrapperElement>;
+            "admiralty-autocomplete": LocalJSX.IntrinsicElements["admiralty-autocomplete"] & JSXBase.HTMLAttributes<HTMLAdmiraltyAutocompleteElement>;
+            "admiralty-autocomplete-option": LocalJSX.IntrinsicElements["admiralty-autocomplete-option"] & JSXBase.HTMLAttributes<HTMLAdmiraltyAutocompleteOptionElement>;
+            "admiralty-breadcrumb": LocalJSX.IntrinsicElements["admiralty-breadcrumb"] & JSXBase.HTMLAttributes<HTMLAdmiraltyBreadcrumbElement>;
+            "admiralty-breadcrumbs": LocalJSX.IntrinsicElements["admiralty-breadcrumbs"] & JSXBase.HTMLAttributes<HTMLAdmiraltyBreadcrumbsElement>;
+            "admiralty-button": LocalJSX.IntrinsicElements["admiralty-button"] & JSXBase.HTMLAttributes<HTMLAdmiraltyButtonElement>;
+            "admiralty-card": LocalJSX.IntrinsicElements["admiralty-card"] & JSXBase.HTMLAttributes<HTMLAdmiraltyCardElement>;
+            "admiralty-checkbox": LocalJSX.IntrinsicElements["admiralty-checkbox"] & JSXBase.HTMLAttributes<HTMLAdmiraltyCheckboxElement>;
+            "admiralty-colour-block": LocalJSX.IntrinsicElements["admiralty-colour-block"] & JSXBase.HTMLAttributes<HTMLAdmiraltyColourBlockElement>;
+            "admiralty-dialogue": LocalJSX.IntrinsicElements["admiralty-dialogue"] & JSXBase.HTMLAttributes<HTMLAdmiraltyDialogueElement>;
+            "admiralty-error-summary": LocalJSX.IntrinsicElements["admiralty-error-summary"] & JSXBase.HTMLAttributes<HTMLAdmiraltyErrorSummaryElement>;
+            "admiralty-expansion": LocalJSX.IntrinsicElements["admiralty-expansion"] & JSXBase.HTMLAttributes<HTMLAdmiraltyExpansionElement>;
+            "admiralty-file-input": LocalJSX.IntrinsicElements["admiralty-file-input"] & JSXBase.HTMLAttributes<HTMLAdmiraltyFileInputElement>;
+            "admiralty-filter": LocalJSX.IntrinsicElements["admiralty-filter"] & JSXBase.HTMLAttributes<HTMLAdmiraltyFilterElement>;
+            "admiralty-filter-group": LocalJSX.IntrinsicElements["admiralty-filter-group"] & JSXBase.HTMLAttributes<HTMLAdmiraltyFilterGroupElement>;
+            "admiralty-footer": LocalJSX.IntrinsicElements["admiralty-footer"] & JSXBase.HTMLAttributes<HTMLAdmiraltyFooterElement>;
+            "admiralty-header": LocalJSX.IntrinsicElements["admiralty-header"] & JSXBase.HTMLAttributes<HTMLAdmiraltyHeaderElement>;
+            "admiralty-header-menu-item": LocalJSX.IntrinsicElements["admiralty-header-menu-item"] & JSXBase.HTMLAttributes<HTMLAdmiraltyHeaderMenuItemElement>;
+            "admiralty-header-menu-link": LocalJSX.IntrinsicElements["admiralty-header-menu-link"] & JSXBase.HTMLAttributes<HTMLAdmiraltyHeaderMenuLinkElement>;
+            "admiralty-header-profile": LocalJSX.IntrinsicElements["admiralty-header-profile"] & JSXBase.HTMLAttributes<HTMLAdmiraltyHeaderProfileElement>;
+            "admiralty-header-sub-menu-item": LocalJSX.IntrinsicElements["admiralty-header-sub-menu-item"] & JSXBase.HTMLAttributes<HTMLAdmiraltyHeaderSubMenuItemElement>;
+            "admiralty-hint": LocalJSX.IntrinsicElements["admiralty-hint"] & JSXBase.HTMLAttributes<HTMLAdmiraltyHintElement>;
+            "admiralty-hr": LocalJSX.IntrinsicElements["admiralty-hr"] & JSXBase.HTMLAttributes<HTMLAdmiraltyHrElement>;
+            "admiralty-icon": LocalJSX.IntrinsicElements["admiralty-icon"] & JSXBase.HTMLAttributes<HTMLAdmiraltyIconElement>;
+            "admiralty-icon-side-bar": LocalJSX.IntrinsicElements["admiralty-icon-side-bar"] & JSXBase.HTMLAttributes<HTMLAdmiraltyIconSideBarElement>;
+            "admiralty-icon-side-bar-item": LocalJSX.IntrinsicElements["admiralty-icon-side-bar-item"] & JSXBase.HTMLAttributes<HTMLAdmiraltyIconSideBarItemElement>;
+            "admiralty-icon-side-bar-wrapper": LocalJSX.IntrinsicElements["admiralty-icon-side-bar-wrapper"] & JSXBase.HTMLAttributes<HTMLAdmiraltyIconSideBarWrapperElement>;
             /**
              * Once this component works, review whether a form field component should be created so
              * that shared properties such as `label`, `hint`, `disabled` etc. can be defined once.
              * Examples of similar components that can extend that base component are area, select
              * and checkbox.
              */
-            "admiralty-input": LocalJSX.AdmiraltyInput & JSXBase.HTMLAttributes<HTMLAdmiraltyInputElement>;
-            "admiralty-input-invalid": LocalJSX.AdmiraltyInputInvalid & JSXBase.HTMLAttributes<HTMLAdmiraltyInputInvalidElement>;
-            "admiralty-label": LocalJSX.AdmiraltyLabel & JSXBase.HTMLAttributes<HTMLAdmiraltyLabelElement>;
-            "admiralty-link": LocalJSX.AdmiraltyLink & JSXBase.HTMLAttributes<HTMLAdmiraltyLinkElement>;
-            "admiralty-modal-dialog": LocalJSX.AdmiraltyModalDialog & JSXBase.HTMLAttributes<HTMLAdmiraltyModalDialogElement>;
-            "admiralty-paginator": LocalJSX.AdmiraltyPaginator & JSXBase.HTMLAttributes<HTMLAdmiraltyPaginatorElement>;
-            "admiralty-paginator-wrapper": LocalJSX.AdmiraltyPaginatorWrapper & JSXBase.HTMLAttributes<HTMLAdmiraltyPaginatorWrapperElement>;
-            "admiralty-phase-banner": LocalJSX.AdmiraltyPhaseBanner & JSXBase.HTMLAttributes<HTMLAdmiraltyPhaseBannerElement>;
-            "admiralty-pill": LocalJSX.AdmiraltyPill & JSXBase.HTMLAttributes<HTMLAdmiraltyPillElement>;
-            "admiralty-progress-bar": LocalJSX.AdmiraltyProgressBar & JSXBase.HTMLAttributes<HTMLAdmiraltyProgressBarElement>;
-            "admiralty-progress-tracker": LocalJSX.AdmiraltyProgressTracker & JSXBase.HTMLAttributes<HTMLAdmiraltyProgressTrackerElement>;
+            "admiralty-input": LocalJSX.IntrinsicElements["admiralty-input"] & JSXBase.HTMLAttributes<HTMLAdmiraltyInputElement>;
+            "admiralty-input-invalid": LocalJSX.IntrinsicElements["admiralty-input-invalid"] & JSXBase.HTMLAttributes<HTMLAdmiraltyInputInvalidElement>;
+            "admiralty-label": LocalJSX.IntrinsicElements["admiralty-label"] & JSXBase.HTMLAttributes<HTMLAdmiraltyLabelElement>;
+            "admiralty-link": LocalJSX.IntrinsicElements["admiralty-link"] & JSXBase.HTMLAttributes<HTMLAdmiraltyLinkElement>;
+            "admiralty-modal-dialog": LocalJSX.IntrinsicElements["admiralty-modal-dialog"] & JSXBase.HTMLAttributes<HTMLAdmiraltyModalDialogElement>;
+            "admiralty-paginator": LocalJSX.IntrinsicElements["admiralty-paginator"] & JSXBase.HTMLAttributes<HTMLAdmiraltyPaginatorElement>;
+            "admiralty-paginator-wrapper": LocalJSX.IntrinsicElements["admiralty-paginator-wrapper"] & JSXBase.HTMLAttributes<HTMLAdmiraltyPaginatorWrapperElement>;
+            "admiralty-phase-banner": LocalJSX.IntrinsicElements["admiralty-phase-banner"] & JSXBase.HTMLAttributes<HTMLAdmiraltyPhaseBannerElement>;
+            "admiralty-pill": LocalJSX.IntrinsicElements["admiralty-pill"] & JSXBase.HTMLAttributes<HTMLAdmiraltyPillElement>;
+            "admiralty-progress-bar": LocalJSX.IntrinsicElements["admiralty-progress-bar"] & JSXBase.HTMLAttributes<HTMLAdmiraltyProgressBarElement>;
+            "admiralty-progress-tracker": LocalJSX.IntrinsicElements["admiralty-progress-tracker"] & JSXBase.HTMLAttributes<HTMLAdmiraltyProgressTrackerElement>;
             /**
              * A step component used within admiralty-progress-tracker to define individual steps in a progress flow.
              */
-            "admiralty-progress-tracker-step": LocalJSX.AdmiraltyProgressTrackerStep & JSXBase.HTMLAttributes<HTMLAdmiraltyProgressTrackerStepElement>;
-            "admiralty-radio": LocalJSX.AdmiraltyRadio & JSXBase.HTMLAttributes<HTMLAdmiraltyRadioElement>;
-            "admiralty-radio-group": LocalJSX.AdmiraltyRadioGroup & JSXBase.HTMLAttributes<HTMLAdmiraltyRadioGroupElement>;
-            "admiralty-read-more": LocalJSX.AdmiraltyReadMore & JSXBase.HTMLAttributes<HTMLAdmiraltyReadMoreElement>;
-            "admiralty-select": LocalJSX.AdmiraltySelect & JSXBase.HTMLAttributes<HTMLAdmiraltySelectElement>;
-            "admiralty-side-nav": LocalJSX.AdmiraltySideNav & JSXBase.HTMLAttributes<HTMLAdmiraltySideNavElement>;
-            "admiralty-side-nav-item": LocalJSX.AdmiraltySideNavItem & JSXBase.HTMLAttributes<HTMLAdmiraltySideNavItemElement>;
-            "admiralty-side-nav-wrapper": LocalJSX.AdmiraltySideNavWrapper & JSXBase.HTMLAttributes<HTMLAdmiraltySideNavWrapperElement>;
-            "admiralty-skeleton": LocalJSX.AdmiraltySkeleton & JSXBase.HTMLAttributes<HTMLAdmiraltySkeletonElement>;
-            "admiralty-skip-link": LocalJSX.AdmiraltySkipLink & JSXBase.HTMLAttributes<HTMLAdmiraltySkipLinkElement>;
-            "admiralty-tab": LocalJSX.AdmiraltyTab & JSXBase.HTMLAttributes<HTMLAdmiraltyTabElement>;
-            "admiralty-tab-group": LocalJSX.AdmiraltyTabGroup & JSXBase.HTMLAttributes<HTMLAdmiraltyTabGroupElement>;
+            "admiralty-progress-tracker-step": LocalJSX.IntrinsicElements["admiralty-progress-tracker-step"] & JSXBase.HTMLAttributes<HTMLAdmiraltyProgressTrackerStepElement>;
+            "admiralty-radio": LocalJSX.IntrinsicElements["admiralty-radio"] & JSXBase.HTMLAttributes<HTMLAdmiraltyRadioElement>;
+            "admiralty-radio-group": LocalJSX.IntrinsicElements["admiralty-radio-group"] & JSXBase.HTMLAttributes<HTMLAdmiraltyRadioGroupElement>;
+            "admiralty-read-more": LocalJSX.IntrinsicElements["admiralty-read-more"] & JSXBase.HTMLAttributes<HTMLAdmiraltyReadMoreElement>;
+            "admiralty-select": LocalJSX.IntrinsicElements["admiralty-select"] & JSXBase.HTMLAttributes<HTMLAdmiraltySelectElement>;
+            "admiralty-side-nav": LocalJSX.IntrinsicElements["admiralty-side-nav"] & JSXBase.HTMLAttributes<HTMLAdmiraltySideNavElement>;
+            "admiralty-side-nav-item": LocalJSX.IntrinsicElements["admiralty-side-nav-item"] & JSXBase.HTMLAttributes<HTMLAdmiraltySideNavItemElement>;
+            "admiralty-side-nav-wrapper": LocalJSX.IntrinsicElements["admiralty-side-nav-wrapper"] & JSXBase.HTMLAttributes<HTMLAdmiraltySideNavWrapperElement>;
+            "admiralty-skeleton": LocalJSX.IntrinsicElements["admiralty-skeleton"] & JSXBase.HTMLAttributes<HTMLAdmiraltySkeletonElement>;
+            "admiralty-skip-link": LocalJSX.IntrinsicElements["admiralty-skip-link"] & JSXBase.HTMLAttributes<HTMLAdmiraltySkipLinkElement>;
+            "admiralty-tab": LocalJSX.IntrinsicElements["admiralty-tab"] & JSXBase.HTMLAttributes<HTMLAdmiraltyTabElement>;
+            "admiralty-tab-group": LocalJSX.IntrinsicElements["admiralty-tab-group"] & JSXBase.HTMLAttributes<HTMLAdmiraltyTabGroupElement>;
             /**
              * Use tables to make information easier for users to scan and compare
              */
-            "admiralty-table": LocalJSX.AdmiraltyTable & JSXBase.HTMLAttributes<HTMLAdmiraltyTableElement>;
+            "admiralty-table": LocalJSX.IntrinsicElements["admiralty-table"] & JSXBase.HTMLAttributes<HTMLAdmiraltyTableElement>;
             /**
              * The table body element is a wrapper for a standard html table body and should be used to wrap rows
              */
-            "admiralty-table-body": LocalJSX.AdmiraltyTableBody & JSXBase.HTMLAttributes<HTMLAdmiraltyTableBodyElement>;
+            "admiralty-table-body": LocalJSX.IntrinsicElements["admiralty-table-body"] & JSXBase.HTMLAttributes<HTMLAdmiraltyTableBodyElement>;
             /**
              * The table cell is a wrapper for a standard <td> element and should be used inside of table rows
              */
-            "admiralty-table-cell": LocalJSX.AdmiraltyTableCell & JSXBase.HTMLAttributes<HTMLAdmiraltyTableCellElement>;
+            "admiralty-table-cell": LocalJSX.IntrinsicElements["admiralty-table-cell"] & JSXBase.HTMLAttributes<HTMLAdmiraltyTableCellElement>;
             /**
              * The table header should be used inside a table element to give headers to all the columns
              */
-            "admiralty-table-header": LocalJSX.AdmiraltyTableHeader & JSXBase.HTMLAttributes<HTMLAdmiraltyTableHeaderElement>;
+            "admiralty-table-header": LocalJSX.IntrinsicElements["admiralty-table-header"] & JSXBase.HTMLAttributes<HTMLAdmiraltyTableHeaderElement>;
             /**
              * The table header cell element is used for showing headings for the columns
              */
-            "admiralty-table-header-cell": LocalJSX.AdmiraltyTableHeaderCell & JSXBase.HTMLAttributes<HTMLAdmiraltyTableHeaderCellElement>;
+            "admiralty-table-header-cell": LocalJSX.IntrinsicElements["admiralty-table-header-cell"] & JSXBase.HTMLAttributes<HTMLAdmiraltyTableHeaderCellElement>;
             /**
              * The table row element should be used to define rows within the table body
              */
-            "admiralty-table-row": LocalJSX.AdmiraltyTableRow & JSXBase.HTMLAttributes<HTMLAdmiraltyTableRowElement>;
-            "admiralty-text-side-bar": LocalJSX.AdmiraltyTextSideBar & JSXBase.HTMLAttributes<HTMLAdmiraltyTextSideBarElement>;
-            "admiralty-text-side-bar-item": LocalJSX.AdmiraltyTextSideBarItem & JSXBase.HTMLAttributes<HTMLAdmiraltyTextSideBarItemElement>;
-            "admiralty-text-side-bar-wrapper": LocalJSX.AdmiraltyTextSideBarWrapper & JSXBase.HTMLAttributes<HTMLAdmiraltyTextSideBarWrapperElement>;
-            "admiralty-textarea": LocalJSX.AdmiraltyTextarea & JSXBase.HTMLAttributes<HTMLAdmiraltyTextareaElement>;
-            "admiralty-theme-toggle": LocalJSX.AdmiraltyThemeToggle & JSXBase.HTMLAttributes<HTMLAdmiraltyThemeToggleElement>;
+            "admiralty-table-row": LocalJSX.IntrinsicElements["admiralty-table-row"] & JSXBase.HTMLAttributes<HTMLAdmiraltyTableRowElement>;
+            "admiralty-text-side-bar": LocalJSX.IntrinsicElements["admiralty-text-side-bar"] & JSXBase.HTMLAttributes<HTMLAdmiraltyTextSideBarElement>;
+            "admiralty-text-side-bar-item": LocalJSX.IntrinsicElements["admiralty-text-side-bar-item"] & JSXBase.HTMLAttributes<HTMLAdmiraltyTextSideBarItemElement>;
+            "admiralty-text-side-bar-wrapper": LocalJSX.IntrinsicElements["admiralty-text-side-bar-wrapper"] & JSXBase.HTMLAttributes<HTMLAdmiraltyTextSideBarWrapperElement>;
+            "admiralty-textarea": LocalJSX.IntrinsicElements["admiralty-textarea"] & JSXBase.HTMLAttributes<HTMLAdmiraltyTextareaElement>;
+            "admiralty-theme-toggle": LocalJSX.IntrinsicElements["admiralty-theme-toggle"] & JSXBase.HTMLAttributes<HTMLAdmiraltyThemeToggleElement>;
         }
     }
 }

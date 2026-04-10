@@ -1,5 +1,5 @@
-@import 'card.vars';
-@import '../../styles/vars/globals';
+@use '../../styles/vars/globals' as *;
+@use 'card.vars' as *;
 
 .card {
   display: flex;

@@ -1,4 +1,4 @@
-@import './file-input.vars';
+@use './file-input.vars' as *;
 
 .admiralty-file-input {
   background: $file-input-background-colour;

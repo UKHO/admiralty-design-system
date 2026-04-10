@@ -1,4 +1,4 @@
-@import '../../styles/vars/globals';
+@use '../../styles/vars/globals' as *;
 
 /**
  * @prop --admiralty-dialogue-title-font-size: Font size of the dialogue title

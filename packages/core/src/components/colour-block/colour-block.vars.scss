@@ -1,4 +1,4 @@
-@import '../../styles/vars/globals';
+@use '../../styles/vars/globals' as *;
 
 /**
  * @prop --admiralty-colour-block-action-font-size: Font size of the colour block action

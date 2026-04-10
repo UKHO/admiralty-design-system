@@ -1,4 +1,4 @@
-@import 'filter.vars';
+@use 'filter.vars' as *;
 
 .filter-heading {
   display: flex;

@@ -1,4 +1,4 @@
-@import '../../styles/vars/globals';
+@use '../../styles/vars/globals' as *;
 
 $horizontal-rule-border-colour: var(--admiralty-colour-light);
 

@@ -1,4 +1,5 @@
-@import 'footer.vars';
+@use '../../styles/vars/globals' as *;
+@use 'footer.vars' as *;
 
 footer {
   @include tablet-or-desktop {

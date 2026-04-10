@@ -1,4 +1,4 @@
-@import '../../styles/vars/globals';
+@use '../../styles/vars/globals' as *;
 
 $theme-toggle-background-colour: var(--admiralty-theme-toggle-background-colour, var(--admiralty-background-colour));
 $theme-toggle-hover-background-colour: var(--admiralty-theme-toggle-hover-background-colour, var(--admiralty-hover-background-colour));

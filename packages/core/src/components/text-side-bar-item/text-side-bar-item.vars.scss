@@ -1,4 +1,4 @@
-@import '../../styles/vars/globals';
+@use '../../styles/vars/globals' as *;
 
 /**
  * @prop --admiralty-text-link-font-weight: Font weight for text link

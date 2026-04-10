@@ -1,4 +1,4 @@
-@import "../../styles/vars/globals";
+@use '../../styles/vars/globals' as *;
 
 /**
  * @prop --admiralty-label-font-weight: Font weight of the label

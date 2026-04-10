@@ -1,4 +1,4 @@
-@import "../../styles/vars/globals";
+@use '../../styles/vars/globals' as *;
 
 /**
  * @prop --admiralty-input-invalid-icon-margin: Margin for the invalid input icon

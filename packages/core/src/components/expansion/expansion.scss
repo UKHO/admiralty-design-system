@@ -1,4 +1,5 @@
-@import 'expansion.vars';
+@use '../../styles/vars/globals' as *;
+@use 'expansion.vars' as *;
 
 section.expansion {
   padding: $expansion-padding;

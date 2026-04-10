@@ -1,7 +1,7 @@
-import { Meta, StoryObj } from '@storybook/web-components';
+import { Meta, StoryObj } from '@storybook/web-components-vite';
 import { TextSideBarItemComponent } from './text-side-bar-item';
 import { html } from 'lit';
-import { withActions } from "@storybook/addon-actions/decorator";
+import { withActions } from "storybook/actions/decorator";
 import { TextSideBarItemVariant } from "./text-side-bar-item.types";
 
 const meta: Meta = {

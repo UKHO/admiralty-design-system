@@ -1,4 +1,4 @@
-@import '../../styles/vars/globals';
+@use '../../styles/vars/globals' as *;
 
 /**
  * @prop --admiralty-radio-label-font-weight: Font weight for the radio label

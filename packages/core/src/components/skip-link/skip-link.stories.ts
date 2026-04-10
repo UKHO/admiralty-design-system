@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/web-components';
+import { Meta, StoryObj } from '@storybook/web-components-vite';
 import { SkipLinkComponent } from './skip-link';
 import { html } from 'lit';
 

@@ -1,4 +1,5 @@
-@import 'colour-block.vars';
+@use '../../styles/vars/globals' as *;
+@use 'colour-block.vars' as *;
 
 .colourBlock {
   height: 100%;

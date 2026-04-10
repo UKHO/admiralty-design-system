@@ -1,4 +1,4 @@
-@import 'inputs.vars';
+@use 'inputs.vars' as *;
 
 .text-input-container {
   display: flex;

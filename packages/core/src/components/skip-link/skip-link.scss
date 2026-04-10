@@ -1,4 +1,4 @@
-@import 'skip-link.vars.scss';
+@use 'skip-link.vars.scss' as *;
 
 .skip-link {
   @extend .visually-hidden;

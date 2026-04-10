@@ -4,11 +4,8 @@
     "allowUnreachableCode": false,
     "declaration": false,
     "experimentalDecorators": true,
-    "lib": [
-      "dom",
-      "es2017"
-    ],
-    "moduleResolution": "node",
+    "lib": ["dom", "es2017"],
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "module": "esnext",
     "target": "es2017",
@@ -18,11 +15,6 @@
     "jsxFactory": "h",
     "skipLibCheck": true
   },
-  "include": [
-    "src"
-  ],
-  "exclude": [
-    "node_modules",
-    "**/*.stories.ts",
-  ]
+  "include": ["src"],
+  "exclude": ["node_modules", "**/*.stories.ts"]
 }

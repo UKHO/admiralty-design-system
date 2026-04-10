@@ -1,4 +1,4 @@
-@import './paginator.vars';
+@use './paginator.vars' as *;
 
 nav.standard {
   display: flex;

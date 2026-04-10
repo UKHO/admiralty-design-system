@@ -1,4 +1,4 @@
-@import 'label.vars.scss';
+@use 'label.vars.scss' as *;
 
 label {
   margin-bottom: $label-margin-bottom;

@@ -5,11 +5,11 @@
   "prettier.enable": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
-  "jest.jestCommandLine": "cd packages/core && yarn test:spec",
-  "jest.autoRun": {
-    "watch": true,
-    "onStartup": ["all-tests"]
+  "jest.jestCommandLine": "cd packages/core && npm run test:spec -- --ci",
+  "jest.runMode": {
+    "type": "watch",
+    "runAllTestsOnStartup": true,
+    "coverage": true
   },
-  "jest.showCoverageOnLoad": true,
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "js/ts.tsdk.path": "node_modules/typescript/lib"
 }

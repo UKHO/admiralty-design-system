@@ -1,4 +1,4 @@
-@import 'horizontal-rule.vars.scss';
+@use 'horizontal-rule.vars.scss' as *;
 
 hr {
   width: 100%;

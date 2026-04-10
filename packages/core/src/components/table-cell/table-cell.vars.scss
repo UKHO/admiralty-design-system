@@ -1,4 +1,4 @@
-@import "../../styles/vars/globals";
+@use '../../styles/vars/globals' as *;
 
 /**
  * @prop --admiralty-table-cell-font-size: Font size for the table cell

@@ -1,5 +1,58 @@
-@import '../utils/a11y';
-@import '../utils/colour-functions';
-@import '../utils/responsive';
+@use '../utils/a11y';
+@use '../utils/colour-functions';
+@use '../utils/responsive';
 
 $font-family-base: var(--admiralty-font-family, inherit) !default;
+
+// Backward-compatible exports for files still importing globals via @import.
+@mixin focus-highlight() {
+  @include a11y.focus-highlight();
+}
+
+@mixin not-desktop() {
+  @include responsive.not-desktop() {
+    @content;
+  }
+}
+
+@mixin desktop-only() {
+  @include responsive.desktop-only() {
+    @content;
+  }
+}
+
+@mixin tablet-only() {
+  @include responsive.tablet-only() {
+    @content;
+  }
+}
+
+@mixin tablet-or-desktop() {
+  @include responsive.tablet-or-desktop() {
+    @content;
+  }
+}
+
+@mixin phone-or-tablet() {
+  @include responsive.phone-or-tablet() {
+    @content;
+  }
+}
+
+@mixin phone-only() {
+  @include responsive.phone-only() {
+    @content;
+  }
+}
+
+@function colour-to-rgb-list($colour) {
+  @return colour-functions.colour-to-rgb-list($colour);
+}
+
+@function get-colour-shade($colour) {
+  @return colour-functions.get-colour-shade($colour);
+}
+
+@function get-colour-tint($colour) {
+  @return colour-functions.get-colour-tint($colour);
+}

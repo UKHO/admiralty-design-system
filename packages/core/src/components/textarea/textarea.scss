@@ -1,4 +1,4 @@
-@import 'textarea.vars';
+@use 'textarea.vars' as *;
 
 .text-area-container {
   textarea {

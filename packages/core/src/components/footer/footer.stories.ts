@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/web-components';
+import { Meta, StoryObj } from '@storybook/web-components-vite';
 import { FooterComponent } from './footer';
 import { html } from 'lit';
 import { FooterType } from './footer.types';

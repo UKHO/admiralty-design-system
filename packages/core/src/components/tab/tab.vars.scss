@@ -1,4 +1,4 @@
-@import "../../styles/vars/globals";
+@use '../../styles/vars/globals' as *;
 
 /**
  * @prop --admiralty-tab-content-font-weight: Font weight for the tab content

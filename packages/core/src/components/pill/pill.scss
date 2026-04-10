@@ -1,4 +1,4 @@
-@import './pill.vars';
+@use './pill.vars' as *;
 
 .pill {
   display: inline-block;

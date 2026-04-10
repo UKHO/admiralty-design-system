@@ -1,4 +1,4 @@
-@import "breadcrumb.vars";
+@use 'breadcrumb.vars' as *;
 
 :host {
   display: flex;
