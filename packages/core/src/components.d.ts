@@ -1075,6 +1075,17 @@ export namespace Components {
          */
         "theme": ThemePreference;
     }
+    interface AdmiraltyTooltip {
+        /**
+          * @default 'centre'
+         */
+        "alignment"?: Alignment;
+        "for": string;
+        /**
+          * @default 'top'
+         */
+        "placement"?: Placement;
+    }
 }
 export interface AdmiraltyAutocompleteCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -1837,6 +1848,12 @@ declare global {
         prototype: HTMLAdmiraltyThemeToggleElement;
         new (): HTMLAdmiraltyThemeToggleElement;
     };
+    interface HTMLAdmiraltyTooltipElement extends Components.AdmiraltyTooltip, HTMLStencilElement {
+    }
+    var HTMLAdmiraltyTooltipElement: {
+        prototype: HTMLAdmiraltyTooltipElement;
+        new (): HTMLAdmiraltyTooltipElement;
+    };
     interface HTMLElementTagNameMap {
         "admiralty-autocomplete": HTMLAdmiraltyAutocompleteElement;
         "admiralty-autocomplete-option": HTMLAdmiraltyAutocompleteOptionElement;
@@ -1898,6 +1915,7 @@ declare global {
         "admiralty-text-side-bar-wrapper": HTMLAdmiraltyTextSideBarWrapperElement;
         "admiralty-textarea": HTMLAdmiraltyTextareaElement;
         "admiralty-theme-toggle": HTMLAdmiraltyThemeToggleElement;
+        "admiralty-tooltip": HTMLAdmiraltyTooltipElement;
     }
 }
 declare namespace LocalJSX {
@@ -3094,6 +3112,17 @@ declare namespace LocalJSX {
          */
         "theme"?: ThemePreference;
     }
+    interface AdmiraltyTooltip {
+        /**
+          * @default 'centre'
+         */
+        "alignment"?: Alignment;
+        "for": string;
+        /**
+          * @default 'top'
+         */
+        "placement"?: Placement;
+    }
 
     interface AdmiraltyAutocompleteAttributes {
         "autoselect": boolean;
@@ -3110,7 +3139,6 @@ declare namespace LocalJSX {
         "menuAttributes": string;
         "inputClasses": string;
         "menuClasses": string;
-        "iconName": string;
         "label": string;
         "hint": string;
         "invalid": boolean;
@@ -3385,6 +3413,11 @@ declare namespace LocalJSX {
         "disabled": boolean;
         "ariaLabel": string;
     }
+    interface AdmiraltyTooltipAttributes {
+        "for": string;
+        "placement": Placement;
+        "alignment": Alignment;
+    }
 
     interface IntrinsicElements {
         "admiralty-autocomplete": Omit<AdmiraltyAutocomplete, keyof AdmiraltyAutocompleteAttributes> & { [K in keyof AdmiraltyAutocomplete & keyof AdmiraltyAutocompleteAttributes]?: AdmiraltyAutocomplete[K] } & { [K in keyof AdmiraltyAutocomplete & keyof AdmiraltyAutocompleteAttributes as `attr:${K}`]?: AdmiraltyAutocompleteAttributes[K] } & { [K in keyof AdmiraltyAutocomplete & keyof AdmiraltyAutocompleteAttributes as `prop:${K}`]?: AdmiraltyAutocomplete[K] };
@@ -3447,6 +3480,7 @@ declare namespace LocalJSX {
         "admiralty-text-side-bar-wrapper": AdmiraltyTextSideBarWrapper;
         "admiralty-textarea": Omit<AdmiraltyTextarea, keyof AdmiraltyTextareaAttributes> & { [K in keyof AdmiraltyTextarea & keyof AdmiraltyTextareaAttributes]?: AdmiraltyTextarea[K] } & { [K in keyof AdmiraltyTextarea & keyof AdmiraltyTextareaAttributes as `attr:${K}`]?: AdmiraltyTextareaAttributes[K] } & { [K in keyof AdmiraltyTextarea & keyof AdmiraltyTextareaAttributes as `prop:${K}`]?: AdmiraltyTextarea[K] };
         "admiralty-theme-toggle": Omit<AdmiraltyThemeToggle, keyof AdmiraltyThemeToggleAttributes> & { [K in keyof AdmiraltyThemeToggle & keyof AdmiraltyThemeToggleAttributes]?: AdmiraltyThemeToggle[K] } & { [K in keyof AdmiraltyThemeToggle & keyof AdmiraltyThemeToggleAttributes as `attr:${K}`]?: AdmiraltyThemeToggleAttributes[K] } & { [K in keyof AdmiraltyThemeToggle & keyof AdmiraltyThemeToggleAttributes as `prop:${K}`]?: AdmiraltyThemeToggle[K] };
+        "admiralty-tooltip": Omit<AdmiraltyTooltip, keyof AdmiraltyTooltipAttributes> & { [K in keyof AdmiraltyTooltip & keyof AdmiraltyTooltipAttributes]?: AdmiraltyTooltip[K] } & { [K in keyof AdmiraltyTooltip & keyof AdmiraltyTooltipAttributes as `attr:${K}`]?: AdmiraltyTooltipAttributes[K] } & { [K in keyof AdmiraltyTooltip & keyof AdmiraltyTooltipAttributes as `prop:${K}`]?: AdmiraltyTooltip[K] } & OneOf<"for", AdmiraltyTooltip["for"], AdmiraltyTooltipAttributes["for"]>;
     }
 }
 export { LocalJSX as JSX };
@@ -3540,6 +3574,7 @@ declare module "@stencil/core" {
             "admiralty-text-side-bar-wrapper": LocalJSX.IntrinsicElements["admiralty-text-side-bar-wrapper"] & JSXBase.HTMLAttributes<HTMLAdmiraltyTextSideBarWrapperElement>;
             "admiralty-textarea": LocalJSX.IntrinsicElements["admiralty-textarea"] & JSXBase.HTMLAttributes<HTMLAdmiraltyTextareaElement>;
             "admiralty-theme-toggle": LocalJSX.IntrinsicElements["admiralty-theme-toggle"] & JSXBase.HTMLAttributes<HTMLAdmiraltyThemeToggleElement>;
+            "admiralty-tooltip": LocalJSX.IntrinsicElements["admiralty-tooltip"] & JSXBase.HTMLAttributes<HTMLAdmiraltyTooltipElement>;
         }
     }
 }

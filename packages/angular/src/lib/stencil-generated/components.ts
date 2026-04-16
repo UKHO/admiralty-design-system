@@ -1541,3 +1541,26 @@ export declare interface AdmiraltyThemeToggle extends Components.AdmiraltyThemeT
 }
 
 
+@ProxyCmp({
+  inputs: ['alignment', 'for', 'placement']
+})
+@Component({
+  selector: 'admiralty-tooltip',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['alignment', { name: 'for', required: true }, 'placement'],
+  standalone: false
+})
+export class AdmiraltyTooltip {
+  protected el: HTMLAdmiraltyTooltipElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface AdmiraltyTooltip extends Components.AdmiraltyTooltip {}
+
+
