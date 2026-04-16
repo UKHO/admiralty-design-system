@@ -70,10 +70,14 @@ export namespace Components {
          */
         "filterFunction": (query: string) => Option[];
         /**
-          * TThe text which will be used under the label to describe the input.
+          * The text which will be used under the label to describe the input.
           * @default null
          */
         "hint": string;
+        /**
+          * Optional icon to show in the autocomplete toggle area. If not provided, the default chevron up/down icons will be used.
+         */
+        "iconName"?: string;
         /**
           * Classes to add to the component's `<input>` element.
          */
@@ -1953,10 +1957,14 @@ declare namespace LocalJSX {
          */
         "filterFunction"?: (query: string) => Option[];
         /**
-          * TThe text which will be used under the label to describe the input.
+          * The text which will be used under the label to describe the input.
           * @default null
          */
         "hint"?: string;
+        /**
+          * Optional icon to show in the autocomplete toggle area. If not provided, the default chevron up/down icons will be used.
+         */
+        "iconName"?: string;
         /**
           * Classes to add to the component's `<input>` element.
          */
