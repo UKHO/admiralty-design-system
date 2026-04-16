@@ -54,6 +54,11 @@ export class RadioGroupComponent implements ComponentInterface {
    */
   @Prop() invalidMessage: string;
 
+  /**
+   * Whether selecting a checked radio option again should clear the selection
+   */
+  @Prop() allowUnselect: boolean = false;
+
   @Watch('value')
   valueChanged(value: any) {
     this.setRadioTabindex(value);
@@ -109,12 +114,14 @@ export class RadioGroupComponent implements ComponentInterface {
     if (this.disabled) return;
     const selectedRadio = e.target && (e.target as HTMLElement).closest('admiralty-radio');
 
-    if (selectedRadio) {
+    if (selectedRadio && !selectedRadio.disabled) {
       const currentValue = this.value;
       const newValue = selectedRadio.value;
 
       if (newValue !== currentValue) {
         this.value = newValue;
+      } else if (this.allowUnselect) {
+        this.value = null;
       }
     }
   };
@@ -128,6 +135,7 @@ export class RadioGroupComponent implements ComponentInterface {
           disabled={this.disabled}
           role="radiogroup"
           aria-invalid={this.invalid ? 'true' : 'false'}
+          aria-required={this.allowUnselect ? null : 'true'}
           aria-describedby={(this.hint ? this.hintId : '') + ' ' + (this.invalid ? this.errorId : '')}
         >
           {this.label ? <legend>{this.label}</legend> : null}

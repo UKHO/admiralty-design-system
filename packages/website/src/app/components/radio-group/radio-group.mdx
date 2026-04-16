@@ -32,6 +32,16 @@ import Disabled from "@/usage/radio-group/disabled/index.mdx";
 
 When there are only two options and the text is short, radio buttons can be arranged horizontally. For more than two options or when the text is longer, the radio buttons should be stacked (the default).
 
+## Optional and required groups
+
+By default, radio groups require a selection.
+
+When a group should be optional, set `allow-unselect="true"` on the radio group. Optional groups allow users to select an option and then click the same option again to return the group to an unselected state.
+
+import Optional from "@/usage/radio-group/optional/index.mdx";
+
+<Optional />
+
 import Horizontal from "@/usage/radio-group/horizontal/index.mdx";
 
 <Horizontal />
@@ -83,4 +93,3 @@ import CustomProps from "@docs/radio-group/customProps.mdx";
 import Slots from "@docs/radio-group/slots.mdx";
 
 <Slots />
-
