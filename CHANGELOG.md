@@ -1,3 +1,25 @@
+# v5.6.0 (Fri Apr 17 2026)
+
+#### 🚀 Enhancement
+
+- `@ukho/admiralty-angular`, `@ukho/admiralty-core`, `@ukho-internal/admiralty-docs`, `@ukho/admiralty-react`, `test-app`, `website`
+  - Add Tooltip Component [#439](https://github.com/UKHO/admiralty-design-system/pull/439) ([@developernm](https://github.com/developernm) [@ecstaticrainbow](https://github.com/ecstaticrainbow) [@lstevens98](https://github.com/lstevens98) mohamme15315@mastek.com)
+- `@ukho/admiralty-angular`, `@ukho/admiralty-core`, `@ukho/admiralty-react`, `website`
+  - Make Autocomplete Icon Dynamic [#480](https://github.com/UKHO/admiralty-design-system/pull/480) ([@lstevens98](https://github.com/lstevens98))
+
+#### 🐛 Bug Fix
+
+- Update deploy permissions for issues and pull requests [#484](https://github.com/UKHO/admiralty-design-system/pull/484) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+#### Authors: 4
+
+- [@developernm](https://github.com/developernm)
+- Lewis Stevens ([@lstevens98](https://github.com/lstevens98))
+- Mohammed Khan (mohamme15315@mastek.com)
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
 # v5.5.3 (Mon Mar 30 2026)
 
 #### 🐛 Bug Fix
