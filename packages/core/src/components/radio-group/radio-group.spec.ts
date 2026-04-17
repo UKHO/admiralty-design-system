@@ -38,7 +38,7 @@ describe('radio-group', () => {
               <!---->
               <div class="admiralty-radio">
                 <input aria-checked="false" aria-labelledby="admiralty-radio-1-input" class="admiralty-radio" id="admiralty-radio-1-input" name="grp" tabindex="0" type="radio" value="option1">
-                <label htmlfor="admiralty-radio-1-input">
+                <label for="admiralty-radio-1-input">
                   Option 1
                 </label>
               </div>
@@ -48,7 +48,7 @@ describe('radio-group', () => {
               <!---->
               <div class="admiralty-radio">
                 <input aria-checked="false" aria-labelledby="admiralty-radio-2-input" class="admiralty-radio" id="admiralty-radio-2-input" name="grp" tabindex="-1" type="radio" value="option2">
-                <label htmlfor="admiralty-radio-2-input">
+                <label for="admiralty-radio-2-input">
                   Option 2
                 </label>
               </div>
@@ -81,7 +81,7 @@ describe('radio-group', () => {
               <!---->
               <div class="admiralty-radio">
                 <input aria-checked="false" aria-labelledby="admiralty-radio-3-input" class="admiralty-radio" id="admiralty-radio-3-input" name="grp" tabindex="0" type="radio" value="option1">
-                <label htmlfor="admiralty-radio-3-input">
+                <label for="admiralty-radio-3-input">
                   Option 1
                 </label>
               </div>
@@ -91,7 +91,7 @@ describe('radio-group', () => {
               <!---->
               <div class="admiralty-radio">
                 <input aria-checked="false" aria-labelledby="admiralty-radio-4-input" class="admiralty-radio" id="admiralty-radio-4-input" name="grp" tabindex="-1" type="radio" value="option2">
-                <label htmlfor="admiralty-radio-4-input">
+                <label for="admiralty-radio-4-input">
                   Option 2
                 </label>
               </div>
@@ -211,7 +211,7 @@ describe('radio-group', () => {
               <!---->
               <div class="admiralty-radio">
                 <input aria-checked="false" aria-labelledby="admiralty-radio-11-input" class="admiralty-radio" id="admiralty-radio-11-input" name="grp" tabindex="0" type="radio" value="option1">
-                <label htmlfor="admiralty-radio-11-input">
+                <label for="admiralty-radio-11-input">
                   Option 1
                 </label>
               </div>
@@ -221,7 +221,7 @@ describe('radio-group', () => {
               <!---->
               <div class="admiralty-radio">
                 <input aria-checked="false" aria-labelledby="admiralty-radio-12-input" class="admiralty-radio" id="admiralty-radio-12-input" name="grp" tabindex="-1" type="radio" value="option2">
-                <label htmlfor="admiralty-radio-12-input">
+                <label for="admiralty-radio-12-input">
                   Option 2
                 </label>
               </div>
@@ -260,7 +260,7 @@ describe('radio-group', () => {
               <!---->
               <div class="admiralty-radio">
                 <input aria-checked="false" aria-labelledby="admiralty-radio-13-input" class="admiralty-radio" id="admiralty-radio-13-input" name="grp" tabindex="0" type="radio" value="option1">
-                <label htmlfor="admiralty-radio-13-input">
+                <label for="admiralty-radio-13-input">
                   Option 1
                 </label>
               </div>
@@ -270,7 +270,7 @@ describe('radio-group', () => {
               <!---->
               <div class="admiralty-radio">
                 <input aria-checked="false" aria-labelledby="admiralty-radio-14-input" class="admiralty-radio" id="admiralty-radio-14-input" name="grp" tabindex="-1" type="radio" value="option2">
-                <label htmlfor="admiralty-radio-14-input">
+                <label for="admiralty-radio-14-input">
                   Option 2
                 </label>
               </div>
