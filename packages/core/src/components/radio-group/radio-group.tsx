@@ -69,7 +69,7 @@ export class RadioGroupComponent implements ComponentInterface {
   /**
    * Event fired when the checked radio button changes
    */
-  @Event() admiraltyChange: EventEmitter<RadioGroupChangeEventDetail>;
+  @Event({ composed: true }) admiraltyChange: EventEmitter<RadioGroupChangeEventDetail>;
 
   @Watch('invalid')
   invalidChanged(value: boolean) {
@@ -111,42 +111,51 @@ export class RadioGroupComponent implements ComponentInterface {
   private getRadios(): HTMLAdmiraltyRadioElement[] {
     return Array.from(this.el.querySelectorAll('admiralty-radio'));
   }
+
   private onClick = (e: Event) => {
     if (this.disabled) return;
 
-    const targetNode = e.target as Node | null;
-    let targetElement: HTMLElement | null = null;
+    const path = (e as any).composedPath?.() as EventTarget[] | undefined;
+    if (!path) return;
 
-    if (targetNode instanceof HTMLElement) {
-      targetElement = targetNode;
-    } else if (targetNode && targetNode.parentNode instanceof HTMLElement) {
-      targetElement = targetNode.parentNode;
+    const clickedLabel = path.some(el => el instanceof HTMLElement && el.tagName === 'LABEL');
+    const clickedInput = path.some(el => el instanceof HTMLInputElement && el.type === 'radio');
+
+    // Find the admiralty-radio element in the composed path
+    const selectedRadio = path.find(
+      el => el instanceof HTMLElement && el.tagName === 'ADMIRALTY-RADIO',
+    ) as HTMLAdmiraltyRadioElement | undefined;
+
+    if (!selectedRadio || selectedRadio.disabled) return;
+
+    const currentValue = this.value;
+    const newValue = selectedRadio.value;
+
+    // Under shadow DOM retargeting, follow-up synthetic clicks can look the same as
+    // the original click. Ignore one immediate same-value click after toggle-off.
+    if (clickedInput && this.ignoreNextInputClickForValue === newValue) {
+      this.ignoreNextInputClickForValue = null;
+      return;
     }
 
-    const selectedRadio = targetElement?.closest('admiralty-radio') as HTMLAdmiraltyRadioElement | null;
-    if (selectedRadio && !selectedRadio.disabled) {
-      const currentValue = this.value;
-      const newValue = selectedRadio.value;
-
-      // Under shadow DOM retargeting, follow-up synthetic clicks can look the same as
-      // the original click. Ignore one immediate same-value click after toggle-off.
-      if (this.ignoreNextInputClickForValue === newValue && currentValue == null) {
+    // Browser label behavior can dispatch a follow-up input click. Handle the
+    // label click once and ignore one immediate synthetic input click for it.
+    if (clickedLabel && !clickedInput) {
+      this.ignoreNextInputClickForValue = newValue;
+      setTimeout(() => {
         this.ignoreNextInputClickForValue = null;
-        return;
-      }
+      }, 0);
+    }
 
-      if (newValue !== currentValue) {
+    if (newValue !== currentValue) {
+      this.value = newValue;
+    } else if (this.allowUnselect) {
+      e.preventDefault();
+      this.ignoreNextInputClickForValue = newValue;
+      setTimeout(() => {
         this.ignoreNextInputClickForValue = null;
-        this.value = newValue;
-      } else if (this.allowUnselect) {
-        // Prevent default to avoid native radio behavior fighting group-controlled state.
-        e.preventDefault();
-        this.ignoreNextInputClickForValue = newValue;
-        setTimeout(() => {
-          this.ignoreNextInputClickForValue = null;
-        }, 0);
-        this.value = null;
-      }
+      }, 0);
+      this.value = null;
     }
   };
 

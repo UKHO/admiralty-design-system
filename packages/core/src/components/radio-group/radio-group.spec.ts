@@ -30,35 +30,35 @@ describe('radio-group', () => {
     });
 
     expect(page.root).toMatchInlineSnapshot(`
-      <admiralty-radio-group display-vertical="false">
+<admiralty-radio-group display-vertical="false">
+  <!---->
+  <fieldset aria-describedby=" " aria-invalid="false" aria-required="true" role="radiogroup">
+    <div class="radio-group">
+      <admiralty-radio name="grp" value="option1">
         <!---->
-        <fieldset aria-describedby=" " aria-invalid="false" aria-required="true" role="radiogroup">
-          <div class="radio-group">
-            <admiralty-radio name="grp" value="option1">
-              <!---->
-              <div class="admiralty-radio">
-                <input aria-checked="false" aria-labelledby="admiralty-radio-1-input" class="admiralty-radio" id="admiralty-radio-1-input" name="grp" tabindex="0" type="radio" value="option1">
-                <label for="admiralty-radio-1-input">
-                  Option 1
-                </label>
-              </div>
-              <div class="conditional unchecked"></div>
-            </admiralty-radio>
-            <admiralty-radio name="grp" value="option2">
-              <!---->
-              <div class="admiralty-radio">
-                <input aria-checked="false" aria-labelledby="admiralty-radio-2-input" class="admiralty-radio" id="admiralty-radio-2-input" name="grp" tabindex="-1" type="radio" value="option2">
-                <label for="admiralty-radio-2-input">
-                  Option 2
-                </label>
-              </div>
-              <div class="conditional unchecked"></div>
-            </admiralty-radio>
-          </div>
-          <admiralty-input-invalid id="admiralty-rg-error-2" style="display: none;"></admiralty-input-invalid>
-        </fieldset>
-      </admiralty-radio-group>
-    `);
+        <div class="admiralty-radio">
+          <input aria-checked="false" aria-labelledby="admiralty-radio-1-input" class="admiralty-radio" id="admiralty-radio-1-input" name="grp" tabindex="0" type="radio" value="option1">
+          <label for="admiralty-radio-1-input">
+            Option 1
+          </label>
+        </div>
+        <div class="conditional unchecked"></div>
+      </admiralty-radio>
+      <admiralty-radio name="grp" value="option2">
+        <!---->
+        <div class="admiralty-radio">
+          <input aria-checked="false" aria-labelledby="admiralty-radio-2-input" class="admiralty-radio" id="admiralty-radio-2-input" name="grp" tabindex="-1" type="radio" value="option2">
+          <label for="admiralty-radio-2-input">
+            Option 2
+          </label>
+        </div>
+        <div class="conditional unchecked"></div>
+      </admiralty-radio>
+    </div>
+    <admiralty-input-invalid id="admiralty-rg-error-2" style="display: none;"></admiralty-input-invalid>
+  </fieldset>
+</admiralty-radio-group>
+`);
   });
 
   it('renders 2 radio buttons vertically', async () => {
@@ -73,35 +73,35 @@ describe('radio-group', () => {
     });
 
     expect(page.root).toMatchInlineSnapshot(`
-      <admiralty-radio-group display-vertical="true">
+<admiralty-radio-group display-vertical="true">
+  <!---->
+  <fieldset aria-describedby=" " aria-invalid="false" aria-required="true" role="radiogroup">
+    <div class="radio-group stack">
+      <admiralty-radio name="grp" value="option1">
         <!---->
-        <fieldset aria-describedby=" " aria-invalid="false" aria-required="true" role="radiogroup">
-          <div class="radio-group stack">
-            <admiralty-radio name="grp" value="option1">
-              <!---->
-              <div class="admiralty-radio">
-                <input aria-checked="false" aria-labelledby="admiralty-radio-3-input" class="admiralty-radio" id="admiralty-radio-3-input" name="grp" tabindex="0" type="radio" value="option1">
-                <label for="admiralty-radio-3-input">
-                  Option 1
-                </label>
-              </div>
-              <div class="conditional unchecked"></div>
-            </admiralty-radio>
-            <admiralty-radio name="grp" value="option2">
-              <!---->
-              <div class="admiralty-radio">
-                <input aria-checked="false" aria-labelledby="admiralty-radio-4-input" class="admiralty-radio" id="admiralty-radio-4-input" name="grp" tabindex="-1" type="radio" value="option2">
-                <label for="admiralty-radio-4-input">
-                  Option 2
-                </label>
-              </div>
-              <div class="conditional unchecked"></div>
-            </admiralty-radio>
-          </div>
-          <admiralty-input-invalid id="admiralty-rg-error-3" style="display: none;"></admiralty-input-invalid>
-        </fieldset>
-      </admiralty-radio-group>
-    `);
+        <div class="admiralty-radio">
+          <input aria-checked="false" aria-labelledby="admiralty-radio-3-input" class="admiralty-radio" id="admiralty-radio-3-input" name="grp" tabindex="0" type="radio" value="option1">
+          <label for="admiralty-radio-3-input">
+            Option 1
+          </label>
+        </div>
+        <div class="conditional unchecked"></div>
+      </admiralty-radio>
+      <admiralty-radio name="grp" value="option2">
+        <!---->
+        <div class="admiralty-radio">
+          <input aria-checked="false" aria-labelledby="admiralty-radio-4-input" class="admiralty-radio" id="admiralty-radio-4-input" name="grp" tabindex="-1" type="radio" value="option2">
+          <label for="admiralty-radio-4-input">
+            Option 2
+          </label>
+        </div>
+        <div class="conditional unchecked"></div>
+      </admiralty-radio>
+    </div>
+    <admiralty-input-invalid id="admiralty-rg-error-3" style="display: none;"></admiralty-input-invalid>
+  </fieldset>
+</admiralty-radio-group>
+`);
   });
 
   it('fires event on radio button changed', async () => {
@@ -238,35 +238,35 @@ describe('radio-group', () => {
     });
 
     expect(page.root).toMatchInlineSnapshot(`
-      <admiralty-radio-group disabled="true">
+<admiralty-radio-group disabled="true">
+  <!---->
+  <fieldset aria-describedby=" " aria-invalid="false" aria-required="true" disabled="" role="radiogroup">
+    <div class="radio-group stack">
+      <admiralty-radio name="grp" value="option1">
         <!---->
-        <fieldset aria-describedby=" " aria-invalid="false" aria-required="true" disabled="" role="radiogroup">
-          <div class="radio-group stack">
-            <admiralty-radio name="grp" value="option1">
-              <!---->
-              <div class="admiralty-radio">
-                <input aria-checked="false" aria-labelledby="admiralty-radio-11-input" class="admiralty-radio" id="admiralty-radio-11-input" name="grp" tabindex="0" type="radio" value="option1">
-                <label for="admiralty-radio-11-input">
-                  Option 1
-                </label>
-              </div>
-              <div class="conditional unchecked"></div>
-            </admiralty-radio>
-            <admiralty-radio name="grp" value="option2">
-              <!---->
-              <div class="admiralty-radio">
-                <input aria-checked="false" aria-labelledby="admiralty-radio-12-input" class="admiralty-radio" id="admiralty-radio-12-input" name="grp" tabindex="-1" type="radio" value="option2">
-                <label for="admiralty-radio-12-input">
-                  Option 2
-                </label>
-              </div>
-              <div class="conditional unchecked"></div>
-            </admiralty-radio>
-          </div>
-          <admiralty-input-invalid id="admiralty-rg-error-7" style="display: none;"></admiralty-input-invalid>
-        </fieldset>
-      </admiralty-radio-group>
-    `);
+        <div class="admiralty-radio">
+          <input aria-checked="false" aria-labelledby="admiralty-radio-13-input" class="admiralty-radio" id="admiralty-radio-13-input" name="grp" tabindex="0" type="radio" value="option1">
+          <label for="admiralty-radio-13-input">
+            Option 1
+          </label>
+        </div>
+        <div class="conditional unchecked"></div>
+      </admiralty-radio>
+      <admiralty-radio name="grp" value="option2">
+        <!---->
+        <div class="admiralty-radio">
+          <input aria-checked="false" aria-labelledby="admiralty-radio-14-input" class="admiralty-radio" id="admiralty-radio-14-input" name="grp" tabindex="-1" type="radio" value="option2">
+          <label for="admiralty-radio-14-input">
+            Option 2
+          </label>
+        </div>
+        <div class="conditional unchecked"></div>
+      </admiralty-radio>
+    </div>
+    <admiralty-input-invalid id="admiralty-rg-error-8" style="display: none;"></admiralty-input-invalid>
+  </fieldset>
+</admiralty-radio-group>
+`);
   });
 
   it('renders labels and hint text', async () => {
@@ -281,40 +281,40 @@ describe('radio-group', () => {
     });
 
     expect(page.root).toMatchInlineSnapshot(`
-      <admiralty-radio-group hint="Hint text" label="Label text">
+<admiralty-radio-group hint="Hint text" label="Label text">
+  <!---->
+  <fieldset aria-describedby="admiralty-rg-hint-9 " aria-invalid="false" aria-required="true" role="radiogroup">
+    <legend>
+      Label text
+    </legend>
+    <admiralty-hint id="admiralty-rg-hint-9">
+      Hint text
+    </admiralty-hint>
+    <div class="radio-group stack">
+      <admiralty-radio name="grp" value="option1">
         <!---->
-        <fieldset aria-describedby="admiralty-rg-hint-8 " aria-invalid="false" aria-required="true" role="radiogroup">
-          <legend>
-            Label text
-          </legend>
-          <admiralty-hint id="admiralty-rg-hint-8">
-            Hint text
-          </admiralty-hint>
-          <div class="radio-group stack">
-            <admiralty-radio name="grp" value="option1">
-              <!---->
-              <div class="admiralty-radio">
-                <input aria-checked="false" aria-labelledby="admiralty-radio-13-input" class="admiralty-radio" id="admiralty-radio-13-input" name="grp" tabindex="0" type="radio" value="option1">
-                <label for="admiralty-radio-13-input">
-                  Option 1
-                </label>
-              </div>
-              <div class="conditional unchecked"></div>
-            </admiralty-radio>
-            <admiralty-radio name="grp" value="option2">
-              <!---->
-              <div class="admiralty-radio">
-                <input aria-checked="false" aria-labelledby="admiralty-radio-14-input" class="admiralty-radio" id="admiralty-radio-14-input" name="grp" tabindex="-1" type="radio" value="option2">
-                <label for="admiralty-radio-14-input">
-                  Option 2
-                </label>
-              </div>
-              <div class="conditional unchecked"></div>
-            </admiralty-radio>
-          </div>
-          <admiralty-input-invalid id="admiralty-rg-error-8" style="display: none;"></admiralty-input-invalid>
-        </fieldset>
-      </admiralty-radio-group>
-    `);
+        <div class="admiralty-radio">
+          <input aria-checked="false" aria-labelledby="admiralty-radio-15-input" class="admiralty-radio" id="admiralty-radio-15-input" name="grp" tabindex="0" type="radio" value="option1">
+          <label for="admiralty-radio-15-input">
+            Option 1
+          </label>
+        </div>
+        <div class="conditional unchecked"></div>
+      </admiralty-radio>
+      <admiralty-radio name="grp" value="option2">
+        <!---->
+        <div class="admiralty-radio">
+          <input aria-checked="false" aria-labelledby="admiralty-radio-16-input" class="admiralty-radio" id="admiralty-radio-16-input" name="grp" tabindex="-1" type="radio" value="option2">
+          <label for="admiralty-radio-16-input">
+            Option 2
+          </label>
+        </div>
+        <div class="conditional unchecked"></div>
+      </admiralty-radio>
+    </div>
+    <admiralty-input-invalid id="admiralty-rg-error-9" style="display: none;"></admiralty-input-invalid>
+  </fieldset>
+</admiralty-radio-group>
+`);
   });
 });
