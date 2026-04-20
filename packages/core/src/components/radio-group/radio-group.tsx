@@ -11,6 +11,7 @@ export class RadioGroupComponent implements ComponentInterface {
   private inputId: string = `admiralty-rg-${this.internalId}`;
   private hintId: string = `admiralty-rg-hint-${this.internalId}`;
   private errorId: string = `admiralty-rg-error-${this.internalId}`;
+  private ignoreNextInputClickForValue: any | null = null;
 
   @Element() el!: HTMLElement;
 
@@ -112,15 +113,38 @@ export class RadioGroupComponent implements ComponentInterface {
   }
   private onClick = (e: Event) => {
     if (this.disabled) return;
-    const selectedRadio = e.target && (e.target as HTMLElement).closest('admiralty-radio');
 
+    const targetNode = e.target as Node | null;
+    let targetElement: HTMLElement | null = null;
+
+    if (targetNode instanceof HTMLElement) {
+      targetElement = targetNode;
+    } else if (targetNode && targetNode.parentNode instanceof HTMLElement) {
+      targetElement = targetNode.parentNode;
+    }
+
+    const selectedRadio = targetElement?.closest('admiralty-radio') as HTMLAdmiraltyRadioElement | null;
     if (selectedRadio && !selectedRadio.disabled) {
       const currentValue = this.value;
       const newValue = selectedRadio.value;
 
+      // Under shadow DOM retargeting, follow-up synthetic clicks can look the same as
+      // the original click. Ignore one immediate same-value click after toggle-off.
+      if (this.ignoreNextInputClickForValue === newValue && currentValue == null) {
+        this.ignoreNextInputClickForValue = null;
+        return;
+      }
+
       if (newValue !== currentValue) {
+        this.ignoreNextInputClickForValue = null;
         this.value = newValue;
       } else if (this.allowUnselect) {
+        // Prevent default to avoid native radio behavior fighting group-controlled state.
+        e.preventDefault();
+        this.ignoreNextInputClickForValue = newValue;
+        setTimeout(() => {
+          this.ignoreNextInputClickForValue = null;
+        }, 0);
         this.value = null;
       }
     }

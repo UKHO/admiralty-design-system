@@ -191,6 +191,41 @@ describe('radio-group', () => {
     expect(rad1.checked).toBe(true);
   });
 
+  it('deselects when clicking on label text for optional groups', async () => {
+    const page = await newSpecPage({
+      components: [RadioGroupComponent, RadioComponent],
+      html: `
+        <admiralty-radio-group allow-unselect="true">
+          <admiralty-radio name="grp" value="option1">Option 1</admiralty-radio>
+          <admiralty-radio name="grp" value="option2">Option 2</admiralty-radio>
+        </admiralty-radio-group>
+      `,
+    });
+
+    const eventSpy = jest.fn();
+    page.doc.addEventListener('admiraltyChange', eventSpy);
+
+    const group = page.root as HTMLAdmiraltyRadioGroupElement;
+    // Get the label that contains "Option 1"
+    const labels = page.doc.querySelectorAll('label');
+    const label = Array.from(labels).find(l => l.textContent === 'Option 1') as HTMLLabelElement;
+
+    // Click on the label to select the radio
+    label.click();
+    await page.waitForChanges();
+
+    expect(group.value).toBe('option1');
+    expect(eventSpy).toBeCalledTimes(1);
+
+    // Click on the label again to unselect
+    label.click();
+    await page.waitForChanges();
+
+    expect(group.value).toBeNull();
+    expect(eventSpy).toBeCalledTimes(2);
+    expect(eventSpy.mock.calls[1][0].detail.value).toBeNull();
+  });
+
   it('renders disabled radio buttons', async () => {
     const page = await newSpecPage({
       components: [RadioGroupComponent, RadioComponent],
