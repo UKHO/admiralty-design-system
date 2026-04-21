@@ -116,15 +116,19 @@ export class RadioGroupComponent implements ComponentInterface {
     if (this.disabled) return;
 
     const path = (e as any).composedPath?.() as EventTarget[] | undefined;
-    if (!path) return;
+    const targetEl = e.target instanceof HTMLElement ? e.target : e.target instanceof Node ? e.target.parentElement : null;
 
-    const clickedLabel = path.some(el => el instanceof HTMLElement && el.tagName === 'LABEL');
-    const clickedInput = path.some(el => el instanceof HTMLInputElement && el.type === 'radio');
+    const clickedLabel = path ? path.some(el => el instanceof HTMLElement && el.tagName === 'LABEL') : !!targetEl?.closest('label');
+    const clickedInput = path
+      ? path.some(el => el instanceof HTMLInputElement && el.type === 'radio')
+      : targetEl instanceof HTMLInputElement
+        ? targetEl.type === 'radio'
+        : !!targetEl?.closest('input[type="radio"]');
 
-    // Find the admiralty-radio element in the composed path
-    const selectedRadio = path.find(
-      el => el instanceof HTMLElement && el.tagName === 'ADMIRALTY-RADIO',
-    ) as HTMLAdmiraltyRadioElement | undefined;
+    // Prefer composedPath for shadow DOM correctness; fall back to closest() when unavailable.
+    const selectedRadio = (path ? path.find(el => el instanceof HTMLElement && el.tagName === 'ADMIRALTY-RADIO') : targetEl?.closest('admiralty-radio')) as
+      | HTMLAdmiraltyRadioElement
+      | undefined;
 
     if (!selectedRadio || selectedRadio.disabled) return;
 
