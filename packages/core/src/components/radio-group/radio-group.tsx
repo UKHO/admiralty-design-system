@@ -123,6 +123,8 @@ export class RadioGroupComponent implements ComponentInterface {
         ? targetEl.type === 'radio'
         : !!targetEl?.closest('input[type="radio"]');
 
+    const clickedLabel = path ? path.some(el => el instanceof HTMLElement && el.tagName === 'LABEL') : targetEl?.tagName === 'LABEL' ? true : !!targetEl?.closest('label');
+
     const clickedConditionalByPath =
       !!targetEl?.closest('[slot="conditional"], .conditional') ||
       !!path?.some(el => el instanceof HTMLElement && (el.slot === 'conditional' || el.classList.contains('conditional') || !!el.closest('[slot="conditional"], .conditional')));
@@ -148,11 +150,19 @@ export class RadioGroupComponent implements ComponentInterface {
       return;
     }
 
-    // For deselect: allow direct interactions on an already-selected radio.
-    // Label clicks are fully handled in radio.tsx onLabelClick (with stopPropagation),
-    // so only direct input clicks reach here for deselect.
-    if (newValue === currentValue && this.allowUnselect && clickedInput) {
+    // Handle label clicks here and suppress native label->input synthetic click.
+    if (clickedLabel) {
       e.preventDefault();
+      if (newValue === currentValue && this.allowUnselect) {
+        this.value = null;
+      } else if (newValue !== currentValue) {
+        this.value = newValue;
+      }
+      return;
+    }
+
+    // For deselect: allow both direct input clicks and label clicks on an already-selected radio.
+    if (newValue === currentValue && this.allowUnselect && (clickedInput || clickedLabel)) {
       this.value = null;
       return;
     }
@@ -162,7 +172,7 @@ export class RadioGroupComponent implements ComponentInterface {
       return;
     }
 
-    // For selection: allow all other clicks to a different radio.
+    // For selection: allow all clicks (input or label) to a different radio.
     if (newValue !== currentValue) {
       this.value = newValue;
     }
@@ -180,10 +190,7 @@ export class RadioGroupComponent implements ComponentInterface {
           aria-required={this.allowUnselect ? null : 'true'}
           aria-describedby={(this.hint ? this.hintId : '') + ' ' + (this.invalid ? this.errorId : '')}
         >
-          {
-            /* {this.label ? <legend class={{ disabled: this.disabled }}>{this.label}</legend> : null} */
-            this.label ? <legend>{this.label}</legend> : null
-          }
+          {this.label ? <legend>{this.label}</legend> : null}
           {this.hint ? <admiralty-hint id={this.hintId}>{this.hint}</admiralty-hint> : null}
           <div class={{ 'radio-group': true, 'stack': displayVertical }} onClick={this.onClick}>
             <slot></slot>

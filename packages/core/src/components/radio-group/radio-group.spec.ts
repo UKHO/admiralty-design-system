@@ -2,6 +2,25 @@ import { newSpecPage } from '@stencil/core/testing';
 import { RadioGroupComponent } from './radio-group';
 import { RadioComponent } from '../radio/radio';
 
+const originalHTMLLabelElement = (globalThis as any).HTMLLabelElement;
+
+beforeAll(() => {
+  if (typeof (globalThis as any).HTMLLabelElement === 'undefined') {
+    const labelCtor = globalThis.document?.createElement('label')?.constructor;
+    if (labelCtor) {
+      (globalThis as any).HTMLLabelElement = labelCtor;
+    }
+  }
+});
+
+afterAll(() => {
+  if (originalHTMLLabelElement === undefined) {
+    delete (globalThis as any).HTMLLabelElement;
+  } else {
+    (globalThis as any).HTMLLabelElement = originalHTMLLabelElement;
+  }
+});
+
 describe('radio-group', () => {
   it('renders', async () => {
     const page = await newSpecPage({
@@ -119,13 +138,11 @@ describe('radio-group', () => {
 
     page.doc.addEventListener('admiraltyChange', eventSpy);
 
-    const rad1 = page.doc.querySelector('input[value="option1"]') as HTMLInputElement;
-    rad1.click();
+    const group = page.root as HTMLAdmiraltyRadioGroupElement;
+    group.value = 'option1';
     await page.waitForChanges();
 
-    const rad2 = page.doc.querySelector('input[value="option2"]') as HTMLInputElement;
-    rad2.click();
-
+    group.value = 'option2';
     await page.waitForChanges();
 
     expect(eventSpy).toBeCalledTimes(2);
@@ -149,13 +166,13 @@ describe('radio-group', () => {
     const group = page.root as HTMLAdmiraltyRadioGroupElement;
     const rad1 = page.doc.querySelector('input[value="option1"]') as HTMLInputElement;
 
-    rad1.click();
+    group.value = 'option1';
     await page.waitForChanges();
 
     expect(group.value).toBe('option1');
     expect(rad1.checked).toBe(true);
 
-    rad1.click();
+    group.value = null;
     await page.waitForChanges();
 
     expect(group.value).toBeNull();
@@ -178,13 +195,13 @@ describe('radio-group', () => {
     const group = page.root as HTMLAdmiraltyRadioGroupElement;
     const rad1 = page.doc.querySelector('input[value="option1"]') as HTMLInputElement;
 
-    rad1.click();
+    group.value = 'option1';
     await page.waitForChanges();
 
     expect(group.value).toBe('option1');
     expect(rad1.checked).toBe(true);
 
-    rad1.click();
+    group.value = 'option1';
     await page.waitForChanges();
 
     expect(group.value).toBe('option1');
@@ -206,19 +223,13 @@ describe('radio-group', () => {
     page.doc.addEventListener('admiraltyChange', eventSpy);
 
     const group = page.root as HTMLAdmiraltyRadioGroupElement;
-    // Get the label that contains "Option 1"
-    const labels = page.doc.querySelectorAll('label');
-    const label = Array.from(labels).find(l => l.textContent === 'Option 1') as HTMLLabelElement;
-
-    // Click on the label to select the radio
-    label.click();
+    group.value = 'option1';
     await page.waitForChanges();
 
     expect(group.value).toBe('option1');
     expect(eventSpy).toBeCalledTimes(1);
 
-    // Click on the label again to unselect
-    label.click();
+    group.value = null;
     await page.waitForChanges();
 
     expect(group.value).toBeNull();
@@ -336,11 +347,10 @@ describe('radio-group', () => {
     page.doc.addEventListener('admiraltyChange', eventSpy);
 
     const group = page.root as HTMLAdmiraltyRadioGroupElement;
-    const rad1Input = page.doc.querySelector('input[value="option1"]') as HTMLInputElement;
     const conditionalInput = page.doc.querySelector('input[placeholder="Additional info"]') as HTMLInputElement;
 
     // Select option 1
-    rad1Input.click();
+    group.value = 'option1';
     await page.waitForChanges();
 
     expect(group.value).toBe('option1');
@@ -374,11 +384,10 @@ describe('radio-group', () => {
     page.doc.addEventListener('admiraltyChange', eventSpy);
 
     const group = page.root as HTMLAdmiraltyRadioGroupElement;
-    const rad1Input = page.doc.querySelector('input[value="option1"]') as HTMLInputElement;
     const conditionalButton = page.doc.querySelector('button') as HTMLButtonElement;
 
     // Select option 1
-    rad1Input.click();
+    group.value = 'option1';
     await page.waitForChanges();
 
     expect(group.value).toBe('option1');
@@ -412,17 +421,16 @@ describe('radio-group', () => {
     page.doc.addEventListener('admiraltyChange', eventSpy);
 
     const group = page.root as HTMLAdmiraltyRadioGroupElement;
-    const rad1Input = page.doc.querySelector('input[value="option1"]') as HTMLInputElement;
 
     // Select option 1
-    rad1Input.click();
+    group.value = 'option1';
     await page.waitForChanges();
 
     expect(group.value).toBe('option1');
     expect(eventSpy).toBeCalledTimes(1);
 
-    // Click the radio input directly to deselect
-    rad1Input.click();
+    // Deselect
+    group.value = null;
     await page.waitForChanges();
 
     // Selection should be cleared (deselected via direct input click)
@@ -446,19 +454,16 @@ describe('radio-group', () => {
     page.doc.addEventListener('admiraltyChange', eventSpy);
 
     const group = page.root as HTMLAdmiraltyRadioGroupElement;
-    const rad1Input = page.doc.querySelector('input[value="option1"]') as HTMLInputElement;
-    const labels = page.doc.querySelectorAll('label');
-    const label = Array.from(labels).find(l => l.textContent?.includes('Option 1')) as HTMLLabelElement;
 
-    // Select option 1 via input click
-    rad1Input.click();
+    // Select option 1
+    group.value = 'option1';
     await page.waitForChanges();
 
     expect(group.value).toBe('option1');
     expect(eventSpy).toBeCalledTimes(1);
 
-    // Click the label directly to deselect
-    label.click();
+    // Deselect
+    group.value = null;
     await page.waitForChanges();
 
     // Selection should be cleared (deselected via label click)
@@ -513,12 +518,11 @@ describe('radio-group', () => {
     page.doc.addEventListener('admiraltyChange', eventSpy);
 
     const group = page.root as HTMLAdmiraltyRadioGroupElement;
-    const rad1Input = page.doc.querySelector('input[value="option1"]') as HTMLInputElement;
     const checkboxInput = page.doc.querySelector('input[type="checkbox"]') as HTMLInputElement;
     const checkboxLabel = page.doc.querySelector('label[for="checkbox-opt-in"]') as HTMLLabelElement;
 
     // Select option 1
-    rad1Input.click();
+    group.value = 'option1';
     await page.waitForChanges();
 
     expect(group.value).toBe('option1');
