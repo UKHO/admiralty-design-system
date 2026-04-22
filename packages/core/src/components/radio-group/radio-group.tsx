@@ -11,7 +11,6 @@ export class RadioGroupComponent implements ComponentInterface {
   private inputId: string = `admiralty-rg-${this.internalId}`;
   private hintId: string = `admiralty-rg-hint-${this.internalId}`;
   private errorId: string = `admiralty-rg-error-${this.internalId}`;
-  private ignoreNextInputClickForValue: any | null = null;
 
   @Element() el!: HTMLElement;
 
@@ -118,48 +117,54 @@ export class RadioGroupComponent implements ComponentInterface {
     const path = (e as any).composedPath?.() as EventTarget[] | undefined;
     const targetEl = e.target instanceof HTMLElement ? e.target : e.target instanceof Node ? e.target.parentElement : null;
 
-    const clickedLabel = path ? path.some(el => el instanceof HTMLElement && el.tagName === 'LABEL') : !!targetEl?.closest('label');
     const clickedInput = path
       ? path.some(el => el instanceof HTMLInputElement && el.type === 'radio')
       : targetEl instanceof HTMLInputElement
         ? targetEl.type === 'radio'
         : !!targetEl?.closest('input[type="radio"]');
 
-    // Prefer composedPath for shadow DOM correctness; fall back to closest() when unavailable.
-    const selectedRadio = (path ? path.find(el => el instanceof HTMLElement && el.tagName === 'ADMIRALTY-RADIO') : targetEl?.closest('admiralty-radio')) as
-      | HTMLAdmiraltyRadioElement
-      | undefined;
+    const clickedConditionalByPath =
+      !!targetEl?.closest('[slot="conditional"], .conditional') ||
+      !!path?.some(el => el instanceof HTMLElement && (el.slot === 'conditional' || el.classList.contains('conditional') || !!el.closest('[slot="conditional"], .conditional')));
+
+    // Prefer composedPath for shadow DOM correctness, but always fall back to closest().
+    const selectedRadio =
+      (path?.find(el => el instanceof HTMLElement && el.tagName === 'ADMIRALTY-RADIO') as HTMLAdmiraltyRadioElement | undefined) ||
+      (targetEl?.closest('admiralty-radio') as HTMLAdmiraltyRadioElement | null) ||
+      undefined;
 
     if (!selectedRadio || selectedRadio.disabled) return;
 
     const currentValue = this.value;
     const newValue = selectedRadio.value;
+    const conditionalNodes = Array.from(selectedRadio.querySelectorAll('[slot="conditional"], .conditional')) as HTMLElement[];
+    const hasConditionalContent = conditionalNodes.length > 0;
+    const clickedConditionalByContainment =
+      (!!targetEl && conditionalNodes.some(node => node.contains(targetEl))) || !!path?.some(el => el instanceof Node && conditionalNodes.some(node => node.contains(el as Node)));
+    const clickedConditional = clickedConditionalByPath || clickedConditionalByContainment;
 
-    // Under shadow DOM retargeting, follow-up synthetic clicks can look the same as
-    // the original click. Ignore one immediate same-value click after toggle-off.
-    if (clickedInput && this.ignoreNextInputClickForValue === newValue) {
-      this.ignoreNextInputClickForValue = null;
+    // Prevent any interaction from conditional slot content
+    if (clickedConditional && hasConditionalContent) {
       return;
     }
 
-    // Browser label behavior can dispatch a follow-up input click. Handle the
-    // label click once and ignore one immediate synthetic input click for it.
-    if (clickedLabel && !clickedInput) {
-      this.ignoreNextInputClickForValue = newValue;
-      setTimeout(() => {
-        this.ignoreNextInputClickForValue = null;
-      }, 0);
+    // For deselect: allow direct interactions on an already-selected radio.
+    // Label clicks are fully handled in radio.tsx onLabelClick (with stopPropagation),
+    // so only direct input clicks reach here for deselect.
+    if (newValue === currentValue && this.allowUnselect && clickedInput) {
+      e.preventDefault();
+      this.value = null;
+      return;
     }
 
+    // Prevent selecting when clicking empty wrapper space around conditional content.
+    if (newValue !== currentValue && hasConditionalContent && targetEl?.tagName === 'DIV' && !clickedInput) {
+      return;
+    }
+
+    // For selection: allow all other clicks to a different radio.
     if (newValue !== currentValue) {
       this.value = newValue;
-    } else if (this.allowUnselect) {
-      e.preventDefault();
-      this.ignoreNextInputClickForValue = newValue;
-      setTimeout(() => {
-        this.ignoreNextInputClickForValue = null;
-      }, 0);
-      this.value = null;
     }
   };
 
@@ -175,7 +180,10 @@ export class RadioGroupComponent implements ComponentInterface {
           aria-required={this.allowUnselect ? null : 'true'}
           aria-describedby={(this.hint ? this.hintId : '') + ' ' + (this.invalid ? this.errorId : '')}
         >
-          {this.label ? <legend>{this.label}</legend> : null}
+          {
+            /* {this.label ? <legend class={{ disabled: this.disabled }}>{this.label}</legend> : null} */
+            this.label ? <legend>{this.label}</legend> : null
+          }
           {this.hint ? <admiralty-hint id={this.hintId}>{this.hint}</admiralty-hint> : null}
           <div class={{ 'radio-group': true, 'stack': displayVertical }} onClick={this.onClick}>
             <slot></slot>

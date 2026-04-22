@@ -317,4 +317,227 @@ describe('radio-group', () => {
 </admiralty-radio-group>
 `);
   });
+
+  it('does not deselect when clicking input element inside conditional slot for optional groups', async () => {
+    const page = await newSpecPage({
+      components: [RadioGroupComponent, RadioComponent],
+      html: `
+        <admiralty-radio-group allow-unselect="true">
+          <admiralty-radio name="grp" value="option1">
+            Option 1
+            <input type="text" slot="conditional" placeholder="Additional info" />
+          </admiralty-radio>
+          <admiralty-radio name="grp" value="option2">Option 2</admiralty-radio>
+        </admiralty-radio-group>
+      `,
+    });
+
+    const eventSpy = jest.fn();
+    page.doc.addEventListener('admiraltyChange', eventSpy);
+
+    const group = page.root as HTMLAdmiraltyRadioGroupElement;
+    const rad1Input = page.doc.querySelector('input[value="option1"]') as HTMLInputElement;
+    const conditionalInput = page.doc.querySelector('input[placeholder="Additional info"]') as HTMLInputElement;
+
+    // Select option 1
+    rad1Input.click();
+    await page.waitForChanges();
+
+    expect(group.value).toBe('option1');
+    expect(eventSpy).toBeCalledTimes(1);
+
+    // Click the input inside conditional content
+    conditionalInput.click();
+    await page.waitForChanges();
+
+    // Selection should remain unchanged (not deselected)
+    expect(group.value).toBe('option1');
+    // Should still only have 1 event (the initial selection)
+    expect(eventSpy).toBeCalledTimes(1);
+  });
+
+  it('does not deselect when clicking button element inside conditional slot for optional groups', async () => {
+    const page = await newSpecPage({
+      components: [RadioGroupComponent, RadioComponent],
+      html: `
+        <admiralty-radio-group allow-unselect="true">
+          <admiralty-radio name="grp" value="option1">
+            Option 1
+            <button slot="conditional">More info</button>
+          </admiralty-radio>
+          <admiralty-radio name="grp" value="option2">Option 2</admiralty-radio>
+        </admiralty-radio-group>
+      `,
+    });
+
+    const eventSpy = jest.fn();
+    page.doc.addEventListener('admiraltyChange', eventSpy);
+
+    const group = page.root as HTMLAdmiraltyRadioGroupElement;
+    const rad1Input = page.doc.querySelector('input[value="option1"]') as HTMLInputElement;
+    const conditionalButton = page.doc.querySelector('button') as HTMLButtonElement;
+
+    // Select option 1
+    rad1Input.click();
+    await page.waitForChanges();
+
+    expect(group.value).toBe('option1');
+    expect(eventSpy).toBeCalledTimes(1);
+
+    // Click the button inside conditional content
+    conditionalButton.click();
+    await page.waitForChanges();
+
+    // Selection should remain unchanged (not deselected)
+    expect(group.value).toBe('option1');
+    // Should still only have 1 event (the initial selection)
+    expect(eventSpy).toBeCalledTimes(1);
+  });
+
+  it('still allows deselect when clicking the radio input directly in optional groups', async () => {
+    const page = await newSpecPage({
+      components: [RadioGroupComponent, RadioComponent],
+      html: `
+        <admiralty-radio-group allow-unselect="true">
+          <admiralty-radio name="grp" value="option1">
+            Option 1
+            <input type="text" slot="conditional" placeholder="Additional info" />
+          </admiralty-radio>
+          <admiralty-radio name="grp" value="option2">Option 2</admiralty-radio>
+        </admiralty-radio-group>
+      `,
+    });
+
+    const eventSpy = jest.fn();
+    page.doc.addEventListener('admiraltyChange', eventSpy);
+
+    const group = page.root as HTMLAdmiraltyRadioGroupElement;
+    const rad1Input = page.doc.querySelector('input[value="option1"]') as HTMLInputElement;
+
+    // Select option 1
+    rad1Input.click();
+    await page.waitForChanges();
+
+    expect(group.value).toBe('option1');
+    expect(eventSpy).toBeCalledTimes(1);
+
+    // Click the radio input directly to deselect
+    rad1Input.click();
+    await page.waitForChanges();
+
+    // Selection should be cleared (deselected via direct input click)
+    expect(group.value).toBeNull();
+    expect(eventSpy).toBeCalledTimes(2);
+    expect(eventSpy.mock.calls[1][0].detail.value).toBeNull();
+  });
+
+  it('still allows deselect when clicking the label directly in optional groups', async () => {
+    const page = await newSpecPage({
+      components: [RadioGroupComponent, RadioComponent],
+      html: `
+        <admiralty-radio-group allow-unselect="true">
+          <admiralty-radio name="grp" value="option1">Option 1</admiralty-radio>
+          <admiralty-radio name="grp" value="option2">Option 2</admiralty-radio>
+        </admiralty-radio-group>
+      `,
+    });
+
+    const eventSpy = jest.fn();
+    page.doc.addEventListener('admiraltyChange', eventSpy);
+
+    const group = page.root as HTMLAdmiraltyRadioGroupElement;
+    const rad1Input = page.doc.querySelector('input[value="option1"]') as HTMLInputElement;
+    const labels = page.doc.querySelectorAll('label');
+    const label = Array.from(labels).find(l => l.textContent?.includes('Option 1')) as HTMLLabelElement;
+
+    // Select option 1 via input click
+    rad1Input.click();
+    await page.waitForChanges();
+
+    expect(group.value).toBe('option1');
+    expect(eventSpy).toBeCalledTimes(1);
+
+    // Click the label directly to deselect
+    label.click();
+    await page.waitForChanges();
+
+    // Selection should be cleared (deselected via label click)
+    expect(group.value).toBeNull();
+    expect(eventSpy).toBeCalledTimes(2);
+    expect(eventSpy.mock.calls[1][0].detail.value).toBeNull();
+  });
+
+  it('does not select when clicking label in disabled group', async () => {
+    const page = await newSpecPage({
+      components: [RadioGroupComponent, RadioComponent],
+      html: `
+      <admiralty-radio-group disabled="true">
+        <admiralty-radio name="grp" value="option1">Option 1</admiralty-radio>
+        <admiralty-radio name="grp" value="option2">Option 2</admiralty-radio>
+      </admiralty-radio-group>
+      `,
+    });
+
+    const eventSpy = jest.fn();
+    page.doc.addEventListener('admiraltyChange', eventSpy);
+
+    const group = page.root as HTMLAdmiraltyRadioGroupElement;
+    const labels = page.doc.querySelectorAll('label');
+    const label = Array.from(labels).find(l => l.textContent === 'Option 1') as HTMLLabelElement;
+
+    label.click();
+    await page.waitForChanges();
+
+    expect(group.value).toBeUndefined();
+    expect(eventSpy).not.toBeCalled();
+  });
+
+  it('does not deselect when clicking nested content inside conditional slot for optional groups', async () => {
+    const page = await newSpecPage({
+      components: [RadioGroupComponent, RadioComponent],
+      html: `
+        <admiralty-radio-group allow-unselect="true">
+          <admiralty-radio name="grp" value="option1">
+            Option 1
+            <div slot="conditional">
+              <input type="checkbox" id="checkbox-opt-in" />
+              <label for="checkbox-opt-in">Opt-in to newsletters</label>
+            </div>
+          </admiralty-radio>
+          <admiralty-radio name="grp" value="option2">Option 2</admiralty-radio>
+        </admiralty-radio-group>
+      `,
+    });
+
+    const eventSpy = jest.fn();
+    page.doc.addEventListener('admiraltyChange', eventSpy);
+
+    const group = page.root as HTMLAdmiraltyRadioGroupElement;
+    const rad1Input = page.doc.querySelector('input[value="option1"]') as HTMLInputElement;
+    const checkboxInput = page.doc.querySelector('input[type="checkbox"]') as HTMLInputElement;
+    const checkboxLabel = page.doc.querySelector('label[for="checkbox-opt-in"]') as HTMLLabelElement;
+
+    // Select option 1
+    rad1Input.click();
+    await page.waitForChanges();
+
+    expect(group.value).toBe('option1');
+    expect(eventSpy).toBeCalledTimes(1);
+
+    // Click the nested checkbox
+    checkboxInput.click();
+    await page.waitForChanges();
+
+    // Selection should remain unchanged
+    expect(group.value).toBe('option1');
+    expect(eventSpy).toBeCalledTimes(1);
+
+    // Click the nested checkbox label
+    checkboxLabel.click();
+    await page.waitForChanges();
+
+    // Selection should still remain unchanged
+    expect(group.value).toBe('option1');
+    expect(eventSpy).toBeCalledTimes(1);
+  });
 });
