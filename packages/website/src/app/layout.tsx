@@ -49,6 +49,7 @@ const componentChildren: any[] = [
   { path: "/components/theme-toggle", variant: "text", name: "Theme Toggle" },
   { path: "/components/textarea", variant: "text", name: "Textarea" },
   { path: "/components/text-side-bar", variant: "text", name: "Text Side Bar" },
+  { path: "/components/tooltip", variant: "text", name: "Tooltip" },
 ];
 
 const gettingStartedChildren: any[] = [
