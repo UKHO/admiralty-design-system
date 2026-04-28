@@ -4,10 +4,21 @@
   border-right: 1px solid $side-bar-right-border-colour;
 }
 
-@media(prefers-color-scheme: dark) { // Changes browser scrollbar to dark
+@media (prefers-color-scheme: dark) {
+  // Changes browser scrollbar to dark
   :host {
     color-scheme: dark;
   }
+}
+
+/* Theme Toggle Support - Manual Dark Mode */
+:host-context(:root.admiralty-dark-mode) {
+  color-scheme: dark;
+}
+
+/* Theme Toggle Support - Manual Light Mode */
+:host-context(:root.admiralty-light-mode) {
+  color-scheme: light;
 }
 
 nav {

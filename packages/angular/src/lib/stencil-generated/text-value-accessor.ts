@@ -1,4 +1,4 @@
-import { Directive, ElementRef } from '@angular/core';
+import { Directive, ElementRef, forwardRef } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 
 import { ValueAccessor } from './value-accessor';
@@ -7,15 +7,16 @@ import { ValueAccessor } from './value-accessor';
   /* tslint:disable-next-line:directive-selector */
   selector: 'admiralty-input:not([type=number]), admiralty-textarea',
   host: {
-    '(admiraltyInput)': 'handleChangeEvent($event.target.value)'
+    '(admiraltyInput)': 'handleChangeEvent($event.target?.["value"])'
   },
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: TextValueAccessor,
+      useExisting: forwardRef(() => TextValueAccessor),
       multi: true
     }
-  ]
+  ],
+standalone: false
 })
 export class TextValueAccessor extends ValueAccessor {
   constructor(el: ElementRef) {

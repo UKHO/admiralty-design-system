@@ -1,4 +1,6 @@
 name: "Chromatic Deployment"
+permissions:
+  contents: read
 
 on: push
 

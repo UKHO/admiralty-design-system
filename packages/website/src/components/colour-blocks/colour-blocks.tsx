@@ -8,9 +8,11 @@ export default function ColourBlocks() {
     <div className={styles.homePageContainer}>
       <div className={styles.latestUpdates}>
         <h2>Updates</h2>
-        <h3>Last Updated October 2025</h3>
-        <p>We released ADMIRALTY Design System update 5.0 on the 8th October 2025. This major update brings enhancements to typography, accessibility, and the website itself. It also introduces serveral new components, including a Pill, a Minified Footer, and new Icon Sidebar and Text Sidebar components.</p>
-      </div>
+        <h3>Last Updated February 2026</h3>
+        <p>We released ADMIRALTY Design System version 5.3.0. This update introduces Dark Mode,
+          improving usability in low-light environments and supporting user preference-based theming. It also launches a
+          new Patterns section to help teams design more consistent and scalable services by providing guidance on
+          common service structures, interaction behaviour, and layout approaches.</p></div>
       <div className={styles.colourBlocksContainer}>
         <AdmiraltyColourBlock
           width={434}

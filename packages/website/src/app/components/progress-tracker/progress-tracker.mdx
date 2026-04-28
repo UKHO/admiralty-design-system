@@ -1,0 +1,122 @@
+# Tracker
+
+Use the tracker component to help users understand progress through a service or the current status of a task. Trackers should reduce uncertainty and help users plan what to do next.
+[View this component on GitHub](https://github.com/UKHO/admiralty-design-system/tree/main/packages/core/src/components/progress-tracker)
+
+## Contents
+
+## When to use this component
+
+Use a tracker when users need to:
+
+- Understand where they are in a multi-step journey
+- See which sections are complete or incomplete
+- Check the status of an application or request
+- Return later and continue a task
+
+Do not use a tracker:
+
+- For short, simple journeys (1 to 3 screens)
+- If there is no meaningful concept of progress
+- As a visual embellishment
+
+## Types of tracker
+
+Choose the pattern that matches the user need.
+
+**Step tracker (linear journeys):** Use for multi-step forms where users complete sections in order.
+
+The step tracker:
+
+- Shows the total number of steps
+- Clearly identifies the current step
+- Uses plain English labels
+- Does not allow users to skip ahead unless the service supports it
+- Allows user to step back in the journey to return to a previous step to amend cached data
+
+Do not show page validation errors in the tracker. Use an error summary and inline validation instead.
+
+import Basic from "@/usage/progress-tracker/basic/index.mdx";
+
+<Basic />
+
+<br />
+
+**Task tracker (checklist style):** Use when users can complete sections in any order or return later.\
+The task tracker shows the status of each section.\
+For example:
+
+- Account creation
+- Payment setup
+- Verification
+
+Use clear text labels. Do not rely on colour alone to communicate status.
+
+Avoid using the word "Error" unless something has genuinely failed.
+
+import AllComplete from "@/usage/progress-tracker/all-complete/index.mdx";
+
+<AllComplete />
+
+<br />
+
+**Status tracker (system-driven progress):** Use when the tracker reflects the system's progress, not the user's progress.\
+For example:
+
+- Submitted
+- Under review
+- More information needed
+- Approved
+
+If user action is required, clearly explain what they must do next.
+
+## Content design
+
+Follow plain English principles.
+
+- Use short, descriptive step names
+- Avoid internal or technical terminology
+- Keep labels consistent throughout the journey
+- Do not change step names part way through a service
+
+Avoid motivational or celebratory language. Keep tone factual and calm.
+
+## Accessibility
+
+The component provides step information through ARIA labels and semantic HTML. Each step is marked with its status (complete, current, or upcoming) to help assistive technology users understand the progress flow.
+
+## Props
+
+import Props from "@docs/progress-tracker/props.mdx";
+
+<Props />
+
+## Events
+
+import Events from "@docs/progress-tracker/events.mdx";
+
+<Events />
+
+## Methods
+
+import Methods from "@docs/progress-tracker/methods.mdx";
+
+<Methods />
+
+## CSS Shadow Parts
+
+import Parts from "@docs/progress-tracker/parts.mdx";
+
+<Parts />
+
+## CSS Custom Properties
+
+import CustomProps from "@docs/progress-tracker/customProps.mdx";
+
+<CustomProps />
+
+## Slots
+
+import Slots from "@docs/progress-tracker/slots.mdx";
+
+<Slots />

@@ -1,0 +1,16 @@
+@import '../../styles/vars/globals';
+
+$theme-toggle-background-colour: var(--admiralty-theme-toggle-background-colour, var(--admiralty-background-colour));
+$theme-toggle-hover-background-colour: var(--admiralty-theme-toggle-hover-background-colour, var(--admiralty-hover-background-colour));
+$theme-toggle-active-background-colour: var(--admiralty-theme-toggle-active-background-colour, var(--admiralty-hover-background-colour));
+$theme-toggle-icon-colour: var(--admiralty-theme-toggle-icon-colour, var(--admiralty-colour-primary));
+$theme-toggle-slider-background-colour: var(--admiralty-theme-toggle-slider-background-colour, var(--admiralty-background-colour-tint));
+$theme-toggle-slider-colour: var(--admiralty-theme-toggle-slider-colour, var(--admiralty-hover-background-colour-tint));
+$theme-toggle-focus-colour: var(--admiralty-theme-toggle-focus-colour, var(--admiralty-focus-colour));
+$theme-toggle-disabled-opacity: var(--admiralty-theme-toggle-disabled-opacity, 0.5);
+$theme-toggle-width: var(--admiralty-theme-toggle-width, 76px);
+$theme-toggle-height: var(--admiralty-theme-toggle-height, 38px);
+$theme-toggle-border-radius: var(--admiralty-theme-toggle-border-radius, 20px);
+$theme-toggle-slider-size: var(--admiralty-theme-toggle-slider-size, 30px);
+$theme-toggle-slider-offset: var(--admiralty-theme-toggle-slider-offset, 37px);
+$theme-toggle-slider-border-radius: var(--admiralty-theme-toggle-slider-border-radius, 18px);

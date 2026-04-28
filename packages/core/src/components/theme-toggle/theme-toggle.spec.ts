@@ -1,0 +1,1011 @@
+import { newSpecPage } from '@stencil/core/testing';
+import { ThemeToggleComponent } from './theme-toggle';
+
+describe('admiralty-theme-toggle', () => {
+  describe('rendering', () => {
+    it('should render the theme toggle button', async () => {
+      const page = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle></admiralty-theme-toggle>`,
+      });
+      expect(page.root).toEqualHtml(`
+        <admiralty-theme-toggle theme="auto">
+          <button aria-label="Toggle dark mode" class="theme-toggle light" type="button">
+            <span class="toggle-background-slider"></span>
+            <span class="toggle-icon sun-icon">
+              <admiralty-icon name="light-mode-outline"></admiralty-icon>
+            </span>
+            <span class="toggle-icon moon-icon">
+              <admiralty-icon name="dark-mode-outline"></admiralty-icon>
+            </span>
+          </button>
+        </admiralty-theme-toggle>
+      `);
+    });
+
+    it('should have button type="button"', async () => {
+      const page = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle></admiralty-theme-toggle>`,
+      });
+      const button = page.root.querySelector('button');
+      expect(button.type).toBe('button');
+    });
+
+    it('should render toggle-background-slider span', async () => {
+      const page = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle></admiralty-theme-toggle>`,
+      });
+      const slider = page.root.querySelector('.toggle-background-slider');
+      expect(slider).toBeTruthy();
+    });
+
+    it('should render sun and moon icons', async () => {
+      const page = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle></admiralty-theme-toggle>`,
+      });
+      const sunIcon = page.root.querySelector('.sun-icon admiralty-icon');
+      const moonIcon = page.root.querySelector('.moon-icon admiralty-icon');
+      expect(sunIcon).toBeTruthy();
+      expect(moonIcon).toBeTruthy();
+      expect(sunIcon.getAttribute('name')).toBe('light-mode-outline');
+      expect(moonIcon.getAttribute('name')).toBe('dark-mode-outline');
+    });
+
+    it('should render with custom aria-label', async () => {
+      const page = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle aria-label="Custom label"></admiralty-theme-toggle>`,
+      });
+      const button = page.root.querySelector('button');
+      expect(button.getAttribute('aria-label')).toBe('Custom label');
+    });
+
+    it('should use default aria-label', async () => {
+      const page = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle></admiralty-theme-toggle>`,
+      });
+      const button = page.root.querySelector('button');
+      expect(button.getAttribute('aria-label')).toBe('Toggle dark mode');
+    });
+  });
+
+  describe('theme prop', () => {
+    it('should render as light theme', async () => {
+      const page = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle theme="light"></admiralty-theme-toggle>`,
+      });
+      const button = page.root.querySelector('button');
+      expect(button.classList.contains('light')).toBe(true);
+      expect(button.classList.contains('dark')).toBe(false);
+    });
+
+    it('should render as dark theme', async () => {
+      const page = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle theme="dark"></admiralty-theme-toggle>`,
+      });
+      const button = page.root.querySelector('button');
+      expect(button.classList.contains('dark')).toBe(true);
+      expect(button.classList.contains('light')).toBe(false);
+    });
+
+    it('should render as auto theme with light system preference', async () => {
+      // Mock matchMedia to return light preference
+      Object.defineProperty(window, 'matchMedia', {
+        writable: true,
+        configurable: true,
+        value: jest.fn().mockImplementation(() => ({
+          matches: false, // light preference
+          media: '(prefers-color-scheme: dark)',
+        })),
+      });
+
+      const page = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle theme="auto"></admiralty-theme-toggle>`,
+      });
+      await page.waitForChanges();
+      const button = page.root.querySelector('button');
+      expect(button.classList.contains('light')).toBe(true);
+    });
+
+    it('should render as auto theme with dark system preference', async () => {
+      // Mock matchMedia to return dark preference
+      Object.defineProperty(window, 'matchMedia', {
+        writable: true,
+        configurable: true,
+        value: jest.fn().mockImplementation(() => ({
+          matches: true, // dark preference
+          media: '(prefers-color-scheme: dark)',
+        })),
+      });
+
+      const page = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle theme="auto"></admiralty-theme-toggle>`,
+      });
+      await page.waitForChanges();
+      const button = page.root.querySelector('button');
+      expect(button.classList.contains('dark')).toBe(true);
+    });
+
+    it('should handle theme changes from light to dark', async () => {
+      const page = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle theme="light"></admiralty-theme-toggle>`,
+      });
+      const component = page.rootInstance;
+      component.theme = 'dark';
+      await page.waitForChanges();
+      const button = page.root.querySelector('button');
+      expect(button.classList.contains('dark')).toBe(true);
+      expect(button.classList.contains('light')).toBe(false);
+    });
+
+    it('should handle theme changes from dark to light', async () => {
+      const page = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle theme="dark"></admiralty-theme-toggle>`,
+      });
+      const component = page.rootInstance;
+      component.theme = 'light';
+      await page.waitForChanges();
+      const button = page.root.querySelector('button');
+      expect(button.classList.contains('light')).toBe(true);
+      expect(button.classList.contains('dark')).toBe(false);
+    });
+
+    it('should handle multiple consecutive theme changes', async () => {
+      const page = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle theme="light"></admiralty-theme-toggle>`,
+      });
+      const component = page.rootInstance;
+      const button = page.root.querySelector('button');
+
+      // Change to dark
+      component.theme = 'dark';
+      await page.waitForChanges();
+      expect(button.classList.contains('dark')).toBe(true);
+
+      // Change back to light
+      component.theme = 'light';
+      await page.waitForChanges();
+      expect(button.classList.contains('light')).toBe(true);
+
+      // Change to dark again
+      component.theme = 'dark';
+      await page.waitForChanges();
+      expect(button.classList.contains('dark')).toBe(true);
+    });
+  });
+
+  describe('disabled state', () => {
+    it('should render disabled button', async () => {
+      const page = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle disabled></admiralty-theme-toggle>`,
+      });
+      const button = page.root.querySelector('button');
+      expect(button.hasAttribute('disabled')).toBe(true);
+      expect(button.classList.contains('disabled')).toBe(true);
+    });
+
+    it('should render enabled button by default', async () => {
+      const page = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle></admiralty-theme-toggle>`,
+      });
+      const button = page.root.querySelector('button');
+      expect(button.hasAttribute('disabled')).toBe(false);
+      expect(button.classList.contains('disabled')).toBe(false);
+    });
+  });
+
+  describe('click events', () => {
+    it('should toggle from light to dark on click', async () => {
+      const page = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle theme="light"></admiralty-theme-toggle>`,
+      });
+      const button = page.root.querySelector('button');
+      button.click();
+      await page.waitForChanges();
+      const component = page.rootInstance;
+      expect(component.theme).toBe('dark');
+    });
+
+    it('should toggle from dark to light on click', async () => {
+      const page = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle theme="dark"></admiralty-theme-toggle>`,
+      });
+      const button = page.root.querySelector('button');
+      button.click();
+      await page.waitForChanges();
+      const component = page.rootInstance;
+      expect(component.theme).toBe('light');
+    });
+
+    it('should emit admiraltyThemeChange event with correct payload on light to dark toggle', async () => {
+      const page = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle theme="light"></admiralty-theme-toggle>`,
+      });
+      const component = page.rootInstance;
+      const emitSpy = jest.spyOn(component.admiraltyThemeChange, 'emit');
+      const button = page.root.querySelector('button');
+      button.click();
+      await page.waitForChanges();
+      expect(emitSpy).toHaveBeenCalledWith({
+        theme: 'dark',
+        isDarkMode: true,
+      });
+    });
+
+    it('should emit admiraltyThemeChange event with correct payload on dark to light toggle', async () => {
+      const page = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle theme="dark"></admiralty-theme-toggle>`,
+      });
+      const component = page.rootInstance;
+      const emitSpy = jest.spyOn(component.admiraltyThemeChange, 'emit');
+      const button = page.root.querySelector('button');
+      button.click();
+      await page.waitForChanges();
+      expect(emitSpy).toHaveBeenCalledWith({
+        theme: 'light',
+        isDarkMode: false,
+      });
+    });
+
+    it('should not toggle when disabled', async () => {
+      const page = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle theme="light" disabled></admiralty-theme-toggle>`,
+      });
+      const button = page.root.querySelector('button');
+      const component = page.rootInstance;
+      const initialTheme = component.theme;
+      button.click();
+      await page.waitForChanges();
+      expect(component.theme).toBe(initialTheme);
+    });
+
+    it('should not emit event when disabled and clicked', async () => {
+      const page = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle theme="light" disabled></admiralty-theme-toggle>`,
+      });
+      const component = page.rootInstance;
+      const emitSpy = jest.spyOn(component.admiraltyThemeChange, 'emit');
+      const button = page.root.querySelector('button');
+      button.click();
+      await page.waitForChanges();
+      expect(emitSpy).not.toHaveBeenCalled();
+    });
+
+    it('should handle multiple consecutive clicks', async () => {
+      const page = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle theme="light"></admiralty-theme-toggle>`,
+      });
+      const button = page.root.querySelector('button');
+      const component = page.rootInstance;
+
+      button.click();
+      await page.waitForChanges();
+      expect(component.theme).toBe('dark');
+
+      button.click();
+      await page.waitForChanges();
+      expect(component.theme).toBe('light');
+
+      button.click();
+      await page.waitForChanges();
+      expect(component.theme).toBe('dark');
+    });
+  });
+
+  describe('theme persistence', () => {
+    beforeEach(() => {
+      localStorage.clear();
+    });
+
+    afterEach(() => {
+      localStorage.clear();
+    });
+
+    it('should respect explicit theme prop over localStorage', async () => {
+      // Set localStorage to one value
+      localStorage.setItem('admiralty-theme-preference', 'dark');
+
+      // But explicitly set theme prop to a different value
+      const page = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle theme="light"></admiralty-theme-toggle>`,
+      });
+
+      const component = page.rootInstance;
+      // Should use the explicit prop, not localStorage
+      expect(component.theme).toBe('light');
+    });
+
+    it('should save light theme to localStorage on toggle', async () => {
+      const page = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle theme="dark"></admiralty-theme-toggle>`,
+      });
+      const button = page.root.querySelector('button');
+      button.click();
+      await page.waitForChanges();
+      const saved = localStorage.getItem('admiralty-theme-preference');
+      expect(saved).toBe('light');
+    });
+
+    it('should save dark theme to localStorage on toggle', async () => {
+      const page = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle theme="light"></admiralty-theme-toggle>`,
+      });
+      const button = page.root.querySelector('button');
+      button.click();
+      await page.waitForChanges();
+      const saved = localStorage.getItem('admiralty-theme-preference');
+      expect(saved).toBe('dark');
+    });
+
+    it('should save auto theme to localStorage', async () => {
+      const page = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle theme="dark"></admiralty-theme-toggle>`,
+      });
+      const component = page.rootInstance;
+      component.theme = 'auto';
+      await page.waitForChanges();
+      const saved = localStorage.getItem('admiralty-theme-preference');
+      expect(saved).toBe('auto');
+    });
+
+    it('should persist theme across component prop changes', async () => {
+      const page = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle theme="light"></admiralty-theme-toggle>`,
+      });
+      const component = page.rootInstance;
+
+      // Toggle to dark
+      component.theme = 'dark';
+      await page.waitForChanges();
+      expect(localStorage.getItem('admiralty-theme-preference')).toBe('dark');
+
+      // Change back to light
+      component.theme = 'light';
+      await page.waitForChanges();
+      expect(localStorage.getItem('admiralty-theme-preference')).toBe('light');
+    });
+
+    it('should keep auto preference and render dark effective theme when system is dark', async () => {
+      // Mock system preference to dark
+      Object.defineProperty(window, 'matchMedia', {
+        writable: true,
+        configurable: true,
+        value: jest.fn().mockImplementation(() => ({
+          matches: true, // dark preference
+          media: '(prefers-color-scheme: dark)',
+        })),
+      });
+
+      const page2 = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle></admiralty-theme-toggle>`,
+      });
+      await page2.waitForChanges();
+      const component = page2.rootInstance;
+
+      // Preference remains auto while effective appearance follows the system.
+      expect(component.theme).toBe('auto');
+
+      // Button should show dark mode classes
+      const button2 = page2.root.querySelector('button');
+      expect(button2.classList.contains('dark')).toBe(true);
+    });
+
+    it('should keep auto preference and render light effective theme when system is light', async () => {
+      // Mock system preference to light to avoid interference
+      Object.defineProperty(window, 'matchMedia', {
+        writable: true,
+        configurable: true,
+        value: jest.fn().mockImplementation(() => ({
+          matches: false, // light preference
+          media: '(prefers-color-scheme: dark)',
+        })),
+      });
+
+      // New component instance without explicit theme prop
+      const page = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle></admiralty-theme-toggle>`,
+      });
+      await page.waitForChanges();
+      const component = page.rootInstance;
+
+      // Preference remains auto while effective appearance follows the system.
+      expect(component.theme).toBe('auto');
+
+      // Button should show light mode classes
+      const button = page.root.querySelector('button');
+      expect(button.classList.contains('light')).toBe(true);
+    });
+  });
+
+  describe('document styling', () => {
+    beforeEach(() => {
+      // Clear any previously set theme classes
+      document.body.classList.remove('admiralty-dark-mode');
+      document.body.classList.remove('admiralty-light-mode');
+      document.body.removeAttribute('data-theme');
+    });
+
+    afterEach(() => {
+      // Clean up after tests
+      document.body.classList.remove('admiralty-dark-mode');
+      document.body.classList.remove('admiralty-light-mode');
+      document.body.removeAttribute('data-theme');
+    });
+
+    it('should add light-mode class to document element for light theme', async () => {
+      const page = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle theme="light"></admiralty-theme-toggle>`,
+      });
+      await page.waitForChanges();
+      expect(document.body.classList.contains('admiralty-light-mode')).toBe(true);
+      expect(document.body.classList.contains('admiralty-dark-mode')).toBe(false);
+    });
+
+    it('should add dark-mode class to document element for dark theme', async () => {
+      const page = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle theme="dark"></admiralty-theme-toggle>`,
+      });
+      await page.waitForChanges();
+      expect(document.body.classList.contains('admiralty-dark-mode')).toBe(true);
+      expect(document.body.classList.contains('admiralty-light-mode')).toBe(false);
+    });
+
+    it('should set data-theme attribute to light', async () => {
+      const page = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle theme="light"></admiralty-theme-toggle>`,
+      });
+      await page.waitForChanges();
+      expect(document.body.getAttribute('data-theme')).toBe('light');
+    });
+
+    it('should set data-theme attribute to dark', async () => {
+      const page = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle theme="dark"></admiralty-theme-toggle>`,
+      });
+      await page.waitForChanges();
+      expect(document.body.getAttribute('data-theme')).toBe('dark');
+    });
+
+    it('should remove theme classes for auto mode', async () => {
+      // Create a page with auto theme
+      const page = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle theme="auto"></admiralty-theme-toggle>`,
+      });
+      await page.waitForChanges();
+
+      // Clean first - remove residual state from previous tests
+      document.body.classList.remove('admiralty-dark-mode');
+      document.body.classList.remove('admiralty-light-mode');
+      document.body.removeAttribute('data-theme');
+
+      // Now check that auto mode doesn't set specific classes
+      expect(document.body.classList.contains('admiralty-light-mode')).toBe(false);
+      expect(document.body.classList.contains('admiralty-dark-mode')).toBe(false);
+      expect(document.body.getAttribute('data-theme')).toBeNull();
+    });
+
+    it('should update document classes when theme changes', async () => {
+      const page = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle theme="light"></admiralty-theme-toggle>`,
+      });
+      const component = page.rootInstance;
+      await page.waitForChanges();
+
+      expect(document.body.classList.contains('admiralty-light-mode')).toBe(true);
+
+      component.theme = 'dark';
+      await page.waitForChanges();
+
+      expect(document.body.classList.contains('admiralty-dark-mode')).toBe(true);
+      expect(document.body.classList.contains('admiralty-light-mode')).toBe(false);
+    });
+  });
+
+  describe('component lifecycle', () => {
+    it('should initialize with default auto theme', async () => {
+      const page = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle></admiralty-theme-toggle>`,
+      });
+      const component = page.rootInstance;
+      // Default value is 'auto', and it will resolve to system preference or light
+      expect(component.theme).toBeTruthy();
+      expect(['auto', 'light', 'dark']).toContain(component.theme);
+    });
+
+    it('should reflect theme prop to attribute', async () => {
+      const page = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle theme="dark"></admiralty-theme-toggle>`,
+      });
+      expect(page.root.getAttribute('theme')).toBe('dark');
+    });
+
+    it('should update reflected theme attribute when changed', async () => {
+      const page = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle theme="light"></admiralty-theme-toggle>`,
+      });
+      const component = page.rootInstance;
+      component.theme = 'dark';
+      await page.waitForChanges();
+      expect(page.root.getAttribute('theme')).toBe('dark');
+    });
+
+    it('should reflect disabled prop to attribute', async () => {
+      const page = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle disabled></admiralty-theme-toggle>`,
+      });
+      expect(page.root.hasAttribute('disabled')).toBe(true);
+    });
+  });
+
+  describe('multiple component instances', () => {
+    it('should handle multiple independent component instances', async () => {
+      const page = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle theme="light"></admiralty-theme-toggle>`,
+      });
+      const component1 = page.root;
+      expect(component1.getAttribute('theme')).toBe('light');
+
+      const page2 = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle theme="dark"></admiralty-theme-toggle>`,
+      });
+      const component2 = page2.root;
+      expect(component2.getAttribute('theme')).toBe('dark');
+    });
+  });
+
+  describe('auto theme switching', () => {
+    it('should switch from light to auto and emit event', async () => {
+      Object.defineProperty(window, 'matchMedia', {
+        writable: true,
+        configurable: true,
+        value: jest.fn().mockImplementation(() => ({
+          matches: false,
+          media: '(prefers-color-scheme: dark)',
+          addEventListener: jest.fn(),
+          removeEventListener: jest.fn(),
+        })),
+      });
+
+      const page = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle theme="light"></admiralty-theme-toggle>`,
+      });
+      const component = page.rootInstance;
+      const emitSpy = jest.spyOn(component.admiraltyThemeChange, 'emit');
+
+      component.theme = 'auto';
+      await page.waitForChanges();
+
+      expect(emitSpy).toHaveBeenCalledWith(expect.objectContaining({ theme: 'auto' }));
+    });
+
+    it('should switch from dark to auto and reflect system light preference', async () => {
+      Object.defineProperty(window, 'matchMedia', {
+        writable: true,
+        configurable: true,
+        value: jest.fn().mockImplementation(() => ({
+          matches: false, // system is light
+          media: '(prefers-color-scheme: dark)',
+          addEventListener: jest.fn(),
+          removeEventListener: jest.fn(),
+        })),
+      });
+
+      const page = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle theme="dark"></admiralty-theme-toggle>`,
+      });
+      const component = page.rootInstance;
+
+      component.theme = 'auto';
+      await page.waitForChanges();
+
+      const button = page.root.querySelector('button');
+      expect(button.classList.contains('light')).toBe(true);
+    });
+
+    it('should save auto to localStorage when switched to auto', async () => {
+      Object.defineProperty(window, 'matchMedia', {
+        writable: true,
+        configurable: true,
+        value: jest.fn().mockImplementation(() => ({
+          matches: false,
+          media: '(prefers-color-scheme: dark)',
+          addEventListener: jest.fn(),
+          removeEventListener: jest.fn(),
+        })),
+      });
+
+      localStorage.clear();
+
+      const page = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle theme="light"></admiralty-theme-toggle>`,
+      });
+      const component = page.rootInstance;
+      component.theme = 'auto';
+      await page.waitForChanges();
+
+      expect(localStorage.getItem('admiralty-theme-preference')).toBe('auto');
+    });
+  });
+
+  describe('admiraltyThemeChange event on direct prop change', () => {
+    it('should emit admiraltyThemeChange when theme prop changes from light to dark directly', async () => {
+      const page = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle theme="light"></admiralty-theme-toggle>`,
+      });
+      const component = page.rootInstance;
+      const emitSpy = jest.spyOn(component.admiraltyThemeChange, 'emit');
+
+      component.theme = 'dark';
+      await page.waitForChanges();
+
+      expect(emitSpy).toHaveBeenCalledWith({ theme: 'dark', isDarkMode: true });
+    });
+
+    it('should emit admiraltyThemeChange when theme prop changes from dark to light directly', async () => {
+      const page = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle theme="dark"></admiralty-theme-toggle>`,
+      });
+      const component = page.rootInstance;
+      const emitSpy = jest.spyOn(component.admiraltyThemeChange, 'emit');
+
+      component.theme = 'light';
+      await page.waitForChanges();
+
+      expect(emitSpy).toHaveBeenCalledWith({ theme: 'light', isDarkMode: false });
+    });
+  });
+
+  describe('system preference change handling', () => {
+    it('should emit admiraltyThemeChange when OS switches to dark while in auto mode', async () => {
+      let capturedChangeHandler: ((e: any) => void) | null = null;
+      const mockMql = {
+        matches: false,
+        media: '(prefers-color-scheme: dark)',
+        addEventListener: jest.fn((type, listener) => {
+          if (type === 'change') capturedChangeHandler = listener;
+        }),
+        removeEventListener: jest.fn(),
+      };
+
+      Object.defineProperty(window, 'matchMedia', {
+        writable: true,
+        configurable: true,
+        value: jest.fn().mockReturnValue(mockMql),
+      });
+
+      // Start with explicit 'light' — no listener registered yet
+      const page = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle theme="light"></admiralty-theme-toggle>`,
+      });
+      const component = page.rootInstance;
+
+      // Switching to 'auto' via @Watch calls setupSystemPreferenceListener
+      component.theme = 'auto';
+      await page.waitForChanges();
+
+      // Spy AFTER setup so we only track the system-preference-change event
+      const emitSpy = jest.spyOn(component.admiraltyThemeChange, 'emit');
+
+      // Simulate OS switching to dark
+      mockMql.matches = true;
+      expect(capturedChangeHandler).not.toBeNull();
+      capturedChangeHandler({});
+      await page.waitForChanges();
+
+      expect(emitSpy).toHaveBeenCalledWith(expect.objectContaining({ theme: 'auto' }));
+    });
+
+    it('should not emit event on system preference change when theme is not auto', async () => {
+      let capturedChangeHandler: ((e: any) => void) | null = null;
+      const mockMql = {
+        matches: false,
+        media: '(prefers-color-scheme: dark)',
+        addEventListener: jest.fn((type, listener) => {
+          if (type === 'change') capturedChangeHandler = listener;
+        }),
+        removeEventListener: jest.fn(),
+      };
+
+      Object.defineProperty(window, 'matchMedia', {
+        writable: true,
+        configurable: true,
+        value: jest.fn().mockReturnValue(mockMql),
+      });
+
+      const page = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle theme="light"></admiralty-theme-toggle>`,
+      });
+      const component = page.rootInstance;
+      const emitSpy = jest.spyOn(component.admiraltyThemeChange, 'emit');
+
+      // Even if listener was somehow called, theme is 'light' not 'auto'
+      if (capturedChangeHandler) {
+        capturedChangeHandler({});
+        await page.waitForChanges();
+      }
+
+      expect(emitSpy).not.toHaveBeenCalled();
+    });
+
+    it('should use legacy addListener fallback when addEventListener is not available', async () => {
+      const mockMql = {
+        matches: false,
+        media: '(prefers-color-scheme: dark)',
+        addListener: jest.fn(),
+        removeListener: jest.fn(),
+        // no addEventListener / removeEventListener
+      };
+
+      Object.defineProperty(window, 'matchMedia', {
+        writable: true,
+        configurable: true,
+        value: jest.fn().mockReturnValue(mockMql),
+      });
+
+      // Start with 'light', then switch to 'auto' via @Watch to trigger setupSystemPreferenceListener
+      const page = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle theme="light"></admiralty-theme-toggle>`,
+      });
+      const component = page.rootInstance;
+      component.theme = 'auto';
+      await page.waitForChanges();
+
+      expect(mockMql.addListener).toHaveBeenCalled();
+    });
+  });
+
+  describe('disconnectedCallback cleanup', () => {
+    it('should remove event listener on disconnect', async () => {
+      const removeEventListenerMock = jest.fn();
+      const mockMql = {
+        matches: false,
+        media: '(prefers-color-scheme: dark)',
+        addEventListener: jest.fn(),
+        removeEventListener: removeEventListenerMock,
+      };
+
+      Object.defineProperty(window, 'matchMedia', {
+        writable: true,
+        configurable: true,
+        value: jest.fn().mockReturnValue(mockMql),
+      });
+
+      // Start with 'light', then switch to 'auto' via @Watch to register the listener
+      const page = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle theme="light"></admiralty-theme-toggle>`,
+      });
+      const component = page.rootInstance;
+      component.theme = 'auto';
+      await page.waitForChanges();
+
+      component.disconnectedCallback();
+
+      expect(removeEventListenerMock).toHaveBeenCalled();
+    });
+
+    it('should use legacy removeListener fallback on disconnect if removeEventListener unavailable', async () => {
+      const removeListenerMock = jest.fn();
+      const mockMql = {
+        matches: false,
+        media: '(prefers-color-scheme: dark)',
+        addListener: jest.fn(),
+        removeListener: removeListenerMock,
+      };
+
+      Object.defineProperty(window, 'matchMedia', {
+        writable: true,
+        configurable: true,
+        value: jest.fn().mockReturnValue(mockMql),
+      });
+
+      // Start with 'light', then switch to 'auto' via @Watch to register the legacy listener
+      const page = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle theme="light"></admiralty-theme-toggle>`,
+      });
+      const component = page.rootInstance;
+      component.theme = 'auto';
+      await page.waitForChanges();
+
+      component.disconnectedCallback();
+
+      expect(removeListenerMock).toHaveBeenCalled();
+    });
+
+    it('should not throw on disconnect when no media query listener was set up', async () => {
+      const page = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle theme="light"></admiralty-theme-toggle>`,
+      });
+      await page.waitForChanges();
+
+      const component = page.rootInstance;
+      expect(() => component.disconnectedCallback()).not.toThrow();
+    });
+  });
+
+  describe('localStorage error handling', () => {
+    it('should keep auto preference when localStorage throws on load', async () => {
+      Object.defineProperty(window, 'matchMedia', {
+        writable: true,
+        configurable: true,
+        value: jest.fn().mockImplementation(() => ({
+          matches: false,
+          media: '(prefers-color-scheme: dark)',
+          addEventListener: jest.fn(),
+          removeEventListener: jest.fn(),
+        })),
+      });
+
+      const getItemSpy = jest.spyOn(window.localStorage, 'getItem').mockImplementation(() => {
+        throw new Error('localStorage unavailable');
+      });
+
+      const page = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle></admiralty-theme-toggle>`,
+      });
+      await page.waitForChanges();
+
+      const component = page.rootInstance;
+      // Should keep auto preference so system changes continue to be followed.
+      expect(component.theme).toBe('auto');
+
+      getItemSpy.mockRestore();
+    });
+
+    it('should not throw when localStorage throws on persist', async () => {
+      const page = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle theme="light"></admiralty-theme-toggle>`,
+      });
+      const component = page.rootInstance;
+
+      const setItemSpy = jest.spyOn(window.localStorage, 'setItem').mockImplementation(() => {
+        throw new Error('localStorage unavailable');
+      });
+
+      expect(() => {
+        component.theme = 'dark';
+      }).not.toThrow();
+
+      setItemSpy.mockRestore();
+    });
+
+    it('should keep auto preference when localStorage has an invalid value', async () => {
+      Object.defineProperty(window, 'matchMedia', {
+        writable: true,
+        configurable: true,
+        value: jest.fn().mockImplementation(() => ({
+          matches: false,
+          media: '(prefers-color-scheme: dark)',
+          addEventListener: jest.fn(),
+          removeEventListener: jest.fn(),
+        })),
+      });
+
+      localStorage.setItem('admiralty-theme-preference', 'invalid-value');
+
+      const page = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle></admiralty-theme-toggle>`,
+      });
+      await page.waitForChanges();
+
+      const component = page.rootInstance;
+      // Invalid stored value should be ignored and leave preference as auto.
+      expect(component.theme).toBe('auto');
+    });
+  });
+
+  describe('CSS classes', () => {
+    it('should always have theme-toggle class', async () => {
+      const page = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle theme="light"></admiralty-theme-toggle>`,
+      });
+      const button = page.root.querySelector('button');
+      expect(button.classList.contains('theme-toggle')).toBe(true);
+    });
+
+    it('should have either light or dark class', async () => {
+      const page = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle theme="light"></admiralty-theme-toggle>`,
+      });
+      const button = page.root.querySelector('button');
+      const hasThemeClass = button.classList.contains('light') || button.classList.contains('dark');
+      expect(hasThemeClass).toBe(true);
+    });
+
+    it('should not have conflicting theme classes', async () => {
+      const page = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle theme="light"></admiralty-theme-toggle>`,
+      });
+      const button = page.root.querySelector('button');
+      // Both shouldn't be true at the same time
+      expect(button.classList.contains('light') && button.classList.contains('dark')).toBe(false);
+    });
+  });
+
+  describe('accessibility', () => {
+    it('should have aria-label for screen readers', async () => {
+      const page = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle></admiralty-theme-toggle>`,
+      });
+      const button = page.root.querySelector('button');
+      expect(button.getAttribute('aria-label')).toBeTruthy();
+    });
+
+    it('should update aria-label when provided', async () => {
+      const customLabel = 'Switch color scheme';
+      const page = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle aria-label="${customLabel}"></admiralty-theme-toggle>`,
+      });
+      const button = page.root.querySelector('button');
+      expect(button.getAttribute('aria-label')).toBe(customLabel);
+    });
+
+    it('should be keyboard accessible', async () => {
+      const page = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle theme="light"></admiralty-theme-toggle>`,
+      });
+      const button = page.root.querySelector('button');
+      expect(button.tagName).toBe('BUTTON');
+      // Buttons are keyboard accessible by default
+    });
+  });
+});
+

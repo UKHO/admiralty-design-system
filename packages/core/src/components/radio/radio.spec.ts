@@ -14,7 +14,7 @@ describe('admiralty-radio', () => {
       <admiralty-radio>
         <div class="admiralty-radio">
           <input aria-checked="false" aria-labelledby="admiralty-radio-${id}-input" class="admiralty-radio" id="admiralty-radio-${id}-input" tabindex="-1" type="radio" value="admiralty-radio-${id}">
-          <label htmlfor="admiralty-radio-${id}-input"></label>
+          <label for="admiralty-radio-${id}-input"></label>
         </div>
         <div class="conditional unchecked"></div>
       </admiralty-radio>
@@ -33,7 +33,7 @@ describe('admiralty-radio', () => {
         <!---->
         <div class="admiralty-radio">
           <input aria-checked="false" aria-labelledby="admiralty-radio-${id}-input" class="admiralty-radio" id="admiralty-radio-${id}-input" name="rad1" tabindex="-1" type="radio" value="option1">
-          <label htmlfor="admiralty-radio-${id}-input">
+          <label for="admiralty-radio-${id}-input">
             Option 1
           </label>
         </div>
@@ -54,7 +54,7 @@ describe('admiralty-radio', () => {
         <!---->
         <div class="admiralty-radio checked">
           <input aria-checked="true" aria-labelledby="admiralty-radio-${id}-input" checked="" class="admiralty-radio" id="admiralty-radio-${id}-input" name="rad1" tabindex="-1" type="radio" value="option1">
-          <label htmlfor="admiralty-radio-${id}-input">
+          <label for="admiralty-radio-${id}-input">
             Option 1
           </label>
         </div>
@@ -75,7 +75,7 @@ describe('admiralty-radio', () => {
         <!---->
         <div class="admiralty-radio">
           <input aria-checked="false" aria-hidden="true" aria-labelledby="admiralty-radio-${id}-input" class="admiralty-radio" disabled="" id="admiralty-radio-${id}-input" name="rad1" tabindex="-1" type="radio" value="option1">
-          <label htmlfor="admiralty-radio-${id}-input">
+          <label for="admiralty-radio-${id}-input">
             Option 1
           </label>
         </div>
@@ -96,7 +96,7 @@ describe('admiralty-radio', () => {
         <!---->
         <div class="admiralty-radio">
           <input aria-checked="false" aria-labelledby="${id}-input" class="admiralty-radio" id="${id}-input" name="rad1" tabindex="-1" type="radio" value="option1">
-          <label htmlfor="${id}-input">
+          <label for="${id}-input">
             Option 1
           </label>
         </div>
