@@ -6,6 +6,7 @@ import {
   AdmiraltyFooter,
   AdmiraltyHeader,
   AdmiraltyLink,
+  AdmiraltyThemeToggle,
   AdmiraltyTextSideBar,
   AdmiraltyTextSideBarItem,
   AdmiraltySkipLink,
@@ -158,7 +159,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <AdmiraltyHeader
             headerTitle="Design System"
             onTitledClicked={() => router.push("/")}
-            logoImgUrl="/svg/Admiralty stacked logo.svg"></AdmiraltyHeader>
+            logoImgUrl="/svg/Admiralty stacked logo.svg">
+            <AdmiraltyThemeToggle slot="profile" className="header-theme-toggle"></AdmiraltyThemeToggle>
+          </AdmiraltyHeader>
           <div className={styles.splitContentWrapper}>
             <div className={styles.middle}>
               <AdmiraltyTextSideBar className={styles.sideBar} textSideBarWidth="250px" showLogo={false}>

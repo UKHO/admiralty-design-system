@@ -33,3 +33,14 @@ h4,
 h5 {
   margin: 18px 0 12px 0;
 }
+
+admiralty-theme-toggle.header-theme-toggle {
+  align-self: center;
+  margin-right: 1rem;
+}
+
+@media (max-width: 768px) {
+  admiralty-theme-toggle.header-theme-toggle {
+    margin-right: 0.5rem;
+  }
+}
