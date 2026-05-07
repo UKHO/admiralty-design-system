@@ -49,11 +49,6 @@ such as dusk and night mode used onboard ships.
 - Full system colour support for dark theme
 - Updated semantic colour mappings (background, surface, text, border, focus, status)
 - Accessible contrast ratios across all core components
-- Dark mode variants for:
-  - Core components
-  - Navigation patterns
-  - Data visualisation elements
-  - Form controls and validation states
 
 ### How it works
 
@@ -69,11 +64,11 @@ Dark Mode has been tested to meet WCAG 2.2 AA contrast standards. Particular att
 - Focus states
 - Data-heavy interfaces
 
-### Implementation Guidelines
+### Advice on implementation
 
-- Do not manually override component colours.
-- Use semantic tokens only.
-- Test content-heavy screens for contrast regressions.
+It’s worth verifying that Dark Mode has been applied consistently across all pages.
+We’ve seen instances where parts of the UI required rework, particularly where colours were not implemented using CSS variables,
+leading to inconsistencies and potential regressions.
 
 ## Patterns
 
@@ -88,23 +83,16 @@ Initial patterns include:
   - Multi-step processes
 
 Each pattern includes:
-  - When to use it
-  - When not to use it
+  - When and when not to use it
   - Accessibility considerations
-  - Content design guidance
-  - Interaction behaviour
+  - Content and interaction design guidance
   - Example layouts
-  - Relationship to components
 
 ### Why patterns?
 
 Components alone don’t guarantee coherent services. Patterns help teams:
   - Avoid reinventing solutions
   - Reduce inconsistency across products
-  - Align with user mental models
-  - Design at a service level, not just a UI level
-
-We plan in the future to introduce patterns for error messaging, complex tables and a  database search and filter.
 
 ## Minor Updates
 
