@@ -58,6 +58,26 @@ export const Horizontal: Story = {
   args: { value: false, displayVertical: false },
 };
 
+export const Optional: Story = {
+  render: args =>
+    html` <admiralty-radio-group label="Preferred contact method" hint="Optional: select an option, then click it again to clear" value=${args.value} allow-unselect="true">
+      <admiralty-radio name="optional" value="email">Email</admiralty-radio>
+      <admiralty-radio name="optional" value="phone">Phone</admiralty-radio>
+      <admiralty-radio name="optional" value="post">Post</admiralty-radio>
+    </admiralty-radio-group>`,
+  args: { value: null },
+};
+
+export const Required: Story = {
+  render: args =>
+    html` <admiralty-radio-group label="Preferred contact method" allow-unselect="false" value=${args.value}>
+      <admiralty-radio name="required" value="email">Email</admiralty-radio>
+      <admiralty-radio name="required" value="phone">Phone</admiralty-radio>
+      <admiralty-radio name="required" value="post">Post</admiralty-radio>
+    </admiralty-radio-group>`,
+  args: { value: 'email' },
+};
+
 export const Invalid: Story = {
   render: args =>
     html` <admiralty-radio-group display-vertical="true" invalid="${args.invalid}" invalid-message="${args.invalidMessage}">

@@ -2,11 +2,11 @@
 
 <!-- Auto Generated Below -->
 
-
 ## Properties
 
 | Property          | Attribute          | Description                                                                      | Type      | Default        |
 | ----------------- | ------------------ | -------------------------------------------------------------------------------- | --------- | -------------- |
+| `allowUnselect`   | `allow-unselect`   | Whether selecting a checked radio option again should clear the selection        | `boolean` | `false`        |
 | `disabled`        | `disabled`         | Whether the radio controls should be disabled                                    | `boolean` | `false`        |
 | `displayVertical` | `display-vertical` | Setting this to false displays the radio options horizontally (defaults to true) | `boolean` | `true`         |
 | `hint`            | `hint`             | The hint text to display below the label                                         | `string`  | `undefined`    |
@@ -16,13 +16,11 @@
 | `name`            | `name`             | The name of the control, which is submitted with the form data                   | `string`  | `this.inputId` |
 | `value`           | `value`            | The value of the radio group                                                     | `any`     | `undefined`    |
 
-
 ## Events
 
 | Event             | Description                                       | Type                                            |
 | ----------------- | ------------------------------------------------- | ----------------------------------------------- |
 | `admiraltyChange` | Event fired when the checked radio button changes | `CustomEvent<RadioGroupChangeEventDetail<any>>` |
-
 
 ## CSS Custom Properties
 
@@ -34,7 +32,6 @@
 | `--admiralty-radio-group-slotted-margin-right`        | Margin right for the slotted data of the radio group        |
 | `--admiralty-radio-group-stack-slotted-margin-bottom` | Margin bottom for the slotted data of the radio group stack |
 
-
 ## Dependencies
 
 ### Depends on
@@ -43,6 +40,7 @@
 - [admiralty-input-invalid](../input-invalid)
 
 ### Graph
+
 ```mermaid
 graph TD;
   admiralty-radio-group --> admiralty-hint
@@ -51,6 +49,6 @@ graph TD;
   style admiralty-radio-group fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
-----------------------------------------------
+---
 
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_
