@@ -1,0 +1,58 @@
+```html
+<admiralty-table caption="Favourite Foods" allow-sorting="true">
+  <admiralty-table-header>
+    <admiralty-table-row>
+      <admiralty-table-header-cell sortable="true" data-col="0">Name</admiralty-table-header-cell>
+      <admiralty-table-header-cell sortable="true" data-col="1">Age</admiralty-table-header-cell>
+      <admiralty-table-header-cell sortable="true" data-col="2">Other</admiralty-table-header-cell>
+      <admiralty-table-header-cell sortable="true" data-col="3">Favourite Food</admiralty-table-header-cell>
+    </admiralty-table-row>
+  </admiralty-table-header>
+  <admiralty-table-body id="sortable-table-body"></admiralty-table-body>
+</admiralty-table>
+
+<script>
+  const rows = [
+    ["Tom", "12", "Likes Bread", "Potatoes"],
+    ["Thomas", "25", "Likes Lots Of Bread", "Pizza"],
+    ["Tommy", "1000", "Bread", "Potatoes"],
+  ];
+
+  const body = document.querySelector("#sortable-table-body");
+  const headerCells = document.querySelectorAll("admiralty-table-header-cell");
+
+  const renderRows = (nextRows) => {
+    body.innerHTML = nextRows
+      .map(
+        (row) =>
+          `<admiralty-table-row>${row
+            .map((cell) => `<admiralty-table-cell>${cell}</admiralty-table-cell>`)
+            .join("")}</admiralty-table-row>`,
+      )
+      .join("");
+  };
+
+  renderRows(rows);
+
+  headerCells.forEach((cell, index) => {
+    cell.addEventListener("admiraltySortChange", (event) => {
+      const direction = event.detail.direction;
+      const sortedRows = [...rows];
+
+      headerCells.forEach((other) => {
+        if (other !== cell) {
+          other.sortDirection = "none";
+        }
+      });
+
+      if (direction === "ascending") {
+        sortedRows.sort((a, b) => a[index].localeCompare(b[index], undefined, { numeric: true }));
+      } else if (direction === "descending") {
+        sortedRows.sort((a, b) => b[index].localeCompare(a[index], undefined, { numeric: true }));
+      }
+
+      renderRows(direction === "none" ? rows : sortedRows);
+    });
+  });
+</script>
+```
