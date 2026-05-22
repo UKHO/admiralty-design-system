@@ -7,7 +7,7 @@ describe('admiralty-table', () => {
 
     const element = await page.find('admiralty-table');
     expect(element).toHaveClass('hydrated');
-    expect(element.getAttribute('role')).toBe('table');
+    expect(await element.getAttribute('role')).toBe('table');
   });
 
   it('renders caption when caption attribute is provided', async () => {
@@ -53,26 +53,26 @@ describe('admiralty-table', () => {
     expect(bodyCell.textContent?.trim()).toBe('Tom');
   });
 
-  it('does not set allow-sorting by default', async () => {
+  it('does not set sorting by default', async () => {
     const page = await newE2EPage();
     await page.setContent('<admiralty-table></admiralty-table>');
 
     const element = await page.find('admiralty-table');
-    expect(element).not.toHaveAttribute('allow-sorting');
+    expect(element).not.toHaveAttribute('sorting');
   });
 
-  it('reflects allow-sorting attribute when provided', async () => {
+  it('reflects sorting attribute when provided', async () => {
     const page = await newE2EPage();
-    await page.setContent('<admiralty-table allow-sorting></admiralty-table>');
+    await page.setContent('<admiralty-table sorting></admiralty-table>');
 
     const element = await page.find('admiralty-table');
-    expect(element).toHaveAttribute('allow-sorting');
+    expect(element).toHaveAttribute('sorting');
   });
 
-  it('makes header cells sortable when allow-sorting is set on table', async () => {
+  it('makes header cells sortable when sorting is set on table', async () => {
     const page = await newE2EPage();
     await page.setContent(`
-      <admiralty-table allow-sorting>
+      <admiralty-table sorting>
         <admiralty-table-header>
           <admiralty-table-row>
             <admiralty-table-header-cell>Name</admiralty-table-header-cell>
@@ -85,13 +85,13 @@ describe('admiralty-table', () => {
     const header = await page.find('admiralty-table-header-cell');
 
     expect(button).not.toBeNull();
-    expect(header.getAttribute('aria-sort')).toBe('none');
+    expect(await header.getAttribute('aria-sort')).toBe('none');
   });
 
-  it('allows a header cell to opt out of sorting when table allow-sorting is set', async () => {
+  it('allows a header cell to opt out of sorting when table sorting is set', async () => {
     const page = await newE2EPage();
     await page.setContent(`
-      <admiralty-table allow-sorting>
+      <admiralty-table sorting>
         <admiralty-table-header>
           <admiralty-table-row>
             <admiralty-table-header-cell sortable="false">Name</admiralty-table-header-cell>

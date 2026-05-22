@@ -835,11 +835,11 @@ export namespace Components {
      * Use tables to make information easier for users to scan and compare
      */
     interface AdmiraltyTable {
+        "caption": string;
         /**
           * When `true`, all `admiralty-table-header-cell` descendants become sortable by default. Individual cells can opt out by setting `sortable="false"`. Has no effect on existing tables that do not set this prop.
          */
-        "allowSorting": boolean;
-        "caption": string;
+        "sorting": boolean;
     }
     /**
      * The table body element is a wrapper for a standard html table body and should be used to wrap rows
@@ -865,7 +865,7 @@ export namespace Components {
          */
         "sortDirection": SortDirection;
         /**
-          * Whether this column header is individually sortable. If the parent `admiralty-table` has `allow-sorting` set, all columns are sortable by default and this prop can be set to `false` to opt a column out.
+          * Whether this column header is individually sortable. If the parent `admiralty-table` has `sorting` set, all columns are sortable by default and this prop can be set to `false` to opt a column out.
          */
         "sortable": boolean;
     }
@@ -2747,11 +2747,11 @@ declare namespace LocalJSX {
      * Use tables to make information easier for users to scan and compare
      */
     interface AdmiraltyTable {
+        "caption"?: string;
         /**
           * When `true`, all `admiralty-table-header-cell` descendants become sortable by default. Individual cells can opt out by setting `sortable="false"`. Has no effect on existing tables that do not set this prop.
          */
-        "allowSorting"?: boolean;
-        "caption"?: string;
+        "sorting"?: boolean;
     }
     /**
      * The table body element is a wrapper for a standard html table body and should be used to wrap rows
@@ -2781,7 +2781,7 @@ declare namespace LocalJSX {
          */
         "sortDirection"?: SortDirection;
         /**
-          * Whether this column header is individually sortable. If the parent `admiralty-table` has `allow-sorting` set, all columns are sortable by default and this prop can be set to `false` to opt a column out.
+          * Whether this column header is individually sortable. If the parent `admiralty-table` has `sorting` set, all columns are sortable by default and this prop can be set to `false` to opt a column out.
          */
         "sortable"?: boolean;
     }

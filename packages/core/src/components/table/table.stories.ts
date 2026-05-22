@@ -58,7 +58,7 @@ export const Basic: Story = {
 };
 
 /**
- * All columns are sortable via `allow-sorting` on the table. Clicking a header
+ * All columns are sortable via `sorting` on the table. Clicking a header
  * cycles through ascending → descending → unsorted. Rows are re-sorted
  * client-side to demonstrate the feature in Storybook.
  */
@@ -73,7 +73,7 @@ export const AllColumnsSortable: Story = {
     ];
 
     return html`
-      <admiralty-table caption="Favourite Foods — all columns sortable" allow-sorting>
+      <admiralty-table caption="Favourite Foods — all columns sortable" sorting>
         <admiralty-table-header>
           <admiralty-table-row>
             <admiralty-table-header-cell data-col="0">Name</admiralty-table-header-cell>
@@ -136,7 +136,7 @@ export const AllColumnsSortable: Story = {
 
 /**
  * Only selected columns are sortable — set `sortable` directly on specific
- * `admiralty-table-header-cell` elements instead of using `allow-sorting` on
+ * `admiralty-table-header-cell` elements instead of using `sorting` on
  * the table.
  */
 export const SelectiveColumnSorting: Story = {

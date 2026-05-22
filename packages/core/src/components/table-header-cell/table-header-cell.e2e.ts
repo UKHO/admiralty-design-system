@@ -78,10 +78,10 @@ describe('table-header-cell', () => {
       expect(sortChange).toHaveReceivedEventDetail({ direction: 'none' });
     });
 
-    it('becomes sortable when parent table has allow-sorting attribute', async () => {
+    it('becomes sortable when parent table has sorting attribute', async () => {
       const page = await newE2EPage();
       await page.setContent(`
-        <admiralty-table allow-sorting>
+        <admiralty-table sorting>
           <admiralty-table-header>
             <admiralty-table-row>
               <admiralty-table-header-cell>Name</admiralty-table-header-cell>
@@ -94,10 +94,10 @@ describe('table-header-cell', () => {
       expect(button).not.toBeNull();
     });
 
-    it('can opt out of sorting when allow-sorting is set on parent table', async () => {
+    it('can opt out of sorting when sorting is set on parent table', async () => {
       const page = await newE2EPage();
       await page.setContent(`
-        <admiralty-table allow-sorting>
+        <admiralty-table sorting>
           <admiralty-table-header>
             <admiralty-table-row>
               <admiralty-table-header-cell sortable="false">Name</admiralty-table-header-cell>

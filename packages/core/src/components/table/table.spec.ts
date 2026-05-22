@@ -58,48 +58,48 @@ describe('admiralty-table', () => {
         expect(page.root?.querySelector('admiralty-table-cell')?.textContent?.trim()).toBe('Tom');
     });
 
-    it('defaults allowSorting to false and does not reflect allow-sorting attribute', async () => {
+    it('defaults sorting to false and does not reflect sorting attribute', async () => {
         const page = await newSpecPage({
             components: [TableComponent],
             html: '<admiralty-table></admiralty-table>',
         });
 
-        expect(page.rootInstance.allowSorting).toBe(false);
-        expect(page.root?.hasAttribute('allow-sorting')).toBe(false);
+        expect(page.rootInstance.sorting).toBe(false);
+        expect(page.root?.hasAttribute('sorting')).toBe(false);
     });
 
-    it('reflects allow-sorting attribute when allowSorting is true', async () => {
+    it('reflects sorting attribute when sorting is true', async () => {
         const page = await newSpecPage({
             components: [TableComponent],
-            html: '<admiralty-table allow-sorting></admiralty-table>',
+            html: '<admiralty-table sorting></admiralty-table>',
         });
 
-        expect(page.rootInstance.allowSorting).toBe(true);
-        expect(page.root?.hasAttribute('allow-sorting')).toBe(true);
+        expect(page.rootInstance.sorting).toBe(true);
+        expect(page.root?.hasAttribute('sorting')).toBe(true);
     });
 
-    it('updates allow-sorting attribute when allowSorting changes at runtime', async () => {
+    it('updates sorting attribute when sorting changes at runtime', async () => {
         const page = await newSpecPage({
             components: [TableComponent],
             html: '<admiralty-table></admiralty-table>',
         });
 
-        page.rootInstance.allowSorting = true;
+        page.rootInstance.sorting = true;
         await page.waitForChanges();
 
-        expect(page.root?.hasAttribute('allow-sorting')).toBe(true);
+        expect(page.root?.hasAttribute('sorting')).toBe(true);
 
-        page.rootInstance.allowSorting = false;
+        page.rootInstance.sorting = false;
         await page.waitForChanges();
 
-        expect(page.root?.hasAttribute('allow-sorting')).toBe(false);
+        expect(page.root?.hasAttribute('sorting')).toBe(false);
     });
 
-    it('enables sortable table header cells when allow-sorting is set on parent', async () => {
+    it('enables sortable table header cells when sorting is set on parent', async () => {
         const page = await newSpecPage({
             components: [TableComponent, TableHeaderCellComponent],
             html: `
-        <admiralty-table allow-sorting>
+        <admiralty-table sorting>
           <admiralty-table-header-cell>Name</admiralty-table-header-cell>
         </admiralty-table>
       `,
@@ -111,11 +111,11 @@ describe('admiralty-table', () => {
         expect(headerCell?.getAttribute('aria-sort')).toBe('none');
     });
 
-    it('allows a header cell to opt out when parent allow-sorting is set', async () => {
+    it('allows a header cell to opt out when parent sorting is set', async () => {
         const page = await newSpecPage({
             components: [TableComponent, TableHeaderCellComponent],
             html: `
-        <admiralty-table allow-sorting>
+        <admiralty-table sorting>
           <admiralty-table-header-cell sortable="false">Name</admiralty-table-header-cell>
         </admiralty-table>
       `,

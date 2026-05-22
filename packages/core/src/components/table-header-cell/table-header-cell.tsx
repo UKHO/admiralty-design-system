@@ -16,7 +16,7 @@ export class TableHeaderCellComponent {
 
   /**
    * Whether this column header is individually sortable.
-   * If the parent `admiralty-table` has `allow-sorting` set, all columns are
+   * If the parent `admiralty-table` has `sorting` set, all columns are
    * sortable by default and this prop can be set to `false` to opt a column out.
    */
   @Prop() sortable: boolean = undefined;
@@ -37,8 +37,8 @@ export class TableHeaderCellComponent {
     if (this.sortable === false) return false;
     // Explicit true opt-in wins next
     if (this.sortable === true) return true;
-    // Fall back to parent table allow-sorting attribute
-    return this.el.closest('admiralty-table')?.hasAttribute('allow-sorting') ?? false;
+    // Fall back to parent table sorting attribute
+    return this.el.closest('admiralty-table')?.hasAttribute('sorting') ?? false;
   }
 
   private handleSortClick = () => {

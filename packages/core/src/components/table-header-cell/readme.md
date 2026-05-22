@@ -1,7 +1,5 @@
 # table-header-cell
 
-
-
 <!-- Auto Generated Below -->
 
 
@@ -11,10 +9,10 @@ The table header cell element is used for showing headings for the columns
 
 ## Properties
 
-| Property        | Attribute        | Description                                                                                                                                                                                                | Type                                    | Default     |
-| --------------- | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------- | ----------- |
-| `sortDirection` | `sort-direction` | The initial sort direction for this column.                                                                                                                                                                | `"ascending" \| "descending" \| "none"` | `'none'`    |
-| `sortable`      | `sortable`       | Whether this column header is individually sortable. If the parent `admiralty-table` has `allow-sorting` set, all columns are sortable by default and this prop can be set to `false` to opt a column out. | `boolean`                               | `undefined` |
+| Property        | Attribute        | Description                                                                                                                                                                                          | Type                                    | Default     |
+| --------------- | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------- | ----------- |
+| `sortDirection` | `sort-direction` | The initial sort direction for this column.                                                                                                                                                          | `"ascending" \| "descending" \| "none"` | `'none'`    |
+| `sortable`      | `sortable`       | Whether this column header is individually sortable. If the parent `admiralty-table` has `sorting` set, all columns are sortable by default and this prop can be set to `false` to opt a column out. | `boolean`                               | `undefined` |
 
 
 ## Events

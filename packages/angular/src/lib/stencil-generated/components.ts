@@ -1204,14 +1204,14 @@ export declare interface AdmiraltyTabGroup extends Components.AdmiraltyTabGroup 
 
 
 @ProxyCmp({
-  inputs: ['allowSorting', 'caption']
+  inputs: ['caption', 'sorting']
 })
 @Component({
   selector: 'admiralty-table',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['allowSorting', 'caption'],
+  inputs: ['caption', 'sorting'],
 })
 export class AdmiraltyTable {
   protected el: HTMLElement;

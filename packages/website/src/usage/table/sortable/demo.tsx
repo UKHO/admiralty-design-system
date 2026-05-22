@@ -55,30 +55,30 @@ export default function Demo() {
   const getSortDirection = (column: number): SortDirection => (activeColumn === column ? activeDirection : "none");
 
   return (
-    <AdmiraltyTable caption="Favourite Foods - sortable columns" allow-sorting="true">
+    <AdmiraltyTable caption="Favourite Foods - sortable columns" sorting={true}>
       <AdmiraltyTableHeader>
         <AdmiraltyTableRow>
           <AdmiraltyTableHeaderCell
             sortable={true}
-            sort-direction={getSortDirection(0)}
+            sortDirection={getSortDirection(0)}
             onAdmiraltySortChange={handleSortChange(0)}>
             Name
           </AdmiraltyTableHeaderCell>
           <AdmiraltyTableHeaderCell
             sortable={true}
-            sort-direction={getSortDirection(1)}
+            sortDirection={getSortDirection(1)}
             onAdmiraltySortChange={handleSortChange(1)}>
             Age
           </AdmiraltyTableHeaderCell>
           <AdmiraltyTableHeaderCell
             sortable={true}
-            sort-direction={getSortDirection(2)}
+            sortDirection={getSortDirection(2)}
             onAdmiraltySortChange={handleSortChange(2)}>
             Other
           </AdmiraltyTableHeaderCell>
           <AdmiraltyTableHeaderCell
             sortable={true}
-            sort-direction={getSortDirection(3)}
+            sortDirection={getSortDirection(3)}
             onAdmiraltySortChange={handleSortChange(3)}>
             Favourite Food
           </AdmiraltyTableHeaderCell>

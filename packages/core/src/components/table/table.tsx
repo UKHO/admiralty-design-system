@@ -17,7 +17,7 @@ export class TableComponent {
    * by default. Individual cells can opt out by setting `sortable="false"`.
    * Has no effect on existing tables that do not set this prop.
    */
-  @Prop({ reflect: true }) allowSorting: boolean = false;
+  @Prop({ reflect: true }) sorting: boolean = false;
 
   render() {
     return (

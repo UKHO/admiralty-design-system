@@ -60,13 +60,13 @@ export default function Demo() {
         <AdmiraltyTableRow>
           <AdmiraltyTableHeaderCell
             sortable={true}
-            sort-direction={getSortDirection(0)}
+            sortDirection={getSortDirection(0)}
             onAdmiraltySortChange={handleSortChange(0)}>
             Name
           </AdmiraltyTableHeaderCell>
           <AdmiraltyTableHeaderCell
             sortable={true}
-            sort-direction={getSortDirection(1)}
+            sortDirection={getSortDirection(1)}
             onAdmiraltySortChange={handleSortChange(1)}>
             Age
           </AdmiraltyTableHeaderCell>
