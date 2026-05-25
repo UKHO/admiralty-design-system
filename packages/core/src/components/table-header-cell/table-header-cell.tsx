@@ -69,7 +69,7 @@ export class TableHeaderCellComponent {
     if (sortable) {
       return (
         <Host role="columnheader" aria-sort={ariaSort} class="sortable">
-          <button class="sort-button" onClick={this.handleSortClick}>
+          <button type="button" class="sort-button" onClick={this.handleSortClick}>
             <span class="sort-label">
               <slot></slot>
             </span>

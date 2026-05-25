@@ -33,7 +33,7 @@ describe('table-header-cell', () => {
       await page.setContent('<admiralty-table-header-cell sortable>Name</admiralty-table-header-cell>');
 
       const element = await page.find('admiralty-table-header-cell');
-      expect(element.getAttribute('aria-sort')).toBe('none');
+      expect(await element.getAttribute('aria-sort')).toBe('none');
     });
 
     it('cycles sort direction on click: none -> ascending -> descending -> none', async () => {
@@ -43,19 +43,19 @@ describe('table-header-cell', () => {
       const element = await page.find('admiralty-table-header-cell');
       const button = await page.find('admiralty-table-header-cell >>> .sort-button');
 
-      expect(element.getAttribute('aria-sort')).toBe('none');
+      expect(await element.getAttribute('aria-sort')).toBe('none');
 
       await button.click();
       await page.waitForChanges();
-      expect(element.getAttribute('aria-sort')).toBe('ascending');
+      expect(await element.getAttribute('aria-sort')).toBe('ascending');
 
       await button.click();
       await page.waitForChanges();
-      expect(element.getAttribute('aria-sort')).toBe('descending');
+      expect(await element.getAttribute('aria-sort')).toBe('descending');
 
       await button.click();
       await page.waitForChanges();
-      expect(element.getAttribute('aria-sort')).toBe('none');
+      expect(await element.getAttribute('aria-sort')).toBe('none');
     });
 
     it('emits admiraltySortChange event with correct direction', async () => {
