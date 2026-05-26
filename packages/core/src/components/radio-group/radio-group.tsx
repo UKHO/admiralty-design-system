@@ -126,7 +126,6 @@ export class RadioGroupComponent implements ComponentInterface {
       <Host>
         <fieldset
           disabled={this.disabled}
-          role="radiogroup"
           aria-invalid={this.invalid ? 'true' : 'false'}
           aria-describedby={(this.hint ? this.hintId : '') + ' ' + (this.invalid ? this.errorId : '')}
         >
