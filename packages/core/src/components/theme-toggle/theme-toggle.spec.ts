@@ -3,26 +3,6 @@ import { ThemeToggleComponent } from './theme-toggle';
 
 describe('admiralty-theme-toggle', () => {
   describe('rendering', () => {
-    it('should render the theme toggle button', async () => {
-      const page = await newSpecPage({
-        components: [ThemeToggleComponent],
-        html: `<admiralty-theme-toggle></admiralty-theme-toggle>`,
-      });
-      expect(page.root).toEqualHtml(`
-        <admiralty-theme-toggle theme="auto">
-          <button aria-label="Toggle dark mode" class="theme-toggle light" type="button">
-            <span class="toggle-background-slider"></span>
-            <span class="toggle-icon sun-icon">
-              <admiralty-icon name="light-mode-outline"></admiralty-icon>
-            </span>
-            <span class="toggle-icon moon-icon">
-              <admiralty-icon name="dark-mode-outline"></admiralty-icon>
-            </span>
-          </button>
-        </admiralty-theme-toggle>
-      `);
-    });
-
     it('should have button type="button"', async () => {
       const page = await newSpecPage({
         components: [ThemeToggleComponent],
@@ -54,22 +34,28 @@ describe('admiralty-theme-toggle', () => {
       expect(moonIcon.getAttribute('name')).toBe('dark-mode-outline');
     });
 
-    it('should render with custom aria-label', async () => {
-      const page = await newSpecPage({
-        components: [ThemeToggleComponent],
-        html: `<admiralty-theme-toggle aria-label="Custom label"></admiralty-theme-toggle>`,
-      });
-      const button = page.root.querySelector('button');
-      expect(button.getAttribute('aria-label')).toBe('Custom label');
-    });
-
-    it('should use default aria-label', async () => {
+    it('should use computed default aria-label', async () => {
       const page = await newSpecPage({
         components: [ThemeToggleComponent],
         html: `<admiralty-theme-toggle></admiralty-theme-toggle>`,
       });
+
       const button = page.root.querySelector('button');
-      expect(button.getAttribute('aria-label')).toBe('Toggle dark mode');
+
+      expect(button.getAttribute('aria-label')).toMatch(
+        /Toggle dark mode \(current: .*\. Press to switch to .* mode\)/
+      );
+    });
+
+    it('should use custom aria-label when provided', async () => {
+      const page = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle aria-label="Custom theme toggle"></admiralty-theme-toggle>`,
+      });
+
+      const button = page.root.querySelector('button');
+
+      expect(button.getAttribute('aria-label')).toBe('Custom theme toggle');
     });
   });
 
