@@ -10,7 +10,7 @@ describe('radio-group', () => {
     });
     expect(page.root).toEqualHtml(`
       <admiralty-radio-group>
-        <fieldset aria-describedby=" " aria-invalid="false" role="radiogroup">
+        <fieldset aria-describedby=" " aria-invalid="false">
           <div class="radio-group stack"></div>
           <admiralty-input-invalid id="admiralty-rg-error-1" style="display: none;"></admiralty-input-invalid>
         </fieldset>
@@ -32,7 +32,7 @@ describe('radio-group', () => {
     expect(page.root).toMatchInlineSnapshot(`
       <admiralty-radio-group display-vertical="false">
         <!---->
-        <fieldset aria-describedby=" " aria-invalid="false" role="radiogroup">
+        <fieldset aria-describedby=" " aria-invalid="false">
           <div class="radio-group">
             <admiralty-radio name="grp" value="option1">
               <!---->
@@ -75,7 +75,7 @@ describe('radio-group', () => {
     expect(page.root).toMatchInlineSnapshot(`
       <admiralty-radio-group display-vertical="true">
         <!---->
-        <fieldset aria-describedby=" " aria-invalid="false" role="radiogroup">
+        <fieldset aria-describedby=" " aria-invalid="false">
           <div class="radio-group stack">
             <admiralty-radio name="grp" value="option1">
               <!---->
@@ -145,7 +145,7 @@ describe('radio-group', () => {
     expect(page.root).toMatchInlineSnapshot(`
       <admiralty-radio-group disabled="true">
         <!---->
-        <fieldset aria-describedby=" " aria-invalid="false" disabled="" role="radiogroup">
+        <fieldset aria-describedby=" " aria-invalid="false" disabled="">
           <div class="radio-group stack">
             <admiralty-radio name="grp" value="option1">
               <!---->
@@ -188,7 +188,7 @@ describe('radio-group', () => {
     expect(page.root).toMatchInlineSnapshot(`
       <admiralty-radio-group hint="Hint text" label="Label text">
         <!---->
-        <fieldset aria-describedby="admiralty-rg-hint-6 " aria-invalid="false" role="radiogroup">
+        <fieldset aria-describedby="admiralty-rg-hint-6 " aria-invalid="false">
           <legend>
             Label text
           </legend>
