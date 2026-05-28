@@ -3,6 +3,25 @@ import { ThemeToggleComponent } from './theme-toggle';
 
 describe('admiralty-theme-toggle', () => {
   describe('rendering', () => {
+
+    it('should render the theme toggle button', async () => {
+      const page = await newSpecPage({
+        components: [ThemeToggleComponent],
+        html: `<admiralty-theme-toggle></admiralty-theme-toggle>`,
+      });
+
+      const button = page.root.querySelector('button');
+
+      expect(button).toHaveClass('theme-toggle');
+      expect(button).toHaveClass('light');
+      expect(button.getAttribute('type')).toBe('button');
+
+      expect(button.getAttribute('aria-label')).toBe(
+        'Toggle dark mode (current: auto (light system preference). Press to switch to dark mode)'
+      );
+    });
+
+
     it('should have button type="button"', async () => {
       const page = await newSpecPage({
         components: [ThemeToggleComponent],
