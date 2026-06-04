@@ -9,6 +9,23 @@
   flex-direction: column;
   box-sizing: border-box;
 
+  &.is-interactive {
+    cursor: pointer;
+
+    &:hover {
+      filter: brightness(0.95);
+    }
+
+    &:active {
+      filter: brightness(0.9);
+    }
+
+    &:focus-visible {
+      outline: 3px solid var(--admiralty-focus-colour);
+      outline-offset: 2px;
+    }
+  }
+
   .content {
     flex-grow: 1;
   }

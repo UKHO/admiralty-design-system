@@ -6,6 +6,8 @@ import { Component, Event, EventEmitter, Prop, h } from '@stencil/core';
   scoped: true,
 })
 export class ColourBlockComponent {
+  private linkElement?: HTMLAnchorElement;
+
   /**
    * The width in pixels of the component.
    */
@@ -46,6 +48,75 @@ export class ColourBlockComponent {
    */
   @Event() colourBlockLinkClicked: EventEmitter<string>;
 
+  private hasLink(): boolean {
+    return Boolean(this.linkText && this.href);
+  }
+
+  private shouldEnableBlockInteraction(): boolean {
+    return this.enableCardEvent || this.hasLink();
+  }
+
+  private isInteractiveTarget(ev: MouseEvent | KeyboardEvent): boolean {
+    const interactiveSelector = 'a, button, input, select, textarea, [role="button"], [role="link"]';
+    const currentTarget = ev.currentTarget instanceof HTMLElement ? ev.currentTarget : null;
+
+    return ev
+      .composedPath()
+      .some(target => {
+        if (!(target instanceof HTMLElement)) {
+          return false;
+        }
+
+        const interactiveElement = target.closest(interactiveSelector);
+        return interactiveElement !== null && interactiveElement !== currentTarget;
+      });
+  }
+
+  private triggerLinkAction() {
+    if (!this.linkElement) {
+      return;
+    }
+
+    this.linkElement.focus({ preventScroll: true });
+    this.linkElement.click();
+  }
+
+  private onBlockClick(ev: MouseEvent) {
+    if (!this.shouldEnableBlockInteraction()) {
+      return;
+    }
+
+    if (this.hasLink() && !this.isInteractiveTarget(ev)) {
+      this.triggerLinkAction();
+      return;
+    }
+
+    if (this.enableCardEvent && !this.hasLink()) {
+      this.handleClickAction(ev);
+    }
+  }
+
+  private onBlockKeyDown(ev: KeyboardEvent) {
+    if (!this.shouldEnableBlockInteraction()) {
+      return;
+    }
+
+    if (ev.key !== 'Enter' && ev.key !== ' ') {
+      return;
+    }
+
+    ev.preventDefault();
+
+    if (this.hasLink()) {
+      this.triggerLinkAction();
+      return;
+    }
+
+    if (this.enableCardEvent) {
+      this.handleClickAction(ev as unknown as MouseEvent);
+    }
+  }
+
   handleClickAction(ev: MouseEvent) {
     if (this.suppressRedirect) {
       ev.preventDefault();
@@ -66,13 +137,17 @@ export class ColourBlockComponent {
         class={{
           colourBlock: true,
           [this.colour]: true,
+          'is-interactive': this.shouldEnableBlockInteraction(),
         }}
         style={{
-          height: this.height ? `${this.height}px` : null,
-          width: this.width ? `${this.width}px` : null,
-          ...(this.enableCardEvent && { cursor: 'pointer' }),
+          height: this.height ? `${this.height}px` : undefined,
+          width: this.width ? `${this.width}px` : undefined,
         }}
-        onClick={ev => (this.enableCardEvent ? this.handleClickAction(ev) : null)}
+        role={this.shouldEnableBlockInteraction() ? (this.hasLink() ? 'link' : 'button') : undefined}
+        tabIndex={this.shouldEnableBlockInteraction() ? 0 : undefined}
+        aria-label={this.shouldEnableBlockInteraction() ? this.linkText || this.heading : undefined}
+        onClick={ev => this.onBlockClick(ev)}
+        onKeyDown={ev => this.onBlockKeyDown(ev)}
       >
         <h2>{this.heading}</h2>
         <div
@@ -89,7 +164,7 @@ export class ColourBlockComponent {
           </admiralty-button>
         ) : null}
         {this.linkText && this.href ? (
-          <a class="clickAction" href={this.href} onClick={ev => this.handleClickAction(ev)}>
+          <a class="clickAction" href={this.href} onClick={ev => this.handleClickAction(ev)} ref={el => (this.linkElement = el)}>
             <span>{this.linkText}</span>
           </a>
         ) : null}
