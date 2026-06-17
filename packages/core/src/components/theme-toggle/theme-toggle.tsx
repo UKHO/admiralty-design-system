@@ -222,6 +222,13 @@ export class ThemeToggleComponent {
 
   render() {
     const isDark = this.isDarkMode();
+    const currentThemeLabel = this.theme === 'auto'
+    ? `auto (${isDark ? 'dark' : 'light'} system preference)`
+      : this.theme;
+
+    const computedAriaLabel = this.ariaLabel !== 'Toggle dark mode'
+      ? this.ariaLabel
+      : `Toggle dark mode (current: ${currentThemeLabel}. Press to switch to ${isDark ? 'light' : 'dark'} mode)`;
 
     return (
       <Host>
@@ -234,7 +241,8 @@ export class ThemeToggleComponent {
           }}
           onClick={this.toggleTheme}
           disabled={this.disabled}
-          aria-label={this.ariaLabel}
+          aria-label={computedAriaLabel}
+          aria-pressed={isDark}
           type="button"
         >
           <span class="toggle-background-slider"></span>

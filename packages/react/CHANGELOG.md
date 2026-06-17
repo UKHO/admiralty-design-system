@@ -1,3 +1,15 @@
+# v5.6.1 (Mon Jun 01 2026)
+
+#### 🐛 Bug Fix
+
+- Merge branch 'main' into updates-page-5.3 ([@lstevens98](https://github.com/lstevens98))
+
+#### Authors: 1
+
+- Lewis Stevens ([@lstevens98](https://github.com/lstevens98))
+
+---
+
 # v5.6.0 (Fri Apr 17 2026)
 
 #### 🚀 Enhancement

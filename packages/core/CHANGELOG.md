@@ -1,3 +1,21 @@
+# v5.6.1 (Mon Jun 01 2026)
+
+#### 🐛 Bug Fix
+
+- Accessibility fixes [#497](https://github.com/UKHO/admiralty-design-system/pull/497) ([@lstevens98](https://github.com/lstevens98))
+- New test for dynamic aria label ([@lstevens98](https://github.com/lstevens98))
+- Remove expect radiogroup to fix tests ([@lstevens98](https://github.com/lstevens98))
+- Update theme toggle tests to check for new label ([@lstevens98](https://github.com/lstevens98))
+- Update radio-group component to remove radiogroup role ([@lstevens98](https://github.com/lstevens98))
+- Update Theme Toggle to read out current theme in aria label ([@lstevens98](https://github.com/lstevens98))
+- Merge branch 'main' into updates-page-5.3 ([@lstevens98](https://github.com/lstevens98))
+
+#### Authors: 1
+
+- Lewis Stevens ([@lstevens98](https://github.com/lstevens98))
+
+---
+
 # v5.6.0 (Fri Apr 17 2026)
 
 #### 🚀 Enhancement
