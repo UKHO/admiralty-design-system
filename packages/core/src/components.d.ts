@@ -215,6 +215,10 @@ export namespace Components {
     }
     interface AdmiraltyColourBlock {
         /**
+          * Explicit accessible name for the interactive block.
+         */
+        "accessibleLabel": string;
+        /**
           * The text to display on the action button
           * @deprecated in favour of `href` and `linkText`
          */
@@ -1991,6 +1995,10 @@ declare namespace LocalJSX {
         "value"?: any | null;
     }
     interface AdmiraltyColourBlock {
+        /**
+          * Explicit accessible name for the interactive block.
+         */
+        "accessibleLabel"?: string;
         /**
           * The text to display on the action button
           * @deprecated in favour of `href` and `linkText`

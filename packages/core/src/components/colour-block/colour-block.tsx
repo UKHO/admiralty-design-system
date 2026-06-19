@@ -33,14 +33,20 @@ export class ColourBlockComponent {
    */
   @Prop() linkText: string;
   /**
+   * Explicit accessible name for the interactive block.
+   */
+  @Prop({ attribute: 'aria-label' }) accessibleLabel: string = '';
+  /**
    * Causes the default browser redirect to be suppressed. Can be used in conjunction with the
    * `colourBlockLinkClicked` event to use a navigation router and prevent a full page reload
    * when navigating.
    */
   @Prop() suppressRedirect: boolean = false;
   /**
-   * Allow the card to be clicked. Will emit a `colourBlockLinkClicked` event. A value for `href`
-   * should also be provided to ensure the component conforms to accessibility standards.
+   * Allow the card to be clicked. Will emit a `colourBlockLinkClicked` event.
+   *
+   * When `href` and `linkText` are provided, the card behaves as a link (`role="link"`).
+   * When they are not provided, the card behaves as a button (`role="button"`).
    */
   @Prop() enableCardEvent: boolean = false;
   /**
@@ -54,6 +60,12 @@ export class ColourBlockComponent {
 
   private shouldEnableBlockInteraction(): boolean {
     return this.enableCardEvent || this.hasLink();
+  }
+
+  private getInteractiveAriaLabel(): string | undefined {
+    const ariaLabelCandidates = [this.accessibleLabel, this.linkText, this.heading, this.actionText].map(value => value?.trim()).filter((value): value is string => Boolean(value));
+
+    return ariaLabelCandidates[0] ?? 'Interactive colour block';
   }
 
   private isInteractiveTarget(ev: MouseEvent | KeyboardEvent): boolean {
@@ -151,7 +163,7 @@ export class ColourBlockComponent {
         }}
         role={this.shouldEnableBlockInteraction() ? (this.hasLink() ? 'link' : 'button') : undefined}
         tabIndex={this.shouldEnableBlockInteraction() ? 0 : undefined}
-        aria-label={this.shouldEnableBlockInteraction() ? this.linkText || this.heading : undefined}
+        aria-label={this.shouldEnableBlockInteraction() ? this.getInteractiveAriaLabel() : undefined}
         onClick={ev => this.onBlockClick(ev)}
         onKeyDown={ev => this.onBlockKeyDown(ev)}
       >

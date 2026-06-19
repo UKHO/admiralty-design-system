@@ -204,6 +204,28 @@ describe('admiralty-colour-block', () => {
     expect(div.getAttribute('tabindex')).toBe('0');
   });
 
+  it('uses explicit aria label for interactive blocks when provided', async () => {
+    const page = await newSpecPage({
+      components: [ColourBlockComponent],
+      html: `<admiralty-colour-block href="/test" link-text="Link" aria-label="Open setup">Test</admiralty-colour-block>`,
+    });
+
+    const div = page.doc.querySelector('admiralty-colour-block div');
+
+    expect(div.getAttribute('aria-label')).toBe('Open setup');
+  });
+
+  it('sets a safe fallback aria label when interactive content has no heading or link text', async () => {
+    const page = await newSpecPage({
+      components: [ColourBlockComponent],
+      html: `<admiralty-colour-block enable-card-event="true">Test</admiralty-colour-block>`,
+    });
+
+    const div = page.doc.querySelector('admiralty-colour-block div');
+
+    expect(div.getAttribute('aria-label')).toBe('Interactive colour block');
+  });
+
   it('prevents default event when the link is clicked', async () => {
     const page = await newSpecPage({
       components: [ColourBlockComponent],
