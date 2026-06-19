@@ -11,7 +11,7 @@ describe('admiralty-colour-block', () => {
       <admiralty-colour-block>
         <div class="admiralty-blue colourBlock">
           <h2></h2>
-          <div class="content white-text"></div>
+          <div class="content"></div>
         </div>
       </admiralty-colour-block>
     `);
@@ -26,7 +26,7 @@ describe('admiralty-colour-block', () => {
       <admiralty-colour-block heading="Test heading">
         <div class="admiralty-blue colourBlock">
           <h2>Test heading</h2>
-          <div class="content white-text">Test content</div>
+          <div class="content">Test content</div>
         </div>
       </admiralty-colour-block>
     `);

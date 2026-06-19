@@ -158,8 +158,7 @@ export class ColourBlockComponent {
         <h2>{this.heading}</h2>
         <div
           class={{
-            'content': true,
-            'white-text': this.colour === 'admiralty-blue' || this.colour === 'teal',
+            content: true,
           }}
         >
           <slot></slot>
