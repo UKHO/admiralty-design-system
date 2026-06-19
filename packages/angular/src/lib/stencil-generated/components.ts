@@ -1,8 +1,8 @@
 /* tslint:disable */
 /* auto-generated angular directive proxies */
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, EventEmitter, Output, NgZone } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, EventEmitter, NgZone } from '@angular/core';
 
-import { ProxyCmp } from './angular-component-lib/utils';
+import { ProxyCmp, proxyOutputs } from './angular-component-lib/utils';
 
 import { Components } from '@ukho/admiralty-core';
 
@@ -16,15 +16,13 @@ import { Components } from '@ukho/admiralty-core';
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['assistiveHint', 'autoselect', 'confirmOnBlur', 'cssNamespace', 'disabled', 'displayMenu', 'filterFunction', 'hint', 'iconName', 'inputClasses', 'invalid', 'invalidMessage', 'label', 'menuAttributes', 'menuClasses', 'minLength', 'name', 'placeholder', 'required', 'showAllValues', 'showNoOptionsFound', 'value'],
-  outputs: ['admiraltyChange'],
-  standalone: false
 })
 export class AdmiraltyAutocomplete {
-  protected el: HTMLAdmiraltyAutocompleteElement;
-  @Output() admiraltyChange = new EventEmitter<CustomEvent<IAdmiraltyAutocompleteAutoCompleteChangeEventDetail>>();
+  protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['admiraltyChange']);
   }
 }
 
@@ -48,10 +46,9 @@ export declare interface AdmiraltyAutocomplete extends Components.AdmiraltyAutoc
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['value'],
-  standalone: false
 })
 export class AdmiraltyAutocompleteOption {
-  protected el: HTMLAdmiraltyAutocompleteOptionElement;
+  protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -71,10 +68,9 @@ export declare interface AdmiraltyAutocompleteOption extends Components.Admiralt
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['active', 'href'],
-  standalone: false
 })
 export class AdmiraltyBreadcrumb {
-  protected el: HTMLAdmiraltyBreadcrumbElement;
+  protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -93,10 +89,9 @@ export declare interface AdmiraltyBreadcrumb extends Components.AdmiraltyBreadcr
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: [],
-  standalone: false
 })
 export class AdmiraltyBreadcrumbs {
-  protected el: HTMLAdmiraltyBreadcrumbsElement;
+  protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -116,10 +111,9 @@ export declare interface AdmiraltyBreadcrumbs extends Components.AdmiraltyBreadc
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['borderless', 'disabled', 'form', 'icon', 'name', 'type', 'value', 'variant'],
-  standalone: false
 })
 export class AdmiraltyButton {
-  protected el: HTMLAdmiraltyButtonElement;
+  protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -139,10 +133,9 @@ export declare interface AdmiraltyButton extends Components.AdmiraltyButton {}
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['heading'],
-  standalone: false
 })
 export class AdmiraltyCard {
-  protected el: HTMLAdmiraltyCardElement;
+  protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -162,17 +155,13 @@ export declare interface AdmiraltyCard extends Components.AdmiraltyCard {}
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['checkboxRight', 'checked', 'disabled', 'labelHidden', 'labelText', 'name', 'value'],
-  outputs: ['admiraltyChange', 'checkboxFocus', 'checkboxBlur'],
-  standalone: false
 })
 export class AdmiraltyCheckbox {
-  protected el: HTMLAdmiraltyCheckboxElement;
-  @Output() admiraltyChange = new EventEmitter<CustomEvent<IAdmiraltyCheckboxCheckboxChangeEventDetail>>();
-  @Output() checkboxFocus = new EventEmitter<CustomEvent<FocusEvent>>();
-  @Output() checkboxBlur = new EventEmitter<CustomEvent<FocusEvent>>();
+  protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['admiraltyChange', 'checkboxFocus', 'checkboxBlur']);
   }
 }
 
@@ -204,15 +193,13 @@ export declare interface AdmiraltyCheckbox extends Components.AdmiraltyCheckbox 
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['actionText', 'colour', 'enableCardEvent', 'heading', 'height', 'href', 'linkText', 'suppressRedirect', 'width'],
-  outputs: ['colourBlockLinkClicked'],
-  standalone: false
 })
 export class AdmiraltyColourBlock {
-  protected el: HTMLAdmiraltyColourBlockElement;
-  @Output() colourBlockLinkClicked = new EventEmitter<CustomEvent<string>>();
+  protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['colourBlockLinkClicked']);
   }
 }
 
@@ -234,10 +221,9 @@ export declare interface AdmiraltyColourBlock extends Components.AdmiraltyColour
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['heading', 'sectionRole', 'type'],
-  standalone: false
 })
 export class AdmiraltyDialogue {
-  protected el: HTMLAdmiraltyDialogueElement;
+  protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -257,10 +243,9 @@ export declare interface AdmiraltyDialogue extends Components.AdmiraltyDialogue 
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['heading'],
-  standalone: false
 })
 export class AdmiraltyErrorSummary {
-  protected el: HTMLAdmiraltyErrorSummaryElement;
+  protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -280,15 +265,13 @@ export declare interface AdmiraltyErrorSummary extends Components.AdmiraltyError
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['alignHeadingRight', 'expanded', 'heading', 'hideBorder'],
-  outputs: ['toggled'],
-  standalone: false
 })
 export class AdmiraltyExpansion {
-  protected el: HTMLAdmiraltyExpansionElement;
-  @Output() toggled = new EventEmitter<CustomEvent<boolean>>();
+  protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['toggled']);
   }
 }
 
@@ -310,15 +293,13 @@ export declare interface AdmiraltyExpansion extends Components.AdmiraltyExpansio
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['invalid', 'invalidMessage', 'label', 'multiple'],
-  outputs: ['fileInputChange'],
-  standalone: false
 })
 export class AdmiraltyFileInput {
-  protected el: HTMLAdmiraltyFileInputElement;
-  @Output() fileInputChange = new EventEmitter<CustomEvent<IAdmiraltyFileInputFileInputChangeEventDetail>>();
+  protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['fileInputChange']);
   }
 }
 
@@ -342,16 +323,13 @@ export declare interface AdmiraltyFileInput extends Components.AdmiraltyFileInpu
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['filterTitle'],
-  outputs: ['filterCleared', 'filterApplied'],
-  standalone: false
 })
 export class AdmiraltyFilter {
-  protected el: HTMLAdmiraltyFilterElement;
-  @Output() filterCleared = new EventEmitter<CustomEvent<void>>();
-  @Output() filterApplied = new EventEmitter<CustomEvent<void>>();
+  protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['filterCleared', 'filterApplied']);
   }
 }
 
@@ -377,10 +355,9 @@ export declare interface AdmiraltyFilter extends Components.AdmiraltyFilter {
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['groupTitle'],
-  standalone: false
 })
 export class AdmiraltyFilterGroup {
-  protected el: HTMLAdmiraltyFilterGroupElement;
+  protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -400,10 +377,9 @@ export declare interface AdmiraltyFilterGroup extends Components.AdmiraltyFilter
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['imageAlt', 'imageLink', 'imageSrc', 'text', 'variant'],
-  standalone: false
 })
 export class AdmiraltyFooter {
-  protected el: HTMLAdmiraltyFooterElement;
+  protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -423,15 +399,13 @@ export declare interface AdmiraltyFooter extends Components.AdmiraltyFooter {}
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['headerTitle', 'headerTitleUrl', 'logoAltText', 'logoImgUrl', 'logoLinkUrl'],
-  outputs: ['titledClicked'],
-  standalone: false
 })
 export class AdmiraltyHeader {
-  protected el: HTMLAdmiraltyHeaderElement;
-  @Output() titledClicked = new EventEmitter<CustomEvent<string>>();
+  protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['titledClicked']);
   }
 }
 
@@ -453,15 +427,13 @@ export declare interface AdmiraltyHeader extends Components.AdmiraltyHeader {
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['active', 'menuTitle'],
-  outputs: ['menuItemClick'],
-  standalone: false
 })
 export class AdmiraltyHeaderMenuItem {
-  protected el: HTMLAdmiraltyHeaderMenuItemElement;
-  @Output() menuItemClick = new EventEmitter<CustomEvent<void>>();
+  protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['menuItemClick']);
   }
 }
 
@@ -483,15 +455,13 @@ export declare interface AdmiraltyHeaderMenuItem extends Components.AdmiraltyHea
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['active', 'href', 'menuTitle', 'suppressRedirect'],
-  outputs: ['menuItemClick'],
-  standalone: false
 })
 export class AdmiraltyHeaderMenuLink {
-  protected el: HTMLAdmiraltyHeaderMenuLinkElement;
-  @Output() menuItemClick = new EventEmitter<CustomEvent<void>>();
+  protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['menuItemClick']);
   }
 }
 
@@ -513,17 +483,13 @@ export declare interface AdmiraltyHeaderMenuLink extends Components.AdmiraltyHea
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['isSignedIn', 'signInOnly', 'signedInText'],
-  outputs: ['signInClicked', 'yourAccountClicked', 'signOutClicked'],
-  standalone: false
 })
 export class AdmiraltyHeaderProfile {
-  protected el: HTMLAdmiraltyHeaderProfileElement;
-  @Output() signInClicked = new EventEmitter<CustomEvent<void>>();
-  @Output() yourAccountClicked = new EventEmitter<CustomEvent<void>>();
-  @Output() signOutClicked = new EventEmitter<CustomEvent<void>>();
+  protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['signInClicked', 'yourAccountClicked', 'signOutClicked']);
   }
 }
 
@@ -556,15 +522,13 @@ the sign in button
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['href', 'menuTitle', 'suppressRedirect'],
-  outputs: ['subMenuItemClick'],
-  standalone: false
 })
 export class AdmiraltyHeaderSubMenuItem {
-  protected el: HTMLAdmiraltyHeaderSubMenuItemElement;
-  @Output() subMenuItemClick = new EventEmitter<CustomEvent<string>>();
+  protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['subMenuItemClick']);
   }
 }
 
@@ -587,10 +551,9 @@ Event contains the menu item text.
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['disabled'],
-  standalone: false
 })
 export class AdmiraltyHint {
-  protected el: HTMLAdmiraltyHintElement;
+  protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -609,10 +572,9 @@ export declare interface AdmiraltyHint extends Components.AdmiraltyHint {}
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: [],
-  standalone: false
 })
 export class AdmiraltyHr {
-  protected el: HTMLAdmiraltyHrElement;
+  protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -632,10 +594,9 @@ export declare interface AdmiraltyHr extends Components.AdmiraltyHr {}
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['name', 'size'],
-  standalone: false
 })
 export class AdmiraltyIcon {
-  protected el: HTMLAdmiraltyIconElement;
+  protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -655,10 +616,9 @@ export declare interface AdmiraltyIcon extends Components.AdmiraltyIcon {}
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['iconSideBarWidth', 'label', 'logoImgUrl', 'showLogo'],
-  standalone: false
 })
 export class AdmiraltyIconSideBar {
-  protected el: HTMLAdmiraltyIconSideBarElement;
+  protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -678,16 +638,13 @@ export declare interface AdmiraltyIconSideBar extends Components.AdmiraltyIconSi
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['active', 'expanded', 'href', 'icon', 'itemText', 'suppressRedirect'],
-  outputs: ['toggled', 'iconSideBarItemClick'],
-  standalone: false
 })
 export class AdmiraltyIconSideBarItem {
-  protected el: HTMLAdmiraltyIconSideBarItemElement;
-  @Output() toggled = new EventEmitter<CustomEvent<boolean>>();
-  @Output() iconSideBarItemClick = new EventEmitter<CustomEvent<string>>();
+  protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['toggled', 'iconSideBarItemClick']);
   }
 }
 
@@ -713,17 +670,13 @@ export declare interface AdmiraltyIconSideBarItem extends Components.AdmiraltyIc
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['autocomplete', 'disabled', 'hint', 'invalid', 'invalidMessage', 'label', 'name', 'placeholder', 'required', 'type', 'value', 'width'],
-  outputs: ['admiraltyInput', 'admiraltyFocus', 'admiraltyBlur'],
-  standalone: false
 })
 export class AdmiraltyInput {
-  protected el: HTMLAdmiraltyInputElement;
-  @Output() admiraltyInput = new EventEmitter<CustomEvent<IAdmiraltyInputInputChangeEventDetail>>();
-  @Output() admiraltyFocus = new EventEmitter<CustomEvent<FocusEvent>>();
-  @Output() admiraltyBlur = new EventEmitter<CustomEvent<FocusEvent>>();
+  protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['admiraltyInput', 'admiraltyFocus', 'admiraltyBlur']);
   }
 }
 
@@ -754,10 +707,9 @@ export declare interface AdmiraltyInput extends Components.AdmiraltyInput {
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: [],
-  standalone: false
 })
 export class AdmiraltyInputInvalid {
-  protected el: HTMLAdmiraltyInputInvalidElement;
+  protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -777,10 +729,9 @@ export declare interface AdmiraltyInputInvalid extends Components.AdmiraltyInput
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['disabled', 'for'],
-  standalone: false
 })
 export class AdmiraltyLabel {
-  protected el: HTMLAdmiraltyLabelElement;
+  protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -800,10 +751,9 @@ export declare interface AdmiraltyLabel extends Components.AdmiraltyLabel {}
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['href', 'newTab'],
-  standalone: false
 })
 export class AdmiraltyLink {
-  protected el: HTMLAdmiraltyLinkElement;
+  protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -823,10 +773,9 @@ export declare interface AdmiraltyLink extends Components.AdmiraltyLink {}
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['description', 'heading', 'label', 'show'],
-  standalone: false
 })
 export class AdmiraltyModalDialog {
-  protected el: HTMLAdmiraltyModalDialogElement;
+  protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -846,15 +795,13 @@ export declare interface AdmiraltyModalDialog extends Components.AdmiraltyModalD
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['currentPage', 'label', 'pages'],
-  outputs: ['pageChange'],
-  standalone: false
 })
 export class AdmiraltyPaginator {
-  protected el: HTMLAdmiraltyPaginatorElement;
-  @Output() pageChange = new EventEmitter<CustomEvent<number>>();
+  protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['pageChange']);
   }
 }
 
@@ -877,10 +824,9 @@ the requested page number.
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['link', 'phase'],
-  standalone: false
 })
 export class AdmiraltyPhaseBanner {
-  protected el: HTMLAdmiraltyPhaseBannerElement;
+  protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -900,10 +846,9 @@ export declare interface AdmiraltyPhaseBanner extends Components.AdmiraltyPhaseB
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['colour', 'label', 'number', 'selected', 'text'],
-  standalone: false
 })
 export class AdmiraltyPill {
-  protected el: HTMLAdmiraltyPillElement;
+  protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -923,10 +868,9 @@ export declare interface AdmiraltyPill extends Components.AdmiraltyPill {}
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['error', 'label', 'progression'],
-  standalone: false
 })
 export class AdmiraltyProgressBar {
-  protected el: HTMLAdmiraltyProgressBarElement;
+  protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -946,15 +890,13 @@ export declare interface AdmiraltyProgressBar extends Components.AdmiraltyProgre
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['allowBackNavigation', 'allowForwardNavigation'],
-  outputs: ['stepClicked'],
-  standalone: false
 })
 export class AdmiraltyProgressTracker {
-  protected el: HTMLAdmiraltyProgressTrackerElement;
-  @Output() stepClicked = new EventEmitter<CustomEvent<IAdmiraltyProgressTrackerStepNavigationDetail>>();
+  protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['stepClicked']);
   }
 }
 
@@ -977,11 +919,10 @@ export declare interface AdmiraltyProgressTracker extends Components.AdmiraltyPr
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['status', { name: 'stepId', required: true }, { name: 'stepTitle', required: true }, 'summary'],
-  standalone: false
+  inputs: ['status', 'stepId', 'stepTitle', 'summary'],
 })
 export class AdmiraltyProgressTrackerStep {
-  protected el: HTMLAdmiraltyProgressTrackerStepElement;
+  protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -1001,17 +942,13 @@ export declare interface AdmiraltyProgressTrackerStep extends Components.Admiral
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['checked', 'disabled', 'invalid', 'name', 'value'],
-  outputs: ['admiraltyFocus', 'admiraltyBlur', 'admiraltyChange'],
-  standalone: false
 })
 export class AdmiraltyRadio {
-  protected el: HTMLAdmiraltyRadioElement;
-  @Output() admiraltyFocus = new EventEmitter<CustomEvent<void>>();
-  @Output() admiraltyBlur = new EventEmitter<CustomEvent<void>>();
-  @Output() admiraltyChange = new EventEmitter<CustomEvent<void>>();
+  protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['admiraltyFocus', 'admiraltyBlur', 'admiraltyChange']);
   }
 }
 
@@ -1041,15 +978,13 @@ export declare interface AdmiraltyRadio extends Components.AdmiraltyRadio {
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['disabled', 'displayVertical', 'hint', 'invalid', 'invalidMessage', 'label', 'name', 'value'],
-  outputs: ['admiraltyChange'],
-  standalone: false
 })
 export class AdmiraltyRadioGroup {
-  protected el: HTMLAdmiraltyRadioGroupElement;
-  @Output() admiraltyChange = new EventEmitter<CustomEvent<IAdmiraltyRadioGroupRadioGroupChangeEventDetail>>();
+  protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['admiraltyChange']);
   }
 }
 
@@ -1073,15 +1008,13 @@ export declare interface AdmiraltyRadioGroup extends Components.AdmiraltyRadioGr
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['heading'],
-  outputs: ['admiraltyToggled'],
-  standalone: false
 })
 export class AdmiraltyReadMore {
-  protected el: HTMLAdmiraltyReadMoreElement;
-  @Output() admiraltyToggled = new EventEmitter<CustomEvent<boolean>>();
+  protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['admiraltyToggled']);
   }
 }
 
@@ -1103,16 +1036,13 @@ export declare interface AdmiraltyReadMore extends Components.AdmiraltyReadMore 
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['disabled', 'hint', 'invalid', 'invalidMessage', 'label', 'value', 'width'],
-  outputs: ['admiraltyChange', 'admiraltyBlur'],
-  standalone: false
 })
 export class AdmiraltySelect {
-  protected el: HTMLAdmiraltySelectElement;
-  @Output() admiraltyChange = new EventEmitter<CustomEvent<IAdmiraltySelectSelectChangeEventDetail>>();
-  @Output() admiraltyBlur = new EventEmitter<CustomEvent<void>>();
+  protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['admiraltyChange', 'admiraltyBlur']);
   }
 }
 
@@ -1140,10 +1070,9 @@ export declare interface AdmiraltySelect extends Components.AdmiraltySelect {
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['label'],
-  standalone: false
 })
 export class AdmiraltySideNav {
-  protected el: HTMLAdmiraltySideNavElement;
+  protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -1163,15 +1092,13 @@ export declare interface AdmiraltySideNav extends Components.AdmiraltySideNav {}
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['headingTitle', 'navActive', 'sideNavItemId'],
-  outputs: ['sideNavItemSelected'],
-  standalone: false
 })
 export class AdmiraltySideNavItem {
-  protected el: HTMLAdmiraltySideNavItemElement;
-  @Output() sideNavItemSelected = new EventEmitter<CustomEvent<string>>();
+  protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['sideNavItemSelected']);
   }
 }
 
@@ -1193,10 +1120,9 @@ export declare interface AdmiraltySideNavItem extends Components.AdmiraltySideNa
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['height', 'noAnimation', 'radius', 'width'],
-  standalone: false
 })
 export class AdmiraltySkeleton {
-  protected el: HTMLAdmiraltySkeletonElement;
+  protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -1216,10 +1142,9 @@ export declare interface AdmiraltySkeleton extends Components.AdmiraltySkeleton 
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['href'],
-  standalone: false
 })
 export class AdmiraltySkipLink {
-  protected el: HTMLAdmiraltySkipLinkElement;
+  protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -1239,10 +1164,9 @@ export declare interface AdmiraltySkipLink extends Components.AdmiraltySkipLink 
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['label', 'tabContentId', 'tabLabelId'],
-  standalone: false
 })
 export class AdmiraltyTab {
-  protected el: HTMLAdmiraltyTabElement;
+  protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -1262,15 +1186,13 @@ export declare interface AdmiraltyTab extends Components.AdmiraltyTab {}
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['selectedIndex'],
-  outputs: ['admiraltyTabSelected'],
-  standalone: false
 })
 export class AdmiraltyTabGroup {
-  protected el: HTMLAdmiraltyTabGroupElement;
-  @Output() admiraltyTabSelected = new EventEmitter<CustomEvent<number>>();
+  protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['admiraltyTabSelected']);
   }
 }
 
@@ -1290,10 +1212,9 @@ export declare interface AdmiraltyTabGroup extends Components.AdmiraltyTabGroup 
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['caption'],
-  standalone: false
 })
 export class AdmiraltyTable {
-  protected el: HTMLAdmiraltyTableElement;
+  protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -1312,10 +1233,9 @@ export declare interface AdmiraltyTable extends Components.AdmiraltyTable {}
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: [],
-  standalone: false
 })
 export class AdmiraltyTableBody {
-  protected el: HTMLAdmiraltyTableBodyElement;
+  protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -1334,10 +1254,9 @@ export declare interface AdmiraltyTableBody extends Components.AdmiraltyTableBod
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: [],
-  standalone: false
 })
 export class AdmiraltyTableCell {
-  protected el: HTMLAdmiraltyTableCellElement;
+  protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -1356,10 +1275,9 @@ export declare interface AdmiraltyTableCell extends Components.AdmiraltyTableCel
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: [],
-  standalone: false
 })
 export class AdmiraltyTableHeader {
-  protected el: HTMLAdmiraltyTableHeaderElement;
+  protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -1378,10 +1296,9 @@ export declare interface AdmiraltyTableHeader extends Components.AdmiraltyTableH
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: [],
-  standalone: false
 })
 export class AdmiraltyTableHeaderCell {
-  protected el: HTMLAdmiraltyTableHeaderCellElement;
+  protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -1400,10 +1317,9 @@ export declare interface AdmiraltyTableHeaderCell extends Components.AdmiraltyTa
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: [],
-  standalone: false
 })
 export class AdmiraltyTableRow {
-  protected el: HTMLAdmiraltyTableRowElement;
+  protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -1423,10 +1339,9 @@ export declare interface AdmiraltyTableRow extends Components.AdmiraltyTableRow 
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['label', 'logoImgUrl', 'showLogo', 'textSideBarWidth'],
-  standalone: false
 })
 export class AdmiraltyTextSideBar {
-  protected el: HTMLAdmiraltyTextSideBarElement;
+  protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
@@ -1446,16 +1361,13 @@ export declare interface AdmiraltyTextSideBar extends Components.AdmiraltyTextSi
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['active', 'expanded', 'href', 'icon', 'itemText', 'suppressRedirect', 'variant'],
-  outputs: ['toggled', 'textSideBarItemClick'],
-  standalone: false
 })
 export class AdmiraltyTextSideBarItem {
-  protected el: HTMLAdmiraltyTextSideBarItemElement;
-  @Output() toggled = new EventEmitter<CustomEvent<boolean>>();
-  @Output() textSideBarItemClick = new EventEmitter<CustomEvent<string>>();
+  protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['toggled', 'textSideBarItemClick']);
   }
 }
 
@@ -1481,16 +1393,13 @@ export declare interface AdmiraltyTextSideBarItem extends Components.AdmiraltyTe
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['disabled', 'hint', 'invalid', 'invalidMessage', 'label', 'value', 'width'],
-  outputs: ['textareaBlur', 'admiraltyInput'],
-  standalone: false
 })
 export class AdmiraltyTextarea {
-  protected el: HTMLAdmiraltyTextareaElement;
-  @Output() textareaBlur = new EventEmitter<CustomEvent<any>>();
-  @Output() admiraltyInput = new EventEmitter<CustomEvent<IAdmiraltyTextareaTextAreaChangeEventDetail>>();
+  protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['textareaBlur', 'admiraltyInput']);
   }
 }
 
@@ -1518,15 +1427,13 @@ export declare interface AdmiraltyTextarea extends Components.AdmiraltyTextarea 
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['ariaLabel', 'disabled', 'theme'],
-  outputs: ['admiraltyThemeChange'],
-  standalone: false
 })
 export class AdmiraltyThemeToggle {
-  protected el: HTMLAdmiraltyThemeToggleElement;
-  @Output() admiraltyThemeChange = new EventEmitter<CustomEvent<IAdmiraltyThemeToggleThemeToggleChangeEventDetail>>();
+  protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['admiraltyThemeChange']);
   }
 }
 
@@ -1549,11 +1456,10 @@ export declare interface AdmiraltyThemeToggle extends Components.AdmiraltyThemeT
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['alignment', { name: 'for', required: true }, 'placement'],
-  standalone: false
+  inputs: ['alignment', 'for', 'placement'],
 })
 export class AdmiraltyTooltip {
-  protected el: HTMLAdmiraltyTooltipElement;
+  protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;

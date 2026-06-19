@@ -60,16 +60,14 @@ export class ColourBlockComponent {
     const interactiveSelector = 'a, button, input, select, textarea, [role="button"], [role="link"]';
     const currentTarget = ev.currentTarget instanceof HTMLElement ? ev.currentTarget : null;
 
-    return ev
-      .composedPath()
-      .some(target => {
-        if (!(target instanceof HTMLElement)) {
-          return false;
-        }
+    return ev.composedPath().some(target => {
+      if (!(target instanceof HTMLElement)) {
+        return false;
+      }
 
-        const interactiveElement = target.closest(interactiveSelector);
-        return interactiveElement !== null && interactiveElement !== currentTarget;
-      });
+      const interactiveElement = target.closest(interactiveSelector);
+      return interactiveElement !== null && interactiveElement !== currentTarget;
+    });
   }
 
   private triggerLinkAction() {
@@ -101,23 +99,31 @@ export class ColourBlockComponent {
       return;
     }
 
+    if (this.isInteractiveTarget(ev)) {
+      return;
+    }
+
+    if (this.hasLink()) {
+      if (ev.key !== 'Enter') {
+        return;
+      }
+
+      ev.preventDefault();
+      this.triggerLinkAction();
+      return;
+    }
+
     if (ev.key !== 'Enter' && ev.key !== ' ') {
       return;
     }
 
     ev.preventDefault();
-
-    if (this.hasLink()) {
-      this.triggerLinkAction();
-      return;
-    }
-
     if (this.enableCardEvent) {
-      this.handleClickAction(ev as unknown as MouseEvent);
+      this.handleClickAction(ev);
     }
   }
 
-  handleClickAction(ev: MouseEvent) {
+  handleClickAction(ev: MouseEvent | KeyboardEvent) {
     if (this.suppressRedirect) {
       ev.preventDefault();
     }
@@ -135,7 +141,7 @@ export class ColourBlockComponent {
     return (
       <div
         class={{
-          colourBlock: true,
+          'colourBlock': true,
           [this.colour]: true,
           'is-interactive': this.shouldEnableBlockInteraction(),
         }}
