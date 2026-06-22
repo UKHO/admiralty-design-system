@@ -24,19 +24,19 @@
 
   & h1 {
     width: 900px;
-    color: var(--colour-block-blue-text-colour);
+    color: var(--colour-block-blue-text-colour) !important;
     margin-left: 142px;
     margin-top: 30px;
   }
 
   & p {
     width: 850px;
-    color: var(--colour-block-blue-text-colour);
+    color: var(--colour-block-blue-text-colour) !important;
     margin-left: 142px;
   }
 
   & a:not(:focus) {
-    color: var(--colour-block-blue-text-colour);
+    color: var(--colour-block-blue-text-colour) !important;
   }
 
 }
