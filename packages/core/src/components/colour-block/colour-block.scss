@@ -52,6 +52,7 @@
 
   &.admiralty-blue {
     background-color: $primary-colour-block-colour;
+    --colour-block-text-colour: var(--colour-block-blue-text-colour);
     * {
       color: $primary-colour-block-text-colour;
     }
@@ -59,6 +60,7 @@
 
   &.teal {
     background-color: $secondary-colour-block-colour;
+    --colour-block-text-colour: var(--admiralty-colour-secondary-contrast);
     * {
       color: $secondary-colour-block-text-colour;
     }
@@ -66,11 +68,24 @@
 
   &.bright-blue {
     background-color: $tertiary-colour-block-colour;
+    --colour-block-text-colour: var(--colour-block-bright-blue-text-colour);
     * {
       color: $tertiary-colour-block-text-colour;
     }
     .clickAction * {
       color: $tertiary-colour-block-text-colour;
     }
+  }
+}
+
+admiralty-colour-block {
+  a,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--colour-block-text-colour, var(--admiralty-colour-primary));
   }
 }
