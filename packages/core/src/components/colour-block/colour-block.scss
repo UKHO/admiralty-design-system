@@ -52,6 +52,7 @@
 
   &.admiralty-blue {
     background-color: $primary-colour-block-colour;
+    --admiralty-colour-primary: var(--colour-block-blue-text-colour);
     --colour-block-text-colour: var(--colour-block-blue-text-colour);
     * {
       color: $primary-colour-block-text-colour;
@@ -60,6 +61,7 @@
 
   &.teal {
     background-color: $secondary-colour-block-colour;
+    --admiralty-colour-primary: var(--admiralty-colour-secondary-contrast);
     --colour-block-text-colour: var(--admiralty-colour-secondary-contrast);
     * {
       color: $secondary-colour-block-text-colour;
@@ -68,6 +70,7 @@
 
   &.bright-blue {
     background-color: $tertiary-colour-block-colour;
+    --admiralty-colour-primary: var(--colour-block-bright-blue-text-colour);
     --colour-block-text-colour: var(--colour-block-bright-blue-text-colour);
     * {
       color: $tertiary-colour-block-text-colour;
