@@ -227,7 +227,7 @@
 
     --colour-block-blue-background-colour: #2b323a;
     --colour-block-blue-text-colour: #ffffff;
-    --colour-block-bright-blue-text-colour: #333333;
+    --colour-block-bright-blue-text-colour: #ffffff;
   }
 }
 
@@ -424,7 +424,7 @@ body.admiralty-dark-mode {
 
   --colour-block-blue-background-colour: #2b323a;
   --colour-block-blue-text-colour: #ffffff;
-  --colour-block-bright-blue-text-colour: #333333;
+  --colour-block-bright-blue-text-colour: #ffffff;
 }
 
 /** Theme Toggle: Prevent double dark mode application when theme toggle is in use **/
@@ -521,6 +521,6 @@ body.admiralty-dark-mode {
 
     --colour-block-blue-background-colour: #2b323a;
     --colour-block-blue-text-colour: #ffffff;
-    --colour-block-bright-blue-text-colour: #333333;
+    --colour-block-bright-blue-text-colour: #ffffff;
   }
 }
