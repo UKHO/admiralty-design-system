@@ -6,6 +6,7 @@
 
  * @prop --admiralty-input-padding: Padding for the input.
  * @prop --admiralty-input-invalid-margin-top: Margin top for invalid input.
+ * @prop --admiralty-input-native-icon-filter: Filter applied to native date/time/number input icons.
 **/
 
 $input-padding: var(--admiralty-input-padding, var(--admiralty-spacing-3));
@@ -21,3 +22,4 @@ $input-focus-colour: var(--admiralty-focus-colour) !default;
 $input-error-border-colour: var(--admiralty-colour-danger) !default;
 $input-disabled-text-colour: var(--admiralty-disabled-colour) !default;
 $input-disabled-border-colour: var(--admiralty-disabled-colour) !default;
+$input-native-icon-filter: var(--admiralty-input-native-icon-filter, none) !default;

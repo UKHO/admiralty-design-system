@@ -35,6 +35,34 @@
       border-color: $input-disabled-border-colour;
       background: $input-background-colour;
     }
+
+    &[type='date']::-webkit-calendar-picker-indicator,
+    &[type='time']::-webkit-calendar-picker-indicator,
+    &[type='time']::-webkit-clear-button,
+    &[type='time']::-webkit-inner-spin-button,
+    &[type='number']::-webkit-inner-spin-button,
+    &[type='number']::-webkit-outer-spin-button {
+      filter: $input-native-icon-filter;
+    }
+  }
+
+  /* Number spinner arrows use color-scheme (filter has no effect on OS-native spin buttons) */
+
+  /* Manual dark mode */
+  :host-context(body.admiralty-dark-mode) input[type='number'] {
+    color-scheme: dark;
+  }
+
+  /* Manual light mode */
+  :host-context(body.admiralty-light-mode) input[type='number'] {
+    color-scheme: light;
+  }
+
+  /* System dark mode, only when no manual override is set */
+  @media (prefers-color-scheme: dark) {
+    :host-context(body:not(.admiralty-light-mode):not(.admiralty-dark-mode)) input[type='number'] {
+      color-scheme: dark;
+    }
   }
 
   admiralty-input-invalid {
