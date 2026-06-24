@@ -1,42 +1,40 @@
 import { Meta, StoryObj } from '@storybook/web-components';
 import { ColourBlockComponent } from './colour-block';
 import { html } from 'lit';
+import { ifDefined } from 'lit/directives/if-defined.js';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 
 const meta: Meta = {
-  component: 'admiralty-breadcrumb',
+  component: 'admiralty-colour-block',
   title: 'Colour Block',
   parameters: {
     actions: {
-      handles: ['click'],
+      handles: ['colourBlockLinkClicked'],
     },
   },
 };
 
 export default meta;
 
-type ColourBlockArgs = Partial<ColourBlockComponent & { content: string; addListener: boolean }>;
+type ColourBlockArgs = Partial<ColourBlockComponent & { content: string }>;
 
 type Story = StoryObj<ColourBlockArgs>;
 
 const template: Story = {
   render: args => html`
     <admiralty-colour-block
-      action-text="${args.actionText}"
-      width="${args.width}"
-      height="${args.height}"
-      heading="${args.heading}"
-      colour="${args.colour}"
-      link-text="${args.linkText}"
-      href="${args.href}"
-      suppress-redirect="${args.suppressRedirect}"
-      enable-card-event="${args.enableCardEvent}"
+      action-text=${ifDefined(args.actionText)}
+      .width=${ifDefined(args.width)}
+      .height=${ifDefined(args.height)}
+      heading=${ifDefined(args.heading)}
+      colour=${ifDefined(args.colour)}
+      link-text=${ifDefined(args.linkText)}
+      href=${ifDefined(args.href)}
+      ?suppress-redirect=${Boolean(args.suppressRedirect)}
+      ?enable-card-event=${Boolean(args.enableCardEvent)}
     >
       <div>${unsafeHTML(args.content)}</div>
     </admiralty-colour-block>
-    <script>
-      ${args.addListener ? `document.querySelector('admiralty-colour-block').addEventListener('colourBlockLinkClicked', () => alert('colourBlockLinkClicked'));` : null};
-    </script>
   `,
 };
 
@@ -50,19 +48,6 @@ const defaultArgs: ColourBlockArgs = {
   suppressRedirect: false,
   colour: 'admiralty-blue',
   enableCardEvent: false,
-};
-
-const rectangleArgs: ColourBlockArgs = {
-  width: 1000,
-  height: 400,
-  heading: 'Block by Block',
-  content: `<p>This colour block is a component in the design system and we hope you enjoy it</p>
-    <p>This block supports HTML such as <b>bold</b> text and <a href='#'>links</a>.</p>
-    <h5>Even Headings</h5>
-    <span>What about spans?</span>`,
-  actionText: 'Click Here',
-  colour: 'admiralty-blue',
-  enableCardEvent: true,
 };
 
 export const AdmiraltyBlue: Story = {
@@ -87,16 +72,18 @@ export const NoRedirect: Story = {
   args: {
     ...defaultArgs,
     suppressRedirect: true,
-    addListener: true,
   },
 };
 
-export const ListenerOnBlock: Story = {
+export const CardEventOnly: Story = {
   ...template,
   args: {
     ...defaultArgs,
+    heading: 'Event only card',
+    content: '<p>This variant emits colourBlockLinkClicked from the card surface without a link.</p>',
+    href: undefined,
+    linkText: undefined,
     suppressRedirect: true,
-    addListener: true,
     enableCardEvent: true,
   },
 };
@@ -110,7 +97,6 @@ export const DeprecatedButton: Story = {
       <p>Buttons should not be used for links.</p>`,
     href: undefined,
     linkText: undefined,
-    addListener: true,
     actionText: 'Show an alert',
     colour: 'teal',
   },

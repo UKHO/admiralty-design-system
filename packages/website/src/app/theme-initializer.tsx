@@ -12,6 +12,21 @@ export function ThemeInitializer() {
   useEffect(() => {
     // Apply theme on client mount (in case the script didn't run)
     applyThemeFromStorage();
+
+    // In auto mode, keep in sync with OS/browser preference changes.
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    const handleSystemThemeChange = () => {
+      const savedTheme = localStorage.getItem("admiralty-theme-preference");
+      if (!savedTheme || savedTheme === "auto") {
+        applyTheme("auto");
+      }
+    };
+
+    mediaQuery.addEventListener("change", handleSystemThemeChange);
+
+    return () => {
+      mediaQuery.removeEventListener("change", handleSystemThemeChange);
+    };
   }, []);
 
   return (
@@ -25,7 +40,7 @@ export function ThemeInitializer() {
             (function() {
               try {
                 const savedTheme = localStorage.getItem('admiralty-theme-preference');
-                const themeToApply = savedTheme || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+                const themeToApply = savedTheme || 'auto';
                 
                 const effectiveTheme = themeToApply === 'auto' 
                   ? (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
@@ -64,13 +79,8 @@ function applyThemeFromStorage() {
   try {
     const savedTheme = localStorage.getItem("admiralty-theme-preference");
 
-    if (savedTheme) {
-      applyTheme(savedTheme);
-    } else {
-      // If no saved preference, use system preference
-      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      applyTheme(prefersDark ? "dark" : "light");
-    }
+    // No saved preference should behave as auto mode so browser preference is respected.
+    applyTheme(savedTheme || "auto");
   } catch (e) {
     console.warn("Unable to apply saved theme:", e);
   }

@@ -1,3 +1,23 @@
+# v5.7.0 (Tue Jun 23 2026)
+
+#### 🚀 Enhancement
+
+- 257753 Make Entire Colour Block Clickable to Improve Usability [#500](https://github.com/UKHO/admiralty-design-system/pull/500) (mohamme15315@mastek.com [@lstevens98](https://github.com/lstevens98) [@mohamme15315](https://github.com/mohamme15315))
+
+#### 🐛 Bug Fix
+
+- Merge branch '257753-make-entire-colour-block-clickable-to-improve-usability' of https://github.com/UKHO/admiralty-design-system into 257753-make-entire-colour-block-clickable-to-improve-usability (mohamme15315@mastek.com)
+- Make entire colour block clickable by adding accessibleLabel input and updating styles for improved usability (mohamme15315@mastek.com)
+- Refactor ColourBlockComponent to improve event handling and interaction logic (mohamme15315@mastek.com)
+
+#### Authors: 3
+
+- [@mohamme15315](https://github.com/mohamme15315)
+- Lewis Stevens ([@lstevens98](https://github.com/lstevens98))
+- Mohammed Khan (mohamme15315@mastek.com)
+
+---
+
 # v5.6.1 (Mon Jun 01 2026)
 
 #### 🐛 Bug Fix

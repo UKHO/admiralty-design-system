@@ -1,7 +1,7 @@
 .banner-image {
   width: 100vw;
   max-width: 100%;
-  background-color: #09315b;
+  background-color: var(--colour-block-blue-background-colour);
   padding: 3rem 0;
 
   .banner-title {
@@ -24,26 +24,20 @@
 
   & h1 {
     width: 900px;
-    color: #ffffff;
+    color: var(--colour-block-blue-text-colour) !important;
     margin-left: 142px;
     margin-top: 30px;
   }
 
   & p {
     width: 850px;
-    color: #ffffff;
+    color: var(--colour-block-blue-text-colour) !important;
     margin-left: 142px;
   }
 
   & a:not(:focus) {
-    color: #ffffff;
+    color: var(--colour-block-blue-text-colour) !important;
   }
 
-}
-
-@media (prefers-color-scheme: dark) {
-    .banner-image {
-        background-color: var(--admiralty-background-colour);
-    }
 }
 
