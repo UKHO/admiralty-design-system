@@ -4,6 +4,12 @@
   display: flex;
   flex-direction: column;
 
+  .input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
   input {
     background-color: $input-background-colour;
     border-color: $input-border-colour;
@@ -14,6 +20,7 @@
     line-height: 24px;
     font-weight: $input-text-weight;
     padding: $input-padding;
+    accent-color: $input-text-colour;
 
     &:focus {
       outline-offset: unset;
@@ -46,10 +53,51 @@
     }
   }
 
+  .password-toggle {
+    position: absolute;
+    right: 12px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $input-text-colour;
+    transition: opacity 0.2s ease;
+
+    &:hover:not(:disabled) {
+      opacity: 0.7;
+    }
+
+    &:focus {
+      outline: 2px solid $input-focus-colour;
+      outline-offset: 2px;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+
+    admiralty-icon {
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: inherit;
+    }
+  }
+
   /* Number spinner arrows use color-scheme (filter has no effect on OS-native spin buttons) */
 
   /* Manual dark mode */
   :host-context(body.admiralty-dark-mode) input[type='number'] {
+    color-scheme: dark;
+  }
+
+  :host-context(body.admiralty-dark-mode) input[type='password'] {
     color-scheme: dark;
   }
 
@@ -58,9 +106,17 @@
     color-scheme: light;
   }
 
+  :host-context(body.admiralty-light-mode) input[type='password'] {
+    color-scheme: light;
+  }
+
   /* System dark mode, only when no manual override is set */
   @media (prefers-color-scheme: dark) {
     :host-context(body:not(.admiralty-light-mode):not(.admiralty-dark-mode)) input[type='number'] {
+      color-scheme: dark;
+    }
+
+    :host-context(body:not(.admiralty-light-mode):not(.admiralty-dark-mode)) input[type='password'] {
       color-scheme: dark;
     }
   }
