@@ -97,6 +97,8 @@
   --colour-block-blue-text-colour: #ffffff;
   --colour-block-bright-blue-text-colour: #09315b;
 
+  --admiralty-input-native-icon-filter: none;
+
   /** Typographic Scale **/
   --admiralty-font-size--3: 0.688rem;
   --admiralty-font-size--2: 0.75rem;
@@ -228,6 +230,8 @@
     --colour-block-blue-background-colour: #2b323a;
     --colour-block-blue-text-colour: #ffffff;
     --colour-block-bright-blue-text-colour: #ffffff;
+
+    --admiralty-input-native-icon-filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(0deg);
   }
 }
 
@@ -329,6 +333,8 @@ body.admiralty-light-mode {
   --colour-block-blue-background-colour: #09315b;
   --colour-block-blue-text-colour: #ffffff;
   --colour-block-bright-blue-text-colour: #09315b;
+
+  --admiralty-input-native-icon-filter: none;
 }
 
 /** Theme Toggle: Force Dark Mode **/
@@ -425,6 +431,8 @@ body.admiralty-dark-mode {
   --colour-block-blue-background-colour: #2b323a;
   --colour-block-blue-text-colour: #ffffff;
   --colour-block-bright-blue-text-colour: #ffffff;
+
+  --admiralty-input-native-icon-filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(0deg);
 }
 
 /** Theme Toggle: Prevent double dark mode application when theme toggle is in use **/
@@ -518,6 +526,8 @@ body.admiralty-dark-mode {
     --admiralty-card-heading-colour: #2b323a;
     --admiralty-card-heading-text-colour: #ffffff;
     --admiralty-card-heading-border-colour: #404040;
+
+    --admiralty-input-native-icon-filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(0deg);
 
     --colour-block-blue-background-colour: #2b323a;
     --colour-block-blue-text-colour: #ffffff;
