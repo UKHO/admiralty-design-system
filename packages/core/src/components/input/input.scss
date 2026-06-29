@@ -93,30 +93,30 @@
   /* Number spinner arrows use color-scheme (filter has no effect on OS-native spin buttons) */
 
   /* Manual dark mode */
-  :host-context(body.admiralty-dark-mode) input[type='number'] {
+  :host-context(body.admiralty-dark-mode) & input[type='number'] {
     color-scheme: dark;
   }
 
-  :host-context(body.admiralty-dark-mode) input[type='password'] {
+  :host-context(body.admiralty-dark-mode) & input[type='password'] {
     color-scheme: dark;
   }
 
   /* Manual light mode */
-  :host-context(body.admiralty-light-mode) input[type='number'] {
+  :host-context(body.admiralty-light-mode) & input[type='number'] {
     color-scheme: light;
   }
 
-  :host-context(body.admiralty-light-mode) input[type='password'] {
+  :host-context(body.admiralty-light-mode) & input[type='password'] {
     color-scheme: light;
   }
 
   /* System dark mode, only when no manual override is set */
   @media (prefers-color-scheme: dark) {
-    :host-context(body:not(.admiralty-light-mode):not(.admiralty-dark-mode)) input[type='number'] {
+    :host-context(body:not(.admiralty-light-mode):not(.admiralty-dark-mode)) & input[type='number'] {
       color-scheme: dark;
     }
 
-    :host-context(body:not(.admiralty-light-mode):not(.admiralty-dark-mode)) input[type='password'] {
+    :host-context(body:not(.admiralty-light-mode):not(.admiralty-dark-mode)) & input[type='password'] {
       color-scheme: dark;
     }
   }
