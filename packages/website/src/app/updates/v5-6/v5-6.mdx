@@ -1,108 +1,135 @@
 import styles from "./styles.css"
 
-# Version 5.3.0 Release Notes
+# Version 5.6 Release Notes
 
 ### Release date 13/02/2026
 
 ## Summary
 
-This release introduces Dark Mode and a new Patterns section to support more consistent,
-accessible, and scalable design.
+This release introduces improved component coverage with new interactive components and completes the Dark Mode implementation with a dedicated toggle control.
+These additions support teams in building user interfaces with better control over user preferences.
 
-## Dark Mode
+## Dark Mode Toggle
 
-Following feedback from our users we have introduced Dark Mode to improve usability in low-light environments
-and support user preference-based theming. A first step in moving toward other themes
-such as dusk and night mode used onboard ships.
+Following the introduction of Dark Mode in 5.3.0, we've now implemented a dedicated Dark Mode toggle control.
+Users can now explicitly switch between light and dark themes without relying on browser settings alone.
 
+### What's Included
+
+- Dark Mode toggle component for consistent theme switching across products
+- Smooth transitions between light and dark themes
+- Updated dark mode code snippets across documentation for improved readability
+
+### Advice on implementation
+
+Make sure the toggle is placed in an easily discoverable location. We recommend header or settings sections.
+Test that theme switching works consistently across all product pages,
+if you've implemented custom colours outside the design system's semantic tokens, you may need to update them to use CSS variables.
+
+## Tooltip Component
 <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
   <img
-    src="/updates/v5-3/get-help-light.png"
+    src="/updates/v5-6/tooltip-light.png"
     alt="Light mode example"
     style={{
       width: "100%",
-      maxWidth: "600px",
+      maxWidth: "150px",
       height: "auto",
       flex: "1",
       padding: "8px",
-      border: "2px solid grey",
+      border: "1px solid grey",
       borderRadius: "6px"
     }}
   />
   <img
-    src="/updates/v5-3/get-help-dark.png"
-    alt="Dark mode example"
+    src="/updates/v5-6/tooltip-dark.png"
+    alt="Light mode example"
     style={{
       width: "100%",
-      maxWidth: "600px",
+      maxWidth: "150px",
       height: "auto",
       flex: "1",
       padding: "8px",
-      border: "2px solid grey",
+      border: "1px solid grey",
       borderRadius: "6px"
     }}
   />
 </div>
 
+Provides contextual information on hover or focus. Useful for explaining features on a geo-display, icons, and abbreviated content.
+
 ### What's Included
 
-- Full system colour support for dark theme
-- Updated semantic colour mappings (background, surface, text, border, focus, status)
-- Accessible contrast ratios across all core components
-
-### How it works
-
-Products can enable Dark Mode using the browser settings,
-we are working to implement a dark mode switch/ toggle in the near future.
+- Configurable positioning (top, bottom, left, right)
+- Automatic repositioning to avoid viewport edges
+- Keyboard accessible (focus and arrow key support)
+- Works in both light and dark modes
 
 ### Accessibility
 
-Dark Mode has been tested to meet WCAG 2.2 AA contrast standards. Particular attention has been given to:
+Tooltips are announced to screen readers. We recommend using them for supplementary information only, critical information should be visible in the UI itself.
 
-- Text readability
-- Status colours (success, warning, error)
-- Focus states
-- Data-heavy interfaces
+## Progress Tracker Component
 
-### Advice on implementation
+<div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
+  <img
+    src="/updates/v5-6/progress-tracker-light.png"
+    alt="Light mode example"
+    style={{
+      width: "100%",
+      maxWidth: "150px",
+      height: "auto",
+      flex: "1",
+      padding: "8px",
+      border: "1px solid grey",
+      borderRadius: "6px"
+    }}
+  />
+  <img
+    src="/updates/v5-6/progress-tracker-dark.png"
+    alt="Light mode example"
+    style={{
+      width: "100%",
+      maxWidth: "150px",
+      height: "auto",
+      flex: "1",
+      padding: "8px",
+      border: "1px solid grey",
+      borderRadius: "6px"
+    }}
+  />
+</div>
 
-It’s worth verifying that Dark Mode has been applied consistently across all pages.
-We’ve seen instances where parts of the UI required rework, particularly where colours were not implemented using CSS variables,
-leading to inconsistencies and potential regressions.
-
-## Patterns
-
-We’ve launched a new Patterns section to support teams in solving common service design challenges consistently.
-Patterns go beyond components. They provide guidance on structure, behaviour, and user intent.
+Visualises multi-step processes and user progress through workflows. Use this for any sequential task.
 
 ### What's included
 
-Initial patterns include:
-  - Page layout structure for a geo-display and complex form
-  - Content grouping strategies
-  - Multi-step processes
-  - When and when not to use it
-  - Accessibility considerations
-  - Content and interaction design guidance
-  - Example layouts
+- Support for completed, current, and upcoming steps
+- Vertical layout
+- Accessible step indicators and labels-
 
-### Why patterns?
+### Advice on implementation
 
-Components alone don’t guarantee coherent services. Patterns help teams:
-  - Avoid reinventing solutions
-  - Reduce inconsistency across products
+Step labels should be clear and predictable. Avoid vague step names like "Step 1" or "Confirm."
+Instead, use outcome-based labels like "Enter information type" or "Choose data type"
+This helps users understand where they are and what to expect next.
+
+## Enhanced Autocomplete Component
+
+The autocomplete component's icon is now fully dynamic, allowing you to swap the default icon for alternatives like a search icon.
+This provides greater flexibility when integrating autocomplete into different contexts.
 
 ## Minor Updates
 
-- Removed dependency on Font Awesome
-- Added [Data Collection](https://designsystem.admiralty.co.uk/patterns/data-collection) and [Find A Location](https://designsystem.admiralty.co.uk/patterns/find-a-location) pattern pages
-- Updated several component examples on Documentation Website
+- Removed Puppeteer dependency, reduces bundle size and simplifies maintenance
+- Enhanced documentation site dark mode code snippets for improved readability and copy-paste accuracy
+- Several internal performance improvements
 
-## In our next release, we're planning to introduce:
-- New "Progress Tracker" component
-- Toggle button for Dark Mode
-- Several package updates for improved security and maintainability
-- Documentation Website improvements
+## In Our Next Release
 
+- Improvements to Colour Block component
+- Adding sortable column functionality to Table component
+- Updates to Radio Group component to allow unselecting options variant
+- Various improvements and bug fixes to Documentation site
 
 
