@@ -1,6 +1,6 @@
 "use client";
-import VersionFiveThree from "./v5-6.mdx";
+import VersionFiveSix from "./v5-6.mdx";
 
 export default function Home() {
-  return <VersionFiveThree></VersionFiveThree>;
+  return <VersionFiveSix></VersionFiveSix>;
 }
