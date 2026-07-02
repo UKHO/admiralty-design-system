@@ -1,0 +1,26 @@
+:root {
+  --playground-container-border-colour: #d0d0d0;
+  --playground-copy-button-bg: #ffffff;
+  --playground-copy-button-border: #9f9f9f;
+  --playground-copy-button-colour: #9f9f9f;
+  --playground-copy-button-hover-bg: #f0f0f0;
+  --playground-copy-button-hover-border: #9f9f9f;
+  --playground-copy-button-focus-outline: #ffdd00;
+  --playground-copy-button-focus-ring: #9f9f9f;
+  --playground-copy-button-copied-bg: var(--admiralty-colour-light, #e2e2e2);
+  --playground-copy-button-copied-border: var(--admiralty-colour-light-contrast, #333333);
+  --playground-copy-button-copied-colour: var(--admiralty-colour-light-contrast, #333333);
+  --playground-copy-button-shadow-colour: rgba(0, 0, 0, 0.18);
+}
+
+body.admiralty-dark-mode {
+  --playground-copy-button-bg: #2a2a2a;
+  --playground-copy-button-border: #888888;
+  --playground-copy-button-colour: #e0e0e0;
+  --playground-copy-button-hover-bg: #3a3a3a;
+  --playground-copy-button-hover-border: #bbbbbb;
+  --playground-copy-button-copied-bg: #232323;
+  --playground-copy-button-copied-border: #9b9b9b;
+  --playground-copy-button-copied-colour: #9b9b9b;
+  --playground-copy-button-shadow-colour: rgba(0, 0, 0, 0.45);
+}

@@ -1,41 +1,80 @@
+@import "./playground.var.scss";
+
 .demo-container {
-    border: 1px solid #d0d0d0;
-    padding: 24px;
+  border: 1px solid var(--playground-container-border-colour);
+  padding: 24px;
 }
 
 .codesnippet-container {
-    border-right: 1px solid #d0d0d0;
-    border-left: 1px solid #d0d0d0;
-    border-bottom: 1px solid #d0d0d0;
-    padding: 24px;
+  border-right: 1px solid var(--playground-container-border-colour);
+  border-left: 1px solid var(--playground-container-border-colour);
+  border-bottom: 1px solid var(--playground-container-border-colour);
+  padding: 24px;
 }
 
 .codesnippet-content {
-    position: relative;
-}
-
-.codesnippet-content:hover .copy-button {
-    opacity: 1;
+  position: relative;
 }
 
 .copy-button {
-  background: rgba(0,0,0,.3);
-  padding: 0.4rem 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  background: var(--playground-copy-button-bg);
+  border: 1px solid var(--playground-copy-button-border);
+  color: var(--playground-copy-button-colour);
+  padding: 0;
+  line-height: 0;
   position: absolute;
-  top: 6px;
-  right: 6px;
-  opacity: 0;
-  transition: opacity .2s ease-in-out;
+  top: 4px;
+  right: 4px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-family: inherit;
   user-select: none;
   cursor: pointer;
+  transition:
+    background-color 0.15s ease-in-out,
+    color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out,
+    transform 0.1s ease-in-out;
 }
 
-.copy-button:focus {
-    opacity: 1;
+.copy-button admiralty-icon,
+.copy-button svg {
+  display: block;
+  margin: 0;
 }
 
-body.admiralty-dark-mode .copy-button {
-    background-color: rgba(0, 0, 0,.3);
-    color: var(--admiralty-colour-primary);
-    border: 2px solid var(--admiralty-colour-primary);
+.copy-button admiralty-icon {
+  min-width: 0;
+  min-height: 0;
+  width: 16px;
+  height: 16px;
+}
+
+.copy-button:hover {
+  background-color: var(--playground-copy-button-hover-bg);
+  border-color: var(--playground-copy-button-hover-border);
+  box-shadow: 0 1px 3px var(--playground-copy-button-shadow-colour);
+}
+
+.copy-button:active {
+  transform: translateY(1px);
+  box-shadow: none;
+}
+
+.copy-button:focus-visible {
+  outline: 3px solid var(--playground-copy-button-focus-outline);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 1px var(--playground-copy-button-focus-ring);
+}
+
+.copy-button--copied {
+  background-color: var(--playground-copy-button-copied-bg);
+  border-color: var(--playground-copy-button-copied-border);
+  color: var(--playground-copy-button-copied-colour);
 }
