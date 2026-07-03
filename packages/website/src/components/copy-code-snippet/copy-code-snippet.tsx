@@ -9,7 +9,6 @@ import { AdmiraltyButton } from "@ukho/admiralty-react";
 
 interface CopyCodeSnippetProps {
   children: ReactNode;
-  // Your other props here.
 }
 
 export default function CopyCodeSnippet({ children }: CopyCodeSnippetProps) {

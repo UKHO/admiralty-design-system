@@ -27,8 +27,7 @@
   z-index: 1;
 }
 
-.copy-button admiralty-icon,
-.copy-button svg {
+.copy-button admiralty-icon {
   display: block;
   margin: 0;
 }
