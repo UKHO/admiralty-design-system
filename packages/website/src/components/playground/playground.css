@@ -37,6 +37,13 @@
   min-height: 0;
   width: 14px;
   height: 14px;
+  opacity: 0.9;
+  transform: scale(1);
+  transform-origin: center;
+  transition:
+    color 0.3s ease,
+    opacity 0.3s ease,
+    transform 0.5s ease;
 }
 
 .copy-button button.icon-secondary.borderless,
@@ -90,4 +97,6 @@
 
 .copy-button--copied button.icon-secondary.borderless admiralty-icon {
   color: var(--admiralty-colour-primary) !important;
+  opacity: 1;
+  transform: scale(1.08);
 }
