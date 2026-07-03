@@ -5,7 +5,7 @@ import Prism from "prismjs";
 import "prismjs/components/prism-typescript.min";
 import "prismjs/components/prism-jsx.min";
 import "prismjs/components/prism-tsx.min";
-import { AdmiraltyIcon } from "@ukho/admiralty-react";
+import { AdmiraltyButton } from "@ukho/admiralty-react";
 
 interface CopyCodeSnippetProps {
   children: ReactNode;
@@ -43,13 +43,15 @@ export default function CopyCodeSnippet({ children }: CopyCodeSnippetProps) {
       <pre ref={codeRef} suppressHydrationWarning={true}>
         {children}
       </pre>
-      <button
+      <AdmiraltyButton
         onClick={onCopy}
+        variant="icon-secondary"
+        borderless={true}
+        type="button"
+        icon={copied ? "check-rounded" : "content-copy"}
         className={`copy-button${copied ? " copy-button--copied" : ""}`}
         aria-label={copied ? "Copied to clipboard" : "Copy code to clipboard"}
-        title={copied ? "Copied!" : "Copy"}>
-        <AdmiraltyIcon name="content-copy" size={16}></AdmiraltyIcon>
-      </button>
+        title={copied ? "Copied!" : "Copy"}></AdmiraltyButton>
     </div>
   );
 }

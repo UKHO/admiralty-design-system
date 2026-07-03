@@ -17,30 +17,14 @@
 }
 
 .copy-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 25px;
-  height: 25px;
-  background: var(--playground-copy-button-bg);
-  border: 1px solid var(--playground-copy-button-border);
-  color: var(--playground-copy-button-colour);
-  padding: 0;
+  display: block;
+  width: 22px;
+  height: 22px;
   line-height: 0;
   position: absolute;
   top: 4px;
   right: 4px;
-  border-radius: 4px;
-  font-size: 0.8rem;
-  font-family: inherit;
-  user-select: none;
-  cursor: pointer;
-  transition:
-    background-color 0.15s ease-in-out,
-    color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out,
-    box-shadow 0.15s ease-in-out,
-    transform 0.1s ease-in-out;
+  z-index: 1;
 }
 
 .copy-button admiralty-icon,
@@ -52,29 +36,59 @@
 .copy-button admiralty-icon {
   min-width: 0;
   min-height: 0;
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
 }
 
-.copy-button:hover {
-  background-color: var(--playground-copy-button-hover-bg);
-  border-color: var(--playground-copy-button-hover-border);
-  box-shadow: 0 1px 3px var(--playground-copy-button-shadow-colour);
+.copy-button button.icon-secondary.borderless,
+.copy-button button.icon-secondary.borderless:hover,
+.copy-button button.icon-secondary.borderless:active {
+  width: 22px;
+  height: 22px;
+  min-width: 22px;
+  min-height: 22px;
+  padding: 0;
+  background-color: transparent;
 }
 
-.copy-button:active {
-  transform: translateY(1px);
+.copy-button button.icon-secondary.borderless:focus {
+  width: 22px;
+  height: 22px;
+  min-width: 22px;
+  min-height: 22px;
+  padding: 0;
+  background-color: transparent;
   box-shadow: none;
+  color: var(--admiralty-colour-primary);
 }
 
-.copy-button:focus-visible {
+.copy-button button.icon-secondary.borderless:focus admiralty-icon {
+  color: var(--admiralty-colour-primary) !important;
+}
+
+.copy-button button.icon-secondary.borderless:focus-visible {
+  width: 22px;
+  height: 22px;
+  min-width: 22px;
+  min-height: 22px;
+  padding: 0;
+  background-color: transparent;
+  box-shadow: none;
+  color: var(--admiralty-colour-primary);
   outline: 3px solid var(--playground-copy-button-focus-outline);
   outline-offset: 2px;
-  box-shadow: 0 0 0 1px var(--playground-copy-button-focus-ring);
 }
 
-.copy-button--copied {
-  background-color: var(--playground-copy-button-copied-bg);
-  border-color: var(--playground-copy-button-copied-border);
-  color: var(--playground-copy-button-copied-colour);
+.copy-button button.icon-secondary.borderless:focus-visible admiralty-icon {
+  color: var(--admiralty-colour-primary) !important;
+}
+
+.copy-button--copied button.icon-secondary.borderless,
+.copy-button--copied button.icon-secondary.borderless:hover,
+.copy-button--copied button.icon-secondary.borderless:active {
+  color: var(--admiralty-colour-primary);
+}
+
+.copy-button--copied button.icon-secondary.borderless admiralty-icon {
+  color: var(--admiralty-colour-primary) !important;
 }
