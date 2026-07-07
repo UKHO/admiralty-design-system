@@ -100,3 +100,12 @@
   opacity: 1;
   transform: scale(1.08);
 }
+
+/* Prevent tooltip slot text from appearing as fallback content under code blocks. */
+.copy-tooltip-label {
+  display: none;
+}
+
+admiralty-tooltip .tooltip .copy-tooltip-label {
+  display: inline;
+}
