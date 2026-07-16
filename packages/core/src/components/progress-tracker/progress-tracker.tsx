@@ -1,6 +1,6 @@
 import { Component, h, Prop, Event, EventEmitter, State, Host, Element } from '@stencil/core';
 
-export type StepStatus = 'complete' | 'current' | 'upcoming';
+export type StepStatus = 'complete' | 'current' | 'upcoming' | 'error';
 
 export interface StepNavigationDetail {
   stepId: string;
@@ -21,9 +21,9 @@ export class ProgressTrackerComponent {
   @Prop() allowBackNavigation = true;
 
   /**
-   * Whether navigation to future steps is allowed
+   * Whether navigation to future steps is allowed. Set to false by default to prevent users from skipping ahead in a process.
    */
-  @Prop() allowForwardNavigation = true;
+  @Prop() allowForwardNavigation = false;
 
   /**
    * Emitted when user clicks on a step
@@ -39,7 +39,12 @@ export class ProgressTrackerComponent {
     bulletSummaries?: string[];
   }> = [];
 
+  @State() liveMessage = '';
+
   private observer?: MutationObserver;
+  private previousCurrentStepId: string | null = null;
+  private lastActiveStepIndex: number | null = null;
+  private hasInitialised = false;
 
   componentWillLoad() {
     this.updateStepsFromChildren();
@@ -115,6 +120,25 @@ export class ProgressTrackerComponent {
         bulletSummaries: bulletSummaries.length > 0 ? bulletSummaries : undefined,
       };
     });
+
+    this.announceCurrentStepChange();
+  }
+
+  private announceCurrentStepChange() {
+    const steps = this.getSteps();
+    const currentIndex = steps.findIndex(step => step.status === 'current');
+    const current = currentIndex === -1 ? undefined : steps[currentIndex];
+
+    if (!this.hasInitialised) {
+      this.hasInitialised = true;
+      this.previousCurrentStepId = current?.id ?? null;
+      return;
+    }
+
+    if (current && current.id !== this.previousCurrentStepId) {
+      this.liveMessage = `Now on step ${currentIndex + 1} of ${steps.length}: ${current.title}`;
+      this.previousCurrentStepId = current.id;
+    }
   }
 
   private getSteps() {
@@ -140,6 +164,10 @@ export class ProgressTrackerComponent {
 
     if (status === 'current') {
       return <span class="progress-tracker-marker progress-tracker-marker--current" aria-label="Current step"></span>;
+    }
+
+    if (status === 'error') {
+      return <span class="progress-tracker-marker progress-tracker-marker--error" aria-label="Step has an error"></span>;
     }
 
     return <span class="progress-tracker-marker progress-tracker-marker--upcoming" aria-label="Upcoming step"></span>;
@@ -216,6 +244,47 @@ export class ProgressTrackerComponent {
     }
   }
 
+  componentWillRender() {
+    const active = document.activeElement as HTMLElement | null;
+    if (active && this.el.contains(active) && active.hasAttribute('data-step-index')) {
+      const index = parseInt(active.getAttribute('data-step-index') || '', 10);
+      this.lastActiveStepIndex = Number.isNaN(index) ? null : index;
+    } else {
+      this.lastActiveStepIndex = null;
+    }
+  }
+
+  componentDidRender() {
+    if (this.lastActiveStepIndex === null) return;
+
+    const stillPresent = this.el.querySelector(`button[data-step-index="${this.lastActiveStepIndex}"]`);
+    if (!stillPresent) {
+      const steps = this.getSteps();
+      let target: number | null = null;
+
+      for (let i = this.lastActiveStepIndex; i < steps.length; i++) {
+        if (this.isStepClickable(i)) {
+          target = i;
+          break;
+        }
+      }
+      if (target === null) {
+        for (let i = this.lastActiveStepIndex - 1; i >= 0; i--) {
+          if (this.isStepClickable(i)) {
+            target = i;
+            break;
+          }
+        }
+      }
+
+      if (target !== null) {
+        this.focusButton(target);
+      }
+    }
+
+    this.lastActiveStepIndex = null;
+  }
+
   render() {
     const steps = this.getSteps();
 
@@ -278,6 +347,10 @@ export class ProgressTrackerComponent {
             })}
           </ol>
         </nav>
+        <div class="progress-tracker-visually-hidden" aria-live="polite" aria-atomic="true">
+          {this.liveMessage}
+        </div>
+
         {/* Hidden slot for child step components */}
         <div style={{ display: 'none' }}>
           <slot></slot>
