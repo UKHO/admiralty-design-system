@@ -1,0 +1,164 @@
+import styles from "./styles.css"
+
+# Version 5.6 Release Notes
+
+### Release date 13/02/2026
+
+## Summary
+
+This release introduces improved component coverage with new interactive components and completes the Dark Mode implementation with a dedicated toggle control.
+These additions support teams in building user interfaces with better control over user preferences.
+
+## Dark Mode Toggle
+
+<div style={{ display: "flex", paddingBottom: "20px", gap: "1rem", flexWrap: "wrap" }}>
+  <img
+    src="/updates/v5-6/toggle-light.png"
+    alt="Example of toggle switch in light mode"
+    style={{
+      width: "100%",
+      maxWidth: "100px",
+      height: "auto",
+      flex: "1",
+      padding: "8px",
+      border: "1px solid grey",
+      borderRadius: "6px"
+    }}
+  />
+  <img
+    src="/updates/v5-6/toggle-dark.png"
+    alt="Example of toggle switch in dark mode"
+    style={{
+      width: "100%",
+      maxWidth: "100px",
+      height: "auto",
+      flex: "1",
+      padding: "8px",
+      border: "1px solid grey",
+      borderRadius: "6px"
+    }}
+  />
+</div>
+
+Following the introduction of Dark Mode in 5.3.0, we've now implemented a dedicated Dark Mode toggle control.
+Users can now explicitly switch between light and dark themes without relying on browser settings alone.
+
+### What's Included
+
+- Dark Mode toggle component for consistent theme switching across products
+- Smooth transitions between light and dark themes
+- Updated dark mode code snippets across documentation for improved readability
+
+### Advice on implementation
+
+Make sure the toggle is placed in an easily discoverable location. We recommend header or settings sections.
+Test that theme switching works consistently across all product pages,
+if you've implemented custom colours outside the design system's semantic tokens, you may need to update them to use CSS variables.
+
+## Tooltip Component
+<div style={{ display: "flex", paddingBottom: "20px", gap: "1rem", flexWrap: "wrap" }}>
+  <img
+    src="/updates/v5-6/tooltip-light.png"
+    alt="Example of tooltip in light mode"
+    style={{
+      width: "100%",
+      maxWidth: "200px",
+      height: "auto",
+      flex: "1",
+      padding: "8px",
+      border: "1px solid grey",
+      borderRadius: "6px"
+    }}
+  />
+  <img
+    src="/updates/v5-6/tooltip-dark.png"
+    alt="Example of tooltip in dark mode"
+    style={{
+      width: "100%",
+      maxWidth: "200px",
+      height: "auto",
+      flex: "1",
+      padding: "8px",
+      border: "1px solid grey",
+      borderRadius: "6px"
+    }}
+  />
+</div>
+
+Provides contextual information on hover or focus. Useful for explaining features on a geo-display, icons, and abbreviated content.
+
+### What's Included
+
+- Configurable positioning (top, bottom, left, right)
+- Automatic repositioning to avoid viewport edges
+- Keyboard accessible (focus and arrow key support)
+- Works in both light and dark modes
+
+### Accessibility
+
+Tooltips are announced to screen readers. We recommend using them for supplementary information only, critical information should be visible in the UI itself.
+
+## Progress Tracker Component
+
+<div style={{ display: "flex", paddingBottom: "20px", gap: "1rem", flexWrap: "wrap" }}>
+  <img
+    src="/updates/v5-6/progress-tracker-light.png"
+    alt="Example of progress tracker in light mode"
+    style={{
+      width: "100%",
+      maxWidth: "150px",
+      height: "auto",
+      flex: "1",
+      padding: "8px",
+      border: "1px solid grey",
+      borderRadius: "6px"
+    }}
+  />
+  <img
+    src="/updates/v5-6/progress-tracker-dark.png"
+    alt="Example of progress tracker in dark mode"
+    style={{
+      width: "100%",
+      maxWidth: "150px",
+      height: "auto",
+      flex: "1",
+      padding: "8px",
+      border: "1px solid grey",
+      borderRadius: "6px"
+    }}
+  />
+</div>
+
+Visualises multi-step processes and user progress through workflows. Use this for any sequential task.
+
+### What's included
+
+- Support for completed, current, and upcoming steps
+- Vertical layout
+- Accessible step indicators and labels-
+
+### Advice on implementation
+
+Step labels should be clear and predictable. Avoid vague step names like "Step 1" or "Confirm."
+Instead, use outcome-based labels like "Enter information type" or "Choose data type"
+This helps users understand where they are and what to expect next.
+
+## Enhanced Autocomplete Component
+
+The autocomplete component's icon is now fully dynamic, allowing you to swap the default icon for alternatives like a search icon.
+This provides greater flexibility when integrating autocomplete into different contexts.
+
+## Minor Updates
+
+- Removed Puppeteer dependency, reduces bundle size and simplifies maintenance
+- Enhanced documentation site dark mode code snippets for improved readability and copy-paste accuracy
+- Several internal performance improvements
+
+## In Our Next Release
+
+- Improvements to Colour Block component
+- Adding sortable column functionality to Table component
+- Updates to Radio Group component to allow unselecting options variant
+- Various improvements and bug fixes to Documentation site
+
+

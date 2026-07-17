@@ -1,3 +1,36 @@
+# v5.7.0 (Tue Jun 23 2026)
+
+#### 🚀 Enhancement
+
+- `@ukho/admiralty-angular`, `@ukho/admiralty-core`, `website`
+  - 257753 Make Entire Colour Block Clickable to Improve Usability [#500](https://github.com/UKHO/admiralty-design-system/pull/500) (mohamme15315@mastek.com [@lstevens98](https://github.com/lstevens98) [@mohamme15315](https://github.com/mohamme15315))
+
+#### Authors: 3
+
+- [@mohamme15315](https://github.com/mohamme15315)
+- Lewis Stevens ([@lstevens98](https://github.com/lstevens98))
+- Mohammed Khan (mohamme15315@mastek.com)
+
+---
+
+# v5.6.1 (Mon Jun 01 2026)
+
+#### 🐛 Bug Fix
+
+- `@ukho/admiralty-core`
+  - Accessibility fixes [#497](https://github.com/UKHO/admiralty-design-system/pull/497) ([@lstevens98](https://github.com/lstevens98))
+- `website`
+  - Add darkmode toggle to header on docs site [#494](https://github.com/UKHO/admiralty-design-system/pull/494) (mohamme15315@mastek.com [@lstevens98](https://github.com/lstevens98) [@mohamme15315](https://github.com/mohamme15315))
+  - Add pages for Update 5.3 [#457](https://github.com/UKHO/admiralty-design-system/pull/457) ([@lstevens98](https://github.com/lstevens98))
+
+#### Authors: 3
+
+- [@mohamme15315](https://github.com/mohamme15315)
+- Lewis Stevens ([@lstevens98](https://github.com/lstevens98))
+- Mohammed Khan (mohamme15315@mastek.com)
+
+---
+
 # v5.6.0 (Fri Apr 17 2026)
 
 #### 🚀 Enhancement
