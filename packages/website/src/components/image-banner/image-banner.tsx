@@ -1,5 +1,5 @@
 import { AdmiraltyButton } from "@ukho/admiralty-react";
-import "./image-banner.css";
+import "./image-banner.scss";
 import { useRouter } from "next/navigation";
 
 export default function ImageBanner() {

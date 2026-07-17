@@ -11,7 +11,7 @@ describe('admiralty-colour-block', () => {
       <admiralty-colour-block>
         <div class="admiralty-blue colourBlock">
           <h2></h2>
-          <div class="content white-text"></div>
+          <div class="content"></div>
         </div>
       </admiralty-colour-block>
     `);
@@ -26,7 +26,7 @@ describe('admiralty-colour-block', () => {
       <admiralty-colour-block heading="Test heading">
         <div class="admiralty-blue colourBlock">
           <h2>Test heading</h2>
-          <div class="content white-text">Test content</div>
+          <div class="content">Test content</div>
         </div>
       </admiralty-colour-block>
     `);
@@ -108,7 +108,7 @@ describe('admiralty-colour-block', () => {
     expect(eventSpy).toHaveBeenCalled();
   });
 
-  it('does not emit an event when the div is clicked', async () => {
+  it('emits an event when the div is clicked when link is present', async () => {
     const page = await newSpecPage({
       components: [ColourBlockComponent],
       html: `<admiralty-colour-block href="/test" link-text="Link">Test</admiralty-colour-block>`,
@@ -122,7 +122,7 @@ describe('admiralty-colour-block', () => {
 
     await page.waitForChanges();
 
-    expect(eventSpy).not.toHaveBeenCalled();
+    expect(eventSpy).toHaveBeenCalled();
   });
 
   it('emits an event when the div is clicked', async () => {
@@ -150,18 +150,80 @@ describe('admiralty-colour-block', () => {
 
     const div = page.doc.querySelector('admiralty-colour-block div');
 
-    expect(div.outerHTML).toContain('pointer');
+    expect(div).toHaveClass('is-interactive');
   });
 
-  it('does not have cursor style pointer when the div can not be clicked', async () => {
+  it('has interactive class when link is present', async () => {
     const page = await newSpecPage({
       components: [ColourBlockComponent],
-      html: `<admiralty-colour-block href="/test" link-text="Link" enable-card-event="false">Test</admiralty-colour-block>`,
+      html: `<admiralty-colour-block href="/test" link-text="Link">Test</admiralty-colour-block>`,
     });
 
     const div = page.doc.querySelector('admiralty-colour-block div');
 
-    expect(div.outerHTML).not.toContain('pointer');
+    expect(div).toHaveClass('is-interactive');
+  });
+
+  it('does not have interactive class when there is no link and card event disabled', async () => {
+    const page = await newSpecPage({
+      components: [ColourBlockComponent],
+      html: `<admiralty-colour-block heading="Test">Test</admiralty-colour-block>`,
+    });
+
+    const div = page.doc.querySelector('admiralty-colour-block div');
+
+    expect(div).not.toHaveClass('is-interactive');
+  });
+
+  it('activates link on Enter key press on the block', async () => {
+    const page = await newSpecPage({
+      components: [ColourBlockComponent],
+      html: `<admiralty-colour-block href="/test" link-text="Link">Test</admiralty-colour-block>`,
+    });
+
+    const eventSpy = jest.fn();
+    page.doc.addEventListener('colourBlockLinkClicked', eventSpy);
+
+    const block = page.doc.querySelector('admiralty-colour-block div');
+    block.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true }));
+
+    await page.waitForChanges();
+
+    expect(eventSpy).toHaveBeenCalled();
+  });
+
+  it('sets role and tab index when block is interactive', async () => {
+    const page = await newSpecPage({
+      components: [ColourBlockComponent],
+      html: `<admiralty-colour-block href="/test" link-text="Link">Test</admiralty-colour-block>`,
+    });
+
+    const div = page.doc.querySelector('admiralty-colour-block div');
+
+    expect(div.getAttribute('role')).toBe('link');
+    expect(div.getAttribute('tabindex')).toBe('0');
+  });
+
+  it('uses explicit aria label for interactive blocks when provided', async () => {
+    const page = await newSpecPage({
+      components: [ColourBlockComponent],
+      html: `<admiralty-colour-block href="/test" link-text="Link" aria-label="Open setup">Test</admiralty-colour-block>`,
+    });
+
+    const div = page.doc.querySelector('admiralty-colour-block div');
+
+    expect(div.getAttribute('aria-label')).toBe('Open setup');
+  });
+
+  it('sets a safe fallback aria label when interactive content has no heading or link text', async () => {
+    const page = await newSpecPage({
+      components: [ColourBlockComponent],
+      html: `<admiralty-colour-block enable-card-event="true">Test</admiralty-colour-block>`,
+    });
+
+    const div = page.doc.querySelector('admiralty-colour-block div');
+
+    expect(div.getAttribute('aria-label')).toBe('Interactive colour block');
   });
 
   it('prevents default event when the link is clicked', async () => {

@@ -63,6 +63,7 @@ const gettingStartedChildren: any[] = [
 ];
 
 const updatesChildren: any[] = [
+  { path: "/updates/v5-6", variant: "text", name: "v5.6.0" },
   { path: "/updates/v5-3", variant: "text", name: "v5.3.0"},
   { path: "/updates/v5", variant: "text", name: "v5.0.0" },
 ];
@@ -79,7 +80,7 @@ const patternsChildren: any[] = [
   { name: "Page Not Found", variant: "text", path: "/patterns/page-not-found" },
   { name: "Service Unavailable", variant: "text", path: "/patterns/service-unavailable" },
   { name: "Service Error", variant: "text", path: "/patterns/service-error" },
-  { name: "Find a location", variant: "text", path: "/patterns/find-a-location " },
+  { name: "Find a location", variant: "text", path: "/patterns/find-a-location" },
   { name: "Data Collection", variant: "text", path: "/patterns/data-collection" },
 ];
 
