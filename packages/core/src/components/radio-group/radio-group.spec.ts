@@ -29,7 +29,7 @@ describe('radio-group', () => {
     });
     expect(page.root).toEqualHtml(`
       <admiralty-radio-group>
-          <fieldset aria-describedby=" " aria-invalid="false" aria-required="true" role="radiogroup">
+          <fieldset aria-describedby=" " aria-invalid="false" aria-required="true">
           <div class="radio-group stack"></div>
           <admiralty-input-invalid id="admiralty-rg-error-1" style="display: none;"></admiralty-input-invalid>
         </fieldset>
@@ -51,13 +51,13 @@ describe('radio-group', () => {
     expect(page.root).toMatchInlineSnapshot(`
 <admiralty-radio-group display-vertical="false">
   <!---->
-  <fieldset aria-describedby=" " aria-invalid="false" aria-required="true" role="radiogroup">
+  <fieldset aria-describedby=" " aria-invalid="false" aria-required="true">
     <div class="radio-group">
       <admiralty-radio name="grp" value="option1">
         <!---->
         <div class="admiralty-radio">
           <input aria-checked="false" aria-labelledby="admiralty-radio-1-input" class="admiralty-radio" id="admiralty-radio-1-input" name="grp" tabindex="0" type="radio" value="option1">
-          <label for="admiralty-radio-1-input">
+          <label htmlfor="admiralty-radio-1-input">
             Option 1
           </label>
         </div>
@@ -67,7 +67,7 @@ describe('radio-group', () => {
         <!---->
         <div class="admiralty-radio">
           <input aria-checked="false" aria-labelledby="admiralty-radio-2-input" class="admiralty-radio" id="admiralty-radio-2-input" name="grp" tabindex="-1" type="radio" value="option2">
-          <label for="admiralty-radio-2-input">
+          <label htmlfor="admiralty-radio-2-input">
             Option 2
           </label>
         </div>
@@ -94,13 +94,13 @@ describe('radio-group', () => {
     expect(page.root).toMatchInlineSnapshot(`
 <admiralty-radio-group display-vertical="true">
   <!---->
-  <fieldset aria-describedby=" " aria-invalid="false" aria-required="true" role="radiogroup">
+  <fieldset aria-describedby=" " aria-invalid="false" aria-required="true">
     <div class="radio-group stack">
       <admiralty-radio name="grp" value="option1">
         <!---->
         <div class="admiralty-radio">
           <input aria-checked="false" aria-labelledby="admiralty-radio-3-input" class="admiralty-radio" id="admiralty-radio-3-input" name="grp" tabindex="0" type="radio" value="option1">
-          <label for="admiralty-radio-3-input">
+          <label htmlfor="admiralty-radio-3-input">
             Option 1
           </label>
         </div>
@@ -110,7 +110,7 @@ describe('radio-group', () => {
         <!---->
         <div class="admiralty-radio">
           <input aria-checked="false" aria-labelledby="admiralty-radio-4-input" class="admiralty-radio" id="admiralty-radio-4-input" name="grp" tabindex="-1" type="radio" value="option2">
-          <label for="admiralty-radio-4-input">
+          <label htmlfor="admiralty-radio-4-input">
             Option 2
           </label>
         </div>
@@ -251,13 +251,13 @@ describe('radio-group', () => {
     expect(page.root).toMatchInlineSnapshot(`
 <admiralty-radio-group disabled="true">
   <!---->
-  <fieldset aria-describedby=" " aria-invalid="false" aria-required="true" disabled="" role="radiogroup">
+  <fieldset aria-describedby=" " aria-invalid="false" aria-required="true" disabled="">
     <div class="radio-group stack">
       <admiralty-radio name="grp" value="option1">
         <!---->
         <div class="admiralty-radio">
           <input aria-checked="false" aria-labelledby="admiralty-radio-13-input" class="admiralty-radio" id="admiralty-radio-13-input" name="grp" tabindex="0" type="radio" value="option1">
-          <label for="admiralty-radio-13-input">
+          <label htmlfor="admiralty-radio-13-input">
             Option 1
           </label>
         </div>
@@ -267,7 +267,7 @@ describe('radio-group', () => {
         <!---->
         <div class="admiralty-radio">
           <input aria-checked="false" aria-labelledby="admiralty-radio-14-input" class="admiralty-radio" id="admiralty-radio-14-input" name="grp" tabindex="-1" type="radio" value="option2">
-          <label for="admiralty-radio-14-input">
+          <label htmlfor="admiralty-radio-14-input">
             Option 2
           </label>
         </div>
@@ -294,7 +294,7 @@ describe('radio-group', () => {
     expect(page.root).toMatchInlineSnapshot(`
 <admiralty-radio-group hint="Hint text" label="Label text">
   <!---->
-  <fieldset aria-describedby="admiralty-rg-hint-9 " aria-invalid="false" aria-required="true" role="radiogroup">
+  <fieldset aria-describedby="admiralty-rg-hint-9 " aria-invalid="false" aria-required="true">
     <legend>
       Label text
     </legend>
@@ -306,7 +306,7 @@ describe('radio-group', () => {
         <!---->
         <div class="admiralty-radio">
           <input aria-checked="false" aria-labelledby="admiralty-radio-15-input" class="admiralty-radio" id="admiralty-radio-15-input" name="grp" tabindex="0" type="radio" value="option1">
-          <label for="admiralty-radio-15-input">
+          <label htmlfor="admiralty-radio-15-input">
             Option 1
           </label>
         </div>
@@ -316,7 +316,7 @@ describe('radio-group', () => {
         <!---->
         <div class="admiralty-radio">
           <input aria-checked="false" aria-labelledby="admiralty-radio-16-input" class="admiralty-radio" id="admiralty-radio-16-input" name="grp" tabindex="-1" type="radio" value="option2">
-          <label for="admiralty-radio-16-input">
+          <label htmlfor="admiralty-radio-16-input">
             Option 2
           </label>
         </div>
