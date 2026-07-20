@@ -2,6 +2,7 @@
 
 /**
  * @prop --admiralty-modal-heading-font-size: Font size for the modal dialog heading
+ * @prop --admiralty-modal-heading-font-size-mobile: Font size for the modal dialog heading on mobile devices
  * @prop --admiralty-modal-heading-font-weight: Font weight for the modal dialog heading
  * @prop --admiralty-modal-slotted-icon-font-size: Font size for the modal dialog slotted icon
  * @prop --admiralty-modal-slotted-text-font-size: Font size for the modal dialog slotted text
@@ -21,9 +22,13 @@ $modal-dialog-heading-margin-bottom: var(--admiralty-modal-dialog-heading-margin
 $modal-dialog-content-padding: var(--admiralty-modal-dialog-content-padding, var(--admiralty-spacing-0) 60px 60px 60px);
 $modal-dialog-content-slotted-padding: var(--admiralty-modal-dialog-content-slotted-padding, 3px var(--admiralty-spacing-3) 3px var(--admiralty-spacing-0));
 $modal-dialog-content-slotted-margin-bottom: var(--admiralty-modal-dialog-content-slotted-margin-bottom, var(--admiralty-spacing-0));
-$modal-dialog-content-slotted-button-padding: var(--admiralty-modal-dialog-content-slotted-button-padding, var(--admiralty-spacing-6) var(--admiralty-spacing-6) var(--admiralty-spacing-6) var(--admiralty-spacing-0));
+$modal-dialog-content-slotted-button-padding: var(
+  --admiralty-modal-dialog-content-slotted-button-padding,
+  var(--admiralty-spacing-6) var(--admiralty-spacing-6) var(--admiralty-spacing-6) var(--admiralty-spacing-0)
+);
 
 $modal-heading-font-size: var(--admiralty-modal-heading-font-size, var(--admiralty-font-size-5));
+$modal-heading-font-size-mobile: var(--admiralty-modal-heading-font-size-mobile, var(--admiralty-font-size-2));
 $modal-heading-font-weight: var(--admiralty-modal-heading-font-weight, var(--admiralty-font-weight-medium));
 $modal-slotted-icon-font-size: var(--admiralty-modal-slotted-icon-font-size, var(--admiralty-font-size-3));
 $modal-slotted-text-font-size: var(--admiralty-modal-slotted-text-font-size, var(--admiralty-font-size-0));
