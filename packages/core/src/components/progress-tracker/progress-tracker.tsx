@@ -21,9 +21,9 @@ export class ProgressTrackerComponent {
   @Prop() allowBackNavigation = true;
 
   /**
-   * Whether navigation to future steps is allowed. Set to false by default to prevent users from skipping ahead in a process.
+   * Whether navigation to future steps is allowed
    */
-  @Prop() allowForwardNavigation = false;
+  @Prop() allowForwardNavigation = true;
 
   /**
    * Emitted when user clicks on a step
@@ -113,10 +113,10 @@ export class ProgressTrackerComponent {
       }
 
       return {
-        id: stepEl.getAttribute('step-id') || stepEl.stepId || '',
-        title: stepEl.getAttribute('step-title') || stepEl.stepTitle || '',
-        status: (stepEl.getAttribute('status') || stepEl.status || 'upcoming') as StepStatus,
-        summary: stepEl.getAttribute('summary') || stepEl.summary,
+        id: stepEl.stepId || stepEl.getAttribute('step-id') || '',
+        title: stepEl.stepTitle || stepEl.getAttribute('step-title') || '',
+        status: (stepEl.status || stepEl.getAttribute('status') || 'upcoming') as StepStatus,
+        summary: stepEl.summary || stepEl.getAttribute('summary'),
         bulletSummaries: bulletSummaries.length > 0 ? bulletSummaries : undefined,
       };
     });
