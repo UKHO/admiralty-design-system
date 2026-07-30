@@ -1,3 +1,21 @@
+# v5.8.0 (Thu Jul 30 2026)
+
+#### 🚀 Enhancement
+
+- Dynamic Progress Tracker Headings [#510](https://github.com/UKHO/admiralty-design-system/pull/510) ([@lstevens98](https://github.com/lstevens98))
+
+#### 🐛 Bug Fix
+
+- read the step property first to fix failing test ([@lstevens98](https://github.com/lstevens98))
+- make headers dynamically buttons ([@lstevens98](https://github.com/lstevens98))
+- Merge branch 'main' into add-5.6-5.7-pages ([@lstevens98](https://github.com/lstevens98))
+
+#### Authors: 1
+
+- Lewis Stevens ([@lstevens98](https://github.com/lstevens98))
+
+---
+
 # v5.7.0 (Tue Jun 23 2026)
 
 #### 🚀 Enhancement
