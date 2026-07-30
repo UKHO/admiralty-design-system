@@ -16,22 +16,22 @@ export class ProgressTrackerStepComponent {
   /**
    * Unique identifier for the step
    */
-  @Prop() stepId!: string;
+  @Prop({ reflect: true }) stepId!: string;
 
   /**
    * The title text displayed for the step
    */
-  @Prop() stepTitle!: string;
+  @Prop({ reflect: true }) stepTitle!: string;
 
   /**
    * The current status of the step
    */
-  @Prop() status: StepStatus = 'upcoming';
+  @Prop({ reflect: true }) status: StepStatus = 'upcoming';
 
   /**
    * Optional summary text displayed below the title
    */
-  @Prop() summary?: string;
+  @Prop({ reflect: true }) summary?: string;
 
   render() {
     // This component is just a data container, the parent renders it
