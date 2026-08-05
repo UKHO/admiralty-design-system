@@ -112,12 +112,6 @@ export class ModalDialogComponent {
       return;
     }
 
-    if (event.key === 'Escape') {
-      event.preventDefault();
-      this.show = false;
-      return;
-    }
-
     if (event.key !== 'Tab') {
       return;
     }
@@ -166,13 +160,6 @@ export class ModalDialogComponent {
   }
 
   private focusFirstInteractiveElement() {
-    const firstFocusableElement = this.getFocusableElements()[0];
-
-    if (firstFocusableElement) {
-      firstFocusableElement.focus();
-      return;
-    }
-
     this.dialogElement?.focus();
   }
 

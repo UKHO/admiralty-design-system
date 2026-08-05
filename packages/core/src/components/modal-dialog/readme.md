@@ -91,6 +91,7 @@ The modal dialog component meets WCAG 2.2 AA standards:
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property      | Attribute     | Description                          | Type      | Default     |
@@ -100,12 +101,14 @@ The modal dialog component meets WCAG 2.2 AA standards:
 | `label`       | `label`       | Label the dialog.                    | `string`  | `undefined` |
 | `show`        | `show`        | Whether to show the modal dialog.    | `boolean` | `false`     |
 
+
 ## Slots
 
 | Slot        | Description             |
 | ----------- | ----------------------- |
 | `"actions"` | Actions for the dialog. |
 | `"content"` | Content of the dialog.  |
+
 
 ## CSS Custom Properties
 
@@ -124,6 +127,7 @@ The modal dialog component meets WCAG 2.2 AA standards:
 | `--admiralty-modal-slotted-icon-font-size`                | Font size for the modal dialog slotted icon              |
 | `--admiralty-modal-slotted-text-font-size`                | Font size for the modal dialog slotted text              |
 
----
 
-_Built with [StencilJS](https://stenciljs.com/)_
+----------------------------------------------
+
+*Built with [StencilJS](https://stenciljs.com/)*
