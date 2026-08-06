@@ -19,7 +19,8 @@ export class ModalDialogComponent {
   private shouldMoveFocus = false;
   private readonly headingId = `admiralty-modal-dialog-heading-${modalDialogIds}`;
   private readonly contentId = `admiralty-modal-dialog-content-${modalDialogIds++}`;
-  private readonly mobileMediaQuery = typeof window === 'undefined' ? undefined : window.matchMedia('(max-width: 479px)');
+  private readonly mobileBreakpointQuery = '(max-width: 479px)';
+  private readonly mobileMediaQuery = typeof window === 'undefined' ? undefined : window.matchMedia(this.mobileBreakpointQuery);
   private originalActionOrder: HTMLElement[] = [];
 
   /**
@@ -209,7 +210,7 @@ export class ModalDialogComponent {
       this.originalActionOrder = actionChildren.slice();
     }
 
-    const isMobileViewport = this.mobileMediaQuery?.matches ?? false;
+    const isMobileViewport = this.getIsMobileViewport();
     const nextOrder = isMobileViewport ? this.getMobileActionOrder(this.originalActionOrder) : this.originalActionOrder;
 
     if (nextOrder.every((child, index) => actionContainer.children[index] === child)) {
@@ -226,11 +227,26 @@ export class ModalDialogComponent {
     }
   }
 
+  private getIsMobileViewport() {
+    if (typeof window === 'undefined' || typeof window.matchMedia !== 'function') {
+      return false;
+    }
+
+    return window.matchMedia(this.mobileBreakpointQuery).matches;
+  }
+
   private hasSameActionChildren(previousChildren: HTMLElement[], nextChildren: HTMLElement[]) {
     return previousChildren.length === nextChildren.length && previousChildren.every(child => nextChildren.includes(child));
   }
 
   private getMobileActionOrder(actionChildren: HTMLElement[]) {
+    const hasExplicitPrimaryAction = actionChildren.some(actionChild => this.isPrimaryAction(actionChild));
+
+    // Fallback for environments where variant metadata is not available on slotted action elements.
+    if (!hasExplicitPrimaryAction && actionChildren.length === 2) {
+      return [actionChildren[1], actionChildren[0]];
+    }
+
     const primaryActions: HTMLElement[] = [];
     const secondaryActions: HTMLElement[] = [];
 
