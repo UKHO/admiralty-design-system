@@ -112,9 +112,9 @@
   --admiralty-font-size-7: 3.5rem;
 
   /** Font Weight **/
-  --admiralty-font-weight-light: 200;
-  --admiralty-font-weight-normal: 300;
-  --admiralty-font-weight-medium: 400;
+  --admiralty-font-weight-light: 300;
+  --admiralty-font-weight-normal: 400;
+  --admiralty-font-weight-medium: 500;
   --admiralty-font-weight-bold: 700;
 
   /** Spacing **/
