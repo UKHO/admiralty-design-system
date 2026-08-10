@@ -16,6 +16,20 @@ import Basic from "@/usage/modal-dialog/basic/index.mdx";
 
 Use the label and description props to provide better accessibility for the modal dialog.
 
+The modal traps focus while open, closes on Escape, and returns focus to the previously focused trigger when it closes.
+
+## Responsive behaviour
+
+At desktop and tablet widths the modal keeps its current centred layout.
+
+Below the small breakpoint, the dialog becomes fluid-width within the viewport, keeps the same heading and content alignment, and stacks actions vertically in the footer band with the primary action first.
+
+Use the default action markup order shown in the examples. The component automatically promotes the primary action above secondary actions on phone-sized viewports so existing consumers do not need to change their templates.
+
+## Mobile example
+
+Open the basic example in a narrow viewport to see the mobile layout. The primary action spans the full footer width and appears above the secondary action.
+
 ## Content Design
 
 When using the modal dialogue, you must:

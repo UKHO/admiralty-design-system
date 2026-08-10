@@ -18,8 +18,11 @@
 
 .modal-dialog {
   display: none;
+  flex-direction: column;
   margin: $modal-dialog-margin;
   width: max-content;
+  max-width: calc(100vw - (var(--admiralty-spacing-4) * 2));
+  max-height: calc(100vh - (var(--admiralty-spacing-4) * 2));
   z-index: 1001;
   position: fixed;
   top: 50%;
@@ -27,8 +30,10 @@
   transform: translate(-50%, -50%);
   background-color: $modal-background-colour;
   border: 1px solid $modal-border-colour;
+  overflow: hidden;
 
   & > .modal-heading {
+    flex-shrink: 0;
     padding: $modal-dialog-heading-padding;
     color: $modal-heading-text-colour;
     font-weight: $modal-heading-font-weight;
@@ -40,11 +45,14 @@
   & > .modal-content {
     border-top: none;
     flex-grow: 1;
+    min-height: 0;
+    overflow: auto;
     padding: $modal-dialog-content-padding;
 
     ::slotted(div[slot='content']) {
       display: flex;
       align-items: start;
+      min-width: 0;
     }
     //Specifying the specific slot inexplicably
     //makes the selector apply to the slotted div
@@ -59,6 +67,7 @@
     ::slotted(div) > div {
       color: $modal-heading-text-colour;
       max-width: 500px;
+      min-width: 0;
       display: inline-block;
       font-weight: var(--admiralty-font-weight-medium);
       font-size: $modal-slotted-text-font-size;
@@ -68,12 +77,14 @@
   }
 
   & > .modal-actions {
+    flex-shrink: 0;
     background-color: $modal-button-bar-background-colour;
 
     ::slotted(div[slot='actions']) {
       display: flex;
       justify-content: end;
       flex-direction: row;
+      flex-wrap: wrap;
     }
     //Specifying the specific slot inexplicably
     //makes the selector apply to the slotted div
@@ -81,9 +92,49 @@
       padding: $modal-dialog-content-slotted-button-padding;
     }
   }
+
+  @include phone-only {
+    width: calc(100vw - (var(--admiralty-spacing-4) * 2));
+
+    & > .modal-heading {
+      padding: 24px 24px 16px 24px;
+      font-size: $modal-heading-font-size-mobile;
+      line-height: 40px;
+    }
+
+    & > .modal-content {
+      padding: 0 24px 24px 24px;
+
+      ::slotted(div) > div {
+        max-width: none;
+      }
+    }
+
+    & > .modal-actions {
+      padding: 24px;
+
+      ::slotted(div[slot='actions']) {
+        align-items: stretch;
+        flex-direction: column;
+        gap: var(--admiralty-spacing-3);
+        justify-content: flex-start;
+      }
+
+      ::slotted(div) > admiralty-button {
+        display: block;
+        padding: 0;
+        width: 100%;
+      }
+
+      ::slotted(div) > admiralty-button button {
+        max-width: none;
+        width: 100%;
+      }
+    }
+  }
 }
 .modal-dialog.show {
-  display: block;
+  display: flex;
 }
 
 // TODO: not in use need to confirm.
