@@ -78,7 +78,7 @@ describe('admiralty-modal-dialog', () => {
       removeEventListener: jest.fn(),
     }));
 
-    const { root, rootInstance, waitForChanges } = await newSpecPage({
+    const { root, waitForChanges } = await newSpecPage({
       components: [ModalDialogComponent],
       html: `
         <admiralty-modal-dialog show="true">
@@ -124,7 +124,7 @@ describe('admiralty-modal-dialog', () => {
     secondaryButton.innerHTML = '<button class="secondary">Leave page</button>';
     primaryButton.innerHTML = '<button class="primary">Continue survey</button>';
 
-    (rootInstance as ModalDialogComponent & { updateActionLayout: () => void }).updateActionLayout();
+    (rootInstance as unknown as { updateActionLayout: () => void }).updateActionLayout();
 
     await waitForChanges();
 
@@ -132,6 +132,33 @@ describe('admiralty-modal-dialog', () => {
 
     expect(reorderedButtons?.[0]?.textContent?.trim()).toBe('Continue survey');
     expect(reorderedButtons?.[1]?.textContent?.trim()).toBe('Leave page');
+  });
+
+  it('preserves consumer order on mobile when both actions are explicitly secondary', async () => {
+    (window.matchMedia as jest.Mock).mockImplementation(() => ({
+      matches: true,
+      addEventListener: jest.fn(),
+      removeEventListener: jest.fn(),
+    }));
+
+    const { root, waitForChanges } = await newSpecPage({
+      components: [ModalDialogComponent],
+      html: `
+        <admiralty-modal-dialog show="true">
+          <div slot="actions">
+            <admiralty-button variant="secondary">Leave page</admiralty-button>
+            <admiralty-button variant="secondary">Continue survey</admiralty-button>
+          </div>
+        </admiralty-modal-dialog>
+      `,
+    });
+
+    await waitForChanges();
+
+    const actionButtons = root.querySelector("div[slot='actions']")?.children;
+
+    expect(actionButtons?.[0]?.textContent?.trim()).toBe('Leave page');
+    expect(actionButtons?.[1]?.textContent?.trim()).toBe('Continue survey');
   });
 
   it('responds to viewport changes and reorders actions when switching to mobile', async () => {

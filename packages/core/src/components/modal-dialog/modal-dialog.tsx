@@ -240,10 +240,10 @@ export class ModalDialogComponent {
   }
 
   private getMobileActionOrder(actionChildren: HTMLElement[]) {
-    const hasExplicitPrimaryAction = actionChildren.some(actionChild => this.isPrimaryAction(actionChild));
+    const hasActionVariantMetadata = actionChildren.some(actionChild => this.hasActionVariantMetadata(actionChild));
 
     // Fallback for environments where variant metadata is not available on slotted action elements.
-    if (!hasExplicitPrimaryAction && actionChildren.length === 2) {
+    if (!hasActionVariantMetadata && actionChildren.length === 2) {
       return [actionChildren[1], actionChildren[0]];
     }
 
@@ -277,6 +277,22 @@ export class ModalDialogComponent {
       'primary';
 
     return buttonVariant === 'primary';
+  }
+
+  private hasActionVariantMetadata(actionChild: HTMLElement) {
+    if (actionChild.tagName.toLowerCase() !== 'admiralty-button') {
+      return actionChild.hasAttribute('data-admiralty-primary-action');
+    }
+
+    const buttonVariant =
+      (actionChild as HTMLElement & { variant?: string }).variant ??
+      actionChild.getAttribute('variant') ??
+      actionChild
+        .querySelector('button')
+        ?.className.split(' ')
+        .find(className => className === 'primary' || className === 'secondary' || className === 'warning' || className === 'text' || className === 'icon');
+
+    return buttonVariant !== undefined;
   }
 
   render() {

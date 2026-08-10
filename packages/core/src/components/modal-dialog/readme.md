@@ -85,7 +85,7 @@ The modal dialog component meets WCAG 2.2 AA standards:
 - **Focus Trapping**: Focus is trapped within the dialog when open
 - **Focus Management**: Focus automatically moves to the first interactive element when the dialog opens
 - **Focus Restoration**: Focus returns to the element that triggered the modal when it closes
-- **Keyboard Navigation**: Users can navigate between focusable elements using Tab/Shift+Tab; Escape closes the dialog
+- **Keyboard Navigation**: Users can navigate between focusable elements using Tab/Shift+Tab
 - **Screen Reader Support**: The dialog is announced with an accessible name (from `label` or `heading`) and description
 - **Touch Targets**: On mobile, buttons are full-width, meeting WCAG 2.2 target size recommendations (44×44 CSS px)
 
