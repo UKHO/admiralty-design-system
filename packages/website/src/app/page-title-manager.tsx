@@ -85,7 +85,7 @@ function getInternalPathFromAnchor(anchor: HTMLAnchorElement): string | null {
       return null;
     }
 
-    return `${targetUrl.pathname}${targetUrl.search}${targetUrl.hash}`;
+    return targetUrl.pathname;
   } catch {
     return null;
   }
@@ -100,13 +100,28 @@ export function PageTitleManager() {
 
   useEffect(() => {
     const onDocumentClick = (event: MouseEvent) => {
-      const target = event.target as HTMLElement | null;
-      const anchor = target?.closest("a[href]");
-      if (!anchor) {
+      if (
+        event.defaultPrevented ||
+        event.button !== 0 ||
+        event.metaKey ||
+        event.ctrlKey ||
+        event.shiftKey ||
+        event.altKey
+      ) {
         return;
       }
 
-      const nextPath = getInternalPathFromAnchor(anchor as HTMLAnchorElement);
+      const target = event.target;
+      if (!(target instanceof Element)) {
+        return;
+      }
+
+      const anchor = target.closest("a[href]") as HTMLAnchorElement | null;
+      if (!anchor || anchor.target === "_blank" || anchor.hasAttribute("download")) {
+        return;
+      }
+
+      const nextPath = getInternalPathFromAnchor(anchor);
       if (!nextPath) {
         return;
       }
