@@ -174,8 +174,41 @@
   .header-profile {
     @include desktop-only {
       display: flex;
-      flex: 0;
+      flex: 0 0 auto;
       flex-direction: row;
+    }
+  }
+
+  .header-profile {
+    flex-shrink: 0;
+    align-items: center;
+  }
+
+  @include not-desktop {
+    .menu-items {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      z-index: 999;
+      min-width: 100%;
+      min-height: 56px;
+      background-color: $header-background-colour;
+      border: 1px solid $header-border-colour;
+    }
+
+    .menu-sections.mob-menus-visible .menu-items {
+      display: block;
+    }
+
+    .header-profile {
+      display: flex;
+      align-items: center;
+      order: 1;
+    }
+
+    .mobile-menu-toggle {
+      order: 2;
     }
   }
 }

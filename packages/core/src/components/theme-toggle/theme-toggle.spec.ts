@@ -15,9 +15,10 @@ describe('admiralty-theme-toggle', () => {
       expect(button).toHaveClass('theme-toggle');
       expect(button).toHaveClass('light');
       expect(button.getAttribute('type')).toBe('button');
+      expect(button.getAttribute('aria-pressed')).toBe('false');
 
       expect(button.getAttribute('aria-label')).toBe(
-        'Toggle dark mode (current: auto (light system preference). Press to switch to dark mode)'
+        'Switch to dark mode (current: auto (light system preference))'
       );
     });
 
@@ -31,24 +32,27 @@ describe('admiralty-theme-toggle', () => {
       expect(button.type).toBe('button');
     });
 
-    it('should render toggle-background-slider span', async () => {
+    it('should provide a 44px touch target', async () => {
       const page = await newSpecPage({
         components: [ThemeToggleComponent],
         html: `<admiralty-theme-toggle></admiralty-theme-toggle>`,
       });
-      const slider = page.root.querySelector('.toggle-background-slider');
-      expect(slider).toBeTruthy();
+      const button = page.root.querySelector('button');
+      expect(button).toHaveClass('theme-toggle');
+      expect(button.getAttribute('aria-pressed')).toBe('false');
     });
 
-    it('should render sun and moon icons', async () => {
+    it('should render the desktop slider and both theme icons', async () => {
       const page = await newSpecPage({
         components: [ThemeToggleComponent],
         html: `<admiralty-theme-toggle></admiralty-theme-toggle>`,
       });
       const sunIcon = page.root.querySelector('.sun-icon admiralty-icon');
       const moonIcon = page.root.querySelector('.moon-icon admiralty-icon');
+      const slider = page.root.querySelector('.toggle-background-slider');
       expect(sunIcon).toBeTruthy();
       expect(moonIcon).toBeTruthy();
+      expect(slider).toBeTruthy();
       expect(sunIcon.getAttribute('name')).toBe('light-mode-outline');
       expect(moonIcon.getAttribute('name')).toBe('dark-mode-outline');
     });
@@ -62,7 +66,7 @@ describe('admiralty-theme-toggle', () => {
       const button = page.root.querySelector('button');
 
       expect(button.getAttribute('aria-label')).toMatch(
-        /Toggle dark mode \(current: .*\. Press to switch to .* mode\)/
+        /Switch to dark mode \(current: .+\)/
       );
     });
 
@@ -97,6 +101,10 @@ describe('admiralty-theme-toggle', () => {
       const button = page.root.querySelector('button');
       expect(button.classList.contains('dark')).toBe(true);
       expect(button.classList.contains('light')).toBe(false);
+      expect(button.getAttribute('aria-pressed')).toBe('true');
+      expect(button.getAttribute('aria-label')).toBe('Switch to light mode (current: dark)');
+      expect(page.root.querySelector('admiralty-icon[name="dark-mode-outline"]')).toBeTruthy();
+      expect(page.root.querySelector('admiralty-icon[name="light-mode-outline"]')).toBeTruthy();
     });
 
     it('should render as auto theme with light system preference', async () => {
