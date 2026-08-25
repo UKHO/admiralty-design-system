@@ -33,9 +33,9 @@ describe('admiralty-header', () => {
                   <admiralty-icon name="menu-rounded"></admiralty-icon>
                 </button>
               </div>
+              <div class="header-profile"></div>
               <div class="menu-sections">
                 <div class="menu-items"></div>
-                <div class="header-profile"></div>
               </div>
             </nav>
           </div>
@@ -71,9 +71,9 @@ describe('admiralty-header', () => {
                   <admiralty-icon name="menu-rounded"></admiralty-icon>
                 </button>
               </div>
+              <div class="header-profile"></div>
               <div class="menu-sections">
                 <div class="menu-items"></div>
-                <div class="header-profile"></div>
               </div>
             </nav>
           </div>
@@ -109,9 +109,9 @@ describe('admiralty-header', () => {
                   <admiralty-icon name="menu-rounded"></admiralty-icon>
                 </button>
               </div>
+              <div class="header-profile"></div>
               <div class="menu-sections">
                 <div class="menu-items"></div>
-                <div class="header-profile"></div>
               </div>
             </nav>
           </div>
@@ -150,11 +150,11 @@ describe('admiralty-header', () => {
                   <admiralty-icon name="menu-rounded"></admiralty-icon>
                 </button>
               </div>
+              <div class="header-profile">
+                <admiralty-header-profile is-signed-in="true" signed-in-text="Mr Admiral" slot="profile"></admiralty-header-profile>
+              </div>
               <div class="menu-sections">
                 <div class="menu-items"></div>
-                <div class="header-profile">
-                  <admiralty-header-profile is-signed-in="true" signed-in-text="Mr Admiral" slot="profile"></admiralty-header-profile>
-                </div>
               </div>
             </nav>
           </div>
@@ -193,11 +193,11 @@ describe('admiralty-header', () => {
                   <admiralty-icon name="menu-rounded"></admiralty-icon>
                 </button>
               </div>
+              <div class="header-profile">
+                <admiralty-header-profile is-signed-in="false" signed-in-text="Mr Admiral" slot="profile"></admiralty-header-profile>
+              </div>
               <div class="menu-sections">
                 <div class="menu-items"></div>
-                <div class="header-profile">
-                  <admiralty-header-profile is-signed-in="false" signed-in-text="Mr Admiral" slot="profile"></admiralty-header-profile>
-                </div>
               </div>
             </nav>
           </div>
@@ -237,12 +237,12 @@ describe('admiralty-header', () => {
                   <admiralty-icon name="menu-rounded"></admiralty-icon>
                 </button>
               </div>
+              <div class="header-profile"></div>
               <div class="menu-sections">
                 <div class="menu-items">
                   <admiralty-header-menu-item active="false" menu-title="Item 1" slot="items"></admiralty-header-menu-item>
                   <admiralty-header-menu-item active="false" menu-title="Item 2" slot="items"></admiralty-header-menu-item>
                 </div>
-                <div class="header-profile"></div>
               </div>
             </nav>
           </div>
@@ -288,6 +288,7 @@ describe('admiralty-header', () => {
                   <admiralty-icon name="menu-rounded"></admiralty-icon>
                 </button>
               </div>
+              <div class="header-profile"></div>
               <div class="menu-sections">
                 <div class="menu-items">
                   <admiralty-header-menu-item active="false" menu-title="Item 1" slot="items">
@@ -299,7 +300,6 @@ describe('admiralty-header', () => {
                     <admiralty-header-sub-menu-item menu-title="sub item 3"></admiralty-header-sub-menu-item>
                   </admiralty-header-menu-item>
                 </div>
-                <div class="header-profile"></div>
               </div>
             </nav>
           </div>
