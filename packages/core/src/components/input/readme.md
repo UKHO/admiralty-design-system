@@ -39,12 +39,13 @@ and checkbox.
 
 ## CSS Custom Properties
 
-| Name                                   | Description                   |
-| -------------------------------------- | ----------------------------- |
-| `--admiralty-input-font-size`          | Font size of the input        |
-| `--admiralty-input-font-weight`        | Font weight of the input      |
-| `--admiralty-input-invalid-margin-top` | Margin top for invalid input. |
-| `--admiralty-input-padding`            | Padding for the input.        |
+| Name                                   | Description                                            |
+| -------------------------------------- | ------------------------------------------------------ |
+| `--admiralty-input-font-size`          | Font size of the input                                 |
+| `--admiralty-input-font-weight`        | Font weight of the input                               |
+| `--admiralty-input-invalid-margin-top` | Margin top for invalid input.                          |
+| `--admiralty-input-native-icon-filter` | Filter applied to native date/time/number input icons. |
+| `--admiralty-input-padding`            | Padding for the input.                                 |
 
 
 ## Dependencies
