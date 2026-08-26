@@ -97,7 +97,7 @@ export class HeaderComponent {
           </div>
           <nav role="navigation" class="header-menus" aria-label="Site navigation">
             <div class={{ 'mobile-menu-toggle': true, 'display-hamburger': this.displayHamburger }}>
-              <button onClick={_ => this.toggleMobileMenu()} aria-expanded={this.mobileMenuOpen} aria-label={this.mobileMenuOpen ? 'Hide menu' : 'Show menu'}>
+              <button onClick={_ => this.toggleMobileMenu()} aria-expanded={this.mobileMenuOpen ? 'true' : 'false'} aria-label={this.mobileMenuOpen ? 'Hide menu' : 'Show menu'}>
                 <admiralty-icon name={this.mobileMenuOpen ? 'close-rounded' : 'menu-rounded'}></admiralty-icon>
               </button>
             </div>

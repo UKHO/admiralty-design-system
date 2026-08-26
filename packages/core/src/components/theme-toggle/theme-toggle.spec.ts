@@ -32,7 +32,7 @@ describe('admiralty-theme-toggle', () => {
       expect(button.type).toBe('button');
     });
 
-    it('should provide a 44px touch target', async () => {
+    it('should apply the theme-toggle class that sizes the 44px touch target', async () => {
       const page = await newSpecPage({
         components: [ThemeToggleComponent],
         html: `<admiralty-theme-toggle></admiralty-theme-toggle>`,

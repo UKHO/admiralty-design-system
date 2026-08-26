@@ -29,7 +29,7 @@ describe('admiralty-header', () => {
             </div>
             <nav aria-label="Site navigation" class="header-menus" role="navigation">
               <div class="mobile-menu-toggle">
-                <button aria-label="Show menu">
+                <button aria-expanded="false" aria-label="Show menu">
                   <admiralty-icon name="menu-rounded"></admiralty-icon>
                 </button>
               </div>
@@ -67,7 +67,7 @@ describe('admiralty-header', () => {
             </div>
             <nav aria-label="Site navigation" class="header-menus" role="navigation">
               <div class="mobile-menu-toggle">
-                <button aria-label="Show menu">
+                <button aria-expanded="false" aria-label="Show menu">
                   <admiralty-icon name="menu-rounded"></admiralty-icon>
                 </button>
               </div>
@@ -105,7 +105,7 @@ describe('admiralty-header', () => {
             </div>
             <nav aria-label="Site navigation" class="header-menus" role="navigation">
               <div class="mobile-menu-toggle">
-                <button aria-label="Show menu">
+                <button aria-expanded="false" aria-label="Show menu">
                   <admiralty-icon name="menu-rounded"></admiralty-icon>
                 </button>
               </div>
@@ -146,7 +146,7 @@ describe('admiralty-header', () => {
             </div>
             <nav aria-label="Site navigation" class="header-menus" role="navigation">
               <div class="display-hamburger mobile-menu-toggle">
-                <button aria-label="Show menu">
+                <button aria-expanded="false" aria-label="Show menu">
                   <admiralty-icon name="menu-rounded"></admiralty-icon>
                 </button>
               </div>
@@ -189,7 +189,7 @@ describe('admiralty-header', () => {
             </div>
             <nav aria-label="Site navigation" class="header-menus" role="navigation">
               <div class="display-hamburger mobile-menu-toggle">
-                <button aria-label="Show menu">
+                <button aria-expanded="false" aria-label="Show menu">
                   <admiralty-icon name="menu-rounded"></admiralty-icon>
                 </button>
               </div>
@@ -233,7 +233,7 @@ describe('admiralty-header', () => {
             </div>
             <nav aria-label="Site navigation" class="header-menus" role="navigation">
               <div class="display-hamburger mobile-menu-toggle">
-                <button aria-label="Show menu">
+                <button aria-expanded="false" aria-label="Show menu">
                   <admiralty-icon name="menu-rounded"></admiralty-icon>
                 </button>
               </div>
@@ -284,7 +284,7 @@ describe('admiralty-header', () => {
             </div>
             <nav aria-label="Site navigation" class="header-menus" role="navigation">
               <div class="display-hamburger mobile-menu-toggle">
-                <button aria-label="Show menu">
+                <button aria-expanded="false" aria-label="Show menu">
                   <admiralty-icon name="menu-rounded"></admiralty-icon>
                 </button>
               </div>
