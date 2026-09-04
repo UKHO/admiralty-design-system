@@ -111,6 +111,73 @@
   --admiralty-font-size-6: 2.75rem;
   --admiralty-font-size-7: 3.5rem;
 
+  /** Semantic Typography **/
+  --admiralty-typography-hero-font-size: 48px;
+  --admiralty-typography-hero-line-height: 1.15;
+  --admiralty-typography-hero-font-weight: 500;
+  --admiralty-typography-hero-letter-spacing: 0.0003em;
+
+  --admiralty-typography-title-font-size: 38px;
+  --admiralty-typography-title-line-height: 1.15;
+  --admiralty-typography-title-font-weight: 500;
+  --admiralty-typography-title-letter-spacing: 0.0003em;
+
+  --admiralty-typography-heading-font-size: 30px;
+  --admiralty-typography-heading-line-height: 1.2;
+  --admiralty-typography-heading-font-weight: 500;
+  --admiralty-typography-heading-letter-spacing: 0.0002em;
+
+  --admiralty-typography-subheading-font-size: 24px;
+  --admiralty-typography-subheading-line-height: 1.25;
+  --admiralty-typography-subheading-font-weight: 600;
+  --admiralty-typography-subheading-letter-spacing: 0.0001em;
+
+  --admiralty-typography-card-font-size: 20px;
+  --admiralty-typography-card-line-height: 1.3;
+  --admiralty-typography-card-font-weight: 600;
+  --admiralty-typography-card-letter-spacing: 0;
+
+  --admiralty-typography-component-font-size: 18px;
+  --admiralty-typography-component-line-height: 1.35;
+  --admiralty-typography-component-font-weight: 600;
+  --admiralty-typography-component-letter-spacing: 0;
+
+  --admiralty-typography-body-small-font-size: 14px;
+  --admiralty-typography-body-small-line-height: 1.5;
+  --admiralty-typography-body-small-font-weight: 300;
+
+  --admiralty-typography-body-default-font-size: 16px;
+  --admiralty-typography-body-default-line-height: 1.6;
+  --admiralty-typography-body-default-font-weight: 300;
+
+  --admiralty-typography-body-large-font-size: 18px;
+  --admiralty-typography-body-large-line-height: 1.6;
+  --admiralty-typography-body-large-font-weight: 300;
+
+  --admiralty-typography-label-default-font-size: 13px;
+  --admiralty-typography-label-default-line-height: 1.4;
+  --admiralty-typography-label-default-font-weight: 500;
+  --admiralty-typography-label-default-letter-spacing: 0.0001em;
+
+  --admiralty-typography-label-small-font-size: 11px;
+  --admiralty-typography-label-small-line-height: 1.4;
+  --admiralty-typography-label-small-font-weight: 500;
+  --admiralty-typography-label-small-letter-spacing: 0.0006em;
+
+  --admiralty-typography-label-small-uppercase-font-size: 11px;
+  --admiralty-typography-label-small-uppercase-line-height: 1.4;
+  --admiralty-typography-label-small-uppercase-font-weight: 500;
+  --admiralty-typography-label-small-uppercase-letter-spacing: 0.0006em;
+
+  --admiralty-typography-supporting-small-font-size: 12px;
+  --admiralty-typography-supporting-small-line-height: 1.35;
+  --admiralty-typography-supporting-small-font-weight: 400;
+
+  --admiralty-typography-supporting-small-uppercase-font-size: 12px;
+  --admiralty-typography-supporting-small-uppercase-line-height: 1.35;
+  --admiralty-typography-supporting-small-uppercase-font-weight: 500;
+  --admiralty-typography-supporting-small-uppercase-letter-spacing: 0.08em;
+
   /** Font Weight **/
   --admiralty-font-weight-light: 200;
   --admiralty-font-weight-normal: 300;
@@ -128,6 +195,13 @@
   --admiralty-spacing-7: 28px; /** 1.8rem **/
   --admiralty-spacing-8: 32px; /** 2rem **/
   --admiralty-spacing-9: 36px; /** 2.3rem **/
+  --admiralty-spacing-10: 40px;
+  --admiralty-spacing-11: 44px;
+  --admiralty-spacing-12: 48px;
+  --admiralty-spacing-13: 52px;
+  --admiralty-spacing-14: 56px;
+  --admiralty-spacing-15: 60px;
+  --admiralty-spacing-16: 64px;
   --admiralty-spacing-auto: auto;
   --admiralty-spacing-unset: unset;
   --admiralty-spacing-inherit: inherit;
