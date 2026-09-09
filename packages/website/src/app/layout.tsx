@@ -15,6 +15,7 @@ import { useRouter } from "next/navigation";
 import { TextSideBarItemVariant } from "@ukho/admiralty-core";
 import styles from "./styles.module.css";
 import { ThemeInitializer } from "./theme-initializer";
+import { PageTitleManager, updateDocumentTitle } from "./page-title-manager";
 
 const componentChildren: any[] = [
   { path: "/components/autocomplete", variant: "text", name: "Autocomplete" },
@@ -64,7 +65,7 @@ const gettingStartedChildren: any[] = [
 
 const updatesChildren: any[] = [
   { path: "/updates/v5-6", variant: "text", name: "v5.6.0" },
-  { path: "/updates/v5-3", variant: "text", name: "v5.3.0"},
+  { path: "/updates/v5-3", variant: "text", name: "v5.3.0" },
   { path: "/updates/v5", variant: "text", name: "v5.0.0" },
 ];
 
@@ -90,7 +91,6 @@ const brandChildren: any[] = [
   { name: "Images", variant: "text", path: "/brand-guide/images" },
   { name: "Logos", variant: "text", path: "/brand-guide/logos" },
 ];
-
 
 const sideBarItems = [
   {
@@ -153,13 +153,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
   return (
     <html lang="en">
+      <head>
+        <title>Admiralty Design System</title>
+      </head>
       <body>
         <ThemeInitializer />
+        <PageTitleManager />
         <div className={styles.pageWrapper}>
           <AdmiraltySkipLink href="#main-content"></AdmiraltySkipLink>
           <AdmiraltyHeader
             headerTitle="Design System"
-            onTitledClicked={() => router.push("/")}
+            onTitledClicked={() => {
+              updateDocumentTitle("/");
+              router.push("/");
+            }}
             logoImgUrl="/svg/Admiralty stacked logo.svg">
             <AdmiraltyThemeToggle slot="profile" className="header-theme-toggle"></AdmiraltyThemeToggle>
           </AdmiraltyHeader>
@@ -176,7 +183,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     {children.map(({ name, variant, path }) => (
                       <AdmiraltyTextSideBarItem
                         key={name}
-                        onTextSideBarItemClick={() => router.push(path)}
+                        onTextSideBarItemClick={() => {
+                          updateDocumentTitle(path);
+                          router.push(path);
+                        }}
                         suppress-redirect="true"
                         variant={variant as TextSideBarItemVariant}
                         href={path}
