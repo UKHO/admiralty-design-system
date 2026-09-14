@@ -1,41 +1,111 @@
+@import "./playground.var.css";
+
 .demo-container {
-    border: 1px solid #d0d0d0;
-    padding: 24px;
+  border: 1px solid var(--playground-container-border-colour);
+  padding: 24px;
 }
 
 .codesnippet-container {
-    border-right: 1px solid #d0d0d0;
-    border-left: 1px solid #d0d0d0;
-    border-bottom: 1px solid #d0d0d0;
-    padding: 24px;
+  border-right: 1px solid var(--playground-container-border-colour);
+  border-left: 1px solid var(--playground-container-border-colour);
+  border-bottom: 1px solid var(--playground-container-border-colour);
+  padding: 24px;
 }
 
 .codesnippet-content {
-    position: relative;
-}
-
-.codesnippet-content:hover .copy-button {
-    opacity: 1;
+  position: relative;
 }
 
 .copy-button {
-  background: rgba(0,0,0,.3);
-  padding: 0.4rem 0.5rem;
+  display: block;
+  width: 22px;
+  height: 22px;
+  line-height: 0;
   position: absolute;
-  top: 6px;
-  right: 6px;
-  opacity: 0;
-  transition: opacity .2s ease-in-out;
-  user-select: none;
-  cursor: pointer;
+  top: 4px;
+  right: 4px;
+  z-index: 1;
 }
 
-.copy-button:focus {
-    opacity: 1;
+.copy-button admiralty-icon {
+  display: block;
+  margin: 0;
 }
 
-body.admiralty-dark-mode .copy-button {
-    background-color: rgba(0, 0, 0,.3);
-    color: var(--admiralty-colour-primary);
-    border: 2px solid var(--admiralty-colour-primary);
+.copy-button admiralty-icon {
+  min-width: 0;
+  min-height: 0;
+  width: 14px;
+  height: 14px;
+  opacity: 0.9;
+  transform: scale(1);
+  transform-origin: center;
+  transition:
+    color 0.3s ease,
+    opacity 0.3s ease,
+    transform 0.5s ease;
+}
+
+.copy-button button.icon-secondary.borderless,
+.copy-button button.icon-secondary.borderless:hover,
+.copy-button button.icon-secondary.borderless:active {
+  width: 22px;
+  height: 22px;
+  min-width: 22px;
+  min-height: 22px;
+  padding: 0;
+  background-color: transparent;
+}
+
+.copy-button button.icon-secondary.borderless:focus {
+  width: 22px;
+  height: 22px;
+  min-width: 22px;
+  min-height: 22px;
+  padding: 0;
+  background-color: transparent;
+  box-shadow: none;
+  color: var(--admiralty-colour-primary);
+}
+
+.copy-button button.icon-secondary.borderless:focus admiralty-icon {
+  color: var(--admiralty-colour-primary) !important;
+}
+
+.copy-button button.icon-secondary.borderless:focus-visible {
+  width: 22px;
+  height: 22px;
+  min-width: 22px;
+  min-height: 22px;
+  padding: 0;
+  background-color: transparent;
+  box-shadow: none;
+  color: var(--admiralty-colour-primary);
+  outline: 3px solid var(--playground-copy-button-focus-outline);
+  outline-offset: 2px;
+}
+
+.copy-button button.icon-secondary.borderless:focus-visible admiralty-icon {
+  color: var(--admiralty-colour-primary) !important;
+}
+
+.copy-button--copied button.icon-secondary.borderless,
+.copy-button--copied button.icon-secondary.borderless:hover,
+.copy-button--copied button.icon-secondary.borderless:active {
+  color: var(--admiralty-colour-primary);
+}
+
+.copy-button--copied button.icon-secondary.borderless admiralty-icon {
+  color: var(--admiralty-colour-primary) !important;
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+/* Prevent tooltip slot text from appearing as fallback content under code blocks. */
+.copy-tooltip-label {
+  display: none;
+}
+
+admiralty-tooltip .tooltip .copy-tooltip-label {
+  display: inline;
 }
