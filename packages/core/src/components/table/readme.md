@@ -1,7 +1,5 @@
 # admiralty-table
 
-
-
 <!-- Auto Generated Below -->
 
 
@@ -11,9 +9,10 @@ Use tables to make information easier for users to scan and compare
 
 ## Properties
 
-| Property  | Attribute | Description | Type     | Default     |
-| --------- | --------- | ----------- | -------- | ----------- |
-| `caption` | `caption` |             | `string` | `undefined` |
+| Property  | Attribute | Description                                                                                                                                                                                                    | Type      | Default     |
+| --------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | ----------- |
+| `caption` | `caption` |                                                                                                                                                                                                                | `string`  | `undefined` |
+| `sorting` | `sorting` | When `true`, all `admiralty-table-header-cell` descendants become sortable by default. Individual cells can opt out by setting `sortable="false"`. Has no effect on existing tables that do not set this prop. | `boolean` | `false`     |
 
 
 ## Slots

@@ -15,6 +15,7 @@ import { StepNavigationDetail } from "./components/progress-tracker/progress-tra
 import { StepStatus } from "./components/progress-tracker-step/progress-tracker-step";
 import { RadioGroupChangeEventDetail } from "./components/radio-group/radio-group-interface";
 import { SelectChangeEventDetail } from "./components/select/select.interface";
+import { SortDirection } from "./components/table-header-cell/table-header-cell";
 import { TextSideBarItemVariant } from "./components/text-side-bar-item/text-side-bar-item.types";
 import { TextAreaChangeEventDetail } from "./components/textarea/textarea.interface";
 import { ThemePreference } from "./components/theme-toggle/theme-toggle";
@@ -29,6 +30,7 @@ export { StepNavigationDetail } from "./components/progress-tracker/progress-tra
 export { StepStatus } from "./components/progress-tracker-step/progress-tracker-step";
 export { RadioGroupChangeEventDetail } from "./components/radio-group/radio-group-interface";
 export { SelectChangeEventDetail } from "./components/select/select.interface";
+export { SortDirection } from "./components/table-header-cell/table-header-cell";
 export { TextSideBarItemVariant } from "./components/text-side-bar-item/text-side-bar-item.types";
 export { TextAreaChangeEventDetail } from "./components/textarea/textarea.interface";
 export { ThemePreference } from "./components/theme-toggle/theme-toggle";
@@ -838,6 +840,10 @@ export namespace Components {
      */
     interface AdmiraltyTable {
         "caption": string;
+        /**
+          * When `true`, all `admiralty-table-header-cell` descendants become sortable by default. Individual cells can opt out by setting `sortable="false"`. Has no effect on existing tables that do not set this prop.
+         */
+        "sorting": boolean;
     }
     /**
      * The table body element is a wrapper for a standard html table body and should be used to wrap rows
@@ -858,6 +864,14 @@ export namespace Components {
      * The table header cell element is used for showing headings for the columns
      */
     interface AdmiraltyTableHeaderCell {
+        /**
+          * The initial sort direction for this column.
+         */
+        "sortDirection": SortDirection;
+        /**
+          * Whether this column header is individually sortable. If the parent `admiralty-table` has `sorting` set, all columns are sortable by default and this prop can be set to `false` to opt a column out.
+         */
+        "sortable": boolean;
     }
     /**
      * The table row element should be used to define rows within the table body
@@ -1047,6 +1061,10 @@ export interface AdmiraltySideNavItemCustomEvent<T> extends CustomEvent<T> {
 export interface AdmiraltyTabGroupCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLAdmiraltyTabGroupElement;
+}
+export interface AdmiraltyTableHeaderCellCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLAdmiraltyTableHeaderCellElement;
 }
 export interface AdmiraltyTextSideBarItemCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -1642,10 +1660,21 @@ declare global {
         prototype: HTMLAdmiraltyTableHeaderElement;
         new (): HTMLAdmiraltyTableHeaderElement;
     };
+    interface HTMLAdmiraltyTableHeaderCellElementEventMap {
+        "admiraltySortChange": { direction: 'none' | 'ascending' | 'descending' };
+    }
     /**
      * The table header cell element is used for showing headings for the columns
      */
     interface HTMLAdmiraltyTableHeaderCellElement extends Components.AdmiraltyTableHeaderCell, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLAdmiraltyTableHeaderCellElementEventMap>(type: K, listener: (this: HTMLAdmiraltyTableHeaderCellElement, ev: AdmiraltyTableHeaderCellCustomEvent<HTMLAdmiraltyTableHeaderCellElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLAdmiraltyTableHeaderCellElementEventMap>(type: K, listener: (this: HTMLAdmiraltyTableHeaderCellElement, ev: AdmiraltyTableHeaderCellCustomEvent<HTMLAdmiraltyTableHeaderCellElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLAdmiraltyTableHeaderCellElement: {
         prototype: HTMLAdmiraltyTableHeaderCellElement;
@@ -2727,6 +2756,10 @@ declare namespace LocalJSX {
      */
     interface AdmiraltyTable {
         "caption"?: string;
+        /**
+          * When `true`, all `admiralty-table-header-cell` descendants become sortable by default. Individual cells can opt out by setting `sortable="false"`. Has no effect on existing tables that do not set this prop.
+         */
+        "sorting"?: boolean;
     }
     /**
      * The table body element is a wrapper for a standard html table body and should be used to wrap rows
@@ -2747,6 +2780,18 @@ declare namespace LocalJSX {
      * The table header cell element is used for showing headings for the columns
      */
     interface AdmiraltyTableHeaderCell {
+        /**
+          * Emitted when the user clicks the sort button. The `detail` contains the new `direction` value (`'ascending'`, `'descending'`, or `'none'`).
+         */
+        "onAdmiraltySortChange"?: (event: AdmiraltyTableHeaderCellCustomEvent<{ direction: 'none' | 'ascending' | 'descending' }>) => void;
+        /**
+          * The initial sort direction for this column.
+         */
+        "sortDirection"?: SortDirection;
+        /**
+          * Whether this column header is individually sortable. If the parent `admiralty-table` has `sorting` set, all columns are sortable by default and this prop can be set to `false` to opt a column out.
+         */
+        "sortable"?: boolean;
     }
     /**
      * The table row element should be used to define rows within the table body
