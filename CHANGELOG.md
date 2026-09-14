@@ -1,3 +1,21 @@
+# v5.8.0 (Thu Jul 30 2026)
+
+#### 🚀 Enhancement
+
+- `@ukho/admiralty-core`, `website`
+  - Dynamic Progress Tracker Headings [#510](https://github.com/UKHO/admiralty-design-system/pull/510) ([@lstevens98](https://github.com/lstevens98))
+
+#### 📝 Documentation
+
+- `website`
+  - 5.6 Updates Page [#508](https://github.com/UKHO/admiralty-design-system/pull/508) ([@lstevens98](https://github.com/lstevens98))
+
+#### Authors: 1
+
+- Lewis Stevens ([@lstevens98](https://github.com/lstevens98))
+
+---
+
 # v5.7.0 (Tue Jun 23 2026)
 
 #### 🚀 Enhancement

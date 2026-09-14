@@ -1,3 +1,15 @@
+# v5.8.0 (Thu Jul 30 2026)
+
+#### 🐛 Bug Fix
+
+- Merge branch 'main' into add-5.6-5.7-pages ([@lstevens98](https://github.com/lstevens98))
+
+#### Authors: 1
+
+- Lewis Stevens ([@lstevens98](https://github.com/lstevens98))
+
+---
+
 # v5.6.1 (Mon Jun 01 2026)
 
 #### 🐛 Bug Fix

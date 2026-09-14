@@ -8,11 +8,10 @@ export default function ColourBlocks() {
     <div className={styles.homePageContainer}>
       <div className={styles.latestUpdates}>
         <h2>Updates</h2>
-        <h3>Last Updated February 2026</h3>
-        <p>We released ADMIRALTY Design System version 5.3.0. This update introduces Dark Mode,
-          improving usability in low-light environments and supporting user preference-based theming. It also launches a
-          new Patterns section to help teams design more consistent and scalable services by providing guidance on
-          common service structures, interaction behaviour, and layout approaches.</p></div>
+        <h3>Last Updated June 2026</h3>
+        <p>We released ADMIRALTY Design System version 5.6.0. This update introduces a dedicated Dark Mode toggle, giving users explicit control over theme selection,
+          alongside new Tooltip and Progress Tracker components to support more intuitive and accessible user experiences.
+          It also enhances the Autocomplete component with configurable icons, providing greater flexibility.</p></div>
       <div className={styles.colourBlocksContainer}>
         <AdmiraltyColourBlock
           width={434}
