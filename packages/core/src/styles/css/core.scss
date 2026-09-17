@@ -17,7 +17,7 @@ html {
   --admiralty-font-family: Inter, Arial, sans-serif;
   --admiralty-font-family-supporting: 'Roboto Mono', monospace;
   @supports (font-variation-settings: normal) {
-    --admiralty-font-family: InterVariable, Arial, sans-serif;
+    --admiralty-font-family: Inter, Arial, sans-serif;
   }
   --admiralty-font-weight: var(--admiralty-font-weight-normal);
   --admiralty-font-size: 18px;
