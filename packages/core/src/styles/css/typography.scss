@@ -4,6 +4,34 @@
 $heading-font-weight: var(--admiralty-font-weight-medium);
 $list-item-font-weight: var(--admiralty-font-weight-normal);
 
+@mixin typography-style($style) {
+  font-size: var(--admiralty-typography-#{$style}-font-size);
+  line-height: var(--admiralty-typography-#{$style}-line-height);
+  font-weight: var(--admiralty-typography-#{$style}-font-weight);
+  letter-spacing: var(--admiralty-typography-#{$style}-letter-spacing);
+}
+
+@mixin typography-body($size) {
+  font-size: var(--admiralty-typography-body-#{$size}-font-size);
+  line-height: var(--admiralty-typography-body-#{$size}-line-height);
+  font-weight: var(--admiralty-typography-body-#{$size}-font-weight);
+}
+
+@mixin typography-supporting($size) {
+  font-family: var(--admiralty-font-family-supporting);
+  font-size: var(--admiralty-typography-supporting-#{$size}-font-size);
+  line-height: var(--admiralty-typography-supporting-#{$size}-line-height);
+  font-weight: var(--admiralty-typography-supporting-#{$size}-font-weight);
+}
+
+@mixin typography-label($size) {
+  font-family: var(--admiralty-font-family-supporting);
+  font-size: var(--admiralty-typography-label-#{$size}-font-size);
+  line-height: var(--admiralty-typography-label-#{$size}-line-height);
+  font-weight: var(--admiralty-typography-label-#{$size}-font-weight);
+  letter-spacing: var(--admiralty-typography-label-#{$size}-letter-spacing);
+}
+
 html {
   font-family: var(--admiralty-font-family);
   font-size: var(--admiralty-font-size);
@@ -25,60 +53,154 @@ a {
 
 h1 {
   color: var(--admiralty-colour-primary);
-  font-weight: $heading-font-weight;
-  font-size: var(--admiralty-font-size-6); /** OLD: 48px = 3rem, NEW: 2.75rem = 44px **/;
-  line-height: 60px;
+  @include typography-style(title);
   margin: 0 0 30px 0;
-  @include responsive.not-desktop {
-    font-size: var(--admiralty-font-size-6); /** OLD: 46px = 2.875rem, NEW: 2.75rem = 44px **/
-    line-height: 54px;
-  }
 }
 
 h2 {
   color: var(--admiralty-colour-primary);
-  font-weight: $heading-font-weight;
-  font-size: var(--admiralty-font-size-3); /** OLD: 36px, NEW: 1.75rem = 28px **/;
-  line-height: 48px;
+  @include typography-style(heading);
   margin-bottom: 18px;
-  @include responsive.not-desktop {
-    font-size: var(--admiralty-font-size-3); /** OLD: 34px = 2.125rem, NEW: 1.75rem = 28px **/;
-    line-height: 42px;
-  }
 }
 
-h3,
-h4,
-h5 {
+h3 {
   color: var(--admiralty-colour-primary);
-  font-weight: $heading-font-weight;
-  font-size: var(--admiralty-font-size-0); /** OLD: 21px = 1.313rem, NEW: 1rem = 16px **/;
-  line-height: 30px;
+  @include typography-style(subheading);
   margin-bottom: 12px;
-  @include responsive.not-desktop {
-    font-size: var(--admiralty-font-size-0); /** OLD: 20px = 1.25rem, NEW: 1rem = 16px **/
-    line-height: 30px;
-  }
 }
 
+h4 {
+  color: var(--admiralty-colour-primary);
+  @include typography-style(card);
+  margin-bottom: 12px;
+}
+
+h5,
 h6 {
   color: var(--admiralty-colour-primary);
-  font-weight: $heading-font-weight;
-  font-size: var(--admiralty-font-size--1); /** OLD: 18px = 1.125rem, NEW 0.875 = 14px **/;
-  line-height: 24px;
+  @include typography-style(component);
   margin-bottom: 12px;
-  @include responsive.not-desktop {
-    font-size: var(--admiralty-font-size--1); /** OLD: 16px, NEW 0.875 = 14px **/
-  }
+}
+
+label {
+  @include typography-label(default);
+}
+
+.admiralty-typography-hero {
+  @include typography-style(hero);
+}
+
+.admiralty-typography-title {
+  @include typography-style(title);
+}
+
+.admiralty-typography-heading {
+  @include typography-style(heading);
+}
+
+.admiralty-typography-subheading {
+  @include typography-style(subheading);
+}
+
+.admiralty-typography-card {
+  @include typography-style(card);
+}
+
+.admiralty-typography-component {
+  @include typography-style(component);
+}
+
+.admiralty-typography-body-small {
+  @include typography-body(small);
+}
+
+.admiralty-typography-body-default {
+  @include typography-body(default);
+}
+
+.admiralty-typography-body-large {
+  @include typography-body(large);
+}
+
+.admiralty-typography-label-default {
+  @include typography-label(default);
+}
+
+.admiralty-typography-label-small {
+  @include typography-label(small);
+}
+
+.admiralty-typography-label-small-uppercase {
+  @include typography-label(small-uppercase);
+  text-transform: uppercase;
+}
+
+.admiralty-typography-supporting-small {
+  @include typography-supporting(small);
+}
+
+.admiralty-typography-supporting-small-uppercase {
+  @include typography-supporting(small-uppercase);
+  letter-spacing: var(--admiralty-typography-supporting-small-uppercase-letter-spacing);
+  text-transform: uppercase;
+}
+
+.admiralty-typography-pair-hero > :first-child {
+  margin-bottom: var(--admiralty-spacing-2);
+}
+
+.admiralty-typography-pair-title > :first-child {
+  margin-bottom: var(--admiralty-spacing-4);
+}
+
+.admiralty-typography-pair-heading > :first-child,
+.admiralty-typography-pair-subheading > :first-child {
+  margin-bottom: var(--admiralty-spacing-4);
+}
+
+.admiralty-typography-pair-component > :first-child,
+.admiralty-typography-pair-supporting > :first-child {
+  margin-bottom: var(--admiralty-spacing-1);
+}
+
+.admiralty-typography-pair-title + .admiralty-typography-pair-title > :first-child,
+.admiralty-typography-pair-title + .admiralty-typography-pair-hero > :first-child {
+  margin-top: 64px;
+}
+
+.admiralty-typography-pair-hero + .admiralty-typography-pair-title > :first-child {
+  margin-top: 72px;
+}
+
+.admiralty-typography-pair-component + .admiralty-typography-pair-component > :first-child {
+  margin-top: var(--admiralty-spacing-6);
+}
+
+.admiralty-typography-pair-title-section > :first-child {
+  margin-bottom: var(--admiralty-spacing-12);
+}
+
+.admiralty-typography-pair-hero-section > :first-child {
+  margin-bottom: var(--admiralty-spacing-16);
+}
+
+.admiralty-typography-pair-component-section > :first-child {
+  margin-bottom: var(--admiralty-spacing-8);
 }
 
 p {
-  font-size: var(--admiralty-font-size-0); /** OLD: 18px = 1.125rem, NEW 1rem = 16px **/;
-  line-height: 24px;
-  margin-bottom: 30px;
-  @include responsive.not-desktop {
-    font-size: var(--admiralty-font-size-0); /** OLD: 16px **/;
-  }
+  @include typography-body(default);
+  margin-bottom: var(--admiralty-spacing-6);
+}
+
+p + h2,
+p + h3,
+p + h4,
+p + h5,
+p + h6,
+.admiralty-typography-body-default + .admiralty-typography-heading,
+.admiralty-typography-body-default + .admiralty-typography-subheading {
+  margin-top: var(--admiralty-spacing-8);
 }
 
 .intro {
