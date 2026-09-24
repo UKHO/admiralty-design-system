@@ -1,4 +1,13 @@
 .contentContainer {
   display: flex;
-  padding: 60px 11rem 0 11rem;
+  padding: 60px 0 0 142px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.content {
+  flex: 1;
+  max-width: 800px;
+  margin: 0;
+  width: 100%;
 }
