@@ -1,4 +1,6 @@
-import { Component, Prop, h } from '@stencil/core';
+import { Component, Element, h, Prop, Watch } from '@stencil/core';
+
+let modalDialogIds = 0;
 
 /**
  * @slot content - Content of the dialog.
@@ -10,33 +12,314 @@ import { Component, Prop, h } from '@stencil/core';
   scoped: true,
 })
 export class ModalDialogComponent {
+  @Element() el!: HTMLElement;
+
+  private dialogElement?: HTMLDivElement;
+  private previouslyFocusedElement: HTMLElement | null = null;
+  private shouldMoveFocus = false;
+  private readonly headingId = `admiralty-modal-dialog-heading-${modalDialogIds}`;
+  private readonly contentId = `admiralty-modal-dialog-content-${modalDialogIds++}`;
+  private readonly mobileBreakpointQuery = '(max-width: 479px)';
+  private readonly mobileMediaQuery = typeof window === 'undefined' ? undefined : window.matchMedia(this.mobileBreakpointQuery);
+  private originalActionOrder: HTMLElement[] = [];
+
   /**
    * The title of the modal dialog.
    */
-  @Prop() heading: string;
+  @Prop() heading?: string;
   /**
    * Label the dialog.
    */
-  @Prop() label: string;
+  @Prop() label?: string;
   /**
    * Describe the contents of the dialog.
    */
-  @Prop() description: string;
+  @Prop() description?: string;
   /**
    * Whether to show the modal dialog.
    */
-  @Prop() show: boolean = false;
+  @Prop({ mutable: true, reflect: true }) show: boolean = false;
+
+  connectedCallback() {
+    if (!this.mobileMediaQuery) {
+      return;
+    }
+
+    if ('addEventListener' in this.mobileMediaQuery) {
+      this.mobileMediaQuery.addEventListener('change', this.handleViewportChange);
+      return;
+    }
+
+    (this.mobileMediaQuery as MediaQueryList & { addListener: (listener: (event: MediaQueryListEvent) => void) => void }).addListener(this.handleViewportChange);
+  }
+
+  componentDidLoad() {
+    if (this.show) {
+      this.capturePreviouslyFocusedElement();
+      this.shouldMoveFocus = true;
+    }
+
+    this.updateActionLayout();
+  }
+
+  componentDidRender() {
+    this.updateActionLayout();
+
+    if (this.show && this.shouldMoveFocus) {
+      this.focusFirstInteractiveElement();
+      this.shouldMoveFocus = false;
+    }
+  }
+
+  disconnectedCallback() {
+    if (!this.mobileMediaQuery) {
+      return;
+    }
+
+    if ('removeEventListener' in this.mobileMediaQuery) {
+      this.mobileMediaQuery.removeEventListener('change', this.handleViewportChange);
+      return;
+    }
+
+    (this.mobileMediaQuery as MediaQueryList & { removeListener: (listener: (event: MediaQueryListEvent) => void) => void }).removeListener(this.handleViewportChange);
+  }
+
+  @Watch('show')
+  protected handleShowChange(newValue: boolean, oldValue: boolean) {
+    if (newValue === oldValue) {
+      return;
+    }
+
+    if (newValue) {
+      this.capturePreviouslyFocusedElement();
+      this.shouldMoveFocus = true;
+      return;
+    }
+
+    this.restoreFocus();
+  }
+
+  private handleViewportChange = () => {
+    this.updateActionLayout();
+  };
+
+  private handleActionsSlotChange = () => {
+    this.originalActionOrder = [];
+    this.updateActionLayout();
+  };
+
+  private handleDialogKeyDown = (event: KeyboardEvent) => {
+    if (!this.show) {
+      return;
+    }
+
+    if (event.key !== 'Tab') {
+      return;
+    }
+
+    const focusableElements = this.getFocusableElements();
+
+    if (!focusableElements.length) {
+      event.preventDefault();
+      this.dialogElement?.focus();
+      return;
+    }
+
+    const firstFocusableElement = focusableElements[0];
+    const lastFocusableElement = focusableElements[focusableElements.length - 1];
+    const activeElement = document.activeElement as HTMLElement | null;
+
+    if (event.shiftKey) {
+      if (!activeElement || activeElement === firstFocusableElement || !this.dialogElement?.contains(activeElement)) {
+        event.preventDefault();
+        lastFocusableElement.focus();
+      }
+
+      return;
+    }
+
+    if (!activeElement || activeElement === lastFocusableElement || !this.dialogElement?.contains(activeElement)) {
+      event.preventDefault();
+      firstFocusableElement.focus();
+    }
+  };
+
+  private capturePreviouslyFocusedElement() {
+    const activeElement = document.activeElement;
+
+    if (activeElement instanceof HTMLElement && !this.el.contains(activeElement)) {
+      this.previouslyFocusedElement = activeElement;
+    }
+  }
+
+  private restoreFocus() {
+    if (this.previouslyFocusedElement?.isConnected) {
+      this.previouslyFocusedElement.focus();
+    }
+
+    this.previouslyFocusedElement = null;
+  }
+
+  private focusFirstInteractiveElement() {
+    this.dialogElement?.focus();
+  }
+
+  private getFocusableElements(): HTMLElement[] {
+    if (!this.dialogElement) {
+      return [];
+    }
+
+    const focusableSelector = [
+      'a[href]',
+      'area[href]',
+      'button:not([disabled])',
+      'input:not([disabled])',
+      'select:not([disabled])',
+      'textarea:not([disabled])',
+      '[tabindex]:not([tabindex="-1"])',
+      '[contenteditable="true"]',
+    ].join(',');
+
+    return Array.from(this.dialogElement.querySelectorAll<HTMLElement>(focusableSelector)).filter(element => {
+      if (element.tabIndex < 0) {
+        return false;
+      }
+
+      if (element.hasAttribute('disabled') || element.getAttribute('aria-hidden') === 'true') {
+        return false;
+      }
+
+      return element.getClientRects().length > 0;
+    });
+  }
+
+  private updateActionLayout() {
+    const actionContainer = this.el.querySelector<HTMLElement>("[slot='actions']");
+
+    if (!actionContainer) {
+      return;
+    }
+
+    const actionChildren = Array.from(actionContainer.children) as HTMLElement[];
+
+    if (!actionChildren.length) {
+      return;
+    }
+
+    if (!this.originalActionOrder.length || !this.hasSameActionChildren(this.originalActionOrder, actionChildren)) {
+      this.originalActionOrder = actionChildren.slice();
+    }
+
+    const isMobileViewport = this.getIsMobileViewport();
+    const nextOrder = isMobileViewport ? this.getMobileActionOrder(this.originalActionOrder) : this.originalActionOrder;
+
+    if (nextOrder.every((child, index) => actionContainer.children[index] === child)) {
+      return;
+    }
+
+    // Preserve focus during reordering if applicable
+    const activeElement = document.activeElement as HTMLElement | null;
+    nextOrder.forEach(child => actionContainer.appendChild(child));
+
+    // Restore focus if it was on an action button
+    if (activeElement && actionContainer.contains(activeElement)) {
+      activeElement.focus();
+    }
+  }
+
+  private getIsMobileViewport() {
+    if (typeof window === 'undefined' || typeof window.matchMedia !== 'function') {
+      return false;
+    }
+
+    return window.matchMedia(this.mobileBreakpointQuery).matches;
+  }
+
+  private hasSameActionChildren(previousChildren: HTMLElement[], nextChildren: HTMLElement[]) {
+    return previousChildren.length === nextChildren.length && previousChildren.every(child => nextChildren.includes(child));
+  }
+
+  private getMobileActionOrder(actionChildren: HTMLElement[]) {
+    const hasActionVariantMetadata = actionChildren.some(actionChild => this.hasActionVariantMetadata(actionChild));
+
+    // Fallback for environments where variant metadata is not available on slotted action elements.
+    if (!hasActionVariantMetadata && actionChildren.length === 2) {
+      return [actionChildren[1], actionChildren[0]];
+    }
+
+    const primaryActions: HTMLElement[] = [];
+    const secondaryActions: HTMLElement[] = [];
+
+    actionChildren.forEach(actionChild => {
+      if (this.isPrimaryAction(actionChild)) {
+        primaryActions.push(actionChild);
+        return;
+      }
+
+      secondaryActions.push(actionChild);
+    });
+
+    return [...primaryActions, ...secondaryActions];
+  }
+
+  private isPrimaryAction(actionChild: HTMLElement) {
+    if (actionChild.tagName.toLowerCase() !== 'admiralty-button') {
+      return actionChild.getAttribute('data-admiralty-primary-action') === 'true';
+    }
+
+    const buttonVariant =
+      (actionChild as HTMLElement & { variant?: string }).variant ??
+      actionChild.getAttribute('variant') ??
+      actionChild
+        .querySelector('button')
+        ?.className.split(' ')
+        .find(className => className === 'primary' || className === 'secondary' || className === 'warning' || className === 'text' || className === 'icon') ??
+      'primary';
+
+    return buttonVariant === 'primary';
+  }
+
+  private hasActionVariantMetadata(actionChild: HTMLElement) {
+    if (actionChild.tagName.toLowerCase() !== 'admiralty-button') {
+      return actionChild.hasAttribute('data-admiralty-primary-action');
+    }
+
+    const buttonVariant =
+      (actionChild as HTMLElement & { variant?: string }).variant ??
+      actionChild.getAttribute('variant') ??
+      actionChild
+        .querySelector('button')
+        ?.className.split(' ')
+        .find(className => className === 'primary' || className === 'secondary' || className === 'warning' || className === 'text' || className === 'icon');
+
+    return buttonVariant !== undefined;
+  }
 
   render() {
     return (
       <div>
-        <div class={{ 'modal-dialog': true, 'show': this.show }} role="dialog" aria-label={this.label} aria-description={this.description}>
-          {this.heading ? <p class="modal-heading">{this.heading}</p> : null}
-          <div class="modal-content">
-            <slot name="content"></slot>
+        <div
+          ref={element => (this.dialogElement = element)}
+          class={{ 'modal-dialog': true, 'show': this.show }}
+          role="dialog"
+          aria-modal="true"
+          aria-label={this.label}
+          aria-labelledby={this.label || !this.heading ? undefined : this.headingId}
+          aria-describedby={this.contentId}
+          aria-description={this.description}
+          tabindex={-1}
+          onKeyDown={this.handleDialogKeyDown}
+        >
+          {this.heading ? (
+            <p class="modal-heading" id={this.headingId}>
+              {this.heading}
+            </p>
+          ) : null}
+          <div class="modal-content" id={this.contentId}>
+            <slot name="content" onSlotchange={this.handleActionsSlotChange}></slot>
           </div>
           <div role="navigation" class="modal-actions">
-            <slot name="actions"></slot>
+            <slot name="actions" onSlotchange={this.handleActionsSlotChange}></slot>
           </div>
         </div>
         <div class={{ 'modal-backdrop': true, 'show': this.show }}></div>
