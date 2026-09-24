@@ -97,16 +97,16 @@ export class HeaderComponent {
           </div>
           <nav role="navigation" class="header-menus" aria-label="Site navigation">
             <div class={{ 'mobile-menu-toggle': true, 'display-hamburger': this.displayHamburger }}>
-              <button onClick={_ => this.toggleMobileMenu()} aria-expanded={this.mobileMenuOpen} aria-label={this.mobileMenuOpen ? 'Hide menu' : 'Show menu'}>
-                <admiralty-icon name={this.mobileMenuOpen ? "close-rounded" : "menu-rounded"}></admiralty-icon>
+              <button onClick={_ => this.toggleMobileMenu()} aria-expanded={this.mobileMenuOpen ? 'true' : 'false'} aria-label={this.mobileMenuOpen ? 'Hide menu' : 'Show menu'}>
+                <admiralty-icon name={this.mobileMenuOpen ? 'close-rounded' : 'menu-rounded'}></admiralty-icon>
               </button>
             </div>
-            <div class={{ "menu-sections": true, 'mob-menus-visible': this.mobileMenuOpen }}>
+            <div class="header-profile">
+              <slot name="profile"></slot>
+            </div>
+            <div class={{ 'menu-sections': true, 'mob-menus-visible': this.mobileMenuOpen }}>
               <div class="menu-items">
                 <slot name="items"></slot>
-              </div>
-              <div class="header-profile">
-                <slot name="profile"></slot>
               </div>
             </div>
           </nav>
