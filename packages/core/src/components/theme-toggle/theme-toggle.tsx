@@ -25,7 +25,7 @@ export class ThemeToggleComponent {
   @Prop({ reflect: true }) disabled: boolean = false;
 
   /**
-   * Label for accessibility. Defaults to "Toggle dark mode".
+   * Label for accessibility. Defaults to an action label for the next theme.
    */
   @Prop() ariaLabel: string = 'Toggle dark mode';
 
@@ -222,13 +222,9 @@ export class ThemeToggleComponent {
 
   render() {
     const isDark = this.isDarkMode();
-    const currentThemeLabel = this.theme === 'auto'
-    ? `auto (${isDark ? 'dark' : 'light'} system preference)`
-      : this.theme;
+    const currentThemeLabel = this.theme === 'auto' ? `auto (${isDark ? 'dark' : 'light'} system preference)` : this.theme;
 
-    const computedAriaLabel = this.ariaLabel !== 'Toggle dark mode'
-      ? this.ariaLabel
-      : `Toggle dark mode (current: ${currentThemeLabel}. Press to switch to ${isDark ? 'light' : 'dark'} mode)`;
+    const computedAriaLabel = this.ariaLabel !== 'Toggle dark mode' ? this.ariaLabel : `Switch to ${isDark ? 'light' : 'dark'} mode (current: ${currentThemeLabel})`;
 
     return (
       <Host>
@@ -242,15 +238,15 @@ export class ThemeToggleComponent {
           onClick={this.toggleTheme}
           disabled={this.disabled}
           aria-label={computedAriaLabel}
-          aria-pressed={isDark}
+          aria-pressed={isDark ? 'true' : 'false'}
           type="button"
         >
           <span class="toggle-background-slider"></span>
           <span class="toggle-icon sun-icon">
-            <admiralty-icon name="light-mode-outline"></admiralty-icon>
+            <admiralty-icon name="light-mode-outline" size={24}></admiralty-icon>
           </span>
           <span class="toggle-icon moon-icon">
-            <admiralty-icon name="dark-mode-outline"></admiralty-icon>
+            <admiralty-icon name="dark-mode-outline" size={24}></admiralty-icon>
           </span>
         </button>
       </Host>
