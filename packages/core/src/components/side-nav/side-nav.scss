@@ -1,4 +1,30 @@
-nav.side-nav {
+@import 'side-nav.vars';
+
+.side-nav {
   display: flex;
   flex-direction: column;
+}
+
+/**
+ * When slotted into `admiralty-header` the same element serves both layouts:
+ * a fixed left hand column on desktop, and a full width block inside the burger
+ * panel below the desktop breakpoint.
+ */
+.side-nav.in-header {
+  @include desktop-only {
+    position: fixed;
+    top: $side-nav-top-offset;
+    left: 0;
+    bottom: 0;
+    width: $side-nav-width;
+    box-sizing: border-box;
+    overflow-y: auto;
+    background-color: $side-nav-background-colour;
+    border-right: 1px solid $side-nav-border-colour;
+    z-index: 1;
+  }
+
+  @include not-desktop {
+    width: 100%;
+  }
 }

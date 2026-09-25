@@ -108,13 +108,39 @@
   display: flex;
   justify-content: flex-end;
 
+  // Desktop order matches the previous DOM order (nav/items, then profile last).
+  .menu-sections {
+    order: 1;
+  }
+
+  .header-profile {
+    order: 2;
+
+    @include not-desktop {
+      order: 3;
+    }
+  }
+
+  .header-toggle {
+    display: flex;
+    align-items: center;
+    order: 3;
+
+    @include not-desktop {
+      order: 2;
+    }
+  }
+
   .mobile-menu-toggle {
     display: none;
+    order: 3;
 
     @include not-desktop {
       &.display-hamburger {
         display: flex;
       }
+
+      order: 3;
     }
     flex-direction: column;
     justify-content: center;
@@ -149,23 +175,42 @@
 
       min-height: 56px;
       position: relative;
-      right: 0;
+      left: 0;
+      right: auto;
 
       position: absolute;
       top: 100%;
       z-index: 999;
-      min-width: 100%;
+      min-width: 250px;
+      box-sizing: border-box;
+      overflow-x: hidden;
       @include tablet-only {
-        min-width: 50%;
-        margin-left: $header-menu-section-tablet-only-margin-left;
+        min-width: 250px;
+        margin-left: 0;
       }
 
       background-color: $header-background-colour;
       border: 1px solid $header-border-colour;
 
+      max-height: calc(100vh - 56px);
+      height: calc(100vh - 56px);
+      overflow-y: auto;
+
       &.mob-menus-visible {
-        display: block;
+        display: flex;
+        flex-direction: column;
+
+        .menu-nav {
+          flex: 1;
+          min-height: 0;
+        }
       }
+    }
+  }
+
+  .menu-sections {
+    @include desktop-only {
+      display: contents;
     }
   }
 
@@ -176,6 +221,14 @@
       display: flex;
       flex: 0;
       flex-direction: row;
+    }
+  }
+
+  // On desktop the slotted side nav positions itself as the left hand column, so its
+  // wrapper must not take part in the header's own layout.
+  .menu-nav {
+    @include desktop-only {
+      display: contents;
     }
   }
 }

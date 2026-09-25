@@ -5,6 +5,7 @@ import "./globals.css";
 import {
   AdmiraltyFooter,
   AdmiraltyHeader,
+  AdmiraltyHeaderProfile,
   AdmiraltyLink,
   AdmiraltyThemeToggle,
   AdmiraltyTextSideBar,
@@ -64,7 +65,7 @@ const gettingStartedChildren: any[] = [
 
 const updatesChildren: any[] = [
   { path: "/updates/v5-6", variant: "text", name: "v5.6.0" },
-  { path: "/updates/v5-3", variant: "text", name: "v5.3.0"},
+  { path: "/updates/v5-3", variant: "text", name: "v5.3.0" },
   { path: "/updates/v5", variant: "text", name: "v5.0.0" },
 ];
 
@@ -90,7 +91,6 @@ const brandChildren: any[] = [
   { name: "Images", variant: "text", path: "/brand-guide/images" },
   { name: "Logos", variant: "text", path: "/brand-guide/logos" },
 ];
-
 
 const sideBarItems = [
   {
@@ -151,6 +151,34 @@ const sideBarItems = [
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const router = useRouter();
 
+  const renderSideBar = (className: string, slot?: string) => (
+    <AdmiraltyTextSideBar
+      slot={slot}
+      className={className}
+      label="Documentation navigation"
+      textSideBarWidth="250px"
+      showLogo={false}>
+      {sideBarItems.map(({ name, variant, children }) => (
+        <AdmiraltyTextSideBarItem
+          key={name}
+          suppress-redirect="true"
+          variant={variant as TextSideBarItemVariant}
+          slot="items"
+          itemText={name}>
+          {children.map(({ name, variant, path }) => (
+            <AdmiraltyTextSideBarItem
+              key={name}
+              onTextSideBarItemClick={() => router.push(path)}
+              suppress-redirect="true"
+              variant={variant as TextSideBarItemVariant}
+              href={path}
+              itemText={name}></AdmiraltyTextSideBarItem>
+          ))}
+        </AdmiraltyTextSideBarItem>
+      ))}
+    </AdmiraltyTextSideBar>
+  );
+
   return (
     <html lang="en">
       <body>
@@ -161,30 +189,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             headerTitle="Design System"
             onTitledClicked={() => router.push("/")}
             logoImgUrl="/svg/Admiralty stacked logo.svg">
-            <AdmiraltyThemeToggle slot="profile" className="header-theme-toggle"></AdmiraltyThemeToggle>
+            {renderSideBar(styles.sideBar, "nav")}
+            <AdmiraltyThemeToggle slot="toggle" className="header-theme-toggle"></AdmiraltyThemeToggle>
+            <AdmiraltyHeaderProfile
+              slot="profile"
+              isSignedIn={true}
+              signedInText="Mr Admiral"
+              signInOnly={false}></AdmiraltyHeaderProfile>
           </AdmiraltyHeader>
           <div className={styles.splitContentWrapper}>
             <div className={styles.middle}>
-              <AdmiraltyTextSideBar className={styles.sideBar} textSideBarWidth="250px" showLogo={false}>
-                {sideBarItems.map(({ name, variant, slot, children }) => (
-                  <AdmiraltyTextSideBarItem
-                    key={name}
-                    suppress-redirect="true"
-                    variant={variant as TextSideBarItemVariant}
-                    slot={slot}
-                    itemText={name}>
-                    {children.map(({ name, variant, path }) => (
-                      <AdmiraltyTextSideBarItem
-                        key={name}
-                        onTextSideBarItemClick={() => router.push(path)}
-                        suppress-redirect="true"
-                        variant={variant as TextSideBarItemVariant}
-                        href={path}
-                        itemText={name}></AdmiraltyTextSideBarItem>
-                    ))}
-                  </AdmiraltyTextSideBarItem>
-                ))}
-              </AdmiraltyTextSideBar>
+              {renderSideBar(styles.desktopSideBar)}
               <main className={styles.mainContent} id="main-content">
                 {children}
               </main>

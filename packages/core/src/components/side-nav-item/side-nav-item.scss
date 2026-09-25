@@ -32,4 +32,13 @@ a.section {
     border-top: 3px solid transparent;
     border-bottom: 3px solid $side-nav-item-text-colour;
   }
+
+  // Full width rows with a 44px touch target once collapsed into the burger menu.
+  @include not-desktop {
+    max-width: none;
+    min-height: 44px;
+    height: auto;
+    align-items: flex-start;
+    text-align: left;
+  }
 }

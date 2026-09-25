@@ -39,6 +39,24 @@ admiralty-theme-toggle.header-theme-toggle {
   margin-right: 1rem;
 }
 
+@media (min-width: 1024px) {
+  admiralty-header .header-menu .menu-nav {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1023px) {
+  admiralty-header .header-menus .menu-sections {
+    left: 0 !important;
+    right: auto !important;
+    min-width: min(250px, 100vw) !important;
+    width: min(250px, 100vw) !important;
+    margin-left: 0 !important;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+}
+
 @media (max-width: 768px) {
   admiralty-theme-toggle.header-theme-toggle {
     margin-right: 0.5rem;

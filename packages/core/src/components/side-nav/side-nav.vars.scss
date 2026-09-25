@@ -1,0 +1,13 @@
+@import '../../styles/vars/globals';
+
+/**
+ * @prop --admiralty-side-nav-width: Width of the side nav when it is rendered as the left hand column on desktop
+ * @prop --admiralty-side-nav-top-offset: Distance from the top of the viewport to the top of the side nav when rendered inside a header
+ * @prop --admiralty-side-nav-background-colour: Background colour of the side nav
+ * @prop --admiralty-side-nav-border-colour: Colour of the side nav's trailing border
+**/
+
+$side-nav-width: var(--admiralty-side-nav-width, 240px);
+$side-nav-top-offset: var(--admiralty-side-nav-top-offset, 80px);
+$side-nav-background-colour: var(--admiralty-side-nav-background-colour, var(--admiralty-header-background-colour));
+$side-nav-border-colour: var(--admiralty-side-nav-border-colour, var(--admiralty-colour-light));

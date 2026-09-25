@@ -1,4 +1,5 @@
 import { Component, Event, EventEmitter, Prop, h } from '@stencil/core';
+import { Keys } from '../Keys';
 
 @Component({
   tag: 'admiralty-side-nav-item',
@@ -33,8 +34,16 @@ export class SideNavItemComponent {
     this.emitSideNavItemSelected();
   }
 
+  handleKeyDownAction(ev: KeyboardEvent) {
+    // Stop Space scrolling the page before the keyup handler runs.
+    if (ev.key === Keys.SPACE) {
+      ev.preventDefault();
+    }
+  }
+
   handleKeyUpAction(ev: KeyboardEvent) {
-    if (ev.key === 'Enter') {
+    if (ev.key === Keys.ENTER || ev.key === Keys.SPACE) {
+      ev.preventDefault();
       this.emitSideNavItemSelected();
     }
   }
@@ -50,7 +59,11 @@ export class SideNavItemComponent {
           section: true,
           navActive: this.navActive,
         }}
+        role="link"
+        tabindex={0}
+        aria-current={this.navActive ? 'page' : null}
         onClick={this.handleClickAction.bind(this)}
+        onKeyDown={this.handleKeyDownAction.bind(this)}
         onKeyUp={this.handleKeyUpAction.bind(this)}
       >
         {this.headingTitle}

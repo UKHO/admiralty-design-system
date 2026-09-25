@@ -6,7 +6,7 @@
 .pageWrapper {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .splitContentWrapper {
@@ -16,23 +16,53 @@
 }
 
 .middle {
-  display:flex;
+  display: flex;
   flex: 1;
 }
 
 .sideBar {
   overflow-y: auto;
   overflow-x: hidden;
-  position: sticky;
-  top: 0;
-  height: 100vh;
+  display: block;
+}
+
+.desktopSideBar {
+  display: none;
 }
 
 .mainContent {
   flex: 1;
-  overflow-y: auto;
+  min-width: 0;
+}
+
+@media (min-width: 1024px) {
+  .sideBar {
+    display: none;
+  }
+
+  .desktopSideBar {
+    display: block;
+    flex: 0 0 250px;
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+    height: calc(100vh - 5em);
+    max-height: calc(100vh - 5em);
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
 }
 
 .pageFooter {
   margin: 0;
+}
+
+@media (max-width: 1023px) {
+  .sideBar {
+    position: static;
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    max-height: none;
+  }
 }

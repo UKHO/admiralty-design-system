@@ -67,12 +67,14 @@
     .sub-menu {
       display: none;
       flex-direction: column;
+      background-color: $header-profile-background-colour;
       font-size: $header-profile-text-size;
       position: absolute;
       top: 100%;
       right: 0;
       border: 1px solid $header-profile-divider-colour;
       width: 300px;
+      z-index: 1000;
 
       &.desktop-visible {
         display: flex;
@@ -95,6 +97,7 @@
         padding: $header-profile-desktop-only-sub-menu-item-padding;
         text-align: left;
         width: 100%;
+        color: $header-profile-text-colour;
 
         &:hover {
           background-color: $header-profile-hover-background-colour;

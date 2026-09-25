@@ -20,6 +20,7 @@ $header-profile-sub-item-text-weight: var(--admiralty-header-profile-sub-item-fo
 
 $header-profile-active-colour: var(--admiralty-colour-primary);
 $header-profile-text-colour: var(--admiralty-colour-primary);
+$header-profile-background-colour: var(--admiralty-header-background-colour);
 $header-profile-hover-background-colour: var(--admiralty-hover-background-colour);
 $header-profile-divider-colour: var(--admiralty-colour-light);
 
@@ -29,4 +30,7 @@ $header-profile-desktop-only-button-padding: var(--admiralty-header-profile-desk
 $header-profile-desktop-only-sub-menu-item-margin: var(--admiralty-header-profile-desktop-only-sub-menu-item-margin, var(--admiralty-spacing-0));
 $header-profile-desktop-only-sub-menu-item-padding: var(--admiralty-header-profile-desktop-only-sub-menu-item-padding, 10px);
 $header-profile-not-desktop-sub-menu-item-padding: var(--admiralty-header-profile-not-desktop-sub-menu-item-padding, var(--admiralty-spacing-3));
-$header-profile-not-desktop-sub-menu-item-span-padding: var(--admiralty-header-profile-not-desktop-sub-menu-item-span-padding, var(--admiralty-spacing-1) var(--admiralty-spacing-0));
+$header-profile-not-desktop-sub-menu-item-span-padding: var(
+  --admiralty-header-profile-not-desktop-sub-menu-item-span-padding,
+  var(--admiralty-spacing-1) var(--admiralty-spacing-0)
+);
