@@ -1,8 +1,8 @@
 import styles from "./styles.css"
 
-# Version 5.9 Release Notes
+# Version 5.9 release notes
 
-### Release date 17/09/2026
+### Release date 25/09/2026
 
 ## Summary
 
@@ -10,7 +10,7 @@ This release introduces improvements across the Design System, with a focus on r
 documentation usability, dark mode support and data presentation.
 It also includes several fixes to improve consistency and readability across components and the documentation site.
 
-## Improved Copy Code Buttons
+## Improved copy code buttons
 
 Copy code buttons are now persistently visible on code examples,
 making it easier to copy code without needing to hover over the code block first.
@@ -56,9 +56,8 @@ The control now adapts to responsive layouts, making it easier for users to mana
     alt="Example of toggle switch full size"
     style={{
       width: "100%",
-      maxWidth: "100px",
+      maxWidth: "120px",
       height: "auto",
-      flex: "1",
       padding: "8px",
       border: "1px solid grey",
       borderRadius: "6px"
@@ -68,10 +67,9 @@ The control now adapts to responsive layouts, making it easier for users to mana
     src="/updates/v5-9/theme-toggle-mini.png"
     alt="Example of toggle switch mini size"
     style={{
-      width: "100%",
+      width: "50%",
       maxWidth: "75px",
       height: "auto",
-      flex: "1",
       padding: "8px",
       border: "1px solid grey",
       borderRadius: "6px"
@@ -79,14 +77,14 @@ The control now adapts to responsive layouts, making it easier for users to mana
   />
 </div>
 
-### What's Included
+### What's included
 
 - Responsive behaviour across different screen sizes
 - Consistent theme switching across supported layouts
 - Improved usability on smaller screens
 - Support for light, dark and automatic theme preferences
 
-### Advice on Implementation
+### Advice on implementation
 
 When implementing the Theme Toggle, make sure it remains easily discoverable and accessible at all screen sizes.
 Test the control across your supported breakpoints to ensure it remains usable and does not conflict with other header or navigation content.
@@ -96,12 +94,12 @@ Test the control across your supported breakpoints to ensure it remains usable a
 The Modal Dialogue component has been updated to better support responsive layouts.
 Modal content now adapts to the available screen space, providing a more consistent experience across desktop, tablet and mobile devices.
 
-### What's Included
+### What's included
 - Improved responsive behaviour
 - Consistent spacing and layout across screen sizes
 - Improved usability on mobile and tablet devices
 
-### Advice on Implementation
+### Advice on implementation
 
 Keep modal content concise and make sure the primary action is clear. Test longer content and different
 viewport sizes to ensure the dialogue remains usable and does not become difficult to navigate.
@@ -139,14 +137,14 @@ Tables now support sortable columns, allowing users to organise and compare info
   />
 </div>
 
-### What's Included
+### What's included
 
 - Sortable table columns
 - Clear indication of the current sort direction
 - Support for sorting data in ascending and descending order
 - Improved usability when working with larger datasets
 
-### Advice on Implementation
+### Advice on implementation
 
 Use sorting when users are likely to need to compare or find information within a larger dataset.
 Column headings should clearly describe the data being sorted, and the current sort direction should be clear to all users.
@@ -156,7 +154,7 @@ Column headings should clearly describe the data being sorted, and the current s
 Added descriptive page titles to the Design System documentation. Browser tabs now provide a clear indication of the page being viewed,
 making it easier to navigate between multiple documentation pages.
 
-## Minor Updates
+## Minor updates
 
 ### Improved bullet point text wrapping
 Fixed an issue with text wrapping within bullet point lists. Lists now display consistently when content spans multiple lines,
@@ -167,7 +165,7 @@ Fixed an issue where calendar and time input controls were not visible when usin
 These controls now display correctly and maintain the expected styling across light and dark themes.
 
 
-## In Our Next Release
+## In our next release
 
 We're beginning the next phase of the Design System, bringing the Admiralty and UKHO design systems together into a single, authoritative design system.
 As part of this work, the existing Admiralty Design System will be refreshed, components will be reviewed and enhanced to improve usability and accessibility across our products and teams.
