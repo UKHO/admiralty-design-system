@@ -1,0 +1,9 @@
+.IconSideBar {
+  border: 1px solid #000000;
+}
+
+@media (prefers-color-scheme: dark) {
+  .IconSideBar {
+    border: 1px solid #ffffff;
+  }
+}

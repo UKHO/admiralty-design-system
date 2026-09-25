@@ -1,0 +1,182 @@
+import styles from "./styles.css"
+
+# Version 5.9 release notes
+
+### Release date 25/09/2026
+
+## Summary
+
+This release introduces improvements across the Design System, with a focus on responsive behaviour,
+documentation usability, dark mode support and data presentation.
+It also includes several fixes to improve consistency and readability across components and the documentation site.
+
+## Improved copy code buttons
+
+Copy code buttons are now persistently visible on code examples,
+making it easier to copy code without needing to hover over the code block first.
+The buttons now use the standard copy icon and the Design System Tooltip component to provide consistent hover feedback.
+
+<div style={{ display: "flex", paddingBottom: "20px", gap: "1rem", flexWrap: "wrap" }}>
+  <img
+    src="/updates/v5-9/codesnippet-light.png"
+    alt="Example of code snippet in light mode"
+    style={{
+      width: "100%",
+      maxWidth: "600px",
+      height: "auto",
+      flex: "1",
+      padding: "8px",
+      border: "1px solid grey",
+      borderRadius: "6px"
+    }}
+  />
+  <img
+    src="/updates/v5-9/codesnippet-dark.png"
+    alt="Example of code snippet in dark mode"
+    style={{
+      width: "100%",
+      maxWidth: "600px",
+      height: "auto",
+      flex: "1",
+      padding: "8px",
+      border: "1px solid grey",
+      borderRadius: "6px"
+    }}
+  />
+</div>
+
+## Responsive theme toggle
+
+The Theme Toggle has been updated to provide a more consistent experience across different screen sizes.
+The control now adapts to responsive layouts, making it easier for users to manage their theme preferences on desktop, tablet and mobile devices.
+
+<div style={{ display: "flex", paddingBottom: "20px", gap: "1rem", flexWrap: "wrap" }}>
+  <img
+    src="/updates/v5-9/theme-toggle-fullsize.png"
+    alt="Example of toggle switch full size"
+    style={{
+      width: "100%",
+      maxWidth: "120px",
+      height: "auto",
+      padding: "8px",
+      border: "1px solid grey",
+      borderRadius: "6px"
+    }}
+  />
+  <img
+    src="/updates/v5-9/theme-toggle-mini.png"
+    alt="Example of toggle switch mini size"
+    style={{
+      width: "50%",
+      maxWidth: "75px",
+      height: "auto",
+      padding: "8px",
+      border: "1px solid grey",
+      borderRadius: "6px"
+    }}
+  />
+</div>
+
+### What's included
+
+- Responsive behaviour across different screen sizes
+- Consistent theme switching across supported layouts
+- Improved usability on smaller screens
+- Support for light, dark and automatic theme preferences
+
+### Advice on implementation
+
+When implementing the Theme Toggle, make sure it remains easily discoverable and accessible at all screen sizes.
+Test the control across your supported breakpoints to ensure it remains usable and does not conflict with other header or navigation content.
+
+## Responsive modal dialogue
+
+The Modal Dialogue component has been updated to better support responsive layouts.
+Modal content now adapts to the available screen space, providing a more consistent experience across desktop, tablet and mobile devices.
+
+### What's included
+- Improved responsive behaviour
+- Consistent spacing and layout across screen sizes
+- Improved usability on mobile and tablet devices
+
+### Advice on implementation
+
+Keep modal content concise and make sure the primary action is clear. Test longer content and different
+viewport sizes to ensure the dialogue remains usable and does not become difficult to navigate.
+
+## Sortable table columns
+
+Tables now support sortable columns, allowing users to organise and compare information directly within the table.
+
+<div style={{ display: "flex", paddingBottom: "20px", gap: "1rem", flexWrap: "wrap" }}>
+  <img
+    src="/updates/v5-9/sortable-table-light.png"
+    alt="Example of sortable table in light mode"
+    style={{
+      width: "100%",
+      maxWidth: "500px",
+      height: "auto",
+      flex: "1",
+      padding: "8px",
+      border: "1px solid grey",
+      borderRadius: "6px"
+    }}
+  />
+  <img
+    src="/updates/v5-9/sortable-table-dark.png"
+    alt="Example of sortable table in dark mode"
+    style={{
+      width: "100%",
+      maxWidth: "500px",
+      height: "auto",
+      flex: "1",
+      padding: "8px",
+      border: "1px solid grey",
+      borderRadius: "6px"
+    }}
+  />
+</div>
+
+### What's included
+
+- Sortable table columns
+- Clear indication of the current sort direction
+- Support for sorting data in ascending and descending order
+- Improved usability when working with larger datasets
+
+### Advice on implementation
+
+Use sorting when users are likely to need to compare or find information within a larger dataset.
+Column headings should clearly describe the data being sorted, and the current sort direction should be clear to all users.
+
+## Browser page titles
+
+Added descriptive page titles to the Design System documentation. Browser tabs now provide a clear indication of the page being viewed,
+making it easier to navigate between multiple documentation pages.
+
+## Minor updates
+
+### Improved bullet point text wrapping
+Fixed an issue with text wrapping within bullet point lists. Lists now display consistently when content spans multiple lines,
+improving readability and maintaining the correct spacing and alignment.
+
+### Calendar and time inputs in dark mode
+Fixed an issue where calendar and time input controls were not visible when using dark mode.
+These controls now display correctly and maintain the expected styling across light and dark themes.
+
+
+## In our next release
+
+We're beginning the next phase of the Design System, bringing the Admiralty and UKHO design systems together into a single, authoritative design system.
+As part of this work, the existing Admiralty Design System will be refreshed, components will be reviewed and enhanced to improve usability and accessibility across our products and teams.
+
+### What's coming
+
+Over the coming months, we'll be working towards:
+- Updating the UI of existing component library to align with the new UKHO visual identity
+- Delivering 32 refreshed look, accessible components meeting WCAG 2.2 AA
+- Introducing new components, including in-page navigation and search.
+- Developing reusable, documented design patterns to support common user journeys
+- Refreshing the Design System documentation website
+
+
