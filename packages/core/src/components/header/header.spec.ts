@@ -414,4 +414,13 @@ describe('admiralty-header', () => {
     expect(page.root.querySelector('.menu-sections').classList.contains('mob-menus-visible')).toBe(false);
     expect(page.root.querySelector('button').getAttribute('aria-expanded')).toBe('false');
   });
+
+  it('does not render profile content when no profile is provided', async () => {
+    const page = await newSpecPage({
+      components: [HeaderComponent],
+      html: `<admiralty-header></admiralty-header>`,
+    });
+
+    expect(page.root.querySelector('admiralty-header-profile')).toBeNull();
+  });
 });

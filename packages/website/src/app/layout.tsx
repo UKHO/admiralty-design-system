@@ -5,7 +5,6 @@ import "./globals.css";
 import {
   AdmiraltyFooter,
   AdmiraltyHeader,
-  AdmiraltyHeaderProfile,
   AdmiraltyLink,
   AdmiraltyThemeToggle,
   AdmiraltyTextSideBar,
@@ -191,11 +190,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             logoImgUrl="/svg/Admiralty stacked logo.svg">
             {renderSideBar(styles.sideBar, "nav")}
             <AdmiraltyThemeToggle slot="toggle" className="header-theme-toggle"></AdmiraltyThemeToggle>
-            <AdmiraltyHeaderProfile
-              slot="profile"
-              isSignedIn={true}
-              signedInText="Mr Admiral"
-              signInOnly={false}></AdmiraltyHeaderProfile>
           </AdmiraltyHeader>
           <div className={styles.splitContentWrapper}>
             <div className={styles.middle}>
