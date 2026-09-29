@@ -35,6 +35,7 @@
  - [admiralty-progress-tracker](../progress-tracker)
  - [admiralty-read-more](../read-more)
  - [admiralty-select](../select)
+ - [admiralty-table-header-cell](../table-header-cell)
  - [admiralty-text-side-bar-item](../text-side-bar-item)
  - [admiralty-theme-toggle](../theme-toggle)
 
@@ -54,6 +55,7 @@ graph TD;
   admiralty-progress-tracker --> admiralty-icon
   admiralty-read-more --> admiralty-icon
   admiralty-select --> admiralty-icon
+  admiralty-table-header-cell --> admiralty-icon
   admiralty-text-side-bar-item --> admiralty-icon
   admiralty-theme-toggle --> admiralty-icon
   style admiralty-icon fill:#f9f,stroke:#333,stroke-width:4px
