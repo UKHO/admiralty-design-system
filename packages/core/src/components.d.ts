@@ -230,7 +230,7 @@ export namespace Components {
          */
         "colour": 'admiralty-blue' | 'teal' | 'bright-blue';
         /**
-          * Allow the card to be clicked. Will emit a `colourBlockLinkClicked` event. A value for `href` should also be provided to ensure the component conforms to accessibility standards.
+          * Allow the card to be clicked. Will emit a `colourBlockLinkClicked` event.  When `href` and `linkText` are provided, the card behaves as a link (`role="link"`). When they are not provided, the card behaves as a button (`role="button"`).
          */
         "enableCardEvent": boolean;
         /**
@@ -572,15 +572,15 @@ export namespace Components {
         /**
           * Describe the contents of the dialog.
          */
-        "description": string;
+        "description"?: string;
         /**
           * The title of the modal dialog.
          */
-        "heading": string;
+        "heading"?: string;
         /**
           * Label the dialog.
          */
-        "label": string;
+        "label"?: string;
         /**
           * Whether to show the modal dialog.
          */
@@ -2038,7 +2038,7 @@ declare namespace LocalJSX {
          */
         "colour"?: 'admiralty-blue' | 'teal' | 'bright-blue';
         /**
-          * Allow the card to be clicked. Will emit a `colourBlockLinkClicked` event. A value for `href` should also be provided to ensure the component conforms to accessibility standards.
+          * Allow the card to be clicked. Will emit a `colourBlockLinkClicked` event.  When `href` and `linkText` are provided, the card behaves as a link (`role="link"`). When they are not provided, the card behaves as a button (`role="button"`).
          */
         "enableCardEvent"?: boolean;
         /**
