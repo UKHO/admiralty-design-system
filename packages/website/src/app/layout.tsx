@@ -64,6 +64,7 @@ const gettingStartedChildren: any[] = [
 ];
 
 const updatesChildren: any[] = [
+  { path: "/updates/v5-9", variant: "text", name: "v5.9.0" },
   { path: "/updates/v5-6", variant: "text", name: "v5.6.0" },
   { path: "/updates/v5-3", variant: "text", name: "v5.3.0" },
   { path: "/updates/v5", variant: "text", name: "v5.0.0" },
