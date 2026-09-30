@@ -1,17 +1,61 @@
 # Side nav
+
 Use navigation to organise your content and help users find what they're looking for. [View this component on GitHub](https://github.com/UKHO/admiralty-design-system/tree/main/packages/core/src/components/side-nav)
 
 ## Contents
 
 ## Basic
+
 Use the side navigation component to manage a large number of contents.
 
-import Basic from '@/usage/side-nav/basic/index.mdx'
+import Basic from "@/usage/side-nav/basic/index.mdx";
 
-<Basic/>
+<Basic />
+
+## Responsive header menu
+
+Place the side nav in the header's `nav` slot to keep one navigation structure across desktop and mobile. At 1024px and above it is a fixed left column; below 1024px it is available from the header burger menu.
+
+```html
+<admiralty-header header-title="HMNAO">
+  <admiralty-side-nav slot="nav" label="Primary navigation">
+    <admiralty-side-nav-item
+      side-nav-item-id="navpac"
+      heading-title="NavPac and compact data"
+    ></admiralty-side-nav-item>
+    <admiralty-side-nav-item
+      side-nav-item-id="astro"
+      heading-title="Astronomical data services"
+      nav-active="true"
+    ></admiralty-side-nav-item>
+    <admiralty-side-nav-item side-nav-item-id="resources" heading-title="Resources and links"></admiralty-side-nav-item>
+  </admiralty-side-nav>
+  <admiralty-header-menu-link slot="items" menu-title="About" href="/about"></admiralty-header-menu-link>
+</admiralty-header>
+```
+
+Reserve space for the fixed side nav in the page content at desktop widths. The default side-nav width is 240px:
+
+```css
+@media (min-width: 1024px) {
+  .page-content {
+    margin-left: var(--admiralty-side-nav-width, 240px);
+  }
+}
+```
+
+| Viewport           | Closed menu                                                                                      | Open menu                                                                                                       |
+| ------------------ | ------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------- |
+| Phone, below 480px | Side nav and profile are hidden with the closed panel; burger and the header toggle are visible. | Full-width, vertically scrollable panel. Side-nav links precede header links such as About and profile content. |
+| Tablet, 480–1023px | Side nav is hidden; burger is visible.                                                           | Left-anchored dropdown, at least 250px wide and vertically scrollable as needed.                                |
+| 1023px             | Collapsed layout and burger remain active.                                                       | Tablet dropdown behavior.                                                                                       |
+| 1024px and wider   | Fixed side-nav column is visible; burger is hidden. Header links remain in the header row.       | Not applicable; the responsive panel is closed at this breakpoint.                                              |
+
+When the panel opens, focus moves to its first item. `Tab` and `Shift+Tab` stay within the panel; `Escape` closes it and restores focus to the burger. Selecting a side-nav item closes the panel. Resizing to desktop while the panel is open closes it without moving focus to the now-hidden burger.
 
 ## Accessibility
-Visual contrast is strong and the side navigation supports keyboard navigation by users, supplying another way to explore content with easy access.
+
+The active side-nav item is announced with `aria-current="page"`. Side-nav items support `Enter` and `Space`; the header burger exposes its open state through `aria-expanded` and controls the menu panel with `aria-controls`.
 
 ## Props
 

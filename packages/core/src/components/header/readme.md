@@ -1,7 +1,5 @@
 # admiralty-header
 
-
-
 <!-- Auto Generated Below -->
 
 
@@ -25,10 +23,12 @@
 
 ## Slots
 
-| Slot        | Description                                                                                                                                          |
-| ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `"items"`   | 'admiralty-header-menu-item menu-title' and 'admiralty-header-menu-link menu-title' components are placed here for appropriate styling and behaviour |
-| `"profile"` | 'admiralty-header-profile' components are placed here (the login/logout) options                                                                     |
+| Slot        | Description                                                                                                                                                    |
+| ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `"items"`   | 'admiralty-header-menu-item menu-title' and 'admiralty-header-menu-link menu-title' components are placed here for appropriate styling and behaviour           |
+| `"nav"`     | an 'admiralty-side-nav' component is placed here. It renders as a left hand sidebar on desktop and collapses into the burger menu below the desktop breakpoint |
+| `"profile"` | 'admiralty-header-profile' components are placed here for the desktop header and mobile menu                                                                   |
+| `"toggle"`  | a theme or mode toggle component displayed beside the mobile menu button                                                                                       |
 
 
 ## CSS Custom Properties
