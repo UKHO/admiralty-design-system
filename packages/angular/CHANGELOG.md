@@ -1,3 +1,33 @@
+# v5.9.0 (Wed Sep 30 2026)
+
+#### 🚀 Enhancement
+
+- 286090 Sortable Column Functionality for Table Component [#496](https://github.com/UKHO/admiralty-design-system/pull/496) (mohamme15315@mastek.com [@lstevens98](https://github.com/lstevens98) [@mohamme15315](https://github.com/mohamme15315))
+- feat(table): add sortable and selective sortable table examples (mohamme15315@mastek.com)
+
+#### 🐛 Bug Fix
+
+- Merge branch 'next' into 299401-Make-modal-dialogue-component-responsive-on-mobile ([@lstevens98](https://github.com/lstevens98))
+- Merge branch 'next' into update-page-v5-9 ([@lstevens98](https://github.com/lstevens98))
+- Merge branch 'next' into 286090-sortable-column-functionality-for-table-component ([@lstevens98](https://github.com/lstevens98))
+- Merge branch 'main' into 266582-add-page-titles (mohamme15315@mastek.com)
+- 286085 Calendar Icon Not Visible In Dark Mode [#502](https://github.com/UKHO/admiralty-design-system/pull/502) (mohamme15315@mastek.com [@lstevens98](https://github.com/lstevens98) [@mohamme15315](https://github.com/mohamme15315))
+- Merge branch '299401-Make-modal-dialogue-component-responsive-on-mobile' of https://github.com/UKHO/admiralty-design-system into 299401-Make-modal-dialogue-component-responsive-on-mobile (mohamme15315@mastek.com)
+- Merge branch 'next' into 286085-calendar-icon-not-visible-in-dark-mode ([@lstevens98](https://github.com/lstevens98))
+- Merge branch 'main' into 286085-calendar-icon-not-visible-in-dark-mode ([@lstevens98](https://github.com/lstevens98))
+- Merge branch 'main' into 299401-Make-modal-dialogue-component-responsive-on-mobile ([@lstevens98](https://github.com/lstevens98))
+- chore: release v5.7.0 (mohamme15315@mastek.com)
+- Merge branch 'main' into 286085-calendar-icon-not-visible-in-dark-mode (mohamme15315@mastek.com)
+- refactor: rename allowSorting to sorting in AdmiraltyTable and related components (mohamme15315@mastek.com)
+
+#### Authors: 3
+
+- [@mohamme15315](https://github.com/mohamme15315)
+- Lewis Stevens ([@lstevens98](https://github.com/lstevens98))
+- Mohammed Khan (mohamme15315@mastek.com)
+
+---
+
 # v5.8.0 (Thu Jul 30 2026)
 
 #### 🐛 Bug Fix

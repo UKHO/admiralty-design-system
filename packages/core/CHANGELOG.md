@@ -1,3 +1,50 @@
+# v5.9.0 (Wed Sep 30 2026)
+
+#### 🚀 Enhancement
+
+- Make Modal Dialog Component Responsive on Mobile [#516](https://github.com/UKHO/admiralty-design-system/pull/516) (mohamme15315@mastek.com [@lstevens98](https://github.com/lstevens98))
+- 286090 Sortable Column Functionality for Table Component [#496](https://github.com/UKHO/admiralty-design-system/pull/496) (mohamme15315@mastek.com [@lstevens98](https://github.com/lstevens98) [@mohamme15315](https://github.com/mohamme15315))
+- feat(table): add end-to-end tests for admiralty-table component (mohamme15315@mastek.com)
+- feat(table): add sortable and selective sortable table examples (mohamme15315@mastek.com)
+
+#### 🐛 Bug Fix
+
+- Merge branch 'next' into 299401-Make-modal-dialogue-component-responsive-on-mobile ([@lstevens98](https://github.com/lstevens98))
+- Merge branch 'next' into update-page-v5-9 ([@lstevens98](https://github.com/lstevens98))
+- Merge branch 'update-page-v5-9' of https://github.com/UKHO/admiralty-design-system into update-page-v5-9 ([@lstevens98](https://github.com/lstevens98))
+- Merge branch 'next' into 286090-sortable-column-functionality-for-table-component ([@lstevens98](https://github.com/lstevens98))
+- Make Dark Mode Toggle Mobile Friendly [#523](https://github.com/UKHO/admiralty-design-system/pull/523) (mohamme15315@mastek.com [@lstevens98](https://github.com/lstevens98) [@mohamme15315](https://github.com/mohamme15315))
+- Merge branch 'next' into 301471-Make-dark-mode-toggle-mobile-friendly ([@lstevens98](https://github.com/lstevens98))
+- Enhance mobile menu toggle accessibility and styling (mohamme15315@mastek.com)
+- Refactor header profile rendering for improved structure and consistency (mohamme15315@mastek.com)
+- Merge branch 'next' into 266582-add-page-titles ([@lstevens98](https://github.com/lstevens98))
+- Make dark mode toggle mobile-friendly and improve accessibility (mohamme15315@mastek.com)
+- Merge branch 'main' into 266582-add-page-titles (mohamme15315@mastek.com)
+- 286085 Calendar Icon Not Visible In Dark Mode [#502](https://github.com/UKHO/admiralty-design-system/pull/502) (mohamme15315@mastek.com [@lstevens98](https://github.com/lstevens98) [@mohamme15315](https://github.com/mohamme15315))
+- Enhance modal dialog responsiveness: update action layout handling and improve README for keyboard navigation (mohamme15315@mastek.com)
+- Enhance modal dialog responsiveness: refactor viewport detection and action layout for mobile (mohamme15315@mastek.com)
+- Merge branch '299401-Make-modal-dialogue-component-responsive-on-mobile' of https://github.com/UKHO/admiralty-design-system into 299401-Make-modal-dialogue-component-responsive-on-mobile (mohamme15315@mastek.com)
+- Refactor modal dialog component: remove unused escape key handling and update README for clarity (mohamme15315@mastek.com)
+- Merge branch 'next' into 286085-calendar-icon-not-visible-in-dark-mode ([@lstevens98](https://github.com/lstevens98))
+- Merge branch 'main' into 286085-calendar-icon-not-visible-in-dark-mode ([@lstevens98](https://github.com/lstevens98))
+- Merge branch 'main' into 299401-Make-modal-dialogue-component-responsive-on-mobile ([@lstevens98](https://github.com/lstevens98))
+- Make modal dialog component responsive on mobile (mohamme15315@mastek.com)
+- chore: release v5.7.0 (mohamme15315@mastek.com)
+- Fix dark mode styles for number and password inputs (mohamme15315@mastek.com)
+- Enhance input styles for dark mode support and improve password toggle functionality (mohamme15315@mastek.com)
+- Merge branch 'main' into 286085-calendar-icon-not-visible-in-dark-mode (mohamme15315@mastek.com)
+- Add native icon filter support for date/time/number inputs in dark mode (mohamme15315@mastek.com)
+- fix(table-header-cell): ensure aria-sort attribute is awaited in tests and add button type for accessibility (mohamme15315@mastek.com)
+- refactor: rename allowSorting to sorting in AdmiraltyTable and related components (mohamme15315@mastek.com)
+
+#### Authors: 3
+
+- [@mohamme15315](https://github.com/mohamme15315)
+- Lewis Stevens ([@lstevens98](https://github.com/lstevens98))
+- Mohammed Khan (mohamme15315@mastek.com)
+
+---
+
 # v5.8.0 (Thu Jul 30 2026)
 
 #### 🚀 Enhancement
