@@ -1,3 +1,32 @@
+# v5.9.0 (Wed Sep 30 2026)
+
+#### 🚀 Enhancement
+
+- `@ukho/admiralty-core`, `website`
+  - Make Modal Dialog Component Responsive on Mobile [#516](https://github.com/UKHO/admiralty-design-system/pull/516) (mohamme15315@mastek.com [@lstevens98](https://github.com/lstevens98))
+- `@ukho/admiralty-angular`, `@ukho/admiralty-core`, `@ukho-internal/admiralty-docs`, `@ukho/admiralty-react`, `website`
+  - 286090 Sortable Column Functionality for Table Component [#496](https://github.com/UKHO/admiralty-design-system/pull/496) (mohamme15315@mastek.com [@lstevens98](https://github.com/lstevens98) [@mohamme15315](https://github.com/mohamme15315))
+
+#### 🐛 Bug Fix
+
+- `website`
+  - Update page v5.9 [#528](https://github.com/UKHO/admiralty-design-system/pull/528) ([@lstevens98](https://github.com/lstevens98))
+  - 266582 Add Page Titles [#522](https://github.com/UKHO/admiralty-design-system/pull/522) (mohamme15315@mastek.com [@lstevens98](https://github.com/lstevens98) [@mohamme15315](https://github.com/mohamme15315))
+  - 257754 make copy button for code snippets persistent and add standard copy icon [#509](https://github.com/UKHO/admiralty-design-system/pull/509) (mohamme15315@mastek.com [@lstevens98](https://github.com/lstevens98) [@mohamme15315](https://github.com/mohamme15315))
+  - 218859 [BUG] Bullet point text wrapping [#511](https://github.com/UKHO/admiralty-design-system/pull/511) (mohamme15315@mastek.com [@mohamme15315](https://github.com/mohamme15315))
+- `@ukho/admiralty-core`
+  - Make Dark Mode Toggle Mobile Friendly [#523](https://github.com/UKHO/admiralty-design-system/pull/523) (mohamme15315@mastek.com [@lstevens98](https://github.com/lstevens98) [@mohamme15315](https://github.com/mohamme15315))
+- `@ukho/admiralty-angular`, `@ukho/admiralty-core`, `@ukho-internal/admiralty-docs`, `@ukho/admiralty-react`, `test-app`, `website`
+  - 286085 Calendar Icon Not Visible In Dark Mode [#502](https://github.com/UKHO/admiralty-design-system/pull/502) (mohamme15315@mastek.com [@lstevens98](https://github.com/lstevens98) [@mohamme15315](https://github.com/mohamme15315))
+
+#### Authors: 3
+
+- [@mohamme15315](https://github.com/mohamme15315)
+- Lewis Stevens ([@lstevens98](https://github.com/lstevens98))
+- Mohammed Khan (mohamme15315@mastek.com)
+
+---
+
 # v5.8.0 (Thu Jul 30 2026)
 
 #### 🚀 Enhancement
