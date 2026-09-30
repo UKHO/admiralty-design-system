@@ -16,7 +16,7 @@
 }
 
 .middle {
-  display:flex;
+  display: flex;
   flex: 1;
 }
 
@@ -31,6 +31,12 @@
 .mainContent {
   flex: 1;
   overflow-y: auto;
+}
+
+.mainContent ul li {
+  display: list-item;
+  padding-left: 1.5em;
+  text-indent: -1.5em;
 }
 
 .pageFooter {

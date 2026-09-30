@@ -1,5 +1,9 @@
 @import './theme-toggle.vars';
 
+:host {
+  display: inline-flex;
+}
+
 .theme-toggle {
   position: relative;
   width: $theme-toggle-width;
@@ -12,6 +16,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: space-around;
+  color: $theme-toggle-icon-colour;
   transition: border-color 0.3s ease;
   gap: 1px;
 
@@ -57,28 +62,67 @@
   align-items: center;
   justify-content: center;
   font-size: 18px;
-  transition: color 0.3s ease;
   width: 24px;
   height: 24px;
   z-index: 1;
 
   admiralty-icon {
+    display: block;
+    width: 24px;
+    height: 24px;
     font-size: inherit;
+    color: currentColor;
+    fill: currentColor;
+  }
+}
+
+@media (max-width: 768px) {
+  :host {
+    width: 44px;
+    height: 44px;
   }
 
   .theme-toggle {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+    border: 2px solid $theme-toggle-icon-colour;
+    border-radius: 50%;
+    background-color: $theme-toggle-background-colour;
+    justify-content: center;
     color: $theme-toggle-icon-colour;
-  }
-}
+    box-shadow: inset 0 0 0 2px $theme-toggle-background-colour;
+    transition:
+      background-color 0.2s ease,
+      border-color 0.2s ease,
+      color 0.2s ease;
 
-.sun-icon {
-  .theme-toggle & {
-    color: $theme-toggle-icon-colour;
-  }
-}
+    &:hover {
+      background-color: $theme-toggle-hover-background-colour;
+    }
 
-.moon-icon {
-  .theme-toggle & {
-    color: $theme-toggle-icon-colour;
+    &:active {
+      background-color: $theme-toggle-active-background-colour;
+    }
+  }
+
+  .toggle-background-slider {
+    display: none;
+  }
+
+  .toggle-icon {
+    font-size: 24px;
+  }
+
+  .theme-toggle.light .sun-icon,
+  .theme-toggle.dark .moon-icon {
+    display: flex;
+    visibility: visible;
+  }
+
+  .theme-toggle.light .moon-icon,
+  .theme-toggle.dark .sun-icon {
+    display: none;
   }
 }

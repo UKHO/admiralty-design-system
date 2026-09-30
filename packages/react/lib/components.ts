@@ -74,7 +74,6 @@ type AdmiraltyAutocompleteEvents = { onAdmiraltyChange: EventName<AdmiraltyAutoc
 export const AdmiraltyAutocomplete: StencilReactComponent<AdmiraltyAutocompleteElement, AdmiraltyAutocompleteEvents> = /*@__PURE__*/ createComponent<AdmiraltyAutocompleteElement, AdmiraltyAutocompleteEvents>({
     tagName: 'admiralty-autocomplete',
     elementClass: AdmiraltyAutocompleteElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: { onAdmiraltyChange: 'admiraltyChange' } as AdmiraltyAutocompleteEvents,
     defineCustomElement: defineAdmiraltyAutocomplete
@@ -85,7 +84,6 @@ type AdmiraltyAutocompleteOptionEvents = NonNullable<unknown>;
 export const AdmiraltyAutocompleteOption: StencilReactComponent<AdmiraltyAutocompleteOptionElement, AdmiraltyAutocompleteOptionEvents> = /*@__PURE__*/ createComponent<AdmiraltyAutocompleteOptionElement, AdmiraltyAutocompleteOptionEvents>({
     tagName: 'admiralty-autocomplete-option',
     elementClass: AdmiraltyAutocompleteOptionElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: {} as AdmiraltyAutocompleteOptionEvents,
     defineCustomElement: defineAdmiraltyAutocompleteOption
@@ -96,7 +94,6 @@ type AdmiraltyBreadcrumbEvents = NonNullable<unknown>;
 export const AdmiraltyBreadcrumb: StencilReactComponent<AdmiraltyBreadcrumbElement, AdmiraltyBreadcrumbEvents> = /*@__PURE__*/ createComponent<AdmiraltyBreadcrumbElement, AdmiraltyBreadcrumbEvents>({
     tagName: 'admiralty-breadcrumb',
     elementClass: AdmiraltyBreadcrumbElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: {} as AdmiraltyBreadcrumbEvents,
     defineCustomElement: defineAdmiraltyBreadcrumb
@@ -107,7 +104,6 @@ type AdmiraltyBreadcrumbsEvents = NonNullable<unknown>;
 export const AdmiraltyBreadcrumbs: StencilReactComponent<AdmiraltyBreadcrumbsElement, AdmiraltyBreadcrumbsEvents> = /*@__PURE__*/ createComponent<AdmiraltyBreadcrumbsElement, AdmiraltyBreadcrumbsEvents>({
     tagName: 'admiralty-breadcrumbs',
     elementClass: AdmiraltyBreadcrumbsElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: {} as AdmiraltyBreadcrumbsEvents,
     defineCustomElement: defineAdmiraltyBreadcrumbs
@@ -118,7 +114,6 @@ type AdmiraltyButtonEvents = NonNullable<unknown>;
 export const AdmiraltyButton: StencilReactComponent<AdmiraltyButtonElement, AdmiraltyButtonEvents> = /*@__PURE__*/ createComponent<AdmiraltyButtonElement, AdmiraltyButtonEvents>({
     tagName: 'admiralty-button',
     elementClass: AdmiraltyButtonElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: {} as AdmiraltyButtonEvents,
     defineCustomElement: defineAdmiraltyButton
@@ -129,7 +124,6 @@ type AdmiraltyCardEvents = NonNullable<unknown>;
 export const AdmiraltyCard: StencilReactComponent<AdmiraltyCardElement, AdmiraltyCardEvents> = /*@__PURE__*/ createComponent<AdmiraltyCardElement, AdmiraltyCardEvents>({
     tagName: 'admiralty-card',
     elementClass: AdmiraltyCardElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: {} as AdmiraltyCardEvents,
     defineCustomElement: defineAdmiraltyCard
@@ -144,7 +138,6 @@ type AdmiraltyCheckboxEvents = {
 export const AdmiraltyCheckbox: StencilReactComponent<AdmiraltyCheckboxElement, AdmiraltyCheckboxEvents> = /*@__PURE__*/ createComponent<AdmiraltyCheckboxElement, AdmiraltyCheckboxEvents>({
     tagName: 'admiralty-checkbox',
     elementClass: AdmiraltyCheckboxElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: {
         onAdmiraltyChange: 'admiraltyChange',
@@ -159,7 +152,6 @@ type AdmiraltyColourBlockEvents = { onColourBlockLinkClicked: EventName<CustomEv
 export const AdmiraltyColourBlock: StencilReactComponent<AdmiraltyColourBlockElement, AdmiraltyColourBlockEvents> = /*@__PURE__*/ createComponent<AdmiraltyColourBlockElement, AdmiraltyColourBlockEvents>({
     tagName: 'admiralty-colour-block',
     elementClass: AdmiraltyColourBlockElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: { onColourBlockLinkClicked: 'colourBlockLinkClicked' } as AdmiraltyColourBlockEvents,
     defineCustomElement: defineAdmiraltyColourBlock
@@ -170,7 +162,6 @@ type AdmiraltyDialogueEvents = NonNullable<unknown>;
 export const AdmiraltyDialogue: StencilReactComponent<AdmiraltyDialogueElement, AdmiraltyDialogueEvents> = /*@__PURE__*/ createComponent<AdmiraltyDialogueElement, AdmiraltyDialogueEvents>({
     tagName: 'admiralty-dialogue',
     elementClass: AdmiraltyDialogueElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: {} as AdmiraltyDialogueEvents,
     defineCustomElement: defineAdmiraltyDialogue
@@ -181,7 +172,6 @@ type AdmiraltyErrorSummaryEvents = NonNullable<unknown>;
 export const AdmiraltyErrorSummary: StencilReactComponent<AdmiraltyErrorSummaryElement, AdmiraltyErrorSummaryEvents> = /*@__PURE__*/ createComponent<AdmiraltyErrorSummaryElement, AdmiraltyErrorSummaryEvents>({
     tagName: 'admiralty-error-summary',
     elementClass: AdmiraltyErrorSummaryElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: {} as AdmiraltyErrorSummaryEvents,
     defineCustomElement: defineAdmiraltyErrorSummary
@@ -192,7 +182,6 @@ type AdmiraltyExpansionEvents = { onToggled: EventName<CustomEvent<boolean>> };
 export const AdmiraltyExpansion: StencilReactComponent<AdmiraltyExpansionElement, AdmiraltyExpansionEvents> = /*@__PURE__*/ createComponent<AdmiraltyExpansionElement, AdmiraltyExpansionEvents>({
     tagName: 'admiralty-expansion',
     elementClass: AdmiraltyExpansionElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: { onToggled: 'toggled' } as AdmiraltyExpansionEvents,
     defineCustomElement: defineAdmiraltyExpansion
@@ -203,7 +192,6 @@ type AdmiraltyFileInputEvents = { onFileInputChange: EventName<AdmiraltyFileInpu
 export const AdmiraltyFileInput: StencilReactComponent<AdmiraltyFileInputElement, AdmiraltyFileInputEvents> = /*@__PURE__*/ createComponent<AdmiraltyFileInputElement, AdmiraltyFileInputEvents>({
     tagName: 'admiralty-file-input',
     elementClass: AdmiraltyFileInputElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: { onFileInputChange: 'fileInputChange' } as AdmiraltyFileInputEvents,
     defineCustomElement: defineAdmiraltyFileInput
@@ -217,7 +205,6 @@ type AdmiraltyFilterEvents = {
 export const AdmiraltyFilter: StencilReactComponent<AdmiraltyFilterElement, AdmiraltyFilterEvents> = /*@__PURE__*/ createComponent<AdmiraltyFilterElement, AdmiraltyFilterEvents>({
     tagName: 'admiralty-filter',
     elementClass: AdmiraltyFilterElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: {
         onFilterCleared: 'filterCleared',
@@ -231,7 +218,6 @@ type AdmiraltyFilterGroupEvents = NonNullable<unknown>;
 export const AdmiraltyFilterGroup: StencilReactComponent<AdmiraltyFilterGroupElement, AdmiraltyFilterGroupEvents> = /*@__PURE__*/ createComponent<AdmiraltyFilterGroupElement, AdmiraltyFilterGroupEvents>({
     tagName: 'admiralty-filter-group',
     elementClass: AdmiraltyFilterGroupElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: {} as AdmiraltyFilterGroupEvents,
     defineCustomElement: defineAdmiraltyFilterGroup
@@ -242,7 +228,6 @@ type AdmiraltyFooterEvents = NonNullable<unknown>;
 export const AdmiraltyFooter: StencilReactComponent<AdmiraltyFooterElement, AdmiraltyFooterEvents> = /*@__PURE__*/ createComponent<AdmiraltyFooterElement, AdmiraltyFooterEvents>({
     tagName: 'admiralty-footer',
     elementClass: AdmiraltyFooterElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: {} as AdmiraltyFooterEvents,
     defineCustomElement: defineAdmiraltyFooter
@@ -253,7 +238,6 @@ type AdmiraltyHeaderEvents = { onTitledClicked: EventName<CustomEvent<string>> }
 export const AdmiraltyHeader: StencilReactComponent<AdmiraltyHeaderElement, AdmiraltyHeaderEvents> = /*@__PURE__*/ createComponent<AdmiraltyHeaderElement, AdmiraltyHeaderEvents>({
     tagName: 'admiralty-header',
     elementClass: AdmiraltyHeaderElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: { onTitledClicked: 'titledClicked' } as AdmiraltyHeaderEvents,
     defineCustomElement: defineAdmiraltyHeader
@@ -264,7 +248,6 @@ type AdmiraltyHeaderMenuItemEvents = { onMenuItemClick: EventName<CustomEvent<vo
 export const AdmiraltyHeaderMenuItem: StencilReactComponent<AdmiraltyHeaderMenuItemElement, AdmiraltyHeaderMenuItemEvents> = /*@__PURE__*/ createComponent<AdmiraltyHeaderMenuItemElement, AdmiraltyHeaderMenuItemEvents>({
     tagName: 'admiralty-header-menu-item',
     elementClass: AdmiraltyHeaderMenuItemElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: { onMenuItemClick: 'menuItemClick' } as AdmiraltyHeaderMenuItemEvents,
     defineCustomElement: defineAdmiraltyHeaderMenuItem
@@ -275,7 +258,6 @@ type AdmiraltyHeaderMenuLinkEvents = { onMenuItemClick: EventName<CustomEvent<vo
 export const AdmiraltyHeaderMenuLink: StencilReactComponent<AdmiraltyHeaderMenuLinkElement, AdmiraltyHeaderMenuLinkEvents> = /*@__PURE__*/ createComponent<AdmiraltyHeaderMenuLinkElement, AdmiraltyHeaderMenuLinkEvents>({
     tagName: 'admiralty-header-menu-link',
     elementClass: AdmiraltyHeaderMenuLinkElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: { onMenuItemClick: 'menuItemClick' } as AdmiraltyHeaderMenuLinkEvents,
     defineCustomElement: defineAdmiraltyHeaderMenuLink
@@ -290,7 +272,6 @@ type AdmiraltyHeaderProfileEvents = {
 export const AdmiraltyHeaderProfile: StencilReactComponent<AdmiraltyHeaderProfileElement, AdmiraltyHeaderProfileEvents> = /*@__PURE__*/ createComponent<AdmiraltyHeaderProfileElement, AdmiraltyHeaderProfileEvents>({
     tagName: 'admiralty-header-profile',
     elementClass: AdmiraltyHeaderProfileElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: {
         onSignInClicked: 'signInClicked',
@@ -305,7 +286,6 @@ type AdmiraltyHeaderSubMenuItemEvents = { onSubMenuItemClick: EventName<CustomEv
 export const AdmiraltyHeaderSubMenuItem: StencilReactComponent<AdmiraltyHeaderSubMenuItemElement, AdmiraltyHeaderSubMenuItemEvents> = /*@__PURE__*/ createComponent<AdmiraltyHeaderSubMenuItemElement, AdmiraltyHeaderSubMenuItemEvents>({
     tagName: 'admiralty-header-sub-menu-item',
     elementClass: AdmiraltyHeaderSubMenuItemElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: { onSubMenuItemClick: 'subMenuItemClick' } as AdmiraltyHeaderSubMenuItemEvents,
     defineCustomElement: defineAdmiraltyHeaderSubMenuItem
@@ -316,7 +296,6 @@ type AdmiraltyHintEvents = NonNullable<unknown>;
 export const AdmiraltyHint: StencilReactComponent<AdmiraltyHintElement, AdmiraltyHintEvents> = /*@__PURE__*/ createComponent<AdmiraltyHintElement, AdmiraltyHintEvents>({
     tagName: 'admiralty-hint',
     elementClass: AdmiraltyHintElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: {} as AdmiraltyHintEvents,
     defineCustomElement: defineAdmiraltyHint
@@ -327,7 +306,6 @@ type AdmiraltyHrEvents = NonNullable<unknown>;
 export const AdmiraltyHr: StencilReactComponent<AdmiraltyHrElement, AdmiraltyHrEvents> = /*@__PURE__*/ createComponent<AdmiraltyHrElement, AdmiraltyHrEvents>({
     tagName: 'admiralty-hr',
     elementClass: AdmiraltyHrElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: {} as AdmiraltyHrEvents,
     defineCustomElement: defineAdmiraltyHr
@@ -338,7 +316,6 @@ type AdmiraltyIconEvents = NonNullable<unknown>;
 export const AdmiraltyIcon: StencilReactComponent<AdmiraltyIconElement, AdmiraltyIconEvents> = /*@__PURE__*/ createComponent<AdmiraltyIconElement, AdmiraltyIconEvents>({
     tagName: 'admiralty-icon',
     elementClass: AdmiraltyIconElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: {} as AdmiraltyIconEvents,
     defineCustomElement: defineAdmiraltyIcon
@@ -349,7 +326,6 @@ type AdmiraltyIconSideBarEvents = NonNullable<unknown>;
 export const AdmiraltyIconSideBar: StencilReactComponent<AdmiraltyIconSideBarElement, AdmiraltyIconSideBarEvents> = /*@__PURE__*/ createComponent<AdmiraltyIconSideBarElement, AdmiraltyIconSideBarEvents>({
     tagName: 'admiralty-icon-side-bar',
     elementClass: AdmiraltyIconSideBarElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: {} as AdmiraltyIconSideBarEvents,
     defineCustomElement: defineAdmiraltyIconSideBar
@@ -363,7 +339,6 @@ type AdmiraltyIconSideBarItemEvents = {
 export const AdmiraltyIconSideBarItem: StencilReactComponent<AdmiraltyIconSideBarItemElement, AdmiraltyIconSideBarItemEvents> = /*@__PURE__*/ createComponent<AdmiraltyIconSideBarItemElement, AdmiraltyIconSideBarItemEvents>({
     tagName: 'admiralty-icon-side-bar-item',
     elementClass: AdmiraltyIconSideBarItemElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: {
         onToggled: 'toggled',
@@ -381,7 +356,6 @@ type AdmiraltyInputEvents = {
 export const AdmiraltyInput: StencilReactComponent<AdmiraltyInputElement, AdmiraltyInputEvents> = /*@__PURE__*/ createComponent<AdmiraltyInputElement, AdmiraltyInputEvents>({
     tagName: 'admiralty-input',
     elementClass: AdmiraltyInputElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: {
         onAdmiraltyInput: 'admiraltyInput',
@@ -396,7 +370,6 @@ type AdmiraltyInputInvalidEvents = NonNullable<unknown>;
 export const AdmiraltyInputInvalid: StencilReactComponent<AdmiraltyInputInvalidElement, AdmiraltyInputInvalidEvents> = /*@__PURE__*/ createComponent<AdmiraltyInputInvalidElement, AdmiraltyInputInvalidEvents>({
     tagName: 'admiralty-input-invalid',
     elementClass: AdmiraltyInputInvalidElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: {} as AdmiraltyInputInvalidEvents,
     defineCustomElement: defineAdmiraltyInputInvalid
@@ -407,7 +380,6 @@ type AdmiraltyLabelEvents = NonNullable<unknown>;
 export const AdmiraltyLabel: StencilReactComponent<AdmiraltyLabelElement, AdmiraltyLabelEvents> = /*@__PURE__*/ createComponent<AdmiraltyLabelElement, AdmiraltyLabelEvents>({
     tagName: 'admiralty-label',
     elementClass: AdmiraltyLabelElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: {} as AdmiraltyLabelEvents,
     defineCustomElement: defineAdmiraltyLabel
@@ -418,7 +390,6 @@ type AdmiraltyLinkEvents = NonNullable<unknown>;
 export const AdmiraltyLink: StencilReactComponent<AdmiraltyLinkElement, AdmiraltyLinkEvents> = /*@__PURE__*/ createComponent<AdmiraltyLinkElement, AdmiraltyLinkEvents>({
     tagName: 'admiralty-link',
     elementClass: AdmiraltyLinkElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: {} as AdmiraltyLinkEvents,
     defineCustomElement: defineAdmiraltyLink
@@ -429,7 +400,6 @@ type AdmiraltyModalDialogEvents = NonNullable<unknown>;
 export const AdmiraltyModalDialog: StencilReactComponent<AdmiraltyModalDialogElement, AdmiraltyModalDialogEvents> = /*@__PURE__*/ createComponent<AdmiraltyModalDialogElement, AdmiraltyModalDialogEvents>({
     tagName: 'admiralty-modal-dialog',
     elementClass: AdmiraltyModalDialogElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: {} as AdmiraltyModalDialogEvents,
     defineCustomElement: defineAdmiraltyModalDialog
@@ -440,7 +410,6 @@ type AdmiraltyPaginatorEvents = { onPageChange: EventName<CustomEvent<number>> }
 export const AdmiraltyPaginator: StencilReactComponent<AdmiraltyPaginatorElement, AdmiraltyPaginatorEvents> = /*@__PURE__*/ createComponent<AdmiraltyPaginatorElement, AdmiraltyPaginatorEvents>({
     tagName: 'admiralty-paginator',
     elementClass: AdmiraltyPaginatorElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: { onPageChange: 'pageChange' } as AdmiraltyPaginatorEvents,
     defineCustomElement: defineAdmiraltyPaginator
@@ -451,7 +420,6 @@ type AdmiraltyPhaseBannerEvents = NonNullable<unknown>;
 export const AdmiraltyPhaseBanner: StencilReactComponent<AdmiraltyPhaseBannerElement, AdmiraltyPhaseBannerEvents> = /*@__PURE__*/ createComponent<AdmiraltyPhaseBannerElement, AdmiraltyPhaseBannerEvents>({
     tagName: 'admiralty-phase-banner',
     elementClass: AdmiraltyPhaseBannerElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: {} as AdmiraltyPhaseBannerEvents,
     defineCustomElement: defineAdmiraltyPhaseBanner
@@ -462,7 +430,6 @@ type AdmiraltyPillEvents = NonNullable<unknown>;
 export const AdmiraltyPill: StencilReactComponent<AdmiraltyPillElement, AdmiraltyPillEvents> = /*@__PURE__*/ createComponent<AdmiraltyPillElement, AdmiraltyPillEvents>({
     tagName: 'admiralty-pill',
     elementClass: AdmiraltyPillElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: {} as AdmiraltyPillEvents,
     defineCustomElement: defineAdmiraltyPill
@@ -473,7 +440,6 @@ type AdmiraltyProgressBarEvents = NonNullable<unknown>;
 export const AdmiraltyProgressBar: StencilReactComponent<AdmiraltyProgressBarElement, AdmiraltyProgressBarEvents> = /*@__PURE__*/ createComponent<AdmiraltyProgressBarElement, AdmiraltyProgressBarEvents>({
     tagName: 'admiralty-progress-bar',
     elementClass: AdmiraltyProgressBarElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: {} as AdmiraltyProgressBarEvents,
     defineCustomElement: defineAdmiraltyProgressBar
@@ -484,7 +450,6 @@ type AdmiraltyProgressTrackerEvents = { onStepClicked: EventName<AdmiraltyProgre
 export const AdmiraltyProgressTracker: StencilReactComponent<AdmiraltyProgressTrackerElement, AdmiraltyProgressTrackerEvents> = /*@__PURE__*/ createComponent<AdmiraltyProgressTrackerElement, AdmiraltyProgressTrackerEvents>({
     tagName: 'admiralty-progress-tracker',
     elementClass: AdmiraltyProgressTrackerElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: { onStepClicked: 'stepClicked' } as AdmiraltyProgressTrackerEvents,
     defineCustomElement: defineAdmiraltyProgressTracker
@@ -495,7 +460,6 @@ type AdmiraltyProgressTrackerStepEvents = NonNullable<unknown>;
 export const AdmiraltyProgressTrackerStep: StencilReactComponent<AdmiraltyProgressTrackerStepElement, AdmiraltyProgressTrackerStepEvents> = /*@__PURE__*/ createComponent<AdmiraltyProgressTrackerStepElement, AdmiraltyProgressTrackerStepEvents>({
     tagName: 'admiralty-progress-tracker-step',
     elementClass: AdmiraltyProgressTrackerStepElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: {} as AdmiraltyProgressTrackerStepEvents,
     defineCustomElement: defineAdmiraltyProgressTrackerStep
@@ -510,7 +474,6 @@ type AdmiraltyRadioEvents = {
 export const AdmiraltyRadio: StencilReactComponent<AdmiraltyRadioElement, AdmiraltyRadioEvents> = /*@__PURE__*/ createComponent<AdmiraltyRadioElement, AdmiraltyRadioEvents>({
     tagName: 'admiralty-radio',
     elementClass: AdmiraltyRadioElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: {
         onAdmiraltyFocus: 'admiraltyFocus',
@@ -525,7 +488,6 @@ type AdmiraltyRadioGroupEvents = { onAdmiraltyChange: EventName<AdmiraltyRadioGr
 export const AdmiraltyRadioGroup: StencilReactComponent<AdmiraltyRadioGroupElement, AdmiraltyRadioGroupEvents> = /*@__PURE__*/ createComponent<AdmiraltyRadioGroupElement, AdmiraltyRadioGroupEvents>({
     tagName: 'admiralty-radio-group',
     elementClass: AdmiraltyRadioGroupElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: { onAdmiraltyChange: 'admiraltyChange' } as AdmiraltyRadioGroupEvents,
     defineCustomElement: defineAdmiraltyRadioGroup
@@ -536,7 +498,6 @@ type AdmiraltyReadMoreEvents = { onAdmiraltyToggled: EventName<CustomEvent<boole
 export const AdmiraltyReadMore: StencilReactComponent<AdmiraltyReadMoreElement, AdmiraltyReadMoreEvents> = /*@__PURE__*/ createComponent<AdmiraltyReadMoreElement, AdmiraltyReadMoreEvents>({
     tagName: 'admiralty-read-more',
     elementClass: AdmiraltyReadMoreElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: { onAdmiraltyToggled: 'admiraltyToggled' } as AdmiraltyReadMoreEvents,
     defineCustomElement: defineAdmiraltyReadMore
@@ -550,7 +511,6 @@ type AdmiraltySelectEvents = {
 export const AdmiraltySelect: StencilReactComponent<AdmiraltySelectElement, AdmiraltySelectEvents> = /*@__PURE__*/ createComponent<AdmiraltySelectElement, AdmiraltySelectEvents>({
     tagName: 'admiralty-select',
     elementClass: AdmiraltySelectElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: {
         onAdmiraltyChange: 'admiraltyChange',
@@ -564,7 +524,6 @@ type AdmiraltySideNavEvents = NonNullable<unknown>;
 export const AdmiraltySideNav: StencilReactComponent<AdmiraltySideNavElement, AdmiraltySideNavEvents> = /*@__PURE__*/ createComponent<AdmiraltySideNavElement, AdmiraltySideNavEvents>({
     tagName: 'admiralty-side-nav',
     elementClass: AdmiraltySideNavElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: {} as AdmiraltySideNavEvents,
     defineCustomElement: defineAdmiraltySideNav
@@ -575,7 +534,6 @@ type AdmiraltySideNavItemEvents = { onSideNavItemSelected: EventName<CustomEvent
 export const AdmiraltySideNavItem: StencilReactComponent<AdmiraltySideNavItemElement, AdmiraltySideNavItemEvents> = /*@__PURE__*/ createComponent<AdmiraltySideNavItemElement, AdmiraltySideNavItemEvents>({
     tagName: 'admiralty-side-nav-item',
     elementClass: AdmiraltySideNavItemElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: { onSideNavItemSelected: 'sideNavItemSelected' } as AdmiraltySideNavItemEvents,
     defineCustomElement: defineAdmiraltySideNavItem
@@ -586,7 +544,6 @@ type AdmiraltySkeletonEvents = NonNullable<unknown>;
 export const AdmiraltySkeleton: StencilReactComponent<AdmiraltySkeletonElement, AdmiraltySkeletonEvents> = /*@__PURE__*/ createComponent<AdmiraltySkeletonElement, AdmiraltySkeletonEvents>({
     tagName: 'admiralty-skeleton',
     elementClass: AdmiraltySkeletonElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: {} as AdmiraltySkeletonEvents,
     defineCustomElement: defineAdmiraltySkeleton
@@ -597,7 +554,6 @@ type AdmiraltySkipLinkEvents = NonNullable<unknown>;
 export const AdmiraltySkipLink: StencilReactComponent<AdmiraltySkipLinkElement, AdmiraltySkipLinkEvents> = /*@__PURE__*/ createComponent<AdmiraltySkipLinkElement, AdmiraltySkipLinkEvents>({
     tagName: 'admiralty-skip-link',
     elementClass: AdmiraltySkipLinkElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: {} as AdmiraltySkipLinkEvents,
     defineCustomElement: defineAdmiraltySkipLink
@@ -608,7 +564,6 @@ type AdmiraltyTabEvents = NonNullable<unknown>;
 export const AdmiraltyTab: StencilReactComponent<AdmiraltyTabElement, AdmiraltyTabEvents> = /*@__PURE__*/ createComponent<AdmiraltyTabElement, AdmiraltyTabEvents>({
     tagName: 'admiralty-tab',
     elementClass: AdmiraltyTabElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: {} as AdmiraltyTabEvents,
     defineCustomElement: defineAdmiraltyTab
@@ -619,7 +574,6 @@ type AdmiraltyTabGroupEvents = { onAdmiraltyTabSelected: EventName<CustomEvent<n
 export const AdmiraltyTabGroup: StencilReactComponent<AdmiraltyTabGroupElement, AdmiraltyTabGroupEvents> = /*@__PURE__*/ createComponent<AdmiraltyTabGroupElement, AdmiraltyTabGroupEvents>({
     tagName: 'admiralty-tab-group',
     elementClass: AdmiraltyTabGroupElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: { onAdmiraltyTabSelected: 'admiraltyTabSelected' } as AdmiraltyTabGroupEvents,
     defineCustomElement: defineAdmiraltyTabGroup
@@ -630,7 +584,6 @@ type AdmiraltyTableEvents = NonNullable<unknown>;
 export const AdmiraltyTable: StencilReactComponent<AdmiraltyTableElement, AdmiraltyTableEvents> = /*@__PURE__*/ createComponent<AdmiraltyTableElement, AdmiraltyTableEvents>({
     tagName: 'admiralty-table',
     elementClass: AdmiraltyTableElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: {} as AdmiraltyTableEvents,
     defineCustomElement: defineAdmiraltyTable
@@ -641,7 +594,6 @@ type AdmiraltyTableBodyEvents = NonNullable<unknown>;
 export const AdmiraltyTableBody: StencilReactComponent<AdmiraltyTableBodyElement, AdmiraltyTableBodyEvents> = /*@__PURE__*/ createComponent<AdmiraltyTableBodyElement, AdmiraltyTableBodyEvents>({
     tagName: 'admiralty-table-body',
     elementClass: AdmiraltyTableBodyElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: {} as AdmiraltyTableBodyEvents,
     defineCustomElement: defineAdmiraltyTableBody
@@ -652,7 +604,6 @@ type AdmiraltyTableCellEvents = NonNullable<unknown>;
 export const AdmiraltyTableCell: StencilReactComponent<AdmiraltyTableCellElement, AdmiraltyTableCellEvents> = /*@__PURE__*/ createComponent<AdmiraltyTableCellElement, AdmiraltyTableCellEvents>({
     tagName: 'admiralty-table-cell',
     elementClass: AdmiraltyTableCellElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: {} as AdmiraltyTableCellEvents,
     defineCustomElement: defineAdmiraltyTableCell
@@ -663,20 +614,18 @@ type AdmiraltyTableHeaderEvents = NonNullable<unknown>;
 export const AdmiraltyTableHeader: StencilReactComponent<AdmiraltyTableHeaderElement, AdmiraltyTableHeaderEvents> = /*@__PURE__*/ createComponent<AdmiraltyTableHeaderElement, AdmiraltyTableHeaderEvents>({
     tagName: 'admiralty-table-header',
     elementClass: AdmiraltyTableHeaderElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: {} as AdmiraltyTableHeaderEvents,
     defineCustomElement: defineAdmiraltyTableHeader
 });
 
-type AdmiraltyTableHeaderCellEvents = NonNullable<unknown>;
+type AdmiraltyTableHeaderCellEvents = { onAdmiraltySortChange: EventName<CustomEvent<{ direction: 'none' | 'ascending' | 'descending' }>> };
 
 export const AdmiraltyTableHeaderCell: StencilReactComponent<AdmiraltyTableHeaderCellElement, AdmiraltyTableHeaderCellEvents> = /*@__PURE__*/ createComponent<AdmiraltyTableHeaderCellElement, AdmiraltyTableHeaderCellEvents>({
     tagName: 'admiralty-table-header-cell',
     elementClass: AdmiraltyTableHeaderCellElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
-    events: {} as AdmiraltyTableHeaderCellEvents,
+    events: { onAdmiraltySortChange: 'admiraltySortChange' } as AdmiraltyTableHeaderCellEvents,
     defineCustomElement: defineAdmiraltyTableHeaderCell
 });
 
@@ -685,7 +634,6 @@ type AdmiraltyTableRowEvents = NonNullable<unknown>;
 export const AdmiraltyTableRow: StencilReactComponent<AdmiraltyTableRowElement, AdmiraltyTableRowEvents> = /*@__PURE__*/ createComponent<AdmiraltyTableRowElement, AdmiraltyTableRowEvents>({
     tagName: 'admiralty-table-row',
     elementClass: AdmiraltyTableRowElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: {} as AdmiraltyTableRowEvents,
     defineCustomElement: defineAdmiraltyTableRow
@@ -696,7 +644,6 @@ type AdmiraltyTextSideBarEvents = NonNullable<unknown>;
 export const AdmiraltyTextSideBar: StencilReactComponent<AdmiraltyTextSideBarElement, AdmiraltyTextSideBarEvents> = /*@__PURE__*/ createComponent<AdmiraltyTextSideBarElement, AdmiraltyTextSideBarEvents>({
     tagName: 'admiralty-text-side-bar',
     elementClass: AdmiraltyTextSideBarElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: {} as AdmiraltyTextSideBarEvents,
     defineCustomElement: defineAdmiraltyTextSideBar
@@ -710,7 +657,6 @@ type AdmiraltyTextSideBarItemEvents = {
 export const AdmiraltyTextSideBarItem: StencilReactComponent<AdmiraltyTextSideBarItemElement, AdmiraltyTextSideBarItemEvents> = /*@__PURE__*/ createComponent<AdmiraltyTextSideBarItemElement, AdmiraltyTextSideBarItemEvents>({
     tagName: 'admiralty-text-side-bar-item',
     elementClass: AdmiraltyTextSideBarItemElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: {
         onToggled: 'toggled',
@@ -727,7 +673,6 @@ type AdmiraltyTextareaEvents = {
 export const AdmiraltyTextarea: StencilReactComponent<AdmiraltyTextareaElement, AdmiraltyTextareaEvents> = /*@__PURE__*/ createComponent<AdmiraltyTextareaElement, AdmiraltyTextareaEvents>({
     tagName: 'admiralty-textarea',
     elementClass: AdmiraltyTextareaElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: {
         onTextareaBlur: 'textareaBlur',
@@ -741,7 +686,6 @@ type AdmiraltyThemeToggleEvents = { onAdmiraltyThemeChange: EventName<AdmiraltyT
 export const AdmiraltyThemeToggle: StencilReactComponent<AdmiraltyThemeToggleElement, AdmiraltyThemeToggleEvents> = /*@__PURE__*/ createComponent<AdmiraltyThemeToggleElement, AdmiraltyThemeToggleEvents>({
     tagName: 'admiralty-theme-toggle',
     elementClass: AdmiraltyThemeToggleElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: { onAdmiraltyThemeChange: 'admiraltyThemeChange' } as AdmiraltyThemeToggleEvents,
     defineCustomElement: defineAdmiraltyThemeToggle
@@ -752,7 +696,6 @@ type AdmiraltyTooltipEvents = NonNullable<unknown>;
 export const AdmiraltyTooltip: StencilReactComponent<AdmiraltyTooltipElement, AdmiraltyTooltipEvents> = /*@__PURE__*/ createComponent<AdmiraltyTooltipElement, AdmiraltyTooltipEvents>({
     tagName: 'admiralty-tooltip',
     elementClass: AdmiraltyTooltipElement,
-    // @ts-ignore - React type of Stencil Output Target may differ from the React version used in the Nuxt.js project, this can be ignored.
     react: React,
     events: {} as AdmiraltyTooltipEvents,
     defineCustomElement: defineAdmiraltyTooltip

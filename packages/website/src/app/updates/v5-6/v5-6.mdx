@@ -1,6 +1,6 @@
 import styles from "./styles.css"
 
-# Version 5.6 Release Notes
+# Version 5.6 release notes
 
 ### Release date 23/06/2026
 
@@ -9,7 +9,7 @@ import styles from "./styles.css"
 This release introduces improved component coverage with new interactive components and completes the Dark Mode implementation with a dedicated toggle control.
 These additions support teams in building user interfaces with better control over user preferences.
 
-## Dark Mode Toggle
+## Dark mode toggle
 
 <div style={{ display: "flex", paddingBottom: "20px", gap: "1rem", flexWrap: "wrap" }}>
   <img
@@ -43,7 +43,7 @@ These additions support teams in building user interfaces with better control ov
 Following the introduction of Dark Mode in 5.3.0, we've now implemented a dedicated Dark Mode toggle control.
 Users can now explicitly switch between light and dark themes without relying on browser settings alone.
 
-### What's Included
+### What's included
 
 - Dark Mode toggle component for consistent theme switching across products
 - Smooth transitions between light and dark themes
@@ -55,7 +55,7 @@ Make sure the toggle is placed in an easily discoverable location. We recommend 
 Test that theme switching works consistently across all product pages,
 if you've implemented custom colours outside the design system's semantic tokens, you may need to update them to use CSS variables.
 
-## Tooltip Component
+## Tooltip component
 <div style={{ display: "flex", paddingBottom: "20px", gap: "1rem", flexWrap: "wrap" }}>
   <img
     src="/updates/v5-6/tooltip-light.png"
@@ -87,7 +87,7 @@ if you've implemented custom colours outside the design system's semantic tokens
 
 Provides contextual information on hover or focus. Useful for explaining features on a geo-display, icons, and abbreviated content.
 
-### What's Included
+### What's included
 
 - Configurable positioning (top, bottom, left, right)
 - Automatic repositioning to avoid viewport edges
@@ -98,7 +98,7 @@ Provides contextual information on hover or focus. Useful for explaining feature
 
 Tooltips are announced to screen readers. We recommend using them for supplementary information only, critical information should be visible in the UI itself.
 
-## Progress Tracker Component
+## Progress tracker component
 
 <div style={{ display: "flex", paddingBottom: "20px", gap: "1rem", flexWrap: "wrap" }}>
   <img
@@ -143,18 +143,18 @@ Step labels should be clear and predictable. Avoid vague step names like "Step 1
 Instead, use outcome-based labels like "Enter information type" or "Choose data type"
 This helps users understand where they are and what to expect next.
 
-## Enhanced Autocomplete Component
+## Enhanced autocomplete component
 
 The autocomplete component's icon is now fully dynamic, allowing you to swap the default icon for alternatives like a search icon.
 This provides greater flexibility when integrating autocomplete into different contexts.
 
-## Minor Updates
+## Minor updates
 
 - Removed Puppeteer dependency, reduces bundle size and simplifies maintenance
 - Enhanced documentation site dark mode code snippets for improved readability and copy-paste accuracy
 - Several internal performance improvements
 
-## In Our Next Release
+## In our next release
 
 - Improvements to Colour Block component
 - Adding sortable column functionality to Table component
