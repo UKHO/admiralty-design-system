@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/web-components';
+import { Meta, StoryObj } from '@storybook/web-components-vite';
 import { SideNavItemComponent } from './side-nav-item';
 import { html } from 'lit';
 

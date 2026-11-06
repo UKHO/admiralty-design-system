@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/web-components';
+import { Meta, StoryObj } from '@storybook/web-components-vite';
 import { AutocompleteComponent } from './autocomplete';
 import { html } from 'lit';
 

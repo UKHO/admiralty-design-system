@@ -1,7 +1,7 @@
-import { Meta, StoryObj } from '@storybook/web-components';
+import { Meta, StoryObj } from '@storybook/web-components-vite';
 import { IconSideBarItemComponent } from './icon-side-bar-item';
 import { html } from 'lit';
-import { withActions } from "@storybook/addon-actions/decorator";
+import { withActions } from "storybook/actions/decorator";
 
 const meta: Meta = {
   component: 'admiralty-icon-side-bar-item',

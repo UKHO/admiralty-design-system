@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/web-components';
+import { Meta, StoryObj } from '@storybook/web-components-vite';
 import { ModalDialogComponent } from './modal-dialog';
 import { html } from 'lit';
 
@@ -80,9 +80,9 @@ export const MobileWithLongContent: Story = {
         <div slot="content">
           <admiralty-icon name="warning-rounded"></admiralty-icon>
           <div>
-            This is a longer piece of content to demonstrate how the modal handles scrolling on mobile viewports. 
-            When the content exceeds the available height, the body area scrolls internally while the title and 
-            action buttons remain visible and sticky to the viewport. This ensures users can always access the actions 
+            This is a longer piece of content to demonstrate how the modal handles scrolling on mobile viewports.
+            When the content exceeds the available height, the body area scrolls internally while the title and
+            action buttons remain visible and sticky to the viewport. This ensures users can always access the actions
             without scrolling the modal itself out of view.
           </div>
         </div>
