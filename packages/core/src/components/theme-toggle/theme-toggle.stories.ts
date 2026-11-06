@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/web-components';
+import { Meta, StoryObj } from '@storybook/web-components-vite';
 import { ThemeToggleComponent } from './theme-toggle';
 import { html } from 'lit';
 

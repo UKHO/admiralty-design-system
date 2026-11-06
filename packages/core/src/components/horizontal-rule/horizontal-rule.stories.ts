@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/web-components';
+import { Meta, StoryObj } from '@storybook/web-components-vite';
 import { HorizontalRuleComponent } from './horizontal-rule';
 import { html } from 'lit';
 

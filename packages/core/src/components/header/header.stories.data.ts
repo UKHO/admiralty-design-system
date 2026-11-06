@@ -1,5 +1,5 @@
 import { HeaderItem } from './header.types';
-import { action } from '@storybook/addon-actions';
+import { action } from 'storybook/actions';
 
 export const mockMenuItemsWithSubItems: HeaderItem[] = [
   {

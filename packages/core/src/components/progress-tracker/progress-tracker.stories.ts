@@ -1,4 +1,4 @@
-﻿import { Meta, StoryObj } from '@storybook/web-components';
+﻿import { Meta, StoryObj } from '@storybook/web-components-vite';
 import { ProgressTrackerComponent } from './progress-tracker';
 import { html } from 'lit';
 
@@ -30,7 +30,7 @@ export const Default: Story = {
                 <li>Longitude: 0deg 7m 5s W</li>
             </ul>
         </admiralty-progress-tracker-step>
-        
+
         <admiralty-progress-tracker-step
             step-id="object"
             step-title="Choose object"
@@ -41,20 +41,20 @@ export const Default: Story = {
                 <li>Sun, Moon, or Venus</li>
             </ul>
         </admiralty-progress-tracker-step>
-        
+
         <admiralty-progress-tracker-step
             step-id="information-type"
             step-title="Choose information type"
             status="current"
             summary="Meridian Transit, Depression"
         ></admiralty-progress-tracker-step>
-        
+
         <admiralty-progress-tracker-step
             step-id="date"
             step-title="Choose date"
             status="upcoming"
         ></admiralty-progress-tracker-step>
-        
+
         <admiralty-progress-tracker-step
             step-id="download"
             step-title="Download data"
@@ -73,14 +73,14 @@ export const AllComplete: Story = {
             status="complete"
             summary="Email verified"
         ></admiralty-progress-tracker-step>
-        
+
         <admiralty-progress-tracker-step
             step-id="step2"
             step-title="Payment setup"
             status="complete"
             summary="Card added"
         ></admiralty-progress-tracker-step>
-        
+
         <admiralty-progress-tracker-step
             step-id="step3"
             step-title="Verification"
@@ -100,14 +100,14 @@ export const WithNavigation: Story = {
                 status="complete"
                 summary="Documents uploaded"
             ></admiralty-progress-tracker-step>
-            
+
             <admiralty-progress-tracker-step
                 step-id="step2"
                 step-title="Review"
                 status="current"
                 summary="In progress"
             ></admiralty-progress-tracker-step>
-            
+
             <admiralty-progress-tracker-step
                 step-id="step3"
                 step-title="Approval"
@@ -137,14 +137,14 @@ export const ForwardNavigationOnly: Story = {
                 status="complete"
                 summary="Documents uploaded"
             ></admiralty-progress-tracker-step>
-            
+
             <admiralty-progress-tracker-step
                 step-id="step2"
                 step-title="Review"
                 status="current"
                 summary="In progress"
             ></admiralty-progress-tracker-step>
-            
+
             <admiralty-progress-tracker-step
                 step-id="step3"
                 step-title="Approval"
@@ -174,14 +174,14 @@ export const BackNavigationOnly: Story = {
                 status="complete"
                 summary="Documents uploaded"
             ></admiralty-progress-tracker-step>
-            
+
             <admiralty-progress-tracker-step
                 step-id="step2"
                 step-title="Review"
                 status="current"
                 summary="In progress"
             ></admiralty-progress-tracker-step>
-            
+
             <admiralty-progress-tracker-step
                 step-id="step3"
                 step-title="Approval"
@@ -215,7 +215,7 @@ export const NoBackNavigation: Story = {
                 <li>Longitude: 0deg 7m 5s W</li>
             </ul>
         </admiralty-progress-tracker-step>
-        
+
         <admiralty-progress-tracker-step
             step-id="object"
             step-title="Choose object"
@@ -226,20 +226,20 @@ export const NoBackNavigation: Story = {
                 <li>Sun, Moon, or Venus</li>
             </ul>
         </admiralty-progress-tracker-step>
-        
+
         <admiralty-progress-tracker-step
             step-id="information-type"
             step-title="Choose information type"
             status="current"
             summary="Meridian Transit, Depression"
         ></admiralty-progress-tracker-step>
-        
+
         <admiralty-progress-tracker-step
             step-id="date"
             step-title="Choose date"
             status="upcoming"
         ></admiralty-progress-tracker-step>
-        
+
         <admiralty-progress-tracker-step
             step-id="download"
             step-title="Download data"
