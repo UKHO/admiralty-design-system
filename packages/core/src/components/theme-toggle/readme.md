@@ -9,7 +9,7 @@
 
 | Property    | Attribute    | Description                                                                                                                                                                                                   | Type                          | Default              |
 | ----------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------- | -------------------- |
-| `ariaLabel` | `aria-label` | Label for accessibility. Defaults to "Toggle dark mode".                                                                                                                                                      | `string`                      | `'Toggle dark mode'` |
+| `ariaLabel` | `aria-label` | Label for accessibility. Defaults to an action label for the next theme.                                                                                                                                      | `string`                      | `'Toggle dark mode'` |
 | `disabled`  | `disabled`   | Whether the toggle should be disabled.                                                                                                                                                                        | `boolean`                     | `false`              |
 | `theme`     | `theme`      | The current theme preference. Can be 'light', 'dark', or 'auto' (system preference). Default value is 'auto'. When no saved preference exists, it remains 'auto' so OS theme changes continue to be followed. | `"auto" \| "dark" \| "light"` | `'auto'`             |
 
