@@ -1,3 +1,24 @@
+# v5.9.1 (Fri Nov 06 2026)
+
+#### 🐛 Bug Fix
+
+- Automatic release [#531](https://github.com/UKHO/admiralty-design-system/pull/531) ([@lstevens98](https://github.com/lstevens98) [@github-actions[bot]](https://github.com/github-actions[bot]))
+- `@ukho/admiralty-angular`, `@ukho/admiralty-core`, `@ukho/admiralty-react`
+  - Fixing the live message in the progress tracker [#541](https://github.com/UKHO/admiralty-design-system/pull/541) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+#### 🔩 Dependency Updates
+
+- `@ukho/admiralty-core`
+  - Upgrading storybook to the latest version [#540](https://github.com/UKHO/admiralty-design-system/pull/540) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+#### Authors: 3
+
+- [@github-actions[bot]](https://github.com/github-actions[bot])
+- Lewis Stevens ([@lstevens98](https://github.com/lstevens98))
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
 # v5.9.0 (Wed Sep 30 2026)
 
 #### 🚀 Enhancement

@@ -1,3 +1,15 @@
+# v5.9.1 (Fri Nov 06 2026)
+
+#### 🐛 Bug Fix
+
+- Fixing the live message in the progress tracker [#541](https://github.com/UKHO/admiralty-design-system/pull/541) ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+#### Authors: 1
+
+- Tom Barham ([@ecstaticrainbow](https://github.com/ecstaticrainbow))
+
+---
+
 # v5.9.0 (Wed Sep 30 2026)
 
 #### 🚀 Enhancement
