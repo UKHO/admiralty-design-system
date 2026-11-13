@@ -20,12 +20,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Install pnpm
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v6
       - uses: actions/setup-node@v4
         with:
-          node-version: 20.x
+          node-version: 26.x
           cache: 'pnpm'
           cache-dependency-path: 'pnpm-lock.yaml'
       - uses: ./.github/workflows/actions/build-all
@@ -35,12 +35,12 @@ jobs:
     needs: [ build ]
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Install pnpm
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v6
       - uses: actions/setup-node@v4
         with:
-          node-version: 20.x
+          node-version: 26.x
           cache: 'pnpm'
           cache-dependency-path: 'pnpm-lock.yaml'
       - uses: ./.github/workflows/actions/test-core-spec
@@ -51,12 +51,12 @@ jobs:
     needs: [test-core-spec,build]
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Install pnpm
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v6
       - uses: actions/setup-node@v4
         with:
-          node-version: 20.x
+          node-version: 26.x
           cache: 'pnpm'
           cache-dependency-path: 'pnpm-lock.yaml'
       - uses: ./.github/workflows/actions/release-packages
@@ -64,11 +64,3 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ADMIN_TOKEN: ${{ secrets.ADMIN_TOKEN }}
-      - uses: ./.github/workflows/actions/release-email
-        name: Send Release Email
-        with:
-          SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
-          FROM_EMAIL: ${{ vars.FROM_EMAIL}}
-          RECIPIENTS: ${{ vars.RECIPIENTS }}
-          SEND_RELEASE_EMAIL: ${{ vars.SEND_RELEASE_EMAIL }}
-          SG_TEMPLATE_ID: ${{ vars.SG_TEMPLATE_ID }}
